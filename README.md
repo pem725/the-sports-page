@@ -13,3 +13,4 @@ Click any `.html` file to download it, then open in your browser. Or visit the G
 | 1 | Mar 27, 2026 | Paul Skenes' 67.5 ERA Opening Day | [skenes_newsletter.html](skenes_newsletter.html) |
 | 2 | Mar 29, 2026 | Pete Alonso's Orioles Debut — Why Mets Fans Should Relax | [alonso_newsletter.html](alonso_newsletter.html) |
 | 3 | Apr 1, 2026 | The Misery Index: Down 14% — Which Teams Share My Pain? | [misery_index_newsletter.html](misery_index_newsletter.html) |
+| 4 | Apr 2, 2026 | Mets 3-3: 50% Extra Innings, 1-for-29 RISP, and Why Six Games Means Nothing | [mets_500_newsletter.html](mets_500_newsletter.html) |
