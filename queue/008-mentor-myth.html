@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. 8</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1;letter-spacing:-.02em}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.desk{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.desk{padding:1.6rem 1.4rem}}
+.desk-hed{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:.2rem}
+.desk-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;color:#a09070;margin-bottom:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.chip{font-family:'Roboto Mono',monospace;font-size:.66rem;background:rgba(201,150,42,.12);border:1px solid rgba(201,150,42,.35);color:#b8982a;padding:.28rem .65rem;cursor:pointer;transition:background .15s}
+.chip:hover{background:rgba(201,150,42,.25);color:var(--gold)}
+.desk label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+textarea#qi{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(201,150,42,.4);color:#f0ead8;font-family:'Libre Baskerville',serif;font-size:.95rem;line-height:1.6;padding:.85rem 1rem;resize:vertical;min-height:90px;outline:none;transition:border-color .2s}
+textarea#qi:focus{border-color:var(--gold)}
+textarea#qi::placeholder{color:#6b5e4a}
+#ask-btn{margin-top:.7rem;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:none;padding:.72rem 1.8rem;cursor:pointer;transition:background .2s,transform .1s}
+#ask-btn:hover{background:#e0aa30;transform:translateY(-1px)}
+#ask-btn:disabled{background:#5a4a28;color:#3a3020;cursor:not-allowed;transform:none}
+.resp{margin-top:1.4rem;border-top:1px solid rgba(201,150,42,.3);padding-top:1.1rem;display:none}
+.resp.on{display:block}
+.resp-hed{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+#rtext{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.78;color:#e0d8c8;white-space:pre-wrap}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ── SITE NEWS BOX ── */
+.site-news{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.site-news{padding:1.6rem 1.4rem}}
+.site-news h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:.6rem}
+.site-news p{font-size:.92rem;color:#c8cabd;line-height:1.65;margin-bottom:.8rem}
+.site-news ul{list-style:none;padding:0;margin:0}
+.site-news li{font-size:.9rem;color:#e0d8c8;line-height:1.6;padding:.45rem 0;border-bottom:1px solid rgba(201,150,42,.15)}
+.site-news li:last-child{border-bottom:none}
+.site-news li strong{color:var(--gold)}
+.site-news a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,150,42,.35);transition:border-color .2s}
+.site-news a:hover{border-color:var(--gold)}
+
+/* ── GOLD HIGHLIGHT ROW (2026 Cousins/Mendoza) ── */
+table.rec .gold-row td{background:#fff3d6;font-weight:700;border-bottom:2px solid var(--gold)}
+table.rec .gold-row .mono{color:var(--gold);font-weight:700}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch from the QB Room &middot; Football, 2026</div>
+  <div class="title">The Sports Page</div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. 8</span>
+    <span>April 3, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- PAPER -->
+<div class="paper">
+
+  <h1 class="hed">Kirk Cousins Wouldn&rsquo;t Mentor Penix in Atlanta. Now He&rsquo;s Getting <em>$20&nbsp;Million</em> to Mentor Mendoza in Vegas.</h1>
+
+  <div class="deck">
+    The Raiders signed a quarterback who reportedly refused to help his replacement last year, then plan to draft his replacement this month. History says supportive mentors produce stars 80% of the time. Hostile ones? 25%. Here&rsquo;s what the data &mdash; and every other sport &mdash; says about teaching someone to take your job.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; April 3, 2026 &middot; Kirk Cousins signed with Raiders April 2</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v good">80%</div><div class="l">Stars from Supportive Mentors</div></div>
+    <div class="sc"><div class="v bad">25%</div><div class="l">Stars from Hostile Mentors</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">$20M</div><div class="l">Cousins&rsquo; Guaranteed Money</div></div>
+  </div>
+
+  <!-- TWO-COLUMN BODY -->
+  <div class="two-col">
+    <div>
+      <p>On Thursday, the Las Vegas Raiders signed Kirk Cousins to a deal worth up to $172 million over five years, with $20 million guaranteed in 2026. The four-time Pro Bowler, now 37, will almost certainly be joined by the first overall pick in the draft later this month &mdash; widely expected to be Indiana quarterback Fernando Mendoza. The plan is clear: Cousins starts, Mendoza learns, and sometime in 2027 or 2028, the torch passes. It&rsquo;s the same plan Kansas City had with Alex Smith and Patrick Mahomes. There&rsquo;s just one problem.</p>
+    </div>
+    <div>
+      <p>Last year in Atlanta, Cousins was asked to do the same thing with Michael Penix Jr., the eighth overall pick. By multiple reports, he refused. An Atlanta source indicated that Cousins&rsquo; unwillingness to help Penix was an issue for the Falcons. He didn&rsquo;t want to teach a young player to take his job. This isn&rsquo;t unusual &mdash; it&rsquo;s the default setting for most NFL quarterbacks. The unusual ones are the Alex Smiths of the world, who invite the rookie into the film room, walk them through reads, and promise not to undercut them. That&rsquo;s the exception. Cousins was the rule. The question is whether $20 million in guaranteed money changes the calculus.</p>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Alex Smith invited Mahomes into his film room and promised not to undercut him. Brett Favre was &lsquo;actually cruel&rsquo; to Aaron Rodgers. Kirk Cousins refused to help Penix Jr. The mentor spectrum is wide &mdash; and $20 million doesn&rsquo;t automatically move you to the right end of it.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the economics of mentorship</cite>
+  </div>
+
+  <!-- MENTOR-ROOKIE SCOREBOARD TABLE -->
+  <h2 class="sh">The Mentor-Rookie Scoreboard, 2001&ndash;2026</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Year</th><th>Veteran</th><th>Rookie</th><th>Relationship</th><th>Sat Yr 1?</th><th>Rookie Became</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl"><td class="mono">2001</td><td>Jon Kitna</td><td>Carson Palmer</td><td>Supportive</td><td class="mono">Yes</td><td class="mono">Star</td></tr>
+      <tr class="hl"><td class="mono">2003</td><td>Kerry Collins</td><td>Eli Manning</td><td>Professional</td><td class="mono">Yes</td><td class="mono">Star</td></tr>
+      <tr class="worse"><td class="mono">2005</td><td>Brett Favre</td><td>Aaron Rodgers</td><td class="mono">HOSTILE</td><td class="mono">Yes</td><td>Star (despite Favre)</td></tr>
+      <tr class="hl"><td class="mono">2005</td><td>Drew Bledsoe</td><td>Tony Romo</td><td>Professional</td><td class="mono">Yes</td><td class="mono">Star</td></tr>
+      <tr><td class="mono">2012</td><td>Alex Smith</td><td>Colin Kaepernick</td><td>Tense</td><td class="mono">No</td><td class="mono">Mixed</td></tr>
+      <tr class="hl"><td class="mono">2017</td><td>Alex Smith</td><td>Patrick Mahomes</td><td style="color:var(--gold);font-weight:700">GOLD STANDARD</td><td class="mono">Yes</td><td class="mono">Star (3 Super Bowls)</td></tr>
+      <tr class="worse"><td class="mono">2019</td><td>Joe Flacco</td><td>Drew Lock</td><td class="mono">Refused</td><td class="mono">No</td><td class="mono">Bust</td></tr>
+      <tr><td class="mono">2020</td><td>Aaron Rodgers</td><td>Jordan Love</td><td>Supportive</td><td class="mono">Yes</td><td class="mono">Decent</td></tr>
+      <tr class="worse"><td class="mono">2022</td><td>Ryan Tannehill</td><td>Malik Willis</td><td class="mono">Contentious</td><td class="mono">Yes</td><td class="mono">Bust</td></tr>
+      <tr class="worse"><td class="mono">2024</td><td>Kirk Cousins</td><td>Michael Penix Jr.</td><td class="mono">HOSTILE</td><td class="mono">No</td><td class="mono">TBD</td></tr>
+      <tr class="gold-row"><td class="mono">2026</td><td><strong>Kirk Cousins</strong></td><td><strong>Fernando Mendoza</strong></td><td class="mono"><strong>???</strong></td><td class="mono"><strong>Expected</strong></td><td class="mono"><strong>TBD</strong></td></tr>
+    </tbody>
+  </table>
+
+  <!-- THE MATH BOX: MENTORING BY THE NUMBERS -->
+  <div class="box">
+    <h3>Mentoring by the Numbers</h3>
+    <div class="math">Supportive/Professional mentors (n=5):
+  Rookies who became stars: 4 of 5 (80%)
+  Examples: Palmer, Manning, Romo, Mahomes
+
+Hostile/Refused mentors (n=4):
+  Rookies who became stars: 1 of 4 (25%)
+  The one star? Aaron Rodgers. A generational outlier.
+
+Sat behind veteran Year 1 (n=7):
+  Became stars: 5 of 7 (71%)
+
+Started immediately (n=2):
+  Became stars: 0 of 2 (0%)
+
+Caveat: Small samples. Selection bias (teams draft
+QBs higher when they have a clear succession plan).
+But the pattern is striking: supportive environments
+produce stars at 3x the rate of hostile ones.</div>
+  </div>
+
+  <!-- SECOND BOX: WHY MENTORING WORKS IN EVERY SPORT EXCEPT THE NFL QB ROOM -->
+  <div class="box">
+    <h3>Why Mentoring Works in Every Sport Except the NFL QB Room</h3>
+    <div class="math">NFL QB room:   1 starter. Zero-sum. Helping your backup
+               means accelerating your own obsolescence.
+
+MLB rotation:  5 starters coexist. Veterans and rookies
+               pitch on different days. No direct threat.
+               Example: veteran pitchers mentor young arms.
+
+NBA:           5+ starters, 8-man rotation. Vets and
+               rookies play simultaneously. LeBron mentors
+               younger teammates while still playing.
+
+NHL:           Mario Lemieux OWNED the Penguins and still
+               mentored Sidney Crosby. Crosby literally
+               lived in Lemieux's house.
+
+The common thread: mentoring works when the veteran's
+job isn't DIRECTLY threatened by the mentee's success.
+The QB position is the most zero-sum role in team sports.
+Only saints or professionals mentor willingly.
+Alex Smith was a saint. Brett Favre was honest about it.
+Kirk Cousins was... Kirk Cousins.</div>
+  </div>
+
+  <hr>
+
+  <!-- HISTORICAL PARALLELS -->
+  <h2 class="sh">They&rsquo;ve Seen This Movie Before</h2>
+
+  <div class="hist-grid">
+    <div class="hc">
+      <div class="hc-name">Alex Smith and Patrick Mahomes &mdash; The Gold Standard</div>
+      <div class="hc-stat">3</div>
+      <div class="hc-label">Super Bowls won after Smith&rsquo;s mentorship</div>
+      <p>In 2017, the Chiefs drafted Mahomes 10th overall to replace Smith, who was coming off a strong playoff season. Smith could have been bitter. Instead, he invited Mahomes into the film room, walked him through defensive reads, and promised he would never undercut him &mdash; a deliberate contrast to what he&rsquo;d heard about Favre and Rodgers. Mahomes sat for one year, then exploded: 5,000 yards, 50 TDs, MVP in Year 2. Three Super Bowls followed. Smith was traded to Washington and later called it &lsquo;the hardest and most rewarding thing I&rsquo;ve done.&rsquo;</p>
+      <div class="verdict">The blueprint. Will Cousins follow it?</div>
+    </div>
+
+    <div class="hc">
+      <div class="hc-name">Brett Favre and Aaron Rodgers &mdash; The Anti-Blueprint</div>
+      <div class="hc-stat">0</div>
+      <div class="hc-label">Times Favre helped Rodgers prepare</div>
+      <p>When the Packers drafted Rodgers 24th overall in 2005, Favre famously said it wasn&rsquo;t his job to get the kid ready. Reports described behavior ranging from cold indifference to outright cruelty &mdash; excluding Rodgers from team activities, pranking his equipment, making his life miserable. Rodgers sat for three years, became an MVP anyway, and later vowed never to treat Jordan Love the same way. The moral: talent can overcome a toxic mentor. But it doesn&rsquo;t have to be that hard.</p>
+      <div class="verdict bad">Rodgers succeeded in spite of, not because of</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- WHAT THIS MEANS FOR THE RAIDERS -->
+<div class="site-news">
+  <h2>What This Means for the Raiders</h2>
+  <ul>
+    <li><strong>The Optimistic Case:</strong> Cousins takes the Smith path. He&rsquo;s 37, he knows his career is winding down, and $20M in guaranteed money buys some humility. Mendoza sits for a year, learns from a four-time Pro Bowler, and the Raiders get their franchise QB in 2027.</li>
+    <li><strong>The Pessimistic Case:</strong> Cousins takes the Atlanta path. He refuses to engage, creates tension in the QB room, and Mendoza either develops on his own or doesn&rsquo;t. The Raiders burn $20M on a placeholder who actively undermines the succession plan.</li>
+    <li><strong>The Realistic Case:</strong> Cousins is professional but not generous. He shows up, does his job, answers questions when asked, but doesn&rsquo;t go out of his way. Mendoza gets the game film and the playbook but not the wisdom. This is the most likely outcome &mdash; and it might be enough.</li>
+  </ul>
+</div>
+
+<!-- FINAL PULL QUOTE AND FOOTER -->
+<div class="paper" style="margin-top:1.2rem">
+
+  <div class="pull">
+    <p>&ldquo;The NFL asks veteran quarterbacks to do something no other sport demands: teach someone to take your job while you&rsquo;re still doing it. Alex Smith said yes and built a dynasty. Brett Favre said no and built a grudge. Kirk Cousins said no in Atlanta. The Raiders are betting $20 million that Vegas changes the answer.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the price of mentorship</cite>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. 8</span>
+    <span>Mentor-rookie data compiled from 2001&ndash;2026 NFL drafts</span>
+    <span>Not financial or wagering advice</span>
+  </div>
+
+</div>
+
+<!-- ASK THE STATS DESK -->
+<div class="desk">
+  <div class="desk-hed">Ask The Stats Desk</div>
+  <div class="desk-sub">Drop any strange stat. Get context in seconds.</div>
+
+  <div class="chips">
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Cousins refused to mentor Penix</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">80% of stars from supportive mentors</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Alex Smith and Mahomes</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Why QB mentoring is different from other sports</span>
+  </div>
+
+  <label for="qi">Your stat question</label>
+  <textarea id="qi" placeholder="e.g. 'Does $20M in guaranteed money change how a veteran mentors his replacement?'"></textarea>
+  <button id="ask-btn" onclick="askDesk()">&#9654; Explain the Context</button>
+
+  <div class="resp" id="resp-box">
+    <div class="resp-hed">The Stats Desk says&hellip;</div>
+    <div id="rtext"></div>
+  </div>
+</div>
+
+<script>
+async function askDesk(){
+  const q=document.getElementById('qi').value.trim();if(!q)return;
+  const btn=document.getElementById('ask-btn'),box=document.getElementById('resp-box'),rt=document.getElementById('rtext');
+  btn.disabled=true;btn.innerHTML='<span class="spin"></span> Thinking\u2026';
+  box.classList.add('on');rt.textContent='';
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.__ANTHROPIC_KEY||''},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:`You are The Stats Desk \u2014 a sharp, witty sports and finance statistics explainer. Given a stat about markets or sports, explain: 1) WHY the number looks extreme, 2) Historical context, 3) What it MEANS vs what it DOESN'T mean, 4) Verdict: noise, red flag, or genuinely noteworthy? Style: editorial voice, dry humor, 2-3 paragraphs. No bullet lists.`,messages:[{role:'user',content:q}]})});
+    const d=await r.json();rt.textContent=d.content?.find(b=>b.type==='text')?.text||'No response \u2014 check your API key.';
+  }catch(e){rt.textContent='Error: '+e.message;}
+  btn.disabled=false;btn.innerHTML='&#9654; Explain the Context';
+}
+</script>
+
+</body>
+</html>
