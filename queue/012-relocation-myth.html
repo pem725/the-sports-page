@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — April 6, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1;letter-spacing:-.02em}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.desk{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.desk{padding:1.6rem 1.4rem}}
+.desk-hed{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:.2rem}
+.desk-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;color:#a09070;margin-bottom:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.chip{font-family:'Roboto Mono',monospace;font-size:.66rem;background:rgba(201,150,42,.12);border:1px solid rgba(201,150,42,.35);color:#b8982a;padding:.28rem .65rem;cursor:pointer;transition:background .15s}
+.chip:hover{background:rgba(201,150,42,.25);color:var(--gold)}
+.desk label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+textarea#qi{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(201,150,42,.4);color:#f0ead8;font-family:'Libre Baskerville',serif;font-size:.95rem;line-height:1.6;padding:.85rem 1rem;resize:vertical;min-height:90px;outline:none;transition:border-color .2s}
+textarea#qi:focus{border-color:var(--gold)}
+textarea#qi::placeholder{color:#6b5e4a}
+#ask-btn{margin-top:.7rem;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:none;padding:.72rem 1.8rem;cursor:pointer;transition:background .2s,transform .1s}
+#ask-btn:hover{background:#e0aa30;transform:translateY(-1px)}
+#ask-btn:disabled{background:#5a4a28;color:#3a3020;cursor:not-allowed;transform:none}
+.resp{margin-top:1.4rem;border-top:1px solid rgba(201,150,42,.3);padding-top:1.1rem;display:none}
+.resp.on{display:block}
+.resp-hed{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+#rtext{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.78;color:#e0d8c8;white-space:pre-wrap}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ── SITE NEWS BOX ── */
+.site-news{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.site-news{padding:1.6rem 1.4rem}}
+.site-news h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:.6rem}
+.site-news p{font-size:.92rem;color:#c8cabd;line-height:1.65;margin-bottom:.8rem}
+.site-news ul{list-style:none;padding:0;margin:0}
+.site-news li{font-size:.9rem;color:#e0d8c8;line-height:1.6;padding:.45rem 0;border-bottom:1px solid rgba(201,150,42,.15)}
+.site-news li:last-child{border-bottom:none}
+.site-news li strong{color:var(--gold)}
+.site-news a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,150,42,.35);transition:border-color .2s}
+.site-news a:hover{border-color:var(--gold)}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch from the Moving Van &middot; All Sports, 2026</div>
+  <div class="title">The Sports Page</div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. 12</span>
+    <span>April 6, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- PAPER -->
+<div class="paper">
+
+  <h1 class="hed">The A&rsquo;s Are Moving to Vegas. The Raiders Already Did. The Data Says <em>Neither</em> Guarantees a Winner.</h1>
+
+  <div class="deck">
+    Sean asked: will the A&rsquo;s get better in Las Vegas? The relocation scorecard across 10 moves in 4 sports says 60% improve &mdash; but the average gain is just .050 in win percentage. The real variable isn&rsquo;t the city. It&rsquo;s the owner. And John Fisher has the lowest payroll in baseball.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; April 6, 2026 &middot; This one&rsquo;s for Sean and the Raiders faithful</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">60%</div><div class="l">Teams That Improved After Moving</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">+.050</div><div class="l">Avg W% Change After Relocation</div></div>
+    <div class="sc"><div class="v bad">$60M</div><div class="l">A&rsquo;s 2024 Payroll (Dead Last in MLB)</div></div>
+  </div>
+
+  <!-- TWO-COLUMN BODY -->
+  <div class="two-col">
+    <div>
+      <p>The Oakland Athletics are playing their final seasons in Sacramento before moving to Las Vegas in 2028, into a $2 billion, 33,000-seat stadium on the old Tropicana site. For A&rsquo;s fans &mdash; the ones who haven&rsquo;t already left &mdash; this is supposed to be the fresh start. New city, new stadium, new energy. Las Vegas is a sports town now: the Raiders, the Golden Knights, soon a basketball team. The A&rsquo;s will have revenue streams that Oakland&rsquo;s crumbling Coliseum never provided. On paper, this is a franchise reboot.</p>
+    </div>
+    <div>
+      <p>But the data across 10 major team relocations in four sports tells a more complicated story. Six of ten teams improved their win percentage after moving. Four got worse. The average improvement was just .050 &mdash; roughly 8 wins in a 162-game baseball season or one extra win in the NFL. And the biggest predictor of post-move success wasn&rsquo;t the new city or the new stadium. It was whether ownership was willing to spend. The A&rsquo;s owner, John Fisher, has fielded the lowest payroll in baseball three times since 2016. A $2 billion stadium doesn&rsquo;t fix a $60 million payroll.</p>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Moving doesn&rsquo;t make you better. Spending makes you better. The A&rsquo;s problem was never Oakland. It was the owner&rsquo;s checkbook. Las Vegas doesn&rsquo;t change what&rsquo;s in it.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the economics of relocation</cite>
+  </div>
+
+  <!-- RELOCATION SCORECARD TABLE -->
+  <h2 class="sh">The Relocation Scorecard: 10 Moves, 4 Sports</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Team Move</th><th>Sport</th><th>Year</th><th>Before W%</th><th>After W%</th><th>Change</th><th>Key Factor</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl"><td>Nordiques &rarr; Avalanche</td><td class="mono">NHL</td><td class="mono">1995</td><td class="mono">.494</td><td class="mono">.652</td><td class="mono">+.158</td><td>Won Cup Year 1</td></tr>
+      <tr class="hl"><td>Sonics &rarr; Thunder</td><td class="mono">NBA</td><td class="mono">2008</td><td class="mono">.415</td><td class="mono">.622</td><td class="mono">+.207</td><td>KD era, instant success</td></tr>
+      <tr class="hl"><td>Rams &rarr; LA</td><td class="mono">NFL</td><td class="mono">2016</td><td class="mono">.418</td><td class="mono">.531</td><td class="mono">+.113</td><td>SB 2019, won SB 2022</td></tr>
+      <tr><td>Nets &rarr; Brooklyn</td><td class="mono">NBA</td><td class="mono">2012</td><td class="mono">.384</td><td class="mono">.451</td><td class="mono">+.067</td><td>Spending spree</td></tr>
+      <tr><td>Whalers &rarr; Hurricanes</td><td class="mono">NHL</td><td class="mono">1997</td><td class="mono">.430</td><td class="mono">.470</td><td class="mono">+.040</td><td>Won Cup 2006</td></tr>
+      <tr><td>Expos &rarr; Nationals</td><td class="mono">MLB</td><td class="mono">2005</td><td class="mono">.478</td><td class="mono">.494</td><td class="mono">+.016</td><td>Won WS 2019 (14 yrs later)</td></tr>
+      <tr><td>Braves &rarr; Atlanta</td><td class="mono">MLB</td><td class="mono">1966</td><td class="mono">.540</td><td class="mono">.517</td><td class="mono">&minus;.023</td><td>Won WS 1995, 2021 eventually</td></tr>
+      <tr><td>Dodgers &rarr; LA</td><td class="mono">MLB</td><td class="mono">1958</td><td class="mono">.587</td><td class="mono">.564</td><td class="mono">&minus;.023</td><td>Dynasty came later</td></tr>
+      <tr class="worse"><td>Raiders &rarr; Vegas</td><td class="mono">NFL</td><td class="mono">2020</td><td class="mono">.400</td><td class="mono">.375</td><td class="mono">&minus;.025</td><td>Gruden, then collapse</td></tr>
+      <tr class="worse"><td>Chargers &rarr; LA</td><td class="mono">NFL</td><td class="mono">2017</td><td class="mono">.531</td><td class="mono">.497</td><td class="mono">&minus;.034</td><td>Worse. Empty stadium</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- THE MATH BOX: SPENDING VS ZIP CODE -->
+  <div class="box">
+    <h3>What Actually Predicts Wins: Spending, Not Zip Code</h3>
+    <div class="math">Correlation between MLB payroll and wins (2024):
+  r = 0.444, R&sup2; = 19.7%
+  &rarr; Payroll explains only 20% of wins
+  &rarr; But it sets the FLOOR
+
+A's payroll trajectory:
+  2023: $56.9M (dead last)
+  2024: $60.0M (dead last, 41% below 29th team)
+  MLB average: ~$160M
+
+Projected win improvement from spending more:
+  $60M &rarr; $120M:  +8-12 wins  (from ~69 to ~77-81)
+  $60M &rarr; $160M:  +12-18 wins (from ~69 to ~81-87)
+  $60M &rarr; $60M in Vegas: +0 wins. Same team, nicer seats.
+
+Fisher has NEVER ranked higher than 24th in payroll.
+A new stadium generates ~$30-50M more in annual revenue.
+The question: does Fisher spend it or pocket it?</div>
+    <p>The Nordiques became the Avalanche and won the Cup immediately &mdash; because they already had a great roster (Sakic, Forsberg, Roy). The Chargers moved to LA and got worse &mdash; because the market didn&rsquo;t embrace them. Location is the setting. Spending is the plot. Ownership is the author.</p>
+  </div>
+
+  <!-- THE MATH BOX: GRUDEN CAUTIONARY TALE -->
+  <div class="box">
+    <h3>The Cost of an Email: The Gruden Cautionary Tale</h3>
+    <div class="math">THE RAIDERS IN LAS VEGAS &mdash; YEAR BY YEAR
+
+Year  City        Record  W%     Note
+2018  Oakland      4-12  .235   Pre-move baseline
+2019  Oakland      7-9   .438   Gruden Year 1
+2020  Las Vegas    8-8   .500   Year 1 in Vegas (COVID)
+2021  Las Vegas   10-7   .588   PLAYOFFS! Gruden fired Wk 5
+2022  Las Vegas    6-11  .353   Post-Gruden hangover
+2023  Las Vegas    8-9   .471   Treading water
+2024  Las Vegas    4-13  .235   Collapse
+2025  Las Vegas    3-14  .176   Rock bottom
+
+With Gruden (2019-2021 Wk 5): .488 (19-14)
+Without Gruden (2021 Wk 6 - 2025): .309 (21-47)
+
+Estimated wins lost to the email scandal: ~12
+Estimated value destroyed: ~$25M+
+
+Sean's lesson: "Be very careful what you write
+to colleagues in email, as it is discoverable."
+The data agrees. Those emails, written years earlier
+at ESPN, cost the Raiders a playoff window.</div>
+  </div>
+
+  <hr>
+
+  <!-- HISTORICAL PARALLELS -->
+  <h2 class="sh">They&rsquo;ve Seen This Movie Before</h2>
+
+  <div class="hist-grid">
+    <div class="hc">
+      <div class="hc-name">The Montreal Expos &mdash; 14 Years to a World Series</div>
+      <div class="hc-stat">14</div>
+      <div class="hc-label">Years from DC move to World Series title</div>
+      <p>The Expos moved to Washington in 2005 after decades of ownership neglect, stadium problems, and MLB literally owning the team. Sound familiar? The Nationals&rsquo; W% barely changed in the first five years. But new ownership (the Lerner family) invested in scouting, development, and eventually payroll. The result: Bryce Harper, Stephen Strasburg, and a 2019 World Series championship. The lesson: relocation works when new ownership commits. The Expos didn&rsquo;t need a new city. They needed owners who wanted to win.</p>
+      <div class="verdict">It took 14 years &mdash; but the INVESTMENT was the variable</div>
+    </div>
+
+    <div class="hc">
+      <div class="hc-name">The Chargers &mdash; When Moving Makes You Worse</div>
+      <div class="hc-stat">&minus;.034</div>
+      <div class="hc-label">W% change after moving to LA</div>
+      <p>The Chargers moved from San Diego to Los Angeles in 2017 chasing a bigger media market. They got one. They also got an empty stadium, a fan base that didn&rsquo;t adopt them, and worse results on the field. Their W% actually declined. In a salary-cap league, the extra revenue didn&rsquo;t translate to better players &mdash; it went to the owner&rsquo;s bottom line. The A&rsquo;s face the same risk in Vegas: if Fisher takes the increased revenue and doesn&rsquo;t reinvest it in payroll, Las Vegas becomes a more expensive version of Oakland.</p>
+      <div class="verdict bad">Bigger market, worse results, richer owner</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FAMILY CONTEXT: A NOTE FROM SEAN -->
+<div class="site-news">
+  <h2>A Note from Sean</h2>
+  <p><em>My brother Sean &mdash; a lifelong Raiders fan &mdash; pitched this story. His question was simple: will the A&rsquo;s actually get better in Vegas, or is this just the Raiders all over again? The answer, statistically, is that relocation is a coin flip dressed up as a fresh start. The Raiders moved to Vegas with Jon Gruden and it looked like a renaissance &mdash; until his old emails surfaced and destroyed the timeline. Sean&rsquo;s takeaway: &ldquo;Be very careful what you write to colleagues in email, as it is discoverable.&rdquo; Amen, brother. The data backs you up.</em></p>
+  <p>Sean also wanted me to note: the Raiders pick #1 in the 2026 draft. Maybe Kirk Cousins and Fernando Mendoza will be the fresh start Vegas actually needs. Maybe. (See Issue #8.)</p>
+</div>
+
+<!-- BACK TO PAPER FOR FINAL PULL QUOTE AND FOOTER -->
+<div class="paper" style="margin-top:1.2rem">
+
+  <div class="pull">
+    <p>&ldquo;The A&rsquo;s don&rsquo;t need Las Vegas. They need an owner who wants to win. Fisher spent $60 million on payroll and $2 billion on a stadium. Those numbers tell you everything about his priorities.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on what money says when owners won&rsquo;t</cite>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. 12</span>
+    <span>Relocation data: Pro Sports Reference, ESPN, Wikipedia</span>
+    <span>Not financial or wagering advice</span>
+  </div>
+
+</div>
+
+<!-- ASK THE STATS DESK -->
+<div class="desk">
+  <div class="desk-hed">Ask The Stats Desk</div>
+  <div class="desk-sub">Drop any strange stat. Get context in seconds.</div>
+
+  <div class="chips">
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">60% of relocated teams improve</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">A's $60M payroll in a $2B stadium</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Gruden's emails cost 12 wins</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Chargers moved and got WORSE</span>
+  </div>
+
+  <label for="qi">Your stat question</label>
+  <textarea id="qi" placeholder="e.g. 'How does the A's payroll compare to other relocated teams?'"></textarea>
+  <button id="ask-btn" onclick="askDesk()">&#9654; Explain the Context</button>
+
+  <div class="resp" id="resp-box">
+    <div class="resp-hed">The Stats Desk says&hellip;</div>
+    <div id="rtext"></div>
+  </div>
+</div>
+
+<script>
+async function askDesk(){
+  const q=document.getElementById('qi').value.trim();if(!q)return;
+  const btn=document.getElementById('ask-btn'),box=document.getElementById('resp-box'),rt=document.getElementById('rtext');
+  btn.disabled=true;btn.innerHTML='<span class="spin"></span> Thinking\u2026';
+  box.classList.add('on');rt.textContent='';
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.__ANTHROPIC_KEY||''},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:`You are The Stats Desk \u2014 a sharp, witty sports and finance statistics explainer. Given a stat about markets or sports, explain: 1) WHY the number looks extreme, 2) Historical context, 3) What it MEANS vs what it DOESN'T mean, 4) Verdict: noise, red flag, or genuinely noteworthy? Style: editorial voice, dry humor, 2-3 paragraphs. No bullet lists.`,messages:[{role:'user',content:q}]})});
+    const d=await r.json();rt.textContent=d.content?.find(b=>b.type==='text')?.text||'No response \u2014 check your API key.';
+  }catch(e){rt.textContent='Error: '+e.message;}
+  btn.disabled=false;btn.innerHTML='&#9654; Explain the Context';
+}
+</script>
+
+</body>
+</html>
