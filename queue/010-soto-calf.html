@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — April 4, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1;letter-spacing:-.02em}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.desk{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.desk{padding:1.6rem 1.4rem}}
+.desk-hed{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:.2rem}
+.desk-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;color:#a09070;margin-bottom:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.chip{font-family:'Roboto Mono',monospace;font-size:.66rem;background:rgba(201,150,42,.12);border:1px solid rgba(201,150,42,.35);color:#b8982a;padding:.28rem .65rem;cursor:pointer;transition:background .15s}
+.chip:hover{background:rgba(201,150,42,.25);color:var(--gold)}
+.desk label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+textarea#qi{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(201,150,42,.4);color:#f0ead8;font-family:'Libre Baskerville',serif;font-size:.95rem;line-height:1.6;padding:.85rem 1rem;resize:vertical;min-height:90px;outline:none;transition:border-color .2s}
+textarea#qi:focus{border-color:var(--gold)}
+textarea#qi::placeholder{color:#6b5e4a}
+#ask-btn{margin-top:.7rem;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:none;padding:.72rem 1.8rem;cursor:pointer;transition:background .2s,transform .1s}
+#ask-btn:hover{background:#e0aa30;transform:translateY(-1px)}
+#ask-btn:disabled{background:#5a4a28;color:#3a3020;cursor:not-allowed;transform:none}
+.resp{margin-top:1.4rem;border-top:1px solid rgba(201,150,42,.3);padding-top:1.1rem;display:none}
+.resp.on{display:block}
+.resp-hed{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+#rtext{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.78;color:#e0d8c8;white-space:pre-wrap}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ── SITE NEWS BOX ── */
+.site-news{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.site-news{padding:1.6rem 1.4rem}}
+.site-news h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:.6rem}
+.site-news p{font-size:.92rem;color:#c8cabd;line-height:1.65;margin-bottom:.8rem}
+.site-news ul{list-style:none;padding:0;margin:0}
+.site-news li{font-size:.9rem;color:#e0d8c8;line-height:1.6;padding:.45rem 0;border-bottom:1px solid rgba(201,150,42,.15)}
+.site-news li:last-child{border-bottom:none}
+.site-news li strong{color:var(--gold)}
+.site-news a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,150,42,.35);transition:border-color .2s}
+.site-news a:hover{border-color:var(--gold)}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch from the Training Room &middot; Baseball, 2026</div>
+  <div class="title">The Sports Page</div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Breaking &middot; Issue No. 10</span>
+    <span>April 4, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- PAPER -->
+<div class="paper">
+
+  <h1 class="hed">The <em>$765 Million</em> Calf: What a Juan Soto Absence Actually Costs the Mets</h1>
+
+  <div class="deck">
+    Juan Soto left Friday&rsquo;s game with right calf tightness. MRI results are pending. The Mets&rsquo; $765 million man &mdash; the largest contract in sports history &mdash; was hitting .333 and carrying 28% of the team&rsquo;s hits. A Bayesian model says there&rsquo;s a 54% chance he misses 10 or more games. Here&rsquo;s what the math says about the cost.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; April 4, 2026 &middot; MRI pending as of press time</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v" style="color:var(--gold)">$765M</div><div class="l">Soto&rsquo;s Contract (Largest in Sports)</div></div>
+    <div class="sc"><div class="v bad">54.4%</div><div class="l">P(Misses 10+ Games)</div></div>
+    <div class="sc"><div class="v bad">.211</div><div class="l">Lineup BA Without Soto</div></div>
+  </div>
+
+  <!-- TWO-COLUMN BODY -->
+  <div class="two-col">
+    <div>
+      <p>Juan Soto singled in the first inning Friday night against the Giants. Then, running from first to third on Bo Bichette&rsquo;s RBI hit, he pulled up limping. Right calf tightness. Pulled from the game. MRI on Saturday. The Mets&rsquo; $765 million man &mdash; the centerpiece of the most expensive roster in baseball history &mdash; lasted 8 games into the season before the training room door swung open. Through those 8 games, Soto was hitting .333 with 10 hits, a homer, and 5 RBI. He was the only consistent bat in a lineup where Francisco Lindor is hitting .143 and Bo Bichette is hitting .111. Remove Soto from the equation and the remaining Mets lineup is hitting approximately .211. He wasn&rsquo;t just their best hitter. He was their only hitter.</p>
+    </div>
+    <div>
+      <p>Calf injuries in baseball are maddeningly unpredictable. &ldquo;Tightness&rdquo; can mean a day off. It can also mean a Grade 1 strain and 10&ndash;15 days on the injured list. In the worst cases &mdash; Mike Trout&rsquo;s 2021 calf strain &mdash; it means months. Soto has been remarkably durable throughout his career: only two IL stints in seven full seasons, 160+ games in two of the last three years. His body has earned the benefit of the doubt. But calf injuries don&rsquo;t care about track records. They care about tissue, and tissue doesn&rsquo;t negotiate.</p>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Without Soto, the remaining Mets lineup is hitting .211. That&rsquo;s not a batting average. That&rsquo;s a cry for help.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on a lineup missing its only hitter</cite>
+  </div>
+
+  <!-- INJURY SCENARIO TABLE -->
+  <h2 class="sh">Injury Scenarios: What the Calf Could Cost</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Scenario</th><th>Days</th><th>Games Missed</th><th>WAR Lost</th><th>Production Value Lost</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl"><td>Day-to-day (tightness only)</td><td class="mono">2&ndash;3</td><td class="mono">~2</td><td class="mono">0.09</td><td class="mono">$0.8M</td></tr>
+      <tr><td>10-day IL (Grade 1 strain)</td><td class="mono">10&ndash;15</td><td class="mono">~11</td><td class="mono">0.44</td><td class="mono">$3.8M</td></tr>
+      <tr><td>15-day IL (Grade 1&ndash;2)</td><td class="mono">15&ndash;25</td><td class="mono">~18</td><td class="mono">0.71</td><td class="mono">$6.0M</td></tr>
+      <tr><td>Extended (Grade 2 strain)</td><td class="mono">30&ndash;45</td><td class="mono">~33</td><td class="mono">1.33</td><td class="mono">$11.3M</td></tr>
+      <tr class="worse"><td>Worst case (Grade 2&ndash;3)</td><td class="mono">45&ndash;60</td><td class="mono">~46</td><td class="mono">1.86</td><td class="mono">$15.9M</td></tr>
+    </tbody>
+  </table>
+
+  <!-- THE MATH: BAYESIAN INJURY ESTIMATE -->
+  <div class="box">
+    <h3>Bayesian Injury Estimate: How Bad Is This?</h3>
+    <div class="math">Prior probabilities (calf tightness in position players):
+  Day-to-day (1-3 days):      40%
+  10-day IL (10-18 days):     35%
+  Extended (20-40 days):      20%
+  Worst case (40-60 days):     5%
+
+Monte Carlo simulation (200,000 trials):
+  Expected games missed:      12.6
+  Median games missed:        10.9
+  P(misses &lt; 5 games):        39.9%  &larr; best case
+  P(misses 10+ games):        54.4%  &larr; most likely
+  P(misses 30+ games):        11.1%  &larr; disaster
+
+Expected WAR lost:             0.50
+Expected production value:     $4.3M
+
+Soto's contract: $51M/year = $315K per game
+His production value: $341K per game (6.5 career WAR avg)
+&rarr; He's actually UNDERPAID relative to his production
+&rarr; Every game missed is a bargain the Mets can't use</div>
+    <p>The 40% day-to-day probability is the hope. The 54% chance of 10+ games is the reality Mets fans need to prepare for. And even in the best case, the MRI results will hang over every sprint, every slide, every hustle play for weeks.</p>
+  </div>
+
+  <!-- THE MATH: SOTO-SHAPED HOLE -->
+  <div class="box">
+    <h3>The Soto-Shaped Hole: Lineup Without Their Best Hitter</h3>
+    <div class="math">Mets through 8 games (with Soto):
+  Team BA: .230 | OBP: .327 | SLG: .378
+  Runs scored: 35 (~4.4/game)
+
+Soto's personal line: .333 / 10 H / 1 HR / 5 RBI
+  &rarr; 28% of team's hits in 5 games played
+  &rarr; Carrying the lineup alone
+
+Without Soto (remaining hitters):
+  Estimated BA: ~.211
+  Lindor: .143 | Bichette: .111 | Polanco: TBD
+  Robert Jr: walk-off HR but overall quiet
+  Alvarez: 2 HRs in last game &mdash; the bright spot
+
+The lineup without Soto isn't just worse.
+It's replacement-level at the top of the order.</div>
+  </div>
+
+  <hr>
+
+  <!-- HISTORICAL PARALLELS -->
+  <h2 class="sh">They&rsquo;ve Seen This Movie Before</h2>
+
+  <div class="hist-grid">
+    <div class="hc">
+      <div class="hc-name">Mike Trout, 2021 &mdash; When the Calf Takes a Season</div>
+      <div class="hc-stat">119</div>
+      <div class="hc-label">Games missed due to calf strain</div>
+      <p>Trout&rsquo;s right calf strain in May 2021 was initially described as &ldquo;mild.&rdquo; He missed the next four months. The Angels went from contenders to sellers. Trout&rsquo;s calf was the inflection point of the Angels&rsquo; decade. This is the doomsday scenario for Soto &mdash; and the reason Mendoza used the word &ldquo;tricky&rdquo; about calf injuries. Most are minor. The ones that aren&rsquo;t can define a season.</p>
+      <div class="verdict bad">The nightmare scenario &mdash; unlikely but real</div>
+    </div>
+
+    <div class="hc">
+      <div class="hc-name">Soto&rsquo;s Own Track Record &mdash; The Case for Calm</div>
+      <div class="hc-stat">2</div>
+      <div class="hc-label">Total IL stints in 7 full seasons</div>
+      <p>Soto has been one of the most durable stars in baseball. A shoulder strain (10 days, 2021) and a back spasm (10 days, 2019) are his only IL visits. He&rsquo;s played 160+ games twice in three years. His body has a track record of resilience that most $765M investments would envy. If any star gets the benefit of the doubt on a calf tweak, it&rsquo;s Soto.</p>
+      <div class="verdict">History favors a short absence</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BACK TO PAPER FOR FINAL PULL QUOTE AND FOOTER -->
+<div class="paper" style="margin-top:1.2rem">
+
+  <div class="pull">
+    <p>&ldquo;The largest contract in sports history attached to a calf muscle that twitched while running first-to-third in the eighth game of the season. This is why Mets fans don&rsquo;t sleep well. But the Bayesian prior says: 40% chance it&rsquo;s nothing. Breathe.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on $765 million and one calf muscle</cite>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Breaking &middot; Issue No. 10</span>
+    <span>Model: Bayesian severity estimation, 200K sims</span>
+    <span>Not medical or wagering advice</span>
+  </div>
+
+</div>
+
+<!-- ASK THE STATS DESK -->
+<div class="desk">
+  <div class="desk-hed">Ask The Stats Desk</div>
+  <div class="desk-sub">Drop any strange stat. Get context in seconds.</div>
+
+  <div class="chips">
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Soto .333 but injured</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">$765M contract and a calf tweak</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">54% chance of 10+ games missed</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Lineup hitting .211 without Soto</span>
+  </div>
+
+  <label for="qi">Your stat question</label>
+  <textarea id="qi" placeholder="e.g. 'What does a 54% chance of missing 10+ games actually mean for the Mets' season?'"></textarea>
+  <button id="ask-btn" onclick="askDesk()">&#9654; Explain the Context</button>
+
+  <div class="resp" id="resp-box">
+    <div class="resp-hed">The Stats Desk says&hellip;</div>
+    <div id="rtext"></div>
+  </div>
+</div>
+
+<script>
+async function askDesk(){
+  const q=document.getElementById('qi').value.trim();if(!q)return;
+  const btn=document.getElementById('ask-btn'),box=document.getElementById('resp-box'),rt=document.getElementById('rtext');
+  btn.disabled=true;btn.innerHTML='<span class="spin"></span> Thinking\u2026';
+  box.classList.add('on');rt.textContent='';
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.__ANTHROPIC_KEY||''},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:`You are The Stats Desk \u2014 a sharp, witty sports and finance statistics explainer. Given a stat about markets or sports, explain: 1) WHY the number looks extreme, 2) Historical context, 3) What it MEANS vs what it DOESN'T mean, 4) Verdict: noise, red flag, or genuinely noteworthy? Style: editorial voice, dry humor, 2-3 paragraphs. No bullet lists.`,messages:[{role:'user',content:q}]})});
+    const d=await r.json();rt.textContent=d.content?.find(b=>b.type==='text')?.text||'No response \u2014 check your API key.';
+  }catch(e){rt.textContent='Error: '+e.message;}
+  btn.disabled=false;btn.innerHTML='&#9654; Explain the Context';
+}
+</script>
+
+</body>
+</html>
