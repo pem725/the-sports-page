@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — April 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1;letter-spacing:-.02em}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+table.rec .proj td{border:2px dashed var(--rust);font-style:italic;background:#fef0ec}
+table.rec .proj .mono{color:var(--rust);font-style:italic}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.desk{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.desk{padding:1.6rem 1.4rem}}
+.desk-hed{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:.2rem}
+.desk-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;color:#a09070;margin-bottom:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.chip{font-family:'Roboto Mono',monospace;font-size:.66rem;background:rgba(201,150,42,.12);border:1px solid rgba(201,150,42,.35);color:#b8982a;padding:.28rem .65rem;cursor:pointer;transition:background .15s}
+.chip:hover{background:rgba(201,150,42,.25);color:var(--gold)}
+.desk label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+textarea#qi{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(201,150,42,.4);color:#f0ead8;font-family:'Libre Baskerville',serif;font-size:.95rem;line-height:1.6;padding:.85rem 1rem;resize:vertical;min-height:90px;outline:none;transition:border-color .2s}
+textarea#qi:focus{border-color:var(--gold)}
+textarea#qi::placeholder{color:#6b5e4a}
+#ask-btn{margin-top:.7rem;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:none;padding:.72rem 1.8rem;cursor:pointer;transition:background .2s,transform .1s}
+#ask-btn:hover{background:#e0aa30;transform:translateY(-1px)}
+#ask-btn:disabled{background:#5a4a28;color:#3a3020;cursor:not-allowed;transform:none}
+.resp{margin-top:1.4rem;border-top:1px solid rgba(201,150,42,.3);padding-top:1.1rem;display:none}
+.resp.on{display:block}
+.resp-hed{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+#rtext{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.78;color:#e0d8c8;white-space:pre-wrap}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ── SITE NEWS BOX ── */
+.site-news{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.site-news{padding:1.6rem 1.4rem}}
+.site-news h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:.6rem}
+.site-news p{font-size:.92rem;color:#c8cabd;line-height:1.65;margin-bottom:.8rem}
+.site-news ul{list-style:none;padding:0;margin:0}
+.site-news li{font-size:.9rem;color:#e0d8c8;line-height:1.6;padding:.45rem 0;border-bottom:1px solid rgba(201,150,42,.15)}
+.site-news li:last-child{border-bottom:none}
+.site-news li strong{color:var(--gold)}
+.site-news a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,150,42,.35);transition:border-color .2s}
+.site-news a:hover{border-color:var(--gold)}
+
+/* ── SERIES PREVIEW ── */
+.series-preview{max-width:820px;margin:1.2rem auto 0;background:var(--card);border:2px solid var(--div);padding:1.8rem 2.4rem;font-size:.92rem;line-height:1.7}
+@media(max-width:600px){.series-preview{padding:1.4rem 1.2rem}}
+.series-preview h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--steel);margin-bottom:.6rem}
+.series-preview p{color:var(--ink);margin-bottom:.5rem}
+.series-preview p:last-child{margin-bottom:0}
+.series-preview .part-list{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted);line-height:2}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch from South Bend &middot; College Football, 2026</div>
+  <div class="title">The Sports Page</div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>EO Series Part 3 of 5 &middot; Issue No. [TBD]</span>
+    <span>April 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- PAPER -->
+<div class="paper">
+
+  <h1 class="hed">Notre Dame Is Simultaneously the Most <em>Protected</em> and Most <em>Vulnerable</em> Program in College Football</h1>
+
+  <div class="deck">
+    The executive order&rsquo;s sports provisions help Notre Dame on every front: transfer limits favor their recruiting, NIL caps compress spending toward their level, and the 5-year eligibility rule suits their young roster. But the enforcement mechanism &mdash; threatening federal research funding &mdash; puts $200 million at risk for a private university already dealing with grant cancellations.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; April 2026 &middot; Part 3 of 5: The Executive Order and College Football</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v good">$20M</div><div class="l">ND NIL Spending (at the cap)</div></div>
+    <div class="sc"><div class="v good">&minus;10</div><div class="l">Net Portal Balance (freeze helps)</div></div>
+    <div class="sc"><div class="v bad">$200M+</div><div class="l">Federal Research Funding at Risk</div></div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION: PROTECTED                           -->
+  <!-- ============================================ -->
+  <h2 class="sh">The Case for Protected: Five Factors Working in ND&rsquo;s Favor</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>#</th><th>Factor</th><th>Data Point</th><th>Effect Under EO</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl"><td class="mono">1</td><td>High-School Recruiting</td><td class="mono">#8 nationally (2025 cycle)</td><td>Transfer limits make HS pipeline the primary roster tool &mdash; ND already built for this</td></tr>
+      <tr class="hl"><td class="mono">2</td><td>NIL Spending at the Cap</td><td class="mono">$20M (est.)</td><td>Cap compresses spending from above, not below &mdash; Ohio State loses $18M in advantage, ND loses $0</td></tr>
+      <tr class="hl"><td class="mono">3</td><td>Net Portal Balance</td><td class="mono">&minus;10 (lost 18, gained 8)</td><td>Fewer departures AND fewer players for rivals to poach &mdash; the math flips in ND&rsquo;s favor</td></tr>
+      <tr class="hl"><td class="mono">4</td><td>Young Roster Profile</td><td class="mono">68% underclassmen</td><td>5-year eligibility cap hurts super-seniors elsewhere; ND&rsquo;s young core has years of runway</td></tr>
+      <tr class="hl"><td class="mono">5</td><td>Media Revenue Independence</td><td class="mono">100% retained</td><td>No conference revenue-sharing dilution &mdash; NBC deal money stays in South Bend</td></tr>
+    </tbody>
+  </table>
+
+  <div class="two-col">
+    <div>
+      <p>Start with recruiting. Notre Dame signed the No. 8 class nationally in 2025, a ranking built almost entirely on high school prospects. Programs that rely on the portal to fill roster holes &mdash; Indiana brought in 18 transfers to fuel its 11&ndash;2 season &mdash; face a structurally smaller talent pool under the EO&rsquo;s one-free-transfer limit. Notre Dame&rsquo;s pipeline doesn&rsquo;t shrink because it was never routed through the portal in the first place.</p>
+      <p>Then there&rsquo;s NIL. The EO&rsquo;s proposed spending cap sits at approximately $20 million per program. Notre Dame already spends at or near that figure. Ohio State spends $38 million. Alabama spends $35 million. USC spends $33 million. A cap doesn&rsquo;t hurt ND at all &mdash; it pulls everyone else down to ND&rsquo;s level. That&rsquo;s not a neutral outcome. That&rsquo;s an advantage.</p>
+    </div>
+    <div>
+      <p>The portal math is particularly telling. ND lost 18 players to the portal and gained only 8, producing a net flow of &minus;10. Under the old system, that hemorrhage was a problem. Under the new rules, fewer players leave (the one-free-transfer limit deters departures) and fewer players are available for competitors to cherry-pick. A net-negative portal school benefits from transfer restrictions the same way a net-exporter benefits from trade barriers: the flow you were losing slows down.</p>
+      <p>Add the 5-year eligibility cap: Marcus Freeman&rsquo;s roster skews young, with 68% underclassmen. Programs stacking 6th-year seniors lose that option. ND&rsquo;s players have years of eligibility remaining. And because ND retains 100% of its NBC media revenue &mdash; no conference redistribution, no sharing with 15 other schools &mdash; every dollar stays in South Bend.</p>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;The EO doesn&rsquo;t just level the playing field for Notre Dame. It tilts the field toward the way Notre Dame was already built &mdash; then threatens to blow up the laboratory underneath it.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the paradox of South Bend</cite>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION: VULNERABLE                          -->
+  <!-- ============================================ -->
+  <h2 class="sh">The Case for Vulnerable: Five Factors Working Against ND</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>#</th><th>Factor</th><th>Data Point</th><th>Exposure Under EO</th></tr>
+    </thead>
+    <tbody>
+      <tr class="worse"><td class="mono">1</td><td>Federal Research Funding</td><td class="mono">$200M+ annually</td><td>EO enforcement lever is federal grants &mdash; non-compliance could trigger funding review</td></tr>
+      <tr class="worse"><td class="mono">2</td><td>Active Grant Cancellations</td><td class="mono">Multiple programs affected</td><td>ND already navigating federal grant freezes &mdash; additional pressure compounds risk</td></tr>
+      <tr class="worse"><td class="mono">3</td><td>No State Backstop</td><td class="mono">Private institution</td><td>Ohio State has the State of Ohio; Michigan has Lansing. ND has ND.</td></tr>
+      <tr class="worse"><td class="mono">4</td><td>Reform Committee Representation</td><td class="mono">1 voice vs. 4 conferences</td><td>Big Ten, SEC, Big 12, ACC each have a commissioner at the table. ND sends its AD.</td></tr>
+      <tr class="worse"><td class="mono">5</td><td>No Collective Bargaining Power</td><td class="mono">Independent = alone</td><td>Conference schools negotiate as blocs of 16&ndash;18. ND negotiates as a bloc of 1.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="two-col">
+    <div>
+      <p>The EO&rsquo;s enforcement mechanism is not a fine. It&rsquo;s not a postseason ban. It&rsquo;s federal research funding. And that changes the calculus entirely for Notre Dame. The university receives more than $200 million annually in federal research grants &mdash; funding that supports hundreds of faculty positions, graduate programs, and lab facilities across engineering, science, and medicine. If the Department of Education interprets non-compliance with NCAA rules as grounds for a funding review, the exposure is enormous.</p>
+      <p>This isn&rsquo;t hypothetical. Notre Dame is already dealing with federal grant cancellations and freezes affecting multiple research programs. The current political environment has made federal funding less predictable for private universities broadly, and the EO adds another potential trigger. A public university facing the same pressure can appeal to its state legislature. Notre Dame has no such backstop. When you&rsquo;re private, the federal government is your only public funder &mdash; and that makes the leverage total.</p>
+    </div>
+    <div>
+      <p>Then there&rsquo;s the governance problem. When the NCAA convenes reform committees &mdash; and they will, because the EO essentially mandates it &mdash; the table will include the commissioners of the Big Ten, SEC, Big 12, and ACC. Each represents 14 to 18 member institutions. They speak with the weight of their conferences behind them. Notre Dame sends its athletic director, Pete Bevacqua, representing one school. In negotiations over transfer windows, revenue sharing, and NIL enforcement, one voice against four conference blocs is not a fair fight. It&rsquo;s not even close.</p>
+      <p>This is the structural disadvantage of independence. Conference schools can collectively bargain: they can threaten to leave the NCAA together, they can pool legal resources, they can present unified positions. Notre Dame bargains alone. In a deregulated world, that was fine &mdash; independence meant freedom. In a federally regulated world, independence means isolation. There is no coalition of one.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- NIL SPENDING COMPARISON TABLE -->
+  <h2 class="sh">NIL Spending: Notre Dame vs. Peers</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Program</th><th>Est. NIL Spend</th><th>Effect of $20M Cap</th><th>Net Change</th></tr>
+    </thead>
+    <tbody>
+      <tr class="worse"><td>Ohio State</td><td class="mono">$38M</td><td>Loses $18M in spending power</td><td class="mono">&minus;47%</td></tr>
+      <tr class="worse"><td>Alabama</td><td class="mono">$35M</td><td>Loses $15M in spending power</td><td class="mono">&minus;43%</td></tr>
+      <tr class="worse"><td>USC</td><td class="mono">$33M</td><td>Loses $13M in spending power</td><td class="mono">&minus;39%</td></tr>
+      <tr class="worse"><td>Texas</td><td class="mono">$30M</td><td>Loses $10M in spending power</td><td class="mono">&minus;33%</td></tr>
+      <tr class="match"><td>Georgia</td><td class="mono">$28M</td><td>Loses $8M in spending power</td><td class="mono">&minus;29%</td></tr>
+      <tr class="hl"><td>Notre Dame</td><td class="mono">$20M</td><td>No change &mdash; already at cap</td><td class="mono">0%</td></tr>
+    </tbody>
+  </table>
+
+  <p>When Ohio State spends $38 million on NIL and Notre Dame spends $20 million, the Buckeyes hold a $18 million advantage &mdash; roughly the cost of eight elite recruits. A $20 million cap erases that gap entirely. Notre Dame goes from outgunned to level overnight, without spending a single additional dollar. The cap is, functionally, an $18 million gift to every program that was already at or below the line.</p>
+
+  <hr>
+
+  <!-- FEDERAL FUNDING COMPARISON TABLE -->
+  <h2 class="sh">Federal Funding: The Leverage Comparison</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>University</th><th>Est. Federal Research $</th><th>NIL Spend</th><th>NIL / Research Ratio</th><th>Type</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Michigan</td><td class="mono">~$1.6B</td><td class="mono">$25M</td><td class="mono">1.6%</td><td>Public</td></tr>
+      <tr><td>Ohio State</td><td class="mono">~$1.1B</td><td class="mono">$38M</td><td class="mono">3.5%</td><td>Public</td></tr>
+      <tr><td>USC</td><td class="mono">~$900M</td><td class="mono">$33M</td><td class="mono">3.7%</td><td>Private</td></tr>
+      <tr><td>Texas</td><td class="mono">~$800M</td><td class="mono">$30M</td><td class="mono">3.8%</td><td>Public</td></tr>
+      <tr class="worse"><td>Notre Dame</td><td class="mono">~$200M</td><td class="mono">$20M</td><td class="mono">10.0%</td><td>Private</td></tr>
+    </tbody>
+  </table>
+
+  <p>The ratio tells the story. At Michigan, NIL spending is 1.6% of federal research funding &mdash; a rounding error, an afterthought. At Ohio State, it&rsquo;s 3.5%. At Notre Dame, NIL spending is 10% of the federal research pie. That means every dollar of NIL spending at ND sits closer to the fire of federal enforcement. If the government ever decides to make an example of a school &mdash; to demonstrate that the EO has teeth &mdash; it will pick a target where the leverage is greatest. A school where $200 million in grants can be held over $20 million in athletics. A school with no state legislature to call. A private university that depends on federal money and has no political backstop.</p>
+
+  <!-- THE IRONY BOX -->
+  <div class="site-news" style="max-width:100%;margin:1.8rem 0;box-shadow:none">
+    <h2>The Irony: The Order That Helps ND on the Field Could Hurt ND in the Lab</h2>
+    <p>Consider the contradiction. On the athletic side, the executive order is a near-perfect policy document for Notre Dame: it caps NIL (ND was already there), freezes transfers (ND was losing players), limits eligibility (ND&rsquo;s roster is young), and preserves media independence (ND keeps its NBC money). On every competitive metric, the EO helps.</p>
+    <p>On the institutional side, the EO is a loaded weapon pointed at ND&rsquo;s research enterprise. The enforcement mechanism &mdash; threatening federal grants &mdash; disproportionately affects private universities with smaller endowments of federal funding. Notre Dame&rsquo;s $200 million in grants is essential to its academic mission but small enough that losing even a fraction would be devastating, and large enough that the threat is credible.</p>
+    <p>The same executive order that makes Marcus Freeman&rsquo;s football team more competitive could make the university&rsquo;s provost unable to sleep at night. That&rsquo;s not a side effect. It&rsquo;s the design.</p>
+  </div>
+
+  <hr>
+
+  <!-- MARCUS FREEMAN'S REBUILD TIMELINE -->
+  <h2 class="sh">The Freeman Timeline: How the 5-Year Cap Helps</h2>
+
+  <div class="two-col">
+    <div>
+      <p>Marcus Freeman is in his fourth year at Notre Dame, and his rebuild has followed a specific pattern: recruit elite high school talent, develop them through the program, and compete with continuity rather than turnover. His 2024 team reached the College Football Playoff national championship game. His 2025 recruiting class ranked 8th nationally. The trajectory is upward, and it depends on keeping that talent in South Bend.</p>
+      <p>The 5-year eligibility cap reinforces this model. Programs that stockpile super-seniors &mdash; players on their 5th or 6th year of eligibility who transfer for one final season of competition &mdash; lose that option. Freeman&rsquo;s roster, built around players in their second and third years, has natural runway. He doesn&rsquo;t need 6th-year transfers. He needs his freshmen to become juniors. The cap ensures they stay.</p>
+    </div>
+    <div>
+      <p>The one-free-transfer rule helps even more directly. Under the old system, a 4-star recruit who didn&rsquo;t start immediately could enter the portal, transfer to a mid-major for playing time, and then transfer again to a rival program for his final seasons. That two-hop path extracted talent from programs like Notre Dame and redistributed it. Under the new rules, the first transfer is free but the second requires a sit-out year. The talent stays closer to where it was originally recruited.</p>
+      <p>Freeman&rsquo;s development model &mdash; redshirt, compete for a starting role as a sophomore, become a starter as a junior, lead as a senior &mdash; is the model the EO was practically designed to protect. Whether that was intentional or coincidental, the outcome is the same: patience is rewarded, and the portal shortcut is closed.</p>
+    </div>
+  </div>
+
+  <!-- MATH BOX 1: PROTECTED VS VULNERABLE FACTOR ANALYSIS -->
+  <div class="box">
+    <h3>The Math: Protected vs. Vulnerable Factor Analysis</h3>
+    <div class="math">PROTECTED FACTORS                        IMPACT (1-10)
+&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
+1. HS recruiting #8 nationally           8 / 10
+2. NIL already at $20M cap               9 / 10
+3. Portal net &minus;10 (freeze helps)         7 / 10
+4. 68% underclassmen (5-yr cap safe)      6 / 10
+5. 100% media revenue retained            7 / 10
+                                   Total: 37 / 50
+
+VULNERABLE FACTORS                       IMPACT (1-10)
+&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
+1. $200M+ federal research at risk        9 / 10
+2. Active grant cancellations ongoing     8 / 10
+3. Private school, no state backstop      7 / 10
+4. 1 voice vs. 4 conference blocs         6 / 10
+5. Independence = no collective power     7 / 10
+                                   Total: 37 / 50
+
+NET ASSESSMENT: 37 Protected, 37 Vulnerable
+
+This is the statistical expression of ND's paradox:
+the competitive upside and institutional downside
+are almost perfectly balanced. The EO helps the
+football program and threatens the university at
+nearly identical magnitudes.
+
+The difference: competitive gains are CERTAIN
+(the cap, the freeze, the eligibility rules exist).
+Institutional risks are CONDITIONAL (only triggered
+by enforcement action). ND's bet is that the gun
+is never fired. If it is, the damage exceeds
+the athletic gains by an order of magnitude.</div>
+    <p>The symmetry is striking and almost certainly accidental. No one drafting sports policy was thinking about the NIL-to-federal-funding ratio of a specific independent Catholic university. But the math doesn&rsquo;t care about intent. It cares about exposure.</p>
+  </div>
+
+  <!-- MATH BOX 2: NIL / FEDERAL FUNDING RATIO COMPARISON -->
+  <div class="box">
+    <h3>The Math: NIL-to-Federal-Funding Ratio &mdash; Who Carries the Most Risk?</h3>
+    <div class="math">                    Federal     NIL      NIL/Research   State
+School              Research    Spend    Ratio          Backstop?
+&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
+Michigan            $1.6B       $25M      1.6%          Yes
+Ohio State          $1.1B       $38M      3.5%          Yes
+USC                  $900M      $33M      3.7%          No
+Texas                $800M      $30M      3.8%          Yes
+Alabama              $600M      $35M      5.8%          Yes
+Georgia              $500M      $28M      5.6%          Yes
+Notre Dame           $200M      $20M     10.0%          No
+
+Interpretation:
+  At Michigan, losing 10% of federal funding = $160M.
+    Painful, survivable, and the state steps in.
+  At Notre Dame, losing 10% of federal funding = $20M.
+    That's their ENTIRE NIL budget, dollar for dollar.
+    And no one steps in.
+
+  The ratio reveals the asymmetry:
+  ND's athletic spending is large RELATIVE to its
+  federal funding cushion. Every other major program
+  either has more federal money (diluting the ratio)
+  or a state legislature (providing a backstop).
+  ND has neither.</div>
+    <p>When the NIL-to-research ratio is 1.6%, as at Michigan, the athletic tail will never wag the institutional dog. When the ratio is 10%, as at Notre Dame, the athletic and academic missions are financially entangled in a way that makes federal enforcement a genuine institutional threat, not just an athletic inconvenience.</p>
+  </div>
+
+  <hr>
+
+  <!-- INDEPENDENCE ANALYSIS -->
+  <h2 class="sh">Independence: Blessing, Curse, Both</h2>
+
+  <div class="two-col">
+    <div>
+      <p>Notre Dame&rsquo;s independence has always been a calculated trade-off: keep all your revenue, sacrifice collective bargaining power. The NBC deal, signed in 1991 and renewed through 2029, gives Notre Dame approximately $15 million per year in television rights &mdash; money that goes directly to Notre Dame, not split among conference members. In the Big Ten, Ohio State generates far more in total media revenue but shares it across 18 schools. Notre Dame&rsquo;s per-school take is competitive precisely because the denominator is 1.</p>
+      <p>Under the EO, this independence means Notre Dame keeps 100% of its media revenue while conference schools enter revenue-sharing negotiations with players. If revenue sharing is mandated, conference schools must split their pooled media money with athletes and other member institutions. Notre Dame splits with no one. The NBC deal remains untouched by conference politics.</p>
+    </div>
+    <div>
+      <p>But revenue independence comes with regulatory isolation. When the Big Ten negotiates with the NCAA on transfer windows, eligibility standards, or NIL enforcement, Commissioner Tony Petitti speaks for 18 schools. The SEC&rsquo;s Greg Sankey speaks for 16. The Big 12 and ACC bring another 30 combined. Notre Dame&rsquo;s voice at the table represents exactly one institution. On reform committees, in congressional hearings, in negotiations with the Department of Education &mdash; Notre Dame advocates alone.</p>
+      <p>In the pre-EO world, this was manageable. Rules were set by the NCAA, an organization where Notre Dame had significant historical influence. In the post-EO world, rules are set by a combination of federal policy, conference negotiation, and political pressure. Power flows to coalitions. And an independent is, by definition, not in one.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- HISTORICAL PARALLELS -->
+  <h2 class="sh">Historical Parallels</h2>
+
+  <div class="hist-grid">
+    <div class="hc">
+      <div class="hc-name">The NBC Deal, 1991 &mdash; Independence as an Asset</div>
+      <div class="hc-stat">$15M/yr</div>
+      <div class="hc-label">Current NBC television rights, no conference split</div>
+      <p>When Notre Dame signed with NBC in 1991, it was a radical act of independence. The CFA (College Football Association) had negotiated television rights collectively. Notre Dame walked away from the collective, signed its own deal, and kept the money. Other schools were furious. But the economics worked: ND controlled its brand, its schedule, and its revenue. For 35 years, the NBC deal has been the single best argument for independence in college sports. The EO&rsquo;s media provisions don&rsquo;t touch it. Revenue independence remains Notre Dame&rsquo;s strongest card.</p>
+      <div class="verdict">The NBC deal survives every reform wave. So far.</div>
+    </div>
+
+    <div class="hc">
+      <div class="hc-name">Private Universities and Federal Funding &mdash; The Leverage Is Enormous</div>
+      <div class="hc-stat">$200M+</div>
+      <div class="hc-label">Annual federal research grants at stake</div>
+      <p>The history of federal funding as a compliance tool is long and well-documented. Title IX enforcement, for decades, relied on the same mechanism: comply with gender equity requirements or risk losing federal grants. Universities almost always complied, because the funding was too important to lose. The EO uses the same playbook: tie athletic compliance to research funding. For public universities, state legislatures provide a political and financial buffer. For private universities like Notre Dame, Stanford, and Duke, federal grants are the only public money &mdash; and losing them means losing the argument with faculty, donors, and boards.</p>
+      <div class="verdict bad">Federal funding leverage has a 100% compliance rate historically</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SERIES PREVIEW -->
+<div class="series-preview">
+  <h3>EO Series &mdash; 5 Parts, 1 Executive Order</h3>
+  <p>This is Part 3 of a 5-part series on the Executive Order and College Football.</p>
+  <div class="part-list">
+    Part 1: The Portal Freeze &mdash; a 35&ndash;40% reduction in transfers reshapes who wins.<br>
+    Part 2: The NIL Gini Coefficient &mdash; measuring inequality in college football spending.<br>
+    <strong>Part 3 (this issue): Notre Dame &mdash; simultaneously protected and vulnerable.</strong><br>
+    Part 4 (next): The Cignetti Question &mdash; does this EO kill the upstarts?<br>
+    Part 5: The Big Picture &mdash; old guard restoration or new era?
+  </div>
+</div>
+
+<!-- BACK TO PAPER FOR FINAL PULL QUOTE AND FOOTER -->
+<div class="paper" style="margin-top:1.2rem">
+
+  <div class="pull">
+    <p>&ldquo;Notre Dame has spent 135 years proving that independence works. The executive order is the first federal policy that makes independence a liability. Not on the field &mdash; on the field, ND is fine. In the provost&rsquo;s office, in the grants department, in the board room where $200 million in research funding is discussed &mdash; that&rsquo;s where independence stops being romantic and starts being risky.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on what happens when the drawbridge only opens one way</cite>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. [TBD] &middot; EO Series Part 3</span>
+    <span>Data: On3 NIL, NSF HERD Survey, NCAA, NBC Sports</span>
+    <span>Not financial or wagering advice</span>
+  </div>
+
+</div>
+
+<!-- ASK THE STATS DESK -->
+<div class="desk">
+  <div class="desk-hed">Ask The Stats Desk</div>
+  <div class="desk-sub">Drop any strange stat. Get context in seconds.</div>
+
+  <div class="chips">
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">ND's NIL-to-research ratio is 10%</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">$200M in federal grants at risk</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">1 voice vs 4 conference commissioners</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">NIL cap eliminates $18M Ohio State advantage</span>
+  </div>
+
+  <label for="qi">Your stat question</label>
+  <textarea id="qi" placeholder="e.g. 'How does ND's 10% NIL-to-research ratio compare to other private universities?'"></textarea>
+  <button id="ask-btn" onclick="askDesk()">&#9654; Explain the Context</button>
+
+  <div class="resp" id="resp-box">
+    <div class="resp-hed">The Stats Desk says&hellip;</div>
+    <div id="rtext"></div>
+  </div>
+</div>
+
+<script>
+async function askDesk(){
+  const q=document.getElementById('qi').value.trim();if(!q)return;
+  const btn=document.getElementById('ask-btn'),box=document.getElementById('resp-box'),rt=document.getElementById('rtext');
+  btn.disabled=true;btn.innerHTML='<span class="spin"></span> Thinking\u2026';
+  box.classList.add('on');rt.textContent='';
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.__ANTHROPIC_KEY||''},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:`You are The Stats Desk \u2014 a sharp, witty sports and finance statistics explainer. Given a stat about markets or sports, explain: 1) WHY the number looks extreme, 2) Historical context, 3) What it MEANS vs what it DOESN'T mean, 4) Verdict: noise, red flag, or genuinely noteworthy? Style: editorial voice, dry humor, 2-3 paragraphs. No bullet lists.`,messages:[{role:'user',content:q}]})});
+    const d=await r.json();rt.textContent=d.content?.find(b=>b.type==='text')?.text||'No response \u2014 check your API key.';
+  }catch(e){rt.textContent='Error: '+e.message;}
+  btn.disabled=false;btn.innerHTML='&#9654; Explain the Context';
+}
+</script>
+
+</body>
+</html>
