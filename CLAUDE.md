@@ -50,10 +50,13 @@ reserve/                <- Evergreen content, no specific date
    git push
    ```
 
-### Sunday Edition (special):
+### Sunday Edition (special — MUST be built fresh):
 - Every Sunday, publish a recap issue that lists the week's posts and grades prediction accuracy.
-- Sunday editions should be finalized with FRESH data (current standings, injury updates, etc.) — not pre-built days in advance.
-- Grade predictions: HIT, MISS, PARTIALLY HIT, or PENDING.
+- **CRITICAL**: Before writing ANYTHING, use web search to pull fresh data — current standings, player stats, injury updates, game results. Then RERUN the prediction models from the week's issues with updated numbers.
+- Score every prediction: HIT, MISS, PARTIALLY HIT, or PENDING — using ACTUAL current data, not stale numbers from when the article was written.
+- If a Sunday skeleton exists in `queue/`, treat it as a TEMPLATE ONLY. Replace ALL statistics with fresh data pulled that morning.
+- Include honest self-assessment: over-reactions, under-reactions, what we'd do differently.
+- See SKILL.md "Sunday Edition Workflow" for the full 5-step process.
 
 ### Content Tiers:
 - **Timely**: Breaking news, injuries, game results. Publish immediately. Goes stale fast.

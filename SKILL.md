@@ -437,12 +437,40 @@ reserve/                <- Evergreen, no specific date
 
 ### Sunday Edition Workflow
 
-Every Sunday, publish a special recap issue:
-- List each issue from the past week with a one-line summary and link
-- Grade every prediction made: HIT, MISS, PARTIALLY HIT, or PENDING
+The Sunday Edition MUST be built fresh on Sunday morning — never from a pre-built draft. Follow these steps:
+
+**Step 1 — Gather fresh data (REQUIRED before writing anything)**:
+- Use web search to pull current MLB standings, team records, and player stats
+- Check injury report updates (especially for players we've been tracking, e.g., Soto calf)
+- Get current NHL standings and playoff picture
+- Check NFL draft news if draft season
+- Get any other relevant current stats for teams we cover
+
+**Step 2 — Rerun prediction models with updated data**:
+For EVERY prediction made in the past week's issues, rerun the relevant model:
+- Beta-Binomial BA projections: update with current AB/hits
+- Bayesian injury estimates: update with actual recovery timeline
+- Season win projections: update with current W-L record
+- Any other quantitative prediction: pull actual outcome and compare
+
+**Step 3 — Score each prediction**:
+- **HIT**: Our prediction/model matched the outcome within a reasonable margin
+- **MISS**: We were materially wrong — own it, explain why
+- **PARTIALLY HIT**: Direction was right, magnitude was off (or vice versa)
+- **PENDING**: Not enough data yet to judge — state what we're still watching
+
+**Step 4 — Write the Sunday Edition**:
+- Recap each issue from the week with a one-line summary and link
+- Present the prediction scorecard with FRESH numbers (not stale pre-built data)
 - Honest self-assessment: over-reactions and under-reactions
-- Must be built with FRESH data — pull current standings, injury updates, etc.
-- Longer than regular issues
+- What we learned, what we'd do differently
+- Preview of next week's planned content
+
+**Step 5 — Publish**:
+- Follow the standard 7-step publish workflow
+- This issue should be LONGER than regular issues
+
+**Key rule**: If a Sunday Edition skeleton exists in `queue/` from an earlier session, treat it as a TEMPLATE ONLY. Replace all statistics, scores, and predictions with fresh data pulled that morning. Never publish stale numbers on Sunday.
 
 ### Issue Numbering Rules
 
