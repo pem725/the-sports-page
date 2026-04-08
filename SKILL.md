@@ -4,17 +4,14 @@ description: >
   Turn a single strange, extreme, or counterintuitive sports statistic into a
   publication-ready newsletter. Use this skill any time a user notices an odd
   number in any sport — a pitcher's 67.5 ERA, a batter's .667 average through 5
-  AB, a QB's perfect passer rating, a 0-for-7 kicker — and wants to understand
-  WHAT it means, WHY it happened mathematically, WHO else has been here before,
-  and HOW LONG recovery will take. The skill drives an end-to-end workflow:
-  statistical diagnosis → historical comparison search → Bayesian recovery
-  modeling → schedule-mapped projections → broadsheet-style HTML newsletter.
-  Trigger this skill whenever the user mentions "strange stat", "crazy number",
-  "what does this mean", "put this in context", "historical comparison",
-  "how long to recover", or pastes/describes an extreme sports line. Also
-  trigger proactively whenever a stat has an obviously small denominator
-  (< 10 IP, < 15 AB, < 5 games, < 3 attempts). The Skenes Opening Day
-  67.5 ERA is the canonical example of what this skill produces.
+  AB, a QB's perfect passer rating — and wants to understand WHAT it means, WHY
+  it happened mathematically, WHO else has been here before, and HOW LONG
+  recovery will take. Drives an end-to-end workflow: statistical diagnosis,
+  historical search, Bayesian modeling, schedule-mapped projections, broadsheet
+  HTML newsletter. Also handles daily publishing from queue to GitHub Pages,
+  Sunday Edition recaps with fresh data and model reruns, and cross-reference
+  checks. Trigger on "strange stat", "crazy number", "what does this mean",
+  "publish the next issue", or any stat with a small denominator.
 ---
 
 # Sports Stat Storyteller Skill
