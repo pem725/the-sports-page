@@ -29,7 +29,7 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
 /* ── MASTHEAD ── */
 .masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
 .kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.title{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,9vw,6rem);font-weight:900;line-height:1;letter-spacing:-.02em;margin:.1rem 0}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
 .tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:var(--muted);margin:.2rem 0 .4rem}
 .datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
 
@@ -271,6 +271,21 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
     <h3>What Is This?</h3>
     <p><strong>The Sports Page</strong> is a newsletter for people who love sports and are curious about the numbers behind them — no statistics degree required. Every issue picks one weird stat from the news, explains why it looks so extreme, digs up who else has been there before, and runs a real statistical model to forecast what comes next.</p>
     <p>New issues drop roughly five times a week during the season. Teams we follow most: <strong>Notre Dame football</strong> (always and forever), <strong>NY Mets</strong>, <strong>NY Rangers</strong>, <strong>NY Jets</strong> — plus the Raiders, Bills, and Seahawks for the extended family. We also chase any stat that's weird enough, from any sport, any team.</p>
+  </div>
+
+  <!-- STORY IDEAS INBOX -->
+  <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem">Pitch a Story</h3>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem">Noticed a weird stat? Saw something that doesn't add up? Send it in. The best ideas become issues.</p>
+    <form action="https://formspree.io/f/xpwzgjvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
+      <input type="text" name="name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" placeholder="Sport (MLB, NFL, NHL, CFB, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <textarea name="idea" placeholder="What's the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
+      <div style="display:flex;gap:.8rem;align-items:center">
+        <button type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
+        <span style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)">or email ideas directly &middot; or <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea&body=Sport:%0A%0AStat+or+story:%0A%0AWhy+it%27s+interesting:" style="color:var(--steel)">post on GitHub</a></span>
+      </div>
+    </form>
   </div>
 
   <!-- FOOTER -->

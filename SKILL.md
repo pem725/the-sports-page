@@ -27,6 +27,30 @@ schedule-mapped projections.
 
 ---
 
+## Tone Selection (REQUIRED before writing each issue)
+
+Before writing any issue, present the user with tone options and ask which
+voice fits this story. Suggest 2-3 that seem like the best match. The
+newsletter should feel like it has multiple sports writers, not one voice.
+
+| Voice | Style | Best For |
+|-------|-------|----------|
+| **The Columnist** | Dry wit, editorial authority, measured confidence | Analysis, historical comparisons, EO series |
+| **The Heckler** | Irreverent, sarcastic, bar-stool energy, trash talk | Jets misery, bad trades, front office disasters |
+| **The Professor** | Patient, empathetic, explains the math gently | Bayesian explainers, Sunday recaps, teaching moments |
+| **The Eulogist** | Respectful, melancholic, beautiful prose about loss | Player injuries, franchise collapses, end-of-era |
+| **The Fan** | Emotional, raw, honest, first-person energy | Drought pieces, playoff heartbreak, loyalty |
+
+Example prompt to user: "This piece on the Jets' draft history could work as
+**The Heckler** (sarcastic roast) or **The Eulogist** (mourning what could
+have been). Which voice do you want?"
+
+For the automated publisher (scheduled trigger), default to **The Columnist**
+unless the content obviously calls for another voice (e.g., injury = Eulogist,
+Jets = Heckler).
+
+---
+
 ## Workflow (run in order)
 
 ### Step 0 — Stat Intake & Diagnosis
