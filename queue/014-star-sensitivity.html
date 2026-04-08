@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — April 7, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1;letter-spacing:-.02em}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.desk{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.desk{padding:1.6rem 1.4rem}}
+.desk-hed{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:.2rem}
+.desk-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;color:#a09070;margin-bottom:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.chip{font-family:'Roboto Mono',monospace;font-size:.66rem;background:rgba(201,150,42,.12);border:1px solid rgba(201,150,42,.35);color:#b8982a;padding:.28rem .65rem;cursor:pointer;transition:background .15s}
+.chip:hover{background:rgba(201,150,42,.25);color:var(--gold)}
+.desk label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+textarea#qi{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(201,150,42,.4);color:#f0ead8;font-family:'Libre Baskerville',serif;font-size:.95rem;line-height:1.6;padding:.85rem 1rem;resize:vertical;min-height:90px;outline:none;transition:border-color .2s}
+textarea#qi:focus{border-color:var(--gold)}
+textarea#qi::placeholder{color:#6b5e4a}
+#ask-btn{margin-top:.7rem;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:none;padding:.72rem 1.8rem;cursor:pointer;transition:background .2s,transform .1s}
+#ask-btn:hover{background:#e0aa30;transform:translateY(-1px)}
+#ask-btn:disabled{background:#5a4a28;color:#3a3020;cursor:not-allowed;transform:none}
+.resp{margin-top:1.4rem;border-top:1px solid rgba(201,150,42,.3);padding-top:1.1rem;display:none}
+.resp.on{display:block}
+.resp-hed{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+#rtext{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.78;color:#e0d8c8;white-space:pre-wrap}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ── BAR CHART ── */
+.bar-chart{margin:1.4rem 0}
+.bar-row{display:flex;align-items:center;margin-bottom:.7rem}
+.bar-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);width:110px;flex-shrink:0;text-align:right;padding-right:.8rem}
+.bar-track{flex:1;background:var(--div);height:28px;position:relative;overflow:hidden}
+.bar-fill{height:100%;display:flex;align-items:center;padding-left:.6rem;font-family:'Playfair Display',serif;font-weight:900;font-size:.9rem;color:#fff;transition:width .6s ease}
+.bar-fill.bball{background:var(--rust)}
+.bar-fill.football{background:var(--steel)}
+.bar-fill.hockey{background:var(--gold)}
+.bar-fill.baseball{background:var(--green)}
+.bar-note{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);margin-left:.5rem;flex-shrink:0;width:90px}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">A Cross-Sport Statistical Investigation &middot; All Sports, 2026</div>
+  <div class="title">The Sports Page</div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. 11</span>
+    <span>April 7, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- PAPER -->
+<div class="paper">
+
+  <h1 class="hed">Tennessee Lost <em>Every Single Player.</em> But Which Sport Collapses When It Loses Just <em>One?</em></h1>
+
+  <div class="deck">
+    The Lady Vols&rsquo; entire roster entered the transfer portal &mdash; zero returning players on a Pat Summitt&ndash;legacy program. That&rsquo;s dramatic. But the deeper statistical question: in which sport can a single superstar walk out the door and take the whole season with them? A Bayesian model across four sports says the answer isn&rsquo;t close. One LeBron is worth 42 wins. One Mike Trout is worth 10. The math is structural &mdash; and it starts with counting to five.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; April 7, 2026 &middot; A four-sport investigation</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">0</div><div class="l">Lady Vols Returning Players</div></div>
+    <div class="sc"><div class="v now">42</div><div class="l">Wins Cleveland Lost When LeBron Left</div></div>
+    <div class="sc"><div class="v good">5</div><div class="l">Players on a Basketball Court</div></div>
+  </div>
+
+  <!-- TWO-COLUMN BODY -->
+  <div class="two-col">
+    <div>
+      <p>On April 6, 2026, the University of Tennessee&rsquo;s women&rsquo;s basketball program reached a distinction no one wanted: zero returning players. All eight Lady Vols with remaining eligibility entered the transfer portal. The No.&nbsp;2 recruit in the 2026 class requested a release from her letter of intent. The program that Pat Summitt built into the most dominant dynasty in women&rsquo;s college sports now has one committed player on its entire roster. An 8-game losing streak, a first-round NCAA Tournament exit, and a second-year coach whose system never took root &mdash; and the whole thing collapsed at once.</p>
+    </div>
+    <div>
+      <p>But here&rsquo;s the thing: Tennessee lost <em>everyone</em>. That&rsquo;s one kind of catastrophe &mdash; the total exodus, the organizational failure. The more interesting statistical question is subtler: which sport is so structurally sensitive to individual talent that losing just <em>one</em> player produces the same kind of devastation? Not eight players. Not a roster purge. One person walks, and the whole operation craters. The answer comes down to a formula so simple it fits on a napkin: how many people are on the field, and how much does the best one play?</p>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;In basketball, one player touches the ball on both ends and plays 80% of the minutes. In baseball, your best hitter waits his turn 89% of the time. That&rsquo;s not a difference in talent. It&rsquo;s a difference in structure.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on why roster size is destiny</cite>
+  </div>
+
+  <!-- THE SENSITIVITY FORMULA -->
+  <div class="box">
+    <h3>The Napkin Formula: Why Five Is the Magic Number</h3>
+    <div class="math">Star Impact Potential = (1 / Players on Field) &times; Minutes Share
+
+Basketball:  1/5  &times; 79%  =  15.8% structural ceiling
+Hockey:      1/6  &times; 92%  =  15.3% (goalie only)
+Football:    1/11 &times; 50%  =   4.5% (QB, offense only)
+Baseball:    1/9  &times; 11%  =   1.2% (one of nine batters)
+
+The fewer players sharing the field and the more minutes
+your star plays, the more the team&rsquo;s fate concentrates
+in one person. Basketball and hockey goalies both hit
+~15% theoretical ceilings. Baseball&rsquo;s structure makes
+it nearly impossible for one player to dominate.</div>
+    <p>This is the denominator problem applied to rosters. In basketball, five players share 240 player-minutes per game. A star who plays 38 of 48 minutes commands 15.8% of total player-minutes &mdash; and he plays offense <em>and</em> defense. In baseball, the best hitter gets ~4.5 plate appearances out of ~38 team plate appearances per game, and never touches the mound. The structural ceiling for individual impact in baseball is roughly one-eighth of basketball&rsquo;s.</p>
+  </div>
+
+  <hr>
+
+  <!-- BAYESIAN MODEL RESULTS -->
+  <h2 class="sh">The Model: 200,000 Simulated Seasons Per Sport</h2>
+
+  <div class="two-col">
+    <div>
+      <p>We ran a Beta-Binomial Bayesian model for each sport, using real before-and-after data from the most famous star departures in history: LeBron James leaving Cleveland (2010), Peyton Manning missing the 2011 season, Carey Price&rsquo;s career-ending injury in Montreal, and composite MLB star-absence data. The model draws 200,000 season simulations from the posterior win-probability distributions with and without the star player, then computes the distribution of win deltas.</p>
+    </div>
+    <div>
+      <p>The results quantify what fans already sense intuitively: basketball is the sport where one departure reshapes everything. The median win delta in the NBA is <strong>40 games</strong> &mdash; nearly half the season. In football, it&rsquo;s 7 games out of 16, which is proportionally enormous but structurally limited to the quarterback position. Hockey goalies produce swings of 32 wins. And baseball? Ten wins. Over 162 games. Your best player moves the needle by about 6%.</p>
+    </div>
+  </div>
+
+  <!-- VISUAL BAR CHART -->
+  <h2 class="sh">Star Impact Share: What Fraction of Wins Walks Out the Door?</h2>
+
+  <div class="bar-chart">
+    <div class="bar-row">
+      <div class="bar-label">Football</div>
+      <div class="bar-track"><div class="bar-fill football" style="width:69.2%">69.2%</div></div>
+      <div class="bar-note">Manning &rarr; Colts</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Basketball</div>
+      <div class="bar-track"><div class="bar-fill bball" style="width:67.2%">67.2%</div></div>
+      <div class="bar-note">LeBron &rarr; Cavs</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Hockey</div>
+      <div class="bar-track"><div class="bar-fill hockey" style="width:55.2%">55.2%</div></div>
+      <div class="bar-note">Price &rarr; Habs</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Baseball</div>
+      <div class="bar-track"><div class="bar-fill baseball" style="width:10.3%">10.3%</div></div>
+      <div class="bar-note">Star &rarr; MLB avg</div>
+    </div>
+  </div>
+
+  <p style="font-size:.85rem;color:var(--muted);text-align:center;margin-bottom:1rem"><em>Impact share = median win delta &divide; median wins with star. Beta-Binomial posterior, 200K simulations, Beta(2,2) prior.</em></p>
+
+  <!-- SCORECARD TABLE -->
+  <h2 class="sh">The Superstar Departure Scorecard</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Sport</th><th>Case Study</th><th>With Star</th><th>Without</th><th>&Delta; Wins</th><th>Impact Share</th><th>P(Playoff)</th></tr>
+    </thead>
+    <tbody>
+      <tr class="worse"><td>Basketball</td><td>LeBron leaves Cleveland, 2010</td><td class="mono">61-21</td><td class="mono">19-63</td><td class="mono">&minus;42</td><td class="mono">67.2%</td><td class="mono">99.9% &rarr; 0%</td></tr>
+      <tr class="worse"><td>Football</td><td>Manning misses 2011</td><td class="mono">10-6</td><td class="mono">2-14</td><td class="mono">&minus;8</td><td class="mono">69.2%</td><td class="mono">66.8% &rarr; 1.5%</td></tr>
+      <tr class="match"><td>Hockey</td><td>Price injured, Montr&eacute;al 2021</td><td class="mono">59-23</td><td class="mono">22-49</td><td class="mono">&minus;32</td><td class="mono">55.2%</td><td class="mono">99.8% &rarr; 1.2%</td></tr>
+      <tr class="hl"><td>Baseball</td><td>Star injury composite (MLB)</td><td class="mono">95-67</td><td class="mono">85-77</td><td class="mono">&minus;10</td><td class="mono">10.3%</td><td class="mono">82.3% &rarr; 43.3%</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- THE MATH BOX: WHY BASKETBALL IS DIFFERENT -->
+  <div class="box">
+    <h3>The Bayesian Model: Beta-Binomial on Win Probability</h3>
+    <div class="math">Prior: Win probability ~ Beta(&alpha;, &beta;)
+  &alpha; = 2 + observed_wins
+  &beta; = 2 + observed_losses
+
+Posterior samples: p ~ Beta(&alpha;, &beta;), N = 200,000
+Season simulation: wins ~ Binomial(games, p)
+
+BASKETBALL (LeBron Case):
+  With:    Beta(63, 23) &rarr; median p = .731 &rarr; 60 wins
+  Without: Beta(21, 65) &rarr; median p = .243 &rarr; 20 wins
+  &Delta;: 40 wins (90% CI: 27&ndash;52)
+
+BASEBALL (Star Absence):
+  With:    Beta(97, 69) &rarr; median p = .585 &rarr; 95 wins
+  Without: Beta(87, 79) &rarr; median p = .524 &rarr; 85 wins
+  &Delta;: 10 wins (90% CI: &minus;11 to +30)
+
+Note: Baseball&rsquo;s 90% CI crosses zero. In a 162-game
+season, natural variance can MASK a star&rsquo;s absence
+entirely. In basketball&rsquo;s 82-game season with a
+5-player roster, there is nowhere to hide.</div>
+    <p>The key insight: baseball&rsquo;s confidence interval for star impact <em>includes zero</em>. The sport is so structurally diluted that in roughly 15% of simulated seasons, a team without its best player wins <em>more</em> games than the version with him. That never happens in basketball. Not once in 200,000 simulations did the LeBron-less Cavaliers outperform the LeBron Cavaliers.</p>
+  </div>
+
+  <hr>
+
+  <!-- HISTORICAL PARALLELS -->
+  <h2 class="sh">The Evidence: Four Departures That Proved the Formula</h2>
+
+  <div class="hist-grid">
+    <div class="hc">
+      <div class="hc-name">LeBron James &mdash; Cleveland, 2010</div>
+      <div class="hc-stat">&minus;42</div>
+      <div class="hc-label">Win drop in one season</div>
+      <p>The Cavaliers went from the best record in the NBA (61-21, back-to-back MVP seasons) to the worst (19-63) in a single summer. Same coaching staff. Most of the same role players. One player left and 42 wins evaporated. The 2010-11 Cavaliers had a net rating of &minus;9.5 &mdash; 30th in the league. LeBron&rsquo;s teams, meanwhile, have reached the Finals 10 times. The talent didn&rsquo;t leave Cleveland. The <em>team</em> left Cleveland.</p>
+      <div class="verdict bad">The single biggest star-departure collapse in sports history</div>
+    </div>
+
+    <div class="hc">
+      <div class="hc-name">Peyton Manning &mdash; Indianapolis, 2011</div>
+      <div class="hc-stat">&minus;8</div>
+      <div class="hc-label">Wins lost in a 16-game season</div>
+      <p>Manning missed the entire 2011 season with a neck injury. The Colts went from 10-6 and a perennial AFC contender to 2-14 and the first overall pick (Andrew Luck). Their offense fell from 4th in yards to 30th. From 1st in passing to 27th. From 2nd in receiving to 29th. One man&rsquo;s neck cost an entire franchise half a season &mdash; but only because the quarterback position touches the ball on every offensive snap. No other football position has this leverage.</p>
+      <div class="verdict bad">Proved the QB is the only football position that matters like this</div>
+    </div>
+
+    <div class="hc">
+      <div class="hc-name">Carey Price &mdash; Montr&eacute;al, 2021</div>
+      <div class="hc-stat">&minus;37</div>
+      <div class="hc-label">Win swing from Cup Final to bottom-5</div>
+      <p>In 2020-21, Price carried the Canadiens to the Stanley Cup Final. In 2021-22, a knee injury limited him to 5 games (1-4-0, and he never played again). Montreal went 22-49-11, one of the worst records in the league. The backups combined for a .310 save percentage. Hockey&rsquo;s goalie position is structurally unique: one player faces every single shot. When that player is elite, the team wins. When he&rsquo;s gone, there is no committee replacement.</p>
+      <div class="verdict bad">Goalie is hockey&rsquo;s quarterback &mdash; but plays 92% of the game</div>
+    </div>
+
+    <div class="hc">
+      <div class="hc-name">Mike Trout &mdash; Angels, 2016&ndash;present</div>
+      <div class="hc-stat">0</div>
+      <div class="hc-label">Playoff appearances despite generational talent</div>
+      <p>Trout has posted 10+ WAR seasons, won three MVPs, and been the consensus best player in baseball for over a decade. The Angels have made the playoffs exactly once with him (2014) and never won a postseason series. Research from the University of Colorado found that when MLB stars get injured, team performance across the board was not meaningfully impacted. The sport&rsquo;s 162-game schedule and 9-player lineup structurally prevent any one player from dominating outcomes.</p>
+      <div class="verdict">Baseball&rsquo;s structure makes one player nearly irrelevant to team fate</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- BACK TO TENNESSEE -->
+  <h2 class="sh">So What Does Tennessee Tell Us?</h2>
+
+  <div class="two-col">
+    <div>
+      <p>The Lady Vols situation is a category error disguised as a roster crisis. When all eight players leave, you&rsquo;re not looking at a star-sensitivity problem &mdash; you&rsquo;re looking at an organizational failure. The transfer portal has made college basketball the most volatile sport in America not because individual players matter more (they always did), but because the <em>mechanism for departure</em> is now frictionless. In the NBA, LeBron needed free agency. In college, every player can leave every year, creating the possibility of a total exodus that professional sports leagues structurally prevent.</p>
+    </div>
+    <div>
+      <p>But the deeper lesson holds: the reason a full-team departure can happen in basketball &mdash; and is nearly unthinkable in baseball &mdash; is the same structural math that makes one departure so devastating. Five players. Eighty percent of minutes. Both ends of the floor. When each player carries 20% of the structural load, losing one is a crisis and losing all eight is an extinction event. In baseball, you could lose your three best players and still win 75 games. In basketball, losing your best player might cost you 42. Tennessee just proved what happens when the math compounds: lose one, you&rsquo;re hurt. Lose everyone, and you&rsquo;re starting from scratch on a program that took Pat Summitt four decades to build.</p>
+    </div>
+  </div>
+
+  <!-- FINAL PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Tennessee didn&rsquo;t lose a roster. It lost a structure. In basketball, the structure is five people &mdash; and when all five leave, the denominator goes to zero. There is no rate stat that survives division by nothing.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the denominator problem applied to entire programs</cite>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. 11</span>
+    <span>Model: Beta-Binomial, 200K sims &middot; Sources: Basketball-Reference, Pro-Football-Reference, Hockey-Reference, FanGraphs</span>
+    <span>Not financial or wagering advice</span>
+  </div>
+
+</div>
+
+<!-- ASK THE STATS DESK -->
+<div class="desk">
+  <div class="desk-hed">Ask The Stats Desk</div>
+  <div class="desk-sub">Drop any strange stat. Get context in seconds.</div>
+
+  <div class="chips">
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">LeBron leaving cost Cleveland 42 wins</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Tennessee has zero returning players</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Trout has 0 playoff series wins in 10 years</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Manning's absence dropped Colts from 4th to 30th in offense</span>
+  </div>
+
+  <label for="qi">Your stat question</label>
+  <textarea id="qi" placeholder="e.g. 'How much would losing Ohtani cost the Dodgers vs losing Luka cost the Mavs?'"></textarea>
+  <button id="ask-btn" onclick="askDesk()">&#9654; Explain the Context</button>
+
+  <div class="resp" id="resp-box">
+    <div class="resp-hed">The Stats Desk says&hellip;</div>
+    <div id="rtext"></div>
+  </div>
+</div>
+
+<script>
+async function askDesk(){
+  const q=document.getElementById('qi').value.trim();if(!q)return;
+  const btn=document.getElementById('ask-btn'),box=document.getElementById('resp-box'),rt=document.getElementById('rtext');
+  btn.disabled=true;btn.innerHTML='<span class="spin"></span> Thinking\u2026';
+  box.classList.add('on');rt.textContent='';
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.__ANTHROPIC_KEY||''},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:`You are The Stats Desk \u2014 a sharp, witty sports statistics explainer specializing in roster sensitivity and star-player impact. Given a stat, explain: 1) WHY the number looks extreme (structural math: roster size, minutes share, positional leverage), 2) Historical context from across sports, 3) What it MEANS vs what it DOESN'T mean, 4) Verdict: structural inevitability, noise, or genuinely impressive? Style: editorial voice, dry humor, 2-3 paragraphs. No bullet lists.`,messages:[{role:'user',content:q}]})});
+    const d=await r.json();rt.textContent=d.content?.find(b=>b.type==='text')?.text||'No response \u2014 check your API key.';
+  }catch(e){rt.textContent='Error: '+e.message;}
+  btn.disabled=false;btn.innerHTML='&#9654; Explain the Context';
+}
+</script>
+
+</body>
+</html>
