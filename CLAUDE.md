@@ -99,7 +99,7 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 11 issues (#1-11)
-Queue: 8 articles ready
+Published: 12 issues (#1-12)
+Queue: 7 articles ready
 Reserve: 1 evergreen piece
-Goal: 489 issues remaining of 500
+Goal: 488 issues remaining of 500
