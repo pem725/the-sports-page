@@ -99,7 +99,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 12 issues (#1-12)
-Queue: 7 articles ready
+Published: 13 issues (#1-13)
+Queue: 8 articles ready (eo-002 through eo-005, 014, 015, 016, 017)
 Reserve: 1 evergreen piece
-Goal: 488 issues remaining of 500
+Goal: 487 issues remaining of 500
+Last published: Issue #13 — "The Portal Freeze" (009-eo-transfer-freeze.html) on April 10, 2026
