@@ -70,6 +70,7 @@ reserve/                <- Evergreen content, no specific date
 - **No name-dropping**: Do NOT label who in the family roots for which team. Cover the teams naturally. They know who they are.
 - **Milestone issues**: Special treatment at #50, #100, etc.
 - **Issue numbering**: Reader-facing numbers assigned at PUBLISH TIME, not creation time. Internal filenames keep their creation-order numbers.
+- **NEVER auto-publish as Sal**: Sal is a guest columnist with a rare cadence (once every 2-3 weeks max). The scheduled agent must NEVER write in Sal's voice, publish a file bylined "By Sal", or generate Sal's Column content. Sal only writes when the human user explicitly invokes him ("let Sal take this one"). If a queued file is bylined as Sal, SKIP it and pick a different file. See SKILL.md "Sal's Column" section for the full persona/rules.
 
 ## Team & Sport Priorities (in order)
 
