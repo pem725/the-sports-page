@@ -100,8 +100,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 13 issues (#1-13)
-Queue: 8 articles ready (eo-002 through eo-005, 014, 015, 016, 017)
+Published: 14 issues (#1-14)
+Queue: 7 articles ready (eo-003 through eo-005, 014, 015, 016, 017)
 Reserve: 1 evergreen piece
-Goal: 487 issues remaining of 500
-Last published: Issue #13 — "The Portal Freeze" (009-eo-transfer-freeze.html) on April 10, 2026
+Goal: 486 issues remaining of 500
+Last published: Issue #14 — "CFB NIL Gini Coefficient" (eo-002-nil-gini.html) on April 11, 2026
