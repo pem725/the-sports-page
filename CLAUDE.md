@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 500 issues over ~2 years. Currently at Issue #10 published (reader-facing numbering).
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 500 issues over ~2 years. Current state is tracked at the bottom of this file.
 
 ## Repository Structure
 
@@ -27,9 +27,17 @@ reserve/                <- Evergreen content, no specific date
 
 ## Publishing Workflow (CRITICAL — follow exactly)
 
-### To publish the next queued article:
+### Step 0 — CHECK THE DAY OF WEEK FIRST (before anything else)
 
-1. **Pick the next file** from `queue/` — choose the most timely piece, or the next in sequence if nothing is urgent.
+**STOP. Before touching the queue, before picking any file, before making any decisions: check what day it is today.**
+
+- **If today is SUNDAY**: Jump immediately to the **Sunday Edition Workflow** below. Do NOT pick from `queue/`. Do NOT publish any regular article today. Sundays are permanently reserved for the Sunday Edition. This is not negotiable. If the Sunday Edition cannot be built for any reason (template missing, data fetch failed), stop and alert the human — do NOT publish a non-Sunday piece on a Sunday as a fallback.
+
+- **If today is MONDAY–SATURDAY**: proceed to the Regular Publishing Workflow below.
+
+### Regular Publishing Workflow (Monday–Saturday only)
+
+1. **Pick the next file** from `queue/` — choose the most timely piece, or the next in sequence if nothing is urgent. **Skip any file whose name starts with `sunday-`** — those are Sunday Edition drafts and must never be picked on a non-Sunday.
 
 2. **Determine the reader issue number**: Count the published issues in `index.html` and add 1. The reader number is SEQUENTIAL based on publication order, NOT the internal filename number.
 
@@ -50,13 +58,66 @@ reserve/                <- Evergreen content, no specific date
    git push
    ```
 
-### Sunday Edition (special — MUST be built fresh):
-- Every Sunday, publish a recap issue that lists the week's posts and grades prediction accuracy.
-- **CRITICAL**: Before writing ANYTHING, use web search to pull fresh data — current standings, player stats, injury updates, game results. Then RERUN the prediction models from the week's issues with updated numbers.
-- Score every prediction: HIT, MISS, PARTIALLY HIT, or PENDING — using ACTUAL current data, not stale numbers from when the article was written.
-- If a Sunday skeleton exists in `queue/`, treat it as a TEMPLATE ONLY. Replace ALL statistics with fresh data pulled that morning.
-- Include honest self-assessment: over-reactions, under-reactions, what we'd do differently.
-- See SKILL.md "Sunday Edition Workflow" for the full 5-step process.
+### Sunday Edition Workflow (Sundays ONLY — runs every Sunday at 4:30am ET)
+
+This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-from-template pattern so the template itself is never modified or consumed.
+
+**The canonical template lives at `reserve/sunday-recap-template.html` and must NEVER be modified in place.** Copy it, edit the copy, publish the copy, leave the original alone.
+
+1. **Compute the Sunday Edition number NNN**: Count existing `published/sunday-*.html` files and add 1. First Sunday = 001, second = 002, etc. Pad with leading zeros.
+
+2. **Copy the template to a working file**:
+   ```
+   cp reserve/sunday-recap-template.html queue/sunday-NNN.html
+   ```
+   Do NOT use `git mv` — the template must stay in reserve/.
+
+3. **Pull fresh data with web_search** (REQUIRED before writing anything):
+   - Current MLB standings and team records
+   - Current NHL standings and playoff picture
+   - Injury updates (especially players the newsletter has been tracking)
+   - Game results from Saturday and any completed Sunday-morning games
+   - Player stats for any player we've written about in the past 7 days
+   - Any relevant NFL, CFB, or other sport news from the past week
+   - **Never use stale data.** Every number in the final piece must come from Sunday morning's fetch.
+
+4. **Rerun every prediction model from the past week's issues** with the fresh data. For each prediction:
+   - Pull the actual current outcome
+   - Rerun the relevant Bayesian model (Gamma-Poisson for ERA, Beta-Binomial for BA/FG%/win-rate) with updated data
+   - Score the prediction: **HIT** (model matched outcome within a reasonable margin), **MISS** (materially wrong, explain why), **PARTIALLY HIT** (direction right, magnitude off), or **PENDING** (not enough data to judge yet)
+   - Be honest about misses. Do not hide them. Misses are the point of the Sunday Edition.
+
+5. **Replace every example value in the working file** (`queue/sunday-NNN.html`):
+   - Title and masthead: set correct Sunday Edition number, date, and reader-facing issue number (count published non-sunday issues + count of published sunday issues + 1)
+   - Stat cards: current issue count, predictions-hit ratio, issues remaining to 500
+   - Issue list: the 5–7 issues published in the past 7 days, with correct links
+   - Prediction scorecard table: one row per prediction rerun, with fresh outcomes and grades
+   - "What we got right" / "What we got wrong" sections: write fresh based on this week's actual outcomes
+   - Over-reactions / under-reactions: fresh honest self-assessment
+   - Road ahead: preview next week's planned content from the queue
+   - Footer: update Sunday Edition number and "predictions tracked from" range
+
+6. **Cross-reference check**: Grep the working file for "Issue #", "Issue No.", and "See Issue" — verify every reference points to an ALREADY PUBLISHED issue.
+
+7. **Move the file**:
+   ```
+   git mv queue/sunday-NNN.html published/sunday-NNN.html
+   ```
+
+8. **Add entry to `index.html`**: Insert a new `<div class="issue">` block at the top, with the correct reader-facing issue number, link, headline, and tags (use `.tag` for "Sunday Edition").
+
+9. **Commit and push**:
+   ```
+   git add index.html published/sunday-NNN.html
+   git commit -m "Publish Sunday Edition No. NNN: week N recap"
+   git push
+   ```
+
+**CRITICAL rules for the Sunday Edition:**
+- The template at `reserve/sunday-recap-template.html` is READ-ONLY. If you find yourself editing it, STOP — you should be editing the copy in `queue/`, not the template itself.
+- Sunday editions are LONGER than regular issues (~1000 words vs ~500). They earn the extra length.
+- Never publish stale numbers. If the data fetch fails, stop and alert — do not fall back to the template's example values.
+- The whole point of the Sunday Edition is public accountability. Misses are not embarrassing; hiding misses is.
 
 ### Content Tiers:
 - **Timely**: Breaking news, injuries, game results. Publish immediately. Goes stale fast.
