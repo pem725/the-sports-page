@@ -141,7 +141,7 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 4. NY Rangers (NHL) — when doing well
 5. NY Jets (NFL) — plus Raiders, Bills, Seahawks for the extended family
 6. Any player with an amazingly great or horrible performance
-7. No basketball
+7. No NBA — but WNBA is welcome on occasion when an interesting stat surfaces
 
 ## Design System
 
