@@ -1,0 +1,52 @@
+name: Story Idea
+description: Pitch a stat or story for The Sports Page
+title: "Story Idea: "
+labels: ["story-idea"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Your name
+      placeholder: e.g., Patrick
+    validations:
+      required: true
+  - type: dropdown
+    id: sport
+    attributes:
+      label: Sport
+      options:
+        - MLB
+        - NFL
+        - NHL
+        - CFB
+        - WNBA
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: stat
+    attributes:
+      label: The stat or story
+      description: What's the number? Why does it look weird, interesting, or important?
+      placeholder: "e.g., 'Lindor is hitting .135 after hamate surgery — is that the surgery or just a cold start?'"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: Optional — what question does this stat raise? What would be interesting to find out?
+      placeholder: "e.g., 'Do players recover their power after hamate surgery? How long does it take?'"
+    validations:
+      required: false
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How timely is this?
+      description: Helps with scheduling
+      options:
+        - Breaking — happening right now
+        - This week — still fresh
+        - Anytime — it's an interesting question, no rush
+    validations:
+      required: true
