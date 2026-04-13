@@ -161,8 +161,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 14 issues (#1-14)
-Queue: 7 articles ready (eo-003 through eo-005, 014, 015, 016, 017)
+Published: 16 issues (#1-16)
+Queue: 6 articles ready (eo-004, eo-005, 014, 015, 016, 017)
 Reserve: 1 evergreen piece
-Goal: 486 issues remaining of 500
-Last published: Issue #14 — "CFB NIL Gini Coefficient" (eo-002-nil-gini.html) on April 11, 2026
+Goal: 484 issues remaining of 500
+Last published: Issue #16 — "Notre Dame Protected and Vulnerable" (eo-003-notre-dame.html) on April 13, 2026
