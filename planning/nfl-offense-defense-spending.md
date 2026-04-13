@@ -74,8 +74,16 @@ Part 2 is optional — depends on whether the draft produces interesting case st
 - [ ] Bengals defensive draft capital vs defensive DVOA, 5-year window
 - [ ] NFL rule changes timeline (passing emphasis) vs offensive spending trend
 
+## Decisions locked (2026-04-12)
+
+1. ✅ **Two pieces.** Part 1 (pre-draft framework, Apr 20-22) + Part 2 (post-draft grading, Apr 26-28). The pre-draft piece is the hook; the post-draft piece is the payoff.
+2. ✅ **Slam the Jets.** Make them the throughline character — the cautionary tale running through both parts. Issue #6 already established the Jets misery brand. This is the sequel: "they pick badly AND they spend on the wrong side of the ball." The callback strengthens both pieces.
+3. ✅ **Dual angle in Part 2: name names AND grade by need-fulfillment.** Two lenses for every top-10 pick:
+   - **Lens A (name prediction):** Before the draft, predict specific players to specific teams. Be wrong in public. Accountability pledge in action.
+   - **Lens B (need fulfillment):** After the draft, grade each pick by whether it filled the RIGHT need given the team's competitive phase. A rebuilding team that drafts an edge rusher when they needed OL gets dinged even if the edge rusher is good — because the competitive-cycle framework says the marginal dollar (and pick) was worth more on offense.
+   This dual angle reveals a key distinction: **you can draft a good player and still make a bad pick** if the need was elsewhere. The gap between "who you got" and "what you needed" is the real evaluation metric.
+
 ## Open questions
 
-1. Does the piece name a "correct" offense-defense split (e.g., "the optimal allocation is 56-58% on offense for rebuilders")? Punchier but harder to defend as a universal rule.
-2. Should the Jets be the throughline character, or one example among several? Given Issue #6 already roasted them, the callback would be strong.
-3. Part 2 (post-draft grading): commit now, or wait and see if the draft gives us material?
+1. How many teams does Part 1 profile in detail? Suggestion: Jets as throughline + 3-4 other teams at different competitive phases (one rebuilder investing in offense correctly, one contender investing in defense correctly, one team misallocating). Keep it to 4-5 total to avoid becoming a 32-team survey.
+2. Does Part 1 include mock predictions for specific picks, or save ALL predictions for Part 2? Suggestion: Part 1 makes 3-5 bold predictions (just enough to be graded). Part 2 grades every top-10 pick.
