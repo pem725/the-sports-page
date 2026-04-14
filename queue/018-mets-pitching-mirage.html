@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. [TBD] — April 15, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1;letter-spacing:-.02em}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.desk{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.desk{padding:1.6rem 1.4rem}}
+.desk-hed{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:.2rem}
+.desk-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;color:#a09070;margin-bottom:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.chip{font-family:'Roboto Mono',monospace;font-size:.66rem;background:rgba(201,150,42,.12);border:1px solid rgba(201,150,42,.35);color:#b8982a;padding:.28rem .65rem;cursor:pointer;transition:background .15s}
+.chip:hover{background:rgba(201,150,42,.25);color:var(--gold)}
+.desk label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+textarea#qi{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(201,150,42,.4);color:#f0ead8;font-family:'Libre Baskerville',serif;font-size:.95rem;line-height:1.6;padding:.85rem 1rem;resize:vertical;min-height:90px;outline:none;transition:border-color .2s}
+textarea#qi:focus{border-color:var(--gold)}
+textarea#qi::placeholder{color:#6b5e4a}
+#ask-btn{margin-top:.7rem;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:none;padding:.72rem 1.8rem;cursor:pointer;transition:background .2s,transform .1s}
+#ask-btn:hover{background:#e0aa30;transform:translateY(-1px)}
+#ask-btn:disabled{background:#5a4a28;color:#3a3020;cursor:not-allowed;transform:none}
+.resp{margin-top:1.4rem;border-top:1px solid rgba(201,150,42,.3);padding-top:1.1rem;display:none}
+.resp.on{display:block}
+.resp-hed{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+#rtext{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.78;color:#e0d8c8;white-space:pre-wrap}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Columnist &middot; New York Mets &middot; MLB</div>
+  <div class="title">The Sports Page</div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. [TBD]</span>
+    <span>April 15, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- PAPER -->
+<div class="paper">
+
+  <h1 class="hed">The Mets&rsquo; Pitching Isn&rsquo;t the Problem. You&rsquo;re Watching the <em>Wrong Side</em> of the Box Score.</h1>
+
+  <div class="deck">
+    Five starters with ERAs under 3.10. A bullpen at 2.84. And yet the Mets are playing .500 ball. The culprit isn&rsquo;t on the mound &mdash; it&rsquo;s in the batter&rsquo;s box, where a $765 million outfielder is on the injured list, a $341 million shortstop is hitting .135, and the franchise&rsquo;s most expensive offseason addition is posting an OBP that starts with a &ldquo;2.&rdquo;
+  </div>
+
+  <div class="byline">By The Columnist &middot; April 15, 2026</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v good">2.30</div><div class="l">Avg Rotation ERA (5 Starters)</div></div>
+    <div class="sc"><div class="v bad">.135</div><div class="l">Lindor BA (Post-Surgery)</div></div>
+    <div class="sc"><div class="v now">7&ndash;7</div><div class="l">Record Despite Elite Pitching</div></div>
+  </div>
+
+  <!-- BODY -->
+  <div class="two-col">
+    <div>
+      <h2 class="sh">The Rotation Nobody&rsquo;s Talking About</h2>
+      <p>If you told a Mets fan in March that by mid-April their rotation would feature a converted closer posting a 1.50 ERA, a rookie with a 2.70 ERA and a 20-to-6 strikeout-to-walk ratio, a returning Kodai Senga striking out 16 in 11.2 innings, and Luis Severino at a career-best 2.14 &mdash; they would have called you delusional and ordered another round.</p>
+      <p>And yet here we are. Clay Holmes, the man the Yankees used as a closer, has thrown 18 innings of 1.50-ERA ball as a starter. McLean, the 24-year-old who debuted last August, looks like the real thing: 20 strikeouts against 6 walks in 16.2 innings is the kind of command that doesn&rsquo;t come from rookie luck. Senga is finally healthy after two lost seasons. Severino is 2-1 with an ERA that would be the envy of any rotation in baseball. And Freddy Peralta, acquired to be the ace, carries a 2.70 pedigree from Milwaukee.</p>
+      <p>The bullpen? A 2.84 ERA with Devin Williams closing, Luke Weaver setting up, and Craig Kimbrel providing veteran depth. There is nothing wrong with this pitching staff.</p>
+    </div>
+    <div>
+      <h2 class="sh">The Lineup That Can&rsquo;t Score</h2>
+      <p>But a pitching staff this good should be anchoring a team well above .500. The Mets are 7-7 because they cannot hit.</p>
+      <p>Juan Soto &mdash; the $765 million man &mdash; was hitting .355 with a home run and 5 RBI when his right calf gave out on April 3. He&rsquo;s on the injured list until at least April 20, with manager Mendoza shutting down all baseball activity. That&rsquo;s a .355 hitter replaced by a league-average bench player for three weeks.</p>
+      <p>Francisco Lindor is hitting .135 with a .577 OPS. He had hamate bone surgery in February &mdash; the bone that controls grip strength and wrist torque. As we noted in <a href="published/011-infield-hitting.html" style="color:var(--rust)">Issue #8</a>, the $467 million infield was hitting .128 through the first week. Lindor&rsquo;s barely improved.</p>
+      <p>Bo Bichette is at .200 with a .229 OBP. That OBP means he&rsquo;s reaching base less often than some pitchers. His strikeout rate has settled at 25% &mdash; down from the 53% we flagged in Issue #8 but still well above his career 18%.</p>
+      <p>And Pete Alonso? Gone. Hitting .176 in Baltimore with 2 hits in his last 28 at-bats. The Mets lost him and gained a lineup hole they haven&rsquo;t filled.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- THE TABLE -->
+  <h2 class="sh">The Evidence: Pitchers vs Hitters</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Pitcher</th><th>Role</th><th>ERA</th><th>IP</th><th>K</th><th>Verdict</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl"><td>Holmes</td><td>SP (converted)</td><td class="mono">1.50</td><td class="mono">18.0</td><td class="mono">12</td><td class="mono">Elite</td></tr>
+      <tr class="hl"><td>Severino</td><td>SP</td><td class="mono">2.14</td><td class="mono">21.0</td><td class="mono">&mdash;</td><td class="mono">Elite (2-1)</td></tr>
+      <tr class="hl"><td>McLean</td><td>SP (rookie)</td><td class="mono">2.70</td><td class="mono">16.2</td><td class="mono">20</td><td class="mono">Ace-caliber</td></tr>
+      <tr class="hl"><td>Senga</td><td>SP (returning)</td><td class="mono">3.09</td><td class="mono">11.2</td><td class="mono">16</td><td class="mono">Back and sharp</td></tr>
+      <tr class="hl"><td>Bullpen</td><td>Relief corps</td><td class="mono">2.84</td><td class="mono">&mdash;</td><td class="mono">&mdash;</td><td class="mono">Solid</td></tr>
+    </tbody>
+  </table>
+
+  <table class="rec" style="margin-top:1.5rem">
+    <thead>
+      <tr><th>Hitter</th><th>BA</th><th>OPS</th><th>Status</th><th>Verdict</th></tr>
+    </thead>
+    <tbody>
+      <tr class="worse"><td>Lindor</td><td class="mono">.135</td><td class="mono">.577</td><td>Playing (hamate surgery Feb)</td><td class="mono">Crisis</td></tr>
+      <tr class="worse"><td>Bichette</td><td class="mono">.200</td><td class="mono">.473</td><td>Playing (K-rate elevated)</td><td class="mono">Struggling</td></tr>
+      <tr class="match"><td>Soto</td><td class="mono">.355</td><td class="mono">&mdash;</td><td>IL since Apr 3 (calf)</td><td class="mono">Absent &mdash; return ~Apr 20</td></tr>
+      <tr class="worse"><td>Alonso</td><td class="mono">.176</td><td class="mono">.538</td><td>In Baltimore now</td><td class="mono">Gone &mdash; and not missed</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;The Mets&rsquo; rotation is pitching like a first-place staff trapped inside a last-place offense. The pitchers are doing their job. The hitters are cashing their checks.&rdquo;</p>
+    <cite>&mdash; The Columnist</cite>
+  </div>
+
+  <!-- THE MATH -->
+  <div class="box">
+    <h3>The Variance Decomposition</h3>
+    <p>In <a href="published/004-mets-500.html" style="color:var(--gold)">Issue #4</a>, we said .500 after 6 games was noise. In <a href="published/011-infield-hitting.html" style="color:var(--gold)">Issue #8</a>, we said the $467M infield was a small-sample panic dressed in dollar signs. Both were right &mdash; but they were pieces of the same story. Here&rsquo;s the full picture:</p>
+    <p>A team&rsquo;s record is driven by two things: runs scored and runs allowed. The Mets&rsquo; rotation ERA of roughly 2.30 puts their run prevention among the best in the National League. But run <em>production</em> &mdash; with Soto absent, Lindor at .135, and Bichette at .200 &mdash; is dragging the record to .500 despite the pitching.</p>
+    <p>This is a variance-attribution question: <strong>which side of the ball explains the Mets&rsquo; mediocre record?</strong> The answer is unambiguous. The pitching is performing at a 95+ win pace. The hitting is performing at a 70-win pace. Average the two and you get&hellip; roughly .500. The math checks out. The narrative doesn&rsquo;t.</p>
+    <div class="math">Pythagorean expectation:
+  Win% ≈ RS² / (RS² + RA²)
+
+  If RS/game ≈ 3.2  and  RA/game ≈ 2.8
+  → Win% ≈ .567  → 92-win pace
+
+  But if RS drops to ≈ 2.5 (Soto absent, Lindor .135):
+  → Win% ≈ .444  → 72-win pace
+
+  The Mets are living in the gap between
+  what their pitching deserves and what
+  their lineup delivers.</div>
+  </div>
+
+  <hr>
+
+  <!-- PREDICTION -->
+  <h2 class="sh">The Prediction</h2>
+
+  <p>Here is where the accountability pledge earns its keep. The Mets have a clear inflection point coming: <strong>Juan Soto&rsquo;s return, expected April 20&ndash;27.</strong></p>
+
+  <p>Our prediction, dated April 15, 2026: <strong>In the 20 games after Soto returns, the Mets will win 12 or more</strong> &mdash; provided the rotation sustains its current pace. That&rsquo;s a .600 clip, which is what a top-5 pitching staff deserves when paired with even a league-average offense. Soto hitting .355 before his injury was well above league-average. Even a post-IL Soto hitting .280 changes the lineup math dramatically.</p>
+
+  <p>If the Mets DON&rsquo;T win 12 of 20 post-Soto, one of two things happened: (1) the pitching regressed, or (2) Lindor&rsquo;s .135 is structural (hamate damage) rather than temporary. Both are testable. We&rsquo;ll grade this in the Sunday Edition when the 20-game window closes.</p>
+
+  <p style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);margin-top:1rem;letter-spacing:.08em">PREDICTION LOGGED: Mets 12+ wins in 20 games post-Soto return. Evaluation date: ~May 15, 2026.</p>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. [TBD]</span>
+    <span>Data: ESPN, Baseball-Reference, MLB.com (April 14, 2026)</span>
+    <span>Not financial or wagering advice</span>
+  </div>
+
+</div>
+
+<!-- ASK THE STATS DESK -->
+<div class="desk">
+  <div class="desk-hed">Ask The Stats Desk</div>
+  <div class="desk-sub">Drop any strange stat. Get context in seconds.</div>
+
+  <div class="chips">
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Mets rotation ERA vs record</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Lindor .135 hamate surgery</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Holmes 1.50 as a starter</span>
+    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Soto return timeline</span>
+  </div>
+
+  <label for="qi">Your stat question</label>
+  <textarea id="qi" placeholder="e.g. 'Can Holmes sustain a 1.50 ERA as a starter?'"></textarea>
+  <button id="ask-btn" onclick="askDesk()">&#9654; Explain the Context</button>
+
+  <div class="resp" id="resp-box">
+    <div class="resp-hed">The Stats Desk says&hellip;</div>
+    <div id="rtext"></div>
+  </div>
+</div>
+
+<script>
+async function askDesk(){
+  const q=document.getElementById('qi').value.trim();if(!q)return;
+  const btn=document.getElementById('ask-btn'),box=document.getElementById('resp-box'),rt=document.getElementById('rtext');
+  btn.disabled=true;btn.innerHTML='<span class="spin"></span> Thinking\u2026';
+  box.classList.add('on');rt.textContent='';
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.__ANTHROPIC_KEY||''},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:`You are The Stats Desk \u2014 a sharp, witty sports statistics explainer for The Sports Page newsletter. Given a stat, explain: 1) WHY the number looks extreme, 2) Historical context, 3) What it MEANS vs what it DOESN'T mean, 4) Verdict: noise, red flag, or genuinely noteworthy? Style: editorial voice, dry humor, 2-3 paragraphs. No bullet lists.`,messages:[{role:'user',content:q}]})});
+    const d=await r.json();rt.textContent=d.content?.find(b=>b.type==='text')?.text||'No response \u2014 check your API key.';
+  }catch(e){rt.textContent='Error: '+e.message;}
+  btn.disabled=false;btn.innerHTML='&#9654; Explain the Context';
+}
+</script>
+
+</body>
+</html>
