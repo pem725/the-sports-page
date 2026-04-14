@@ -131,6 +131,7 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 - **No name-dropping**: Do NOT label who in the family roots for which team. Cover the teams naturally. They know who they are.
 - **Milestone issues**: Special treatment at #50, #100, etc.
 - **Issue numbering**: Reader-facing numbers assigned at PUBLISH TIME, not creation time. Internal filenames keep their creation-order numbers.
+- **Topic variety — no back-to-back**: NEVER publish two articles in a row on the same topic, sport, or series. If yesterday's issue was college football, today's must be something else. Three in a row on the same topic is forbidden unless a genuinely extraordinary event demands it (think: "sports as we know it ends" level). When selecting from queue/, check what was published yesterday and pick a DIFFERENT sport or topic. The EO series, for example, should be interleaved with MLB, NFL, NHL, or other content — never run consecutive EO parts on consecutive days.
 - **NEVER auto-publish as Sal**: Sal is a guest columnist with a rare cadence (once every 2-3 weeks max). The scheduled agent must NEVER write in Sal's voice, publish a file bylined "By Sal", or generate Sal's Column content. Sal only writes when the human user explicitly invokes him ("let Sal take this one"). If a queued file is bylined as Sal, SKIP it and pick a different file. See SKILL.md "Sal's Column" section for the full persona/rules.
 
 ## Team & Sport Priorities (in order)
