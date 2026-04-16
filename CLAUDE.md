@@ -162,8 +162,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 18 issues (#1-18)
-Queue: 6 articles ready (eo-005, eo-006, 014, 015, 016, 017)
+Published: 19 issues (#1-19)
+Queue: 5 articles ready (eo-006, 014, 015, 016, 017)
 Reserve: 1 evergreen piece
-Goal: 482 issues remaining of 500
-Last published: Issue #17 — "The Rule That Would Have Prevented Cignetti's Miracle Now Protects What He Built" (eo-004-cignetti.html) on April 14, 2026
+Goal: 481 issues remaining of 500
+Last published: Issue #19 — "The EO Isn't Saving College Sports — It's Restoring the Old Guard" (eo-005-big-picture.html) on April 16, 2026
