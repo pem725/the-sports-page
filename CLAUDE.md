@@ -37,26 +37,45 @@ reserve/                <- Evergreen content, no specific date
 
 ### Regular Publishing Workflow (Monday–Saturday only)
 
-1. **Pick the next file** from `queue/` — choose the most timely piece, or the next in sequence if nothing is urgent. **Skip any file whose name starts with `sunday-`** — those are Sunday Edition drafts and must never be picked on a non-Sunday.
+1. **Read the publish order** from `QUEUE_ORDER.txt` in the repo root. This file lists queue filenames, one per line, in the order they should be published. Take the FIRST line that matches a file still in `queue/`. If QUEUE_ORDER.txt is empty or missing, fall back to picking the most timely non-CFB/non-repeat piece from `queue/`. **Skip any file whose name starts with `sunday-`**.
 
-2. **Determine the reader issue number**: Count the published issues in `index.html` and add 1. The reader number is SEQUENTIAL based on publication order, NOT the internal filename number.
-
-3. **Update the issue number inside the HTML file**: Search for "Issue No." and replace with the correct reader number (e.g., "Issue No. 14"). There are usually 2 occurrences (datebar and footer).
-
-4. **Update the date**: If the article has a placeholder or old date, update it to today's date.
-
-5. **Add the entry to index.html**: Insert a new `<div class="issue">` block at the TOP of the issues list (before the previous highest issue). Follow the exact HTML pattern of existing entries. Include: issue-num, issue-date, issue-hed (with link to `published/FILENAME`), issue-deck, and issue-tags.
-
-6. **Move the file**: `git mv queue/FILENAME.html published/FILENAME.html`
-
-7. **Cross-reference check**: Grep the file for "Issue #", "Issue No.", and "See Issue" — verify every reference points to an ALREADY PUBLISHED issue. If referencing an unpublished piece, change to "coming soon."
-
-8. **Commit and push**:
+2. **Derive current state from git** (do NOT rely on the "Current State" section at the bottom of this file — it may be stale):
+   ```bash
+   # Count published issues (the reader-facing number for the next issue)
+   grep -c 'class="issue-num"' index.html
+   # See what published most recently (for the variety rule)
+   git log --oneline -1
    ```
-   git add index.html published/FILENAME.html
-   git commit -m "Publish Issue #N: brief description"
-   git push
-   ```
+   The next reader issue number = the count from grep + 1.
+
+3. **Variety check**: Compare today's piece against what `git log --oneline -1` shows. If it's the same topic/sport as yesterday, skip it and take the NEXT line from QUEUE_ORDER.txt instead. Never publish back-to-back same topic.
+
+4. **Update the issue number inside the HTML file**: Search for "Issue No." and replace with the correct reader number. There are usually 2 occurrences (datebar and footer). Also update the `<title>` tag.
+
+5. **Update the date**: Replace any placeholder or old date with today's date.
+
+6. **Cross-reference check**: Grep the file for "Issue #", "Issue No.", and "See Issue" — verify every reference points to an ALREADY PUBLISHED issue. If referencing an unpublished piece, change to "coming soon."
+
+7. **Add the entry to index.html**: Insert a new `<div class="issue">` block at the TOP of `<div class="issues">`, BEFORE all existing issues. Follow the exact HTML pattern of existing entries. Include: issue-num, issue-date, issue-hed (with link to `published/FILENAME`), issue-deck, and issue-tags.
+
+8. **Move the file**: `git mv queue/FILENAME.html published/FILENAME.html`
+
+9. **Remove the published file from QUEUE_ORDER.txt**: Delete the line you just published so the next run picks the next file. This keeps the queue order accurate.
+
+10. **Update the Current State section** at the bottom of this file. Update ALL fields atomically — do not update the count without also updating "Last published." The fields are:
+    - Published count
+    - Queue contents (list remaining files)
+    - Goal (500 minus published count)
+    - Last published (issue number, title, filename, today's date)
+
+11. **Commit and push**:
+    ```
+    git add index.html published/FILENAME.html QUEUE_ORDER.txt CLAUDE.md
+    git commit -m "Publish Issue #N: brief description"
+    git push origin main
+    ```
+
+12. **If ANY step fails**: Do NOT silently exit. Create a GitHub issue on this repo with the label `publish-failure` describing what went wrong, what step failed, and the error message. Use: `gh issue create --title "Publish failure: [date]" --label "publish-failure" --body "[error details]"`. Then exit. Never publish a broken or incomplete issue.
 
 ### Sunday Edition Workflow (Sundays ONLY — runs every Sunday at 4:30am ET)
 
