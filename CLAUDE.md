@@ -77,6 +77,28 @@ reserve/                <- Evergreen content, no specific date
 
 12. **If ANY step fails**: Do NOT silently exit. Create a GitHub issue on this repo with the label `publish-failure` describing what went wrong, what step failed, and the error message. Use: `gh issue create --title "Publish failure: [date]" --label "publish-failure" --body "[error details]"`. Then exit. Never publish a broken or incomplete issue.
 
+### Autopublish (GitHub Actions — Mon-Sat)
+
+A GitHub Actions workflow (`.github/workflows/autopublish.yml`) runs at 4:30am ET Monday–Saturday. It calls `scripts/autopublish.py` which handles the full Regular Publishing Workflow deterministically. **Sunday Editions remain manual** — they require live data, prediction scoring, and editorial prose that a script cannot provide.
+
+**PUBLISH-META requirement**: Every queue file MUST include a metadata comment block at the very top (before `<!DOCTYPE html>`). The autopublish script uses this for variety checking and index.html tag generation. Format:
+
+```html
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, Small Sample
+-->
+```
+
+- `topic`: The primary topic/sport (used for the variety rule — no back-to-back same topic)
+- `tags`: Comma-separated, for the index.html entry. Use `Text:cssclass` to apply a color class (mlb, nfl, cfb, nhl), or plain `Text` for default styling.
+
+**When creating new queue files**, always include PUBLISH-META. Claude should add this automatically when generating new issues.
+
+To manually trigger: go to GitHub → Actions tab → "Autopublish Daily Issue" → "Run workflow."
+
+To dry-run locally: `python3 scripts/autopublish.py --dry-run`
+
 ### Sunday Edition Workflow (Sundays ONLY — runs every Sunday at 4:30am ET)
 
 This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-from-template pattern so the template itself is never modified or consumed.

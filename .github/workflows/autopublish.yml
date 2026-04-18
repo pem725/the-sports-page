@@ -1,0 +1,43 @@
+name: Autopublish Daily Issue
+
+on:
+  schedule:
+    # 4:30am ET = 8:30 UTC (EST) or 8:30 UTC (EDT is UTC-4, so 4:30am EDT = 8:30 UTC)
+    # During EDT (Mar-Nov): fires at 4:30am ET
+    # During EST (Nov-Mar): fires at 3:30am ET (one hour early — acceptable)
+    - cron: '30 8 * * 1-6'   # Mon-Sat only, skip Sunday
+
+  # Manual trigger from GitHub UI (Actions tab → Run workflow)
+  workflow_dispatch:
+
+permissions:
+  contents: write    # push commits
+  issues: write      # create failure issues
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # full history for git log
+
+      - name: Configure git identity
+        run: |
+          git config user.name "The Sports Page Bot"
+          git config user.email "sports-page-bot@users.noreply.github.com"
+
+      - name: Run autopublish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/autopublish.py
+
+      - name: Verify push succeeded
+        run: |
+          echo "Last commit:"
+          git log --oneline -1
+          echo ""
+          echo "Published files:"
+          ls published/ | wc -l
