@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — About &amp; Roadmap</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.sh:first-of-type{margin-top:.5rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.lesson{border-left:3px solid var(--gold);padding:.8rem 1.2rem;margin:1rem 0;background:var(--card)}
+.lesson strong{color:var(--rust);font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem}
+.lesson p{font-size:.9rem;line-height:1.6;margin:0}
+
+.timeline{list-style:none;padding:0;margin:1rem 0}
+.timeline li{font-size:.88rem;line-height:1.6;padding:.4rem 0 .4rem 1.2rem;border-bottom:1px solid var(--div);position:relative}
+.timeline li:last-child{border-bottom:none}
+.timeline li::before{content:'';position:absolute;left:0;top:.7rem;width:8px;height:8px;border-radius:50%;background:var(--steel)}
+.timeline li.fix::before{background:var(--rust)}
+.timeline li.win::before{background:var(--green)}
+.timeline li .date{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);margin-right:.5rem}
+
+#peek-list{list-style:none;padding:0;margin:1rem 0}
+#peek-list li{font-size:.9rem;line-height:1.65;padding:.5rem 0;border-bottom:1px solid var(--div)}
+#peek-list li:last-child{border-bottom:none}
+#peek-list a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3);font-weight:700}
+#peek-list a:hover{border-color:var(--rust)}
+#peek-list .tag{font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .5rem;border:1px solid var(--div);color:var(--muted);background:var(--cream);margin-left:.5rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}.sc .v.bad{color:var(--rust)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Behind the Numbers</div>
+  <div class="title"><a href="index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">How this newsletter got built, what broke, and what we learned</div>
+  <div class="datebar">
+    <span id="about-est">Est. March 2026</span>
+    <span id="about-stats">Loading...</span>
+    <span><a href="index.html" style="color:inherit;border:none">&larr; Back to Archive</a></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h2 class="sh">What This Is</h2>
+
+  <p>The Sports Page is a newsletter for friends and family who love sports and are curious about the numbers behind them. Each issue takes one weird stat and explains what it actually means. No statistics degree required. New issues publish five or six times a week during the season, with a Sunday Edition that grades our predictions against reality.</p>
+
+  <p>This page is the behind-the-scenes story. How the newsletter gets built, what went wrong along the way, and what we learned from each mistake. If the newsletter teaches statistics through sports, this page teaches what it takes to build something from scratch &mdash; one commit at a time.</p>
+
+  <!-- LIVE STATS -->
+  <div class="stat-row" id="about-stat-cards">
+    <div class="sc"><div class="v now" id="sc-issues">--</div><div class="l">Issues Published</div></div>
+    <div class="sc"><div class="v good" id="sc-commits">56</div><div class="l">Git Commits</div></div>
+    <div class="sc"><div class="v now" id="sc-queue">--</div><div class="l">In the Queue</div></div>
+  </div>
+
+  <hr>
+
+  <!-- THEME 1: CONTENT -->
+  <h2 class="sh">Content &amp; Editorial Voice</h2>
+
+  <p>The first issue was Paul Skenes&rsquo; 67.5 ERA on Opening Day. We didn&rsquo;t have a design system, a publishing workflow, or a queue. We had one weird stat and a Google Font. The newsletter grew from there &mdash; one question at a time.</p>
+
+  <ul class="timeline">
+    <li class="win"><span class="date">Mar 27</span> Launch with Issues #1 and #2: Skenes&rsquo; ERA and Alonso&rsquo;s decline curve. Two pieces, zero infrastructure.</li>
+    <li><span class="date">Apr 1</span> The Misery Index (#3) crossed sports and markets for the first time. The tone clicked: editorial, not academic.</li>
+    <li><span class="date">Apr 3</span> Draft Combinatorics (#5) proved 32! makes every mock draft wrong. Our first pure math piece.</li>
+    <li class="win"><span class="date">Apr 4</span> Jets Draft Misery (#6) introduced The Heckler voice. The newsletter stopped sounding like one writer.</li>
+    <li><span class="date">Apr 4</span> Soto injury (#7) was our first BREAKING piece. Published same day. Bayesian severity model gave 54% chance of 10+ games missed. It hit.</li>
+    <li><span class="date">Apr 10</span> Started the EO Series &mdash; five parts on the executive order&rsquo;s impact on college athletics. Most ambitious thing we&rsquo;d attempted.</li>
+    <li class="win"><span class="date">Apr 12</span> First Sunday Edition. Graded every prediction against reality. Three hits, two pending, zero hides.</li>
+    <li><span class="date">Apr 14</span> Introduced Sal &mdash; a guest columnist who writes once every 2&ndash;3 weeks with perfectly worded sarcasm. Sal only writes when explicitly invoked.</li>
+    <li class="win"><span class="date">Apr 17</span> WNBA maturity analysis published. Three days later, the new CBA proved the thesis: minimum salary jumped from $66K to $300K+.</li>
+    <li><span class="date">Apr 19</span> Sunday Edition #2 included our first MISS: the Mets 88-win projection. Downgraded honestly. Willie Randolph parallel.</li>
+  </ul>
+
+  <div class="lesson">
+    <strong>What we learned</strong>
+    <p>The newsletter found its identity around Issue #5. Before that, it was a stats blog. After that, it was a publication with voices, opinions, and accountability. The Sunday Edition &mdash; where we grade our own predictions &mdash; turned out to be the soul of the project. Without it, we&rsquo;re just another hot-take machine. With it, we&rsquo;re an experiment in applied prediction.</p>
+  </div>
+
+  <hr>
+
+  <!-- THEME 2: AUTOMATION -->
+  <h2 class="sh">Automation &amp; Infrastructure</h2>
+
+  <p>The first ten issues were published by hand: edit the file, update the index, commit, push. It worked until it didn&rsquo;t. The automation journey was bumpy.</p>
+
+  <ul class="timeline">
+    <li><span class="date">Apr 8</span> Restructured into published/queue/reserve content tiers. Before this, everything lived in one folder.</li>
+    <li><span class="date">Apr 11</span> Added setup-machine.sh for cross-platform development (Linux + Mac).</li>
+    <li><span class="date">Apr 12</span> Built Sunday Edition automation: template + day-of-week forcing function. Sundays became a workflow, not a chore.</li>
+    <li class="fix"><span class="date">Apr 16</span> Publishing backend broke. State was stale, queue ordering was vague, failures were silent. Fixed all three: explicit QUEUE_ORDER.txt, git-derived state, failure alerts via GitHub issues.</li>
+    <li class="fix"><span class="date">Apr 18</span> Discovered the auto-publish had never actually been wired up. The scheduled trigger didn&rsquo;t exist. The workflow was documented but never connected.</li>
+    <li class="win"><span class="date">Apr 18</span> Built GitHub Actions autopublish: a Python script that runs Mon&ndash;Sat at 4:30am ET. Reads the queue, enforces variety rules, updates issue numbers, inserts into index.html, commits, and pushes. No AI needed for the mechanical parts.</li>
+    <li class="win"><span class="date">Apr 19</span> Added live-computed publication rate to the homepage. The JS reads the archive directly &mdash; no hardcoded values. The page IS the database.</li>
+  </ul>
+
+  <div class="lesson">
+    <strong>What we learned</strong>
+    <p>Automation isn&rsquo;t reliable until it&rsquo;s boring. The Claude Code scheduled trigger worked sometimes. GitHub Actions works every time. We split the problem: mechanical publishing (Mon&ndash;Sat) is a deterministic script; editorial work (Sundays, new content) stays human. The best automation is the kind nobody notices.</p>
+  </div>
+
+  <hr>
+
+  <!-- THEME 3: DESIGN & UI -->
+  <h2 class="sh">Design &amp; User Interface</h2>
+
+  <p>The broadsheet aesthetic was there from day one. The navigation was not.</p>
+
+  <ul class="timeline">
+    <li><span class="date">Mar 27</span> First design: Playfair Display headlines, Libre Baskerville body, Roboto Mono stats. Aged newsprint palette. This has never changed.</li>
+    <li><span class="date">Apr 8</span> Added branding: logo, banner, favicon, QR code for sharing.</li>
+    <li class="fix"><span class="date">Apr 8</span> Masthead redesign #1: badge logo + title. Too busy. Redesign #2: back to text-only broadsheet. Redesign #3: final version. Three commits in one day to get back where we started.</li>
+    <li><span class="date">Apr 10</span> Added share section with QR code and banner at page bottom.</li>
+    <li><span class="date">Apr 13</span> Added &ldquo;Pitch a Story&rdquo; form with Formspree. First attempt redirected away from the page. Fixed to AJAX submission.</li>
+    <li class="fix"><span class="date">Apr 19</span> Discovered articles had zero navigation back to the homepage. No clickable masthead, no back link, no breadcrumb. Added &ldquo;&larr; Back to Archive&rdquo; and made the title a link.</li>
+    <li class="fix"><span class="date">Apr 19</span> Attempted semantic HTML upgrade (div &rarr; header/main/footer) via batch regex. It broke layouts on files with complex nesting. The pitch form spanned 100% of the browser. Reverted to divs, kept the working nav elements.</li>
+    <li><span class="date">Apr 19</span> Removed the &ldquo;Ask the Stats Desk&rdquo; interactive form from all pages. It required an API key that readers didn&rsquo;t have. If a feature doesn&rsquo;t work for readers, it shouldn&rsquo;t be on the page.</li>
+  </ul>
+
+  <div class="lesson">
+    <strong>What we learned</strong>
+    <p>Two hard lessons. First: never batch-replace HTML structure with regex. Files have different nesting patterns, and the same regex will match the wrong closing tag in complex layouts. Additive changes (inserting new elements) are safe to batch. Structural changes (swapping element types) require per-file attention. Second: the masthead went through three redesigns in one day before landing back at the original. Sometimes the first instinct was right.</p>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;The best automation is the kind nobody notices. The best design is the one you don&rsquo;t redesign three times.&rdquo;</p>
+    <cite>&mdash; Lessons from 56 commits</cite>
+  </div>
+
+  <hr>
+
+  <!-- THEME 4: DATA INTEGRITY -->
+  <h2 class="sh">Data Integrity &amp; Methodology</h2>
+
+  <p>A statistics newsletter that publishes wrong numbers has no reason to exist. We got some wrong.</p>
+
+  <ul class="timeline">
+    <li class="fix"><span class="date">Apr 6</span> Fixed issue numbering: Soto piece was labeled #10 internally but published as reader Issue #7. Reader-facing numbers and internal filenames are different systems &mdash; we confused them.</li>
+    <li class="fix"><span class="date">Apr 7</span> Fixed a cross-reference: an article referenced &ldquo;See Issue #8&rdquo; but Issue #8 hadn&rsquo;t been published yet. Changed to &ldquo;coming soon.&rdquo;</li>
+    <li><span class="date">Apr 10</span> Added topic variety rule: never publish back-to-back on the same sport or series. The EO series ran three parts in five days and tested readers&rsquo; patience.</li>
+    <li class="win"><span class="date">Apr 12</span> First Sunday Edition scored 3 of 4 predictions correctly. Soto injury model was our most precise hit (54% chance of 10+ games, placed on 10-day IL).</li>
+    <li class="fix"><span class="date">Apr 19</span> Sunday Edition #2 initially reported the Mets&rsquo; losing streak as 11 games. It was 10. The error came from inferring the streak grew because the record changed &mdash; instead of checking the actual game-by-game log.</li>
+    <li class="win"><span class="date">Apr 19</span> Added the triple-verify rule: every number must be checked against 3 independent sources before publishing. Never infer a number from another number. The cost of checking is seconds; the cost of being wrong is credibility.</li>
+  </ul>
+
+  <div class="lesson">
+    <strong>What we learned</strong>
+    <p>The losing-streak error taught us the most important lesson of the project so far: a newsletter about statistical rigor cannot be sloppy with its own statistics. We added &ldquo;triple-verify every number&rdquo; as the first editorial rule. If ESPN, Baseball-Reference, and MLB.com don&rsquo;t agree, we don&rsquo;t publish until they do. This rule exists because we broke it.</p>
+  </div>
+
+  <hr>
+
+  <!-- THEME 5: THE JOURNEY -->
+  <h2 class="sh">The Arc</h2>
+
+  <p>In 23 days, The Sports Page went from a single HTML file about Paul Skenes to a daily-publishing newsletter with automated infrastructure, multiple editorial voices, a prediction accountability system, and a five-part investigative series on federal policy&rsquo;s impact on college athletics.</p>
+
+  <p>It also broke. The publishing trigger never existed. The masthead was redesigned three times in one afternoon. An issue went live with the wrong number. A stat was published without verification. A batch script put a form outside its container and it spanned the entire browser window.</p>
+
+  <p>Every fix made the system better. The queue ordering became explicit after vague priorities caused confusion. The variety rule was added after the EO series ran too hot. The triple-verify rule was added after a wrong number reached the page. The navigation was added after someone tried to get back to the homepage and couldn&rsquo;t.</p>
+
+  <p>That&rsquo;s the real story of this project: not that it works, but that it learned how to work. One commit at a time.</p>
+
+  <div class="pull">
+    <p>&ldquo;Every fix made the system better. Not because the fixes were brilliant, but because the failures were specific.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on building in public</cite>
+  </div>
+
+  <hr>
+
+  <!-- PEEK AHEAD -->
+  <h2 class="sh">Peek Ahead: What&rsquo;s in the Queue</h2>
+
+  <p style="font-size:.9rem;color:var(--muted);margin-bottom:.5rem">These are written, reviewed, and ready to publish. The autopublish script picks from this list every weekday morning.</p>
+
+  <ul id="peek-list">
+    <li><em>Loading queue&hellip;</em></li>
+  </ul>
+
+  <p style="font-size:.88rem;color:var(--muted);margin-top:1rem">Like what you see? Have a better idea? &darr;</p>
+
+  <!-- STORY IDEAS INBOX -->
+  <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem">Pitch a Story</h3>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem">Noticed a weird stat? Saw something that doesn&rsquo;t add up? Send it in. The best ideas become issues.</p>
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" id="pitch-name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" id="pitch-sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <textarea name="idea" placeholder="What&rsquo;s the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
+      <div style="display:flex;gap:.8rem;align-items:center">
+        <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
+        <span style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)">or <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea&body=Sport:%0A%0AStat+or+story:%0A%0AWhy+it%27s+interesting:" style="color:var(--steel)">post on GitHub</a></span>
+      </div>
+    </form>
+    <div id="pitch-ok" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--green);font-weight:600;letter-spacing:.08em">Sent! We read every pitch. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.08em">Something went wrong. Try the GitHub link instead.</div>
+  </div>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='SENDING\u2026';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}
+      else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='SUBMIT IDEA';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; About &amp; Roadmap</span>
+    <span>56 commits and counting</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+
+<script>
+// Peek Ahead: fetch QUEUE_ORDER.txt and build links to queued articles
+(function(){
+  fetch('QUEUE_ORDER.txt')
+    .then(function(r){ return r.text(); })
+    .then(function(text){
+      var lines = text.trim().split('\n').filter(function(l){ return l.trim(); });
+      var list = document.getElementById('peek-list');
+      if(!lines.length){
+        list.innerHTML = '<li><em>Queue is empty &mdash; time to write!</em></li>';
+        return;
+      }
+      list.innerHTML = '';
+      var promises = lines.map(function(filename){
+        return fetch('queue/' + filename.trim())
+          .then(function(r){ return r.text(); })
+          .then(function(html){
+            // Extract headline from <h1 class="hed">
+            var hedMatch = html.match(/<h1\s+class="hed">(.*?)<\/h1>/s);
+            var hed = hedMatch ? hedMatch[1].replace(/<[^>]+>/g, '').replace(/&rsquo;/g, "'").replace(/&ldquo;/g, '"').replace(/&rdquo;/g, '"').replace(/&mdash;/g, '—').replace(/&amp;/g, '&').replace(/&minus;/g, '−') : filename.trim();
+
+            // Extract topic from PUBLISH-META
+            var topicMatch = html.match(/topic:\s*(.+)/);
+            var topic = topicMatch ? topicMatch[1].trim() : '';
+
+            return {filename: filename.trim(), hed: hed, topic: topic};
+          })
+          .catch(function(){ return {filename: filename.trim(), hed: filename.trim(), topic: ''}; });
+      });
+      Promise.all(promises).then(function(items){
+        items.forEach(function(item){
+          var li = document.createElement('li');
+          var link = '<a href="queue/' + item.filename + '">' + item.hed + '</a>';
+          var tag = item.topic ? '<span class="tag">' + item.topic + '</span>' : '';
+          li.innerHTML = link + tag;
+          list.appendChild(li);
+        });
+        // Update queue count in stat card
+        var qEl = document.getElementById('sc-queue');
+        if(qEl) qEl.textContent = items.length;
+      });
+    })
+    .catch(function(){
+      document.getElementById('peek-list').innerHTML = '<li><em>Could not load queue.</em></li>';
+    });
+
+  // Live stats from the main index page
+  fetch('index.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      // Count issues
+      var issueCount = (html.match(/class="issue-num"/g) || []).length;
+      var el = document.getElementById('sc-issues');
+      if(el) el.textContent = issueCount;
+
+      // Compute pub rate for the datebar
+      var dates = html.match(/class="issue-date">([^<]+)</g) || [];
+      if(dates.length){
+        var oldest = dates[dates.length - 1].replace('class="issue-date">', '').trim();
+        var first = new Date(oldest);
+        var weeks = (new Date() - first) / (7*24*60*60*1000);
+        if(weeks > 0){
+          var rate = (issueCount / weeks).toFixed(1);
+          var statsEl = document.getElementById('about-stats');
+          if(statsEl) statsEl.textContent = issueCount + ' issues · ' + rate + 'x/week';
+        }
+      }
+    });
+})();
+</script>
+
+</body>
+</html>
