@@ -87,8 +87,8 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
   <div class="title">The Sports Page</div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
   <div class="datebar">
-    <span>Est. March 2026</span>
-    <span>New Issues 5x/Week</span>
+    <span id="est-date">Est. March 2026</span>
+    <span id="pub-rate">New Issues 5x/Week</span>
     <span><a href="#share" style="color:inherit;border:none">Share This Page &darr;</a></span>
   </div>
 </div>
@@ -471,5 +471,68 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 </div>
 
+<script>
+// Live publication rate — computed from the archive, not hardcoded.
+// Reads issue count and earliest date directly from the page.
+(function(){
+  var issues = document.querySelectorAll('.issue-date');
+  if(!issues.length) return;
+
+  var n = issues.length;
+
+  // Parse the oldest issue date (last in DOM order = earliest published)
+  var oldest = issues[issues.length - 1].textContent.trim().replace(/\s*·.*/, '');
+  var first = new Date(oldest);
+  var now = new Date();
+  var msPerWeek = 7 * 24 * 60 * 60 * 1000;
+  var weeks = (now - first) / msPerWeek;
+
+  if(weeks <= 0) return;
+
+  var rate = n / weeks;
+
+  // Significant digits: precision is limited by the denominator (weeks).
+  // With W weeks, uncertainty in rate ≈ 1/W per issue.
+  // Rule: show 1 decimal for < 10 weeks, 2 for 10-99, 3 for 100+.
+  var decimals = weeks < 10 ? 1 : weeks < 100 ? 2 : 3;
+  var display = rate.toFixed(decimals);
+
+  // Build tooltip explaining the computation and precision
+  var tip = n + ' issues ÷ ' + weeks.toFixed(1) + ' weeks = '
+    + rate.toFixed(3) + '/wk\n\n'
+    + 'Displayed as ' + display + '/wk (' + decimals + ' decimal'
+    + (decimals > 1 ? 's' : '') + ').\n\n'
+    + 'Why ' + decimals + '? With only ' + weeks.toFixed(1)
+    + ' weeks of data, each week adds ~'
+    + (1/weeks).toFixed(2) + ' uncertainty to the rate. '
+    + 'The ' + (decimals === 1 ? 'tenths' : decimals === 2 ? 'hundredths' : 'thousandths')
+    + ' place is the last digit the data can support. '
+    + 'More decimals would be false precision — '
+    + 'reporting accuracy we haven\'t earned yet.';
+
+  var el = document.getElementById('pub-rate');
+  if(el){
+    el.textContent = 'New Issues ' + display + 'x/Week';
+    el.title = tip;
+    el.style.cursor = 'help';
+    el.style.borderBottom = '1px dotted var(--muted)';
+  }
+
+  // Also update the "Est." date from the archive
+  var months = ['January','February','March','April','May','June',
+    'July','August','September','October','November','December'];
+  var estEl = document.getElementById('est-date');
+  if(estEl){
+    estEl.textContent = 'Est. ' + months[first.getMonth()] + ' ' + first.getFullYear();
+  }
+
+  // Update the footer's "Est." line too
+  var footerEst = document.querySelector('.footer span:first-child');
+  if(footerEst && footerEst.textContent.indexOf('Est.') !== -1){
+    footerEst.textContent = 'The Sports Page · Est. '
+      + months[first.getMonth()] + ' ' + first.getFullYear();
+  }
+})();
+</script>
 </body>
 </html>
