@@ -372,43 +372,6 @@ entirely. In basketball&rsquo;s 82-game season with a
 
 </div>
 
-<!-- ASK THE STATS DESK -->
-<div class="desk">
-  <div class="desk-hed">Ask The Stats Desk</div>
-  <div class="desk-sub">Drop any strange stat. Get context in seconds.</div>
-
-  <div class="chips">
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">LeBron leaving cost Cleveland 42 wins</span>
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Tennessee has zero returning players</span>
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Trout has 0 playoff series wins in 10 years</span>
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Manning's absence dropped Colts from 4th to 30th in offense</span>
-  </div>
-
-  <label for="qi">Your stat question</label>
-  <textarea id="qi" placeholder="e.g. 'How much would losing Ohtani cost the Dodgers vs losing Luka cost the Mavs?'"></textarea>
-  <button id="ask-btn" onclick="askDesk()">&#9654; Explain the Context</button>
-
-  <div class="resp" id="resp-box">
-    <div class="resp-hed">The Stats Desk says&hellip;</div>
-    <div id="rtext"></div>
-  </div>
-</div>
-
-<script>
-async function askDesk(){
-  const q=document.getElementById('qi').value.trim();if(!q)return;
-  const btn=document.getElementById('ask-btn'),box=document.getElementById('resp-box'),rt=document.getElementById('rtext');
-  btn.disabled=true;btn.innerHTML='<span class="spin"></span> Thinking\u2026';
-  box.classList.add('on');rt.textContent='';
-  try{
-    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.__ANTHROPIC_KEY||''},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:`You are The Stats Desk \u2014 a sharp, witty sports statistics explainer specializing in roster sensitivity and star-player impact. Given a stat, explain: 1) WHY the number looks extreme (structural math: roster size, minutes share, positional leverage), 2) Historical context from across sports, 3) What it MEANS vs what it DOESN'T mean, 4) Verdict: structural inevitability, noise, or genuinely impressive? Style: editorial voice, dry humor, 2-3 paragraphs. No bullet lists.`,messages:[{role:'user',content:q}]})});
-    const d=await r.json();rt.textContent=d.content?.find(b=>b.type==='text')?.text||'No response \u2014 check your API key.';
-  }catch(e){rt.textContent='Error: '+e.message;}
-  btn.disabled=false;btn.innerHTML='&#9654; Explain the Context';
-}
-</script>
-
-
 <!-- SHARE SECTION -->
 <div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
   <img src="assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">

@@ -374,43 +374,6 @@ players comparably to the NBA at the same stage.</div>
 
 </div>
 
-<!-- ASK THE STATS DESK -->
-<div class="desk">
-  <div class="desk-hed">Ask The Stats Desk</div>
-  <div class="desk-sub">Drop any strange stat. Get context in seconds.</div>
-
-  <div class="chips">
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">WNBA 0.9% selectivity &mdash; most exclusive league</span>
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">NBA attendance in 1976 = WNBA attendance today</span>
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">9.3% revenue share vs NBA's 20% at same age</span>
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">$583K vs $700K inflation-adjusted at age 30</span>
-  </div>
-
-  <label for="qi">Your stat question</label>
-  <textarea id="qi" placeholder="e.g. 'How does the WNBA's revenue share compare to the NBA at the same age?'"></textarea>
-  <button id="ask-btn" onclick="askDesk()">&#9654; Explain the Context</button>
-
-  <div class="resp" id="resp-box">
-    <div class="resp-hed">The Stats Desk says&hellip;</div>
-    <div id="rtext"></div>
-  </div>
-</div>
-
-<script>
-async function askDesk(){
-  const q=document.getElementById('qi').value.trim();if(!q)return;
-  const btn=document.getElementById('ask-btn'),box=document.getElementById('resp-box'),rt=document.getElementById('rtext');
-  btn.disabled=true;btn.innerHTML='<span class="spin"></span> Thinking\u2026';
-  box.classList.add('on');rt.textContent='';
-  try{
-    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.__ANTHROPIC_KEY||''},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:`You are The Stats Desk \u2014 a sharp, witty sports and economics statistics explainer with the patient, data-driven tone of The Professor. Given a stat about the WNBA, NBA, or league economics, explain: 1) WHY the number looks extreme, 2) Historical context at equivalent league maturity, 3) What it MEANS vs what it DOESN'T mean, 4) Verdict: misleading comparison, genuinely noteworthy, or requires more context? Style: editorial voice, patient and respectful, 2-3 paragraphs. No bullet lists. Be fair to all sides.`,messages:[{role:'user',content:q}]})});
-    const d=await r.json();rt.textContent=d.content?.find(b=>b.type==='text')?.text||'No response \u2014 check your API key.';
-  }catch(e){rt.textContent='Error: '+e.message;}
-  btn.disabled=false;btn.innerHTML='&#9654; Explain the Context';
-}
-</script>
-
-
 <!-- SHARE SECTION -->
 <div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
   <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">

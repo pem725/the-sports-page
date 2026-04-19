@@ -319,41 +319,5 @@ After Year 1:
 
 </div>
 
-<!-- ASK THE STATS DESK -->
-<div class="desk">
-  <div class="desk-hed">Ask The Stats Desk</div>
-  <div class="desk-sub">Drop any strange stat. Get context in seconds.</div>
-
-  <div class="chips">
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Year 1 explains 60% of coaching ability</span>
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">23% of bad coaches look good after Year 1</span>
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Cignetti .795 career win rate</span>
-    <span class="chip" onclick="document.getElementById('qi').value=this.textContent;document.getElementById('qi').focus()">Is 5 years enough to evaluate a coach?</span>
-  </div>
-
-  <label for="qi">Your stat question</label>
-  <textarea id="qi" placeholder="e.g. 'How much can you learn from a coach's first season?'"></textarea>
-  <button id="ask-btn" onclick="askDesk()">&#9654; Explain the Context</button>
-
-  <div class="resp" id="resp-box">
-    <div class="resp-hed">The Stats Desk says&hellip;</div>
-    <div id="rtext"></div>
-  </div>
-</div>
-
-<script>
-async function askDesk(){
-  const q=document.getElementById('qi').value.trim();if(!q)return;
-  const btn=document.getElementById('ask-btn'),box=document.getElementById('resp-box'),rt=document.getElementById('rtext');
-  btn.disabled=true;btn.innerHTML='<span class="spin"></span> Thinking\u2026';
-  box.classList.add('on');rt.textContent='';
-  try{
-    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.__ANTHROPIC_KEY||''},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:`You are The Stats Desk \u2014 a sharp, witty sports statistics explainer specializing in college football coaching evaluation. Given a stat or question about coaching tenure, win rates, or program building, explain: 1) WHY the number matters, 2) Historical context, 3) What it MEANS vs what it DOESN'T mean, 4) Verdict: noise, signal, or genuinely noteworthy? Style: editorial voice, dry humor, 2-3 paragraphs. No bullet lists.`,messages:[{role:'user',content:q}]})});
-    const d=await r.json();rt.textContent=d.content?.find(b=>b.type==='text')?.text||'No response \u2014 check your API key.';
-  }catch(e){rt.textContent='Error: '+e.message;}
-  btn.disabled=false;btn.innerHTML='&#9654; Explain the Context';
-}
-</script>
-
 </body>
 </html>
