@@ -169,7 +169,8 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 
 - **Triple-verify every number**: Every statistic, record, score, streak, or standing published in an issue MUST be verified against at least 3 independent sources (e.g., ESPN, Baseball-Reference, MLB.com). If sources disagree, resolve the discrepancy before publishing. Never infer a number from another number (e.g., don't assume a losing streak grew by 1 because the record changed — check the actual game-by-game results). A newsletter built on statistical credibility cannot publish wrong numbers.
 - **Single question per issue**: Every issue focuses on ONE statistical question.
-- **No holiday specials**: Sports content only, no seasonal gimmicks.
+- **No holiday specials**: Sports content only, no seasonal gimmicks. The ONE exception is MLB Opening Day — see below.
+- **Opening Day is our New Year**: MLB Opening Day is the newsletter's annual anniversary. The Sports Page launched on Opening Day 2026 (March 27 — the Skenes 67.5 ERA issue). Every future Opening Day gets a special retrospective issue: the year in review, prediction accuracy across the full "Sports Page Year," milestones hit, lessons learned. Plan this in advance. The "Sports Page Year" runs from Opening Day to Opening Day — some years will be 365 days, others may gain or lose a week as MLB's schedule shifts. That's fine. No other holidays are observed, but Opening Day is not a holiday — it's the new year.
 - **No name-dropping**: Do NOT label who in the family roots for which team. Cover the teams naturally. They know who they are.
 - **Milestone issues**: Special treatment at #50, #100, etc.
 - **Issue numbering**: Reader-facing numbers assigned at PUBLISH TIME, not creation time. Internal filenames keep their creation-order numbers.
