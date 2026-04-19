@@ -203,8 +203,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 20 issues (#1-20)
+Published: 21 issues (#1-21)
 Queue: 4 articles ready (014, 015, 017, eo-006)
 Reserve: 1 evergreen piece
-Goal: 480 issues remaining of 500
-Last published: Issue #20 — "WNBA Players Make 116x Less Than NBA Players. That Number Is True. It's Also the Wrong Comparison." (016-wnba-pay-maturity.html) on April 17, 2026
+Goal: 479 issues remaining of 500
+Last published: Issue #21 — Sunday Edition No. 2: "Three HITs, One MISS, and a CBA That Arrived Right on Schedule" (sunday-002.html) on April 19, 2026
