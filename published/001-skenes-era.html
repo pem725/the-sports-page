@@ -117,12 +117,14 @@ textarea#qi::placeholder{color:#6b5e4a}
 #rtext{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.78;color:#e0d8c8;white-space:pre-wrap}
 .spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
 @keyframes sp{to{transform:rotate(360deg)}}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- MASTHEAD -->
-<div class="masthead">
+<header class="masthead">
   <div class="kicker">A Statistical Dispatch from Pittsburgh · Baseball, 2026</div>
   <div class="title">The Stats Desk</div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
@@ -131,10 +133,14 @@ textarea#qi::placeholder{color:#6b5e4a}
     <span>March 27, 2026</span>
     <span>Distributed Free to Friends</span>
   </div>
-</div>
+</header>
+
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
 
 <!-- PAPER -->
-<div class="paper">
+<main id="main-content" class="paper">
 
   <h1 class="hed">The Night Paul Skenes Posted a <em>67.5</em> ERA — And Why the Math Will Hunt Him All Season</h1>
 
@@ -358,7 +364,7 @@ Units gained per 6.5-IP, 2-ER start:   1.97×6.5 − 9×2 = −5.2 ✗
   <div class="pull">
     <p>"The 34% chance he never reaches 1.97 again this season is not a failure of talent. It is a statement about mathematics. Five earned runs in two-thirds of an inning carry the calculus of catastrophe through every future start."</p>
     <cite>— Bayesian ERA Recovery Model, 200,000 Simulated Seasons · Stats Desk, March 2026</cite>
-  </div>
+  </main>
 
   <!-- STORY IDEAS INBOX -->
   <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
@@ -367,8 +373,8 @@ Units gained per 6.5-IP, 2-ER start:   1.97×6.5 − 9×2 = −5.2 ✗
     <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
       <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-      <input type="text" name="name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
-      <input type="text" name="sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="name" id="pitch-name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" id="pitch-sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
       <textarea name="idea" placeholder="What&rsquo;s the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
       <div style="display:flex;gap:.8rem;align-items:center">
         <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
@@ -392,12 +398,12 @@ Units gained per 6.5-IP, 2-ER start:   1.97×6.5 − 9×2 = −5.2 ✗
   });
   </script>
 
-  <div class="footer">
+  <footer class="footer">
     <span>The Stats Desk · vol. I no. 1 · March 27, 2026</span>
     <span>Model: Gamma-Poisson conjugate · N=200,000</span>
     <span>Schedule: 2026 PIT via ESPN/CBS Sports</span>
     <span>All figures are illustrative simulations, not predictions.</span>
-  </div>
+  </footer>
 
 </div><!-- /paper -->
 

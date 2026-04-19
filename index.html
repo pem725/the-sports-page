@@ -75,12 +75,14 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
 
 /* ── FOOTER ── */
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- MASTHEAD -->
-<div class="masthead">
+<header class="masthead">
   <div class="kicker">A Statistical Dispatch for Friends &amp; Family</div>
   <div class="title">The Sports Page</div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
@@ -89,10 +91,10 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
     <span>New Issues 5x/Week</span>
     <span><a href="#share" style="color:inherit;border:none">Share This Page &darr;</a></span>
   </div>
-</div>
+</header>
 
 <!-- PAPER -->
-<div class="paper">
+<main id="main-content" class="paper">
 
   <!-- ISSUE ARCHIVE -->
   <h2 class="sh">The Archive</h2>
@@ -417,7 +419,7 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
     <h3>What Is This?</h3>
     <p><strong>The Sports Page</strong> is a newsletter for people who love sports and are curious about the numbers behind them — no statistics degree required. Every issue picks one weird stat from the news, explains why it looks so extreme, digs up who else has been there before, and runs a real statistical model to forecast what comes next.</p>
     <p>New issues drop roughly five times a week during the season. Teams we follow most: <strong>Notre Dame football</strong> (always and forever), <strong>NY Mets</strong>, <strong>NY Rangers</strong>, <strong>NY Jets</strong> — plus the Raiders, Bills, and Seahawks for the extended family. We also chase any stat that's weird enough, from any sport, any team.</p>
-  </div>
+  </main>
 
   <!-- STORY IDEAS INBOX -->
   <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
@@ -426,8 +428,8 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
     <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
       <input type="hidden" name="_subject" value="New Story Pitch — The Sports Page">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-      <input type="text" name="name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
-      <input type="text" name="sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="name" id="pitch-name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" id="pitch-sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
       <textarea name="idea" placeholder="What's the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
       <div style="display:flex;gap:.8rem;align-items:center">
         <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
@@ -452,10 +454,10 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
   </script>
 
   <!-- FOOTER -->
-  <div class="footer">
+  <footer class="footer">
     <span>The Sports Page · Est. March 2026</span>
     <span>Powered by Bayesian models &amp; editorial stubbornness</span>
-  </div>
+  </footer>
 
 </div>
 
