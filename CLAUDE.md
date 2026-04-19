@@ -167,6 +167,7 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 
 ## Editorial Rules
 
+- **Triple-verify every number**: Every statistic, record, score, streak, or standing published in an issue MUST be verified against at least 3 independent sources (e.g., ESPN, Baseball-Reference, MLB.com). If sources disagree, resolve the discrepancy before publishing. Never infer a number from another number (e.g., don't assume a losing streak grew by 1 because the record changed — check the actual game-by-game results). A newsletter built on statistical credibility cannot publish wrong numbers.
 - **Single question per issue**: Every issue focuses on ONE statistical question.
 - **No holiday specials**: Sports content only, no seasonal gimmicks.
 - **No name-dropping**: Do NOT label who in the family roots for which team. Cover the teams naturally. They know who they are.
