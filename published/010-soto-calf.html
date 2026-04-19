@@ -23,7 +23,7 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
 
 .masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
 .kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1;letter-spacing:-.02em}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
 .tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
 .datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
 
@@ -121,7 +121,7 @@ textarea#qi::placeholder{color:#6b5e4a}
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- MASTHEAD -->
-<header class="masthead">
+<div class="masthead">
   <div class="kicker">A Statistical Dispatch from the Training Room &middot; Baseball, 2026</div>
   <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
@@ -130,14 +130,14 @@ textarea#qi::placeholder{color:#6b5e4a}
     <span>April 4, 2026</span>
     <span>Distributed Free to Friends &amp; Family</span>
   </div>
-</header>
+</div>
 
 
 <!-- NAV -->
 <nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
 
 <!-- PAPER -->
-<main id="main-content" class="paper">
+<div id="main-content" class="paper">
 
   <h1 class="hed">The <em>$765 Million</em> Calf: What a Juan Soto Absence Actually Costs the Mets</h1>
 
@@ -269,7 +269,7 @@ It's replacement-level at the top of the order.</div>
   <div class="pull">
     <p>&ldquo;The largest contract in sports history attached to a calf muscle that twitched while running first-to-third in the eighth game of the season. This is why Mets fans don&rsquo;t sleep well. But the Bayesian prior says: 40% chance it&rsquo;s nothing. Breathe.&rdquo;</p>
     <cite>&mdash; The Sports Page, on $765 million and one calf muscle</cite>
-  </main>
+  </div>
 
   <!-- STORY IDEAS INBOX -->
   <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
@@ -304,11 +304,11 @@ It's replacement-level at the top of the order.</div>
   </script>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <div class="footer">
     <span>The Sports Page &middot; Breaking &middot; Issue No. 7</span>
     <span>Model: Bayesian severity estimation, 200K sims</span>
     <span>Not medical or wagering advice</span>
-  </footer>
+  </div>
 
 </div>
 
