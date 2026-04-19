@@ -1,0 +1,373 @@
+<!-- PUBLISH-META
+topic: Analytics
+tags: MLB:mlb, Analytics, S&amp;P 500
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — April 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Professor &middot; Cross-Sport Analytics</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. __</span>
+    <span>April __, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Want to Know If the Mets Lost? Check the <em>S&amp;P 500.</em> (Please Don&rsquo;t.)</h1>
+
+  <div class="deck">
+    We computed the phi coefficient between the S&amp;P 500&rsquo;s daily direction and six MLB teams&rsquo; win-loss records. The Mets came back with &phi; = &minus;0.567, p &lt; 0.05. On days the market goes up, the Mets lose 90% of the time. The correlation is statistically significant. It is also the most dangerous kind of number in statistics: one that looks real and isn&rsquo;t.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; The Professor &middot; April __, 2026</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">&minus;0.567</div><div class="l">Phi Coefficient (Mets vs S&amp;P)</div></div>
+    <div class="sc"><div class="v bad">90%</div><div class="l">Mets Loss Rate on Market-Up Days</div></div>
+    <div class="sc"><div class="v now">p &lt; 0.05</div><div class="l">&ldquo;Statistically Significant&rdquo;</div></div>
+  </div>
+
+  <!-- SECTION 1: THE DISCOVERY -->
+  <h2 class="sh">The Discovery</h2>
+
+  <p>Here is what we did. We took every trading day between March 26 and April 17, 2026 &mdash; sixteen days when both the New York Stock Exchange and Major League Baseball were open for business. For each day, we recorded two things: did the S&amp;P 500 go up or down? And did each of six MLB teams win or lose?</p>
+
+  <p>Then we computed the phi coefficient &mdash; the standard measure of association between two binary variables &mdash; for each team. The phi coefficient works like a Pearson correlation, but for data that comes in two categories (up/down, win/loss) instead of continuous numbers. It ranges from &minus;1 (perfect inverse) to +1 (perfect alignment), with 0 meaning no association at all.</p>
+
+  <p>Five teams came back with nothing interesting. The Dodgers &mdash; the best team in baseball &mdash; registered a phi of exactly 0.000. No correlation whatsoever. The Braves, Pirates, Reds, and Rays all landed in the range of &minus;0.3 to +0.2, well within what random noise produces.</p>
+
+  <p>And then there were the Mets.</p>
+
+  <hr>
+
+  <!-- SECTION 2: THE TABLE -->
+  <h2 class="sh">The Contingency Table</h2>
+
+  <p>Here is the 2&times;2 table for the Mets. Every cell is a count of days.</p>
+
+  <table class="rec">
+    <thead>
+      <tr><th></th><th>Mets Win</th><th>Mets Loss</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>S&amp;P Up</strong></td><td class="mono">1</td><td class="mono" style="color:var(--rust);font-weight:700">9</td><td class="mono">10</td></tr>
+      <tr><td><strong>S&amp;P Down</strong></td><td class="mono" style="color:var(--green);font-weight:700">2</td><td class="mono">1</td><td class="mono">3</td></tr>
+      <tr style="border-top:2px solid var(--ink)"><td><strong>Total</strong></td><td class="mono">3</td><td class="mono">10</td><td class="mono">13</td></tr>
+    </tbody>
+  </table>
+
+  <p>Read it slowly. On the ten trading days when the S&amp;P 500 went up, the Mets won exactly once. One win in ten tries &mdash; a 10% win rate. On the three days the market went down, the Mets won twice &mdash; a 67% win rate. The Mets were seven times more likely to win when the market dropped.</p>
+
+  <p>If a hedge fund analyst showed you this table, you might ask for more data. If a research assistant showed it to a professor, the professor might nod approvingly. The numbers are clean. The pattern is stark. And the phi coefficient &mdash; &minus;0.567 &mdash; crosses the threshold that academic journals have treated as &ldquo;real&rdquo; for nearly a century.</p>
+
+  <p>It is, of course, nonsense.</p>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;The most dangerous number in statistics isn&rsquo;t the wrong one. It&rsquo;s the right one that means nothing.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on spurious correlation</cite>
+  </div>
+
+  <!-- SECTION 3: THE MATH -->
+  <h2 class="sh">The Math (And Why It &ldquo;Works&rdquo;)</h2>
+
+  <div class="box">
+    <h3>The Phi Coefficient</h3>
+    <p>The phi coefficient for a 2&times;2 table is:</p>
+    <div class="math">&phi; = (ad &minus; bc) / &radic;[(a+b)(c+d)(a+c)(b+d)]
+
+Where:
+  a = Market UP &amp; Team WIN    = 1
+  b = Market UP &amp; Team LOSS   = 9
+  c = Market DOWN &amp; Team WIN  = 2
+  d = Market DOWN &amp; Team LOSS = 1
+
+&phi; = (1&times;1 &minus; 9&times;2) / &radic;(10 &times; 3 &times; 3 &times; 10)
+    = (1 &minus; 18) / &radic;900
+    = &minus;17 / 30
+    = &minus;0.567</div>
+    <p>The chi-square test statistic is n &times; &phi;&sup2; = 13 &times; 0.321 = 4.17, which exceeds the critical value of 3.841 for p = 0.05 with one degree of freedom. By the standard most journals use, this result is &ldquo;statistically significant.&rdquo;</p>
+    <p>That standard is the problem.</p>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 4: THE LINEUP -->
+  <h2 class="sh">The Full Lineup: Six Teams vs. the Market</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Team</th><th>Record (Trading Days)</th><th>Phi (&phi;)</th><th>&chi;&sup2;</th><th>p-value</th><th>Direction</th></tr>
+    </thead>
+    <tbody>
+      <tr class="worse">
+        <td><strong>New York Mets</strong></td>
+        <td class="mono">3-10</td>
+        <td class="mono">&minus;0.567</td>
+        <td class="mono">4.17</td>
+        <td class="mono">&lt; 0.05</td>
+        <td>Market UP &rarr; Mets LOSE</td>
+      </tr>
+      <tr>
+        <td>Atlanta Braves</td>
+        <td class="mono">10-3</td>
+        <td class="mono">&minus;0.300</td>
+        <td class="mono">1.17</td>
+        <td class="mono">&gt; 0.10</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td>Pittsburgh Pirates</td>
+        <td class="mono">8-5</td>
+        <td class="mono">+0.225</td>
+        <td class="mono">0.66</td>
+        <td class="mono">&gt; 0.10</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td>Tampa Bay Rays</td>
+        <td class="mono">6-6</td>
+        <td class="mono">&minus;0.192</td>
+        <td class="mono">0.44</td>
+        <td class="mono">&gt; 0.10</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td>Cincinnati Reds</td>
+        <td class="mono">6-7</td>
+        <td class="mono">+0.141</td>
+        <td class="mono">0.26</td>
+        <td class="mono">&gt; 0.10</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr class="hl">
+        <td>Los Angeles Dodgers</td>
+        <td class="mono">9-3</td>
+        <td class="mono">0.000</td>
+        <td class="mono">0.00</td>
+        <td class="mono">1.00</td>
+        <td>No correlation</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The Dodgers are the control group. The best team in baseball wins at the same rate regardless of what the market does. That is what &ldquo;no correlation&rdquo; actually looks like: a phi of 0.000, a chi-square of 0.00, a p-value of 1.00. The Dodgers don&rsquo;t care about the S&amp;P 500. Neither do the Mets. The difference is that the Mets&rsquo; losing streak happened to coincide with the market&rsquo;s winning streak.</p>
+
+  <hr>
+
+  <!-- SECTION 5: WHY WE FOUND THIS -->
+  <h2 class="sh">Why We Found This (The Uncomfortable Part)</h2>
+
+  <p>The explanation is embarrassingly simple. The S&amp;P 500 went up on 12 of 16 trading days in this period &mdash; a 75% up-day rate as the market recovered from its March lows. The Mets, meanwhile, went 3-10 on trading days &mdash; a 23% win rate during the worst stretch of their season.</p>
+
+  <p>A team that loses 77% of the time during a period when the market rises 75% of the time will produce a negative phi coefficient by construction. It&rsquo;s not a discovery. It&rsquo;s arithmetic. The Mets lose most days. The market goes up most days. The days overlap. That&rsquo;s it.</p>
+
+  <p>But here is the part that matters: <strong>we tested six teams and found one with p &lt; 0.05.</strong> That&rsquo;s not a low hit rate. At a 5% significance level, the probability of finding at least one &ldquo;significant&rdquo; result when testing six independent hypotheses is:</p>
+
+  <div class="box">
+    <h3>The Multiple Comparisons Problem</h3>
+    <div class="math">P(at least one false positive) = 1 &minus; (1 &minus; 0.05)^n
+
+With 6 teams:  1 &minus; 0.95^6  = 1 &minus; 0.735 = 26.5%
+With 30 teams: 1 &minus; 0.95^30 = 1 &minus; 0.215 = 78.5%</div>
+    <p>If we had tested all 30 MLB teams instead of six, there is a <strong>79% chance</strong> we would have found at least one &ldquo;statistically significant&rdquo; correlation with the stock market. Not because any team actually predicts the market. Because that is how probability works when you test enough hypotheses.</p>
+    <p>This is called <strong>data dredging</strong> &mdash; or, less politely, <strong>p-hacking</strong>. You run enough tests, and something will cross the threshold. The threshold doesn&rsquo;t know you ran the other tests. It only sees the one you showed it.</p>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 6: THE VIGEN CONNECTION -->
+  <h2 class="sh">Tyler Vigen&rsquo;s Lesson</h2>
+
+  <p>In 2014, a Harvard Law student named Tyler Vigen built a website that became one of the most effective statistics lessons ever created. He wrote software to scan thousands of data sets and surface pairs with high correlations. The results were ridiculous and unforgettable:</p>
+
+  <div class="two-col">
+    <div>
+      <p style="font-size:.9rem;color:var(--muted);line-height:1.65"><strong style="color:var(--rust)">Per-capita cheese consumption</strong> correlates with <strong style="color:var(--steel)">deaths by bedsheet entanglement</strong> at r = 0.947.</p>
+    </div>
+    <div>
+      <p style="font-size:.9rem;color:var(--muted);line-height:1.65"><strong style="color:var(--rust)">US crude oil imports from Norway</strong> correlate with <strong style="color:var(--steel)">drivers killed in collisions with trains</strong> at r = 0.953.</p>
+    </div>
+  </div>
+
+  <p>Nobody believes cheese causes bedsheet deaths. The absurdity is the point. Vigen&rsquo;s website teaches what a semester of statistics lectures sometimes fails to: <strong>correlation is a property of data sets, not a property of reality.</strong> Two things can move together perfectly in the data and have absolutely nothing to do with each other in the world.</p>
+
+  <p>Our Mets-S&amp;P correlation is the same lesson, wearing a baseball jersey. The phi coefficient is real. The p-value is real. The relationship is not.</p>
+
+  <hr>
+
+  <!-- SECTION 7: THE REAL LESSON -->
+  <h2 class="sh">What This Actually Teaches</h2>
+
+  <p>There are three lessons here, and they compound.</p>
+
+  <p><strong>Lesson 1: &ldquo;Statistically significant&rdquo; does not mean &ldquo;real.&rdquo;</strong> The p &lt; 0.05 threshold was proposed by Ronald Fisher in the 1920s as a convenient rule of thumb. It was never intended to be a binary gate between truth and fiction. A p-value tells you how surprising your data would be <em>if the null hypothesis were true</em>. It does not tell you the null hypothesis is false. It does not tell you the effect is meaningful. It does not tell you the correlation is causal. It tells you one thing: this particular arrangement of numbers would be unusual under pure chance. &ldquo;Unusual&rdquo; is not &ldquo;impossible.&rdquo;</p>
+
+  <p><strong>Lesson 2: The number of tests matters more than the result of any one test.</strong> If you test one hypothesis at &alpha; = 0.05 and get a significant result, you have a 5% chance of a false positive. If you test thirty hypotheses, you have a 79% chance that at least one of them crosses the threshold by accident. This is the multiple comparisons problem, and it is the most common source of irreproducible results in published research. Every time you read a headline that says &ldquo;study finds link between X and Y,&rdquo; ask: how many X&rsquo;s did they test before they found this one?</p>
+
+  <p><strong>Lesson 3: Mechanism matters more than math.</strong> Before trusting any correlation, ask: <em>why</em> would these two things be connected? What is the mechanism? What is the causal chain? For the Mets and the S&amp;P 500, there is no mechanism. Francisco Lindor does not check the Dow before his at-bat. The Federal Reserve does not set interest rates based on the Mets&rsquo; bullpen ERA. The absence of a plausible mechanism is the single strongest reason to dismiss a correlation &mdash; stronger than any p-value.</p>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;With 30 MLB teams, there is a 79% chance of finding a &lsquo;significant&rsquo; market correlation. Not because any team predicts the market. Because that is how probability works when you test enough hypotheses.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on multiple comparisons</cite>
+  </div>
+
+  <!-- SECTION 8: THE KICKER -->
+  <h2 class="sh">So Should You Sell When the Mets Lose?</h2>
+
+  <p>No. Obviously not. But here is the uncomfortable truth: if we had published the first half of this article without the second half &mdash; just the phi coefficient, the contingency table, and the p-value &mdash; it would have looked like a finding. It had a number. It had a formula. It had a threshold it crossed. It had a table. It had everything a research paper has except the one thing that actually matters: a reason to believe it.</p>
+
+  <p>The Mets are 7-14 because Juan Soto is on the injured list, Francisco Lindor had hamate surgery, and Bo Bichette is still adjusting to a new league. The S&amp;P 500 rose because the tariff pause reduced uncertainty and earnings came in above expectations. These are two completely independent stories that happened to unfold on the same calendar. The phi coefficient measured the overlap of two timelines. It did not measure a relationship.</p>
+
+  <p>The next time someone tells you that two things are &ldquo;statistically correlated,&rdquo; ask three questions: How many things did they test? What is the mechanism? And would Tyler Vigen put it on his website?</p>
+
+  <p>If the answer to the third question is yes, the correlation belongs on a poster, not in a portfolio.</p>
+
+  <!-- FINAL PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Correlation is a property of data sets, not a property of reality. Two things can move together perfectly in the numbers and have absolutely nothing to do with each other in the world.&rdquo;</p>
+    <cite>&mdash; The Sports Page, The Professor</cite>
+  </div>
+
+  <!-- STORY IDEAS INBOX -->
+  <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem">Pitch a Story</h3>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem">Noticed a weird stat? Saw something that doesn&rsquo;t add up? Send it in. The best ideas become issues.</p>
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" id="pitch-name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" id="pitch-sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <textarea name="idea" placeholder="What&rsquo;s the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
+      <div style="display:flex;gap:.8rem;align-items:center">
+        <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
+        <span style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)">or <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea&body=Sport:%0A%0AStat+or+story:%0A%0AWhy+it%27s+interesting:" style="color:var(--steel)">post on GitHub</a></span>
+      </div>
+    </form>
+    <div id="pitch-ok" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--green);font-weight:600;letter-spacing:.08em">Sent! We read every pitch. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.08em">Something went wrong. Try the GitHub link instead.</div>
+  </div>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='SENDING\u2026';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}
+      else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='SUBMIT IDEA';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. __ &middot; The Professor</span>
+    <span>Data: Investing.com (S&amp;P 500), ESPN (MLB game results), March 26&ndash;April 17, 2026</span>
+    <span>Not financial or wagering advice (especially not this time)</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+
+</body>
+</html>
