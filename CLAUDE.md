@@ -205,8 +205,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 21 issues (#1-21)
-Queue: 4 articles ready (014, 015, 017, eo-006)
+Published: 22 issues (#1-22)
+Queue: 4 articles ready (015, 017, 019, eo-006)
 Reserve: 1 evergreen piece
-Goal: 479 issues remaining of 500
-Last published: Issue #21 — Sunday Edition No. 2: "Three HITs, One MISS, and a CBA That Arrived Right on Schedule" (sunday-002.html) on April 19, 2026
+Goal: 478 issues remaining of 500
+Last published: Issue #22 — "Tennessee Lost Every Single Player. But Which Sport Collapses When It Loses Just One?" (014-star-sensitivity.html) on April 20, 2026
