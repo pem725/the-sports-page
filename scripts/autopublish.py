@@ -70,6 +70,23 @@ def check_day():
     return today
 
 
+def already_published_today(today):
+    """Return True if a 'Publish Issue #' commit landed on main today.
+
+    Uses commit author date (%ad, short form) so timezone-aware comparison
+    against today's local date works. Fetches first so a concurrent push
+    from another runner is visible.
+    """
+    run("git fetch origin main", check=False)
+    today_str = today.strftime("%Y-%m-%d")
+    result = run(
+        f'git log origin/main --since="{today_str} 00:00" '
+        f'--grep="^Publish Issue #" --pretty=format:%H',
+        check=False,
+    )
+    return bool(result.stdout.strip())
+
+
 # ---------------------------------------------------------------------------
 # Step 1: Pick the next file from the queue
 # ---------------------------------------------------------------------------
@@ -333,6 +350,11 @@ def main():
     # Step 0: Day check
     today = check_day()
     print(f"Date: {today.strftime('%A, %B %-d, %Y')}")
+
+    # Step 0.5: Idempotency guard — bail if another runner already published today
+    if already_published_today(today):
+        print("An issue has already been published today. Skipping.")
+        sys.exit(0)
 
     # Step 1: Get last topic and pick file
     last_topic = get_last_topic()
