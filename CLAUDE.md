@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 500 issues over ~2 years. Current state is tracked at the bottom of this file.
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 477 issues remaining of 500
 
 ## Repository Structure
 
@@ -205,8 +205,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 22 issues (#1-22)
-Queue: 4 articles ready (015, 017, 019, eo-006)
+Published: 23 issues (#1-23)
+Queue: 3 articles ready (015-fan-misery-map, 019-spurious-correlation, eo-006-juco-detour)
 Reserve: 1 evergreen piece
-Goal: 478 issues remaining of 500
-Last published: Issue #22 — "Tennessee Lost Every Single Player. But Which Sport Collapses When It Loses Just One?" (014-star-sensitivity.html) on April 20, 2026
+Goal: 477 issues remaining of 500
+Last published: Issue #23 — "The WNBA and MLS Were Born the Same Year. One Pays $584K. The Other Pays $633K. Guess Which Is Which." (017-wnba-soccer-comparison.html) on April 20, 2026
