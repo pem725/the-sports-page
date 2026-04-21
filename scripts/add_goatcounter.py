@@ -66,6 +66,10 @@ def main():
     # published/
     p = os.path.join(REPO, "published")
     targets += [os.path.join(p, f) for f in os.listdir(p) if f.endswith(".html")]
+    # reserve/ (evergreen + templates — especially sunday-recap-template.html)
+    r = os.path.join(REPO, "reserve")
+    if os.path.isdir(r):
+        targets += [os.path.join(r, f) for f in os.listdir(r) if f.endswith(".html")]
 
     print(f"HTML files found: {len(targets)}")
     injected = skipped = failed = 0
