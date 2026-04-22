@@ -108,7 +108,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   <!-- LIVE STATS -->
   <div class="stat-row" id="about-stat-cards">
     <div class="sc"><div class="v now" id="sc-issues">--</div><div class="l">Issues Published</div></div>
-    <div class="sc"><div class="v good" id="sc-commits">56</div><div class="l">Git Commits</div></div>
+    <div class="sc"><div class="v good" id="sc-commits">--</div><div class="l">Git Commits</div></div>
     <div class="sc"><div class="v now" id="sc-queue">--</div><div class="l">In the Queue</div></div>
   </div>
 
@@ -327,14 +327,39 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
           li.innerHTML = link + tag;
           list.appendChild(li);
         });
-        // Update queue count in stat card
-        var qEl = document.getElementById('sc-queue');
-        if(qEl) qEl.textContent = items.length;
+        // NOTE: QUEUE_ORDER.txt is the publish-ready subset.
+        // The "In the Queue" stat card is updated separately from the
+        // GitHub API below so it reflects the full drafted backlog,
+        // not just what's wired up for autopublish.
       });
     })
     .catch(function(){
       document.getElementById('peek-list').innerHTML = '<li><em>Could not load queue.</em></li>';
     });
+
+  // Full queue count: drafted files in queue/ (not just publish-ready ones in QUEUE_ORDER.txt)
+  fetch('https://api.github.com/repos/pem725/the-sports-page/contents/queue')
+    .then(function(r){ return r.ok ? r.json() : []; })
+    .then(function(files){
+      var htmlFiles = (files || []).filter(function(f){
+        return f && f.name && f.name.endsWith('.html');
+      });
+      var qEl = document.getElementById('sc-queue');
+      if(qEl) qEl.textContent = htmlFiles.length;
+    })
+    .catch(function(){ /* leave as "--" */ });
+
+  // Commit count: use Link header's rel="last" from /commits?per_page=1
+  fetch('https://api.github.com/repos/pem725/the-sports-page/commits?per_page=1')
+    .then(function(r){
+      var link = r.headers.get('Link') || '';
+      var m = link.match(/[&?]page=(\d+)[^>]*>;\s*rel="last"/);
+      if(m){
+        var cEl = document.getElementById('sc-commits');
+        if(cEl) cEl.textContent = m[1];
+      }
+    })
+    .catch(function(){ /* leave as "--" */ });
 
   // Live stats from the main index page
   fetch('index.html')
