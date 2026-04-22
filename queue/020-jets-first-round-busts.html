@@ -1,0 +1,341 @@
+<!-- PUBLISH-META
+topic: NFL
+tags: NFL:nfl, Jets, Draft, 50-Year Study
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — April __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+  --sal-bg: #1f2b3d;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+/* SAL SIDEBAR */
+.sal-aside{background:var(--sal-bg);color:#dae1ee;padding:1.6rem 1.8rem;margin:2rem 0;border-left:5px solid var(--gold);position:relative}
+.sal-kicker{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.sal-hed{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;font-style:italic;color:#f0e6c8;margin-bottom:.8rem;line-height:1.3}
+.sal-body{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.75;color:#cfd7e4}
+.sal-body p{margin-bottom:.7rem}
+.sal-body p:last-child{margin-bottom:0}
+.sal-byline{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-top:1rem;text-align:right}
+.sal-note{font-family:'Libre Baskerville',serif;font-size:.78rem;font-style:italic;color:#8a94a8;margin-top:.6rem;padding-top:.6rem;border-top:1px solid rgba(201,150,42,.25);text-align:right}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+/* SITE NEWS BOX */
+.site-news{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.site-news{padding:1.6rem 1.4rem}}
+.site-news h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:.6rem}
+.site-news p{font-size:.92rem;color:#c8cabd;line-height:1.65;margin-bottom:.8rem}
+
+/* SHARE */
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch from Draft Week &middot; Football, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. __</span>
+    <span>April __, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Fifty Years, One <em>Hall of Famer</em>, and a 28% Rate at the Top of the Draft</h1>
+
+  <div class="deck">
+    The first round is where every team puts its most confident bet. Since 1976, the Jets have placed 57 such bets. Twenty-eight percent of them &mdash; more than one in four &mdash; produced careers that failed every reasonable definition of success. The draft is about to happen again.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; April __, 2026 &middot; Draft: April 23&ndash;25, Pittsburgh</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">27.8%</div><div class="l">Triple-Bust Rate, 1976&ndash;2022</div></div>
+    <div class="sc"><div class="v now">60%</div><div class="l">Top-10 Picks Below Slot Value</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">1</div><div class="l">Hall of Famers in 50 Years</div></div>
+  </div>
+
+  <p>Three days from now, the New York Jets will sit in a draft room in Pittsburgh and identify the player they are most certain about in the world. This is the premise of the first round: of every pick a team will ever make, the first is the one on which the scouts, the analytics staff, and the head coach have converged with the highest confidence. The tape is richest. The combine data is complete. The interviews are done. If a franchise knows anything, it knows this.</p>
+
+  <p>The Jets have been in that draft room in the first round 57 times since 1976. We looked at every single one.</p>
+
+  <h2 class="sh">Three Definitions of a Bust</h2>
+
+  <p>Defining a bust is an argument most fans have already had. Rather than settle that argument, we ran all three of its leading candidates in parallel. Pick your preferred definition; the Jets fail under each of them.</p>
+
+  <div class="box">
+    <h3>The Three Lenses</h3>
+    <div class="math">Definition A &mdash; Never made a Pro Bowl
+  binary. crude. hard to argue with.
+
+Definition B &mdash; Career Approximate Value below
+              the expected AV for that draft slot
+  (PFR career AV vs. Chase Stuart&rsquo;s expected-AV
+  curve, which reflects what a median player taken
+  at that slot historically becomes)
+
+Definition C &mdash; Fewer than 4 seasons as the Jets&rsquo;
+              primary starter at his position
+  the team-specific test. did he even justify the
+  pick to the franchise that spent it?</div>
+    <p>Each definition captures something real. A isn&rsquo;t fair to excellent role players. B requires trusting a statistic. C ignores good careers elsewhere. So we report all three, and we flag the picks that failed under all three as &ldquo;triple busts.&rdquo; A triple bust is a first-round pick about whom every available metric agrees.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <p>Of 54 picks old enough to judge (we set aside 2023&ndash;2025 as too young), <strong>30 never made a Pro Bowl</strong> (55.6%). <strong>Twenty-two had career AV below the expected value for their slot</strong> (40.7%). <strong>Twenty-five started fewer than four seasons for the Jets</strong> at the position for which they were drafted (46.3%).</p>
+      <p>Those are three different definitions of failure. The Jets&rsquo; rate is above 40% on all three.</p>
+    </div>
+    <div>
+      <p>The number that carries the argument, however, is the intersection. <strong>Fifteen of 54 picks &mdash; 27.8% &mdash; failed under every definition simultaneously.</strong> No Pro Bowl. Below-slot production. Under four years as a Jets starter. Every possible angle, miss.</p>
+      <p>More than one in four. For half a century.</p>
+    </div>
+  </div>
+
+  <div class="pull">
+    <p>&ldquo;A triple bust is not a bad pick. A bad pick is debatable. A triple bust is a pick about which every available metric agrees &mdash; and they only agree when the player was no one&rsquo;s argument to make in the first place.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the three-lens methodology</cite>
+  </div>
+
+  <h2 class="sh">The Top-Ten Problem</h2>
+
+  <p>The picture darkens when the lens narrows. Of the Jets&rsquo; 25 first-round picks in the top ten &mdash; the picks over which the team had the most leverage, the most information, the most time to decide &mdash; <strong>fifteen produced careers below what their draft slot historically yields</strong>. That is not a rate that should survive a front office. That is 60%.</p>
+
+  <p>The population here is not hypothetical. Top-ten picks are the closest thing the draft has to a guaranteed star. Historical averages suggest a top-ten selection should produce a career AV in the 33-to-72 range depending on the slot &mdash; essentially, a multi-year starter with at least intermittent Pro Bowl appearances. The Jets landed below that bar on three of every five of their top-ten selections.</p>
+
+  <h2 class="sh">The Triple-Bust Gallery</h2>
+
+  <p>For the record, in chronological order, the 15 triple-busts:</p>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Year</th><th>Slot</th><th>Player</th><th>Pos</th><th>Pro Bowls</th><th>Career AV</th><th>NYJ Starter Yrs</th></tr>
+    </thead>
+    <tbody>
+      <tr class="worse"><td class="mono">1980</td><td class="mono">#2</td><td>Johnny &lsquo;Lam&rsquo; Jones</td><td class="mono">WR</td><td class="mono">0</td><td class="mono">17</td><td class="mono">2</td></tr>
+      <tr class="worse"><td class="mono">1984</td><td class="mono">#10</td><td>Russell Carter</td><td class="mono">DB</td><td class="mono">0</td><td class="mono">18</td><td class="mono">3</td></tr>
+      <tr class="worse"><td class="mono">1984</td><td class="mono">#15</td><td>Ron Faurot</td><td class="mono">DE</td><td class="mono">0</td><td class="mono">3</td><td class="mono">1</td></tr>
+      <tr class="worse"><td class="mono">1987</td><td class="mono">#21</td><td>Roger Vick</td><td class="mono">FB</td><td class="mono">0</td><td class="mono">10</td><td class="mono">1</td></tr>
+      <tr class="worse"><td class="mono">1988</td><td class="mono">#8</td><td>Dave Cadigan</td><td class="mono">OL</td><td class="mono">0</td><td class="mono">28</td><td class="mono">3</td></tr>
+      <tr class="worse"><td class="mono">1990</td><td class="mono">#2</td><td>Blair Thomas</td><td class="mono">RB</td><td class="mono">0</td><td class="mono">14</td><td class="mono">2</td></tr>
+      <tr class="worse"><td class="mono">1992</td><td class="mono">#15</td><td>Johnny Mitchell</td><td class="mono">TE</td><td class="mono">0</td><td class="mono">23</td><td class="mono">3</td></tr>
+      <tr class="worse"><td class="mono">2008</td><td class="mono">#6</td><td>Vernon Gholston</td><td class="mono">DE</td><td class="mono">0</td><td class="mono">2</td><td class="mono">0</td></tr>
+      <tr class="worse"><td class="mono">2012</td><td class="mono">#16</td><td>Quinton Coples</td><td class="mono">DE</td><td class="mono">0</td><td class="mono">18</td><td class="mono">3</td></tr>
+      <tr class="worse"><td class="mono">2013</td><td class="mono">#9</td><td>Dee Milliner</td><td class="mono">CB</td><td class="mono">0</td><td class="mono">8</td><td class="mono">1</td></tr>
+      <tr class="worse"><td class="mono">2014</td><td class="mono">#18</td><td>Calvin Pryor</td><td class="mono">S</td><td class="mono">0</td><td class="mono">14</td><td class="mono">2</td></tr>
+      <tr class="worse"><td class="mono">2016</td><td class="mono">#20</td><td>Darron Lee</td><td class="mono">LB</td><td class="mono">0</td><td class="mono">17</td><td class="mono">2</td></tr>
+      <tr class="worse"><td class="mono">2018</td><td class="mono">#3</td><td>Sam Darnold</td><td class="mono">QB</td><td class="mono">0</td><td class="mono">30</td><td class="mono">3</td></tr>
+      <tr class="worse"><td class="mono">2020</td><td class="mono">#11</td><td>Mekhi Becton</td><td class="mono">OT</td><td class="mono">0</td><td class="mono">19</td><td class="mono">2</td></tr>
+      <tr class="worse"><td class="mono">2021</td><td class="mono">#2</td><td>Zach Wilson</td><td class="mono">QB</td><td class="mono">0</td><td class="mono">9</td><td class="mono">3</td></tr>
+    </tbody>
+  </table>
+
+  <p>A generous critic could argue that a few names on that list deserve an asterisk. Sam Darnold has been a productive quarterback since leaving New York. Mekhi Becton was an All-Pro caliber tackle for twelve weeks before his knee gave out. Ron Faurot signed with a USFL team after being cut, which is its own kind of indictment but not exactly his fault. The methodology does not care about asterisks. Asterisks are what front offices reach for when the spreadsheet stops being kind.</p>
+
+  <!-- SAL SIDEBAR: first appearance -->
+  <div class="sal-aside">
+    <div class="sal-kicker">Voices from the Crowd</div>
+    <div class="sal-hed">Ah yes &mdash; the draft. Where we remember, briefly, that scouting is a profession.</div>
+    <div class="sal-body">
+      <p>Fifteen triple busts is a number that should be impossible. Not morally &mdash; statistically. To miss on three separate, orthogonal definitions of competence in the same player, at the same draft slot, for fifty straight years, requires a kind of consistency the franchise has never exhibited at the position of football.</p>
+      <p>Consider, if you will, the honor roll: Lam Jones, Blair Thomas, Vernon Gholston, Zach Wilson. Four top-ten quarterbacks and skill players who, between them, produced a career AV roughly equivalent to one serviceable season from the gentleman they passed on. It is a lineage. It is almost a craft.</p>
+      <p>The 2026 draft begins Thursday. Of course it does.</p>
+    </div>
+    <div class="sal-byline">&mdash; Sal &middot; Guest Columnist</div>
+    <div class="sal-note">Voices from the Crowd is a new sidebar in The Sports Page. Sal will return, occasionally, when something has simmered long enough to be worth saying.</div>
+  </div>
+
+  <hr>
+
+  <!-- HITS SECTION -->
+  <h2 class="sh">For the Sake of Balance</h2>
+
+  <p>Sixteen picks failed none of the three definitions. They made a Pro Bowl, produced above their slot&rsquo;s expected value, and started at least four years for the Jets at their drafted position. A clean hit. Among them: Marvin Powell, Freeman McNeil, Al Toon, D&rsquo;Brickashaw Ferguson, Nick Mangold, Darrelle Revis. Real players. The roster that could have been.</p>
+
+  <p>Ferguson and Mangold, consecutive picks in 2006, produced a combined 10 Pro Bowls and played 20 years for the Jets between them. Revis, the next year, is the only Hall of Famer the franchise has drafted in the first round in fifty years. That window &mdash; 2006, 2007 &mdash; generated three of the cleanest picks in the dataset and, not coincidentally, the only era of sustained Jets contention in the modern memory.</p>
+
+  <div class="hist-grid">
+    <div class="hc">
+      <div class="hc-name">Darrelle Revis &mdash; 2007, Pick #14</div>
+      <div class="hc-stat">138</div>
+      <div class="hc-label">Career AV (Hall of Fame)</div>
+      <p>Seven Pro Bowls. First-ballot Hall of Fame. Revis Island. For a single decade, the Jets employed the best cornerback in the sport and could not build a contender around him. This is the ceiling the draft is supposed to deliver. In 50 years it has happened once.</p>
+      <div class="verdict">Franchise-defining</div>
+    </div>
+    <div class="hc">
+      <div class="hc-name">Vernon Gholston &mdash; 2008, Pick #6</div>
+      <div class="hc-stat">0</div>
+      <div class="hc-label">Career sacks (PFR)</div>
+      <p>Taken sixth overall the year after Revis. Recorded zero sacks in three NFL seasons. Career AV of 2. Started no games for the Jets at defensive end. A triple bust in the purest form &mdash; and the clearest demonstration that being right on one pick and wrong on the next can coexist in the same draft room.</p>
+      <div class="verdict bad">Triple bust</div>
+    </div>
+  </div>
+
+  <h2 class="sh">Why This Piece, Now</h2>
+
+  <p>On Thursday, the Jets will pick seventh overall. Ample projection inventory exists. Most of it will disagree. Many readers of this newsletter &mdash; including some who will read it between mock drafts &mdash; will have strong convictions about who the Jets should take, who they will take, and whether the Jets are capable of taking the right one. The last of those three is the interesting question, and this is the only one the data directly addresses.</p>
+
+  <p>The data&rsquo;s answer, over 57 picks and 50 years, is: sometimes. Fifteen clean hits out of 54 analyzable picks is a 30% hit rate. Fifteen triple busts out of 54 is a 28% triple-bust rate. The remaining 42% sit in between &mdash; picks that got something, but not enough. The draft is in three days. The base rate is not kind. On Friday, we&rsquo;ll look at who actually drafts well, and why the Giants, who have shared a market and now share a stadium, produce different outcomes from the same pool of information.</p>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. __</span>
+    <span>Sources: Wikipedia (picks &amp; years); PFR (AV &amp; Pro Bowls); Chase Stuart (slot-AV curve)</span>
+    <span>Analyzed: 54 picks 1976&ndash;2022. 2023&ndash;2025 picks too young to judge.</span>
+  </div>
+
+</div>
+
+<!-- SITE NEWS: DRAFT WATCH -->
+<div class="site-news">
+  <h2>Family Draft Watch &mdash; April 23&ndash;25, Pittsburgh</h2>
+  <p>The 2026 NFL Draft begins Thursday evening. The Jets hold pick #7. The Raiders pick first. Notre Dame&rsquo;s Jeremiyah Love is projected in the top ten. On Friday, The Sports Page will publish the team-by-team first-round hit-rate leaderboard, with the Jets and Giants drawn in direct comparison.</p>
+</div>
+
+<!-- PAPER: PULL QUOTE, PITCH, FOOTER -->
+<div class="paper" style="margin-top:1.2rem">
+
+  <div class="pull">
+    <p>&ldquo;Every team thinks the first round is where they are most right. For fifty years, one team in New York has been most right about 30% of the time &mdash; and most wrong about 28%. The math of a draft room is not a coin flip. It&rsquo;s close.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the base rate</cite>
+  </div>
+
+  <!-- STORY IDEAS -->
+  <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem">Pitch a Story</h3>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem">Noticed a weird stat? Saw something that doesn&rsquo;t add up? Send it in. The best ideas become issues.</p>
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <textarea name="idea" placeholder="What&rsquo;s the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
+      <div style="display:flex;gap:.8rem;align-items:center">
+        <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
+        <span style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)">or <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea&body=Sport:%0A%0AStat+or+story:%0A%0AWhy+it%27s+interesting:" style="color:var(--steel)">post on GitHub</a></span>
+      </div>
+    </form>
+    <div id="pitch-ok" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--green);font-weight:600;letter-spacing:.08em">Sent! We read every pitch. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.08em">Something went wrong. Try the GitHub link instead.</div>
+  </div>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='SENDING\u2026';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}
+      else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='SUBMIT IDEA';
+  });
+  </script>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. __</span>
+    <span>Dataset: scripts/data/jets-first-round-1976-2025.csv</span>
+    <span>Not financial or wagering advice</span>
+  </div>
+
+</div>
+
+<!-- SHARE -->
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+
+</body>
+</html>

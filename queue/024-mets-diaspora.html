@@ -1,0 +1,139 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, Front Office, HIT/MISS
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — April __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on Departures &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>April __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">The Mets Diaspora: Three Years of <em>Departures</em>, One Ongoing Indictment</h1>
+<div class="deck">Since 2023, the Mets have parted with a meaningful number of players. The roster that replaced them is currently 7-14. The honest accounting is neither "they let everyone go too cheap" nor "every departure was correct." It is somewhere uncomfortable in between, and the replacements are the part that hurts.</div>
+<div class="byline">By The Columnist &middot; The Sports Page &middot; On the Cost of Letting Someone Walk</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v bad">3</div><div class="l">Years of Decisions</div></div>
+  <div class="sc"><div class="v now">HIT/MISS</div><div class="l">Grading Framework</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">?</div><div class="l">Replacement Net WAR</div></div>
+</div>
+
+<p>The front office&rsquo;s job is not to retain every useful player. It is to correctly estimate the gap between what a departing player will produce for someone else and what the replacement will produce in his role. A HIT is a player the Mets correctly let go &mdash; he declined, got hurt, or merely approximated his replacement. A MISS is a player who thrived elsewhere while the replacement underperformed. A NEUTRAL outcome is a wash. The question is the overall ledger.</p>
+
+<h2 class="sh">The Framework, Applied</h2>
+
+<p>Between the 2023-24 and 2024-25 offseasons, the Mets parted with a number of notable names via free agency or trade. Among them: <strong>Edwin D&iacute;az</strong> (to the Dodgers, where he has begun to show the injury trouble he flirted with in New York), <strong>Harrison Bader</strong>, <strong>Jos&eacute; Quintana</strong>, <strong>Adam Ottavino</strong>, <strong>Seth Lugo</strong>, <strong>Trevor May</strong>, <strong>Trevor Williams</strong>, and &mdash; most significantly &mdash; <strong>Pete Alonso</strong>, who reached free agency.</p>
+
+<p>Three years is long enough for a ledger. It is not yet long enough to close the book on any single case. The table below is an in-progress grading of the most consequential departures, with methodology and criteria held constant across cases.</p>
+
+<table class="rec">
+<thead><tr><th>Departed</th><th>Destination</th><th>Years since Mets</th><th>Early verdict</th></tr></thead>
+<tbody>
+  <tr class="hl"><td>Edwin D&iacute;az</td><td class="mono">Dodgers</td><td class="mono">1</td><td class="mono">HIT: injuries returning</td></tr>
+  <tr><td>Harrison Bader</td><td class="mono">TBD</td><td class="mono">1</td><td class="mono">TBD: small sample</td></tr>
+  <tr><td>Jos&eacute; Quintana</td><td class="mono">TBD</td><td class="mono">1</td><td class="mono">TBD</td></tr>
+  <tr><td>Adam Ottavino</td><td class="mono">TBD</td><td class="mono">1</td><td class="mono">TBD</td></tr>
+  <tr><td>Seth Lugo</td><td class="mono">elsewhere</td><td class="mono">2</td><td class="mono">MISS: All-Star production</td></tr>
+  <tr><td>Trevor May</td><td class="mono">retired</td><td class="mono">2</td><td class="mono">HIT: natural decline</td></tr>
+  <tr><td>Trevor Williams</td><td class="mono">TBD</td><td class="mono">1</td><td class="mono">TBD</td></tr>
+  <tr class="match"><td>Pete Alonso</td><td class="mono">free agency</td><td class="mono">1</td><td class="mono">Critical; case pending</td></tr>
+</tbody>
+</table>
+
+<p>A partial accounting. This table is open for revision; readers should not treat individual grades as final. The tentative pattern is mixed &mdash; some departures look defensible (D&iacute;az, May), some look painful (Lugo). The interesting question is not whether the individual departures were correct. It is whether the <em>replacements</em> were.</p>
+
+<h2 class="sh">The Replacement Question</h2>
+
+<p>The Mets&rsquo; current 7-14 record was not produced by the absences of Lugo or D&iacute;az in isolation. It was produced by a roster that, when measured in the slots where those players used to produce, has given back less than projected. The bullpen that was supposed to compensate for D&iacute;az departing has been unsteady. The rotation depth that was supposed to compensate for Quintana and Lugo has thinned. The right-handed bat that was supposed to replace Alonso&rsquo;s slot has been either different or missing.</p>
+
+<p>This is where the honest verdict lives. Letting Edwin D&iacute;az go to Los Angeles, given what his body appears to be doing in April, may yet read as a HIT. But a HIT on the departure is not a HIT on the decision if the replacement produces materially less. The front office&rsquo;s job is not to be right about the departing player. It is to be right about the gap.</p>
+
+<div class="pull">
+  <p>&ldquo;The question is not whether Edwin D&iacute;az was going to get hurt. The question is whether the Mets had a bullpen built to survive it. They did not.&rdquo;</p>
+  <cite>&mdash; The Columnist, on where the haunting actually comes from</cite>
+</div>
+
+<div class="box">
+  <h3>How This Piece Grows</h3>
+  <p>This is an opening scorecard, not a closing one. Each departure named above will be revisited in Sunday Editions throughout the season as fresh data accumulates. The goal is a rolling, honest accounting: the front office may deserve more credit than the current record suggests, or less. The numbers will say which.</p>
+  <p>Readers with a specific departure to flag &mdash; including ones not named here &mdash; should drop it into Pitch a Story.</p>
+</div>
+
+<p>The takeaway, provisionally: the Mets&rsquo; current problems are not obviously the fault of who was let go. They are more plausibly the fault of who was brought in to replace them. Getting rid of some players made sense. The failure to acquire suitable replacements is what haunts this team.</p>
+
+<div class="footer">
+  <span>The Sports Page &middot; Issue No. __</span>
+  <span>Framework: HIT (player declined), MISS (thrived elsewhere), NEUTRAL, TBD</span>
+  <span>Not financial or wagering advice</span>
+</div>
+</div>
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+</body>
+</html>

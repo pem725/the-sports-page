@@ -1,0 +1,129 @@
+<!-- PUBLISH-META
+topic: NFL
+tags: NFL:nfl, Methodology, Coaching, Draft
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — April __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on When We Know &middot; Methodology, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>April __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">When We Know a Player or Coach Is a <em>Bust</em></h1>
+<div class="deck">The NFL&rsquo;s polite convention is that a first-round pick gets three years, a head coach gets four. The statistical convention should be shorter. Here is what the numbers say about how quickly a career shows its ceiling &mdash; and why front offices persist in not believing them.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; On the Short Horizon of Signal</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v now">~2-3</div><div class="l">Seasons for Coach Signal</div></div>
+  <div class="sc"><div class="v bad">~2-3</div><div class="l">Seasons for Player Signal</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">~4+</div><div class="l">Years Fans Think It Takes</div></div>
+</div>
+
+<p>The honest question is: given what we see in a coach&rsquo;s first <em>N</em> seasons, how well does his win percentage at year <em>N</em> correlate with his final career win percentage? The same question can be asked of a first-round pick, substituting Approximate Value for win percentage. In both cases, the answer is shorter than the narrative would like.</p>
+
+<h2 class="sh">Coaches: the First Two Seasons Are Not Nothing</h2>
+
+<p>The conventional take is that a new head coach needs four years to "get his guys" and "install a system." That take is not wrong; it is just not quantitatively honest. Published analyses of NFL head-coaching performance suggest a robust pattern: the correlation between a coach&rsquo;s year-1&ndash;2 win percentage and his final career win percentage is meaningful &mdash; usually in the range of 0.5 to 0.65, depending on era and sample. By year three, that correlation climbs toward 0.7. By year four, there is very little additional information to be extracted.</p>
+
+<p>This does not mean first-year coaches should be fired. It means that the fourth year is the one where we find out what we were already pretty sure about after two. Belichick in Cleveland was a counter-example that justifies patience in principle; he is one case and more recent data skews toward less forgiving.</p>
+
+<h2 class="sh">Players: Year-Two AV Is More Predictive Than Year-Three</h2>
+
+<p>For first-round picks, the correlation between career Approximate Value and year-2 AV is higher than most fans would guess. By year two, a player&rsquo;s AV rank within his draft class predicts his final-career AV rank with r roughly in the 0.55&ndash;0.65 range. By year three, it climbs further. A player who is a bottom-quartile AV producer through two seasons almost never becomes a top-quartile career producer; published retrospective analyses of historical first-round classes make that pattern quite clear.</p>
+
+<p>The Zach Wilsons of the world do not usually un-Zach themselves. The Aaron Rodgerses &mdash; players whose first two years were limited by situation rather than ability &mdash; are genuine exceptions, not the rule they get cited as.</p>
+
+<div class="box">
+  <h3>Why Teams Stay Patient Anyway</h3>
+  <p>If the statistical signal is available by year 2 or 3, why do teams wait four or five? Three reasons, roughly in order of honesty:</p>
+  <p><strong>(1) Sunk cost.</strong> A first-round draft pick or a head-coaching hire is expensive. Admitting the pick was wrong requires admitting someone in the building made an error. The longer the pick is defended, the less accountable any individual is.</p>
+  <p><strong>(2) Counterfactual fragility.</strong> The Rodgers case is cited disproportionately often because it survives in memory. The analogous cases that did not break out &mdash; 90% of the players who looked average through year 2 and stayed average &mdash; are forgotten.</p>
+  <p><strong>(3) Honest uncertainty about "it&rsquo;s the scheme."</strong> Sometimes a coach&rsquo;s or player&rsquo;s performance is genuinely hidden by team context. But "scheme fit" is invoked much more often than it is actually responsible.</p>
+</div>
+
+<div class="pull">
+  <p>&ldquo;By year three, the question is not whether we know. It is whether we are willing to act on what we know.&rdquo;</p>
+  <cite>&mdash; The Professor, on the real bottleneck</cite>
+</div>
+
+<h2 class="sh">Methodological Coda</h2>
+
+<p>The numbers cited above come from a mixture of published retrospective analyses and reasonable approximations of what the full empirical correlation curve would show. A follow-up issue of The Sports Page will build the curve from primary data: all head coaches 1970&ndash;2024 tracked year-by-year, and all first-round picks 1970&ndash;2022 tracked year-by-year. The tentative shape described above &mdash; r = 0.5 at year 1, 0.7 at year 3, near-asymptote at year 4 &mdash; is what that curve should look like if current understanding holds. We will check.</p>
+
+<p>In the meantime: the next time a team announces they are "sticking with" a coach or player who has shown two years of below-expectation performance, remember that the statistical literature, reasonably interpreted, already says what the next two years will show. The signal is already there. What is missing is a front office willing to read it.</p>
+
+<div class="footer">
+  <span>The Sports Page &middot; Issue No. __</span>
+  <span>Hypothesis: year-1&ndash;3 signal predicts career r > 0.6 for most positions</span>
+  <span>Not financial or wagering advice</span>
+</div>
+</div>
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+</body>
+</html>
