@@ -140,19 +140,25 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 
 6. **Cross-reference check**: Grep the working file for "Issue #", "Issue No.", and "See Issue" — verify every reference points to an ALREADY PUBLISHED issue.
 
-7. **Move the file**:
+7. **Inject the readership block** (auto-populated from GoatCounter):
+   ```
+   python3 scripts/fetch_readership.py --inject queue/sunday-NNN.html
+   ```
+   This replaces the `<!-- READERSHIP_BLOCK -->` marker in the template with the top-5 most-read issues of the prior week. Requires `$GOATCOUNTER_TOKEN` in the environment (set in `~/.zshrc`). If the API is unreachable or returns no data, the script writes a graceful "data pending" message and still exits 0 — do not skip this step.
+
+8. **Move the file**:
    ```
    git mv queue/sunday-NNN.html published/sunday-NNN.html
    ```
 
-8. **Add entry to `index.html`**: Insert a new `<div class="issue">` block at the top, with the correct reader-facing issue number, link, headline, and tags (use `.tag` for "Sunday Edition").
+9. **Add entry to `index.html`**: Insert a new `<div class="issue">` block at the top, with the correct reader-facing issue number, link, headline, and tags (use `.tag` for "Sunday Edition").
 
-9. **Commit and push**:
-   ```
-   git add index.html published/sunday-NNN.html
-   git commit -m "Publish Sunday Edition No. NNN: week N recap"
-   git push
-   ```
+10. **Commit and push**:
+    ```
+    git add index.html published/sunday-NNN.html
+    git commit -m "Publish Sunday Edition No. NNN: week N recap"
+    git push
+    ```
 
 **CRITICAL rules for the Sunday Edition:**
 - The template at `reserve/sunday-recap-template.html` is READ-ONLY. If you find yourself editing it, STOP — you should be editing the copy in `queue/`, not the template itself.
