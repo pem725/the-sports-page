@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 476 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 475 issues remaining of 500
 
 ## Repository Structure
 
@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 24 issues (#1-24)
-Queue: 2 articles ready (015-fan-misery-map, eo-006-juco-detour)
+Published: 25 issues (#1-25)
+Queue: 8 articles ready (015-fan-misery-map, 021-draft-hit-rate-jets-giants, 022-cfb-jnd-rankings, 023-mets-slow-start, 024-mets-diaspora, 025-signal-horizon, 026-stabilization-thresholds, eo-006-juco-detour)
 Reserve: 1 evergreen piece
-Goal: 476 issues remaining of 500
-Last published: Issue #24 — "Want to Know If the Mets Lost? Check the S&P 500. (Please Don’t.)" (019-spurious-correlation.html) on April 21, 2026
+Goal: 475 issues remaining of 500
+Last published: Issue #25 — "Fifty Years, One Hall of Famer, and a 28% Rate at the Top of the Draft" (020-jets-first-round-busts.html) on April 22, 2026
