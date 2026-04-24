@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 474 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 473 issues remaining of 500
 
 ## Repository Structure
 
@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 26 issues (#1-26)
-Queue: 7 articles ready (015-fan-misery-map, 021-draft-hit-rate-jets-giants, 022-cfb-jnd-rankings, 024-mets-diaspora, 025-signal-horizon, 026-stabilization-thresholds, eo-006-juco-detour)
+Published: 27 issues (#1-27)
+Queue: 6 articles ready (015-fan-misery-map, 022-cfb-jnd-rankings, 024-mets-diaspora, 025-signal-horizon, 026-stabilization-thresholds, eo-006-juco-detour)
 Reserve: 1 evergreen piece
-Goal: 474 issues remaining of 500
-Last published: Issue #26 — "The 2026 Mets Are 7-14. The Math Is Unhappy, Not Final." (023-mets-slow-start.html) on April 23, 2026
+Goal: 473 issues remaining of 500
+Last published: Issue #27 — "Same Stadium, Different Drafts: Jets vs. Giants, 50 Years In" (021-draft-hit-rate-jets-giants.html) on April 24, 2026
