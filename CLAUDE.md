@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 472 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 470 issues remaining of 500
 
 ## Repository Structure
 
@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 28 issues (#1-28)
-Queue: 5 articles ready (015-fan-misery-map, 022-cfb-jnd-rankings, 025-signal-horizon, 026-stabilization-thresholds, eo-006-juco-detour)
+Published: 30 issues (#1-30)
+Queue: 4 articles ready (015-fan-misery-map, 022-cfb-jnd-rankings, 026-stabilization-thresholds, eo-006-juco-detour)
 Reserve: 1 evergreen piece
-Goal: 472 issues remaining of 500
-Last published: Issue #28 — "The Mets Diaspora: Three Years of Departures, One Ongoing Indictment" (024-mets-diaspora.html) on April 25, 2026
+Goal: 470 issues remaining of 500
+Last published: Issue #30 — "When We Know a Player or Coach Is a Bust" (025-signal-horizon.html) on April 27, 2026
