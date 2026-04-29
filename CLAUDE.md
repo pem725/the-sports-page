@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 469 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 468 issues remaining of 500
 
 ## Repository Structure
 
@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 31 issues (#1-31)
-Queue: 3 articles ready (015-fan-misery-map, 026-stabilization-thresholds, eo-006-juco-detour)
+Published: 32 issues (#1-32)
+Queue: 2 articles ready (015-fan-misery-map, eo-006-juco-detour)
 Reserve: 1 evergreen piece
-Goal: 469 issues remaining of 500
-Last published: Issue #31 — "The Just-Noticeable Difference in College Football Rankings Is 13" (022-cfb-jnd-rankings.html) on April 28, 2026
+Goal: 468 issues remaining of 500
+Last published: Issue #32 — "When the Number Starts to Mean Something" (026-stabilization-thresholds.html) on April 29, 2026
