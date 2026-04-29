@@ -421,8 +421,12 @@ def main():
     update_claude_md(issue_num, filename, headline_plain, today)
     print("Updated CLAUDE.md")
 
+    # Step 10.5: Refresh RSS feed for Buttondown subscribers
+    run("python3 scripts/generate_rss.py", check=False)
+    print("Refreshed feed.xml")
+
     # Step 11: Commit and push
-    run(f'git add index.html "published/{filename}" QUEUE_ORDER.txt CLAUDE.md')
+    run(f'git add index.html "published/{filename}" QUEUE_ORDER.txt CLAUDE.md feed.xml')
     commit_msg = f"Publish Issue #{issue_num}: {headline_plain[:60]}"
     run(f'git commit -m "{commit_msg}"')
     run("git push origin main")

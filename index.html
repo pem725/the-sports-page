@@ -98,6 +98,18 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
 <!-- PAPER -->
 <div id="main-content" class="paper">
 
+  <!-- SUBSCRIBE -->
+  <div id="subscribe" style="border:2px solid var(--rust);background:var(--cream);padding:1.5rem 1.8rem;margin:1.5rem 0 2rem;text-align:center">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--rust);margin-bottom:.4rem">Get The Sports Page in Your Inbox</h3>
+    <p style="font-size:.92rem;color:var(--muted);margin-bottom:1rem;font-family:'Libre Baskerville',serif;font-style:italic">Five issues a week. Sunday Edition grades the predictions. Free.</p>
+    <form id="bd-form" action="https://buttondown.com/api/emails/embed-subscribe/thesportspage" method="POST" target="_blank" style="display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;max-width:480px;margin:0 auto">
+      <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" style="flex:1 1 220px;font-family:'Libre Baskerville',serif;font-size:.95rem;padding:.55rem .8rem;border:1px solid var(--div);background:#fff;color:var(--ink);outline:none">
+      <input type="hidden" value="1" name="embed">
+      <button type="submit" style="background:var(--rust);color:#fff;font-family:'Roboto Mono',monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:none;padding:.55rem 1.4rem;cursor:pointer">Subscribe</button>
+    </form>
+    <p style="font-size:.7rem;color:var(--muted);margin-top:.7rem;font-family:'Roboto Mono',monospace;letter-spacing:.05em">No spam. Unsubscribe anytime. Powered by Buttondown.</p>
+  </div>
+
   <!-- ISSUE ARCHIVE -->
   <h2 class="sh">The Archive</h2>
 
