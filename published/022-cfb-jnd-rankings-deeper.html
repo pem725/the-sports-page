@@ -1,0 +1,230 @@
+<!-- DEEPER DIVE for Issue #31 — CFB JND rankings -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deeper Dive — How We Fit the CFB JND Curve — The Sports Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f;--code-bg:#1a2330}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--steel);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);font-weight:600}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--steel);border-bottom:3px double var(--steel);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:900;line-height:1.15;margin-bottom:.4rem}
+.hed em{color:var(--steel);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.05rem;color:var(--muted);border-left:3px solid var(--steel);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.toc{background:var(--card);border:1px solid var(--div);padding:1rem 1.2rem;margin:1.2rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem}
+.toc strong{color:var(--steel);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem;display:block;margin-bottom:.5rem}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--div);transition:border-color .2s}
+.toc a:hover{border-bottom-color:var(--steel)}
+.toc-sep{color:var(--muted);margin:0 .35rem}
+.back-link{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em}
+.back-link a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.tier{margin:2.4rem 0 1.5rem;padding-top:1.5rem;border-top:3px double var(--steel)}
+.tier-kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.3rem}
+.tier-hed{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;line-height:1.2;margin-bottom:.6rem}
+.tier-hed em{color:var(--steel);font-style:italic}
+p{margin-bottom:.9rem}
+.callout{background:var(--card);border-left:4px solid var(--gold);padding:.9rem 1.1rem;margin:1.2rem 0;font-size:.92rem;line-height:1.65}
+.callout strong{color:var(--rust)}
+.math-block{font-family:'Roboto Mono',monospace;background:var(--steel);color:#dce8f5;padding:1rem 1.2rem;font-size:.82rem;line-height:1.85;margin:1rem 0;white-space:pre-wrap;overflow-x:auto;border-radius:0}
+.math-block .accent{color:var(--gold);font-weight:600}
+pre.code{background:var(--code-bg);color:#e0e8f5;padding:1.2rem 1.4rem;font-family:'Roboto Mono',monospace;font-size:.78rem;line-height:1.65;overflow-x:auto;margin:1rem 0;border-left:4px solid var(--steel)}
+pre.code .kw{color:#ff8b6b}
+pre.code .str{color:#a8e0c8}
+pre.code .num{color:#c9b890}
+pre.code .com{color:#7d8a9c;font-style:italic}
+pre.code .fn{color:#88c8ff}
+.snapshot-note{font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);letter-spacing:.05em;margin-top:-.5rem;margin-bottom:1.2rem;padding:.5rem .8rem;background:var(--card);border-left:3px solid var(--gold);font-style:italic}
+.snapshot-note a{color:var(--steel)}
+.worked-example{background:#fff;border:1px solid var(--div);padding:1rem 1.2rem;margin:1rem 0;font-size:.92rem}
+.worked-example h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--rust);margin-bottom:.5rem}
+.worked-example .step{margin-left:1.2rem;margin-bottom:.4rem}
+.worked-example .verdict{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.05em;margin-top:.6rem}
+.footer{border-top:3px double var(--steel);padding-top:.7rem;margin-top:2.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Deeper Dive &middot; Methodology Supplement</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Where the math lives</div>
+  <div class="datebar">
+    <span>Supplement to Issue No. 31</span>
+    <span>How We Fit the CFB JND Curve</span>
+    <span>For readers who want the math</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0" class="back-link" aria-label="Page navigation">
+  <a href="../index.html">&larr; Back to Archive</a> &middot;
+  <a href="022-cfb-jnd-rankings.html">Read the original article &rarr;</a>
+</nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">How We Fit the <em>CFB JND Curve</em></h1>
+
+  <div class="deck">
+    The companion piece to Issue #31, &ldquo;The Just-Noticeable Difference in College Football Rankings Is 13.&rdquo; A 19th-century psychophysics framework, applied to thirty seasons of ranked matchups, fitted with twenty lines of Python. Three sections, three reader levels.
+  </div>
+
+  <div class="byline">Methodology Supplement &middot; Issue #31 &middot; Last updated April 28, 2026</div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc" role="navigation" aria-label="Sections of this supplement">
+    <strong>Three sections, jump to your level</strong>
+    <a href="#the-idea">The Idea</a>
+    <span class="toc-sep">&middot;</span>
+    <a href="#the-math">The Math</a>
+    <span class="toc-sep">&middot;</span>
+    <a href="#the-code">The Code</a>
+  </div>
+
+  <!-- THE IDEA -->
+  <section id="the-idea" class="tier" aria-labelledby="the-idea-hed">
+    <div class="tier-kicker">The Idea</div>
+    <h2 id="the-idea-hed" class="tier-hed">A 19th-century framework for telling things <em>apart</em></h2>
+
+    <p>In the 1860s, the German psychophysicists Gustav Fechner and Ernst Weber asked a quiet, foundational question: <em>how different must two stimuli be before a person can reliably tell them apart?</em> Lift two weights with your eyes closed; if the difference between them is small enough, you can't say which is heavier. Their answer became the <strong>just-noticeable difference</strong>, or JND &mdash; a threshold below which the nervous system, under controlled conditions, fails to discriminate.</p>
+
+    <p>Fast-forward to college football. Every Saturday afternoon, the AP poll asks the same question of two teams: <em>which one is better?</em> If the ranking system can reliably tell them apart, the higher-ranked team should win meaningfully more than half the time. If it can't, the games at small rank-deltas should look like coin flips. That's an empirical question with thirty years of data behind it.</p>
+
+    <p>The piece in Issue #31 found the answer: the AP poll's JND is a rank delta of about 13. Below that, the ranking is doing only slightly more than guessing. Above that, it's doing real work.</p>
+
+    <div class="callout">
+      <strong>How this is commonly misread.</strong> &ldquo;The AP poll predicts winners 68% of the time&rdquo; is a true number you'll see in sports analytics writing. It's also misleading, because that 68% is an aggregate across all rank-deltas. At Δ=2 it's 61%. At Δ=20 it's 78%. Reporting one average hides the fact that the model carries radically different signal at different gaps. The JND framing fixes this: instead of asking &ldquo;does the poll work?&rdquo; (yes-but-noisily), it asks &ldquo;at what gap does the poll start working <em>well</em>?&rdquo; (around 13).</p>
+    </div>
+
+    <p>The JND threshold for &ldquo;works well&rdquo; isn't arbitrary. It comes from signal detection theory: a discriminability of d&prime; = 1, which corresponds to a 75% correct rate in a two-alternative forced-choice task. That's the classical bar for &ldquo;just noticeable.&rdquo; Below 75%, the human (or the poll) is responding more to noise than to signal. Above it, real information is being transmitted.</p>
+  </section>
+
+  <!-- THE MATH -->
+  <section id="the-math" class="tier" aria-labelledby="the-math-hed">
+    <div class="tier-kicker">The Math</div>
+    <h2 id="the-math-hed" class="tier-hed">Logistic regression on <em>1,597 ranked matchups</em></h2>
+
+    <p>For every FBS game from 1995 through 2024 in which both teams appeared in that week's AP Top 25, we recorded two numbers per game: the rank delta Δ (the absolute difference between the two teams' AP ranks) and a binary outcome (1 if the higher-ranked team won, 0 if it lost). That gave us 1,597 rows. The natural model for a binary outcome that depends smoothly on a continuous predictor is logistic regression:</p>
+
+    <div class="math-block">P(higher rank wins | <span class="accent">&Delta;</span>) = 1 / (1 + exp(&minus;(<span class="accent">a</span> + <span class="accent">b</span>&Delta;)))</div>
+
+    <p>Two parameters: <strong>a</strong> is the intercept (baseline log-odds at Δ=0, where teams are tied in rank), and <strong>b</strong> is the slope (how steeply the win probability rises with each additional rank of separation). Fitting this to the 1,597 games via maximum-likelihood gradient descent yields:</p>
+
+    <div class="math-block"><span class="accent">a</span> = 0.2636
+<span class="accent">b</span> = 0.0633</div>
+
+    <p>To find the JND, we solve for the Δ at which the predicted win probability equals 0.75 (the d&prime;=1 threshold). The algebra gives a clean closed form:</p>
+
+    <div class="math-block">0.75 = 1 / (1 + exp(&minus;(a + b&Delta;)))
+   1 + exp(&minus;(a + b&Delta;)) = 1/0.75 = 4/3
+       exp(&minus;(a + b&Delta;)) = 1/3
+            &minus;(a + b&Delta;) = ln(1/3)
+                a + b&Delta; = ln(3)
+                     <span class="accent">&Delta;</span> = (ln(3) &minus; a) / b
+                       = (1.0986 &minus; 0.2636) / 0.0633
+                       <span class="accent">&asymp; 13.2</span></div>
+
+    <p>For comparison, an ideal psychometric function &mdash; one in which the ranking system perfectly captured team quality &mdash; would have a much steeper slope. If the JND lived at Δ=4, the slope would be b = ln(3)/4 ≈ 0.275, four times the empirical fit. The empirical b is about 23% of the theoretical ideal. That ratio is the magnitude of the gap between &ldquo;what rankings ought to do&rdquo; and &ldquo;what rankings actually do.&rdquo;</p>
+
+    <div class="worked-example">
+      <h4>Worked example: #4 Alabama at #2 Georgia, September 28, 2024</h4>
+      <p>Two teams ranked two slots apart in the AP poll. Δ = 2.</p>
+      <div class="step"><strong>Logistic prediction:</strong> P(Georgia wins) = 1 / (1 + exp(−(0.2636 + 0.0633 × 2))) = 1 / (1 + exp(−0.39)) = <strong>0.595</strong></div>
+      <div class="step"><strong>Actual outcome:</strong> Alabama 41, Georgia 34. The lower-ranked team won.</div>
+      <div class="step"><strong>What the model says:</strong> A 60/40 game in Georgia's favor was always going to break the &ldquo;wrong&rdquo; way 40% of the time. Δ=2 sits well below the 13.2 JND, so the AP poll's preference between these two teams is mostly noise.</div>
+      <div class="verdict">Verdict: outcome is fully consistent with the model's prediction. Below the JND, ranks are coin flips with a thumb on them.</div>
+    </div>
+
+    <p>The key insight: the AP poll's slope at Δ=2 is so shallow that a 60% prediction is doing barely more than chance. That's not a failure of the poll; it's the poll honestly reporting low confidence. The piece's JND framing makes that low confidence quantitative.</p>
+  </section>
+
+  <!-- THE CODE -->
+  <section id="the-code" class="tier" aria-labelledby="the-code-hed">
+    <div class="tier-kicker">The Code</div>
+    <h2 id="the-code-hed" class="tier-hed">Twenty lines that fit the curve, <em>any sport, any era</em></h2>
+
+    <p>Two scripts produce the analysis. The first builds the dataset from the College Football Data API; the second fits the logistic regression and emits the SVG paths used in the article's figures. The methodological core of the second script &mdash; the gradient-descent fit and the JND formula &mdash; is below:</p>
+
+<pre class="code"><span class="kw">import</span> math
+
+<span class="kw">def</span> <span class="fn">fit_logistic</span>(xs, ys, lr=<span class="num">0.003</span>, iters=<span class="num">5000</span>):
+    <span class="str">"""Maximum-likelihood logistic regression: P = 1/(1+exp(-(a + b*x)))"""</span>
+    a, b = <span class="num">0.0</span>, <span class="num">0.0</span>
+    n = <span class="fn">len</span>(xs)
+    <span class="kw">for</span> _ <span class="kw">in</span> <span class="fn">range</span>(iters):
+        ga = gb = <span class="num">0.0</span>
+        <span class="kw">for</span> x, y <span class="kw">in</span> <span class="fn">zip</span>(xs, ys):
+            p = <span class="num">1.0</span> / (<span class="num">1.0</span> + math.exp(-(a + b * x)))
+            ga += (y - p)
+            gb += (y - p) * x
+        a += lr * ga / n
+        b += lr * gb / n
+    <span class="kw">return</span> a, b
+
+
+<span class="kw">def</span> <span class="fn">jnd_from_params</span>(a, b, target=<span class="num">0.75</span>):
+    <span class="str">"""Solve P=target for the rank delta at which we cross the JND threshold."""</span>
+    <span class="kw">return</span> (math.log(target / (<span class="num">1</span> - target)) - a) / b
+
+
+<span class="com"># Usage: xs is a list of rank deltas (one per game), ys is a list of 0/1</span>
+<span class="com"># for whether the higher-ranked team won. After the fit:</span>
+<span class="com">#   a, b = fit_logistic(xs, ys)</span>
+<span class="com">#   print(f"JND at delta = {jnd_from_params(a, b):.1f}")</span>
+<span class="com"># For our 1,597-game dataset: a=0.26, b=0.063, JND=13.2</span>
+</pre>
+
+    <div class="snapshot-note">Snapshot from this issue's analysis. The current production version &mdash; including SVG path generation and per-delta scatter rendering &mdash; lives at <a href="https://github.com/pem725/the-sports-page/blob/main/scripts/fit_cfb_jnd_curves.py">scripts/fit_cfb_jnd_curves.py</a> in the repo. The data builder is at <a href="https://github.com/pem725/the-sports-page/blob/main/scripts/build_cfb_jnd_dataset.py">scripts/build_cfb_jnd_dataset.py</a>.</div>
+
+    <p><strong>To reproduce Issue #31's numbers</strong>: get a free API key from <a href="https://collegefootballdata.com" style="color:var(--steel)">collegefootballdata.com</a>, set <span style="font-family:'Roboto Mono',monospace;font-size:.85em;background:var(--card);padding:.1em .35em">CFBD_KEY</span> in your environment, then run:</p>
+
+<pre class="code">CFBD_KEY=&lt;your_key&gt; python3 scripts/build_cfb_jnd_dataset.py
+python3 scripts/fit_cfb_jnd_curves.py</pre>
+
+    <p>The first script fetches games and AP rankings for 30 seasons, joins them on (year, week, team), filters to ranked-vs-ranked matchups, and writes the dataset to <span style="font-family:'Roboto Mono',monospace;font-size:.85em;background:var(--card);padding:.1em .35em">scripts/data/cfb-ranked-matchups.csv</span>. The second loads the CSV, fits the logistic, and prints the JND plus a per-delta breakdown.</p>
+
+    <p><strong>To run it on a different ranking system</strong>: replace the CFBD API call with whatever data source has your ranking + outcome pairs. The fit_logistic function doesn't care what the predictor is &mdash; it could be NBA Vegas line difference, NHL Elo gap, soccer Pythagorean expectation, anything. The JND framework generalizes to any ordinal-rank-vs-binary-outcome question.</p>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--steel);margin-top:1.4rem;margin-bottom:.5rem">Caveats and known limitations</h3>
+    <ul style="margin:.3rem 0 .6rem 1.4rem;font-size:.92rem">
+      <li>Only AP poll rankings, not Coaches or CFP. The CFP era introduced its own committee ranking that may have different JND properties; we haven't fit it separately yet.</li>
+      <li>No home-field adjustment. Home teams win ~58% of CFB games on average; that means our predictions are slightly miscalibrated when the lower-ranked team is at home.</li>
+      <li>No Vegas line incorporated. The line is a far better predictor than the poll, and a JND analysis on point-spread outcomes would yield a tighter curve.</li>
+      <li>Logistic regression assumes the relationship is monotonic in Δ. It mostly is, but the per-delta scatter shows a notable Δ=4 anomaly (63.5% across 137 games, lower than Δ=3 or Δ=5). The logistic fit smooths over that bump.</li>
+      <li>FBS only. FCS, Division II, Division III matchups are excluded.</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- BACK TO MAIN -->
+  <p style="text-align:center;font-family:'Libre Baskerville',serif;font-style:italic;color:var(--muted);margin-top:1.5rem">
+    Read the article that uses this analysis: <a href="022-cfb-jnd-rankings.html" style="color:var(--rust)">The Just-Noticeable Difference in College Football Rankings Is 13 &rarr;</a>
+  </p>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Deeper Dive</span>
+    <span>Methodology Supplement to Issue No. 31</span>
+    <span>Reproducibility receipts on every methodology piece</span>
+  </div>
+
+</div>
+
+</body>
+</html>
