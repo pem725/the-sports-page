@@ -1,0 +1,198 @@
+<!-- PUBLISH-META
+topic: NFL
+tags: NFL:nfl, Jets, Drafting, After-the-Jets Series
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+table.rec .hl .mono{color:var(--green);font-weight:700}
+table.rec .jets td{background:#fef0ec;font-weight:700}
+table.rec .jets .mono{color:var(--rust);font-weight:700}
+.dist-bar{display:grid;grid-template-columns:auto 1fr auto;gap:.6rem;align-items:center;font-family:'Roboto Mono',monospace;font-size:.78rem;margin:.3rem 0;line-height:1.5}
+.dist-bar .label{color:var(--muted);min-width:7ch}
+.dist-bar .bar{background:var(--card);height:1.4rem;border:1px solid var(--div);position:relative;overflow:hidden}
+.dist-bar .bar-fill{background:var(--steel);height:100%}
+.dist-bar .bar-fill.jets{background:var(--rust)}
+.dist-bar .bar-fill.elite{background:var(--green)}
+.dist-bar .count{font-weight:600;min-width:5ch;text-align:right}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">After the Jets &middot; Part 1 of 4 &middot; Football, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">The Jets Have Drafted <em>One</em> Hall of Famer in Fifty Years. So Have <em>Twelve</em> Other Teams.</h1>
+<div class="deck">Issue No. 25 noted that the Jets had produced exactly one first-round Hall of Famer since 1976. The number sounded damning. The number is, across the league, the modal outcome. Part 1 of a four-part series on what the Jets&rsquo; draft history looks like once you put it next to everyone else&rsquo;s.</div>
+<div class="byline">By The Columnist &middot; The Sports Page &middot; After the Jets, Part 1 of 4</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v" style="color:var(--steel)">66</div><div class="l">Total HoFers, 32 Teams, 50 Yrs</div></div>
+  <div class="sc"><div class="v now">2.06</div><div class="l">League Average per Team</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">13/32</div><div class="l">Teams With 0 or 1 HoFers</div></div>
+</div>
+
+<p>This newsletter, in Issue No. 25, took a swing at the Jets&rsquo; first-round draft history and noted, with appropriate gravity, that the franchise had produced one Hall of Fame first-round pick since 1976. The Hall of Famer is Darrelle Revis. The implication, as written, was that one Hall of Famer in fifty years of high-leverage picks is a franchise indictment.</p>
+
+<p>It is also &mdash; this is the part Issue No. 25 did not test &mdash; the modal outcome across the league. Twelve other franchises have drafted exactly one first-round Hall of Famer over the same window. One franchise, the Eagles, has drafted zero. The honest verdict on the Jets&rsquo; draft history is not that they are uniquely bad at finding stars. The honest verdict is that they are normally bad, in a league where being normally bad is the rule.</p>
+
+<h2 class="sh">The Distribution, in One Picture</h2>
+
+<div class="dist-bar">
+  <div class="label">0 HoFers</div>
+  <div class="bar"><div class="bar-fill" style="width:3.13%"></div></div>
+  <div class="count">1 (PHI)</div>
+</div>
+<div class="dist-bar">
+  <div class="label">1 HoFer</div>
+  <div class="bar"><div class="bar-fill jets" style="width:37.5%"></div></div>
+  <div class="count">12 (incl. <strong>NYJ</strong>)</div>
+</div>
+<div class="dist-bar">
+  <div class="label">2 HoFers</div>
+  <div class="bar"><div class="bar-fill" style="width:28.13%"></div></div>
+  <div class="count">9</div>
+</div>
+<div class="dist-bar">
+  <div class="label">3 HoFers</div>
+  <div class="bar"><div class="bar-fill" style="width:18.75%"></div></div>
+  <div class="count">6</div>
+</div>
+<div class="dist-bar">
+  <div class="label">4 HoFers</div>
+  <div class="bar"><div class="bar-fill" style="width:9.38%"></div></div>
+  <div class="count">3</div>
+</div>
+<div class="dist-bar">
+  <div class="label">6 HoFers</div>
+  <div class="bar"><div class="bar-fill elite" style="width:3.13%"></div></div>
+  <div class="count">1 (IND)</div>
+</div>
+
+<p>Forty percent of the league has produced zero or one first-round Hall of Famer in fifty years. The largest single cohort &mdash; thirteen teams &mdash; has produced exactly one. The Jets sit on that line. Their indictment is, statistically, the population mean of the league&rsquo;s lower half.</p>
+
+<h2 class="sh">The Top of the League</h2>
+
+<table class="rec">
+  <thead><tr><th>Team</th><th>HoFers</th><th>Picks</th><th>Rate</th><th>Drafted</th></tr></thead>
+  <tbody>
+    <tr class="hl"><td><strong>Indianapolis Colts</strong></td><td class="mono">6</td><td class="mono">44</td><td class="mono">13.6%</td><td>Elway, Faulk, M. Harrison, Manning, E. James, Freeney</td></tr>
+    <tr><td>Dallas Cowboys</td><td class="mono">4</td><td class="mono">42</td><td class="mono">9.5%</td><td>M. Irvin, Aikman, E. Smith, Ware</td></tr>
+    <tr><td>Seattle Seahawks</td><td class="mono">4</td><td class="mono">43</td><td class="mono">9.3%</td><td>Easley, Kennedy, Walter Jones, Hutchinson</td></tr>
+    <tr><td>San Francisco 49ers</td><td class="mono">4</td><td class="mono">50</td><td class="mono">8.0%</td><td>Lott, Rice, B. Young, P. Willis</td></tr>
+    <tr><td>Baltimore Ravens</td><td class="mono">3</td><td class="mono">33</td><td class="mono">9.1%</td><td>Ogden, R. Lewis, E. Reed</td></tr>
+  </tbody>
+</table>
+
+<p>Indianapolis is the league outlier. Six Hall of Famers in forty-four picks, more than triple the league average. They are also a useful study in why these distributions are so heavy in the right tail: the Colts&rsquo; six HoFers were drafted in a sixteen-year window, 1983 to 2002, when first Tom Polian and then Bill Polian ran the front office. Six HoFers in fifty years is not a fifty-year team-building competence. It is an era. The other tier-one franchises tell similar stories: Dallas&rsquo;s four HoFers come almost entirely from a 1988-1990 trio plus a 2005 outlier; Seattle&rsquo;s four cluster between 1981 and 2001; San Francisco&rsquo;s four span 1981 to 2007 but are concentrated around the dynasty era. The team-level numbers are eras.</p>
+
+<h2 class="sh">The Bottom of the League</h2>
+
+<table class="rec">
+  <thead><tr><th>Team</th><th>HoFers</th><th>Picks</th><th>Rate</th><th>Drafted</th></tr></thead>
+  <tbody>
+    <tr class="jets"><td><strong>New York Jets</strong></td><td class="mono">1</td><td class="mono">53</td><td class="mono">1.9%</td><td>Revis (2007)</td></tr>
+    <tr><td>Cincinnati Bengals</td><td class="mono">1</td><td class="mono">52</td><td class="mono">1.9%</td><td>A. Mu&ntilde;oz (1980) &mdash; nothing for 45 years</td></tr>
+    <tr><td>NY Giants</td><td class="mono">1</td><td class="mono">49</td><td class="mono">2.0%</td><td>Lawrence Taylor (1981)</td></tr>
+    <tr><td>Green Bay Packers</td><td class="mono">1</td><td class="mono">49</td><td class="mono">2.0%</td><td>Sterling Sharpe (1988)</td></tr>
+    <tr><td>Atlanta Falcons</td><td class="mono">1</td><td class="mono">48</td><td class="mono">2.1%</td><td>Deion Sanders (1989)</td></tr>
+    <tr><td>New Orleans Saints</td><td class="mono">1</td><td class="mono">46</td><td class="mono">2.2%</td><td>Willie Roaf (1993)</td></tr>
+    <tr><td>Miami Dolphins</td><td class="mono">1</td><td class="mono">44</td><td class="mono">2.3%</td><td>Dan Marino (1983)</td></tr>
+    <tr><td>Cleveland Browns</td><td class="mono">1</td><td class="mono">42</td><td class="mono">2.4%</td><td>Joe Thomas (2007)</td></tr>
+    <tr><td>Arizona Cardinals</td><td class="mono">1</td><td class="mono">39</td><td class="mono">2.6%</td><td>L. Fitzgerald (2004)</td></tr>
+    <tr><td>Denver Broncos</td><td class="mono">1</td><td class="mono">38</td><td class="mono">2.6%</td><td>S. Atwater (1989)</td></tr>
+    <tr><td>Jacksonville Jaguars</td><td class="mono">1</td><td class="mono">36</td><td class="mono">2.8%</td><td>Tony Boselli (1995)</td></tr>
+    <tr><td>Houston Texans</td><td class="mono">1</td><td class="mono">22</td><td class="mono">4.5%</td><td>A. Johnson (2003)</td></tr>
+    <tr class="jets"><td><strong>Philadelphia Eagles</strong></td><td class="mono">0</td><td class="mono">43</td><td class="mono">0.0%</td><td>(none)</td></tr>
+  </tbody>
+</table>
+
+<p>Read this list slowly. The New York Giants, with a 50-year window, produced exactly one Hall of Famer in their first round &mdash; Lawrence Taylor, in 1981. They have not produced another. The Green Bay Packers&rsquo; only first-round HoFer is Sterling Sharpe. The Bengals&rsquo; only first-round HoFer is Anthony Mu&ntilde;oz, drafted forty-five years ago. The Eagles, drafting from a major media market with regular high picks for two decades of bad teams, have produced none.</p>
+
+<p>The Jets&rsquo; one HoFer is, by the rate, indistinguishable from the Bengals&rsquo; one. The two franchises have nearly identical picks (53 and 52), nearly identical HoF rates (1.89% and 1.92%), and nearly identical reputations as poorly-run organizations. They are not the league&rsquo;s anti-talents. They are its median.</p>
+
+<div class="pull">
+  <p>&ldquo;The honest indictment of the Jets is not that they cannot find Hall of Famers. The honest indictment is that they cannot find Hall of Famers, and neither can twelve other teams.&rdquo;</p>
+  <cite>&mdash; The Columnist, on context</cite>
+</div>
+
+<h2 class="sh">What This Doesn&rsquo;t Excuse</h2>
+
+<p>None of this argues the Jets&rsquo; draft history is good. The Jets are below the league median (two HoFers); they are below the median by exactly one Hall of Famer. They are also tied with the New York Giants &mdash; usually held up as the well-run rival across the metropolitan area &mdash; on this one specific metric. That comparison is a useful corrective. It is not a vindication.</p>
+
+<p>What the league-wide distribution actually says is that the supply of first-round Hall of Famers is concentrated in a small number of franchise-eras. Six teams (Indianapolis, Dallas, Seattle, San Francisco, Baltimore, Washington) account for twenty-four of the league&rsquo;s sixty-six first-round HoFers &mdash; thirty-six percent of the talent supply, drafted by nineteen percent of the league. The other twenty-six teams split the remaining forty-two HoFers, an average of 1.6 per franchise. The Jets&rsquo; one falls inside that 1.6-per-franchise pool. So does every team in the bottom-thirteen list above.</p>
+
+<p>The case against the Jets, properly stated, is therefore not &ldquo;they have produced one Hall of Famer in fifty years.&rdquo; It is &ldquo;they have produced one Hall of Famer in fifty years, and they have done it while being mediocre on other dimensions of evaluation.&rdquo; Those other dimensions &mdash; Pro Bowls, slot-adjusted career value, retention &mdash; are the subject of Parts 2, 3, and 4 of this series.</p>
+
+<h2 class="sh">Coming Next</h2>
+
+<p>Part 2 (Bust Leaderboard) ranks all thirty-two teams on the three Issue No. 25 bust definitions and asks whether the Jets&rsquo; bust rate is, like their HoF count, ordinary or genuinely off. Part 3 (Worst Evaluators) extends across the four major sports and tries to separate teams that draft poorly from teams that draft fine but won&rsquo;t pay to keep talent &mdash; an Athletics-and-Pirates problem in baseball that the NFL doesn&rsquo;t face quite the same way. Part 4 (Where Scouting Earns Its Money) tests the widely-held belief that draft separation happens in the late rounds, not the early ones, and asks where the Jets fall on that curve.</p>
+
+<p>By the end of this series, the question &ldquo;is the Jets&rsquo; draft history actually bad, and if so, in what specific way&rdquo; will have a real answer. So far, in Part 1: their HoF count alone says nothing about the Jets that does not also say it about half the league.</p>
+
+<div class="footer">
+  <span>The Sports Page &middot; Issue No. __ &middot; After the Jets, Part 1/4</span>
+  <span>Source: nflverse draft_picks.csv (1976-2025, n=1,395 picks)</span>
+  <span>Not financial or wagering advice</span>
+</div>
+</div>
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+</body>
+</html>
