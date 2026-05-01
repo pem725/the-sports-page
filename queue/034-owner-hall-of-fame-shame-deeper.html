@@ -1,0 +1,226 @@
+<!-- DEEPER DIVE for Issue #__ — Owner Hall of Fame/Shame -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deeper Dive — Why Variance Matters and Why Composites Beat Singletons — The Sports Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f;--code-bg:#1a2330}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--steel);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);font-weight:600}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--steel);border-bottom:3px double var(--steel);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:900;line-height:1.15;margin-bottom:.4rem}
+.hed em{color:var(--steel);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.05rem;color:var(--muted);border-left:3px solid var(--steel);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.toc{background:var(--card);border:1px solid var(--div);padding:1rem 1.2rem;margin:1.2rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem}
+.toc strong{color:var(--steel);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem;display:block;margin-bottom:.5rem}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--div);transition:border-color .2s}
+.toc a:hover{border-bottom-color:var(--steel)}
+.toc-sep{color:var(--muted);margin:0 .35rem}
+.back-link{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em}
+.back-link a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.tier{margin:2.4rem 0 1.5rem;padding-top:1.5rem;border-top:3px double var(--steel)}
+.tier-kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.3rem}
+.tier-hed{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;line-height:1.2;margin-bottom:.6rem}
+.tier-hed em{color:var(--steel);font-style:italic}
+p{margin-bottom:.9rem}
+.callout{background:var(--card);border-left:4px solid var(--gold);padding:.9rem 1.1rem;margin:1.2rem 0;font-size:.92rem;line-height:1.65}
+.callout strong{color:var(--rust)}
+.math-block{font-family:'Roboto Mono',monospace;background:var(--steel);color:#dce8f5;padding:1rem 1.2rem;font-size:.82rem;line-height:1.85;margin:1rem 0;white-space:pre-wrap;overflow-x:auto;border-radius:0}
+.math-block .accent{color:var(--gold);font-weight:600}
+pre.code{background:var(--code-bg);color:#e0e8f5;padding:1.2rem 1.4rem;font-family:'Roboto Mono',monospace;font-size:.78rem;line-height:1.65;overflow-x:auto;margin:1rem 0;border-left:4px solid var(--steel)}
+pre.code .kw{color:#ff8b6b}
+pre.code .str{color:#a8e0c8}
+pre.code .num{color:#c9b890}
+pre.code .com{color:#7d8a9c;font-style:italic}
+pre.code .fn{color:#88c8ff}
+.snapshot-note{font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);letter-spacing:.05em;margin-top:-.5rem;margin-bottom:1.2rem;padding:.5rem .8rem;background:var(--card);border-left:3px solid var(--gold);font-style:italic}
+.snapshot-note a{color:var(--steel)}
+.worked-example{background:#fff;border:1px solid var(--div);padding:1rem 1.2rem;margin:1rem 0;font-size:.92rem}
+.worked-example h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--rust);margin-bottom:.5rem}
+.worked-example .step{margin-left:1.2rem;margin-bottom:.4rem}
+.worked-example .verdict{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.05em;margin-top:.6rem}
+.footer{border-top:3px double var(--steel);padding-top:.7rem;margin-top:2.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="masthead">
+  <div class="kicker">Deeper Dive &middot; Methodology Supplement</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Where the math lives</div>
+  <div class="datebar">
+    <span>Supplement to Issue No. __</span>
+    <span>Variance, Composites, and Bill James</span>
+    <span>For readers who want the math</span>
+  </div>
+</div>
+
+<nav style="max-width:820px;margin:.4rem auto 0" class="back-link" aria-label="Page navigation">
+  <a href="../index.html">&larr; Back to Archive</a> &middot;
+  <a href="034-owner-hall-of-fame-shame.html">Read the original article &rarr;</a>
+</nav>
+
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Why <em>Variance</em> Matters, and Why Composite Indices Beat Single Stats</h1>
+
+  <div class="deck">
+    The companion piece to the Owner Hall of Fame &amp; Shame. Variance is the squared deviation from the mean &mdash; and it is the single most important concept in applied statistics, because it controls how much you can trust any individual measurement. Three sections, three reader levels.
+  </div>
+
+  <div class="byline">Methodology Supplement &middot; Variance and Composite Indices &middot; May 2026</div>
+
+  <div class="toc" role="navigation" aria-label="Sections of this supplement">
+    <strong>Three sections, jump to your level</strong>
+    <a href="#the-idea">The Idea</a>
+    <span class="toc-sep">&middot;</span>
+    <a href="#the-math">The Math</a>
+    <span class="toc-sep">&middot;</span>
+    <a href="#the-code">The Code</a>
+  </div>
+
+  <!-- THE IDEA -->
+  <section id="the-idea" class="tier" aria-labelledby="the-idea-hed">
+    <div class="tier-kicker">The Idea</div>
+    <h2 id="the-idea-hed" class="tier-hed">The single most useful word in <em>statistics</em></h2>
+
+    <p>Suppose you and a friend each measure the height of a flagpole and report your answers. Yours: thirty-two feet. Theirs: forty-one feet. The mean of your two answers is 36.5, and that mean is, on average, more accurate than either individual measurement. The reason is variance. Each of you, working alone, was subject to measurement error &mdash; a slightly off reading on the tape measure, a hand that wobbled. By averaging two independent measurements, you cancel out half the error.</p>
+
+    <p>Variance is the formal name for that error. In statistics, it is the average squared distance of a set of numbers from their mean. A high-variance measurement is one that bounces around a lot, day to day or trial to trial; a low-variance measurement is one that lands close to its true value most of the time. Here is the foundational fact: <strong>when you average several measurements, the variance of the average is smaller than the variance of any single measurement.</strong> Specifically, for n independent measurements with the same variance, the variance of the mean is divided by n. Two measurements halve the error. Four quarter it. Sixteen reduce it by sixteen.</p>
+
+    <div class="callout">
+      <strong>Why this matters for owner rankings.</strong> A single championship is a high-variance measurement of an owner&rsquo;s competence. Lots of luck, lots of timing, lots of factors outside the owner&rsquo;s control. Win percentage is a more stable measurement &mdash; spread across hundreds of games &mdash; but still partial. Playoff appearance rate captures something else again. Each of these three numbers carries some signal about the owner and a lot of noise about everything else. Average them, and the noise partially cancels. The signal stays.
+    </div>
+
+    <p>This is the whole reason composite indices &mdash; in sports, in economics, in clinical trials &mdash; exist. The Consumer Price Index averages thousands of prices because any single price is noisy. The S&amp;P 500 averages five hundred companies because any single company is noisy. Bill James&rsquo;s Win Shares averages offense, defense, and pitching because any single component is noisy. The same statistical move, applied to different problems, with the same justification: <em>the average is more reliable than its parts</em>.</p>
+
+    <p>The question, then, is which parts to combine and how to weight them. The honest answer is that there is no single right combination &mdash; but as long as each input is a reasonable measurement of the underlying thing you care about, averaging them reduces error. That is the only mathematical guarantee. It happens to be a very strong one.</p>
+  </section>
+
+  <!-- THE MATH -->
+  <section id="the-math" class="tier" aria-labelledby="the-math-hed">
+    <div class="tier-kicker">The Math</div>
+    <h2 id="the-math-hed" class="tier-hed">The variance of the mean is <em>variance over n</em></h2>
+
+    <p>The formal definition of variance, for a random variable X with mean &mu;:</p>
+
+    <div class="math-block">Var(<span class="accent">X</span>) = E[(X &minus; &mu;)&sup2;]</div>
+
+    <p>If you have n independent random variables X&#8321;, X&#8322;, &hellip;, X&#x2099;, each with the same variance &sigma;&sup2;, the variance of their average is:</p>
+
+    <div class="math-block">Var(mean of X) = <span class="accent">&sigma;&sup2;</span> / <span class="accent">n</span></div>
+
+    <p>This single equation is the engine of almost everything in applied statistics. It is why polls report margins of error inversely proportional to the square root of sample size, why scientific experiments use replicate measurements, and why averaging three reasonable owner metrics is more reliable than fixating on one. The variance of a three-metric average is one-third the variance of a single metric (assuming the three are independent &mdash; in practice they are correlated, which softens but does not eliminate the gain).</p>
+
+    <p>Z-scoring, the move used in the main piece, is a related discipline. It standardizes each metric by subtracting the league mean and dividing by the league standard deviation:</p>
+
+    <div class="math-block">z = (<span class="accent">x</span> &minus; &mu;) / &sigma;</div>
+
+    <p>The result is a number that says, in standard-deviation units, where this owner sits relative to their peers. A z-score of +1 is one standard deviation above the league mean; +2 is two. Z-scores are dimensionless, so a z-score on championships per decade (an NBA-scale number around 1-3) and a z-score on win percentage (a fraction between 0 and 1) can be averaged together honestly. Without z-scoring, the championship metric would dominate the average because its raw values are larger.</p>
+
+    <div class="worked-example">
+      <h4>Worked example: Jerry Buss vs. James Dolan, in z-scores</h4>
+      <p>For the NBA owners in our dataset, the within-league means and standard deviations on each metric are approximately:</p>
+      <p class="step">&middot; Champs/decade: &mu; = 1.0, &sigma; = 1.1</p>
+      <p class="step">&middot; Win percentage: &mu; = 0.510, &sigma; = 0.080</p>
+      <p class="step">&middot; Playoff%: &mu; = 0.59, &sigma; = 0.21</p>
+      <p>Buss: champs/decade = 3.03, win% = .622, playoff% = .88</p>
+      <p class="step">z &asymp; (3.03 &minus; 1.0)/1.1, (0.622 &minus; 0.510)/0.080, (0.88 &minus; 0.59)/0.21</p>
+      <p class="step">z &asymp; +1.85, +1.40, +1.38</p>
+      <p class="step">Composite = (1.85 + 1.40 + 1.38) / 3 &asymp; <strong>+1.54</strong></p>
+      <p>Dolan: champs/decade = 0, win% = .430, playoff% = .35</p>
+      <p class="step">z &asymp; (0 &minus; 1.0)/1.1, (0.430 &minus; 0.510)/0.080, (0.35 &minus; 0.59)/0.21</p>
+      <p class="step">z &asymp; &minus;0.91, &minus;1.00, &minus;1.14</p>
+      <p class="step">Composite = (&minus;0.91 + &minus;1.00 + &minus;1.14) / 3 &asymp; <strong>&minus;1.02</strong></p>
+      <p class="verdict">VERDICT &middot; Buss is roughly 2.5 standard deviations above Dolan in NBA owner space. A single-metric ranking on championships would say Buss-by-ten and Dolan-by-zero, which understates the gap because zero is the floor on champs but Dolan&rsquo;s underperformance shows up across all three components.</p>
+    </div>
+
+    <p>The cross-league rankings in the main piece use this same procedure, run within each league. Cross-league composites are then directly comparable because z-scores share a common scale &mdash; one standard deviation in the NBA is the same statistical distance from the mean as one standard deviation in the NFL. The MLB and NHL z-scores are computed analogously.</p>
+  </section>
+
+  <!-- THE CODE -->
+  <section id="the-code" class="tier" aria-labelledby="the-code-hed">
+    <div class="tier-kicker">The Code</div>
+    <h2 id="the-code-hed" class="tier-hed">The Owner Index, in <em>thirty lines of Python</em></h2>
+
+    <p>Below is a self-contained implementation. The input is a list of owners with their three raw metrics; the output is a sorted ranking with composite z-scores. The math is exactly what was described above; the code makes it explicit.</p>
+
+    <div class="snapshot-note">Snapshot: this is illustrative. The actual Owner Index numbers in the article were computed from a slightly larger spreadsheet of inputs (including approximate playoff percentages for older owners). The methodology is identical to what&rsquo;s shown below.</div>
+
+<pre class="code"><span class="com"># owner_index.py — z-scored composite of three owner metrics</span>
+<span class="kw">from</span> statistics <span class="kw">import</span> mean, stdev
+<span class="kw">from</span> collections <span class="kw">import</span> defaultdict
+
+<span class="kw">def</span> <span class="fn">z_score</span>(value, values):
+    mu = mean(values)
+    sigma = stdev(values)
+    <span class="kw">return</span> (value - mu) / sigma <span class="kw">if</span> sigma &gt; <span class="num">0</span> <span class="kw">else</span> <span class="num">0</span>
+
+<span class="kw">def</span> <span class="fn">owner_index</span>(owners):
+    <span class="com"># owners is a list of dicts with keys:</span>
+    <span class="com">#   league, champs_per_decade, win_pct, playoff_pct</span>
+    by_league = defaultdict(list)
+    <span class="kw">for</span> o <span class="kw">in</span> owners:
+        by_league[o[<span class="str">"league"</span>]].append(o)
+
+    <span class="kw">for</span> league, group <span class="kw">in</span> by_league.items():
+        cpd = [o[<span class="str">"champs_per_decade"</span>] <span class="kw">for</span> o <span class="kw">in</span> group]
+        wpc = [o[<span class="str">"win_pct"</span>]            <span class="kw">for</span> o <span class="kw">in</span> group]
+        ppc = [o[<span class="str">"playoff_pct"</span>]        <span class="kw">for</span> o <span class="kw">in</span> group]
+        <span class="kw">for</span> o <span class="kw">in</span> group:
+            z1 = z_score(o[<span class="str">"champs_per_decade"</span>], cpd)
+            z2 = z_score(o[<span class="str">"win_pct"</span>],            wpc)
+            z3 = z_score(o[<span class="str">"playoff_pct"</span>],        ppc)
+            o[<span class="str">"composite"</span>] = (z1 + z2 + z3) / <span class="num">3</span>
+
+    <span class="kw">return</span> sorted(owners, key=<span class="kw">lambda</span> o: -o[<span class="str">"composite"</span>])
+
+<span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
+    <span class="com"># 21-row spreadsheet truncated for illustration</span>
+    data = [
+        {<span class="str">"name"</span>: <span class="str">"Jerry Buss"</span>,    <span class="str">"league"</span>: <span class="str">"NBA"</span>,
+         <span class="str">"champs_per_decade"</span>: <span class="num">3.03</span>, <span class="str">"win_pct"</span>: <span class="num">0.622</span>, <span class="str">"playoff_pct"</span>: <span class="num">0.88</span>},
+        {<span class="str">"name"</span>: <span class="str">"James Dolan"</span>,   <span class="str">"league"</span>: <span class="str">"NBA"</span>,
+         <span class="str">"champs_per_decade"</span>: <span class="num">0.0</span>,  <span class="str">"win_pct"</span>: <span class="num">0.430</span>, <span class="str">"playoff_pct"</span>: <span class="num">0.35</span>},
+        <span class="com"># ... 19 more owners, real data in spreadsheet</span>
+    ]
+    ranked = owner_index(data)
+    <span class="kw">for</span> o <span class="kw">in</span> ranked:
+        print(<span class="str">f"{o['name']:25s} {o['league']:5s} composite = {o['composite']:+.2f}"</span>)</pre>
+
+    <p>Three notes on what the code does <em>not</em> do. First, it does not weight the three metrics &mdash; they are averaged equally. A more sophisticated index would weight by inverse variance or by predictive validity. Second, it treats the three metrics as independent, which they are not (good owners tend to be good at all three). The variance reduction from averaging correlated inputs is smaller than the equation in the math section suggests &mdash; but it is still positive. Third, it z-scores within league but not within era. An owner from the 1980s NBA faces a different competitive landscape than one from the 2020s NBA. A version that respected era would z-score within league-decade.</p>
+
+    <p>Each of those refinements would shuffle the rankings somewhat. None of them would change the basic finding: composites are more stable than single stats, and Bill James&rsquo;s methodological move &mdash; in 1985, in 2002, and now &mdash; remains the right one.</p>
+
+    <div class="callout">
+      <strong>The Bill James citation.</strong> The Win Shares system is documented in Bill James&rsquo;s 2002 book <em>Win Shares</em>, but the underlying philosophy &mdash; that no single component captures a player&rsquo;s contribution &mdash; runs through his entire body of work, including the early <em>Baseball Abstract</em> series (1977-1988) and his work on the Hall of Fame ballot (the <em>Politics of Glory</em>, 1994). The composite move is older than James &mdash; the Consumer Price Index dates to 1913, and statistical principal components to Karl Pearson in 1901 &mdash; but James popularized it for sports.
+    </div>
+  </section>
+
+  <hr>
+
+  <p style="font-size:.85rem;color:var(--muted);font-style:italic">If your favorite ranking is built on a single number, ask yourself how that number compares to two or three reasonable alternatives. If they all agree, the ranking is robust. If they disagree, the headline number is doing too much work.</p>
+
+  <div class="footer">
+    <span>Deeper Dive &middot; Variance and Composite Indices</span>
+    <span>References: James (2002, Win Shares); James (1994, Politics of Glory)</span>
+    <span>Companion to Issue __</span>
+  </div>
+</div>
+
+</body>
+</html>

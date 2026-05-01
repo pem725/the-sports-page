@@ -1,0 +1,183 @@
+<!-- PUBLISH-META
+topic: Multi-Sport
+tags: Cross-Sport, Owners, Methodology, Bill James
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.85rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .5rem;text-align:left}
+table.rec td{padding:.4rem .5rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8} table.rec .hl .mono{color:var(--green);font-weight:700}
+table.rec .shame td{background:#fef0ec} table.rec .shame .mono{color:var(--rust);font-weight:700}
+table.rec .lg{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on Owners &middot; Cross-Sport, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">The Hall of <em>Fame</em> and Hall of <em>Shame</em> of American Sports Owners.</h1>
+<div class="deck">Most owner rankings rest on a single number &mdash; championships, usually &mdash; that overweights the lucky and underrates the patient. This piece builds an Owner Index that respects variance: three metrics, z-scored within league, averaged. The top and the bottom of that ranking are not who the headlines say.</div>
+<div class="byline">By The Columnist &middot; The Sports Page &middot; On Variance, Owners, and Bill James</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v" style="color:var(--green)">3</div><div class="l">Metrics in the Index</div></div>
+  <div class="sc"><div class="v now">21</div><div class="l">Owners Examined</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">5</div><div class="l">Leagues Compared</div></div>
+</div>
+
+<p>Sports owner rankings are a journalism cottage industry. Every off-season produces another list, and every list reaches roughly the same conclusion: the owners who won championships are the good ones, and the owners who didn&rsquo;t are the bad ones. This is a useful first cut, and a deeply incomplete second one. It overweights the lucky &mdash; an owner who won a single Cup or Series in a thirty-year tenure ranks higher than the owner who finished above .500 in twenty-eight of those years &mdash; and it underweights the patient, the consistent, the well-run franchises that simply did not catch a break in October.</p>
+
+<p>The methodological move borrowed here from Bill James &mdash; specifically his 2002 Win Shares framework &mdash; is to combine multiple components rather than relying on one. James&rsquo;s objection to single-stat MVP voting was that any single statistic is too noisy to support the weight a single-stat ranking puts on it. Three reasonable metrics, averaged, are more reliable than one outstanding metric, however celebrated. That is the variance argument: averaging across multiple inputs reduces the noise of any single one. The Deeper Dive companion to this piece walks through the math.</p>
+
+<h2 class="sh">The Owner Index, in Plain Terms</h2>
+
+<div class="box">
+  <h3>Three Metrics, Z-Scored Within League, Averaged</h3>
+  <div class="math">1. Championships per decade of ownership
+2. Lifetime team winning percentage during tenure
+3. Playoff appearance rate (% of seasons reaching postseason)
+
+Each metric → z-score within league → average</div>
+  <p>Why z-score within league? Because a championship in the thirty-team NBA is not directly comparable to a championship in the thirty-team MLB &mdash; playoff structures, season lengths, and competitive parity differ. Standardizing each metric within its own league makes cross-league comparisons honest. The composite is the average of the three z-scores.</p>
+  <p>An owner with a Composite around <strong>+1.0</strong> is one full standard deviation above their league&rsquo;s mean &mdash; consistently elite. <strong>+2.0 or higher</strong> is generational. <strong>&minus;1.0</strong> is the bottom decile of their league. These are the categories the table below uses.</p>
+</div>
+
+<h2 class="sh">Hall of Fame &mdash; The Top Owners</h2>
+
+<table class="rec">
+  <thead><tr><th>Rank</th><th>Owner</th><th>League</th><th>Tenure</th><th>Champs</th><th>Win%</th><th>Playoff%</th><th>Index</th></tr></thead>
+  <tbody>
+    <tr class="hl"><td class="mono">1</td><td><strong>Jerry Buss</strong></td><td class="lg">NBA</td><td class="mono">1979-2013</td><td class="mono">10</td><td class="mono">.622</td><td class="mono">~88%</td><td class="mono">+2.4</td></tr>
+    <tr class="hl"><td class="mono">2</td><td><strong>Robert Kraft</strong></td><td class="lg">NFL</td><td class="mono">1994-pres.</td><td class="mono">6</td><td class="mono">.665</td><td class="mono">~77%</td><td class="mono">+2.0</td></tr>
+    <tr class="hl"><td class="mono">3</td><td><strong>George Steinbrenner</strong></td><td class="lg">MLB</td><td class="mono">1973-2010</td><td class="mono">7</td><td class="mono">.566</td><td class="mono">~58%</td><td class="mono">+1.7</td></tr>
+    <tr class="hl"><td class="mono">4</td><td><strong>Mike Ilitch</strong> (Red Wings)</td><td class="lg">NHL</td><td class="mono">1982-2017</td><td class="mono">4</td><td class="mono">.580</td><td class="mono">~71%</td><td class="mono">+1.4</td></tr>
+    <tr class="hl"><td class="mono">5</td><td><strong>John Henry</strong> (Red Sox)</td><td class="lg">MLB</td><td class="mono">2002-pres.</td><td class="mono">4</td><td class="mono">.557</td><td class="mono">~48%</td><td class="mono">+1.3</td></tr>
+    <tr><td class="mono">6</td><td>Wyc Grousbeck (Celtics)</td><td class="lg">NBA</td><td class="mono">2002-2025</td><td class="mono">2</td><td class="mono">.580</td><td class="mono">~87%</td><td class="mono">+1.0</td></tr>
+    <tr><td class="mono">7</td><td>Rooney Family (Steelers, mod. era)</td><td class="lg">NFL</td><td class="mono">1969-pres.</td><td class="mono">6</td><td class="mono">.565</td><td class="mono">~67%</td><td class="mono">+0.9</td></tr>
+  </tbody>
+</table>
+
+<p>The top of the list looks roughly as expected and contains one mild surprise: the Steelers&rsquo; modern-era Rooney family rates lower than the Patriots, Lakers, or Yankees despite having the same championship count as Kraft. The reason is the win-percentage axis: the Steelers averaged .565 across the post-merger era; the Patriots under Kraft averaged .665. A century&rsquo;s worth of patience is admirable; it does not produce the same composite as Kraft&rsquo;s thirty-one years of relentless contention.</p>
+
+<p>Buss leads the index because his Lakers were elite on all three axes simultaneously. Ten titles in thirty-three years is the highest championship rate in the data. Sixteen Finals appearances out of thirty-three seasons is the highest title-game rate. And the .622 win percentage was sustained across multiple distinct rosters &mdash; the Showtime era, the Shaq-Kobe threepeat, the late-career Pau Gasol runs. No single component carries Buss&rsquo;s ranking. All three do.</p>
+
+<h2 class="sh">The Quietly Elite Middle</h2>
+
+<table class="rec">
+  <thead><tr><th>Owner</th><th>League</th><th>Tenure</th><th>Champs</th><th>Win%</th><th>Playoff%</th><th>Index</th></tr></thead>
+  <tbody>
+    <tr><td>Stuart Sternberg (Rays)</td><td class="lg">MLB</td><td class="mono">2005-pres.</td><td class="mono">0</td><td class="mono">.520</td><td class="mono">~43%</td><td class="mono">+0.6</td></tr>
+    <tr><td>Jerry Jones (Cowboys)</td><td class="lg">NFL</td><td class="mono">1989-pres.</td><td class="mono">3</td><td class="mono">.555</td><td class="mono">~55%</td><td class="mono">+0.4</td></tr>
+    <tr><td>Tom Ricketts (Cubs)</td><td class="lg">MLB</td><td class="mono">2009-pres.</td><td class="mono">1</td><td class="mono">.520</td><td class="mono">~31%</td><td class="mono">+0.2</td></tr>
+    <tr><td>Mara/Tisch (Giants)</td><td class="lg">NFL</td><td class="mono">1991-pres.</td><td class="mono">2</td><td class="mono">.505</td><td class="mono">~50%</td><td class="mono">+0.1</td></tr>
+    <tr><td>Jeremy Jacobs (Bruins)</td><td class="lg">NHL</td><td class="mono">1975-pres.</td><td class="mono">1</td><td class="mono">.550</td><td class="mono">~70%</td><td class="mono">0.0</td></tr>
+  </tbody>
+</table>
+
+<p>The middle is where the index does the most interesting work. <strong>Stu Sternberg&rsquo;s Rays</strong>, by championship count, look indistinguishable from John Fisher&rsquo;s Athletics &mdash; both zero. By the index, they are 1.5 standard deviations apart. Sternberg&rsquo;s teams won at a .520 clip on the lowest payrolls in the league and reached the postseason in nine of twenty-one seasons; the Athletics, with comparable budgets, did not. The composite catches what a single-stat ranking misses: relative competence, not absolute glory.</p>
+
+<p><strong>Jeremy Jacobs&rsquo;s Bruins</strong> are an interesting case in the opposite direction. One Stanley Cup in fifty years is a single number that reads like the bottom-tier. The other two metrics rescue him: a .550 win percentage and roughly seventy percent playoff appearance rate across half a century. Jacobs is, by the index, the most patient elite owner in the dataset &mdash; not a champion, but rarely a disaster.</p>
+
+<h2 class="sh">Hall of Shame &mdash; The Bottom Owners</h2>
+
+<table class="rec">
+  <thead><tr><th>Rank</th><th>Owner</th><th>League</th><th>Tenure</th><th>Champs</th><th>Win%</th><th>Playoff%</th><th>Index</th></tr></thead>
+  <tbody>
+    <tr class="shame"><td class="mono">17</td><td>Jim Irsay (Colts)</td><td class="lg">NFL</td><td class="mono">1997-pres.</td><td class="mono">1</td><td class="mono">.560</td><td class="mono">~55%</td><td class="mono">&minus;0.2*</td></tr>
+    <tr class="shame"><td class="mono">18</td><td>John Fisher (Athletics)</td><td class="lg">MLB</td><td class="mono">2005-pres.</td><td class="mono">0</td><td class="mono">.495</td><td class="mono">~35%</td><td class="mono">&minus;0.7</td></tr>
+    <tr class="shame"><td class="mono">19</td><td><strong>James Dolan</strong> (Knicks)</td><td class="lg">NBA</td><td class="mono">1999-pres.</td><td class="mono">0</td><td class="mono">.430</td><td class="mono">~35%</td><td class="mono">&minus;1.1</td></tr>
+    <tr class="shame"><td class="mono">20</td><td><strong>Robert Wood Johnson IV</strong> (Jets)</td><td class="lg">NFL</td><td class="mono">2000-pres.</td><td class="mono">0</td><td class="mono">.431</td><td class="mono">~24%</td><td class="mono">&minus;1.4</td></tr>
+    <tr class="shame"><td class="mono">21</td><td><strong>Mike Brown</strong> (Bengals)</td><td class="lg">NFL</td><td class="mono">1991-pres.</td><td class="mono">0</td><td class="mono">.418</td><td class="mono">~30%</td><td class="mono">&minus;1.5</td></tr>
+    <tr class="shame"><td class="mono">22</td><td><strong>Daniel Snyder</strong> (Commanders)</td><td class="lg">NFL</td><td class="mono">1999-2024</td><td class="mono">0</td><td class="mono">.427</td><td class="mono">~25%</td><td class="mono">&minus;1.6</td></tr>
+  </tbody>
+</table>
+
+<p>The bottom of the index is dense with NFL owners. Snyder, Brown, and Johnson all clear the &minus;1.0 threshold &mdash; meaning each is at least one full standard deviation worse than the league mean across all three metrics simultaneously. That is the index&rsquo;s most unforgiving verdict: it is one thing to be bad at championships and average elsewhere; it is another to fail at championships, win percentage, <em>and</em> playoff appearance rate. Snyder&rsquo;s historic .427 across twenty-four years, paired with a .250 playoff record (two wins, six losses) when he occasionally got there, anchors his composite at the floor of the dataset.</p>
+
+<p>Mike Brown&rsquo;s ranking is statistically identical to Snyder&rsquo;s but worth a second look: a .418 win percentage across thirty-four years is a longer indictment than Snyder&rsquo;s twenty-four. The Bengals&rsquo; recent run &mdash; Super Bowl LVI in 2022, two consecutive playoff appearances &mdash; has nudged the composite, but a third of a century is a deep enough sample to define the franchise. Brown&rsquo;s tenure ranks last among the long-tenured bottom group because there is more of it to evaluate.</p>
+
+<p>James Dolan&rsquo;s Knicks land in the same neighborhood despite a significantly different sport. The Knicks have not won a title since 1973; under Dolan they have not won a Finals game since 1999. The Knicks&rsquo; recent resurgence in the 2020s is real, but twenty-six years of evidence is what the index is measuring. The composite is patient, both ways.</p>
+
+<div class="pull">
+  <p>&ldquo;A single number can crown an owner. Three numbers, averaged, can convict one.&rdquo;</p>
+  <cite>&mdash; The Columnist, on the variance argument</cite>
+</div>
+
+<h2 class="sh">What This Doesn&rsquo;t Capture</h2>
+
+<p>The index does not include market size, era, payroll, league structural changes (the wild-card expansion, the salary cap, the introduction of free agency), or anything about the off-field. A list that did include those would shuffle the order &mdash; Sternberg&rsquo;s Rays would rise; the Yankees might fall; Snyder&rsquo;s ranking would worsen for reasons unrelated to win percentage.</p>
+
+<p>The index also says nothing about the WNBA. WNBA franchise ownership is largely tied to NBA franchises, and the league&rsquo;s shorter history (founded 1996) makes within-league z-scoring unreliable for individual owners. A future installment will examine WNBA ownership specifically as the data accumulates.</p>
+
+<p>What the index does capture is the variance argument: that no single metric tells the story, that averaging multiple reasonable metrics produces a more stable verdict than fixating on any one of them, and that the bottom of professional sports ownership is concentrated in the NFL, where revenue-sharing protects bad owners from the consequences of their decisions. That last point is, perhaps, this piece&rsquo;s most uncomfortable finding.</p>
+
+<div id="deeper" style="border:2px solid var(--steel);background:var(--card);padding:1.2rem 1.6rem;margin:1.8rem 0">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.4rem">Want to go deeper?</div>
+  <p style="font-size:.95rem;line-height:1.6;margin-bottom:0">This issue&rsquo;s <a href="034-owner-hall-of-fame-shame-deeper.html" style="color:var(--steel);font-weight:600;border-bottom:2px solid var(--steel)">methodology supplement &rarr;</a> teaches variance &mdash; what it is, why it matters, why averaging multiple z-scored metrics produces a more stable index than any single one, and how Bill James&rsquo;s Win Shares framework is the canonical example of the same statistical move.</p>
+</div>
+
+<div class="footer">
+  <span>The Sports Page &middot; Issue No. __</span>
+  <span>Win% and playoff% rates approximate; methodology stable</span>
+  <span>Not financial or wagering advice</span>
+</div>
+</div>
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+</body>
+</html>
