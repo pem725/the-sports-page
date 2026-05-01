@@ -1,0 +1,183 @@
+<!-- PUBLISH-META
+topic: NFL
+tags: NFL:nfl, Jets, Drafting, After-the-Jets Series
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.86rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.4rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8} table.rec .hl .mono{color:var(--green);font-weight:700}
+table.rec .jets td{background:#fef0ec;font-weight:700} table.rec .jets .mono{color:var(--rust);font-weight:700}
+.quadrants{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:1.5rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem}
+.quad{padding:.9rem 1rem;border:1px solid var(--div);background:var(--card)}
+.quad.hh{border-color:var(--green);background:#e0f0e8}
+.quad.ll{border-color:var(--rust);background:#fef0ec}
+.quad-label{font-weight:600;letter-spacing:.05em;text-transform:uppercase;font-size:.7rem;color:var(--muted);margin-bottom:.4rem}
+.quad-teams{font-size:.85rem;line-height:1.55;color:var(--ink)}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">After the Jets &middot; Part 4 of 4 &middot; Football, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">The Jets Are the NFL&rsquo;s <em>Second-Worst</em> Drafters in Rounds 1-3. The Worst Are the Patriots. The Patriots Won <em>Six</em> Super Bowls.</h1>
+<div class="deck">Part 4 of the After-the-Jets series tests a long-held belief: that scouting departments distinguish themselves not in the early rounds, where the talent is obvious, but in the late ones, where it isn&rsquo;t. The data confirms it. The relative spread of late-round hit rates is roughly three times the early-round spread &mdash; and the team rankings on the two metrics tell entirely different stories.</div>
+<div class="byline">By The Columnist &middot; The Sports Page &middot; After the Jets, Part 4 of 4</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v" style="color:var(--steel)">50.0%</div><div class="l">League Median, R1-3 Hit Rate</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">13.3%</div><div class="l">League Median, R4-7 Hit Rate</div></div>
+  <div class="sc"><div class="v bad">2.9&times;</div><div class="l">Relative Spread Ratio (R4-7 / R1-3)</div></div>
+</div>
+
+<p>The widely-held but rarely-cited claim about NFL scouting goes like this: in the early rounds, every team can find a contributor, because the talent is too obvious to miss. What separates the well-run franchises from the badly-run ones is what they do in the late rounds &mdash; rounds four through seven, where Tom Brady was found, where Antonio Gates was overlooked entirely, where Richard Sherman fell to the fifth round. The hypothesis is that good scouting earns its money where the data is thin.</p>
+
+<p>The data, finally examined honestly across all 32 franchises and 9,535 NFL picks from 1976 to 2020, supports the hypothesis. The teams cluster tightly on rounds 1-3 hit rate &mdash; everyone is somewhere between 40% and 58%, with a coefficient of variation of 8.1%. They spread widely on rounds 4-7 hit rate &mdash; everyone is somewhere between 7.9% and 22.1%, with a coefficient of variation of 23.4%. The late rounds are roughly three times as sensitive to organizational competence as the early rounds. Scouting earns its money exactly where the conventional wisdom said it did.</p>
+
+<h2 class="sh">The Hit Definition for Late Rounds</h2>
+
+<div class="box">
+  <h3>What Counts as a Hit Past the Third Round</h3>
+  <p>Late-round picks are judged more leniently than first-rounders, because the slot expectation is much lower. A hit in rounds 4-7 is defined as: <strong>at least one Pro Bowl appearance OR at least four seasons as a starter</strong>. That is a low bar. Most picks fail it. Across the league, only 14% of rounds 4-7 selections meet either criterion.</p>
+  <p>The early-round hit definition is the same, but applied against a much higher slot expectation. About half of all rounds 1-3 picks make a Pro Bowl or start for four years. The hit-rate gap (50% vs 14%) is itself diagnostic: rounds 1-3 are easier; rounds 4-7 are where you separate.</p>
+</div>
+
+<h2 class="sh">The Variance Quantified</h2>
+
+<div class="box">
+  <div class="math">                R1-3 hit rate    R4-7 hit rate
+League min:        40.4% (NE)      7.9% (HOU)
+League median:     50.0%           13.3%
+League max:        58.0% (NO)     22.1% (BAL)
+Coefficient of
+  variation:        8.1%          23.4%
+Spread ratio:                      2.9&times;</div>
+</div>
+
+<p>Read the spread ratio carefully. The standard deviation in early-round hit rate, divided by the mean, is 8.1%. The same calculation in late rounds is 23.4%. Late-round hit rates are 2.9 times more variable than early-round hit rates, in relative terms. That is the empirical statement of &ldquo;scouting matters more in late rounds&rdquo; &mdash; for every 1% of relative spread that early-round hit rate produces between best and worst teams, late-round hit rate produces 2.9%. The sortable signal lives downstream.</p>
+
+<h2 class="sh">The Four Quadrants</h2>
+
+<p>Cut each axis at its median, and the league falls into four quadrants. The high-high group is the consensus elite of NFL scouting: above-median in early rounds, above-median in late rounds. The low-low group is the genuinely bad. The two off-diagonal groups are where this analysis earns its rent.</p>
+
+<div class="quadrants">
+  <div class="quad hh">
+    <div class="quad-label">High R1-3, High R4-7</div>
+    <div class="quad-teams"><strong>Good in both rounds:</strong><br>BAL, CAR, DAL, MIN, NO, NYG, PIT, TEN</div>
+  </div>
+  <div class="quad">
+    <div class="quad-label">High R1-3, Low R4-7</div>
+    <div class="quad-teams"><strong>Obvious-talent specialists:</strong><br>ARI, DET, HOU, IND, JAX, LAR, SEA, TB</div>
+  </div>
+  <div class="quad">
+    <div class="quad-label">Low R1-3, High R4-7</div>
+    <div class="quad-teams"><strong>Late-round-savvy:</strong><br>ATL, CHI, DEN, GB, MIA, NE, <strong style="color:var(--rust)">NYJ</strong>, SF</div>
+  </div>
+  <div class="quad ll">
+    <div class="quad-label">Low R1-3, Low R4-7</div>
+    <div class="quad-teams"><strong>Bad in both:</strong><br>BUF, CIN, CLE, KC, LAC, LV, PHI, WAS</div>
+  </div>
+</div>
+
+<p>Three observations.</p>
+
+<p>First, the Cincinnati Bengals appear in the bottom-right quadrant for the third time in this series &mdash; they were worst in Issue No. 25&rsquo;s triple-bust ranking, second-worst in Part 1&rsquo;s HoF count, and now low-low on hit rate by round-bucket. They are not a team that fails one test. They are a team that fails every test we have run. At some point this stops being a draft-history finding and becomes an organizational verdict.</p>
+
+<p>Second, the Patriots are in the upper-left of the lower-left quadrant &mdash; Low R1-3, High R4-7. Belichick&rsquo;s Patriots, the franchise that won six Super Bowls in eighteen years, had the worst rounds 1-3 hit rate in the league at 40.4%. They built their dynasty on Brady (sixth round), Edelman (seventh), Gronkowski (second &mdash; the only first-three exception), and a steady supply of late-round and undrafted contributors. The dynasty was a 4-7-rounds dynasty.</p>
+
+<p>Third, the Jets are right next to them in the same quadrant &mdash; Low R1-3 (43.1%, second-worst in the league), High R4-7 (14.3%, slightly above median). The Jets have the same shape of draft history as the dynastic Patriots. They have not, conspicuously, won six Super Bowls. The shape, by itself, is not predictive of outcomes; what matters is whether the team finds a Brady in the late rounds. The Patriots did. The Jets did not.</p>
+
+<h2 class="sh">The Jets&rsquo; Specific Indictment</h2>
+
+<table class="rec">
+  <thead><tr><th>Bucket</th><th>Jets Rate</th><th>Rank</th><th>League Median</th></tr></thead>
+  <tbody>
+    <tr class="jets"><td>Rounds 1-3</td><td class="mono">43.1%</td><td class="mono">2 of 32 (worst)</td><td class="mono">50.0%</td></tr>
+    <tr><td>Rounds 4-7</td><td class="mono">14.3%</td><td class="mono">19 of 32 (median)</td><td class="mono">13.3%</td></tr>
+  </tbody>
+</table>
+
+<p>The Jets&rsquo; specific failure is not in the late rounds &mdash; they are average there. It is in the early rounds, where the talent is supposed to be obvious. They are second-worst in the league at converting top-100 picks into Pro Bowlers or four-year starters. That is a different indictment than &ldquo;they cannot scout.&rdquo; It is closer to &ldquo;they cannot draft when the league is watching them draft.&rdquo;</p>
+
+<p>The patterns from the original Issue No. 25 piece point in the same direction. The Jets&rsquo; most painful first-round busts &mdash; Vernon Gholston, Dee Milliner, Quinton Coples, Calvin Pryor &mdash; were all picks made under public pressure, often with the implication of owner involvement, in slots where the talent should have been straightforward to evaluate. The data does not prove the owner-meddling thesis. It does, however, fit it: high-pressure, high-visibility decisions where the Jets pick the wrong player.</p>
+
+<div class="pull">
+  <p>&ldquo;The Jets and the dynastic Patriots have the same draft-pattern shape. The difference between them is that the Patriots eventually drafted Tom Brady.&rdquo;</p>
+  <cite>&mdash; The Columnist, on shape vs. outcome</cite>
+</div>
+
+<h2 class="sh">What This Series Actually Found</h2>
+
+<p>Across four parts, the indictment of the Jets has narrowed considerably from the original framing in Issue No. 25.</p>
+
+<p><strong>Part 1</strong>: The Jets&rsquo; one Hall of Famer is the modal outcome &mdash; twelve other teams have produced exactly one. <strong>Part 2</strong>: The Jets&rsquo; triple-bust rate (25.0%) is below median but nowhere near the worst (Cincinnati, 37.0%). <strong>Part 3</strong> &mdash; the cross-sport piece, coming next &mdash; will ask whether any NFL team is in genuine evaluation territory the league&rsquo;s worst MLB and NBA franchises occupy. <strong>Part 4</strong> (this piece): the Jets are second-worst at the easier task (converting top-100 picks) and roughly average at the harder one (finding late-round value).</p>
+
+<p>The honest verdict on the Jets after four parts is not that they cannot evaluate talent. It is that they cannot evaluate talent <em>well</em>, that their failures cluster in the highest-pressure picks, and that they sit alongside roughly a dozen other franchises in the league&rsquo;s lower half on most measures. They are not the floor. They are not the ceiling. They are, on the available evidence, mediocre in a league where mediocre is the rule. The franchise indictment, properly stated, is that they have been mediocre for fifty years &mdash; not that they have been historically bad in any given decade.</p>
+
+<p>That is, ironically, both a vindication and a more painful reading. Catastrophic incompetence at least implies the possibility of catastrophic improvement. Sustained mediocrity does not. The Jets are not broken. They are, as they have been for a half-century, the median.</p>
+
+<div class="footer">
+  <span>The Sports Page &middot; Issue No. __ &middot; After the Jets, Part 4/4</span>
+  <span>Source: nflverse draft_picks.csv (1976-2020 R1-7, n=9,535 picks judged)</span>
+  <span>Not financial or wagering advice</span>
+</div>
+</div>
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+</body>
+</html>
