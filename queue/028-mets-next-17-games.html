@@ -1,0 +1,153 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, log5, Schedule
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+table.rec .hl .mono{color:var(--green);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust);font-weight:700}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on Forward Projections &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">The Mets&rsquo; Next 17 Games, <em>Mapped</em>.</h1>
+<div class="deck">Six series. Three home, three away. One opponent below them in the standings, one currently the second-best team in baseball. The log5 model says the next two and a half weeks should produce six wins, give or take. That is not a recovery pace. That is the pace of running out of road.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; Forward Projections</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v bad">6</div><div class="l">Wins Projected (of 17)</div></div>
+  <div class="sc"><div class="v now">.377</div><div class="l">Projected Win Rate, Next 17</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">1</div><div class="l">Series Where Mets Are Favored</div></div>
+</div>
+
+<p>The Mets sit at 10-21 and have, between Saturday and the eighteenth of May, six series and seventeen games to play. The Sunday Edition has framed where they sit. Saturday&rsquo;s issue framed what 10-21 has historically meant. This piece does the operational version of the same exercise: takes the schedule the Mets actually face, applies a probability model the analytics community has used for a generation, and produces a number for each series.</p>
+
+<p>The number is the <strong>log5</strong> probability &mdash; named for Bill James&rsquo;s 1981 formulation, which lets you combine two team-level win rates into a head-to-head expectation. The formula assumes the league average is .500, which it is by construction, and ignores everything except each team&rsquo;s underlying quality. It does not know about Soto&rsquo;s return. It does not know about Lindor&rsquo;s availability on a given day. It does not know which side of Devin Williams will show up. What it does know is what each team has done so far and how that maps to a single, comparable rate.</p>
+
+<h2 class="sh">The Setup, In One Equation</h2>
+
+<div class="box">
+  <h3>The log5 Formula</h3>
+  <div class="math">P(team A beats team B) = pa &times; (1 &minus; pb)
+                       / [pa &times; (1 &minus; pb) + pb &times; (1 &minus; pa)]
+
+Where pa, pb are the two teams' "true talent" win rates,
+estimated from run differential per game.</div>
+  <p>For each team we estimate true-talent win rate from run differential per game (RD/G), using the long-known approximation WPct &asymp; .500 + (RD/G)/10. This is more stable than the raw record over thirty games &mdash; the Mets&rsquo; .323 record probably understates them; their RD/G of &minus;1.13 says their honest level is closer to .387. The model uses the honest number.</p>
+</div>
+
+<h2 class="sh">The Six Series</h2>
+
+<table class="rec">
+  <thead><tr><th>Dates</th><th>Opponent</th><th>Opp&rsquo;s True %</th><th>P(Mets win/game)</th><th>Expected Wins</th></tr></thead>
+  <tbody>
+    <tr><td class="mono">May 2-3</td><td>@ LA Angels</td><td class="mono">.419</td><td class="mono">.467</td><td>0.93 of 2</td></tr>
+    <tr><td class="mono">May 4-6</td><td>@ Colorado</td><td class="mono">.478</td><td class="mono">.408</td><td>1.22 of 3</td></tr>
+    <tr class="worse"><td class="mono">May 8-10</td><td>@ Arizona</td><td class="mono">.627</td><td class="mono">.273</td><td>0.82 of 3</td></tr>
+    <tr><td class="mono">May 12-14</td><td>vs Detroit</td><td class="mono">.528</td><td class="mono">.361</td><td>1.08 of 3</td></tr>
+    <tr class="worse"><td class="mono">May 15-17</td><td>vs NY Yankees</td><td class="mono">.652</td><td class="mono">.252</td><td>0.76 of 3</td></tr>
+    <tr class="hl"><td class="mono">May 18-20</td><td>@ Washington</td><td class="mono">.355</td><td class="mono">.534</td><td>1.60 of 3</td></tr>
+  </tbody>
+</table>
+
+<p>Sum the expected wins across all six series and the model returns <strong>6.41 wins out of 17 games</strong>. That is a .377 pace &mdash; better than the team&rsquo;s current .323, but only slightly. Better, fundamentally, because the schedule includes the Nationals (worse than the Mets by every available measure) and the Tigers (around .500). Worse than even-money on the days they face Arizona or the Yankees, who would have been favored against any team, never mind the Mets in their current state.</p>
+
+<p>The single series where the Mets are projected favorites is the one against Washington at the end of the window. That is the entire margin in the schedule.</p>
+
+<h2 class="sh">Three Scenarios, In Cumulative Record</h2>
+
+<table class="rec">
+  <thead><tr><th>Scenario</th><th>Pace</th><th>Result, 17 games</th><th>Total record</th><th>Implication</th></tr></thead>
+  <tbody>
+    <tr class="hl"><td>Playoff push</td><td class="mono">.600</td><td class="mono">10&ndash;7</td><td class="mono">20&ndash;28</td><td>Best plausible outcome. Still 11.5 GB.</td></tr>
+    <tr><td>Mid-tier (model)</td><td class="mono">.377</td><td class="mono">6&ndash;11</td><td class="mono">16&ndash;32</td><td>Treading water at a sub-.400 pace. Wild card pace requires .615 the rest of the way.</td></tr>
+    <tr class="worse"><td>Collapse continues</td><td class="mono">.323</td><td class="mono">5&ndash;12</td><td class="mono">15&ndash;33</td><td>Effectively eliminated by the All-Star break.</td></tr>
+  </tbody>
+</table>
+
+<p>The conditional-probability piece on Saturday made the historical case: roughly eleven percent of teams that started below .400 in the last decade made the playoffs. The forward-projection piece &mdash; this one &mdash; makes the operational case: the next seventeen games are not friendly. They include the Diamondbacks at Chase Field and the Yankees in the subway series. The model says the Mets, if everything breaks honestly to true talent, walk out of May 18 at sixteen wins and thirty-two losses. That is not the end of the season. It is, however, the end of the cushion.</p>
+
+<div class="pull">
+  <p>&ldquo;The model gives them six wins. The schedule gives them one favorable series. Believing requires the schedule to lie.&rdquo;</p>
+  <cite>&mdash; The Professor, on operational pessimism</cite>
+</div>
+
+<h2 class="sh">What the Model Does Not Know</h2>
+
+<p>Three honest caveats. First, the run-differential approach treats every team as a constant; it does not know that Soto returned the second week of April or that Williams might be replaced in a leverage role. Second, the league constant is an approximation; the actual league mean is whatever it is on any given day, and small drift can move the numbers by one or two percentage points per game. Third, log5 assumes independence between matchups, which baseball does not respect &mdash; an exhausted bullpen carries forward; a hot bat clusters across consecutive series.</p>
+
+<p>That said, the magnitude here is robust. The Mets are a .377 team facing a schedule whose average opponent quality is roughly .510. The model says they will win about six. They might win seven. They will not win ten.</p>
+
+<p>The Sunday Edition will rerun this piece on May 17 against actual outcomes. If the Mets are at thirteen, fourteen, fifteen wins by then, the door has closed audibly. If they are at sixteen or seventeen, the model will have undershot and the conversation about June and July restarts.</p>
+
+<div class="footer">
+  <span>The Sports Page &middot; Issue No. __</span>
+  <span>Method: log5 over RD-derived true-talent rates, May 1, 2026 standings</span>
+  <span>Not financial or wagering advice</span>
+</div>
+</div>
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+</body>
+</html>
