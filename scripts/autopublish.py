@@ -215,6 +215,17 @@ def get_last_topic():
 # Step 6: Update issue number and date in the article HTML
 # ---------------------------------------------------------------------------
 
+def update_deeper(content, issue_num, today):
+    """Update Issue No. references and date in a Deeper Dive companion.
+    Preserves the Deeper Dive's distinctive title (e.g., 'Deeper Dive — ...')."""
+    date_str = today.strftime("%B %-d, %Y")
+    content = re.sub(r'Issue No\.\s*[_\d]+', f'Issue No. {issue_num}', content)
+    content = re.sub(r'Issue\s*#\s*\[TBD\]', f'Issue #{issue_num}', content)
+    date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2})?,?\s*\d{4}'
+    content = re.sub(date_pattern, date_str, content)
+    return content
+
+
 def update_article(content, issue_num, today):
     date_str = today.strftime("%B %-d, %Y")  # e.g., "April 18, 2026"
 
@@ -413,6 +424,18 @@ def main():
     run(f'git mv "queue/{filename}" "published/{filename}"')
     print(f"Moved queue/{filename} → published/{filename}")
 
+    # Step 8.5: Move Deeper Dive companion if one exists
+    deeper_filename = filename.replace(".html", "-deeper.html")
+    deeper_path = os.path.join(QUEUE_DIR, deeper_filename)
+    deeper_published = False
+    if os.path.isfile(deeper_path):
+        deeper_content = read_file(deeper_path)
+        deeper_content = update_deeper(deeper_content, issue_num, today)
+        write_file(deeper_path, deeper_content)
+        run(f'git mv "queue/{deeper_filename}" "published/{deeper_filename}"')
+        deeper_published = True
+        print(f"Moved queue/{deeper_filename} → published/{deeper_filename}")
+
     # Step 9: Update QUEUE_ORDER.txt
     remove_from_queue_order(filename)
     print("Updated QUEUE_ORDER.txt")
@@ -426,7 +449,8 @@ def main():
     print("Refreshed feed.xml")
 
     # Step 11: Commit and push
-    run(f'git add index.html "published/{filename}" QUEUE_ORDER.txt CLAUDE.md feed.xml')
+    deeper_arg = f' "published/{deeper_filename}"' if deeper_published else ""
+    run(f'git add index.html "published/{filename}"{deeper_arg} QUEUE_ORDER.txt CLAUDE.md feed.xml')
     commit_msg = f"Publish Issue #{issue_num}: {headline_plain[:60]}"
     run(f'git commit -m "{commit_msg}"')
     run("git push origin main")

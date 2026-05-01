@@ -1,0 +1,226 @@
+<!-- DEEPER DIVE for Issue #[TBD] — Mets conditional probability -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deeper Dive — Conditional Probability and the Mets — The Sports Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f;--code-bg:#1a2330}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--steel);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);font-weight:600}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--steel);border-bottom:3px double var(--steel);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:900;line-height:1.15;margin-bottom:.4rem}
+.hed em{color:var(--steel);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.05rem;color:var(--muted);border-left:3px solid var(--steel);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.toc{background:var(--card);border:1px solid var(--div);padding:1rem 1.2rem;margin:1.2rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem}
+.toc strong{color:var(--steel);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem;display:block;margin-bottom:.5rem}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--div);transition:border-color .2s}
+.toc a:hover{border-bottom-color:var(--steel)}
+.toc-sep{color:var(--muted);margin:0 .35rem}
+.back-link{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em}
+.back-link a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.tier{margin:2.4rem 0 1.5rem;padding-top:1.5rem;border-top:3px double var(--steel)}
+.tier-kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.3rem}
+.tier-hed{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;line-height:1.2;margin-bottom:.6rem}
+.tier-hed em{color:var(--steel);font-style:italic}
+p{margin-bottom:.9rem}
+.callout{background:var(--card);border-left:4px solid var(--gold);padding:.9rem 1.1rem;margin:1.2rem 0;font-size:.92rem;line-height:1.65}
+.callout strong{color:var(--rust)}
+.math-block{font-family:'Roboto Mono',monospace;background:var(--steel);color:#dce8f5;padding:1rem 1.2rem;font-size:.82rem;line-height:1.85;margin:1rem 0;white-space:pre-wrap;overflow-x:auto;border-radius:0}
+.math-block .accent{color:var(--gold);font-weight:600}
+pre.code{background:var(--code-bg);color:#e0e8f5;padding:1.2rem 1.4rem;font-family:'Roboto Mono',monospace;font-size:.78rem;line-height:1.65;overflow-x:auto;margin:1rem 0;border-left:4px solid var(--steel)}
+pre.code .kw{color:#ff8b6b}
+pre.code .str{color:#a8e0c8}
+pre.code .num{color:#c9b890}
+pre.code .com{color:#7d8a9c;font-style:italic}
+pre.code .fn{color:#88c8ff}
+.snapshot-note{font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);letter-spacing:.05em;margin-top:-.5rem;margin-bottom:1.2rem;padding:.5rem .8rem;background:var(--card);border-left:3px solid var(--gold);font-style:italic}
+.snapshot-note a{color:var(--steel)}
+.worked-example{background:#fff;border:1px solid var(--div);padding:1rem 1.2rem;margin:1rem 0;font-size:.92rem}
+.worked-example h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--rust);margin-bottom:.5rem}
+.worked-example .step{margin-left:1.2rem;margin-bottom:.4rem}
+.worked-example .verdict{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.05em;margin-top:.6rem}
+.footer{border-top:3px double var(--steel);padding-top:.7rem;margin-top:2.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Deeper Dive &middot; Methodology Supplement</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Where the math lives</div>
+  <div class="datebar">
+    <span>Supplement to Issue No. __</span>
+    <span>Conditional Probability and the Mets</span>
+    <span>For readers who want the math</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0" class="back-link" aria-label="Page navigation">
+  <a href="../index.html">&larr; Back to Archive</a> &middot;
+  <a href="027-mets-conditional-probability.html">Read the original article &rarr;</a>
+</nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Conditional Probability and <em>the Inverse Fallacy</em></h1>
+
+  <div class="deck">
+    The companion piece to the Mets 10-21 article. Why P(A | B) and P(B | A) are different numbers, why the difference matters in courtrooms and clinics as much as in baseball, and a Python script that computes both directly from a CSV of season records.
+  </div>
+
+  <div class="byline">Methodology Supplement &middot; Mets Conditional Probability &middot; May 2026</div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc" role="navigation" aria-label="Sections of this supplement">
+    <strong>Three sections, jump to your level</strong>
+    <a href="#the-idea">The Idea</a>
+    <span class="toc-sep">&middot;</span>
+    <a href="#the-math">The Math</a>
+    <span class="toc-sep">&middot;</span>
+    <a href="#the-code">The Code</a>
+  </div>
+
+  <!-- THE IDEA -->
+  <section id="the-idea" class="tier" aria-labelledby="the-idea-hed">
+    <div class="tier-kicker">The Idea</div>
+    <h2 id="the-idea-hed" class="tier-hed">Why <em>information</em> changes a probability</h2>
+
+    <p>An unconditional probability is what you would say if you knew nothing else. Pick a random MLB team in March: 12 of 30 make the playoffs, so P(playoffs) is 40%. That number is the answer when you have no information beyond &ldquo;it&rsquo;s a major league team in this era.&rdquo;</p>
+
+    <p>A <strong>conditional probability</strong> is what you would say if you knew one specific additional thing. Once you learn the team is 10-21 through 31 games, you are no longer reasoning about a random team &mdash; you are reasoning about a team in a specific category, the &ldquo;sub-.400 starts&rdquo; category. The right reference class is no longer all 30 teams; it is the historical set of teams that have started this poorly. Inside that smaller, harsher reference class, the playoff rate is much lower &mdash; around 11%.</p>
+
+    <p>The vertical bar in the notation P(A | B) is doing all the work. It says: <em>restrict your attention to the cases where B is true, and ask what fraction of those have A.</em> Different B, different reference class, different fraction. Same A.</p>
+
+    <div class="callout">
+      <strong>The inverse fallacy.</strong> The most common error in conditional reasoning is to confuse P(A | B) with P(B | A). They are not the same number, and they are not symmetric. P(plays in the NBA | is over seven feet tall) is high. P(is over seven feet tall | plays in the NBA) is much lower. Same two facts, two different fractions.</p>
+      <p style="margin-bottom:0">In the Mets case: people sometimes argue that bad starts don&rsquo;t matter because of the 2019 Nationals. That argument uses P(bad start | won the World Series) &mdash; which is small, but exists &mdash; and reads it as if it were P(makes the playoffs | started badly), which is what we actually want. The two are not interchangeable.</p>
+    </div>
+
+    <p>The same shape of reasoning shows up everywhere. In medicine, P(has the disease | tested positive) and P(tests positive | has the disease) are routinely confused, even by clinicians. The first is what the patient cares about; the second is what the test reports. The first depends on the base rate. In law, the &ldquo;prosecutor&rsquo;s fallacy&rdquo; is the courtroom version of the same swap. In each case, the cure is the same: write the bar correctly, identify which side of it is the condition, and check which question you actually want answered.</p>
+  </section>
+
+  <!-- THE MATH -->
+  <section id="the-math" class="tier" aria-labelledby="the-math-hed">
+    <div class="tier-kicker">The Math</div>
+    <h2 id="the-math-hed" class="tier-hed">Bayes&rsquo; theorem, applied to <em>10-21</em></h2>
+
+    <p>The two conditional probabilities &mdash; P(A | B) and P(B | A) &mdash; are related by Bayes&rsquo; theorem. The full statement:</p>
+
+    <div class="math-block">P(<span class="accent">A</span> | <span class="accent">B</span>) = P(<span class="accent">B</span> | <span class="accent">A</span>) &times; P(<span class="accent">A</span>) / P(<span class="accent">B</span>)</div>
+
+    <p>For our case, let A = &ldquo;makes the playoffs&rdquo; and B = &ldquo;starts the season at or below .400 through 31 games.&rdquo; Then:</p>
+
+    <div class="math-block">P(playoffs | bad start) =
+    P(bad start | playoffs) &times; P(playoffs) / P(bad start)</div>
+
+    <p>To turn this into numbers, we need three pieces of historical data. Working from the last ten seasons (2016&ndash;2025, n &asymp; 300 team-seasons under varying playoff formats):</p>
+
+    <div class="math-block">P(<span class="accent">playoffs</span>)              = 12/30 = 0.400   (modern format)
+P(<span class="accent">bad start</span>)             ≈ 35/300 = 0.117   (sub-.400 at game 31)
+P(<span class="accent">bad start</span> | <span class="accent">playoffs</span>) ≈ 4/120 = 0.033   (4 of 120 playoff teams)</div>
+
+    <p>Plugging in:</p>
+
+    <div class="math-block">P(playoffs | bad start)
+  = (0.033) &times; (0.400) / (0.117)
+  = 0.0132 / 0.117
+  = <span class="accent">0.113</span>   (≈ 11%)</div>
+
+    <p>The same answer arrives if we count directly: roughly 4 out of 35 sub-.400 starts made the playoffs, which is about 11%. Bayes&rsquo; theorem is a sanity check on the direct count, not a replacement for it. But it tells you something the direct count doesn&rsquo;t: it shows you, in algebra, exactly how the inverse conditional (P(bad start | playoffs) = 3.3%) is related to the conditional you actually want (P(playoffs | bad start) = 11.3%). They differ by a factor of P(playoffs) / P(bad start) &mdash; in this case, about 3.4&times;. The base rates do that work.</p>
+
+    <div class="worked-example">
+      <h4>Worked example: the 2024 Astros, in conditional notation</h4>
+      <p>On April 25, 2024, the Astros were 7-19 (.269) through 26 games. A reader at the time, applying the framework correctly, would have written:</p>
+      <p class="step">&middot; P(playoffs) = 0.40 (unconditional, modern format)</p>
+      <p class="step">&middot; P(playoffs | start &le; .300) ≈ very wide bar, n=8 over ten years, point estimate ~12%</p>
+      <p class="step">&middot; The honest answer to a friend: &ldquo;Probably out, but not certainly. Roughly one in eight, give or take a lot.&rdquo;</p>
+      <p>The Astros went on to finish 88-73 and win the AL West. That outcome is consistent with a ~12% probability event. It does not retroactively make the probability higher. Conditional probability is about what you should have said before you knew the answer. The Astros were always somewhere on the right tail of the distribution; they happened to be the realization that landed there.</p>
+      <p class="verdict">VERDICT &middot; A 12% event happened. The framework is not invalidated; it predicted a 12% event would happen roughly 12% of the time.</p>
+    </div>
+
+    <p>This is the trap that single-case reasoning lays. One memorable comeback &mdash; the Nationals, the Astros &mdash; can be read as evidence that comebacks are common, when in fact each one is a draw from a low-probability tail. The math does not say the comeback was impossible. The math says the comeback was, before it happened, a roughly one-in-ten event &mdash; and that calling it &ldquo;probable&rdquo; in advance would have been wrong.</p>
+  </section>
+
+  <!-- THE CODE -->
+  <section id="the-code" class="tier" aria-labelledby="the-code-hed">
+    <div class="tier-kicker">The Code</div>
+    <h2 id="the-code-hed" class="tier-hed">Computing P(playoffs | start) <em>from a CSV</em></h2>
+
+    <p>Below is a self-contained Python script that takes a CSV of historical seasons (one row per team-season, with columns for the early-season record and a binary playoffs indicator) and computes both conditional probabilities &mdash; the one we want and its inverse &mdash; alongside the underlying base rates. It is short on purpose. The whole point of conditional probability is that the arithmetic is trivial; the discipline is in asking the question correctly.</p>
+
+    <div class="snapshot-note">Snapshot: this listing is illustrative. The production script that generated the numbers in the article lives at <a href="../scripts/conditional-probability.py">scripts/conditional-probability.py</a> in the repo and ingests the same CSV format.</div>
+
+<pre class="code"><span class="com"># conditional-probability.py — compute P(playoffs | start) and its inverse</span>
+<span class="kw">import</span> csv
+
+<span class="kw">def</span> <span class="fn">load_seasons</span>(path):
+    <span class="com"># expects columns: team, year, wins_thru_31, losses_thru_31, made_playoffs (0/1)</span>
+    <span class="kw">with</span> open(path) <span class="kw">as</span> f:
+        <span class="kw">return</span> list(csv.DictReader(f))
+
+<span class="kw">def</span> <span class="fn">conditional_probs</span>(rows, threshold=<span class="num">0.400</span>):
+    n_total = len(rows)
+    n_playoffs = sum(<span class="num">1</span> <span class="kw">for</span> r <span class="kw">in</span> rows <span class="kw">if</span> int(r[<span class="str">"made_playoffs"</span>]))
+    n_badstart = sum(<span class="num">1</span> <span class="kw">for</span> r <span class="kw">in</span> rows
+                     <span class="kw">if</span> _winpct(r) &lt;= threshold)
+    n_both = sum(<span class="num">1</span> <span class="kw">for</span> r <span class="kw">in</span> rows
+                 <span class="kw">if</span> _winpct(r) &lt;= threshold
+                 <span class="kw">and</span> int(r[<span class="str">"made_playoffs"</span>]))
+
+    P_A   = n_playoffs / n_total                            <span class="com"># P(playoffs)</span>
+    P_B   = n_badstart / n_total                            <span class="com"># P(bad start)</span>
+    P_AB  = n_both     / n_badstart  <span class="kw">if</span> n_badstart <span class="kw">else</span> <span class="num">0</span>  <span class="com"># P(playoffs | bad)</span>
+    P_BA  = n_both     / n_playoffs  <span class="kw">if</span> n_playoffs <span class="kw">else</span> <span class="num">0</span>  <span class="com"># P(bad | playoffs)</span>
+
+    <span class="kw">return</span> {<span class="str">"P(playoffs)"</span>: P_A, <span class="str">"P(bad)"</span>: P_B,
+            <span class="str">"P(playoffs|bad)"</span>: P_AB, <span class="str">"P(bad|playoffs)"</span>: P_BA,
+            <span class="str">"n_total"</span>: n_total, <span class="str">"n_badstart"</span>: n_badstart,
+            <span class="str">"n_both"</span>: n_both}
+
+<span class="kw">def</span> <span class="fn">_winpct</span>(r):
+    w, l = int(r[<span class="str">"wins_thru_31"</span>]), int(r[<span class="str">"losses_thru_31"</span>])
+    <span class="kw">return</span> w / (w + l) <span class="kw">if</span> (w + l) <span class="kw">else</span> <span class="num">0</span>
+
+<span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
+    rows = load_seasons(<span class="str">"seasons_2016_2025.csv"</span>)
+    out  = conditional_probs(rows, threshold=<span class="num">0.400</span>)
+    <span class="kw">for</span> k, v <span class="kw">in</span> out.items():
+        print(<span class="str">f"{k:24s} {v}"</span>)</pre>
+
+    <p>The two conditional probabilities are computed from the same three counts &mdash; n_total, n_badstart, and n_both. The numerator is the same in both directions. Only the denominator changes. Switching from P(A | B) to P(B | A) is a one-line change: divide by n_playoffs instead of n_badstart. That single change can move the answer by a factor of three or more, which is why the inverse fallacy is so dangerous and so hard to spot.</p>
+
+    <div class="callout">
+      <strong>What&rsquo;s missing.</strong> Real season data has confounders this script does not handle: expansion of the playoff format from 10 to 12 teams in 2022, division alignment changing strength-of-schedule, COVID-shortened 2020. A more careful version would either restrict to post-2022 seasons or weight earlier seasons by the fraction of teams that made the playoffs in that year&rsquo;s format. The article&rsquo;s 11% estimate is robust to these adjustments at the first decimal place; it is not robust at the third. Conditional probability tells you which question you&rsquo;re asking; the data tells you how confidently you can answer it.</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <p style="font-size:.85rem;color:var(--muted);font-style:italic">If you have a stat where the conditional you really want and the conditional people are quoting are not the same number, send it to the Stats Desk. Half the educational value of this newsletter is in spotting the swap before it does damage.</p>
+
+  <div class="footer">
+    <span>Deeper Dive &middot; Mets Conditional Probability</span>
+    <span>Reference: 10 yr historical, 2016&ndash;2025</span>
+    <span>Companion to Issue No. __</span>
+  </div>
+</div>
+
+</body>
+</html>
