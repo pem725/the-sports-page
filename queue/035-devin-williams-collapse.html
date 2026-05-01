@@ -1,0 +1,153 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, Bayesian, Regression to the Mean
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8} table.rec .hl .mono{color:var(--green);font-weight:700}
+table.rec .bad td{background:#fef0ec} table.rec .bad .mono{color:var(--rust);font-weight:700}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on Regression &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">The Mets Paid $51 Million for the <em>0.33-ERA</em> Devin Williams. He Was Never Coming Back.</h1>
+<div class="deck">In 2020, Devin Williams posted a 0.33 ERA &mdash; the lowest single-season ERA with twenty-plus innings since earned runs were first recorded in 1913. In April 2026 he is 9.95 in the same role, on the same arm, in front of a Mets fanbase that paid him to be the 2020 version. The math on what happened, and why it was always coming, is unkind to free-agency optimism.</div>
+<div class="byline">By The Columnist &middot; The Sports Page &middot; On Regression and Reality</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v bad">9.95</div><div class="l">2026 ERA, 12.2 IP</div></div>
+  <div class="sc"><div class="v now">$51M</div><div class="l">Three-Year Contract Value</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">36.00</div><div class="l">ERA, Last Four Appearances</div></div>
+</div>
+
+<p>Three weeks of the regular season have been enough to render a verdict on the Mets&rsquo; off-season closer signing. Devin Williams, brought in for three years and fifty-one million dollars to anchor the late innings, has produced a 9.95 ERA across twelve and two-thirds innings, with a Walks-and-Hits-per-Inning ratio of 2.68 &mdash; meaning roughly two-and-a-half baserunners every time he takes the mound. In his most recent four outings he has compiled an ERA of 36.00, allowed eight earned runs in two full innings, and walked four batters. There are bullpen arms in Triple-A who would consider this a ledger to apologize for.</p>
+
+<p>The honest reading of these numbers is not that something has gone catastrophically wrong with Williams in late April 2026. The honest reading is that the math underneath his career has been telling this story since approximately 2024, and the Mets bought a pitcher who, statistically, no longer existed.</p>
+
+<h2 class="sh">The Career Arc, in Five Numbers</h2>
+
+<table class="rec">
+  <thead><tr><th>Year</th><th>Team</th><th>IP</th><th>ERA</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr class="hl"><td class="mono">2020</td><td>Brewers</td><td class="mono">27.0</td><td class="mono">0.33</td><td>NL Rookie of the Year. Lowest single-season ERA &ge;21 IP since 1913.</td></tr>
+    <tr><td class="mono">2021-23</td><td>Brewers</td><td class="mono">~165</td><td class="mono">1.66</td><td>Two-time NL Reliever of the Year. Sustained dominance.</td></tr>
+    <tr><td class="mono">2024 (1H)</td><td>Brewers</td><td class="mono">22</td><td class="mono">1.25</td><td>Mid-season trade to Yankees. Still elite by every metric.</td></tr>
+    <tr><td class="mono">2025</td><td>Yankees</td><td class="mono">62</td><td class="mono">4.79</td><td>First crack. ERA quadrupled. Walks up. K-rate down.</td></tr>
+    <tr class="bad"><td class="mono">2026 (early)</td><td>Mets</td><td class="mono">12.2</td><td class="mono">9.95</td><td>Free-agent contract begins. Floor falls out.</td></tr>
+  </tbody>
+</table>
+
+<p>Each individual year, in isolation, can be talked into. The 2020 season was abbreviated and historically dominant; the 2021-23 stretch was sustained excellence; the 2024 first half looked like the same pitcher; the 2025 jump to 4.79 was framed by some observers as a one-year blip in unfamiliar surroundings; the 2026 collapse is, supposedly, just twelve innings of bad luck. Five different defenses for five different points on a curve. Stitched together, they tell a different story: the descent has been monotonic since the 2024 trade.</p>
+
+<h2 class="sh">Why &ldquo;0.33 in 27 Innings&rdquo; Was Always Partial Truth</h2>
+
+<div class="box">
+  <h3>The Bayesian Reading</h3>
+  <p>This newsletter has covered the same statistical structure twice before &mdash; in Issue #1 (Skenes) on the upside and Issue #4 (Mason Miller) on the present-tense. The math is identical. A short, dominant stretch &mdash; say, 27 innings &mdash; updates the prior on a pitcher&rsquo;s true talent, but it does not replace it. The full posterior is something like:</p>
+  <div class="math">prior:           career path through 2019 (minor leagues)
+new evidence:    2020 season — 27 IP at 0.33 ERA
+posterior:       still elite, but not 0.33 elite
+                 closer to a 1.50-2.00 ERA pitcher
+
+predictive:      the next season's expected ERA is the
+                 posterior's mean, with substantial uncertainty,
+                 NOT the most recent season's observed ERA</div>
+  <p>The 0.33 number was always more luck than skill. A 1.50 ERA pitcher will, in 27 random innings, post somewhere in a wide range &mdash; 0.33 is plausible, 4.00 is plausible, the long-run average is around 1.50. Selecting the year that landed at 0.33 and treating it as the player&rsquo;s level is the same statistical error as picking the year a coin flipped seven heads in ten flips and concluding the coin is biased.</p>
+</div>
+
+<p>The 2021-23 period &mdash; 165 innings of 1.66 ERA &mdash; is far more credible as a true-talent estimate. A 165-IP sample stabilizes considerably; the law of large numbers does its work. That is the version of Williams the Mets thought they were getting. The trouble is, by the time they signed him, even <em>that</em> version had been unwinding for two years.</p>
+
+<h2 class="sh">The Mechanism: Why Closers Decline Suddenly</h2>
+
+<p>Three reasons relievers fall apart faster than starters, all relevant here.</p>
+
+<p><strong>First, the velocity floor.</strong> Late-inning relievers throw their hardest pitches under maximum effort. Even modest declines &mdash; a fastball that drops from 97 to 95, a changeup that loses three inches of late break &mdash; remove the margin of error that made the pitch unhittable. Williams&rsquo;s changeup, the &ldquo;Airbender,&rdquo; was historically his weapon precisely because of its movement profile. Whether the movement is still there in 2026 is the question Mets fans should actually be asking.</p>
+
+<p><strong>Second, the small-sample volatility.</strong> A reliever throws sixty to seventy innings a year. A starter throws two-hundred-plus. Random variance is therefore much larger in reliever ERA than in starter ERA, year over year. A 1.50-true-talent reliever has roughly a one-in-five chance of posting a 4.50+ ERA in any given season &mdash; not because they have changed, but because seventy innings is not enough to outlast a stretch of bad luck. Williams&rsquo;s 2025 4.79 was, in this sense, possibly luck. His 2026 9.95, on top of it, is not.</p>
+
+<p><strong>Third, the confidence cliff.</strong> Closers are paid to not blink. Once the math turns, the manager&rsquo;s leash shortens, the closer presses, and the press feeds back into the math. Williams has now blown saves in high-profile spots (a Conforto pinch-hit double; a no-out walk-three Twins outing) that produce headlines that produce shorter leashes. Whether the underlying talent has actually moved or merely the pressure has, the result reads identically on the box score.</p>
+
+<div class="pull">
+  <p>&ldquo;The Mets bought the 2020 Williams. They paid 2026 prices. The 2020 Williams was always partly a coin flip that came up heads.&rdquo;</p>
+  <cite>&mdash; The Columnist, on the cost of regression</cite>
+</div>
+
+<h2 class="sh">What the Mets Should Have Paid For</h2>
+
+<p>A defensible market price for Williams in December 2025 would have averaged across his five-year window &mdash; including the rough 2025 &mdash; and discounted heavily for relief-pitcher volatility. The fair-market expected ERA going forward, on a Bayesian update with all available evidence, was probably somewhere between 2.80 and 3.30. The Mets paid for a 1.66-ERA pitcher and got a 5.00-ERA pitcher; the truth was always closer to 3.00. The contract was overpriced by a factor that the math could have caught and the front office, evidently, did not.</p>
+
+<p>None of this should be read as predicting that Williams will continue at 9.95. The same regression argument that says he was never the 0.33 pitcher also says he is not the 9.95 pitcher. The current twelve-and-two-thirds-inning sample is, statistically, even less reliable than the 27-IP 2020 sample at the other end. He will likely settle &mdash; the question is at what level. The career line through 2025 says somewhere between 2.80 and 3.50. That is good enough to keep his job. It is not good enough to justify the contract.</p>
+
+<h2 class="sh">The Lesson, Again</h2>
+
+<p>Three issues of this newsletter &mdash; Skenes, Miller, now Williams &mdash; have all said the same thing in different directions. <em>Short samples lie. Long samples lie less. Selecting on the year that landed at the extreme and pretending it is the player&rsquo;s level is the most common error in baseball front-office work.</em> The Mets are simply the latest organization to make it. They will not be the last.</p>
+
+<div class="footer">
+  <span>The Sports Page &middot; Issue No. __</span>
+  <span>References: Issue #1 (Skenes), Issue #39 (Mason Miller)</span>
+  <span>Not financial or wagering advice</span>
+</div>
+</div>
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+</body>
+</html>
