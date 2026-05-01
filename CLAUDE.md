@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 467 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 466 issues remaining of 500
 
 ## Repository Structure
 
@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 33 issues (#1-33)
-Queue: 1 articles ready (015-fan-misery-map)
+Published: 34 issues (#1-34)
+Queue: empty
 Reserve: 1 evergreen piece
-Goal: 467 issues remaining of 500
-Last published: Issue #33 — "The JUCO Detour: College Baseball’s Portal Workaround Is Already Here" (eo-006-juco-detour.html) on April 30, 2026
+Goal: 466 issues remaining of 500
+Last published: Issue #34 — "You Can’t Choose Your Allegiances Unless You’re a Rat. Here’s What 54 Years of Loyalty Has Cost." (015-fan-misery-map.html) on May 1, 2026
