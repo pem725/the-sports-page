@@ -1,0 +1,139 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Padres, Small Sample, Stabilization
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+table.rec .hl .mono{color:var(--green);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust);font-weight:700}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on Hot Streaks &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Mason Miller Is Spectacular. He Is <em>Not</em>, Yet, the Most Unhittable Pitcher Who Ever Lived.</h1>
+<div class="deck">A headline at The Athletic this week asked whether the Padres&rsquo; closer is the most unhittable pitcher in baseball history. The answer is no, and the reason is not Mason Miller. The reason is the size of the sample required to use a sentence like that.</div>
+<div class="byline">By The Columnist &middot; The Sports Page &middot; On Headlines and Their Burdens</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v good">25.2</div><div class="l">Scoreless IP (Active)</div></div>
+  <div class="sc"><div class="v now">.063</div><div class="l">BAA Since Streak Began</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">59.6%</div><div class="l">K-Rate, Same Window</div></div>
+</div>
+
+<p>Let us begin where the headline writers begin: Mason Miller&rsquo;s actual numbers, which are real and astonishing. Through six appearances in 2026, he has pitched 6&#8531; innings, allowed one hit, walked one batter, and struck out sixteen. He has not allowed a run in his last 25&#8533; innings, the longest active streak in the major leagues. Across the broader window since his last earned run on August 5 of last year, his line is 34&#8531; innings, no runs, five hits, a 64.4% strikeout rate, and an opponent batting average of .063 &mdash; first among the 365 pitchers who have faced at least 75 batters in that span. The slider, mercifully, lives up to the noise: 87.8 mph average velocity, ten inches of horizontal break, three inches of drop. By every available measure, this is real.</p>
+
+<p>The Athletic, however, was not satisfied describing this as merely real. The headline reached for the all-time superlative: was Mason Miller, just then, the most unhittable pitcher who ever lived? Set aside, briefly, that the question is posed as a question and answered, in the body, with a careful retreat. Headlines are how readers receive the verdict, and the verdict the headline announces is not one a 34&#8531;-inning sample can deliver.</p>
+
+<h2 class="sh">What &ldquo;Most Unhittable Ever&rdquo; Would Require</h2>
+
+<p>The first issue is the denominator. To be the most unhittable pitcher who ever lived, you need to be unhittable for long enough that the word means something. Pedro Mart&iacute;nez&rsquo;s 2000 season &mdash; widely regarded as the most dominant pitching season since the deadball era &mdash; spanned 217 innings against the highest-offense league in the modern history of the sport. His opponent batting average was .167. Greg Maddux&rsquo;s 1994 was 202 innings. Roger Clemens&rsquo;s 1997 Cy Young was 264 innings. These pitchers were not posting .063 batting averages against; they were posting numbers that look mortal next to Miller&rsquo;s. They were also doing it three to seven times longer.</p>
+
+<p>The second issue is the role. Miller is a closer. He works one inning at a time against opponents who have, in many cases, already faced the front of his game three times this week. He throws his hardest pitch on his first batter of the night and has the bullpen to bail him out if he loses command. None of this diminishes what he&rsquo;s doing. All of it makes the comparison to nine-inning starting pitchers across history a category error.</p>
+
+<p>The third issue is the one this newsletter has covered before, in Issue No. 32 on stabilization thresholds: the strikeout rate stabilizes around seventy plate appearances; ERA does not become reliable until well past fifty innings. Miller, in 2026, is at twenty-four batters faced. He is, statistically, on the gentle slope of the learning curve, not the plateau of the demonstrated truth.</p>
+
+<h2 class="sh">The Comparable Files</h2>
+
+<p>The right way to read the Miller stretch is not against Pedro and Maddux. It is against the closer-and-rookie cohort of the last fifteen years &mdash; pitchers who, in their first extended look, were called unhittable by reasonable people. Five of them, with what happened next.</p>
+
+<table class="rec">
+  <thead><tr><th>Pitcher</th><th>Hot Stretch</th><th>The Numbers</th><th>What Happened Next</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Devin Williams</strong>, 2020</td><td class="mono">27 IP, 0.33 ERA, 53 K</td><td class="mono">NL ROY; lowest single-season ERA &ge;21 IP since 1913 (.018 BAA vs his changeup)</td><td>Sustained briefly, then injured, then traded to the Mets where he is, this week, one of the worst late-inning relievers in the National League.</td></tr>
+    <tr class="worse"><td><strong>Edwin D&iacute;az</strong>, 2018</td><td class="mono">73.1 IP, 1.96 ERA, 124 K</td><td class="mono">Led MLB with 57 saves; 210 ERA+ in Seattle</td><td>Traded to the Mets. ERA leapt to 5.59. Recovered three years later. The collapse was, at the time, called the most surprising of any player&rsquo;s in the league.</td></tr>
+    <tr class="worse"><td><strong>Spencer Strider</strong>, 2022-23</td><td class="mono">312.2 IP, 35.2% K-rate</td><td class="mono">281 K led MLB in 2023; perennial Cy Young candidate</td><td>Tommy John surgery in April 2024. Returned slowly. Has not been the same pitcher.</td></tr>
+    <tr class="worse"><td><strong>Jordan Hicks</strong>, 2018</td><td class="mono">77.2 IP, 102+ mph fastball</td><td class="mono">The hardest-throwing reliever in baseball, briefly</td><td>Tommy John, then a second elbow procedure, then conversion to a back-end starter. Has bounced between roles since.</td></tr>
+    <tr class="worse"><td><strong>Mark Wohlers</strong>, 1995-96</td><td class="mono">142 IP, 86 saves, 2.9 ERA</td><td class="mono">Braves closer in the World Series years</td><td>Lost his command in 1998: 17 walks in 14 innings, 10.18 ERA. He never recovered. He retired at 32.</td></tr>
+  </tbody>
+</table>
+
+<p>Five careers. Five different ways of stopping being unhittable. One of them &mdash; D&iacute;az &mdash; is back, more or less. The others are cautionary in different registers: injury, surgery, the sudden inability to throw the ball over the plate. The throughline is not that any of these pitchers were ever overrated; the early numbers, in each case, were real. The throughline is that an early-career hot streak compresses into a small piece of evidence about what comes after.</p>
+
+<div class="pull">
+  <p>&ldquo;Spectacular for now is a complete sentence. The trouble starts when the for-now is dropped.&rdquo;</p>
+  <cite>&mdash; The Columnist, on the load-bearing role of qualifiers</cite>
+</div>
+
+<h2 class="sh">What Mason Miller Is, Then</h2>
+
+<p>An elite reliever in a year-and-a-half stretch of brilliance, with a slider that has a reasonable claim to the most-distinctive-pitch title in the sport. The 87.8 mph slider with that movement profile may be a genuine outlier; if it is, the rest of his career is going to look extraordinary. The body of evidence supporting Miller&rsquo;s claim to all-time-best status is six 2026 appearances built atop a 34&#8531;-inning hot streak across two seasons. By the standards of relief work, that is a lot. By the standards of an &ldquo;ever lived&rdquo; superlative, it is roughly seven percent of a Pedro Mart&iacute;nez 2000.</p>
+
+<p>The sentence the situation actually deserves is not the headline. It is something closer to: <em>Mason Miller is, by any honest reading of the available numbers, in the middle of one of the most dominant short stretches a relief pitcher has ever produced, and we will know whether he is the most unhittable pitcher in history sometime around 2032.</em> The sportswriter&rsquo;s job is to tell us what we know now. The Athletic told us a thing we cannot, in May of 2026, know. The slider, on the other hand, is real. We can know that, and that is enough to get out of bed for.</p>
+
+<h2 class="sh">The Record Worth Watching</h2>
+
+<p>Two markers that would make the case differently. First, if Miller&rsquo;s strikeout rate is still north of fifty percent on Memorial Day &mdash; about thirty additional appearances and 100+ batters faced &mdash; the strikeout claim has stabilized into something we can quote with confidence. Second, if his opponent batting average remains under .150 across a hundred-plate-appearance window once league hitters have seen him three or four times each, the &ldquo;they figure him out&rdquo; case starts to weaken in a way the comp set above is, in fact, ranged against.</p>
+
+<p>Until then: the right description is &ldquo;currently unhittable.&rdquo; The current is doing essentially all the work in that sentence.</p>
+
+<div class="footer">
+  <span>The Sports Page &middot; Issue No. __</span>
+  <span>References: Issue #32 (stabilization), Issue #26 (small samples)</span>
+  <span>Not financial or wagering advice</span>
+</div>
+</div>
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+</body>
+</html>
