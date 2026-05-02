@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 466 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 465 issues remaining of 500
 
 ## Repository Structure
 
@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 34 issues (#1-34)
-Queue: empty
+Published: 35 issues (#1-35)
+Queue: 9 articles ready (028-mets-next-17-games, 029-cfb-coaching-stabilization, 030-mason-miller-unhittable, 031-hof-harvest-32-teams, 032-bust-leaderboard-32-teams, 033-rounds-1-3-vs-4-7, 034-owner-hall-of-fame-shame-deeper, 034-owner-hall-of-fame-shame, 035-devin-williams-collapse)
 Reserve: 1 evergreen piece
-Goal: 466 issues remaining of 500
-Last published: Issue #34 — "You Can’t Choose Your Allegiances Unless You’re a Rat. Here’s What 54 Years of Loyalty Has Cost." (015-fan-misery-map.html) on May 1, 2026
+Goal: 465 issues remaining of 500
+Last published: Issue #35 — "The Mets Are 10-21. The Question Isn’t How Bad. It’s What Bad Means." (027-mets-conditional-probability.html) on May 2, 2026
