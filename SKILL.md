@@ -240,10 +240,12 @@ below). Required sections:
 10. **Pull quote** — the key statistical insight in Playfair Display italic
 11. **"Ask the Stats Desk" AI tool** — Claude API-powered textarea at bottom
     that contextualizes any stat the reader pastes in
-12. **"Pitch a Story" box** — REQUIRED on every piece. Routes reader story
-    ideas to GitHub Issues (primary) and email to Patrick (fallback). See
-    template below — copy verbatim, do not redesign per piece. Inserted
-    OUTSIDE the `.paper` div, BEFORE the share/QR box.
+12. **"Pitch a Story" box** — REQUIRED on every piece. Canonical Formspree
+    form that routes reader pitches to Patrick's inbox; he forwards
+    selected ones to GitHub Issues with the `story-idea` label so Claude
+    reads them when planning queue. See template below — copy verbatim, do
+    not redesign per piece. Inserted INSIDE the `.paper` div, immediately
+    before `<div class="footer">`.
 
 ### Step 5 — Skill Output
 
@@ -370,29 +372,55 @@ comparable rate in his 2nd career start would have shown an ERA >30.
 
 ## Pitch a Story — Reader Idea Form (REQUIRED on every piece)
 
-This box belongs OUTSIDE the `.paper` div, BEFORE the share/QR box, on every
-published piece. It routes reader ideas to (1) GitHub Issues with the
-`story-idea` label so they accumulate in the backlog Claude can process,
-and (2) email to Patrick as a fallback for non-GitHub readers. Copy the
-HTML below verbatim — do not redesign per piece.
+This box belongs INSIDE the `.paper` div, immediately before the
+`<div class="footer">`. It is the canonical Formspree form: clean inline
+inputs, gold accent, GitHub link as a sidecar option. Reader submissions
+hit Patrick's inbox via Formspree; he routes the good ones into GitHub
+Issues with the `story-idea` label so Claude can read them when planning
+queue. Copy the HTML below verbatim — do not redesign per piece.
 
 ```html
-<!-- PITCH BOX -->
-<div id="pitch" style="max-width:820px;margin:1.5rem auto 0;background:var(--cream);border:2px solid var(--gold);padding:2rem 2.5rem;text-align:center">
-  <div style="font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.6rem">Pitch a Story to The Sports Page</div>
-  <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3.5vw,1.8rem);font-weight:900;color:var(--ink);margin-bottom:.5rem;line-height:1.2">Got a stat that doesn&rsquo;t make sense?</h3>
-  <p style="font-family:'Libre Baskerville',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-bottom:1.4rem;line-height:1.5">Send it. We&rsquo;ll find what the math is hiding &mdash; and we just might write the next issue about it.</p>
-  <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
-    <a href="https://github.com/pem725/the-sports-page/issues/new?labels=story-idea&title=Story+Idea%3A+&body=**Your+name%3A**+%0A%0A**Sport%3A**+%0A%0A**The+stat+or+story%3A**+%0A%0A**Why+it+matters%3A**+%0A%0A**Timeliness%3A**+breaking+%2F+this+week+%2F+anytime" target="_blank" rel="noopener" style="display:inline-block;padding:.75rem 1.4rem;background:var(--steel);color:var(--cream);text-decoration:none;font-family:'Roboto Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600">Submit via GitHub &rarr;</a>
-    <a href="mailto:pem725@gmail.com?subject=The+Sports+Page+%E2%80%94+Story+Idea&body=Hi+Patrick%2C%0A%0AI+have+an+idea+for+a+piece%3A%0A%0A" style="display:inline-block;padding:.75rem 1.4rem;background:transparent;color:var(--ink);text-decoration:none;font-family:'Roboto Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:2px solid var(--ink)">Or Email Patrick</a>
+  <!-- STORY IDEAS INBOX -->
+  <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem">Pitch a Story</h3>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem">Noticed a weird stat? Saw something that doesn&rsquo;t add up? Send it in. The best ideas become issues.</p>
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" id="pitch-name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" id="pitch-sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <textarea name="idea" placeholder="What&rsquo;s the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
+      <div style="display:flex;gap:.8rem;align-items:center">
+        <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
+        <span style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)">or <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea&body=Sport:%0A%0AStat+or+story:%0A%0AWhy+it%27s+interesting:" style="color:var(--steel)">post on GitHub</a></span>
+      </div>
+    </form>
+    <div id="pitch-ok" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--green);font-weight:600;letter-spacing:.08em">Sent! We read every pitch. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.08em">Something went wrong. Try the GitHub link instead.</div>
   </div>
-</div>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='SENDING\u2026';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}
+      else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='SUBMIT IDEA';
+  });
+  </script>
 ```
 
-The GitHub link uses URL-prefilled issue creation: it lands on the GitHub
-issue form with the `story-idea` label and a structured body template
-already populated. Reader fills in name, sport, and idea, clicks submit,
-and the issue appears in the backlog Claude reads when planning queue.
+Formspree endpoint `f/xykbazvr` is the production endpoint for The Sports
+Page; do not change it. Patrick monitors the inbox and routes selected
+pitches to GitHub Issues (manually or via Gmail filter rules) so they
+land where Claude reads them.
+
+If a future piece is missing this box, run `scripts/migrate_pitch_box.py`
+to backfill cleanly — the script removes any older variant and inserts
+the canonical Formspree form before `<div class="footer">`.
 
 ---
 
@@ -449,7 +477,7 @@ Style: editorial, dry wit, flowing paragraphs, no bullet lists. 2-4 paragraphs.`
 
 ## Quality Checklist (before presenting artifact)
 
-- [ ] Pitch a Story box at the bottom (REQUIRED — routes ideas to GitHub Issues)
+- [ ] Pitch a Story box (Formspree form) inserted INSIDE `.paper` before the footer
 - [ ] Headline includes the extreme number
 - [ ] Denominator math is shown explicitly  
 - [ ] At least 2 historical parallels found via web search
