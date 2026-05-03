@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 35 issues (#1-35)
-Queue: 9 articles ready (028-mets-next-17-games, 029-cfb-coaching-stabilization, 030-mason-miller-unhittable, 031-hof-harvest-32-teams, 032-bust-leaderboard-32-teams, 033-rounds-1-3-vs-4-7, 034-owner-hall-of-fame-shame-deeper, 034-owner-hall-of-fame-shame, 035-devin-williams-collapse)
+Published: 36 issues (#1-36)
+Queue: 9 articles ready (029-cfb-coaching-stabilization, 028-mets-next-17-games, 031-hof-harvest-32-teams, 030-mason-miller-unhittable, 032-bust-leaderboard-32-teams, 034-owner-hall-of-fame-shame.html, 033-rounds-1-3-vs-4-7, 035-devin-williams-collapse)
 Reserve: 1 evergreen piece
-Goal: 465 issues remaining of 500
-Last published: Issue #35 — "The Mets Are 10-21. The Question Isn’t How Bad. It’s What Bad Means." (027-mets-conditional-probability.html) on May 2, 2026
+Goal: 464 issues remaining of 500
+Last published: Issue #36 — Sunday Edition No. 004: The Week in Reference Cards (sunday-004.html) on May 3, 2026
