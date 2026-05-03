@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Sunday Edition No. 004 — May 3, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+/* ── SUNDAY EDITION EXTRAS ── */
+.intro{font-size:1.05rem;line-height:1.75;margin-bottom:1.8rem;padding:1.2rem 1.5rem;background:var(--card);border-left:4px solid var(--steel);color:var(--ink)}
+.issue-list{list-style:none;padding:0;margin:0 0 1.8rem}
+.issue-list li{font-size:.9rem;line-height:1.65;padding:.5rem 0;border-bottom:1px solid var(--div)}
+.issue-list li:last-child{border-bottom:none}
+.issue-list .inum{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;color:var(--steel);margin-right:.4rem}
+.issue-list .idate{font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);margin-right:.4rem}
+.issue-list a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3);font-weight:700;transition:border-color .2s}
+.issue-list a:hover{border-color:var(--rust)}
+.box.green-box{background:var(--green)}
+.box.green-box h3{color:#e0f0e8}
+.box.green-box p{color:#c8edcf}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Sunday Edition &middot; Week 6 Recap &middot; All Sports</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Sunday Edition No. 004 &middot; Issue No. 36</span>
+    <span>May 3, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">The Week in Reference Cards: One Old Forecast Home, One New Variable, and a Mets Win That <em>Proves Nothing</em></h1>
+
+  <div class="deck">
+    Six issues in seven days &mdash; four were explicit methodology tools, one was a 54-year retrospective, and one landed a conditional probability the morning before the Mets went out and won 4&ndash;3. Meanwhile, a prediction from Week 1 finally closed. And Lindor&rsquo;s calf is now a six-week factor nobody had priced in.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; May 3, 2026 &middot; Sunday Edition No. 4</div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    Welcome to Sunday Edition No. 4. This week the newsletter ran four methodology tools, one historical retrospective, and one conditional probability piece that published the morning before the Mets went out and beat the Angels 4&ndash;3. Meanwhile, Paul Skenes&rsquo; ERA is now 3.27 through five starts &mdash; a number that quietly closes a prediction we have been tracking since Opening Day. The Mets are 11-21. Francisco Lindor is in a boot until early June. The NHL playoffs are down to eight teams in the second round. And the first reader-pitched piece in the newsletter&rsquo;s history ran Thursday &mdash; the JUCO Detour, credited to Sean. Four tools, one closure, one win that doesn&rsquo;t move the probability much. Here is the accounting.
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">35</div><div class="l">Issues Published Through Saturday</div></div>
+    <div class="sc"><div class="v good">1 HIT</div><div class="l">Skenes ERA Recovery, Finally Closed</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">464</div><div class="l">Issues Remaining to Our 500 Goal</div></div>
+  </div>
+
+  <!-- SECTION 1: THE WEEK IN REVIEW -->
+  <h2 class="sh">The Week in Review: Issues #30&ndash;35</h2>
+
+  <ol class="issue-list">
+    <li><span class="inum">#30</span><span class="idate">Apr 27</span> &mdash; <a href="025-signal-horizon.html">When We Know a Player or Coach Is a Bust</a> &mdash; The statistical case that two seasons of data already tells you more than most front offices are willing to hear. The three reasons they stay patient anyway: sunk cost, counterfactual fragility, and honest uncertainty about scheme fit.</li>
+    <li><span class="inum">#31</span><span class="idate">Apr 28</span> &mdash; <a href="022-cfb-jnd-rankings.html">The Just-Noticeable Difference in College Football Rankings Is 13</a> &mdash; Thirty years of ranked-vs-ranked games, a logistic regression, and the finding that rankings within 13 positions are statistically indistinguishable during the regular season &mdash; but suddenly reliable in bowl games.</li>
+    <li><span class="inum">#32</span><span class="idate">Apr 29</span> &mdash; <a href="026-stabilization-thresholds.html">When the Number Starts to Mean Something</a> &mdash; A reference card for every sport: the sample sizes at which statistics earn their signal. Batting average at 910 PA. ERA at 150 IP. Save percentage at 1,400 shots. Save this one.</li>
+    <li><span class="inum">#33</span><span class="idate">Apr 30</span> &mdash; <a href="eo-006-juco-detour.html">The JUCO Detour: College Baseball&rsquo;s Portal Workaround Is Already Here</a> &mdash; EO Series Part 6, and the newsletter&rsquo;s first reader-credited piece. Brady Ballinger went from a Las Vegas JUCO to Big 12 All-American without using his one portal transfer. The executive order builds a wall. The JUCO pipeline runs underneath it.</li>
+    <li><span class="inum">#34</span><span class="idate">May 1</span> &mdash; <a href="015-fan-misery-map.html">You Can&rsquo;t Choose Your Allegiances Unless You&rsquo;re a Rat</a> &mdash; 54 years, four teams, five championships, 32-year drought. The fan misery map, with math. Boston&rsquo;s 14 titles. Buffalo&rsquo;s zero. A 1-in-185 drought that still counting.</li>
+    <li><span class="inum">#35</span><span class="idate">May 2</span> &mdash; <a href="027-mets-conditional-probability.html">The Mets Are 10-21. The Question Isn&rsquo;t How Bad. It&rsquo;s What Bad Means.</a> &mdash; A short course in conditional probability, P(A|B) vs. P(B|A), and why eleven percent is not zero but is also not forty. The inverse fallacy, the Nationals&rsquo; 2019 redemption arc, and the honest answer about where this season ends.</li>
+  </ol>
+
+  <hr>
+
+  <!-- SECTION 2: THE PREDICTION SCORECARD -->
+  <h2 class="sh">The Prediction Scorecard</h2>
+
+  <p>Four of this week&rsquo;s six issues were methodology reference cards and retrospective analyses. They generate no graded predictions &mdash; they are built to make you a better reader of numbers, not to stake a claim on outcomes. The two that do generate stakes are long-horizon: the JUCO structural argument plays out over years; the Mets conditional probability plays out over 130 games. One carry-over from Week 1, however, finally has enough data to close.</p>
+
+  <table class="rec">
+    <thead>
+      <tr><th>#</th><th>Prediction</th><th>Outcome</th><th>Grade</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl">
+        <td class="mono">1</td>
+        <td>Skenes&rsquo; 67.5 Opening Day ERA would dilute via denominator leverage within 4&ndash;5 starts; career ERA (1.97) is the Bayesian attractor</td>
+        <td>After 2 starts ERA was still 9.53 (tracking behind). Through 5 starts: <strong>3.27 ERA overall</strong>, <strong>0.95 ERA / 0.53 WHIP / 29:5 K:BB across 28.1 IP</strong> in his last five starts. Recovery confirmed.</td>
+        <td class="mono">HIT &mdash; mechanism correct; took 5 starts, projected 4&ndash;5</td>
+      </tr>
+      <tr>
+        <td class="mono">26</td>
+        <td>Posterior win projection: 80&ndash;82 wins, 90% credible interval [70, 89], based on 7-14 start (Apr 23)</td>
+        <td>Mets now 11-21 through 32 games after winning May 2. Prior of ~83 preseason wins + 11W/32G observed shifts the central estimate. Issue #35&rsquo;s independently-derived projection of 75&ndash;82 is consistent with the updated posterior.</td>
+        <td class="mono">PENDING &mdash; posterior sliding toward 75&ndash;78; direction correct, updating</td>
+      </tr>
+      <tr>
+        <td class="mono">35</td>
+        <td>P(playoffs | 10-21 start) &asymp; 11%; projected season record 75&ndash;82 wins</td>
+        <td>Mets won 4&ndash;3 vs. Angels on May 2. Record now 11-21. One win in an 11% scenario is a single trial, not a signal. The probability does not move materially from one game.</td>
+        <td class="mono">PENDING &mdash; 130 games remaining; model consistent with current data</td>
+      </tr>
+      <tr class="match">
+        <td class="mono">33</td>
+        <td>The JUCO-to-D1 pipeline will grow as the EO&rsquo;s one-transfer cap makes the JUCO detour structurally advantageous; Brady Ballinger is the prototype</td>
+        <td>Ballinger is the 59th overall prospect for the 2026 MLB Draft and now playing outfield at Kansas. 2026 JUCO recruiting data not yet available to measure enrollment trends.</td>
+        <td class="mono">PENDING &mdash; multi-year structural thesis; 2026 recruiting data needed</td>
+      </tr>
+      <tr>
+        <td class="mono">30</td>
+        <td>Year-1&ndash;2 coach/player performance correlates with final career outcome at r &asymp; 0.5&ndash;0.65; stated explicitly as a hypothesis</td>
+        <td>Stated as a hypothesis pending primary data analysis from 1970&ndash;2024. The Monday coaching stability piece tests this from scratch.</td>
+        <td class="mono">N/A &mdash; hypothesis for future analysis, not a graded forecast</td>
+      </tr>
+      <tr>
+        <td class="mono">31</td>
+        <td>CFB ranking JND = 13.2 rank-delta; rankings are noise below that threshold during the regular season</td>
+        <td>Historical analysis of 1,597 games across 30 seasons. No forward-looking prediction embedded.</td>
+        <td class="mono">N/A &mdash; retrospective empirical analysis</td>
+      </tr>
+      <tr>
+        <td class="mono">32</td>
+        <td>Stabilization thresholds: published reference numbers for BA, ERA, SV%, FG%, etc.</td>
+        <td>Reference card. No time-bound forecast.</td>
+        <td class="mono">N/A &mdash; reference card</td>
+      </tr>
+      <tr>
+        <td class="mono">34</td>
+        <td>Four-team fan portfolio: 1-in-185 probability of a 32-year championship drought</td>
+        <td>Retrospective calculation using 54 years of MLB, NFL, NHL, and CFB championship data.</td>
+        <td class="mono">N/A &mdash; retrospective</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- SECTION 3: WHAT WE GOT RIGHT -->
+  <h2 class="sh">What We Got Right</h2>
+
+  <div class="box">
+    <h3>The Skenes Closure</h3>
+    <p>Issue #1 (March 27, Opening Day) argued that Paul Skenes&rsquo; 67.5 ERA was a mathematical artifact &mdash; a denominator problem, not a talent signal &mdash; and that the Gamma-Poisson model with his career ERA (1.97) as the Bayesian attractor would pull the observed rate back toward his true level within 4&ndash;5 starts. Two starts later, in Sunday Edition No. 1, his ERA was 9.53 and we noted the recovery was tracking a start behind schedule. We said the model had not failed; it needed more innings.</p>
+    <p>It got them. Through five starts Skenes is 3-1 with a 3.27 ERA overall. Strip out the Opening Day disaster (&frac23; of an inning, five runs allowed) and his last five starts produced a 0.95 ERA, 0.53 WHIP, and 29:5 K:BB across 28.1 innings. His 2.01 ERA through 61 career starts is now the lowest by any pitcher through 60 starts in the Live Ball Era. The denominator leverage worked exactly as described. The mechanism was correct, the timeframe was correct (5 starts, projected 4&ndash;5), and the career ERA acted as the anchor the model said it would. This is the cleanest model closure the newsletter has produced since the Soto injury call in Week 1.</p>
+    <p>A note on honesty: his current overall ERA is 3.27, not the 1.97 career figure. He is not yet back at his baseline &mdash; he is back in the range of &ldquo;normal elite ace.&rdquo; The model said the ERA would normalize; it did not promise it would normalize to a specific decimal by a specific date. We called the direction and mechanism correctly. That is what we promised to grade.</p>
+  </div>
+
+  <!-- SECTION 4: FACTUAL UPDATES — NOT MISSES -->
+  <h2 class="sh">New Data (Not Misses)</h2>
+
+  <div class="box">
+    <h3>What Changed This Week That Updates the Prior Without Being a Forecasting Error</h3>
+    <p><strong>Francisco Lindor&rsquo;s calf.</strong> The Mets&rsquo; shortstop walked off during the streak-breaking game on April 22 and is now on the IL with a serious left calf strain. The Mets are privately expecting him to miss until early June &mdash; 30 or more games without a player earning $340 million over 10 years. Issue #35&rsquo;s conditional probability analysis (11%) was built on historical comps for teams with poor starts. Few of those comparable teams were simultaneously playing without their franchise shortstop for six or more weeks. With Lindor&rsquo;s absence now a known quantity, the real playoff probability is likely below 11%. Ronny Mauricio is filling in at short. The defense is different. The lineup construction is different. The model needs to update &mdash; and it will, in the Mets piece landing Tuesday.</p>
+    <p><strong>Devin Williams&rsquo; ERA is 9.95.</strong> The Mets&rsquo; $51 million closer started the season with five scoreless appearances. He has since allowed 8 earned runs in roughly two innings across his last four outings &mdash; a 36.00 ERA in that stretch. The newsletter has a piece on this in the queue. We have not published it yet because the data was still accumulating. It has now accumulated. This is new information that materially updates the conditional probability analysis in Issue #35: the bullpen the model assumed was healthy has not been healthy.</p>
+    <p><strong>Mets won on May 2, 4&ndash;3.</strong> Ronny Mauricio hit a solo homer to give the Mets a lead they held. Record now 11-21. One win in an 11% playoff-odds scenario is a single trial in a long distribution. The piece said &ldquo;eleven percent is not zero.&rdquo; Saturday provided one data point confirming that. It also didn&rsquo;t change much else.</p>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Denominator leverage was right. It just needed five starts instead of four. That is not a miss &mdash; that is a model performing at the edge of its precision window. The difference between &lsquo;right&rsquo; and &lsquo;right on schedule&rsquo; is smaller than most people want to admit.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the Skenes closure</cite>
+  </div>
+
+  <!-- SECTION 5: OVER-REACTIONS AND UNDER-REACTIONS -->
+  <h2 class="sh">Over-Reactions and Under-Reactions</h2>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--rust);margin-bottom:.6rem">Over-Reactions</h3>
+      <p>Issue #31 (the CFB JND piece) correctly showed that rankings within 13 positions are statistically indistinguishable during the regular season. The piece drew the right conclusion: stop arguing about #8 vs. #11. But it may have undersold the complementary finding &mdash; that in bowl and playoff games, the rankings hit 89% accuracy even at small deltas. The tool works in January. It fails in November. We said this, but we said it quietly. The January finding is the more actionable one for anyone watching the CFP bracket form. Going forward: be louder about the seasonal exception alongside the seasonal limitation.</p>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--steel);margin-bottom:.6rem">Under-Reactions</h3>
+      <p>Issue #35 named Lindor&rsquo;s calf injury as context but did not revise the conditional probability calculation to account for it explicitly. The 11% figure came from historical comps. A proper update needs to incorporate the Lindor variable: the Mets are not a randomly-selected bad-start team; they are a bad-start team playing without their best position player for six weeks. The corrected probability is probably 6&ndash;9%, not 11%. That difference matters. The Tuesday piece (&ldquo;Mets: Next 17 Games&rdquo;) will run the updated posterior with Lindor&rsquo;s absence priced in.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 5.5: WHAT READERS READ — auto-populated by scripts/fetch_readership.py -->
+  <h2 class="sh">What Readers Read &middot; Apr 26&ndash;May 2</h2>
+<p><em>Readership data pending &mdash; the analytics pipeline installed recently, and last week&rsquo;s counts were not captured. This section will populate starting with the first full week of data.</em></p>
+
+
+  <hr>
+
+  <!-- SECTION 6: THE ROAD AHEAD -->
+  <h2 class="sh">The Road Ahead</h2>
+
+  <p>Five pieces in the next five days, and they land at the right moment.</p>
+
+  <p><strong>Monday:</strong> The data follow-up to Issue #30 (the signal horizon piece) &mdash; CFB coaching stabilization built from primary data on every head coach from 1970 to 2024. The tentative r&nbsp;&asymp;&nbsp;0.5&ndash;0.65 hypothesis from Issue #30 gets tested against the actual curve. If the hypothesis is wrong, we will say so.</p>
+
+  <p><strong>Tuesday:</strong> The Mets&rsquo; next 17 games &mdash; a piece that was in the queue before Lindor went on the IL and now arrives with significantly higher stakes. With Mauricio at short and Lindor in a boot for six weeks, the next 17 games will tell us more about this team than the previous 32. The conditional probability will be updated with Lindor&rsquo;s absence explicitly modeled.</p>
+
+  <p><strong>Wednesday:</strong> The Hall-of-Fame Harvest &mdash; the first piece in the four-part &ldquo;After the Jets&rdquo; series on NFL Draft capital and organizational quality. How many future Hall of Famers will the 2026 draft class produce, by pick range, and how does this vary across the 32 franchises? The dataset goes back to 1970.</p>
+
+  <p><strong>Thursday:</strong> Mason Miller. Oakland&rsquo;s closer is posting numbers the statistical literature would classify as unsustainable. The question is not whether regression is coming &mdash; it is &mdash; but where the regression lands and when. Same framework as the Skenes piece: Gamma-Poisson, career ERA as the attractor.</p>
+
+  <p>And sometime this week, finally: the Devin Williams collapse piece. A $51 million closer with a 9.95 ERA through eight outings, 36.00 over his last four. The data has accumulated. Thirty-five issues down. Four hundred and sixty-four to go.</p>
+
+  <!-- FINAL PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Thirty-five issues. Four tools this week, one closure, one Mets win that didn&rsquo;t change the math. The model keeps updating. Four sixty-four to go.&rdquo;</p>
+    <cite>&mdash; The Sports Page, Sunday Edition No. 4</cite>
+  </div>
+
+  <!-- STORY IDEAS INBOX -->
+  <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem">Pitch a Story</h3>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem">Noticed a weird stat? Saw something that doesn&rsquo;t add up? Send it in. The best ideas become issues.</p>
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" id="pitch-name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" id="pitch-sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <textarea name="idea" placeholder="What&rsquo;s the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
+      <div style="display:flex;gap:.8rem;align-items:center">
+        <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
+        <span style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)">or <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea&body=Sport:%0A%0AStat+or+story:%0A%0AWhy+it%27s+interesting:" style="color:var(--steel)">post on GitHub</a></span>
+      </div>
+    </form>
+    <div id="pitch-ok" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--green);font-weight:600;letter-spacing:.08em">Sent! We read every pitch. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.08em">Something went wrong. Try the GitHub link instead.</div>
+  </div>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='SENDING…';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}
+      else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='SUBMIT IDEA';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Sunday Edition No. 004 &middot; Issue No. 36</span>
+    <span>Predictions tracked from Issues #1&ndash;35; carry-overs from #1, #26</span>
+    <span>See you next Sunday</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+
+</body>
+</html>
