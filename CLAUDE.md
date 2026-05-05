@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 463 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 462 issues remaining of 500
 
 ## Repository Structure
 
@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 37 issues (#1-37)
-Queue: 8 articles ready (028-mets-next-17-games, 030-mason-miller-unhittable, 031-hof-harvest-32-teams, 032-bust-leaderboard-32-teams, 033-rounds-1-3-vs-4-7, 034-owner-hall-of-fame-shame-deeper, 034-owner-hall-of-fame-shame, 035-devin-williams-collapse)
+Published: 38 issues (#1-38)
+Queue: 7 articles ready (030-mason-miller-unhittable, 031-hof-harvest-32-teams, 032-bust-leaderboard-32-teams, 033-rounds-1-3-vs-4-7, 034-owner-hall-of-fame-shame-deeper, 034-owner-hall-of-fame-shame, 035-devin-williams-collapse)
 Reserve: 1 evergreen piece
-Goal: 463 issues remaining of 500
-Last published: Issue #37 — "Year One Tells You 60% of Everything You’ll Ever Know About a Coach" (029-cfb-coaching-stabilization.html) on May 4, 2026
+Goal: 462 issues remaining of 500
+Last published: Issue #38 — "The Mets’ Next 17 Games, Mapped." (028-mets-next-17-games.html) on May 5, 2026
