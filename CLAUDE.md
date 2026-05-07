@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 461 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 460 issues remaining of 500
 
 ## Repository Structure
 
@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 39 issues (#1-39)
-Queue: 6 articles ready (030-mason-miller-unhittable, 032-bust-leaderboard-32-teams, 033-rounds-1-3-vs-4-7, 034-owner-hall-of-fame-shame-deeper, 034-owner-hall-of-fame-shame, 035-devin-williams-collapse)
+Published: 40 issues (#1-40)
+Queue: 5 articles ready (032-bust-leaderboard-32-teams, 033-rounds-1-3-vs-4-7, 034-owner-hall-of-fame-shame-deeper, 034-owner-hall-of-fame-shame, 035-devin-williams-collapse)
 Reserve: 1 evergreen piece
-Goal: 461 issues remaining of 500
-Last published: Issue #39 — "The Jets Have Drafted One Hall of Famer in Fifty Years. So Have Twelve Other Teams." (031-hof-harvest-32-teams.html) on May 6, 2026
+Goal: 460 issues remaining of 500
+Last published: Issue #40 — "Mason Miller Is Spectacular. He Is Not, Yet, the Most Unhittable Pitcher Who Ever Lived." (030-mason-miller-unhittable.html) on May 7, 2026
