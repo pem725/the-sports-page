@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 460 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 459 issues remaining of 500
 
 ## Repository Structure
 
@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 40 issues (#1-40)
-Queue: 5 articles ready (032-bust-leaderboard-32-teams, 033-rounds-1-3-vs-4-7, 034-owner-hall-of-fame-shame-deeper, 034-owner-hall-of-fame-shame, 035-devin-williams-collapse)
+Published: 41 issues (#1-41)
+Queue: 4 articles ready (033-rounds-1-3-vs-4-7, 034-owner-hall-of-fame-shame-deeper, 034-owner-hall-of-fame-shame, 035-devin-williams-collapse)
 Reserve: 1 evergreen piece
-Goal: 460 issues remaining of 500
-Last published: Issue #40 — "Mason Miller Is Spectacular. He Is Not, Yet, the Most Unhittable Pitcher Who Ever Lived." (030-mason-miller-unhittable.html) on May 7, 2026
+Goal: 459 issues remaining of 500
+Last published: Issue #41 — "The Jets Are 25th in Triple-Bust Rate. They Are Also 10th in Clean-Hit Rate." (032-bust-leaderboard-32-teams.html) on May 8, 2026
