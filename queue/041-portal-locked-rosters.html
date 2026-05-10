@@ -1,0 +1,166 @@
+<!-- PUBLISH-META
+topic: CFB
+tags: CFB:cfb, Notre Dame, Transfer Portal, Methodology
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+table.rec .hl .mono{color:var(--green);font-weight:700}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on Hot Streaks &middot; College Football, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Notre Dame Took Seven from the Portal. <em>One Thousand Two Hundred</em> Other Players Have Nowhere to Go.</h1>
+<div class="deck">For the first time in the transfer-portal era, college football has only one window. It opened January 2 and closed January 16. There is no spring window in 2026 &mdash; it was eliminated last fall. Rosters that were assembled in those fifteen January days are now locked through bowl season. This piece is about what that means, mathematically, for the teams that bet right and the players who didn&rsquo;t make it onto a roster before the door shut.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; On Locked Rosters and the New Calendar</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v good">7</div><div class="l">Notre Dame Portal Additions</div></div>
+  <div class="sc"><div class="v bad">~1,200</div><div class="l">Players Still Unsigned</div></div>
+  <div class="sc"><div class="v now">15</div><div class="l">Days the Window Was Open</div></div>
+</div>
+
+<p>The NCAA voted last October to consolidate college football&rsquo;s transfer windows. The old system had two: a long December window after the regular season ended, and a shorter April window after most programs finished spring ball. Coaches argued the spring window disrupted practice and rewarded last-minute roster shopping over patient development. The April window is gone. The new single window, January 2 through January 16, is the only path for an FBS player to change schools. Two CFP championship-game participants get a five-day extension after the title game. Everyone else &mdash; coaches, players, athletic departments &mdash; lives with whatever they signed by January 17.</p>
+
+<p>The first round of consequences arrived on the players&rsquo; side. By the close of the window, an estimated 1,200 FBS-experienced players who had entered the portal had not found a new program. Under the old rules, most of them would have waited for the April window, watched spring depth charts shake out, and tried again. Under the new rules, they are stuck. Some will return to their original programs. Some will drop a level &mdash; FCS, Division II, junior college. Some will leave football. None of them will play 2026 college football for a different FBS team unless their current school grants a release through some narrow medical or hardship channel.</p>
+
+<h2 class="sh">The Notre Dame Class, in One Paragraph</h2>
+
+<p>Notre Dame closed the window with seven commitments. Two are wide receivers who left Ohio State after the playoff run: Quincy Porter and Mylan Graham, both former four-star recruits with two seasons of eligibility remaining. The defensive front added Tionne Gray, a defensive tackle from Oregon, and Francis Brewu, a defensive lineman from Pittsburgh who had seven tackles for loss in 2025. Three additional players filled depth needs at safety, linebacker, and place-kicker. None of the departures were starters. Marcus Freeman&rsquo;s class was rated a top-five portal class by the major recruiting services, with a particular emphasis on plug-and-play immediate contributors rather than developmental projects.</p>
+
+<p>This is the kind of class that was, under the old system, supplemented by spring shopping. A coaching staff would assess April practice, identify two or three weaknesses, and pick from the spring portal. That tool is gone. Whatever Notre Dame committed to in mid-January is the team that will line up against Miami on August 30.</p>
+
+<h2 class="sh">Why a Locked Roster Looks Like the NFL Now</h2>
+
+<div class="box">
+<h3>The Roster-Construction Calendar Has Compressed</h3>
+<p>The closest analog is NFL roster construction, where a team has roughly one major spending window each spring (free agency in March + the draft in late April), followed by minicamps and training camp where the roster is essentially set. NFL teams cannot, under most circumstances, sign a frontline starter in July. The 2026 college football calendar now resembles that compressed structure. The portal opens, the portal closes, the team is the team.</p>
+<p>This has predictable second-order effects. Front offices &mdash; or whatever the college equivalent now is &mdash; are forced to do their entire roster math in two weeks rather than five months. Decisions made under that pressure are noisier than decisions made with a spring re-look option. The variance of outcomes goes up. Some teams will get the January window very right; others will get it very wrong; and the ones who got it wrong will find out without a corrective tool.</p>
+</div>
+
+<h2 class="sh">The Empirical Question</h2>
+
+<p>The methodological piece this newsletter has been developing &mdash; that small samples lie, that stabilization takes longer than fans want it to, that one window does not give you enough information to know if you got it right &mdash; applies to the new portal calendar more than it applied to the old one. Under the two-window system, a January class that underperformed in spring practice could be patched. Under the single-window system, the January class is the bet. By the third game of the season we will have early signal. By Halloween we will know which power-conference programs picked well. By December we will have a quantifiable answer to a question college football has never previously had to answer in this form: <em>given exactly one shot at the roster, who got it right?</em></p>
+
+<table class="rec">
+  <thead><tr><th>What Will Be Visible By</th><th>What We&rsquo;ll Know</th></tr></thead>
+  <tbody>
+    <tr><td class="mono">Week 4 (mid-Sep)</td><td>Which January-window starters are real, which were class ranking artifacts. About 30% of true talent is visible by here per Issue #37&rsquo;s stabilization curve.</td></tr>
+    <tr><td class="mono">Week 8 (late Oct)</td><td>About 60% of true talent visible. Conference standings start to mean something. Programs with portal misses start to look conspicuously thin.</td></tr>
+    <tr><td class="mono">Bowl Season</td><td>Full-season grade. The first single-window experiment is judged. NCAA decides whether to keep the format or split the window again.</td></tr>
+  </tbody>
+</table>
+
+<div class="pull">
+  <p>&ldquo;The new calendar punishes teams that needed two looks. The old one let those teams hide their first mistake. We are about to find out which group is bigger.&rdquo;</p>
+  <cite>&mdash; The Columnist, on the cost of one swing</cite>
+</div>
+
+<h2 class="sh">The Unsigned</h2>
+
+<p>The 1,200 number deserves a closer look. These are not all marginal players. The portal in any year contains a top tier (returning starters seeking better opportunities), a middle tier (rotation players whose roles changed), and a bottom tier (depth pieces and young players who lost their position battle). Under the old system, the bottom tier disproportionately found homes in the spring window, when programs needed late depth. Under the new system, the bottom tier is the part that does not, on average, get signed at all. Some of those players will be back at their original schools. Many will not be playing FBS football in 2026.</p>
+
+<p>This is not a tragedy. It is a structural change with predictable distributional consequences, and it will produce its own data. We will revisit this piece after the season &mdash; both to grade Notre Dame&rsquo;s seven additions against their underlying-talent metrics, and to ask whether the NCAA&rsquo;s consolidation move did what it was advertised to do, which was &ldquo;bring stability to the sport.&rdquo; The hypothesis under test is whether stability and one-window roster locks are the same thing. The early read, six months in, is that they are not.</p>
+
+  <!-- STORY IDEAS INBOX (compact) -->
+  <aside id="pitch" style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.7rem 0;margin:1.6rem 0 .4rem;font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <span style="text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600">Pitch a stat &rarr;</span>
+      <input type="text" name="sport" placeholder="Sport" style="font-family:inherit;font-size:.7rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;width:5rem">
+      <input type="text" name="idea" placeholder="The weird number you noticed" required style="font-family:'Libre Baskerville',serif;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;flex:1;min-width:12rem">
+      <button id="pitch-btn" type="submit" style="background:var(--ink);color:var(--cream);font-family:inherit;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.32rem .7rem;cursor:pointer">Send</button>
+      <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea" style="color:var(--steel);text-decoration:none;font-size:.6rem">or GitHub</a>
+    </form>
+    <div id="pitch-ok" style="display:none;margin-top:.3rem;color:var(--green);font-size:.62rem">Sent. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;margin-top:.3rem;color:var(--rust);font-size:.62rem">Failed &mdash; try the GitHub link.</div>
+  </aside>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='…';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='Send';
+  });
+  </script>
+
+<div class="footer">
+  <span>The Sports Page &middot; Issue No. __</span>
+  <span>Sources: NCAA, ESPN portal coverage, 247Sports, Notre Dame portal trackers</span>
+  <span>Not financial or wagering advice</span>
+</div>
+</div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3.5vw,1.8rem);font-weight:900;color:var(--ink);margin-bottom:.5rem;line-height:1.2">Got a stat that doesn&rsquo;t make sense?</h3>
+  <p style="font-family:'Libre Baskerville',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-bottom:1.4rem;line-height:1.5">Send it. We&rsquo;ll find what the math is hiding &mdash; and we just might write the next issue about it.</p>
+  <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+    <a href="https://github.com/pem725/the-sports-page/issues/new?labels=story-idea&title=Story+Idea%3A+&body=**Your+name%3A**+%0A%0A**Sport%3A**+%0A%0A**The+stat+or+story%3A**+%0A%0A**Why+it+matters%3A**+%0A%0A**Timeliness%3A**+breaking+%2F+this+week+%2F+anytime" target="_blank" rel="noopener" style="display:inline-block;padding:.75rem 1.4rem;background:var(--steel);color:var(--cream);text-decoration:none;font-family:'Roboto Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600">Submit via GitHub &rarr;</a>
+    <a href="mailto:pem725@gmail.com?subject=The+Sports+Page+%E2%80%94+Story+Idea&body=Hi+Patrick%2C%0A%0AI+have+an+idea+for+a+piece%3A%0A%0A" style="display:inline-block;padding:.75rem 1.4rem;background:transparent;color:var(--ink);text-decoration:none;font-family:'Roboto Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:2px solid var(--ink)">Or Email Patrick</a>
+  </div>
+</div>
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+</body>
+</html>
