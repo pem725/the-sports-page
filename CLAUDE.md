@@ -211,8 +211,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 42 issues (#1-42)
-Queue: 2 articles ready (033-rounds-1-3-vs-4-7, 035-devin-williams-collapse)
+Published: 43 issues (#1-43)
+Queue: 7 articles ready (033-rounds-1-3-vs-4-7, 035-devin-williams-collapse, 036-cost-per-win, 037-nobody-hates-rockies, 038-mets-braves-asymmetry, 039-mets-bullpen-eighth, 040-three-lies-scatter-plot)
 Reserve: 1 evergreen piece
-Goal: 458 issues remaining of 500
-Last published: Issue #42 — "The Hall of Fame and Hall of Shame of American Sports Owners." (034-owner-hall-of-fame-shame.html) on May 9, 2026
+Goal: 457 issues remaining of 500
+Last published: Issue #43 — Sunday Edition No. 005 "Six Issues, Eight Games, and a Model That Underestimated the Mets" (sunday-005.html) on May 10, 2026
