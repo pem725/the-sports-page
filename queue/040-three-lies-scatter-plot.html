@@ -1,0 +1,332 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Methods, Charts, Statistics
+
+REFERENCE: This piece pairs with the Cost of a Win issue (queue/036). Reuses
+the same 30-team payroll/wins dataset to show three different ways to
+deceive a reader using identical numbers.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.lie-tag{display:inline-block;background:var(--rust);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.15rem .5rem;font-weight:600}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on Hot Streaks &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Three Lies, <em>Thirty Dots.</em></h1>
+<div class="deck">A companion piece to last week&rsquo;s issue on cost-per-win. Same payroll. Same wins. Same thirty teams. Three different charts &mdash; each one technically honest, each one telling a story the data does not, in fact, support. Consider this a guided tour of how a sports columnist could lie to you with statistics without saying a single false sentence.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; In the Tradition of Darrell Huff</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v now">3</div><div class="l">Lies, This Issue</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">.014</div><div class="l">Honest R&sup2;</div></div>
+  <div class="sc"><div class="v bad">.076</div><div class="l">Best Cherry-Picked R&sup2;</div></div>
+</div>
+
+<p>In 1954, the journalist Darrell Huff published a small book called <em>How to Lie with Statistics</em>. It is the best-selling statistics book in history, mostly because the title is a confession dressed as a tutorial. Huff&rsquo;s thesis was that no one needs to invent fake numbers to deceive a reader; the deceptive parts of statistics are the choices made <em>around</em> the numbers &mdash; which axis to use, which observations to include, which curve to draw through the cloud of dots. Each of those choices is a lie of omission disguised as a methodological preference.</p>
+
+<p>This issue takes the dataset from last week&rsquo;s <em>Cost of a Win</em> piece &mdash; the 2026 payroll and current win column for all thirty MLB teams &mdash; and shows three different ways that same dataset could be drawn to support three completely different conclusions. The honest fit, computed without any cherry-picking, has an R&sup2; of .014: through May 7, payroll explains essentially none of the variation in wins. Each of the lies below makes that relationship look stronger or different than it actually is.</p>
+
+<h2 class="sh">Lie #1 &middot; The Quadratic Fit That Makes Up a Story</h2>
+
+<div class="chart">
+  <div class="chart-cap"><span class="lie-tag">Lie 1</span> &nbsp; &ldquo;Wins Follow a U-Shape: The Middle Market Is the Worst Place to Spend.&rdquo;</div>
+  <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <line x1="60" y1="30" x2="60" y2="220" stroke="#1a1208" stroke-width="1.5"/>
+    <line x1="60" y1="220" x2="710" y2="220" stroke="#1a1208" stroke-width="1.5"/>
+    <text x="52" y="54" text-anchor="end" fill="#6b5e4a">26</text>
+    <text x="52" y="96" text-anchor="end" fill="#6b5e4a">22</text>
+    <text x="52" y="139" text-anchor="end" fill="#6b5e4a">18</text>
+    <text x="52" y="181" text-anchor="end" fill="#6b5e4a">14</text>
+    <text x="60" y="240" text-anchor="middle" fill="#6b5e4a">$0</text>
+    <text x="217" y="240" text-anchor="middle" fill="#6b5e4a">$100M</text>
+    <text x="375" y="240" text-anchor="middle" fill="#6b5e4a">$200M</text>
+    <text x="533" y="240" text-anchor="middle" fill="#6b5e4a">$300M</text>
+    <text x="690" y="240" text-anchor="middle" fill="#6b5e4a">$400M</text>
+    <text x="385" y="262" text-anchor="middle" fill="#1a1208" font-weight="600">2026 PAYROLL</text>
+    <!-- quadratic curve through points: y=20.69 - 0.0393x + 0.000146x² -->
+    <polyline points="139,124 218,133 296,135 375,128 454,115 533,93 611,64 690,30" fill="none" stroke="#b83a1e" stroke-width="2" opacity="0.85"/>
+    <!-- 30 dots -->
+    <circle cx="544" cy="83" r="4" fill="#6b5e4a"/>
+    <circle cx="451" cy="178" r="4" fill="#6b5e4a"/>
+    <circle cx="446" cy="157" r="4" fill="#6b5e4a"/>
+    <circle cx="435" cy="51" r="4" fill="#6b5e4a"/>
+    <circle cx="384" cy="51" r="4" fill="#6b5e4a"/>
+    <circle cx="381" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="375" cy="93" r="4" fill="#6b5e4a"/>
+    <circle cx="373" cy="157" r="4" fill="#6b5e4a"/>
+    <circle cx="331" cy="51" r="4" fill="#6b5e4a"/>
+    <circle cx="325" cy="178" r="4" fill="#6b5e4a"/>
+    <circle cx="317" cy="167" r="4" fill="#6b5e4a"/>
+    <circle cx="317" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="292" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="285" cy="167" r="4" fill="#6b5e4a"/>
+    <circle cx="259" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="247" cy="136" r="4" fill="#6b5e4a"/>
+    <circle cx="211" cy="136" r="4" fill="#6b5e4a"/>
+    <circle cx="207" cy="125" r="4" fill="#6b5e4a"/>
+    <circle cx="194" cy="93" r="4" fill="#6b5e4a"/>
+    <circle cx="194" cy="167" r="4" fill="#6b5e4a"/>
+    <circle cx="183" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="181" cy="125" r="4" fill="#6b5e4a"/>
+    <circle cx="177" cy="114" r="4" fill="#6b5e4a"/>
+    <circle cx="173" cy="136" r="4" fill="#6b5e4a"/>
+    <circle cx="161" cy="62" r="4" fill="#6b5e4a"/>
+    <circle cx="159" cy="157" r="4" fill="#6b5e4a"/>
+    <circle cx="158" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="158" cy="114" r="4" fill="#6b5e4a"/>
+    <circle cx="143" cy="104" r="4" fill="#6b5e4a"/>
+    <circle cx="114" cy="146" r="4" fill="#6b5e4a"/>
+  </svg>
+  <div class="chart-note">Same thirty teams. Quadratic fit forced through the points. R&sup2; = .056 &mdash; four times the honest linear fit. The curve dips through the middle market, swoops up sharply at the top end, and tells you that &ldquo;wins follow a U-shape.&rdquo; The curve is mostly fitting one team (the Dodgers), but you would have to know that to know it.</div>
+</div>
+
+<p>The first lie is the easiest one to fall for, because it looks like sophistication. A linear fit on this data has an R&sup2; of .014. A second-degree polynomial &mdash; a parabola &mdash; has an R&sup2; of .056. That is four times as much explanatory power, achieved by adding one extra parameter. The columnist who runs this fit will write a sentence that begins, <em>The relationship between payroll and wins is non-linear, with diminishing returns in the middle market and accelerating returns above $250 million.</em> This sentence sounds correct. The chart appears to support it. The sentence is, nonetheless, almost entirely a lie.</p>
+
+<p>The honest reading: the parabola is fitting the Dodgers, and to a lesser extent the Yankees. Of thirty teams, exactly two are in the &ldquo;accelerating returns&rdquo; portion of the curve, and those two teams are entirely responsible for the upward sweep at the right edge of the chart. The dip in the middle is not a real phenomenon either; it is what a parabola has to do, mathematically, in order to bend its way around two stubbornly high data points on the right edge while still passing through the cloud in the middle. <strong>An overfit polynomial does not describe a relationship; it describes the residuals of a small number of outlying points.</strong> A more flexible model &mdash; a fifth-degree polynomial, say &mdash; would have an even higher R&sup2;, and would also be even more obviously absurd.</p>
+
+<h2 class="sh">Lie #2 &middot; The Outlier Deletion That Cleans Up the Story</h2>
+
+<div class="chart">
+  <div class="chart-cap"><span class="lie-tag">Lie 2</span> &nbsp; &ldquo;Once You Remove the Two Obvious Outliers, the Pattern Is Clear: More Money, More Wins.&rdquo;</div>
+  <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <line x1="60" y1="30" x2="60" y2="220" stroke="#1a1208" stroke-width="1.5"/>
+    <line x1="60" y1="220" x2="710" y2="220" stroke="#1a1208" stroke-width="1.5"/>
+    <text x="52" y="54" text-anchor="end" fill="#6b5e4a">26</text>
+    <text x="52" y="96" text-anchor="end" fill="#6b5e4a">22</text>
+    <text x="52" y="139" text-anchor="end" fill="#6b5e4a">18</text>
+    <text x="52" y="181" text-anchor="end" fill="#6b5e4a">14</text>
+    <text x="60" y="240" text-anchor="middle" fill="#6b5e4a">$0</text>
+    <text x="217" y="240" text-anchor="middle" fill="#6b5e4a">$100M</text>
+    <text x="375" y="240" text-anchor="middle" fill="#6b5e4a">$200M</text>
+    <text x="533" y="240" text-anchor="middle" fill="#6b5e4a">$300M</text>
+    <text x="690" y="240" text-anchor="middle" fill="#6b5e4a">$400M</text>
+    <text x="385" y="262" text-anchor="middle" fill="#1a1208" font-weight="600">2026 PAYROLL (METS &amp; BLUE JAYS REMOVED)</text>
+    <!-- new linear fit without Mets and Blue Jays: y=17.17+0.01473x at x=0 → 144, at x=400 → 82 -->
+    <line x1="60" y1="144" x2="710" y2="82" stroke="#b83a1e" stroke-width="2" opacity="0.85" stroke-dasharray="6,4"/>
+    <!-- 28 dots, with X marks where Mets and Blue Jays were -->
+    <circle cx="544" cy="83" r="4" fill="#6b5e4a"/>
+    <text x="447" y="182" fill="#b83a1e" font-size="14" font-weight="700" text-anchor="middle">×</text>
+    <text x="446" y="160" fill="#b83a1e" font-size="14" font-weight="700" text-anchor="middle">×</text>
+    <circle cx="435" cy="51" r="4" fill="#6b5e4a"/>
+    <circle cx="384" cy="51" r="4" fill="#6b5e4a"/>
+    <circle cx="381" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="375" cy="93" r="4" fill="#6b5e4a"/>
+    <circle cx="373" cy="157" r="4" fill="#6b5e4a"/>
+    <circle cx="331" cy="51" r="4" fill="#6b5e4a"/>
+    <circle cx="325" cy="178" r="4" fill="#6b5e4a"/>
+    <circle cx="317" cy="167" r="4" fill="#6b5e4a"/>
+    <circle cx="317" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="292" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="285" cy="167" r="4" fill="#6b5e4a"/>
+    <circle cx="259" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="247" cy="136" r="4" fill="#6b5e4a"/>
+    <circle cx="211" cy="136" r="4" fill="#6b5e4a"/>
+    <circle cx="207" cy="125" r="4" fill="#6b5e4a"/>
+    <circle cx="194" cy="93" r="4" fill="#6b5e4a"/>
+    <circle cx="194" cy="167" r="4" fill="#6b5e4a"/>
+    <circle cx="183" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="181" cy="125" r="4" fill="#6b5e4a"/>
+    <circle cx="177" cy="114" r="4" fill="#6b5e4a"/>
+    <circle cx="173" cy="136" r="4" fill="#6b5e4a"/>
+    <circle cx="161" cy="62" r="4" fill="#6b5e4a"/>
+    <circle cx="159" cy="157" r="4" fill="#6b5e4a"/>
+    <circle cx="158" cy="146" r="4" fill="#6b5e4a"/>
+    <circle cx="158" cy="114" r="4" fill="#6b5e4a"/>
+    <circle cx="143" cy="104" r="4" fill="#6b5e4a"/>
+    <circle cx="114" cy="146" r="4" fill="#6b5e4a"/>
+  </svg>
+  <div class="chart-note">Same thirty teams as before, except the Mets and Blue Jays have been removed (red &times;). New linear fit: slope of +1.47 wins per $100M, R&sup2; = .076. Both numbers are <em>more than double</em> the values from the full dataset. Same data minus two teams; entirely different story.</div>
+</div>
+
+<p>The second lie is the most common one in sports writing, and the hardest to defend against, because it always begins with a sensible-sounding word: <em>outlier</em>. The columnist will say something like, <em>If we remove the Mets and Blue Jays, who are clearly underperforming for reasons unrelated to payroll, the relationship between spending and wins becomes much stronger.</em> The new R&sup2; jumps from .014 to .076. The slope jumps from +0.6 wins per $100 million to +1.47 wins per $100 million. The columnist points to these numbers and concludes that, in the typical case, money does buy wins, and the Mets and Blue Jays are the exceptions that prove the rule.</p>
+
+<div class="box">
+<h3>The Word &ldquo;Outlier&rdquo; Is Doing the Work Here</h3>
+<p>An outlier, in legitimate use, is a data point that arose from a different process than the rest of the dataset &mdash; a typo, a measurement error, a fundamentally different population. None of those describe the Mets or the Blue Jays. They are major-league teams playing major-league baseball, with payrolls and win totals generated by exactly the same processes as the other twenty-eight. They are not outliers. They are <em>data points the columnist did not like</em>.</p>
+<p>The honest treatment of an inconvenient observation is to model it &mdash; to ask why a team with this payroll is producing this win total, and to refine your understanding of the relationship. The dishonest treatment is to remove it from the chart and quietly rerun the regression. The R&sup2; will, in almost every case, get bigger. That is not because your model is better. It is because you have less data.</p>
+</div>
+
+<h2 class="sh">Lie #3 &middot; The Truncated Y-Axis That Makes the Spread Look Big</h2>
+
+<div class="chart">
+  <div class="chart-cap"><span class="lie-tag">Lie 3</span> &nbsp; &ldquo;Look at the Massive Spread in Win Totals Across the League.&rdquo;</div>
+  <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <line x1="60" y1="30" x2="60" y2="220" stroke="#1a1208" stroke-width="1.5"/>
+    <line x1="60" y1="220" x2="710" y2="220" stroke="#1a1208" stroke-width="1.5"/>
+    <!-- y-axis truncated to 14-26 -->
+    <text x="52" y="34" text-anchor="end" fill="#6b5e4a">26</text>
+    <text x="52" y="65" text-anchor="end" fill="#6b5e4a">24</text>
+    <text x="52" y="97" text-anchor="end" fill="#6b5e4a">22</text>
+    <text x="52" y="128" text-anchor="end" fill="#6b5e4a">20</text>
+    <text x="52" y="160" text-anchor="end" fill="#6b5e4a">18</text>
+    <text x="52" y="191" text-anchor="end" fill="#6b5e4a">16</text>
+    <text x="52" y="222" text-anchor="end" fill="#6b5e4a">14</text>
+    <text x="60" y="240" text-anchor="middle" fill="#6b5e4a">$0</text>
+    <text x="217" y="240" text-anchor="middle" fill="#6b5e4a">$100M</text>
+    <text x="375" y="240" text-anchor="middle" fill="#6b5e4a">$200M</text>
+    <text x="533" y="240" text-anchor="middle" fill="#6b5e4a">$300M</text>
+    <text x="690" y="240" text-anchor="middle" fill="#6b5e4a">$400M</text>
+    <text x="385" y="262" text-anchor="middle" fill="#1a1208" font-weight="600">2026 PAYROLL</text>
+    <!-- new y mapping: 14 → 220, 26 → 30; range 12 wins over 190 px = 15.83 px/win -->
+    <!-- y_pixel = 220 - (wins-14)*15.83 -->
+    <!-- Same regression line: at $0 → 17.96 wins → y=220-3.96*15.83=157.3; at $400 → 20.35 → y=220-6.35*15.83=119.5 -->
+    <line x1="60" y1="157" x2="710" y2="120" stroke="#b83a1e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+    <!-- dots in new coords -->
+    <circle cx="544" cy="78" r="4" fill="#6b5e4a"/><!-- Dodgers 23 -->
+    <circle cx="451" cy="220" r="4" fill="#b83a1e"/><!-- Mets 14 (at edge) -->
+    <circle cx="446" cy="188" r="4" fill="#6b5e4a"/><!-- Blue Jays 16 -->
+    <circle cx="435" cy="30" r="4" fill="#6b5e4a"/><!-- Yankees 26 -->
+    <circle cx="384" cy="30" r="4" fill="#6b5e4a"/><!-- Braves 26 -->
+    <circle cx="381" cy="173" r="4" fill="#6b5e4a"/><!-- Phillies 17 -->
+    <circle cx="375" cy="93" r="4" fill="#6b5e4a"/><!-- Padres 22 -->
+    <circle cx="373" cy="188" r="4" fill="#6b5e4a"/><!-- Red Sox 16 -->
+    <circle cx="331" cy="30" r="4" fill="#6b5e4a"/><!-- Cubs 26 -->
+    <circle cx="325" cy="220" r="4" fill="#6b5e4a"/><!-- Giants 14 -->
+    <circle cx="317" cy="204" r="4" fill="#6b5e4a"/><!-- Astros 15 -->
+    <circle cx="317" cy="173" r="4" fill="#6b5e4a"/><!-- Rangers 17 -->
+    <circle cx="292" cy="173" r="4" fill="#6b5e4a"/><!-- Dbacks 17 -->
+    <circle cx="285" cy="204" r="4" fill="#6b5e4a"/><!-- Angels 15 -->
+    <circle cx="259" cy="173" r="4" fill="#6b5e4a"/><!-- Royals 17 -->
+    <circle cx="247" cy="157" r="4" fill="#6b5e4a"/><!-- Mariners 18 -->
+    <circle cx="211" cy="157" r="4" fill="#6b5e4a"/><!-- Tigers 18 -->
+    <circle cx="207" cy="141" r="4" fill="#6b5e4a"/><!-- Brewers 19 -->
+    <circle cx="194" cy="93" r="4" fill="#6b5e4a"/><!-- Cardinals 22 -->
+    <circle cx="194" cy="204" r="4" fill="#6b5e4a"/><!-- Rockies 15 -->
+    <circle cx="183" cy="173" r="4" fill="#6b5e4a"/><!-- Orioles 17 -->
+    <circle cx="181" cy="141" r="4" fill="#6b5e4a"/><!-- Athletics 19 -->
+    <circle cx="177" cy="125" r="4" fill="#6b5e4a"/><!-- Reds 20 -->
+    <circle cx="173" cy="157" r="4" fill="#6b5e4a"/><!-- Nationals 18 -->
+    <circle cx="161" cy="46" r="4" fill="#6b5e4a"/><!-- Rays 25 -->
+    <circle cx="159" cy="188" r="4" fill="#6b5e4a"/><!-- Twins 16 -->
+    <circle cx="158" cy="173" r="4" fill="#6b5e4a"/><!-- WhiteSox 17 -->
+    <circle cx="158" cy="125" r="4" fill="#6b5e4a"/><!-- Guardians 20 -->
+    <circle cx="143" cy="109" r="4" fill="#6b5e4a"/><!-- Pirates 21 -->
+    <circle cx="114" cy="173" r="4" fill="#6b5e4a"/><!-- Marlins 17 -->
+  </svg>
+  <div class="chart-note">Same thirty teams. Same regression. The y-axis now starts at 14 wins instead of zero, which doubles the apparent vertical spread. The Mets land at the bottom of the visible chart, and the Yankees and Braves brush the ceiling. The data has not changed. The chart implies an enormous gap between teams that is, in absolute terms, exactly the same gap as before.</div>
+</div>
+
+<p>The third lie is the one Huff dedicated his second chapter to: cropping the y-axis. The chart above shows the same thirty dots and the same regression line, but the y-axis no longer starts at zero (or even at ten); it starts at fourteen. This is, in some sense, a defensible choice &mdash; nobody is at zero wins, so why include that part of the chart? The trouble is what happens visually. The Mets, who are at fourteen wins, now sit at the bottom edge of the picture frame. The Yankees and Braves and Cubs, at twenty-six, are at the top edge. The eye, looking at this chart, registers a much larger spread than the first chart in the original issue did. The columnist who uses this chart will write that there is a &ldquo;massive gap&rdquo; between the league&rsquo;s best and worst teams. The actual gap is twelve wins out of thirty-seven games played &mdash; not nothing, but also not a number that would impress anyone if it were rendered on a y-axis that started at zero.</p>
+
+<div class="pull">
+  <p>&ldquo;Every chart is a stack of choices. The honest ones are the choices the writer announces. The dishonest ones are the choices the writer makes and forgets to mention.&rdquo;</p>
+  <cite>&mdash; The Professor, on the moral architecture of statistical graphics</cite>
+</div>
+
+<h2 class="sh">A Defensive Reader&rsquo;s Checklist</h2>
+
+<p>If, in the next month, you read a sports column that shows you a scatter plot purporting to demonstrate that money buys wins (or fails to buy them), here are the four things to check before you believe the chart:</p>
+
+<table class="rec">
+  <thead><tr><th>Look For</th><th>What It Tells You</th></tr></thead>
+  <tbody>
+    <tr><td><strong>The R&sup2;</strong></td><td>If the columnist is showing you a chart and not stating the R&sup2;, there is a reason. The R&sup2; is the percentage of variation the model explains. Below .10 is decorative, not predictive.</td></tr>
+    <tr><td><strong>What got dropped</strong></td><td>Are all teams shown? If not, was the deletion justified by a measurement issue (yes) or by &ldquo;they don&rsquo;t fit the story&rdquo; (no)?</td></tr>
+    <tr><td><strong>The y-axis floor</strong></td><td>Does the y-axis start at zero, or at some convenient number that magnifies the spread? The choice should be defensible on its merits, not because it makes the picture more dramatic.</td></tr>
+    <tr><td><strong>The fit type</strong></td><td>Linear is the default. Quadratic or higher-order fits should be justified by a real reason (not by &ldquo;it gives me a higher R&sup2;&rdquo;). Adding parameters always raises R&sup2;.</td></tr>
+  </tbody>
+</table>
+
+<p>None of the three charts in this issue are technically wrong. Each of them computes correctly from the same dataset. Each of them, in isolation, would pass the sniff test of any editor who is not paying close attention. And each of them, taken at face value, would lead a reader to a different conclusion about the relationship between baseball payroll and baseball wins. The honest answer &mdash; that the relationship is real but small, and that thirty-seven games is too few to see it cleanly &mdash; is, statistically, the dullest of the four. Dullness, here, is a virtue. The chart is doing exactly as much work as the data warrants. Anything more interesting is being added by hand.</p>
+
+  <!-- STORY IDEAS INBOX (compact) -->
+  <aside id="pitch" style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.7rem 0;margin:1.6rem 0 .4rem;font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <span style="text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600">Pitch a stat &rarr;</span>
+      <input type="text" name="sport" placeholder="Sport" style="font-family:inherit;font-size:.7rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;width:5rem">
+      <input type="text" name="idea" placeholder="The weird number you noticed" required style="font-family:'Libre Baskerville',serif;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;flex:1;min-width:12rem">
+      <button id="pitch-btn" type="submit" style="background:var(--ink);color:var(--cream);font-family:inherit;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.32rem .7rem;cursor:pointer">Send</button>
+      <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea" style="color:var(--steel);text-decoration:none;font-size:.6rem">or GitHub</a>
+    </form>
+    <div id="pitch-ok" style="display:none;margin-top:.3rem;color:var(--green);font-size:.62rem">Sent. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;margin-top:.3rem;color:var(--rust);font-size:.62rem">Failed &mdash; try the GitHub link.</div>
+  </aside>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='…';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='Send';
+  });
+  </script>
+
+<div class="footer">
+  <span>The Sports Page &middot; Issue No. __</span>
+  <span>Companion piece to Issue on Cost of a Win; tradition: Darrell Huff, 1954</span>
+  <span>Not financial or wagering advice</span>
+</div>
+</div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3.5vw,1.8rem);font-weight:900;color:var(--ink);margin-bottom:.5rem;line-height:1.2">Got a stat that doesn&rsquo;t make sense?</h3>
+  <p style="font-family:'Libre Baskerville',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-bottom:1.4rem;line-height:1.5">Send it. We&rsquo;ll find what the math is hiding &mdash; and we just might write the next issue about it.</p>
+  <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+    <a href="https://github.com/pem725/the-sports-page/issues/new?labels=story-idea&title=Story+Idea%3A+&body=**Your+name%3A**+%0A%0A**Sport%3A**+%0A%0A**The+stat+or+story%3A**+%0A%0A**Why+it+matters%3A**+%0A%0A**Timeliness%3A**+breaking+%2F+this+week+%2F+anytime" target="_blank" rel="noopener" style="display:inline-block;padding:.75rem 1.4rem;background:var(--steel);color:var(--cream);text-decoration:none;font-family:'Roboto Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600">Submit via GitHub &rarr;</a>
+    <a href="mailto:pem725@gmail.com?subject=The+Sports+Page+%E2%80%94+Story+Idea&body=Hi+Patrick%2C%0A%0AI+have+an+idea+for+a+piece%3A%0A%0A" style="display:inline-block;padding:.75rem 1.4rem;background:transparent;color:var(--ink);text-decoration:none;font-family:'Roboto Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:2px solid var(--ink)">Or Email Patrick</a>
+  </div>
+</div>
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+</body>
+</html>
