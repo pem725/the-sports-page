@@ -125,7 +125,20 @@ Sal is a scalpel, not a hammer. Save him for the cuts that matter.
 
 ## Workflow (run in order)
 
-### Step 0 — Stat Intake & Diagnosis
+### Step 0 — Sync with GitHub (always, before any other step)
+
+```bash
+cd <repo path>
+git fetch origin main
+git status -sb
+git pull origin main --ff-only
+```
+
+This is a hard prerequisite for **every** invocation of this skill on **every** machine — drafting a new issue, queueing, publishing, Sunday Edition, even just inspecting the queue. The repo is shared across machines and the GitHub Actions autopublish bot pushes commits Mon–Sat at 4:30am ET. A stale local clone will silently produce wrong issue numbers, wrong recap windows, and broken cross-references.
+
+If `git pull --ff-only` fails: stop and reconcile before doing anything else. Never force-pull or stash blindly. See CLAUDE.md "Step 0 — SYNC WITH GITHUB FIRST" for the full rationale and the 2026-05-10 incident that motivated this rule.
+
+### Step 1 — Stat Intake & Diagnosis
 
 When a user presents a stat or event, immediately diagnose:
 
@@ -149,7 +162,7 @@ single event. A pitcher who gives up 5 ER in 2/3 IP has a denominator of
 
 Print the diagnosis inline before proceeding.
 
-### Step 1 — Historical Search
+### Step 2 — Historical Search
 
 Use `web_search` to find:
 - Elite performers who had similar anomalous short outings
@@ -168,7 +181,7 @@ Use `web_search` to find:
 
 Surface 2–4 historical parallels that illuminate the current event.
 
-### Step 2 — Bayesian Recovery Model (Python)
+### Step 3 — Bayesian Recovery Model (Python)
 
 For ERA-based recovery (adapt formula for other stats):
 
@@ -214,7 +227,7 @@ for p in [10,25,50,75,90]:
 the target ERA, not just equal to it. Average future performance locks the
 ERA above target forever if the damage is large enough.
 
-### Step 3 — Schedule Mapping
+### Step 4 — Schedule Mapping
 
 Look up the team's schedule (use `web_search` → ESPN or CBS Sports schedule
 pages) and project starts:
@@ -222,7 +235,7 @@ pages) and project starts:
 - Map percentile starts to calendar dates and opponents
 - Flag any notable matchups (division rivals, nationally televised)
 
-### Step 4 — Newsletter Generation
+### Step 5 — Newsletter Generation
 
 Build an HTML artifact in broadsheet newspaper style (see Design System
 below). Required sections:
@@ -247,7 +260,7 @@ below). Required sections:
     not redesign per piece. Inserted INSIDE the `.paper` div, immediately
     before `<div class="footer">`.
 
-### Step 5 — Skill Output
+### Step 6 — Skill Output
 
 Produce two files:
 - `[topic]_newsletter.html` — the artifact (present to user)

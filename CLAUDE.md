@@ -27,9 +27,28 @@ reserve/                <- Evergreen content, no specific date
 
 ## Publishing Workflow (CRITICAL — follow exactly)
 
-### Step 0 — CHECK THE DAY OF WEEK FIRST (before anything else)
+### Step 0 — SYNC WITH GITHUB FIRST (always, before anything else)
 
-**STOP. Before touching the queue, before picking any file, before making any decisions: check what day it is today.**
+**STOP. Before reading anything in this repo, before counting issues, before drafting, before checking the day of week: sync the local clone with GitHub.**
+
+```bash
+cd /home/pem725/GitTemp/the-sports-page  # or wherever the repo lives on this machine
+git fetch origin main
+git status -sb                            # confirm not ahead/behind in unexpected ways
+git pull origin main --ff-only            # fast-forward only — never silent merge
+```
+
+This is non-negotiable and applies to **every** invocation of this skill on **every** machine — drafting, publishing, queueing, Sunday Editions, even just "let me check what's in the queue." The repo is shared across machines and the GitHub Actions autopublish bot pushes commits Monday–Saturday at 4:30am ET. Your local clone is *probably* stale, even if you worked here yesterday.
+
+**Why this rule exists**: On 2026-05-10, a Sunday Edition was drafted from a stale local clone that was missing four autopublish commits (Issues #39–42). The recap claimed a "four-day publishing pipeline silence" that had not occurred. The bad Sunday Edition was caught only because `git push` was rejected with a non-fast-forward error. The right fix is upstream: never start work from a stale clone.
+
+**If `git pull --ff-only` fails** (because you have uncommitted local work, or local commits that diverge): stop and reconcile *before* doing anything else. Do not force-pull, do not stash blindly. Inspect with `git log HEAD..origin/main` and `git status` first, then decide.
+
+**If you are not in the repo directory**: find it. The skill directory and the repo are the same physical location on the machine that owns the repo (typically via a symlink). On a fresh machine, see `setup-machine.sh`.
+
+### Step 1 — CHECK THE DAY OF WEEK (after the GitHub sync)
+
+**Before touching the queue, before picking any file, before making any decisions: check what day it is today.**
 
 - **If today is SUNDAY**: Jump immediately to the **Sunday Edition Workflow** below. Do NOT pick from `queue/`. Do NOT publish any regular article today. Sundays are permanently reserved for the Sunday Edition. This is not negotiable. If the Sunday Edition cannot be built for any reason (template missing, data fetch failed), stop and alert the human — do NOT publish a non-Sunday piece on a Sunday as a fallback.
 
