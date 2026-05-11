@@ -1,125 +1,146 @@
 #!/usr/bin/env python3
 """
-almanac.py — silly fake-Latin issue labels and the Almanac history block.
+almanac.py — silly fake-Latin labels and the Almanac history block, applied
+only on milestone editions.
 
-Mocks the federal government's "semiquincentennial" coinage by treating
-every issue number as if it were a year-anniversary requiring a Latin name.
-The further from natural milestones (50, 100, 250, 500), the sillier the
-compound. The joke peaks at Issue #250 ("Semiquincentennial") matching
-the federal usage exactly, and resolves at Issue #500 ("Quincentennial").
+Mocks the federal government's "semiquincentennial" coinage by giving every
+fiftieth issue a fake-Latin -ennial name, as if the newsletter's own issue
+count required pomp-Latin observance. Non-milestone issues stay plain. The
+joke peaks at Issue #250, where the newsletter's internal label
+("Semiquincentennial") matches the federal usage for the nation's 250th year
+exactly — same word, different denominator. The Quincentennial (#500)
+closes the run.
+
+Milestone schedule:
+  - Every 50 issues from #50 through #10,000 (200 milestones total).
+  - Beyond #10,000 we move to geological/epoch labels (effectively never,
+    given ~340 issues/year publication rate; this is a stub for symmetry).
+  - All other issues get no label and no Almanac block.
 
 Pairs with almanac_data.py for the year-level historical facts that
-populate the Almanac block at the end of each issue.
-
-Used by autopublish.py to inject content at publish time.
+populate the Almanac block on milestone issues. Used by autopublish.py.
 """
 
 from __future__ import annotations
 import datetime
-import random
 
 
 # ---------------------------------------------------------------------------
-# Silly fake-Latin label generator
+# Silly fake-Latin label generator (milestone-only)
 # ---------------------------------------------------------------------------
 
-# Real terms for milestone numbers — these are deliberate (the joke lands
-# at #250 matching the federal usage).
-MILESTONES = {
-    1:   "Primal",
-    25:  "Quintavicessennial",
-    50:  "Semicentennial",
-    75:  "Triquartacentennial",
-    100: "Centennial",
-    125: "Sesquincentennial",
-    150: "Sesquicentennial",
-    175: "Triquartersesquicentennial",
-    200: "Bicentennial",
-    225: "Bicentavicessennial",
-    250: "Semiquincentennial",     # the federal joke, exactly
-    275: "Bicentaquintaseptaquinquagessennial",
-    300: "Tercentennial",
-    350: "Sesquibicentennial",
-    400: "Quadricentennial",
-    450: "Sesquinonacentennial",
-    500: "Quincentennial",         # the goal
+# Real Latin/Latin-ish terms for major milestone numbers. The federal
+# joke is at K=5 (Issue #250 = "Semiquincentennial"), matching the
+# usage the federal government has adopted for the nation's 250th.
+REAL_TERMS = {
+    1:  "Semicentennial",        # 50
+    2:  "Centennial",            # 100
+    3:  "Sesquicentennial",      # 150
+    4:  "Bicentennial",          # 200
+    5:  "Semiquincentennial",    # 250 — federal usage, deliberate
+    6:  "Tercentennial",         # 300
+    8:  "Quadricentennial",      # 400
+    10: "Quincentennial",        # 500
+    12: "Sexcentennial",         # 600
+    14: "Septucentennial",       # 700
+    16: "Octocentennial",        # 800
+    18: "Nonacentennial",        # 900
+    20: "Millennial",            # 1000
+    30: "Sesquimillennial",      # 1500
+    40: "Bimillennial",          # 2000
+    50: "Bisesquimillennial",    # 2500 — a stretch, but on-theme
+    60: "Trimillennial",         # 3000
+    80: "Quadrimillennial",      # 4000
+    100: "Quinquemillennial",    # 5000
+    120: "Sexmillennial",        # 6000
+    140: "Septuamillennial",     # 7000
+    160: "Octomillennial",       # 8000
+    180: "Nonamillennial",       # 9000
+    200: "Decamillennial",       # 10,000 — last numeric milestone
 }
 
-# Latin ones-place prefixes (modified for euphony in compounds).
-LATIN_ONES = ["", "una", "duo", "tert", "quart", "quint", "sext", "sept", "oct", "non"]
-
-# Latin tens-place stems.
-LATIN_TENS = {
-    1: "decim",      # 11-19 (with prefix)
-    2: "viges",
-    3: "triges",
-    4: "quadrages",
-    5: "quinquages",
-    6: "sexages",
-    7: "septuages",
-    8: "octoges",
-    9: "nonages",
-}
+# Beyond #10,000 we drop the year-anniversary conceit and use
+# geological/cosmological terms. This is a stub; we will not reach
+# this regime in any human lifetime.
+EPOCH_TERMS = [
+    "Holocene",
+    "Anthropocene",
+    "Pleistocene",
+    "Miocene",
+    "Eocene",
+    "Mesozoic",
+    "Paleozoic",
+]
 
 
-def silly_label(n: int) -> str:
-    """Build a fake-Latin -ennial name for issue number n.
+def _silly_coin(k: int) -> str:
+    """Coin a silly Latin compound for K when no real term exists.
 
-    Returns the bare adjective ("Quartaquadragesennial"), without "Edition"
-    or "The" — those are added at the styling layer.
+    K is the 50-multiple count (n = K * 50). Used for K=7, 9, 11, etc.
     """
-    if n in MILESTONES:
-        return MILESTONES[n]
-
-    if n < 10:
-        return f"{LATIN_ONES[n].capitalize()}ennial"
-
-    if n < 20:
-        # 10 = "Decennial", 11 = "Undecennial", ... 19 = "Nondecennial"
-        teen_prefixes = ["", "Un", "Duo", "Ter", "Quart", "Quint",
-                         "Sext", "Sept", "Oct", "Non"]
-        if n == 10:
-            return "Decennial"
-        return f"{teen_prefixes[n - 10]}decennial"
-
-    if n < 100:
-        tens = n // 10
-        ones = n % 10
-        if ones == 0:
-            return f"{LATIN_TENS[tens].capitalize()}imennial"
-        return f"{LATIN_ONES[ones].capitalize()}a{LATIN_TENS[tens]}ennial"
-
-    # 100-499: build "<hundreds>cent..." compounds, with no doubled "cent"
-    if n < 500:
-        hundreds = n // 100
-        remainder = n % 100
-        if remainder == 0:
-            return ["", "Centennial", "Bicentennial",
-                    "Tercentennial", "Quadricentennial"][hundreds]
-        h_prefix = ["", "Cent", "Bicent", "Tercent", "Quadricent"][hundreds]
-        sub = silly_label(remainder).lower()
-        return f"{h_prefix}a{sub}"
-
-    # >= 500 just keeps escalating
-    return f"Post-Quincentennial-{n}"
+    # Build a compound from the nearest two real anchors. For K=7 (350),
+    # we riff on the "5" anchor (250 = Semiquincentennial) and the "2"
+    # anchor (100 = Centennial). For most odd K, sesqui- prefixed to the
+    # next-lower even produces a serviceable joke compound.
+    if k < 20 and k % 2 == 1:
+        # Odd K up to 19: "Sesqui" + the (K-1)-anchor
+        base = REAL_TERMS.get(k - 1, "")
+        if base:
+            return f"Sesqui{base.lower()}"
+    # Generic fallback: combine "Semi" + the next-higher real anchor
+    nearest_above = min((kk for kk in REAL_TERMS if kk > k), default=None)
+    if nearest_above is not None:
+        return f"Semi{REAL_TERMS[nearest_above].lower()}"
+    return f"Iteration-{k}"
 
 
-def label_with_article(n: int) -> str:
-    """Returns 'The Quartaquadragesennial Edition' (or similar)."""
-    return f"The {silly_label(n)} Edition"
+def silly_label(n: int) -> str | None:
+    """Return the edition label for issue n, or None if n is not a milestone.
+
+    Milestones are every 50 issues from 50 through 10,000. Beyond that,
+    epoch-style names cycle in for the joke's symmetry.
+    """
+    if n < 50:
+        return None
+    if n > 10_000:
+        # Pick an epoch deterministically; cycles through EPOCH_TERMS.
+        idx = ((n - 10_000) // 1000) % len(EPOCH_TERMS)
+        return f"{EPOCH_TERMS[idx]} Era"
+    if n % 50 != 0:
+        return None
+
+    k = n // 50
+    if k in REAL_TERMS:
+        return REAL_TERMS[k]
+    return _silly_coin(k).capitalize()
+
+
+def label_with_article(n: int) -> str | None:
+    """Returns 'The Semicentennial Edition' or None."""
+    label = silly_label(n)
+    return f"The {label} Edition" if label else None
+
+
+def is_milestone(n: int) -> bool:
+    """True iff issue n is a labeled milestone."""
+    return silly_label(n) is not None
 
 
 # ---------------------------------------------------------------------------
 # Almanac HTML block
 # ---------------------------------------------------------------------------
 
-def almanac_html(issue_num: int, today: datetime.date | None = None) -> str:
-    """Render the Almanac footer block for an issue.
+def almanac_html(issue_num: int, today: datetime.date | None = None) -> str | None:
+    """Render the Almanac footer block for milestone issues only.
 
-    Pulls one fact per anniversary year from almanac_data.ANNIVERSARIES,
-    rotated deterministically by issue_num so consecutive issues see
-    different facts about the same anniversary years.
+    Returns None for non-milestone issues — autopublish skips injection
+    when the return is None. For milestones, pulls one fact per anniversary
+    year from almanac_data.ANNIVERSARIES, rotated deterministically by
+    issue_num so different milestones see different facts.
     """
+    if not is_milestone(issue_num):
+        return None
+
     # Lazy import so this module is testable in isolation.
     from almanac_data import ANNIVERSARIES
 
@@ -128,7 +149,7 @@ def almanac_html(issue_num: int, today: datetime.date | None = None) -> str:
         year = year_data["year"]
         years_ago = year_data["years_ago"]
         facts = year_data["facts"]
-        # Rotate fact selection by issue number — different issues see
+        # Rotate fact selection by issue number — different milestones see
         # different facts about the same anniversary year.
         fact = facts[issue_num % len(facts)]
         rows.append(
@@ -140,13 +161,13 @@ def almanac_html(issue_num: int, today: datetime.date | None = None) -> str:
     rows_html = "\n".join(rows)
 
     return f'''<section class="almanac">
-  <h2 class="alm-hed">The Almanac &middot; <em>Did You Know?</em></h2>
-  <p class="alm-intro">In each of our Republic&rsquo;s prior fifty-year
-  observances, history was running its own headlines. The federal government,
-  in 2026, has named the present year the <em>semiquincentennial</em> &mdash;
-  five Latin morphemes for what could have been &ldquo;two-fifty.&rdquo; This
-  newsletter, in solidarity with that branch of the joke, observes its issues
-  in the same manner. The current edition is <strong>{label_with_article(issue_num)}</strong>.</p>
+  <h2 class="alm-hed">The Almanac &middot; <em>A Milestone Observance</em></h2>
+  <p class="alm-intro">Every fiftieth issue of this newsletter is, by our
+  own coinage, an &ldquo;edition&rdquo; in the same fake-Latin manner that
+  the federal government has decreed 2026 the <em>semiquincentennial</em>
+  of the Republic. This is the <strong>{label_with_article(issue_num)}</strong>.
+  In observance, the Almanac looks back at what was actually happening at the
+  five prior fifty-year marks of our national life.</p>
   <ul class="alm-list">
 {rows_html}
   </ul>
@@ -173,6 +194,13 @@ ALMANAC_CSS = """
 
 
 if __name__ == "__main__":
-    # Sanity test
-    for n in [1, 2, 5, 10, 11, 25, 43, 44, 50, 99, 100, 143, 250, 500]:
-        print(f"#{n:>3d} → {label_with_article(n)}")
+    # Sanity test — show that only milestones get labels
+    print("Non-milestone issues (no label, no Almanac):")
+    for n in [1, 2, 5, 25, 43, 44, 45, 49, 51, 99, 101, 149, 249, 251, 499]:
+        label = label_with_article(n)
+        print(f"  #{n:>4d} → {label or '(no label — plain issue)'}")
+    print("\nMilestone issues (label + Almanac):")
+    for n in [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 1000,
+              1500, 2000, 5000, 10000, 11000]:
+        label = label_with_article(n)
+        print(f"  #{n:>5d} → {label}")

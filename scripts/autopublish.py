@@ -256,35 +256,35 @@ def update_article(content, issue_num, today):
     # Remove the PUBLISH-META comment from the published file (cleanup)
     content = re.sub(r'<!--\s*PUBLISH-META\s*\n.*?\n\s*-->\s*\n?', '', content, flags=re.DOTALL)
 
-    # ---- Inject the silly-Latin label into the kicker ----
-    # The current kicker is something like:
-    #   <div class="kicker">A Statistical Dispatch on Hot Streaks &middot; Baseball, 2026</div>
-    # We append " &middot; The XYZennial Edition" before the closing </div>.
-    edition = f"The {silly_label(issue_num)} Edition"
-    content = re.sub(
-        r'(<div class="kicker">)([^<]*?)(</div>)',
-        lambda m: f'{m.group(1)}{m.group(2).rstrip()} &middot; {edition}{m.group(3)}',
-        content,
-        count=1,
-    )
+    # ---- Milestone-only: silly label + Almanac block ----
+    # Non-milestone issues skip all three injections and ship plain.
+    label = silly_label(issue_num)
+    if label is not None:
+        # Append " &middot; The XYZennial Edition" to the kicker
+        edition = f"The {label} Edition"
+        content = re.sub(
+            r'(<div class="kicker">)([^<]*?)(</div>)',
+            lambda m: f'{m.group(1)}{m.group(2).rstrip()} &middot; {edition}{m.group(3)}',
+            content,
+            count=1,
+        )
 
-    # ---- Inject the Almanac CSS into the <style> block ----
-    # Insert before the closing </style>. count=1 so we only hit the first <style>.
-    content = content.replace(
-        '</style>',
-        ALMANAC_CSS.rstrip() + '\n</style>',
-        1,
-    )
+        # Inject the Almanac CSS into the <style> block (before </style>)
+        content = content.replace(
+            '</style>',
+            ALMANAC_CSS.rstrip() + '\n</style>',
+            1,
+        )
 
-    # ---- Inject the Almanac HTML block before the article footer ----
-    # The footer lives at <div class="footer">. The Almanac goes right above it.
-    almanac = almanac_html(issue_num, today)
-    content = re.sub(
-        r'(<div class="footer">)',
-        almanac + '\n\n' + r'\1',
-        content,
-        count=1,
-    )
+        # Inject the Almanac HTML block right above the article footer
+        almanac = almanac_html(issue_num, today)
+        if almanac is not None:
+            content = re.sub(
+                r'(<div class="footer">)',
+                almanac + '\n\n' + r'\1',
+                content,
+                count=1,
+            )
 
     return content
 
