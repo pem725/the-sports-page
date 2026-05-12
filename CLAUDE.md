@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 456 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 455 issues remaining of 500
 
 ## Repository Structure
 
@@ -230,8 +230,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 44 issues (#1-44)
-Queue: 7 articles ready (035-devin-williams-collapse, 036-cost-per-win, 037-nobody-hates-rockies, 038-mets-braves-asymmetry, 039-mets-bullpen-eighth, 040-three-lies-scatter-plot, 041-portal-locked-rosters)
+Published: 45 issues (#1-45)
+Queue: 6 articles ready (036-cost-per-win, 037-nobody-hates-rockies, 038-mets-braves-asymmetry, 039-mets-bullpen-eighth, 040-three-lies-scatter-plot, 041-portal-locked-rosters)
 Reserve: 1 evergreen piece
-Goal: 456 issues remaining of 500
-Last published: Issue #44 — "The Jets Are the NFL’s Second-Worst Drafters in Rounds 1-3. The Worst Are the Patriots. The Patriots Won Six Super Bowls." (033-rounds-1-3-vs-4-7.html) on May 11, 2026
+Goal: 455 issues remaining of 500
+Last published: Issue #45 — "The Mets Paid $51 Million for the 0.33-ERA Devin Williams. He Was Never Coming Back." (035-devin-williams-collapse.html) on May 12, 2026
