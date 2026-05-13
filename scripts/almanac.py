@@ -165,9 +165,9 @@ def almanac_html(issue_num: int, today: datetime.date | None = None) -> str | No
   <p class="alm-intro">Every fiftieth issue of this newsletter is, by our
   own coinage, an &ldquo;edition&rdquo; in the same fake-Latin manner that
   the federal government has decreed 2026 the <em>semiquincentennial</em>
-  of the Republic. This is the <strong>{label_with_article(issue_num)}</strong>.
-  In observance, the Almanac looks back at what was actually happening at the
-  five prior fifty-year marks of our national life.</p>
+  of the Republic. This is <strong>{label_with_article(issue_num)}</strong>.
+  In observance, the Almanac looks back at what was actually happening at
+  the five prior fifty-year marks of our national life.</p>
   <ul class="alm-list">
 {rows_html}
   </ul>
