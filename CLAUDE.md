@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 454 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 453 issues remaining of 500
 
 ## Repository Structure
 
@@ -230,8 +230,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 46 issues (#1-46)
-Queue: 5 articles ready (036-cost-per-win, 037-nobody-hates-rockies, 038-mets-braves-asymmetry, 039-mets-bullpen-eighth, 040-three-lies-scatter-plot)
+Published: 47 issues (#1-47)
+Queue: 6 articles ready (036-cost-per-win, 038-mets-braves-asymmetry, 039-mets-bullpen-eighth, 040-three-lies-scatter-plot, 042-plate-discipline-r07, sunday-006)
 Reserve: 1 evergreen piece
-Goal: 454 issues remaining of 500
-Last published: Issue #46 — "Notre Dame Took Seven from the Portal. One Thousand Two Hundred Other Players Have Nowhere to Go." (041-portal-locked-rosters.html) on May 13, 2026
+Goal: 453 issues remaining of 500
+Last published: Issue #47 — "The Rockies Have Never Won the West. Nobody’s Mad About It." (037-nobody-hates-rockies.html) on May 14, 2026
