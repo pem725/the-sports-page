@@ -230,8 +230,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 49 issues (#1-49)
-Queue: 4 articles ready (039-mets-bullpen-eighth, 040-three-lies-scatter-plot, 042-plate-discipline-r07, sunday-006)
+Published: 50 issues (#1-50)
+Queue: 3 articles ready (039-mets-bullpen-eighth, 040-three-lies-scatter-plot, 042-plate-discipline-r07)
 Reserve: 1 evergreen piece
-Goal: 451 issues remaining of 500
-Last published: Issue #49 — "Seventeen to Two: The Rivalry Where One Side Stopped Showing Up Years Ago." (038-mets-braves-asymmetry.html) on May 16, 2026
+Goal: 450 issues remaining of 500
+Last published: Issue #50 — "Fifty Issues, Fifty Lessons, and One Federal Coinage We Repurposed for Ourselves." (sunday-006.html) on May 17, 2026
