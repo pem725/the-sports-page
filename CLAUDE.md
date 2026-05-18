@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 451 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 449 issues remaining of 500
 
 ## Repository Structure
 
@@ -230,8 +230,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 50 issues (#1-50)
-Queue: 3 articles ready (039-mets-bullpen-eighth, 040-three-lies-scatter-plot, 042-plate-discipline-r07)
+Published: 51 issues (#1-51)
+Queue: 2 articles ready (039-mets-bullpen-eighth, 042-plate-discipline-r07)
 Reserve: 1 evergreen piece
-Goal: 450 issues remaining of 500
-Last published: Issue #50 — "Fifty Issues, Fifty Lessons, and One Federal Coinage We Repurposed for Ourselves." (sunday-006.html) on May 17, 2026
+Goal: 449 issues remaining of 500
+Last published: Issue #51 — "Three Lies, Thirty Dots." (040-three-lies-scatter-plot.html) on May 18, 2026
