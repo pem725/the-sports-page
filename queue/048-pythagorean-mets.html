@@ -1,0 +1,171 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, Pythagorean, Bill James, Wins Expected, Run Differential
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on a 1981 Formula That Still Works &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Bill James Says the Mets Should Be 22&ndash;24. <em>The Bigger Story Is What That Means Over 162.</em></h1>
+<div class="deck">In 1981, Bill James proposed a formula so simple a 12-year-old could compute it: take a team&rsquo;s runs scored, square them, and divide by the sum of (runs scored squared) plus (runs allowed squared). The result, multiplied by games played, is the team&rsquo;s expected wins. The Mets, through 46 games, have scored 176 runs and allowed 186. James&rsquo;s formula says they should be <strong>22&ndash;24</strong>. They are 20&ndash;26. They have been, in close-game outcomes, a touch unlucky. The harder problem is that the same formula, projected forward, says this team is on pace to win <strong>76 games</strong> &mdash; not the 87 the wild card has historically required.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; MLB &middot; Wins Expected</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v now">20&ndash;26</div><div class="l">Mets Actual Record</div></div>
+  <div class="sc"><div class="v good">22&ndash;24</div><div class="l">Pythagorean Expected</div></div>
+  <div class="sc"><div class="v bad">76</div><div class="l">Wins Pace, Full Season</div></div>
+</div>
+
+<p>One of the most useful things a statistician can do for a fan is to separate luck from skill. The standings give you the result; the result is a mix of how well the team has actually played and how the close games happened to fall. Bill James, the founder of modern baseball analytics, asked in 1981 whether the underlying play could be measured directly &mdash; using only runs scored and runs allowed &mdash; without contaminating the answer with the way the close games broke. The answer, after a decade of testing, turned out to be yes. The formula he produced is called the <em>Pythagorean expectation</em>, and forty-five years later it remains one of the cleanest predictors of baseball wins ever invented.</p>
+
+<h2 class="sh">The Formula, Built on a Napkin in 1981</h2>
+
+<p>The original Pythagorean formula goes like this:</p>
+
+<div class="box">
+<h3>Bill James, 1981, Two Lines of Math</h3>
+<div class="math">Win%  =  RS&sup2;  /  ( RS&sup2;  +  RA&sup2; )
+
+Expected wins  =  Win%  &times;  Games played</div>
+<p>RS is total runs scored, RA is total runs allowed. The exponent of 2 is what gives the formula its name &mdash; if you think of RS and RA as the legs of a right triangle, the formula looks like the Pythagorean theorem with the legs squared. James later refined the exponent down from 2 to about 1.83, which fits actual MLB outcomes slightly better, but for any practical use the original power-of-two version is within rounding error.</p>
+<p>For the Mets at 46 games (176 RS, 186 RA):</p>
+<div class="math">Win%  =  176&sup2;  /  ( 176&sup2;  +  186&sup2; )
+      =  30,976  /  ( 30,976 + 34,596 )
+      =  30,976  /  65,572
+      =  0.4724
+
+Expected wins in 46 games  =  21.7  &asymp;  22
+
+Expected record  =  22 W,  24 L</div>
+</div>
+
+<p>The Mets are 20 and 26. The Pythagorean expectation says they should be 22 and 24. The difference is two wins. In statistical terms, the Mets have been roughly two wins worse than their underlying run differential predicts &mdash; a real but modest deviation that, in any 46-game sample, is well within the noise band Pythagorean produces.</p>
+
+<h2 class="sh">Why the Formula Works (and Why It Sometimes Doesn&rsquo;t)</h2>
+
+<p>Pythagorean expectation works for a reason that is statistically beautiful and intuitively unobvious: <em>baseball runs are distributed in a way that mostly disconnects total runs from clutch timing</em>. Across a 162-game season, a team that scores 5 runs per game and allows 4.5 runs per game will, given enough opportunities, win the right number of close games and lose the right number of blowouts that its record converges on what its run differential predicts. The luck factor &mdash; whether a particular bullpen meltdown happens to come in a one-run game or a six-run game &mdash; averages out.</p>
+
+<p>The formula sometimes misses, and the misses are themselves informative. A team that wins disproportionately many one-run games &mdash; what announcers love to call &ldquo;clutch&rdquo; &mdash; will outperform its Pythagorean record in the short run. A team with a great closer might do this systematically. A team with a brutal bullpen will underperform Pythagorean, losing close games at higher rates than their runs scored should produce. The 2012 Baltimore Orioles famously beat Pythagorean by eleven games, riding a 29&ndash;9 record in one-run games to a playoff berth their run differential said they did not deserve. The next year, they regressed almost exactly to what Pythagorean had said.</p>
+
+<p>The empirical literature, accumulated over four decades, says: Pythagorean predicts actual wins within <strong>&plusmn;3 to 4 games</strong> for the average team over a 162-game season. That is, on a 162-game scale, remarkably precise &mdash; tighter than most preseason projection systems can manage.</p>
+
+<h2 class="sh">The Mets&rsquo; Real Problem Is Not the Two-Game Gap</h2>
+
+<p>The two-game underperformance is interesting trivia. The much more important number is what the Mets&rsquo; run-scoring rate, sustained for the rest of the season, would produce. Through 46 games, the Mets are scoring <strong>3.83 runs per game</strong> (24th in MLB) and allowing <strong>4.04 runs per game</strong> (about league average). Projecting both rates forward across 162 games gives 621 runs scored and 657 runs allowed. Plug those into Pythagorean:</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>Pace</th><th>Runs Scored</th><th>Runs Allowed</th><th>Pythagorean Win%</th><th>Expected Wins</th></tr>
+  </thead>
+  <tbody>
+    <tr class="hl">
+      <td>Current pace (162 g)</td>
+      <td class="mono">621</td>
+      <td class="mono">657</td>
+      <td class="mono">.472</td>
+      <td class="mono"><strong>76</strong></td>
+    </tr>
+    <tr>
+      <td>Required for WC3 (~87 W)</td>
+      <td class="mono">~720</td>
+      <td class="mono">~657</td>
+      <td class="mono">.547</td>
+      <td class="mono">87</td>
+    </tr>
+    <tr>
+      <td>Preseason FanGraphs projection</td>
+      <td class="mono">~735</td>
+      <td class="mono">~650</td>
+      <td class="mono">.561</td>
+      <td class="mono">~88</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Read the gap. The Mets&rsquo; current pace produces a 76-win team. The wild card requires an 87-win team. Their preseason projection &mdash; the one this newsletter referenced last week as &ldquo;what they need to play&rdquo; &mdash; required them to score roughly 735 runs over the year. They are on pace for 621. The 100-run-shortfall in run scoring is the difference between &ldquo;wild card team&rdquo; and &ldquo;sub-.500 finish.&rdquo; The pitching is fine. The offense is the problem.</p>
+
+<div class="pull">
+  <p>&ldquo;Pythagorean does not tell you the Mets are doomed. It tells you that, for the math to work, they have to start scoring runs at the rate they were projected to score them. They have not yet. The clock is now the second half of a 49-game window.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on what 76 wins actually means</cite>
+</div>
+
+<h2 class="sh">What Has to Change &mdash; and Probably Will</h2>
+
+<p>Two pieces of context make the offensive shortfall less alarming than the raw number suggests. First, <strong>Francisco Lindor</strong> has missed time with a calf strain and <strong>Francisco Alvarez</strong> has been on the injured list with a hand injury. Lindor was projected by both PECOTA and ZiPS to produce a .350 wOBA-equivalent over a full season; Alvarez was projected at .335. Both bats, when healthy, are top-three on the team. The current run-scoring rate has been produced without either at full strength for most of the season. When both return &mdash; both are expected back before the end of May &mdash; the projection model implicitly assumes about half a run per game of offensive improvement. That alone, applied across the remaining 116 games, accounts for roughly 58 additional runs &mdash; well over half of the 100-run shortfall.</p>
+
+<p>Second, there is a structural reason to expect the bullpen to allow fewer runs in the second quarter than it did in the first. <strong>Devin Williams</strong>, examined statistically in Issue #45, was striking out batters at his historical rate and giving up contact at his historical rate; he was simply unlucky in run-prevention through April. Over his last six outings, including Sunday&rsquo;s win against the Yankees, he has not allowed a run. A bullpen that gives back the runs Williams returns from suppressing should lower the team&rsquo;s RA pace by 0.1&ndash;0.2 runs per game &mdash; another 15 to 30 runs of improvement across the remaining schedule.</p>
+
+<p>Add those two effects together, and the Mets&rsquo; rest-of-season Pythagorean projection plausibly climbs from 76 wins back into the low-to-mid 80s. That is still short of 87. It is closer. The wild card race is decided in the gap between &ldquo;closer&rdquo; and &ldquo;close enough.&rdquo;</p>
+
+<h2 class="sh">Are There Better Formulas? Yes, and No</h2>
+
+<p>Pythagorean has been refined many times in the four decades since James proposed it. The two most important successors are <strong>Pythagenpat</strong>, which lets the exponent vary based on a team&rsquo;s run environment (the right exponent for a high-scoring era is higher than 2; for a low-scoring era it is lower), and <strong>BaseRuns</strong>, which works at the granular level of plate-appearance outcomes and is what FanGraphs uses for its &ldquo;underlying performance&rdquo; calculations. Both improvements add accuracy, particularly for extreme teams. Both have at most a one-win improvement over the original Pythagorean across a 162-game season. The marginal accuracy gain is real but small.</p>
+
+<p>A future issue will work through the Pythagenpat refinement in detail and apply it to the Mets head-to-head against the classic version. For now, the simple Pythagorean has done what it was designed to do: take two season-to-date numbers and tell you, with two-or-three-win precision, what kind of team this actually is. It is the most useful low-effort statistical tool in baseball, and forty-five years after Bill James invented it, no replacement has come close to making it obsolete.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A reader who wants to do the math at home can use the Pythagorean formula on any team: pull the team&rsquo;s runs scored and runs allowed from Baseball-Reference, square each number, and divide. The result is the expected winning percentage. Multiply by games played, and you have the expected wins. The arithmetic is fifth-grade. The insight is sabermetric.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Issue No. __ &middot; Pythagorean Wins, Bill James, and the 100-Run Gap</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
