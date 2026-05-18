@@ -212,6 +212,51 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 6. Any player with an amazingly great or horrible performance
 7. No NBA — but WNBA is welcome on occasion when an interesting stat surfaces
 
+## Sport-Season Calendar (topical relevance)
+
+The newsletter exists in time. Each month has a different mix of what is actually happening in the sports world, and good editorial judgment matches today's issue to today's news cycle. This calendar tells Claude what is "live" and what is dormant in any given month, plus which annual events warrant pre-planned special treatment.
+
+### Monthly mix — what is in season
+
+| Month | Active cycles |
+|---|---|
+| **January** | NFL playoffs / Super Bowl buildup; CFP National Championship (early Jan); NHL/NBA mid-season; MLB hot stove finishes; CFB recruiting Signing Day (early-Jan/Feb) |
+| **February** | Super Bowl (1st or 2nd Sunday); NHL/NBA all-star; MLB spring training opens (mid-month); CFB National Signing Day (1st Wed of Feb) |
+| **March** | MLB spring training; March Madness Selection Sunday + tournament; **MLB Opening Day late March** (newsletter anniversary) |
+| **April** | MLB Opening Week; NBA/NHL playoffs begin; The Masters (early April); NFL Draft (last week) |
+| **May** | MLB regular season; Kentucky Derby (1st Saturday); Preakness (3rd Saturday); Indy 500 (Memorial Day weekend); NBA/NHL conference finals |
+| **June** | Stanley Cup Final; NBA Finals; US Open golf; Belmont Stakes (early June); College World Series; MLB regular |
+| **July** | MLB All-Star Break (mid-July); Wimbledon; Open Championship golf; MLB trade deadline (end of month) |
+| **August** | NFL preseason; CFB season opens (last week); MLB pennant races; US Open tennis begins |
+| **September** | NFL Week 1; CFB conference play; MLB final stretch; US Open tennis finals; WNBA playoffs |
+| **October** | MLB playoffs / World Series; NFL mid-season; CFB mid-season; NHL/NBA seasons open |
+| **November** | NFL stretch run; CFB rivalry games (Thanksgiving week); MLB awards season; CFP rankings begin; NBA early season |
+| **December** | NFL playoff picture; CFB bowl games / CFP first round; NHL/NBA mid-season; MLB Winter Meetings |
+
+### Tentpole annual events worth pre-planned issues
+
+These are the days the calendar bends around. Each warrants its own issue, planned in advance when possible. The Opening Day anniversary is the only one whose framing was set when the newsletter launched; the rest are open formats.
+
+- **MLB Opening Day** — newsletter anniversary. The "Sports Page Year" begins. Year-in-review issue: prediction accuracy across the full year, milestones hit, lessons learned. (Rule already in "Editorial Rules" above; this entry is the cross-reference.)
+- **MLB First Day of Spring Training** (mid-February) — pitchers and catchers report; the year's first baseball issue.
+- **Super Bowl Sunday** — eve-of preview + morning-after retrospective. Two issues, one weekend.
+- **March Madness Selection Sunday** — bracket math piece (seed-vs-seed historical win rates, Cinderella conditions).
+- **The Masters Sunday** — winner-takes-Augusta retrospective, with field-quality stats.
+- **NFL Draft Round 1** — pick-by-pick statistical analysis, focus on AFC family teams (Jets, Bills, Raiders, Seahawks).
+- **MLB All-Star Break** — first-half review issue; predictions reset; second-half projections.
+- **MLB Trade Deadline** (end of July) — what the contenders did, with log5 swings.
+- **World Series Game 1** — series preview with log5/Bayesian projection.
+- **CFB Rivalry Week** (Thanksgiving) — Notre Dame's most-watched stretch; statistical retrospective on the rivalries the Irish play (USC, Stanford, Navy, plus current ACC/SEC matchups).
+- **CFP National Championship** — annual title piece.
+
+### Editorial guidance on topical relevance
+
+- **Stay in season.** A January Mets piece is allowed but must justify its timing — hot-stove move, free agency, prospect news. Off-season Mets pieces about regular-season game logs are dead on arrival.
+- **When multiple sports are simultaneously live**, prefer the one with the most recent extreme/counterintuitive stat. The newsletter's identity is THE stat, not THE league.
+- **Date-sensitive pieces decay fast.** A "Mets are 20–26 through 46 games" piece must publish within ~7 days of the underlying data. Drafts that miss their window go to reserve/ for archive, not the front of QUEUE_ORDER.
+- **The calendar interacts with the variety rule.** When choosing from the queue, prefer pieces whose sport is in active season. If two pieces are otherwise equivalent, the in-season one wins.
+- **Sundays remain Sunday Edition only** — see the Sunday Edition Workflow in the Publishing section above. The seasonal calendar does not override this.
+
 ## Design System
 
 Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):

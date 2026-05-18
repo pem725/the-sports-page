@@ -672,3 +672,26 @@ For EVERY prediction made in the past week's issues, rerun the relevant model:
 4. NY Rangers (when doing well)
 5. NY Jets + Raiders, Bills, Seahawks (extended family)
 6. Any player with a remarkably great or terrible performance
+
+### Sport-Season Calendar
+
+Pieces should track the live sports calendar. Each month has a different mix of "in season" content; pieces about dormant sports must justify their timing.
+
+| Month | Live cycles |
+|---|---|
+| Jan | NFL playoffs / Super Bowl buildup; CFP National Championship; hot stove finishes |
+| Feb | Super Bowl; CFB Signing Day (1st Wed); MLB spring training opens mid-month |
+| Mar | MLB spring training; March Madness; **MLB Opening Day = newsletter anniversary** |
+| Apr | MLB Opening Week; NBA/NHL playoffs; Masters; NFL Draft (last week) |
+| May | MLB regular; Kentucky Derby (1st Sat); Indy 500 (Memorial Day); NBA/NHL conf finals |
+| Jun | Stanley Cup Final; NBA Finals; US Open golf; College World Series |
+| Jul | MLB All-Star Break; Wimbledon; Open Championship; MLB trade deadline (end of month) |
+| Aug | NFL preseason; CFB opens (last week); MLB pennant races |
+| Sep | NFL Week 1; CFB conference play; MLB stretch; US Open tennis; WNBA playoffs |
+| Oct | MLB playoffs / World Series; NFL mid; CFB mid; NHL/NBA open |
+| Nov | NFL stretch; CFB rivalry week (Thanksgiving); MLB awards; CFP rankings begin |
+| Dec | NFL playoff picture; CFB bowls / CFP first round; MLB Winter Meetings |
+
+**Tentpole annual events** that warrant pre-planned issues: MLB Opening Day (anniversary), First Day of Spring Training, Super Bowl Sunday (eve + morning-after), March Madness Selection Sunday, Masters Sunday, NFL Draft Round 1, MLB All-Star Break, MLB Trade Deadline, World Series Game 1, CFB Rivalry Week, CFP National Championship.
+
+Full guidance in CLAUDE.md → "Sport-Season Calendar". Use that as the authoritative version.
