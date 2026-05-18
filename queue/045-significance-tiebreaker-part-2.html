@@ -1,0 +1,202 @@
+<!-- PUBLISH-META
+topic: Methods
+tags: Methods, MLB:mlb, Mets, Braves, Significance Testing, Tiebreaker, Series
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust);font-weight:700}
+.series-tag{display:inline-block;background:var(--rust);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.18rem .55rem;font-weight:700;margin-bottom:.5rem}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on the Tiebreaker That Settled Nothing &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<span class="series-tag">Significance Series &middot; Part 2 of 4</span>
+
+<h1 class="hed">The Tiebreaker Pretends to Add Data. <em>Instead, It Adds Noise.</em></h1>
+<div class="deck">When two teams finish tied at 89&ndash;73, as the Mets and Braves did in 2024, the league reaches for the head-to-head record to break the tie. It looks rigorous. It is settled in advance, by formula, with no ambiguity. But the head-to-head record between two teams is built from a sample so small that, under statistical scrutiny, it cannot reliably distinguish the best team in baseball from the worst. The Braves won the 2024 NL tiebreaker over the Mets <strong>7&ndash;6</strong>. The probability of that outcome under the assumption that the two teams were equally good is, to four decimal places, <strong>1.0000</strong>.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; Methods &middot; Significance Testing, Part 2</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v" style="color:var(--gold)">7&ndash;6</div><div class="l">2024 Mets-Braves H2H</div></div>
+  <div class="sc"><div class="v now">1.000</div><div class="l">p-value of the Tiebreaker</div></div>
+  <div class="sc"><div class="v bad">11&ndash;2</div><div class="l">H2H Needed for p &lt; .05</div></div>
+</div>
+
+<p>Part 1 of this series ended with a teaser. The 2024 National League Mets and Braves both finished 89&ndash;73. By every statistical test we built &mdash; chi-square, contingency table, deviation from the null &mdash; the two teams were indistinguishable. The chi-square statistic on their full-season records was, exactly, zero. And yet, when the regular season ended and the league had to slot one team into the fifth seed and the other into the sixth, the rules did not say &ldquo;coin flip&rdquo; or &ldquo;co-seed.&rdquo; The rules said: <em>look at the head-to-head record between them, and the team with more wins gets the better spot</em>. The Braves had won the season series 7&ndash;6. They went to the fifth seed. The Mets went to the sixth.</p>
+
+<p>This issue is about whether that procedure makes statistical sense. The answer, as you can probably guess by now, is no. The longer answer is the point of Part 2.</p>
+
+<h2 class="sh">The MLB Tiebreaker, in Plain English</h2>
+
+<p>In 2022, when MLB expanded the postseason from 10 teams to 12, the league quietly abolished one of its most beloved oddities: Game 163, the one-game tiebreaker. (Watch Bucky Dent home run footage if you need to mourn.) From 2022 onward, all regular-season ties &mdash; for division titles, for wild card seeding, for the final playoff spot &mdash; are settled by a strict mathematical hierarchy:</p>
+
+<ol style="padding-left:1.4rem;line-height:1.7;margin:.6rem 0 1rem">
+  <li><strong>Head-to-head record</strong> between the two tied teams.</li>
+  <li><strong>Intradivision record</strong> (each team&rsquo;s record against opponents in its own division).</li>
+  <li><strong>Interdivision record</strong> (each team&rsquo;s record against the rest of its league).</li>
+</ol>
+
+<p>Each criterion is applied in order. The first one that produces a winner stops the procedure. In the 2024 NL case, the first criterion (head-to-head) settled it. The Mets and Braves had played thirteen games against each other across the season, finishing on a doubleheader on September 30 in Atlanta. They split the doubleheader. The Braves walked away 7&ndash;6 in the season series. The procedure ended.</p>
+
+<p>What it ended on, however, is a sample of <strong>thirteen games</strong>. That is the entire body of evidence the tiebreaker considered. To anyone who worked through Part 1, the next question writes itself: how much can a thirteen-game sample really tell us?</p>
+
+<h2 class="sh">The Binomial Test, the Right Tool for This Job</h2>
+
+<p>Part 1 introduced the chi-square test for comparing two independent samples &mdash; each team&rsquo;s full record against the rest of the league. Head-to-head is a different situation. The two teams are playing each other, so the Mets&rsquo; wins are the Braves&rsquo; losses; the samples are not independent, they are perfectly linked. The right tool here is the <em>binomial test</em>.</p>
+
+<p>The setup is simple. Under the null hypothesis &mdash; that both teams have equal true winning probability against each other &mdash; each individual head-to-head game is, in effect, the flip of a fair coin. We ask: <em>given thirteen flips of a fair coin, how unusual is it to see seven heads and six tails?</em></p>
+
+<div class="box">
+<h3>The Math, with a Coin Instead of a Bat</h3>
+<p>The probability of seeing exactly k wins in n games when both teams are equally matched is given by the binomial formula:</p>
+<div class="math">P(k wins in n games | p = 0.5) = C(n,k) &middot; 0.5^n
+
+For n = 13, the distribution looks like this:
+
+  k = 6:  C(13,6) / 2^13 = 1716 / 8192 = 0.2095
+  k = 7:  C(13,7) / 2^13 = 1716 / 8192 = 0.2095
+  k = 8:  C(13,8) / 2^13 = 1287 / 8192 = 0.1571
+  k = 9:  C(13,9) / 2^13 =  715 / 8192 = 0.0873
+  k = 10: C(13,10)/ 2^13 =  286 / 8192 = 0.0349
+  k = 11: C(13,11)/ 2^13 =   78 / 8192 = 0.0095</div>
+<p>Notice that 6 wins and 7 wins are <em>exactly equally likely</em> under the null &mdash; both have probability about 21%. A 7&ndash;6 split is the literal most-likely outcome of a thirteen-game series between two equally matched teams. (Tied for first with 6&ndash;7, of course; they are reflections of each other.) Seeing this result and concluding &ldquo;the team that went 7&ndash;6 is better&rdquo; is the same statistical move as flipping a coin thirteen times, getting seven heads, and concluding &ldquo;this coin is biased toward heads.&rdquo;</p>
+</div>
+
+<p>To formalize the procedure, we ask for the <em>p-value</em>: the probability of seeing an outcome at least as extreme as the observed one, under the null. For a two-sided binomial test of 7&ndash;6 in 13 games, that probability is essentially <strong>1.0</strong>. The 7&ndash;6 result is not only consistent with the null hypothesis. It is what the null hypothesis predicts.</p>
+
+<h2 class="sh">How Lopsided Does Head-to-Head Have to Be?</h2>
+
+<p>Working backwards from the .05 threshold introduced in Part 1, the head-to-head ladder of significance looks like this:</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>H2H Outcome</th><th>Two-Sided p-value</th><th>Statistical Verdict</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="mono">7&ndash;6</td><td class="mono">1.000</td><td>Most likely outcome under null</td></tr>
+    <tr><td class="mono">8&ndash;5</td><td class="mono">0.581</td><td>Routine coin-flip variation</td></tr>
+    <tr><td class="mono">9&ndash;4</td><td class="mono">0.267</td><td>Mildly notable, not significant</td></tr>
+    <tr class="hl"><td class="mono">10&ndash;3</td><td class="mono">0.092</td><td>On the edge, still not significant</td></tr>
+    <tr class="worse"><td class="mono">11&ndash;2</td><td class="mono">0.022</td><td><strong>Statistically significant</strong></td></tr>
+    <tr><td class="mono">12&ndash;1</td><td class="mono">0.003</td><td>Highly significant</td></tr>
+    <tr><td class="mono">13&ndash;0</td><td class="mono">0.0002</td><td>Effectively certain difference</td></tr>
+  </tbody>
+</table>
+
+<p>Read that table once and a striking thing emerges. To declare, with conventional 95% confidence, that the two teams actually have different head-to-head winning probabilities, the season series has to end at <strong>11&ndash;2</strong> or worse. Anything from a sweep-the-doubleheader 7&ndash;6 to a respectable 10&ndash;3 falls below the threshold. The tiebreaker rule, as written, will pick a winner from a 7&ndash;6 series and call it settled. The statistics say the series settled nothing.</p>
+
+<div class="pull">
+  <p>&ldquo;A thirteen-game head-to-head sample, examined honestly, cannot distinguish two equally matched teams from two teams whose true win probabilities differ by ten percentage points. The tiebreaker activates anyway.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on what 7&ndash;6 means and doesn&rsquo;t</cite>
+</div>
+
+<h2 class="sh">The Power Problem: Even Real Differences Get Missed</h2>
+
+<p>The previous section asked: <em>if the two teams are equally matched, how likely is the observed result?</em> The other side of significance testing asks the harder question: <em>if the two teams are NOT equally matched &mdash; if one really is better than the other &mdash; how likely is the test to catch it?</em> This is called <strong>statistical power</strong>, and in a thirteen-game sample, the answer is bleak.</p>
+
+<p>Imagine the Braves really are a better team than the Mets &mdash; not by a lot, just modestly. Suppose their true probability of beating the Mets in any given game is 0.55 (versus 0.45 for the Mets). How often does a thirteen-game season series correctly identify them as the better team at p &lt; .05? That is, how often does the series end at 11&ndash;2 or more lopsided in the Braves&rsquo; favor?</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>True Win Probability (better team)</th><th>Power: P(detect at p &lt; .05 in 13 games)</th><th>What It Means</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="mono">.550 vs .450</td><td class="mono">2.7%</td><td>Nearly invisible</td></tr>
+    <tr><td class="mono">.600 vs .400</td><td class="mono">5.8%</td><td>One time in seventeen</td></tr>
+    <tr class="hl"><td class="mono">.650 vs .350</td><td class="mono">11.7%</td><td>One time in nine</td></tr>
+    <tr><td class="mono">.700 vs .300</td><td class="mono">20.2%</td><td>One time in five</td></tr>
+    <tr><td class="mono">.800 vs .200</td><td class="mono">42.1%</td><td>Coin flip on a giant skill gap</td></tr>
+  </tbody>
+</table>
+
+<p>The numbers in that right-hand column should be alarming. Consider a true skill gap of .600 vs .400 &mdash; the equivalent of a 97-win team playing a 65-win team, a yawning chasm. A thirteen-game series would correctly identify the 97-win team as better only about 5.8% of the time. Most of the time, even with that enormous gap, the series would end at something like 8&ndash;5 or 9&ndash;4, neither of which crosses the threshold.</p>
+
+<p>To put it bluntly: the head-to-head tiebreaker is a test that, for any realistic skill difference between two playoff-bubble teams, is wrong far more often than it is right. It produces a winner, certainly. It puts the better team in the better seed less than ten percent of the time.</p>
+
+<h2 class="sh">If Not the Tiebreaker, Then What?</h2>
+
+<p>It would be unfair to leave this issue without acknowledging why the tiebreaker rules exist. They are, despite their statistical weakness, doing useful work of a different kind. They are providing a <em>deterministic, advance-known procedure</em> for resolving an ambiguity, so that nobody has to invent a fairness rule under playoff-pressure time constraints. Both teams have agreed to the rules in March. When September arrives, neither team can complain. That is not nothing.</p>
+
+<p>But it is also not statistics. A statistician handed the same problem would consider three alternatives:</p>
+
+<ol style="padding-left:1.4rem;line-height:1.7;margin:.6rem 0 1rem">
+  <li><strong>Co-seed the tied teams.</strong> Treat 89&ndash;73 and 89&ndash;73 as exactly what they are: identical. Both teams enter the playoffs at the same seed level. The bracket adjusts.</li>
+  <li><strong>Use a longer series to settle it.</strong> The pre-2022 Game 163 tiebreaker was bad because one game is even less informative than thirteen. A three-game playoff would be slightly better; a seven-game playoff would be meaningfully so. None of these is what the league reaches for, for understandable scheduling reasons.</li>
+  <li><strong>Build a Bayesian posterior.</strong> Use the full 162-game records of both teams, plus a sensible prior, to compute the posterior probability that one team has a higher true winning percentage than the other. Spoiler: for two teams at 89&ndash;73, this probability is approximately 0.50. The Bayesian framework will agree with the chi-square: these are not distinguishable teams.</li>
+</ol>
+
+<p>The third option is where this series is heading. Part 4 will work it out in detail and show how it reframes the entire question. For now, the takeaway is that the league&rsquo;s tiebreaker rules are a procedural convenience masquerading as a fairness procedure. They settle ties not because the data warrants it, but because somebody has to.</p>
+
+<h2 class="sh">Coming in Part 3</h2>
+
+<div class="box">
+<h3>Three Teams, One Question, No Easy Answer</h3>
+<p>Part 3 takes on what happens when the contenders are not two but three. In September 2024, with one weekend left to play, the Mets, Braves, and Diamondbacks were all alive for the final two NL wild card spots. The chi-square test scales up beyond a two-by-two table &mdash; it generalizes to any number of rows &mdash; but the result it produces is different in kind. It tells you that <em>somebody</em> is different. It does not tell you which one.</p>
+<p>Untangling that requires follow-up tests, which create their own statistical mischief. Part 3 walks the reader through the three-team chi-square, the multiple-comparison problem, and the unsettling truth that &ldquo;significance&rdquo; gets harder to claim the more comparisons you try to make.</p>
+</div>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A reader who works through the math here is invited to compute the binomial p-value for any historical head-to-head tiebreaker. The newsletter is especially curious to see what readers find when applying the test to the 1993 Giants-Braves race (NL West, one game tiebreaker), the 1978 Yankees-Red Sox playoff (one-game, season series tied 8&ndash;7), or the 2007 Mets-Phillies collapse (NL East, season series tied 9&ndash;9). Each of these would be a statistical coin flip under a binomial test, regardless of which way the game went.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Issue No. __ &middot; Significance Series, Part 2: The Tiebreaker Trap</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
