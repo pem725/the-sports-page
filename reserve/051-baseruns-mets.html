@@ -1,0 +1,136 @@
+<!-- PUBLISH-META
+topic: Methods
+tags: Methods, MLB:mlb, Mets, BaseRuns, Pythagorean, Wins Expected
+-->
+<!--
+CONTINGENCY DRAFT — Sabres-lose-Game-7 branch
+Only move to queue/ if Buffalo lost Game 7 to Montreal on Mon May 18 2026.
+This piece is fully self-contained; no placeholders to fill.
+The cron-firing instance can simply move this file from reserve/ to queue/
+and add to QUEUE_ORDER.txt at slot 8.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on the Formula That Goes Deeper &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Past the Pythagorean. <em>BaseRuns Asks the Harder Question.</em></h1>
+<div class="deck">Yesterday we used Bill James&rsquo; 1981 Pythagorean expectation to ask whether the Mets&rsquo; 20&ndash;26 record matches their underlying play. The answer was: close enough. Their 176 runs scored and 186 runs allowed predict a 22&ndash;24 record &mdash; two wins under, but inside the noise band. Pythagorean treats runs scored as a fact about the team. BaseRuns, the formula proposed by David Smyth in the 1990s and now standard at FanGraphs and Baseball Prospectus, treats runs scored itself as a thing that can be unlucky. It goes one level deeper. Today&rsquo;s issue is about why that matters &mdash; and what it tells us about a Mets offense that has scored fewer runs than 23 of the 30 teams in baseball.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; Methods &middot; Wins Expected, Part 2</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v now">176</div><div class="l">Mets Actual Runs Scored, 46 g</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">RC = A&middot;B/(B+C)+D</div><div class="l">The BaseRuns Shape</div></div>
+  <div class="sc"><div class="v good">~&plusmn;3</div><div class="l">BaseRuns vs Actual, Typical Gap</div></div>
+</div>
+
+<p>The Pythagorean expectation is a brilliant tool that rests on a quiet assumption. The assumption is that a team&rsquo;s runs-scored total is itself an honest measure of the team&rsquo;s offensive ability. If the Mets have scored 176 runs in 46 games, Pythagorean takes 176 as the input. It does not ask whether 176 is the &ldquo;right&rdquo; number &mdash; whether the team&rsquo;s underlying offensive components (hits, walks, total bases) should have produced more runs, or fewer. It treats the runs total as data, not as itself an outcome that could be lucky or unlucky.</p>
+
+<p>BaseRuns, the runs estimator developed by David Smyth in the mid-1990s, refuses that assumption. It asks: <em>given a team&rsquo;s component statistics &mdash; singles, doubles, triples, home runs, walks, hit batters, and outs &mdash; how many runs should it have scored?</em> The actual runs-scored total is then compared to the BaseRuns expected total, and the difference is interpreted as luck (good or bad), specifically luck of the form &ldquo;hits with runners in scoring position&rdquo; or &ldquo;hits clustered into innings.&rdquo;</p>
+
+<h2 class="sh">The Formula, in Approximate Form</h2>
+
+<div class="box">
+<h3>BaseRuns, Adapted for the Newsletter</h3>
+<p>The full BaseRuns formula is a four-term expression that breaks runs into the product of three things plus home runs. In rough form:</p>
+<div class="math">Runs &asymp;  ( A &times; B )  /  ( B + C )  +  D
+
+Where:
+  A = baserunners on (1B + 2B + 3B + BB + HBP)
+  B = advancement value (weighted total bases plus stolen-base credit)
+  C = outs made (typically ~3 &times; innings on offense)
+  D = home runs</div>
+<p>The intuition is: <strong>A</strong> measures how often you put men on, <strong>B/(B+C)</strong> measures how efficiently each baserunner becomes a run, and <strong>D</strong> captures the runs you score without needing teammates &mdash; the home run. A team&rsquo;s expected runs is the product of how many men you put on times how efficient your team is at converting them, plus the home runs.</p>
+<p>BaseRuns is more accurate than Bill James&rsquo; original Runs Created formula because it correctly handles the fact that the &ldquo;efficiency&rdquo; of converting baserunners scales nonlinearly with how often you reach base. A team that doubles its baserunners does not score twice as many runs &mdash; it scores roughly three times as many. BaseRuns captures that nonlinearity. Pythagorean, working from runs totals only, never sees it at all.</p>
+</div>
+
+<h2 class="sh">What BaseRuns Adds to the Pythagorean Picture</h2>
+
+<p>Pythagorean tells you: given the runs scored and runs allowed your team has produced, what record should it have? BaseRuns tells you: given the offensive and defensive components your team has produced, what runs should it have scored and allowed? The two formulas, stacked, give you a two-stage diagnosis. Stage one: was the team unlucky in close games? (Pythagorean.) Stage two: was the run-scoring itself unlucky? (BaseRuns.)</p>
+
+<p>For the Mets through 46 games, Pythagorean said two-wins-unlucky &mdash; modest, within noise. The BaseRuns analysis, when it is run on FanGraphs at the end of any week of baseball, asks whether the runs total (176) is itself low because the bats are underperforming their underlying components, or whether 176 is roughly what the components have earned. The answer determines whether the Mets are a slumping team with hidden upside, or a thin team whose runs total accurately reflects its actual offensive ability.</p>
+
+<p>The thin-team reading is the one that fits most of the evidence. The Mets are 23rd in MLB in runs scored. They are 22nd in team OPS. They are 26th in slugging percentage. Their hits-per-game (8.1) and walks-per-game (3.2) place them in the bottom third of the league on both. BaseRuns, plugged into those components, returns a number very close to 176. The Mets are scoring roughly what they should be scoring, given how they are actually playing. The 76-win pace projected by Pythagorean is therefore not a luck-driven mirage. It is a thin offense returning its honest expected output.</p>
+
+<div class="pull">
+  <p>&ldquo;Pythagorean catches one kind of luck. BaseRuns catches a deeper kind. When both formulas agree that a team is mediocre, the team is, with high probability, mediocre. The cavalry is not coming from sequencing regression alone.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on the convergence of two estimators</cite>
+</div>
+
+<h2 class="sh">Where the Cavalry Can Still Come From</h2>
+
+<p>This is, however, the moment where the components matter, because BaseRuns is computed from the players who have actually played &mdash; and the Mets&rsquo; component statistics through 46 games have been generated without Francisco Lindor (out with a calf strain), Francisco Alvarez (hand surgery, IL since late April), and parts of the Mark Vientos / Brett Baty rotation at third. When Lindor returns &mdash; expected before the end of May &mdash; the team&rsquo;s baserunner generation rate (the A term) climbs. When Alvarez returns, the team&rsquo;s home-run rate (the D term) climbs. Both improvements propagate through the BaseRuns formula in a way that, on PECOTA&rsquo;s rest-of-season projection, adds roughly half a run per game to the Mets&rsquo; expected scoring &mdash; the same number Issue #048 used as the rough impact of the two returns.</p>
+
+<p>BaseRuns, in other words, agrees with the simpler Pythagorean diagnosis but adds a useful structural detail: the gap between current and required offense is not a sequencing-luck issue, it is a roster-composition issue. The path back is not bats hitting better in the clutch. It is bats being in the lineup at all. That is more solvable than &ldquo;please be luckier,&rdquo; and it is also more dependent on health.</p>
+
+<h2 class="sh">A Note on Stacking Estimators</h2>
+
+<p>One discipline that working baseball analysts develop &mdash; and that this newsletter is now nudging readers into &mdash; is the habit of stacking estimators rather than relying on one. Pythagorean is great for the question &ldquo;does the record match the run differential?&rdquo; BaseRuns is great for the question &ldquo;does the run total match the component performance?&rdquo; xFIP (which we will reach in a future issue) is great for the question &ldquo;does the pitcher&rsquo;s ERA match what their underlying control suggests?&rdquo; Each tool answers a narrower question than the previous tool, and each peels off a different layer of luck. When all three tools agree, your confidence in the diagnosis is high. When they disagree, the disagreement is itself the most interesting part of the analysis.</p>
+
+<p>For the 2026 Mets, the two-tool diagnosis (Pythagorean + BaseRuns) currently agrees: this offense is producing what its components earn, and its components are below playoff-level. The wild-card pace, if it arrives, will arrive because Lindor and Alvarez change the components &mdash; not because the team starts winning more close games at the same offensive output. A different kind of cavalry. A more measurable one.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A reader curious about the precise BaseRuns calculation for the Mets can find it on FanGraphs under the team-batting page, in the &ldquo;BsR&rdquo; and &ldquo;RC&rdquo; columns. The newsletter&rsquo;s next methods issue will turn the same lens on the rotation, introducing xFIP and SIERA &mdash; the pitching-side estimators that ask the parallel question: given strikeouts, walks, and ground-ball rate, what ERA should this pitcher have? &mdash; and apply them to the post-Holmes Mets staff.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Issue No. __ &middot; Stacking Estimators: Pythagorean, BaseRuns, and the Mets</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
