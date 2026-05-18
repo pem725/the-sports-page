@@ -1,0 +1,201 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, Wild Card, Turnaround, Log5
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on the Mets&rsquo; Reasonable Math &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">What the Mets Need from Here Is Not a Miracle. <em>It Is Their Preseason Projection.</em></h1>
+<div class="deck">After Sunday&rsquo;s 7&ndash;6 win over the Yankees, capped by a Tyrone Taylor home run in the ninth and a Devin Williams hold-and-win in the tenth, the Mets are 20&ndash;26. To reach the average National League wild card cutoff of 87 wins, they need to play <strong>.578 baseball</strong> the rest of the way. That is roughly what PECOTA and FanGraphs projected them to play in March. The famous comeback teams &mdash; the 2019 Nationals, the 2005 Astros, the 1973 Mets &mdash; were all in worse holes than this when they started climbing out. The math is not the problem. The next fifty-eight days are.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; Mets &middot; Wild Card</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v now">20&ndash;26</div><div class="l">Mets Record Through May 17</div></div>
+  <div class="sc"><div class="v good">.578</div><div class="l">Pace Needed for 87 Wins</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">49</div><div class="l">Games Until All-Star Break</div></div>
+</div>
+
+<p>For roughly six weeks, the working assumption around this newsletter has been that the Mets were broken in some structurally interesting way. The injury list was longer than the active roster looked. The bullpen was a horror show with cinematography. The log5 model in Issue #38, on May 5, projected them to win 6.4 of their next 17 games, and even that felt charitable. Through thirteen of those games, the Mets are 8&ndash;5. Sunday made it nine. The model was wrong in the only direction worth being wrong in.</p>
+
+<p>So we should now ask the next question, which is the one fans started asking around dinnertime Sunday: <em>what would actually have to be true for this to be a real season?</em> The answer is more boring than the famous comeback stories let on. The Mets don&rsquo;t need a miracle. They need to play approximately the team they were projected to be.</p>
+
+<h2 class="sh">The Math, Plain</h2>
+
+<p>The third National League wild card spot, in the three years since the third spot was created, has gone to:</p>
+
+<ul style="padding-left:1.4rem;line-height:1.7;margin:.6rem 0 1rem">
+  <li><strong>2022</strong> &mdash; Philadelphia Phillies, <strong>87&ndash;75</strong></li>
+  <li><strong>2023</strong> &mdash; Arizona Diamondbacks, <strong>84&ndash;78</strong></li>
+  <li><strong>2024</strong> &mdash; New York Mets, <strong>89&ndash;73</strong> (tied with Atlanta at 89)</li>
+</ul>
+
+<p>The three-year average is just over 86.5 wins. Call it 87. To reach 87 wins from 20&ndash;26, the Mets need to go <strong>67&ndash;49</strong> over their remaining 116 games. That is a .578 winning percentage &mdash; the pace of a 94-win full season. For comparison: FanGraphs&rsquo; preseason projection had the Mets winning between 86 and 88 games. PECOTA had them at 87. The road from here to a wild card spot is, almost exactly, the road they were forecast to walk in March, applied across 116 games instead of 162.</p>
+
+<div class="box">
+<h3>The Forty-Nine-Game Question</h3>
+<p>The All-Star Break begins on Tuesday, July 14 &mdash; fifty-eight days from Sunday. The Mets will play roughly forty-nine games in that window. If they play .578 baseball through the break &mdash; the wild card pace &mdash; they will arrive at the All-Star Game at <strong>48&ndash;47</strong>, a half-game over .500 and somewhere in the neighborhood of three games out of the third wild card spot. That is the floor for being a real team again. Anything below it puts the August trade deadline into &ldquo;sellers&rdquo; territory.</p>
+<div class="math">Current:        20 W, 26 L  (46 g, .435)
+Need by July 14: 28 W, 21 L  over next 49 g  (.571)
+Arrives at:     48 W, 47 L   (95 g, .505)
+
+Need for 87:    67 W, 49 L   over remaining 116 g  (.578)
+Final record:   87 W, 75 L   (.537)
+</div>
+</div>
+
+<h2 class="sh">The Famous Comebacks Were All Worse Than This One</h2>
+
+<p>Sports memory is built almost entirely on survivorship bias. The teams everyone names when they say &ldquo;you can come back from anything&rdquo; came back from holes substantially deeper than the one the Mets are in right now. Five of them, with verified records:</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>Year</th><th>Team</th><th>Worst Point</th><th>Games Under</th><th>Finished</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr class="hl">
+      <td>1973</td>
+      <td>Mets</td>
+      <td class="mono">Aug 16: 12 under .500</td>
+      <td class="mono">&minus;12</td>
+      <td class="mono">82&ndash;79</td>
+      <td class="mono">NL pennant; lost WS in 7</td>
+    </tr>
+    <tr>
+      <td>2005</td>
+      <td>Astros</td>
+      <td class="mono">May 24: 15&ndash;30</td>
+      <td class="mono">&minus;15</td>
+      <td class="mono">89&ndash;73</td>
+      <td class="mono">NL pennant; swept in WS</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>Cardinals</td>
+      <td class="mono">Aug 24: 10.5 GB WC</td>
+      <td class="mono">~&minus;6</td>
+      <td class="mono">90&ndash;72</td>
+      <td class="mono">World Series champions</td>
+    </tr>
+    <tr class="hl">
+      <td>2019</td>
+      <td>Nationals</td>
+      <td class="mono">May 24: 19&ndash;31</td>
+      <td class="mono">&minus;12</td>
+      <td class="mono">93&ndash;69</td>
+      <td class="mono">World Series champions</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Tigers</td>
+      <td class="mono">Aug 11: 55&ndash;63</td>
+      <td class="mono">&minus;8</td>
+      <td class="mono">86&ndash;76</td>
+      <td class="mono">Wild card berth</td>
+    </tr>
+    <tr style="background:#fef0ec">
+      <td><strong>2026</strong></td>
+      <td><strong>Mets</strong></td>
+      <td class="mono"><strong>May 17: 20&ndash;26</strong></td>
+      <td class="mono"><strong>&minus;6</strong></td>
+      <td class="mono">87&nbsp;goal</td>
+      <td class="mono"><strong>need 67&ndash;49 from here</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Read the column labeled &ldquo;Games Under&rdquo; carefully. Of the five canonical second-half-comeback teams of the past fifty years, four were further underwater than the current Mets at the point of their famous turn. Only the 2011 Cardinals, who got their hole down to roughly six games and then closed in September, are a tighter comp. The lesson is not that the Mets&rsquo; situation is dire. The lesson is that the situations everyone remembers as dire were dire-er. The Mets, right now, are slumping. They are not in the cellar of any famous comeback narrative.</p>
+
+<p>One caveat is honest to put on the table. These five teams are remembered <em>because</em> they came back. The much larger population of teams that were 6 games under at game 46 and faded the rest of the way does not have a Wikipedia page. The base rate of teams that finish below .500 from this kind of start is, year over year, much higher than the base rate of teams that finish at 87 wins. The newsletter cannot, without a database of every team since 1995, give an exact number. What the newsletter can say is that the road, in arithmetic, is not steeper than the road the projections already had the Mets on.</p>
+
+<h2 class="sh">Devin Williams, Subject of Issue #45, Closes One and Wins One</h2>
+
+<p>Twelve days after this newsletter argued (in Issue #45) that the &ldquo;ineffective&rdquo; Devin Williams was, by his expected-ERA, the same pitcher he&rsquo;d been in Milwaukee &mdash; just with an unsustainable cluster of bad outings front-loaded onto his Mets debut &mdash; he pitched a perfect ninth Saturday for his sixth save, then earned the win Sunday in extras. The xERA on May 5 was 3.07. The actual ERA on May 5 was 5.68. The newsletter said the truth was nearer to the first number than the second, and that the second would migrate toward the first as the sample grew. Across his last six outings he has not allowed a run. The two ERAs are still separated by more than two points. The gap will continue to close in the only direction it can.</p>
+
+<div class="pull">
+  <p>&ldquo;The Mets do not need a miracle. They need to play, for one hundred and sixteen games, what their preseason projections said they were. That is not a comeback story. That is just baseball, finally arriving on schedule.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on the modesty of the actually-required miracle</cite>
+</div>
+
+<h2 class="sh">What to Watch Until July 14</h2>
+
+<p>Three things, none of them headline numbers, will decide whether the math works.</p>
+
+<p><strong>First, the rotation behind Holmes.</strong> The newsletter wrote in Sunday&rsquo;s edition that the log5 framework has no way to encode an injury that arrived after the projection. Clay Holmes is on a long absence with a fractured fibula, and he was, on May 14, the Mets&rsquo; best 2026 starter. Whoever fills his rotation slot &mdash; Tylor Megill is the early favorite &mdash; needs to throw league-average innings, not replacement-level innings. The difference between those two is roughly four wins across the rest of a season. Four wins is the entire margin of this exercise.</p>
+
+<p><strong>Second, the Lindor and Alvarez returns.</strong> Both were on the injured list as of last week. Both are projected to be back before June. The Mets have been outscoring projections without their everyday shortstop and without their everyday catcher. When those bats return, the offense should not get worse. The downside risk is a setback that pushes either return into July.</p>
+
+<p><strong>Third, the schedule.</strong> The next twenty games include three against Washington (the projected weakest team in the division), four against Miami, and three against the White Sox. There are no Padres or Dodgers on the slate until the second week of June. This is the easiest run of opponents the Mets will face all season. If a .578 pace is going to happen, it has to start in the next three weeks.</p>
+
+<h2 class="sh">The Honest Close</h2>
+
+<p>Saturday night, the Mets were 18&ndash;26 and most of New York was writing the obituary. Sunday night, after a three-run Taylor home run off David Bednar with two outs in the ninth, they are 20&ndash;26 and most of New York is using the pronoun &ldquo;we.&rdquo; Both responses are about the same team. Neither is more honest than the other. What is honest is the math: the Mets are six games under .500, twelve games above last place, and exactly on the road their preseason projections drew for them, applied to a shorter calendar.</p>
+
+<p>The famous comeback teams of the last fifty years did something rare. The Mets, to be honest, would not need to do something rare. They would need to do something ordinary &mdash; play, for 116 games, like the team the smart projections said they were. Whether they can do that is the only question that matters. The next forty-nine games will answer it.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A future issue, on a reader suggestion, will examine the asymmetric pronoun &mdash; why fans say &ldquo;we&rdquo; when their team wins and &ldquo;they&rdquo; when it loses. Robert Cialdini&rsquo;s 1976 work called it Basking In Reflected Glory. The newsletter calls it the most honest data point in fandom. Coming soon.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Issue No. __ &middot; Math, Memory, and the Modesty of a Wild Card Run</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
