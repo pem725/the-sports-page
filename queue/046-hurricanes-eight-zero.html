@@ -1,0 +1,155 @@
+<!-- PUBLISH-META
+topic: NHL
+tags: NHL:nhl, Stanley Cup, Hurricanes, Conference Finals, Sweeps
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on the Hurricanes&rsquo; 8&ndash;0 Run &middot; Hockey, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Carolina Is 8&ndash;0 in the Playoffs. <em>That Has Never Happened in This Format Before.</em></h1>
+<div class="deck">The Hurricanes have swept both Ottawa and Philadelphia to open the 2026 Stanley Cup Playoffs &mdash; the first team to sweep its first two rounds in the four-round, best-of-seven era introduced in 1987. The closest historical comparable is the 1985 Edmonton Oilers, who also started 8&ndash;0, in a different playoff format. The team before them in any format was the 1969 St. Louis Blues. The thing Carolina is doing has not been done in the lifetime of most NHL coaches, and never in the bracket fans know.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; NHL &middot; Conference Finals</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v good">8&ndash;0</div><div class="l">Hurricanes Playoff Record, 2026</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">1985</div><div class="l">Last Team to Start 8&ndash;0</div></div>
+  <div class="sc"><div class="v now">0</div><div class="l">Prior 8&ndash;0 Starts, Modern Format</div></div>
+</div>
+
+<p>For six straight regular seasons, the Carolina Hurricanes have been one of the best teams in the National Hockey League by every analytical measure that does not also include the words &ldquo;won the Stanley Cup.&rdquo; They have led the league in expected goals percentage. They have led the league in high-danger chances generated. They have, when permitted to play the way head coach Rod Brind&rsquo;Amour wants them to play, generated more pressure per minute than any team in the sport. And every spring, the playoffs have arrived and Carolina has, more or less, lost. They were swept by Florida in the 2023 Eastern Conference Final. They were swept by Pittsburgh in the 2009 Eastern Conference Final. They have not won a Stanley Cup since 2006, the franchise&rsquo;s lone title, achieved by a team whose underlying numbers were nothing like the Hurricanes of the past six years.</p>
+
+<p>This spring, the Hurricanes are doing something different. As the Eastern Conference Final opens, they bring an <strong>8&ndash;0 record</strong> through two rounds. They have swept the Ottawa Senators 4&ndash;0 in the first round and the Philadelphia Flyers 4&ndash;0 in the second. No team has started the playoffs 8&ndash;0 since the 1985 Edmonton Oilers &mdash; forty-one years ago, in a different playoff format. And no team has ever done it under the modern bracket: four rounds, all best-of-seven, in place since 1987. The Hurricanes are alone on that list. The list, as of this morning, has one name on it.</p>
+
+<h2 class="sh">What Eight-and-Zero Looks Like Up Close</h2>
+
+<p>The first-round sweep of Ottawa was statistically extraordinary in a way that the simple result (4&ndash;0) does not convey. Across all four games of that series, <em>the Senators never led for a single second</em>. Carolina opened each game, kept the lead, and closed each game. The most recent team to accomplish that feat in a first-round series is the 2009 Detroit Red Wings against the Columbus Blue Jackets. Before that, you have to climb back into the early years of the four-round format to find another example. The Hurricanes, in their opening series, played the kind of hockey that does not give the opponent so much as the texture of being ahead.</p>
+
+<p>Frederik Andersen started all four games for Carolina. He finished the series 4&ndash;0 with a <strong>1.10 goals-against average</strong> and a <strong>.955 save percentage</strong>, plus one shutout in Game 1. Andersen is 36 years old. The Hurricanes signed him in 2021 hoping he would be the goaltender they had needed for a decade. He has, in eight playoff games this year, been precisely that.</p>
+
+<h2 class="sh">The Historical Comp Set Is Very Small &mdash; and Very Optimistic</h2>
+
+<p>How rare is an 8&ndash;0 playoff start? Rare enough that the historical record contains only a handful of comparable runs, each in a different playoff structure. Here is the full set:</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>Year</th><th>Team</th><th>Playoff Format</th><th>How the Season Ended</th></tr>
+  </thead>
+  <tbody>
+    <tr class="hl">
+      <td>1952</td>
+      <td>Detroit Red Wings</td>
+      <td class="mono">Two best-of-7 rounds</td>
+      <td class="mono">Won Stanley Cup (8&ndash;0 total)</td>
+    </tr>
+    <tr>
+      <td>1960</td>
+      <td>Montreal Canadiens</td>
+      <td class="mono">Two best-of-7 rounds</td>
+      <td class="mono">Won Stanley Cup (8&ndash;0 total)</td>
+    </tr>
+    <tr class="hl">
+      <td>1969</td>
+      <td>St. Louis Blues</td>
+      <td class="mono">Three best-of-7 rounds</td>
+      <td class="mono">Swept first two rounds; lost Finals to Montreal</td>
+    </tr>
+    <tr>
+      <td>1985</td>
+      <td>Edmonton Oilers</td>
+      <td class="mono">Four rounds, mix of formats</td>
+      <td class="mono">Won Stanley Cup (15&ndash;3 total)</td>
+    </tr>
+    <tr class="hl">
+      <td><strong>2026</strong></td>
+      <td><strong>Carolina Hurricanes</strong></td>
+      <td class="mono"><strong>Four best-of-7 rounds (modern)</strong></td>
+      <td class="mono"><strong>In Eastern Conference Final</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Read that table carefully. Three of the four historical 8&ndash;0 starts ended with the team winning the Stanley Cup. The fourth, the 1969 Blues, lost in the Finals to a Montreal dynasty in the middle of winning four straight Cups; a glass-half-empty reading would call that a loss, a glass-half-full reading would note that the Blues took a juggernaut to a long series before losing. None of the historical comps faced what the Hurricanes face now: two more rounds, both best-of-seven, against opponents who will absolutely not behave like the Senators and Flyers did.</p>
+
+<p>The smallness of the sample is itself the point. We are, statistically speaking, in territory the NHL has not been in often enough to estimate base rates. The four prior teams that started this way went 3&ndash;1 in winning the Cup. The fifth team is Carolina, and the data set will, by mid-June, contain a fifth entry.</p>
+
+<div class="pull">
+  <p>&ldquo;Carolina is doing the thing the analytics community has been predicting Carolina would do for six years. The unsettling part is that the analytics community has been wrong about Carolina, in some form, every spring since 2019.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on the limits of predictive vindication</cite>
+</div>
+
+<h2 class="sh">Two Reasons to Believe; Two to Hesitate</h2>
+
+<p><strong>Reasons to believe.</strong> First, the underlying play has matched the result &mdash; Carolina has dominated possession, generated more shot attempts than its opponents, and gotten elite goaltending. This is not a team riding hot percentages. It is a team executing its identity at a level the regular season suggested was possible. Second, the path through the East has thinned. The Bruins and Maple Leafs are out. The Florida Panthers, who eliminated the Hurricanes from the 2023 Eastern Conference Final in four straight, are out. The conference final opponent will be either a Buffalo Sabres team that had not won a playoff series in over a decade until this spring, or a Montreal Canadiens team rebuilt around young talent that is still earning playoff scars. Either is beatable; neither has Florida&rsquo;s recent record against this exact opponent.</p>
+
+<p><strong>Reasons to hesitate.</strong> First, conference finals are where this version of Carolina has gone to die. The 2023 sweep at Florida&rsquo;s hands was a different opponent and a different roster, but the pattern is what it is &mdash; this franchise gets here and then does not get further. Second, an 8&ndash;0 start guarantees a long layoff between rounds, and long layoffs have historically been a mixed bag for teams that rode momentum to get them. The 2012 Los Angeles Kings used a layoff well and won the Cup. The 2013 Penguins, who swept the conference semifinals after their own sweep of the first round, used the layoff badly and were dismissed in four games by the Bruins. Carolina&rsquo;s eight days off before the conference final is the longest of any 2026 team. That is, by some readings, an asset. By others, it is exactly the kind of thing that breaks a rhythm built over eight straight wins.</p>
+
+<h2 class="sh">What the Number Actually Tells Us</h2>
+
+<p>An 8&ndash;0 playoff start is not, on its own, evidence about what comes next. The team that has won the previous eight games does not, by virtue of having won them, win the next game with elevated probability beyond what its talent already predicts. The historical record &mdash; three Cup wins, one Cup loss, sample size of four, format mismatch &mdash; cannot tell you which way Carolina&rsquo;s ninth game will go. What the number tells us, instead, is that for the first time in the modern bracket, an NHL team has played the first two rounds of the playoffs without losing a single game. That is not predictive. That is, however, historic. It is the rarest kind of small-sample artifact: the kind that arises from a team finally playing, for sixteen hockey periods in a row, the way every model said it could play.</p>
+
+<p>Whatever happens in the conference final, the 2026 Hurricanes are now part of a list whose other entries are remembered. Three of them are remembered as champions. The 1969 Blues are remembered as the team that gave Montreal a real test. Carolina is remembered, so far, as the team that finally cashed the analytics check. The shape of that memory &mdash; what it eventually means &mdash; is the question of the next two weeks.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Issue No. __ &middot; The Hurricanes, the 8&ndash;0 Start, and the Forty-One-Year Wait</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
