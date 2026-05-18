@@ -1,0 +1,205 @@
+<!-- PUBLISH-META
+topic: Methods
+tags: Methods, MLB:mlb, Mets, Yankees, Significance Testing, Chi-Square, Series
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+.ctable{width:100%;max-width:520px;margin:1rem auto;border-collapse:collapse;font-family:'Roboto Mono',monospace}
+.ctable th,.ctable td{border:1px solid var(--ink);padding:.55rem .8rem;text-align:center;font-size:.95rem}
+.ctable th{background:var(--ink);color:var(--cream);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+.ctable .rh{background:var(--card);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem}
+.series-tag{display:inline-block;background:var(--rust);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.18rem .55rem;font-weight:700;margin-bottom:.5rem}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on When &ldquo;Different&rdquo; Is Actually Different &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<span class="series-tag">Significance Series &middot; Part 1 of 4</span>
+
+<h1 class="hed">A Five-Game Lead at Season&rsquo;s End Is <em>Statistical Noise.</em> Here&rsquo;s the Math.</h1>
+<div class="deck">A primer on the chi-square test, the oldest and most useful tool for asking the question every fan asks all summer: <em>are those two teams actually different, or did the dice just roll their way?</em> Today we set up the simplest possible case &mdash; the Mets and the Yankees, head to head, at four points in a hypothetical season &mdash; and discover the surprising number of games one team needs to be ahead before statistics will let us call them different. The answer, every quarter, is bigger than you think.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; Methods &middot; Significance Testing, Part 1</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v" style="color:var(--gold)">13</div><div class="l">Wins Apart at 162 g for p &lt; .05</div></div>
+  <div class="sc"><div class="v now">7</div><div class="l">Wins Apart at 40 g for p &lt; .05</div></div>
+  <div class="sc"><div class="v good">3.841</div><div class="l">&chi;&sup2; Threshold, df = 1</div></div>
+</div>
+
+<p>Every September, the sports world makes a decision that everyone watching agrees was rigorous and almost no one watching can defend: it sorts teams into &ldquo;in the playoffs&rdquo; and &ldquo;out of the playoffs&rdquo; on the basis of win totals. Two teams tied in wins? Apply tiebreakers &mdash; head-to-head, then common opponents, then division record &mdash; until one team comes out on top. The whole apparatus treats the win column as the truth. If you finished a game ahead, you were better. If you finished a game behind, you were worse. Period.</p>
+
+<p>Today&rsquo;s issue is about whether that&rsquo;s correct. The short answer is: <em>often, no</em>. The longer answer requires a tool the newsletter has not yet introduced. It is a tool you can apply at the kitchen table, on the back of a napkin, with one division and one square root. We will build it from scratch, using the two teams who play each other once a year on the 7 train. Welcome to Part 1 of the Significance Series.</p>
+
+<h2 class="sh">The Setup: One Table, Four Cells</h2>
+
+<p>Suppose the Mets and the Yankees have each played the same number of games. We want to ask a single, very specific question: <strong>have the Mets and the Yankees, in the games they have actually played, won at different rates &mdash; or did they win at the same rate and only look different because of luck?</strong> That second possibility is what statisticians call the <em>null hypothesis</em>. The whole point of significance testing is to assess how confident we should be that the null hypothesis is wrong.</p>
+
+<p>To do that, we arrange the data the simplest possible way: a table with one row per team and one column per outcome.</p>
+
+<table class="ctable">
+  <thead>
+    <tr><th></th><th>Wins</th><th>Losses</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="rh">Mets</td><td>W<sub>M</sub></td><td>L<sub>M</sub></td></tr>
+    <tr><td class="rh">Yankees</td><td>W<sub>Y</sub></td><td>L<sub>Y</sub></td></tr>
+  </tbody>
+</table>
+
+<p>This is called a <em>two-by-two contingency table</em>, and it is the most ubiquitous object in applied statistics. Drug trials use it. Political polling uses it. The CDC uses it to ask whether a vaccine works. We are using it to ask whether two New York teams are actually different from each other.</p>
+
+<p>Under the null hypothesis &mdash; that the two teams share a single, common, true winning percentage &mdash; we can compute what we would <em>expect</em> the table to look like. Suppose both teams have played N games and the combined record is, say, 81 wins and 81 losses out of 162. Then under the null, each team should be 40.5&ndash;40.5. Anything other than that &mdash; any deviation in either direction &mdash; is the gap the test is measuring.</p>
+
+<h2 class="sh">The Chi-Square, in Plain English</h2>
+
+<p>Karl Pearson invented the chi-square statistic in 1900. He was trying to test whether observed counts in biology experiments matched theoretical predictions. The statistic he came up with does the same job for any contingency table: it adds up, across all the cells of the table, how far each observed count is from its expected count under the null, scaled by the size of the expected count. The formula looks like this:</p>
+
+<div class="box">
+<h3>The Chi-Square Formula, Plus the One Shortcut We&rsquo;ll Actually Use</h3>
+<p>For a general two-by-two table, the chi-square statistic is:</p>
+<div class="math">&chi;&sup2; = &Sigma; [ (Observed - Expected)&sup2; / Expected ]</div>
+<p>summed over all four cells. The bigger &chi;&sup2; gets, the more the observed table diverges from what the null predicted, and the less plausible the null becomes.</p>
+<p>For our specific case &mdash; two teams each playing N games, with the combined win rate p &mdash; algebra collapses the general formula into something memorable. Let d be the gap in wins between the two teams (the Mets&rsquo; wins minus the Yankees&rsquo; wins). Then:</p>
+<div class="math">&chi;&sup2; = d&sup2; / ( N &middot; p &middot; (1 - p) )
+
+When both teams are near .500 (p &asymp; .5), this is just:
+
+&chi;&sup2; = 4 &middot; d&sup2; / N</div>
+<p>Memorize the second line. It is the entire mechanism. If &chi;&sup2; exceeds <strong>3.841</strong>, the difference clears the conventional p&nbsp;&lt;&nbsp;.05 threshold. Below 3.841, we cannot reject the null. We say the two teams are <em>not statistically significantly different</em>.</p>
+</div>
+
+<p>That number, 3.841, comes from the chi-square distribution at one degree of freedom &mdash; a curve that the math says describes how the statistic should behave when the null is true. You do not need to derive it. You can keep it in your wallet next to your library card.</p>
+
+<h2 class="sh">The Four Quarters of a Hypothetical Season</h2>
+
+<p>So: how far apart do the Mets and the Yankees actually need to be, in win totals, before the chi-square says &ldquo;these are not the same team&rdquo;? Working backwards from &chi;&sup2; &gt; 3.841, the minimum gap d at each quarter of a 162-game season is:</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>Games Each</th><th>Min Gap d for p &lt; .05</th><th>Example Records</th><th>Difference in Win %</th></tr>
+  </thead>
+  <tbody>
+    <tr class="hl">
+      <td>40 (quarter season)</td>
+      <td class="mono">7 wins</td>
+      <td class="mono">Mets 24&ndash;16, Yanks 17&ndash;23</td>
+      <td class="mono">.600 vs .425 &mdash; a 175-point gap</td>
+    </tr>
+    <tr>
+      <td>81 (half season)</td>
+      <td class="mono">9 wins</td>
+      <td class="mono">Mets 45&ndash;36, Yanks 36&ndash;45</td>
+      <td class="mono">.556 vs .444 &mdash; a 112-point gap</td>
+    </tr>
+    <tr class="hl">
+      <td>121 (three-quarter)</td>
+      <td class="mono">11 wins</td>
+      <td class="mono">Mets 66&ndash;55, Yanks 55&ndash;66</td>
+      <td class="mono">.545 vs .455 &mdash; a 90-point gap</td>
+    </tr>
+    <tr>
+      <td>162 (full season)</td>
+      <td class="mono">13 wins</td>
+      <td class="mono">Mets 88&ndash;74, Yanks 75&ndash;87</td>
+      <td class="mono">.543 vs .463 &mdash; an 80-point gap</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Read the right-hand column carefully. To call the two teams &ldquo;different&rdquo; with 95% confidence at the end of a 162-game season, the winning percentages have to differ by <strong>at least 80 points</strong>. An 87-win team and an 81-win team &mdash; a six-game gap, the difference between a wild-card spot and watching October on the couch &mdash; are not statistically different. The math cannot distinguish them. The standings can. That is a distinction worth holding onto.</p>
+
+<div class="pull">
+  <p>&ldquo;A five-game lead at season&rsquo;s end is statistical noise. So is six. So, on a tight day, is seven. The math says the standings are mostly drawing distinctions that statistics will not back up.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on what 3.841 actually means</cite>
+</div>
+
+<h2 class="sh">Why the Gap Grows in Absolute Terms but Shrinks in Percentage Terms</h2>
+
+<p>Notice something strange in the table. As the season lengthens, the <em>absolute</em> gap required for significance grows: 7 wins at quarter, 13 wins at full season. But the <em>proportional</em> gap shrinks: a 175-point win-percentage difference at quarter season collapses to an 80-point difference at full. This is the famous square-root law of statistics making its first appearance in the series.</p>
+
+<p>Roughly: doubling the sample size lets you detect a difference about &radic;2 &asymp; 1.41 times smaller in proportion. Quadrupling it lets you detect one about twice as small. The reason the gap-in-wins grows is that there is more sheer count to move around; the reason the gap-in-percentage shrinks is that the percentage is becoming a more stable estimate of the underlying skill. The longer the season, the less noise, the smaller the &ldquo;real&rdquo; difference you can reliably catch.</p>
+
+<p>This is why, when an analyst tells you a player&rsquo;s .310 batting average over 600 at-bats is meaningfully different from .280, they may be right; and when the same analyst tells you a player&rsquo;s .310 over 60 at-bats is meaningfully different from .280, they are almost certainly wrong. The sample size sets the floor on what you can claim.</p>
+
+<h2 class="sh">Why the Newsletter Needs Both Bayesian and Frequentist Thinking</h2>
+
+<p>Up to now this newsletter has leaned almost entirely Bayesian. Gamma-Poisson priors on pitchers, Beta-Binomial priors on hitters, log5 frameworks for matchup probabilities &mdash; all of those are tools for updating belief in light of new evidence. They answer the question <em>what should I think now?</em></p>
+
+<p>The chi-square is different. It answers a stricter question: <em>given that nothing is actually going on, how often would I see something this dramatic by chance alone?</em> If the answer is &ldquo;less than 5% of the time,&rdquo; we cross a procedural threshold and call the difference significant. That is not the same as believing the difference is real with any particular probability &mdash; a subtlety that Part 4 of this series will live on. For now, both tools belong in the toolkit. Bayesian reasoning tells you what to believe; frequentist reasoning tells you what to be surprised by.</p>
+
+<h2 class="sh">The Takeaway, and What&rsquo;s Next</h2>
+
+<p>You now have everything you need to do a chi-square on your kitchen table. Write down two teams&rsquo; records. Compute the gap in wins. Square it. Multiply by four. Divide by the games-played-per-team. If the answer beats 3.841, the teams are statistically significantly different. If it does not, they are, for our purposes, the same team.</p>
+
+<p>Try it on the 2024 National League race: the Mets finished 89&ndash;73 and the Braves finished 89&ndash;73. Gap = 0. &chi;&sup2; = 0. By every standard a statistician would use, the two teams were <em>identical</em>. Yet the league&rsquo;s tiebreaker rules sent one of them to a different seed. That gap &mdash; between what the math says and what the standings produce &mdash; is the subject of Part 2.</p>
+
+<div class="box">
+<h3>Coming in This Series</h3>
+<p><strong>Part 2 &middot; The Tiebreaker Trap.</strong> What happens when two teams finish dead even? The league&rsquo;s tiebreaker rules &mdash; head-to-head, common opponents, division record &mdash; promise to settle questions that statistics cannot. We&rsquo;ll show, with the 2024 Mets-Braves tie as our case, why those rules are closer to a coin flip in formal dress.</p>
+<p><strong>Part 3 &middot; When the Question Is Three Teams.</strong> What if four wild-card contenders are within six games of each other in late September? The chi-square scales to any number of rows &mdash; it just tells you that <em>someone</em> is different, without yet telling you who. The follow-up tests, and what they cost you.</p>
+<p><strong>Part 4 &middot; The Bayesian Alternative, and the Trap of p &lt; .05.</strong> How the same comparison looks under Beta-Binomial priors. When each framework gives a sharper answer. And the most common mistake working analysts make: stopping at &ldquo;significant&rdquo; without ever asking how big the difference actually is.</p>
+</div>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A reader who works through the math here is invited to compute &chi;&sup2; for any two real teams of interest. The newsletter would be especially curious to see what happens when readers run the test on the 2007 Mets and 2007 Phillies, the 1993 Giants and Braves, or the 2024 Mets and Braves &mdash; three of the closest pennant races of the past forty years, none of which involved teams the chi-square considered different.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Issue No. __ &middot; Significance Series, Part 1: The Chi-Square</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
