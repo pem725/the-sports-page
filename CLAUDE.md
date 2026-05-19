@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 449 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 448 issues remaining of 500
 
 ## Repository Structure
 
@@ -275,8 +275,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 51 issues (#1-51)
-Queue: 2 articles ready (039-mets-bullpen-eighth, 042-plate-discipline-r07)
+Published: 52 issues (#1-52)
+Queue: 7 articles ready (039-mets-bullpen-eighth, 042-plate-discipline-r07, 044-significance-chi-square-part-1, 046-hurricanes-eight-zero, 047-notre-dame-recruiting, 048-pythagorean-mets, 049-misery-index-ny-dc)
 Reserve: 1 evergreen piece
-Goal: 449 issues remaining of 500
-Last published: Issue #51 — "Three Lies, Thirty Dots." (040-three-lies-scatter-plot.html) on May 18, 2026
+Goal: 448 issues remaining of 500
+Last published: Issue #52 — "What the Mets Need from Here Is Not a Miracle. It Is Their Preseason Projection." (043-mets-wild-card-math.html) on May 19, 2026
