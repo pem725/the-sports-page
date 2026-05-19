@@ -1,0 +1,132 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mariners, Cal Raleigh, Slump, Bayesian, Injury
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on a Slump, a Shower, and the Real Story Underneath &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Zero for Thirty-Eight. <em>Then a Shower. Then the IL.</em></h1>
+<div class="deck">Between April 30 and May 12, Seattle Mariners catcher Cal Raleigh went hitless in 38 consecutive at-bats &mdash; the longest slump of his career. Teammate Logan Gilbert convinced him, on the night of the 12th, to shower in full Mariners uniform to wash off the baseball juju. On May 13, Raleigh went 2-for-4 with a walk and three runs scored, the slump broken at last. Two days later, he was on the injured list with an oblique strain. The shower was a great story. The math says the streak was going to end anyway. The math also says the oblique was probably the reason it started.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; MLB &middot; Mariners</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v bad">38</div><div class="l">Hitless ABs, Raleigh&rsquo;s 2026 Career Worst</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">.161</div><div class="l">2026 BA Through 44 G (2nd-worst MLB)</div></div>
+  <div class="sc"><div class="v now">.222</div><div class="l">Career BA, the True Talent Estimate</div></div>
+</div>
+
+<p>Cal Raleigh is, by reputation, a switch-hitting power catcher who carries the kind of career batting line that catchers carry &mdash; modest average, real power, durable enough to start most days behind the plate. His career numbers say he is a true-talent .222 hitter with thirty-home-run pop. Catchers like that are valuable. Catchers like that almost never lead the league in slumps. So what happened between April 30 and May 12, when one of the best young catchers in the American League went thirty-eight consecutive at-bats without recording a base hit, requires a real statistical explanation. Today&rsquo;s issue offers two of them &mdash; one wrong, one probably right.</p>
+
+<h2 class="sh">How Rare Is Thirty-Eight Outs in a Row for a Career .222 Hitter?</h2>
+
+<p>This is the easy math. If Raleigh&rsquo;s true probability of recording a hit in any given at-bat is .222, his probability of <em>not</em> recording one is .778. The probability of stringing 38 consecutive outs is then 0.778 raised to the 38th power.</p>
+
+<div class="box">
+<h3>The Binomial Calculation</h3>
+<div class="math">P(0-for-38 | true BA = .222) = 0.778^38
+                              = 0.0000792
+                              &asymp; 1 in 12,600</div>
+<p>That is the probability of any specific 38-at-bat window producing zero hits. But a season has many such windows &mdash; for a starting catcher with 350 to 500 plate appearances, there are roughly 400 different 38-PA stretches that could potentially be hitless. The probability of seeing <em>at least one</em> 0-for-38 streak across a full season, by random sequencing alone, is therefore much higher:</p>
+<div class="math">P(at least one 0-for-38 streak in 400 windows) &asymp; 1 - (1 - 0.0000792)^400
+                                                  &asymp; 3.1%</div>
+<p>About one in thirty-two seasons. For a ten-year career, the expected number of seasons containing at least one 0-for-38 streak is approximately 0.3 &mdash; meaning a player like Raleigh would, by sheer random sequencing, expect to see one such streak roughly once every three or four full seasons of his career.</p>
+</div>
+
+<p>So an 0-for-38 stretch is rare but not absurd for a career .222 hitter. It is approximately the kind of thing that happens by bad luck alone once or twice in a career. The streak does not, on its own, prove anything is wrong with the player.</p>
+
+<h2 class="sh">The Shower Explanation: Wrong, but Defensible</h2>
+
+<p>On the night of Monday, May 12, after his 38th consecutive hitless at-bat, Raleigh accepted advice from Mariners starter Logan Gilbert: <em>shower in your full uniform to wash off the baseball juju</em>. Raleigh did. On Tuesday, May 13, he singled off Astros reliever Jayden Murray in the seventh inning to end the streak, then added another single in the ninth. The Mariners won. The clubhouse was very pleased.</p>
+
+<p>The shower did not break the streak. What broke the streak is what was going to break it anyway: <strong>regression to the mean</strong>. A career .222 hitter who has gone 0-for-38 still has a per-AB hit probability of approximately .222 in his very next at-bat. The probability he goes 0-for-4 the next day is .778 to the fourth power, or about 37%. The probability he gets at least one hit on the next day is 63%. The probability that he gets two hits and a walk in four PAs &mdash; what he actually did &mdash; is around 11%. Unlikely but not freakish. The slump ending on May 13 was, statistically, the most likely outcome of the next game. A future Methods issue will work through the wider phenomenon of slump-busting superstitions and why they always appear to work; for now, the short version is: <em>regression to the mean is the secret sauce, and the uniform shower is the placebo</em>.</p>
+
+<h2 class="sh">The Oblique Explanation: Probably Right</h2>
+
+<p>Here is where the story turns. On May 15 &mdash; two days after the slump-busting two-hit game &mdash; the Mariners placed Raleigh on the injured list with an oblique strain. The team said he would be shut down for a week before re-evaluation. Oblique strains in hitters are a known and brutal injury: they affect rotational power, contact quality, and bat speed long before they show up in the kind of pain that puts a player on the IL. A hitter playing through a developing oblique strain will typically suppress all three of those things by ten to twenty percent &mdash; enough to turn a .222 hitter into a .140 hitter, the way Raleigh has appeared to be hitting all spring.</p>
+
+<p>Through 44 games this year, Raleigh&rsquo;s slash line was .161 / .243 / .317, with 7 home runs, 26 hits, and 31.5% strikeout rate &mdash; the second-worst batting average in MLB. None of that looks like the player his career numbers describe. It looks, in retrospect, like a hitter playing through an oblique strain that finally announced itself.</p>
+
+<p>The 0-for-38 streak, in this reading, is not a freak event randomly extracted from a normal season. It is the most visible symptom of a slowly-developing injury that affected Raleigh for the entire first six weeks of his year. The shower did not fix it. Regression to the mean briefly papered over it. The IL was the inevitable end.</p>
+
+<div class="pull">
+  <p>&ldquo;The shower made for a great story. The math says the streak was always going to end on its own. The oblique is the explanation the headline writers missed.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on what May actually told us about Cal Raleigh</cite>
+</div>
+
+<h2 class="sh">A Bayesian Update on Raleigh&rsquo;s True 2026 Talent</h2>
+
+<p>For Mariners fans, the question now is: <em>which Cal Raleigh comes back?</em> The .161 hitter from the first six weeks, or the career .222 with power he has been for his whole MLB life? The Bayesian framework gives a clean answer. The prior on Raleigh&rsquo;s true batting talent, built from over 1500 career plate appearances, is well-defined &mdash; roughly a Beta distribution centered at .222 with relatively tight bounds. The 2026 data &mdash; 161 batting average over 130-ish PAs &mdash; updates that prior, but not heavily, because (a) the sample is small, and (b) we now have a structural explanation for why the 2026 data is depressed (the oblique).</p>
+
+<p>The Bayesian posterior, after appropriate discounting of the injury-contaminated 2026 sample, lands somewhere around .215 &mdash; almost indistinguishable from his career number. The fan instinct that &ldquo;Raleigh is the same hitter, just hurt&rdquo; is, in this case, statistically defensible. When he returns from the IL, the betting expectation is a return to the player he has always been, not a continuation of the 2026 line.</p>
+
+<h2 class="sh">What This Costs the Mariners</h2>
+
+<p>Seattle is 23&ndash;26 and sits second in the AL West behind a surprisingly competent Athletics team. With Raleigh out, the Mariners lose their primary catcher and one of their three highest-projected hitters by preseason wOBA. The replacement bats are well below Raleigh&rsquo;s true talent, even at .161. The AL West is not a finished race &mdash; the Rangers, the Astros, and the Angels are all under .500 and look beatable. But every week Raleigh is on the IL is a week the Mariners are competing without one of the four position players who has to be on the field for them to win the division. The good news, for fans, is that the underlying problem appears to be one body part. Once the oblique is right, the bat should follow.</p>
+
+<p>For now, the shower remains a great story. The oblique remains the actual explanation. The newsletter will return to the subject of slump-busting superstitions in a future Methods issue, where we will work through why the placebo always seems to work, the role of regression to the mean in convincing us of false causation, and what Wade Boggs&rsquo; chicken, the Giambi brothers&rsquo; jock straps, and the rally cap have in common with Cal Raleigh&rsquo;s uniform shower.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Issue No. __ &middot; Cal Raleigh, the Slump, the Shower, and the Oblique That Was There All Along</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
