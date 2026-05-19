@@ -1,0 +1,168 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mariners, Jerry Dipoto, Wins Expected, Wild Card, Strategy
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+table.rec .worse td{background:#fef0ec}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on a Decade of Mariners Math &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Jerry Dipoto Said You Play 54% Baseball to Make the Playoffs. <em>The Math Says: Sometimes.</em></h1>
+<div class="deck">On October 3, 2023, Mariners president of baseball operations Jerry Dipoto told reporters his organization operates on a ten-year plan to win 54% of its games. He said this two days after the Mariners missed the playoffs for the 21st time in 22 years. Seattle fans were not amused. The math, however, deserves more than the headline outrage allowed. Dipoto's number is approximately right &mdash; the historical American League Wild Card 3 cutoff has indeed sat around 86 to 89 wins, very close to 54%. The deeper problem is what happens when a team sets that number as its <em>ceiling</em>: the Mariners have hit it on the nose twice in three years and missed the playoffs both times.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; MLB &middot; Mariners</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v" style="color:var(--gold)">.521</div><div class="l">Mariners Win % under Dipoto, 2016&ndash;2025</div></div>
+  <div class="sc"><div class="v now">.540</div><div class="l">Dipoto&rsquo;s Stated Target</div></div>
+  <div class="sc"><div class="v good">2</div><div class="l">Playoff Appearances in 10 Years</div></div>
+</div>
+
+<p>It was, in retrospect, the kind of comment that survives because the math is interesting underneath the public-relations fumble. Jerry Dipoto, the executive in charge of the Seattle Mariners since 2015, sat down in October 2023 two days after his team had missed the playoffs by a single game with 88 wins and explained to a press conference that the organization&rsquo;s goal was, in fact, to <em>win 54 percent of the time</em>. Teams that win 54 percent of the time, he said, almost always make the postseason. Sometimes they go to the World Series. Then he added, in a phrase that has since become local infamy, that operating this way was &ldquo;doing the fanbase a favor.&rdquo; The internet, predictably, did the rest.</p>
+
+<p>Two days later he apologized. The clip remained. The strategy remained. And as of this morning, more than two and a half years after the comment, the question still hangs over Seattle baseball: <em>was Dipoto&rsquo;s math actually right?</em> Today&rsquo;s issue runs the audit.</p>
+
+<h2 class="sh">The Decade of Dipoto, Year by Year</h2>
+
+<table class="rec">
+  <thead>
+    <tr><th>Year</th><th>W&ndash;L</th><th>Win %</th><th>Postseason</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2016</td><td class="mono">86&ndash;76</td><td class="mono">.531</td><td>Missed</td></tr>
+    <tr><td>2017</td><td class="mono">78&ndash;84</td><td class="mono">.481</td><td>Missed</td></tr>
+    <tr><td>2018</td><td class="mono">89&ndash;73</td><td class="mono">.549</td><td>Missed</td></tr>
+    <tr class="worse"><td>2019</td><td class="mono">68&ndash;94</td><td class="mono">.420</td><td>Rebuild year</td></tr>
+    <tr class="worse"><td>2020</td><td class="mono">27&ndash;33</td><td class="mono">.450</td><td>COVID short season</td></tr>
+    <tr><td>2021</td><td class="mono">90&ndash;72</td><td class="mono">.556</td><td>Missed</td></tr>
+    <tr class="hl"><td>2022</td><td class="mono">90&ndash;72</td><td class="mono">.556</td><td><strong>WC, lost ALDS to Astros</strong></td></tr>
+    <tr><td>2023</td><td class="mono">88&ndash;74</td><td class="mono">.543</td><td>Missed by 1 game</td></tr>
+    <tr><td>2024</td><td class="mono">85&ndash;77</td><td class="mono">.525</td><td>Missed by 1 game</td></tr>
+    <tr class="hl"><td>2025</td><td class="mono">90&ndash;72</td><td class="mono">.556</td><td><strong>Won ALDS, lost ALCS in 7</strong></td></tr>
+  </tbody>
+</table>
+
+<p>Across the full ten-year window, the Mariners under Dipoto have gone 791&ndash;727. The win percentage is .521. The 54% target has not, in raw cumulative terms, been hit. When you exclude the explicit 2019 rebuild and the 60-game 2020 sample, the remaining eight years yield 696&ndash;600, a win percentage of <strong>.537</strong> &mdash; near the target but still about three points shy. The strategy, even on charitable accounting, has delivered a team that wins approximately half a game per year fewer than what its own front office said it was aiming for.</p>
+
+<h2 class="sh">Was 54% the Right Number to Target?</h2>
+
+<p>Set aside whether the Mariners actually <em>achieved</em> 54%, and consider whether 54% was the right target in the first place. The arithmetic is easy: 54% of 162 games is 87.5, so a 54-percent team wins approximately 87 or 88 games over a full season.</p>
+
+<p>What does the American League Wild Card 3 cutoff actually require? In the three years since the third wild card was added (2022 expansion), the AL WC3 has been claimed by teams winning <strong>86, 90, and 87 games</strong> respectively. The average is right around 87.7, or 54.1 percent of 162. <em>Dipoto&rsquo;s target number was, statistically, exactly the threshold that the American League playoff field has actually demanded.</em></p>
+
+<div class="box">
+<h3>The 54% Number, Decoded</h3>
+<div class="math">54% of 162 games  =  87.5 wins
+
+Recent AL WC3 cutoffs:
+  2022:  86 wins  (Tampa Bay Rays)
+  2023:  90 wins  (Houston Astros, division winner)
+  2024:  89 wins  (Detroit Tigers)
+  Mean: 88.3 wins  =  54.5%
+
+The Dipoto target (54%) is functionally identical to
+the historical AL WC3 line. The math is not wrong.
+
+What's wrong is treating it as a target rather than a floor.</div>
+</div>
+
+<p>Dipoto, on the math itself, was right. A team that consistently wins 54 percent of its games is, on average, a playoff team. The press-conference outrage was earned for tone but not for content &mdash; the executive said the quiet part loud about how mid-payroll franchises actually approach the postseason in the three-wild-card era, and the math behind it is unassailable on average.</p>
+
+<h2 class="sh">The Problem with Targeting an Average</h2>
+
+<p>Here is where the math gets uncomfortable. Targeting the average of the WC3 cutoff means landing at the cutoff <em>half the time</em>. When you land exactly at the cutoff, you are competing with multiple other teams stacked at exactly the same record &mdash; and tiebreakers, as Issue #45 of this newsletter walked through, are statistical coin flips. The Mariners&rsquo; recent history is the case study:</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>Year</th><th>Mariners Wins</th><th>AL WC3 Cutoff</th><th>Outcome</th></tr>
+  </thead>
+  <tbody>
+    <tr class="hl"><td>2022</td><td class="mono">90</td><td class="mono">86</td><td class="mono">IN (4 games clear)</td></tr>
+    <tr><td>2023</td><td class="mono">88</td><td class="mono">90</td><td class="mono">OUT (missed by 2)</td></tr>
+    <tr><td>2024</td><td class="mono">85</td><td class="mono">89</td><td class="mono">OUT (missed by 4)</td></tr>
+    <tr class="hl"><td>2025</td><td class="mono">90</td><td class="mono">87</td><td class="mono">IN (3 games clear, won division)</td></tr>
+  </tbody>
+</table>
+
+<p>The pattern is stark. When the Mariners hit 90 wins, they made it both times. When they hit between 85 and 88 wins &mdash; in the exact band the 54% target produces &mdash; they missed both times. The strategy of building a team that wins 87 to 88 games per year does not produce a playoff team half the time. It produces a playoff team in years when the cutoff happens to land at 86 or 87, and a one-game miss in years when the cutoff lands at 89 or 90. Across the recent four-season sample, the success rate of Dipoto&rsquo;s strategy is exactly 50%.</p>
+
+<div class="pull">
+  <p>&ldquo;Targeting the average of the wild-card cutoff guarantees that you will miss the playoffs roughly half the time. Targeting <em>five percent above</em> the average is what actually makes a franchise reliably postseason-bound.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on why ceilings matter more than averages</cite>
+</div>
+
+<h2 class="sh">What Dipoto Should Have Said</h2>
+
+<p>The substantive critique is not that Dipoto&rsquo;s target was too low. It is that the target was framed as a target rather than a floor. A franchise that wants to make the playoffs reliably needs to build the kind of team that wins 90+ games &mdash; about 56 percent. A franchise that builds for exactly 88 wins is building a team whose modal outcome is a 50/50 coin flip on October baseball. Dipoto&rsquo;s ten-year average of .521 is well below either target, which is why the Mariners are 2-for-10 on playoff appearances rather than 5-for-10. The strategy, as actually executed, has been a 52-percent strategy that happens to have hit 90 wins twice through favorable variance.</p>
+
+<p>The Mariners' 2025 division title and ALCS appearance, the on-the-cusp 2026 with Cal Raleigh now on the IL, and the 90-win 2021 and 2022 seasons are the parts of the Dipoto record that vindicate the framework. The 2023 and 2024 one-game misses are the parts that show its fragility. Both are real. Neither cancels the other.</p>
+
+<h2 class="sh">The 2026 Snapshot</h2>
+
+<p>As of this morning, the Mariners are 23&ndash;26 and second in the AL West behind a surprisingly competent Athletics club at 27&ndash;22. The math, applied honestly, says the Mariners need to play .560 baseball over their remaining 113 games to clear 88 wins. That is achievable but not guaranteed &mdash; particularly with Raleigh on the IL through at least early June. The 2026 season will, if the pattern of the past four years holds, end either at 90 wins (in, comfortably) or at 86&ndash;87 (out, narrowly). Forty-nine games is too small a sample to know which side of the line the team will land on. The 54% target, applied as faithfully as it has been, will give Mariners fans the answer in October, the same way it has given them every recent year&rsquo;s answer in October: by a margin smaller than a single weekend series.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A reader who roots for any franchise operating with a similar middle-tier-payroll constraint &mdash; the Twins, the Brewers, the Guardians, the Rays &mdash; is invited to run the same exercise on their team&rsquo;s last decade. The result is almost always similar: targeting the average produces a coin flip on October; targeting 90 wins is what makes a contender. The math is the same in every market. Only the spending decisions differ.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Issue No. __ &middot; Dipoto, the 54% Strategy, and What Targeting an Average Actually Buys You</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
