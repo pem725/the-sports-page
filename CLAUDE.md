@@ -248,6 +248,11 @@ These are the days the calendar bends around. Each warrants its own issue, plann
 - **World Series Game 1** — series preview with log5/Bayesian projection.
 - **CFB Rivalry Week** (Thanksgiving) — Notre Dame's most-watched stretch; statistical retrospective on the rivalries the Irish play (USC, Stanford, Navy, plus current ACC/SEC matchups).
 - **CFP National Championship** — annual title piece.
+- **Pre-Season Simulation (recurring genre, one per sport per year)** — drops the week before each sport's regular season starts. Takes consensus pre-season expectations (Vegas win totals or equivalent) as the prior, applies a just-noticeable-difference threshold, and forecasts every regular-season game deterministically (or as a coin flip if the gap is within JND). Outputs: expected standings, playoff seeds, championship pick. The forecast is *intentionally* honest about uncertainty — most games near the JND threshold are explicit coin flips, not forced predictions. Sunday Editions grade weekly against this baseline. Schedule:
+  - **NFL Pre-Season Sim** — last weekend of August (before Week 1 kickoff)
+  - **CFB Pre-Season Sim** — last weekend of August (before Week 0/1)
+  - **MLB Pre-Season Sim** — MLB Opening Day (bundles with newsletter-anniversary issue)
+  - Methodology established in the "Pre-Season Simulation Framework" Methods piece. Use that as the recipe each time.
 
 ### Editorial guidance on topical relevance
 

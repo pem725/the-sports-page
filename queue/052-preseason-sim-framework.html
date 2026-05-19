@@ -1,0 +1,201 @@
+<!-- PUBLISH-META
+topic: Methods
+tags: Methods, NFL:nfl, MLB:mlb, CFB:cfb, Pre-Season Simulation, Forecasting, JND
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+table.rec .worse td{background:#fef0ec}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on the Discipline of Being Wrong on Purpose &middot; Methods, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Pre-Season Simulation: <em>A Framework for Forecasts That Are Honestly Wrong.</em></h1>
+<div class="deck">Most pre-season predictions hide their uncertainty in fake precision. ESPN's experts will rank thirty-two NFL teams to one decimal place; nobody can defend the difference between the seventeenth and eighteenth ranked team. Today we introduce a recurring format &mdash; the <strong>Pre-Season Simulation</strong> &mdash; that goes the other way. It uses consensus pre-season expectations as the prior, applies a just-noticeable-difference threshold cribbed from the Significance Series, and forecasts every regular-season game by one of two rules: <em>higher-projected team wins</em>, or <em>coin flip</em>. There is no middle ground, on purpose. The point is to lock in only what the data justifies and to explicitly mark the games that pre-season expectations cannot tell us about. The first sport up: NFL, in late August.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; Methods &middot; Forecasting</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v now">272</div><div class="l">NFL Regular-Season Games / Year</div></div>
+  <div class="sc"><div class="v good">2.0</div><div class="l">Win-Total Gap for Lock (NFL)</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">~40%</div><div class="l">Games Expected to Be Coin Flips</div></div>
+</div>
+
+<p>Forecasting a full season of professional sports is, in the only way that matters, impossible. Injuries happen. Coordinators get hired and fired in October. Quarterbacks tear ACLs. A rookie defensive back has a Pro Bowl year nobody saw coming. Any model that pretends to predict an exact win-loss record team by team is asking the reader to trust a precision it has no right to.</p>
+
+<p>And yet some pre-season forecasting is genuinely useful. A team projected by consensus at 11 wins is meaningfully different from a team projected at 5. The matchup between them, all else equal, has a clear favorite. The forecasting problem is not whether forecasts are possible; it is which forecasts are <em>defensible</em> and which are theater. Today's issue introduces a framework that draws that line cleanly.</p>
+
+<h2 class="sh">The Framework, in Four Steps</h2>
+
+<div class="box">
+<h3>The Pre-Season Simulation Recipe</h3>
+<p>Given a sport's regular-season schedule and a public consensus pre-season ranking, apply the following procedure to every game:</p>
+<div class="math">1. Use Vegas pre-season win totals (or equivalent public consensus) as the prior
+   for each team's expected wins over the full regular season.
+
+2. For each individual game between Home and Away teams:
+     effective_home_total = home_win_total + home_field_adjustment
+       (HFA: +0.5 win-equivalent for NFL, +0.10 win-pct for MLB/CFB)
+     gap = effective_home_total - away_win_total
+
+3. Apply the just-noticeable-difference threshold (T):
+     NFL:  T = 2.0 wins (about 11.8% win-pct gap on a 17-game schedule)
+     MLB:  T = 12 wins  (about 7.4% win-pct gap on a 162-game schedule)
+     CFB:  T = 1.5 wins (about 12.5% win-pct gap on a 12-game schedule)
+
+4. Game prediction:
+     If gap >  T  →  HOME team wins  (locked)
+     If gap < -T  →  AWAY team wins  (locked)
+     If |gap| ≤ T →  COIN FLIP       (explicitly 50/50, not predicted)</div>
+<p>The output of this procedure is a list of locked wins, locked losses, and coin-flip games for every team. Summing the locked wins gives a floor; adding half the coin flips gives the expected total. The standings projection is the rank-ordered list of these expected totals.</p>
+</div>
+
+<h2 class="sh">A Worked Example</h2>
+
+<p>Consider two hypothetical 2026 NFL matchups, using the kind of pre-season win totals Vegas typically publishes in mid-summer:</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>Matchup</th><th>Pre-Season Win Totals</th><th>Home Field</th><th>Effective Gap</th><th>Verdict</th></tr>
+  </thead>
+  <tbody>
+    <tr class="hl">
+      <td>Bills (away) at Jets (home)</td>
+      <td class="mono">Bills 10.5, Jets 7.5</td>
+      <td class="mono">Jets +0.5 &rarr; 8.0</td>
+      <td class="mono">10.5 &minus; 8.0 = +2.5 (Bills)</td>
+      <td class="mono"><strong>BILLS WIN</strong></td>
+    </tr>
+    <tr>
+      <td>Chiefs (away) at Bills (home)</td>
+      <td class="mono">Chiefs 10.0, Bills 10.5</td>
+      <td class="mono">Bills +0.5 &rarr; 11.0</td>
+      <td class="mono">11.0 &minus; 10.0 = +1.0 (Bills)</td>
+      <td class="mono"><strong>COIN FLIP</strong></td>
+    </tr>
+    <tr class="worse">
+      <td>Jaguars (away) at Chiefs (home)</td>
+      <td class="mono">Jaguars 7.0, Chiefs 10.0</td>
+      <td class="mono">Chiefs +0.5 &rarr; 10.5</td>
+      <td class="mono">10.5 &minus; 7.0 = +3.5 (Chiefs)</td>
+      <td class="mono"><strong>CHIEFS WIN</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Read the middle row carefully. The Chiefs and the Bills are <em>both</em> projected as 10-win teams. Vegas does not know which one is better. The Pre-Season Simulation does not pretend to know either. It logs a coin flip and moves on. Over a full 272-game NFL schedule, we expect roughly forty percent of all matchups to fall into this band &mdash; not predicted, not avoided, just honestly flagged.</p>
+
+<h2 class="sh">Why the JND Threshold Is the Whole Point</h2>
+
+<p>This newsletter's Significance Series (Part 1, the chi-square primer) established a principle: two teams are not statistically distinguishable until the gap in their performance exceeds a sample-dependent number of games. For a 162-game baseball season, that number is 13 wins. For a 17-game NFL season, the directly analogous chi-square threshold is closer to <em>5 wins</em> &mdash; meaning anything tighter than 11-6 vs 6-11 is not statistically significant after the fact.</p>
+
+<p>The Pre-Season Simulation operates on the same logic in reverse. Before the season, we do not yet have observed records &mdash; we have <em>projected</em> records. The question becomes: how big a projected-record gap is large enough to lock in a matchup prediction? The threshold of 2.0 wins on a 17-game NFL schedule is deliberately tighter than the full-season JND of 5 wins because pre-season projections are themselves uncertain. A 2.0-win gap in projections is roughly the smallest gap at which the projection itself is meaningfully different. Below that, two teams are projected as essentially the same; whatever happens in their actual matchup will be more about variance than about pre-season skill.</p>
+
+<p>The MLB threshold is set proportionally for the longer schedule. The CFB threshold accounts for the much shorter regular season (12 games) and the much wider talent spread across opponents.</p>
+
+<div class="pull">
+  <p>&ldquo;A model that predicts everything is theater. A model that predicts only what it can defend, and explicitly flags the rest, is honest. The Pre-Season Simulation is built around that distinction.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on the discipline of admitting uncertainty</cite>
+</div>
+
+<h2 class="sh">What This Framework Does Not Try to Capture</h2>
+
+<p>This is a deliberately narrow tool. It does not model in-season injuries (because by definition they happen after the simulation runs). It does not capture mid-season coaching changes, breakout rookies, late trade-deadline acquisitions, or hot streaks. It does not weight by recent performance because there is no recent performance yet. It treats every game on the schedule as a one-shot draw against the pre-season prior, nothing more.</p>
+
+<p>That sounds like a lot of weakness. It is, instead, the source of the framework's strength: by capturing only the pre-season expectations, the simulation produces a clean baseline that Sunday Editions can grade weekly against reality. When the actual season diverges from the simulation, the divergence is informative &mdash; it tells us where the pre-season consensus was wrong and which surprises were structural versus random.</p>
+
+<h2 class="sh">When Each Sport's Simulation Drops</h2>
+
+<table class="rec">
+  <thead>
+    <tr><th>Sport</th><th>Pre-Season Sim Drop Date</th><th>What It Anchors</th></tr>
+  </thead>
+  <tbody>
+    <tr class="hl">
+      <td><strong>NFL</strong></td>
+      <td class="mono">Last weekend of August 2026 (before Week 1 kickoff)</td>
+      <td class="mono">Full 272-game regular season, playoff seeds, Super Bowl pick</td>
+    </tr>
+    <tr>
+      <td><strong>College Football</strong></td>
+      <td class="mono">Last weekend of August 2026 (before Week 0/1)</td>
+      <td class="mono">Conference race projections, CFP top 12 forecast, championship pick</td>
+    </tr>
+    <tr class="hl">
+      <td><strong>MLB</strong></td>
+      <td class="mono">MLB Opening Day, March 2027 (newsletter anniversary)</td>
+      <td class="mono">Full 2430-game schedule, division winners, wild cards, WS pick</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each Pre-Season Sim becomes the standing reference document for that season. Every Sunday Edition during the season will grade actual results against the simulation. By the All-Star Break of MLB, the Bye Week of NFL teams, the end of CFB regular season, the simulation will have generated either credit (where it called things right) or honest visible misses (where it did not). Either outcome is useful. Hidden uncertainty is the only enemy.</p>
+
+<h2 class="sh">The Honest Close</h2>
+
+<p>The first principle of forecasting is to know which of your predictions are defensible and which are theater. The Pre-Season Simulation framework was designed to separate the two as cleanly as the data allows. About forty percent of all NFL matchups, by the framework's own estimate, will be flagged as coin flips. The forty percent is not a failure of the model. It is the model telling the truth.</p>
+
+<p>By late August, when the 2026 NFL Pre-Season Simulation drops, this newsletter will publish a complete game-by-game projection of all 272 regular-season games, expected division standings, expected playoff seeds, and a Super Bowl pick. About a hundred games will be locked. About a hundred and ten will be coin flips. The remaining seventy will fall into the gray band where one team is favored but the projection is shaky. We will write all of it down. We will publish it. And every Sunday from Week 1 onward, this newsletter will grade itself in public against what it claimed in August. That is the entire point.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">The framework itself is sport-agnostic. Readers who want to apply it to other leagues &mdash; NHL, NBA, English Premier League, Champions League &mdash; can use the same recipe with the appropriate JND threshold. The arithmetic is portable. The discipline of being wrong on purpose is the part that travels.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Issue No. __ &middot; The Pre-Season Simulation Framework, Established</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
