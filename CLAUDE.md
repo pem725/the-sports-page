@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 447 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 446 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 53 issues (#1-53)
-Queue: 11 articles ready (039-mets-bullpen-eighth, 044-significance-chi-square-part-1, 045-significance-tiebreaker-part-2, 046-hurricanes-eight-zero, 047-notre-dame-recruiting, 048-pythagorean-mets, 049-misery-index-ny-dc, 051-baseruns-mets, 052-preseason-sim-framework, 053-raleigh-slump-shower-oblique, 054-mariners-54-percent)
+Published: 54 issues (#1-54)
+Queue: 11 articles ready (044-significance-chi-square-part-1, 045-significance-tiebreaker-part-2, 046-hurricanes-eight-zero, 047-notre-dame-recruiting, 048-pythagorean-mets, 049-misery-index-ny-dc, 051-baseruns-mets, 052-preseason-sim-framework, 053-raleigh-slump-shower-oblique, 054-mariners-54-percent, 055-superstition-baseball-math)
 Reserve: 1 evergreen piece
-Goal: 447 issues remaining of 500
-Last published: Issue #53 — "Do Patient Teams Win More Games? Chris Kelly Asks. The Math Says: Not Really." (042-plate-discipline-r07.html) on May 20, 2026
+Goal: 446 issues remaining of 500
+Last published: Issue #54 — "The Mets Bought Two Closers. Both Are Broken." (039-mets-bullpen-eighth.html) on May 21, 2026
