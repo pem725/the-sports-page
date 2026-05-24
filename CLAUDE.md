@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 444 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 443 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 56 issues (#1-56)
+Published: 57 issues (#1-57)
 Queue: 9 articles ready (045-significance-tiebreaker-part-2, 047-notre-dame-recruiting, 048-pythagorean-mets, 049-misery-index-ny-dc, 051-baseruns-mets, 052-preseason-sim-framework, 053-raleigh-slump-shower-oblique, 054-mariners-54-percent, 055-superstition-baseball-math)
 Reserve: 1 evergreen piece
-Goal: 444 issues remaining of 500
-Last published: Issue #56 — "Carolina Is 8–0 in the Playoffs. That Has Never Happened in This Format Before." (046-hurricanes-eight-zero.html) on May 23, 2026
+Goal: 443 issues remaining of 500
+Last published: Sunday Edition No. 007 — "The Mets Are 22–29. The Hurricanes Lost a Game. Memorial Day Weekend." (sunday-007.html) on May 24, 2026
