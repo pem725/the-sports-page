@@ -2,10 +2,14 @@ name: Autopublish Daily Issue
 
 on:
   schedule:
-    # 4:30am ET = 8:30 UTC (EST) or 8:30 UTC (EDT is UTC-4, so 4:30am EDT = 8:30 UTC)
-    # During EDT (Mar-Nov): fires at 4:30am ET
-    # During EST (Nov-Mar): fires at 3:30am ET (one hour early — acceptable)
-    - cron: '30 8 * * 1-6'   # Mon-Sat only, skip Sunday
+    # Primary: 4:30am ET = 8:30 UTC
+    # Backup:  5:30am ET = 9:30 UTC (catches GitHub cron misses)
+    # The script's already_published_today() guard prevents double-publishes,
+    # so running twice is safe — the second invocation exits immediately.
+    # During EDT (Mar-Nov): fires at 4:30am / 5:30am ET
+    # During EST (Nov-Mar): fires at 3:30am / 4:30am ET (one hour early — acceptable)
+    - cron: '30 8 * * 1-6'   # Mon-Sat primary
+    - cron: '30 9 * * 1-6'   # Mon-Sat backup
 
   # Manual trigger from GitHub UI (Actions tab → Run workflow)
   workflow_dispatch:
