@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 442 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 441 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 58 issues (#1-58)
-Queue: 8 articles ready (045-significance-tiebreaker-part-2, 048-pythagorean-mets, 049-misery-index-ny-dc, 051-baseruns-mets, 052-preseason-sim-framework, 053-raleigh-slump-shower-oblique, 054-mariners-54-percent, 055-superstition-baseball-math)
+Published: 59 issues (#1-59)
+Queue: 7 articles ready (045-significance-tiebreaker-part-2, 049-misery-index-ny-dc, 051-baseruns-mets, 052-preseason-sim-framework, 053-raleigh-slump-shower-oblique, 054-mariners-54-percent, 055-superstition-baseball-math)
 Reserve: 1 evergreen piece
-Goal: 442 issues remaining of 500
-Last published: Issue #58 — "Marcus Freeman Won the Portal. Then He Started On 2027." (047-notre-dame-recruiting.html) on May 25, 2026
+Goal: 441 issues remaining of 500
+Last published: Issue #59 — "Bill James Says the Mets Should Be 22–24. The Bigger Story Is What That Means Over 162." (048-pythagorean-mets.html) on May 26, 2026
