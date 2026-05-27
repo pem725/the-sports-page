@@ -103,6 +103,71 @@ Where:
 
 <p>The thin-team reading is the one that fits most of the evidence. The Mets are 23rd in MLB in runs scored. They are 22nd in team OPS. They are 26th in slugging percentage. Their hits-per-game (8.1) and walks-per-game (3.2) place them in the bottom third of the league on both. BaseRuns, plugged into those components, returns a number very close to 176. The Mets are scoring roughly what they should be scoring, given how they are actually playing. The 76-win pace projected by Pythagorean is therefore not a luck-driven mirage. It is a thin offense returning its honest expected output.</p>
 
+<div class="chart">
+  <div class="chart-cap">Mets Through 46 Games &mdash; Three Estimators, One Scale (Y-Axis Starts at Zero)</div>
+  <svg viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- X-axis baseline -->
+    <line x1="120" y1="170" x2="710" y2="170" stroke="#1a1208" stroke-width="1.5"/>
+    <!-- X-axis tick marks -->
+    <line x1="120" y1="167" x2="120" y2="173" stroke="#1a1208" stroke-width="1"/>
+    <line x1="248" y1="167" x2="248" y2="173" stroke="#1a1208" stroke-width="1"/>
+    <line x1="377" y1="167" x2="377" y2="173" stroke="#1a1208" stroke-width="1"/>
+    <line x1="505" y1="167" x2="505" y2="173" stroke="#1a1208" stroke-width="1"/>
+    <line x1="633" y1="167" x2="633" y2="173" stroke="#1a1208" stroke-width="1"/>
+    <line x1="710" y1="167" x2="710" y2="173" stroke="#1a1208" stroke-width="1"/>
+    <!-- X-axis labels -->
+    <text x="120" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">0</text>
+    <text x="248" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">10</text>
+    <text x="377" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">20</text>
+    <text x="505" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">30</text>
+    <text x="633" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">40</text>
+    <text x="710" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">46</text>
+    <text x="415" y="210" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9">WINS THROUGH 46 GAMES</text>
+
+    <!-- Wild Card Pace reference line: 25 W at x=441 -->
+    <line x1="441" y1="22" x2="441" y2="165" stroke="#c9962a" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>
+    <text x="441" y="16" text-anchor="middle" fill="#c9962a" font-size="8" font-weight="600">WC PACE: 25 W</text>
+
+    <!-- Row labels (left of chart) -->
+    <text x="115" y="53" text-anchor="end" fill="#1a1208" font-size="9" font-weight="700">ACTUAL</text>
+    <text x="115" y="65" text-anchor="end" fill="#6b5e4a" font-size="7">20&ndash;26, .435</text>
+    <text x="115" y="103" text-anchor="end" fill="#1a1208" font-size="9" font-weight="700">PYTHAGOREAN</text>
+    <text x="115" y="115" text-anchor="end" fill="#6b5e4a" font-size="7">22&ndash;24, .478</text>
+    <text x="115" y="148" text-anchor="end" fill="#1a1208" font-size="9" font-weight="700">BASERUNS</text>
+    <text x="115" y="160" text-anchor="end" fill="#6b5e4a" font-size="7">~22 W, .478</text>
+
+    <!-- Row 1: Actual = 20 wins (rust) -->
+    <line x1="120" y1="52" x2="377" y2="52" stroke="#b83a1e" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="377" cy="52" r="6" fill="#b83a1e"/>
+    <text x="392" y="56" fill="#b83a1e" font-size="11" font-weight="700">20</text>
+
+    <!-- Row 2: Pythagorean = 22 wins (steel blue) -->
+    <line x1="120" y1="102" x2="402" y2="102" stroke="#2c4a6e" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="402" cy="102" r="6" fill="#2c4a6e"/>
+    <text x="417" y="106" fill="#2c4a6e" font-size="11" font-weight="700">22</text>
+
+    <!-- Row 3: BaseRuns = ~22 wins (green) -->
+    <line x1="120" y1="148" x2="402" y2="148" stroke="#2a6e3f" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="402" cy="148" r="6" fill="#2a6e3f"/>
+    <text x="417" y="152" fill="#2a6e3f" font-size="11" font-weight="700">~22</text>
+
+    <!-- Annotation: 2-win gap between Actual and Pythagorean -->
+    <line x1="384" y1="60" x2="384" y2="94" stroke="#6b5e4a" stroke-width="0.8" stroke-dasharray="2,2"/>
+    <line x1="396" y1="60" x2="396" y2="94" stroke="#6b5e4a" stroke-width="0.8" stroke-dasharray="2,2"/>
+    <text x="390" y="80" text-anchor="middle" fill="#6b5e4a" font-size="8" font-style="italic">&minus;2 W</text>
+
+    <!-- Annotation: Pythagorean-BaseRuns convergence -->
+    <line x1="410" y1="110" x2="410" y2="140" stroke="#6b5e4a" stroke-width="0.8" stroke-dasharray="2,2"/>
+    <text x="422" y="128" fill="#6b5e4a" font-size="7" font-style="italic">converge: no</text>
+    <text x="422" y="137" fill="#6b5e4a" font-size="7" font-style="italic">sequencing luck</text>
+
+    <!-- Annotation: gap to WC pace -->
+    <text x="455" y="42" fill="#c9962a" font-size="7" font-style="italic">3&ndash;5 wins</text>
+    <text x="455" y="51" fill="#c9962a" font-size="7" font-style="italic">below pace</text>
+  </svg>
+  <div class="chart-note">Horizontal lollipop chart. X-axis starts at zero and runs the full 46 games. All three estimators plotted on the same honest scale. The gold dashed line marks the 25-win pace required for a third NL wild card. Pythagorean and BaseRuns converge at ~22 wins, confirming no hidden sequencing luck. The 2-win gap to the actual record (20) is close-game variance &mdash; modest and within historical norms. The 3&ndash;5 win gap to the wild-card pace is structural, not luck-driven.</div>
+</div>
+
 <div class="pull">
   <p>&ldquo;Pythagorean catches one kind of luck. BaseRuns catches a deeper kind. When both formulas agree that a team is mediocre, the team is, with high probability, mediocre. The cavalry is not coming from sequencing regression alone.&rdquo;</p>
   <cite>&mdash; The Sports Page, on the convergence of two estimators</cite>
