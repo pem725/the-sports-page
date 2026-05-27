@@ -104,68 +104,130 @@ Where:
 <p>The thin-team reading is the one that fits most of the evidence. The Mets are 23rd in MLB in runs scored. They are 22nd in team OPS. They are 26th in slugging percentage. Their hits-per-game (8.1) and walks-per-game (3.2) place them in the bottom third of the league on both. BaseRuns, plugged into those components, returns a number very close to 176. The Mets are scoring roughly what they should be scoring, given how they are actually playing. The 76-win pace projected by Pythagorean is therefore not a luck-driven mirage. It is a thin offense returning its honest expected output.</p>
 
 <div class="chart">
-  <div class="chart-cap">Mets Through 46 Games &mdash; Three Estimators, One Scale (Y-Axis Starts at Zero)</div>
-  <svg viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
-    <!-- X-axis baseline -->
-    <line x1="120" y1="170" x2="710" y2="170" stroke="#1a1208" stroke-width="1.5"/>
-    <!-- X-axis tick marks -->
-    <line x1="120" y1="167" x2="120" y2="173" stroke="#1a1208" stroke-width="1"/>
-    <line x1="248" y1="167" x2="248" y2="173" stroke="#1a1208" stroke-width="1"/>
-    <line x1="377" y1="167" x2="377" y2="173" stroke="#1a1208" stroke-width="1"/>
-    <line x1="505" y1="167" x2="505" y2="173" stroke="#1a1208" stroke-width="1"/>
-    <line x1="633" y1="167" x2="633" y2="173" stroke="#1a1208" stroke-width="1"/>
-    <line x1="710" y1="167" x2="710" y2="173" stroke="#1a1208" stroke-width="1"/>
-    <!-- X-axis labels -->
-    <text x="120" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">0</text>
-    <text x="248" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">10</text>
-    <text x="377" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">20</text>
-    <text x="505" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">30</text>
-    <text x="633" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">40</text>
-    <text x="710" y="188" text-anchor="middle" fill="#6b5e4a" font-size="9">46</text>
-    <text x="415" y="210" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9">WINS THROUGH 46 GAMES</text>
+  <div class="chart-cap">2025 MLB &mdash; Every Team&rsquo;s Pythagorean Expected Wins vs. Actual Wins (Full Season)</div>
+  <svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- Axes -->
+    <line x1="80" y1="430" x2="80" y2="30" stroke="#1a1208" stroke-width="1.5"/>
+    <line x1="80" y1="430" x2="710" y2="430" stroke="#1a1208" stroke-width="1.5"/>
 
-    <!-- Wild Card Pace reference line: 25 W at x=441 -->
-    <line x1="441" y1="22" x2="441" y2="165" stroke="#c9962a" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>
-    <text x="441" y="16" text-anchor="middle" fill="#c9962a" font-size="8" font-weight="600">WC PACE: 25 W</text>
+    <!-- Y-axis ticks + labels (Actual Wins) -->
+    <line x1="76" y1="399" x2="80" y2="399" stroke="#1a1208" stroke-width="1"/><text x="72" y="403" text-anchor="end" fill="#6b5e4a" font-size="9">40</text>
+    <line x1="76" y1="338" x2="80" y2="338" stroke="#1a1208" stroke-width="1"/><text x="72" y="342" text-anchor="end" fill="#6b5e4a" font-size="9">50</text>
+    <line x1="76" y1="276" x2="80" y2="276" stroke="#1a1208" stroke-width="1"/><text x="72" y="280" text-anchor="end" fill="#6b5e4a" font-size="9">60</text>
+    <line x1="76" y1="215" x2="80" y2="215" stroke="#1a1208" stroke-width="1"/><text x="72" y="219" text-anchor="end" fill="#6b5e4a" font-size="9">70</text>
+    <line x1="76" y1="153" x2="80" y2="153" stroke="#1a1208" stroke-width="1"/><text x="72" y="157" text-anchor="end" fill="#6b5e4a" font-size="9">80</text>
+    <line x1="76" y1="92" x2="80" y2="92" stroke="#1a1208" stroke-width="1"/><text x="72" y="96" text-anchor="end" fill="#6b5e4a" font-size="9">90</text>
+    <line x1="76" y1="30" x2="80" y2="30" stroke="#1a1208" stroke-width="1"/><text x="72" y="34" text-anchor="end" fill="#6b5e4a" font-size="9">100</text>
+    <text x="22" y="230" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9" transform="rotate(-90,22,230)">ACTUAL WINS</text>
 
-    <!-- Row labels (left of chart) -->
-    <text x="115" y="53" text-anchor="end" fill="#1a1208" font-size="9" font-weight="700">ACTUAL</text>
-    <text x="115" y="65" text-anchor="end" fill="#6b5e4a" font-size="7">20&ndash;26, .435</text>
-    <text x="115" y="103" text-anchor="end" fill="#1a1208" font-size="9" font-weight="700">PYTHAGOREAN</text>
-    <text x="115" y="115" text-anchor="end" fill="#6b5e4a" font-size="7">22&ndash;24, .478</text>
-    <text x="115" y="148" text-anchor="end" fill="#1a1208" font-size="9" font-weight="700">BASERUNS</text>
-    <text x="115" y="160" text-anchor="end" fill="#6b5e4a" font-size="7">~22 W, .478</text>
+    <!-- X-axis ticks + labels (Pythagorean Wins) -->
+    <line x1="129" y1="430" x2="129" y2="434" stroke="#1a1208" stroke-width="1"/><text x="129" y="448" text-anchor="middle" fill="#6b5e4a" font-size="9">40</text>
+    <line x1="225" y1="430" x2="225" y2="434" stroke="#1a1208" stroke-width="1"/><text x="225" y="448" text-anchor="middle" fill="#6b5e4a" font-size="9">50</text>
+    <line x1="322" y1="430" x2="322" y2="434" stroke="#1a1208" stroke-width="1"/><text x="322" y="448" text-anchor="middle" fill="#6b5e4a" font-size="9">60</text>
+    <line x1="419" y1="430" x2="419" y2="434" stroke="#1a1208" stroke-width="1"/><text x="419" y="448" text-anchor="middle" fill="#6b5e4a" font-size="9">70</text>
+    <line x1="516" y1="430" x2="516" y2="434" stroke="#1a1208" stroke-width="1"/><text x="516" y="448" text-anchor="middle" fill="#6b5e4a" font-size="9">80</text>
+    <line x1="613" y1="430" x2="613" y2="434" stroke="#1a1208" stroke-width="1"/><text x="613" y="448" text-anchor="middle" fill="#6b5e4a" font-size="9">90</text>
+    <line x1="710" y1="430" x2="710" y2="434" stroke="#1a1208" stroke-width="1"/><text x="710" y="448" text-anchor="middle" fill="#6b5e4a" font-size="9">100</text>
+    <text x="395" y="470" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9">PYTHAGOREAN EXPECTED WINS</text>
 
-    <!-- Row 1: Actual = 20 wins (rust) -->
-    <line x1="120" y1="52" x2="377" y2="52" stroke="#b83a1e" stroke-width="3" stroke-linecap="round"/>
-    <circle cx="377" cy="52" r="6" fill="#b83a1e"/>
-    <text x="392" y="56" fill="#b83a1e" font-size="11" font-weight="700">20</text>
+    <!-- Light grid lines -->
+    <line x1="80" y1="399" x2="710" y2="399" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="80" y1="338" x2="710" y2="338" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="80" y1="276" x2="710" y2="276" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="80" y1="215" x2="710" y2="215" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="80" y1="153" x2="710" y2="153" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="80" y1="92" x2="710" y2="92" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="129" y1="30" x2="129" y2="430" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="225" y1="30" x2="225" y2="430" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="322" y1="30" x2="322" y2="430" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="419" y1="30" x2="419" y2="430" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="516" y1="30" x2="516" y2="430" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="613" y1="30" x2="613" y2="430" stroke="#e0d8c5" stroke-width="0.5"/>
 
-    <!-- Row 2: Pythagorean = 22 wins (steel blue) -->
-    <line x1="120" y1="102" x2="402" y2="102" stroke="#2c4a6e" stroke-width="3" stroke-linecap="round"/>
-    <circle cx="402" cy="102" r="6" fill="#2c4a6e"/>
-    <text x="417" y="106" fill="#2c4a6e" font-size="11" font-weight="700">22</text>
+    <!-- Diagonal: Actual = Pythagorean (perfect agreement) -->
+    <line x1="80" y1="430" x2="710" y2="30" stroke="#1a1208" stroke-width="1.2" stroke-dasharray="6,4" opacity="0.4"/>
+    <text x="695" y="48" fill="#6b5e4a" font-size="7" font-style="italic" text-anchor="end">perfect agreement</text>
 
-    <!-- Row 3: BaseRuns = ~22 wins (green) -->
-    <line x1="120" y1="148" x2="402" y2="148" stroke="#2a6e3f" stroke-width="3" stroke-linecap="round"/>
-    <circle cx="402" cy="148" r="6" fill="#2a6e3f"/>
-    <text x="417" y="152" fill="#2a6e3f" font-size="11" font-weight="700">~22</text>
+    <!-- &plusmn;3 win band (dashed, lighter) -->
+    <line x1="80" y1="412" x2="681" y2="30" stroke="#c8b99a" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.5"/>
+    <line x1="109" y1="430" x2="710" y2="49" stroke="#c8b99a" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.5"/>
+    <text x="690" y="63" fill="#c8b99a" font-size="7" font-style="italic" text-anchor="end">&plusmn;3 W band</text>
 
-    <!-- Annotation: 2-win gap between Actual and Pythagorean -->
-    <line x1="384" y1="60" x2="384" y2="94" stroke="#6b5e4a" stroke-width="0.8" stroke-dasharray="2,2"/>
-    <line x1="396" y1="60" x2="396" y2="94" stroke="#6b5e4a" stroke-width="0.8" stroke-dasharray="2,2"/>
-    <text x="390" y="80" text-anchor="middle" fill="#6b5e4a" font-size="8" font-style="italic">&minus;2 W</text>
+    <!-- ====== 30 TEAM DOTS (2025 final standings) ====== -->
+    <!-- Regular dots (within &plusmn;5 of diagonal) -->
+    <circle cx="661" cy="49" r="4" fill="#6b5e4a"/><!-- MIL 95→97 (+2) -->
+    <circle cx="642" cy="55" r="4" fill="#6b5e4a"/><!-- PHI 93→96 (+3) -->
+    <circle cx="671" cy="67" r="4" fill="#6b5e4a"/><!-- NYY 96→94 (-2) -->
+    <circle cx="652" cy="73" r="4" fill="#6b5e4a"/><!-- LAD 94→93 (-1) -->
+    <circle cx="603" cy="92" r="4" fill="#6b5e4a"/><!-- SDP 89→90 (+1) -->
+    <circle cx="623" cy="98" r="4" fill="#6b5e4a"/><!-- BOS 91→89 (-2) -->
+    <circle cx="584" cy="110" r="4" fill="#6b5e4a"/><!-- DET 87→87 (0) -->
+    <circle cx="555" cy="135" r="4" fill="#6b5e4a"/><!-- CIN 84→83 (-1) -->
+    <circle cx="535" cy="141" r="4" fill="#6b5e4a"/><!-- KCR 82→82 (0) -->
+    <circle cx="545" cy="147" r="4" fill="#6b5e4a"/><!-- SFG 83→81 (-2) -->
+    <circle cx="526" cy="153" r="4" fill="#6b5e4a"/><!-- ARI 81→80 (-1) -->
+    <circle cx="458" cy="166" r="4" fill="#6b5e4a"/><!-- STL 74→78 (+4) -->
+    <circle cx="448" cy="178" r="4" fill="#6b5e4a"/><!-- OAK 73→76 (+3) -->
+    <circle cx="429" cy="184" r="4" fill="#6b5e4a"/><!-- BAL 71→75 (+4) -->
+    <circle cx="448" cy="209" r="4" fill="#6b5e4a"/><!-- PIT 73→71 (-2) -->
+    <circle cx="439" cy="215" r="4" fill="#6b5e4a"/><!-- MIN 72→70 (-2) -->
+    <circle cx="119" cy="381" r="4" fill="#6b5e4a"/><!-- COL 39→43 (+4) -->
 
-    <!-- Annotation: Pythagorean-BaseRuns convergence -->
-    <line x1="410" y1="110" x2="410" y2="140" stroke="#6b5e4a" stroke-width="0.8" stroke-dasharray="2,2"/>
-    <text x="422" y="128" fill="#6b5e4a" font-size="7" font-style="italic">converge: no</text>
-    <text x="422" y="137" fill="#6b5e4a" font-size="7" font-style="italic">sequencing luck</text>
+    <!-- Overperformers (&gt;+5 from diagonal, green) -->
+    <circle cx="516" cy="104" r="5.5" fill="#2a6e3f"/><!-- CLE 80→88 (+8) -->
+    <circle cx="584" cy="67" r="5.5" fill="#2a6e3f"/><!-- TOR 87→94 (+7) -->
+    <circle cx="448" cy="159" r="5.5" fill="#2a6e3f"/><!-- MIA 73→79 (+6) -->
+    <circle cx="380" cy="202" r="5.5" fill="#2a6e3f"/><!-- LAA 66→72 (+6) -->
+    <circle cx="332" cy="239" r="5.5" fill="#2a6e3f"/><!-- WSN 61→66 (+5) -->
+    <circle cx="584" cy="92" r="5" fill="#2a6e3f"/><!-- SEA 87→90 (+3, near CHC/DET cluster) -->
+    <circle cx="545" cy="110" r="5" fill="#2a6e3f"/><!-- HOU 83→87 (+4) -->
 
-    <!-- Annotation: gap to WC pace -->
-    <text x="455" y="42" fill="#c9962a" font-size="7" font-style="italic">3&ndash;5 wins</text>
-    <text x="455" y="51" fill="#c9962a" font-size="7" font-style="italic">below pace</text>
+    <!-- Underperformers (&lt;-5 from diagonal, rust) -->
+    <circle cx="439" cy="276" r="5.5" fill="#b83a1e"/><!-- CHW 72→60 (-12) -->
+    <circle cx="603" cy="147" r="5.5" fill="#b83a1e"/><!-- TEX 89→81 (-8) -->
+    <circle cx="555" cy="172" r="5.5" fill="#b83a1e"/><!-- TBR 84→77 (-7) -->
+    <circle cx="516" cy="178" r="5" fill="#b83a1e"/><!-- ATL 80→76 (-4) -->
+    <circle cx="661" cy="79" r="5" fill="#b83a1e"/><!-- CHC 95→92 (-3) -->
+
+    <!-- 2025 NYM (steel blue, circled) -->
+    <circle cx="565" cy="135" r="5.5" fill="#2c4a6e"/><!-- NYM 85→83 (-2) -->
+
+    <!-- 2026 NYM pace (gold ring, prorated: PythW=78, ActW=70) -->
+    <circle cx="497" cy="215" r="8" fill="none" stroke="#c9962a" stroke-width="2.5"/>
+    <circle cx="497" cy="215" r="2" fill="#c9962a"/>
+
+    <!-- ====== LABELS (major outliers + Mets) ====== -->
+    <text x="449" y="290" fill="#b83a1e" font-size="8" font-weight="700">CHW &minus;12</text>
+    <text x="449" y="300" fill="#6b5e4a" font-size="7" font-style="italic">72-win talent, 60 actual</text>
+
+    <text x="475" y="96" fill="#2a6e3f" font-size="8" font-weight="700">CLE +8</text>
+    <text x="475" y="106" fill="#6b5e4a" font-size="7" font-style="italic">one-run game magic</text>
+
+    <text x="545" y="60" fill="#2a6e3f" font-size="8" font-weight="700">TOR +7</text>
+
+    <text x="615" y="140" fill="#b83a1e" font-size="8" font-weight="700">TEX &minus;8</text>
+    <text x="615" y="150" fill="#6b5e4a" font-size="7" font-style="italic">89-win talent, .500 actual</text>
+
+    <text x="559" y="186" fill="#b83a1e" font-size="8" font-weight="700">TBR &minus;7</text>
+
+    <text x="575" y="128" fill="#2c4a6e" font-size="8" font-weight="700">2025 NYM &minus;2</text>
+
+    <text x="508" y="208" fill="#c9962a" font-size="8" font-weight="700">2026 NYM pace</text>
+    <text x="508" y="218" fill="#c9962a" font-size="7" font-style="italic">78 Pyth &rarr; 70 actual</text>
+    <text x="508" y="228" fill="#c9962a" font-size="7" font-style="italic">(prorated to 162 g)</text>
+
+    <text x="108" y="376" fill="#6b5e4a" font-size="8" font-weight="700">COL</text>
+
+    <!-- Legend -->
+    <rect x="84" y="486" width="8" height="8" fill="#2a6e3f" rx="4"/><text x="97" y="494" fill="#6b5e4a" font-size="7">Over-performed Pyth (&gt;+5)</text>
+    <rect x="260" y="486" width="8" height="8" fill="#b83a1e" rx="4"/><text x="273" y="494" fill="#6b5e4a" font-size="7">Under-performed Pyth (&gt;&minus;5)</text>
+    <rect x="460" y="486" width="8" height="8" fill="#6b5e4a" rx="4"/><text x="473" y="494" fill="#6b5e4a" font-size="7">Within &plusmn;5 W</text>
+    <circle cx="612" cy="490" r="5" fill="none" stroke="#c9962a" stroke-width="2"/><text x="622" y="494" fill="#c9962a" font-size="7">2026 Mets pace</text>
+
+    <!-- Subtitle inside chart area -->
+    <text x="395" y="505" text-anchor="middle" fill="#6b5e4a" font-size="7" font-style="italic">Data: 2025 final standings, all 30 MLB teams. PythW computed using the standard 1.83 exponent. 2026 Mets pace prorated from 46 games.</text>
   </svg>
-  <div class="chart-note">Horizontal lollipop chart. X-axis starts at zero and runs the full 46 games. All three estimators plotted on the same honest scale. The gold dashed line marks the 25-win pace required for a third NL wild card. Pythagorean and BaseRuns converge at ~22 wins, confirming no hidden sequencing luck. The 2-win gap to the actual record (20) is close-game variance &mdash; modest and within historical norms. The 3&ndash;5 win gap to the wild-card pace is structural, not luck-driven.</div>
+  <div class="chart-note">Scatter plot of all 30 MLB teams from the 2025 season. Each dot places a team&rsquo;s Pythagorean expected wins (x-axis) against its actual wins (y-axis). The dashed diagonal is perfect agreement; the lighter lines mark the &plusmn;3 win band where most teams land. <strong>The 2025 White Sox (-12)</strong> are the starkest outlier: a team whose run differential predicted 72 wins but posted only 60 &mdash; twelve wins of close-game misfortune. <strong>Cleveland (+8)</strong> overperformed its Pythagorean by the widest margin, winning far more one-run games than expected. <strong>Texas (-8)</strong> was an 89-Pythagorean-win team that finished at .500. <strong>The 2025 Mets (-2)</strong>, circled in steel blue, sat comfortably inside the &plusmn;3 band &mdash; a normal two-win gap. <strong>The 2026 Mets</strong>, shown as the gold ring, project at their current pace to 70 actual wins against a 78-win Pythagorean expectation &mdash; an 8-win gap that, if sustained, would place them alongside Texas and Tampa Bay as one of the unluckiest teams in recent history. Axes start at the data range (35&ndash;100 wins), not at zero, because a zero-origin would compress all 30 teams into an unreadable cluster; the &plusmn;3 band provides the honest reference frame.</div>
 </div>
 
 <div class="pull">
