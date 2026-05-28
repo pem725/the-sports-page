@@ -226,8 +226,16 @@ def update_deeper(content, issue_num, today):
     date_str = today.strftime("%B %-d, %Y")
     content = re.sub(r'Issue No\.\s*[_\d]+', f'Issue No. {issue_num}', content)
     content = re.sub(r'Issue\s*#\s*\[TBD\]', f'Issue #{issue_num}', content)
+    # Scope the date substitution to the datebar only — never the body — so
+    # historical dates in the companion's text are never overwritten.
     date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2})?,?\s*\d{4}'
-    content = re.sub(date_pattern, date_str, content)
+    content = re.sub(
+        r'<div class="datebar">.*?</div>',
+        lambda m: re.sub(date_pattern, date_str, m.group(0)),
+        content,
+        count=1,
+        flags=re.DOTALL,
+    )
     return content
 
 
@@ -248,10 +256,27 @@ def update_article(content, issue_num, today):
         content,
     )
 
-    # Update date in datebar <span> — match common date patterns
-    # Pattern: Month DD, YYYY or Month __, YYYY or Month YYYY
+    # Update the publish date ONLY inside the datebar span. A document-wide
+    # date regex previously clobbered historical dates in the article body —
+    # the Memorial Day roll of honor (Issue #58) had all twelve death dates
+    # overwritten with the publish date. Scope strictly to the datebar; the
+    # <title> date is already handled above.
     date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2})?,?\s*\d{4}'
-    content = re.sub(date_pattern, date_str, content)
+    content = re.sub(
+        r'<div class="datebar">.*?</div>',
+        lambda m: re.sub(date_pattern, date_str, m.group(0)),
+        content,
+        count=1,
+        flags=re.DOTALL,
+    )
+
+    # Safety net: if the publish date now appears suspiciously often, the
+    # body was likely clobbered. Abort rather than publish bad dates.
+    if content.count(date_str) > 6:
+        fail(
+            f'Publish date "{date_str}" appears {content.count(date_str)} times '
+            f'after substitution — likely a date-clobbering bug. Aborting.'
+        )
 
     # Remove the PUBLISH-META comment from the published file (cleanup)
     content = re.sub(r'<!--\s*PUBLISH-META\s*\n.*?\n\s*-->\s*\n?', '', content, flags=re.DOTALL)
