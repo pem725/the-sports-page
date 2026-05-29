@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 439 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 438 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 61 issues (#1-61)
-Queue: 5 articles ready (045-significance-tiebreaker-part-2, 052-preseason-sim-framework, 053-raleigh-slump-shower-oblique, 054-mariners-54-percent, 055-superstition-baseball-math)
+Published: 62 issues (#1-62)
+Queue: 4 articles ready (052-preseason-sim-framework, 053-raleigh-slump-shower-oblique, 054-mariners-54-percent, 055-superstition-baseball-math)
 Reserve: 1 evergreen piece
-Goal: 439 issues remaining of 500
-Last published: Issue #61 — "Forty, Fifty-Seven, Thirty-Two. The Other City Has Forty-Nine." (049-misery-index-ny-dc.html) on May 28, 2026
+Goal: 438 issues remaining of 500
+Last published: Issue #62 — "The Tiebreaker Pretends to Add Data. Instead, It Adds Noise." (045-significance-tiebreaker-part-2.html) on May 29, 2026
