@@ -1,0 +1,193 @@
+<!-- PUBLISH-META
+topic: NBA
+tags: NBA:nba, Pyrrhic Victory March, Bobcats, NBA Draft, Anthony Davis, Tanking, Lottery, History
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.series-tag{display:inline-block;background:var(--rust);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.18rem .55rem;font-weight:700;margin-bottom:.5rem}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">The Pyrrhic Victory March &middot; A History-and-Statistics Series</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<span class="series-tag">The Pyrrhic Victory March &middot; Part III of VI</span>
+
+<h1 class="hed">The Bobcats Set a Record That Should Have Won Them Anthony Davis. <em>Tantalus Disagreed.</em></h1>
+<div class="deck">In Greek mythology, Tantalus is the king condemned to stand forever in a pool of water beneath a fruit tree. When he stoops to drink, the water recedes. When he reaches for the fruit, the branches lift. The prize is always exactly in view and never quite obtainable. His name became the root of the English word <em>tantalize</em>. In May of 2012 the Charlotte Bobcats finished a lockout-shortened season at seven wins and fifty-nine losses, the lowest winning percentage in the history of the National Basketball Association, and entered the draft lottery with the highest possible odds of selecting the consensus best prospect of his generation. Then they reached.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; History &amp; Statistics</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v bad">.106</div><div class="l">Bobcats Win % &mdash; NBA Single-Season Record</div></div>
+  <div class="sc"><div class="v now">25% &rarr; #2</div><div class="l">Best Odds Possible, Second Pick Received</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">2019</div><div class="l">Year the NBA Flattened the Top Odds</div></div>
+</div>
+
+<p>Part I of this series argued that the NFL&rsquo;s draft is a deterministic Pyrrhic-victory machine. Part II showed how the NHL&rsquo;s lottery turns the same machinery into a coin flip. The National Basketball Association sits one step further along that arc. The NBA lottery is older &mdash; the league has used a weighted lottery to choose the first overall pick since 1985 &mdash; and the gap between &ldquo;the worst team&rdquo; and &ldquo;the team that lands the prize&rdquo; has been wider, more often, and on national television. The Charlotte Bobcats&rsquo; 2012 lottery night is the case the NBA has spent the years since trying to make impossible. It did not, in the end, succeed.</p>
+
+<h2 class="sh">A Lockout, a Catastrophe, a Record</h2>
+
+<p>The 2011&ndash;2012 NBA season was shortened to 66 games by a lockout that ate the early months of the schedule. The Charlotte Bobcats &mdash; an expansion franchise that had been founded in 2004, had never made the playoffs except for a single first-round loss in 2010, and was, in the early years of Michael Jordan&rsquo;s tenure as majority owner, the punchline of a long-running sports-radio joke &mdash; lost 23 in a row at one point and finished the season seven and fifty-nine. The winning percentage was <strong>.106</strong>. No team in NBA history, in any season of any length, had ever been worse on a per-game basis.</p>
+
+<p>By the rules of the time, that record entitled the Bobcats to the maximum possible lottery weight: <strong>250 of the 1,000 combinations</strong>, or a 25.0 percent chance at the first overall pick. The prize was Anthony Davis, the freshman center who had just led Kentucky to a national championship and who, on every credible scouting board, was a generational two-way player &mdash; the kind of prospect around whom a franchise is built and around whom a worst-record-in-history rebuild is justified. The chart below shows the full top-eight distribution of the 2012 lottery.</p>
+
+<div class="chart">
+  <div class="chart-cap">2012 NBA Draft Lottery &mdash; Odds of Winning the #1 Overall Pick (Top 8)</div>
+  <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- Gridlines -->
+    <line x1="180" y1="30" x2="180" y2="310" stroke="#c8b99a" stroke-width="0.5"/>
+    <line x1="300" y1="30" x2="300" y2="310" stroke="#c8b99a" stroke-width="0.5"/>
+    <line x1="420" y1="30" x2="420" y2="310" stroke="#c8b99a" stroke-width="0.5"/>
+    <line x1="540" y1="30" x2="540" y2="310" stroke="#c8b99a" stroke-width="0.5"/>
+    <line x1="660" y1="30" x2="660" y2="310" stroke="#c8b99a" stroke-width="0.5"/>
+    <line x1="730" y1="30" x2="730" y2="310" stroke="#c8b99a" stroke-width="0.5"/>
+
+    <!-- Axes -->
+    <line x1="180" y1="30" x2="180" y2="310" stroke="#1a1208" stroke-width="1.5"/>
+    <line x1="180" y1="310" x2="735" y2="310" stroke="#1a1208" stroke-width="1.5"/>
+
+    <!-- X labels (%) -->
+    <text x="180" y="325" text-anchor="middle" fill="#6b5e4a" font-size="9">0%</text>
+    <text x="300" y="325" text-anchor="middle" fill="#6b5e4a" font-size="9">5%</text>
+    <text x="420" y="325" text-anchor="middle" fill="#6b5e4a" font-size="9">10%</text>
+    <text x="540" y="325" text-anchor="middle" fill="#6b5e4a" font-size="9">15%</text>
+    <text x="660" y="325" text-anchor="middle" fill="#6b5e4a" font-size="9">20%</text>
+    <text x="730" y="325" text-anchor="middle" fill="#6b5e4a" font-size="9">25%</text>
+    <text x="455" y="345" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9">PROBABILITY OF WINNING #1 OVERALL</text>
+
+    <!-- Bars: each row 32px tall, bar 24px, starting y=45. Width = pct * 24 -->
+    <!-- Row 1: Charlotte 25.0% (worst) - rust -->
+    <rect x="180" y="45" width="600" height="24" fill="#b83a1e"/>
+    <text x="175" y="61" text-anchor="end" fill="#1a1208" font-size="9" font-weight="700">CHARLOTTE (7&ndash;59)</text>
+    <text x="745" y="61" text-anchor="end" fill="#ffffff" font-size="9" font-weight="700">25.0%</text>
+
+    <!-- Row 2: Washington 19.9% -->
+    <rect x="180" y="77" width="477" height="24" fill="#6b5e4a"/>
+    <text x="175" y="93" text-anchor="end" fill="#1a1208" font-size="9" font-weight="700">Washington (20&ndash;46)</text>
+    <text x="665" y="93" fill="#6b5e4a" font-size="9" font-weight="700">19.9%</text>
+
+    <!-- Row 3: Cleveland 13.8% -->
+    <rect x="180" y="109" width="331" height="24" fill="#6b5e4a"/>
+    <text x="175" y="125" text-anchor="end" fill="#1a1208" font-size="9" font-weight="700">Cleveland (21&ndash;45)</text>
+    <text x="519" y="125" fill="#6b5e4a" font-size="9" font-weight="700">13.8%</text>
+
+    <!-- Row 4: NEW ORLEANS 13.7% (WON, gold) -->
+    <rect x="180" y="141" width="329" height="24" fill="#c9962a"/>
+    <text x="175" y="157" text-anchor="end" fill="#1a1208" font-size="9" font-weight="700">NEW ORLEANS (21&ndash;45)</text>
+    <text x="517" y="157" fill="#c9962a" font-size="9" font-weight="700">13.7% &mdash; WON</text>
+
+    <!-- Row 5: Sacramento 7.6% -->
+    <rect x="180" y="173" width="182" height="24" fill="#6b5e4a"/>
+    <text x="175" y="189" text-anchor="end" fill="#1a1208" font-size="9">Sacramento (22&ndash;44)</text>
+    <text x="370" y="189" fill="#6b5e4a" font-size="9">7.6%</text>
+
+    <!-- Row 6: Brooklyn 7.5% -->
+    <rect x="180" y="205" width="180" height="24" fill="#6b5e4a"/>
+    <text x="175" y="221" text-anchor="end" fill="#1a1208" font-size="9">Brooklyn (22&ndash;44)</text>
+    <text x="368" y="221" fill="#6b5e4a" font-size="9">7.5%</text>
+
+    <!-- Row 7: Golden State 4.3% -->
+    <rect x="180" y="237" width="103" height="24" fill="#6b5e4a"/>
+    <text x="175" y="253" text-anchor="end" fill="#1a1208" font-size="9">Golden State (23&ndash;43)</text>
+    <text x="291" y="253" fill="#6b5e4a" font-size="9">4.3%</text>
+
+    <!-- Row 8: Toronto 3.5% -->
+    <rect x="180" y="269" width="84" height="24" fill="#6b5e4a"/>
+    <text x="175" y="285" text-anchor="end" fill="#1a1208" font-size="9">Toronto (23&ndash;43)</text>
+    <text x="272" y="285" fill="#6b5e4a" font-size="9">3.5%</text>
+  </svg>
+  <div class="chart-note">The 2012 NBA lottery, top eight teams. Bars are scaled honestly. Charlotte&rsquo;s 25.0% &mdash; the maximum the system allowed &mdash; was still a one-in-four shot at the prize. The bottom-six teams in this chart combined held a higher probability than Charlotte did alone. The New Orleans Hornets, with the fourth-best odds at 13.7%, won the lottery and selected Anthony Davis. (New Orleans&rsquo;s effective team odds were a touch higher than their slot because they held an additional late-lottery pick acquired from Minnesota; the standard slot odds and the team-combined odds run together in the literature, and 13.7% is the figure the league&rsquo;s press release used.)</div>
+</div>
+
+<h2 class="sh">May 30, 2012 &mdash; The Lottery on Camera</h2>
+
+<p>The NBA, unlike the NHL, treats its lottery as televised theater. Ping-pong balls in a tumbler, sealed envelopes, a stage of team representatives staring at logos turned backwards on a board. The 2012 lottery was held in Secaucus, New Jersey, on the evening of May 30, 2012. The Hornets&rsquo; logo turned over at the #1 slot. The Bobcats&rsquo; logo turned over at #2. Anthony Davis went to New Orleans. Charlotte selected Michael Kidd-Gilchrist, a Kentucky teammate of Davis&rsquo;s and a fine collegiate forward whose professional career would be hampered repeatedly by injuries and who would never become the kind of player Davis would, in a few years, be.</p>
+
+<p>The 2012 lottery night is the version of this story that aged into the canonical example. It was televised, the Bobcats had set a record, the prize was a generational player by consensus, and the math gave the prize to a team that had been four spots behind in the lineup. By 2019 the league had decided that this kind of outcome &mdash; visible, dramatic, and built into the structure &mdash; was creating bad incentives at the bottom of the standings, where the entire field had visibly stopped trying to win games in March. The NBA flattened the top of the lottery: starting with the 2019 draft, the three worst teams now share identical 14.0% odds. The reform was, in part, designed so that no team could ever again do what Charlotte did and have the math punish it that precisely on national television.</p>
+
+<div class="box">
+<h3>What Happened to the Players</h3>
+<p>Anthony Davis went on to become an eight-time All-Star, a four-time All-NBA First Team selection, the cornerstone of the New Orleans Pelicans rebrand and then, after his trade in 2019, the second star alongside LeBron James on the Lakers team that won the 2020 NBA championship. His combined career stats &mdash; through 2025 &mdash; place him among the better big men of his generation by every available measure.</p>
+<p>Michael Kidd-Gilchrist played eight NBA seasons. He started fewer than 250 games. He never made an All-Star team. The Bobcats &mdash; rebranded back to the Hornets after the 2013&ndash;14 season &mdash; have made the playoffs three times since the 2012 lottery and have never won a postseason series. Their roster construction has been built and rebuilt several times. The 2012 draft pick is not the reason. It is one reason among many. But it is the reason this issue is about Charlotte.</p>
+</div>
+
+<h2 class="sh">What the Tantalus Story Was Actually About</h2>
+
+<p>The Greeks were specific about what made Tantalus&rsquo;s punishment cruel. It was not that the prize was unobtainable in the abstract. It was that the prize was <em>visible at all times</em>, hovering exactly within view, and the act of reaching for it was what made it move away. The cruelty was structural &mdash; the reach itself created the loss. A draft lottery is, mathematically, the modern version of that punishment. The act of finishing dead last is what entitles a franchise to the highest probability of the prize and to the most-televised disappointment if the probability does not pay off. The system is engineered so that the team with the most to gain also has the most public way to lose. The fruit is right there. The branches rise.</p>
+
+<p>The deeper statistical lesson, building on Part II, is that the lottery is a fully-engineered piece of <em>fortuna</em>. The NBA, having watched the 2012 lottery and several similar nights, did the only reasonable thing a league with this incentive structure can do: it made fortuna less punishing by flattening her odds. That reform happened in 2019. It is, in effect, the league&rsquo;s admission that a system which deliberately rewards losing produces structural Pyrrhic victories so reliably that the rules themselves had to be rewritten.</p>
+
+<div class="pull">
+  <p>&ldquo;The Greeks did not invent Tantalus to teach a moral lesson about greed. They invented him to describe a particular shape of cruelty: the prize that is visible, weighted, and exactly out of reach. The 2012 Charlotte Bobcats are what that shape looks like in a basketball arena.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on the mythological pedigree of the draft lottery</cite>
+</div>
+
+<h2 class="sh">The March Ahead</h2>
+
+<p>Part IV moves to Major League Baseball, where the Pyrrhic-victory question takes its most uncomfortable form. Until 2023 the MLB draft was deterministic like the NFL&rsquo;s &mdash; worst record, first pick &mdash; and one franchise, the Houston Astros, used that structure to engineer a multi-year teardown that produced three consecutive number-one overall selections and, in 2017, a World Series. The tank, as a transaction, worked. What it produced for the rest of baseball &mdash; the question Aristotle, in a famous passage, asked about common goods two thousand three hundred years ago &mdash; is exactly why the league finally introduced a draft lottery for the 2023 draft. Part IV is about a win that was Pyrrhic at the league level rather than the team level. It is the most useful Pyrrhic victory of the series, because it is the one the rules actually changed in response to.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A reader with a candidate for the march &mdash; in basketball or any other sport &mdash; is invited to send it. The newsletter is particularly interested in non-lottery Pyrrhic victories: wins that cost a coach, a culture, a trade leverage, or a playoff seed.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>The Pyrrhic Victory March, Part III &middot; Tantalus, Charlotte, and the Televised Goddess</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>

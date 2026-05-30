@@ -1,0 +1,198 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Pyrrhic Victory March, Astros, MLB Draft, Tanking, Draft Lottery, History
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.series-tag{display:inline-block;background:var(--rust);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.18rem .55rem;font-weight:700;margin-bottom:.5rem}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">The Pyrrhic Victory March &middot; A History-and-Statistics Series</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<span class="series-tag">The Pyrrhic Victory March &middot; Part IV of VI</span>
+
+<h1 class="hed">The Astros Won the Tank. <em>Baseball Lost the Decade.</em></h1>
+<div class="deck">Aristotle, in a passage of the Politics still quoted today, wrote that &ldquo;what is common to the greatest number gets the least amount of care.&rdquo; He was arguing against Plato&rsquo;s plan for collective property. The line endures because the principle is older than the argument: when individual incentives diverge from the collective good, individuals optimize and the commons decays. This is the only issue in this series where the Pyrrhic victory is paid for not by one team but by an entire league. The 2017 Houston Astros are the team that won. Major League Baseball is the commons that lost.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; History &amp; Statistics</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v bad">274</div><div class="l">Astros Losses, 2011&ndash;2013 (three seasons)</div></div>
+  <div class="sc"><div class="v now">3</div><div class="l">Consecutive #1 Overall Picks &mdash; an MLB First</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">2023</div><div class="l">Year MLB Installed a Draft Lottery</div></div>
+</div>
+
+<p>The first three parts of this series argued that the structural cost of a meaningless win sits on the team that wins it: the 2020 Jets gave up Trevor Lawrence, the 2015 Sabres surrendered Connor McDavid to a lottery they could not control, the 2012 Bobcats watched Anthony Davis go to New Orleans on national television. Each of those is a team-level Pyrrhic victory. The 2011&ndash;2017 Houston Astros are a different shape entirely. The tank, run as a deliberate multi-year program by general manager Jeff Luhnow, worked exactly as designed. The team finished 56&ndash;106, then 55&ndash;107, then 51&ndash;111 &mdash; three consecutive 100-loss seasons that produced three consecutive number-one overall draft picks, an MLB first. By 2017 the rebuilt team won 101 games and a World Series. From Houston&rsquo;s vantage point, this is the cleanest successful tank in the history of professional sports.</p>
+
+<p>What it produced for the rest of baseball is the issue.</p>
+
+<h2 class="sh">A Decade of Wins, Charted</h2>
+
+<div class="chart">
+  <div class="chart-cap">Houston Astros, Regular-Season Wins, 2010&ndash;2017</div>
+  <svg viewBox="0 0 760 410" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- Axes -->
+    <line x1="100" y1="350" x2="100" y2="40" stroke="#1a1208" stroke-width="1.5"/>
+    <line x1="100" y1="350" x2="730" y2="350" stroke="#1a1208" stroke-width="1.5"/>
+    <!-- Y ticks/labels -->
+    <line x1="96" y1="350" x2="100" y2="350" stroke="#1a1208" stroke-width="1"/><text x="92" y="354" text-anchor="end" fill="#6b5e4a" font-size="9">0</text>
+    <line x1="96" y1="280" x2="100" y2="280" stroke="#1a1208" stroke-width="1"/><text x="92" y="284" text-anchor="end" fill="#6b5e4a" font-size="9">25</text>
+    <line x1="96" y1="209" x2="100" y2="209" stroke="#1a1208" stroke-width="1"/><text x="92" y="213" text-anchor="end" fill="#6b5e4a" font-size="9">50</text>
+    <line x1="96" y1="139" x2="100" y2="139" stroke="#1a1208" stroke-width="1"/><text x="92" y="143" text-anchor="end" fill="#6b5e4a" font-size="9">75</text>
+    <line x1="96" y1="68" x2="100" y2="68" stroke="#1a1208" stroke-width="1"/><text x="92" y="72" text-anchor="end" fill="#6b5e4a" font-size="9">100</text>
+    <text x="40" y="200" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9" transform="rotate(-90,40,200)">REGULAR-SEASON WINS</text>
+
+    <!-- Horizontal reference lines -->
+    <line x1="100" y1="280" x2="730" y2="280" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="100" y1="209" x2="730" y2="209" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="100" y1="139" x2="730" y2="139" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="100" y1="68" x2="730" y2="68" stroke="#e0d8c5" stroke-width="0.5"/>
+
+    <!-- Bars: each year slot ~77px wide. Bar width 50px. px_per_win = 282/100 ≈ 2.82 -->
+    <!-- 2010: 76 W (muted) -->
+    <rect x="115" y="136" width="50" height="214" fill="#6b5e4a"/>
+    <text x="140" y="365" text-anchor="middle" fill="#6b5e4a" font-size="9">2010</text>
+    <text x="140" y="128" text-anchor="middle" fill="#6b5e4a" font-size="8">76</text>
+
+    <!-- 2011: 56 W (rust, tank year 1) -->
+    <rect x="192" y="192" width="50" height="158" fill="#b83a1e"/>
+    <text x="217" y="365" text-anchor="middle" fill="#b83a1e" font-size="9" font-weight="700">2011</text>
+    <text x="217" y="184" text-anchor="middle" fill="#b83a1e" font-size="8" font-weight="700">56</text>
+
+    <!-- 2012: 55 W (rust, tank year 2 — Correa) -->
+    <rect x="269" y="195" width="50" height="155" fill="#b83a1e"/>
+    <text x="294" y="365" text-anchor="middle" fill="#b83a1e" font-size="9" font-weight="700">2012</text>
+    <text x="294" y="187" text-anchor="middle" fill="#b83a1e" font-size="8" font-weight="700">55</text>
+
+    <!-- 2013: 51 W (rust, tank year 3 — Appel) -->
+    <rect x="346" y="206" width="50" height="144" fill="#b83a1e"/>
+    <text x="371" y="365" text-anchor="middle" fill="#b83a1e" font-size="9" font-weight="700">2013</text>
+    <text x="371" y="198" text-anchor="middle" fill="#b83a1e" font-size="8" font-weight="700">51</text>
+
+    <!-- 2014: 70 W (muted) -->
+    <rect x="423" y="153" width="50" height="197" fill="#6b5e4a"/>
+    <text x="448" y="365" text-anchor="middle" fill="#6b5e4a" font-size="9">2014</text>
+    <text x="448" y="145" text-anchor="middle" fill="#6b5e4a" font-size="8">70</text>
+
+    <!-- 2015: 86 W (muted) -->
+    <rect x="500" y="108" width="50" height="242" fill="#6b5e4a"/>
+    <text x="525" y="365" text-anchor="middle" fill="#6b5e4a" font-size="9">2015</text>
+    <text x="525" y="100" text-anchor="middle" fill="#6b5e4a" font-size="8">86</text>
+
+    <!-- 2016: 84 W (muted) -->
+    <rect x="577" y="113" width="50" height="237" fill="#6b5e4a"/>
+    <text x="602" y="365" text-anchor="middle" fill="#6b5e4a" font-size="9">2016</text>
+    <text x="602" y="105" text-anchor="middle" fill="#6b5e4a" font-size="8">84</text>
+
+    <!-- 2017: 101 W (gold, WS Champs) -->
+    <rect x="654" y="65" width="50" height="285" fill="#c9962a"/>
+    <text x="679" y="365" text-anchor="middle" fill="#c9962a" font-size="9" font-weight="700">2017</text>
+    <text x="679" y="57" text-anchor="middle" fill="#c9962a" font-size="8" font-weight="700">101</text>
+
+    <!-- Annotations for tank years -->
+    <text x="217" y="395" text-anchor="middle" fill="#6b5e4a" font-size="7" font-style="italic">&rarr; &lsquo;12 #1: Correa</text>
+    <text x="294" y="395" text-anchor="middle" fill="#6b5e4a" font-size="7" font-style="italic">&rarr; &lsquo;13 #1: Appel (bust)</text>
+    <text x="371" y="395" text-anchor="middle" fill="#6b5e4a" font-size="7" font-style="italic">&rarr; &lsquo;14 #1: Aiken (unsigned)</text>
+
+    <!-- 2017 callout -->
+    <text x="679" y="395" text-anchor="middle" fill="#c9962a" font-size="7" font-weight="700">WORLD SERIES</text>
+  </svg>
+  <div class="chart-note">Bars show the Astros&rsquo; regular-season win total for each year, 2010&ndash;2017. Y-axis starts at zero. The three rust-colored bars are the three consecutive 100-loss seasons that produced three consecutive number-one overall draft picks &mdash; Carlos Correa (2012), Mark Appel (2013), and Brady Aiken (2014, who did not sign after a medical-evaluation dispute and went unselected by Houston, which received a compensatory pick the following year). The 2017 title bar is colored gold because the team won the World Series. It is also the year that, two years later in November 2019, MLB confirmed had been played in part with the assistance of an electronic sign-stealing scheme; the title remains in the record book and the asterisk remains in the discourse. Both are facts. This issue is about the tanking, not the trash cans.</div>
+</div>
+
+<h2 class="sh">The Astros&rsquo; Tank Worked. So What.</h2>
+
+<p>It is worth being honest about the team-level math first. As a transaction, Houston&rsquo;s 2011&ndash;2013 strategy delivered. Carlos Correa, the first overall pick in 2012, became one of the best shortstops of his generation and a foundational piece of the championship core. The 2013 pick, Mark Appel, never reached the majors as a meaningful player. The 2014 pick, Brady Aiken, did not sign after the team withdrew its initial $6.5 million offer over concerns about his elbow ligament, and Houston received the second overall pick of the 2015 draft as compensation, which it used on Alex Bregman &mdash; another franchise player. Two of the three top picks worked, one did not, and the compensatory pick that followed the Aiken dispute produced a star. By 2015 the Astros were a playoff team; by 2017 they were a champion. The tank, judged solely on the Astros&rsquo; balance sheet, is the model of how to do this.</p>
+
+<p>The trouble is that the Astros&rsquo; balance sheet is not the only one. From 2011 to 2013 inclusive, Houston lost 274 games. Three full seasons of Astros home games were sold to fans, advertisers, and television partners under the formal banner of competitive Major League Baseball, with the front office having decided in advance that the goal was not to win those games. The product the league sold was, on the field, exactly what an indifferent product looks like. Other teams in the AL Central and AL West played the Astros 18 or 19 times a year and accumulated win totals that were, to a meaningful extent, gifts. The integrity of the standings &mdash; not in the sense of legality, which was unquestioned, but in the older Aristotelian sense of <em>shared care for a common good</em> &mdash; was being eroded by one franchise&rsquo;s rational optimization for a future championship.</p>
+
+<h2 class="sh">What Aristotle Saw, Two Millennia Ago</h2>
+
+<p>The passage that everyone now quotes &mdash; it is at <em>Politics</em> 1261b32 in the standard numbering &mdash; is short. Aristotle writes that what is owned in common is cared for least, because every individual owner thinks first of his own interest and only secondarily of the joint one. Modern environmental and economic theory generalized this in the 20th century under the name of the &ldquo;Tragedy of the Commons,&rdquo; coined by Garrett Hardin in 1968 to describe overgrazing on shared pasture. But the structure long predates the name. Hardin&rsquo;s paper described shepherds; Aristotle described citizens; the modern application to sports describes franchises. The argument runs the same way each time. If every team optimizes individually for its own future championship by selling its present season for draft picks, no team has incentive to maintain the collective product the league depends on. Each team&rsquo;s tank is locally rational. The aggregated effect is a competitive landscape with fewer teams trying in any given month.</p>
+
+<div class="box">
+<h3>What MLB Did About It</h3>
+<p>Major League Baseball, having watched the Astros&rsquo; tank work, the Cubs&rsquo; tank work (the 2016 champions had selected number-two overall in 2014), and a string of other teams begin or continue multi-year teardowns, used the 2022 Collective Bargaining Agreement to introduce a <strong>draft lottery</strong>, beginning with the 2023 draft. The structure is, on paper, more aggressive against tanking than any other league&rsquo;s. The three teams with the worst regular-season records each receive <em>identical</em> 16.5% odds at the first overall pick &mdash; not 25 percent at the bottom and 19.9 percent at the next slot as in the old NBA system, but a tied probability that removes the incentive to finish dead last. The top six picks are all decided by lottery. Teams that fail to make the playoffs in consecutive seasons have their lottery odds capped. The rule package is, in the language of game theory, a Nash-equilibrium-shifting reform: it is meant to make tanking a <em>worse</em> bet than competing.</p>
+<p>Whether it has worked is, at this writing in 2026, still an unresolved empirical question. Tanking in baseball is harder than tanking in basketball or football for a structural reason that has nothing to do with the lottery: MLB&rsquo;s amateur draft picks are <em>less valuable</em> per slot than NBA or NFL picks, because the time from draft to major-league impact is long (typically 3&ndash;5 years) and the variance in development is high. Even the #1 overall pick is far from a sure thing &mdash; Appel was a #1, after all. The lottery makes tanking worse on top of an underlying market that already made it a marginal bet. Whether the combination is enough to discourage the next multi-year teardown is the policy question MLB is now living inside.</p>
+</div>
+
+<h2 class="sh">The Pyrrhic Victory at League Scale</h2>
+
+<p>Here is the way to read this issue against the previous three. The 2020 Jets, the 2015 Sabres, and the 2012 Bobcats each paid a team-level cost for a strategy that did not work. The 2011&ndash;2013 Astros executed a strategy that <em>did</em> work, in the narrow sense of producing a championship, and the cost was paid by the rest of baseball &mdash; by the fans who paid to watch what they were told was competitive baseball, by the players elsewhere whose statistics were inflated against a deliberately weakened opponent, and by the league office that ultimately had to redesign the draft system to discourage what it had previously rewarded.</p>
+
+<p>This is the most useful Pyrrhic victory in the series, because it is the one where the rules actually changed. The NFL has done nothing since the 2020 Jets. The NHL has nibbled at lottery reform but not overhauled its system. The NBA flattened the top of its lottery in 2019, which helped. MLB built a brand-new mechanism from scratch in 2023, with explicit anti-tanking language in the press release. That is what it looks like when a Pyrrhic victory at the league level becomes large enough that the league finally moves. Aristotle would have recognized the moment exactly: the polis acts when the commons has been visibly degraded for long enough that individual optimization can no longer be tolerated.</p>
+
+<div class="pull">
+  <p>&ldquo;The Astros&rsquo; tank produced a championship, three top picks, and a redesign of the MLB draft. The first two were the goal. The third was the bill, and it was sent to every other team in baseball.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on the only Pyrrhic victory in this series the rules actually noticed</cite>
+</div>
+
+<h2 class="sh">The March Ahead</h2>
+
+<p>Part V leaves the draft behind. College football has no draft, no lottery, and no formal incentive to lose &mdash; and yet the same shortsightedness appears in different costume: a coach&rsquo;s January-bowl win that gets him hired away, a regular-season win that buys a worse playoff seed, a run-up-the-score finish that costs a roster its locker-room culture. The shape is the same. The clothes are different. The capstone, Part VI, returns to the determinism of the NFL to ask the inverse question: when the system rewards losing, is losing on purpose ever the right answer? The 2011 Colts are the cleanest case in modern football where it was.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on sources: the Astros&rsquo; multi-year tank is documented in several long-form treatments &mdash; Ben Reiter&rsquo;s &ldquo;Astroball&rdquo; (2018) is the most thorough, written before the sign-stealing scandal broke. The sign-stealing report was published by MLB on January 13, 2020. Aristotle&rsquo;s passage on common property is in <em>Politics</em>, Book II, Chapter 3. Hardin&rsquo;s &ldquo;The Tragedy of the Commons&rdquo; was published in <em>Science</em> in December 1968.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>The Pyrrhic Victory March, Part IV &middot; Houston, the Commons, and the League That Changed the Rules</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
