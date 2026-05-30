@@ -1,0 +1,256 @@
+<!-- PUBLISH-META
+topic: Methods
+tags: Methods, Salary Cap, Payroll, MLB, NFL, NBA, NHL, Cross-League
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on the Salary Cap &middot; Cross-League, 2024</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">The Browns Spent the Most. They Went 3&ndash;14. <em>Money Behaves Differently in Each League.</em></h1>
+<div class="deck">In 215 BC, two years into Rome&rsquo;s war with Hannibal, the tribune Gaius Oppius proposed the law that bears his name &mdash; the <em>Lex Oppia</em> &mdash; which capped how much gold a woman could own, what dyes she could wear, and how she could travel in the city. The argument was austerity. The deeper argument, the one that mattered, was that conspicuous spending by the wealthiest Romans was corroding the equality the Republic depended on. The Romans had invented the sumptuary law: a deliberate piece of legislation that prevents the rich from outspending the rest. Two thousand and one years later, three of the four major North American sports leagues operate one. The fourth (Major League Baseball) does not. This issue asks a question that is older than the leagues themselves: when you can buy whatever you want, how often does it buy you the thing you actually wanted?</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; Methods &middot; Cross-League</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v bad">3&ndash;14</div><div class="l">2024 Browns Record (Top NFL Spender)</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">$176M</div><div class="l">2023&ndash;24 Warriors Luxury Tax (Missed Playoffs)</div></div>
+  <div class="sc"><div class="v now">215 BC</div><div class="l">Year of the Lex Oppia</div></div>
+</div>
+
+<p>This newsletter argued in Issue #48 (&ldquo;The Cost of a Win&rdquo;) that, in Major League Baseball through the first six weeks of 2026, team payroll explained about 1.4 percent of the variance in team wins. The point of the piece was that a relationship which sportswriters discuss as if it were nearly deterministic &mdash; <em>you get what you pay for</em> &mdash; is, in practice, almost decoration. Over full historical seasons the relationship is stronger but still modest, with payroll explaining somewhere in the neighborhood of fifteen to twenty percent of the variation in MLB winning percentages. That is a real relationship. It is not the relationship the language of fan complaint assumes.</p>
+
+<p>The natural next question was the one this issue answers. Does the same pattern hold in the other three major leagues, where salary caps formally limit how much teams can spend? The short answer is that it does not, and the reasons are structural in ways that are worth working through carefully. A salary cap is a sumptuary law. Like the Roman version, it does not eliminate spending differences; it compresses them. And in a sport where the range of spending has been compressed by rule, the relationship between spending and winning has nowhere to be predictive from.</p>
+
+<h2 class="sh">The Top Spender in Every League Missed the 2024 Title</h2>
+
+<p>The cleanest single fact about 2024, across all four leagues, is this: in the National Football League, the National Basketball Association, Major League Baseball, and the National Hockey League, <strong>the highest-paid team in the regular season did not win the championship.</strong> Three of them did not even reach the championship round. One of them missed the playoffs entirely. The figure below plots the top five spenders in each league and color-codes their outcome.</p>
+
+<div class="chart">
+  <div class="chart-cap">2024 Champions Were Not the Top Spenders &mdash; What the Five Biggest Payrolls Actually Won</div>
+  <svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- Background grid lines -->
+    <line x1="200" y1="30" x2="200" y2="290" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="290" y1="30" x2="290" y2="290" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="380" y1="30" x2="380" y2="290" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="470" y1="30" x2="470" y2="290" stroke="#e0d8c5" stroke-width="0.5"/>
+    <line x1="560" y1="30" x2="560" y2="290" stroke="#e0d8c5" stroke-width="0.5"/>
+
+    <!-- Column headers (payroll rank) -->
+    <text x="200" y="22" text-anchor="middle" fill="#1a1208" font-weight="700" font-size="9">#1 spender</text>
+    <text x="290" y="22" text-anchor="middle" fill="#1a1208" font-weight="700" font-size="9">#2</text>
+    <text x="380" y="22" text-anchor="middle" fill="#1a1208" font-weight="700" font-size="9">#3</text>
+    <text x="470" y="22" text-anchor="middle" fill="#1a1208" font-weight="700" font-size="9">#4</text>
+    <text x="560" y="22" text-anchor="middle" fill="#1a1208" font-weight="700" font-size="9">#5</text>
+
+    <!-- ===== ROW 1: NFL (y=70) ===== -->
+    <text x="190" y="60" text-anchor="end" fill="#1a1208" font-size="10" font-weight="700">NFL</text>
+    <text x="190" y="74" text-anchor="end" fill="#6b5e4a" font-size="7" font-style="italic">2024 season</text>
+    <!-- 1: Browns 3-14 missed (rust) -->
+    <circle cx="200" cy="70" r="16" fill="#b83a1e" stroke="#1a1208" stroke-width="1"/>
+    <text x="200" y="73" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">CLE</text>
+    <text x="200" y="98" text-anchor="middle" fill="#6b5e4a" font-size="7">3&ndash;14</text>
+    <!-- 2: Bills lost AFC Champ (gold = finals appearance, lost) -->
+    <circle cx="290" cy="70" r="16" fill="#c9962a" stroke="#1a1208" stroke-width="1"/>
+    <text x="290" y="73" text-anchor="middle" fill="#1a1208" font-size="9" font-weight="700">BUF</text>
+    <text x="290" y="98" text-anchor="middle" fill="#6b5e4a" font-size="7">AFC Champ</text>
+    <!-- 3: 49ers 6-11 missed (rust) -->
+    <circle cx="380" cy="70" r="16" fill="#b83a1e" stroke="#1a1208" stroke-width="1"/>
+    <text x="380" y="73" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">SF</text>
+    <text x="380" y="98" text-anchor="middle" fill="#6b5e4a" font-size="7">6&ndash;11</text>
+    <!-- 4: Eagles CHAMPS (green) -->
+    <circle cx="470" cy="70" r="18" fill="#2a6e3f" stroke="#c9962a" stroke-width="2.5"/>
+    <text x="470" y="73" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">PHI</text>
+    <text x="470" y="100" text-anchor="middle" fill="#2a6e3f" font-size="7" font-weight="700">SB CHAMPS</text>
+    <!-- 5: Dolphins 8-9 missed (rust) -->
+    <circle cx="560" cy="70" r="16" fill="#b83a1e" stroke="#1a1208" stroke-width="1"/>
+    <text x="560" y="73" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">MIA</text>
+    <text x="560" y="98" text-anchor="middle" fill="#6b5e4a" font-size="7">8&ndash;9</text>
+
+    <!-- ===== ROW 2: NBA (y=140) ===== -->
+    <text x="190" y="130" text-anchor="end" fill="#1a1208" font-size="10" font-weight="700">NBA</text>
+    <text x="190" y="144" text-anchor="end" fill="#6b5e4a" font-size="7" font-style="italic">2023&ndash;24</text>
+    <!-- 1: Warriors missed (rust) -->
+    <circle cx="200" cy="140" r="16" fill="#b83a1e" stroke="#1a1208" stroke-width="1"/>
+    <text x="200" y="143" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">GSW</text>
+    <text x="200" y="168" text-anchor="middle" fill="#6b5e4a" font-size="7">Play-In L</text>
+    <!-- 2: Clippers R1 (muted) -->
+    <circle cx="290" cy="140" r="16" fill="#6b5e4a" stroke="#1a1208" stroke-width="1"/>
+    <text x="290" y="143" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">LAC</text>
+    <text x="290" y="168" text-anchor="middle" fill="#6b5e4a" font-size="7">1st rd L</text>
+    <!-- 3: Suns swept (muted) -->
+    <circle cx="380" cy="140" r="16" fill="#6b5e4a" stroke="#1a1208" stroke-width="1"/>
+    <text x="380" y="143" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">PHX</text>
+    <text x="380" y="168" text-anchor="middle" fill="#6b5e4a" font-size="7">1st rd swept</text>
+    <!-- 4: Bucks R1 (muted) -->
+    <circle cx="470" cy="140" r="16" fill="#6b5e4a" stroke="#1a1208" stroke-width="1"/>
+    <text x="470" y="143" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">MIL</text>
+    <text x="470" y="168" text-anchor="middle" fill="#6b5e4a" font-size="7">1st rd L</text>
+    <!-- 5: Celtics CHAMPS (green) -->
+    <circle cx="560" cy="140" r="18" fill="#2a6e3f" stroke="#c9962a" stroke-width="2.5"/>
+    <text x="560" y="143" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">BOS</text>
+    <text x="560" y="170" text-anchor="middle" fill="#2a6e3f" font-size="7" font-weight="700">CHAMPIONS</text>
+
+    <!-- ===== ROW 3: MLB (y=210) ===== -->
+    <text x="190" y="200" text-anchor="end" fill="#1a1208" font-size="10" font-weight="700">MLB</text>
+    <text x="190" y="214" text-anchor="end" fill="#6b5e4a" font-size="7" font-style="italic">2024 season</text>
+    <!-- 1: Mets NLCS (steel = semis lost) -->
+    <circle cx="200" cy="210" r="16" fill="#2c4a6e" stroke="#1a1208" stroke-width="1"/>
+    <text x="200" y="213" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">NYM</text>
+    <text x="200" y="238" text-anchor="middle" fill="#6b5e4a" font-size="7">NLCS L</text>
+    <!-- 2: Dodgers CHAMPS (green) -->
+    <circle cx="290" cy="210" r="18" fill="#2a6e3f" stroke="#c9962a" stroke-width="2.5"/>
+    <text x="290" y="213" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">LAD</text>
+    <text x="290" y="240" text-anchor="middle" fill="#2a6e3f" font-size="7" font-weight="700">CHAMPIONS</text>
+    <!-- 3: Yankees lost WS (gold = finals) -->
+    <circle cx="380" cy="210" r="16" fill="#c9962a" stroke="#1a1208" stroke-width="1"/>
+    <text x="380" y="213" text-anchor="middle" fill="#1a1208" font-size="9" font-weight="700">NYY</text>
+    <text x="380" y="238" text-anchor="middle" fill="#6b5e4a" font-size="7">WS Runner-Up</text>
+    <!-- 4: Braves WC exit (muted) -->
+    <circle cx="470" cy="210" r="16" fill="#6b5e4a" stroke="#1a1208" stroke-width="1"/>
+    <text x="470" y="213" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">ATL</text>
+    <text x="470" y="238" text-anchor="middle" fill="#6b5e4a" font-size="7">WC exit</text>
+    <!-- 5: Astros WC exit (muted) -->
+    <circle cx="560" cy="210" r="16" fill="#6b5e4a" stroke="#1a1208" stroke-width="1"/>
+    <text x="560" y="213" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">HOU</text>
+    <text x="560" y="238" text-anchor="middle" fill="#6b5e4a" font-size="7">WC exit</text>
+
+    <!-- ===== ROW 4: NHL (y=280) ===== -->
+    <text x="190" y="270" text-anchor="end" fill="#1a1208" font-size="10" font-weight="700">NHL</text>
+    <text x="190" y="284" text-anchor="end" fill="#6b5e4a" font-size="7" font-style="italic">2023&ndash;24</text>
+    <!-- 1: Avalanche 2nd round (steel) -->
+    <circle cx="200" cy="280" r="16" fill="#2c4a6e" stroke="#1a1208" stroke-width="1"/>
+    <text x="200" y="283" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">COL</text>
+    <text x="200" y="308" text-anchor="middle" fill="#6b5e4a" font-size="7">2nd rd L</text>
+    <!-- 2: Maple Leafs R1 (muted) -->
+    <circle cx="290" cy="280" r="16" fill="#6b5e4a" stroke="#1a1208" stroke-width="1"/>
+    <text x="290" y="283" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">TOR</text>
+    <text x="290" y="308" text-anchor="middle" fill="#6b5e4a" font-size="7">1st rd L</text>
+    <!-- 3: Lightning R1 (muted) -->
+    <circle cx="380" cy="280" r="16" fill="#6b5e4a" stroke="#1a1208" stroke-width="1"/>
+    <text x="380" y="283" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">TBL</text>
+    <text x="380" y="308" text-anchor="middle" fill="#6b5e4a" font-size="7">1st rd L</text>
+    <!-- 4: Golden Knights R1 (muted) -->
+    <circle cx="470" cy="280" r="16" fill="#6b5e4a" stroke="#1a1208" stroke-width="1"/>
+    <text x="470" y="283" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">VGK</text>
+    <text x="470" y="308" text-anchor="middle" fill="#6b5e4a" font-size="7">1st rd L</text>
+    <!-- 5: Panthers CHAMPS (green) -->
+    <circle cx="560" cy="280" r="18" fill="#2a6e3f" stroke="#c9962a" stroke-width="2.5"/>
+    <text x="560" y="283" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">FLA</text>
+    <text x="560" y="310" text-anchor="middle" fill="#2a6e3f" font-size="7" font-weight="700">SC CHAMPS</text>
+
+    <!-- Legend -->
+    <text x="80" y="345" fill="#1a1208" font-size="8" font-weight="700">LEGEND:</text>
+    <circle cx="148" cy="343" r="6" fill="#2a6e3f"/><text x="158" y="346" fill="#6b5e4a" font-size="8">Champion</text>
+    <circle cx="232" cy="343" r="6" fill="#c9962a"/><text x="242" y="346" fill="#6b5e4a" font-size="8">Reached final</text>
+    <circle cx="328" cy="343" r="6" fill="#2c4a6e"/><text x="338" y="346" fill="#6b5e4a" font-size="8">Reached conf. semis</text>
+    <circle cx="448" cy="343" r="6" fill="#6b5e4a"/><text x="458" y="346" fill="#6b5e4a" font-size="8">Lost 1st round / play-in</text>
+    <circle cx="600" cy="343" r="6" fill="#b83a1e"/><text x="610" y="346" fill="#6b5e4a" font-size="8">Missed playoffs</text>
+
+    <!-- Subtitle -->
+    <text x="395" y="370" text-anchor="middle" fill="#6b5e4a" font-size="7" font-style="italic">Top 5 payrolls by league, 2024 (NFL/MLB) and 2023&ndash;24 (NBA/NHL). Champions are gold-ringed.</text>
+  </svg>
+  <div class="chart-note">Each row is a league&rsquo;s top five spenders. Champions are gold-ringed green dots. <strong>The #1 spender wins zero titles across the four leagues.</strong> Only one (Buffalo) even reached its league&rsquo;s championship round. Two of the four top spenders (Cleveland in the NFL, Golden State in the NBA) missed the playoffs entirely. The four champions ranked 4th, 5th, 2nd, and 5th in their leagues&rsquo; payrolls. Within the chart you can see two different shapes of failure: NFL/NBA top spenders failing dramatically (Cleveland 3&ndash;14, Warriors paying $176.9M in luxury tax for a Play-In loss), and MLB/NHL top spenders failing more modestly &mdash; reaching the playoffs but falling short of the title.</div>
+</div>
+
+<h2 class="sh">Why Each League&rsquo;s Money Behaves Differently</h2>
+
+<p>Different leagues compress spending in different ways, and the way each league compresses is what determines whether money predicts wins. The four shapes are worth naming.</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>League</th><th>Cap Structure</th><th>Top/Bottom Range</th><th>Payroll-Wins Typical R&sup2;</th><th>2024 Champion&rsquo;s Payroll Rank</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>MLB</strong></td><td class="mono">None (luxury tax only)</td><td class="mono">~7.2&times;</td><td class="mono">~.14&ndash;.26</td><td class="mono">2nd (Dodgers, $325M)</td></tr>
+    <tr><td><strong>NBA</strong></td><td class="mono">Soft cap + tax aprons</td><td class="mono">~1.6&times;</td><td class="mono">~.10&ndash;.20</td><td class="mono">5th (Celtics, ~$181M)</td></tr>
+    <tr><td><strong>NHL</strong></td><td class="mono">Hard cap + high floor</td><td class="mono">~1.35&times;</td><td class="mono">~.01&ndash;.04</td><td class="mono">5th (Panthers, ~$89M)</td></tr>
+    <tr><td><strong>NFL</strong></td><td class="mono">Hard cap + dead money</td><td class="mono">~1.8&times; cash</td><td class="mono">~.00&ndash;.02</td><td class="mono">4th (Eagles, ~$295M+)</td></tr>
+  </tbody>
+</table>
+
+<p>The headline relationship across the four leagues is summarized by the third and fourth columns of that table. <strong>The more compressed a league&rsquo;s spending range, the less predictive power payroll has.</strong> MLB &mdash; the only uncapped league &mdash; allows a 7.2-fold gap between its top and bottom payrolls and produces the strongest spending-wins relationship (still only explaining about a fifth of the variation). The NHL, at the other extreme, allows only a 1.35x range thanks to its hard cap and unusually high salary floor, and the resulting R&sup2; is statistically near zero. There is not enough variance in NHL spending to predict anything from.</p>
+
+<p>The NFL is the most interesting case because its R&sup2; is the lowest of the four despite its cash-spending range being slightly wider than the NBA&rsquo;s. Two structural features sever the dollars-to-wins link more thoroughly than any cap alone could. The first is <em>dead money</em>: contracts get restructured and accelerated against future caps in ways that produce very large cash outlays on players who are no longer producing or no longer on the team. The 2024 Cleveland Browns paid $326 million in cash, much of it allocated to the dead-money cap hit of Deshaun Watson, who started two games. The second is the <em>rookie-quarterback advantage</em>: a starting quarterback on a rookie contract costs roughly a fifth what a market-priced veteran costs, which gives a team enormous cap flexibility everywhere else. Recent Super Bowls have been disproportionately won by teams operating inside their quarterback&rsquo;s rookie window. Both mechanisms decouple regular-season payroll from on-field output to a degree no other sport approaches.</p>
+
+<div class="box">
+<h3>What the Sumptuary Law Was Supposed to Do</h3>
+<p>The Roman <em>Lex Oppia</em> was repealed in 195 BC after a famous public protest by Roman women, which Livy describes as one of the only times the matrons of the city collectively appeared in the streets to lobby the Senate. Cato the Elder argued for keeping it. He lost. The conventional reading of the episode is that sumptuary laws fail because they target a symptom (display of wealth) rather than its cause (the underlying wealth itself), and because the political coalition that enforces them tends to weaken as the war years recede.</p>
+<p>Sports caps are slightly more durable, because they are enforced by the leagues rather than by political coalitions, and because they are renegotiated only every few years through collective bargaining. But the structural problem is the same: the cap compresses display without compressing underlying advantage. Owners with the deepest pockets still gain edges &mdash; through better front offices, better facilities, more aggressive use of cap mechanics (the Dodgers&rsquo; deferred-money structures are a famous current case), or simply through hiring the best people at every non-cap position. The cap controls the spending dimension that can be measured. It cannot eliminate the dimensions that can&rsquo;t.</p>
+</div>
+
+<h2 class="sh">A Note on What Issue #48 Said</h2>
+
+<p>The earlier Cost-of-a-Win piece argued, on six weeks of 2026 MLB data, that payroll explained roughly 1.4 percent of variance in current-year wins. The longer-horizon and cross-league extension done in this issue says that figure was unusually low &mdash; the full-season MLB number is closer to twenty percent &mdash; but the deeper point survives every refinement. Even in the league with the widest spending range in professional sports, money explains about one-fifth of who wins and who loses, which means four-fifths is something else. In the three capped leagues, the something-else fraction climbs above ninety percent. The salary cap, judged by what it was built to do, has worked. The four 2024 championship trophies were won by teams ranking 2nd, 5th, 5th, and 4th in their league&rsquo;s payroll. Money buys wins. The receipt looks different in each league, and in three of the four it looks remarkably small.</p>
+
+<div class="pull">
+  <p>&ldquo;A salary cap is a sumptuary law written for an audience that has forgotten what sumptuary laws are. The Romans would have recognized the genre immediately. They would also have predicted, correctly, that the rich would find ways around it.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on the Lex Oppia and the luxury-tax apron</cite>
+</div>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on sources: payroll figures are drawn from Spotrac (NFL cash, NBA/NHL cap), Cot&rsquo;s Baseball Contracts (MLB), and the leagues&rsquo; collective-bargaining-agreement publications. Correlations are reported as ranges because they vary by source, season, and whether the dependent variable is regular-season wins, playoff appearances, or championships. The directional finding &mdash; that capped leagues have weaker payroll-wins relationships than uncapped MLB &mdash; survives every reasonable choice of measure. The Lex Oppia is documented in Livy, <em>Ab Urbe Condita</em>, Book 34, Chapters 1&ndash;8. The newsletter&rsquo;s Cost-of-a-Win piece (Issue #48) ran on May 15, 2026.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Sources: Spotrac, Cot&rsquo;s Contracts, league CBA publications, Livy 34.1&ndash;8</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
