@@ -1,0 +1,204 @@
+<!-- PUBLISH-META
+topic: NFL
+tags: NFL:nfl, Pyrrhic Victory March, Jets, NFL Draft, Trevor Lawrence, Tanking, History
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+table.rec .worse td{background:#fef0ec}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.series-tag{display:inline-block;background:var(--rust);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.18rem .55rem;font-weight:700;margin-bottom:.5rem}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">The Pyrrhic Victory March &middot; A History-and-Statistics Series</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<span class="series-tag">The Pyrrhic Victory March &middot; Part I of VI</span>
+
+<h1 class="hed">One More Such Victory, <em>and the Jets Are Undone.</em></h1>
+<div class="deck">In 279 BC, King Pyrrhus of Epirus beat the Romans at Asculum and lost so many of his irreplaceable officers that, as Plutarch tells it, he said: &ldquo;One more such victory and we are utterly ruined.&rdquo; A win that costs more than a loss has carried his name ever since. This new series looks for Pyrrhic victories in sports &mdash; wins that quietly cost a franchise far more than the defeat would have. We begin with the cleanest example of the modern era: the two games the 2020 New York Jets won, after starting 0&ndash;13, that cost them Trevor Lawrence.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; History &amp; Statistics</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v bad">2</div><div class="l">Jets Wins After an 0&ndash;13 Start</div></div>
+  <div class="sc"><div class="v now">#1 &rarr; #2</div><div class="l">Draft Slot Those Wins Cost</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">279 BC</div><div class="l">Pyrrhus&rsquo;s First Regret</div></div>
+</div>
+
+<p>The phrase &ldquo;Pyrrhic victory&rdquo; is one of the few pieces of classical history that survives in everyday speech, and it survives because the idea behind it is genuinely useful. Pyrrhus of Epirus, one of the finest field commanders of the ancient world, fought the Roman Republic twice on Italian soil and beat them both times. The second win, at Asculum in 279 BC, was so expensive &mdash; his veteran infantry and the officers he could not replace were gutted &mdash; that the victory itself doomed his campaign. Plutarch records the line that made him immortal: another win like that, and there would be no army left to win with.</p>
+
+<p>Sports produce this shape more often than the language of sports admits, because sports treat a win as an unalloyed good. The scoreboard does not have a column for what the win cost. Usually there is no cost; usually a win is just a win. But there is one structural feature of American professional sports that turns the back end of a losing season into a perfect Pyrrhic-victory machine: <strong>the draft rewards losing.</strong> The worse your record, the higher you pick. And in a league with no draft lottery to muddy the incentive &mdash; the National Football League &mdash; the worst record guarantees the first selection. In that world, a win in a lost season is not free. It can be the most expensive thing a franchise does all year.</p>
+
+<h2 class="sh">The 2020 Jets, and the Two Wins That Did the Damage</h2>
+
+<p>The 2020 Jets began the season by losing thirteen straight games. By mid-December they were 0&ndash;13, the consensus worst team in football, and aimed squarely at the top of a draft that everyone in the sport had been discussing for a year. The prize was Trevor Lawrence, the Clemson quarterback widely regarded as the best quarterback prospect since Andrew Luck &mdash; the kind of player around whom a franchise is rebuilt. The fan shorthand had already been coined: <em>Tank for Trevor.</em></p>
+
+<p>Then the Jets won. On December 20, 2020, they beat the Los Angeles Rams &mdash; a playoff team &mdash; 23&ndash;20. One week later, on December 27, they beat the Cleveland Browns, who finished 11&ndash;5, by a score of 23&ndash;16. Two upsets of two playoff teams, in the final three weeks of a season the Jets had no stake in. They finished 2&ndash;14. The Jacksonville Jaguars, who lost their last fifteen games to finish 1&ndash;15, claimed the worst record in football and, with it, the first overall pick.</p>
+
+<p>Jacksonville drafted Trevor Lawrence. The Jets, picking second, drafted Zach Wilson of BYU.</p>
+
+<div class="box">
+<h3>The Win Probability of Those Two Wins Was, Competitively, Zero</h3>
+<p>Here is the part that makes this a clean Pyrrhic victory rather than a judgment call. A win is supposed to advance a team toward something &mdash; a playoff berth, a seed, a tiebreaker. The standard measure of that is Win Probability Added: how much a result improved a team&rsquo;s odds of a meaningful outcome. For a 0&ndash;13 team in Weeks 15 and 16, those odds were already zero and stayed zero. The Rams and Browns wins moved the Jets&rsquo; playoff probability from 0% to 0%. They advanced the franchise toward nothing.</p>
+<p>What the wins <em>did</em> change was the draft order &mdash; in the wrong direction. They are, in the precise sense, victories with no benefit and a catastrophic cost. Pyrrhus at least gained the field at Asculum. The Jets gained nothing and surrendered a franchise quarterback.</p>
+</div>
+
+<h2 class="sh">What a Single Slot Is Worth at the Very Top</h2>
+
+<p>How much does moving from the first pick to the second pick actually cost? The oldest answer in the NFL is the Jimmy Johnson trade-value chart, built by the Cowboys in the early 1990s to price draft-pick trades. It assigns each slot a point value, and its defining feature is how steeply it falls at the very top.</p>
+
+<div class="chart">
+  <div class="chart-cap">NFL Draft Trade Value by Pick (Jimmy Johnson Chart, Picks 1&ndash;12)</div>
+  <svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- Axes -->
+    <line x1="80" y1="360" x2="80" y2="30" stroke="#1a1208" stroke-width="1.5"/>
+    <line x1="80" y1="360" x2="730" y2="360" stroke="#1a1208" stroke-width="1.5"/>
+    <!-- Y ticks/labels (value, 0 to 3000) -->
+    <line x1="76" y1="360" x2="80" y2="360" stroke="#1a1208" stroke-width="1"/><text x="72" y="364" text-anchor="end" fill="#6b5e4a" font-size="9">0</text>
+    <line x1="76" y1="305" x2="80" y2="305" stroke="#1a1208" stroke-width="1"/><text x="72" y="309" text-anchor="end" fill="#6b5e4a" font-size="9">500</text>
+    <line x1="76" y1="250" x2="80" y2="250" stroke="#1a1208" stroke-width="1"/><text x="72" y="254" text-anchor="end" fill="#6b5e4a" font-size="9">1000</text>
+    <line x1="76" y1="195" x2="80" y2="195" stroke="#1a1208" stroke-width="1"/><text x="72" y="199" text-anchor="end" fill="#6b5e4a" font-size="9">1500</text>
+    <line x1="76" y1="140" x2="80" y2="140" stroke="#1a1208" stroke-width="1"/><text x="72" y="144" text-anchor="end" fill="#6b5e4a" font-size="9">2000</text>
+    <line x1="76" y1="85" x2="80" y2="85" stroke="#1a1208" stroke-width="1"/><text x="72" y="89" text-anchor="end" fill="#6b5e4a" font-size="9">2500</text>
+    <line x1="76" y1="30" x2="80" y2="30" stroke="#1a1208" stroke-width="1"/><text x="72" y="34" text-anchor="end" fill="#6b5e4a" font-size="9">3000</text>
+    <text x="24" y="200" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9" transform="rotate(-90,24,200)">TRADE VALUE (POINTS)</text>
+    <!-- Bars: value*0.11 = height; y_top = 360 - height. slot width 50, bar width 34 -->
+    <!-- Pick 1: 3000 (gold, Lawrence) -->
+    <rect x="92" y="30" width="34" height="330" fill="#c9962a"/>
+    <!-- Pick 2: 2600 (rust, Jets/Wilson) -->
+    <rect x="146" y="74" width="34" height="286" fill="#b83a1e"/>
+    <!-- Picks 3-12 (muted) -->
+    <rect x="200" y="118" width="34" height="242" fill="#6b5e4a"/><!-- 3: 2200 -->
+    <rect x="254" y="162" width="34" height="198" fill="#6b5e4a"/><!-- 4: 1800 -->
+    <rect x="308" y="173" width="34" height="187" fill="#6b5e4a"/><!-- 5: 1700 -->
+    <rect x="362" y="184" width="34" height="176" fill="#6b5e4a"/><!-- 6: 1600 -->
+    <rect x="416" y="195" width="34" height="165" fill="#6b5e4a"/><!-- 7: 1500 -->
+    <rect x="470" y="206" width="34" height="154" fill="#6b5e4a"/><!-- 8: 1400 -->
+    <rect x="524" y="211" width="34" height="149" fill="#6b5e4a"/><!-- 9: 1350 -->
+    <rect x="578" y="217" width="34" height="143" fill="#6b5e4a"/><!-- 10: 1300 -->
+    <rect x="632" y="222" width="34" height="138" fill="#6b5e4a"/><!-- 11: 1250 -->
+    <rect x="686" y="228" width="34" height="132" fill="#6b5e4a"/><!-- 12: 1200 -->
+    <!-- X labels (pick numbers) -->
+    <text x="109" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">1</text>
+    <text x="163" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">2</text>
+    <text x="217" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">3</text>
+    <text x="271" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">4</text>
+    <text x="325" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">5</text>
+    <text x="379" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">6</text>
+    <text x="433" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">7</text>
+    <text x="487" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">8</text>
+    <text x="541" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">9</text>
+    <text x="595" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">10</text>
+    <text x="649" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">11</text>
+    <text x="703" y="374" text-anchor="middle" fill="#6b5e4a" font-size="9">12</text>
+    <text x="405" y="392" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9">OVERALL PICK NUMBER</text>
+    <!-- Callouts -->
+    <text x="109" y="24" text-anchor="middle" fill="#c9962a" font-size="8" font-weight="700">LAWRENCE (3000)</text>
+    <text x="200" y="68" text-anchor="start" fill="#b83a1e" font-size="8" font-weight="700">WILSON &mdash; the Jets landed here (2600)</text>
+    <!-- Gap bracket between 1 and 2 -->
+    <line x1="143" y1="42" x2="183" y2="42" stroke="#1a1208" stroke-width="0.6" stroke-dasharray="2,2"/>
+    <text x="210" y="100" text-anchor="start" fill="#6b5e4a" font-size="7" font-style="italic">one slot = 400 points on this chart</text>
+  </svg>
+  <div class="chart-note">The Jimmy Johnson chart values the first pick at 3,000 points and the second at 2,600 &mdash; a 400-point gap, the steepest one-slot drop anywhere in the draft. Y-axis starts at zero. The honest caveat: modern analytics (notably Chase Stuart&rsquo;s career-value chart) argue this curve is far too steep &mdash; that in raw expected value, pick #1 and pick #2 are nearly interchangeable. Both can be true at once. The chart prices an <em>average</em> slot; a generational quarterback is not an average slot. That tension is the whole story.</div>
+</div>
+
+<h2 class="sh">Where the Smooth Curve Lies</h2>
+
+<p>The draft-value charts &mdash; both the old Jimmy Johnson version and the more sophisticated career-value versions &mdash; describe the average outcome of a draft slot across decades of picks. On average, the second pick is only slightly worse than the first, and a great deal of recent analytics work has gone into showing that the very top picks are routinely <em>overvalued</em>. If the prize at the top of the 2021 draft had been an average prospect, the Jets&rsquo; two wins would have cost them something small and forgettable.</p>
+
+<p>But a franchise quarterback is not an average draft slot. The value of the quarterback position is a step function, not a smooth curve: a team either has a top-tier one or it does not, and the gap between those two states is worth more than any other single advantage in the sport. The smooth curve cannot see the step. That is exactly the kind of place where a column will tell you &ldquo;the data says pick value is continuous&rdquo; and be technically correct and substantively wrong &mdash; the average hides a discontinuity that matters enormously in the specific case.</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>&nbsp;</th><th>Pick #1 &mdash; Jacksonville</th><th>Pick #2 &mdash; NY Jets</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="mono">Player</td><td>Trevor Lawrence</td><td>Zach Wilson</td></tr>
+    <tr class="hl"><td class="mono">Still with team (2026)</td><td>Yes</td><td class="mono">No &mdash; traded to Denver, 2024</td></tr>
+    <tr><td class="mono">Postseason</td><td>Led a 27-point comeback playoff win (Jan. 2023)</td><td class="mono">Benched; lost the job</td></tr>
+    <tr class="hl"><td class="mono">Second contract</td><td>5 years, $275 million (2024)</td><td class="mono">Traded for a late-round pick swap</td></tr>
+  </tbody>
+</table>
+
+<p>Of the five quarterbacks taken in the first round of the 2021 draft, exactly one is still with the team that drafted him: Trevor Lawrence. The other four &mdash; Wilson, Trey Lance, Justin Fields, and Mac Jones &mdash; have all been traded. The Jets did not merely miss the best player. They drafted into the part of the class that the rest of the league has spent the years since trying to give away.</p>
+
+<div class="pull">
+  <p>&ldquo;The scoreboard has no column for what a win costs. The draft is the column. In December of 2020, the Jets won two games and paid for them with a decade.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on the only victories that show up as losses</cite>
+</div>
+
+<h2 class="sh">The Counterfactual, Stated Plainly</h2>
+
+<p>It is fair to ask whether this is hindsight. It is not, and the reason is the same Win Probability point from above. At the moment the Jets beat the Rams, two things were already true and known: the wins could not help them in 2020, and Trevor Lawrence was the consensus prize at the top of the draft. The downside was visible in real time &mdash; it is why the fan base groaned at a win. A Pyrrhic victory is not defined by hindsight; it is defined by a cost that was foreseeable and incurred anyway. Pyrrhus knew his veterans were irreplaceable while he was spending them. So did anyone watching the Jets in December 2020.</p>
+
+<p>None of this requires believing that teams should lose on purpose, or that players and coaches competing hard in Week 16 did anything wrong &mdash; they did the honorable thing, which is precisely what makes the structure tragic rather than scandalous. The incentive is the problem. A league that hands its best young player to its worst team has built a machine that punishes late-season competence. The 2020 Jets are what that machine looks like when it runs in reverse on a team that could not stop itself from winning.</p>
+
+<div class="box">
+<h3>The March Ahead</h3>
+<p>This series will follow the Pyrrhic victory across every sport, because the shortsightedness wears different clothes in each league. <strong>Part II</strong> goes to the NHL and the 2015 race to the bottom for Connor McDavid &mdash; where a team tanked perfectly and the <em>draft lottery</em> still took the prize away, turning a sure thing into a coin flip. <strong>Part III</strong> brings the same lottery cruelty to the NBA. <strong>Part IV</strong> asks why Major League Baseball, almost alone, made tanking a bad bet &mdash; and then changed its rules in 2023 to make it worse. And the capstone returns to the NFL for the control group: the 2011 Colts, who lost their way to Andrew Luck on purpose, and proved the Jets&rsquo; cost was real.</p>
+</div>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A reader with a candidate for the march &mdash; a win that cost a team more than a loss would have, in any sport, at any level &mdash; is invited to send it. The best Pyrrhic victories are the ones the box score still records as wins.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>The Pyrrhic Victory March, Part I &middot; Two Wins, One Lost Franchise</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
