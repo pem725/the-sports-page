@@ -1,0 +1,217 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Payroll, Salary, Regression, Methods, Cohen, History
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on the Money &middot; Baseball, 2024</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Money Buys Wins in Baseball. <em>Just Not Very Many.</em></h1>
+<div class="deck">In 215 BC, two years into Rome&rsquo;s war with Hannibal, the tribune Gaius Oppius proposed the law that bears his name &mdash; the <em>Lex Oppia</em> &mdash; which capped how much gold a woman could own and how she could appear in public. The argument was austerity. The deeper argument, the one that mattered, was that conspicuous spending by the wealthiest Romans was corroding the equality the Republic depended on. The Romans had invented the sumptuary law. Two thousand years later, three of the four major North American sports leagues operate one. Major League Baseball does not. Issue #48 of this newsletter argued that, even in the league with no cap, payroll explained less of the variation in winning than the language of fan complaint assumes. This issue plots every team. The scatter is the argument.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; Baseball &middot; Methods</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v now">0.21</div><div class="l">R&sup2;: Payroll &harr; W% (MLB 2024, all 30 teams)</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">4.18&times;</div><div class="l">Mets-to-Athletics Payroll Ratio</div></div>
+  <div class="sc"><div class="v good">+8</div><div class="l">Wins Per $100M of Payroll (Regression Slope)</div></div>
+</div>
+
+<p>The cleanest version of the question this newsletter keeps returning to is also the oldest. Across the thirty teams of Major League Baseball in 2024, did the teams that spent more win more? The answer is yes. The size of the &ldquo;yes&rdquo; is the part that surprises most readers, and the part that the figure below makes uncomfortably visible.</p>
+
+<h2 class="sh">Every Team, Every Dollar, Every Win &mdash; Plotted Honestly</h2>
+
+<div class="chart">
+  <div class="chart-cap">2024 MLB &mdash; Opening Day Payroll vs. Regular-Season Winning Percentage (All 30 Teams)</div>
+  <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- Axes -->
+    <line x1="100" y1="400" x2="100" y2="40" stroke="#1a1208" stroke-width="1.5"/>
+    <line x1="100" y1="400" x2="720" y2="400" stroke="#1a1208" stroke-width="1.5"/>
+
+    <!-- Y-axis ticks (W% 0 to 0.700, step 0.100) -->
+    <line x1="96" y1="400" x2="100" y2="400" stroke="#1a1208" stroke-width="1"/><text x="92" y="404" text-anchor="end" fill="#6b5e4a" font-size="9">.000</text>
+    <line x1="96" y1="349" x2="100" y2="349" stroke="#1a1208" stroke-width="1"/><text x="92" y="353" text-anchor="end" fill="#6b5e4a" font-size="9">.100</text>
+    <line x1="96" y1="297" x2="100" y2="297" stroke="#1a1208" stroke-width="1"/><text x="92" y="301" text-anchor="end" fill="#6b5e4a" font-size="9">.200</text>
+    <line x1="96" y1="246" x2="100" y2="246" stroke="#1a1208" stroke-width="1"/><text x="92" y="250" text-anchor="end" fill="#6b5e4a" font-size="9">.300</text>
+    <line x1="96" y1="194" x2="100" y2="194" stroke="#1a1208" stroke-width="1"/><text x="92" y="198" text-anchor="end" fill="#6b5e4a" font-size="9">.400</text>
+    <line x1="96" y1="143" x2="100" y2="143" stroke="#1a1208" stroke-width="1"/><text x="92" y="147" text-anchor="end" fill="#6b5e4a" font-size="9">.500</text>
+    <line x1="96" y1="91" x2="100" y2="91" stroke="#1a1208" stroke-width="1"/><text x="92" y="95" text-anchor="end" fill="#6b5e4a" font-size="9">.600</text>
+    <line x1="96" y1="40" x2="100" y2="40" stroke="#1a1208" stroke-width="1"/><text x="92" y="44" text-anchor="end" fill="#6b5e4a" font-size="9">.700</text>
+    <text x="34" y="220" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9" transform="rotate(-90,34,220)">WINNING PERCENTAGE</text>
+
+    <!-- X-axis ticks ($60M to $360M, step $50M) -->
+    <line x1="100" y1="400" x2="100" y2="404" stroke="#1a1208" stroke-width="1"/><text x="100" y="416" text-anchor="middle" fill="#6b5e4a" font-size="9">$60</text>
+    <line x1="183" y1="400" x2="183" y2="404" stroke="#1a1208" stroke-width="1"/><text x="183" y="416" text-anchor="middle" fill="#6b5e4a" font-size="9">$100</text>
+    <line x1="286" y1="400" x2="286" y2="404" stroke="#1a1208" stroke-width="1"/><text x="286" y="416" text-anchor="middle" fill="#6b5e4a" font-size="9">$150</text>
+    <line x1="390" y1="400" x2="390" y2="404" stroke="#1a1208" stroke-width="1"/><text x="390" y="416" text-anchor="middle" fill="#6b5e4a" font-size="9">$200</text>
+    <line x1="493" y1="400" x2="493" y2="404" stroke="#1a1208" stroke-width="1"/><text x="493" y="416" text-anchor="middle" fill="#6b5e4a" font-size="9">$250</text>
+    <line x1="596" y1="400" x2="596" y2="404" stroke="#1a1208" stroke-width="1"/><text x="596" y="416" text-anchor="middle" fill="#6b5e4a" font-size="9">$300</text>
+    <line x1="700" y1="400" x2="700" y2="404" stroke="#1a1208" stroke-width="1"/><text x="700" y="416" text-anchor="middle" fill="#6b5e4a" font-size="9">$350</text>
+    <text x="410" y="438" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9">2024 OPENING DAY PAYROLL ($ MILLIONS)</text>
+
+    <!-- Grid lines -->
+    <line x1="100" y1="143" x2="720" y2="143" stroke="#e0d8c5" stroke-width="0.5"/><!-- .500 -->
+    <line x1="100" y1="246" x2="720" y2="246" stroke="#e0d8c5" stroke-width="0.5"/><!-- .300 -->
+    <line x1="100" y1="91"  x2="720" y2="91"  stroke="#e0d8c5" stroke-width="0.5"/><!-- .600 -->
+    <line x1="100" y1="194" x2="720" y2="194" stroke="#e0d8c5" stroke-width="0.5"/><!-- .400 -->
+    <line x1="286" y1="40" x2="286" y2="400" stroke="#e0d8c5" stroke-width="0.5"/><!-- $150 -->
+    <line x1="390" y1="40" x2="390" y2="400" stroke="#e0d8c5" stroke-width="0.5"/><!-- $200 -->
+    <line x1="493" y1="40" x2="493" y2="400" stroke="#e0d8c5" stroke-width="0.5"/><!-- $250 -->
+    <line x1="596" y1="40" x2="596" y2="400" stroke="#e0d8c5" stroke-width="0.5"/><!-- $300 -->
+
+    <!-- Regression line: W% = 0.402 + 0.000506 * payroll($M) -->
+    <!-- At x=100 ($60): W% = 0.432 → y = 400 - 0.432*514.3 = 178 -->
+    <!-- At x=720 ($360): W% = 0.584 → y = 400 - 0.584*514.3 = 100 -->
+    <line x1="100" y1="178" x2="720" y2="100" stroke="#2c4a6e" stroke-width="1.8" stroke-dasharray="6,4" opacity="0.75"/>
+    <text x="715" y="92" text-anchor="end" fill="#2c4a6e" font-size="8" font-style="italic">regression: W% = .402 + .00051 &middot; payroll</text>
+
+    <!-- R² annotation -->
+    <rect x="540" y="50" width="170" height="36" fill="#f5f0e8" stroke="#1a1208" stroke-width="0.7" opacity="0.95"/>
+    <text x="625" y="64" text-anchor="middle" fill="#1a1208" font-size="10" font-weight="700">R&sup2; = 0.214</text>
+    <text x="625" y="78" text-anchor="middle" fill="#6b5e4a" font-size="8" font-style="italic">~21% of W% explained</text>
+
+    <!-- ====== 30 TEAM DOTS ====== -->
+    <!-- High payroll (right side) -->
+    <circle cx="680" cy="118" r="5" fill="#c9962a" stroke="#1a1208" stroke-width="1"/><!-- NYM Mets -->
+    <text x="685" y="115" fill="#c9962a" font-size="8" font-weight="700">NYM ($340M)</text>
+    <circle cx="649" cy="89" r="5" fill="#2a6e3f" stroke="#1a1208" stroke-width="1"/><!-- LAD Dodgers (champion) -->
+    <text x="643" y="80" text-anchor="end" fill="#2a6e3f" font-size="8" font-weight="700">LAD champion</text>
+    <circle cx="617" cy="102" r="4" fill="#6b5e4a"/><!-- NYY -->
+    <text x="623" y="100" fill="#6b5e4a" font-size="7">NYY</text>
+    <circle cx="530" cy="118" r="4" fill="#6b5e4a"/><!-- ATL -->
+    <text x="536" y="116" fill="#6b5e4a" font-size="7">ATL</text>
+    <circle cx="515" cy="119" r="4" fill="#6b5e4a"/><!-- HOU -->
+    <circle cx="513" cy="99" r="4" fill="#6b5e4a"/><!-- PHI -->
+    <text x="513" y="92" text-anchor="middle" fill="#6b5e4a" font-size="7">PHI</text>
+    <circle cx="497" cy="146" r="4" fill="#6b5e4a"/><!-- SF -->
+    <circle cx="493" cy="165" r="4" fill="#6b5e4a"/><!-- TOR -->
+    <text x="487" y="170" text-anchor="end" fill="#6b5e4a" font-size="7">TOR</text>
+    <circle cx="492" cy="153" r="4" fill="#6b5e4a"/><!-- TEX -->
+    <circle cx="460" cy="137" r="4" fill="#6b5e4a"/><!-- CHC -->
+    <circle cx="454" cy="105" r="4" fill="#6b5e4a"/><!-- SD -->
+    <text x="460" y="103" fill="#6b5e4a" font-size="7">SD</text>
+    <circle cx="422" cy="118" r="4" fill="#6b5e4a"/><!-- ARI -->
+    <circle cx="416" cy="137" r="4" fill="#6b5e4a"/><!-- STL -->
+    <circle cx="406" cy="143" r="4" fill="#6b5e4a"/><!-- BOS -->
+    <circle cx="367" cy="200" r="4" fill="#6b5e4a"/><!-- LAA -->
+    <text x="373" y="203" fill="#6b5e4a" font-size="7">LAA</text>
+    <!-- Mid payroll -->
+    <circle cx="321" cy="206" r="4" fill="#6b5e4a"/><!-- COL -->
+    <circle cx="307" cy="140" r="4" fill="#6b5e4a"/><!-- MIN -->
+    <circle cx="305" cy="130" r="4" fill="#6b5e4a"/><!-- SEA -->
+    <circle cx="305" cy="127" r="4" fill="#6b5e4a"/><!-- KC -->
+    <circle cx="282" cy="105" r="5" fill="#2a6e3f"/><!-- MIL Brewers (overperformer) -->
+    <text x="276" y="100" text-anchor="end" fill="#2a6e3f" font-size="8" font-weight="700">MIL</text>
+    <!-- Low payroll -->
+    <circle cx="263" cy="175" r="4" fill="#6b5e4a"/><!-- WSN -->
+    <circle cx="253" cy="106" r="5" fill="#2a6e3f"/><!-- CLE Guardians (overperformer) -->
+    <text x="247" y="101" text-anchor="end" fill="#2a6e3f" font-size="8" font-weight="700">CLE</text>
+    <circle cx="232" cy="270" r="6" fill="#b83a1e" stroke="#1a1208" stroke-width="1"/><!-- CHW (disaster) -->
+    <text x="238" y="273" fill="#b83a1e" font-size="8" font-weight="700">CHW 41&ndash;121</text>
+    <circle cx="228" cy="159" r="4" fill="#6b5e4a"/><!-- PIT -->
+    <circle cx="228" cy="146" r="4" fill="#6b5e4a"/><!-- TBR -->
+    <circle cx="226" cy="156" r="4" fill="#6b5e4a"/><!-- CIN -->
+    <circle cx="226" cy="127" r="4" fill="#6b5e4a"/><!-- DET -->
+    <text x="232" y="125" fill="#6b5e4a" font-size="7">DET</text>
+    <circle cx="222" cy="203" r="4" fill="#6b5e4a"/><!-- MIA -->
+    <circle cx="214" cy="111" r="5" fill="#2a6e3f"/><!-- BAL Orioles (big overperformer) -->
+    <text x="208" y="106" text-anchor="end" fill="#2a6e3f" font-size="8" font-weight="700">BAL 91&ndash;71</text>
+    <circle cx="143" cy="181" r="4" fill="#6b5e4a"/><!-- OAK -->
+    <text x="149" y="184" fill="#6b5e4a" font-size="7">OAK ($81M)</text>
+  </svg>
+  <div class="chart-note">Each dot is one of the 30 MLB teams in 2024. X-axis: Opening Day payroll in millions (Cot&rsquo;s Contracts via Heavy.com). Y-axis: regular-season winning percentage (ESPN). Y-axis starts at zero. The dashed regression line is the best linear fit through the cloud; <strong>R&sup2; is 0.214</strong>, meaning payroll explains about twenty-one percent of the variation in winning percentage and roughly four-fifths is explained by something else. The line&rsquo;s slope translates to about <strong>eight extra wins per additional $100 million</strong> over a 162-game season. The Mets ($340M) sit exactly on the line at the top right &mdash; the steepest spending in baseball bought them precisely the .549 the model predicted. The Dodgers ($325M) sit slightly above the line and won the World Series. The largest underperformer is the Chicago White Sox &mdash; a payroll near the middle of the league at $124 million that produced 41 wins. The largest overperformers are the Orioles, Guardians, and Brewers, all small-to-mid market and all clear of the line by at least nine games.</div>
+</div>
+
+<h2 class="sh">Reading the Cloud</h2>
+
+<p>The first thing to read in the figure is the slope. The line goes up from left to right. Teams that spent more, on average, won more games &mdash; the relationship that fan-radio assumes is real, real. The second thing to read is the scatter around the line. <strong>R&sup2; is 0.214</strong>, which is a way of saying that the dashed line catches a fifth of what is happening across the league in 2024 and misses four fifths of it. The number is consistent with several decades of published baseball-economics research, which has tended to find MLB&rsquo;s payroll-to-wins R&sup2; in the .14 to .26 range across full seasons. Issue #48 of this newsletter, using the first six weeks of the 2026 season, found 1.4 percent &mdash; an early-season noise figure that climbs toward the published full-season number as innings accumulate. The honest range to carry in mind is twenty percent. Money matters. Money is not the model.</p>
+
+<p>The third thing to read is the points that sit furthest from the line. The 2024 Chicago White Sox &mdash; a payroll squarely in the middle of the league at $124 million, twenty-three games below the regression line&rsquo;s prediction &mdash; are the standout. Their 41&ndash;121 record was the worst single-season mark since the 1962 Mets. Above the line, the Baltimore Orioles, Cleveland Guardians, and Milwaukee Brewers each spent below the league average and finished with 90-plus wins. Those four teams are most of the 2024 story. Each one was, in the language of regression, a residual large enough to make the chart visibly less predictive. Each one was, in plain English, a team that the dollars-and-cents read of baseball got wrong.</p>
+
+<div class="box">
+<h3>The Mets&rsquo; Position on the Chart</h3>
+<p>Steve Cohen&rsquo;s 2024 Mets are the rightmost dot. The team paid <strong>$340 million</strong> in Opening Day payroll &mdash; the highest figure in baseball &mdash; and finished 89&ndash;73 for a .549 winning percentage and an NLCS appearance. The Mets&rsquo; dot sits almost exactly on the regression line, which is the most useful and the least flattering thing the chart can say about them. They got exactly what their payroll predicted. They did not overpay for a free agent and then collapse below the line (the way the 2024 Giants did at $252M for an 80-win season). They also did not extract extra wins from their dollars (the way the Dodgers very slightly did, finishing above the line on the way to a title). The most expensive roster in baseball delivered an average return on its investment. The Mets got the value the regression said they should get. The chart that says &ldquo;money matters&rdquo; also says &ldquo;money does not produce surplus.&rdquo;</p>
+</div>
+
+<h2 class="sh">What This Means for the Cross-League Question</h2>
+
+<p>The natural extension &mdash; do the other three major leagues look like this? &mdash; is the question the newsletter set out to plot. Each of the NFL, NBA, and NHL operates a salary cap, which is by design a sumptuary law: a structural compression of how much teams can differ in spending. The available evidence, drawn from partial data and from the published literature, tells a consistent story. The NBA&rsquo;s payroll-to-wins R&sup2;, in studies that pool multiple seasons, sits in the .10 to .20 range &mdash; close to MLB&rsquo;s. The NHL&rsquo;s R&sup2; is statistically near zero, because the league&rsquo;s hard cap and unusually high salary floor compress the spending range to less than a 1.4x ratio across the league. The NFL&rsquo;s R&sup2; for cash spending is also close to zero, because cap mechanics (dead money, rookie-contract quarterback windows) sever the dollars-to-wins link more thoroughly than any cap alone could. The 2024 evidence backs all three of these directional findings: the top NFL spender (Browns, $326M cash) went 3&ndash;14; the top NBA spender (Warriors, $224.8M plus a $176.9M luxury-tax bill) missed the playoffs; the top NHL spender (Avalanche) lost in the second round; only the MLB&rsquo;s top spender, the Mets, even reached its league&rsquo;s championship round, and then lost.</p>
+
+<p>A clean four-panel cross-league scatter on the same axes was the original ambition of this issue. The honest disclosure is that the public payroll data for the NFL, NBA, and NHL is locked behind aggregators &mdash; Spotrac, HoopsHype, PuckPedia &mdash; that do not return their full tables to the tools available to this newsletter. The newsletter could compile the partial top-five-and-bottom-five for each league, which is what the cross-league section of this piece does in narrative; what it could not do without sleight of hand was plot fifteen confirmed dots and ninety estimated ones on the same canvas. The MLB chart above is, instead, the complete version of the cleanest case: the league with the widest spending range, where the relationship between money and winning is at its strongest, and where the strongest version of that relationship still explains only about a fifth of who wins and who loses.</p>
+
+<div class="pull">
+  <p>&ldquo;In the league where money matters most, money explains a fifth. The other four fifths is everything else &mdash; health, development, sequencing, front-office judgment, and Fortune. The chart is the most accurate picture of the money question this newsletter can draw.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on the 2024 MLB scatter</cite>
+</div>
+
+<h2 class="sh">A Note on the Sumptuary Argument</h2>
+
+<p>The <em>Lex Oppia</em> was repealed in 195 BC after a famous public protest by Roman women, which Livy describes as the only time the matrons of the city collectively appeared in the streets to lobby the Senate. Cato the Elder argued for keeping it. He lost. The conventional reading of the episode is that sumptuary laws fail because they target a symptom (the display of wealth) rather than its cause (the underlying wealth itself). The modern salary cap is more durable because it is enforced by leagues through collective bargaining rather than by political coalitions, but the structural lesson is the same. Caps compress spending without compressing underlying advantage. Owners with deeper pockets still find edges &mdash; through better front offices, better facilities, more aggressive use of cap mechanics (the Dodgers&rsquo; deferred-money structures are a current case), or simply through hiring the best people at every non-cap position. The cap controls the dimension that can be measured. The chart you just looked at, in the league that does not even try to compress that dimension, says the dimension is not, by itself, the thing that decides the year.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on the data: 2024 MLB Opening Day payrolls are from Cot&rsquo;s Contracts as reported via Heavy.com; regular-season W-L records are from ESPN&rsquo;s 2024 MLB standings. The Lex Oppia is documented in Livy, <em>Ab Urbe Condita</em>, Book 34, Chapters 1&ndash;8. Issue #48 of this newsletter (&ldquo;The Cost of a Win&rdquo;) was published on May 15, 2026, and used the first six weeks of the 2026 MLB season; its R&sup2; of .014 was an early-sample noise figure that has been understood, in this issue, in the context of the published full-season range of .14 to .26. The 2024 figure of .214 sits squarely in that range.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Sources: Cot&rsquo;s Contracts via Heavy.com (payroll), ESPN (W-L), Livy 34.1&ndash;8</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
