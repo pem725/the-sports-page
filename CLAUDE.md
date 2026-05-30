@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 438 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 437 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 62 issues (#1-62)
-Queue: 4 articles ready (052-preseason-sim-framework, 053-raleigh-slump-shower-oblique, 054-mariners-54-percent, 055-superstition-baseball-math)
+Published: 63 issues (#1-63)
+Queue: 9 articles ready (052-preseason-sim-framework, 054-mariners-54-percent, 055-superstition-baseball-math, 056-pyrrhic-1-jets-trevor, 057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins)
 Reserve: 1 evergreen piece
-Goal: 438 issues remaining of 500
-Last published: Issue #62 — "The Tiebreaker Pretends to Add Data. Instead, It Adds Noise." (045-significance-tiebreaker-part-2.html) on May 29, 2026
+Goal: 437 issues remaining of 500
+Last published: Issue #63 — "Zero for Thirty-Eight. Then a Shower. Then the IL." (053-raleigh-slump-shower-oblique.html) on May 30, 2026
