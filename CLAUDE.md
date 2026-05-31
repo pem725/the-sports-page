@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 63 issues (#1-63)
+Published: 64 issues (#1-64)
 Queue: 9 articles ready (052-preseason-sim-framework, 054-mariners-54-percent, 055-superstition-baseball-math, 056-pyrrhic-1-jets-trevor, 057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins)
 Reserve: 1 evergreen piece
-Goal: 437 issues remaining of 500
-Last published: Issue #63 — "Zero for Thirty-Eight. Then a Shower. Then the IL." (053-raleigh-slump-shower-oblique.html) on May 30, 2026
+Goal: 436 issues remaining of 500
+Last published: Issue #64 — "The Doctors Said May. The Calendar Says May. The Players Say Otherwise." (sunday-008.html) on May 31, 2026
