@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 437 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 435 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 64 issues (#1-64)
-Queue: 9 articles ready (052-preseason-sim-framework, 054-mariners-54-percent, 055-superstition-baseball-math, 056-pyrrhic-1-jets-trevor, 057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins)
+Published: 65 issues (#1-65)
+Queue: 8 articles ready (052-preseason-sim-framework, 054-mariners-54-percent, 055-superstition-baseball-math, 057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins)
 Reserve: 1 evergreen piece
-Goal: 436 issues remaining of 500
-Last published: Issue #64 — "The Doctors Said May. The Calendar Says May. The Players Say Otherwise." (sunday-008.html) on May 31, 2026
+Goal: 435 issues remaining of 500
+Last published: Issue #65 — "One More Such Victory, and the Jets Are Undone." (056-pyrrhic-1-jets-trevor.html) on June 1, 2026
