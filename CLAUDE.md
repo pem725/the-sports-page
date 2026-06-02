@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 435 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 434 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 65 issues (#1-65)
-Queue: 8 articles ready (052-preseason-sim-framework, 054-mariners-54-percent, 055-superstition-baseball-math, 057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins)
+Published: 66 issues (#1-66)
+Queue: 7 articles ready (054-mariners-54-percent, 055-superstition-baseball-math, 057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins)
 Reserve: 1 evergreen piece
-Goal: 435 issues remaining of 500
-Last published: Issue #65 — "One More Such Victory, and the Jets Are Undone." (056-pyrrhic-1-jets-trevor.html) on June 1, 2026
+Goal: 434 issues remaining of 500
+Last published: Issue #66 — "Pre-Season Simulation: A Framework for Forecasts That Are Honestly Wrong." (052-preseason-sim-framework.html) on June 2, 2026
