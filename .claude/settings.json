@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git -C \"$CLAUDE_PROJECT_DIR\" fetch origin 2>&1 && git -C \"$CLAUDE_PROJECT_DIR\" pull --ff-only 2>&1 || echo \"WARNING: the-sports-page 'git pull --ff-only' FAILED -- local clone may be stale or diverged. Reconcile manually (git log HEAD..origin/main ; git status) BEFORE drafting or publishing. Do NOT start work from a stale clone.\"",
+            "timeout": 60,
+            "statusMessage": "Syncing local clone with GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}
