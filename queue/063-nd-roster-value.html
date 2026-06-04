@@ -1,0 +1,286 @@
+<!-- PUBLISH-META
+topic: CFB
+tags: CFB:cfb, Notre Dame, NIL, Economics
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — June __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch from South Bend &middot; College Football, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. __</span>
+    <span>June __, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Notre Dame Just Bought the <em>Sixth</em> Most Expensive Roster in College Football. Here&rsquo;s What $40.4 Million Actually Buys.</h1>
+
+  <div class="deck">
+    Six programs are now valued north of $40 million for 2026, and the Irish are one of them. But the team that won last year&rsquo;s title wasn&rsquo;t the biggest spender &mdash; and the No. 6 roster on this very list couldn&rsquo;t even make the 12-team playoff a season ago. At the top of the market, money doesn&rsquo;t buy the trophy. It buys a ticket to the lottery.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; June __, 2026 &middot; The Economics of Winning</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">$40.4M</div><div class="l">ND 2026 Roster Valuation</div></div>
+    <div class="sc"><div class="v">6th</div><div class="l">National Spending Rank</div></div>
+    <div class="sc"><div class="v bad">11th</div><div class="l">Where $$$ Got Them in 2025 (1st out)</div></div>
+  </div>
+
+  <p>The number making the rounds in South Bend this week is $40.4 million. That&rsquo;s College Front Office&rsquo;s estimated 2026 roster valuation for Notre Dame &mdash; sixth in the country, behind Texas, Miami, Ohio State, LSU, and Oregon. It is, by any historical standard, an astonishing figure for a program that built its brand on the opposite of a checkbook.</p>
+
+  <p>Back in <a href="eo-003-notre-dame.html" style="color:var(--steel)">Issue No.&nbsp;16</a>, we wrote about the executive order&rsquo;s proposed $20 million NIL cap and noted Notre Dame was already spending right at it. Two months later, the market has spoken, and the gap between &ldquo;the cap&rdquo; and &ldquo;the market&rdquo; is the whole story. A valuation is not a salary line; the House settlement lets schools share $20.5 million directly with athletes, and everything above that &mdash; collectives, brand deals, booster money &mdash; lives outside the cap. The $40.4 million figure is what the roster is worth on the open market, not a check Notre Dame wrote. But it tells you exactly which arms race the Irish have decided to enter.</p>
+
+  <!-- THE FIELD -->
+  <h2 class="sh">The $40 Million Club</h2>
+
+  <p>For the first time, six rosters cleared $40 million. Here is the field Notre Dame is now buying into &mdash; valuations from College Front Office, the same source cited across Yahoo Sports, College Sports Network, and OutKick.</p>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Rank</th><th>Program</th><th>2026 Roster Value</th><th>Conference</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="mono">1</td><td>Texas</td><td class="mono">$47.9M</td><td>SEC</td></tr>
+      <tr><td class="mono">2</td><td>Miami</td><td class="mono">$44.0M</td><td>ACC</td></tr>
+      <tr><td class="mono">3</td><td>Ohio State</td><td class="mono">$43.5M</td><td>Big Ten</td></tr>
+      <tr><td class="mono">4</td><td>LSU</td><td class="mono">$42.8M</td><td>SEC</td></tr>
+      <tr><td class="mono">5</td><td>Oregon</td><td class="mono">$42.8M</td><td>Big Ten</td></tr>
+      <tr class="hl"><td class="mono">6</td><td>Notre Dame</td><td class="mono">$40.4M</td><td>Independent</td></tr>
+      <tr><td class="mono">7</td><td>Texas A&amp;M</td><td class="mono">$38.9M</td><td>SEC</td></tr>
+      <tr><td class="mono">8</td><td>Alabama</td><td class="mono">$37.2M</td><td>SEC</td></tr>
+      <tr><td class="mono">9</td><td>Tennessee</td><td class="mono">$36.7M</td><td>SEC</td></tr>
+      <tr><td class="mono">10</td><td>Texas Tech</td><td class="mono">$36.3M</td><td>Big 12</td></tr>
+    </tbody>
+  </table>
+
+  <p>Notice how compressed the top is. The most expensive roster in America (Texas, $47.9M) costs only 18.6% more than the sixth (Notre Dame, $40.4M). The entire top ten fits inside an $11.6 million band. When the field bunches this tightly, the marginal dollar stops being a differentiator &mdash; everyone at the front of the line is paying roughly the same price for roughly the same caliber of athlete.</p>
+
+  <!-- THE COUNTERINTUITIVE PART -->
+  <h2 class="sh">The Part That Should Worry the Spenders</h2>
+
+  <div class="two-col">
+    <div>
+      <p>Here is the uncomfortable fact for everyone in the $40 million club: the team that actually won the 2024 national championship &mdash; Ohio State, beating Notre Dame 34&ndash;23 in Atlanta &mdash; did it on a roster reported around $20 million that season, roughly half of what the top teams now carry. The biggest checkbook did not hoist the trophy. A very good checkbook, spent well, did.</p>
+      <p>And then there&rsquo;s the data point sitting right inside this year&rsquo;s table. The sixth-most-valuable roster in the country belongs to a program that, one season ago, went 10&ndash;2, finished 11th in the final rankings, and became the <em>first team left out</em> of the 12-team playoff. Miami took the last at-large bid at No.&nbsp;10. Notre Dame declined a non-playoff bowl on the way out the door. Top-six money bought a team that missed the bracket by one spot.</p>
+    </div>
+    <div>
+      <p>This is not an accident of one season. The academic work on NIL spending keeps landing in the same place. A 2025 Claremont thesis, bluntly titled <em>Buying Wins?</em>, and a peer-reviewed study in <em>Management Science</em> both find that higher NIL spending is associated with <strong>smaller betting spreads and more upsets</strong> &mdash; not more wins for the team doing the spending. Money, in aggregate, is buying competitive balance. It is closing the gap between the haves and the have-somethings, which means it is making each individual favorite <em>less</em> safe, not more.</p>
+      <p>Put differently: when only Alabama and Clemson could afford the best players, the best players clustered and the titles clustered. Now that twenty programs can afford a near-elite roster, the talent spreads out, the games get closer, and the outcome bends toward variance. The check still has to be cashed on the field, by a quarterback, in January, in one game.</p>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Spending $40 million doesn&rsquo;t buy a national title. It buys a seat at a six-team table where everyone paid the same cover charge for the same single prize.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the economics of the front of the line</cite>
+  </div>
+
+  <!-- THE MATH -->
+  <div class="box">
+    <h3>The Math: What Does the Marginal Dollar Buy at the Top?</h3>
+    <p>This is our own arithmetic on the published 2026 valuations &mdash; not an outside projection. It is meant to show how flat the top of the market has become.</p>
+    <div class="math">THE $40M CLUB, COMPRESSED
+&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
+  #1 Texas        $47.9M   &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;
+  #6 Notre Dame   $40.4M   &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;
+  Gap, #1 to #6:   $7.5M   = +18.6%
+
+  Six rosters now exceed $40M.
+  Exactly ONE trophy is awarded.
+
+EXPECTED RETURN ON A TOP-6 ROSTER
+&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
+  If the title were a coin flip among
+  the six $40M+ rosters alone:
+        P(title) = 1 / 6  =  16.7%
+  But the field is 134 FBS teams, and
+  recent history says the champion need
+  not be the top spender (2024: champ
+  spent ~$20M, about HALF the leaders).
+
+THE LESSON
+&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
+  Money buys you INTO the lottery.
+  It does not buy the winning ticket.
+  Coaching, health, and one good month
+  in January decide which $40M roster
+  actually cashes.</div>
+    <p>The honest read on $40.4 million is not &ldquo;Notre Dame bought a championship.&rdquo; It is &ldquo;Notre Dame paid the going rate to remain a legitimate contender.&rdquo; That is a real and meaningful thing to buy &mdash; staying in the room matters &mdash; but it is a probability, not a guarantee, and the probability is shared with five other very rich rosters.</p>
+  </div>
+
+  <!-- HISTORICAL CARDS -->
+  <h2 class="sh">Two Data Points the Checkbook Can&rsquo;t Explain</h2>
+
+  <div class="hist-grid">
+    <div class="hc">
+      <div class="hc-name">The 2024 Champion Wasn&rsquo;t the Top Spender</div>
+      <div class="hc-stat">~$20M</div>
+      <div class="hc-label">Reported 2024 Ohio State roster &mdash; about half of today&rsquo;s leaders</div>
+      <p>Ohio State beat Notre Dame 34&ndash;23 for the 2024 national title on a roster valued at roughly half what the 2026 front-runners now carry. Two years of NIL inflation later, that same caliber of champion would rank outside the top ten in spending. The trophy correlates with talent <em>and</em> coaching and health and a forgiving bracket &mdash; not with finishing first in valuation.</p>
+      <div class="verdict">Spending rank &ne; final ranking</div>
+    </div>
+
+    <div class="hc">
+      <div class="hc-name">Top-Six Money, First Team Out</div>
+      <div class="hc-stat">10&ndash;2</div>
+      <div class="hc-label">Notre Dame&rsquo;s 2025 record &mdash; and an 11th-place finish</div>
+      <p>A year ago the Irish carried a top-tier roster, started 0&ndash;2 against Miami and Texas A&amp;M, won ten straight to reach 10&ndash;2 &mdash; and were the first team left out of the 12-team field at No.&nbsp;11. The exact thing the money is supposed to prevent (missing the playoff) happened anyway. The 2026 valuation is, in part, the bill for making sure it doesn&rsquo;t happen twice.</p>
+      <div class="verdict bad">$40M+ rosters miss the bracket too</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <p>So is $40.4 million a lot or a little? It&rsquo;s both. It is a staggering sum for Notre Dame to spend and a perfectly ordinary sum for a 2026 contender to spend &mdash; sixth in line, inside a tight band, chasing one trophy against five equally-funded rivals. The Irish didn&rsquo;t buy a championship this offseason. They bought the right to keep being in the conversation when the lottery is drawn in January. For a program that spent a century insisting it didn&rsquo;t need to, that is the most expensive admission ticket in its history.</p>
+
+  <!-- STORY IDEAS INBOX -->
+  <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem">Pitch a Story</h3>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem">Noticed a weird stat? Saw something that doesn&rsquo;t add up? Send it in. The best ideas become issues.</p>
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" id="pitch-name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" id="pitch-sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <textarea name="idea" placeholder="What&rsquo;s the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
+      <div style="display:flex;gap:.8rem;align-items:center">
+        <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
+        <span style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)">or <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea&body=Sport:%0A%0AStat+or+story:%0A%0AWhy+it%27s+interesting:" style="color:var(--steel)">post on GitHub</a></span>
+      </div>
+    </form>
+    <div id="pitch-ok" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--green);font-weight:600;letter-spacing:.08em">Sent! We read every pitch. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.08em">Something went wrong. Try the GitHub link instead.</div>
+  </div>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='SENDING…';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}
+      else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='SUBMIT IDEA';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. __</span>
+    <span>Data: College Front Office, Yahoo Sports, College Sports Network, ESPN, CBS Sports, Claremont (&ldquo;Buying Wins?&rdquo;), Management Science</span>
+    <span>Not financial or wagering advice</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+
+</body>
+</html>

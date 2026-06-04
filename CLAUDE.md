@@ -281,7 +281,7 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 ## Current State (update this when publishing)
 
 Published: 68 issues (#1-68)
-Queue: 5 articles ready (057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins)
+Queue: 8 articles ready (062-cup-final-game1, 063-nd-roster-value, 057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 064-mariners-streak, 060-mets-sell-or-hold, 061-mlb-money-buys-wins)
 Reserve: 1 evergreen piece
 Goal: 432 issues remaining of 500
 Last published: Issue #68 — "Why Every Baseball Superstition Looks Like It Worked." (055-superstition-baseball-math.html) on June 4, 2026
