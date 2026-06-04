@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 433 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 432 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 67 issues (#1-67)
-Queue: 6 articles ready (055-superstition-baseball-math, 057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins)
+Published: 68 issues (#1-68)
+Queue: 5 articles ready (057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins)
 Reserve: 1 evergreen piece
-Goal: 433 issues remaining of 500
-Last published: Issue #67 — "Jerry Dipoto Said You Play 54% Baseball to Make the Playoffs. The Math Says: Sometimes." (054-mariners-54-percent.html) on June 3, 2026
+Goal: 432 issues remaining of 500
+Last published: Issue #68 — "Why Every Baseball Superstition Looks Like It Worked." (055-superstition-baseball-math.html) on June 4, 2026
