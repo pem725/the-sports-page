@@ -1,0 +1,167 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, Juan Soto, wRC+, Rank Statistics
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — June __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8}
+table.rec .worse td{background:#fef0ec}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch on Rank, Distance &amp; Loneliness &middot; Baseball, 2026</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>June __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Juan Soto Is <em>94 Spots</em> From Help. That Number Is Lying to You.</h1>
+<div class="deck">A piece making the rounds this week declares Juan Soto the least-supported hitter in Mets history &mdash; his nearest teammate sits 94 places below him on the league leaderboard. The claim is built on a real and genuinely bleak chasm. But &ldquo;94 spots&rdquo; is the wrong number to be frightened by, and the reason why is the most useful thing a baseball leaderboard can teach you: rank gaps and skill gaps are not the same animal, and on a leaderboard the two come apart most violently exactly where Soto is standing.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; Baseball &middot; The Mathematics of Loneliness</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v good">161</div><div class="l">Soto&rsquo;s wRC+ &mdash; 4th in MLB, ahead of Ohtani</div></div>
+  <div class="sc"><div class="v bad">59</div><div class="l">Point gap to the next-best Met (Benge, 102)</div></div>
+  <div class="sc"><div class="v now">94</div><div class="l">Leaderboard spots between them &mdash; the misleading figure</div></div>
+</div>
+
+<p>The stat traveled fast because it is a good stat. By wRC+ &mdash; weighted runs created, scaled so that 100 is exactly league average and every point above is one percent better than average &mdash; Juan Soto sits fourth in all of baseball at 161, a notch ahead of Shohei Ohtani. The next-best qualified hitter on his own team, the rookie Carson Benge, sits 98th at 102. Ninety-four places below him. <em>FanSided</em>&rsquo;s Oliver Fox ran the gap back through franchise history and reports it as the largest distance between a Met&rsquo;s No. 1 and No. 2 qualified hitter since the team was born in 1962, eclipsing the 1998 club (Olerud third in the league, McRae fifty-sixth) by more than forty spots, and the thirteenth-largest such gap anywhere in MLB this century. We have not independently rebuilt that historical ledger; it is his analysis, and it is a careful one. What we can do is the part this newsletter exists to do: ask what the headline number actually measures.</p>
+
+<h2 class="sh">A Leaderboard Is Not a Ruler</h2>
+
+<p>Here is the trap. &ldquo;Ninety-four spots&rdquo; sounds like a distance, and your brain prices it as one &mdash; ninety-four units of something, a canyon. But a leaderboard rank is not a measurement of skill. It is a measurement of <em>how many other people are standing between you and someone else</em>, and that depends entirely on how densely the crowd is packed at that part of the line. wRC+ is packed very densely in the middle and very thinly at the top. The result is that the same number of &ldquo;spots&rdquo; can mean wildly different amounts of actual hitting depending on where you measure them.</p>
+
+<p>Walk it out. Among the roughly 130 qualified hitters in the league, the bottom of the list bottoms out near 75 and the very top reaches into the 180s and 190s. But the great bulk of major-league regulars &mdash; the entire fat middle of the distribution &mdash; live between about 90 and 115. League average is 100 by construction, and the league clusters tightly around it, because a player who drifts much below 100 stops being a regular and loses his place on the list. So the leaderboard is steep at the very top, where a handful of stars are spread far apart in skill, and nearly flat across its long middle, where dozens of roughly interchangeable hitters are jammed into a band a dozen points wide.</p>
+
+<div class="chart">
+  <div class="chart-cap">wRC+ by League Rank &mdash; Why 94 Spots Is Mostly Flat Ground</div>
+  <svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- Axes -->
+    <line x1="80" y1="360" x2="80" y2="40" stroke="#1a1208" stroke-width="1.5"/>
+    <line x1="80" y1="360" x2="730" y2="360" stroke="#1a1208" stroke-width="1.5"/>
+
+    <!-- Y ticks/labels (wRC+) -->
+    <line x1="76" y1="304" x2="80" y2="304" stroke="#1a1208" stroke-width="1"/><text x="72" y="308" text-anchor="end" fill="#6b5e4a" font-size="9">100</text>
+    <line x1="76" y1="249" x2="80" y2="249" stroke="#1a1208" stroke-width="1"/><text x="72" y="253" text-anchor="end" fill="#6b5e4a" font-size="9">120</text>
+    <line x1="76" y1="193" x2="80" y2="193" stroke="#1a1208" stroke-width="1"/><text x="72" y="197" text-anchor="end" fill="#6b5e4a" font-size="9">140</text>
+    <line x1="76" y1="137" x2="80" y2="137" stroke="#1a1208" stroke-width="1"/><text x="72" y="141" text-anchor="end" fill="#6b5e4a" font-size="9">160</text>
+    <line x1="76" y1="82" x2="80" y2="82" stroke="#1a1208" stroke-width="1"/><text x="72" y="86" text-anchor="end" fill="#6b5e4a" font-size="9">180</text>
+    <text x="24" y="200" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9" transform="rotate(-90,24,200)">wRC+</text>
+
+    <!-- X ticks/labels (rank) -->
+    <line x1="80" y1="360" x2="80" y2="364" stroke="#1a1208" stroke-width="1"/><text x="80" y="376" text-anchor="middle" fill="#6b5e4a" font-size="9">1</text>
+    <line x1="195" y1="360" x2="195" y2="364" stroke="#1a1208" stroke-width="1"/><text x="195" y="376" text-anchor="middle" fill="#6b5e4a" font-size="9">25</text>
+    <line x1="316" y1="360" x2="316" y2="364" stroke="#1a1208" stroke-width="1"/><text x="316" y="376" text-anchor="middle" fill="#6b5e4a" font-size="9">50</text>
+    <line x1="436" y1="360" x2="436" y2="364" stroke="#1a1208" stroke-width="1"/><text x="436" y="376" text-anchor="middle" fill="#6b5e4a" font-size="9">75</text>
+    <line x1="556" y1="360" x2="556" y2="364" stroke="#1a1208" stroke-width="1"/><text x="556" y="376" text-anchor="middle" fill="#6b5e4a" font-size="9">100</text>
+    <line x1="700" y1="360" x2="700" y2="364" stroke="#1a1208" stroke-width="1"/><text x="700" y="376" text-anchor="middle" fill="#6b5e4a" font-size="9">130</text>
+    <text x="400" y="394" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9">MLB LEADERBOARD RANK (QUALIFIED HITTERS)</text>
+
+    <!-- League-average reference -->
+    <line x1="80" y1="304" x2="730" y2="304" stroke="#c8b99a" stroke-width="0.8" stroke-dasharray="4,4"/>
+    <text x="700" y="299" text-anchor="end" fill="#c8b99a" font-size="8" font-style="italic">league average = 100</text>
+
+    <!-- Shaded "94 spots" span between Soto and Benge -->
+    <rect x="94" y="40" width="452" height="320" fill="#b83a1e" opacity="0.05"/>
+
+    <!-- The illustrative curve -->
+    <polyline points="80,54 94,135 123,179 171,221 219,243 316,268 412,282 546,299 700,338" fill="none" stroke="#2c4a6e" stroke-width="2"/>
+
+    <!-- Soto -->
+    <circle cx="94" cy="135" r="6" fill="#c9962a" stroke="#1a1208" stroke-width="1"/>
+    <text x="106" y="128" fill="#c9962a" font-size="9" font-weight="700">SOTO &mdash; 161, 4th</text>
+
+    <!-- Benge -->
+    <circle cx="546" cy="299" r="6" fill="#b83a1e" stroke="#1a1208" stroke-width="1"/>
+    <text x="540" y="290" text-anchor="end" fill="#b83a1e" font-size="9" font-weight="700">BENGE &mdash; 102, 98th</text>
+
+    <!-- Annotation: the flat stretch -->
+    <text x="360" y="338" text-anchor="middle" fill="#6b5e4a" font-size="8" font-style="italic">ranks 30&ndash;100: ~20 points of wRC+ spread across 70 places</text>
+  </svg>
+  <div class="chart-note">Representative shape of a single-season wRC+ leaderboard, not exact per-player values. The curve falls off a cliff at the very top and then flattens into a long plateau. Soto (gold) sits on the cliff; Benge (rust) sits well out on the plateau. The 94 places between them look enormous laid along the rank axis, but most of those places are stacked into a narrow vertical band &mdash; the true vertical drop is 59 points, and the back half of it is nearly flat. The scary part of the stat (94 spots) lives in the flat part. The real part (59 points) is the cliff Soto is standing on alone.</div>
+</div>
+
+<h2 class="sh">The Honest Number Is 59, and It Is Still Brutal</h2>
+
+<p>So strip the theater off and the defensible version of the headline is this: Soto is producing 161 percent of league-average offense, and his best teammate is producing 102. A fifty-nine-point wRC+ gap between a club&rsquo;s top two hitters is, by any reasonable reading, enormous &mdash; you do not need the inflated &ldquo;94 spots&rdquo; to make the point, and reaching for it actually weakens it, because the moment a skeptic realizes ranks compress in the middle, the whole claim looks like a magic trick. It is not a magic trick. The fifty-nine points are real, they are measured against an above-average teammate, and a team whose No. 2 bat is league-average-plus while its superstar laps the field is a team that is, in the most literal sense, wasting one of the best hitters alive.</p>
+
+<div class="pull">
+  <p>&ldquo;Rank tells you how many people are between you and someone. It does not tell you how far. On a leaderboard, those two questions have different answers, and the gap between them is widest at the top &mdash; which is exactly where the lonely players live.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on the difference between a rank and a ruler</cite>
+</div>
+
+<h2 class="sh">A Monument and an Indictment Are the Same Statue</h2>
+
+<p>There is one more thing the metric quietly smuggles in, and it cuts the other way. To rank as the &ldquo;least-supported&rdquo; hitter in your franchise&rsquo;s history, you need two ingredients, and only one of them is bad. You need a weak supporting cast &mdash; and the 2026 Mets, ranked at or near the bottom of the sport in non-Soto offense with Lindor and Bichette hurt or scuffling for much of the year, supply that. But you <em>also</em> need a hitter monstrously good enough to open the gap in the first place. A merely very good player surrounded by the same weak cast would not crack this list, because the distance from &ldquo;very good&rdquo; to &ldquo;league average&rdquo; is small. The list is filtered for greatness as strictly as it is filtered for surrounding weakness.</p>
+
+<div class="box">
+<h3>The Stat Half-Measures Soto Himself</h3>
+<p>This is why the &ldquo;least-supported&rdquo; framing is half a compliment wearing a frown. Of the two things required to land on it &mdash; a historically isolated star and a historically thin cast &mdash; the Mets undeniably have the second. But the engine of the gap is the first. Move Benge&rsquo;s 102 onto a team whose best hitter is a good-not-great 125, and the &ldquo;gap&rdquo; is 23 points and nobody writes the article. The reason the number is historic is that Soto is doing something only a dozen-odd hitters per season do at all.</p>
+<p>So read the stat as two sentences, not one. The Mets have failed to build a lineup around a generational bat &mdash; true, and the front office should own it. And Juan Soto is so far out on the leaderboard&rsquo;s cliff that the entire rest of his roster is invisible behind him &mdash; also true, and that one is not an indictment of anyone but a monument to him. The same statue says both things. Which inscription you read off it depends only on which way you walk around it.</p>
+</div>
+
+<h2 class="sh">What to Keep, What to Throw Back</h2>
+
+<p>Keep the fifty-nine points. That is the chasm, it is measured against a real and above-average teammate, and on the franchise-history claim we will trust Fox&rsquo;s reconstruction until someone overturns it. Throw back the ninety-four spots &mdash; not because it is false, but because it is the part of the stat that knows the least about baseball and the most about how crowds bunch up in the middle of a line. And hold both readings of the thing at once: a lineup that has stranded a top-five hitter on an island, and a hitter good enough that the island was always going to be lonely no matter who else was standing on the Mets&rsquo; shore. The supporting cast can get better. The view from the cliff, for now, belongs to Soto alone.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on the data: Soto&rsquo;s 161 wRC+ (4th, ahead of Ohtani) and Carson Benge&rsquo;s 102 wRC+ (98th) are current-season qualified-hitter figures from FanGraphs as of this week and move with every game. The franchise-history gap (largest since 1962, eclipsing the 1998 Olerud/McRae club) and the &ldquo;13th-largest in MLB since 2000&rdquo; ranking are the original analysis of Oliver Fox at FanSided; this issue treats those as his computation rather than independently verifying the full historical leaderboard. The leaderboard curve above is an illustration of distribution shape, not a plot of named players. Hat tip to Tim, who sent this one our way.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>Sources: FanGraphs (wRC+, qualified hitters); FanSided / Oliver Fox (historical gap analysis)</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
