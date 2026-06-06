@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 431 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 430 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 69 issues (#1-69)
-Queue: 8 articles ready (057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins, 063-nd-roster-value, 064-mariners-streak, 065-soto-least-supported)
+Published: 70 issues (#1-70)
+Queue: 8 articles ready (057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins, 064-mariners-streak, 065-soto-least-supported, 066-pyrrhic-5-cincinnati)
 Reserve: 1 evergreen piece
-Goal: 431 issues remaining of 500
-Last published: Issue #69 — "Vegas Did Something No Road Team Had Ever Done in a Cup Final. The Real Question Is How Much It Matters." (062-cup-final-game1.html) on June 5, 2026
+Goal: 430 issues remaining of 500
+Last published: Issue #70 — "Notre Dame Just Bought the Sixth Most Expensive Roster in College Football. Here’s What $40.4 Million Actually Buys." (063-nd-roster-value.html) on June 6, 2026
