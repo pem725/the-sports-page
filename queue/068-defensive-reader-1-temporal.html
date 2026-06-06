@@ -1,0 +1,151 @@
+<!-- PUBLISH-META
+topic: Methods
+tags: Methods, Reader's Defense, Inference, Media Literacy, Hume, Temporal Contiguity
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.55rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.series-tag{display:inline-block;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.18rem .55rem;font-weight:700;margin-bottom:.5rem}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">The Reader&rsquo;s Defense &middot; Inaugural Issue &middot; A Recurring Thread</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<span class="series-tag">The Reader&rsquo;s Defense &middot; Part I</span>
+
+<h1 class="hed">We Made an Inference Error Yesterday. <em>Three More Are in Your Sports Feed Right Now.</em></h1>
+<div class="deck">In 1748 the Scottish philosopher David Hume published <em>An Enquiry Concerning Human Understanding</em>, in which he warned, with the calm exasperation of a man who knew his warning would be politely ignored for several centuries, that human beings habitually mistake temporal sequence for causation. When one billiard ball strikes another and the second one moves, Hume wrote, we do not actually <em>see</em> a cause. We see a sequence. The leap from &ldquo;A happened, then B happened&rdquo; to &ldquo;A caused B&rdquo; is something the mind adds, on its own, after the fact. Sports media commits a version of this error roughly daily, including by this newsletter, including yesterday morning. This issue inaugurates a new recurring thread: <strong>The Reader&rsquo;s Defense.</strong> The goal is to send readers home with vocabulary they can use to spot the error the next time it walks past them in a headline. We start with the version we just published.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; The Reader&rsquo;s Defense</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v" style="color:var(--gold)">1748</div><div class="l">Year Hume Warned About This</div></div>
+  <div class="sc"><div class="v bad">1</div><div class="l">Error This Newsletter Owned Yesterday</div></div>
+  <div class="sc"><div class="v">3</div><div class="l">Errors Named Today &mdash; All Currently Live</div></div>
+</div>
+
+<p>Yesterday morning, Issue #70 of this newsletter framed Notre Dame&rsquo;s $40.4 million 2026 roster valuation as if it had been responsible for the program&rsquo;s 11th-place finish a season ago. A reader caught the error within hours and the issue was corrected, in full, by the same evening. The errata box on the bottom of Issue #70 explains the specific repair. This issue is about the wider pattern. The mistake we made is not a Sports Page mistake. It is a media mistake the size of a continent, and once a reader knows where to look for it, the same reader will find it operating &mdash; this week, in current coverage &mdash; in at least three other places.</p>
+
+<h2 class="sh">The Error, Named</h2>
+
+<p>The class of error has a clean technical name: <strong>temporal contiguity</strong>. The general form is the mistake of treating two events that occur close together in time as <em>cause and effect</em>, when in fact the only thing actually observed is that they happened in sequence. Hume&rsquo;s argument was that the inferential leap is, strictly speaking, unjustified &mdash; the second event might be caused by the first, or might be caused by a third factor that produced both, or might be coincidence with no causal connection at all. The leap is always an addition the mind makes on its own. Most of the time, the addition is harmless and useful. Occasionally, it is the entire reason a sports column is wrong.</p>
+
+<p>The most diagnostic version of the error in sports writing is the one Issue #70 committed: a <em>forward-looking</em> number being used to explain a <em>backward-looking</em> outcome. The 2026 valuation describes a roster that has not played a game yet. The 11th-place finish describes a roster that did. They share the institutional name &ldquo;Notre Dame&rdquo; but they are not the same underlying object. The temporal arrow goes the wrong way the moment a sentence uses one to explain the other. Once a reader sees that shape, the same shape becomes visible elsewhere.</p>
+
+<h2 class="sh">Three Examples Hiding in This Week&rsquo;s Sports Coverage</h2>
+
+<p>None of the columns referenced below are quoted by name &mdash; the point is the pattern, not the byline. A reader who follows national sports coverage for a week will encounter all three of these shapes without effort.</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>Shape of the Error</th><th>How It Reads in a Headline</th><th>Why the Inference Fails</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Forward valuation explains backward result</strong> <em>(our error)</em></td>
+      <td class="mono">&ldquo;Notre Dame&rsquo;s $40.4M roster couldn&rsquo;t make the playoff last year.&rdquo;</td>
+      <td>The $40.4M describes the 2026 roster, which has not played. The 2025 roster that went 10&ndash;2 was a different and cheaper team. Same name. Different object.</td>
+    </tr>
+    <tr>
+      <td><strong>Preseason projection treated as in-season verdict</strong></td>
+      <td class="mono">&ldquo;PECOTA had the Mets at 87 wins. They&rsquo;re 22&ndash;29. The projection failed.&rdquo;</td>
+      <td>A projection is a distribution over outcomes with a wide credible interval, not a prediction of a point. Falling below the median does not prove the model wrong; it provides new information that should update the prior. The projection has no responsibility for the result it described in probability terms.</td>
+    </tr>
+    <tr>
+      <td><strong>Post hoc ergo propter hoc</strong> <em>(the classic case)</em></td>
+      <td class="mono">&ldquo;Team X fired their pitching coach in mid-May. Their ERA dropped 0.4 over the next month. The new coach is a difference-maker.&rdquo;</td>
+      <td>The coach change happened before the ERA improvement. So did the schedule turning toward weaker opponents, several injured starters returning, and the league&rsquo;s normal regression of a high early-season ERA back toward the staff&rsquo;s true talent. Any of those could be doing the work the column credits to the coach. The temporal sequence is real. The causal arrow is added by the writer.</td>
+    </tr>
+    <tr>
+      <td><strong>Contract extension cited as evaluation of past play</strong></td>
+      <td class="mono">&ldquo;Team Y just extended their head coach for five more years. His last three seasons were clearly good enough to warrant it.&rdquo;</td>
+      <td>The extension is a forward-looking bet on what the coach will produce <em>next</em>, made partly on the basis of confidence in his methods and partly on the cost of replacing him. The dollar figure on the extension is not a retrospective grade of his past work. It is a price the team is willing to pay for his future work given current options.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Notice the shared structure of the four shapes. In each case, a column has reached for a number or event that lives on one side of a temporal line and used it to explain something that lives on the other side. The Notre Dame error reached <em>backward</em> from a 2026 figure to a 2025 finish. The PECOTA error reaches <em>backward</em> from a current standings result to declare a preseason model wrong. The coaching-change error reaches <em>forward</em> from a personnel decision to declare it the cause of a subsequent improvement. The contract-extension error reaches <em>backward</em> from a future commitment to a retrospective grade. The shapes differ; the underlying move is the same. Each one is the mind doing what Hume said it would do &mdash; adding a causal connection between two events whose only verified relationship is that they happened near each other in time.</p>
+
+<div class="box">
+<h3>The Vocabulary the Reader Takes Home</h3>
+<p>Three terms, three uses. If a reader leaves this issue with these in hand, they will catch the error the next time without needing to remember any specific case.</p>
+<p><strong>1. Temporal contiguity.</strong> The technical name for two events being close in time. Useful as a diagnostic question: &ldquo;Is the column claiming a cause, or just describing a sequence?&rdquo; If the only evidence is that A happened, then B happened, the column has not yet made the causal case. It has only described what Hume saw on the billiard table.</p>
+<p><strong>2. Post hoc ergo propter hoc.</strong> Latin for &ldquo;after this, therefore because of this.&rdquo; The classical name for the coaching-change error and most other &ldquo;X happened, then Y happened, so X caused Y&rdquo; arguments. Worth keeping in the pocket because the phrase carries its own warning every time it is invoked.</p>
+<p><strong>3. The temporal arrow.</strong> An informal check the reader can run on any sports sentence. Identify the time of the cause and the time of the effect. If the cause is in the future relative to the effect, the sentence is broken. If both are in the past but the cause is downstream of the effect, the sentence is broken in a subtler way. The fix is usually to identify what was actually present and acting at the time of the effect &mdash; the 2025 Notre Dame roster, not the 2026 one &mdash; and to rewrite the sentence around that.</p>
+</div>
+
+<div class="pull">
+  <p>&ldquo;The leap from temporal sequence to causal claim is always something the mind adds. It is the most useful thing the mind does and the most dangerous. A defensive reader learns to ask, every time, whether the leap has been earned.&rdquo;</p>
+  <cite>&mdash; The Sports Page, summarising David Hume in fewer words than he used</cite>
+</div>
+
+<h2 class="sh">The Series, Stated</h2>
+
+<p>This issue inaugurates a recurring thread the newsletter will run alongside its regular coverage. Each entry of <em>The Reader&rsquo;s Defense</em> will pick one common inference error, give it a name, illustrate it with current sports examples, and end with a small vocabulary the reader can carry forward. The next likely entries: <em>regression to the mean</em>, which the newsletter has already used implicitly in pieces on small samples and is worth introducing explicitly; <em>survivorship bias</em>, which underlies most &ldquo;they did it, so you can too&rdquo; sports narratives; <em>base-rate neglect</em>, the cousin of expectation violation that Issue #67&rsquo;s asymmetry piece is about to put on the page; and <em>cherry-picked outliers</em>, which Issue #51 (&ldquo;Three Lies, Thirty Dots&rdquo;) already had a great deal to say about and which deserves a sharper, named restatement.</p>
+
+<p>The premise of the series is not that sports media is bad. The premise is that sports media uses the same patterns of inference everyone else uses, and that those patterns occasionally produce sentences that do not survive examination. Knowing the names of the failures makes them visible. Visible failures stop persuading. A reader who can see a temporal contiguity error in a sports column has, at the same time, gained a tool they can use in political columns, economic columns, and dinner-table arguments. The cargo is general. The vehicle is the sport. The newsletter happens to be good at sports.</p>
+
+<p>The series will hold itself to the same standard it asks of others. The errata box at the bottom of Issue #70, posted yesterday evening, is the model. The newsletter will continue to make mistakes; the newsletter will continue to own them in writing; and the readers who keep catching them will continue to be the most important contributors to the project.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on sources: Hume&rsquo;s <em>An Enquiry Concerning Human Understanding</em> was published in London in 1748; the billiard-ball passage is in Section IV, Part II. The newsletter&rsquo;s Issue #70 errata, referenced throughout, was posted on June 6, 2026. The three additional examples above are composite illustrations of patterns currently visible in national sports coverage rather than quotations of specific columns; the patterns are sufficiently widespread that any reader can verify them by reading any national sports outlet for a week.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>The Reader&rsquo;s Defense, Part I &middot; Temporal Contiguity, Hume, and the 2026 Roster That Never Played</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
