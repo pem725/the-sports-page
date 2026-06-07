@@ -7,7 +7,7 @@ With Clay Holmes on the IL (fractured fibula, weeks-to-months), the Mets' rotati
 ## Decision Points
 
 - **All-Star Break**: Tuesday, July 14, 2026 — first opportunity for a public signal
-- **Trade Deadline**: Friday, July 31, 2026 — the actual buy-or-sell line
+- **Trade Deadline**: Monday, August 3, 2026 (6pm ET) — the actual buy-or-sell line
 - **September 1 roster expansion**: secondary signal of development priorities
 
 ## What to Track
