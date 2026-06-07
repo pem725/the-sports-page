@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 70 issues (#1-70)
+Published: 71 issues (#1-71)
 Queue: 8 articles ready (057-pyrrhic-2-sabres-mcdavid, 058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins, 064-mariners-streak, 065-soto-least-supported, 066-pyrrhic-5-cincinnati)
 Reserve: 1 evergreen piece
-Goal: 430 issues remaining of 500
-Last published: Issue #70 — "Notre Dame Just Bought the Sixth Most Expensive Roster in College Football. Here’s What $40.4 Million Actually Buys." (063-nd-roster-value.html) on June 6, 2026
+Goal: 429 issues remaining of 500
+Last published: Issue #71 — "Marner Scored Three in Six Minutes. Carolina Answered With Three in Under One. The Scorecard Is Still Waiting." (sunday-009.html) on June 7, 2026
