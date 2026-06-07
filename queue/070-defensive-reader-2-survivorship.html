@@ -1,0 +1,215 @@
+<!-- PUBLISH-META
+topic: Methods
+tags: Methods, Reader's Defense, Inference, Media Literacy, Survivorship Bias, Wald
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — May __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.55rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.series-tag{display:inline-block;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.18rem .55rem;font-weight:700;margin-bottom:.5rem}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">The Reader&rsquo;s Defense &middot; Part II &middot; A Recurring Thread</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>May __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<span class="series-tag">The Reader&rsquo;s Defense &middot; Part II</span>
+
+<h1 class="hed">Abraham Wald Looked at the Planes That Came Back. <em>Sports Media Almost Never Does.</em></h1>
+<div class="deck">In 1943 the United States Army Air Forces, alarmed by the rate at which B-17 and B-24 bombers were being lost over Europe, asked a group of statisticians at Columbia University&rsquo;s Statistical Research Group to look at the returning planes and recommend where to add armor. Armor was heavy. The bombers could only carry so much of it. The military had already mapped the bullet holes on the planes that made it home and recommended adding armor where the holes were most concentrated &mdash; the wings, the fuselage, the tail. Abraham Wald, a Hungarian refugee mathematician on the team, looked at the same data and proposed the opposite. <strong>Armor the places that have no holes.</strong> The bombers with holes in those places had not come back to be photographed. The bullet holes on returning aircraft mapped the parts of a B-17 that could be hit and survived. The undamaged regions mapped the parts where a hit was fatal. The military adopted Wald&rsquo;s recommendation and B-17 survival rates rose. The pattern of error he caught has a name. It runs through sports coverage every week.</div>
+<div class="byline">By The Professor &middot; The Sports Page &middot; The Reader&rsquo;s Defense</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v" style="color:var(--gold)">1943</div><div class="l">Year Wald Inverted the Bomber Analysis</div></div>
+  <div class="sc"><div class="v">199</div><div class="l">Brady&rsquo;s Draft Slot &mdash; The Most Famous Survivor</div></div>
+  <div class="sc"><div class="v bad">0</div><div class="l">Failed Tanks Cited in the Average &ldquo;Tanking Works&rdquo; Column</div></div>
+</div>
+
+<p>Wald&rsquo;s insight is one of the cleanest pieces of statistical reasoning produced in the twentieth century, and it has a short technical name: <strong>survivorship bias</strong>. The general form is the mistake of drawing a conclusion from a sample of survivors when the data you actually need would include the non-survivors that the sample has already filtered out. The returning bombers were the data the Air Forces could see. The missing planes were the data the military needed. Wald&rsquo;s contribution was to notice that the absence of a hole on a returning bomber was, itself, the most important observation in the dataset &mdash; precisely because the planes that <em>did</em> get hit there were not in the photograph.</p>
+
+<p>This is the shape, in miniature, of about a third of the inference errors that pass through sports writing on any given week. The general move is: identify a person, team, or strategy that succeeded; identify their distinctive features; recommend that other people emulate those features. The move ignores everything that happened to the people, teams, and strategies who shared the same features and failed, because those people are not on the panel show, are not on the magazine cover, and frequently are not on a roster anymore. The survivors get written about. The non-survivors do not. The reader learns from the survivors. The reader is, as a consequence, learning from a sample that has been pre-filtered for the very thing the conclusion is supposed to predict.</p>
+
+<h2 class="sh">The Wald Diagram, in Sports Terms</h2>
+
+<div class="chart">
+  <div class="chart-cap">The Returning Bombers (What You See) vs. The Missing Bombers (Where the Conclusion Lives)</div>
+  <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- LEFT PANEL: returning bomber with bullet holes -->
+    <text x="190" y="22" text-anchor="middle" fill="#1a1208" font-weight="700" font-size="10">WHAT THE MILITARY MAPPED</text>
+    <text x="190" y="36" text-anchor="middle" fill="#6b5e4a" font-style="italic" font-size="9">Bullet holes on returning bombers</text>
+
+    <!-- Simplified B-17 silhouette (top-down view) -->
+    <!-- Fuselage -->
+    <rect x="170" y="100" width="40" height="120" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+    <!-- Nose cone -->
+    <ellipse cx="190" cy="100" rx="20" ry="22" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+    <!-- Wings -->
+    <polygon points="60,150 170,140 170,180 60,170" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+    <polygon points="320,150 210,140 210,180 320,170" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+    <!-- Tail -->
+    <polygon points="170,220 210,220 200,250 180,250" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+    <!-- Horizontal stabilizer -->
+    <polygon points="140,240 240,240 230,255 150,255" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+
+    <!-- Bullet holes on returning bomber (rust dots) - clustered on wings, fuselage rear, tail -->
+    <circle cx="100" cy="155" r="2.5" fill="#b83a1e"/>
+    <circle cx="115" cy="160" r="2.5" fill="#b83a1e"/>
+    <circle cx="130" cy="165" r="2.5" fill="#b83a1e"/>
+    <circle cx="145" cy="158" r="2.5" fill="#b83a1e"/>
+    <circle cx="90" cy="170" r="2.5" fill="#b83a1e"/>
+    <circle cx="125" cy="148" r="2.5" fill="#b83a1e"/>
+    <!-- right wing -->
+    <circle cx="245" cy="155" r="2.5" fill="#b83a1e"/>
+    <circle cx="260" cy="160" r="2.5" fill="#b83a1e"/>
+    <circle cx="275" cy="165" r="2.5" fill="#b83a1e"/>
+    <circle cx="290" cy="158" r="2.5" fill="#b83a1e"/>
+    <circle cx="280" cy="170" r="2.5" fill="#b83a1e"/>
+    <!-- rear fuselage -->
+    <circle cx="185" cy="195" r="2.5" fill="#b83a1e"/>
+    <circle cx="195" cy="205" r="2.5" fill="#b83a1e"/>
+    <circle cx="180" cy="210" r="2.5" fill="#b83a1e"/>
+    <circle cx="200" cy="215" r="2.5" fill="#b83a1e"/>
+    <!-- tail -->
+    <circle cx="190" cy="235" r="2.5" fill="#b83a1e"/>
+    <circle cx="195" cy="245" r="2.5" fill="#b83a1e"/>
+
+    <text x="60" y="275" fill="#b83a1e" font-size="8" font-style="italic">&bull; = recorded hit</text>
+
+    <!-- DIVIDER -->
+    <line x1="380" y1="50" x2="380" y2="265" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <!-- RIGHT PANEL: Wald's inversion -->
+    <text x="570" y="22" text-anchor="middle" fill="#1a1208" font-weight="700" font-size="10">WHAT WALD SAW</text>
+    <text x="570" y="36" text-anchor="middle" fill="#6b5e4a" font-style="italic" font-size="9">Armor the places with no holes &mdash; those planes never returned</text>
+
+    <!-- Same silhouette -->
+    <rect x="550" y="100" width="40" height="120" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+    <ellipse cx="570" cy="100" rx="20" ry="22" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+    <polygon points="440,150 550,140 550,180 440,170" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+    <polygon points="700,150 590,140 590,180 700,170" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+    <polygon points="550,220 590,220 580,250 560,250" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+    <polygon points="520,240 620,240 610,255 530,255" fill="#c8b99a" stroke="#1a1208" stroke-width="1"/>
+
+    <!-- Armor areas (gold highlights) on the places WITHOUT holes — engines (wing roots), cockpit, fuselage center -->
+    <!-- Wing roots / engine locations -->
+    <rect x="475" y="148" width="40" height="22" fill="#c9962a" opacity="0.65"/>
+    <rect x="623" y="148" width="40" height="22" fill="#c9962a" opacity="0.65"/>
+    <!-- Cockpit / nose -->
+    <ellipse cx="570" cy="100" rx="18" ry="20" fill="#c9962a" opacity="0.65"/>
+    <!-- Center fuselage -->
+    <rect x="552" y="125" width="36" height="50" fill="#c9962a" opacity="0.65"/>
+
+    <text x="700" y="275" text-anchor="end" fill="#c9962a" font-size="8" font-style="italic">&block; = armor here (the missing data)</text>
+  </svg>
+  <div class="chart-note">The diagram is a stylized version of the analysis Wald presented to the Statistical Research Group in 1943. The military had been on the verge of adding armor where the bullet holes were &mdash; wings, tail, rear fuselage. Wald pointed out that the absence of holes near the engines, cockpit, and center fuselage was the actual signal in the dataset. Bombers hit in those places did not come home. The missing observations were where the conclusion lived. The lesson generalizes far beyond aviation, and it generalizes most stubbornly in sports.</div>
+</div>
+
+<h2 class="sh">Three Sports Survivorship Errors, Currently in Circulation</h2>
+
+<p>The pattern below is the same shape every time. A successful person, team, or method gets identified. The features of the success get catalogued. The features get presented as a blueprint. The blueprint is recommended, in print or on the radio, as a lesson for someone else to follow. In every case, the features of the thousands of equivalent people, teams, and methods that <em>shared the same features and failed</em> are absent from the analysis, because those equivalents are not the subject of any column. Three current examples follow.</p>
+
+<table class="rec">
+  <thead>
+    <tr><th>Shape of the Error</th><th>How It Reads in a Headline</th><th>What&rsquo;s Missing from the Picture</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>The Brady Argument</strong></td>
+      <td class="mono">&ldquo;Tom Brady was the 199th pick in 2000. Late picks are undervalued.&rdquo;</td>
+      <td>Brady is one of roughly twenty-five players selected at that slot since the AFL-NFL merger. The other twenty-four had careers ranging from short to forgettable. The sample of all 199th picks does not support &ldquo;late picks are undervalued.&rdquo; The sample of one 199th pick who became Tom Brady does. The column is using a sample size of one and presenting it as a population finding.</td>
+    </tr>
+    <tr>
+      <td><strong>The Late Bloomer Pattern</strong></td>
+      <td class="mono">&ldquo;Player X didn&rsquo;t break out until age 25 or 26. Don&rsquo;t write off late developers.&rdquo;</td>
+      <td>For every star whose age-25 season was the breakout, there are dozens of age-25 players who were sent to Triple-A, traded to a non-contender, or released. Their stories are not the ones we tell because they did not break out. The breakout cases are visible by construction. The non-breakout cases drop quietly off the back of every roster every spring and are forgotten by July. A base rate of &ldquo;how often does a player still working at 25 become a star&rdquo; cannot be computed from highlight reels.</td>
+    </tr>
+    <tr>
+      <td><strong>The Successful Tank Blueprint</strong></td>
+      <td class="mono">&ldquo;The Astros tanked from 2011 to 2013 and won the 2017 World Series. Tanking works.&rdquo;</td>
+      <td>The 2011 Houston Astros are visible because they later won a championship. The 2011 Cleveland Browns, who have tanked through at least three rebuilds in the same window without producing a comparable franchise quarterback, are visible to Cleveland fans and almost nobody else. The Pyrrhic March, which ran in this newsletter for six weeks, made the same point with five additional case studies of teams whose tanks did not pay off in any way the column would write about. Successful tanks survive into the next news cycle. Unsuccessful tanks become &ldquo;rebuilding under new leadership.&rdquo;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In each of these cases the column being criticized has not made an error of fact. Tom Brady was the 199th pick in 2000. The cited late bloomer did break out at 25. The Astros did tank and the Astros did win. The error is in the population from which the conclusion is drawn. The columnist has implicitly chosen a sample &mdash; <em>successful 199th picks</em>, <em>late bloomers who broke out</em>, <em>tanks that ended in titles</em> &mdash; that has been pre-filtered for the very feature the conclusion is supposed to predict. The reasoning is, formally, a tautology: the players who succeeded had the features the writer is now recommending, because the writer chose to examine players who succeeded. The non-success players, who likely had similar features, are missing from the photograph. They are the planes that did not come home.</p>
+
+<div class="box">
+<h3>The Vocabulary the Reader Takes Home</h3>
+<p>Three terms. They are slightly more technical than the temporal-contiguity vocabulary from Part I and they are worth the slightly higher cost.</p>
+<p><strong>1. Survivorship bias.</strong> The general name for any inference drawn from a sample that has been pre-filtered for success. The phrase carries the warning in its own etymology: the sample contains only the survivors. The non-survivors are missing. Any conclusion that does not account for what is missing is incomplete by construction.</p>
+<p><strong>2. Selection mechanism.</strong> The diagnostic question the reader should ask of any sports column that draws a lesson from a small set of successes: <em>What decided which cases I am being shown?</em> If the answer is &ldquo;the writer chose them because they succeeded,&rdquo; the conclusion is doing less work than it appears to be doing. The selection mechanism is what produces the bias.</p>
+<p><strong>3. The Wald check.</strong> An informal habit the reader can run on any blueprint argument. Identify the cases the column presents. Then identify, by name if possible, the equivalent cases that share the same features but failed. If you cannot name any, ask whether the column has actually looked for them. If the column has not looked for them, the reader should not be persuaded by what the column found.</p>
+</div>
+
+<div class="pull">
+  <p>&ldquo;The absence of bullet holes on a returning bomber was the most important observation in the dataset. The absence of failed late bloomers, of failed tanks, of forgotten late picks is the most important observation in roughly a third of sports columns. The data is missing on purpose. The conclusion does not survive its absence.&rdquo;</p>
+  <cite>&mdash; The Sports Page, on Wald and what gets photographed</cite>
+</div>
+
+<h2 class="sh">The Series, Continued</h2>
+
+<p>This is Part II of the newsletter&rsquo;s recurring thread <em>The Reader&rsquo;s Defense</em>. Part I (David Hume, temporal contiguity, the Issue&nbsp;#70 errata) introduced the project. The next entries already named: <em>regression to the mean</em>, the Galton finding that explains why hot streaks are usually borrowed from cold streaks waiting to happen; <em>base-rate neglect</em>, the Kahneman&ndash;Tversky finding that explains why one upset feels more important than the historical record of upsets ever does; and <em>cherry-picked outliers</em>, which Issue&nbsp;#51 of this newsletter (&ldquo;Three Lies, Thirty Dots&rdquo;) treated graphically and which the series will revisit verbally. Each entry will give the reader a name for an error, an illustration from current sports coverage, and a small vocabulary to carry to the next column they read.</p>
+
+<p>The premise, as in Part I, is not that sports media is uniquely bad. The premise is that sports media uses the same inferential patterns everyone uses, and that those patterns have failure modes named centuries ago by people who could not have anticipated a single televised sport. Hume could not have anticipated a draft lottery. Wald could not have anticipated a 199th pick becoming a seven-time Super Bowl winner. The reasoning errors are older than the games. The reasoning errors persist because the games make them feel new. The defensive reader learns the errors by name and stops feeling that any of them are new.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on the data: the 1943 bomber-armor analysis is conventionally attributed to Abraham Wald and the Statistical Research Group at Columbia University; the canonical narrative source is Marc Mangel and Francisco Samaniego&rsquo;s 1984 article &ldquo;Abraham Wald&rsquo;s Work on Aircraft Survivability&rdquo; in the <em>Journal of the American Statistical Association</em>. Tom Brady&rsquo;s draft slot (199th overall, sixth round, 2000) is documented across every NFL reference. The 2011&ndash;2013 Houston Astros&rsquo; teardown and 2017 championship were the subject of Part IV of the Pyrrhic Victory March in this newsletter. The general principle &mdash; that a sample pre-filtered for success cannot be used to predict success &mdash; is older than statistics as a discipline and recurs in every domain that produces survivors and non-survivors. The reader who has finished this issue should be able to detect it in roughly half the sports columns they read this week.</p>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>The Reader&rsquo;s Defense, Part II &middot; Wald, the Bombers That Came Back, and the Sports Columns That Don&rsquo;t</span>
+  <span><a href="../index.html" style="color:var(--rust);text-decoration:none">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
