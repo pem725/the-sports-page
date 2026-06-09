@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 428 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 427 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 72 issues (#1-72)
-Queue: 11 articles ready (058-pyrrhic-3-bobcats-davis, 059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins, 064-mariners-streak, 065-soto-least-supported, 066-pyrrhic-5-cincinnati, 067-nd-outrage-asymmetry, 068-defensive-reader-1-temporal, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship)
+Published: 73 issues (#1-73)
+Queue: 10 articles ready (059-pyrrhic-4-astros-mlb-commons, 060-mets-sell-or-hold, 061-mlb-money-buys-wins, 064-mariners-streak, 065-soto-least-supported, 066-pyrrhic-5-cincinnati, 067-nd-outrage-asymmetry, 068-defensive-reader-1-temporal, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship)
 Reserve: 1 evergreen piece
-Goal: 428 issues remaining of 500
-Last published: Issue #72 — "The Sabres Did the Tank Perfectly. The Lottery Did Not Care." (057-pyrrhic-2-sabres-mcdavid.html) on June 8, 2026
+Goal: 427 issues remaining of 500
+Last published: Issue #73 — "The Bobcats Set a Record That Should Have Won Them Anthony Davis. Tantalus Disagreed." (058-pyrrhic-3-bobcats-davis.html) on June 9, 2026
