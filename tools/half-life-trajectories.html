@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Trajectories — The Half-Life Explorer</title>
+<link rel="icon" href="../assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;
+  --steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;
+  --card:#ede5d2;--green:#2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:15px;line-height:1.55;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:1180px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.mode-tabs{display:flex;gap:0;max-width:1180px;margin:1rem auto 0;border-bottom:3px solid var(--ink)}
+.mode-tabs button{flex:1;background:var(--card);border:1px solid var(--div);border-bottom:none;color:var(--muted);font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.7rem 1rem;cursor:pointer}
+.mode-tabs button:hover{background:#fff}
+.mode-tabs button.active{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+.mode-tabs button .sub{display:block;font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;color:var(--muted);margin-top:.15rem;font-weight:400}
+.mode-tabs button.active .sub{color:var(--cream)}
+
+.paper{max-width:1180px;margin:.8rem auto 0;background:var(--cream);padding:1.5rem 2rem 2rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:720px){.paper{padding:1.2rem 1rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.97rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.7rem 0 1.2rem;line-height:1.5}
+
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem;background:var(--card);border:1px solid var(--div);padding:.8rem 1rem;margin-bottom:1rem;font-size:.85rem}
+.filter-grp label{display:block;font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+.filter-grp select,.filter-grp input{width:100%;font-family:'Roboto Mono',monospace;font-size:.85rem;padding:.32rem .45rem;border:1px solid var(--div);background:#fff;color:var(--ink)}
+
+.cohort-note{font-size:.78rem;color:var(--muted);margin:.4rem 0 .6rem;font-family:'Roboto Mono',monospace}
+.cohort-note b{color:var(--ink)}
+
+.chart-wrap{position:relative;border:1px solid var(--div);background:#fff;margin-bottom:.6rem}
+.chart-wrap canvas, .chart-wrap svg{display:block;position:absolute;top:0;left:0}
+.chart-wrap{height:520px}
+@media(max-width:720px){.chart-wrap{height:380px}}
+
+.tooltip{position:absolute;background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.72rem;padding:.4rem .6rem;pointer-events:none;display:none;border:1px solid var(--gold);max-width:240px;z-index:5}
+.tooltip b{color:var(--gold);font-family:'Playfair Display',serif;font-size:.85rem;display:block;margin-bottom:.15rem}
+
+.legend{display:flex;gap:1.5rem;font-size:.78rem;flex-wrap:wrap;margin:.4rem 0 1rem;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:.4rem}
+.legend i{display:inline-block;width:22px;height:3px;border-radius:1px}
+
+.callout{background:var(--steel);color:#dce8f5;padding:1rem 1.4rem;margin:1.2rem 0;font-size:.88rem;line-height:1.6}
+.callout h3{font-family:'Playfair Display',serif;font-size:.95rem;color:#fff;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.05em}
+
+.player-list-wrap{display:grid;grid-template-columns:1fr;gap:.6rem;margin-top:1rem}
+.player-list-wrap h4{font-family:'Playfair Display',serif;font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem;color:var(--steel)}
+.player-list{max-height:280px;overflow-y:auto;border:1px solid var(--div);background:#fff;font-family:'Roboto Mono',monospace;font-size:.78rem}
+.player-list .row{display:grid;grid-template-columns:1.8fr .5fr .5fr .6fr .6fr;gap:.4rem;padding:.32rem .5rem;border-bottom:1px solid var(--div);cursor:pointer}
+.player-list .row:hover{background:var(--card)}
+.player-list .row.active{background:#fdf0d0;font-weight:600}
+.player-list .row .nm{font-family:'Libre Baskerville',serif;font-size:.85rem}
+.player-list .row .num{text-align:right}
+.player-list .head{position:sticky;top:0;background:var(--ink);color:var(--cream);font-weight:600;cursor:default;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
+.player-list .head:hover{background:var(--ink)}
+.player-list .head .nm{font-family:'Roboto Mono',monospace;font-size:.62rem}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--steel);text-decoration:none}
+
+.btn-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.btn-row button{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .7rem;border:1px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.btn-row button.active{background:var(--ink);color:var(--gold)}
+.btn-row button:hover{background:var(--steel);color:#fff}
+
+.loading-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.8);font-style:italic;color:var(--muted);z-index:10}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Tool of The Sports Page</div>
+  <h1 class="title">Career Trajectories</h1>
+  <p class="tagline">"Every player who ever stepped in the box. Plotted."</p>
+  <div class="datebar"><span>Reference Tool</span><span>v.1 &middot; MLB 1985&ndash;2025 &middot; Full Cohort</span><span>Includes Flameouts</span></div>
+</header>
+
+<div class="mode-tabs">
+  <button id="tabHit" class="active" data-mode="hit">Hitters<span class="sub">7,300+ players</span></button>
+  <button id="tabPit" data-mode="pit">Pitchers<span class="sub">5,600+ players</span></button>
+</div>
+
+<main class="paper">
+  <h2 class="hed">Every career, plotted at once. <em>Including the ones that ended.</em></h2>
+  <p class="deck">Every line is one player. Every dot is one season. Pick a stat, a position, a debut tier &mdash; the cohort changes underneath. The bold curve is the cohort median. The shaded band is the middle half (25th to 75th percentile). Click a name to highlight one player's whole trajectory.</p>
+
+  <div class="filters">
+    <div class="filter-grp">
+      <label for="indicator">Indicator (Y axis)</label>
+      <select id="indicator"></select>
+    </div>
+    <div class="filter-grp">
+      <label for="posFilter">Position / Role</label>
+      <select id="posFilter"><option value="">All</option></select>
+    </div>
+    <div class="filter-grp">
+      <label for="tierFilter">Debut tier</label>
+      <select id="tierFilter">
+        <option value="">All debuts</option>
+        <option value="cup">Cup of coffee (debut &lt; 100 PA / 30 IP)</option>
+        <option value="partial">Partial year (100&ndash;299 PA / 30&ndash;79 IP)</option>
+        <option value="regular">Regular (300&ndash;501 PA / 80&ndash;161 IP)</option>
+        <option value="qualifier">Qualifier (502+ PA / 162+ IP)</option>
+      </select>
+    </div>
+    <div class="filter-grp">
+      <label for="decadeFilter">Debut decade</label>
+      <select id="decadeFilter">
+        <option value="">All decades</option>
+      </select>
+    </div>
+    <div class="filter-grp">
+      <label for="search">Highlight player</label>
+      <input type="text" id="search" placeholder="Alonso, Machado, …" autocomplete="off">
+    </div>
+    <div class="filter-grp">
+      <label>&nbsp;</label>
+      <button id="clearHighlight" style="width:100%;font-family:'Roboto Mono',monospace;font-size:.75rem;padding:.32rem .5rem;border:1px solid var(--div);background:#fff;color:var(--muted);cursor:pointer">Clear highlight</button>
+    </div>
+  </div>
+
+  <div class="cohort-note" id="cohortNote">Loading…</div>
+
+  <div class="chart-wrap" id="chartWrap">
+    <canvas id="canvas"></canvas>
+    <svg id="overlay" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="tooltip" id="tooltip"></div>
+    <div class="loading-overlay" id="loadingOverlay">Loading 7,300+ careers…</div>
+  </div>
+
+  <div class="legend">
+    <span><i style="background:#ccc4ad"></i> Each player's trajectory</span>
+    <span><i style="background:var(--ink);height:4px"></i> Cohort median</span>
+    <span><i style="background:rgba(184,58,30,.25);height:14px"></i> Middle half (25th&ndash;75th pct)</span>
+    <span><i style="background:var(--rust);height:4px"></i> Highlighted player</span>
+  </div>
+
+  <div class="callout">
+    <h3>What this view shows that tables cannot</h3>
+    <p>Pick "Cup of coffee" from the Debut tier filter. Watch most lines fall off a cliff after year 1. That's the population the prior table-based explorer hid from you — the flameouts. Now pick "Qualifier" and the cliffs disappear: those careers run flat into year 10 and beyond. The whole prior aging-curve literature is a chart of the lucky quarter of the rookie class.</p>
+  </div>
+
+  <div class="player-list-wrap">
+    <h4>Cohort — click a name to highlight in chart</h4>
+    <div class="btn-row" id="sortBtnRow">
+      <button data-sort="career_y" class="active">Career years (long→short)</button>
+      <button data-sort="career_pa">Career PA / IP</button>
+      <button data-sort="debut">Debut year (recent→old)</button>
+      <button data-sort="name">A→Z</button>
+    </div>
+    <div class="player-list" id="playerList"></div>
+  </div>
+
+  <div class="footer">
+    <span><a href="./half-life-explorer.html">&larr; Back to the table explorer</a></span>
+    <span>Career Trajectories &middot; v.1</span>
+    <span>MLB 1985&ndash;2025 &middot; Full cohort (no qualification filter)</span>
+  </div>
+</main>
+
+<script>
+// ─────── Constants ───────
+const HIT_INDICATORS = [
+  ["OPS","OPS"],
+  ["AVG","Batting average"],
+  ["OBP","On-base %"],
+  ["ISO","ISO (SLG − AVG)"],
+  ["HR_PA","HR per PA"],
+  ["K_PA","Strikeouts per PA"],
+  ["BB_PA","Walks per PA"],
+  ["PA","Plate appearances"],
+];
+const PIT_INDICATORS = [
+  ["ERA","ERA"],
+  ["WHIP","WHIP"],
+  ["K9","K per 9"],
+  ["BB9","BB per 9"],
+  ["HR9","HR per 9"],
+  ["IP","Innings pitched"],
+];
+const HIT_POSITIONS = ["C","1B","2B","3B","SS","LF","CF","RF","DH"];
+const PIT_ROLES = ["SP","RP"];
+const TIERS = ["cup","partial","regular","qualifier"];
+const LOWER_BETTER = new Set(["ERA","WHIP","BB9","HR9","K_PA"]);
+
+let DATA = null;
+let MODE = "hit";
+let highlightedPid = null;
+let sortKey = "career_y";
+
+const $ = id => document.getElementById(id);
+const $$ = sel => document.querySelectorAll(sel);
+
+// ─────── Chart geometry ───────
+const M = {top:30, right:24, bottom:42, left:60};
+let W, H, plotW, plotH;
+function resize() {
+  const w = $("chartWrap");
+  W = w.clientWidth; H = w.clientHeight;
+  plotW = W - M.left - M.right;
+  plotH = H - M.top - M.bottom;
+  const cv = $("canvas");
+  cv.width = W * (window.devicePixelRatio || 1);
+  cv.height = H * (window.devicePixelRatio || 1);
+  cv.style.width = W + "px"; cv.style.height = H + "px";
+  const ctx = cv.getContext("2d");
+  ctx.setTransform(window.devicePixelRatio||1, 0, 0, window.devicePixelRatio||1, 0, 0);
+  $("overlay").setAttribute("width", W);
+  $("overlay").setAttribute("height", H);
+  $("overlay").setAttribute("viewBox", `0 0 ${W} ${H}`);
+  if (DATA) renderChart();
+}
+window.addEventListener("resize", resize);
+
+// ─────── Boot ───────
+fetch("./half-life-trajectories-data.json").then(r => r.json()).then(d => {
+  DATA = d;
+  $("loadingOverlay").style.display = "none";
+  $("tabHit").addEventListener("click", () => setMode("hit"));
+  $("tabPit").addEventListener("click", () => setMode("pit"));
+  $("indicator").addEventListener("change", () => { saveAxis(); renderChart(); });
+  $("posFilter").addEventListener("change", () => { renderChart(); renderPlayerList(); });
+  $("tierFilter").addEventListener("change", () => { renderChart(); renderPlayerList(); });
+  $("decadeFilter").addEventListener("change", () => { renderChart(); renderPlayerList(); });
+  $("search").addEventListener("input", e => {
+    const v = e.target.value.trim().toLowerCase();
+    if (!v) return;
+    const cands = filteredPlayers().filter(p => p.n.toLowerCase().includes(v));
+    if (cands.length) {
+      highlightedPid = cands[0]._idx;
+      renderChart();
+      renderPlayerList();
+    }
+  });
+  $("clearHighlight").addEventListener("click", () => {
+    highlightedPid = null; $("search").value = "";
+    renderChart(); renderPlayerList();
+  });
+  $$("#sortBtnRow button").forEach(b => b.addEventListener("click", () => {
+    sortKey = b.dataset.sort;
+    $$("#sortBtnRow button").forEach(x => x.classList.toggle("active", x === b));
+    renderPlayerList();
+  }));
+  populateDecades();
+  setMode("hit");
+});
+
+function setMode(m) {
+  MODE = m;
+  $("tabHit").classList.toggle("active", m === "hit");
+  $("tabPit").classList.toggle("active", m === "pit");
+  // Indicators
+  const opts = m === "hit" ? HIT_INDICATORS : PIT_INDICATORS;
+  $("indicator").innerHTML = opts.map(([v,l]) => `<option value="${v}">${l}</option>`).join("");
+  // Pos filter
+  const posOpts = m === "hit" ? HIT_POSITIONS : PIT_ROLES;
+  $("posFilter").innerHTML = '<option value="">All</option>' + posOpts.map(p => `<option value="${p}">${p}</option>`).join("");
+  $("posFilter").value = "";
+  $("tierFilter").value = "";
+  $("decadeFilter").value = "";
+  $("search").value = "";
+  highlightedPid = null;
+  resize(); // also re-renders
+  renderPlayerList();
+}
+
+function saveAxis() { /* placeholder for any axis transforms */ }
+
+function populateDecades() {
+  const sel = $("decadeFilter");
+  for (let dec = 1980; dec <= 2020; dec += 10) {
+    const o = document.createElement("option");
+    o.value = dec; o.textContent = `${dec}s`;
+    sel.appendChild(o);
+  }
+}
+
+function getSchema() {
+  return MODE === "hit" ? DATA.hit_schema : DATA.pit_schema;
+}
+
+function filteredPlayers() {
+  const all = MODE === "hit" ? DATA.hit : DATA.pit;
+  const posKey = MODE === "hit" ? "p" : "r";
+  const posFilter = $("posFilter").value;
+  const tierFilter = $("tierFilter").value;
+  const decFilter = $("decadeFilter").value ? parseInt($("decadeFilter").value) : null;
+  const out = [];
+  for (let i = 0; i < all.length; i++) {
+    const p = all[i];
+    if (posFilter && p[posKey] !== posFilter) continue;
+    if (tierFilter && p.t !== tierFilter) continue;
+    if (decFilter !== null) {
+      const dec = Math.floor(p.d / 10) * 10;
+      if (dec !== decFilter) continue;
+    }
+    p._idx = i;
+    out.push(p);
+  }
+  return out;
+}
+
+// ─────── Chart render ───────
+function renderChart() {
+  if (!DATA) return;
+  const ctx = $("canvas").getContext("2d");
+  ctx.clearRect(0, 0, W, H);
+
+  const ind = $("indicator").value;
+  const schema = getSchema();
+  const indIdx = schema.indexOf(ind);
+  if (indIdx < 0) return;
+
+  const players = filteredPlayers();
+  $("cohortNote").innerHTML =
+    `<b>${players.length.toLocaleString()}</b> players in cohort &middot; ` +
+    `Y-axis: ${$("indicator").options[$("indicator").selectedIndex].text} &middot; ` +
+    `X-axis: MLB years of service`;
+
+  if (!players.length) return;
+
+  // Collect all (svc, value) pairs to set axis ranges
+  const xMax = Math.max(...players.flatMap(p => p.s.map(s => s[0])), 1);
+  const xCap = Math.min(xMax, 22); // cap to keep readable
+  const vals = [];
+  for (const p of players) for (const s of p.s) {
+    if (s[0] > xCap) continue;
+    if (s[indIdx] != null) vals.push(s[indIdx]);
+  }
+  if (!vals.length) return;
+  vals.sort((a,b) => a-b);
+  const p01 = vals[Math.floor(vals.length*0.01)];
+  const p99 = vals[Math.floor(vals.length*0.99)];
+  let yMin = Math.min(p01, 0);
+  let yMax = p99;
+  if (ind === "ERA" || ind === "WHIP" || ind === "BB9" || ind === "HR9" || ind === "K_PA") {
+    yMin = vals[0]; yMax = vals[Math.floor(vals.length*0.97)];
+  }
+  if (ind === "OPS" || ind === "AVG" || ind === "OBP" || ind === "ISO" || ind === "HR_PA" || ind === "BB_PA") {
+    yMin = 0;
+  }
+  if (yMax === yMin) yMax = yMin + 1;
+
+  const X = svc => M.left + (svc - 1) / (xCap - 1) * plotW;
+  const Y = v => M.top + (1 - (v - yMin) / (yMax - yMin)) * plotH;
+
+  // Compute median + IQR per svc year
+  const perSvc = Array(xCap+1).fill(null).map(() => []);
+  for (const p of players) for (const s of p.s) {
+    if (s[0] > xCap) continue;
+    if (s[indIdx] != null) perSvc[s[0]].push(s[indIdx]);
+  }
+  const medianBand = perSvc.map(arr => {
+    if (!arr.length) return null;
+    const a = arr.slice().sort((x,y) => x-y);
+    return {
+      n: a.length,
+      med: a[Math.floor(a.length*0.5)],
+      p25: a[Math.floor(a.length*0.25)],
+      p75: a[Math.floor(a.length*0.75)],
+    };
+  });
+
+  // ── Canvas: spaghetti ──
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = "rgba(120, 110, 90, 0.10)";
+  // If subset is small, increase opacity
+  if (players.length < 50) ctx.strokeStyle = "rgba(120, 110, 90, 0.55)";
+  else if (players.length < 200) ctx.strokeStyle = "rgba(120, 110, 90, 0.28)";
+  else if (players.length < 800) ctx.strokeStyle = "rgba(120, 110, 90, 0.15)";
+
+  for (const p of players) {
+    ctx.beginPath();
+    let first = true;
+    for (const s of p.s) {
+      if (s[0] > xCap || s[indIdx] == null) continue;
+      const x = X(s[0]), y = Y(s[indIdx]);
+      if (first) { ctx.moveTo(x, y); first = false; }
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+
+  // ── SVG: axes, IQR ribbon, median, highlight ──
+  const svg = $("overlay");
+  svg.innerHTML = "";
+
+  // Background plot area
+  svg.insertAdjacentHTML("beforeend",
+    `<rect x="${M.left}" y="${M.top}" width="${plotW}" height="${plotH}" fill="none" stroke="none"/>`);
+
+  // X gridlines + labels
+  for (let svc = 1; svc <= xCap; svc++) {
+    if (xCap > 15 && svc % 2 === 0 && svc !== xCap) continue;
+    const x = X(svc);
+    svg.insertAdjacentHTML("beforeend",
+      `<line x1="${x}" y1="${M.top}" x2="${x}" y2="${M.top+plotH}" stroke="#e0d8c5" stroke-width="1" stroke-dasharray="2,4"/>` +
+      `<text x="${x}" y="${M.top+plotH+15}" text-anchor="middle" font-family="Roboto Mono" font-size="10" fill="#6b5e4a">${svc}</text>`);
+  }
+  svg.insertAdjacentHTML("beforeend",
+    `<text x="${M.left+plotW/2}" y="${H-8}" text-anchor="middle" font-family="Roboto Mono" font-size="11" fill="#1a1208" font-weight="600">MLB year of service</text>`);
+
+  // Y gridlines + labels
+  const yTicks = niceTicks(yMin, yMax, 5);
+  for (const v of yTicks) {
+    const y = Y(v);
+    svg.insertAdjacentHTML("beforeend",
+      `<line x1="${M.left}" y1="${y}" x2="${M.left+plotW}" y2="${y}" stroke="#e0d8c5" stroke-width="1" stroke-dasharray="2,4"/>` +
+      `<text x="${M.left-8}" y="${y+3}" text-anchor="end" font-family="Roboto Mono" font-size="10" fill="#6b5e4a">${formatTick(v, ind)}</text>`);
+  }
+  const indLabel = $("indicator").options[$("indicator").selectedIndex].text;
+  svg.insertAdjacentHTML("beforeend",
+    `<text transform="rotate(-90, 18, ${M.top+plotH/2})" x="18" y="${M.top+plotH/2}" text-anchor="middle" font-family="Roboto Mono" font-size="11" fill="#1a1208" font-weight="600">${indLabel}</text>`);
+
+  // Axis lines
+  svg.insertAdjacentHTML("beforeend",
+    `<line x1="${M.left}" y1="${M.top}" x2="${M.left}" y2="${M.top+plotH}" stroke="#1a1208" stroke-width="2"/>` +
+    `<line x1="${M.left}" y1="${M.top+plotH}" x2="${M.left+plotW}" y2="${M.top+plotH}" stroke="#1a1208" stroke-width="2"/>`);
+
+  // IQR ribbon
+  let bandTop = "M", bandBot = "L";
+  let bandPts = [];
+  for (let svc = 1; svc <= xCap; svc++) {
+    const b = medianBand[svc];
+    if (!b) continue;
+    bandPts.push({x: X(svc), top: Y(b.p75), bot: Y(b.p25), med: Y(b.med)});
+  }
+  if (bandPts.length > 1) {
+    const pathTop = bandPts.map((p,i) => (i ? "L" : "M") + p.x + "," + p.top).join(" ");
+    const pathBot = bandPts.slice().reverse().map(p => "L" + p.x + "," + p.bot).join(" ");
+    svg.insertAdjacentHTML("beforeend",
+      `<path d="${pathTop} ${pathBot} Z" fill="rgba(184,58,30,0.18)" stroke="none"/>`);
+    const medPath = bandPts.map((p,i) => (i ? "L" : "M") + p.x + "," + p.med).join(" ");
+    svg.insertAdjacentHTML("beforeend",
+      `<path d="${medPath}" fill="none" stroke="#1a1208" stroke-width="2.5"/>`);
+  }
+
+  // Highlighted player
+  if (highlightedPid != null) {
+    const all = MODE === "hit" ? DATA.hit : DATA.pit;
+    const p = all[highlightedPid];
+    if (p) {
+      const segs = [];
+      for (const s of p.s) {
+        if (s[0] > xCap || s[indIdx] == null) continue;
+        segs.push({x: X(s[0]), y: Y(s[indIdx]), svc: s[0], val: s[indIdx], pa: s[1]});
+      }
+      if (segs.length) {
+        const path = segs.map((p,i) => (i ? "L" : "M") + p.x + "," + p.y).join(" ");
+        svg.insertAdjacentHTML("beforeend",
+          `<path d="${path}" fill="none" stroke="#b83a1e" stroke-width="3"/>`);
+        for (const sg of segs) {
+          svg.insertAdjacentHTML("beforeend",
+            `<circle cx="${sg.x}" cy="${sg.y}" r="4" fill="#b83a1e" stroke="#fff" stroke-width="1.5">` +
+            `<title>${p.n} — yr ${sg.svc}: ${formatTick(sg.val, ind)} (${sg.pa})</title></circle>`);
+        }
+        // Name label at top right
+        svg.insertAdjacentHTML("beforeend",
+          `<text x="${M.left+plotW-6}" y="${M.top+14}" text-anchor="end" font-family="Playfair Display" font-style="italic" font-size="14" fill="#b83a1e" font-weight="700">${p.n} &middot; ${p[MODE==="hit"?"p":"r"]} &middot; ${p.d}</text>`);
+      }
+    }
+  }
+}
+
+function niceTicks(lo, hi, n) {
+  const range = hi - lo;
+  if (range === 0) return [lo];
+  const step0 = range / n;
+  const mag = Math.pow(10, Math.floor(Math.log10(step0)));
+  const norm = step0 / mag;
+  let step;
+  if (norm < 1.5) step = 1*mag;
+  else if (norm < 3) step = 2*mag;
+  else if (norm < 7) step = 5*mag;
+  else step = 10*mag;
+  const first = Math.ceil(lo / step) * step;
+  const out = [];
+  for (let v = first; v <= hi + step*0.0001; v += step) out.push(Math.round(v/step)*step);
+  return out;
+}
+
+function formatTick(v, ind) {
+  if (v == null) return "—";
+  if (ind === "PA" || ind === "IP") return Math.round(v);
+  if (ind === "ERA" || ind === "WHIP" || ind === "K9" || ind === "BB9" || ind === "HR9") return v.toFixed(2);
+  if (ind === "HR_PA" || ind === "BB_PA" || ind === "K_PA") return (v*100).toFixed(1) + "%";
+  return v.toFixed(3);
+}
+
+// ─────── Player list ───────
+function renderPlayerList() {
+  const players = filteredPlayers();
+  const sorters = {
+    career_y:  (a,b) => b.y - a.y,
+    career_pa: (a,b) => (b.pa||b.ip||0) - (a.pa||a.ip||0),
+    debut:     (a,b) => b.d - a.d,
+    name:      (a,b) => a.n.localeCompare(b.n),
+  };
+  players.sort(sorters[sortKey] || sorters.career_y);
+
+  const isHit = MODE === "hit";
+  const list = $("playerList");
+  let html = `<div class="row head"><span class="nm">${isHit?"Player":"Pitcher"}</span><span class="num">${isHit?"Pos":"Role"}</span><span class="num">Debut</span><span class="num">Yrs</span><span class="num">${isHit?"PA":"IP"}</span></div>`;
+  const max = Math.min(players.length, 300);
+  for (let i = 0; i < max; i++) {
+    const p = players[i];
+    const isActive = highlightedPid === p._idx;
+    html += `<div class="row${isActive?" active":""}" data-idx="${p._idx}">` +
+      `<span class="nm">${p.n}</span>` +
+      `<span class="num">${p[isHit?"p":"r"]}</span>` +
+      `<span class="num">${p.d}</span>` +
+      `<span class="num">${p.y}</span>` +
+      `<span class="num">${(p.pa||p.ip||0).toLocaleString()}</span>` +
+      `</div>`;
+  }
+  if (players.length > max) {
+    html += `<div class="row" style="cursor:default;color:#6b5e4a;font-style:italic"><span>… ${(players.length-max).toLocaleString()} more not shown (refine filters)</span></div>`;
+  }
+  list.innerHTML = html;
+  list.querySelectorAll(".row[data-idx]").forEach(row => {
+    row.addEventListener("click", () => {
+      const idx = parseInt(row.dataset.idx);
+      highlightedPid = (highlightedPid === idx) ? null : idx;
+      renderChart();
+      renderPlayerList();
+    });
+  });
+}
+</script>
+</body>
+</html>
