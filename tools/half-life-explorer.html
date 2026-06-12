@@ -86,6 +86,13 @@ table.players tr:hover td{background:#fdf0d0}
 .footer a{color:var(--steel);text-decoration:none}
 
 .loading{padding:2rem;text-align:center;font-style:italic;color:var(--muted)}
+
+.mode-tabs{display:flex;gap:0;max-width:1100px;margin:1rem auto 0;border-bottom:3px solid var(--ink)}
+.mode-tabs button{flex:1;background:var(--card);border:1px solid var(--div);border-bottom:none;color:var(--muted);font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.8rem 1rem;cursor:pointer;transition:background .15s}
+.mode-tabs button:hover{background:#fff}
+.mode-tabs button.active{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+.mode-tabs button .sub{display:block;font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;color:var(--muted);margin-top:.15rem;font-weight:400}
+.mode-tabs button.active .sub{color:var(--cream)}
 </style>
 </head>
 <body>
@@ -94,16 +101,21 @@ table.players tr:hover td{background:#fdf0d0}
   <div class="kicker">A Tool of The Sports Page</div>
   <h1 class="title">The Half-Life Explorer</h1>
   <p class="tagline">"How long does a major league career stay productive — and at which position?"</p>
-  <div class="datebar"><span>Reference Tool</span><span>v.1 &middot; MLB 1985&ndash;2025</span><span>Sortable</span></div>
+  <div class="datebar"><span>Reference Tool</span><span>v.2 &middot; MLB 1985&ndash;2025</span><span>Sortable</span></div>
 </header>
+
+<div class="mode-tabs">
+  <button id="tabHit" class="active" data-mode="hit">Hitters<span class="sub">by position</span></button>
+  <button id="tabPit" data-mode="pit">Pitchers<span class="sub">by role (SP / RP)</span></button>
+</div>
 
 <main class="paper">
 
-  <h2 class="hed">Position by Service-Year. Sortable.</h2>
-  <p class="deck">For every major league position, this table shows how the median qualified hitter ages &mdash; measured from MLB debut forward, not from peak backward. Click any column to sort. Click again to reverse.</p>
+  <h2 class="hed" id="hedTitle">Position by Service-Year. Sortable.</h2>
+  <p class="deck" id="hedDeck">For every major league position, this table shows how the median qualified hitter ages &mdash; measured from MLB debut forward, not from peak backward. Click any column to sort. Click again to reverse.</p>
 
-  <h2 class="sh">I. Survival Curve by Position</h2>
-  <p class="note">Of players who became regulars (&ge;300 PA in years 1&ndash;3), what share were still posting a 300+ PA season at each later service-year window? This is the actuarial half-life of the position. The cohort sample is every qualified hitter 1985&ndash;2025 (n = <span id="ncohort">&hellip;</span>).</p>
+  <h2 class="sh" id="sec1Hed">I. Survival Curve by Position</h2>
+  <p class="note" id="sec1Note">Of players who became regulars (&ge;300 PA in years 1&ndash;3), what share were still posting a 300+ PA season at each later service-year window? This is the actuarial half-life of the position. The cohort sample is every qualified hitter 1985&ndash;2025 (n = <span id="ncohort">&hellip;</span>).</p>
 
   <div class="legend">
     <span><i style="background:#d8ecd8"></i> &ge;80% still active</span>
@@ -122,19 +134,12 @@ table.players tr:hover td{background:#fdf0d0}
     <p>The "Half-Life" column reports the first window where fewer than half the cohort is still a regular. That number is the position's actuarial expiration date &mdash; knowing only what year of MLB service a player is in, you can read off how likely it is that he's still in the lineup.</p>
   </div>
 
-  <h2 class="sh">II. Production by Position &times; Service Year</h2>
-  <p class="note">Median OPS among the players who <em>are</em> still putting up 200+ PA at each window. Among survivors, careers don't slope &mdash; they hold flat then cliff. The decline most fans observe is mostly attrition, not deterioration.</p>
+  <h2 class="sh" id="sec2Hed">II. Production by Position &times; Service Year</h2>
+  <p class="note" id="sec2Note">Median OPS among the players who <em>are</em> still putting up 200+ PA at each window. Among survivors, careers don't slope &mdash; they hold flat then cliff. The decline most fans observe is mostly attrition, not deterioration.</p>
 
   <div class="controls">
     <label for="indicator">Indicator</label>
     <select id="indicator">
-      <option value="OPS" selected>OPS</option>
-      <option value="OBP">OBP</option>
-      <option value="ISO">ISO (Slugging &minus; Avg)</option>
-      <option value="HR_per_PA">HR per PA</option>
-      <option value="BB_per_PA">BB per PA</option>
-      <option value="K_per_PA">K per PA</option>
-      <option value="PA">Plate Appearances (median per season)</option>
     </select>
     <label for="metric">Statistic</label>
     <select id="metric">
@@ -150,8 +155,8 @@ table.players tr:hover td{background:#fdf0d0}
     <tbody id="prodBody"></tbody>
   </table>
 
-  <h2 class="sh">III. Individual Players</h2>
-  <p class="note">Search by name. Sort by any column. PA-weighted career averages plus a per-bucket OPS strip. Cohort = every hitter 1985&ndash;2025 with at least 2,000 career PA (<span id="nplayers">&hellip;</span> players).</p>
+  <h2 class="sh" id="sec3Hed">III. Individual Players</h2>
+  <p class="note" id="sec3Note">Search by name. Sort by any column. PA-weighted career averages plus a per-bucket OPS strip. Cohort = every hitter 1985&ndash;2025 with at least 2,000 career PA (<span id="nplayers">&hellip;</span> players).</p>
 
   <div class="controls">
     <div class="search-wrap" style="flex:1">
@@ -159,7 +164,7 @@ table.players tr:hover td{background:#fdf0d0}
       <input type="text" id="psearch" placeholder="Alonso, Machado, Bonds, &hellip;" autocomplete="off">
       <span class="match-count" id="matchCount"></span>
     </div>
-    <label for="pfilter">Position</label>
+    <label for="pfilter"><span id="pfilterLabel">Position</span></label>
     <select id="pfilter">
       <option value="">All</option>
     </select>
@@ -181,25 +186,138 @@ table.players tr:hover td{background:#fdf0d0}
 
   <div class="footer">
     <span>The Sports Page &middot; Tools</span>
-    <span>Half-Life Explorer &middot; v.1</span>
-    <span>1985&ndash;2025 &middot; Hitters &middot; Qualified-Season Cohort</span>
+    <span>Half-Life Explorer &middot; v.2</span>
+    <span>1985&ndash;2025 &middot; Hitters + Pitchers &middot; Qualified-Season Cohort</span>
   </div>
 </main>
 
 <script>
 const BUCKETS = ["1-3","4-6","7-9","10-12","13-15","16+"];
 const POS_ORDER = ["C","1B","2B","3B","SS","LF","CF","RF","DH"];
+const ROLE_ORDER = ["SP","RP"];
+
+// Indicator menus per mode
+const HITTER_INDICATORS = [
+  ["OPS","OPS"], ["OBP","OBP"], ["ISO","ISO (Slugging − Avg)"],
+  ["HR_per_PA","HR per PA"], ["BB_per_PA","BB per PA"], ["K_per_PA","K per PA"],
+  ["PA","Plate Appearances (median per season)"]
+];
+const PITCHER_INDICATORS = [
+  ["ERA","ERA"], ["WHIP","WHIP"], ["K_per_9","K/9"],
+  ["BB_per_9","BB/9"], ["HR_per_9","HR/9"],
+  ["IP","Innings Pitched (median per season)"]
+];
+
+// "Lower is better" indicators get inverted heat (high baseline = bad survivor)
+const LOWER_BETTER = new Set(["ERA","WHIP","BB_per_9","HR_per_9","K_per_PA"]);
+
 let DATA = null;
+let MODE = "hit"; // "hit" or "pit"
 
 fetch('./half-life-data.json').then(r => r.json()).then(d => {
   DATA = d;
-  render();
+  document.getElementById("tabHit").addEventListener("click", () => setMode("hit"));
+  document.getElementById("tabPit").addEventListener("click", () => setMode("pit"));
+  document.getElementById("indicator").addEventListener("change", renderProduction);
+  document.getElementById("metric").addEventListener("change", renderProduction);
+  document.getElementById("psearch").addEventListener("input", e => {
+    playerSearch = e.target.value; renderPlayers();
+  });
+  document.getElementById("pfilter").addEventListener("change", e => {
+    playerPosFilter = e.target.value; renderPlayers();
+  });
+  setMode("hit");
 });
 
+function setMode(m) {
+  MODE = m;
+  document.getElementById("tabHit").classList.toggle("active", m === "hit");
+  document.getElementById("tabPit").classList.toggle("active", m === "pit");
+  applyModeLabels();
+  populateIndicatorMenu();
+  populatePositionFilter();
+  // reset sort states so the table doesn't try to sort by a now-missing key
+  survivalSort = {key: "half_life_order", asc: true};
+  prodSort = {key: m === "hit" ? "pos" : "role", asc: true};
+  playerSort = {key: m === "hit" ? "career_pa" : "career_ip", asc: false};
+  playerSearch = ""; playerPosFilter = "";
+  document.getElementById("psearch").value = "";
+  document.getElementById("pfilter").value = "";
+  render();
+}
+
+function applyModeLabels() {
+  const hit = MODE === "hit";
+  document.getElementById("hedTitle").textContent =
+    hit ? "Position by Service-Year. Sortable." : "Role by Service-Year. Sortable.";
+  document.getElementById("hedDeck").innerHTML = hit
+    ? "For every major league position, this table shows how the median qualified hitter ages — measured from MLB debut forward, not from peak backward. Click any column to sort. Click again to reverse."
+    : "For every major league pitching role, this table shows how the median qualified pitcher ages — measured from MLB debut forward, not from peak backward. Click any column to sort. Click again to reverse.";
+  document.getElementById("sec1Hed").textContent =
+    hit ? "I. Survival Curve by Position" : "I. Survival Curve by Role";
+  document.getElementById("sec1Note").innerHTML = hit
+    ? "Of players who became regulars (≥300 PA in years 1–3), what share were still posting a 300+ PA season at each later service-year window? This is the actuarial half-life of the position. The cohort sample is every qualified hitter 1985–2025 (n = <span id=\"ncohort\">…</span>)."
+    : "Of pitchers who became regulars in years 1–3 (≥80 IP for SP, ≥40 IP for RP), what share were still meeting that bar in any role at each later service-year window? This is the actuarial half-life of the role. The cohort sample is every qualified pitcher 1985–2025 + top relief leaders (n = <span id=\"ncohort\">…</span>).";
+  document.getElementById("sec2Hed").textContent =
+    hit ? "II. Production by Position × Service Year" : "II. Production by Role × Service Year";
+  document.getElementById("sec2Note").innerHTML = hit
+    ? "Median OPS among the players who <em>are</em> still putting up 200+ PA at each window. Among survivors, careers don't slope — they hold flat then cliff. The decline most fans observe is mostly attrition, not deterioration."
+    : "Median ERA among the pitchers <em>actively pitching</em> in that role at each window. Unlike hitters, pitcher production <em>does</em> slope: ERA rises through the career even among survivors. A pitcher who loses 2 mph can't adjust the way a hitter who slows down can.";
+  document.getElementById("sec3Hed").textContent =
+    hit ? "III. Individual Players" : "III. Individual Pitchers";
+  document.getElementById("sec3Note").innerHTML = hit
+    ? "Search by name. Sort by any column. PA-weighted career averages plus a per-bucket OPS strip. Cohort = every hitter 1985–2025 with at least 2,000 career PA (<span id=\"nplayers\">…</span> players)."
+    : "Search by name. Sort by any column. IP-weighted career averages plus a per-bucket ERA strip. Cohort = every pitcher 1985–2025 with at least 800 career IP (<span id=\"nplayers\">…</span> pitchers).";
+  document.getElementById("pfilterLabel").textContent = hit ? "Position" : "Role";
+  document.getElementById("psearch").placeholder = hit
+    ? "Alonso, Machado, Bonds, …"
+    : "Clemens, Verlander, Rivera, …";
+}
+
+function populateIndicatorMenu() {
+  const sel = document.getElementById("indicator");
+  sel.innerHTML = "";
+  const opts = MODE === "hit" ? HITTER_INDICATORS : PITCHER_INDICATORS;
+  for (const [v, label] of opts) {
+    const o = document.createElement("option");
+    o.value = v; o.textContent = label;
+    sel.appendChild(o);
+  }
+  // default selection
+  sel.value = MODE === "hit" ? "OPS" : "ERA";
+}
+
+function populatePositionFilter() {
+  const sel = document.getElementById("pfilter");
+  sel.innerHTML = '<option value="">All</option>';
+  const order = MODE === "hit" ? POS_ORDER : ROLE_ORDER;
+  for (const p of order) {
+    const opt = document.createElement("option"); opt.value = p; opt.textContent = p;
+    sel.appendChild(opt);
+  }
+}
+
+function render() {
+  if (!DATA) return;
+  const isHit = MODE === "hit";
+  const hl = isHit ? DATA.hl : DATA.p_hl;
+  const pc = isHit ? DATA.pc : DATA.p_pc;
+  // Cohort total
+  const cohortTotal = Object.values(hl.survival_curve).reduce((s, o) => s + o.cohort_size, 0);
+  const ncEl = document.getElementById("ncohort");
+  if (ncEl) ncEl.textContent = cohortTotal;
+  const nplEl = document.getElementById("nplayers");
+  if (nplEl) nplEl.textContent = isHit ? pc.players.length : pc.pitchers.length;
+  renderSurvival();
+  renderProduction();
+  renderPlayers();
+}
+
 function fmt(v, ind) {
-  if (v == null) return "&mdash;";
-  if (ind === "PA" || ind === "G") return Math.round(v);
+  if (v == null) return "—";
+  if (ind === "PA" || ind === "G" || ind === "IP") return Math.round(v);
   if (ind === "HR_per_PA" || ind === "BB_per_PA" || ind === "K_per_PA") return (v * 100).toFixed(1) + "%";
+  if (ind === "ERA" || ind === "WHIP" || ind === "K_per_9" || ind === "BB_per_9" || ind === "HR_per_9") return v.toFixed(2);
   return v.toFixed(3);
 }
 
@@ -210,27 +328,20 @@ function heatClass(v) {
   return "heat-lo";
 }
 
-function render() {
-  const hl = DATA.hl, pc = DATA.pc;
-  document.getElementById("ncohort").textContent =
-    Object.values(hl.survival_curve).reduce((s,o) => s + o.cohort_size, 0);
-  document.getElementById("nplayers").textContent = pc.players.length;
-  renderSurvival();
-  renderProduction();
-  populatePositionFilter();
-  renderPlayers();
-  attachListeners();
-}
-
 // ─────── Survival table ───────
 let survivalSort = {key: "half_life_order", asc: true};
 
 function renderSurvival() {
-  const hl = DATA.hl;
+  const isHit = MODE === "hit";
+  const hl = isHit ? DATA.hl : DATA.p_hl;
+  const labelKey = isHit ? "pos" : "role";
+  const labelHeader = isHit ? "Position" : "Role";
+  const order = isHit ? POS_ORDER : ROLE_ORDER;
+
   const head = document.getElementById("survivalHead");
   head.innerHTML = '';
   const cols = [
-    {key:"pos", label:"Position"},
+    {key: labelKey, label: labelHeader},
     {key:"cohort_size", label:"Cohort n"},
     ...BUCKETS.map(b => ({key:"sr_"+b, label:"yrs "+b})),
     {key:"half_life_order", label:"Survival half-life"},
@@ -248,17 +359,18 @@ function renderSurvival() {
     head.appendChild(th);
   }
 
-  const rows = POS_ORDER.filter(p => hl.survival_curve[p]).map(p => {
+  const rows = order.filter(p => hl.survival_curve[p]).map(p => {
     const sc = hl.survival_curve[p];
     const half = hl.half_life[p] ? hl.half_life[p].survival_half_life : null;
     const halfOrder = half ? BUCKETS.indexOf(half) : 99;
-    return {
-      pos: p,
+    const row = {
       cohort_size: sc.cohort_size,
       ...Object.fromEntries(BUCKETS.map(b => ["sr_"+b, sc.survival_rate[b]])),
       half_life: half,
       half_life_order: halfOrder,
     };
+    row[labelKey] = p;
+    return row;
   });
 
   rows.sort((a,b) => {
@@ -272,7 +384,7 @@ function renderSurvival() {
   body.innerHTML = '';
   for (const r of rows) {
     const tr = document.createElement("tr");
-    tr.innerHTML = '<td class="label">' + r.pos + '</td><td>' + r.cohort_size + '</td>' +
+    tr.innerHTML = '<td class="label">' + r[labelKey] + '</td><td>' + r.cohort_size + '</td>' +
       BUCKETS.map(b => {
         const v = r["sr_"+b];
         return '<td class="' + heatClass(v) + '">' + (v*100).toFixed(0) + '%</td>';
@@ -286,13 +398,18 @@ function renderSurvival() {
 let prodSort = {key: "pos", asc: true};
 
 function renderProduction() {
-  const hl = DATA.hl;
+  const isHit = MODE === "hit";
+  const hl = isHit ? DATA.hl : DATA.p_hl;
+  const summary = isHit ? hl.pos_bucket_summary : hl.role_bucket_summary;
+  const labelKey = isHit ? "pos" : "role";
+  const labelHeader = isHit ? "Position" : "Role";
+  const order = isHit ? POS_ORDER : ROLE_ORDER;
   const ind = document.getElementById("indicator").value;
   const met = document.getElementById("metric").value;
   const head = document.getElementById("prodHead");
   head.innerHTML = '';
   const cols = [
-    {key:"pos", label:"Position"},
+    {key: labelKey, label: labelHeader},
     ...BUCKETS.map(b => ({key:"v_"+b, label:"yrs "+b})),
   ];
   for (const c of cols) {
@@ -308,10 +425,11 @@ function renderProduction() {
     head.appendChild(th);
   }
 
-  const rows = POS_ORDER.filter(p => hl.survival_curve[p]).map(p => {
-    const row = {pos: p};
+  const rows = order.filter(p => hl.survival_curve[p]).map(p => {
+    const row = {};
+    row[labelKey] = p;
     for (const b of BUCKETS) {
-      const cell = hl.pos_bucket_summary[p+"|"+b] || {};
+      const cell = summary[p+"|"+b] || {};
       row["v_"+b] = (cell[ind] || {})[met];
     }
     return row;
@@ -330,7 +448,7 @@ function renderProduction() {
   body.innerHTML = '';
   for (const r of rows) {
     const tr = document.createElement("tr");
-    tr.innerHTML = '<td class="label">' + r.pos + '</td>' +
+    tr.innerHTML = '<td class="label">' + r[labelKey] + '</td>' +
       BUCKETS.map(b => '<td>' + fmt(r["v_"+b], ind) + '</td>').join("");
     body.appendChild(tr);
   }
@@ -341,7 +459,7 @@ let playerSort = {key: "career_pa", asc: false};
 let playerSearch = "";
 let playerPosFilter = "";
 
-const PLAYER_COLS = [
+const HITTER_COLS = [
   {key:"name", label:"Player", cls:"pname"},
   {key:"pos",  label:"Pos",   cls:"pos"},
   {key:"career_yrs",  label:"Yrs"},
@@ -350,28 +468,39 @@ const PLAYER_COLS = [
   {key:"career_obp",  label:"OBP"},
   {key:"career_iso",  label:"ISO"},
   {key:"career_hr_pa",label:"HR%"},
-  ...BUCKETS.map(b => ({key:"bk_"+b, label:"yrs "+b, isBucket:true})),
+  ...BUCKETS.map(b => ({key:"bk_"+b, label:"yrs "+b, isBucket:true, num:true})),
+];
+const PITCHER_COLS = [
+  {key:"name", label:"Pitcher", cls:"pname"},
+  {key:"role", label:"Debut", cls:"pos"},
+  {key:"career_yrs", label:"Yrs"},
+  {key:"career_ip", label:"IP"},
+  {key:"career_era", label:"ERA", dec:2},
+  {key:"career_whip", label:"WHIP", dec:2},
+  {key:"career_k9", label:"K/9", dec:2},
+  {key:"career_bb9", label:"BB/9", dec:2},
+  {key:"career_hr9", label:"HR/9", dec:2},
+  ...BUCKETS.map(b => ({key:"bk_"+b, label:"yrs "+b, isBucket:true, era:true})),
 ];
 
-function populatePositionFilter() {
-  const sel = document.getElementById("pfilter");
-  for (const p of POS_ORDER) {
-    const opt = document.createElement("option"); opt.value = p; opt.textContent = p;
-    sel.appendChild(opt);
-  }
-}
-
 function renderPlayers() {
-  const players = DATA.pc.players.map(p => {
+  const isHit = MODE === "hit";
+  const cols = isHit ? HITTER_COLS : PITCHER_COLS;
+  const source = isHit ? DATA.pc.players : DATA.p_pc.pitchers;
+  const filterKey = isHit ? "pos" : "role";
+  const bucketSrc = isHit ? "bucket_ops" : "bucket_era";
+
+  const players = source.map(p => {
     const row = Object.assign({}, p);
-    for (const b of BUCKETS) row["bk_"+b] = (p.bucket_ops || {})[b];
+    const b_src = p[bucketSrc] || {};
+    for (const b of BUCKETS) row["bk_"+b] = b_src[b];
     return row;
   });
 
   const search = playerSearch.trim().toLowerCase();
   let filtered = players;
   if (search) filtered = filtered.filter(p => p.name.toLowerCase().includes(search));
-  if (playerPosFilter) filtered = filtered.filter(p => p.pos === playerPosFilter);
+  if (playerPosFilter) filtered = filtered.filter(p => p[filterKey] === playerPosFilter);
 
   filtered.sort((a,b) => {
     const av = a[playerSort.key], bv = b[playerSort.key];
@@ -386,14 +515,14 @@ function renderPlayers() {
 
   const head = document.getElementById("playerHead");
   head.innerHTML = '';
-  for (const c of PLAYER_COLS) {
+  for (const c of cols) {
     const th = document.createElement("th");
     th.className = "sortable " + (c.cls || "");
     th.textContent = c.label;
     if (playerSort.key === c.key) th.innerHTML += ' <span class="sort-arrow">' + (playerSort.asc ? "▲" : "▼") + '</span>';
     th.addEventListener("click", () => {
       if (playerSort.key === c.key) playerSort.asc = !playerSort.asc;
-      else { playerSort.key = c.key; playerSort.asc = (c.key === "name" || c.key === "pos"); }
+      else { playerSort.key = c.key; playerSort.asc = (c.key === "name" || c.key === "pos" || c.key === "role"); }
       renderPlayers();
     });
     head.appendChild(th);
@@ -405,31 +534,23 @@ function renderPlayers() {
   for (let i = 0; i < max; i++) {
     const p = filtered[i];
     const tr = document.createElement("tr");
-    tr.innerHTML = PLAYER_COLS.map(c => {
+    tr.innerHTML = cols.map(c => {
       const v = p[c.key];
       if (c.cls === "pname") return '<td class="pname">' + v + '</td>';
       if (c.cls === "pos")   return '<td class="pos">' + v + '</td>';
-      if (c.key === "career_yrs" || c.key === "career_pa") return '<td>' + (v != null ? v : "&mdash;") + '</td>';
-      if (c.key === "career_hr_pa") return '<td>' + (v != null ? (v*100).toFixed(1)+"%" : "&mdash;") + '</td>';
-      if (c.isBucket || c.key.indexOf("career_") === 0) return '<td>' + (v != null ? v.toFixed(3) : "&mdash;") + '</td>';
-      return '<td>' + (v != null ? v : "&mdash;") + '</td>';
+      if (c.key === "career_yrs" || c.key === "career_pa" || c.key === "career_ip") {
+        return '<td>' + (v != null ? v : "—") + '</td>';
+      }
+      if (c.key === "career_hr_pa") return '<td>' + (v != null ? (v*100).toFixed(1)+"%" : "—") + '</td>';
+      if (c.era) return '<td>' + (v != null ? v.toFixed(2) : "—") + '</td>';
+      if (c.dec) return '<td>' + (v != null ? v.toFixed(c.dec) : "—") + '</td>';
+      if (c.isBucket || c.key.indexOf("career_") === 0) return '<td>' + (v != null ? v.toFixed(3) : "—") + '</td>';
+      return '<td>' + (v != null ? v : "—") + '</td>';
     }).join("");
     body.appendChild(tr);
   }
 }
 
-function attachListeners() {
-  document.getElementById("indicator").addEventListener("change", renderProduction);
-  document.getElementById("metric").addEventListener("change", renderProduction);
-  document.getElementById("psearch").addEventListener("input", function(e) {
-    playerSearch = e.target.value;
-    renderPlayers();
-  });
-  document.getElementById("pfilter").addEventListener("change", function(e) {
-    playerPosFilter = e.target.value;
-    renderPlayers();
-  });
-}
 </script>
 </body>
 </html>
