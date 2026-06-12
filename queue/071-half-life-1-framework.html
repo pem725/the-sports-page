@@ -70,13 +70,13 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <main class="paper">
 
   <h2 class="hed">A Career Doesn't <em>Decline</em>. It Disappears.</h2>
-  <p class="deck">Across 518 hitters and 41 seasons of major league play, the median surviving veteran hits about as well in year 14 as he did in year 4. The decline you think you're watching is mostly attrition &mdash; the players who slowed down didn't slow down. They left.</p>
-  <p class="byline">The Sports Page &middot; Half-Life Series, Part I &middot; Service-year cohort: MLB hitters 1985&ndash;2025</p>
+  <p class="deck">Of the 401 first basemen who debuted in the major leagues between 1985 and 2025, half are out of the lineup by year five. Three in four are gone by year ten. The "aging curve" you have been reading about your whole life is a chart of the 17 percent of debutants who lasted long enough to be on it.</p>
+  <p class="byline">The Sports Page &middot; Half-Life Series, Part I &middot; MLB hitters 1985&ndash;2025 (every debut)</p>
 
   <div class="stat-row">
-    <div class="sc"><div class="v now">518</div><div class="l">Hitters in sample</div></div>
-    <div class="sc"><div class="v bad">~50%</div><div class="l">Gone by yrs 13&ndash;15</div></div>
-    <div class="sc"><div class="v good">.788</div><div class="l">Median 1B OPS, yrs 13&ndash;15</div></div>
+    <div class="sc"><div class="v now">7,324</div><div class="l">Hitters in cohort</div></div>
+    <div class="sc"><div class="v bad">~50%</div><div class="l">Gone by year 5</div></div>
+    <div class="sc"><div class="v bad">~14%</div><div class="l">Still active at year 13</div></div>
   </div>
 
   <p>Manny Machado is fourteen years into a major league career and, for a few weeks this spring, his batting average ducked below .200. That dip is what prompted this series. The question was simple. Is he past his prime, or just slumping? And while we are at it &mdash; where, exactly, does Pete Alonso sit on the same kind of curve, seven years in?</p>
@@ -90,84 +90,90 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   <p>Starting from debut also fixes a different problem. You cannot measure half-life from peak if you do not know when peak occurred. Peak is a retrospective verdict; no one knows in real time that they have hit it. Debut is a date on a card. Pick the knowable starting line. The rest of the framework follows.</p>
 
   <div class="chart-wrap">
-    <div class="chart-label">Figure 1 &middot; Survival Curves by Position &middot; n=448 careers</div>
-<svg class="chart" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
-<rect x="0" y="0" width="720" height="400" fill="#ede5d2"/>
-<line x1="60" y1="340" x2="590" y2="340" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="52" y="344" text-anchor="end" font-size="11" fill="#6b5e4a">0%</text>
-<line x1="60" y1="265" x2="590" y2="265" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="52" y="269" text-anchor="end" font-size="11" fill="#6b5e4a">25%</text>
-<line x1="60" y1="190" x2="590" y2="190" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="52" y="194" text-anchor="end" font-size="11" fill="#6b5e4a">50%</text>
-<line x1="60" y1="115" x2="590" y2="115" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="52" y="119" text-anchor="end" font-size="11" fill="#6b5e4a">75%</text>
-<line x1="60" y1="40" x2="590" y2="40" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+    <div class="chart-label">Figure 1 &middot; Survival curves by position &middot; every debutant 1985&ndash;2025</div>
+<svg class="chart" viewBox="0 0 740 420" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect x="0" y="0" width="740" height="420" fill="#ede5d2"/>
+<line x1="60" y1="360" x2="610" y2="360" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="52" y="364" text-anchor="end" font-size="11" fill="#6b5e4a">0%</text>
+<line x1="60" y1="280" x2="610" y2="280" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="52" y="284" text-anchor="end" font-size="11" fill="#6b5e4a">25%</text>
+<line x1="60" y1="200" x2="610" y2="200" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="52" y="204" text-anchor="end" font-size="11" fill="#6b5e4a">50%</text>
+<line x1="60" y1="120" x2="610" y2="120" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="52" y="124" text-anchor="end" font-size="11" fill="#6b5e4a">75%</text>
+<line x1="60" y1="40" x2="610" y2="40" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
 <text x="52" y="44" text-anchor="end" font-size="11" fill="#6b5e4a">100%</text>
-<line x1="60" y1="190" x2="590" y2="190" stroke="#b83a1e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6"/>
-<text x="596" y="194" font-size="10" fill="#b83a1e" font-weight="600">half-life</text>
-<text x="60" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 1-3</text>
-<text x="166" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 4-6</text>
-<text x="272" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 7-9</text>
-<text x="378" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 10-12</text>
-<text x="484" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 13-15</text>
-<text x="590" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 16+</text>
-<line x1="60" y1="40" x2="60" y2="340" stroke="#1a1208" stroke-width="2"/>
-<line x1="60" y1="340" x2="590" y2="340" stroke="#1a1208" stroke-width="2"/>
-<text x="325" y="388" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">MLB years of service</text>
-<text transform="rotate(-90,18,190)" x="18" y="190" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">% of debut cohort still a regular (300+ PA season)</text>
-<polyline points="60,40 166,40 272,40 378,40 484,60 590,260" fill="none" stroke="#b83a1e" stroke-width="2.2"/>
-<circle cx="590" cy="260" r="3.5" fill="#b83a1e"/>
-<line x1="600" y1="50" x2="618" y2="50" stroke="#b83a1e" stroke-width="2.2"/>
-<text x="624" y="54" font-size="11" fill="#1a1208">C (n=15)</text>
-<polyline points="60,40 166,40 272,40 378,84 484,176 590,267" fill="none" stroke="#2c4a6e" stroke-width="2.2"/>
-<circle cx="590" cy="267" r="3.5" fill="#2c4a6e"/>
-<line x1="600" y1="68" x2="618" y2="68" stroke="#2c4a6e" stroke-width="2.2"/>
-<text x="624" y="72" font-size="11" fill="#1a1208">1B (n=62)</text>
-<polyline points="60,40 166,45 272,45 378,105 484,210 590,285" fill="none" stroke="#c9962a" stroke-width="2.2"/>
-<circle cx="590" cy="285" r="3.5" fill="#c9962a"/>
-<line x1="600" y1="86" x2="618" y2="86" stroke="#c9962a" stroke-width="2.2"/>
-<text x="624" y="90" font-size="11" fill="#1a1208">2B (n=60)</text>
-<polyline points="60,40 166,40 272,46 378,109 484,202 590,294" fill="none" stroke="#2a6e3f" stroke-width="2.2"/>
-<circle cx="590" cy="294" r="3.5" fill="#2a6e3f"/>
-<line x1="600" y1="104" x2="618" y2="104" stroke="#2a6e3f" stroke-width="2.2"/>
-<text x="624" y="108" font-size="11" fill="#1a1208">3B (n=52)</text>
-<polyline points="60,40 166,40 272,40 378,80 484,188 590,288" fill="none" stroke="#8b1e3f" stroke-width="2.2"/>
-<circle cx="590" cy="288" r="3.5" fill="#8b1e3f"/>
-<line x1="600" y1="122" x2="618" y2="122" stroke="#8b1e3f" stroke-width="2.2"/>
-<text x="624" y="126" font-size="11" fill="#1a1208">SS (n=75)</text>
-<polyline points="60,40 166,40 272,45 378,121 484,213 590,284" fill="none" stroke="#5e4b8b" stroke-width="2.2"/>
-<circle cx="590" cy="284" r="3.5" fill="#5e4b8b"/>
-<line x1="600" y1="140" x2="618" y2="140" stroke="#5e4b8b" stroke-width="2.2"/>
-<text x="624" y="144" font-size="11" fill="#1a1208">LF (n=59)</text>
-<polyline points="60,40 166,40 272,46 378,82 484,160 590,250" fill="none" stroke="#1f6b78" stroke-width="2.2"/>
-<circle cx="590" cy="250" r="3.5" fill="#1f6b78"/>
-<line x1="600" y1="158" x2="618" y2="158" stroke="#1f6b78" stroke-width="2.2"/>
-<text x="624" y="162" font-size="11" fill="#1a1208">CF (n=50)</text>
-<polyline points="60,40 166,40 272,46 378,46 484,152 590,252" fill="none" stroke="#a85a1c" stroke-width="2.2"/>
-<circle cx="590" cy="252" r="3.5" fill="#a85a1c"/>
-<line x1="600" y1="176" x2="618" y2="176" stroke="#a85a1c" stroke-width="2.2"/>
-<text x="624" y="180" font-size="11" fill="#1a1208">RF (n=51)</text>
-<polyline points="60,40 166,40 272,40 378,103 484,165 590,240" fill="none" stroke="#6b5e4a" stroke-width="2.2"/>
-<circle cx="590" cy="240" r="3.5" fill="#6b5e4a"/>
-<line x1="600" y1="194" x2="618" y2="194" stroke="#6b5e4a" stroke-width="2.2"/>
-<text x="624" y="198" font-size="11" fill="#1a1208">DH (n=24)</text>
+<line x1="60" y1="200" x2="610" y2="200" stroke="#b83a1e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6"/>
+<text x="616" y="204" font-size="10" fill="#b83a1e" font-weight="600">half-life</text>
+<text x="60" y="378" text-anchor="middle" font-size="11" fill="#1a1208">1</text>
+<text x="125" y="378" text-anchor="middle" font-size="11" fill="#1a1208">3</text>
+<text x="189" y="378" text-anchor="middle" font-size="11" fill="#1a1208">5</text>
+<text x="254" y="378" text-anchor="middle" font-size="11" fill="#1a1208">7</text>
+<text x="319" y="378" text-anchor="middle" font-size="11" fill="#1a1208">9</text>
+<text x="384" y="378" text-anchor="middle" font-size="11" fill="#1a1208">11</text>
+<text x="448" y="378" text-anchor="middle" font-size="11" fill="#1a1208">13</text>
+<text x="513" y="378" text-anchor="middle" font-size="11" fill="#1a1208">15</text>
+<text x="578" y="378" text-anchor="middle" font-size="11" fill="#1a1208">17</text>
+<text x="610" y="378" text-anchor="middle" font-size="11" fill="#1a1208">18</text>
+<line x1="60" y1="40" x2="60" y2="360" stroke="#1a1208" stroke-width="2"/>
+<line x1="60" y1="360" x2="610" y2="360" stroke="#1a1208" stroke-width="2"/>
+<text x="335" y="408" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">MLB year of service</text>
+<text transform="rotate(-90,18,200)" x="18" y="200" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">% of every debutant still in MLB (&ge;1 PA)</text>
+<polyline points="60,40 92,127 125,142 157,169 189,184 222,202 254,220 287,247 319,267 351,273 384,289 416,307 448,319 481,335 513,343 545,350 578,354 610,356" fill="none" stroke="#b83a1e" stroke-width="2.2"/>
+<circle cx="610" cy="356" r="3.5" fill="#b83a1e"/>
+<line x1="620" y1="50" x2="638" y2="50" stroke="#b83a1e" stroke-width="2.2"/>
+<text x="644" y="54" font-size="11" fill="#1a1208">C (n=665)</text>
+<polyline points="60,40 92,120 125,147 157,169 189,199 222,216 254,240 287,252 319,271 351,278 384,295 416,302 448,315 481,327 513,337 545,344 578,350 610,354" fill="none" stroke="#2c4a6e" stroke-width="2.2"/>
+<circle cx="610" cy="354" r="3.5" fill="#2c4a6e"/>
+<line x1="620" y1="67" x2="638" y2="67" stroke="#2c4a6e" stroke-width="2.2"/>
+<text x="644" y="71" font-size="11" fill="#1a1208">1B (n=401)</text>
+<polyline points="60,40 92,113 125,139 157,166 189,189 222,213 254,222 287,251 319,266 351,284 384,300 416,310 448,324 481,332 513,341 545,349 578,354 610,357" fill="none" stroke="#c9962a" stroke-width="2.2"/>
+<circle cx="610" cy="357" r="3.5" fill="#c9962a"/>
+<line x1="620" y1="84" x2="638" y2="84" stroke="#c9962a" stroke-width="2.2"/>
+<text x="644" y="88" font-size="11" fill="#1a1208">2B (n=484)</text>
+<polyline points="60,40 92,112 125,131 157,165 189,192 222,214 254,232 287,243 319,259 351,280 384,294 416,312 448,324 481,338 513,347 545,351 578,354 610,358" fill="none" stroke="#2a6e3f" stroke-width="2.2"/>
+<circle cx="610" cy="358" r="3.5" fill="#2a6e3f"/>
+<line x1="620" y1="101" x2="638" y2="101" stroke="#2a6e3f" stroke-width="2.2"/>
+<text x="644" y="105" font-size="11" fill="#1a1208">3B (n=429)</text>
+<polyline points="60,40 92,105 125,121 157,151 189,168 222,188 254,210 287,225 319,239 351,264 384,275 416,297 448,313 481,322 513,332 545,344 578,348 610,354" fill="none" stroke="#8b1e3f" stroke-width="2.2"/>
+<circle cx="610" cy="354" r="3.5" fill="#8b1e3f"/>
+<line x1="620" y1="118" x2="638" y2="118" stroke="#8b1e3f" stroke-width="2.2"/>
+<text x="644" y="122" font-size="11" fill="#1a1208">SS (n=390)</text>
+<polyline points="60,40 92,123 125,149 157,175 189,202 222,222 254,244 287,261 319,274 351,294 384,305 416,321 448,330 481,339 513,347 545,351 578,353 610,354" fill="none" stroke="#5e4b8b" stroke-width="2.2"/>
+<circle cx="610" cy="354" r="3.5" fill="#5e4b8b"/>
+<line x1="620" y1="135" x2="638" y2="135" stroke="#5e4b8b" stroke-width="2.2"/>
+<text x="644" y="139" font-size="11" fill="#1a1208">LF (n=509)</text>
+<polyline points="60,40 92,105 125,118 157,139 189,164 222,201 254,225 287,246 319,262 351,277 384,291 416,309 448,319 481,328 513,338 545,346 578,350 610,355" fill="none" stroke="#1f6b78" stroke-width="2.2"/>
+<circle cx="610" cy="355" r="3.5" fill="#1f6b78"/>
+<line x1="620" y1="152" x2="638" y2="152" stroke="#1f6b78" stroke-width="2.2"/>
+<text x="644" y="156" font-size="11" fill="#1a1208">CF (n=447)</text>
+<polyline points="60,40 92,115 125,145 157,180 189,205 222,220 254,239 287,265 319,283 351,293 384,302 416,310 448,320 481,331 513,339 545,346 578,352 610,357" fill="none" stroke="#a85a1c" stroke-width="2.2"/>
+<circle cx="610" cy="357" r="3.5" fill="#a85a1c"/>
+<line x1="620" y1="169" x2="638" y2="169" stroke="#a85a1c" stroke-width="2.2"/>
+<text x="644" y="173" font-size="11" fill="#1a1208">RF (n=422)</text>
+<polyline points="60,40 92,118 125,166 157,196 189,244 222,242 254,282 287,289 319,294 351,310 384,317 416,320 448,324 481,334 513,341 545,343 578,346 610,351" fill="none" stroke="#6b5e4a" stroke-width="2.2"/>
+<circle cx="610" cy="351" r="3.5" fill="#6b5e4a"/>
+<line x1="620" y1="186" x2="638" y2="186" stroke="#6b5e4a" stroke-width="2.2"/>
+<text x="644" y="190" font-size="11" fill="#1a1208">DH (n=135)</text>
 </svg>
   </div>
 
-  <p>What survives in the chart above is the answer to a single question. Of the players who became regulars (a season of 300 plate appearances or more in their first three years), what fraction is still putting up a 300-PA season at each later window? That is the actuarial half-life of a position. The half-life of a watt-hour of strontium-90. The half-life of a clean fastball.</p>
+  <p>The chart answers a single question. Of every player who took an MLB plate appearance at a given position between 1985 and 2025, what share was still in a major league lineup at each later year of service? Not a regular. Not a qualifier. Just <em>in the league at all.</em></p>
 
-  <p>The shape is the same at every position. Flat. Flat. Flat. Cliff. Almost every cohort stays nearly intact through years 7&ndash;9. Then attrition starts at 10&ndash;12, and the floor falls out between years 13 and 15. By year 16, more than two-thirds of every cohort is out of the lineup entirely.</p>
+  <p>The shape is the same at every position. Decline starts immediately. By year three, roughly a third of every cohort is already out. By year five, half. By year ten, three quarters. By year fifteen, the curves are flush against the floor: four to nine percent of debutants are still drawing a paycheck. The horror of it is not the steepness; it is the absence of any flat stretch at the top.</p>
 
-  <h3 class="sh">What happens to the survivors</h3>
+  <p>If you read aging-curve literature anywhere &mdash; the kind that says "player production peaks at 27 and then declines two percent per year" &mdash; you are reading a chart drawn from the survivors. The flameouts who debuted at 23 and were back in Triple-A by 25 do not appear in those charts. They were never in the regression. The decline rate sounds civilized because the violent attrition was hidden upstream of the data.</p>
 
-  <p>Here is the counterintuitive finding. <strong>Among the players still standing at year 13, production has barely moved.</strong></p>
+  <h3 class="sh">What happens to the players who stay</h3>
 
-  <p>The median first baseman at years 1&ndash;3 puts up an .805 OPS. At years 4&ndash;6, .859 &mdash; a real peak. By years 13&ndash;15, the median surviving first baseman is still hitting .788. A six-percent drop over a decade of major-league wear. The same pattern holds at third base (.738 to .746), at shortstop (.699 to .708), at left field (.782 to .777). The position medians look like a flat line with a tiny dip at the end.</p>
+  <p>Here is the counterintuitive finding. <strong>Among the players still standing at year thirteen, production has not just held steady &mdash; it has crept upward.</strong></p>
 
-  <p>This is not because baseball is kind to its veterans. It is because baseball is not. The players whose bats slowed down were not allowed to keep hitting in major league lineups; they were sent down, released, retired, or wedged into a bench role and dropped from the sample. The 14-year veteran you watch from behind home plate looks productive because the 14-year veterans who became unproductive are not there anymore.</p>
+  <p>The median first baseman with 200 plate appearances or more at years 1&ndash;3 posts a .782 OPS. At years 7&ndash;9 the figure is .805. At years 13&ndash;15, still .790. At third base it climbs from .728 to .777 over the same span. At shortstop, .687 to .717. Position after position, the veteran's median sits a few points <em>above</em> the rookie's median, not below it.</p>
+
+  <p>This is not because baseball improves its players. It is because baseball is brutal. The players whose bats slowed down were not allowed to keep hitting in major-league lineups; they were sent down, released, retired. With each passing service year, the population of "still hitting" gets thinner and more talented. The median climbs not because anyone got better, but because everyone worse than the median was removed from the sample. Survivorship intensifies until the only players left are the ones who never needed an aging curve.</p>
 
   <div class="pull">
-    <p>The career is not a slope. It is a runway with a cliff at the end.</p>
+    <p>A career is not a slope. It is a steep escalator going down, and a survivors' lounge at the top.</p>
     <cite>The Half-Life Framework</cite>
   </div>
 
@@ -178,15 +184,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
       <div class="hc-name">Pete Alonso &middot; 1B &middot; year 8</div>
       <div class="hc-stat">.871</div>
       <div class="hc-label">2025 OPS &middot; career .857</div>
-      <p>Alonso enters his eighth major league season inside the years 7&ndash;9 bucket. Median 1B OPS for that window: <strong>.854</strong>. Median PA: <strong>612</strong>. His 2025 line beat both. Survival probability for a first baseman through years 7&ndash;9, given that he was a regular at years 1&ndash;3: roughly 100 percent. Alonso is not past his prime. By the data, he is sitting on it.</p>
+      <p>Alonso enters his eighth major league season. Of the 401 first basemen who debuted in MLB since 1985, only <strong>about a third</strong> are still in the league at year eight. Among those who are, the median OPS in the years 7&ndash;9 window is <strong>.805</strong>. Alonso's 2025 mark of .871 is above the survivor median &mdash; and he beat the median rookie's mark by almost a hundred OPS points. He is not past his prime. By the data, he is sitting on it.</p>
       <div class="verdict">Status: Inside the prime window</div>
     </div>
     <div class="hc">
       <div class="hc-name">Manny Machado &middot; 3B &middot; year 15</div>
       <div class="hc-stat">.795</div>
       <div class="hc-label">2025 OPS &middot; career .830</div>
-      <p>Machado is in his fifteenth season. He is one of the survivors: roughly <strong>46 percent</strong> of the 3B cohort that debuted before him is still a regular at years 13&ndash;15. Median surviving 3B OPS for that window: <strong>.746</strong>. Machado in 2025 was at .795, comfortably above the survivor median. His current spring slump is a story about a single month, against a position where a deeper slump &mdash; a bigger one &mdash; would not be unusual for the few players still here.</p>
-      <div class="verdict">Status: Survivor, still above median</div>
+      <p>Machado is in his fifteenth season. Of the 429 third basemen who debuted in MLB since 1985, fewer than <strong>one in ten</strong> is still in the league at year fifteen. Among those who are, median OPS at years 13&ndash;15 is <strong>.777</strong>. Machado in 2025 was at .795 &mdash; on the right side of the survivor line, but with little margin. The spring slump is a story about a single month, against a tail population so small that any deeper dip will be hard to read against noise.</p>
+      <div class="verdict">Status: Survivor, narrowly above median</div>
     </div>
   </div>
 
@@ -199,9 +205,11 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   </div>
 
   <div class="tool-cta">
-    <h3>The Half-Life Explorer</h3>
-    <p>The full position-by-position grid &mdash; survival rates, production percentiles, every hitter in the cohort &mdash; is a sortable companion tool. Look up your favorite player. Compare positions. Click columns to re-sort.</p>
-    <a href="../tools/half-life-explorer.html">Open the Explorer &rarr;</a>
+    <h3>Two tools accompany this piece</h3>
+    <p><strong>Career Trajectories</strong> plots every one of the 7,300+ hitters and 5,600+ pitchers in this cohort as a faint line. Filter by debut tier &mdash; cup of coffee, partial, regular, qualifier &mdash; and watch the cliff change shape. Search any player to highlight them against the cloud.</p>
+    <a href="../tools/half-life-trajectories.html">Open Career Trajectories &rarr;</a>
+    <p style="margin-top:.8rem;font-size:.85rem"><strong>The Half-Life Explorer</strong> sorts the same data into tables &mdash; survival rates, production percentiles, individual players. Useful for the position-by-position grid.</p>
+    <a href="../tools/half-life-explorer.html" style="font-size:.7rem">Open the Explorer &rarr;</a>
   </div>
 
   <h3 class="sh">A word on what is coming</h3>
@@ -218,9 +226,9 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
   <div class="box" style="background:var(--ink)">
     <h3>Notes &amp; sources</h3>
-    <p style="color:#c8b99a">Cohort: Every hitter with a qualified season (502+ PA) at any point between the 1985 and 2025 MLB regular seasons. Career stats pulled from the MLB Stats API. Service-year clock starts at MLB debut; in-progress 2026 seasons excluded. "Regular" defined as a 300+ PA season, the conventional everyday-player threshold.</p>
-    <p style="color:#c8b99a">Median sample sizes per bucket range from 31 (catchers at 16+ years) to 272 (shortstops at 7&ndash;9 years). The catcher and DH curves should be read with the smallest cohorts in mind &mdash; n=15 and n=24 respectively for the at-debut cohort &mdash; though the survival pattern at those positions is large enough to clear noise.</p>
-    <p style="color:#c8b99a">The chart uses a zero-anchored y-axis (per the Tufte / Huff rule) and includes every position in the dataset, including those whose curves are noisier than others. No outliers were dropped.</p>
+    <p style="color:#c8b99a">Cohort: every player who recorded at least one MLB plate appearance in the 1985&ndash;2025 regular seasons. Career stats pulled from the MLB Stats API. Service-year clock starts at MLB debut; in-progress 2026 seasons excluded. Primary position assigned by the player's plate-appearance-weighted modal position across their career. Cohort cell sizes shown in the chart legend; smallest is DH at n=135.</p>
+    <p style="color:#c8b99a">"Survival" in this piece means having a major league plate appearance &mdash; <em>not</em> being a regular or qualifier. The harsher cuts (300+ PA, 502+ PA) push the curves lower still; the Career Trajectories tool shows all three bars by filter. Production figures cited (median OPS by service-year bucket) are computed from player-seasons with at least 200 PA, a threshold that admits part-time roles while excluding emergency call-ups.</p>
+    <p style="color:#c8b99a">The chart uses a zero-anchored y-axis (per the Tufte / Huff rule) and includes every position in the dataset. No outliers were dropped. All positions in the chart use n &ge; 135. Survivorship within survivor populations &mdash; the way the players who stay raise the median &mdash; is itself a finding of this analysis, not a quirk to be cleaned out.</p>
   </div>
 
   <div class="footer">
