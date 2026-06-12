@@ -1,0 +1,234 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Half-Life, Aging Curves, Methods, Survivorship Bias, Tools
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; June __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.tool-cta{background:var(--ink);color:var(--cream);padding:1.4rem 1.6rem;margin:1.8rem 0;text-align:center}
+.tool-cta h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);margin-bottom:.4rem;letter-spacing:.04em}
+.tool-cta p{font-size:.95rem;color:#dce8f5;margin-bottom:.7rem}
+.tool-cta a{display:inline-block;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:.55rem 1.1rem;text-decoration:none;border:2px solid var(--gold)}
+.tool-cta a:hover{background:var(--ink);color:var(--gold)}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title">The Sports Page</h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>The Half-Life of a Position &middot; Part I</span><span>June __, 2026</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">A Career Doesn't <em>Decline</em>. It Disappears.</h2>
+  <p class="deck">Across 518 hitters and 41 seasons of major league play, the median surviving veteran hits about as well in year 14 as he did in year 4. The decline you think you're watching is mostly attrition &mdash; the players who slowed down didn't slow down. They left.</p>
+  <p class="byline">The Sports Page &middot; Half-Life Series, Part I &middot; Service-year cohort: MLB hitters 1985&ndash;2025</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">518</div><div class="l">Hitters in sample</div></div>
+    <div class="sc"><div class="v bad">~50%</div><div class="l">Gone by yrs 13&ndash;15</div></div>
+    <div class="sc"><div class="v good">.788</div><div class="l">Median 1B OPS, yrs 13&ndash;15</div></div>
+  </div>
+
+  <p>Manny Machado is fourteen years into a major league career and, for a few weeks this spring, his batting average ducked below .200. That dip is what prompted this series. The question was simple. Is he past his prime, or just slumping? And while we are at it &mdash; where, exactly, does Pete Alonso sit on the same kind of curve, seven years in?</p>
+
+  <p>The standard answer reaches for "aging curves" calibrated to chronological age. We are going to reach for something cleaner. The clock that matters for a ballplayer is not the one on his birth certificate. It is the one that starts ticking at his major league debut.</p>
+
+  <h3 class="sh">Why service years, not birthdays</h3>
+
+  <p>A 30-year-old in his third major league season has a fundamentally different baseball body than a 30-year-old in his ninth. One has 1,200 professional at-bats on him. The other has 4,000, with the bone density and the swing wear that go with them. The user of a "career half-life" framework has to choose a clock that ticks at the right speed. Service years tick at the speed of major-league baseball: same level of competition, same travel, same workload bracket. They begin, for everyone, at debut.</p>
+
+  <p>Starting from debut also fixes a different problem. You cannot measure half-life from peak if you do not know when peak occurred. Peak is a retrospective verdict; no one knows in real time that they have hit it. Debut is a date on a card. Pick the knowable starting line. The rest of the framework follows.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Survival Curves by Position &middot; n=448 careers</div>
+<svg class="chart" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect x="0" y="0" width="720" height="400" fill="#ede5d2"/>
+<line x1="60" y1="340" x2="590" y2="340" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="52" y="344" text-anchor="end" font-size="11" fill="#6b5e4a">0%</text>
+<line x1="60" y1="265" x2="590" y2="265" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="52" y="269" text-anchor="end" font-size="11" fill="#6b5e4a">25%</text>
+<line x1="60" y1="190" x2="590" y2="190" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="52" y="194" text-anchor="end" font-size="11" fill="#6b5e4a">50%</text>
+<line x1="60" y1="115" x2="590" y2="115" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="52" y="119" text-anchor="end" font-size="11" fill="#6b5e4a">75%</text>
+<line x1="60" y1="40" x2="590" y2="40" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="52" y="44" text-anchor="end" font-size="11" fill="#6b5e4a">100%</text>
+<line x1="60" y1="190" x2="590" y2="190" stroke="#b83a1e" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6"/>
+<text x="596" y="194" font-size="10" fill="#b83a1e" font-weight="600">half-life</text>
+<text x="60" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 1-3</text>
+<text x="166" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 4-6</text>
+<text x="272" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 7-9</text>
+<text x="378" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 10-12</text>
+<text x="484" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 13-15</text>
+<text x="590" y="358" text-anchor="middle" font-size="11" fill="#1a1208">yrs 16+</text>
+<line x1="60" y1="40" x2="60" y2="340" stroke="#1a1208" stroke-width="2"/>
+<line x1="60" y1="340" x2="590" y2="340" stroke="#1a1208" stroke-width="2"/>
+<text x="325" y="388" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">MLB years of service</text>
+<text transform="rotate(-90,18,190)" x="18" y="190" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">% of debut cohort still a regular (300+ PA season)</text>
+<polyline points="60,40 166,40 272,40 378,40 484,60 590,260" fill="none" stroke="#b83a1e" stroke-width="2.2"/>
+<circle cx="590" cy="260" r="3.5" fill="#b83a1e"/>
+<line x1="600" y1="50" x2="618" y2="50" stroke="#b83a1e" stroke-width="2.2"/>
+<text x="624" y="54" font-size="11" fill="#1a1208">C (n=15)</text>
+<polyline points="60,40 166,40 272,40 378,84 484,176 590,267" fill="none" stroke="#2c4a6e" stroke-width="2.2"/>
+<circle cx="590" cy="267" r="3.5" fill="#2c4a6e"/>
+<line x1="600" y1="68" x2="618" y2="68" stroke="#2c4a6e" stroke-width="2.2"/>
+<text x="624" y="72" font-size="11" fill="#1a1208">1B (n=62)</text>
+<polyline points="60,40 166,45 272,45 378,105 484,210 590,285" fill="none" stroke="#c9962a" stroke-width="2.2"/>
+<circle cx="590" cy="285" r="3.5" fill="#c9962a"/>
+<line x1="600" y1="86" x2="618" y2="86" stroke="#c9962a" stroke-width="2.2"/>
+<text x="624" y="90" font-size="11" fill="#1a1208">2B (n=60)</text>
+<polyline points="60,40 166,40 272,46 378,109 484,202 590,294" fill="none" stroke="#2a6e3f" stroke-width="2.2"/>
+<circle cx="590" cy="294" r="3.5" fill="#2a6e3f"/>
+<line x1="600" y1="104" x2="618" y2="104" stroke="#2a6e3f" stroke-width="2.2"/>
+<text x="624" y="108" font-size="11" fill="#1a1208">3B (n=52)</text>
+<polyline points="60,40 166,40 272,40 378,80 484,188 590,288" fill="none" stroke="#8b1e3f" stroke-width="2.2"/>
+<circle cx="590" cy="288" r="3.5" fill="#8b1e3f"/>
+<line x1="600" y1="122" x2="618" y2="122" stroke="#8b1e3f" stroke-width="2.2"/>
+<text x="624" y="126" font-size="11" fill="#1a1208">SS (n=75)</text>
+<polyline points="60,40 166,40 272,45 378,121 484,213 590,284" fill="none" stroke="#5e4b8b" stroke-width="2.2"/>
+<circle cx="590" cy="284" r="3.5" fill="#5e4b8b"/>
+<line x1="600" y1="140" x2="618" y2="140" stroke="#5e4b8b" stroke-width="2.2"/>
+<text x="624" y="144" font-size="11" fill="#1a1208">LF (n=59)</text>
+<polyline points="60,40 166,40 272,46 378,82 484,160 590,250" fill="none" stroke="#1f6b78" stroke-width="2.2"/>
+<circle cx="590" cy="250" r="3.5" fill="#1f6b78"/>
+<line x1="600" y1="158" x2="618" y2="158" stroke="#1f6b78" stroke-width="2.2"/>
+<text x="624" y="162" font-size="11" fill="#1a1208">CF (n=50)</text>
+<polyline points="60,40 166,40 272,46 378,46 484,152 590,252" fill="none" stroke="#a85a1c" stroke-width="2.2"/>
+<circle cx="590" cy="252" r="3.5" fill="#a85a1c"/>
+<line x1="600" y1="176" x2="618" y2="176" stroke="#a85a1c" stroke-width="2.2"/>
+<text x="624" y="180" font-size="11" fill="#1a1208">RF (n=51)</text>
+<polyline points="60,40 166,40 272,40 378,103 484,165 590,240" fill="none" stroke="#6b5e4a" stroke-width="2.2"/>
+<circle cx="590" cy="240" r="3.5" fill="#6b5e4a"/>
+<line x1="600" y1="194" x2="618" y2="194" stroke="#6b5e4a" stroke-width="2.2"/>
+<text x="624" y="198" font-size="11" fill="#1a1208">DH (n=24)</text>
+</svg>
+  </div>
+
+  <p>What survives in the chart above is the answer to a single question. Of the players who became regulars (a season of 300 plate appearances or more in their first three years), what fraction is still putting up a 300-PA season at each later window? That is the actuarial half-life of a position. The half-life of a watt-hour of strontium-90. The half-life of a clean fastball.</p>
+
+  <p>The shape is the same at every position. Flat. Flat. Flat. Cliff. Almost every cohort stays nearly intact through years 7&ndash;9. Then attrition starts at 10&ndash;12, and the floor falls out between years 13 and 15. By year 16, more than two-thirds of every cohort is out of the lineup entirely.</p>
+
+  <h3 class="sh">What happens to the survivors</h3>
+
+  <p>Here is the counterintuitive finding. <strong>Among the players still standing at year 13, production has barely moved.</strong></p>
+
+  <p>The median first baseman at years 1&ndash;3 puts up an .805 OPS. At years 4&ndash;6, .859 &mdash; a real peak. By years 13&ndash;15, the median surviving first baseman is still hitting .788. A six-percent drop over a decade of major-league wear. The same pattern holds at third base (.738 to .746), at shortstop (.699 to .708), at left field (.782 to .777). The position medians look like a flat line with a tiny dip at the end.</p>
+
+  <p>This is not because baseball is kind to its veterans. It is because baseball is not. The players whose bats slowed down were not allowed to keep hitting in major league lineups; they were sent down, released, retired, or wedged into a bench role and dropped from the sample. The 14-year veteran you watch from behind home plate looks productive because the 14-year veterans who became unproductive are not there anymore.</p>
+
+  <div class="pull">
+    <p>The career is not a slope. It is a runway with a cliff at the end.</p>
+    <cite>The Half-Life Framework</cite>
+  </div>
+
+  <h3 class="sh">Living cases: Alonso and Machado</h3>
+
+  <div class="hist-grid">
+    <div class="hc">
+      <div class="hc-name">Pete Alonso &middot; 1B &middot; year 8</div>
+      <div class="hc-stat">.871</div>
+      <div class="hc-label">2025 OPS &middot; career .857</div>
+      <p>Alonso enters his eighth major league season inside the years 7&ndash;9 bucket. Median 1B OPS for that window: <strong>.854</strong>. Median PA: <strong>612</strong>. His 2025 line beat both. Survival probability for a first baseman through years 7&ndash;9, given that he was a regular at years 1&ndash;3: roughly 100 percent. Alonso is not past his prime. By the data, he is sitting on it.</p>
+      <div class="verdict">Status: Inside the prime window</div>
+    </div>
+    <div class="hc">
+      <div class="hc-name">Manny Machado &middot; 3B &middot; year 15</div>
+      <div class="hc-stat">.795</div>
+      <div class="hc-label">2025 OPS &middot; career .830</div>
+      <p>Machado is in his fifteenth season. He is one of the survivors: roughly <strong>46 percent</strong> of the 3B cohort that debuted before him is still a regular at years 13&ndash;15. Median surviving 3B OPS for that window: <strong>.746</strong>. Machado in 2025 was at .795, comfortably above the survivor median. His current spring slump is a story about a single month, against a position where a deeper slump &mdash; a bigger one &mdash; would not be unusual for the few players still here.</p>
+      <div class="verdict">Status: Survivor, still above median</div>
+    </div>
+  </div>
+
+  <p>The point is not to forecast either man's next month. It is to give the conversation a coordinate system. "Past his prime" without a position curve is folk wisdom; with one, it is a check you can run on yourself.</p>
+
+  <div class="box">
+    <h3>The civic-mission note</h3>
+    <p>This piece is, in a sense, a sequel to The Reader's Defense on survivorship bias. The aging-curve question is where survivorship lives. The grizzled veteran you see hitting .280 in his sixteenth season is not evidence that baseball ages gently. He is evidence of the players you do not see &mdash; the dozens from his draft class who were already cut.</p>
+    <p>When a fan, a manager, or a general manager argues that "veterans hold up," ask the second question: <em>which veterans?</em> The ones still here, or all the ones who debuted alongside them?</p>
+  </div>
+
+  <div class="tool-cta">
+    <h3>The Half-Life Explorer</h3>
+    <p>The full position-by-position grid &mdash; survival rates, production percentiles, every hitter in the cohort &mdash; is a sortable companion tool. Look up your favorite player. Compare positions. Click columns to re-sort.</p>
+    <a href="../tools/half-life-explorer.html">Open the Explorer &rarr;</a>
+  </div>
+
+  <h3 class="sh">A word on what is coming</h3>
+
+  <p>This is Part I. The framework. Parts II through IV will dig further:</p>
+
+  <p><strong>Part II</strong> goes position by position. Why does the catcher cohort hold so long, then crash at year 16? Why are the survival rates flatter for designated hitters than for everyone else? Where, exactly, does the cliff begin for shortstops &mdash; and is it a cliff or a glide path back to second base?</p>
+
+  <p><strong>Part III</strong> asks what this is worth. A multi-year extension signed at year 8 buys different things than one signed at year 12. The half-life curve has a dollar sign attached. We will put one on it.</p>
+
+  <p><strong>Part IV</strong> turns the framework on the current league. Which present-day stars are inside their position's prime window, which are surviving on momentum, and which have already crossed the line that most of their cohort already crossed? The Explorer can answer that question for any player you can name; the piece will work through a dozen of them by hand.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Cohort: Every hitter with a qualified season (502+ PA) at any point between the 1985 and 2025 MLB regular seasons. Career stats pulled from the MLB Stats API. Service-year clock starts at MLB debut; in-progress 2026 seasons excluded. "Regular" defined as a 300+ PA season, the conventional everyday-player threshold.</p>
+    <p style="color:#c8b99a">Median sample sizes per bucket range from 31 (catchers at 16+ years) to 272 (shortstops at 7&ndash;9 years). The catcher and DH curves should be read with the smallest cohorts in mind &mdash; n=15 and n=24 respectively for the at-debut cohort &mdash; though the survival pattern at those positions is large enough to clear noise.</p>
+    <p style="color:#c8b99a">The chart uses a zero-anchored y-axis (per the Tufte / Huff rule) and includes every position in the dataset, including those whose curves are noisier than others. No outliers were dropped.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. __</span>
+    <span>Half-Life Series, Part I</span>
+    <span>June __, 2026 &middot; New York, NY</span>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Half-Life Explorer — The Sports Page</title>
+<link rel="icon" href="../assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:15px;line-height:1.6;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:1100px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:1100px;margin:.8rem auto 0;background:var(--cream);padding:2rem 2.4rem 2.6rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:700px){.paper{padding:1.4rem 1.2rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:1.8rem 0 .9rem}
+
+.note{font-size:.85rem;color:var(--muted);font-style:italic;margin-bottom:.8rem}
+
+.controls{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;background:var(--card);border:1px solid var(--div);padding:.7rem .9rem;margin-bottom:1rem;font-size:.85rem}
+.controls label{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.controls select,.controls input{font-family:'Roboto Mono',monospace;font-size:.85rem;padding:.3rem .5rem;border:1px solid var(--div);background:#fff;color:var(--ink)}
+
+table.grid{width:100%;border-collapse:collapse;font-size:.85rem;margin:.4rem 0 1.2rem;background:#fff}
+table.grid th,table.grid td{padding:.4rem .55rem;border:1px solid var(--div);text-align:right;vertical-align:middle}
+table.grid th{background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;user-select:none;position:relative;text-align:center}
+table.grid th.sortable:hover{background:var(--steel)}
+table.grid th .sort-arrow{display:inline-block;width:8px;color:var(--gold);margin-left:.2rem}
+table.grid td.label{text-align:left;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--steel);font-weight:600}
+table.grid td.pname{text-align:left;font-family:'Libre Baskerville',serif;font-weight:600}
+table.grid tr:nth-child(even) td{background:var(--card)}
+table.grid tr:hover td{background:#fdf0d0}
+.heat-hi{background:#d8ecd8 !important}
+.heat-mid{background:#fff4d0 !important}
+.heat-lo{background:#f5d2c8 !important}
+
+.legend{display:flex;gap:1.2rem;font-size:.75rem;color:var(--muted);margin:.4rem 0 1rem;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:.4rem}
+.legend i{display:inline-block;width:14px;height:14px;border:1px solid var(--div)}
+
+.callout{background:var(--steel);color:#dce8f5;padding:1.2rem 1.4rem;margin:1.4rem 0;font-size:.92rem;line-height:1.65}
+.callout h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.05em}
+.callout p{margin-bottom:.5rem}
+.callout p:last-child{margin-bottom:0}
+
+.search-wrap{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-bottom:.6rem}
+.search-wrap input{flex:1;min-width:200px;font-size:.95rem}
+.match-count{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted)}
+
+.tbl-scroll{overflow-x:auto;max-height:540px;overflow-y:auto;border:1px solid var(--div)}
+table.players{width:100%;border-collapse:collapse;font-size:.82rem;background:#fff}
+table.players th,table.players td{padding:.35rem .55rem;border-bottom:1px solid var(--div);white-space:nowrap}
+table.players th{background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;user-select:none;position:sticky;top:0;z-index:2;text-align:right}
+table.players th.sortable:hover{background:var(--steel)}
+table.players th.pname,table.players td.pname{text-align:left}
+table.players th .sort-arrow{color:var(--gold);margin-left:.2rem}
+table.players td{text-align:right;font-family:'Roboto Mono',monospace;font-size:.78rem}
+table.players td.pname{font-family:'Libre Baskerville',serif;font-weight:600;font-size:.85rem}
+table.players td.pos{color:var(--steel);font-weight:600}
+table.players tr:nth-child(even) td{background:var(--card)}
+table.players tr:hover td{background:#fdf0d0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--steel);text-decoration:none}
+
+.loading{padding:2rem;text-align:center;font-style:italic;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Tool of The Sports Page</div>
+  <h1 class="title">The Half-Life Explorer</h1>
+  <p class="tagline">"How long does a major league career stay productive — and at which position?"</p>
+  <div class="datebar"><span>Reference Tool</span><span>v.1 &middot; MLB 1985&ndash;2025</span><span>Sortable</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">Position by Service-Year. Sortable.</h2>
+  <p class="deck">For every major league position, this table shows how the median qualified hitter ages &mdash; measured from MLB debut forward, not from peak backward. Click any column to sort. Click again to reverse.</p>
+
+  <h2 class="sh">I. Survival Curve by Position</h2>
+  <p class="note">Of players who became regulars (&ge;300 PA in years 1&ndash;3), what share were still posting a 300+ PA season at each later service-year window? This is the actuarial half-life of the position. The cohort sample is every qualified hitter 1985&ndash;2025 (n = <span id="ncohort">&hellip;</span>).</p>
+
+  <div class="legend">
+    <span><i style="background:#d8ecd8"></i> &ge;80% still active</span>
+    <span><i style="background:#fff4d0"></i> 50&ndash;79% (half-life crossing)</span>
+    <span><i style="background:#f5d2c8"></i> &lt;50% (past half-life)</span>
+  </div>
+
+  <table class="grid" id="survivalTable">
+    <thead><tr id="survivalHead"></tr></thead>
+    <tbody id="survivalBody"><tr><td class="loading" colspan="9">Loading data&hellip;</td></tr></tbody>
+  </table>
+
+  <div class="callout">
+    <h3>How to read this table</h3>
+    <p><strong>Click any column header to sort.</strong> Want positions ranked by who survives longest? Click "10&ndash;12." Want to see which position washes out earliest? Click "13&ndash;15" then click again to reverse.</p>
+    <p>The "Half-Life" column reports the first window where fewer than half the cohort is still a regular. That number is the position's actuarial expiration date &mdash; knowing only what year of MLB service a player is in, you can read off how likely it is that he's still in the lineup.</p>
+  </div>
+
+  <h2 class="sh">II. Production by Position &times; Service Year</h2>
+  <p class="note">Median OPS among the players who <em>are</em> still putting up 200+ PA at each window. Among survivors, careers don't slope &mdash; they hold flat then cliff. The decline most fans observe is mostly attrition, not deterioration.</p>
+
+  <div class="controls">
+    <label for="indicator">Indicator</label>
+    <select id="indicator">
+      <option value="OPS" selected>OPS</option>
+      <option value="OBP">OBP</option>
+      <option value="ISO">ISO (Slugging &minus; Avg)</option>
+      <option value="HR_per_PA">HR per PA</option>
+      <option value="BB_per_PA">BB per PA</option>
+      <option value="K_per_PA">K per PA</option>
+      <option value="PA">Plate Appearances (median per season)</option>
+    </select>
+    <label for="metric">Statistic</label>
+    <select id="metric">
+      <option value="median" selected>Median (50th pct.)</option>
+      <option value="p25">25th percentile</option>
+      <option value="p75">75th percentile</option>
+      <option value="mean">Mean</option>
+    </select>
+  </div>
+
+  <table class="grid" id="prodTable">
+    <thead><tr id="prodHead"></tr></thead>
+    <tbody id="prodBody"></tbody>
+  </table>
+
+  <h2 class="sh">III. Individual Players</h2>
+  <p class="note">Search by name. Sort by any column. PA-weighted career averages plus a per-bucket OPS strip. Cohort = every hitter 1985&ndash;2025 with at least 2,000 career PA (<span id="nplayers">&hellip;</span> players).</p>
+
+  <div class="controls">
+    <div class="search-wrap" style="flex:1">
+      <label for="psearch" style="white-space:nowrap">Search</label>
+      <input type="text" id="psearch" placeholder="Alonso, Machado, Bonds, &hellip;" autocomplete="off">
+      <span class="match-count" id="matchCount"></span>
+    </div>
+    <label for="pfilter">Position</label>
+    <select id="pfilter">
+      <option value="">All</option>
+    </select>
+  </div>
+
+  <div class="tbl-scroll">
+    <table class="players" id="playerTable">
+      <thead><tr id="playerHead"></tr></thead>
+      <tbody id="playerBody"></tbody>
+    </table>
+  </div>
+
+  <div class="callout" style="background:var(--ink)">
+    <h3>What this tool is &mdash; and isn't</h3>
+    <p>It's a descriptive snapshot of the 1985&ndash;2025 MLB hitting population, organized by position and by years of major league service. It tells you the typical arc; it can't tell you any individual player's future.</p>
+    <p>It's also a counter to a common error: "Player X is declining because his age-32 numbers are down." Most players who decline don't decline gracefully &mdash; they disappear. The 32-year-olds still in the lineup are mostly the ones who haven't declined yet. That makes the lineup look more durable than the population is.</p>
+    <p>Built by The Sports Page &middot; Data source: MLB Stats API &middot; <a style="color:#c9962a" href="../index.html">&larr; back to archive</a></p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Tools</span>
+    <span>Half-Life Explorer &middot; v.1</span>
+    <span>1985&ndash;2025 &middot; Hitters &middot; Qualified-Season Cohort</span>
+  </div>
+</main>
+
+<script>
+const BUCKETS = ["1-3","4-6","7-9","10-12","13-15","16+"];
+const POS_ORDER = ["C","1B","2B","3B","SS","LF","CF","RF","DH"];
+let DATA = null;
+
+fetch('./half-life-data.json').then(r => r.json()).then(d => {
+  DATA = d;
+  render();
+});
+
+function fmt(v, ind) {
+  if (v == null) return "&mdash;";
+  if (ind === "PA" || ind === "G") return Math.round(v);
+  if (ind === "HR_per_PA" || ind === "BB_per_PA" || ind === "K_per_PA") return (v * 100).toFixed(1) + "%";
+  return v.toFixed(3);
+}
+
+function heatClass(v) {
+  if (v == null) return "";
+  if (v >= 0.8) return "heat-hi";
+  if (v >= 0.5) return "heat-mid";
+  return "heat-lo";
+}
+
+function render() {
+  const hl = DATA.hl, pc = DATA.pc;
+  document.getElementById("ncohort").textContent =
+    Object.values(hl.survival_curve).reduce((s,o) => s + o.cohort_size, 0);
+  document.getElementById("nplayers").textContent = pc.players.length;
+  renderSurvival();
+  renderProduction();
+  populatePositionFilter();
+  renderPlayers();
+  attachListeners();
+}
+
+// ─────── Survival table ───────
+let survivalSort = {key: "half_life_order", asc: true};
+
+function renderSurvival() {
+  const hl = DATA.hl;
+  const head = document.getElementById("survivalHead");
+  head.innerHTML = '';
+  const cols = [
+    {key:"pos", label:"Position"},
+    {key:"cohort_size", label:"Cohort n"},
+    ...BUCKETS.map(b => ({key:"sr_"+b, label:"yrs "+b})),
+    {key:"half_life_order", label:"Survival half-life"},
+  ];
+  for (const c of cols) {
+    const th = document.createElement("th");
+    th.className = "sortable";
+    th.textContent = c.label;
+    if (survivalSort.key === c.key) th.innerHTML += ' <span class="sort-arrow">' + (survivalSort.asc ? "▲" : "▼") + '</span>';
+    th.addEventListener("click", () => {
+      if (survivalSort.key === c.key) survivalSort.asc = !survivalSort.asc;
+      else { survivalSort.key = c.key; survivalSort.asc = true; }
+      renderSurvival();
+    });
+    head.appendChild(th);
+  }
+
+  const rows = POS_ORDER.filter(p => hl.survival_curve[p]).map(p => {
+    const sc = hl.survival_curve[p];
+    const half = hl.half_life[p] ? hl.half_life[p].survival_half_life : null;
+    const halfOrder = half ? BUCKETS.indexOf(half) : 99;
+    return {
+      pos: p,
+      cohort_size: sc.cohort_size,
+      ...Object.fromEntries(BUCKETS.map(b => ["sr_"+b, sc.survival_rate[b]])),
+      half_life: half,
+      half_life_order: halfOrder,
+    };
+  });
+
+  rows.sort((a,b) => {
+    const av = a[survivalSort.key], bv = b[survivalSort.key];
+    if (av === bv) return 0;
+    if (typeof av === "string") return survivalSort.asc ? av.localeCompare(bv) : bv.localeCompare(av);
+    return survivalSort.asc ? av - bv : bv - av;
+  });
+
+  const body = document.getElementById("survivalBody");
+  body.innerHTML = '';
+  for (const r of rows) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = '<td class="label">' + r.pos + '</td><td>' + r.cohort_size + '</td>' +
+      BUCKETS.map(b => {
+        const v = r["sr_"+b];
+        return '<td class="' + heatClass(v) + '">' + (v*100).toFixed(0) + '%</td>';
+      }).join("") +
+      '<td class="label">' + (r.half_life || "16+ (holds)") + '</td>';
+    body.appendChild(tr);
+  }
+}
+
+// ─────── Production table ───────
+let prodSort = {key: "pos", asc: true};
+
+function renderProduction() {
+  const hl = DATA.hl;
+  const ind = document.getElementById("indicator").value;
+  const met = document.getElementById("metric").value;
+  const head = document.getElementById("prodHead");
+  head.innerHTML = '';
+  const cols = [
+    {key:"pos", label:"Position"},
+    ...BUCKETS.map(b => ({key:"v_"+b, label:"yrs "+b})),
+  ];
+  for (const c of cols) {
+    const th = document.createElement("th");
+    th.className = "sortable";
+    th.textContent = c.label;
+    if (prodSort.key === c.key) th.innerHTML += ' <span class="sort-arrow">' + (prodSort.asc ? "▲" : "▼") + '</span>';
+    th.addEventListener("click", () => {
+      if (prodSort.key === c.key) prodSort.asc = !prodSort.asc;
+      else { prodSort.key = c.key; prodSort.asc = true; }
+      renderProduction();
+    });
+    head.appendChild(th);
+  }
+
+  const rows = POS_ORDER.filter(p => hl.survival_curve[p]).map(p => {
+    const row = {pos: p};
+    for (const b of BUCKETS) {
+      const cell = hl.pos_bucket_summary[p+"|"+b] || {};
+      row["v_"+b] = (cell[ind] || {})[met];
+    }
+    return row;
+  });
+
+  rows.sort((a,b) => {
+    const av = a[prodSort.key], bv = b[prodSort.key];
+    if (av == null && bv == null) return 0;
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    if (typeof av === "string") return prodSort.asc ? av.localeCompare(bv) : bv.localeCompare(av);
+    return prodSort.asc ? av - bv : bv - av;
+  });
+
+  const body = document.getElementById("prodBody");
+  body.innerHTML = '';
+  for (const r of rows) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = '<td class="label">' + r.pos + '</td>' +
+      BUCKETS.map(b => '<td>' + fmt(r["v_"+b], ind) + '</td>').join("");
+    body.appendChild(tr);
+  }
+}
+
+// ─────── Player table ───────
+let playerSort = {key: "career_pa", asc: false};
+let playerSearch = "";
+let playerPosFilter = "";
+
+const PLAYER_COLS = [
+  {key:"name", label:"Player", cls:"pname"},
+  {key:"pos",  label:"Pos",   cls:"pos"},
+  {key:"career_yrs",  label:"Yrs"},
+  {key:"career_pa",   label:"PA"},
+  {key:"career_ops",  label:"OPS"},
+  {key:"career_obp",  label:"OBP"},
+  {key:"career_iso",  label:"ISO"},
+  {key:"career_hr_pa",label:"HR%"},
+  ...BUCKETS.map(b => ({key:"bk_"+b, label:"yrs "+b, isBucket:true})),
+];
+
+function populatePositionFilter() {
+  const sel = document.getElementById("pfilter");
+  for (const p of POS_ORDER) {
+    const opt = document.createElement("option"); opt.value = p; opt.textContent = p;
+    sel.appendChild(opt);
+  }
+}
+
+function renderPlayers() {
+  const players = DATA.pc.players.map(p => {
+    const row = Object.assign({}, p);
+    for (const b of BUCKETS) row["bk_"+b] = (p.bucket_ops || {})[b];
+    return row;
+  });
+
+  const search = playerSearch.trim().toLowerCase();
+  let filtered = players;
+  if (search) filtered = filtered.filter(p => p.name.toLowerCase().includes(search));
+  if (playerPosFilter) filtered = filtered.filter(p => p.pos === playerPosFilter);
+
+  filtered.sort((a,b) => {
+    const av = a[playerSort.key], bv = b[playerSort.key];
+    if (av == null && bv == null) return 0;
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    if (typeof av === "string") return playerSort.asc ? av.localeCompare(bv) : bv.localeCompare(av);
+    return playerSort.asc ? av - bv : bv - av;
+  });
+
+  document.getElementById("matchCount").textContent = filtered.length + " of " + players.length + " players";
+
+  const head = document.getElementById("playerHead");
+  head.innerHTML = '';
+  for (const c of PLAYER_COLS) {
+    const th = document.createElement("th");
+    th.className = "sortable " + (c.cls || "");
+    th.textContent = c.label;
+    if (playerSort.key === c.key) th.innerHTML += ' <span class="sort-arrow">' + (playerSort.asc ? "▲" : "▼") + '</span>';
+    th.addEventListener("click", () => {
+      if (playerSort.key === c.key) playerSort.asc = !playerSort.asc;
+      else { playerSort.key = c.key; playerSort.asc = (c.key === "name" || c.key === "pos"); }
+      renderPlayers();
+    });
+    head.appendChild(th);
+  }
+
+  const body = document.getElementById("playerBody");
+  body.innerHTML = '';
+  const max = Math.min(filtered.length, 600);
+  for (let i = 0; i < max; i++) {
+    const p = filtered[i];
+    const tr = document.createElement("tr");
+    tr.innerHTML = PLAYER_COLS.map(c => {
+      const v = p[c.key];
+      if (c.cls === "pname") return '<td class="pname">' + v + '</td>';
+      if (c.cls === "pos")   return '<td class="pos">' + v + '</td>';
+      if (c.key === "career_yrs" || c.key === "career_pa") return '<td>' + (v != null ? v : "&mdash;") + '</td>';
+      if (c.key === "career_hr_pa") return '<td>' + (v != null ? (v*100).toFixed(1)+"%" : "&mdash;") + '</td>';
+      if (c.isBucket || c.key.indexOf("career_") === 0) return '<td>' + (v != null ? v.toFixed(3) : "&mdash;") + '</td>';
+      return '<td>' + (v != null ? v : "&mdash;") + '</td>';
+    }).join("");
+    body.appendChild(tr);
+  }
+}
+
+function attachListeners() {
+  document.getElementById("indicator").addEventListener("change", renderProduction);
+  document.getElementById("metric").addEventListener("change", renderProduction);
+  document.getElementById("psearch").addEventListener("input", function(e) {
+    playerSearch = e.target.value;
+    renderPlayers();
+  });
+  document.getElementById("pfilter").addEventListener("change", function(e) {
+    playerPosFilter = e.target.value;
+    renderPlayers();
+  });
+}
+</script>
+</body>
+</html>
