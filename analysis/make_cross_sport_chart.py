@@ -6,13 +6,15 @@ ANALYSIS = Path(__file__).parent
 d = json.load(open(ANALYSIS / "predictability_cross_sport.json"))
 
 # Order from highest to lowest persistence
+# All five entries are aggregates: four sports (league of teams) and one
+# regional snow index (5-station Colorado ski belt). Fair comparison —
+# no single weather station mixed with full leagues.
 items = [
     ("NBA",                d["NBA"]["lag1_r"],   d["NBA"]["n_pairs"],   "#c9962a", "small rosters, dominant superstars"),
     ("NHL",                d["NHL"]["lag1_r"],   d["NHL"]["n_pairs"],   "#2c4a6e", "moderate roster carry-over"),
     ("MLB",                d["MLB"]["lag1_r"],   d["MLB"]["n_pairs"],   "#2a6e3f", "deep rosters, individual stars dilute"),
     ("NFL",                d["NFL"]["lag1_r"],   d["NFL"]["n_pairs"],   "#8b1e3f", "17-game season, hard cap, draft parity"),
-    ("CO ski region",      d["CO ski region snow"]["lag1_r"], d["CO ski region snow"]["n_pairs"], "#6b5e4a", "aggregate of 5 stations, no signal"),
-    ("Steamboat snow",     d["Steamboat snow"]["lag1_r"],     d["Steamboat snow"]["n_pairs"],     "#6b5e4a", "single station, no signal"),
+    ("CO ski region",      d["CO ski region snow"]["lag1_r"], d["CO ski region snow"]["n_pairs"], "#6b5e4a", "5-station aggregate; no year-over-year memory"),
 ]
 
 W, H = 760, 480

@@ -57,8 +57,8 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <main class="paper">
 
   <h2 class="hed">The NBA Repeats. The NFL Doesn't. <em>Both Are More Predictable Than the Snow.</em></h2>
-  <p class="deck">A reader asked the right next question: this newsletter's predictability work has so far been Major League Baseball against Steamboat Springs snowfall. What happens if you point the same test at football, hockey, basketball? The chart below is the answer. The four North American sports separate by more than a factor of two. The order is not random. It tracks how much of a roster carries over from one season to the next.</p>
-  <p class="byline">The Sports Page &middot; Method: pooled lag-1 Pearson r of team win pct &middot; Data: 1985&ndash;2025 final standings, all four leagues, plus NOAA snowfall</p>
+  <p class="deck">A reader asked the right next question: this newsletter's predictability work has so far been Major League Baseball against Colorado snowfall. What happens if you point the same test at football, hockey, basketball? The chart below is the answer. The four North American sports separate by more than a factor of two. The order is not random. It tracks how much of a roster carries over from one season to the next.</p>
+  <p class="byline">The Sports Page &middot; Method: pooled lag-1 Pearson r of team win pct &middot; Data: 1985&ndash;2025 final standings, all four leagues, plus NOAA regional snowfall</p>
 
   <div class="stat-row">
     <div class="sc"><div class="v good">+.649</div><div class="l">NBA lag-1 r</div></div>
@@ -68,7 +68,9 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
   <p>The test is the same one we ran for Major League Baseball in Issue #74 and for Colorado snowfall in Issue #75. Pull final standings for every team, every year, between 1985 and the present. Pair each team's year with the team's record the following year. Compute the Pearson correlation between this-year and next-year winning percentages. The result is the system's lag-one autocorrelation &mdash; a single number summarizing how much memory the system carries from one season to the next.</p>
 
-  <p>Four leagues, run head to head:</p>
+  <p>We are showing five rows on the chart. Four of them are professional sports leagues, each represented by a pool of every team-to-team year-over-year pair across forty seasons. The fifth is the Colorado ski-belt regional snowfall index from Issue #75 &mdash; the average across five long-running NOAA stations, the apples-to-apples aggregate-to-aggregate comparison the methodology demands. Comparing one weather station to a whole league would be exactly the kind of unfair smoothing we corrected in Issue #75. Five rows; five aggregates.</p>
+
+  <p>Four leagues plus one snow region, run head to head:</p>
 
   <div class="chart-wrap">
     <div class="chart-label">Figure 1 &middot; Cross-sport predictability scoreboard &middot; lag-1 r, 1985&ndash;2025</div>
@@ -117,12 +119,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <text x="225.375" y="258.0" font-family="Playfair Display" font-size="17" font-weight="700" fill="#b83a1e">r = -0.010</text>
 <text x="188" y="253.0" text-anchor="end" font-family="Playfair Display" font-size="15" font-weight="700" fill="#1a1208">CO ski region</text>
 <text x="188" y="266.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=35 pairs</text>
-<text x="526" y="258.0" text-anchor="start" font-family="Libre Baskerville" font-style="italic" font-size="10" fill="#6b5e4a">aggregate of 5 stations, no signal</text>
-<rect x="219.375" y="280" width="2.7125000000000057" height="30" fill="#6b5e4a" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="228.0875" y="300.0" font-family="Playfair Display" font-size="17" font-weight="700" fill="#6b5e4a">r = +0.007</text>
-<text x="188" y="295.0" text-anchor="end" font-family="Playfair Display" font-size="15" font-weight="700" fill="#1a1208">Steamboat snow</text>
-<text x="188" y="308.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=27 pairs</text>
-<text x="526" y="300.0" text-anchor="start" font-family="Libre Baskerville" font-style="italic" font-size="10" fill="#6b5e4a">single station, no signal</text>
+<text x="526" y="258.0" text-anchor="start" font-family="Libre Baskerville" font-style="italic" font-size="10" fill="#6b5e4a">5-station aggregate; no year-over-year memory</text>
 </svg>
   </div>
 
@@ -147,9 +144,13 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   <p>The National Hockey League sits at r = .618 &mdash; closer to the NBA than to the MLB. Hockey is closer to a small-roster, star-anchored sport than its 23-man dressed lineup suggests; a top line, a top defensive pair, and a starting goaltender can carry an outsized share of run-prevention, and those positions tend to stay together for long stretches. The NHL also has fewer competitive teams than fans like to admit &mdash; the gap between contenders and rebuilders, year over year, is unusually persistent.</p>
 
   <div class="pull">
-    <p>The NBA's persistence is the league's superstar economics. The NFL's volatility is the league's draft and cap economics. The snow's noise is the atmosphere refusing to recognize anybody at all.</p>
+    <p>The NBA's persistence is the league's superstar economics. The NFL's volatility is the league's draft and cap economics. The snow simply has no year-over-year memory to test.</p>
     <cite>Cross-Sport Persistence</cite>
   </div>
+
+  <h3 class="sh">A word on the snow row</h3>
+
+  <p>The Colorado snow row sits at the bottom of the chart for the reason Issue #75 already showed: at the regional level, with five stations averaged, the lag-one autocorrelation is essentially zero, and conditioning on the El Ni&ntilde;o-Southern-Oscillation state in Issue #75's leave-one-out test made the prediction <em>worse</em>, not better. The two predictability tests this newsletter has carried out on snowfall have agreed, in two different ways, that the signal a casual analog-matcher would expect is not actually there in the data. We are not invoking ocean-temperature regimes as a hidden predictor that would rescue the snow; we already checked. The snow row is in the chart as the honest baseline against which the sports rows can be read.</p>
 
   <h3 class="sh">What this means for fans</h3>
 
@@ -170,7 +171,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   <div class="box" style="background:var(--ink)">
     <h3>Notes &amp; sources</h3>
     <p style="color:#c8b99a">MLB: MLB Stats API regular-season standings 1985&ndash;2025, 1,158 same-team year-over-year pairs. NFL: ESPN sports API regular-season standings 1986&ndash;2025, 1,195 pairs. NBA: ESPN sports API 1985&ndash;2025, 1,140 pairs. NHL: ESPN sports API 1985&ndash;2025, with winning percentage computed as (wins + 0.5*ties) / games played; 1,073 pairs.</p>
-    <p style="color:#c8b99a">Snowfall: Steamboat Springs (NOAA GHCN-Daily USC00057936), 27 lag-1 season pairs since 1985. Colorado regional ski index: average of five NOAA stations (Aspen, Crested Butte, Steamboat, Telluride, Vail), 35 lag-1 pairs.</p>
+    <p style="color:#c8b99a">Snowfall: Colorado ski-belt regional index, the average across five long-running NOAA GHCN-Daily stations (Aspen, Crested Butte, Steamboat Springs, Telluride, Vail). 35 lag-1 pairs since 1985. Each season's index is included only when at least three of the five stations report at least 150 days of the Nov-through-Apr ski-season window. The single-station Steamboat-only series from Issue #74 produced the same answer (r ≈ 0) and is omitted here as a duplicate.</p>
     <p style="color:#c8b99a">Pearson r computed as a pooled correlation across all eligible (team, year, year+1) triples. The strike-shortened 1994 MLB season and pandemic-shortened 2020 across all four sports are included on the basis that winning percentage is a fraction comparable across game counts. Excluding those years moves no league's r by more than 0.02.</p>
   </div>
 
