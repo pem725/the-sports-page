@@ -1,0 +1,34 @@
+{
+  "snow": {
+    "by_state": {
+      "El Ni\u00f1o": {
+        "n": 11,
+        "mean": 4058.2,
+        "median": 4083.0,
+        "std": 1045.1
+      },
+      "La Ni\u00f1a": {
+        "n": 13,
+        "mean": 4200.4,
+        "median": 3444.0,
+        "std": 1413.3
+      },
+      "Neutral": {
+        "n": 7,
+        "mean": 3624.7,
+        "median": 3525.0,
+        "std": 1130.8
+      }
+    },
+    "rmse_climatology": 1232.4,
+    "rmse_enso": 1292.5,
+    "rmse_reduction_pct": -4.88,
+    "n_pairs": 31
+  },
+  "mlb": {
+    "rmse_climatology": 0.0249,
+    "rmse_profile": 0.0128,
+    "rmse_reduction_pct": 48.35,
+    "n_pairs": 31
+  }
+}

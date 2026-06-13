@@ -1,0 +1,237 @@
+{
+  "region_snow": {
+    "stations": [
+      "Aspen 1 SW",
+      "Crested Butte",
+      "Steamboat Springs",
+      "Telluride",
+      "Vail"
+    ],
+    "series": [
+      {
+        "season_start": 1985,
+        "snow_mm": 4429.5,
+        "n_stations": 4
+      },
+      {
+        "season_start": 1986,
+        "snow_mm": 4165.3,
+        "n_stations": 3
+      },
+      {
+        "season_start": 1987,
+        "snow_mm": 4313.2,
+        "n_stations": 4
+      },
+      {
+        "season_start": 1988,
+        "snow_mm": 4259.4,
+        "n_stations": 5
+      },
+      {
+        "season_start": 1989,
+        "snow_mm": 3307.8,
+        "n_stations": 5
+      },
+      {
+        "season_start": 1990,
+        "snow_mm": 4811.2,
+        "n_stations": 4
+      },
+      {
+        "season_start": 1991,
+        "snow_mm": 3420.8,
+        "n_stations": 5
+      },
+      {
+        "season_start": 1992,
+        "snow_mm": 6415.6,
+        "n_stations": 5
+      },
+      {
+        "season_start": 1993,
+        "snow_mm": 3383.0,
+        "n_stations": 4
+      },
+      {
+        "season_start": 1994,
+        "snow_mm": 5076.2,
+        "n_stations": 5
+      },
+      {
+        "season_start": 1995,
+        "snow_mm": 5292.8,
+        "n_stations": 4
+      },
+      {
+        "season_start": 1996,
+        "snow_mm": 5137.2,
+        "n_stations": 5
+      },
+      {
+        "season_start": 1997,
+        "snow_mm": 3857.2,
+        "n_stations": 5
+      },
+      {
+        "season_start": 1998,
+        "snow_mm": 3412.4,
+        "n_stations": 5
+      },
+      {
+        "season_start": 1999,
+        "snow_mm": 3548.2,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2000,
+        "snow_mm": 3492.6,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2001,
+        "snow_mm": 2939.8,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2002,
+        "snow_mm": 3674.2,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2003,
+        "snow_mm": 3616.5,
+        "n_stations": 4
+      },
+      {
+        "season_start": 2004,
+        "snow_mm": 4023.4,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2005,
+        "snow_mm": 4048.5,
+        "n_stations": 4
+      },
+      {
+        "season_start": 2006,
+        "snow_mm": 2857.2,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2007,
+        "snow_mm": 5559.2,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2008,
+        "snow_mm": 4958.8,
+        "n_stations": 4
+      },
+      {
+        "season_start": 2009,
+        "snow_mm": 3881.0,
+        "n_stations": 4
+      },
+      {
+        "season_start": 2013,
+        "snow_mm": 3619.7,
+        "n_stations": 3
+      },
+      {
+        "season_start": 2014,
+        "snow_mm": 2902.3,
+        "n_stations": 3
+      },
+      {
+        "season_start": 2015,
+        "snow_mm": 3817.7,
+        "n_stations": 3
+      },
+      {
+        "season_start": 2016,
+        "snow_mm": 3868.3,
+        "n_stations": 3
+      },
+      {
+        "season_start": 2017,
+        "snow_mm": 2237.8,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2018,
+        "snow_mm": 4345.6,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2019,
+        "snow_mm": 3633.4,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2020,
+        "snow_mm": 2907.2,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2021,
+        "snow_mm": 3291.6,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2022,
+        "snow_mm": 5055.2,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2023,
+        "snow_mm": 3865.0,
+        "n_stations": 5
+      },
+      {
+        "season_start": 2024,
+        "snow_mm": 3474.8,
+        "n_stations": 5
+      }
+    ],
+    "by_state": {
+      "Neutral": {
+        "n": 10,
+        "mean": 3986.6,
+        "median": 3618.1
+      },
+      "El Ni\u00f1o": {
+        "n": 14,
+        "mean": 3845.2,
+        "median": 3861.1
+      },
+      "La Ni\u00f1a": {
+        "n": 13,
+        "mean": 4092.4,
+        "median": 4048.5
+      }
+    },
+    "lag1_r": -0.0098,
+    "lag1_n": 35,
+    "rmse_climatology": 876.3,
+    "rmse_enso": 923.9,
+    "rmse_reduction_pct": -5.43,
+    "n_pairs": 37
+  },
+  "mlb_league": {
+    "rmse_climatology": 0.0249,
+    "rmse_profile": 0.0128,
+    "rmse_reduction_pct": 48.35,
+    "n_pairs": 31,
+    "lag1_r": 0.6968,
+    "lag1_n": 40
+  },
+  "steamboat_single": {
+    "lag1_r": 0.007,
+    "n": 27
+  },
+  "mets_single": {
+    "lag1_r": 0.4073,
+    "n": 40
+  }
+}
