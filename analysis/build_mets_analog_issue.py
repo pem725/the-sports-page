@@ -1,0 +1,156 @@
+"""Assemble queue/076-mets-analog.html with inline SVG chart."""
+from pathlib import Path
+
+ANALYSIS = Path(__file__).parent
+QUEUE = Path("/home/pem725/GitTemp/the-sports-page/queue")
+chart = (ANALYSIS / "mets_analog_chart.svg").read_text()
+
+html = f"""<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, Mariners, Cubs, Historical Analog, Roster Construction
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; June __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}}
+*,*::before,*::after{{box-sizing:border-box;margin:0;padding:0}}
+body{{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}}
+.masthead{{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}}
+.kicker{{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}}
+.title{{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}}
+.tagline{{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}}
+.datebar{{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}}
+.paper{{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}}
+@media(max-width:600px){{.paper{{padding:1.6rem 1.4rem}}}}
+.hed{{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}}
+.hed em{{color:var(--rust);font-style:italic}}
+.deck{{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}}
+.byline{{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}}
+.stat-row{{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}}
+@media(max-width:460px){{.stat-row{{grid-template-columns:1fr 1fr}}}}
+.sc{{background:var(--card);padding:1rem .8rem;text-align:center}}
+.sc .v{{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}}
+.sc .v.bad{{color:var(--rust)}} .sc .v.now{{color:var(--steel)}} .sc .v.good{{color:var(--green)}}
+.sc .l{{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}}
+.sh{{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}}
+.pull{{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}}
+.pull p{{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}}
+.pull cite{{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}}
+.box{{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}}
+.box h3{{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}}
+.box p{{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}}
+.box p:last-child{{margin-bottom:0}}
+.chart-wrap{{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}}
+.chart-label{{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}}
+svg.chart{{width:100%;height:auto;display:block}}
+table.cmp{{width:100%;border-collapse:collapse;font-size:.88rem;margin:1.2rem 0;background:#fff}}
+table.cmp th{{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left;background:var(--card)}}
+table.cmp td{{padding:.5rem .6rem;border-bottom:1px solid var(--div);font-family:'Roboto Mono',monospace;font-size:.85rem}}
+table.cmp td:first-child{{font-family:'Playfair Display',serif;font-weight:700;color:var(--steel);font-size:.95rem}}
+table.cmp tr.mets td{{background:#fce4d4}}
+table.cmp tr.mets td:first-child{{color:var(--rust)}}
+.footer{{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}}
+hr{{border:none;border-top:1px solid var(--div);margin:1.5rem 0}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title">The Sports Page</h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>Team Analog</span><span>June __, 2026</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">By the Numbers, the Mets Are the 2012 Mariners. <em>By Strategy, They Have a Choice.</em></h2>
+  <p class="deck">We extended the historical-analog framework from the league to the team. The 2026 Mets's closest statistical neighbor in forty years of MLB rosters is the 2012 Seattle Mariners. The runner-up is the 2014 Chicago Cubs. The two teams started identically. They ended their next decade not even on the same map.</p>
+  <p class="byline">The Sports Page &middot; Team-Analog Framework, Part I &middot; Cohort: 1,188 team-seasons (1985&ndash;2025)</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">2012</div><div class="l">Closest analog (Mariners)</div></div>
+    <div class="sc"><div class="v good">2014</div><div class="l">Runner-up (Cubs)</div></div>
+    <div class="sc"><div class="v bad">10 yrs</div><div class="l">Mariners to playoff return</div></div>
+  </div>
+
+  <p>Yesterday's piece on conditional prediction left a methodological gift behind: a nearest-neighbor framework, built on standardized feature vectors, that can be turned on any unit of analysis. Issue #73 used it on league-level seasons. Today we extend it to teams. Six features per (team, season) cell &mdash; team OPS, team ERA, league-relative strikeout rate, walk rate, home-run rate, and winning percentage &mdash; standardized across 1,188 historical team-seasons since 1985. For each team in 2026, we compute the Euclidean distance to every cell. The closest one is the team's <em>statistical twin</em>, the historical roster that most resembles it in shape.</p>
+
+  <p>For the New York Mets, the answer is unambiguous and not flattering. Their statistical twin is the <strong>2012 Seattle Mariners</strong>. Distance: 0.899 standard-deviations in the six-dimensional space, well clear of the next nearest match.</p>
+
+  <table class="cmp">
+    <thead><tr><th>Team</th><th>OPS</th><th>ERA</th><th>K/PA</th><th>BB/PA</th><th>HR/PA</th><th>Win pct</th></tr></thead>
+    <tbody>
+      <tr class="mets"><td>2026 Mets (so far)</td><td>.662</td><td>3.90</td><td>22.1%</td><td>7.4%</td><td>2.90%</td><td>.449</td></tr>
+      <tr><td>2012 Mariners</td><td>.665</td><td>3.76</td><td>20.8%</td><td>7.7%</td><td>2.46%</td><td>.463</td></tr>
+      <tr><td>2014 Cubs</td><td>.685</td><td>3.91</td><td>24.2%</td><td>7.2%</td><td>2.57%</td><td>.451</td></tr>
+      <tr><td>2022 Marlins</td><td>.657</td><td>3.87</td><td>24.0%</td><td>7.3%</td><td>2.42%</td><td>.426</td></tr>
+      <tr><td>2015 Padres</td><td>.685</td><td>4.09</td><td>22.1%</td><td>7.1%</td><td>2.46%</td><td>.457</td></tr>
+    </tbody>
+  </table>
+
+  <p>The fit is the kind that statisticians love and front offices have to learn to read. Within a few hundredths on OPS, within a fifth of a run on ERA, within a percentage point on walks and within four wins on the season, the Mets are the Mariners. Roughly average pitching that is tolerably above league mean. Below-average offense with one anchor (Soto for the Mets; King Felix's pitching anchored the 2012 Mariners differently, but the structural pattern of a heavily carried roster is the same). A win percentage that is treading water around .450.</p>
+
+  <h3 class="sh">What 2012 Seattle did next</h3>
+
+  <p>Eric Wedge was kept on as manager. The off-season acquisitions were modest &mdash; Kendrys Morales from the Angels, Jason Bay as a free agent. The big-name trade that had defined their 2012 was selling Ichiro to the Yankees in July, which had felt at the time like the end of an era and proved instead to be the start of a much longer one. The 2013 Mariners lost 91 games. The 2014 club briefly contended (87-75). The 2015 fell back. The 2016 contended again. By 2017 they were just over .500. By 2019 the floor fell out again.</p>
+
+  <p>The Mariners did not make the playoffs in 2012. They did not make them in 2013. Or 2014. Or any year through 2021. <strong>The wait was twenty-one years.</strong> Lou Piniella was the last man to lead Seattle into October, in 2001. The 2012 Mariners began the period of that drought's final decade. They reached the postseason in 2022, ten full seasons after their analog year.</p>
+
+  <h3 class="sh">What 2014 Chicago did next</h3>
+
+  <p>The Cubs began their 2014 season looking very much like the Mariners had two years earlier &mdash; .685 team OPS, 3.91 ERA, a young roster, no obvious immediate path to ninety wins. They finished 73-89, in fifth place in the National League Central. By any naive measure, statistical pattern matching included, they were the same kind of mid-tier club as Seattle had been.</p>
+
+  <p>Then Theo Epstein's front office did three things in the off-season that the Mariners had not done. <strong>One</strong>: they fired manager Rick Renteria and hired Joe Maddon. <strong>Two</strong>: they signed Jon Lester to a six-year, $155 million contract &mdash; the priciest deal in club history at the time. <strong>Three</strong>: they brought up Kris Bryant in April 2015 and Kyle Schwarber in June, accelerating the timeline of the homegrown core they had spent four seasons building. The 2015 Cubs went 97-65 and reached the National League Championship Series. The 2016 club won 103 games and the World Series.</p>
+
+  <p>From the statistical starting point of 2014, the Cubs took two seasons to a championship. From the statistical starting point of 2012, the Mariners took ten seasons to a wild-card berth. The data did not separate them. The strategy did.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Win percentage trajectories &middot; 2012 Mariners vs 2014 Cubs over the ten years following their respective analog seasons</div>
+{chart}
+  </div>
+
+  <h3 class="sh">What it means for the Mets</h3>
+
+  <p>The 2026 Mets are not the 2012 Mariners by accident. The roster shape we wrote about in Issue #72 &mdash; one star bat, eight bunched-near-replacement regulars, mid-tier pitching &mdash; is one of the most reliably mid-table configurations a major-league baseball team can assemble. The data correctly recognizes the family. The question is what the front office does about the membership.</p>
+
+  <p>The 2012 Mariners were a small-market team with limited financial flexibility and a leadership group that valued continuity over reinvention. The 2014 Cubs were a large-market team with a new ownership group, a deep farm system, and a president of baseball operations who had already shown a willingness to spend big at the right moment. The Mets sit closer to the second pattern than the first &mdash; Steve Cohen owns the team, Juan Soto's contract is in place, the farm system has been replenished. But the <em>shape</em> of their roster, today, looks like the team that did nothing.</p>
+
+  <div class="pull">
+    <p>The data tells you where you are. It does not tell you where you go. The Cubs and the Mariners proved that the same starting point has very different endings, and the difference was almost entirely choices made in a single off-season.</p>
+    <cite>Team Analog, Part I</cite>
+  </div>
+
+  <h3 class="sh">A note on the framework</h3>
+
+  <p>The other twenty-nine 2026 teams have analogs too, and a handful of those matches are sharper than the Mets'. The Texas Rangers most closely resemble the 2025 San Francisco Giants (distance 0.38). The Toronto Blue Jays match the 1994 New York Mets (0.43). The Houston Astros land near the 2023 St. Louis Cardinals (0.46), a comparison that will look ominous to Houston fans &mdash; the 2023 Cardinals lost 91 games one year after winning 93. We will publish those scorecards as a sortable tool in the coming days, similar to the Half-Life Explorer. The Mets's analog is the right place to start the series because the contrast between the two nearest matches happens to encode the most consequential decision a front office can make.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Data: per-team season aggregates pulled from the MLB Stats API team-stats endpoint, 1985 through 2025 inclusive, plus 2026 partial through games of June 12. Hitting features per team: PA-weighted OPS, K-per-PA, BB-per-PA, HR-per-PA. Pitching feature: team ERA. Standings feature: winning percentage. Team-seasons with fewer than 1,000 plate appearances or 200 innings pitched were excluded (this affects only short-strike-year survivors).</p>
+    <p style="color:#c8b99a">Standardization: each feature was z-scored across the 1,188 historical team-seasons (all years strictly prior to 2026). The 2026 vectors are then transformed using those historical mean and standard deviation parameters &mdash; no look-ahead.</p>
+    <p style="color:#c8b99a">Distance: Euclidean in the six-dimensional standardized space. The Mets's distance to the 2012 Mariners is 0.899; the next four nearest matches all sit between 1.02 and 1.07. The clean separation between the top match and the runners-up is itself a sign that the analog is informative; if the top five had all sat within 0.05 of each other, that would have indicated a noisy fit.</p>
+    <p style="color:#c8b99a">Historical record: 2012 Mariners 75-87 (4th AL West); 2014 Cubs 73-89 (5th NL Central). Subsequent win totals from MLB Stats API standings. Editorial framing (Wedge / Renteria, Lester signing, Bryant / Schwarber call-ups) is from public reporting and is offered as context for the off-season strategic decisions that distinguished the two clubs.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. __</span>
+    <span>Team Analog, Part I</span>
+    <span>June __, 2026 &middot; New York, NY</span>
+  </div>
+</main>
+
+</body>
+</html>
+"""
+
+dest = QUEUE / "076-mets-analog.html"
+dest.write_text(html)
+print(f"Wrote {dest}")
