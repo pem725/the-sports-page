@@ -1,0 +1,231 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Methods, Historical Analog, Era, Rate Stats, 2021
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; June __, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+table.rank{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rank th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rank td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:middle}
+table.rank tr:last-child td{border-bottom:none}
+table.rank .mono{font-family:'Roboto Mono',monospace;font-size:.82rem}
+table.rank .yr{font-family:'Playfair Display',serif;font-weight:700;color:var(--steel)}
+table.rank tr.hl td{background:#fce4d4}
+table.rank tr.hl .yr{color:var(--rust)}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title">The Sports Page</h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>The Analog Year</span><span>June __, 2026</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">Bank of America Says 2026 Is <em>1994</em>. Baseball Says 2026 Is <em>2021</em>.</h2>
+  <p class="deck">Wall Street is bracing for a market shock modeled on a thirty-year-old precedent. We ran the same kind of pattern-matching exercise on Major League Baseball. The closest analog to 2026 in the data is not 1994 or 1968 or any year you would expect. It is the season that ended five summers ago. The reason is not flattering to the sport.</p>
+  <p class="byline">The Sports Page &middot; Method: nearest-neighbor in 8-feature standardized space &middot; Data: MLB Stats API, 1985&ndash;present</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">2021</div><div class="l">Closest analog year</div></div>
+    <div class="sc"><div class="v bad">2.13</div><div class="l">Z-distance to 2026</div></div>
+    <div class="sc"><div class="v good">5/5</div><div class="l">Top analogs since 2017</div></div>
+  </div>
+
+  <p>This morning's Bank of America memo warned that today's stock market resembles 1994 &mdash; rising yields, sticky inflation, a Federal Reserve that is in no mood to deliver the rate cuts everyone has priced in. Wall Street's 1994 was a market that re-rated quickly when its assumptions about monetary policy turned out to be wrong. The BofA strategists are saying: that could happen again.</p>
+
+  <p>It is the kind of analysis that begs to be tried on baseball. Pick a year, build a feature vector of what its baseball looked like &mdash; how often pitchers struck batters out, how often they walked them, how many home runs the league produced per plate appearance, what the average earned-run average was &mdash; and ask, simply, which prior season the current one most resembles.</p>
+
+  <h3 class="sh">The method, briefly</h3>
+
+  <p>Eight league-rate features per season, every year from 1985 to 2025: walks per plate appearance, strikeouts per plate appearance, home runs per plate appearance, league OPS, league ERA, strikeouts per nine innings, walks per nine, home runs per nine. Standardize each feature across the historical years &mdash; that is, convert each measurement into how many standard deviations it sits above or below its forty-year average. Then compute, for 2026, the Euclidean distance from each prior year's feature vector to this season's. The year with the smallest distance is the closest analog.</p>
+
+  <p>We ran that. The answer was unambiguous: <strong>2021.</strong></p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; MLB league rates by year, 1985&ndash;2026 &middot; the K-rate revolution and 2026's neighborhood</div>
+<svg class="chart" viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect x="0" y="0" width="760" height="460" fill="#ede5d2"/>
+<line x1="118.7" y1="40" x2="118.7" y2="360" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="118.7" y="378" text-anchor="middle" font-size="11" fill="#1a1208">14%</text>
+<line x1="247.0" y1="40" x2="247.0" y2="360" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="247.0" y="378" text-anchor="middle" font-size="11" fill="#1a1208">16%</text>
+<line x1="375.2" y1="40" x2="375.2" y2="360" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="375.2" y="378" text-anchor="middle" font-size="11" fill="#1a1208">18%</text>
+<line x1="503.5" y1="40" x2="503.5" y2="360" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="503.5" y="378" text-anchor="middle" font-size="11" fill="#1a1208">20%</text>
+<line x1="631.7" y1="40" x2="631.7" y2="360" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="631.7" y="378" text-anchor="middle" font-size="11" fill="#1a1208">22%</text>
+<line x1="70" y1="290.4" x2="710" y2="290.4" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="62" y="294.4" text-anchor="end" font-size="11" fill="#6b5e4a">8.0%</text>
+<line x1="70" y1="220.9" x2="710" y2="220.9" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="62" y="224.9" text-anchor="end" font-size="11" fill="#6b5e4a">8.5%</text>
+<line x1="70" y1="151.3" x2="710" y2="151.3" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="62" y="155.3" text-anchor="end" font-size="11" fill="#6b5e4a">9.0%</text>
+<line x1="70" y1="81.7" x2="710" y2="81.7" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="62" y="85.7" text-anchor="end" font-size="11" fill="#6b5e4a">9.5%</text>
+<line x1="70" y1="40" x2="70" y2="360" stroke="#1a1208" stroke-width="2"/>
+<line x1="70" y1="360" x2="710" y2="360" stroke="#1a1208" stroke-width="2"/>
+<text x="390" y="408" text-anchor="middle" font-size="13" fill="#1a1208" font-weight="600">Strikeouts per plate appearance</text>
+<text transform="rotate(-90,22,200)" x="22" y="200" text-anchor="middle" font-size="13" fill="#1a1208" font-weight="600">Walks per plate appearance</text>
+<polyline points="70.6,150.6 157.4,121.0 166.5,167.4 162.1,309.6 169.7,225.1 181.5,166.7 199.2,150.3 166.4,237.8 192.6,200.4 243.9,144.5 286.1,103.8 308.4,123.5 341.7,235.1 305.5,231.9 364.0,89.1 369.0,30.9 343.3,184.7 367.0,150.2 387.5,222.2 416.0,196.7 393.7,310.3 410.1,237.1 419.4,127.7 430.1,93.4 471.4,118.6 559.1,228.2 567.4,259.7 502.2,288.7 535.2,217.4 580.7,202.1 615.1,107.8 651.7,158.3 690.5,71.0 720.0,30.1 706.6,196.3 545.2,278.4 565.1,222.2 530.0,366.0 553.0,217.8 530.4,189.9 555.6,148.4" fill="none" stroke="#6b5e4a" stroke-width="1.2" opacity="0.35"/>
+<circle cx="70.6" cy="150.6" r="6" fill="#6b5e4a" fill-opacity="1.0" stroke="#1a1208" stroke-width="1.2"/>
+<circle cx="157.4" cy="121.0" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="166.5" cy="167.4" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="162.1" cy="309.6" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="169.7" cy="225.1" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="181.5" cy="166.7" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="199.2" cy="150.3" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="166.4" cy="237.8" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="192.6" cy="200.4" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="243.9" cy="144.5" r="6" fill="#8b1e3f" fill-opacity="1.0" stroke="#1a1208" stroke-width="1.2"/>
+<circle cx="286.1" cy="103.8" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="308.4" cy="123.5" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="341.7" cy="235.1" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="305.5" cy="231.9" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="364.0" cy="89.1" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="369.0" cy="30.9" r="6" fill="#6b5e4a" fill-opacity="1.0" stroke="#1a1208" stroke-width="1.2"/>
+<circle cx="343.3" cy="184.7" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="367.0" cy="150.2" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="387.5" cy="222.2" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="416.0" cy="196.7" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="393.7" cy="310.3" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="410.1" cy="237.1" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="419.4" cy="127.7" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="430.1" cy="93.4" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="471.4" cy="118.6" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="559.1" cy="228.2" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="567.4" cy="259.7" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="502.2" cy="288.7" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="535.2" cy="217.4" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="580.7" cy="202.1" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="615.1" cy="107.8" r="6" fill="#2c4a6e" fill-opacity="1.0" stroke="#1a1208" stroke-width="1.2"/>
+<circle cx="651.7" cy="158.3" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="690.5" cy="71.0" r="6" fill="#c9962a" fill-opacity="1.0" stroke="#1a1208" stroke-width="1.2"/>
+<circle cx="720.0" cy="30.1" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="706.6" cy="196.3" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="545.2" cy="278.4" r="6" fill="#2c4a6e" fill-opacity="1.0" stroke="#1a1208" stroke-width="1.2"/>
+<circle cx="565.1" cy="222.2" r="6" fill="#c9962a" fill-opacity="1.0" stroke="#1a1208" stroke-width="1.2"/>
+<circle cx="530.0" cy="366.0" r="3" fill="#6b5e4a" fill-opacity="0.5" stroke="#1a1208" stroke-width="0.4"/>
+<circle cx="553.0" cy="217.8" r="6" fill="#2c4a6e" fill-opacity="1.0" stroke="#1a1208" stroke-width="1.2"/>
+<circle cx="530.4" cy="189.9" r="6" fill="#2c4a6e" fill-opacity="1.0" stroke="#1a1208" stroke-width="1.2"/>
+<circle cx="555.6" cy="148.4" r="6" fill="#b83a1e" fill-opacity="1.0" stroke="#1a1208" stroke-width="1.2"/>
+<text x="80.6" y="154.6" text-anchor="start" font-family="Playfair Display" font-size="13" font-weight="400" fill="#6b5e4a">1985</text>
+<text x="234.9" y="148.5" text-anchor="end" font-family="Playfair Display" font-size="13" font-weight="400" fill="#8b1e3f">1994</text>
+<text x="359.0" y="34.9" text-anchor="end" font-family="Playfair Display" font-size="13" font-weight="400" fill="#6b5e4a">2000</text>
+<text x="625.1" y="111.8" text-anchor="start" font-family="Playfair Display" font-size="13" font-weight="400" fill="#2c4a6e">2018</text>
+<text x="700.5" y="75.0" text-anchor="start" font-family="Playfair Display" font-size="13" font-weight="400" fill="#c9962a">2020</text>
+<text x="536.2" y="282.4" text-anchor="end" font-family="Playfair Display" font-size="13" font-weight="700" fill="#c9962a">2021</text>
+<text x="543.0" y="226.2" text-anchor="end" font-family="Playfair Display" font-size="13" font-weight="400" fill="#2c4a6e">2023</text>
+<text x="563.0" y="221.8" text-anchor="start" font-family="Playfair Display" font-size="13" font-weight="400" fill="#2c4a6e">2025</text>
+<text x="565.6" y="144.4" text-anchor="start" font-family="Playfair Display" font-size="13" font-weight="700" fill="#b83a1e">2026</text>
+<text x="123.7" y="216.9" font-family="Playfair Display" font-style="italic" font-size="11" fill="#6b5e4a">contact era</text>
+<text x="626.7" y="313.6" text-anchor="end" font-family="Playfair Display" font-style="italic" font-size="11" fill="#6b5e4a">strikeout era</text>
+<circle cx="558.5" cy="156.4" r="40" fill="none" stroke="#b83a1e" stroke-width="1.4" stroke-dasharray="4,3" opacity="0.6"/>
+<text x="603.5" y="126.4" font-family="Playfair Display" font-style="italic" font-size="12" font-weight="700" fill="#b83a1e">2026's neighborhood</text>
+</svg>
+  </div>
+
+  <p>The chart above is the visible reason. Each dot is one MLB season since 1985, plotted by how often the league struck batters out (horizontal) against how often the league walked them (vertical). The faint line traces the year-by-year drift &mdash; the contact-and-discipline game of the late eighties, the silver-bat era of the late nineties, the steady right-and-down strikeout revolution that began around 2010 and has lifted strikeout rates by more than fifty percent in fifteen years. The walking pace stays mostly flat, except for spikes.</p>
+
+  <p>The dot labeled <strong>2026</strong> sits squarely in the upper right of that long arc, inside a small loop that includes 2020, 2021, and 2023. Of the five years that score closest to this season, <em>all five</em> are from 2017 onward. Pre-2017 baseball, the era that produced most of the storylines and statistics we grew up using, is not in the conversation anymore.</p>
+
+  <h3 class="sh">Why 2021 wins (and what made it weird)</h3>
+
+  <table class="rank">
+    <thead><tr><th>Rank</th><th>Year</th><th>Z-distance</th><th>What that year was famous for</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td class="mono">1</td><td class="yr">2021</td><td class="mono">2.13</td><td>Sticky-stuff crackdown in June; Braves win WS as wild card</td></tr>
+      <tr><td class="mono">2</td><td class="yr">2023</td><td class="mono">2.31</td><td>Pitch clock debuts; shift restrictions; offense rebounds</td></tr>
+      <tr><td class="mono">3</td><td class="yr">2018</td><td class="mono">2.34</td><td>The "openers" era; Red Sox roll over the league</td></tr>
+      <tr><td class="mono">4</td><td class="yr">2020</td><td class="mono">2.50</td><td>60-game pandemic season; Dodgers finally win</td></tr>
+      <tr><td class="mono">5</td><td class="yr">2025</td><td class="mono">2.56</td><td>ABS challenge system; Yankees title</td></tr>
+      <tr><td class="mono">6</td><td class="yr">2009</td><td class="mono">2.73</td><td>The first year after the steroid hangover; Yankees title</td></tr>
+    </tbody>
+  </table>
+
+  <p>The feature pushing 2026 closer to 2021 than to last year is the walk rate. The league is walking nine-point-two percent of batters faced &mdash; the highest figure since the pandemic-shortened 2020. In 2025 it was eight-point-four percent. That is a ten-percent jump in a single season. We do not know yet whether to blame the second year of the automated ball-strike challenge system, a change in pitcher selection toward command-over-power arms, or something we have not measured. What we do know is that 2021's narrative was driven by exactly this kind of mid-year inflection, and that the second half of 2021 looked nothing like the first.</p>
+
+  <div class="pull">
+    <p>The deepest finding is the absence of one: there is no 1994 in baseball anymore. The game has been rule-changed past its own historical record.</p>
+    <cite>The Analog Year</cite>
+  </div>
+
+  <h3 class="sh">What 2021 did, and what it suggests</h3>
+
+  <p>The 2021 season is recent enough that the headlines are not quite history yet, but it had three distinct shocks worth keeping in mind. <strong>One</strong>: on June 21, Major League Baseball began enforcing its sticky-substance rule, and spin rates collapsed almost overnight. Strikeouts dropped. Walks rose. The pitchers who had been overpowering hitters in May were merely good in July. <strong>Two</strong>: the trade deadline in late July saw five future Hall-of-Fame names change teams in a single week &mdash; Trea Turner and Max Scherzer to the Dodgers, Anthony Rizzo and Joey Gallo to the Yankees. The teams that did the most won the most. <strong>Three</strong>: the Atlanta Braves finished 88-73 and won the wild card, then beat the 95-win Astros in six games. The team most fans had stopped watching by August lifted the trophy.</p>
+
+  <p>If 2026 ends anything like 2021 did, the lessons for the next four months are concrete. The walk-rate spike is probably a marker of structural change, not noise &mdash; watch for an in-season league response, the way the sticky-stuff enforcement was triggered five years ago. The trade deadline will matter more than usual: contenders who buy hard look extreme in retrospect; contenders who stand pat look feckless. And the most likely World Series participant is not the team you would name if asked today.</p>
+
+  <h3 class="sh">The deeper finding</h3>
+
+  <p>Bank of America's market piece could reach back thirty-two years to a 1994 with comparable inflation, comparable yields, comparable Fed posture. We could not do the same for baseball. The closest pre-2017 analog to 2026 is <em>2009</em>, twenty places back in the standings, beaten out by every year from 2017 through 2025. The pre-modern game &mdash; the one with bunt singles and fifteen-percent strikeout rates and pitchers who threw eight innings &mdash; is statistically too far from 2026 to inform it.</p>
+
+  <p>That is partly a triumph of the modern game (more strikeouts, more strategy, more bullpens) and partly an indictment (rule changes every other year, baseball physics that shift with the contract for the supplier of the seams). Whichever way you read it, the practical effect is the same: this newsletter's house statistical history starts in roughly 2018, and the patterns before then have decreasing predictive value for the patterns ahead.</p>
+
+  <p>Wall Street can compare 2026 to 1994. Baseball cannot. We will have to settle for comparing it to <em>last summer.</em></p>
+
+  <div class="box">
+    <h3>Reading the chart yourself</h3>
+    <p>Strikeouts per plate appearance are on the horizontal axis &mdash; left is more contact-y, right is more swing-and-miss. Walks per plate appearance are vertical &mdash; high is patient hitters or wild pitchers, low is the opposite. The faint line connecting the dots traces year by year from 1985 (far left) through 2026 (the red dot). The dashed red circle marks the cluster of five years that score closest to 2026 on the full eight-feature distance metric. Notice that the cluster is in the upper-right region &mdash; high strikeouts, high walks &mdash; and that no pre-2017 season is anywhere near it.</p>
+  </div>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Data: every player-season 1985&ndash;2025 plus partial 2026 through games of June 12, pulled from the MLB Stats API. League-level features computed by aggregating across all hitters (PA-weighted for OPS) and all pitchers (IP-weighted for ERA / K-9 / BB-9 / HR-9). Eight features used: OPS, K-per-PA, BB-per-PA, HR-per-PA, ERA, K-per-9, BB-per-9, HR-per-9. Each feature standardized (z-scored) across the forty historical years. Distance is Euclidean in the standardized space.</p>
+    <p style="color:#c8b99a">Caveats: 2026 is a partial season. Walk-rate estimates from the first ten weeks of a season often drift over the course of the year, both because pitch mixes change in warmer weather and because the leverage of close-game late-inning situations is heavier in July and August. The 2021 analog should be read as a hypothesis, not a forecast. Other reasonable methodologies (different feature weighting, longer historical windows that include strike years 1972 and 1981) might shift the top five but are unlikely to remove the structural break around 2017 that this analysis surfaces.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Issue No. __</span>
+    <span>The Analog Year</span>
+    <span>June __, 2026 &middot; New York, NY</span>
+  </div>
+</main>
+
+</body>
+</html>
