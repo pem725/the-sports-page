@@ -42,23 +42,38 @@ for v in [-0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]:
 svg.append(f'<text x="{ML+plot_w/2}" y="{MT+plot_h+44}" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">Pearson r — does last year predict next year?</text>')
 
 # Bars
+# r-value labels live INSIDE wider bars (white) and outside (colored) for narrower ones
+# Notes (italic) anchored to a fixed right-margin column, away from the bar tips
 bar_h = 30
 gap = 12
 y_start = MT + 10
+# Reserve a clean column for the italic note, starting near the right edge
+note_x = ML + plot_w + 16  # outside the plot area, in the right margin
+INSIDE_BAR_MIN_WIDTH = 70   # pixels — bars wider than this can host the label internally
+
 for i, (name, r, n, color, note) in enumerate(items):
     y = y_start + i * (bar_h + gap)
     x0 = X(0); xv = X(r)
+    rlabel = f"r = {r:+.3f}"
     if r >= 0:
-        svg.append(f'<rect x="{x0}" y="{y}" width="{xv-x0}" height="{bar_h}" fill="{color}" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>')
-        svg.append(f'<text x="{xv+6}" y="{y+bar_h/2+5}" font-family="Playfair Display" font-size="18" font-weight="700" fill="{color}">r = {r:+.3f}</text>')
+        bar_w = xv - x0
+        svg.append(f'<rect x="{x0}" y="{y}" width="{bar_w}" height="{bar_h}" fill="{color}" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>')
+        if bar_w >= INSIDE_BAR_MIN_WIDTH:
+            # Label inside, right-aligned at the bar end
+            svg.append(f'<text x="{xv-8}" y="{y+bar_h/2+5}" text-anchor="end" font-family="Playfair Display" font-size="17" font-weight="700" fill="#fff">{rlabel}</text>')
+        else:
+            # Label just to the right of the bar (narrow positive bars only)
+            svg.append(f'<text x="{xv+6}" y="{y+bar_h/2+5}" font-family="Playfair Display" font-size="17" font-weight="700" fill="{color}">{rlabel}</text>')
     else:
-        svg.append(f'<rect x="{xv}" y="{y}" width="{x0-xv}" height="{bar_h}" fill="#b83a1e" fill-opacity="0.85" stroke="#1a1208" stroke-width="1"/>')
-        svg.append(f'<text x="{xv-6}" y="{y+bar_h/2+5}" text-anchor="end" font-family="Playfair Display" font-size="18" font-weight="700" fill="#b83a1e">r = {r:+.3f}</text>')
-    # Left label
+        bar_w = x0 - xv
+        svg.append(f'<rect x="{xv}" y="{y}" width="{bar_w}" height="{bar_h}" fill="#b83a1e" fill-opacity="0.85" stroke="#1a1208" stroke-width="1"/>')
+        # Negative bars are tiny; placing the label to the LEFT collides with team names.
+        # Put it on the right side of zero instead, with a small leader implied by adjacency.
+        svg.append(f'<text x="{x0+6}" y="{y+bar_h/2+5}" font-family="Playfair Display" font-size="17" font-weight="700" fill="#b83a1e">{rlabel}</text>')
+    # Left label (team name + n)
     svg.append(f'<text x="{ML-12}" y="{y+bar_h/2}" text-anchor="end" font-family="Playfair Display" font-size="15" font-weight="700" fill="#1a1208">{name}</text>')
     svg.append(f'<text x="{ML-12}" y="{y+bar_h/2+13}" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n={n} pairs</text>')
-    # Right side annotation
-    note_x = X(0.72)
+    # Right margin note (italic), in its own column — never overlaps a bar
     svg.append(f'<text x="{note_x}" y="{y+bar_h/2+5}" text-anchor="start" font-family="Libre Baskerville" font-style="italic" font-size="10" fill="#6b5e4a">{note}</text>')
 
 svg.append('</svg>')
