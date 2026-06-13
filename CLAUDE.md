@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 424 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://pem725.github.io/the-sports-page/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 423 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 76 issues (#1-76)
-Queue: 8 articles ready (060-mets-sell-or-hold, 061-mlb-money-buys-wins, 064-mariners-streak, 067-nd-outrage-asymmetry, 068-defensive-reader-1-temporal, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework)
+Published: 77 issues (#1-77)
+Queue: 8 articles ready (060-mets-sell-or-hold, 061-mlb-money-buys-wins, 064-mariners-streak, 067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering)
 Reserve: 1 evergreen piece
-Goal: 424 issues remaining of 500
-Last published: Issue #76 — "Juan Soto Is 94 Spots From Help. That Number Is Lying to You." (065-soto-least-supported.html) on June 12, 2026
+Goal: 423 issues remaining of 500
+Last published: Issue #77 — "We Made an Inference Error Yesterday. Three More Are in Your Sports Feed Right Now." (068-defensive-reader-1-temporal.html) on June 13, 2026
