@@ -1,0 +1,990 @@
+{
+  "snow_regions": {
+    "Colorado": {
+      "n_stations": 5,
+      "n_seasons": 37,
+      "lag1_r": -0.0098,
+      "rmse_climatology": 876.3,
+      "rmse_enso": 923.9,
+      "rmse_reduction_pct": -5.43,
+      "enso_state_means_mm": {
+        "Neutral": 3987.0,
+        "El Ni\u00f1o": 3845.0,
+        "La Ni\u00f1a": 4092.0
+      },
+      "n_enso_pairs": 37
+    },
+    "Pacific Northwest": {
+      "n_stations": 3,
+      "n_seasons": 24,
+      "lag1_r": -0.2665,
+      "rmse_climatology": 1462.8,
+      "rmse_enso": 1546.0,
+      "rmse_reduction_pct": -5.69,
+      "enso_state_means_mm": {
+        "Neutral": 5464.0,
+        "El Ni\u00f1o": 5468.0,
+        "La Ni\u00f1a": 6291.0
+      },
+      "n_enso_pairs": 24
+    },
+    "Utah/Wyoming": {
+      "n_stations": 4,
+      "n_seasons": 40,
+      "lag1_r": 0.0343,
+      "rmse_climatology": 642.2,
+      "rmse_enso": 624.4,
+      "rmse_reduction_pct": 2.77,
+      "enso_state_means_mm": {
+        "Neutral": 1793.0,
+        "El Ni\u00f1o": 1543.0,
+        "La Ni\u00f1a": 2097.0
+      },
+      "n_enso_pairs": 40
+    },
+    "New Mexico": {
+      "n_stations": 2,
+      "n_seasons": 28,
+      "lag1_r": 0.0489,
+      "rmse_climatology": 526.7,
+      "rmse_enso": 536.0,
+      "rmse_reduction_pct": -1.77,
+      "enso_state_means_mm": {
+        "Neutral": 2372.0,
+        "El Ni\u00f1o": 2581.0,
+        "La Ni\u00f1a": 2167.0
+      },
+      "n_enso_pairs": 28
+    },
+    "Vermont": {
+      "n_stations": 3,
+      "n_seasons": 40,
+      "lag1_r": 0.0061,
+      "rmse_climatology": 568.7,
+      "rmse_enso": 579.3,
+      "rmse_reduction_pct": -1.88,
+      "enso_state_means_mm": {
+        "Neutral": 2450.0,
+        "El Ni\u00f1o": 2111.0,
+        "La Ni\u00f1a": 2319.0
+      },
+      "n_enso_pairs": 40
+    }
+  },
+  "sports": {
+    "NBA": {
+      "lag1_r": 0.6487,
+      "rmse_reduction_pct": 23.9,
+      "n_pairs": 1140
+    },
+    "NHL": {
+      "lag1_r": 0.6181,
+      "rmse_reduction_pct": 21.39,
+      "n_pairs": 1073
+    },
+    "MLB": {
+      "lag1_r": 0.4902,
+      "rmse_reduction_pct": 12.84,
+      "n_pairs": 1158
+    },
+    "NFL": {
+      "lag1_r": 0.3427,
+      "rmse_reduction_pct": 6.06,
+      "n_pairs": 1195
+    }
+  },
+  "snow_series": {
+    "Colorado": {
+      "stations": [
+        "Aspen 1 SW",
+        "Crested Butte",
+        "Steamboat Springs",
+        "Telluride",
+        "Vail"
+      ],
+      "series": [
+        {
+          "season_start": 1985,
+          "snow_mm": 4429.5,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1986,
+          "snow_mm": 4165.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1987,
+          "snow_mm": 4313.2,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1988,
+          "snow_mm": 4259.4,
+          "n_stations": 5
+        },
+        {
+          "season_start": 1989,
+          "snow_mm": 3307.8,
+          "n_stations": 5
+        },
+        {
+          "season_start": 1990,
+          "snow_mm": 4811.2,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1991,
+          "snow_mm": 3420.8,
+          "n_stations": 5
+        },
+        {
+          "season_start": 1992,
+          "snow_mm": 6415.6,
+          "n_stations": 5
+        },
+        {
+          "season_start": 1993,
+          "snow_mm": 3383.0,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1994,
+          "snow_mm": 5076.2,
+          "n_stations": 5
+        },
+        {
+          "season_start": 1995,
+          "snow_mm": 5292.8,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1996,
+          "snow_mm": 5137.2,
+          "n_stations": 5
+        },
+        {
+          "season_start": 1997,
+          "snow_mm": 3857.2,
+          "n_stations": 5
+        },
+        {
+          "season_start": 1998,
+          "snow_mm": 3412.4,
+          "n_stations": 5
+        },
+        {
+          "season_start": 1999,
+          "snow_mm": 3548.2,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2000,
+          "snow_mm": 3492.6,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2001,
+          "snow_mm": 2939.8,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2002,
+          "snow_mm": 3674.2,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2003,
+          "snow_mm": 3616.5,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2004,
+          "snow_mm": 4023.4,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2005,
+          "snow_mm": 4048.5,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2006,
+          "snow_mm": 2857.2,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2007,
+          "snow_mm": 5559.2,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2008,
+          "snow_mm": 4958.8,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2009,
+          "snow_mm": 3881.0,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2013,
+          "snow_mm": 3619.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2014,
+          "snow_mm": 2902.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2015,
+          "snow_mm": 3817.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2016,
+          "snow_mm": 3868.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2017,
+          "snow_mm": 2237.8,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2018,
+          "snow_mm": 4345.6,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2019,
+          "snow_mm": 3633.4,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2020,
+          "snow_mm": 2907.2,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2021,
+          "snow_mm": 3291.6,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2022,
+          "snow_mm": 5055.2,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2023,
+          "snow_mm": 3865.0,
+          "n_stations": 5
+        },
+        {
+          "season_start": 2024,
+          "snow_mm": 3474.8,
+          "n_stations": 5
+        }
+      ]
+    },
+    "Pacific Northwest": {
+      "stations": [
+        "Stampede Pass",
+        "Snoqualmie Falls",
+        "Crater Lake"
+      ],
+      "series": [
+        {
+          "season_start": 1985,
+          "snow_mm": 6853.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1986,
+          "snow_mm": 6046.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1987,
+          "snow_mm": 6124.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1988,
+          "snow_mm": 8458.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1989,
+          "snow_mm": 3001.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1990,
+          "snow_mm": 4495.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1991,
+          "snow_mm": 4312.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1992,
+          "snow_mm": 7643.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1993,
+          "snow_mm": 4186.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1994,
+          "snow_mm": 7215.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1996,
+          "snow_mm": 5551.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1997,
+          "snow_mm": 6238.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1998,
+          "snow_mm": 7958.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1999,
+          "snow_mm": 5657.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2000,
+          "snow_mm": 3298.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2001,
+          "snow_mm": 5821.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2002,
+          "snow_mm": 5153.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2003,
+          "snow_mm": 6244.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2004,
+          "snow_mm": 3770.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2005,
+          "snow_mm": 6917.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2006,
+          "snow_mm": 5548.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2007,
+          "snow_mm": 6753.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2008,
+          "snow_mm": 5737.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2009,
+          "snow_mm": 4799.5,
+          "n_stations": 2
+        }
+      ]
+    },
+    "Utah/Wyoming": {
+      "stations": [
+        "Lake Yellowstone",
+        "Yellowstone Mammoth",
+        "Altamont",
+        "Angle"
+      ],
+      "series": [
+        {
+          "season_start": 1985,
+          "snow_mm": 2343.5,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1986,
+          "snow_mm": 1103.0,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1987,
+          "snow_mm": 1794.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1988,
+          "snow_mm": 2291.0,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1989,
+          "snow_mm": 1443.8,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1990,
+          "snow_mm": 1608.2,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1991,
+          "snow_mm": 1170.2,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1992,
+          "snow_mm": 2080.0,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1993,
+          "snow_mm": 1434.5,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1994,
+          "snow_mm": 2043.8,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1995,
+          "snow_mm": 2005.0,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1996,
+          "snow_mm": 1346.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1997,
+          "snow_mm": 1626.2,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1998,
+          "snow_mm": 2045.5,
+          "n_stations": 4
+        },
+        {
+          "season_start": 1999,
+          "snow_mm": 2335.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2000,
+          "snow_mm": 1918.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2001,
+          "snow_mm": 1595.2,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2002,
+          "snow_mm": 2052.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2003,
+          "snow_mm": 1733.2,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2004,
+          "snow_mm": 842.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2005,
+          "snow_mm": 2178.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2006,
+          "snow_mm": 916.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2007,
+          "snow_mm": 1364.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2008,
+          "snow_mm": 2227.5,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2009,
+          "snow_mm": 937.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2010,
+          "snow_mm": 4416.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2011,
+          "snow_mm": 2874.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2012,
+          "snow_mm": 2267.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2013,
+          "snow_mm": 2008.5,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2014,
+          "snow_mm": 1718.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2015,
+          "snow_mm": 1658.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2016,
+          "snow_mm": 2259.2,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2017,
+          "snow_mm": 2016.0,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2018,
+          "snow_mm": 2438.8,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2019,
+          "snow_mm": 1821.5,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2020,
+          "snow_mm": 1649.0,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2021,
+          "snow_mm": 1382.5,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2022,
+          "snow_mm": 1398.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2023,
+          "snow_mm": 1473.2,
+          "n_stations": 4
+        },
+        {
+          "season_start": 2024,
+          "snow_mm": 954.3,
+          "n_stations": 3
+        }
+      ]
+    },
+    "New Mexico": {
+      "stations": [
+        "Red River",
+        "Dulce"
+      ],
+      "series": [
+        {
+          "season_start": 1985,
+          "snow_mm": 2175.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1986,
+          "snow_mm": 2879.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1987,
+          "snow_mm": 2561.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1988,
+          "snow_mm": 2656.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1989,
+          "snow_mm": 2422.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1990,
+          "snow_mm": 2895.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1991,
+          "snow_mm": 2433.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1992,
+          "snow_mm": 3205.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1993,
+          "snow_mm": 3311.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1994,
+          "snow_mm": 2384.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1995,
+          "snow_mm": 1366.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1996,
+          "snow_mm": 2879.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1997,
+          "snow_mm": 2299.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1998,
+          "snow_mm": 1839.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1999,
+          "snow_mm": 2226.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2000,
+          "snow_mm": 2691.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2001,
+          "snow_mm": 1542.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2002,
+          "snow_mm": 2585.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2003,
+          "snow_mm": 2460.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2004,
+          "snow_mm": 2879.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2005,
+          "snow_mm": 1967.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2006,
+          "snow_mm": 2971.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2010,
+          "snow_mm": 1673.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2011,
+          "snow_mm": 2274.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2012,
+          "snow_mm": 1952.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2013,
+          "snow_mm": 1381.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2014,
+          "snow_mm": 2238.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 2020,
+          "snow_mm": 2093.0,
+          "n_stations": 2
+        }
+      ]
+    },
+    "Vermont": {
+      "stations": [
+        "Saint Johnsbury",
+        "Island Pond",
+        "Burlington Intl"
+      ],
+      "series": [
+        {
+          "season_start": 1985,
+          "snow_mm": 2386.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1986,
+          "snow_mm": 2087.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1987,
+          "snow_mm": 1615.5,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1988,
+          "snow_mm": 1323.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1989,
+          "snow_mm": 2252.0,
+          "n_stations": 2
+        },
+        {
+          "season_start": 1990,
+          "snow_mm": 1758.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1991,
+          "snow_mm": 2488.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1992,
+          "snow_mm": 3184.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1993,
+          "snow_mm": 2823.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1994,
+          "snow_mm": 1472.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1995,
+          "snow_mm": 2777.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1996,
+          "snow_mm": 2739.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1997,
+          "snow_mm": 2297.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1998,
+          "snow_mm": 1912.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 1999,
+          "snow_mm": 2262.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2000,
+          "snow_mm": 3249.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2001,
+          "snow_mm": 2146.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2002,
+          "snow_mm": 2230.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2003,
+          "snow_mm": 2496.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2004,
+          "snow_mm": 2096.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2005,
+          "snow_mm": 2048.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2006,
+          "snow_mm": 2649.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2007,
+          "snow_mm": 3424.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2008,
+          "snow_mm": 2658.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2009,
+          "snow_mm": 1974.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2010,
+          "snow_mm": 3146.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2011,
+          "snow_mm": 1386.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2012,
+          "snow_mm": 2127.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2013,
+          "snow_mm": 2475.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2014,
+          "snow_mm": 2574.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2015,
+          "snow_mm": 1078.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2016,
+          "snow_mm": 3135.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2017,
+          "snow_mm": 2527.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2018,
+          "snow_mm": 3003.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2019,
+          "snow_mm": 2097.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2020,
+          "snow_mm": 1670.0,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2021,
+          "snow_mm": 1771.3,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2022,
+          "snow_mm": 1890.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2023,
+          "snow_mm": 1891.7,
+          "n_stations": 3
+        },
+        {
+          "season_start": 2024,
+          "snow_mm": 2167.3,
+          "n_stations": 3
+        }
+      ]
+    }
+  }
+}

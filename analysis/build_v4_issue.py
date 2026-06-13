@@ -1,4 +1,13 @@
-<!-- PUBLISH-META
+"""Rewrite queue/078 with the right-predictor framing across regions."""
+from pathlib import Path
+
+ANALYSIS = Path(__file__).parent
+QUEUE = Path("/home/pem725/GitTemp/the-sports-page/queue")
+chart = (ANALYSIS / "cross_sport_chart.svg").read_text()
+import json
+d = json.load(open(ANALYSIS / "predictability_v4.json"))
+
+html = f"""<!-- PUBLISH-META
 topic: Methods
 tags: Methods, Reader's Defense, Cross-Sport, Cross-Region, ENSO, Prediction
 -->
@@ -10,45 +19,45 @@ tags: Methods, Reader's Defense, Cross-Sport, Cross-Region, ENSO, Prediction
 <title>The Sports Page &mdash; Issue No. __ &mdash; June __, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
-.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
-.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
-.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
-.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
-.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
-@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
-.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
-.hed em{color:var(--rust);font-style:italic}
-.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
-.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
-@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
-.sc{background:var(--card);padding:1rem .8rem;text-align:center}
-.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
-.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
-.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
-.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
-.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
-.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
-.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
-.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
-.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
-.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
-.box p:last-child{margin-bottom:0}
-.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
-.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
-svg.chart{width:100%;height:auto;display:block}
-table.regional{width:100%;border-collapse:collapse;font-size:.86rem;margin:1.2rem 0;background:#fff}
-table.regional th{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .55rem;text-align:right;background:var(--card)}
-table.regional th:first-child,table.regional td:first-child{text-align:left;font-family:'Playfair Display',serif;font-weight:700;color:var(--steel);font-size:.95rem}
-table.regional td{padding:.45rem .55rem;border-bottom:1px solid var(--div);font-family:'Roboto Mono',monospace;font-size:.85rem;text-align:right}
-table.regional td.signal{color:var(--green);font-weight:600}
-table.regional td.weak{color:var(--muted)}
-.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
-hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+:root{{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}}
+*,*::before,*::after{{box-sizing:border-box;margin:0;padding:0}}
+body{{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}}
+.masthead{{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}}
+.kicker{{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}}
+.title{{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}}
+.tagline{{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}}
+.datebar{{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}}
+.paper{{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}}
+@media(max-width:600px){{.paper{{padding:1.6rem 1.4rem}}}}
+.hed{{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}}
+.hed em{{color:var(--rust);font-style:italic}}
+.deck{{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}}
+.byline{{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}}
+.stat-row{{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}}
+@media(max-width:460px){{.stat-row{{grid-template-columns:1fr 1fr}}}}
+.sc{{background:var(--card);padding:1rem .8rem;text-align:center}}
+.sc .v{{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}}
+.sc .v.bad{{color:var(--rust)}} .sc .v.now{{color:var(--steel)}} .sc .v.good{{color:var(--green)}}
+.sc .l{{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}}
+.sh{{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}}
+.pull{{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}}
+.pull p{{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}}
+.pull cite{{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}}
+.box{{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}}
+.box h3{{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}}
+.box p{{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}}
+.box p:last-child{{margin-bottom:0}}
+.chart-wrap{{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}}
+.chart-label{{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}}
+svg.chart{{width:100%;height:auto;display:block}}
+table.regional{{width:100%;border-collapse:collapse;font-size:.86rem;margin:1.2rem 0;background:#fff}}
+table.regional th{{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .55rem;text-align:right;background:var(--card)}}
+table.regional th:first-child,table.regional td:first-child{{text-align:left;font-family:'Playfair Display',serif;font-weight:700;color:var(--steel);font-size:.95rem}}
+table.regional td{{padding:.45rem .55rem;border-bottom:1px solid var(--div);font-family:'Roboto Mono',monospace;font-size:.85rem;text-align:right}}
+table.regional td.signal{{color:var(--green);font-weight:600}}
+table.regional td.weak{{color:var(--muted)}}
+.footer{{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}}
+hr{{border:none;border-top:1px solid var(--div);margin:1.5rem 0}}
 </style>
 </head>
 <body>
@@ -84,61 +93,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
   <div class="chart-wrap">
     <div class="chart-label">Figure 1 &middot; The right test, cross-domain &middot; % RMSE reduction over climatology baseline, leave-one-out cross-validated</div>
-<svg class="chart" viewBox="0 0 800 580" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
-<rect x="0" y="0" width="800" height="580" fill="#ede5d2"/>
-<text x="400.0" y="30" text-anchor="middle" font-family="Playfair Display" font-size="15" font-weight="700" fill="#1a1208">Each domain on its own best-known predictor</text>
-<text x="400.0" y="50" text-anchor="middle" font-size="11" fill="#6b5e4a">Sports = optimal lag-1 model (prior-year record). Snow = ENSO state (La Niña / Neutral / El Niño).</text>
-<line x1="200.0" y1="80" x2="200.0" y2="525" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="200.0" y="542" text-anchor="middle" font-size="11" fill="#1a1208">-10%</text>
-<line x1="300.0" y1="80" x2="300.0" y2="525" stroke="#1a1208" stroke-width="2" stroke-dasharray="none"/>
-<text x="300.0" y="542" text-anchor="middle" font-size="11" fill="#1a1208">+0%</text>
-<line x1="400.0" y1="80" x2="400.0" y2="525" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="400.0" y="542" text-anchor="middle" font-size="11" fill="#1a1208">+10%</text>
-<line x1="500.0" y1="80" x2="500.0" y2="525" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="500.0" y="542" text-anchor="middle" font-size="11" fill="#1a1208">+20%</text>
-<line x1="600.0" y1="80" x2="600.0" y2="525" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="600.0" y="542" text-anchor="middle" font-size="11" fill="#1a1208">+30%</text>
-<text x="400.0" y="564" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">% RMSE reduction over climatology baseline (positive = predictor helps)</text>
-<line x1="0" y1="232" x2="800" y2="232" stroke="#1a1208" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
-<text x="20" y="170" font-family="Playfair Display" font-style="italic" font-size="11" fill="#6b5e4a" font-weight="700">SPORTS</text>
-<text x="20" y="322" font-family="Playfair Display" font-style="italic" font-size="11" fill="#6b5e4a" font-weight="700">SNOW</text>
-<rect x="300.0" y="86" width="239.0" height="28" fill="#c9962a" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="531.0" y="105.0" text-anchor="end" font-family="Playfair Display" font-size="16" font-weight="700" fill="#fff">+23.9%</text>
-<text x="188" y="100.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">NBA (lag-1)</text>
-<text x="188" y="113.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=1140</text>
-<rect x="300.0" y="124" width="213.9000000000001" height="28" fill="#2c4a6e" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="505.9000000000001" y="143.0" text-anchor="end" font-family="Playfair Display" font-size="16" font-weight="700" fill="#fff">+21.4%</text>
-<text x="188" y="138.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">NHL (lag-1)</text>
-<text x="188" y="151.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=1073</text>
-<rect x="300.0" y="162" width="128.39999999999998" height="28" fill="#2a6e3f" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="420.4" y="181.0" text-anchor="end" font-family="Playfair Display" font-size="16" font-weight="700" fill="#fff">+12.8%</text>
-<text x="188" y="176.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">MLB (lag-1)</text>
-<text x="188" y="189.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=1158</text>
-<rect x="300.0" y="200" width="60.60000000000002" height="28" fill="#8b1e3f" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="366.6" y="219.0" font-family="Playfair Display" font-size="16" font-weight="700" fill="#8b1e3f">+6.1%</text>
-<text x="188" y="214.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">NFL (lag-1)</text>
-<text x="188" y="227.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=1195</text>
-<rect x="300.0" y="238" width="27.69999999999999" height="28" fill="#6b5e4a" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="333.7" y="257.0" font-family="Playfair Display" font-size="16" font-weight="700" fill="#6b5e4a">+2.8%</text>
-<text x="188" y="252.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">Utah/Wyoming (ENSO)</text>
-<text x="188" y="265.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=40</text>
-<rect x="282.3" y="276" width="17.69999999999999" height="28" fill="#b83a1e" fill-opacity="0.85" stroke="#1a1208" stroke-width="1"/>
-<text x="306.0" y="295.0" font-family="Playfair Display" font-size="16" font-weight="700" fill="#b83a1e">-1.8%</text>
-<text x="188" y="290.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">New Mexico (ENSO)</text>
-<text x="188" y="303.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=28</text>
-<rect x="281.2" y="314" width="18.80000000000001" height="28" fill="#b83a1e" fill-opacity="0.85" stroke="#1a1208" stroke-width="1"/>
-<text x="306.0" y="333.0" font-family="Playfair Display" font-size="16" font-weight="700" fill="#b83a1e">-1.9%</text>
-<text x="188" y="328.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">Vermont (ENSO)</text>
-<text x="188" y="341.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=40</text>
-<rect x="245.7" y="352" width="54.30000000000001" height="28" fill="#b83a1e" fill-opacity="0.85" stroke="#1a1208" stroke-width="1"/>
-<text x="306.0" y="371.0" font-family="Playfair Display" font-size="16" font-weight="700" fill="#b83a1e">-5.4%</text>
-<text x="188" y="366.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">Colorado (ENSO)</text>
-<text x="188" y="379.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=37</text>
-<rect x="243.1" y="390" width="56.900000000000006" height="28" fill="#b83a1e" fill-opacity="0.85" stroke="#1a1208" stroke-width="1"/>
-<text x="306.0" y="409.0" font-family="Playfair Display" font-size="16" font-weight="700" fill="#b83a1e">-5.7%</text>
-<text x="188" y="404.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">Pacific Northwest (ENSO)</text>
-<text x="188" y="417.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">n=24</text>
-</svg>
+{chart}
   </div>
 
   <h3 class="sh">What the sports rows say</h3>
@@ -202,3 +157,8 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
 </body>
 </html>
+"""
+
+dest = QUEUE / "078-cross-sport-persistence.html"
+dest.write_text(html)
+print(f"Wrote {dest}")
