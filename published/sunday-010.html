@@ -1,0 +1,356 @@
+<!-- PUBLISH-META
+topic: Sunday Edition
+tags: Sunday Edition, NHL:nhl, MLB:mlb, CFB:cfb, Scorecard
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Sunday Edition No. 010 — June 14, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+/* ── SUNDAY EDITION EXTRAS ── */
+.intro{font-size:1.05rem;line-height:1.75;margin-bottom:1.8rem;padding:1.2rem 1.5rem;background:var(--card);border-left:4px solid var(--steel);color:var(--ink)}
+.issue-list{list-style:none;padding:0;margin:0 0 1.8rem}
+.issue-list li{font-size:.9rem;line-height:1.65;padding:.5rem 0;border-bottom:1px solid var(--div)}
+.issue-list li:last-child{border-bottom:none}
+.issue-list .inum{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;color:var(--steel);margin-right:.4rem}
+.issue-list .idate{font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);margin-right:.4rem}
+.issue-list a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3);font-weight:700;transition:border-color .2s}
+.issue-list a:hover{border-color:var(--rust)}
+.box.green-box{background:var(--green)}
+.box.green-box h3{color:#e0f0e8}
+.box.green-box p{color:#c8edcf}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Sunday Edition &middot; Week 10 Recap &middot; NHL &middot; MLB &middot; CFB</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Sunday Edition No. 010 &middot; Issue No. 78</span>
+    <span>June 14, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Carolina Leads 3&ndash;2. The 75% Comp Spent Last Week at 31%. <em>It&rsquo;s Back.</em></h1>
+
+  <div class="deck">
+    Last Sunday promised this edition would close the Issue #56 Carolina historical comp. It cannot &mdash; Game 6 is tonight in Las Vegas, and the comp does not grade until the Cup is awarded. But here is what happened to the math in seven days: it went from 75% to 31% to 75% again. A Bayesian prior that correctly encodes the structure of a situation does not disappear when things get uncomfortable. It updates, and it waits. This week, it was right to wait.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; June 14, 2026 &middot; Sunday Edition No. 010</div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    Ten Sundays in. Seventy-seven issues published. The Pyrrhic Victory March ran through Parts II through V this week &mdash; the Sabres, the Bobcats, the Astros, Cincinnati &mdash; and the Reader&rsquo;s Defense inaugurated itself with an honest accounting of the newsletter&rsquo;s own temporal-contiguity error. Five predictions are still tracking. Zero resolved. The Carolina comp was promised a closing grade today. It cannot have one: Game 6 tips in Las Vegas at 8 p.m. ET tonight, the series is live, and the newsletter does not grade live situations. The math is updated below. The patience is real. The series will end when the sport decides.
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">77</div><div class="l">Issues Published</div></div>
+    <div class="sc"><div class="v bad">5</div><div class="l">Live Predictions Still Tracking</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">423</div><div class="l">Issues Remaining to 500</div></div>
+  </div>
+
+  <!-- SECTION 1: THE WEEK IN REVIEW -->
+  <h2 class="sh">The Week in Review: Issues #72&ndash;77</h2>
+
+  <ol class="issue-list">
+    <li><span class="inum">#72</span><span class="idate">Jun 8</span> &mdash; <a href="057-pyrrhic-2-sabres-mcdavid.html">The Sabres Did the Tank Perfectly. The Lottery Did Not Care.</a> &mdash; Part II of the Pyrrhic Victory March. Buffalo earned the best odds in the 2015 NHL Draft Lottery, ran the table on preparation, and watched Edmonton pick Connor McDavid at 11.5%. A 20% favorite is still an 80% underdog. Sallust and Fortuna enter the series.</li>
+    <li><span class="inum">#73</span><span class="idate">Jun 9</span> &mdash; <a href="058-pyrrhic-3-bobcats-davis.html">The Bobcats Set a Record That Should Have Won Them Anthony Davis. Tantalus Disagreed.</a> &mdash; Part III. Charlotte&rsquo;s .106 winning percentage &mdash; the worst in NBA history &mdash; earned the maximum lottery odds and the second pick. Anthony Davis went to New Orleans at 13.7%. The NBA flattened its lottery in 2019 partly because of nights like that one.</li>
+    <li><span class="inum">#74</span><span class="idate">Jun 10</span> &mdash; <a href="059-pyrrhic-4-astros-mlb-commons.html">The Astros Won the Tank. Baseball Lost the Decade.</a> &mdash; Part IV. The only Pyrrhic victory in the series where the rules actually changed in response. Houston&rsquo;s three-year 274-loss tank worked. The 2017 title is in the record book. And in 2023, MLB installed a draft lottery using the logic of Aristotle&rsquo;s Tragedy of the Commons in its own CBA language.</li>
+    <li><span class="inum">#75</span><span class="idate">Jun 11</span> &mdash; <a href="066-pyrrhic-5-cincinnati.html">Cincinnati Was Named After a Man Who Refused to Stay in Power. Five Straight Coaches Did Not Get the Message.</a> &mdash; Part V. The CFB shape of the problem: not a draft slot, but a coach. Brian Kelly left 12&ndash;0 in 2009 for Notre Dame. Luke Fickell left 13&ndash;0 in 2021 for Wisconsin. Five coaches, zero retained. The program that builds the offer creates the offer it cannot refuse.</li>
+    <li><span class="inum">#76</span><span class="idate">Jun 12</span> &mdash; <a href="065-soto-least-supported.html">Juan Soto Is 94 Spots From Help. That Number Is Lying to You.</a> &mdash; The rank gap between Soto and his nearest teammate is real and historic. The 94-leaderboard-spot figure overstates the skill gap; the honest number is 59 wRC+ points. Keep the 59. Throw back the 94. Both readings of the same stat point to the same indictment: the Mets have placed a top-five hitter in baseball on an island.</li>
+    <li><span class="inum">#77</span><span class="idate">Jun 13</span> &mdash; <a href="068-defensive-reader-1-temporal.html">We Made an Inference Error Yesterday. Three More Are in Your Sports Feed Right Now.</a> &mdash; The Reader&rsquo;s Defense, Part I. Temporal contiguity, post hoc ergo propter hoc, and the temporal arrow &mdash; three tools a reader carries out of one issue. The newsletter named its own error, explained the pattern, and sent readers equipped to catch it the next time it appears in a headline. It will appear before the week is out.</li>
+  </ol>
+
+  <hr>
+
+  <!-- SECTION 2: THE PREDICTION SCORECARD -->
+  <h2 class="sh">The Prediction Scorecard &middot; Week 10</h2>
+
+  <p>Five items carry forward from prior editions. This week&rsquo;s issues &mdash; four Pyrrhic March retrospectives, one stat-analysis piece, and a methodology inaugural &mdash; made no forward-looking forecasts. Zero new scorecard rows. All five open items depend on events still in progress.</p>
+
+  <table class="rec">
+    <thead>
+      <tr><th>From</th><th>Prediction</th><th>Outcome as of Sunday Morning</th><th>Grade</th></tr>
+    </thead>
+    <tbody>
+      <tr class="match">
+        <td class="mono">#56</td>
+        <td>Historical comp: 3 of 4 teams that entered a Cup Final 8+ unbeaten through two rounds went on to win the Cup. Carolina qualified at 8&ndash;0. Pre-series probability: 75%.</td>
+        <td>Carolina is 14&ndash;5 in the playoffs overall and leads the Final 3&ndash;2 after winning Games 4 and 5. The series probability, assuming even teams: P(Carolina wins &ge;1 of next 2) = 1&minus;(0.5)&sup2; = 75.0%. The prior has been restored: from 75% pre-series, down to 31% when Vegas led 2&ndash;1, back to 75% as Carolina leads 3&ndash;2. Game 6 is tonight in Las Vegas.</td>
+        <td class="mono"><strong>PENDING</strong> &mdash; this edition was promised as the closing grade. It cannot close a live series. Carolina can clinch tonight; Vegas can force Game 7. Grade follows the result. Sunday Edition No. 011 closes this item.</td>
+      </tr>
+      <tr class="worse">
+        <td class="mono">#69</td>
+        <td>After Vegas wins Game 1: Vegas series win probability = 65.6% (binomial, 50/50 per game, no home-ice adjustment).</td>
+        <td>Vegas won Game 1, lost Game 2 in OT, won Game 3 in double OT, lost Games 4 and 5. Vegas now trails 2&ndash;3, needing to win both remaining games. Updated probability: P(Vegas wins both) = (0.5)&sup2; = 25.0%. Five games of data have substantially revised the one-game estimate.</td>
+        <td class="mono"><strong>PENDING</strong> &mdash; series live. The 65.6% after Game 1 was the correct probability given the evidence then available. The sport updated the inputs. Grade follows series close.</td>
+      </tr>
+      <tr>
+        <td class="mono">#63</td>
+        <td>Raleigh&rsquo;s 0-for-38 slump was a medical event (oblique strain), not a streakiness signal. On return, career true talent (.222 BA, 60-HR pace) would re-emerge.</td>
+        <td>Oblique confirmed. Rehab: 4-for-10, 3 HR, 9 RBI across 3 games at High-A Everett and Triple-A Tacoma. Expected activation to the Mariners on June 16. The structural call is holding. MLB plate appearances arrive Tuesday.</td>
+        <td class="mono"><strong>PENDING</strong> &mdash; structural diagnosis confirmed (oblique, regression to mean, shower got the credit). Talent-on-return prediction requires live big-league at-bats. Grade next Sunday with two-plus weeks of data.</td>
+      </tr>
+      <tr>
+        <td class="mono">#58</td>
+        <td>Marcus Freeman&rsquo;s portal and recruiting strategy produces repeating top-5 national class rankings.</td>
+        <td>2026 class result: #2 per Rivals, #3 per 247Sports, #5 per ESPN. Squarely inside the predicted range. 2027 class too early for national ranking.</td>
+        <td class="mono"><strong>PENDING</strong> &mdash; the 2026 class is an encouraging data point. The broader framework grades in January 2027. Long horizon.</td>
+      </tr>
+      <tr>
+        <td class="mono">#70</td>
+        <td>Notre Dame P(CFP title) = 16.7% among the six programs spending &ge;$40M on roster, assuming equal talent conversion.</td>
+        <td>Off-season. 2026 season opens in August. The P(title) is a pre-season prior, not a game prediction. Issue #77&rsquo;s Reader&rsquo;s Defense named the temporal-contiguity error embedded in any retroactive use of the 2026 roster figure against the 2025 season result &mdash; an important distinction going forward.</td>
+        <td class="mono"><strong>PENDING</strong> &mdash; the framework grades in January 2027, not before.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- SECTION 3: WHAT WE GOT RIGHT -->
+  <h2 class="sh">What We Got Right</h2>
+
+  <div class="box green-box">
+    <h3>Three Structural Calls That Are Holding</h3>
+    <p>The Carolina comp&rsquo;s math has proven more durable than its wobble suggested. Seven days ago, with Vegas leading 2&ndash;1, the 75% historical prior had been revised to 31% by three games of actual hockey. The newsletter called it honestly: not a miss, an update. Carolina has since won two straight, and the pre-series probability structure is restored. A 75% prior does not abandon itself on a 2&ndash;1 deficit; it updates, then waits. The series gave it new data. It updated again. Tonight it updates one more time, one way or the other.</p>
+    <p>Cal Raleigh&rsquo;s structural diagnosis from Issue #63 continues to hold. The 0-for-38 was identified as a medical event wearing a statistical disguise: oblique strain, regression to mean on the math&rsquo;s schedule, and the shower ritual getting the credit that probability deserves. Three legs of that call, three confirmations. The oblique was confirmed. The slump ended when regression predicted. And his Triple-A Tacoma line &mdash; three home runs and nine RBI in three rehab games &mdash; is the career true talent the newsletter said would re-emerge. He returns to the Mariners on Tuesday. The proof arrives then.</p>
+    <p>Issue #76&rsquo;s core argument &mdash; that 59 wRC+ points is the honest number and 94 leaderboard spots is the misleading one &mdash; has held through the week. Juan Soto&rsquo;s June wRC+ is 230, joining Darryl Strawberry as the only Met with 20+ walks and 10+ home runs in a single calendar month. The gap the newsletter described as real is real. The stat the newsletter said to throw back was the one that looked biggest and meant least. The analysis called the structure correctly.</p>
+  </div>
+
+  <!-- SECTION 4: THE HONEST ACCOUNTING -->
+  <h2 class="sh">The Honest Accounting</h2>
+
+  <div class="box">
+    <h3>One Promise the Sport Would Not Let Us Keep</h3>
+    <p>Sunday Edition No. 009 stated explicitly that Edition No. 010 would &ldquo;close&rdquo; the Issue #56 Carolina comp. That promise is broken, because the sport is playing Game 6 tonight and the newsletter does not grade live situations. This is not a forecasting error &mdash; no model was wrong. It is a scheduling commitment that Game 5 made obsolete by running until Thursday evening in Las Vegas instead of Tuesday. The right response is transparency, not embarrassment: the Carolina comp gets its grade next Sunday, whichever way Game 6 and a possible Game 7 go. The math will be honest then as it has been throughout.</p>
+    <p>This week&rsquo;s issues made no forward predictions. The Pyrrhic March is retrospective history; the Soto piece is statistical analysis of a current distribution; the Reader&rsquo;s Defense is methodology. There are no new forecasting rows to grade because there were no new forecasts. That is a week that builds framework, not a week that builds the scorecard. Both are necessary.</p>
+  </div>
+
+  <!-- PULL QUOTE 1 -->
+  <div class="pull">
+    <p>&ldquo;A prior that goes 75% to 31% to 75% in eight days has not failed. It has done exactly what a prior is supposed to do: absorbed new evidence, revised, and waited. That is the difference between a Bayesian model and a take.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the Carolina comp&rsquo;s round trip</cite>
+  </div>
+
+  <!-- SECTION 5: OVER-REACTIONS AND UNDER-REACTIONS -->
+  <h2 class="sh">Over-Reactions and Under-Reactions</h2>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--rust);margin-bottom:.6rem">Over-Reactions</h3>
+      <p>Issue #76 correctly explained why &ldquo;94 spots&rdquo; was the wrong number and &ldquo;59 wRC+ points&rdquo; was the right one. But writing that piece on June 12, with Soto&rsquo;s season wRC+ at 161, undersold the velocity of what he was doing in real time. His June wRC+ is 230. The piece analyzed a static snapshot when the underlying subject was accelerating. The right frame for the stat was a moving picture. The newsletter shot a still and called it accurate. It was accurate. It was also incomplete.</p>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--steel);margin-bottom:.6rem">Under-Reactions</h3>
+      <p>Issue #67 framed Dipoto&rsquo;s 54% threshold as the Mariners&rsquo; ceiling masquerading as a floor. Last Sunday they were 33&ndash;30 (52.4%), leading the AL West without Raleigh. This Sunday they are 36&ndash;34 (51.4%) &mdash; below the threshold and slipping. The newsletter noted Raleigh&rsquo;s importance without fully pricing the fragility of a roster whose ceiling-defining number depends on one catcher&rsquo;s health. He returns Tuesday. The next week is the empirical test: is 54% a structural property of the team, or a property of Cal Raleigh playing baseball?</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 5.5: WHAT READERS READ — auto-populated by scripts/fetch_readership.py -->
+  <h2 class="sh">What Readers Read &middot; Jun 7&ndash;Jun 13</h2>
+<p><em>Readership data pending &mdash; the analytics pipeline installed recently, and last week&rsquo;s counts were not captured. This section will populate starting with the first full week of data.</em></p>
+
+
+  <hr>
+
+  <!-- SECTION 5.6: STANDINGS AND TRACKING -->
+  <h2 class="sh">Standings &amp; Tracking</h2>
+
+  <div class="hist-grid">
+    <div class="hc">
+      <div class="hc-name">Stanley Cup Final</div>
+      <div class="hc-stat">3&ndash;2</div>
+      <div class="hc-label">Carolina leads Vegas &middot; Game 6 tonight, 8 p.m. ET</div>
+      <p>Carolina can clinch the Cup in Las Vegas tonight. Vegas must win to force Game 7. The Issue #56 historical comp (75% for any team entering the Final 8&ndash;0 through two rounds) has been restored to exactly its original probability by Carolina winning three of the last four games. The comp grades next Sunday.</p>
+      <div class="verdict bad">Issue #56 comp: PENDING &mdash; closes Sunday No. 011</div>
+    </div>
+    <div class="hc">
+      <div class="hc-name">New York Mets</div>
+      <div class="hc-stat">25&ndash;33</div>
+      <div class="hc-label">5th NL East &middot; 14 GB Atlanta</div>
+      <p>Soto&rsquo;s June wRC+ is 230. The team is 25&ndash;33. One of the best offensive months any player in baseball is having this year is happening on a last-place team. The sell-or-hold question gets a fresh read before the deadline piece publishes.</p>
+      <div class="verdict bad">Soto carrying a sinking ship</div>
+    </div>
+    <div class="hc">
+      <div class="hc-name">Seattle Mariners</div>
+      <div class="hc-stat">36&ndash;34</div>
+      <div class="hc-label">AL West &middot; 51.4% winning pace</div>
+      <p>Below Dipoto&rsquo;s 54% floor without Raleigh. He returns Tuesday (June 16) after a rehab that produced 3 HR and 9 RBI in 3 games. The empirical test of the 54% structural argument starts this week. If they stay below it with Raleigh in the lineup, the issue was wrong about the threshold being a floor.</p>
+      <div class="verdict">Raleigh back Tuesday &mdash; test begins</div>
+    </div>
+    <div class="hc">
+      <div class="hc-name">Notre Dame CFB</div>
+      <div class="hc-stat">$40.4M</div>
+      <div class="hc-label">2026 roster value &middot; 6th nationally</div>
+      <p>2026 class: #2 Rivals, #3 per 247Sports, #5 ESPN. Freeman&rsquo;s thesis continues to hold at the data-point level. P(title) = 16.7% is a pre-season prior that grades in January 2027. Issue #77 explicitly named the temporal-contiguity error in using 2026 valuation to explain 2025 results. The 2026 season opens in August.</p>
+      <div class="verdict">Season opens August</div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: THE ROAD AHEAD -->
+  <h2 class="sh">The Road Ahead</h2>
+
+  <p>Fourteen pieces sit in the queue. Several have gained urgency this week.</p>
+
+  <p>Monday brings the <strong>Mariners variance piece</strong>: what does it mean that Seattle&rsquo;s winning pace has tracked within a few points of Dipoto&rsquo;s 54% threshold all season? With Raleigh returning Tuesday, that question becomes real-time. The piece arrives the same week the experiment starts.</p>
+
+  <p>The <strong>Mets sell-or-hold piece</strong> was drafted when the team was 20&ndash;26. At 25&ndash;33 and 14 games back in June, the calculus for the July 31 trade deadline has shifted. It gets a fresh read before publication. If the framing no longer fits the actual team, it gets revised or held. The newsletter does not publish outdated arguments.</p>
+
+  <p>The <strong>Pyrrhic March capstone</strong> &mdash; Part VI, the 2011 Indianapolis Colts and Andrew Luck &mdash; closes the series. The Colts went 2&ndash;14, selected Luck first overall, and built a contender in the league where losing deterministically works best. It is the only piece in the march where the strategy worked cleanly. The series has earned its ending.</p>
+
+  <p>The <strong>Reader&rsquo;s Defense</strong> continues with Part II: survivorship bias and the Wald bomber-armor problem. Part I named temporal contiguity. Part II names the error that makes &ldquo;they did it, so you can too&rdquo; sports narratives structurally deceptive. The format is working. The series continues.</p>
+
+  <p>And the <strong>Carolina comp</strong> closes next Sunday. There is nothing to preview. The series will deliver a result. The scorecard will record it honestly, hit or miss.</p>
+
+  <!-- FINAL PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Seventy-seven issues in. Fourteen pieces in the queue. Five predictions still open. One Cup Final game tonight at 8 p.m. ET. The ledger stays open until the sport closes it, and the sport always does.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the long game</cite>
+  </div>
+
+  <!-- STORY IDEAS INBOX (compact) -->
+  <aside id="pitch" style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.7rem 0;margin:1.6rem 0 .4rem;font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <span style="text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600">Pitch a stat &rarr;</span>
+      <input type="text" name="sport" placeholder="Sport" style="font-family:inherit;font-size:.7rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;width:5rem">
+      <input type="text" name="idea" placeholder="The weird number you noticed" required style="font-family:'Libre Baskerville',serif;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;flex:1;min-width:12rem">
+      <button id="pitch-btn" type="submit" style="background:var(--ink);color:var(--cream);font-family:inherit;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.32rem .7rem;cursor:pointer">Send</button>
+      <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea" style="color:var(--steel);text-decoration:none;font-size:.6rem">or GitHub</a>
+    </form>
+    <div id="pitch-ok" style="display:none;margin-top:.3rem;color:var(--green);font-size:.62rem">Sent. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;margin-top:.3rem;color:var(--rust);font-size:.62rem">Failed &mdash; try the GitHub link.</div>
+  </aside>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='&hellip;';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='Send';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Sunday Edition No. 010 &middot; Issue No. 78</span>
+    <span>Predictions tracked from Issues #56&ndash;77</span>
+    <span>See you next Sunday</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
+  <img src="../assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">pem725.github.io/the-sports-page</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+
+</body>
+</html>
