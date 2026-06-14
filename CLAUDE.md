@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 77 issues (#1-77)
-Queue: 8 articles ready (060-mets-sell-or-hold, 061-mlb-money-buys-wins, 064-mariners-streak, 067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering)
+Published: 78 issues (#1-78)
+Queue: 14 articles ready (064-mariners-streak, 060-mets-sell-or-hold, 061-mlb-money-buys-wins, 067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence)
 Reserve: 1 evergreen piece
-Goal: 423 issues remaining of 500
-Last published: Issue #77 — "We Made an Inference Error Yesterday. Three More Are in Your Sports Feed Right Now." (068-defensive-reader-1-temporal.html) on June 13, 2026
+Goal: 422 issues remaining of 500
+Last published: Issue #78 — Sunday Edition No. 010 "Carolina Leads 3-2. The 75% Comp Is Back." (sunday-010.html) on June 14, 2026
