@@ -1,4 +1,13 @@
-<!-- PUBLISH-META
+"""Rewrite queue/078 with Pearson r × 100 metric (signed, -100 to +100)."""
+from pathlib import Path
+import json
+
+ANALYSIS = Path(__file__).parent
+QUEUE = Path("/home/pem725/GitTemp/the-sports-page/queue")
+chart = (ANALYSIS / "cross_sport_chart.svg").read_text()
+v4 = json.load(open(ANALYSIS / "predictability_v4.json"))
+
+html = """<!-- PUBLISH-META
 topic: Methods
 tags: Methods, Reader's Defense, Cross-Sport, Cross-Region, ENSO, Prediction
 -->
@@ -83,69 +92,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
   <div class="chart-wrap">
     <div class="chart-label">Figure 1 &middot; The right test, cross-domain &middot; Pearson r &times; 100, leave-one-out cross-validated</div>
-<svg class="chart" viewBox="0 0 820 600" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
-<rect x="0" y="0" width="820" height="600" fill="#ede5d2"/>
-<text x="410.0" y="30" text-anchor="middle" font-family="Playfair Display" font-size="15" font-weight="700" fill="#1a1208">How informative is each domain's natural predictor?</text>
-<text x="410.0" y="50" text-anchor="middle" font-size="11" fill="#6b5e4a">Pearson correlation between predictor and outcome, scaled to −100 ↔ +100. Sign = direction. Magnitude = informativeness.</text>
-<line x1="260.0" y1="80" x2="260.0" y2="545" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="260.0" y="562" text-anchor="middle" font-size="11" fill="#1a1208">-70</text>
-<line x1="331.42857142857144" y1="80" x2="331.42857142857144" y2="545" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="331.42857142857144" y="562" text-anchor="middle" font-size="11" fill="#1a1208">-50</text>
-<line x1="420.7142857142857" y1="80" x2="420.7142857142857" y2="545" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="420.7142857142857" y="562" text-anchor="middle" font-size="11" fill="#1a1208">-25</text>
-<line x1="510.0" y1="80" x2="510.0" y2="545" stroke="#1a1208" stroke-width="2" stroke-dasharray="none"/>
-<text x="510.0" y="562" text-anchor="middle" font-size="11" fill="#1a1208">+0</text>
-<line x1="599.2857142857142" y1="80" x2="599.2857142857142" y2="545" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="599.2857142857142" y="562" text-anchor="middle" font-size="11" fill="#1a1208">+25</text>
-<line x1="688.5714285714286" y1="80" x2="688.5714285714286" y2="545" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="688.5714285714286" y="562" text-anchor="middle" font-size="11" fill="#1a1208">+50</text>
-<line x1="760.0" y1="80" x2="760.0" y2="545" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="760.0" y="562" text-anchor="middle" font-size="11" fill="#1a1208">+70</text>
-<text x="510.0" y="584" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">Predictor–outcome correlation × 100  (perfect = +100; useless = 0)</text>
-<text x="688.5714285714286" y="72" text-anchor="middle" font-family="Playfair Display" font-style="italic" font-size="10" fill="#2a6e3f">strong</text>
-<text x="331.42857142857144" y="72" text-anchor="middle" font-family="Playfair Display" font-style="italic" font-size="10" fill="#b83a1e">strong reversed</text>
-<text x="599.2857142857142" y="72" text-anchor="middle" font-family="Playfair Display" font-style="italic" font-size="10" fill="#c9962a">modest</text>
-<text x="420.7142857142857" y="72" text-anchor="middle" font-family="Playfair Display" font-style="italic" font-size="10" fill="#b83a1e">modest reversed</text>
-<line x1="0" y1="240" x2="820" y2="240" stroke="#1a1208" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
-<text x="22" y="170" font-family="Playfair Display" font-style="italic" font-size="11" fill="#6b5e4a" font-weight="700">SPORTS</text>
-<text x="22" y="330" font-family="Playfair Display" font-style="italic" font-size="11" fill="#6b5e4a" font-weight="700">SNOW</text>
-<rect x="510.0" y="86" width="231.67857142857144" height="28" fill="#c9962a" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="733.6785714285714" y="105.0" text-anchor="end" font-family="Playfair Display" font-size="17" font-weight="700" fill="#fff">+65</text>
-<text x="248" y="98.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">NBA</text>
-<text x="248" y="112.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">predictor: lag-1: prior year &middot; n=1140</text>
-<rect x="510.0" y="124" width="220.75" height="28" fill="#2c4a6e" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="722.75" y="143.0" text-anchor="end" font-family="Playfair Display" font-size="17" font-weight="700" fill="#fff">+62</text>
-<text x="248" y="136.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">NHL</text>
-<text x="248" y="150.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">predictor: lag-1: prior year &middot; n=1073</text>
-<rect x="510.0" y="162" width="175.07142857142867" height="28" fill="#2a6e3f" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="677.0714285714287" y="181.0" text-anchor="end" font-family="Playfair Display" font-size="17" font-weight="700" fill="#fff">+49</text>
-<text x="248" y="174.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">MLB</text>
-<text x="248" y="188.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">predictor: lag-1: prior year &middot; n=1158</text>
-<rect x="510.0" y="200" width="122.39285714285711" height="28" fill="#8b1e3f" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="624.3928571428571" y="219.0" text-anchor="end" font-family="Playfair Display" font-size="17" font-weight="700" fill="#fff">+34</text>
-<text x="248" y="212.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">NFL</text>
-<text x="248" y="226.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">predictor: lag-1: prior year &middot; n=1195</text>
-<rect x="510.0" y="254" width="71.17857142857156" height="28" fill="#6b5e4a" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="573.1785714285716" y="273.0" text-anchor="end" font-family="Playfair Display" font-size="17" font-weight="700" fill="#fff">+20</text>
-<text x="248" y="266.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">Utah/Wyoming</text>
-<text x="248" y="280.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">predictor: ENSO state &middot; n=40</text>
-<rect x="510.0" y="292" width="6.0" height="28" fill="#6b5e4a" fill-opacity="0.88" stroke="#1a1208" stroke-width="1"/>
-<text x="522.0" y="311.0" font-family="Playfair Display" font-size="17" font-weight="700" fill="#6b5e4a">+2</text>
-<text x="248" y="304.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">New Mexico</text>
-<text x="248" y="318.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">predictor: ENSO state &middot; n=28</text>
-<rect x="492.10714285714283" y="330" width="17.892857142857167" height="28" fill="#b83a1e" fill-opacity="0.85" stroke="#1a1208" stroke-width="1"/>
-<text x="486.10714285714283" y="349.0" text-anchor="end" font-family="Playfair Display" font-size="17" font-weight="700" fill="#b83a1e">-5</text>
-<text x="248" y="342.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">Vermont</text>
-<text x="248" y="356.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">predictor: ENSO state &middot; n=40</text>
-<rect x="442.0357142857143" y="368" width="67.96428571428572" height="28" fill="#b83a1e" fill-opacity="0.85" stroke="#1a1208" stroke-width="1"/>
-<text x="436.0357142857143" y="387.0" text-anchor="end" font-family="Playfair Display" font-size="17" font-weight="700" fill="#b83a1e">-19</text>
-<text x="248" y="380.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">Pacific Northwest</text>
-<text x="248" y="394.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">predictor: ENSO state &middot; n=24</text>
-<rect x="336.75" y="406" width="173.25" height="28" fill="#b83a1e" fill-opacity="0.85" stroke="#1a1208" stroke-width="1"/>
-<text x="344.75" y="425.0" text-anchor="start" font-family="Playfair Display" font-size="17" font-weight="700" fill="#fff">-49</text>
-<text x="248" y="418.0" text-anchor="end" font-family="Playfair Display" font-size="14" font-weight="700" fill="#1a1208">Colorado</text>
-<text x="248" y="432.0" text-anchor="end" font-family="Roboto Mono" font-size="9" fill="#6b5e4a">predictor: ENSO state &middot; n=37</text>
-</svg>
+""" + chart + """
   </div>
 
   <h3 class="sh">What the sports side shows</h3>
@@ -210,3 +157,8 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
 </body>
 </html>
+"""
+
+dest = QUEUE / "078-cross-sport-persistence.html"
+dest.write_text(html)
+print(f"Wrote {dest}")
