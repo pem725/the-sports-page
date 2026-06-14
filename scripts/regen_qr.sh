@@ -7,7 +7,7 @@
 
 set -euo pipefail
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-URL='https://pem725.github.io/the-sports-page/?utm_source=qr&utm_medium=print'
+URL='https://thesportspage.net/?utm_source=qr&utm_medium=print'
 
 qr --error-correction=M "$URL" > "$REPO/assets/qr-code.png"
 echo "Wrote QR encoding: $URL"

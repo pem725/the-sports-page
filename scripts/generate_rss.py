@@ -3,7 +3,7 @@
 Generate feed.xml at the repo root from every file in published/.
 
 Buttondown polls this feed and emails subscribers when new items appear.
-The feed lives at https://pem725.github.io/the-sports-page/feed.xml.
+The feed lives at https://thesportspage.net/feed.xml.
 
 Idempotent: running multiple times overwrites the same file with the same
 content. Safe to call from autopublish.py after every publish.
@@ -18,7 +18,7 @@ from email.utils import formatdate
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUBLISHED = os.path.join(REPO, "published")
 OUT = os.path.join(REPO, "feed.xml")
-SITE = "https://pem725.github.io/the-sports-page"
+SITE = "https://thesportspage.net/"
 
 # Issue # → publication date map, derived from index.html so pubDates match
 # what readers see in the archive

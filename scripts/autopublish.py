@@ -517,7 +517,7 @@ def main():
 
     print()
     print(f"Published Issue #{issue_num}: {headline_plain[:60]}")
-    print(f"Live at: https://pem725.github.io/the-sports-page/published/{filename}")
+    print(f"Live at: https://thesportspage.net/published/{filename}")
     print("Done.")
 
 
