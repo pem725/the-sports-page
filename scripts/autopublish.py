@@ -496,6 +496,17 @@ def main():
         deeper_published = True
         print(f"Moved queue/{deeper_filename} → published/{deeper_filename}")
 
+    # Step 8.6: Render the per-issue Open Graph card (1200×630 PNG).
+    # Must run BEFORE the share-section refresh so the inject step picks up
+    # the new card path. Non-fatal if Pillow / fonts unavailable.
+    try:
+        run(f'python3 scripts/generate_og_images.py "{filename}"', check=False)
+        if deeper_published:
+            run(f'python3 scripts/generate_og_images.py "{deeper_filename}"', check=False)
+        print(f"OG card rendered for {filename}")
+    except Exception as e:
+        print(f"⚠ OG card render failed: {e}", file=sys.stderr)
+
     # Step 8.7: Refresh share section + Open Graph meta tags on the just-moved file.
     # Idempotent: replaces any existing share block with the current canonical version.
     # Source of truth lives in scripts/inject_share.py.
@@ -527,7 +538,9 @@ def main():
 
     # Step 11: Commit and push
     deeper_arg = f' "published/{deeper_filename}"' if deeper_published else ""
-    run(f'git add index.html "published/{filename}"{deeper_arg} QUEUE_ORDER.txt CLAUDE.md feed.xml')
+    og_card_path = f'assets/og/{filename.replace(".html", ".png")}'
+    og_arg = f' "{og_card_path}"' if os.path.isfile(os.path.join(REPO, og_card_path)) else ""
+    run(f'git add index.html "published/{filename}"{deeper_arg}{og_arg} QUEUE_ORDER.txt CLAUDE.md feed.xml')
     commit_msg = f"Publish Issue #{issue_num}: {headline_plain[:60]}"
     run(f'git commit -m "{commit_msg}"')
     run("git push origin main")

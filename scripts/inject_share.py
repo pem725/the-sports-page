@@ -21,6 +21,15 @@ from urllib.parse import quote
 REPO = Path(__file__).resolve().parent.parent
 BASE = "https://thesportspage.net"
 DEFAULT_OG_IMAGE = f"{BASE}/assets/banner.png"
+OG_DIR = REPO / "assets" / "og"
+
+
+def og_image_for(filename):
+    """Return canonical URL of per-issue OG card if it exists, else fallback."""
+    stem = Path(filename).stem
+    if (OG_DIR / f"{stem}.png").exists():
+        return f"{BASE}/assets/og/{stem}.png"
+    return DEFAULT_OG_IMAGE
 
 # ---------- helpers ----------
 TAG_STRIP_RE = re.compile(r"<[^>]+>")
@@ -164,17 +173,20 @@ def og_tags(filename, hed, deck):
     if len(description) > 200:
         description = description[:197].rsplit(" ", 1)[0] + "…"
     title = hed if hed else "The Sports Page"
+    image = og_image_for(filename)
     return f"""<!-- Open Graph + Twitter Card for social previews -->
 <meta property="og:title" content="{escape(title)}">
 <meta property="og:description" content="{escape(description)}">
 <meta property="og:url" content="{url}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Sports Page">
-<meta property="og:image" content="{DEFAULT_OG_IMAGE}">
+<meta property="og:image" content="{image}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{escape(title)}">
 <meta name="twitter:description" content="{escape(description)}">
-<meta name="twitter:image" content="{DEFAULT_OG_IMAGE}">"""
+<meta name="twitter:image" content="{image}">"""
 
 
 # ---------- main file processor ----------
