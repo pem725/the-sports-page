@@ -269,30 +269,33 @@ def render_stat_row(img, draw, fs, cards):
         # Card background
         draw.rectangle([x0, hero_top, x1, hero_bottom], fill=CARD)
 
-        # Value — centered horizontally, with generous gap to label below
-        vbox = draw.textbbox((0, 0), v, font=value_font)
-        vw = vbox[2] - vbox[0]
-        # Use the font ascent for actual visual height (textbbox includes descent that varies)
-        # Approximation: glyph visible height ≈ font.size * 0.72 for Playfair Black
-        visual_vh = int(value_font.size * 0.72)
-        vx = x0 + (cell_w - vw) // 2
-        vy = cy - visual_vh // 2 - 36  # lift up to make room for label
+        # Measure the value's actual rendered bbox FIRST so we can position
+        # everything else from the real ink bounds, not a heuristic.
+        # textbbox((0,0), ...) returns where ink would land if drawn at (0,0).
+        # That gives us actual top, bottom, width, height.
+        vbox_at_0 = draw.textbbox((0, 0), v, font=value_font)
+        vink_w = vbox_at_0[2] - vbox_at_0[0]
+        vink_h = vbox_at_0[3] - vbox_at_0[1]
 
-        # Final safety: never bleed beyond cell_inset
-        vx = max(vx, x0 + cell_inset)
-        if vx + vw > x1 - cell_inset:
-            # Should not happen given fit_font, but clamp just in case
-            vx = x1 - cell_inset - vw
+        # Vertical block (value + gap + label lines) — compute total height
+        # so we can center it within the cell.
+        label_lines = wrap(draw, label.upper(), label_font, inner_w)[:2]
+        gap_v_to_l = 32
+        lh = int(label_font.size * 1.5)
+        labels_block_h = len(label_lines) * lh
+        total_block_h = vink_h + gap_v_to_l + labels_block_h
 
+        block_top = hero_top + (hero_h - total_block_h) // 2
+
+        # Draw the value. Because textbbox at (0,0) reports a bbox top
+        # that may be > 0 (the font's top-of-box is above the highest ink),
+        # we offset by -vbox_at_0[1] to make `block_top` the ACTUAL ink top.
+        vx = x0 + (cell_w - vink_w) // 2 - vbox_at_0[0]
+        vy = block_top - vbox_at_0[1]
         draw.text((vx, vy), v, fill=INK, font=value_font)
 
-        # Label — wrapped to inner_w, max 2 lines
-        label_lines = wrap(draw, label.upper(), label_font, inner_w)[:2]
-        if not label_lines:
-            continue
-        lh = int(label_font.size * 1.4)
-        # Position label BELOW the value with a clear visual gap
-        ly = vy + visual_vh + 28
+        # Label — positioned cleanly below the value ink with the gap
+        ly = block_top + vink_h + gap_v_to_l
         for ln in label_lines:
             lnbox = draw.textbbox((0, 0), ln, font=label_font)
             lx = x0 + (cell_w - (lnbox[2] - lnbox[0])) // 2
