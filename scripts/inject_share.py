@@ -178,9 +178,13 @@ def og_tags(filename, hed, deck):
 
 
 # ---------- main file processor ----------
+# Match the SHARE SECTION block by anchoring at the comment marker and
+# extending to just before </body>. This avoids the trap of trying to find
+# the matching </div> or </section> inside HTML that contains nested divs.
+# Share sections are always at the END of the file by design, so anchoring
+# to </body> is safe and idempotent.
 SHARE_BLOCK_RE = re.compile(
-    r'<!-- SHARE SECTION -->\s*<(?:div|section) id="share".*?</(?:div|section)>'
-    r'\s*(?:<!--[^>]*COPY-LINK[^>]*-->\s*<script>.*?</script>)?',
+    r'<!-- SHARE SECTION -->.*?(?=</body>)',
     re.DOTALL,
 )
 OG_BLOCK_RE = re.compile(
