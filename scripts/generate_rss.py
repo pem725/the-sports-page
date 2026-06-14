@@ -76,6 +76,28 @@ def extract_meta(filepath):
     return title, deck, body
 
 
+def hero_image_html(fname, title):
+    """Prepend the issue's OG card as a clickable hero image in the email body.
+
+    OG cards live at /assets/og/<slug>.png with the same slug as the HTML
+    filename. They're 1200×630 and designed as a visual hook for social
+    previews — perfect doubling as an email lede.
+    """
+    slug = fname[:-5]  # strip ".html"
+    og_path = os.path.join(REPO, "assets", "og", f"{slug}.png")
+    if not os.path.isfile(og_path):
+        return ""
+    return (
+        f'<p style="text-align:center;margin:0 0 32px;">'
+        f'<a href="{SITE}published/{fname}" style="display:inline-block;">'
+        f'<img src="{SITE}assets/og/{slug}.png" '
+        f'alt="{html.escape(title)}" '
+        f'style="max-width:100%;height:auto;display:block;margin:0 auto;'
+        f'border:1px solid #c9962a;">'
+        f'</a></p>'
+    )
+
+
 def get_index_dates():
     """Map filename -> (issue_num, ISO date) by parsing index.html entries."""
     if not os.path.isfile(INDEX_HTML):
@@ -115,6 +137,7 @@ def main():
             continue  # not in index.html → skip
         num, dt = dates[fname]
         title, deck, body = extract_meta(os.path.join(PUBLISHED, fname))
+        body = hero_image_html(fname, title) + body
         items.append({
             "num": num,
             "title": f"#{num}: {title}",
