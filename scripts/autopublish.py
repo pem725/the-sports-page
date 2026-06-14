@@ -496,6 +496,23 @@ def main():
         deeper_published = True
         print(f"Moved queue/{deeper_filename} → published/{deeper_filename}")
 
+    # Step 8.7: Refresh share section + Open Graph meta tags on the just-moved file.
+    # Idempotent: replaces any existing share block with the current canonical version.
+    # Source of truth lives in scripts/inject_share.py.
+    try:
+        from inject_share import inject_into
+        share_path = os.path.join(PUBLISHED_DIR, filename)
+        changed, msg = inject_into(share_path)
+        print(f"Share section: {msg} ({filename})")
+        if deeper_published:
+            deeper_share_path = os.path.join(PUBLISHED_DIR, deeper_filename)
+            inject_into(deeper_share_path)
+            print(f"Share section: refreshed ({deeper_filename})")
+    except Exception as e:
+        print(f"⚠ share-section refresh failed: {e}", file=sys.stderr)
+        # non-fatal — the issue still publishes with whatever share section
+        # was already in the queued file
+
     # Step 9: Update QUEUE_ORDER.txt
     remove_from_queue_order(filename)
     print("Updated QUEUE_ORDER.txt")
