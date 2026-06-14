@@ -2,7 +2,7 @@
 
 *A daily sports statistics newsletter that takes one strange number and explains what it actually means.*
 
-**Live:** https://pem725.github.io/the-sports-page/
+**Live:** https://thesportspage.net/
 
 ---
 

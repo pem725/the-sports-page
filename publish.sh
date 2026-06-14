@@ -50,5 +50,5 @@ git commit -m "Publish: $FILENAME"
 git push
 
 echo ""
-echo "Live at: https://pem725.github.io/the-sports-page/published/$FILENAME"
+echo "Live at: https://thesportspage.net/published/$FILENAME"
 echo "Done."
