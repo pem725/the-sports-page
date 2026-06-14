@@ -33,14 +33,47 @@ def clean_text(s):
 
 
 def extract_meta(filepath):
-    """Return (title, deck, issue_num) from a published HTML file."""
+    """Return (title, deck, full_html_body) from a published HTML file.
+
+    full_html_body is the article's <main> contents (paragraphs, charts,
+    tables, headings, pull quotes — everything a reader expects in the
+    issue), with relative URLs absolutized and the email-irrelevant
+    bits (nav, footer, share section, skip-link) stripped out.
+    """
     with open(filepath, encoding="utf-8") as f:
         content = f.read()
-    hed_m = re.search(r'<h1\s+class="hed">(.*?)</h1>', content, re.DOTALL)
-    deck_m = re.search(r'<div\s+class="deck">\s*(.*?)\s*</div>', content, re.DOTALL)
+
+    # Headline and deck — accept either <h1 class="hed"> (older) or
+    # <h2 class="hed"> (newer Python-templated issues).
+    hed_m = re.search(r'<h[12]\s+class="hed"[^>]*>(.*?)</h[12]>', content, re.DOTALL)
+    # Deck can be either <div class="deck"> or <p class="deck">
+    deck_m = re.search(r'<(?:div|p)\s+class="deck"[^>]*>\s*(.*?)\s*</(?:div|p)>',
+                       content, re.DOTALL)
     title = clean_text(hed_m.group(1)) if hed_m else os.path.basename(filepath)
     deck = clean_text(deck_m.group(1)) if deck_m else ""
-    return title, deck
+
+    # Article body — prefer <main> if present (newer issues), fall back
+    # to <div id="main-content" class="paper"> or <div class="paper"> (older).
+    body_m = (
+        re.search(r'<main[^>]*>(.*?)</main>', content, re.DOTALL)
+        or re.search(r'<div[^>]*\bid="main-content"[^>]*>(.*?)</div>\s*(?:<!-- SHARE)',
+                     content, re.DOTALL)
+        or re.search(r'<div[^>]*\bclass="paper"[^>]*>(.*?)</div>\s*(?:<!-- SHARE|</body>)',
+                     content, re.DOTALL)
+    )
+    body = body_m.group(1) if body_m else f"<h2>{title}</h2><p>{deck}</p>"
+
+    # Absolutize relative URLs so images / links work in an email context.
+    body = re.sub(r'src="\.\./assets/', f'src="{SITE}assets/', body)
+    body = re.sub(r'href="\.\./assets/', f'href="{SITE}assets/', body)
+    body = re.sub(r'href="\.\./tools/', f'href="{SITE}tools/', body)
+    body = re.sub(r'href="\.\./published/', f'href="{SITE}published/', body)
+    body = re.sub(r'href="\.\./index\.html"', f'href="{SITE}"', body)
+    # Site-root references that survived earlier passes
+    body = body.replace('href="../', f'href="{SITE}')
+    body = body.replace('src="../', f'src="{SITE}')
+
+    return title, deck, body
 
 
 def get_index_dates():
@@ -81,23 +114,31 @@ def main():
         if fname not in dates:
             continue  # not in index.html → skip
         num, dt = dates[fname]
-        title, deck = extract_meta(os.path.join(PUBLISHED, fname))
+        title, deck, body = extract_meta(os.path.join(PUBLISHED, fname))
         items.append({
             "num": num,
             "title": f"#{num}: {title}",
             "deck": deck,
-            "link": f"{SITE}/published/{fname}",
-            "guid": f"{SITE}/published/{fname}",
+            "body": body,
+            "link": f"{SITE}published/{fname}",
+            "guid": f"{SITE}published/{fname}",
             "pubDate": formatdate(dt.timestamp(), usegmt=True),
         })
 
     items.sort(key=lambda x: -x["num"])  # newest first
+
+    # CDATA-wrap the body HTML so XML doesn't choke on inline HTML/SVG.
+    # Need to escape any literal "]]>" in the body to avoid breaking CDATA.
+    def cdata(body):
+        body = body.replace("]]>", "]]]]><![CDATA[>")
+        return f"<![CDATA[{body}]]>"
 
     rss_items = "\n".join(
         f"""    <item>
       <title>{html.escape(it['title'])}</title>
       <link>{html.escape(it['link'])}</link>
       <description>{html.escape(it['deck'])}</description>
+      <content:encoded>{cdata(it['body'])}</content:encoded>
       <pubDate>{it['pubDate']}</pubDate>
       <guid isPermaLink="true">{html.escape(it['guid'])}</guid>
     </item>"""
@@ -106,11 +147,13 @@ def main():
 
     now = formatdate(datetime.datetime.now().timestamp(), usegmt=True)
     feed = f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>The Sports Page</title>
-    <link>{SITE}/</link>
-    <atom:link href="{SITE}/feed.xml" rel="self" type="application/rss+xml" />
+    <link>{SITE}</link>
+    <atom:link href="{SITE}feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
     <lastBuildDate>{now}</lastBuildDate>
