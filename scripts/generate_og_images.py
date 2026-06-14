@@ -49,18 +49,32 @@ BOTTOM_STRIPE_H = 56
 PADDING_X = 80
 
 
+PLAYFAIR_BLACK = str(FONTS / "PlayfairDisplay-Black.ttf")
+ROBOTO_BOLD = str(FONTS / "RobotoMono-Bold.ttf")
+LIBRE_ITALIC = str(FONTS / "LibreBaskerville-Italic.ttf")
+
+
 def fonts():
     return {
-        "kicker": ImageFont.truetype(str(FONTS / "RobotoMono-Bold.ttf"), 18),
-        "url":    ImageFont.truetype(str(FONTS / "RobotoMono-Bold.ttf"), 20),
-        "value_xl": ImageFont.truetype(str(FONTS / "PlayfairDisplay-Black.ttf"), 120),
-        "value":    ImageFont.truetype(str(FONTS / "PlayfairDisplay-Black.ttf"), 90),
-        "label":    ImageFont.truetype(str(FONTS / "RobotoMono-Bold.ttf"), 13),
-        "pull_xl":  ImageFont.truetype(str(FONTS / "LibreBaskerville-Italic.ttf"), 44),
-        "pull_l":   ImageFont.truetype(str(FONTS / "LibreBaskerville-Italic.ttf"), 36),
-        "pull_m":   ImageFont.truetype(str(FONTS / "LibreBaskerville-Italic.ttf"), 30),
-        "deck":     ImageFont.truetype(str(FONTS / "LibreBaskerville-Italic.ttf"), 32),
+        "kicker": ImageFont.truetype(ROBOTO_BOLD, 18),
+        "url":    ImageFont.truetype(ROBOTO_BOLD, 20),
+        "label":  ImageFont.truetype(ROBOTO_BOLD, 13),
+        "label_s":ImageFont.truetype(ROBOTO_BOLD, 11),
+        "pull_xl":  ImageFont.truetype(LIBRE_ITALIC, 44),
+        "pull_l":   ImageFont.truetype(LIBRE_ITALIC, 36),
+        "pull_m":   ImageFont.truetype(LIBRE_ITALIC, 30),
+        "deck":     ImageFont.truetype(LIBRE_ITALIC, 32),
     }
+
+
+def fit_font(draw, text, font_path, max_width, max_size=120, min_size=40, step=4):
+    """Find the largest font size at which `text` fits in `max_width`."""
+    for size in range(max_size, min_size - 1, -step):
+        f = ImageFont.truetype(font_path, size)
+        bbox = draw.textbbox((0, 0), text, font=f)
+        if bbox[2] - bbox[0] <= max_width:
+            return f
+    return ImageFont.truetype(font_path, min_size)
 
 
 TAG_STRIP = re.compile(r"<[^>]+>")
@@ -212,56 +226,78 @@ def render_chart(img, draw, fs, svg_text):
 
 
 def render_stat_row(img, draw, fs, cards):
-    """Render the 3-up stat grid in the hero zone, matching the issue's own design."""
-    hero_top = TOP_STRIPE_H + 60
-    hero_bottom = H - BOTTOM_STRIPE_H - 60
+    """Render the 2- or 3-up stat grid. Each value gets its own font size
+    so that LONG numbers ("7,324") and SHORT numbers ("8") both fit cleanly
+    inside their cell without bleeding into neighbors."""
+    hero_top = TOP_STRIPE_H + 50
+    hero_bottom = H - BOTTOM_STRIPE_H - 50
     hero_h = hero_bottom - hero_top
+    cy = hero_top + hero_h // 2
 
     n = len(cards[:3])
     if n == 0:
         return False
     cards = cards[:n]
-    pad = 24
+    pad = 28   # gap between cells
+    cell_inset = 28  # inset from cell edges where text can sit
+
     avail_w = W - 2 * PADDING_X - (n - 1) * pad
     cell_w = avail_w // n
+    inner_w = cell_w - 2 * cell_inset  # actual safe drawable width
 
-    # Pick value font size: if any value is wide, downsize
-    value_font = fs["value_xl"]
+    # Per-card font sizes — find the largest size at which the value fits.
+    # Cap at 110pt so a single-character "8" doesn't dominate.
+    value_fonts = []
     for v, _ in cards:
-        bbox = draw.textbbox((0, 0), v, font=value_font)
-        if bbox[2] - bbox[0] > cell_w - 30:
-            value_font = fs["value"]
-            break
+        # Smaller cap when there are 3 cards (less width per cell)
+        max_size = 100 if n == 3 else 130
+        f = fit_font(draw, v, PLAYFAIR_BLACK, inner_w, max_size=max_size, min_size=40, step=4)
+        value_fonts.append(f)
+
+    # Normalize so all 3 use the SAME font size — the smallest one that all values fit
+    common_size = min(f.size for f in value_fonts)
+    value_font = ImageFont.truetype(PLAYFAIR_BLACK, common_size)
+
+    # Label font — smaller if the labels are long
+    max_label_chars = max(len(label) for _, label in cards)
+    label_font = fs["label"] if max_label_chars <= 32 else fs["label_s"]
 
     for i, (v, label) in enumerate(cards):
         x0 = PADDING_X + i * (cell_w + pad)
         x1 = x0 + cell_w
-        cy = hero_top + hero_h // 2
 
         # Card background
         draw.rectangle([x0, hero_top, x1, hero_bottom], fill=CARD)
 
-        # Value text — centered
+        # Value — centered horizontally, with generous gap to label below
         vbox = draw.textbbox((0, 0), v, font=value_font)
         vw = vbox[2] - vbox[0]
-        vh = vbox[3] - vbox[1]
+        # Use the font ascent for actual visual height (textbbox includes descent that varies)
+        # Approximation: glyph visible height ≈ font.size * 0.72 for Playfair Black
+        visual_vh = int(value_font.size * 0.72)
         vx = x0 + (cell_w - vw) // 2
-        vy = cy - vh // 2 - 30
-        # Color heuristic: gold for now (matches site .v default)
+        vy = cy - visual_vh // 2 - 36  # lift up to make room for label
+
+        # Final safety: never bleed beyond cell_inset
+        vx = max(vx, x0 + cell_inset)
+        if vx + vw > x1 - cell_inset:
+            # Should not happen given fit_font, but clamp just in case
+            vx = x1 - cell_inset - vw
+
         draw.text((vx, vy), v, fill=INK, font=value_font)
 
-        # Label below
-        # Wrap label to fit
-        label_font = fs["label"]
-        label_lines = wrap(draw, label.upper(), label_font, cell_w - 30)
-        lbox = draw.textbbox((0, 0), label_lines[0], font=label_font)
-        lh = lbox[3] - lbox[1]
-        ly = vy + vh + 24
-        for ln in label_lines[:2]:
+        # Label — wrapped to inner_w, max 2 lines
+        label_lines = wrap(draw, label.upper(), label_font, inner_w)[:2]
+        if not label_lines:
+            continue
+        lh = int(label_font.size * 1.4)
+        # Position label BELOW the value with a clear visual gap
+        ly = vy + visual_vh + 28
+        for ln in label_lines:
             lnbox = draw.textbbox((0, 0), ln, font=label_font)
             lx = x0 + (cell_w - (lnbox[2] - lnbox[0])) // 2
             draw.text((lx, ly), ln, fill=MUTED, font=label_font)
-            ly += lh + 6
+            ly += lh
 
     return True
 
