@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Pearson Correlation</title>
+<meta name="description" content="A friendly primer on the Pearson correlation — the number on a scale from negative one to plus one that tells you how tightly two things move together.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem;text-transform:capitalize}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 12</span><span>Pearson Correlation</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Pearson Correlation</h1>
+
+  <div class="deck">
+    A number on a scale from negative one to plus one that tells you how tightly two things move together. The newsletter calls it <em>r</em>. It is the single most-used statistic in the catalog and one of the most-misread numbers in pop science.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>One number, from -1 to +1, that scores how tightly two things move together.</h3>
+
+    <p>Plot last year&rsquo;s ERA on the x-axis. Plot this year&rsquo;s ERA on the y-axis. Each pitcher is one dot. If high-ERA pitchers last year are also high-ERA pitchers this year, the dots cluster along a diagonal line going up-and-right. If they have no relationship, the dots scatter all over the plot like buckshot.</p>
+
+    <p>The Pearson correlation, often written <em>r</em>, is one number that scores the tightness of that cluster. <strong>+1 means perfect: a perfectly straight line up-and-right. -1 means perfect in the opposite direction: a perfectly straight line down-and-right (high last year means low this year). 0 means no relationship at all.</strong></p>
+
+    <p>The middle of the scale is where most of the interesting reading happens. An <em>r</em> of +.9 is a fantastically tight relationship &mdash; almost never seen in noisy human systems like sports. An <em>r</em> of +.5 is what people who do this work call "strong." An <em>r</em> of +.3 is "moderate." An <em>r</em> of +.1 is "weak but visible." An <em>r</em> of 0.0 is noise. Negative numbers are the same scale, in the opposite direction.</p>
+
+    <p>One trap. <strong>The correlation in sports tends to look smaller than the underlying truth justifies.</strong> The reason is that everything in sports is shot through with single-season variance. A pitcher&rsquo;s "true" ERA can be a constant from one year to the next while his observed ERA jumps around within a window of plus-or-minus half a run. Some of the year-to-year scatter is talent change. Most of it is noise. The Pearson correlation only sees the observed jumps. It does not know which ones were talent and which ones were dice.</p>
+
+    <p>So when the newsletter reports an <em>r</em> of +.41 for some season-over-season metric, that is a strong relationship in the sports context. Not strong like a physics experiment. Strong like a thing that has a real signal underneath, fighting through a lot of noise to show up.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Karl Pearson, 1895, and why the squared version matters more than the raw one.</h3>
+
+    <p>Karl Pearson formalized the statistic in 1895, building on earlier work by Francis Galton. The formula is one of the prettier ones in statistics: divide the covariance of two variables by the product of their standard deviations. The result is dimensionless and bounded between -1 and +1, which is why it is so portable.</p>
+
+    <p>The thing the formula is actually measuring is <em>shared linear variation</em>. If you know one variable, how much of the variance in the other variable can you explain by drawing a straight line through the cloud of points? That is exactly what <em>r</em> answers, on a scaled-and-signed basis.</p>
+
+    <p>Here is the move most people miss. <strong>The squared correlation, called R-squared or the coefficient of determination, is more interpretable than the raw <em>r</em>.</strong> An <em>r</em> of +.5 sounds halfway between random and perfect. The R-squared of the same relationship is 0.25, meaning only twenty-five percent of the variation in one variable is explained by a linear relationship with the other. The other seventy-five percent is something else &mdash; noise, other variables, nonlinearity, all of it.</p>
+
+    <p>This is why the newsletter usually reports <em>r</em>-times-one-hundred on a -100-to-+100 scale rather than the raw +.41. The scaled version makes the magnitude feel like what it is: <em>not zero</em>, but also <em>not the whole story</em>. The headline metric of the newsletter&rsquo;s cross-sport persistence piece (Issue #78) was that the NBA&rsquo;s year-over-year predictor scores about +65 on that scale, MLB about +49, NFL about +34, and one snow-region predictor goes <em>negative</em> at -48. Translated back to raw Pearson terms: 0.65, 0.49, 0.34, and -0.48. All meaningful. All explaining only a portion of the variance, even at the top end.</p>
+
+    <p>Three failure modes worth knowing. The first is <strong>nonlinearity</strong>. Pearson&rsquo;s <em>r</em> only sees straight-line relationships. If two variables are tightly related but in a curve &mdash; say, performance versus age, which rises then falls &mdash; the correlation can come out near zero even though the underlying relationship is real. The fix is to look at the scatterplot, not just the number.</p>
+
+    <p>The second is <strong>outliers</strong>. A single weird point can move <em>r</em> by a lot, especially in small samples. Always plot the data before trusting the number.</p>
+
+    <p>The third, and the one that powers more bad sports analysis than any other, is <strong>"correlation does not imply causation"</strong> &mdash; a sentence so worn out that most people roll their eyes when they hear it. Roll your eyes if you want. The sentence is still true. A correlation of +.7 between coffee consumption and home runs in a season is real. It does not mean caffeine causes home runs. It probably means both are correlated with summer, or with games played, or with something a third variable is doing. The correlation is the signal that there is something to investigate. It is not the answer to the investigation.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li><a href="https://thesportspage.net/published/074-predictability.html">Issue #74 &middot; The Mets Are Seventy Times More Predictable Than the Snow</a> &mdash; year-over-year <em>r</em> as the central metric</li>
+      <li><a href="https://thesportspage.net/published/078-cross-sport-persistence.html">Issue #78 &middot; Cross-Sport Persistence</a> &mdash; <em>r</em>-times-100 as the headline scale across four leagues plus snow</li>
+      <li>Sunday Edition predictions occasionally use <em>r</em> for tracking-to-outcome scoring</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>

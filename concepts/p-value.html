@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — P-Value</title>
+<meta name="description" content="A friendly primer on the p-value — the most misinterpreted number in statistics, and the one academic sports work uses more than any other.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6.5vw,4rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 11</span><span>P-Value</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">P-Value</h1>
+
+  <div class="deck">
+    The number every academic paper reports and that almost nobody, including many of the authors, defines correctly. We will define it carefully, then we will tell you why a low one means less than it looks like.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>If the team were really a .500 team, how surprising is this streak?</h3>
+
+    <p>The p-value is the answer to one specific question, asked backwards. <strong>"If the world were boring &mdash; if my hypothesis-of-no-effect were true &mdash; how likely would I be to see something at least as weird as what I just saw?"</strong></p>
+
+    <p>Pretend your team is exactly .500. Pure coin flip. They play five games and win all five. How surprising is that, <em>assuming</em> they were really a .500 team the whole time?</p>
+
+    <p>One half to the fifth power. Three point one two five percent.</p>
+
+    <p>That number &mdash; 0.03125 &mdash; is the p-value of "five straight wins, given a true .500 team." It is the probability of seeing data at least this extreme, <em>if</em> the no-effect hypothesis (the team is .500) were true. A small p-value means the data are surprising under the boring hypothesis. A big p-value means they are not.</p>
+
+    <p>Convention in most of science is to call results "significant" if the p-value is below 0.05, the magical "less than one in twenty" threshold. The threshold is arbitrary. Ronald Fisher, the statistician who proposed it in 1925, said so explicitly. It stuck anyway because thresholds always do.</p>
+
+    <p>The single biggest source of bad inference about p-values is the one even careful people make: <strong>the p-value is NOT the probability that the hypothesis is wrong</strong>. It is the probability of <em>seeing this kind of data</em> if the hypothesis were right. Those are different statements. Confusing them is so common it has its own name: the <em>prosecutor&rsquo;s fallacy</em>. The Sports Page tries to never make this swap, and you should not either.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Why the p-value crisis is real, and why the newsletter mostly stays out of it.</h3>
+
+    <p>Three things have happened to p-values over the last century. First, they were proposed by Ronald Fisher as an informal way of measuring evidence against a null hypothesis &mdash; a "rule of thumb" for noticing when to look more carefully. Second, Jerzy Neyman and Egon Pearson formalized them into a rigid decision rule with thresholds and Type I and Type II errors. Third, scientific publishing took the threshold seriously and started rejecting papers whose p-values were above 0.05. By 2000, the p-value had stopped being a measure of evidence and started being a gatekeeper for publication. That is the version most academic sports research lives inside.</p>
+
+    <p>The problems are two. The first is <strong>p-hacking</strong>: when the threshold determines what gets published, researchers have an incentive to slice the data, change the analysis, drop the inconvenient subgroup, until <em>some</em> p-value comes in below 0.05. By the 2010s, "p-hacking" had a name, a literature, and a replication crisis in psychology and biomedicine that has not finished playing out. The second is <strong>misinterpretation</strong>. A p-value of 0.04 does not mean there is a 4% chance the null is true. It means: <em>if the null were true, there is a 4% chance of data this extreme</em>. Those two sentences feel like they mean the same thing. They do not. The American Statistical Association issued a formal statement on this in 2016 because the confusion had become so widespread.</p>
+
+    <p>The newsletter mostly stays out of the p-value game. The framework it uses instead is Bayesian: estimate the posterior probability of the hypothesis given the data, given a prior. That number <em>is</em> what most people thought a p-value was. The Bayesian framework is more honest about uncertainty, more direct about what is being claimed, and harder to game.</p>
+
+    <p>But you will encounter p-values constantly when you read academic sports analytics or any paper from a peer-reviewed journal. Three things to do when you see one. <strong>Ask what the null was.</strong> The p-value only makes sense relative to a specific no-effect hypothesis. <strong>Ask what was tried before settling on this analysis.</strong> If the researchers ran twenty analyses and reported the one with the lowest p-value, the 0.05 threshold is a mirage. <strong>And ask how big the effect is, separately from how significant it is.</strong> A statistically significant difference can be too small to matter. A statistically non-significant difference can be large and important &mdash; the p-value just says you cannot rule out the boring story yet.</p>
+
+    <p>The last point is the most important. Statistical significance and practical significance are different. A p-value tells you something about how much the data argue against a specific null. It does not tell you whether the result matters, whether it will replicate, or whether the researchers cherry-picked the analysis. Those are the questions worth asking. The p-value is a starting point, not a conclusion.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li>The newsletter mostly does not use p-values directly &mdash; it uses Bayesian posteriors, which are more honest about the question being asked</li>
+      <li>When peer-reviewed sports research is cited (occasionally, sparingly), the p-value will appear; we try to surface what the null was and how big the effect actually was, not just the threshold pass</li>
+      <li>Related: <a href="https://thesportspage.net/concepts/bayesian-inference.html">Bayesian inference</a> is the framework the newsletter prefers, for exactly the reasons in the deeper-dive above</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>
