@@ -1,0 +1,192 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, Bobby Bonilla, Deferred Comp, Compound Interest, Joy
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Bobby Bonilla Day</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.08);padding:.8rem 1rem;font-size:.82rem;color:#eef6ff;margin:.7rem 0;line-height:1.9;white-space:pre-wrap}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+</style>
+<meta property="og:title" content="Bobby Bonilla Day. The Math of a Karmic Debt the Mets Pay Every July 1.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/bobby-bonilla-day.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/bobby-bonilla-day.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bobby Bonilla Day. The Math of a Karmic Debt.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/bobby-bonilla-day.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="masthead">
+  <div class="kicker">A Statistical Holiday &middot; The Mets, In Perpetuity</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. 95</span>
+    <span>July 1, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Bobby Bonilla Day. <em>The Mets Are About to Mail a Check.</em></h1>
+
+  <div class="deck">
+    It is July 1. Somewhere in the Citi Field accounting office, a payment of one million, one hundred ninety-three thousand, two hundred forty-eight dollars and twenty cents is being sent to a sixty-two-year-old man who has not played a major league baseball game since 2001. This is the fifteenth such payment. There are eleven more to come. The math the Mets thought they were doing was beautiful. The math they actually did is a monument.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; In Honor of an Annual Tradition &middot; July 1, 2026</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">1986</div><div class="l">The Year the Karma Began</div></div>
+    <div class="sc"><div class="v now">2008</div><div class="l">The Year the Math Caught Up</div></div>
+    <div class="sc"><div class="v good">2035</div><div class="l">The Year the Checks Stop</div></div>
+  </div>
+
+  <p>The check goes out today. It will go out next July 1, and the one after that, and the one after that. The check will continue to go out until 2035, by which point Bobby Bonilla will be seventy-two years old, will have not played for the New York Mets in thirty-five years, and will have collected, in total, approximately thirty million dollars for not playing.</p>
+
+  <p>The Mets owed him five million, nine hundred thousand dollars in 1999. They could not, would not, or did not want to pay it in 1999. So they made him a different offer. Defer the payment. Take nothing for ten years. Then receive twenty-five annual payments, starting in 2011, of one million, one hundred ninety-three thousand, two hundred forty-eight dollars and twenty cents each. The interest rate, baked into the deal, was eight percent.</p>
+
+  <p>Bonilla, who is not stupid, said yes.</p>
+
+  <h2 class="sh">The math the Mets thought they were doing</h2>
+
+  <p>The Mets, in 1999, were not just a baseball team. They were an investment operation. Specifically, their principal owners, Fred Wilpon and Saul Katz, were investing the team&rsquo;s working capital with a soft-spoken Manhattan asset manager named Bernie Madoff, whose fund had been returning, by his own monthly statements, somewhere between ten and fifteen percent per year for as long as anyone could remember.</p>
+
+  <p>If you can borrow at eight percent and invest at twelve, you are running a printing press. Five million, nine hundred thousand dollars deferred for ten years at eight percent grows to about twelve point seven million dollars. The same five million, nine hundred thousand invested at twelve percent grows to about eighteen point three million. The difference &mdash; about five and a half million dollars &mdash; was, in the math the Mets thought they were doing, free money.</p>
+
+  <p>And the math kept going. Once the annual payments to Bonilla started in 2011, the Mets would have decades of Madoff returns piled up to draw down against the obligation. Even after paying Bonilla his one point one nine million per year, the leftover would still be growing inside Madoff&rsquo;s "fund." On paper, the deal was a beautiful piece of <span class="cc" data-preview="The 'what if it hadn't' question. The world we never get to observe is sitting right next door."><em>counterfactual</em><a class="cc-i" href="../concepts/counterfactuals.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> arithmetic: in the world where the Mets just paid Bonilla in 1999, they were out five point nine million. In the world where they deferred and invested with Madoff, they were eventually <em>ahead</em>, even after writing the checks.</p>
+
+  <p>The math has a name. It is called <strong>arbitrage</strong>, and it is the holiest word in finance. If the math is right, arbitrage is the closest thing in capitalism to a free lunch.</p>
+
+  <h2 class="sh">The math the Mets actually did</h2>
+
+  <p>On December 11, 2008, Bernie Madoff was arrested. The fund he had been running for thirty-seven years was a Ponzi scheme. There were no twelve percent returns. There were no returns at all. The "investments" of every client &mdash; the Wilpons included, allegedly to the tune of several hundred million dollars &mdash; had been recycled into payouts to other clients. When the music stopped, the money was gone, including the imaginary money the Mets had been planning to use to cover Bobby Bonilla&rsquo;s annual checks.</p>
+
+  <p>The Bonilla obligation, however, was not imaginary. It was a binding contract. Twenty-five years of annual payments of one million, one hundred ninety-three thousand, two hundred forty-eight dollars and twenty cents. The total nominal cost of the deal, summed across every July from 2011 through 2035, is roughly twenty-nine point eight million dollars.</p>
+
+  <p>The original obligation was five point nine million. Compound interest at eight percent over thirty-six years did the rest.</p>
+
+  <div class="box">
+    <h3>The compound-interest beat</h3>
+    <p>This is what eight percent over thirty-six years looks like:</p>
+    <div class="math">5,900,000 &times; (1.08)^36 &asymp; 94,200,000
+
+(The Mets pay 29.8M in installments, not 94M lump,
+because they get to spread it &mdash; but the math
+of compounding is the same engine in both directions.)</div>
+    <p>The lesson is general. Compound interest is the most patient force in finance. It does not care about your investment thesis. It does not care that you had a deal with a guy named Bernie. It does not care that Wilpon was a baseball man and Saul Katz was a real estate man and the team was your inheritance. It compounds.</p>
+  </div>
+
+  <h2 class="sh">The Buckner connection (a digression in good faith)</h2>
+
+  <p>In Game Six of the 1986 World Series, Bill Buckner, the Red Sox first baseman, missed a slow ground ball off the bat of Mookie Wilson. The ball rolled through his legs. Ray Knight scored. The Mets won the game and, two nights later, the World Series.</p>
+
+  <p>A theory popular among Mets fans of a certain age holds that this play, this ball, this slow grounder, was a cosmic-scale withdrawal from a karmic account the universe maintains for baseball teams. The thesis is that the Mets, on that night, took out a loan against the future. The universe charges interest.</p>
+
+  <p>We are not in the business of literally arguing this. There is no karma account. The universe does not balance ledgers. The Buckner play was a gold-glove first baseman bending in the wrong spot at the wrong time, fielding under a hooked line drive&rsquo;s worth of physics he could not see. It happens. It does not portend.</p>
+
+  <p>But it makes a hell of a frame. <strong>If you wanted to construct a narrative in which the Mets spent the next forty years giving the karma back &mdash; the Madoff fund, the Bonilla deal, the dynasty that never quite arrived, the Wilpon family selling the team in 2020 with the financial wreckage of two decades behind them &mdash; you could do it.</strong> The frame is not math. The math is what is inside the frame, and the math is what we are here for.</p>
+
+  <p>The math says: the Mets thought they had found arbitrage. The arbitrage was a Ponzi scheme. The contract was real, the counterparty&rsquo;s returns were not, and the compound-interest engine on the contract side has been turning every July 1 for fifteen years.</p>
+
+  <div class="pull">
+    <p>Compound interest is the most patient force in finance. It does not care that you had a deal with a guy named Bernie.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">The civic-mission close</h2>
+
+  <p>The reason this story keeps getting told &mdash; the reason July 1 keeps trending &mdash; is not that the dollar figures are large. They are not, by major-league standards. The reason is that the structure of the deal is the cleanest possible illustration of two ideas that the human brain has a hard time holding at the same time.</p>
+
+  <p>The first is <strong>compound interest is real, and it accumulates</strong>. The second is <strong>"free money" almost never is</strong>. The first explains why the deal looked attractive in 1999. The second explains why it stopped looking attractive in 2008. Both are still working today.</p>
+
+  <p>The next time you encounter a deal that sounds like arbitrage &mdash; in a sports trade, in a stadium financing package, in a free-agent signing the front office insists is a steal &mdash; ask the same two questions. <em>Where does the compounding go?</em> And <em>where is the catch?</em> If you do not know the answer to either, you may be playing the role of the 1999 Mets in someone else&rsquo;s deal.</p>
+
+  <p>One last thing, for the Mets fans. The contract is binding. The checks will continue. There are eleven more Bobby Bonilla Days between now and the last one in 2035. None of them will be a tragedy. The contract was signed in good faith and is being honored in full. <strong>Honor it. Celebrate it. The day is yours.</strong></p>
+
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Issue No. 95 &middot; July 1, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+
+</div>
+
+</body>
+</html>

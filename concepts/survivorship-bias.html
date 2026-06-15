@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Survivorship Bias</title>
+<meta name="description" content="A friendly primer on survivorship bias — why the people who made it tell stories that leave out the people who didn't.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,3.6rem);font-weight:900;line-height:1.05;margin-bottom:.4rem;text-transform:capitalize}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 04</span><span>Survivorship Bias</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Survivorship Bias</h1>
+
+  <div class="deck">
+    The story you hear is told by the people who made it. The people who did not are not in the room. This is the most quietly destructive bias in sports analysis, and it has a famous origin story involving bullet holes.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>Abraham Wald, the bullet holes, and the planes that came home.</h3>
+
+    <p>In 1943, the U.S. Air Force had a problem. American bombers were getting shot down at unsustainable rates over Europe. The brass needed to know where to put extra armor on the planes &mdash; armor is heavy, you cannot armor everywhere &mdash; and they asked statisticians to help.</p>
+
+    <p>The statisticians at the Statistical Research Group at Columbia were handed a stack of diagrams showing the bullet hole patterns on every bomber that had returned from a mission. The pattern was clear: holes everywhere on the wings, the fuselage, the tail. <em>Almost no holes</em> on the engines or the cockpit. The natural recommendation: armor the wings, fuselage, and tail. That is where the planes were getting hit.</p>
+
+    <p>Abraham Wald, a Hungarian-Jewish refugee mathematician working in the group, said: <strong>armor the engines and the cockpit.</strong></p>
+
+    <p>Why? Because they were only looking at the planes that came home. <em>Planes that got hit in the engines or the cockpit did not come home.</em> The diagrams the brass were handing out were a sample of survivors. The places without bullet holes in the surviving planes were not safe spots. They were the places where a hit was fatal.</p>
+
+    <p>This is survivorship bias. <strong>When you look at the people, teams, products, or strategies that made it, you are looking at a sample that has been pre-filtered by the very thing you are trying to study.</strong> The losers are not in your data because they did not survive to be measured.</p>
+
+    <p>In sports it shows up constantly. The aging curve you read about? It is a chart of the players who lasted long enough to age. The "successful coach" book that tells you what successful coaches do? Almost certainly applies just as well to a long list of failed coaches who did exactly the same things. The "great teams have great chemistry" piece is written about teams that won. We do not interview the bad teams about how their chemistry was equally great.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Why this is the bias that hides inside almost every success story.</h3>
+
+    <p>Robyn Dawes, the psychologist who spent the last third of his career fighting bad inference in clinical judgment, identified survivorship bias as a special case of a broader sin: <strong>conditioning on the dependent variable</strong>. You pick your sample based on the outcome you want to explain, and then you ask the sample what they did. The answer is necessarily a list of things the successful people did &mdash; and almost certainly also a list of things plenty of unsuccessful people did, who are not in the room to tell you.</p>
+
+    <p>The corrective move requires you to find or imagine the people who did not survive. In Wald&rsquo;s case, the answer was to flip the inference: <em>the absence of bullet holes in surviving planes told you where fatal hits landed</em>. In sports the move is harder because the unsuccessful players, coaches, and teams rarely get studied with the same intensity. Their stories are not written. Their methods are not interviewed.</p>
+
+    <p>So you have to build the comparison group yourself. The Sports Page does this on purpose in several recurring places. The Half-Life series treats every player who ever appeared in a major-league game as a member of the sample &mdash; not just the players who lasted long enough to qualify for batting titles. The Pyrrhic Victory series asks "what fraction of high-watermark performances were followed by collapse" by looking at <em>every</em> team that had the watermark, not the ones who kept winning. Without the comparison, every triumph looks like a roadmap. With it, most triumphs look like luck.</p>
+
+    <p>The standard rhetorical move that powers survivorship-bias-driven content is "they all did this." <em>All the great closers visualize the pitch before they throw it.</em> <em>All the championship teams have a leader in the locker room.</em> <em>All the elite hitters have quiet hands.</em> Maybe. But also: an enormous number of <em>not</em>-great pitchers visualized the pitch, plenty of <em>not</em>-championship teams had a vocal locker-room presence, and a lot of replacement-level hitters had hands as quiet as any hall-of-famer. The "all" in those sentences is a count over survivors. The base rate among non-survivors is the missing piece.</p>
+
+    <p>The instructive truth: <strong>if you cannot list ten people who did exactly the thing the successful person did, and failed, you are reading a survivorship-bias-shaped narrative</strong>. The narrative might still be right. It is just not yet evidence.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li><a href="https://thesportspage.net/published/068-defensive-reader-1-temporal.html">Issue #77 &middot; We Made an Inference Error Yesterday</a> &mdash; the Reader&rsquo;s Defense series names the family of inference errors this concept belongs to</li>
+      <li>The Half-Life series (queued) &mdash; every aging-curve piece you have ever read is the chart of survivors</li>
+      <li>Pyrrhic Victory series &middot; Sabres / Bobcats / Astros / Cincinnati &mdash; the watermark itself is the survival event</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>

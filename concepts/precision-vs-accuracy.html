@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Precision vs. Accuracy</title>
+<meta name="description" content="A friendly primer on the difference between precision and accuracy — two words that sound like they should be synonyms but live on different axes.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 07</span><span>Precision vs. Accuracy</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Precision <em>vs.</em> Accuracy</h1>
+
+  <div class="deck">
+    Two words that sound like they should be synonyms. They live on perpendicular axes. A measurement can be precisely wrong, or roughly right, and the difference matters.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>The dartboard. Two ways to throw.</h3>
+
+    <p>Imagine a dartboard. You throw five darts. They all land in a tight cluster &mdash; touching each other &mdash; about six inches from the bullseye.</p>
+
+    <p>You are <strong>precise</strong>. The darts agree with each other. The grouping is small.</p>
+
+    <p>You are <strong>not accurate</strong>. The grouping is in the wrong place.</p>
+
+    <p>Now imagine throwing five darts that scatter all over the board &mdash; one hits the wall, one hits the bullseye, one lands in the twenty-five ring. The center of all five throws, averaged together, is right on the bullseye.</p>
+
+    <p>You are <strong>accurate</strong>. On average, you hit the target.</p>
+
+    <p>You are <strong>not precise</strong>. The grouping is huge.</p>
+
+    <p>That is the whole concept. <strong>Accuracy is how close you are to the truth on average. Precision is how close your readings are to each other.</strong> A measurement can be precise and wrong (the tight cluster six inches off). A measurement can be accurate and noisy (the scattered average). The two have nothing to do with each other except that we keep using the words like they are synonyms, which they are not.</p>
+
+    <p>This matters in sports because a lot of the numbers you read are presented as if they were precise <em>and</em> accurate. The expected runs allowed projection of 3.17. The expected wins of 81.4. The predicted championship probability of 23.6%. All three of those numbers are presented to two or three decimal places, which is a precision claim. Whether they are accurate is a separate question.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Significant digits, false precision, and the 6.86-issues-a-week problem.</h3>
+
+    <p>The header of this newsletter says <em>6.86 issues per week</em>. That number is doing work. It is communicating something the more natural "about seven a week" would not. Specifically: the newsletter is committing to a cadence with <strong>three digits of precision</strong>. The 6.86 is not seven. It is something specific: roughly six issues most weeks, with the occasional bonus or skipped day, producing an average that is precisely 6.86 over enough weeks.</p>
+
+    <p>The number of <strong>significant digits</strong> in a measurement is a statement about how much confidence the measurer has in the answer. Six-point-eight-six is making a stronger claim than seven. Seven is making a stronger claim than "about a half-dozen." Each step adds information. Each step also raises the bar for being right.</p>
+
+    <p>This is where sports numbers go wrong constantly. A player&rsquo;s "expected" batting average reported as .293 looks like it is communicating precision to the thousandths. The underlying calculation is not that confident. The model that produced it has a confidence interval that is probably twenty to fifty points wide. Reporting it as .293 is a false-precision claim. Reporting it as <strong>"around .28 to .32, best guess .29"</strong> is what the math actually justifies.</p>
+
+    <p>The same problem haunts win-probability charts that update to the tenth of a percent in real time, projection systems that report fractional wins, and predicted-margin-of-victory numbers that read like the bookies have a crystal ball. All of those are precision-coded statements about quantities that are accuracy-bounded. The math knows its own uncertainty. The presentation often does not.</p>
+
+    <p>The corrective move is to <strong>match the digits to the confidence</strong>. If you only know the win total within five games, report a range, not a number. If you know the championship probability to within ten percentage points, do not write 23.6%. Write "about a one-in-four chance" or "low twenties." The decimal point is a promise. Do not write a promise you cannot keep.</p>
+
+    <p>One historical note. The accuracy-precision distinction was named in metrology &mdash; the science of measurement &mdash; and has been a quietly important idea in chemistry, physics, and engineering for a century. The same idea has only slowly migrated into the statistical conversation around sports. The newsletter holds it as a discipline: <strong>only show as many digits as the underlying math earns</strong>. That is also why the masthead says 6.86, not 7, and not 6.86458571. The first cheats up. The third cheats down. The middle is the truth.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li>The masthead "6.86 issues per week" is a precision-vs.-accuracy demonstration. Hover over the number on the homepage for the long version.</li>
+      <li>Sunday Editions &mdash; predictions are scored against ranges where possible, not point estimates</li>
+      <li>Half-Life series (queued) &mdash; the survival probabilities are reported to one digit on purpose</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>

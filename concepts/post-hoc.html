@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Post Hoc Ergo Propter Hoc</title>
+<meta name="description" content="A friendly primer on post hoc ergo propter hoc — Latin for 'after this, therefore because of this' — the most common bad inference in sports media.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 05</span><span>Post Hoc</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Post Hoc <em>Ergo Propter Hoc</em></h1>
+
+  <div class="deck">
+    "After this, therefore because of this." A medieval logic teacher coined the phrase; sports radio has been making a living off it for thirty years.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>The rooster crowed, and then the sun came up.</h3>
+
+    <p>The rooster crowed. Then the sun came up. The rooster, looking around, decided that he had made the sun come up. He grew very proud. He held meetings. He gave talks at chicken conferences.</p>
+
+    <p>This is the structure of the post hoc fallacy. <strong>The rooster has a real observation</strong> &mdash; the sun did come up after he crowed &mdash; <strong>and a completely wrong explanation</strong>. The crowing and the sunrise are both real. The "therefore" between them is the addition the rooster put there himself.</p>
+
+    <p>Sports media does this constantly. A team loses three in a row. The coach makes a speech. The team wins the next five. Sportswriters write about the speech. The Sports Page is doing a hundred-word version of this sentence right now, and you can feel how natural it is. The speech and the winning are both real. The "therefore" between them is something we added, on our own, after the fact.</p>
+
+    <p>The Latin name &mdash; <em>post hoc ergo propter hoc</em>, "after this, therefore because of this" &mdash; has been around since at least the medieval logic textbooks. The reason it has stuck around is that the brain is wired to do it. The brain is a story-making engine, and stories need causes. When two things happen in sequence, the brain reaches for "B happened because A did" almost before you can check whether the story has any evidence at all.</p>
+
+    <p>The corrective move is not to stop telling stories. It is to ask, every time: <strong>would B have happened anyway, even if A hadn&rsquo;t?</strong> If a player slumps for two weeks and then snaps out of it, would he have snapped out of it without the haircut, the shower, the talk with the hitting coach? The base rate of two-week slumps that end on their own without any intervention at all is very high. The base rate is doing most of the work.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>The David Hume version, the temporal-contiguity version, and the reason this one is so hard to see.</h3>
+
+    <p>The Scottish philosopher David Hume, writing in 1748, gave the cleanest version of the diagnosis. He pointed out that we never actually observe causation. We observe one event, then another. The "cause" we attribute to the first event is something the mind <em>adds</em>, on its own, after the second event happens. Hume was not saying causation does not exist. He was saying we do not see it directly. We infer it from the sequence, and the inference is not always justified.</p>
+
+    <p>The post hoc fallacy is what happens when the inference is sloppy. The general pattern: <em>A happened, then B happened, therefore A caused B</em>. Three ways this can go wrong:</p>
+
+    <p>First, <strong>B might have happened anyway</strong>. Most slumps end. Most cold streaks warm up. Most teams in a 5-of-7 hole come back at some rate close to the historical average. When B is something that happens regularly without any A in the picture, calling A the cause overstates A&rsquo;s contribution.</p>
+
+    <p>Second, <strong>A and B might both be caused by a third thing.</strong> The hitting coach&rsquo;s talk happened the same week that the pitcher faced was a five-and-fly soft-tosser, the schedule turned home, and the slumping hitter got two days off to rest a tweak. Any of those could be doing the actual work the column credits to the talk. The talk and the recovery are both real. The causal arrow between them is added.</p>
+
+    <p>Third, <strong>A might be a consequence of B starting to happen</strong>. The locker-room speech may have been triggered by the slump showing early signs of ending &mdash; the manager felt the momentum shift first and seized the moment to give the talk that "did" it. The arrow runs backwards.</p>
+
+    <p>In sports the most common and most diagnostic version is what Issue #77 called <strong>temporal contiguity</strong> &mdash; the special case where the two events happen <em>close together in time</em> and so the post hoc inference feels overwhelmingly natural. The closer in time, the harder it is to resist. The Notre Dame valuation was published the same week as the 11th-place finish, and the temptation to make one explain the other was almost irresistible. It was also wrong, because one was a forward-looking measurement of the future and one was a backward-looking measurement of the past.</p>
+
+    <p>The procedural defense is the same as for every cousin of confirmation bias: <strong>before accepting "A caused B," list the alternative explanations and the base rate of B happening without A</strong>. If the list is long and the base rate is high, the post hoc story is decorative, not causal. It might be true. It is not yet evidence.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li><a href="https://thesportspage.net/published/068-defensive-reader-1-temporal.html">Issue #77 &middot; We Made an Inference Error Yesterday</a> &mdash; the temporal-contiguity case, with the Notre Dame example</li>
+      <li><a href="https://thesportspage.net/published/055-superstitions.html">Issue #54 &middot; Why Every Baseball Superstition Looks Like It Worked</a> &mdash; the rooster crowing, but in pinstripes</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>

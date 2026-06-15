@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Sample Size</title>
+<meta name="description" content="A friendly primer on sample size — why three at-bats is not a hot streak, why spring training stats do not predict, and why the law of large numbers is everyone's friend.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,3.6rem);font-weight:900;line-height:1.05;margin-bottom:.4rem;text-transform:capitalize}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 06</span><span>Sample Size</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Sample Size</h1>
+
+  <div class="deck">
+    Three at-bats is not a hot streak. It is three at-bats. The law of large numbers is everyone&rsquo;s friend &mdash; including the player you are about to give up on, and the rookie you are about to crown.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>Flip a fair coin five times. Now decide whether it is a fair coin.</h3>
+
+    <p>Take a coin out of your pocket. Flip it five times. Suppose it lands heads four times and tails once. Is the coin biased toward heads?</p>
+
+    <p>You cannot tell. A perfectly fair coin lands four-of-five heads about <strong>nineteen percent of the time</strong>. That is roughly one out of every five coin sessions. If you decide the coin is biased every time you see a four-of-five result, you will be wrong about nineteen percent of the time, which is roughly the rate at which sports broadcasters anoint new superstars during spring training.</p>
+
+    <p>Now flip the coin five thousand times. If it lands heads four thousand times, the coin is biased. Five thousand flips is a sample big enough that we can trust the pattern. Five flips is not.</p>
+
+    <p>Sample size is just the question: <strong>how many readings do I have, and is it enough for the pattern to be real?</strong> Almost every "this is a trend" sentence in sports media is written about a sample that would not convince anyone if it were a coin in their own pocket. A pitcher with a 1.20 ERA through three starts? Tiny sample. A hitter who is 0-for-13? Tiny sample. A team that has won six of seven? Tiny sample.</p>
+
+    <p>The corrective move is not to ignore short streaks. It is to <strong>discount them in proportion to how short they are</strong>. The pitcher&rsquo;s real ERA, given his three starts, is somewhere between his three-start number and his career number. The hitter&rsquo;s 0-for-13 means something, but probably less than it feels like it means. The team&rsquo;s 6-of-7 stretch is real and also nearly meaningless about next month.</p>
+
+    <p>The law of large numbers is the formal statement of why: <strong>as the sample gets bigger, the observed average gets closer to the true average</strong>. The math is patient. It just takes more flips than the brain wants to wait for.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Why the same sample is "big enough" for one question and tiny for another.</h3>
+
+    <p>The first complication: there is no universal "big enough." Sample size only means something <em>relative to what you are trying to detect</em>. To distinguish a .250 hitter from a .350 hitter, you might only need a few hundred plate appearances. To distinguish a .280 hitter from a .290 hitter, you need <strong>thousands</strong>. Same sport, same data type, vastly different signal-to-noise ratios depending on the question.</p>
+
+    <p>This is why "sample size" cannot be answered with a number. It has to be answered with a number <em>and</em> an effect size you are trying to see. The smaller the difference between the two hypotheses, the larger the sample you need to tell them apart. This is the same reason political polling needs different sample sizes for "is the race competitive" versus "is one candidate ahead by half a point."</p>
+
+    <p>The second complication: <strong>not all observations are equally informative</strong>. Sixty plate appearances against the same pitcher is not the same as sixty plate appearances against sixty different pitchers. Five games in April against weak teams is not the same as five games in October against good ones. The math says "n=60" or "n=5," but the actual signal can be much smaller. When the newsletter discounts a short stretch, it is doing both: shrinking for sample size <em>and</em> shrinking for the quality of the sample.</p>
+
+    <p>The third complication: <strong>the brain is allergic to admitting it does not know</strong>. The honest answer to "is this rookie&rsquo;s 1.20 spring ERA real?" is "we cannot tell from the sample we have." The brain rejects that answer. The brain wants a verdict. The procedural defense of small samples is to write down the honest answer anyway, even if it reads like a non-answer, because the alternative is the brain producing the wrong answer with confidence.</p>
+
+    <p>The Bayesian framing The Sports Page uses constantly is just sample-size discipline made formal. <strong>Start with the league average as your prior. Update toward the player&rsquo;s observed performance, weighted by how much you observed.</strong> Three at-bats moves your estimate almost not at all. Three thousand moves it almost the whole way. The math handles the discount for you. All you have to do is trust the math more than you trust the gut, which is hard, because the gut is loud and the math is quiet.</p>
+
+    <p>One last note. The "law of large numbers" sounds like a mystical sports cliche, but it is one of the most precise results in probability theory. Jacob Bernoulli proved it in 1713. For two centuries it has been telling us, with mathematical certainty, that <em>given enough trials, the observed frequency of an event converges to its true probability</em>. The trick is that "enough" is sometimes more trials than a player gets in a career. The law is true. It is also slow.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li>Sunday Editions &mdash; the prediction scorecard discounts short stretches on purpose</li>
+      <li>Half-Life series (queued) &mdash; the binary survival metric was chosen because batting-average shrinkage needs a much larger sample to mean anything</li>
+      <li><a href="https://thesportspage.net/published/064-mariners-streak.html">Issue #79 &middot; How Do You Win Eight Straight</a> &mdash; the 8&ndash;3 and 7&ndash;1 are exactly the sample size where the brain wants to draw a conclusion the math says it shouldn&rsquo;t</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>
