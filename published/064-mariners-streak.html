@@ -82,6 +82,12 @@ table.rec .worse .mono{color:var(--rust)}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
 </style>
 <!-- Open Graph + Twitter Card for social previews -->
 <meta property="og:title" content="How Do You Win Eight Straight and Then Lose by Six? You Build an Offense Designed to Do Exactly That.">
@@ -149,7 +155,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   <div class="two-col">
     <div>
       <p>Look at the shape of Seattle&rsquo;s offense, not its total. They are hitting .234 as a team &mdash; 23rd in the majors &mdash; while slugging .398, which ranks 9th. That split is the entire story. A lineup that ranks near the bottom in getting on base but near the top in power doesn&rsquo;t manufacture runs single by single; it waits for the three-run homer. Their overall run total (267, right at league average) is built the high-wire way.</p>
-      <p>An offense that depends on the home run is, by its nature, a high-variance offense. Singles and walks are frequent, low-impact events &mdash; they smooth scoring out. Home runs are rare, high-impact events &mdash; they make scoring lumpy. A team that lives on the lumpy kind will post an 8 one night and a 1 the next without changing a thing about who they are.</p>
+      <p>An offense that depends on the home run is, by its nature, a <span class="cc" data-preview="Hot streaks cool off, cold streaks warm up. The gravity of the average pulling everything back to itself.">high-variance<a class="cc-i" href="../concepts/regression-to-the-mean.html" target="_blank" rel="noopener" aria-label="What is regression to the mean? Open primer.">i</a></span> offense. Singles and walks are frequent, low-impact events &mdash; they smooth scoring out. Home runs are rare, high-impact events &mdash; they make scoring lumpy. A team that lives on the lumpy kind will post an 8 one night and a 1 the next without changing a thing about who they are.</p>
     </div>
     <div>
       <p>This is why the streak and the blowout loss are not in tension. During eight straight wins, the homers were landing &mdash; three in a single game against the Mets. In the finale, against a pitcher who kept the ball in the yard, the same lineup had no backup plan and scored once. Same hitters, same approach, opposite result. The dice simply came up differently.</p>

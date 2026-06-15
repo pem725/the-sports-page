@@ -99,6 +99,12 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .box.green-box h3{color:#e0f0e8}
 .box.green-box p{color:#c8edcf}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
@@ -140,7 +146,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   <h1 class="hed">Carolina Leads 3&ndash;2. The 75% Comp Spent Last Week at 31%. <em>It&rsquo;s Back.</em></h1>
 
   <div class="deck">
-    Last Sunday promised this edition would close the Issue #56 Carolina historical comp. It cannot &mdash; Game 6 is tonight in Las Vegas, and the comp does not grade until the Cup is awarded. But here is what happened to the math in seven days: it went from 75% to 31% to 75% again. A Bayesian prior that correctly encodes the structure of a situation does not disappear when things get uncomfortable. It updates, and it waits. This week, it was right to wait.
+    Last Sunday promised this edition would close the Issue #56 Carolina historical comp. It cannot &mdash; Game 6 is tonight in Las Vegas, and the comp does not grade until the Cup is awarded. But here is what happened to the math in seven days: it went from 75% to 31% to 75% again. A <span class="cc" data-preview="A Bayesian prior is a formalized base rate — how often does this kind of thing happen, before we know the specifics of this case.">Bayesian prior<a class="cc-i" href="../concepts/base-rate.html" target="_blank" rel="noopener" aria-label="What is a base rate? Open primer.">i</a></span> that correctly encodes the structure of a situation does not disappear when things get uncomfortable. It updates, and it waits. This week, it was right to wait.
   </div>
 
   <div class="byline">By The Sports Page &middot; June 14, 2026 &middot; Sunday Edition No. 010</div>

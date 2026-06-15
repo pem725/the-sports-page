@@ -68,6 +68,7 @@ def extract_meta(filepath):
     body = re.sub(r'href="\.\./assets/', f'href="{SITE}assets/', body)
     body = re.sub(r'href="\.\./tools/', f'href="{SITE}tools/', body)
     body = re.sub(r'href="\.\./published/', f'href="{SITE}published/', body)
+    body = re.sub(r'href="\.\./concepts/', f'href="{SITE}concepts/', body)
     body = re.sub(r'href="\.\./index\.html"', f'href="{SITE}"', body)
     # Site-root references that survived earlier passes
     body = body.replace('href="../', f'href="{SITE}')
