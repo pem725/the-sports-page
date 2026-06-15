@@ -218,9 +218,67 @@ def cross_sport_scoreboard():
         save_svg("078-cross-sport")
 
 
+# ──────────────────────────────────────────────────────────────────────
+# Cartoon 5 — Issue #082 (Sixteen and three: NHL 16-3 first time ever)
+# ──────────────────────────────────────────────────────────────────────
+def sixteen_and_three():
+    """One tiny bar in a sea of bigger ones — the visceral case for rarity.
+
+    Shows the distribution of NHL champion playoff losses, 1987-2026.
+    Every bar is the count of champions with that many losses. The
+    "3 losses" bar is a SINGLE dot — the 2026 Hurricanes are the only
+    NHL team ever to finish a 16-win playoff run at 16-3. Annotation
+    drives the point: "this happened exactly once."
+    """
+    with with_xkcd():
+        plt.rcParams["font.family"] = HUMOR
+        fig, ax = plt.subplots(figsize=(8.5, 5.4))
+        setup_axes(ax)
+
+        # Verified NHL champion loss-count distribution (1987-2026, ex-2005)
+        loss_counts = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+        n_champs    = [1, 1, 5, 3, 9, 10, 5, 2, 3]
+        colors      = [STEEL if l != 3 else RUST for l in loss_counts]
+
+        bars = ax.bar(loss_counts, n_champs, color=colors, edgecolor=INK,
+                      linewidth=2, width=0.7)
+
+        # Value labels on top of each bar
+        for bar, v in zip(bars, n_champs):
+            ax.text(bar.get_x() + bar.get_width()/2, v + 0.25,
+                    f"{v}", ha="center", va="bottom", color=INK, fontsize=11)
+
+        ax.set_xlabel("LOSSES ON THE WAY TO THE CUP", color=INK)
+        ax.set_ylabel("NHL CHAMPIONS,\n1987-2026", color=INK)
+        ax.set_title("ONE OF THESE IS NOT LIKE THE OTHERS", color=INK, pad=22)
+
+        ax.set_xticks(loss_counts)
+        ax.set_yticks([])
+        ax.set_ylim(0, 13.5)
+        ax.set_xlim(1, 11.5)
+
+        # Annotation pointing at the lone "3" bar
+        ax.annotate("HAPPENED EXACTLY ONCE\n(THE 2026 HURRICANES)",
+                    xy=(3, 1.2), xytext=(5.5, 6.5),
+                    color=RUST, ha="center",
+                    fontsize=11,
+                    arrowprops=dict(arrowstyle="->", color=RUST, lw=2.2,
+                                    connectionstyle="arc3,rad=-.3"))
+
+        # Smaller annotation: the modal/common shape
+        ax.annotate("WHAT A CHAMPION\nUSUALLY LOOKS LIKE",
+                    xy=(7, 10.2), xytext=(8.7, 12.2),
+                    color=STEEL, ha="center", fontsize=10,
+                    arrowprops=dict(arrowstyle="->", color=STEEL, lw=1.8,
+                                    connectionstyle="arc3,rad=.2"))
+
+        save_svg("082-sixteen-and-three")
+
+
 if __name__ == "__main__":
     predictability_bars()
     variance_curve()
     half_life_runway()
     cross_sport_scoreboard()
-    print(f"\n4 cartoons in {OUT.relative_to(REPO)}")
+    sixteen_and_three()
+    print(f"\n5 cartoons in {OUT.relative_to(REPO)}")
