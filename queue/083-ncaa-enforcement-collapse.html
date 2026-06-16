@@ -1,0 +1,147 @@
+<!-- PUBLISH-META
+topic: CFB
+tags: CFB:cfb, NCAA, Methods, Reader's Defense, Integrity, Institutions
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — What "Banned" Used to Mean</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+</style>
+<meta property="og:title" content="What 'Banned' Used to Mean. A Lubbock County Judge Just Showed What It Means Now.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/083-ncaa-enforcement-collapse.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/083-ncaa-enforcement-collapse.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What 'Banned' Used to Mean.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/083-ncaa-enforcement-collapse.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch &middot; College Football &middot; The Sorsby Case, Part I</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. 81</span>
+    <span>June 17, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<div id="main-content" class="paper">
+
+  <h1 class="hed">What &ldquo;Banned&rdquo; Used to Mean. <em>A Lubbock County Judge Just Showed What It Means Now.</em></h1>
+
+  <div class="deck">
+    The NCAA declared Brendan Sorsby permanently ineligible for college football. A state-court judge in Texas overruled the NCAA. The Big 12 conference sued its own member school. Yesterday Sorsby withdrew his lawsuit and announced for the NFL Supplemental Draft. This looks like the NCAA winning. It is the opposite.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; The Reader's Defense &middot; Methods, Institutions, and Enforcement</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">9,000+</div><div class="l">Bets Placed &middot; Sorsby, 2022&ndash;2025</div></div>
+    <div class="sc"><div class="v now">7</div><div class="l">Conditions in the Texas Court Injunction</div></div>
+    <div class="sc"><div class="v good">1</div><div class="l">Lubbock County Judge Who Released Him</div></div>
+  </div>
+
+  <p>The NCAA spent decades constructing the word <em>banned</em>. In the institution&rsquo;s charter language it is the heaviest available penalty: permanent ineligibility for college sport, full stop, no appeal beyond the NCAA&rsquo;s own internal process. The word has weight because of what is behind it: the implicit deal every athlete makes, the moment they accept a scholarship, that the rules apply because everyone agreed they apply.</p>
+
+  <p>On June 8, 2026, Lubbock County Judge Ken Curry granted a temporary injunction that allowed Brendan Sorsby to play college football despite an NCAA permanent-ineligibility ruling. The injunction came with seven conditions, including a two-game suspension and mandatory monthly compliance reports. Yesterday Sorsby withdrew the lawsuit and applied for the supplemental draft. The NCAA gets to call this a win. It is not a win. <strong>The deterrent value of a NCAA "permanent ineligibility" depends entirely on whether the next athlete believes the ban is permanent. After June 8, the next athlete has every reason not to.</strong></p>
+
+  <h2 class="sh">The integrity question, briefly</h2>
+
+  <p>The reason there are gambling rules at all is structural, not moral. A team sport assumes a unitary objective function on the field: <em>win the game.</em> Every statistic the sport produces, every inference a coach makes from a film cut-up, every contract the front office writes, depends on that assumption holding. If even one player has a side bet, the function is no longer unitary. The pitcher who walks the leadoff hitter "to set up the double play" &mdash; was it the matchup or was it the line? The receiver who drops the catch &mdash; was it concentration or was it the over?</p>
+
+  <p>The NCAA findings, which Sorsby has not disputed, document about nine thousand bets totaling around ninety thousand dollars over four years, including forty-plus wagers on Indiana football and individual Hoosiers during the 2022 season &mdash; while he was on the roster, redshirting. He has consistently said all bets were on Indiana to succeed, and that he never bet on games in which he played. The NCAA&rsquo;s case is not that he threw games. The case is that the existence of his book corrupts the inferential basis of every play he was on the field for. <strong>You cannot tell which plays were honest after the fact.</strong> That is the Pete Rose argument, the 1919 Chicago White Sox argument, and the reason the rule exists.</p>
+
+  <p>So far, none of this is new. What is new starts at the courthouse.</p>
+
+  <h2 class="sh">The institution loses jurisdiction</h2>
+
+  <p>For most of the twentieth century, NCAA enforcement was effectively unappealable. A permanently-ineligible player could sue, but the courts mostly deferred to the NCAA as a voluntary private association with the right to set its own rules. That presumption has been falling, piece by piece, for at least a decade: the antitrust losses in <em>O&rsquo;Bannon</em>, the NIL-rights collapse, the transfer-portal restraining orders. Each was a separate suit. Each one chipped a piece off the structural assumption.</p>
+
+  <p>The Sorsby injunction is the next chip. A Lubbock County judge &mdash; a state-court judge in one Texas county &mdash; rewrote the NCAA&rsquo;s penalty in real time, complete with the substitute punishment the judge thought was appropriate. The NCAA appealed and lost the player anyway, because the player saw the injunction working, and chose to leave. That is the structural fact. <strong>Every athlete now knows that "permanently ineligible" is renegotiable in any state court in the country.</strong></p>
+
+  <p>This is not a story about whether Sorsby&rsquo;s case had merit. It is a story about what the existence of his court-granted reinstatement tells the next athlete. The next athlete reads the wire copy and understands: <em>if I am willing to file, the NCAA penalty is a starting bid.</em> The deterrent collapses. Not all at once. Not from any single ruling. But from the visible knowledge that the ruling exists.</p>
+
+  <div class="pull">
+    <p>Once one player wins in court, the deterrent does not collapse from any single ruling. It collapses from the visible knowledge that the ruling exists.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">The civic-mission close</h2>
+
+  <p>An enforcement institution exists because participants agree to be bound by it. The agreement is most of what the institution is. The rules are the small part; the agreement to be bound is the large part. When the binding becomes <span class="cc" data-preview="When the cases that 'count' are picked based on which ones can be enforced, you are not measuring the rule — you are measuring the enforcement. Robyn Dawes' name for the methodological sin behind survivorship bias."><em>conditioned on the consequence</em><a class="cc-i" href="../concepts/conditioning-on-the-consequence.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> &mdash; binding for the athletes who do not file, voluntary for the athletes who do &mdash; the institution still exists on paper but does a different job in practice. It becomes the body that punishes the athletes who cannot afford a lawyer.</p>
+
+  <p>The NCAA has watched this happen, slowly, across a decade. NIL collapsed the amateurism assumption. The portal collapsed the binding-contract assumption. Sorsby collapsed the discretionary-penalty assumption. The body still meets, the press releases still go out, the eligibility rulings are still issued. The participants have learned that the rulings are draft positions, not decrees.</p>
+
+  <p>This is not a column about whether Sorsby is a good or bad person. He is, by his own admission, a person who bet about nine thousand times on sports including his own team while on a roster, and a person who hired a lawyer and got himself reinstated by a county judge in Texas. Both of those facts are true. The question worth asking, and the one this column will return to in subsequent issues, is what happens to a sport whose enforcement institution can be overridden in any county courthouse. The honest answer, which neither the NCAA nor the conferences want to give yet, is that the enforcement institution no longer fully exists. The court is the enforcement institution now. The court was always going to be the institution that bound the institution. <strong>It just took a while for the math to come due.</strong></p>
+
+  <p><em>Part II of this thread, on conference-level peer enforcement &mdash; the Big 12 lawsuit and the schools who said they would not play Texas Tech &mdash; will publish later this week. Part III, on whatever the NFL Supplemental Draft produces, will publish after the June 22 entry deadline.</em></p>
+
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Issue No. 81 &middot; June 17, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+
+</div>
+
+</body>
+</html>
