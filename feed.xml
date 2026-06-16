@@ -8,7 +8,231 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jun 2026 23:27:10 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2026 09:35:15 GMT</lastBuildDate>
+    <item>
+      <title>#80: Two Trophies. Same Record. Twenty-Four Hours Apart.</title>
+      <link>https://thesportspage.net/published/082-sixteen-and-three.html</link>
+      <description>The Knicks finished the playoffs sixteen and three. The Hurricanes finished the playoffs sixteen and three. They clinched titles a day apart, ending droughts of fifty-three and twenty years respectively. The internet called it destiny. We checked the base rate. Surprising, yes — but not the way the timeline thinks.</description>
+      <content:encoded><![CDATA[
+
+  <h1 class="hed">Two Trophies. Same Record. <em>Twenty-Four Hours Apart.</em></h1>
+
+  <div class="deck">
+    The Knicks finished the playoffs sixteen and three. The Hurricanes finished the playoffs sixteen and three. They clinched titles a day apart, ending droughts of fifty-three and twenty years respectively. The internet called it destiny. We checked the base rate. Surprising, yes &mdash; but not the way the timeline thinks.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; NBA &amp; NHL champions, 1987&ndash;2026 &middot; Joint base-rate analysis</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">16&ndash;3</div><div class="l">Knicks &middot; 2026 NBA</div></div>
+    <div class="sc"><div class="v bad">16&ndash;3</div><div class="l">Canes &middot; 2026 NHL</div></div>
+    <div class="sc"><div class="v now">1st</div><div class="l">Such Pairing Ever Recorded</div></div>
+  </div>
+
+  <figure class="cartoon" style="margin:36px auto;max-width:560px;">
+    <img src="https://thesportspage.net/assets/xkcd/082-sixteen-and-three.png" alt="Hand-drawn bar chart titled ONE OF THESE IS NOT LIKE THE OTHERS. Bars show NHL champion playoff losses 1987-2026: 2 losses (1), 3 losses (1, drawn in rust), 4 losses (5), 5 losses (3), 6 losses (9), 7 losses (10), 8 losses (5), 9 losses (2), 10 losses (3). A rust annotation points at the lone 3-loss bar: HAPPENED EXACTLY ONCE (THE 2026 HURRICANES). A steel annotation points at the cluster around 6 and 7 losses: WHAT A CHAMPION USUALLY LOOKS LIKE." style="width:100%;height:auto;display:block;">
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:14px;text-align:center;letter-spacing:0.5px;text-transform:uppercase;">Cartoon &middot; One of these is not like the others</figcaption>
+  </figure>
+
+  <p>Sunday night, the Knicks closed a fifty-three-year drought. Monday night, the Hurricanes closed a twenty-year one. Both teams finished their playoff runs at sixteen wins and three losses. The same coincidence appeared on Knicks subreddits and Carolina message boards within the same hour. <em>They&rsquo;re the same number.</em> The word "destiny" trended.</p>
+
+  <p>We are in the destiny-debunking business. So we ran the <span class="cc" data-preview="How often does anyone do this thing? The boring, important number every 'what are the odds' question secretly depends on."><em>base rate</em><a class="cc-i" href="https://thesportspage.net/concepts/base-rate.html" target="_blank" rel="noopener" aria-label="What is a base rate? Open primer.">i</a></span>.</p>
+
+  <h2 class="sh">The shape of the question</h2>
+
+  <p>Both the NBA and the NHL have used the same playoff architecture since 1987: four rounds, each best-of-seven. A champion must win exactly sixteen games. The number of losses, however, is free to vary. A team that runs the table 4&ndash;0, 4&ndash;0, 4&ndash;0, 4&ndash;0 finishes 16&ndash;0. A team that grinds out every series in seven games finishes 16&ndash;12. Most champions land in the middle.</p>
+
+  <p>Sixteen-and-three is one specific outcome out of about a dozen plausible ones. The Knicks happened to land there. So did the Hurricanes. The question is how often we should expect that.</p>
+
+  <p>One methodological note before the histograms: from 1984 through 2002 the NBA&rsquo;s first round was best-of-five, so champions in that era needed only fifteen wins, not sixteen. The apples-to-apples era for direct comparison is therefore 2003 through 2026 &mdash; twenty-three years in which both leagues required exactly sixteen wins.</p>
+
+  <h2 class="sh">The base rate, one league at a time</h2>
+
+  <p>Here is the distribution of how many <em>losses</em> each league&rsquo;s champion absorbed on their way to the trophy. The NBA panel is the twenty-four NBA champions from 2003 through 2026. The NHL panel is the thirty-nine NHL champions from 1987 through 2026 (the 2005 season was lost to a lockout and is excluded).</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; How dominant is a typical champion? &middot; Losses on the way to the trophy</div>
+    <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace" role="img" aria-label="Histogram comparing NBA champion playoff losses (2003-2026) and NHL champion playoff losses (1987-2026). The 3-loss bar in each panel is highlighted.">
+      <!-- Title bar -->
+      <text x="190" y="22" font-size="11" font-weight="600" fill="#2c4a6e" text-anchor="middle" letter-spacing="2">NBA CHAMPIONS &middot; 2003&ndash;2026 (n=24)</text>
+      <text x="570" y="22" font-size="11" font-weight="600" fill="#b83a1e" text-anchor="middle" letter-spacing="2">NHL CHAMPIONS &middot; 1987&ndash;2026 (n=39)</text>
+
+      <!-- Left panel grid -->
+      <line x1="40" y1="380" x2="340" y2="380" stroke="#1a1208" stroke-width="1.5"/>
+      <line x1="40" y1="60" x2="40" y2="380" stroke="#1a1208" stroke-width="1.5"/>
+
+      <!-- Right panel grid -->
+      <line x1="420" y1="380" x2="720" y2="380" stroke="#1a1208" stroke-width="1.5"/>
+      <line x1="420" y1="60" x2="420" y2="380" stroke="#1a1208" stroke-width="1.5"/>
+
+      <!-- Y-axis ticks (left): counts up to 12 -->
+      <g font-size="9" fill="#6b5e4a">
+        <text x="34" y="383" text-anchor="end">0</text>
+        <text x="34" y="330" text-anchor="end">3</text>
+        <text x="34" y="277" text-anchor="end">6</text>
+        <text x="34" y="224" text-anchor="end">9</text>
+        <text x="34" y="171" text-anchor="end">12</text>
+      </g>
+      <line x1="38" y1="330" x2="40" y2="330" stroke="#1a1208"/>
+      <line x1="38" y1="277" x2="40" y2="277" stroke="#1a1208"/>
+      <line x1="38" y1="224" x2="40" y2="224" stroke="#1a1208"/>
+      <line x1="38" y1="171" x2="40" y2="171" stroke="#1a1208"/>
+
+      <!-- Y-axis ticks (right) -->
+      <g font-size="9" fill="#6b5e4a">
+        <text x="414" y="383" text-anchor="end">0</text>
+        <text x="414" y="330" text-anchor="end">3</text>
+        <text x="414" y="277" text-anchor="end">6</text>
+        <text x="414" y="224" text-anchor="end">9</text>
+        <text x="414" y="171" text-anchor="end">12</text>
+      </g>
+      <line x1="418" y1="330" x2="420" y2="330" stroke="#1a1208"/>
+      <line x1="418" y1="277" x2="420" y2="277" stroke="#1a1208"/>
+      <line x1="418" y1="224" x2="420" y2="224" stroke="#1a1208"/>
+      <line x1="418" y1="171" x2="420" y2="171" stroke="#1a1208"/>
+
+      <!-- NBA bars: loss counts 1,3,4,5,6,7,8,10 → 1,2,2,5,1,11,1,1 -->
+      <!-- bar width ~22px, gap 2px; baseline y=380, scale 17.7 px per count -->
+      <!-- 1 loss: 1 → height 17.7 -->
+      <rect x="50"  y="362.3" width="22" height="17.7"  fill="#2c4a6e"/>
+      <!-- 3 losses: 2 → height 35.4, HIGHLIGHT -->
+      <rect x="98"  y="344.6" width="22" height="35.4"  fill="#b83a1e" stroke="#1a1208" stroke-width="1.5"/>
+      <!-- 4 losses: 2 -->
+      <rect x="122" y="344.6" width="22" height="35.4"  fill="#2c4a6e"/>
+      <!-- 5 losses: 5 -->
+      <rect x="146" y="291.5" width="22" height="88.5"  fill="#2c4a6e"/>
+      <!-- 6 losses: 1 -->
+      <rect x="170" y="362.3" width="22" height="17.7"  fill="#2c4a6e"/>
+      <!-- 7 losses: 11 -->
+      <rect x="194" y="185.3" width="22" height="194.7" fill="#2c4a6e"/>
+      <!-- 8 losses: 1 -->
+      <rect x="218" y="362.3" width="22" height="17.7"  fill="#2c4a6e"/>
+      <!-- 10 losses: 1 -->
+      <rect x="266" y="362.3" width="22" height="17.7"  fill="#2c4a6e"/>
+
+      <!-- NBA value labels on tall/important bars -->
+      <text x="205" y="180" font-size="11" font-weight="700" fill="#2c4a6e" text-anchor="middle">11</text>
+      <text x="109" y="340" font-size="11" font-weight="700" fill="#b83a1e" text-anchor="middle">2</text>
+      <text x="157" y="287" font-size="11" font-weight="700" fill="#2c4a6e" text-anchor="middle">5</text>
+
+      <!-- NBA x-axis labels: losses -->
+      <g font-size="9" fill="#6b5e4a" text-anchor="middle">
+        <text x="61"  y="396">1</text>
+        <text x="109" y="396" fill="#b83a1e" font-weight="700">3</text>
+        <text x="133" y="396">4</text>
+        <text x="157" y="396">5</text>
+        <text x="181" y="396">6</text>
+        <text x="205" y="396">7</text>
+        <text x="229" y="396">8</text>
+        <text x="277" y="396">10</text>
+      </g>
+      <text x="190" y="418" font-size="10" fill="#6b5e4a" text-anchor="middle" letter-spacing="1">LOSSES ON THE WAY TO THE TITLE</text>
+
+      <!-- NHL bars: loss counts 2,3,4,5,6,7,8,9,10 → 1,1,5,3,9,10,5,2,3 -->
+      <!-- 2 losses: 1 -->
+      <rect x="436" y="362.3" width="22" height="17.7"  fill="#b83a1e"/>
+      <!-- 3 losses: 1, HIGHLIGHT -->
+      <rect x="460" y="362.3" width="22" height="17.7"  fill="#b83a1e" stroke="#1a1208" stroke-width="1.5"/>
+      <!-- 4 losses: 5 -->
+      <rect x="484" y="291.5" width="22" height="88.5"  fill="#b83a1e"/>
+      <!-- 5 losses: 3 -->
+      <rect x="508" y="326.9" width="22" height="53.1"  fill="#b83a1e"/>
+      <!-- 6 losses: 9 -->
+      <rect x="532" y="220.7" width="22" height="159.3" fill="#b83a1e"/>
+      <!-- 7 losses: 10 -->
+      <rect x="556" y="203"   width="22" height="177"   fill="#b83a1e"/>
+      <!-- 8 losses: 5 -->
+      <rect x="580" y="291.5" width="22" height="88.5"  fill="#b83a1e"/>
+      <!-- 9 losses: 2 -->
+      <rect x="604" y="344.6" width="22" height="35.4"  fill="#b83a1e"/>
+      <!-- 10 losses: 3 -->
+      <rect x="628" y="326.9" width="22" height="53.1"  fill="#b83a1e"/>
+
+      <!-- NHL value labels on tall bars -->
+      <text x="543" y="215" font-size="11" font-weight="700" fill="#b83a1e" text-anchor="middle">9</text>
+      <text x="567" y="198" font-size="11" font-weight="700" fill="#b83a1e" text-anchor="middle">10</text>
+      <text x="471" y="357" font-size="11" font-weight="700" fill="#b83a1e" text-anchor="middle">1</text>
+
+      <!-- NHL x-axis labels -->
+      <g font-size="9" fill="#6b5e4a" text-anchor="middle">
+        <text x="447" y="396">2</text>
+        <text x="471" y="396" fill="#b83a1e" font-weight="700">3</text>
+        <text x="495" y="396">4</text>
+        <text x="519" y="396">5</text>
+        <text x="543" y="396">6</text>
+        <text x="567" y="396">7</text>
+        <text x="591" y="396">8</text>
+        <text x="615" y="396">9</text>
+        <text x="639" y="396">10</text>
+      </g>
+      <text x="570" y="418" font-size="10" fill="#6b5e4a" text-anchor="middle" letter-spacing="1">LOSSES ON THE WAY TO THE TITLE</text>
+
+      <!-- Annotations: pointing at the highlighted 3-loss bars -->
+      <text x="190" y="50" font-size="9" fill="#b83a1e" text-anchor="middle" font-weight="600">16&ndash;3: 2024 CELTICS, 2026 KNICKS</text>
+      <text x="570" y="50" font-size="9" fill="#b83a1e" text-anchor="middle" font-weight="600">16&ndash;3: 2026 HURRICANES (ONLY)</text>
+    </svg>
+  </div>
+
+  <p>The NBA shape is heavily skewed toward 16&ndash;7, the record of a champion who got pushed about as much as a champion realistically does. Eleven of the twenty-four NBA champions in this era went 16&ndash;7. Three losses across the entire playoffs is at the dominant end: it has happened twice in twenty-four years.</p>
+
+  <p>The NHL shape is similar but a touch fatter on the high-loss side, because hockey playoffs are weirder. Goalies get hot, third-line forwards score in overtime, the team that took two regular-season meetings somehow drops a 2&ndash;0 first-round lead. Of the thirty-nine NHL champions since 1987, only <em>one</em> finished sixteen and three. That is the 2026 Hurricanes. We will return to that number.</p>
+
+  <h2 class="sh">When have both leagues&rsquo; champions matched, exactly?</h2>
+
+  <p>Now combine. For each year in the apples-to-apples era, compare the NBA champion&rsquo;s W&ndash;L to the NHL champion&rsquo;s W&ndash;L. How often does the pair match exactly? Three times in twenty-three comparable years.</p>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Year</th><th>NBA</th><th>Record</th><th>NHL</th><th>Record</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl"><td>2004</td><td>Pistons</td><td class="mono">16&ndash;7</td><td>Lightning</td><td class="mono">16&ndash;7</td></tr>
+      <tr class="hl"><td>2025</td><td>Thunder</td><td class="mono">16&ndash;7</td><td>Panthers</td><td class="mono">16&ndash;7</td></tr>
+      <tr class="now"><td>2026</td><td>Knicks</td><td class="mono">16&ndash;3</td><td>Hurricanes</td><td class="mono">16&ndash;3</td></tr>
+    </tbody>
+  </table>
+
+  <p>Two of those matches are at 16&ndash;7. That is the record produced by the most common shape of a dominant-but-pushed champion in both leagues. When champions match, they usually match at the league&rsquo;s modal record. That is unsurprising: the modal record is the modal record because it is what champions usually have.</p>
+
+  <p>2026 is the outlier. It is not just a match. It is a match at a record that has happened <em>once</em> in the entire history of the NHL&rsquo;s 16-win era. The Hurricanes are the first NHL team to ever finish sixteen and three, and they did it in the same week the Knicks also finished sixteen and three.</p>
+
+  <p>If you treat the two champion&rsquo;s records as independent &mdash; and they should be; the Knicks did not affect the Hurricanes&rsquo; bracket and vice versa &mdash; the joint probability of both arriving at sixteen and three in any given year is roughly (2 in 24) for the NBA times (1 in 39) for the NHL, or about <strong>0.21 percent</strong>. One year in every four hundred and seventy.</p>
+
+  <div class="pull">
+    <p>Same record. Twenty-four hours apart. The math says: surprising, sure. Destiny, no.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">What is and isn&rsquo;t a coincidence here</h2>
+
+  <p>The <em>timing</em> is not a coincidence. The NBA Finals and the Stanley Cup Final both wrap up in mid-June every year, every year, every year. They typically end within a week of each other. The fact that one trophy was raised on Sunday and the other on Monday is normal scheduling, not cosmic alignment.</p>
+
+  <p>The <em>matching record</em> is partly a coincidence and partly inevitable. Champions in both leagues cluster around the modal records of their league. Once-per-decade matches are baked into the structure of having two parallel leagues with the same playoff architecture. We have three such matches in twenty-three years. That is roughly once every eight years &mdash; not the kind of math that justifies the word "destiny."</p>
+
+  <p>The <em>sixteen-and-three</em> part is the genuinely surprising piece. A specific match at a specific record, where one of the leagues had never produced that record before. If you ran a simulation of the modern playoff era forward another four hundred years, you would expect to see this exact pairing roughly one more time. We got it now.</p>
+
+  <p>The <em>droughts ending together</em> is not even a little bit a coincidence. The Knicks last won in 1973, fifty-three years ago. The Hurricanes last won in 2006, twenty years ago. There is no statistical mechanism by which one drought ending raises the probability that another drought ends. The brain edits the two stories into one narrative because two stories at once are harder to hold than one composite story. That editorial cut feels like meaning. It is not meaning. It is editing.</p>
+
+  <h2 class="sh">The civic-mission beat</h2>
+
+  <p>When you encounter a coincidence in any data, the wrong question is "what are the odds." The right question is "compared to what." Without a base rate, every coincidence looks miraculous, because every coincidence is the one event you noticed out of millions you did not. If you tracked every possible record match in every possible pair of sports every year, some of them would line up every year. The brain edits out the misses and keeps the hits, and the editorial cut feels like cosmic alignment.</p>
+
+  <p>The Knicks won a championship. The Hurricanes won a championship. They were two of the best teams in their respective sports this year, and they each finished sixteen and three because each is what a dominant team that loses a few games looks like. The droughts ending is the real story. The matching record is a small statistical curiosity. The destiny is just narrative.</p>
+
+  <p>The math is patient. It does not need destiny. It does not need the universe to mean something. It just needs the base rate.</p>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Issue No. 80 &middot; June 16, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+
+]]></content:encoded>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/082-sixteen-and-three.html</guid>
+    </item>
     <item>
       <title>#79: How Do You Win Eight Straight and Then Lose by Six? You Build an Offense Designed to Do Exactly That.</title>
       <link>https://thesportspage.net/published/064-mariners-streak.html</link>
@@ -123,7 +347,7 @@ THE TAKEAWAY
   </div>
 
 ]]></content:encoded>
-      <pubDate>Mon, 15 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/064-mariners-streak.html</guid>
     </item>
     <item>
@@ -349,7 +573,7 @@ THE TAKEAWAY
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 14 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 14 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/sunday-010.html</guid>
     </item>
     <item>
@@ -441,7 +665,7 @@ THE TAKEAWAY
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Sat, 13 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/068-defensive-reader-1-temporal.html</guid>
     </item>
     <item>
@@ -547,7 +771,7 @@ THE TAKEAWAY
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Fri, 12 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 12 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/065-soto-least-supported.html</guid>
     </item>
     <item>
@@ -703,7 +927,7 @@ THE TAKEAWAY
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Thu, 11 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/066-pyrrhic-5-cincinnati.html</guid>
     </item>
     <item>
@@ -841,7 +1065,7 @@ THE TAKEAWAY
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Wed, 10 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/059-pyrrhic-4-astros-mlb-commons.html</guid>
     </item>
     <item>
@@ -973,7 +1197,7 @@ THE TAKEAWAY
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Tue, 09 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/058-pyrrhic-3-bobcats-davis.html</guid>
     </item>
     <item>
@@ -1145,7 +1369,7 @@ THE TAKEAWAY
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/057-pyrrhic-2-sabres-mcdavid.html</guid>
     </item>
     <item>
@@ -1370,7 +1594,7 @@ THE TAKEAWAY
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 07 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/sunday-009.html</guid>
     </item>
     <item>
@@ -1551,7 +1775,7 @@ THE LESSON
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sat, 06 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/063-nd-roster-value.html</guid>
     </item>
     <item>
@@ -1656,7 +1880,7 @@ RESULT
   </div>
 
 ]]></content:encoded>
-      <pubDate>Fri, 05 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/062-cup-final-game1.html</guid>
     </item>
     <item>
@@ -1746,7 +1970,7 @@ independent of any ritual performed beforehand.</div>
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Thu, 04 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/055-superstition-baseball-math.html</guid>
     </item>
     <item>
@@ -1856,7 +2080,7 @@ What's wrong is treating it as a target rather than a floor.</div>
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Wed, 03 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/054-mariners-54-percent.html</guid>
     </item>
     <item>
@@ -1999,7 +2223,7 @@ What's wrong is treating it as a target rather than a floor.</div>
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Tue, 02 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/052-preseason-sim-framework.html</guid>
     </item>
     <item>
@@ -2141,7 +2365,7 @@ What's wrong is treating it as a target rather than a floor.</div>
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/056-pyrrhic-1-jets-trevor.html</guid>
     </item>
     <item>
@@ -2341,7 +2565,7 @@ What's wrong is treating it as a target rather than a floor.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 31 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/sunday-008.html</guid>
     </item>
     <item>
@@ -2416,7 +2640,7 @@ What's wrong is treating it as a target rather than a floor.</div>
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Sat, 30 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/053-raleigh-slump-shower-oblique.html</guid>
     </item>
     <item>
@@ -2558,7 +2782,7 @@ For n = 13, the distribution looks like this:
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Fri, 29 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/045-significance-tiebreaker-part-2.html</guid>
     </item>
     <item>
@@ -2686,7 +2910,7 @@ For n = 13, the distribution looks like this:
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Thu, 28 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/049-misery-index-ny-dc.html</guid>
     </item>
     <item>
@@ -2885,7 +3109,7 @@ Where:
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Wed, 27 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/051-baseruns-mets.html</guid>
     </item>
     <item>
@@ -2999,7 +3223,7 @@ Expected record  =  22 W,  24 L</div>
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/048-pythagorean-mets.html</guid>
     </item>
     <item>
@@ -3157,7 +3381,7 @@ Expected record  =  22 W,  24 L</div>
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Mon, 25 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/047-notre-dame-recruiting.html</guid>
     </item>
     <item>
@@ -3357,7 +3581,7 @@ Expected record  =  22 W,  24 L</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 24 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 24 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/sunday-007.html</guid>
     </item>
     <item>
@@ -3455,7 +3679,7 @@ Expected record  =  22 W,  24 L</div>
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Sat, 23 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/046-hurricanes-eight-zero.html</guid>
     </item>
     <item>
@@ -3598,7 +3822,7 @@ When both teams are near .500 (p &asymp; .5), this is just:
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Fri, 22 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/044-significance-chi-square-part-1.html</guid>
     </item>
     <item>
@@ -3699,7 +3923,7 @@ When both teams are near .500 (p &asymp; .5), this is just:
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Thu, 21 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/039-mets-bullpen-eighth.html</guid>
     </item>
     <item>
@@ -3818,7 +4042,7 @@ The actual spread of wins = ~80. The rest is noise relative to this lever.</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Wed, 20 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/042-plate-discipline-r07.html</guid>
     </item>
     <item>
@@ -3962,7 +4186,7 @@ Final record:   87 W, 75 L   (.537)
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none">Archive</a></span>
 </div>
 ]]></content:encoded>
-      <pubDate>Tue, 19 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/043-mets-wild-card-math.html</guid>
     </item>
     <item>
@@ -4236,7 +4460,7 @@ Final record:   87 W, 75 L   (.537)
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Mon, 18 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/040-three-lies-scatter-plot.html</guid>
     </item>
     <item>
@@ -4581,7 +4805,7 @@ Final record:   87 W, 75 L   (.537)
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Sun, 17 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/sunday-006.html</guid>
     </item>
     <item>
@@ -4698,7 +4922,7 @@ Final record:   87 W, 75 L   (.537)
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Sat, 16 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/038-mets-braves-asymmetry.html</guid>
     </item>
     <item>
@@ -4951,7 +5175,7 @@ even though they're functionally identical at this sample size</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Fri, 15 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/036-cost-per-win.html</guid>
     </item>
     <item>
@@ -5069,7 +5293,7 @@ even though they're functionally identical at this sample size</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Thu, 14 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/037-nobody-hates-rockies.html</guid>
     </item>
     <item>
@@ -5178,7 +5402,7 @@ even though they're functionally identical at this sample size</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Wed, 13 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/041-portal-locked-rosters.html</guid>
     </item>
     <item>
@@ -5307,7 +5531,7 @@ predictive:      the next season's expected ERA is the
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Tue, 12 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/035-devin-williams-collapse.html</guid>
     </item>
     <item>
@@ -5460,7 +5684,7 @@ Spread ratio:                      2.9&times;</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Mon, 11 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 11 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/033-rounds-1-3-vs-4-7.html</guid>
     </item>
     <item>
@@ -5648,7 +5872,7 @@ Spread ratio:                      2.9&times;</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 10 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/sunday-005.html</guid>
     </item>
     <item>
@@ -5806,7 +6030,7 @@ Each metric → z-score within league → average</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Sat, 09 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/034-owner-hall-of-fame-shame.html</guid>
     </item>
     <item>
@@ -5953,7 +6177,7 @@ Each metric → z-score within league → average</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Fri, 08 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/032-bust-leaderboard-32-teams.html</guid>
     </item>
     <item>
@@ -6066,7 +6290,7 @@ Each metric → z-score within league → average</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Thu, 07 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/030-mason-miller-unhittable.html</guid>
     </item>
     <item>
@@ -6231,7 +6455,7 @@ Each metric → z-score within league → average</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Wed, 06 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/031-hof-harvest-32-teams.html</guid>
     </item>
     <item>
@@ -6358,7 +6582,7 @@ estimated from run differential per game.</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Tue, 05 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/028-mets-next-17-games.html</guid>
     </item>
     <item>
@@ -6578,7 +6802,7 @@ After Year 1:
   </div>
 
 ]]></content:encoded>
-      <pubDate>Mon, 04 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/029-cfb-coaching-stabilization.html</guid>
     </item>
     <item>
@@ -6789,7 +7013,7 @@ After Year 1:
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 03 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/sunday-004.html</guid>
     </item>
     <item>
@@ -6920,7 +7144,7 @@ P(start &le; .400 | made playoffs) ≈ .04   ← the inverse conditional</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Sat, 02 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/027-mets-conditional-probability.html</guid>
     </item>
     <item>
@@ -7293,7 +7517,7 @@ drought for any fan who HAS won before.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Fri, 01 May 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/015-fan-misery-map.html</guid>
     </item>
     <item>
@@ -7498,7 +7722,7 @@ PATH B: HIGH SCHOOL &rarr; JUCO &rarr; D1 (THE DETOUR)
     <strong>Part 6 (this issue): The JUCO Detour &mdash; college baseball&rsquo;s portal workaround.</strong>
   </div>
 ]]></content:encoded>
-      <pubDate>Thu, 30 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/eo-006-juco-detour.html</guid>
     </item>
     <item>
@@ -7608,7 +7832,7 @@ PATH B: HIGH SCHOOL &rarr; JUCO &rarr; D1 (THE DETOUR)
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Wed, 29 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/026-stabilization-thresholds.html</guid>
     </item>
     <item>
@@ -7902,7 +8126,7 @@ Overall : higher rank won 68.8% of all matchups</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Tue, 28 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/022-cfb-jnd-rankings.html</guid>
     </item>
     <item>
@@ -8002,7 +8226,7 @@ Overall : higher rank won 68.8% of all matchups</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/025-signal-horizon.html</guid>
     </item>
     <item>
@@ -8189,7 +8413,7 @@ Overall : higher rank won 68.8% of all matchups</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/sunday-003.html</guid>
     </item>
     <item>
@@ -8299,7 +8523,7 @@ Overall : higher rank won 68.8% of all matchups</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Sat, 25 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/024-mets-diaspora.html</guid>
     </item>
     <item>
@@ -8439,7 +8663,7 @@ Overall : higher rank won 68.8% of all matchups</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Fri, 24 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/021-draft-hit-rate-jets-giants.html</guid>
     </item>
     <item>
@@ -8543,7 +8767,7 @@ Projected final record (at mean):  80 &ndash; 82</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
   <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 ]]></content:encoded>
-      <pubDate>Thu, 23 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/023-mets-slow-start.html</guid>
     </item>
     <item>
@@ -8751,7 +8975,7 @@ Definition C &mdash; Fewer than 4 seasons as the Jets&rsquo;
   </div>
 
 ]]></content:encoded>
-      <pubDate>Wed, 22 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/020-jets-first-round-busts.html</guid>
     </item>
     <item>
@@ -9013,7 +9237,7 @@ With 30 teams: 1 &minus; 0.95^30 = 1 &minus; 0.215 = 78.5%</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Tue, 21 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/019-spurious-correlation.html</guid>
     </item>
     <item>
@@ -9230,7 +9454,7 @@ is the inflection point that brought near-parity.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Mon, 20 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/017-wnba-soccer-comparison.html</guid>
     </item>
     <item>
@@ -9468,7 +9692,7 @@ entirely. In basketball&rsquo;s 82-game season with a
   </div>
 
 ]]></content:encoded>
-      <pubDate>Mon, 20 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/014-star-sensitivity.html</guid>
     </item>
     <item>
@@ -9679,7 +9903,7 @@ entirely. In basketball&rsquo;s 82-game season with a
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 19 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/sunday-002.html</guid>
     </item>
     <item>
@@ -9923,7 +10147,7 @@ players comparably to the NBA at the same stage.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Fri, 17 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/016-wnba-pay-maturity.html</guid>
     </item>
     <item>
@@ -10195,7 +10419,7 @@ howitzer to hang a picture frame.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Thu, 16 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/eo-005-big-picture.html</guid>
     </item>
     <item>
@@ -10341,7 +10565,7 @@ howitzer to hang a picture frame.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Wed, 15 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/018-mets-pitching-mirage.html</guid>
     </item>
     <item>
@@ -10609,7 +10833,7 @@ Mid-tier &ldquo;instant rebuild&rdquo; scenario:
   </div>
 
 ]]></content:encoded>
-      <pubDate>Tue, 14 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/eo-004-cignetti.html</guid>
     </item>
     <item>
@@ -10927,7 +11151,7 @@ Interpretation:
   </div>
 
 ]]></content:encoded>
-      <pubDate>Mon, 13 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/eo-003-notre-dame.html</guid>
     </item>
     <item>
@@ -11119,7 +11343,7 @@ Interpretation:
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 12 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/sunday-001.html</guid>
     </item>
     <item>
@@ -11401,7 +11625,7 @@ The convergence point:
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sat, 11 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/eo-002-nil-gini.html</guid>
     </item>
     <item>
@@ -11600,7 +11824,7 @@ rises after the king is inside.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Fri, 10 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/009-eo-transfer-freeze.html</guid>
     </item>
     <item>
@@ -11789,7 +12013,7 @@ Kirk Cousins was... Kirk Cousins.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Thu, 09 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/008-mentor-myth.html</guid>
     </item>
     <item>
@@ -12095,7 +12319,7 @@ What went wrong:
   </div>
 
 ]]></content:encoded>
-      <pubDate>Wed, 08 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/013-nhl-three-franchises.html</guid>
     </item>
     <item>
@@ -12284,7 +12508,7 @@ at ESPN, cost the Raiders a playoff window.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Tue, 07 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/012-relocation-myth.html</guid>
     </item>
     <item>
@@ -12480,7 +12704,7 @@ It&rsquo;s talent retention.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Mon, 06 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/007-mets-alumni.html</guid>
     </item>
     <item>
@@ -12654,7 +12878,7 @@ The stabilization threshold for batting average:
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 05 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/011-infield-hitting.html</guid>
     </item>
     <item>
@@ -12843,7 +13067,7 @@ Avg draft position of Jets' hits:   #10.0
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sat, 04 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/006-jets-draft.html</guid>
     </item>
     <item>
@@ -13018,7 +13242,7 @@ The gap? Mostly trade prediction.</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Fri, 03 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/005-draft-combinatorics.html</guid>
     </item>
     <item>
@@ -13189,7 +13413,7 @@ Both of these are unsustainable. Regression is coming.</div>
     <li><strong>"Interactive Stats Lab"</strong> — Browser-based demos: Dunning-Kruger simulator, distribution explorer, and more. <a href="https://pem725.github.io/apps/">&rarr; Try them</a></li>
   </ul>
 ]]></content:encoded>
-      <pubDate>Thu, 02 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/004-mets-500.html</guid>
     </item>
     <item>
@@ -13430,7 +13654,7 @@ Closest match: YOUR PORTFOLIO ≈ NY RANGERS
   </div>
 
 ]]></content:encoded>
-      <pubDate>Wed, 01 Apr 2026 04:00:00 GMT</pubDate>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/003-misery-index.html</guid>
     </item>
     <item>
@@ -13693,7 +13917,7 @@ P(Alonso posts sub-.250 season):         60.2%</div>
   </div>
 
 ]]></content:encoded>
-      <pubDate>Sun, 29 Mar 2026 04:00:00 GMT</pubDate>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/002-alonso-orioles.html</guid>
     </item>
     <item>
@@ -13701,7 +13925,7 @@ P(Alonso posts sub-.250 season):         60.2%</div>
       <link>https://thesportspage.net/published/001-skenes-era.html</link>
       <description>The number looks absurd. The panic is understandable. But the real story isn&#x27;t what happened in two-thirds of an inning — it&#x27;s what the denominator does to a career, and how long it takes to forget.</description>
       <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/001-skenes-era.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/001-skenes-era.png" alt="The Night Paul Skenes Posted a 67.5 ERA — And Why the Math Will Hunt Him All Season" style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><h2>The Night Paul Skenes Posted a 67.5 ERA — And Why the Math Will Hunt Him All Season</h2><p>The number looks absurd. The panic is understandable. But the real story isn't what happened in two-thirds of an inning — it's what the denominator does to a career, and how long it takes to forget.</p>]]></content:encoded>
-      <pubDate>Fri, 27 Mar 2026 04:00:00 GMT</pubDate>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://thesportspage.net/published/001-skenes-era.html</guid>
     </item>
   </channel>

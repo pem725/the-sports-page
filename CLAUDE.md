@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 421 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 420 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 79 issues (#1-79)
-Queue: 13 articles ready (060-mets-sell-or-hold, 061-mlb-money-buys-wins, 067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence)
+Published: 80 issues (#1-80)
+Queue: 15 articles ready (060-mets-sell-or-hold, 061-mlb-money-buys-wins, 067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, _TEMPLATE, bobby-bonilla-day)
 Reserve: 1 evergreen piece
-Goal: 421 issues remaining of 500
-Last published: Issue #79 — "How Do You Win Eight Straight and Then Lose by Six? You Build an Offense Designed to Do Exactly That." (064-mariners-streak.html) on June 15, 2026
+Goal: 420 issues remaining of 500
+Last published: Issue #80 — "Two Trophies. Same Record. Twenty-Four Hours Apart." (082-sixteen-and-three.html) on June 16, 2026
