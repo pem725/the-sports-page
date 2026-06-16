@@ -2,14 +2,31 @@ name: Autopublish Daily Issue
 
 on:
   schedule:
-    # Primary: 4:30am ET = 8:30 UTC
-    # Backup:  5:30am ET = 9:30 UTC (catches GitHub cron misses)
-    # The script's already_published_today() guard prevents double-publishes,
-    # so running twice is safe — the second invocation exits immediately.
-    # During EDT (Mar-Nov): fires at 4:30am / 5:30am ET
-    # During EST (Nov-Mar): fires at 3:30am / 4:30am ET (one hour early — acceptable)
-    - cron: '30 8 * * 1-6'   # Mon-Sat primary
-    - cron: '30 9 * * 1-6'   # Mon-Sat backup
+    # IMPORTANT — GitHub Actions free-tier scheduled workflows fire LATE,
+    # not on time. Observed delay 1.5–2.5 hours when scheduled at the
+    # popular 8:30/9:30 UTC slot (start-of-hour high-load windows).
+    # See: https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule
+    #
+    # Strategy: schedule earlier and at off-hour minutes to land in a
+    # lower-load window, plus stack several entries spread across ~3
+    # hours so at least one fires by the target time.
+    #
+    # already_published_today() guard in scripts/autopublish.py means only
+    # the first run to succeed does work; subsequent runs exit immediately.
+    # Safe to over-schedule.
+    #
+    # During EDT (Mar–Nov), the four cron entries below map to:
+    #   2:30 AM ET → delayed avg ~4:00 AM ET (primary; this should be
+    #                the one that wins the race on most mornings)
+    #   3:00 AM ET → delayed avg ~4:30 AM ET (1st backup)
+    #   4:30 AM ET → delayed avg ~6:00 AM ET (2nd backup)
+    #   5:30 AM ET → delayed avg ~7:00 AM ET (3rd backup — final safety)
+    #
+    # During EST (Nov–Mar), subtract one hour from each ET time. Still fine.
+    - cron: '30 6 * * 1-6'   # 06:30 UTC — 2:30 AM EDT — earliest
+    - cron: '0 7 * * 1-6'    # 07:00 UTC — 3:00 AM EDT
+    - cron: '30 8 * * 1-6'   # 08:30 UTC — 4:30 AM EDT — was original primary
+    - cron: '30 9 * * 1-6'   # 09:30 UTC — 5:30 AM EDT — was original backup
 
   # Manual trigger from GitHub UI (Actions tab → Run workflow)
   workflow_dispatch:
