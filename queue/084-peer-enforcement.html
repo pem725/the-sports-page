@@ -1,0 +1,153 @@
+<!-- PUBLISH-META
+topic: CFB
+tags: CFB:cfb, NCAA, Big 12, Game Theory, Methods, Reader's Defense
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — When the Refs Stop Refereeing</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+</style>
+<meta property="og:title" content="When the Refs Stop Refereeing, the Players Try to Become the Refs. The Math Says They Run Out of Energy.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/084-peer-enforcement.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/084-peer-enforcement.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="When the Refs Stop Refereeing.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/084-peer-enforcement.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch &middot; College Football &middot; The Sorsby Case, Part II</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. 83</span>
+    <span>June 19, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<div id="main-content" class="paper">
+
+  <h1 class="hed">When the Refs Stop Refereeing, the Players Try to Become the Refs. <em>The Math Says They Run Out of Energy.</em></h1>
+
+  <div class="deck">
+    The Big 12 sued its own member. Nebraska said it would not play Texas Tech if Sorsby was on the roster. Other programs nodded along. This is how a sport reacts when its formal enforcement institution stops being able to enforce: the schools try to enforce each other. The catch &mdash; and there is always a catch &mdash; is that peer enforcement is expensive. Sometimes the price is more than the punishment is worth.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; The Reader's Defense &middot; The Sorsby Case, Part II</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">1</div><div class="l">Big 12 Conference Suing Its Own School</div></div>
+    <div class="sc"><div class="v now">~$8M</div><div class="l">Per-Game TV Revenue a Forfeit Costs</div></div>
+    <div class="sc"><div class="v good">0</div><div class="l">Games Actually Canceled This Cycle</div></div>
+  </div>
+
+  <p>Part I of this thread, on the NCAA&rsquo;s loss of jurisdictional authority over its own permanent-ineligibility ruling, ran earlier this week. Today&rsquo;s question picks up where that one left off. <strong>If the institution that was supposed to enforce the rule no longer can, who does?</strong> The honest first answer the sport gave was: <em>we will.</em> The Big 12 conference filed suit against Texas Tech. Nebraska, with Texas Tech on its 2026 schedule, said publicly that it would not take the field if Brendan Sorsby was on the roster. The threats were credible-sounding. The lawsuits were real. For a week it looked like the peer-enforcement layer of college football had taken over the job the NCAA could no longer do.</p>
+
+  <p>Then Sorsby withdrew his lawsuit and announced for the supplemental draft. The peer layer never had to test whether its threats would actually hold. That outcome is worth thinking carefully about, because the answer to "would they have held" is the answer to whether the sport now has any working enforcement at all.</p>
+
+  <h2 class="sh">The two kinds of enforcement, briefly</h2>
+
+  <p>Every cooperative system, sports included, keeps the rules binding in two ways. The first is <strong>formal enforcement</strong>: a centralized body with the power to punish defectors. Courts, regulators, the NCAA Eligibility Center. The second is <strong>peer enforcement</strong>: participants punishing each other directly through shunning, reputation, refused cooperation. In the language of game theory, the first is third-party enforcement and the second is second-party enforcement. Most stable systems use both. The formal layer carries the visible weight. The peer layer is mostly invisible &mdash; until the formal layer breaks, and then the peer layer becomes the only show in town.</p>
+
+  <p>This is the point in the column where the natural temptation is to say peer enforcement is robust and democratic and warm. It is sometimes. It is also expensive in a specific way that formal enforcement is not. <strong>Every peer enforcement action costs the enforcer something.</strong> Nebraska refusing to play Texas Tech does not just punish Texas Tech &mdash; it forfeits Nebraska&rsquo;s share of an eight-million-dollar television window, a home gate of forty-five thousand seats, a recruiting weekend, and a contractual commitment that the conference scheduling office spent two years arranging. Peer enforcement is a threat the enforcer has to be willing to pay for. The credibility of the threat is exactly the willingness to absorb that cost.</p>
+
+  <h2 class="sh">When peer enforcement works, and when it doesn&rsquo;t</h2>
+
+  <p>The literature on cooperative systems is clear about the conditions under which peer enforcement actually holds together. Three matter the most:</p>
+
+  <p><strong>Repeat play.</strong> Participants who will meet again next season have an incentive to maintain a reputation. A school that defects from a peer-enforcement threat learns it cannot extract future cooperation; that lesson keeps schools from defecting. <em>But</em> conference realignment in college sports has shredded the repeat-play assumption. The Big 12 has 16 members in 2026, after years of teams leaving and arriving. The Big Ten is 18. The SEC is 16. The next round of realignment is already being rumored. When the partners you punish today might not be in your conference next year, the reputational arithmetic gets murky.</p>
+
+  <p><strong>Low-cost detection.</strong> Peers need to be able to tell who defected from the enforcement. In the Sorsby case this was easy: did Texas Tech play Sorsby or not. In subtler cases &mdash; an under-the-table NIL deal, a wink-and-nod recruiting agreement &mdash; the detection cost is enormous. The peer layer cannot punish what it cannot see. Most rules are subtler than "did the QB take the snap."</p>
+
+  <p><strong>Credible commitment.</strong> The enforcer has to be willing to actually carry out the threat, not just announce it. The cleanest test is whether they would carry it out when carrying it out hurts them. Nebraska&rsquo;s threat looked credible because Nebraska runs a clean program by reputation and would have paid the eight-million-dollar cost as a values-driven choice. The threat from a less-clean program would have been less credible &mdash; not because they were lying, but because nobody believes a school will pay an expensive price to enforce a rule it would happily skirt itself.</p>
+
+  <p>The Sorsby case had high marks on detection and decent marks on credibility, but the realignment churn pulls the rug out from under repeat play. <strong>In the long run, peer enforcement in college football is going to have trouble holding together for exactly the reason peer enforcement of anything is hard: it costs the enforcer something, and there has to be a future to make that cost worth paying.</strong></p>
+
+  <div class="pull">
+    <p>Peer enforcement is a threat the enforcer has to be willing to pay for. The credibility of the threat is exactly the willingness to absorb that cost.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">The counterfactual we did not get to run</h2>
+
+  <p>Here is the subtler point, the one this column wants you to walk away with. <strong>Sorsby withdrew before the system was actually tested.</strong> We do not know whether Nebraska would have taken the forfeit. We do not know whether other schools on Texas Tech&rsquo;s 2026 schedule would have joined Nebraska. We do not know whether the Big 12 conference would have followed through on the lawsuit or settled. The cleanest possible <span class="cc" data-preview="What would have happened if it hadn't. The fundamental question of cause-and-effect, asked about a world we never get to observe."><em>counterfactual</em><a class="cc-i" href="../concepts/counterfactuals.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> on whether the peer-enforcement layer of college football has any teeth was sitting two weeks out, and the player walked off the board before we got to run it.</p>
+
+  <p>This matters because the apparent strength of peer enforcement in the Sorsby case &mdash; the threats, the lawsuits, the visible solidarity &mdash; is now part of the institutional narrative the sport tells itself. <em>The system handled it.</em> The system did not handle it. The system <em>announced</em> that it would handle it, and then was relieved of having to find out whether the announcement was credible. The next time something like this happens &mdash; and there will be a next time &mdash; the announcements may carry less weight, because the announcers themselves know they did not have to follow through last time.</p>
+
+  <h2 class="sh">The civic-mission close</h2>
+
+  <p>Formal enforcement institutions evolved because peer enforcement is hard to sustain. The fixed costs of the formal layer are paid up front; the marginal cost of any individual enforcement is small. The fixed costs of peer enforcement are low; the marginal cost of any individual enforcement is large and falls on whoever happens to be the enforcer that day. <strong>That is why every stable cooperative system in human history has built formal enforcement institutions.</strong> When the formal layer breaks, the peer layer fills in for a while &mdash; but historically it does not last. The pressure to defect, to free-ride, to absorb the punishment by going along, grows over time. The peer layer wears down.</p>
+
+  <p>The Sorsby case is now closed at the personal level. Part III of this thread will run when the NFL Supplemental Draft delivers its verdict on whether the league has appetite for him, and at what price. The institutional question is the question that stays open. <strong>College football has, as of this month, no working enforcement institution that can punish a player for gambling on his own team without that punishment being overruled by a county judge.</strong> The peer layer noticed. The peer layer is, for now, awake. Whether the peer layer can stay awake, in the absence of a working formal institution to do most of the work, is the rest of the story. We will be watching.</p>
+
+  <p><em>Part I of this thread published earlier this week. Part III will run after the June 22 supplemental-draft deadline and the draft itself.</em></p>
+
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Issue No. 83 &middot; June 19, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+
+</div>
+
+</body>
+</html>
