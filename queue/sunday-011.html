@@ -1,0 +1,470 @@
+<!--
+  ============================================================
+  SUNDAY EDITION TEMPLATE — DO NOT PUBLISH AS-IS
+  ============================================================
+  This file is the structural shell for every Sunday Edition.
+  The HTML structure, CSS, section ordering, and layout are
+  canonical — copy them exactly.
+
+  EVERYTHING ELSE IS AN EXAMPLE AND MUST BE REPLACED WITH
+  FRESH DATA PULLED SUNDAY MORNING BEFORE PUBLISHING:
+    - Title, masthead dates, Sunday Edition number
+    - Issue numbers (reader-facing)
+    - Stat cards (issue count, predictions hit, issues remaining)
+    - Issue list (past 7 days' published pieces with links)
+    - Prediction scorecard (rerun every model with fresh data)
+    - "What we got right" and "What we got wrong" sections
+    - Over/under reactions analysis
+    - Road ahead preview
+    - Pull quotes (update if appropriate, keep tone)
+
+  PROCESS: Copy this file to queue/sunday-NNN.html, then
+  replace every example value above. The template in reserve/
+  is read-only — never modify it in place. See CLAUDE.md
+  "Sunday Edition Workflow" for the full step-by-step process.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Sunday Edition No. [NNN] — [DATE]</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.desk{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.desk{padding:1.6rem 1.4rem}}
+.desk-hed{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:.2rem}
+.desk-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;color:#a09070;margin-bottom:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.chip{font-family:'Roboto Mono',monospace;font-size:.66rem;background:rgba(201,150,42,.12);border:1px solid rgba(201,150,42,.35);color:#b8982a;padding:.28rem .65rem;cursor:pointer;transition:background .15s}
+.chip:hover{background:rgba(201,150,42,.25);color:var(--gold)}
+.desk label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+textarea#qi{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(201,150,42,.4);color:#f0ead8;font-family:'Libre Baskerville',serif;font-size:.95rem;line-height:1.6;padding:.85rem 1rem;resize:vertical;min-height:90px;outline:none;transition:border-color .2s}
+textarea#qi:focus{border-color:var(--gold)}
+textarea#qi::placeholder{color:#6b5e4a}
+#ask-btn{margin-top:.7rem;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:none;padding:.72rem 1.8rem;cursor:pointer;transition:background .2s,transform .1s}
+#ask-btn:hover{background:#e0aa30;transform:translateY(-1px)}
+#ask-btn:disabled{background:#5a4a28;color:#3a3020;cursor:not-allowed;transform:none}
+.resp{margin-top:1.4rem;border-top:1px solid rgba(201,150,42,.3);padding-top:1.1rem;display:none}
+.resp.on{display:block}
+.resp-hed{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+#rtext{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.78;color:#e0d8c8;white-space:pre-wrap}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ── SITE NEWS BOX ── */
+.site-news{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.site-news{padding:1.6rem 1.4rem}}
+.site-news h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:.6rem}
+.site-news p{font-size:.92rem;color:#c8cabd;line-height:1.65;margin-bottom:.8rem}
+.site-news ul{list-style:none;padding:0;margin:0}
+.site-news li{font-size:.9rem;color:#e0d8c8;line-height:1.6;padding:.45rem 0;border-bottom:1px solid rgba(201,150,42,.15)}
+.site-news li:last-child{border-bottom:none}
+.site-news li strong{color:var(--gold)}
+.site-news a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,150,42,.35);transition:border-color .2s}
+.site-news a:hover{border-color:var(--gold)}
+
+/* ── SUNDAY EDITION EXTRAS ── */
+.intro{font-size:1.05rem;line-height:1.75;margin-bottom:1.8rem;padding:1.2rem 1.5rem;background:var(--card);border-left:4px solid var(--steel);color:var(--ink)}
+.issue-list{list-style:none;padding:0;margin:0 0 1.8rem}
+.issue-list li{font-size:.9rem;line-height:1.65;padding:.5rem 0;border-bottom:1px solid var(--div)}
+.issue-list li:last-child{border-bottom:none}
+.issue-list .inum{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;color:var(--steel);margin-right:.4rem}
+.issue-list .idate{font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);margin-right:.4rem}
+.issue-list a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3);font-weight:700;transition:border-color .2s}
+.issue-list a:hover{border-color:var(--rust)}
+.box.green-box{background:var(--green)}
+.box.green-box h3{color:#e0f0e8}
+.box.green-box p{color:#c8edcf}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="When the Whistle Stopped Working: One Week, Three Institutions, Three Different Outcomes">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/sunday-011.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="When the Whistle Stopped Working: One Week of Sports Enforcement">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/banner.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Sunday Edition &middot; Week 11 Recap &middot; CFB &middot; MLB &middot; The Enforcement Question</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Sunday Edition No. 11 &middot; Issue No. 85</span>
+    <span>June 21, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">When the Whistle <em>Stopped Working.</em></h1>
+
+  <div class="deck">
+    One week. Three sports-governance institutions, ranked roughly by money in the room. Three different enforcement outcomes. The pattern is now visible enough to give a name to. This Sunday Edition tracks the Sorsby three-piece arc against actual outcomes, grades open predictions from prior weeks, and previews the supplemental-draft week that finishes the story.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; June 21, 2026 &middot; Sunday Edition No. 11</div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    This week the newsletter ran a three-piece arc on the collapse of NCAA enforcement, the wobbling peer layer that tried to substitute, and the high school institutions that &mdash; for now &mdash; still hold authority. The arc was built around three claims about how enforcement actually works. Today we check the claims. Where they look right, we say so. Where they look wrong or incomplete, we say that too. Misses are the point of the Sunday Edition.
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">6</div><div class="l">Issues Published This Week (#79&ndash;#84)</div></div>
+    <div class="sc"><div class="v good">TODO_HIT</div><div class="l">Open Predictions Resolved This Week</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">415</div><div class="l">Issues Remaining to Our 500 Goal</div></div>
+  </div>
+
+  <!-- SECTION 1: THE WEEK IN REVIEW -->
+  <h2 class="sh">The Week in Review: Issues #79&ndash;#84</h2>
+
+  <ol class="issue-list">
+    <li><span class="inum">#79</span><span class="idate">Jun 15</span> &mdash; <a href="published/064-mariners-streak.html">How Do You Win Eight Straight and Then Lose by Six?</a> &mdash; A low-average, high-power lineup is a high-variance lineup. Mariners 8-3, then 7-1. Same roster.</li>
+    <li><span class="inum">#80</span><span class="idate">Jun 16</span> &mdash; <a href="published/082-sixteen-and-three.html">Two Trophies. Same Record. Twenty-Four Hours Apart.</a> &mdash; Knicks 16&ndash;3, Hurricanes 16&ndash;3. First-ever joint 16&ndash;3 finish in the modern playoff era. Base-rate analysis.</li>
+    <li><span class="inum">#81</span><span class="idate">Jun 17</span> &mdash; <a href="published/083-ncaa-enforcement-collapse.html">What &ldquo;Banned&rdquo; Used to Mean.</a> &mdash; The Sorsby Case, Part I. A Lubbock County judge overruled NCAA permanent ineligibility. The deterrent collapses by visibility.</li>
+    <li><span class="inum">#82</span><span class="idate">Jun 18</span> &mdash; <a href="published/060-mets-sell-or-hold.html">Mets Buy-or-Sell &middot; The June Update</a> &mdash; The tracker updates with five weeks until the deadline.</li>
+    <li><span class="inum">#83</span><span class="idate">Jun 19</span> &mdash; <a href="published/084-peer-enforcement.html">When the Refs Stop Refereeing, the Players Try to Become the Refs.</a> &mdash; The Sorsby Case, Part II. The Big 12 sued its own member; Nebraska threatened to refuse the game; nobody had to find out whether the threats would hold.</li>
+    <li><span class="inum">#84</span><span class="idate">Jun 20</span> &mdash; <a href="published/085-hs-still-holds.html">The High School Has More Authority Than the NCAA. Here Is Why.</a> &mdash; The Sorsby Case, Part III. Three Texas UIL rulings stuck this week. The schoolyard&rsquo;s strength is not virtue &mdash; it is the price of a lawsuit.</li>
+  </ol>
+
+  <hr>
+
+  <!-- SECTION 2: THE PREDICTION SCORECARD -->
+  <h2 class="sh">The Prediction Scorecard</h2>
+
+  <p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-bottom:1rem">This week brought one resolved prediction from a prior issue and three new claims from the Sorsby arc. Two of the new claims are testable already; one waits for the supplemental draft on Monday and Tuesday.</p>
+
+  <table class="rec">
+    <thead>
+      <tr><th>#</th><th>Prediction (origin issue)</th><th>Outcome (this week)</th><th>Grade</th></tr>
+    </thead>
+    <tbody>
+
+      <tr class="hl">
+        <td class="mono">#78</td>
+        <td>Sunday Edition No. 010 stood by the 75% historical comp for Carolina entering the Final 8&ndash;0 through two rounds, despite a mid-series dip to 31%. Prior was right to wait.</td>
+        <td>Carolina won the Cup. Series closed in Las Vegas. The patient prior was correct.</td>
+        <td class="mono">HIT</td>
+      </tr>
+
+      <tr class="hl">
+        <td class="mono">#81</td>
+        <td>The NCAA&rsquo;s &ldquo;permanent ineligibility&rdquo; deterrent collapses by visibility &mdash; the next athlete reads the Sorsby ruling and concludes the penalty is a starting bid in court.</td>
+        <td>TODO_VERIFY_SUNDAY &mdash; check whether any new player has filed an injunction against an NCAA ruling this week, or whether NCAA enforcement actions have visibly slowed.</td>
+        <td class="mono">PENDING</td>
+      </tr>
+
+      <tr>
+        <td class="mono">#83</td>
+        <td>Peer enforcement (Big 12 lawsuit, Nebraska threat) looks robust this cycle but will struggle to hold over time because conference realignment shreds the repeat-play assumption.</td>
+        <td>TODO_FETCH_SUNDAY &mdash; status of the Big 12 lawsuit vs Texas Tech after Sorsby withdrew. Has it been dismissed? Settled? Refiled?</td>
+        <td class="mono">PENDING &mdash; this one resolves over months, not days</td>
+      </tr>
+
+      <tr class="hl">
+        <td class="mono">#84</td>
+        <td>Texas UIL DEC rulings hold authority because the legal cost-benefit doesn&rsquo;t justify a challenge at HS stakes; one TRO would change that.</td>
+        <td>TODO_VERIFY_SUNDAY &mdash; have Nussmeier, Meredith, or Kennedy filed appeals beyond the UIL State Executive Committee? Has any other Texas HS player been ruled ineligible in the past 48 hours?</td>
+        <td class="mono">HIT-IN-PROGRESS &mdash; no court challenges filed as of mid-week; updated count below</td>
+      </tr>
+
+      <tr>
+        <td class="mono">#79</td>
+        <td>The Mariners&rsquo; high-variance lineup will continue to produce alternating blowouts and one-run duds with no roster change.</td>
+        <td>TODO_FETCH_SUNDAY &mdash; Mariners W-L since #79 published Monday, and game-by-game run totals. Pattern should still be present.</td>
+        <td class="mono">PENDING &mdash; check Saturday box scores</td>
+      </tr>
+
+      <tr>
+        <td class="mono">#82</td>
+        <td>Mets Buy-or-Sell tracker (June): the prior leans buy at or above .520, lean sell below .470, with the broad middle &ldquo;hold and watch&rdquo;.</td>
+        <td>TODO_FETCH_SUNDAY &mdash; Mets W-L through Saturday June 20, and where the buy/sell tracker stands. Trade deadline is six weeks out.</td>
+        <td class="mono">TRACKING</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- SECTION 3: WHAT WE GOT RIGHT -->
+  <h2 class="sh">What We Got Right</h2>
+
+  <div class="box">
+    <h3>The Wins</h3>
+    <p><strong>The Carolina prior held all the way to the trophy.</strong> Sunday Edition No. 010 said the Bayesian comp at 75% had not been broken by a mid-series 31% scare, and stayed at the prior. Carolina lifted the Cup. This is the cleanest possible Bayesian win on a multi-week prediction: a structural prior that survived noise and was vindicated by outcome.</p>
+    <p><strong>The Sorsby arc was published before the news cycle settled into a single take.</strong> Most sports columns this week framed Sorsby as an integrity story (Pete Rose lineage, gambling threatens sport). The Sports Page argued, in three parts, that the deeper story is about institutional enforcement collapsing in the regimes where the money is largest, and still working in the regimes where the money is small. That frame has not yet been adopted elsewhere. The Sunday Edition reserves the right to revisit this judgment after Part IV.</p>
+    <p>TODO_WRITE_SUNDAY &mdash; one additional &ldquo;wins&rdquo; paragraph based on whatever resolved between Wednesday and Sunday morning. If the Mariners variance pattern (#79) is still visible in this week&rsquo;s game log, that is the one to write about.</p>
+  </div>
+
+  <!-- SECTION 4: WHAT WE GOT WRONG -->
+  <h2 class="sh">What We Got Wrong (or Aren&rsquo;t Sure About)</h2>
+
+  <div class="box">
+    <h3>The Misses and Uncertainties</h3>
+    <p><strong>The Sorsby Part II peer-enforcement counterfactual was a forced concession.</strong> Part II argued that the apparent strength of peer enforcement &mdash; Big 12 lawsuit, Nebraska threat &mdash; would not have actually held up under stress, because Sorsby withdrew before anyone had to forfeit a TV window. That is a counterfactual the newsletter cannot actually run. The honest read is: we made a strong structural claim about an outcome we did not get to observe. Reasonable readers can disagree about whether the claim was earned.</p>
+    <p>TODO_WRITE_SUNDAY &mdash; one additional &ldquo;wrong&rdquo; paragraph based on whatever broke this week. If the Mets data took a wrong-side turn after the buy/sell update Thursday, write about it. If a verified number in any published piece is found to be off, document the correction. The Sunday Edition is built to surface errata in public, not bury them.</p>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Institutional authority is inversely correlated with institutional importance, not because importance corrupts virtue but because importance attracts lawyers.&rdquo;</p>
+    <cite>&mdash; The Sports Page, Issue #84, on enforcement</cite>
+  </div>
+
+  <!-- SECTION 5: OVER-REACTIONS AND UNDER-REACTIONS -->
+  <h2 class="sh">Over-Reactions and Under-Reactions</h2>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--rust);margin-bottom:.6rem">Over-Reactions</h3>
+      <p>The 16-3 coincidence piece (#80) earlier in the week leaned on the word &ldquo;coincidence&rdquo; harder than the data fully justifies. The matching record happens in 13% of comparable years (3 in 23). It is unusual at the specific value 16-3, but not so unusual that the headline framing was the only honest reading. A more conservative version of the piece would have led with &ldquo;rare but not extreme&rdquo; rather than &ldquo;first ever.&rdquo; Reasonable editorial choice, but a softer one would also have been defensible.</p>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--steel);margin-bottom:.6rem">Under-Reactions</h3>
+      <p>TODO_WRITE_SUNDAY &mdash; the most likely candidate is a Mets piece. The team had a brutal blowout on June 15 (Reds 12&ndash;0). If the variance pattern continues into this weekend, the newsletter under-played the &ldquo;this team has structural pitching variance&rdquo; story by waiting for more data. If the Mets recover, the patience was right. Decide Sunday morning based on the box scores.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 5.5: WHAT READERS READ — auto-populated by scripts/fetch_readership.py -->
+  <!-- READERSHIP_BLOCK -->
+
+  <hr>
+
+  <!-- SECTION 6: THE ROAD AHEAD -->
+  <h2 class="sh">The Road Ahead</h2>
+
+  <p><strong>Monday June 22</strong> is the entry deadline for the NFL Supplemental Draft. The draft itself runs in the days after. <strong>The Sorsby Case, Part IV</strong> &mdash; the market verdict &mdash; publishes when the draft delivers an outcome. Three outcomes the piece can absorb: an early-round selection (talent &gt; integrity discount, NCAA &ldquo;win&rdquo; is hollow), a late-round selection (market prices the discount, NCAA reputation has residual deterrent value), or no selection at all (labor market enforces what the NCAA could not).</p>
+
+  <p><strong>Mets buy-or-sell</strong> data collection continues through the July 31 trade deadline, six weeks out. Issue #82 updated the tracker Thursday. Expect another update in the early-July Sunday Edition once the All-Star Break is in view.</p>
+
+  <p><strong>The Half-Life series</strong> opens with Part I (positional durability framework, MLB hitters 1985&ndash;2025) in the queue. Look for it later this month. Part II (Pete Alonso&rsquo;s position on the curve, seven years in) follows.</p>
+
+  <p>And in the concept library: we shipped twelve primers this week (base rate, confirmation bias, regression to the mean, survivorship bias, post hoc, sample size, precision-vs-accuracy, counterfactuals, conditioning on the consequence, Bayesian inference, p-value, Pearson correlation). Each lives at <a href="../concepts/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">/concepts/</a>. We&rsquo;ll keep adding primers as new issues call for them.</p>
+
+  <!-- FINAL PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Eighty-five issues in. Four hundred and fifteen to go. The whistle stopped working in one regime this week, and held in another. That is the kind of distinction a newsletter built on the math should be the one to draw.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the week</cite>
+  </div>
+
+  <!-- STORY IDEAS INBOX (compact) -->
+  <aside id="pitch" style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.7rem 0;margin:1.6rem 0 .4rem;font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <span style="text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600">Pitch a stat &rarr;</span>
+      <input type="text" name="sport" placeholder="Sport" style="font-family:inherit;font-size:.7rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;width:5rem">
+      <input type="text" name="idea" placeholder="The weird number you noticed" required style="font-family:'Libre Baskerville',serif;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;flex:1;min-width:12rem">
+      <button id="pitch-btn" type="submit" style="background:var(--ink);color:var(--cream);font-family:inherit;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.32rem .7rem;cursor:pointer">Send</button>
+      <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea" style="color:var(--steel);text-decoration:none;font-size:.6rem">or GitHub</a>
+    </form>
+    <div id="pitch-ok" style="display:none;margin-top:.3rem;color:var(--green);font-size:.62rem">Sent. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;margin-top:.3rem;color:var(--rust);font-size:.62rem">Failed &mdash; try the GitHub link.</div>
+  </aside>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='\u2026';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='Send';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Sunday Edition No. 11 &middot; Issue No. 85</span>
+    <span>Predictions tracked from Issues #78, #79, #81, #82, #83, #84</span>
+    <span>See you next Sunday</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/sunday-011.html">
+
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+
+  <!-- SOCIAL SHARE BUTTONS -->
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+
+    <a href="https://twitter.com/intent/tweet?text=When%20the%20Whistle%20Stopped%20Working%3A%20The%20Sports%20Page%20Week%2011%20Recap%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/sunday-011.html" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:background .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/sunday-011.html" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/sunday-011.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20When%20the%20Whistle%20Stopped%20Working%3A%20The%20Sports%20Page%20Week%2011%20Recap&body=Thought%20you%27d%20enjoy%20this%3A%0A%0AWhen%20the%20Whistle%20Stopped%20Working%3A%20The%20Sports%20Page%20Week%2011%20Recap%0A%0A%0A%0ARead%20it%20here%3A%20https%3A//thesportspage.net/published/sunday-011.html%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/sunday-011.html"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+
+  </div>
+
+  <!-- DIVIDER -->
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+
+  <!-- QR CODE — physical/in-person sharing -->
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+
+</section>
+
+<!-- COPY-LINK INTERACTION (pure vanilla, no dependencies) -->
+<script>
+(function(){
+  var btn = document.getElementById('sp-copy-link');
+  if (!btn) return;
+  var label = document.getElementById('sp-copy-label');
+  var url = btn.getAttribute('data-url');
+  btn.addEventListener('click', function(){
+    try {
+      navigator.clipboard.writeText(url).then(function(){
+        label.textContent = 'Copied!';
+        btn.style.background = '#c9962a';
+        btn.style.color = '#1a1208';
+        setTimeout(function(){
+          label.textContent = 'Copy link';
+          btn.style.background = 'transparent';
+          btn.style.color = '#c9962a';
+        }, 1800);
+      });
+    } catch (e) {
+      // Fallback for older browsers: select-and-prompt
+      window.prompt('Copy this link:', url);
+    }
+  });
+})();
+</script><div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+</div>
+
+</body>
+</html>
