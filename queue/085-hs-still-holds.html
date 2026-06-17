@@ -1,0 +1,191 @@
+<!-- PUBLISH-META
+topic: CFB
+tags: CFB:cfb, NCAA, Texas UIL, Methods, Reader's Defense, Institutions
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The High School Has More Authority Than the NCAA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.92rem;margin:1.2rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.5rem .6rem;text-align:left}
+table.rec td{padding:.55rem .6rem;border-bottom:1px solid var(--div);vertical-align:middle}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.85rem;color:var(--muted)}
+table.rec .held td{background:#e6efef}
+table.rec .lost td{background:#fceee9;font-weight:700}
+table.rec .lost .mono{color:var(--rust)}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+</style>
+<meta property="og:title" content="The High School Has More Authority Than the NCAA. Here Is Why.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/085-hs-still-holds.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/085-hs-still-holds.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The High School Has More Authority Than the NCAA.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/085-hs-still-holds.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="masthead">
+  <div class="kicker">A Statistical Dispatch &middot; CFB &middot; Texas HS &middot; The Sorsby Case, Part III</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Issue No. 84</span>
+    <span>June 20, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<div id="main-content" class="paper">
+
+  <h1 class="hed">The High School Has More Authority Than the NCAA. <em>Here Is Why.</em></h1>
+
+  <div class="deck">
+    Three Texas high school football recruits have been ruled ineligible in the past two weeks. The rulings stuck. A county judge overruled a similar NCAA ruling two weeks ago and the player walked. Same week. Same state. Different outcomes. The institutions with less prestige hold more authority. The math behind the inversion is the rest of this column.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; The Reader's Defense &middot; The Sorsby Case, Part III</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">3</div><div class="l">Texas HS Players Ruled Ineligible (Past 2 Weeks)</div></div>
+    <div class="sc"><div class="v good">0</div><div class="l">Court Challenges Filed</div></div>
+    <div class="sc"><div class="v now">1</div><div class="l">County Judge Who Overruled the NCAA</div></div>
+  </div>
+
+  <p>Parts I and II of this thread argued that the NCAA had lost its enforcement authority over a college quarterback. Brendan Sorsby got a Lubbock County judge to overrule a permanent-ineligibility ruling on June 8. The Big 12 conference sued its own member school. Nebraska threatened to refuse to play. The peer layer woke up. The formal layer did not. Sorsby withdrew his lawsuit yesterday and announced for the supplemental draft.</p>
+
+  <p>Now look at what was happening at the high school level the entire time the NCAA was losing.</p>
+
+  <h2 class="sh">Three rulings in two weeks. They held.</h2>
+
+  <p>On Thursday June 11, a Texas UIL District Executive Committee ruled five-star cornerback John Meredith III ineligible for the 2026 high school season, after he transferred from Euless Trinity to Fort Worth North Crowley in January. Vote: 5&ndash;2. He sits.</p>
+
+  <p>On Tuesday June 16, a different Texas UIL DEC ruled four-star quarterback Colton Nussmeier ineligible for the 2026 season after he transferred from Flower Mound Marcus to Denton Ryan. Vote: 3&ndash;3 &mdash; a tie. The Prior Athletic Participation Form, filled out by his Marcus coach, broke the tie by recording the transfer as motivated by athletic purposes. Nussmeier sits. He is the younger brother of Garrett Nussmeier, drafted by the Chiefs at pick 249 in April, and a Georgia commit.</p>
+
+  <p>Quarterback Bryson Kennedy of Duncanville, a transfer from Little Rock Central, was ruled ineligible inside the same window. The pattern is so clean that MaxPreps headlined Nussmeier&rsquo;s case as &ldquo;the second highly-ranked Texas player to be denied transfer in less than a week.&rdquo; UIL itself moved in October 2024 to empower its State Executive Committee to investigate schools with excessive transfer activity. The enforcement apparatus is active. The rulings are sticking.</p>
+
+  <p>So far this year, exactly zero of these high school rulings have been challenged in a state court. The Texas state court system that two weeks ago issued an injunction overruling an NCAA permanent-ineligibility ruling has not been asked to issue an injunction overruling a UIL high school ruling. Same state. Same judiciary. Different sport-governance body. Different result.</p>
+
+  <h2 class="sh">The inversion, laid out plainly</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Institution</th><th>Money in the Room</th><th>Authority Held?</th></tr>
+    </thead>
+    <tbody>
+      <tr class="lost"><td>NCAA &middot; Sorsby ban</td><td class="mono">tens of millions</td><td class="mono">No &mdash; overruled</td></tr>
+      <tr class="lost"><td>Big 12 &middot; suit + Nebraska threat</td><td class="mono">~$8M per game</td><td class="mono">Untested &mdash; Sorsby left first</td></tr>
+      <tr class="held"><td>Texas UIL &middot; Meredith</td><td class="mono">none (HS)</td><td class="mono">Yes &mdash; held</td></tr>
+      <tr class="held"><td>Texas UIL &middot; Nussmeier</td><td class="mono">none (HS)</td><td class="mono">Yes &mdash; held</td></tr>
+      <tr class="held"><td>Texas UIL &middot; Kennedy</td><td class="mono">none (HS)</td><td class="mono">Yes &mdash; held</td></tr>
+    </tbody>
+  </table>
+
+  <p>The pattern is not subtle. <strong>Authority is inversely correlated with stakes.</strong> The institution with the most money in the room had the least working enforcement. The institutions with no money in the room had the most.</p>
+
+  <h2 class="sh">The mechanism</h2>
+
+  <p>Three forces scale upward with the size of the stakes, and all three weaken enforcement when they are present.</p>
+
+  <p><strong>Lawyers.</strong> The cost of mounting a legal challenge is roughly fixed; the upside scales with what is at stake. At NCAA-eligible levels, a season of college football is worth a top-end law firm. At high school levels, the same season is worth a phone call to a relative. The high school DEC ruling sticks not because it is bulletproof but because it is not worth challenging.</p>
+
+  <p><strong>Money.</strong> The institution being defended is more solvent the more stakes it manages, but it is also a richer target. Once the money in the room exceeds the cost of a lawsuit, lawsuits arrive. Below that threshold, they do not.</p>
+
+  <p><strong>Media attention.</strong> A high-profile case attracts pressure on adjudicators to be defensible, which produces narrower rulings and more procedural openings to challenge. A low-profile case is decided at face value. The Sorsby ruling went through three layers of review and an injunction. The Nussmeier ruling was a 3&ndash;3 vote that turned on a checkbox.</p>
+
+  <p>Three forces scale <em>downward</em> with locality, and all three strengthen enforcement when they are present.</p>
+
+  <p><strong>Detection.</strong> When everyone in the local league knows everyone, &ldquo;did the player transfer for athletic reasons&rdquo; is answerable by the people who watched it happen. When the league is national, the same question requires an investigation.</p>
+
+  <p><strong>Single-jurisdiction venue.</strong> The Sorsby injunction worked because there are fifty state-court systems an athlete could file in. The UIL ruling sticks because Texas high school football is governed by a single Texas body, with a single Texas-state legal home, and the players are minors whose families do not generally have access to the kind of plaintiff bar that can find advantageous venue.</p>
+
+  <p><strong>Repeat play.</strong> The schools in a local district will play each other every year. Coaches who push the rules become known to their peers. Reputational sanction is real because the network is small enough that everyone knows.</p>
+
+  <div class="pull">
+    <p>The high school DEC ruling sticks not because it is bulletproof but because it is not worth challenging.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">The fragility we will probably find out about</h2>
+
+  <p>The Texas UIL ruling on Colton Nussmeier was a tie. Three for, three against, broken by a checkbox on a form a coach filled out. The family includes a current NFL offensive coordinator. The brother was a top-shelf recruit who got drafted. The Georgia program he committed to has institutional reach and a long memory.</p>
+
+  <p>None of this means a court challenge is coming. None of this means the family will file. But the structural conditions that protected the UIL ruling from the lawyers-money-media trio are conditions that scale exactly with stakes &mdash; and the Nussmeier case is, by Texas high school football standards, very high-stakes. If a TRO is ever going to come for a UIL transfer ruling, this is the family for whom the legal arithmetic might work out.</p>
+
+  <p>Which brings us to the <span class="cc" data-preview="What would have happened if it hadn't. The fundamental question of cause-and-effect, asked about a world we never get to observe."><em>counterfactual</em><a class="cc-i" href="../concepts/counterfactuals.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> the column wants you to hold. We do not yet know whether the Texas UIL&rsquo;s authority is structurally durable, or whether it has simply not been tested by a litigant with enough money in the room to make testing worthwhile. The NCAA looked durable too, until it didn&rsquo;t. The institutions that &ldquo;still work&rdquo; might be the institutions that nobody has yet bothered to sue.</p>
+
+  <h2 class="sh">The civic-mission close</h2>
+
+  <p>The cleanest reading of the past two weeks is a structural law: <strong>institutional authority is inversely correlated with institutional importance, not because importance corrupts virtue but because importance attracts lawyers.</strong> The high school holds because the high school is small. The NCAA fell because the NCAA is large. The schoolyard&rsquo;s strength is not the schoolyard&rsquo;s virtue. It is the schoolyard&rsquo;s irrelevance to the kind of capital that produces a successful court challenge.</p>
+
+  <p>This is a sobering observation about institutions in any field, not just sport. The fields where you most need durable enforcement are the fields where the most money sits, and those are exactly the fields where enforcement breaks down. The fields where you can most afford weak enforcement are the fields where enforcement is rarely tested, because the money is not yet there. As the money in any field grows, the enforcement institutions designed for the prior smaller regime do not scale gracefully. They get sued.</p>
+
+  <p><em>Part IV of this thread, on the NFL Supplemental Draft&rsquo;s verdict on Sorsby, will publish after the June 22 entry deadline and the draft itself.</em></p>
+
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Issue No. 84 &middot; June 20, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+
+</div>
+
+</body>
+</html>
