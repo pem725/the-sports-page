@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 419 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 418 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,8 +280,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 81 issues (#1-81)
-Queue: 16 articles ready (060-mets-sell-or-hold, 061-mlb-money-buys-wins, 067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 084-peer-enforcement, _TEMPLATE, bobby-bonilla-day)
+Published: 82 issues (#1-82)
+Queue: 17 articles ready (061-mlb-money-buys-wins, 067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 084-peer-enforcement, 085-hs-still-holds, _TEMPLATE, bobby-bonilla-day, sunday-011)
 Reserve: 1 evergreen piece
-Goal: 419 issues remaining of 500
-Last published: Issue #81 — "What “Banned” Used to Mean. A Lubbock County Judge Just Showed What It Means Now." (083-ncaa-enforcement-collapse.html) on June 17, 2026
+Goal: 418 issues remaining of 500
+Last published: Issue #82 — "Steve Cohen Has Sold Before. The Data Mostly Agrees with Him." (060-mets-sell-or-hold.html) on June 18, 2026
