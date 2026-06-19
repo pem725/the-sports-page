@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The License</title>
+<meta name="description" content="The Sports Page License: borrow it, give it back better. Free to read and share, non-commercial, attribution required — and come back to me before you build on it.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5.5vw,3.4rem);font-weight:900;line-height:1.05;margin-bottom:.3rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Playfair Display',serif;font-style:italic;font-size:1.25rem;color:var(--steel);margin:.4rem 0 1.4rem;line-height:1.4}
+
+.tier{margin:1.6rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier ol{margin:.4rem 0 0 1.1rem}
+.tier li{margin-bottom:.55rem}
+.tier strong{color:var(--rust)}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2.2rem 0 .9rem;color:var(--ink)}
+.sec{margin-bottom:1.2rem}
+.sec h4{font-family:'Roboto Mono',monospace;font-size:.8rem;letter-spacing:.06em;color:var(--steel);font-weight:600;margin:1.2rem 0 .4rem;text-transform:uppercase}
+p{margin-bottom:1rem}
+.lead{font-weight:700}
+ul.defs{list-style:none;padding-left:0}
+ul.defs li{padding:.35rem 0;border-bottom:1px dotted var(--div)}
+ul.defs li:last-child{border-bottom:none}
+.term{font-family:'Roboto Mono',monospace;font-size:.85rem;color:var(--rust);font-weight:600}
+
+.quiz-cta{margin:1.8rem 0;border:2px solid var(--steel);background:var(--card);padding:1.6rem 1.8rem;text-align:center}
+.quiz-cta .qk{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:600}
+.quiz-cta h3{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;margin:.3rem 0 .4rem;line-height:1.15}
+.quiz-cta p{font-size:.95rem;color:var(--muted);margin-bottom:1rem}
+.quiz-cta a.btn{display:inline-block;background:var(--rust);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:.7rem 1.4rem;border:1px solid var(--rust);transition:background .15s}
+.quiz-cta a.btn:hover{background:#9c2f17}
+
+.contact{margin-top:2rem;border-top:2px solid var(--ink);padding-top:1rem;text-align:center}
+.contact .lbl{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.contact a{font-family:'Roboto Mono',monospace;font-size:1.05rem;color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.4)}
+.fine{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:1rem;text-align:center}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="masthead">
+  <div class="kicker">The License &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>The Sports Page License</span>
+    <span>v1.0</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+
+<div id="main-content" class="paper">
+
+  <h1 class="hed">The Sports Page License</h1>
+  <div class="deck">&ldquo;Borrow it. Give it back better.&rdquo;</div>
+
+  <p>Copyright &copy; 2026 <strong>The Sports Page</strong> (<a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">thesportspage.net</a>). All rights reserved except those expressly granted below.</p>
+
+  <div class="tier">
+    <div class="tier-label">The Spirit &middot; Read This Part First</div>
+    <h3>This work is a loan, not a giveaway.</h3>
+    <p>You are welcome to read it, enjoy it, pass it along, and learn from it &mdash; that part is free, and meant to be. But the ideas, the methods, the writing, and the figures here are lent to you on three conditions, and they are conditions, not suggestions:</p>
+    <ol>
+      <li><strong>No commercial gain.</strong> You may not make money from this work or from anything built out of it. Not directly, not indirectly.</li>
+      <li><strong>Come back to me.</strong> If you want to do more than read and share it &mdash; build on it, adapt it, republish it, or reuse its ideas and methods &mdash; ask me first.</li>
+      <li><strong>Give it back better.</strong> If you improve on what you borrowed, the improvement comes home. You send it back to me, and you pass it on to others under these same terms.</li>
+    </ol>
+    <p>Everything below is the careful version of those three sentences. If the careful version and the spirit ever seem to disagree, the spirit wins.</p>
+  </div>
+
+  <div class="quiz-cta">
+    <div class="qk">Before you go further</div>
+    <h3>&ldquo;Wait &mdash; is <em>my</em> use commercial?&rdquo;</h3>
+    <p>It&rsquo;s the question everyone gets wrong. Take the 2-minute, no-judgment quiz and find out where your plan lands: free, knock-first, or a conversation.</p>
+    <a class="btn" href="https://thesportspage.net/commercial-gain-quiz.html">Take the Commercial-Gain Quiz &rarr;</a>
+  </div>
+
+  <h2 class="sh">The Terms</h2>
+
+  <div class="sec">
+    <h4>0. Definitions</h4>
+    <ul class="defs">
+      <li><span class="term">&ldquo;The Work&rdquo;</span> &mdash; all content in this project and published at thesportspage.net: the written issues, the Sunday Editions, the concept primers, the statistical methods and frameworks, the figures and charts, the design system, and the supporting code, in whole or in any part.</li>
+      <li><span class="term">&ldquo;The Author&rdquo;</span> &mdash; The Sports Page, the copyright holder, reachable at the contact address below.</li>
+      <li><span class="term">&ldquo;You&rdquo;</span> &mdash; any person or organization exercising the permissions in this License.</li>
+      <li><span class="term">&ldquo;Commercial gain&rdquo;</span> &mdash; any use primarily intended for or directed toward commercial advantage or monetary compensation. This includes, without limitation: selling or licensing the Work; placing it behind a paywall; using it in advertising or paid promotion; bundling it with a paid product or service; or using it to train, fine-tune, or evaluate any model or system that is offered or operated for commercial gain.</li>
+      <li><span class="term">&ldquo;Adaptation&rdquo;</span> &mdash; anything you create that is based on, derived from, translated from, remixes, transforms, or substantially reuses the Work &mdash; including reuse of its distinctive ideas, methods, or analytical frameworks.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h4>1. What you may do freely</h4>
+    <p>Subject to Sections 2&ndash;6, and at no charge, you may <strong>read</strong> and privately enjoy the Work; <strong>share</strong> verbatim, unaltered copies of an individual issue, primer, or figure, by any medium; and <strong>quote</strong> briefly &mdash; up to roughly fifty words, or a single stat card or figure &mdash; for commentary, criticism, teaching, or discussion. That&rsquo;s the giveaway part. It requires no permission, only that you honor Sections 2 and 3.</p>
+  </div>
+
+  <div class="sec">
+    <h4>2. Attribution</h4>
+    <p>Whenever you share or quote, you must credit <strong>The Sports Page</strong> by name, include a working link to <strong>https://thesportspage.net/</strong>, and keep this License and all copyright notices intact on any copy. You may not imply that The Author endorses you or your use.</p>
+  </div>
+
+  <div class="sec">
+    <h4>3. Non-commercial, always</h4>
+    <p>You may not use the Work, or any Adaptation of it, for <strong>commercial gain</strong> as defined in Section 0. This condition has no expiration and is not waived by any other permission in this License. If you are unsure whether your use is commercial, assume it is, and ask. <a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">(Genuinely unsure? The quiz helps.)</a></p>
+  </div>
+
+  <div class="sec">
+    <h4>4. Ask first (anything beyond Section 1)</h4>
+    <p>If you want to do anything more than read, share verbatim, or briefly quote &mdash; in particular, create an <strong>Adaptation</strong>, republish a substantial portion, or reuse the Work&rsquo;s ideas, methods, or frameworks in your own work &mdash; you must <strong>contact The Author in advance and obtain written permission.</strong> Permission, when granted, may carry conditions, and is always non-commercial. The door is open; please knock.</p>
+  </div>
+
+  <div class="sec">
+    <h4>5. Give it back better</h4>
+    <p>If The Author grants you permission under Section 4 and you make an Adaptation, then: <strong>(a)</strong> you will send your Adaptation, and a plain description of what you changed and improved, back to The Author; <strong>(b)</strong> you will license your Adaptation to the public under <strong>this same License</strong>, in its entirety, with no added restrictions and nothing removed; and <strong>(c)</strong> your Adaptation will keep attribution to The Sports Page and a link back to thesportspage.net. What you borrowed comes home, and it comes home improved. That is the whole bargain.</p>
+  </div>
+
+  <div class="sec">
+    <h4>6. What you may never do</h4>
+    <p>Use the Work or any Adaptation for commercial gain (&sect;3); remove, obscure, or alter copyright notices, attribution, or this License; sublicense, relicense, or apply terms that restrict the rights this License grants to others; use the Work to train, fine-tune, or evaluate any model or system operated for commercial gain; or present an Adaptation as the original, or imply endorsement by The Author.</p>
+  </div>
+
+  <div class="sec">
+    <h4>7. Reservation of rights and exceptions</h4>
+    <p>All rights not expressly granted here are reserved by The Author. The Author may grant written exceptions to any term of this License &mdash; including commercial permissions &mdash; entirely at their discretion. An exception applies only to the specific use it names.</p>
+  </div>
+
+  <div class="sec">
+    <h4>8. No warranty</h4>
+    <p>The Work is provided &ldquo;as is,&rdquo; without warranty of any kind. The Author is not liable for any claim, damages, or other liability arising from the Work or its use, to the fullest extent permitted by law. Statistics are checked carefully but are offered for interest and discussion, not as professional, financial, or wagering advice.</p>
+  </div>
+
+  <div class="sec">
+    <h4>9. Termination</h4>
+    <p>Your rights under this License end automatically if you breach it. They are reinstated if you cure the breach within 30 days of becoming aware of it. Sections 0, 3, 6, 8, and this sentence survive termination.</p>
+  </div>
+
+  <div class="sec">
+    <h4>10. Interpretation</h4>
+    <p>This License is written in plain language on purpose. Where a term needs a more formal definition than is given here, interpret it consistently with the <strong>Creative Commons Attribution&ndash;NonCommercial&ndash;ShareAlike 4.0 International License</strong> (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">CC BY-NC-SA 4.0</a>), which is the nearest standard equivalent to the freely-granted portion of this License. Where this License is more restrictive &mdash; notably the &ldquo;ask first&rdquo; requirement of Section 4 and the &ldquo;share it back&rdquo; requirement of Section 5(a) &mdash; this License controls.</p>
+  </div>
+
+  <div class="contact">
+    <div class="lbl">To ask permission, send improvements, or request an exception</div>
+    <a href="mailto:license@thesportspage.net">license@thesportspage.net</a>
+    <p class="fine">This is a human-readable license written by the author, not a lawyer. For high-stakes reuse, both parties should seek their own legal advice. The plain-text source lives in <a href="https://github.com/pem725/the-sports-page/blob/main/LICENSE.md" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">LICENSE.md</a>.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; The License v1.0</span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
+  </div>
+
+</div>
+
+</body>
+</html>

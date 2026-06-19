@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Is It Commercial? A Quiz</title>
+<meta name="description" content="A short, funny, genuinely useful quiz on what counts as 'commercial gain' under The Sports Page License. Free, knock-first, or a hard no? Find out.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,5.5vw,3.2rem);font-weight:900;line-height:1.06;margin-bottom:.3rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:var(--steel);margin:.4rem 0 1.2rem;line-height:1.42}
+
+.key{border:1px solid var(--div);background:#fbf7ec;padding:1rem 1.2rem;margin:1.2rem 0 1.6rem;font-size:.9rem}
+.key b{font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.05em;padding:.1rem .4rem;border-radius:3px}
+.k-free{color:var(--green);border:1px solid var(--green)}
+.k-knock{color:var(--gold);border:1px solid var(--gold)}
+.k-no{color:var(--rust);border:1px solid var(--rust)}
+
+.scorebar{position:sticky;top:0;background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.08em;padding:.55rem 1rem;text-align:center;margin:0 0 1.4rem;z-index:10}
+.scorebar b{color:var(--gold)}
+
+.q{border-top:2px solid var(--ink);padding:1.3rem 0 .4rem;margin-bottom:.6rem}
+.q .qn{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.q .scenario{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;line-height:1.3;margin-bottom:.9rem}
+.opts{display:flex;flex-direction:column;gap:.5rem}
+.opt{display:block;width:100%;text-align:left;font-family:'Roboto Mono',monospace;font-size:.82rem;letter-spacing:.03em;background:var(--card);color:var(--ink);border:1px solid var(--div);padding:.65rem .9rem;cursor:pointer;transition:background .12s,border-color .12s}
+.opt:hover:not(:disabled){background:#e3dac4;border-color:var(--muted)}
+.opt:disabled{cursor:default}
+.opt.chosen-right{background:#e2efe5;border-color:var(--green);color:var(--green);font-weight:600}
+.opt.chosen-wrong{background:#f3e0db;border-color:var(--rust);color:var(--rust);font-weight:600;text-decoration:line-through}
+.opt.reveal-right{border-color:var(--green);color:var(--green);font-weight:600}
+.feedback{display:none;margin-top:.8rem;padding:.85rem 1rem;border-left:3px solid var(--steel);background:#fbf7ec;font-size:.93rem;line-height:1.6}
+.feedback.show{display:block}
+.feedback .tag{font-family:'Roboto Mono',monospace;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.1rem .45rem;border-radius:3px;margin-right:.4rem}
+.tag.free{color:var(--green);border:1px solid var(--green)}
+.tag.knock{color:#9a7012;border:1px solid var(--gold)}
+.tag.no{color:var(--rust);border:1px solid var(--rust)}
+.feedback .ok{font-weight:700;color:var(--green)}
+.feedback .miss{font-weight:700;color:var(--rust)}
+
+#result{display:none;border:2px solid var(--steel);background:var(--card);padding:1.8rem;margin-top:2rem;text-align:center}
+#result.show{display:block}
+#result .rk{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
+#result .score{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;line-height:1;color:var(--rust);margin:.2rem 0}
+#result h3{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;margin:.2rem 0 .5rem}
+#result p{font-size:.97rem;margin-bottom:.8rem}
+#result a.btn{display:inline-block;background:var(--rust);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:.65rem 1.3rem;border:1px solid var(--rust);margin:.3rem .2rem}
+#result a.ghost{background:transparent;color:var(--rust)}
+
+.cheat{margin:1.8rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem;font-size:.95rem;font-style:italic;color:var(--muted)}
+.cheat b{color:var(--rust);font-style:normal}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="masthead">
+  <div class="kicker">A Public Service Quiz &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>The License</span>
+    <span>Is It Commercial?</span>
+    <span><a href="https://thesportspage.net/license.html" style="color:inherit;text-decoration:none">Read the License &rarr;</a></span>
+  </div>
+</div>
+
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Is It Commercial? <em>A Quiz You Can&rsquo;t Fail (But Can Definitely Get Wrong)</em></h1>
+  <div class="deck">You&rsquo;d like to use something from The Sports Page. Wonderful. First, the only question that matters: is your use <em>commercial</em>? Nine scenarios. Pick an answer, learn the rule, keep your conscience clean.</div>
+
+  <div class="key">
+    Every scenario has one of three honest answers, straight out of <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">the License</a>:
+    <div style="margin-top:.6rem;line-height:2">
+      <b class="k-free">FREE TO GO</b> &mdash; read, share, quote, with credit. No need to ask.<br>
+      <b class="k-knock">KNOCK FIRST</b> &mdash; allowed, but it&rsquo;s an adaptation: ask, then give it back better.<br>
+      <b class="k-no">HARD NO</b> &mdash; that&rsquo;s commercial gain. Not without a separate conversation.
+    </div>
+  </div>
+
+  <div class="scorebar" id="scorebar">Answered <b id="answered">0</b> / 9 &nbsp;&middot;&nbsp; Correct <b id="correct">0</b></div>
+
+  <div id="quiz"><noscript><p style="color:var(--rust)"><strong>This quiz needs JavaScript for the scoring.</strong> No JS? No problem &mdash; the short version: if money is involved anywhere, it&rsquo;s commercial (hard no). If you&rsquo;re changing or rebuilding the work, knock first. If you&rsquo;re just reading, sharing, or quoting with credit, you&rsquo;re free to go. Full rules in <a href="https://thesportspage.net/license.html">the License</a>.</p></noscript></div>
+
+  <div id="result">
+    <div class="rk">Your Verdict</div>
+    <div class="score" id="finalScore">0/9</div>
+    <h3 id="rank"></h3>
+    <p id="rankBlurb"></p>
+    <p style="font-style:italic;color:var(--muted)">The one cheat code, if you forget everything else: <strong style="color:var(--rust);font-style:normal">when in doubt, knock first.</strong> &ldquo;Ask&rdquo; is always a safe answer, and now you know where.</p>
+    <a class="btn" href="mailto:license@thesportspage.net">Email license@thesportspage.net</a>
+    <a class="btn ghost" href="https://thesportspage.net/license.html">Read the full License</a>
+  </div>
+
+  <div class="cheat">
+    The honest summary, in one line: <b>money anywhere &rarr; hard no. Changing the work &rarr; knock first. Just reading, sharing, or quoting with credit &rarr; free to go.</b> The whole point of the license is that &ldquo;borrow it&rdquo; is generous and &ldquo;give it back better&rdquo; is the rent.
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; The Commercial-Gain Quiz</span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var FREE="free", KNOCK="knock", NO="no";
+  var LABELS = {free:"Free to go", knock:"Knock first", no:"Hard no — that's commercial"};
+  var TAGTXT = {free:"Free to go", knock:"Knock first", no:"Hard no"};
+
+  var QUESTIONS = [
+    { s:"You forward an issue to the group chat to win an argument about the Mets.",
+      a:FREE,
+      e:"Verbatim sharing is literally the point (§1). Your friends already know your source — the attribution writes itself. Collect your winnings." },
+    { s:"You quote one stat from an issue in a post, with a link back to us.",
+      a:FREE,
+      e:"A brief quote plus a link is §1 and §2 in a single move — the link does your attributing for you. Post away." },
+    { s:"You print an issue and pin it to the office break-room corkboard.",
+      a:FREE,
+      e:"Unaltered, non-commercial, nobody paid anybody (§1). The corkboard has never been more numerate." },
+    { s:"You coach a free youth team and rebuild one of our charts for a chalk-talk.",
+      a:KNOCK,
+      e:"Rebuilding a figure is an Adaptation (§4), even a noble non-commercial one. The answer is almost certainly yes — but knock first, then send the better chalk-talk home (§5). Coaches are exactly who we want borrowing." },
+    { s:"Your subscriber-paid newsletter reprints our chart to reel in new paying subscribers.",
+      a:NO,
+      e:"Paywall plus promotion is commercial gain twice over (§0). That's a different conversation — and we're glad to have it at license@ — but not as a freebie." },
+    { s:"You pour all 500 issues into your sports-betting startup's prediction model.",
+      a:NO,
+      e:"Training a system “operated for commercial gain” is named in §0 and banned in §6. Betting on our regression-to-the-mean piece is poetic justice waiting to happen — but still, no." },
+    { s:"A nonprofit reprints an issue, unaltered and credited, in its free community newsletter.",
+      a:FREE,
+      e:"Verbatim, non-commercial, attributed — clean §1. (The moment they start editing it, that flips to a §4 knock. As-is, share away.)" },
+    { s:"You sell T-shirts with one of our charts on them — “just at cost,” you swear.",
+      a:NO,
+      e:"Selling is commercial, and “at cost” is still selling (§0 / §3). Also, we have notes on the design. Pitch us first — maybe we make it official." },
+    { s:"You build a free, ad-free, open-source tool using our methods, credit us, link back, and send it over.",
+      a:KNOCK,
+      e:"This is the dream borrower: non-commercial, attributed, shared back (§5). It's still a §4 knock so we know it exists and can cheer — but you've basically already read the spirit. A-plus." }
+  ];
+
+  var answered=0, correct=0, total=QUESTIONS.length;
+  var quiz=document.getElementById('quiz');
+  var elAnswered=document.getElementById('answered');
+  var elCorrect=document.getElementById('correct');
+
+  QUESTIONS.forEach(function(q, i){
+    var card=document.createElement('div'); card.className='q';
+    var qn=document.createElement('div'); qn.className='qn'; qn.textContent='Scenario '+(i+1)+' of '+total;
+    var sc=document.createElement('div'); sc.className='scenario'; sc.textContent=q.s;
+    var opts=document.createElement('div'); opts.className='opts';
+    var fb=document.createElement('div'); fb.className='feedback';
+
+    [FREE,KNOCK,NO].forEach(function(val){
+      var b=document.createElement('button'); b.type='button'; b.className='opt'; b.textContent=LABELS[val]; b.setAttribute('data-val',val);
+      b.addEventListener('click', function(){
+        if(card.getAttribute('data-done')) return;
+        card.setAttribute('data-done','1');
+        var right = (val===q.a);
+        if(right) correct++;
+        answered++;
+        elAnswered.textContent=answered; elCorrect.textContent=correct;
+        // lock + style all buttons
+        var btns=opts.querySelectorAll('button');
+        for(var k=0;k<btns.length;k++){
+          btns[k].disabled=true;
+          var bv=btns[k].getAttribute('data-val');
+          if(bv===q.a) btns[k].classList.add(right && bv===val ? 'chosen-right' : 'reveal-right');
+          if(bv===val && !right) btns[k].classList.add('chosen-wrong');
+        }
+        var tagClass = q.a;
+        fb.innerHTML = '<span class="tag '+tagClass+'">'+TAGTXT[q.a]+'</span>'
+          + (right ? '<span class="ok">Nailed it.</span> ' : '<span class="miss">Not quite.</span> ')
+          + q.e;
+        fb.classList.add('show');
+        if(answered===total) showResult();
+      });
+      opts.appendChild(b);
+    });
+
+    card.appendChild(qn); card.appendChild(sc); card.appendChild(opts); card.appendChild(fb);
+    quiz.appendChild(card);
+  });
+
+  function showResult(){
+    var r=document.getElementById('result');
+    document.getElementById('finalScore').textContent=correct+'/'+total;
+    var rank, blurb;
+    if(correct>=8){
+      rank="Licensed to Borrow";
+      blurb="You read the fine print and the spirit. We'd hand you the car keys and the good charts. Go build something — and send it back better.";
+    } else if(correct>=5){
+      rank="Provisionally Trustworthy";
+      blurb="You've got the vibe. You knew that money means no and that changing things means asking. The misses are exactly why this quiz exists — and you'll knock when it counts.";
+    } else {
+      rank="Please Email Us First (Affectionately)";
+      blurb="Bless your heart. The wonderful news: “ask first” is always a safe answer, and now you have our address. We don't bite; we just like knowing our ideas are out there getting better.";
+    }
+    document.getElementById('rank').textContent=rank;
+    document.getElementById('rankBlurb').textContent=blurb;
+    r.classList.add('show');
+    r.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+})();
+</script>
+</body>
+</html>
