@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Necessary vs. Sufficient</title>
+<meta name="description" content="A friendly primer on the difference between necessary and sufficient conditions — the quiet logical error behind half of all 'they qualify, so they'll win' arguments in sports.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5.5vw,3.4rem);font-weight:900;line-height:1.05;margin-bottom:.4rem;text-transform:capitalize}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+
+p{margin-bottom:1rem}
+
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 13</span>
+    <span>Necessary vs. Sufficient</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Necessary vs. Sufficient</h1>
+
+  <div class="deck">
+    A door you must walk through is not the same as the room on the other side. A condition can be required for something to happen and still come nowhere close to <em>making</em> it happen. Mixing the two up is one of the quietest, most common errors in all of sports argument.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>If you only read this far, read this.</h3>
+
+    <p>To board a flight you need a ticket. No ticket, no flight &mdash; the ticket is <strong>necessary</strong>. But owning a ticket does not put you on the plane. You can have a ticket and miss the gate, get bumped, sleep through the alarm. The ticket is required, not enough. Something that is <em>enough on its own</em> &mdash; the kind of thing where, if you have it, the outcome is guaranteed &mdash; is called <strong>sufficient</strong>.</p>
+
+    <p>Almost every "they qualify, so they'll win" argument is this mistake wearing a jersey. "This team is over .500, so they'll make the playoffs." Being over .500 is roughly necessary; it is nowhere near sufficient. "This pitcher throws 100, so he'll be an ace." Velocity is close to necessary for a modern ace; plenty of guys throw 100 and never command a thing.</p>
+
+    <p>Here is the tell. When someone says a team "checks the box," ask: <strong>is that the only box, or just one of them?</strong> A box you must check to be eligible is doing very different work from a box that, once checked, ends the conversation. Eligibility is not victory. The threshold is not the prize.</p>
+
+    <p>The sneaky part is that a necessary condition <em>feels</em> like evidence. It is technically true, it sounds impressive, and it points the right direction. But a fact engineered to mislead by leaving out the rest of the story is still misleading. "They cleared the bar" is true. "They're going to win" does not follow from it.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Why the qualified field is so much bigger than the winners' circle.</h3>
+
+    <p>Formally: a condition is <strong>necessary</strong> for an outcome if the outcome cannot occur without it &mdash; remove the condition and the outcome is impossible. A condition is <strong>sufficient</strong> if its presence guarantees the outcome &mdash; have the condition and the outcome must follow. Most real-world conditions are one or the other. Very few are both.</p>
+
+    <p>The reason this matters for sports is a counting argument. Necessary conditions define a <em>field</em> &mdash; everyone who could possibly win. Sufficient conditions would define the <em>winner</em> &mdash; and in any competitive league, there is essentially never a single sufficient condition, because if there were, the team that had it would win every year and the sport would die of boredom. So the honest analyst lives in the gap: a long list of necessary conditions, a qualified field of many, and a champion drawn from the top of that field by factors no single number captures.</p>
+
+    <p>This is why a threshold statistic &mdash; "a national champion needs a blue-chip ratio over fifty percent" &mdash; is so easy to abuse. The fifty-percent line is a real, historically validated <em>necessary</em> condition. But eighteen teams cleared it in 2025. The line tells you who bought a ticket. It does not tell you who is getting on the plane. When a stat defines the floor, the interesting question is never "did they clear it" &mdash; almost everyone in contention has. The interesting question is <strong>where they rank inside the qualified field, and what separates the top of that field from the merely eligible.</strong></p>
+
+    <p>The corrective habit is one sentence long: <strong>when you hear a condition cited as proof, ask whether it's the kind that's required or the kind that's enough.</strong> If it is merely required, then the count matters &mdash; how many others also cleared it? &mdash; and the real story is hiding in the distance between the threshold and the prize.</p>
+
+    <p>Do this for a season and you will notice how much sports commentary is built on necessary conditions dressed as sufficient ones. The cure is not cynicism. It is the small, steady pleasure of knowing the difference between a door and the room behind it.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li><a href="https://thesportspage.net/published/082-sixteen-and-three.html">Two Trophies, Same Record</a> &mdash; clearing a striking threshold is not the same as the threshold meaning what it appears to</li>
+      <li><a href="https://thesportspage.net/published/068-defensive-reader-1-temporal.html">We Made an Inference Error Yesterday</a> &mdash; a companion entry in The Reader's Defense, on conditions that look like causes</li>
+      <li><a href="https://thesportspage.net/concepts/base-rate.html">Concept Primer &middot; Base Rate</a> &mdash; how big is the qualified field, really? That is a base-rate question</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
+  </div>
+
+</div>
+
+</body>
+</html>
