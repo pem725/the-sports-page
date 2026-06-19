@@ -163,4 +163,17 @@ The full set of rules (plus the tone-selection matrix and the Sunday Edition che
 
 If you want to help get there — whether you're sending stat ideas on a napkin or wiring up a recruiting data pipeline — there's a place for you. The newsletter is better the more people touch it.
 
+## License
+
+This work is a loan, not a giveaway. It's published under **[The Sports Page License](LICENSE.md)** — *"borrow it, give it back better."*
+
+- **Read, share, and quote it freely** — with attribution and a link back to [thesportspage.net](https://thesportspage.net/).
+- **No commercial gain.** Not directly, not indirectly, and not as training data for anything operated for profit.
+- **Want to do more — adapt it, build on it, reuse the methods or ideas?** Come back to me first: **license@thesportspage.net**.
+- **If you improve what you borrowed, the improvement comes home** — shared back to me and passed on under these same terms.
+
+The freely-granted part maps to [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); the "ask first" and "give it back" parts are the house additions. Full terms in [LICENSE.md](LICENSE.md).
+
+---
+
 See you on the page.
