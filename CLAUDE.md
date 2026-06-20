@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 417 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 416 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 83 issues (#1-83)
-Queue: 17 articles ready (061-mlb-money-buys-wins, 067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 086-nd-dynasty-test, 077-astros-analog, 078-cross-sport-persistence, 085-hs-still-holds, _TEMPLATE, bobby-bonilla-day, sunday-011)
+Published: 84 issues (#1-84)
+Queue: 16 articles ready (067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 085-hs-still-holds, 086-nd-dynasty-test, _TEMPLATE, bobby-bonilla-day, sunday-011)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 417 issues remaining of 500
-Last published: Issue #83 — "When the Refs Stop Refereeing, the Players Try to Become the Refs. The Math Says They Run Out of Energy." (084-peer-enforcement.html) on June 19, 2026
+Goal: 416 issues remaining of 500
+Last published: Issue #84 — "Money Buys Wins in Baseball. Just Not Very Many." (061-mlb-money-buys-wins.html) on June 20, 2026
