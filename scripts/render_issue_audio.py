@@ -153,6 +153,21 @@ def main():
               f"~{wc/150:.1f} min at 150 wpm ---", file=sys.stderr)
         return
 
+    if '--script' in args:
+        # Write a clean reading script for self-recording (voice-independent).
+        slug = os.path.splitext(os.path.basename(src))[0]
+        sdir = os.path.join(REPO, 'audio', 'scripts')
+        os.makedirs(sdir, exist_ok=True)
+        spath = os.path.join(sdir, f'{slug}.txt')
+        wc = len(narration.split())
+        bar = '=' * min(len(info['hed']), 70)
+        header = (f"{info['hed']}\n{bar}\n"
+                  f"READING SCRIPT  --  ~{wc} words, ~{wc/150:.0f} min at a natural pace.\n"
+                  f"Pause at blank lines. Drop your voice for the pull quotes.\n\n")
+        open(spath, 'w', encoding='utf-8').write(header + narration + '\n')
+        print(f"{spath}  (~{wc} words, ~{wc/150:.0f} min)")
+        return
+
     if out is None:
         slug = os.path.splitext(os.path.basename(src))[0]
         out = os.path.join(REPO, 'audio', f'{slug}.mp3')
