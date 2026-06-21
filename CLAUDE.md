@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 84 issues (#1-84)
-Queue: 16 articles ready (067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 085-hs-still-holds, 086-nd-dynasty-test, _TEMPLATE, bobby-bonilla-day, sunday-011)
+Published: 85 issues (#1-85)
+Queue: 15 articles ready (067-nd-outrage-asymmetry, 069-pyrrhic-6-colts-luck, 070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 085-hs-still-holds, 086-nd-dynasty-test, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 416 issues remaining of 500
-Last published: Issue #84 — "Money Buys Wins in Baseball. Just Not Very Many." (061-mlb-money-buys-wins.html) on June 20, 2026
+Goal: 415 issues remaining of 500
+Last published: Sunday Edition No. 11 (Issue #85) — "The Prior Was Right to Wait." (sunday-011.html) on June 21, 2026
