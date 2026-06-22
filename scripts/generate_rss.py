@@ -18,6 +18,16 @@ from email.utils import formatdate
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUBLISHED = os.path.join(REPO, "published")
 OUT = os.path.join(REPO, "feed.xml")
+
+# Inline the design-system CSS into the email body so layout survives clients
+# that strip the page's <head><style>. Graceful fallback: if anything goes
+# wrong importing it, emails still send (just unstyled) -- never crash the bot.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    from email_inline import inline_for_email
+except Exception:
+    def inline_for_email(b):  # noqa: E704
+        return b
 SITE = "https://thesportspage.net/"
 
 # Issue # → publication date map, derived from index.html so pubDates match
@@ -73,6 +83,9 @@ def extract_meta(filepath):
     # Site-root references that survived earlier passes
     body = body.replace('href="../', f'href="{SITE}')
     body = body.replace('src="../', f'src="{SITE}')
+
+    # Inline the design-system styles so the layout renders in email.
+    body = inline_for_email(body)
 
     return title, deck, body
 
