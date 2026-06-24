@@ -30,6 +30,47 @@ except Exception:
         return b
 SITE = "https://thesportspage.net/"
 
+# Email clients (Gmail, Outlook) strip inline <svg>, so chart figures vanish
+# from the emailed edition. We swap each chart SVG for a PNG <img> rendered by
+# scripts/generate_figures.py. The website HTML keeps the crisp vector SVG;
+# only this email/feed body uses the raster. The SVG filter below MUST match
+# generate_figures.py exactly so the fig<N> numbering lines up. Share-button
+# icons (viewBox 0 0 24 24) are excluded by the width >= 200 threshold.
+FIG_DIR = os.path.join(REPO, "assets", "figures")
+_SVG_RE = re.compile(r"<svg\b[^>]*>.*?</svg>", re.DOTALL | re.IGNORECASE)
+_VIEWBOX_RE = re.compile(
+    r'viewBox\s*=\s*"[\d.+-]+\s+[\d.+-]+\s+([\d.]+)\s+[\d.]+"', re.IGNORECASE)
+_MIN_VIEWBOX_W = 200
+
+
+def swap_chart_figures(body, slug):
+    """Replace each chart SVG with a PNG <img> (or a graceful online link)."""
+    counter = {"n": 0}
+
+    def repl(m):
+        svg = m.group(0)
+        vb = _VIEWBOX_RE.search(svg)
+        if not vb or float(vb.group(1)) < _MIN_VIEWBOX_W:
+            return svg  # share icon or non-figure — leave as-is
+        counter["n"] += 1
+        n = counter["n"]
+        png = os.path.join(FIG_DIR, f"{slug}-fig{n}.png")
+        if os.path.isfile(png):
+            return (
+                f'<img src="{SITE}assets/figures/{slug}-fig{n}.png" '
+                f'alt="The Sports Page — chart" '
+                f'style="width:100%;max-width:680px;height:auto;display:block;'
+                f'margin:0 auto;border:1px solid #c8b99a;">'
+            )
+        # PNG not rendered yet — never ship a broken figure to email.
+        return (
+            f'<p style="text-align:center;font-style:italic;color:#6b5e4a;'
+            f'margin:0;">[ View the chart at '
+            f'<a href="{SITE}published/{slug}.html">thesportspage.net</a> ]</p>'
+        )
+
+    return _SVG_RE.sub(repl, body)
+
 # Issue # → publication date map, derived from index.html so pubDates match
 # what readers see in the archive
 INDEX_HTML = os.path.join(REPO, "index.html")
@@ -83,6 +124,10 @@ def extract_meta(filepath):
     # Site-root references that survived earlier passes
     body = body.replace('href="../', f'href="{SITE}')
     body = body.replace('src="../', f'src="{SITE}')
+
+    # Swap chart SVGs for PNG <img>s so figures survive email clients that
+    # strip inline SVG (Gmail, Outlook). Website HTML keeps the vector SVG.
+    body = swap_chart_figures(body, os.path.basename(filepath)[:-5])
 
     # Inline the design-system styles so the layout renders in email.
     body = inline_for_email(body)

@@ -507,6 +507,20 @@ def main():
     except Exception as e:
         print(f"⚠ OG card render failed: {e}", file=sys.stderr)
 
+    # Step 8.65: Rasterize the issue's chart figure(s) to PNG so they survive
+    # email clients that strip inline SVG (Gmail, Outlook). Uses headless
+    # Chrome, which IS available on the CI runner (unlike cairosvg). The
+    # website keeps the vector SVG; generate_rss.py swaps in the PNG for email.
+    # Non-fatal: if Chrome is unavailable, the email falls back to a "view
+    # online" link (handled in generate_rss.py).
+    try:
+        run(f'python3 scripts/generate_figures.py "published/{filename}"', check=False)
+        if deeper_published:
+            run(f'python3 scripts/generate_figures.py "published/{deeper_filename}"', check=False)
+        print(f"Chart figures rendered for {filename}")
+    except Exception as e:
+        print(f"⚠ figure render failed: {e}", file=sys.stderr)
+
     # Step 8.7: Refresh share section + Open Graph meta tags on the just-moved file.
     # Idempotent: replaces any existing share block with the current canonical version.
     # Source of truth lives in scripts/inject_share.py.
@@ -540,7 +554,8 @@ def main():
     deeper_arg = f' "published/{deeper_filename}"' if deeper_published else ""
     og_card_path = f'assets/og/{filename.replace(".html", ".png")}'
     og_arg = f' "{og_card_path}"' if os.path.isfile(os.path.join(REPO, og_card_path)) else ""
-    run(f'git add index.html "published/{filename}"{deeper_arg}{og_arg} QUEUE_ORDER.txt CLAUDE.md feed.xml')
+    fig_arg = ' assets/figures' if os.path.isdir(os.path.join(REPO, "assets", "figures")) else ""
+    run(f'git add index.html "published/{filename}"{deeper_arg}{og_arg}{fig_arg} QUEUE_ORDER.txt CLAUDE.md feed.xml')
     commit_msg = f"Publish Issue #{issue_num}: {headline_plain[:60]}"
     run(f'git commit -m "{commit_msg}"')
     run("git push origin main")
