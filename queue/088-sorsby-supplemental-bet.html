@@ -1,6 +1,6 @@
 <!-- PUBLISH-META
 topic: CFB
-tags: CFB:cfb, Texas Tech, Gambling, Base Rates
+tags: CFB:cfb, Sal's Column, Texas Tech, Base Rates
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -20,9 +20,9 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
 .datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
 .paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
 @media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
-.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:900;line-height:1.14;margin-bottom:.4rem}
 .hed em{color:var(--rust);font-style:italic}
-.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--gold);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
 .byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
 @media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
@@ -30,10 +30,13 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
 .sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
 .sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
 .sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
-.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--gold);padding-bottom:.2rem;margin:2rem 0 1rem}
 .pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
 .pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
 .pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.saldesk{border:1px solid var(--gold);border-left:5px solid var(--gold);background:#faf5ea;padding:1.2rem 1.6rem;margin:1.9rem 0}
+.saldesk .lbl{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.55rem}
+.saldesk p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.18rem;line-height:1.5;color:var(--ink);margin:0}
 .box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
 .box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
 .box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
@@ -47,14 +50,15 @@ table.rec .hl td{background:#f3e2dc}
 .chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
 .chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
 .chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.series-tag{display:inline-block;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.18rem .55rem;font-weight:700;margin-bottom:.5rem}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <!-- Open Graph + Twitter Card for social previews -->
-<meta property="og:title" content="Brendan Sorsby's Last Bet Was on a Draft That Hasn't Picked Anyone Since 2019.">
-<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:title" content="A Draft That Has Chosen One Man Since 2019 — and the Quarterback Who Bet a Year on Being the Second.">
+<meta property="og:description" content="Sal's Column — The Sports Page. One strange number, considered at length.">
 <meta property="og:url" content="https://thesportspage.net/published/088-sorsby-supplemental-bet.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Sports Page">
@@ -62,14 +66,14 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Brendan Sorsby's Last Bet Was on a Draft That Hasn't Picked Anyone Since 2019.">
-<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:title" content="A Draft That Has Chosen One Man Since 2019 — and the Quarterback Who Bet a Year on Being the Second.">
+<meta name="twitter:description" content="Sal's Column — The Sports Page.">
 <meta name="twitter:image" content="https://thesportspage.net/assets/og/088-sorsby-supplemental-bet.png">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <div class="masthead">
-  <div class="kicker">The Base-Rate Beat &middot; Probability &amp; Eligibility</div>
+  <div class="kicker">Sal&rsquo;s Column &middot; The Sports Page</div>
   <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
   <div class="datebar"><span>Issue No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
@@ -77,29 +81,44 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
 <div id="main-content" class="paper">
 
-<h1 class="hed">Brendan Sorsby&rsquo;s Last Bet Was on a Draft That <em>Hasn&rsquo;t Picked Anyone Since 2019.</em></h1>
-<div class="deck">He wagered some $90,000 on sports across four years &mdash; including on his own team &mdash; and lost his college eligibility. His escape hatch to the NFL was the supplemental draft, a mechanism so rare it has selected exactly one player since 2019 and zero the last time it was held. This week, the league declined to hold it at all.</div>
-<div class="byline">By The Columnist &middot; The Sports Page &middot; Probability &amp; Eligibility</div>
+<span class="series-tag">Sal&rsquo;s Column &middot; Guest Essay</span>
+
+<h1 class="hed">A Draft That Has Chosen <em>One Man Since 2019</em> &mdash; and the Quarterback Who Bet a Year on Being the Second.</h1>
+<div class="deck">Everyone has spent a month arguing about Brendan Sorsby. He is the least interesting party in the affair. The interesting parties are the five institutions that took turns offering him a door, and then, each in its season, declined to open one.</div>
+<div class="byline">By Sal &middot; Guest Columnist</div>
 
 <div class="stat-row">
-  <div class="sc"><div class="v bad">~$90K</div><div class="l">Wagered on Sports, 2022&ndash;25 &mdash; Incl. Bets on His Own Team</div></div>
-  <div class="sc"><div class="v now">0</div><div class="l">Players the Supplemental Draft Has Selected Since 2019</div></div>
-  <div class="sc"><div class="v bad">2027</div><div class="l">The Earliest He Can Now Reach the NFL &mdash; A Year Erased</div></div>
+  <div class="sc"><div class="v bad">~$90K</div><div class="l">Wagered on Sports, 2022&ndash;25 &mdash; Some of It on His Own Team</div></div>
+  <div class="sc"><div class="v now">1</div><div class="l">Players the Supplemental Draft Has Chosen Since 2019</div></div>
+  <div class="sc"><div class="v bad">2027</div><div class="l">The Earliest He May Now Reach the NFL &mdash; A Year, Gone</div></div>
 </div>
 
-<p>Strip away the courtrooms and the conference lawyers for a moment and Brendan Sorsby is, on the field, a real quarterback. Over four college seasons at Indiana and then Cincinnati he threw for 7,208 yards and 60 touchdowns against just 18 interceptions, and added 1,295 yards and 22 scores on the ground; his final year at Cincinnati was 24 touchdowns against 5 picks. That is a draftable résumé. Talent was never the question in his case. Probability was.</p>
+<p>There exists, tucked into the operating bylaws of the National Football League, a provision for something called the supplemental draft. It is a second, smaller draft, held quietly in the summer, for players who &mdash; through some misfortune of timing or conduct &mdash; missed the first one. A back door. A second window. A mechanism of mercy, in theory, for the young man whose circumstances changed after the regular draft had already packed up and gone home. Ah yes. The supplemental draft. The league&rsquo;s most dependable instrument for doing, in any given year, absolutely nothing at all.</p>
 
-<p>Because Sorsby&rsquo;s problem was never that an NFL team looked at the tape and said no. His problem is that, as of this week, there was no door for a team to say <em>yes</em> through. On Monday the league announced it would not hold a 2026 supplemental draft &mdash; the one remaining mechanism by which Sorsby could have entered the NFL this year &mdash; rendering him ineligible until the 2027 regular draft. To understand why that sentence is the entire story, you have to follow two bets.</p>
+<p>I have been turning the Brendan Sorsby business over for some weeks now &mdash; one accumulates these cases the way one accumulates anything worth understanding, which is to say slowly, and against one&rsquo;s better judgment &mdash; and I have arrived at the conclusion that nearly everyone discussing it has been arguing about the wrong man. They want to litigate the quarterback. Was he reckless, was he sympathetic, did he deserve what he got. The quarterback, I am sorry to report, is the least interesting figure in the entire arrangement. The interesting figures are the five institutions &mdash; the NCAA, a Texas courtroom, the Big 12, the NFL&rsquo;s calendar, and that phantom summer draft &mdash; which spent the better part of a month presenting this young man with one door after another, and then, each in its own appointed hour, declined to open a single one of them.</p>
 
-<h2 class="sh">The First Bet</h2>
+<p>Let us begin, as we must, with the part that is not funny, so that we are clear before the sarcasm gets going about where it will and will not be aimed. It will be aimed at institutions. It will not, at any point, be aimed at him.</p>
 
-<p>The NCAA ruled Sorsby ineligible after finding he had wagered roughly $90,000 on professional and college sports over four years. The accounting is staggering in volume: more than 2,900 bets totaling over $30,000 during his two years at Indiana, and at least 165 more totaling at least $38,000 across his two years at Cincinnati. Forty of those wagers, placed as a freshman in 2022, were on Indiana football &mdash; the sport he was, at that moment, a rostered player in. He has since been diagnosed with a gambling and anxiety disorder and completed a 35-day stay at a gambling rehabilitation center in Arizona. This is, before it is anything else, a story about an illness, and it is worth saying so plainly before we talk about the math.</p>
+<h2 class="sh">The First Door, and the Numbers Behind It</h2>
 
-<p>The legal sequence was its own gauntlet. On June 8, a Texas state judge granted Sorsby a preliminary injunction barring the NCAA from punishing him, appearing to clear him to play for Texas Tech this fall (minus the first two games, a penalty his own lawyers had proposed). The reaction around college football was not warm; coaches and athletic directors quoted in the coverage ranged from stunned to disgusted. Then the Big 12 filed for a federal injunction asserting its own right to discipline him, and the path that had briefly opened began closing again. Rather than keep fighting through the fall, Sorsby pivoted to the pros.</p>
+<p>The NCAA ruled Brendan Sorsby ineligible after determining he had wagered somewhere near $90,000 on professional and college sports across four years. The volume is the thing that stops you: better than 2,900 separate bets totaling more than $30,000 during his two years at Indiana, and at least 165 more totaling at least $38,000 across his two seasons starting at Cincinnati. Forty of those wagers &mdash; placed as a freshman, in 2022 &mdash; were on Indiana football, which is to say on the sport he was, at that very moment, a rostered member of. These are not, you will notice, the numbers of a man enjoying himself. They are the numbers of a man who is unwell. He has since been diagnosed with a gambling and anxiety disorder and has completed a thirty-five-day stay at a treatment center in Arizona. One might ask what kind of system waits until a 2,900-bet pattern has fully matured before it intervenes; one might ask, and one would not get an answer. We will leave the young man here, in the one corner of this story where he is owed our quiet, and turn to the machinery.</p>
 
-<h2 class="sh">The Second Bet</h2>
+<p>Because here is the cruelty of his actual situation: on the field, Sorsby is a genuine prospect. Across Indiana and Cincinnati he threw for 7,208 yards and sixty touchdowns against eighteen interceptions, ran for another 1,295 and twenty-two scores, and finished his last college season with twenty-four touchdowns against five picks. No professional team ever looked at that tape and said no. No team was ever given the chance to say anything at all. That distinction &mdash; between a man who is rejected and a man for whom no door is ever opened &mdash; is the whole of this column.</p>
 
-<p>The regular NFL draft was long over. The only remaining entry point in 2026 was the <strong>supplemental draft</strong> &mdash; a separate, summer mechanism for players who lose their eligibility after the regular draft has passed. Here is the part almost nobody pricing this situation seemed to register: the supplemental draft is the closest thing professional football has to a lottery nobody runs. It is held entirely at the league&rsquo;s discretion, only when it approves eligible prospects, and even when it <em>is</em> held, teams routinely decline to bid, because claiming a player costs an equal-value pick in next year&rsquo;s real draft. The most reliable thing about the supplemental draft is that nothing happens.</p>
+<h2 class="sh">The Second Door, Painted and Then Sanded Off</h2>
+
+<p>The legal choreography deserves a moment, if only for its comedy. On the eighth of June, a Texas state judge granted Sorsby a preliminary injunction forbidding the NCAA from punishing him, and thereby appeared to clear him to suit up for Texas Tech this autumn &mdash; minus the opening two games, a penalty his own attorneys had thoughtfully volunteered. The reception among the sport&rsquo;s coaches and administrators ranged, in the reporting, from stunned to something considerably warmer than stunned. And then, as one does when one has lost a round in a courtroom, the Big 12 simply went and found a different courtroom, filing for a federal injunction asserting its own sovereign right to discipline the man the state judge had just freed. A door opened by Texas; a door re-bolted by the conference. Sorsby, displaying rather more clarity than the institutions circling him, declined to spend his autumn as a legal exhibit and turned, instead, to the professionals. Which brings us, at last, to the door that was never a door.</p>
+
+<div class="saldesk">
+  <div class="lbl">From Sal&rsquo;s Desk</div>
+  <p>&ldquo;A second window, the rule book calls it. I have looked closely at this window. It is a very fine painting of a window, executed on a wall of considerable thickness, and it fools a remarkable number of people who really ought to know the difference.&rdquo;</p>
+</div>
+
+<h2 class="sh">The Third Door, Which Is a Painting</h2>
+
+<p>The regular draft was long finished. The only remaining avenue into the NFL in 2026 was the supplemental draft &mdash; and here we must pause, because almost no one shouting about Sorsby&rsquo;s &ldquo;path to the pros&rdquo; appeared to know what the supplemental draft actually is. It is held purely at the league&rsquo;s discretion. It occurs only in years when the league deigns to approve eligible prospects. And even when it is convened, teams routinely take no one, because claiming a player obliges you to surrender a pick of equal value in next spring&rsquo;s real draft &mdash; a steep price for a man who arrives, by the very design of the pool, wearing a red flag. The supplemental draft&rsquo;s most reliable feature, across its long and sleepy history, is that nothing happens.</p>
+
+<p>The reason this is not common knowledge is a small masterpiece of human error, and it has two names attached to it: Terrelle Pryor, taken in the third round of the 2011 supplemental draft, and Josh Gordon, taken in the second round of 2012. Two genuine talents, two memorable selections, and between them a single durable illusion &mdash; that the supplemental draft is a real road, because once or twice it carried someone famous. It is the oldest trick the mind plays on itself: we remember the year the door opened and forget the decade it stayed shut. Consider the actual ledger.</p>
 
 <div class="chart">
   <div class="chart-cap">Players Selected in Recent NFL Supplemental Drafts</div>
@@ -149,36 +168,37 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
     <text x="620" y="136" text-anchor="middle" fill="#b83a1e" font-size="8.5" font-style="italic">Sorsby&rsquo;s year &mdash;</text>
     <text x="620" y="150" text-anchor="middle" fill="#b83a1e" font-size="8.5" font-style="italic">the door never opened.</text>
   </svg>
-  <div class="chart-note">Selections in the NFL&rsquo;s recent supplemental drafts. The draft is discretionary and frequently produces no picks at all; 2019 (Jalen Thompson, to Arizona) was the last time any player was taken, the 2023 edition selected nobody, and in 2026 the league declined to hold one &mdash; the year a real prospect was actually counting on it. Years not shown had no supplemental draft.</div>
+  <div class="chart-note">Selections in the NFL&rsquo;s recent supplemental drafts. The draft is discretionary and frequently produces no picks at all; 2019 (Jalen Thompson, to Arizona) was the last time any player was taken, the 2023 edition was convened and selected nobody, and in 2026 the league declined to hold one &mdash; the year a real prospect was actually counting on it. Years not shown had no supplemental draft.</div>
 </div>
 
+<p>Read it slowly, because it rewards the patience. One man chosen in 2015, out of seven made available. Two in 2018. One &mdash; a safety named Jalen Thompson, to Arizona &mdash; in 2019, and not one human being since. In 2023 the league went to the trouble of holding a supplemental draft for two eligible players and then, having held it, selected neither: a draft convened, in the year of our Lord 2023, for the express purpose of choosing NO ONE. And in 2026, the year a legitimately draftable quarterback was finally and desperately depending on it, the league reviewed the situation and announced it would not be holding a supplemental draft at all. It would, instead, encourage Mr. Sorsby to prepare for the 2027 regular draft &mdash; a full calendar year away &mdash; with the unbothered grace of a maitre d&rsquo; suggesting you come back next season for the table you reserved tonight.</p>
+
 <div class="box">
-<h3>The Math: Pricing a Door That Is Usually Locked</h3>
-<p>To be drafted out of the supplemental pool, two independent things both have to happen. First, the NFL has to decide to hold the draft at all &mdash; a pure discretionary call. Second, some team has to be willing to spend a real, equal-value future pick on a player who, by the nature of the pool, arrives with red flags. Both of those conditions have been failing for years. Since Jalen Thompson in 2019, the supplemental draft has produced exactly <strong>zero</strong> selections: the 2023 edition was held and nobody was taken, and 2026 was never held at all.</p>
-<p>This is the error worth taking home, and it is not Sorsby&rsquo;s alone &mdash; it is one all of us make. It&rsquo;s called <strong>base-rate neglect</strong>: judging an option by the fact that it <em>exists</em> rather than by how often it actually pays. &ldquo;There is a supplemental draft, so I have a path&rdquo; feels like a plan. But the base rate of that path delivering an NFL job in any given recent year rounds to nothing. A door you can see is not the same as a door that opens, and the supplemental draft is a door the NFL leaves shut almost every time someone reaches for the handle.</p>
+<h3>The Error, Named Without a Lecture</h3>
+<p>I promised no lectures, and I will keep to it, but the principle deserves stating once, plainly, because it is the only durable thing you can carry out of this sorry episode. The mistake everyone made &mdash; the courts, the conference, the commentators, and yes, in the end, the young man himself &mdash; was to treat the supplemental draft&rsquo;s <em>existence</em> as evidence of its <em>odds.</em> &ldquo;There is a draft, therefore there is a path.&rdquo; It is the same arithmetic that sells lottery tickets. The ticket exists; people therefore plan, in the soft furniture of their minds, around winning. The honest way to price any rare door is never to ask whether it is there. It is to ask how often, lately, it has actually opened. For this one, the answer was: once, since 2019, and not at all in the season it was needed.</p>
 </div>
 
 <table class="rec">
-  <tr><th>The Sorsby Sequence, 2026</th><th>Outcome</th></tr>
-  <tr><td>June 8 &mdash; Texas judge grants injunction vs. NCAA</td><td class="mono">Cleared to play for Texas Tech (minus 2 games)</td></tr>
-  <tr><td>Big 12 files for a federal injunction to discipline him</td><td class="mono">Path narrows again</td></tr>
-  <tr><td>Sorsby drops the college fight, applies to the supplemental draft</td><td class="mono">Bets on the rare door</td></tr>
-  <tr class="hl"><td>NFL declines to hold a 2026 supplemental draft</td><td class="mono">Ineligible &mdash; no door at all</td></tr>
-  <tr><td>League points him to the 2027 regular draft</td><td class="mono">A full year erased</td></tr>
+  <tr><th>The Sequence, June 2026</th><th>What the Institution Did</th></tr>
+  <tr><td>A Texas judge grants an injunction against the NCAA</td><td class="mono">Opens the door (less two games)</td></tr>
+  <tr><td>The Big 12 files for a federal injunction</td><td class="mono">Bolts it from the other side</td></tr>
+  <tr><td>Sorsby drops the college fight, applies to the supplemental draft</td><td class="mono">Reaches for the painted handle</td></tr>
+  <tr class="hl"><td>The NFL declines to hold a 2026 supplemental draft</td><td class="mono">There was never a handle</td></tr>
+  <tr><td>The league points him toward the 2027 regular draft</td><td class="mono">&ldquo;Do come back next year.&rdquo;</td></tr>
 </table>
 
 <div class="pull">
-  <p>&ldquo;A door you can see is not the same as a door that opens. The supplemental draft is one the NFL leaves shut almost every time someone reaches for the handle.&rdquo;</p>
-  <cite>&mdash; The Sports Page</cite>
+  <p>&ldquo;A man who is rejected has at least been seen. Brendan Sorsby was never rejected. He was simply never let into the room where rejection happens.&rdquo;</p>
+  <cite>&mdash; Sal, The Sports Page</cite>
 </div>
 
-<h2 class="sh">What This Is, and What It Isn&rsquo;t</h2>
+<h2 class="sh">The Verdict</h2>
 
-<p>It would be cheap, and wrong, to file this under &ldquo;gambler makes one more bad bet&rdquo; and move on. Sorsby is a young man with a diagnosed disorder who, by every account, has sought treatment, and the human cost of a year erased is real regardless of how the spreadsheet reads. The point of running the numbers is not to score him. It is that the institutions surrounding him &mdash; the NCAA, a state court, a conference, the NFL&rsquo;s draft calendar, and a discretionary draft that mostly does not occur &mdash; never had to coordinate, and so a path that looked like four open doors was, in probability terms, a hallway of mostly locked ones. Nobody in the system was obligated to notice that the math had already closed before the lawyers finished arguing.</p>
+<p>So let us settle, finally, who is on trial here, because it is not the quarterback. Brendan Sorsby did not misjudge his arm, or his tape, or his worth to a professional roster &mdash; all of which were, and remain, real. He misjudged the architecture. He counted five doors and believed he had five chances, when in fact he had one hallway, and the hallway was a façade: a courtroom door that a conference could re-lock at will, a conference door the courts could pry back open, and at the very end of it, painted with great craftsmanship onto a load-bearing wall, the supplemental draft &mdash; the exit the league maintains precisely so that it may always say an exit exists. The system did not fail Sorsby through malice. It failed him through a thousand small discretions, none of which any single institution was obliged to coordinate with any other, and the sum of which was a young man rendered unemployable in his profession for a year, by no decision that anyone in particular ever quite made.</p>
 
-<p>That is the quiet lesson the supplemental draft keeps teaching, and it travels far beyond football. We are wired to treat an option&rsquo;s existence as evidence of its odds. The lottery ticket exists; people therefore plan around winning. The supplemental draft exists; a real prospect therefore staked a season on it. The honest way to value any rare door is not to ask whether it is there. It is to ask how often, lately, it has actually opened. For this one, the answer is once since 2019 &mdash; and not at all in the year it was finally needed.</p>
+<p>It turns out the door was painted on. It always was. Brendan Sorsby is merely the man who walked into it hard enough that the rest of us, at last, heard the sound.</p>
 
-<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on the data: Sorsby&rsquo;s college statistics (7,208 passing yards, 60 TD, 18 INT across Indiana and Cincinnati; 24 TD / 5 INT in 2025) are from Sports-Reference and team records. His wagering totals (~$90,000 over four years; 2,900-plus bets at Indiana; 40 bets on Indiana football as a 2022 freshman; 165-plus bets at Cincinnati), the gambling- and anxiety-disorder diagnosis, the 35-day rehabilitation stay, the June 8 injunction, the Big 12&rsquo;s federal filing, and the NFL&rsquo;s decision not to hold a 2026 supplemental draft are from ESPN, CBS Sports, NBC Sports, and NFL.com reporting. Supplemental-draft history (one selection in 2019, none in 2023, the mechanism&rsquo;s discretionary nature) is from ESPN, Sports Illustrated, and the league&rsquo;s public draft records. &ldquo;Base-rate neglect&rdquo; is used in its standard decision-science sense.</p>
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on the data, for those who like to check Sal&rsquo;s arithmetic: Sorsby&rsquo;s college statistics (7,208 passing yards, 60 TD, 18 INT across Indiana and Cincinnati; 24 TD / 5 INT in 2025) are from Sports-Reference and team records. His wagering totals (~$90,000 over four years; 2,900-plus bets at Indiana; 40 on Indiana football as a 2022 freshman; 165-plus at Cincinnati), the gambling- and anxiety-disorder diagnosis, the thirty-five-day rehabilitation stay, the June 8 injunction, the Big 12&rsquo;s federal filing, and the NFL&rsquo;s decision not to hold a 2026 supplemental draft are from ESPN, CBS Sports, NBC Sports, and NFL.com reporting. Supplemental-draft history &mdash; Terrelle Pryor (2011) and Josh Gordon (2012); single selections in 2015 and 2019; the 2023 edition that took no one &mdash; is from ESPN, Sports Illustrated, and the league&rsquo;s public draft records.</p>
 
   <!-- STORY IDEAS INBOX -->
   <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
@@ -214,7 +234,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
 <div class="footer">
   <span>&copy; 2026 The Sports Page</span>
-  <span>The Base-Rate Beat &middot; Brendan Sorsby, the Supplemental Draft, and Pricing a Door That Is Usually Locked</span>
+  <span>Sal&rsquo;s Column &middot; Brendan Sorsby, the Supplemental Draft, and the Door That Was Painted On</span>
   <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">Archive</a></span>
 </div>
 </div>
