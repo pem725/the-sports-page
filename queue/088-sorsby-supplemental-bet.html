@@ -1,0 +1,222 @@
+<!-- PUBLISH-META
+topic: CFB
+tags: CFB:cfb, Texas Tech, Gambling, Base Rates
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.5rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#f3e2dc}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="Brendan Sorsby's Last Bet Was on a Draft That Hasn't Picked Anyone Since 2019.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/088-sorsby-supplemental-bet.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/088-sorsby-supplemental-bet.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brendan Sorsby's Last Bet Was on a Draft That Hasn't Picked Anyone Since 2019.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/088-sorsby-supplemental-bet.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">The Base-Rate Beat &middot; Probability &amp; Eligibility</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Brendan Sorsby&rsquo;s Last Bet Was on a Draft That <em>Hasn&rsquo;t Picked Anyone Since 2019.</em></h1>
+<div class="deck">He wagered some $90,000 on sports across four years &mdash; including on his own team &mdash; and lost his college eligibility. His escape hatch to the NFL was the supplemental draft, a mechanism so rare it has selected exactly one player since 2019 and zero the last time it was held. This week, the league declined to hold it at all.</div>
+<div class="byline">By The Columnist &middot; The Sports Page &middot; Probability &amp; Eligibility</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v bad">~$90K</div><div class="l">Wagered on Sports, 2022&ndash;25 &mdash; Incl. Bets on His Own Team</div></div>
+  <div class="sc"><div class="v now">0</div><div class="l">Players the Supplemental Draft Has Selected Since 2019</div></div>
+  <div class="sc"><div class="v bad">2027</div><div class="l">The Earliest He Can Now Reach the NFL &mdash; A Year Erased</div></div>
+</div>
+
+<p>Strip away the courtrooms and the conference lawyers for a moment and Brendan Sorsby is, on the field, a real quarterback. Over four college seasons at Indiana and then Cincinnati he threw for 7,208 yards and 60 touchdowns against just 18 interceptions, and added 1,295 yards and 22 scores on the ground; his final year at Cincinnati was 24 touchdowns against 5 picks. That is a draftable résumé. Talent was never the question in his case. Probability was.</p>
+
+<p>Because Sorsby&rsquo;s problem was never that an NFL team looked at the tape and said no. His problem is that, as of this week, there was no door for a team to say <em>yes</em> through. On Monday the league announced it would not hold a 2026 supplemental draft &mdash; the one remaining mechanism by which Sorsby could have entered the NFL this year &mdash; rendering him ineligible until the 2027 regular draft. To understand why that sentence is the entire story, you have to follow two bets.</p>
+
+<h2 class="sh">The First Bet</h2>
+
+<p>The NCAA ruled Sorsby ineligible after finding he had wagered roughly $90,000 on professional and college sports over four years. The accounting is staggering in volume: more than 2,900 bets totaling over $30,000 during his two years at Indiana, and at least 165 more totaling at least $38,000 across his two years at Cincinnati. Forty of those wagers, placed as a freshman in 2022, were on Indiana football &mdash; the sport he was, at that moment, a rostered player in. He has since been diagnosed with a gambling and anxiety disorder and completed a 35-day stay at a gambling rehabilitation center in Arizona. This is, before it is anything else, a story about an illness, and it is worth saying so plainly before we talk about the math.</p>
+
+<p>The legal sequence was its own gauntlet. On June 8, a Texas state judge granted Sorsby a preliminary injunction barring the NCAA from punishing him, appearing to clear him to play for Texas Tech this fall (minus the first two games, a penalty his own lawyers had proposed). The reaction around college football was not warm; coaches and athletic directors quoted in the coverage ranged from stunned to disgusted. Then the Big 12 filed for a federal injunction asserting its own right to discipline him, and the path that had briefly opened began closing again. Rather than keep fighting through the fall, Sorsby pivoted to the pros.</p>
+
+<h2 class="sh">The Second Bet</h2>
+
+<p>The regular NFL draft was long over. The only remaining entry point in 2026 was the <strong>supplemental draft</strong> &mdash; a separate, summer mechanism for players who lose their eligibility after the regular draft has passed. Here is the part almost nobody pricing this situation seemed to register: the supplemental draft is the closest thing professional football has to a lottery nobody runs. It is held entirely at the league&rsquo;s discretion, only when it approves eligible prospects, and even when it <em>is</em> held, teams routinely decline to bid, because claiming a player costs an equal-value pick in next year&rsquo;s real draft. The most reliable thing about the supplemental draft is that nothing happens.</p>
+
+<div class="chart">
+  <div class="chart-cap">Players Selected in Recent NFL Supplemental Drafts</div>
+  <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- Y axis -->
+    <line x1="70" y1="240" x2="70" y2="60" stroke="#1a1208" stroke-width="1.5"/>
+    <line x1="70" y1="240" x2="710" y2="240" stroke="#1a1208" stroke-width="1.5"/>
+    <!-- Y ticks 0,1,2 (80px per pick) -->
+    <line x1="66" y1="240" x2="70" y2="240" stroke="#1a1208" stroke-width="1"/><text x="62" y="244" text-anchor="end" fill="#6b5e4a" font-size="9">0</text>
+    <line x1="66" y1="160" x2="70" y2="160" stroke="#1a1208" stroke-width="1"/><text x="62" y="164" text-anchor="end" fill="#6b5e4a" font-size="9">1</text>
+    <line x1="66" y1="80" x2="70" y2="80" stroke="#1a1208" stroke-width="1"/><text x="62" y="84" text-anchor="end" fill="#6b5e4a" font-size="9">2</text>
+    <text x="26" y="150" text-anchor="middle" fill="#1a1208" font-weight="600" font-size="9" transform="rotate(-90,26,150)">PLAYERS SELECTED</text>
+
+    <!-- 2015: 1 pick (center 140) -->
+    <rect x="105" y="160" width="70" height="80" fill="#2c4a6e" stroke="#1a1208" stroke-width="0.6"/>
+    <text x="140" y="153" text-anchor="middle" fill="#2c4a6e" font-size="11" font-weight="700">1</text>
+    <text x="140" y="258" text-anchor="middle" fill="#1a1208" font-size="9" font-weight="700">2015</text>
+    <text x="140" y="271" text-anchor="middle" fill="#6b5e4a" font-size="8">1 of 7 available</text>
+
+    <!-- 2018: 2 picks (center 260) -->
+    <rect x="225" y="80" width="70" height="160" fill="#2c4a6e" stroke="#1a1208" stroke-width="0.6"/>
+    <text x="260" y="73" text-anchor="middle" fill="#2c4a6e" font-size="11" font-weight="700">2</text>
+    <text x="260" y="258" text-anchor="middle" fill="#1a1208" font-size="9" font-weight="700">2018</text>
+    <text x="260" y="271" text-anchor="middle" fill="#6b5e4a" font-size="8">Beal, Alexander</text>
+
+    <!-- 2019: 1 pick (center 380) -->
+    <rect x="345" y="160" width="70" height="80" fill="#2c4a6e" stroke="#1a1208" stroke-width="0.6"/>
+    <text x="380" y="153" text-anchor="middle" fill="#2c4a6e" font-size="11" font-weight="700">1</text>
+    <text x="380" y="258" text-anchor="middle" fill="#1a1208" font-size="9" font-weight="700">2019</text>
+    <text x="380" y="271" text-anchor="middle" fill="#6b5e4a" font-size="8">J. Thompson</text>
+
+    <!-- 2023: 0 picks (center 500) -->
+    <line x1="465" y1="240" x2="535" y2="240" stroke="#b83a1e" stroke-width="3"/>
+    <text x="500" y="232" text-anchor="middle" fill="#b83a1e" font-size="11" font-weight="700">0</text>
+    <text x="500" y="258" text-anchor="middle" fill="#1a1208" font-size="9" font-weight="700">2023</text>
+    <text x="500" y="271" text-anchor="middle" fill="#6b5e4a" font-size="8">held; 0 taken</text>
+
+    <!-- 2026: not held (center 620) — dashed empty bar -->
+    <rect x="585" y="160" width="70" height="80" fill="none" stroke="#b83a1e" stroke-width="1.3" stroke-dasharray="5,4"/>
+    <text x="620" y="206" text-anchor="middle" fill="#b83a1e" font-size="15" font-weight="700">&#10005;</text>
+    <text x="620" y="258" text-anchor="middle" fill="#b83a1e" font-size="9" font-weight="700">2026</text>
+    <text x="620" y="271" text-anchor="middle" fill="#b83a1e" font-size="8">NOT HELD</text>
+
+    <!-- Annotation above the empty right side -->
+    <text x="500" y="110" text-anchor="middle" fill="#6b5e4a" font-size="8.5" font-style="italic">2019 was the last time the supplemental</text>
+    <text x="500" y="122" text-anchor="middle" fill="#6b5e4a" font-size="8.5" font-style="italic">draft produced a single NFL player.</text>
+    <text x="620" y="136" text-anchor="middle" fill="#b83a1e" font-size="8.5" font-style="italic">Sorsby&rsquo;s year &mdash;</text>
+    <text x="620" y="150" text-anchor="middle" fill="#b83a1e" font-size="8.5" font-style="italic">the door never opened.</text>
+  </svg>
+  <div class="chart-note">Selections in the NFL&rsquo;s recent supplemental drafts. The draft is discretionary and frequently produces no picks at all; 2019 (Jalen Thompson, to Arizona) was the last time any player was taken, the 2023 edition selected nobody, and in 2026 the league declined to hold one &mdash; the year a real prospect was actually counting on it. Years not shown had no supplemental draft.</div>
+</div>
+
+<div class="box">
+<h3>The Math: Pricing a Door That Is Usually Locked</h3>
+<p>To be drafted out of the supplemental pool, two independent things both have to happen. First, the NFL has to decide to hold the draft at all &mdash; a pure discretionary call. Second, some team has to be willing to spend a real, equal-value future pick on a player who, by the nature of the pool, arrives with red flags. Both of those conditions have been failing for years. Since Jalen Thompson in 2019, the supplemental draft has produced exactly <strong>zero</strong> selections: the 2023 edition was held and nobody was taken, and 2026 was never held at all.</p>
+<p>This is the error worth taking home, and it is not Sorsby&rsquo;s alone &mdash; it is one all of us make. It&rsquo;s called <strong>base-rate neglect</strong>: judging an option by the fact that it <em>exists</em> rather than by how often it actually pays. &ldquo;There is a supplemental draft, so I have a path&rdquo; feels like a plan. But the base rate of that path delivering an NFL job in any given recent year rounds to nothing. A door you can see is not the same as a door that opens, and the supplemental draft is a door the NFL leaves shut almost every time someone reaches for the handle.</p>
+</div>
+
+<table class="rec">
+  <tr><th>The Sorsby Sequence, 2026</th><th>Outcome</th></tr>
+  <tr><td>June 8 &mdash; Texas judge grants injunction vs. NCAA</td><td class="mono">Cleared to play for Texas Tech (minus 2 games)</td></tr>
+  <tr><td>Big 12 files for a federal injunction to discipline him</td><td class="mono">Path narrows again</td></tr>
+  <tr><td>Sorsby drops the college fight, applies to the supplemental draft</td><td class="mono">Bets on the rare door</td></tr>
+  <tr class="hl"><td>NFL declines to hold a 2026 supplemental draft</td><td class="mono">Ineligible &mdash; no door at all</td></tr>
+  <tr><td>League points him to the 2027 regular draft</td><td class="mono">A full year erased</td></tr>
+</table>
+
+<div class="pull">
+  <p>&ldquo;A door you can see is not the same as a door that opens. The supplemental draft is one the NFL leaves shut almost every time someone reaches for the handle.&rdquo;</p>
+  <cite>&mdash; The Sports Page</cite>
+</div>
+
+<h2 class="sh">What This Is, and What It Isn&rsquo;t</h2>
+
+<p>It would be cheap, and wrong, to file this under &ldquo;gambler makes one more bad bet&rdquo; and move on. Sorsby is a young man with a diagnosed disorder who, by every account, has sought treatment, and the human cost of a year erased is real regardless of how the spreadsheet reads. The point of running the numbers is not to score him. It is that the institutions surrounding him &mdash; the NCAA, a state court, a conference, the NFL&rsquo;s draft calendar, and a discretionary draft that mostly does not occur &mdash; never had to coordinate, and so a path that looked like four open doors was, in probability terms, a hallway of mostly locked ones. Nobody in the system was obligated to notice that the math had already closed before the lawyers finished arguing.</p>
+
+<p>That is the quiet lesson the supplemental draft keeps teaching, and it travels far beyond football. We are wired to treat an option&rsquo;s existence as evidence of its odds. The lottery ticket exists; people therefore plan around winning. The supplemental draft exists; a real prospect therefore staked a season on it. The honest way to value any rare door is not to ask whether it is there. It is to ask how often, lately, it has actually opened. For this one, the answer is once since 2019 &mdash; and not at all in the year it was finally needed.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on the data: Sorsby&rsquo;s college statistics (7,208 passing yards, 60 TD, 18 INT across Indiana and Cincinnati; 24 TD / 5 INT in 2025) are from Sports-Reference and team records. His wagering totals (~$90,000 over four years; 2,900-plus bets at Indiana; 40 bets on Indiana football as a 2022 freshman; 165-plus bets at Cincinnati), the gambling- and anxiety-disorder diagnosis, the 35-day rehabilitation stay, the June 8 injunction, the Big 12&rsquo;s federal filing, and the NFL&rsquo;s decision not to hold a 2026 supplemental draft are from ESPN, CBS Sports, NBC Sports, and NFL.com reporting. Supplemental-draft history (one selection in 2019, none in 2023, the mechanism&rsquo;s discretionary nature) is from ESPN, Sports Illustrated, and the league&rsquo;s public draft records. &ldquo;Base-rate neglect&rdquo; is used in its standard decision-science sense.</p>
+
+  <!-- STORY IDEAS INBOX -->
+  <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem">Pitch a Story</h3>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem">Noticed a weird stat? Saw something that doesn&rsquo;t add up? Send it in. The best ideas become issues.</p>
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" id="pitch-name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" id="pitch-sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <textarea name="idea" placeholder="What&rsquo;s the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
+      <div style="display:flex;gap:.8rem;align-items:center">
+        <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
+        <span style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)">or <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea&body=Sport:%0A%0AStat+or+story:%0A%0AWhy+it%27s+interesting:" style="color:var(--steel)" target="_blank" rel="noopener">post on GitHub</a></span>
+      </div>
+    </form>
+    <div id="pitch-ok" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--green);font-weight:600;letter-spacing:.08em">Sent! We read every pitch. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.08em">Something went wrong. Try the GitHub link instead.</div>
+  </div>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='SENDING…';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}
+      else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='SUBMIT IDEA';
+  });
+  </script>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>The Base-Rate Beat &middot; Brendan Sorsby, the Supplemental Draft, and Pricing a Door That Is Usually Locked</span>
+  <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
