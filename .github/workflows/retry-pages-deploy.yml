@@ -1,0 +1,37 @@
+name: Retry Pages Deploy on Failure
+
+# GitHub Pages "deploy" occasionally times out on GitHub's own
+# infrastructure (the build succeeds in ~20s, then the deploy step hangs
+# ~10 min and aborts). It's transient and a plain re-run fixes it. This
+# watchdog does that re-run automatically so nobody has to babysit it.
+#
+# It fires when the managed "pages-build-deployment" workflow finishes,
+# and only acts when that run FAILED on the main branch. It re-runs the
+# failed jobs as a new attempt. The run_attempt guard caps it at two
+# automatic retries (attempts 1 and 2 trigger a retry; a 3rd failure
+# stops), so a genuinely broken deploy can never loop forever.
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+
+permissions:
+  actions: write   # needed to re-run a workflow run
+
+jobs:
+  retry:
+    if: >
+      github.event.workflow_run.conclusion == 'failure' &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.run_attempt < 3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Re-run the failed Pages deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
+        run: |
+          echo "Pages deploy run $RUN_ID failed on attempt $ATTEMPT — re-running failed jobs."
+          gh run rerun "$RUN_ID" --failed --repo "${{ github.repository }}"
