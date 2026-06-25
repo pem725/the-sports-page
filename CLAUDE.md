@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 412 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 411 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 88 issues (#1-88)
-Queue: 14 articles ready (070-defensive-reader-2-survivorship, 071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 087-wilson-featured-back, 088-sorsby-supplemental-bet, _TEMPLATE, bobby-bonilla-day)
+Published: 89 issues (#1-89)
+Queue: 13 articles ready (071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 087-wilson-featured-back, 088-sorsby-supplemental-bet, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 412 issues remaining of 500
-Last published: Issue #88 — "The Texas Longhorns Spent the Most. Notre Dame Was the Story." (067-nd-outrage-asymmetry.html) on June 24, 2026
+Goal: 411 issues remaining of 500
+Last published: Issue #89 — "Abraham Wald Looked at the Planes That Came Back. Sports Media Almost Never Does." (070-defensive-reader-2-survivorship.html) on June 25, 2026
