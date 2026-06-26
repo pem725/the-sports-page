@@ -113,11 +113,16 @@ def xml_safe_entities(svg):
 def standalone_svg(svg, w, h):
     """Make a self-contained SVG: explicit pixel size + cream background."""
     svg = xml_safe_entities(svg)
-    # Force width/height so Chrome renders at the intended pixel size.
-    svg = re.sub(r'\swidth\s*=\s*"[^"]*"', "", svg, count=1)
-    svg = re.sub(r'\sheight\s*=\s*"[^"]*"', "", svg, count=1)
-    svg = re.sub(r"<svg\b",
-                 f'<svg width="{int(w)}" height="{int(h)}"', svg, count=1)
+    # Set an explicit pixel size on the <svg> TAG ONLY (strip any width/height
+    # it carries, then add ours). Scoping to the opening tag is essential: a
+    # global strip would also delete width=/height= from the FIRST child <rect>
+    # — which silently erases the first bar — because these figures size the
+    # <svg> via style="width:100%" and carry no width attribute on the tag.
+    def _size_svg_tag(m):
+        tag = re.sub(r'\s(?:width|height)\s*=\s*"[^"]*"', "", m.group(0))
+        return re.sub(r"<svg\b", f'<svg width="{int(w)}" height="{int(h)}"',
+                      tag, count=1)
+    svg = re.sub(r"<svg\b[^>]*>", _size_svg_tag, svg, count=1)
     # Inject a full-bleed cream rectangle as the first child so the figure
     # sits on the broadsheet paper colour rather than transparent/white.
     bg = f'<rect x="0" y="0" width="{w}" height="{h}" fill="{CREAM}"/>'
