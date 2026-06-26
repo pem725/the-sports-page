@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 411 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 410 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 89 issues (#1-89)
+Published: 90 issues (#1-90)
 Queue: 13 articles ready (071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 087-wilson-featured-back, 088-sorsby-supplemental-bet, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 411 issues remaining of 500
-Last published: Issue #89 — "Abraham Wald Looked at the Planes That Came Back. Sports Media Almost Never Does." (070-defensive-reader-2-survivorship.html) on June 25, 2026
+Goal: 410 issues remaining of 500
+Last published: Issue #90 — "The Mets Scored 14 Runs in Three Games. Dansby Swanson Drove In 15 by Himself." (089-mets-swanson-collapse.html) on June 26, 2026
