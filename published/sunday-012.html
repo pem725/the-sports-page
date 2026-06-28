@@ -1,0 +1,395 @@
+<!-- PUBLISH-META
+topic: Sunday Edition
+tags: Sunday Edition, MLB:mlb, Scorecard
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Sunday Edition No. 12 — June 28, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+/* ── SUNDAY EDITION EXTRAS ── */
+.intro{font-size:1.05rem;line-height:1.75;margin-bottom:1.8rem;padding:1.2rem 1.5rem;background:var(--card);border-left:4px solid var(--steel);color:var(--ink)}
+.issue-list{list-style:none;padding:0;margin:0 0 1.8rem}
+.issue-list li{font-size:.9rem;line-height:1.65;padding:.5rem 0;border-bottom:1px solid var(--div)}
+.issue-list li:last-child{border-bottom:none}
+.issue-list .inum{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;color:var(--steel);margin-right:.4rem}
+.issue-list .idate{font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);margin-right:.4rem}
+.issue-list a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3);font-weight:700;transition:border-color .2s}
+.issue-list a:hover{border-color:var(--rust)}
+.box.green-box{background:var(--green)}
+.box.green-box h3{color:#e0f0e8}
+.box.green-box p{color:#c8edcf}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Issue #90 Ran the Autopsy. Mendoza Was Fired That Night.">
+<meta property="og:description" content="Three clean HITs, one PARTIAL, one PENDING. The Swanson regression is tracking. The NFL just made the Sorsby story stranger.">
+<meta property="og:url" content="https://thesportspage.net/published/sunday-012.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Issue #90 Ran the Autopsy. Mendoza Was Fired That Night.">
+<meta name="twitter:description" content="Three clean HITs, one PARTIAL, one PENDING. The Swanson regression is tracking. The NFL just made the Sorsby story stranger.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/banner.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Sunday Edition &middot; Week 12 Recap &middot; MLB &amp; CFB Enforcement Arc</div>
+  <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Sunday Edition No. 12 &middot; Issue No. 92</span>
+    <span>June 28, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Issue #90 Ran the Autopsy. <em>Mendoza Was Fired That Night.</em></h1>
+
+  <div class="deck">
+    The newsletter diagnosed the rot on a Friday morning. The organization confirmed it twelve hours later. Three clean HITs, one PARTIALLY HIT, one still PENDING. The Swanson regression is tracking. And the NFL just made the Sorsby story stranger than we could have written it.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; June 28, 2026 &middot; Sunday Edition No. 12</div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    Issue #90 diagnosed the structural conditions of a 34&ndash;47 team spending $375 million &mdash; the second-highest payroll in baseball &mdash; and concluded that what was visible on the field was not a slump but a system failing at every layer simultaneously. The piece ran at approximately 9 a.m. on June 26. By that evening, the Mets had fired Carlos Mendoza. The newsletter did not predict the firing. The piece was written and edited before there was anything to predict. What the piece did was read the structural rot, and the organization&rsquo;s own action confirmed the read. That is the honest accounting of the sequence, and the Sunday Edition is where we keep honest accounts.
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">6</div><div class="l">Issues Published This Week (#86&ndash;#91)</div></div>
+    <div class="sc"><div class="v good">3 for 3</div><div class="l">Gradeable Predictions That Hit</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">409</div><div class="l">Issues Remaining to Our 500 Goal</div></div>
+  </div>
+
+  <!-- SECTION 1: THE WEEK IN REVIEW -->
+  <h2 class="sh">The Week in Review: Issues #86&ndash;#91</h2>
+
+  <ol class="issue-list">
+    <li><span class="inum">#86</span><span class="idate">Jun 22</span> &mdash; <a href="https://thesportspage.net/published/085-hs-still-holds.html" target="_blank" rel="noopener">The High School Has More Authority Than the NCAA. Here Is Why It Holds.</a> &mdash; The Sorsby Case, Part III. The UIL enforces what the NCAA cannot because it owns the exit door. Why local peer networks outlast national bureaucracies when the stakes are personal, repeated, and face-to-face.</li>
+    <li><span class="inum">#87</span><span class="idate">Jun 23</span> &mdash; <a href="https://thesportspage.net/published/069-pyrrhic-6-colts-luck.html" target="_blank" rel="noopener">The Colts Lost Fourteen Games on Purpose. They Won the Next Thing That Mattered.</a> &mdash; Pyrrhic Victory March, finale. The 2011 Indianapolis Colts chose 2&ndash;14 with discipline, and Andrew Luck fell to them at No.&nbsp;1. Kutuzov, strategic loss, and when burning the scoreboard is the correct play.</li>
+    <li><span class="inum">#88</span><span class="idate">Jun 24</span> &mdash; <a href="https://thesportspage.net/published/067-nd-outrage-asymmetry.html" target="_blank" rel="noopener">The Texas Longhorns Spent the Most. Notre Dame Was the Story.</a> &mdash; Texas led college football in NIL spending; Notre Dame spent less and generated three times the outrage. Expectation violation is not moral accounting &mdash; it is social psychology, and Tacitus would have recognized it immediately.</li>
+    <li><span class="inum">#89</span><span class="idate">Jun 25</span> &mdash; <a href="https://thesportspage.net/published/070-defensive-reader-2-survivorship.html" target="_blank" rel="noopener">Abraham Wald Looked at the Planes That Came Back. Sports Media Only Interviews the Survivors.</a> &mdash; Part II of The Reader&rsquo;s Defense. The 1943 bomber-armor problem as a template for reading any sports column that draws lessons from successes. The planes that did not come home are the ones that matter.</li>
+    <li><span class="inum">#90</span><span class="idate">Jun 26</span> &mdash; <a href="https://thesportspage.net/published/089-mets-swanson-collapse.html" target="_blank" rel="noopener">The Mets Scored 14 Runs in Three Games. Dansby Swanson Drove In 15 by Himself.</a> &mdash; One man outproduced an entire opponent by himself across three games, which is mathematically unusual. The Mets paid $375 million and fielded the 1962 expansion club for one unforgettable weekend. Mendoza was fired that evening.</li>
+    <li><span class="inum">#91</span><span class="idate">Jun 27</span> &mdash; <a href="https://thesportspage.net/published/087-wilson-featured-back.html" target="_blank" rel="noopener">Russell Wilson Can&rsquo;t Play With a Featured Back. He Won a Super Bowl Behind One.</a> &mdash; The story says Wilson is a scrambler who needs open space. The scoreboard says his only ring required Marshawn Lynch rushing for 1,257 yards. When the story and the scoreboard disagree about a quarterback, bet the scoreboard.</li>
+  </ol>
+
+  <hr>
+
+  <!-- SECTION 2: THE PREDICTION SCORECARD -->
+  <h2 class="sh">The Prediction Scorecard</h2>
+
+  <p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-bottom:1rem">Three predictions from Issue #90 resolve cleanly this week &mdash; all HITs. Two enforcement predictions from the Sorsby arc get grade updates. The Mariners variance call from Issue #79 carries its PARTIAL from last week unchanged. All data verified through Saturday, June 27.</p>
+
+  <table class="rec">
+    <thead>
+      <tr><th>#</th><th>Prediction (origin issue)</th><th>Outcome</th><th>Grade</th></tr>
+    </thead>
+    <tbody>
+
+      <tr class="hl">
+        <td class="mono">#90</td>
+        <td>The Mets&rsquo; 2026 season showed the structural signature of organizational collapse: second-highest payroll in baseball, last place in the NL East, the kind of systemic rot that eventually produces an institutional response.</td>
+        <td>Manager Carlos Mendoza fired June 26 at 34&ndash;47, twelve hours after the piece published. Andy Green named interim for the final 81 games. Steve Cohen: &ldquo;Fans deserve better.&rdquo; Current record: <strong>35&ndash;48</strong>, 14 games behind NL East&ndash;leading Atlanta (49&ndash;31). No fire-sale trades as of Sunday morning &mdash; David Stearns still publicly hedging on the deadline.</td>
+        <td class="mono">HIT &mdash; the collapse diagnosis was confirmed by the organization&rsquo;s own action, same day. We did not predict the firing; we read the conditions that produced it.</td>
+      </tr>
+
+      <tr class="hl">
+        <td class="mono">#90</td>
+        <td>Dansby Swanson is a &ldquo;visitor, not a resident.&rdquo; His true-talent level is approximately .183. After going 7-for-12 in a historic three-game eruption, his season average had climbed only to .202 &mdash; a number the denominator would continue pulling back toward .183.</td>
+        <td>One week of additional at-bats: Swanson&rsquo;s season average has retreated from .202 to <strong>.199</strong>. The regression toward true talent is tracking as described. He has 11 HR and 46 RBI on the season &mdash; contributing with his power profile &mdash; but the contact average confirms the structural read.</td>
+        <td class="mono">HIT &mdash; regression tracking toward .183. The eruption was a visit. The season average is returning to the resident&rsquo;s address.</td>
+      </tr>
+
+      <tr class="hl">
+        <td class="mono">#82</td>
+        <td>The Mets buy-or-sell prior leans <em>sell</em> at any win percentage below .470. This was graded &ldquo;SELL signal confirmed&rdquo; last week at 34&ndash;42 (.447).</td>
+        <td>Now 35&ndash;48 (.422) &mdash; 25 games into sell-signal territory. Stearns has not acted. He is, as the prior predicted, buying time toward the August 3 deadline. The signal has not changed; the organization&rsquo;s response to it is the variable still resolving.</td>
+        <td class="mono">HIT (signal) &mdash; SELL confirmed. Deadline verdict still pending August 3.</td>
+      </tr>
+
+      <tr class="match">
+        <td class="mono">#81</td>
+        <td>The NCAA&rsquo;s &ldquo;permanent ineligibility&rdquo; deterrent collapses by visibility &mdash; the next athlete reads the Sorsby ruling and concludes the penalty is a starting bid in court, not a terminal sentence.</td>
+        <td>The court precedent holds: the Lubbock injunction overruled NCAA permanent ineligibility. But the labor market that was supposed to absorb Sorsby closed: the NFL declined to hold a supplemental draft in 2026 &mdash; the first time in league history the mechanism was cancelled with a declared applicant. Sorsby was told to prepare for the 2027 NFL Annual Draft. His attorney called the decision &ldquo;a violation of the CBA and the law.&rdquo; Texas Tech blocked him from playing regardless of the injunction.</td>
+        <td class="mono">PARTIALLY HIT &mdash; the deterrent collapsed in court exactly as modeled. The practical labor-market exit closed in a way that was not modeled. The legal precedent stands; the labor door was removed from the frame.</td>
+      </tr>
+
+      <tr>
+        <td class="mono">#83</td>
+        <td>Peer enforcement (Big 12 lawsuit, Nebraska threat) looks robust this cycle but will struggle to hold over time, because the threats were never actually stress-tested.</td>
+        <td>Big 12 lawsuit against Texas Tech remains active &mdash; conference says it is &ldquo;in no rush&rdquo; to pull it. Texas Tech blocked Sorsby from playing despite the court injunction. Short-term enforcement held this cycle. The long-term test &mdash; whether peer enforcement survives a cycle in which the penalties prove unenforceable &mdash; will take months or years to resolve.</td>
+        <td class="mono">PENDING &mdash; first clause (robust this cycle) tracking. Long-term test has not arrived.</td>
+      </tr>
+
+      <tr class="match">
+        <td class="mono">#79</td>
+        <td>The Mariners&rsquo; high-power, low-average lineup is structurally high-variance: alternating blowouts and low-output duds with no roster change required.</td>
+        <td>Per last available data: 39&ndash;39. The &ldquo;low-floor&rdquo; half of the call continues to hold; the &ldquo;alternating blowouts&rdquo; half has not materialized consistently. Duds outnumber explosive outings this stretch.</td>
+        <td class="mono">PARTIAL &mdash; unchanged from last week.</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- SECTION 3: WHAT WE GOT RIGHT -->
+  <h2 class="sh">What We Got Right</h2>
+
+  <div class="box green-box">
+    <h3>The Wins</h3>
+    <p>The Mets piece was the cleanest call this newsletter has made. The &ldquo;wheels are coming off&rdquo; framing &mdash; structural collapse at every layer, $375M payroll, last in the NL East &mdash; was confirmed by the organization&rsquo;s own action before most subscribers had finished reading. We did not predict the specific outcome. We diagnosed the conditions that made some organizational response inevitable. The firing was the response. The distinction matters: the newsletter is a diagnostic tool, not an oracle. The diagnosis was right. The receipt arrived the same day.</p>
+    <p>The Swanson regression call is tracking. Issue #90 wrote that his true-talent level was approximately .183 and that the 7-for-12 eruption was a statistical visit, not a change of address. One week of at-bats later, his average has dropped from .202 to .199. The denominator is doing what denominators do. The call was not dramatic &mdash; it was arithmetic &mdash; and arithmetic tends to win.</p>
+    <p>The court reading on the Sorsby arc (Issue #81) was directionally correct: the NCAA&rsquo;s &ldquo;permanent ineligibility&rdquo; deterrent did collapse by visibility. The Lubbock injunction established the precedent. The next athlete who reads that ruling and concludes it is a starting bid in court rather than a terminal sentence will be reading it correctly. What the newsletter did not model was the NFL removing the supplemental draft mechanism entirely. That is recorded below as new data, not a forecasting failure.</p>
+  </div>
+
+  <!-- SECTION 4: WHAT WE GOT WRONG / FACTUAL UPDATES -->
+  <h2 class="sh">What We Got Wrong &mdash; and What Is Simply New Data</h2>
+
+  <div class="box">
+    <h3>Honest Accounting</h3>
+    <p>No forecasting errors this week. Issues #86 through #89 and #91 were analytical and retrospective &mdash; the Pyrrhic series finale, the ND outrage-asymmetry piece, the survivorship-bias explainer, the Wilson supporting-cast analysis. None made forward bets that could resolve in seven days, and Issue #91 was explicit about this: &ldquo;four seasons is a pattern, not a model, and this newsletter will not pretend otherwise.&rdquo; Calibrated hedges do not fail; they age.</p>
+    <p>What is new data, not a forecasting error: David Peterson made his Cubs debut Saturday against Milwaukee and went 5&thinsp;&#x2154;&thinsp;innings, two earned runs, in an 8&ndash;2 Cubs win &mdash; first pitch surrendered as a leadoff homer to Jackson Chourio, decent outing otherwise. Issue #90 called Peterson &ldquo;reinforcements shipped directly to the firing squad.&rdquo; One start in, Peterson looked competent. Cole Mathis remains in the minors on the approximate 2029 timeline the piece assigned him. This is not a miss; the piece was describing the trade&rsquo;s immediate optics, not Peterson&rsquo;s career arc.</p>
+    <p>The Sorsby labor-market outcome was not fully modeled. Sunday Edition No.&nbsp;11 laid out three possible supplemental draft scenarios: an early-round pick (market prizes talent above the integrity discount), a late pick (market prices the discount), or undrafted (labor market enforces what the NCAA could not). The NFL generated a fourth: it declined to hold the supplemental draft at all. No supplemental draft has been cancelled before with a declared applicant. This is new data about how the NFL and the NCAA actually coexist &mdash; not a prediction failure &mdash; but the Sunday Edition records it as something we did not anticipate.</p>
+  </div>
+
+  <!-- PULL QUOTE 1 -->
+  <div class="pull">
+    <p>&ldquo;We diagnosed the patient. The front office decided to fire the doctor. Two different things, recorded at different times by different parties &mdash; and they agreed.&rdquo;</p>
+    <cite>&mdash; The Sports Page, Sunday Edition No. 12</cite>
+  </div>
+
+  <!-- SECTION 5: OVER-REACTIONS AND UNDER-REACTIONS -->
+  <h2 class="sh">Over-Reactions and Under-Reactions</h2>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--rust);margin-bottom:.6rem">Where the Coverage Over-Reacted</h3>
+      <p>The national framing after the Mendoza firing was immediate and uniform: &ldquo;fire sale imminent.&rdquo; Stearns gave no indication of that. He said, publicly and clearly, that he wanted to give the team a chance before making deadline decisions. Andy Green went 1&ndash;1 in his first two games, winning 6&ndash;2 over the Phillies Saturday to snap a seven-game losing streak. A fire sale of a $375M roster before the interim manager finishes his first road trip would be extraordinary. Stearns is buying time. The newsletter has tracked this correctly throughout: when the organization commits, it will announce the commitment via a trade, not a press conference. The August&nbsp;3 deadline is the test.</p>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--steel);margin-bottom:.6rem">Where the Coverage Under-Reacted</h3>
+      <p>The NFL cancelling the Sorsby supplemental draft received less analytical attention than it deserved. The NFL&rsquo;s position &mdash; that it will simply decline to create the mechanism that lets an athlete exit the college system through its process &mdash; is a structural statement about how the NFL and the NCAA coexist. The two leagues are not adversarial. The NFL can remove the exit. That has implications for every future athlete who assumes the professional draft is a backstop against NCAA enforcement. Sorsby assumed a door existed. The NFL removed the door from the frame. That is the actual story from this week&rsquo;s Sorsby developments, and it received about a third of the coverage the court filings did.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- READERSHIP — auto-populated by scripts/fetch_readership.py -->
+  <h2 class="sh">What Readers Read This Week</h2>
+  <p style="font-style:italic;color:var(--muted);font-size:.92rem"><em>Readership data temporarily unavailable &mdash; the GoatCounter analytics API was unreachable from this environment. Top-5 weekly rankings will populate in next week&rsquo;s edition once the pipeline re-establishes. The full archive remains at <a href="https://thesportspage.net/" style="color:var(--rust)">thesportspage.net</a>.</em></p>
+
+  <hr>
+
+  <!-- SECTION 6: THE ROAD AHEAD -->
+  <h2 class="sh">The Road Ahead</h2>
+
+  <p>The Sorsby Part IV piece (queued as <code>088-sorsby-supplemental-bet.html</code>) was built around three market verdicts: early pick, late pick, or undrafted. The NFL&rsquo;s refusal to hold the supplemental draft at all is a fourth outcome &mdash; and arguably the most structurally revealing of the four. It will not publish as written. The piece needs to be rebuilt around what actually happened: the NFL choosing to protect the NCAA&rsquo;s enforcement environment by removing the supplemental draft mechanism rather than letting the labor market render a verdict. That is a more important story than any draft slot. The revision will not be rushed.</p>
+
+  <p>After the Sorsby revision: the Half-Life of a Lead framework (#071) and the Team Clustering analysis (#072) are up next. Both are methodology-forward, data-heavy pieces of the kind that keep this newsletter from becoming a headlines service. They will run as the Sorsby piece is completed and the summer schedule permits.</p>
+
+  <p>The Mets watch continues toward August 3. At 35&ndash;48 (.422), David Stearns is 25 games deep into sell-signal territory by the prior established in Issue&nbsp;#82. Every week without a trade is a data point about what kind of organization this is. Every trade is a verdict. The newsletter will record both.</p>
+
+  <!-- FINAL PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;The NFL didn&rsquo;t just close the door on Sorsby. It removed the door from the frame. That is a different kind of statement about how power actually works.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the Sorsby labor-market outcome</cite>
+  </div>
+
+  <!-- STORY IDEAS INBOX (compact) -->
+  <aside id="pitch" style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.7rem 0;margin:1.6rem 0 .4rem;font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <span style="text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600">Pitch a stat &rarr;</span>
+      <input type="text" name="sport" placeholder="Sport" style="font-family:inherit;font-size:.7rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;width:5rem">
+      <input type="text" name="idea" placeholder="The weird number you noticed" required style="font-family:'Libre Baskerville',serif;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;flex:1;min-width:12rem">
+      <button id="pitch-btn" type="submit" style="background:var(--ink);color:var(--cream);font-family:inherit;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.32rem .7rem;cursor:pointer">Send</button>
+      <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea" style="color:var(--steel);text-decoration:none;font-size:.6rem" target="_blank" rel="noopener">or GitHub</a>
+    </form>
+    <div id="pitch-ok" style="display:none;margin-top:.3rem;color:var(--green);font-size:.62rem">Sent. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;margin-top:.3rem;color:var(--rust);font-size:.62rem">Failed &mdash; try the GitHub link.</div>
+  </aside>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='&hellip;';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='Send';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Sunday Edition No. 12 &middot; Issue No. 92</span>
+    <span>Predictions tracked from Issues #79&ndash;#91</span>
+    <span>See you next Sunday</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/sunday-012.html">
+
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+
+    <a href="https://twitter.com/intent/tweet?text=Issue%20%2390%20Ran%20the%20Autopsy.%20Mendoza%20Was%20Fired%20That%20Night.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/sunday-012.html" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:background .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/sunday-012.html" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/sunday-012.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20Issue%20%2390%20Ran%20the%20Autopsy.%20Mendoza%20Was%20Fired%20That%20Night.&body=Thought%20you%27d%20enjoy%20this%3A%0A%0AIssue%20%2390%20Ran%20the%20Autopsy.%20Mendoza%20Was%20Fired%20That%20Night.%0A%0ARead%20it%20here%3A%20https%3A//thesportspage.net/published/sunday-012.html%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/sunday-012.html"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+
+  </div>
+
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+
+  <a href="https://thesportspage.net/" style="text-decoration:none" target="_blank" rel="noopener"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none" target="_blank" rel="noopener"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)" target="_blank" rel="noopener">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+
+</section>
+
+<script>
+(function(){
+  var btn = document.getElementById('sp-copy-link');
+  if (!btn) return;
+  var label = document.getElementById('sp-copy-label');
+  var url = btn.getAttribute('data-url');
+  btn.addEventListener('click', function(){
+    try {
+      navigator.clipboard.writeText(url).then(function(){
+        label.textContent = 'Copied!';
+        btn.style.background = '#c9962a';
+        btn.style.color = '#1a1208';
+        setTimeout(function(){
+          label.textContent = 'Copy link';
+          btn.style.background = 'transparent';
+          btn.style.color = '#c9962a';
+        }, 1800);
+      });
+    } catch (e) {
+      window.prompt('Copy this link:', url);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
