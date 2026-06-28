@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 91 issues (#1-91)
+Published: 92 issues (#1-92, including Sunday Edition No. 12)
 Queue: 12 articles ready (071-half-life-1-framework, 072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 088-sorsby-supplemental-bet, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 409 issues remaining of 500
-Last published: Issue #91 — "Russell Wilson Can’t Play With a Featured Back. He Won a Super Bowl Behind One." (087-wilson-featured-back.html) on June 27, 2026
+Goal: 408 issues remaining of 500
+Last published: Issue #92 — Sunday Edition No. 12 "Issue #90 Ran the Autopsy. Mendoza Was Fired That Night." (sunday-012.html) on June 28, 2026
