@@ -169,21 +169,31 @@ def parse_tags(tags_str):
 # ---------------------------------------------------------------------------
 
 def extract_headline(content):
-    """Get text from <h1 class="hed">...</h1>, stripping HTML tags."""
-    m = re.search(r'<h1\s+class="hed">(.*?)</h1>', content, re.DOTALL)
+    """Get text from the headline, stripping HTML tags.
+
+    Accept either <h1 class="hed"> (older issues) or <h2 class="hed">
+    (newer Python-templated issues) — same tolerance as generate_rss.py.
+    The backreference guarantees the closing tag matches the opening one.
+    """
+    m = re.search(r'<(h[12])\s+class="hed"[^>]*>(.*?)</\1>', content, re.DOTALL)
     if not m:
-        fail("Could not find <h1 class=\"hed\"> in the article.")
-    raw = m.group(1).strip()
+        fail("Could not find <h1/h2 class=\"hed\"> in the article.")
+    raw = m.group(2).strip()
     # Keep the raw HTML for the index entry (it has &rsquo; etc.)
     return raw
 
 
 def extract_deck(content):
-    """Get text from <div class="deck">...</div>."""
-    m = re.search(r'<div\s+class="deck">\s*(.*?)\s*</div>', content, re.DOTALL)
+    """Get text from the deck.
+
+    Accept either <div class="deck"> (older) or <p class="deck"> (newer),
+    matching generate_rss.py.
+    """
+    m = re.search(r'<(div|p)\s+class="deck"[^>]*>\s*(.*?)\s*</\1>',
+                  content, re.DOTALL)
     if not m:
-        fail("Could not find <div class=\"deck\"> in the article.")
-    return m.group(1).strip()
+        fail("Could not find <div/p class=\"deck\"> in the article.")
+    return m.group(2).strip()
 
 
 # ---------------------------------------------------------------------------
