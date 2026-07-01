@@ -1,0 +1,188 @@
+<!-- PUBLISH-META
+topic: NHL
+tags: NHL:nhl, Las Vegas, Expansion, Golden Knights
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:900;line-height:1.14;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="New Teams Are Supposed to Lose for Years. Las Vegas Won Three Titles in Twenty-Four Months.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/093-vegas-expansion-curse.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/093-vegas-expansion-curse.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="New Teams Are Supposed to Lose for Years. Las Vegas Won Three Titles in Twenty-Four Months.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/093-vegas-expansion-curse.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">The Desert Boomtown &middot; Expansion &amp; the Odds</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">New Teams Are Supposed to Lose for Years. <em>Las Vegas Won Three Titles in Twenty-Four Months.</em></h1>
+<div class="deck">The expansion curse is real: add a team to a league and it&rsquo;s historically bad for a decade. Las Vegas got the memo, read it, and set it on fire. From zero major-league teams in 2016 to three championships by 2023 &mdash; here is how the desert broke the oldest rule in sports.</div>
+<div class="byline">By The Columnist &middot; The Sports Page &middot; The Desert Boomtown</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v now">Year 1</div><div class="l">Golden Knights Reached the Cup Final in Their Inaugural Season &mdash; First Since 1967</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">6</div><div class="l">Seasons to Their First Cup &mdash; Fastest Expansion Team in NHL History</div></div>
+  <div class="sc"><div class="v good">3</div><div class="l">Titles Vegas Teams Won in 2022&ndash;23 &mdash; a Decade After Having None</div></div>
+</div>
+
+<p>There is a law in professional sports as old as expansion itself, and it is a cruel one. When a league adds a team, that team is supposed to be bad &mdash; historically, cosmically bad &mdash; for years. It gets the players no one else wanted; it loses while the city learns to love it; and only after a decade of patience does it become anything at all. The expansion curse is real, and it is the default setting of every new franchise in every sport. Except in one place. Las Vegas got the memo, read it carefully, and set it on fire.</p>
+
+<p>Consider where the city started. For most of its history, Las Vegas had no major professional sports teams at all &mdash; the leagues stayed away, nervous about planting a franchise in the one city synonymous with betting on the games they were trying to protect. As recently as 2016, the entertainment capital of the world had exactly zero teams in the NHL, the NFL, the WNBA, or Major League Baseball. And then, in the space of a single decade, it acquired four of them and started winning almost before the moving trucks had left.</p>
+
+<h2 class="sh">The Team That Torched the Curse</h2>
+
+<p>The Vegas Golden Knights began play in 2017 as an expansion team that <em>Deadspin</em> and <em>Newsweek</em> predicted would be among the worst in hockey. Instead they went 51-24-7, piled up 109 points, and marched all the way to the Stanley Cup Final in their very first season &mdash; the first expansion team to reach the Final in its inaugural year since 1967. They lost that one to Washington. Then they came back and, in 2023, won the Stanley Cup in their sixth season of existence: the fastest any expansion team has ever won it in NHL history. A franchise that did not exist in 2016 was hoisting the oldest trophy in North American sports seven years later.</p>
+
+<p>And the Golden Knights were not a one-sport fluke. The Las Vegas Aces, who relocated to the desert in 2018, won the WNBA championship in 2022 and again in 2023 &mdash; the league&rsquo;s first repeat champion in more than two decades, with A&rsquo;ja Wilson taking Finals MVP. Add it up: across the twenty-four months of 2022 and 2023, teams representing Las Vegas won <strong>three</strong> major professional championships. Three, in a city that a decade earlier had none to lose with. The Raiders arrived from Oakland in 2020; the Athletics are on their way from California for 2028. The desert the leagues once refused to enter is now, by every measure, a title town.</p>
+
+<div class="chart">
+  <div class="chart-cap">Las Vegas Goes Major League: From Zero Teams to Three Titles</div>
+  <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- baseline -->
+    <line x1="80" y1="215" x2="710" y2="215" stroke="#1a1208" stroke-width="1.5"/>
+    <!-- year ticks -->
+    <line x1="80" y1="215" x2="80" y2="220" stroke="#1a1208" stroke-width="1"/><text x="80" y="235" text-anchor="middle" fill="#6b5e4a" font-size="9">2016</text>
+    <line x1="183" y1="215" x2="183" y2="220" stroke="#1a1208" stroke-width="1"/><text x="183" y="235" text-anchor="middle" fill="#6b5e4a" font-size="9">2018</text>
+    <line x1="287" y1="215" x2="287" y2="220" stroke="#1a1208" stroke-width="1"/><text x="287" y="235" text-anchor="middle" fill="#6b5e4a" font-size="9">2020</text>
+    <line x1="390" y1="215" x2="390" y2="220" stroke="#1a1208" stroke-width="1"/><text x="390" y="235" text-anchor="middle" fill="#6b5e4a" font-size="9">2022</text>
+    <line x1="493" y1="215" x2="493" y2="220" stroke="#1a1208" stroke-width="1"/><text x="493" y="235" text-anchor="middle" fill="#6b5e4a" font-size="9">2024</text>
+    <line x1="597" y1="215" x2="597" y2="220" stroke="#1a1208" stroke-width="1"/><text x="597" y="235" text-anchor="middle" fill="#6b5e4a" font-size="9">2026</text>
+    <line x1="700" y1="215" x2="700" y2="220" stroke="#1a1208" stroke-width="1"/><text x="700" y="235" text-anchor="middle" fill="#6b5e4a" font-size="9">2028</text>
+
+    <!-- ARRIVALS (steel, below the line) -->
+    <circle cx="132" cy="215" r="5" fill="#2c4a6e"/><text x="132" y="256" text-anchor="middle" fill="#2c4a6e" font-size="9" font-weight="700">Knights</text><text x="132" y="267" text-anchor="middle" fill="#6b5e4a" font-size="8">debut &rsquo;17</text>
+    <circle cx="287" cy="215" r="5" fill="#2c4a6e"/><text x="287" y="256" text-anchor="middle" fill="#2c4a6e" font-size="9" font-weight="700">Raiders</text><text x="287" y="267" text-anchor="middle" fill="#6b5e4a" font-size="8">arrive &rsquo;20</text>
+    <circle cx="700" cy="215" r="5" fill="#2c4a6e"/><text x="700" y="256" text-anchor="end" fill="#2c4a6e" font-size="9" font-weight="700">A&rsquo;s arrive</text><text x="700" y="267" text-anchor="end" fill="#6b5e4a" font-size="8">2028</text>
+
+    <!-- MILESTONE: Cup Final year 1 (2018, above) -->
+    <line x1="183" y1="215" x2="183" y2="178" stroke="#2c4a6e" stroke-width="0.8"/><circle cx="183" cy="215" r="5" fill="#2c4a6e"/>
+    <text x="183" y="170" text-anchor="middle" fill="#2c4a6e" font-size="9" font-weight="700">Cup Final</text><text x="183" y="159" text-anchor="middle" fill="#6b5e4a" font-size="8" font-style="italic">in year one</text>
+
+    <!-- CHAMPIONSHIPS (gold, above) -->
+    <line x1="390" y1="215" x2="390" y2="150" stroke="#c9962a" stroke-width="0.8"/><circle cx="390" cy="215" r="6" fill="#c9962a"/>
+    <text x="390" y="142" text-anchor="middle" fill="#c9962a" font-size="9" font-weight="700">Aces title</text>
+    <line x1="442" y1="215" x2="442" y2="112" stroke="#c9962a" stroke-width="0.8"/><circle cx="442" cy="215" r="6" fill="#c9962a"/>
+    <text x="442" y="104" text-anchor="middle" fill="#c9962a" font-size="9" font-weight="700">Knights Cup</text><text x="442" y="93" text-anchor="middle" fill="#c9962a" font-size="9" font-weight="700">+ Aces repeat</text>
+
+    <!-- 3-titles-in-24-months bracket -->
+    <text x="416" y="72" text-anchor="middle" fill="#b83a1e" font-size="9" font-style="italic">3 titles in 24 months</text>
+    <path d="M366 78 Q416 68 466 78" fill="none" stroke="#b83a1e" stroke-width="0.8"/>
+  </svg>
+  <div class="chart-note">Blue marks a team&rsquo;s arrival; gold marks a championship. A city with zero major-league teams in 2016 saw the Golden Knights reach the Cup Final in their first season (2018), then won three titles &mdash; two Aces championships and the Knights&rsquo; Cup &mdash; across 2022 and 2023. The Athletics complete the set in 2028.</div>
+</div>
+
+<div class="box">
+<h3>Why the Curse Broke in the Desert</h3>
+<p>The instinct is to call this luck, and luck was involved &mdash; but luck does not repeat itself across three franchises in two different sports. The expansion curse, it turns out, was never a law of nature. It was the product of two conditions: the miserable terms on which new teams were usually stocked, and the undesirable cities they were usually dropped into. Las Vegas changed both. The Golden Knights entered under an unusually generous expansion draft &mdash; the rest of the league left more talent exposed than it ever had before, and Vegas&rsquo;s front office pillaged it expertly, assembling a roster the &ldquo;Golden Misfits&rdquo; wore as a badge.</p>
+<p>And the city itself flipped the oldest disadvantage in sports on its head. For decades the problem for a new franchise was that it sat in a place players had to be dragged to. Las Vegas &mdash; no state income tax, the entertainment capital of the country, a genuine destination &mdash; is a place players <em>want</em> to go. Change the two conditions that manufactured a rule, and the rule quietly stops being one. We said as much in this space just last week about college football. It turns out the desert proved the point first.</p>
+</div>
+
+<div class="pull">
+  <p>&ldquo;Across the twenty-four months of 2022 and 2023, Las Vegas teams won three major championships &mdash; from a city that, ten years earlier, didn&rsquo;t have a single team to lose with.&rdquo;</p>
+  <cite>&mdash; The Sports Page</cite>
+</div>
+
+<h2 class="sh">The House Doesn&rsquo;t Always Win. Sometimes the Long Shot Does.</h2>
+
+<p>There is something fitting about all of this happening in Las Vegas, of all places &mdash; a city that has always understood, better than anywhere, that the smart money and the sentimental money occasionally cash the same ticket. The Golden Knights were a long shot; the oddsmakers, the ones who work down the street, had them near the bottom of the league. The Aces were an afterthought franchise that had wandered the map for years. Both came in. And a place that spent a century being told it could never have this now owns more championships than teams that have been trying, in older and prouder cities, for half a century.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.95rem;margin-top:1.4rem;border-left:3px solid var(--gold);padding-left:.9rem">This issue is for Sean &mdash; who makes his home where the improbable became ordinary &mdash; on the occasion of his birthday. Long may the desert keep beating the odds.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on the data: the Vegas Golden Knights&rsquo; inaugural 2017&ndash;18 season (51-24-7, 109 points, the first expansion team since the 1967&ndash;68 St. Louis Blues to reach the Stanley Cup Final in its first year) and their 2023 championship (won in their sixth season, the fastest expansion team to win the Cup in NHL history) are from the NHL, Hockey-Reference, and Wikipedia. The Las Vegas Aces&rsquo; back-to-back WNBA titles (2022 and 2023, the league&rsquo;s first repeat champion since 2001&ndash;02, A&rsquo;ja Wilson Finals MVP) are from WNBA and Associated Press records; the franchise relocated to Las Vegas in 2018. The Raiders relocated from Oakland for the 2020 season; the Athletics&rsquo; move to Las Vegas is set for 2028. Nevada levies no state income tax. This piece treats &ldquo;major-league team&rdquo; as the NHL, NFL, WNBA, and MLB franchises based in the city.</p>
+
+  <!-- STORY IDEAS INBOX -->
+  <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem">Pitch a Story</h3>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem">Noticed a weird stat? Saw something that doesn&rsquo;t add up? Send it in. The best ideas become issues.</p>
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" id="pitch-name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" id="pitch-sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <textarea name="idea" placeholder="What&rsquo;s the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
+      <div style="display:flex;gap:.8rem;align-items:center">
+        <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
+        <span style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)">or <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea&body=Sport:%0A%0AStat+or+story:%0A%0AWhy+it%27s+interesting:" style="color:var(--steel)" target="_blank" rel="noopener">post on GitHub</a></span>
+      </div>
+    </form>
+    <div id="pitch-ok" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--green);font-weight:600;letter-spacing:.08em">Sent! We read every pitch. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.08em">Something went wrong. Try the GitHub link instead.</div>
+  </div>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='SENDING…';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}
+      else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='SUBMIT IDEA';
+  });
+  </script>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>The Desert Boomtown &middot; How Las Vegas Broke the Oldest Rule in Sports</span>
+  <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
