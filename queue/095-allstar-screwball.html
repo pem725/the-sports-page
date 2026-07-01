@@ -1,0 +1,191 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, All-Star Game, Screwball, History
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Issue No. __ — TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:900;line-height:1.14;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+.chart-cap{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;text-align:center}
+.chart-note{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:center;line-height:1.4}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="Forty Summers Ago, Fernando Valenzuela Struck Out Five Straight All-Stars. He Was Only the Second Man Ever to Do It.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/095-allstar-screwball.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/095-allstar-screwball.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Forty Summers Ago, Fernando Valenzuela Struck Out Five Straight All-Stars. He Was Only the Second Man Ever to Do It.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/095-allstar-screwball.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">The Midsummer Classic &middot; A Record Four Decades Old</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Issue No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+<h1 class="hed">Forty Summers Ago, Fernando Valenzuela Struck Out Five Straight All-Stars. <em>He Was Only the Second Man Ever to Do It.</em></h1>
+<div class="deck">On the night of the 2026 All-Star Game, a look back at one of the rarest feats the midsummer classic has ever produced &mdash; matched exactly once in more than ninety years, both times by a vanishing pitch called the screwball, and untouched in the four decades since.</div>
+<div class="byline">By The Columnist &middot; The Sports Page &middot; The Midsummer Classic</div>
+
+<div class="stat-row">
+  <div class="sc"><div class="v now">5</div><div class="l">Consecutive Strikeouts Fernando Valenzuela Recorded in the 1986 All-Star Game</div></div>
+  <div class="sc"><div class="v good">2</div><div class="l">Times in 90+ Years Anyone Has Struck Out Five Straight in an All-Star Game</div></div>
+  <div class="sc"><div class="v" style="color:var(--gold)">40</div><div class="l">Summers Since &mdash; and No One Has Matched It. A Record Four Decades Old.</div></div>
+</div>
+
+<p>On a July afternoon at the Polo Grounds in 1934, a New York Giants left-hander named Carl Hubbell &mdash; a man who did not even throw especially hard &mdash; walked to the mound in the second All-Star Game ever played and did something that has echoed for more than ninety years. He struck out, in succession, Babe Ruth, Lou Gehrig, Jimmie Foxx, Al Simmons, and Joe Cronin: five men who would all reach the Hall of Fame, the beating heart of the American League&rsquo;s Murderers&rsquo; Row, retired one after another on a pitch most of them had never learned to hit. It remains the most famous half-inning in the history of the game&rsquo;s midsummer showcase.</p>
+
+<p>And for fifty-two years, no one came close to matching it.</p>
+
+<h2 class="sh">Fifty-Two Years Later, in Houston</h2>
+
+<p>Then, on the night of July 15, 1986 &mdash; forty summers ago this month &mdash; another left-hander with a screwball walked to the mound at the Astrodome and did it again. Fernando Valenzuela, the Dodgers&rsquo; folk hero, the man who had made an entire city fall in love with baseball, struck out Don Mattingly, Cal Ripken Jr., Jesse Barfield, Lou Whitaker, and Teddy Higuera &mdash; five straight, tying Hubbell&rsquo;s record exactly, screwball for screwball, half a century apart. Two men, and only two, have ever struck out five consecutive batters in an All-Star Game. Both of them threw the same beautiful, backward-breaking, nearly extinct pitch.</p>
+
+<div class="chart">
+  <div class="chart-cap">Five Straight in the All-Star Game: It Has Happened Twice in Ninety Years</div>
+  <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Roboto Mono',monospace;font-size:10px">
+    <!-- baseline -->
+    <line x1="80" y1="175" x2="700" y2="175" stroke="#1a1208" stroke-width="1.5"/>
+    <!-- decade ticks -->
+    <line x1="80" y1="175" x2="80" y2="180" stroke="#1a1208" stroke-width="1"/><text x="80" y="193" text-anchor="middle" fill="#6b5e4a" font-size="9">1930</text>
+    <line x1="204" y1="175" x2="204" y2="180" stroke="#1a1208" stroke-width="1"/><text x="204" y="193" text-anchor="middle" fill="#6b5e4a" font-size="9">1950</text>
+    <line x1="328" y1="175" x2="328" y2="180" stroke="#1a1208" stroke-width="1"/><text x="328" y="193" text-anchor="middle" fill="#6b5e4a" font-size="9">1970</text>
+    <line x1="452" y1="175" x2="452" y2="180" stroke="#1a1208" stroke-width="1"/><text x="452" y="193" text-anchor="middle" fill="#6b5e4a" font-size="9">1990</text>
+    <line x1="576" y1="175" x2="576" y2="180" stroke="#1a1208" stroke-width="1"/><text x="576" y="193" text-anchor="middle" fill="#6b5e4a" font-size="9">2010</text>
+    <line x1="700" y1="175" x2="700" y2="180" stroke="#1a1208" stroke-width="1"/><text x="700" y="193" text-anchor="middle" fill="#6b5e4a" font-size="9">2030</text>
+
+    <!-- 52 years apart (muted, above, between the two feats) -->
+    <text x="266" y="150" text-anchor="middle" fill="#6b5e4a" font-size="9" font-style="italic">52 years apart</text>
+
+    <!-- Hubbell 1934 (x=105) -->
+    <line x1="105" y1="175" x2="105" y2="128" stroke="#c9962a" stroke-width="0.8"/><circle cx="105" cy="175" r="6" fill="#c9962a" stroke="#1a1208" stroke-width="0.6"/>
+    <text x="105" y="120" text-anchor="middle" fill="#c9962a" font-size="10" font-weight="700">HUBBELL</text><text x="105" y="109" text-anchor="middle" fill="#6b5e4a" font-size="8">1934 &middot; 5 HOFers</text>
+
+    <!-- Fernando 1986 (x=427) -->
+    <line x1="427" y1="175" x2="427" y2="128" stroke="#c9962a" stroke-width="0.8"/><circle cx="427" cy="175" r="6" fill="#c9962a" stroke="#1a1208" stroke-width="0.6"/>
+    <text x="427" y="120" text-anchor="middle" fill="#c9962a" font-size="10" font-weight="700">VALENZUELA</text><text x="427" y="109" text-anchor="middle" fill="#6b5e4a" font-size="8">1986 &middot; 5 All-Stars</text>
+
+    <!-- Now 2026 (x=675) -->
+    <circle cx="675" cy="175" r="5" fill="none" stroke="#b83a1e" stroke-width="1.5"/>
+    <text x="675" y="120" text-anchor="middle" fill="#b83a1e" font-size="9" font-style="italic">still</text><text x="675" y="109" text-anchor="middle" fill="#b83a1e" font-size="9" font-style="italic">unmatched</text>
+
+    <!-- 40 summers span, 1986 -> now (rust, below the line) -->
+    <line x1="427" y1="225" x2="675" y2="225" stroke="#b83a1e" stroke-width="1.2"/>
+    <line x1="427" y1="220" x2="427" y2="230" stroke="#b83a1e" stroke-width="1.2"/>
+    <line x1="675" y1="220" x2="675" y2="230" stroke="#b83a1e" stroke-width="1.2"/>
+    <text x="551" y="247" text-anchor="middle" fill="#b83a1e" font-size="10" font-weight="700" font-style="italic">40 summers &mdash; no one has matched it</text>
+  </svg>
+  <div class="chart-note">Only twice in more than ninety years of All-Star Games has a pitcher struck out five batters in a row: Carl Hubbell in 1934 and Fernando Valenzuela in 1986, fifty-two years apart, both left-handed screwballers. Four decades have passed since the second, and the record still stands untouched.</div>
+</div>
+
+<h2 class="sh">The Pitch That Links Them</h2>
+
+<p>About the screwball, because it is the secret of the entire thing. It breaks the wrong way &mdash; in toward a same-handed hitter, away from an opposite-handed one, the mirror image of a curveball &mdash; and it is thrown by twisting the forearm in a manner the human elbow was frankly not built to enjoy. It has always been rare, and it is now essentially extinct; a whole generation of pitchers has come and gone without a single reliable screwball artist among them. Hubbell threw it. Fernando threw it. And the record the two of them share may be safe forever precisely because the weapon they shared has all but disappeared from the game. In the forty years since 1986, no one has come close &mdash; not because the hitters got better, but because the pitch that beat them stopped being taught.</p>
+
+<div class="box">
+<h3>Why This Record May Never Fall</h3>
+<p>Consider what it actually takes. Striking out five consecutive major-league All-Stars is hard on its own terms &mdash; these are, by definition, the best hitters alive that summer. But doing it inside a single All-Star appearance, when a pitcher typically works only one or two innings, means nearly every out you record has to be a strikeout, with no room for a harmless groundball or a lazy fly. There is no margin. It has happened twice in ninety-two years.</p>
+<p>And here is the part that tips a rare feat toward a permanent one: the two men who managed it shared a pitch that no longer exists at the top level of the sport. A record held for four decades, set by a method that has since vanished, is about as close to unbreakable as baseball ever offers. Some marks survive because they are hard. This one may survive because the key was thrown away.</p>
+</div>
+
+<div class="pull">
+  <p>&ldquo;Two men have struck out five straight All-Stars in ninety years. Both threw the screwball. Forty summers have passed since the second &mdash; and the pitch that did it has all but died, which may make the record eternal.&rdquo;</p>
+  <cite>&mdash; The Sports Page</cite>
+</div>
+
+<h2 class="sh">A List That May Never Grow</h2>
+
+<p>Fernando Valenzuela is gone now &mdash; we lost him in 2024 &mdash; and the screwball, in the way of these things, is quietly going with him. But for one inning forty summers ago, on the game&rsquo;s brightest stage, he reached back across fifty-two years and touched a ghost from 1934, and the two of them &mdash; the soft-spoken Giant and the beloved Dodger, both left-handed, both throwing the pitch that nobody throws anymore &mdash; became the only two names on a list that may never grow. Most records are made to be broken. This one, four decades old and guarded by a lost art, looks made to last. On the night of another All-Star Game, it is worth remembering that some of the best things the summer of 1986 produced have only gotten better with the years.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.95rem;margin-top:1.4rem;border-left:3px solid var(--gold);padding-left:.9rem">This one is for Simone, on her birthday &mdash; herself a product of that very good summer, and living proof that the finest vintages of 1986 only improve with time. Happy birthday.</p>
+
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.4rem">A note on the data: Carl Hubbell&rsquo;s five consecutive strikeouts in the 1934 All-Star Game (Babe Ruth, Lou Gehrig, Jimmie Foxx, Al Simmons, and Joe Cronin, at the Polo Grounds on July 10, 1934) and Fernando Valenzuela&rsquo;s five consecutive strikeouts in the 1986 All-Star Game (Don Mattingly, Cal Ripken Jr., Jesse Barfield, Lou Whitaker, and Teddy Higuera, at the Astrodome on July 15, 1986) are from the Society for American Baseball Research, the National Baseball Hall of Fame, and Baseball Almanac; both pitchers were left-handed screwball specialists, and their shared mark of five straight remains the All-Star Game record. Roger Clemens was the MVP of that 1986 game, played in his hometown of Houston. This issue publishes on the night of the 2026 All-Star Game.</p>
+
+  <!-- STORY IDEAS INBOX -->
+  <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem">Pitch a Story</h3>
+    <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem">Noticed a weird stat? Saw something that doesn&rsquo;t add up? Send it in. The best ideas become issues.</p>
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-direction:column;gap:.6rem">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" id="pitch-name" placeholder="Your name" required style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <input type="text" name="sport" id="pitch-sport" placeholder="Sport (MLB, NFL, NHL, CFB, WNBA, etc.)" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none">
+      <textarea name="idea" placeholder="What&rsquo;s the stat or story? Why is it weird, interesting, or important?" required rows="3" style="font-family:'Libre Baskerville',serif;font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;resize:vertical"></textarea>
+      <div style="display:flex;gap:.8rem;align-items:center">
+        <button id="pitch-btn" type="submit" style="background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.6rem 1.4rem;cursor:pointer">Submit Idea</button>
+        <span style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)">or <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea&body=Sport:%0A%0AStat+or+story:%0A%0AWhy+it%27s+interesting:" style="color:var(--steel)" target="_blank" rel="noopener">post on GitHub</a></span>
+      </div>
+    </form>
+    <div id="pitch-ok" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--green);font-weight:600;letter-spacing:.08em">Sent! We read every pitch. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;padding:.8rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--rust);font-weight:600;letter-spacing:.08em">Something went wrong. Try the GitHub link instead.</div>
+  </div>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='SENDING…';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}
+      else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='SUBMIT IDEA';
+  });
+  </script>
+
+<div class="footer">
+  <span>&copy; 2026 The Sports Page</span>
+  <span>The Midsummer Classic &middot; Hubbell, Valenzuela, and the Record the Screwball Left Behind</span>
+  <span><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">Archive</a></span>
+</div>
+</div>
+</body>
+</html>
