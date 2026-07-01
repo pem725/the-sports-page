@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 406 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 405 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 94 issues (#1-94)
-Queue: 12 articles ready (072-team-clustering, 073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 088-sorsby-supplemental-bet, 090-clark-distance-match, _TEMPLATE, bobby-bonilla-day)
+Published: 95 issues (#1-95)
+Queue: 11 articles ready (073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 088-sorsby-supplemental-bet, 090-clark-distance-match, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 406 issues remaining of 500
-Last published: Issue #94 — "For Twenty Years You Couldn’t Win the Title Without Elite Recruits. Indiana Won It With an 8% Blue-Chip Ratio." (091-cfb-rules-broke.html) on June 30, 2026
+Goal: 405 issues remaining of 500
+Last published: Issue #95 — "Every Team Has a Shape. The Mets' Shape Is Soto, Alone." (072-team-clustering.html) on July 1, 2026

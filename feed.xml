@@ -8,7 +8,99 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Jun 2026 07:50:28 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 07:58:30 GMT</lastBuildDate>
+    <item>
+      <title>#95: Every Team Has a Shape. The Mets&#x27; Shape Is Soto, Alone.</title>
+      <link>https://thesportspage.net/published/072-team-clustering.html</link>
+      <description>Yesterday&#x27;s piece said Juan Soto was ninety-four spots from the next Met. Today we plotted all thirty teams against that gap. The Mets are not the most lopsided roster in baseball — but they may be the only one where the lopsidedness is mostly the floor&#x27;s fault, not the ceiling&#x27;s.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/072-team-clustering.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/072-team-clustering.png" alt="Every Team Has a Shape. The Mets&#x27; Shape Is Soto, Alone." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">Every Team Has a Shape. <em>The Mets' Shape Is Soto, Alone.</em></h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">Yesterday's piece said Juan Soto was ninety-four spots from the next Met. Today we plotted all thirty teams against that gap. The Mets are not the most lopsided roster in baseball &mdash; but they may be the only one where the lopsidedness is mostly the floor's fault, not the ceiling's.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; In-Season Data: 2026 through June 11 &middot; All 30 MLB rosters</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">.671</div><div class="l">Mets mean OPS (29th)</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v now" style="font-size:28px;font-weight:bold;line-height:1;display:block">.906</div><div class="l">Juan Soto's OPS</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">.250</div><div class="l">Gap: Soto over team median</div></div>
+  </div>
+
+  <p>Take every hitter on a major league roster who has logged at least fifty plate appearances this season. Plot them all. Compute the team's plate-appearance-weighted mean OPS &mdash; that is the team's offensive average, the height of the lineup. Then compute the standard deviation of OPS across the team's hitters &mdash; the spread, the gap between the brand of bats at the top and the bottom.</p>
+
+  <p>You get a two-axis grid. <strong>Up</strong> means the bats are spread out: a few stars, then a drop. <strong>Right</strong> means the lineup, on average, hits. <strong>Down</strong> means the bats are bunched together; everyone looks like everyone else. <strong>Left</strong> means the lineup, on average, does not hit.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Every MLB roster, 2026 season-to-date &middot; n=30 teams</div>
+<img src="https://thesportspage.net/assets/figures/072-team-clustering-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The empty quadrant</h3>
+
+  <p>The first thing to notice is the bottom-right corner. <em>Nobody is there.</em> No team in baseball this season has assembled a lineup that is both above-average and tightly bunched at the top. Clustered excellence &mdash; a roster of nine hitters who all post seven-fifty or eight-hundred OPS, the way you might draw it up at a whiteboard &mdash; does not exist. The Dodgers and Yankees come closest in mean offense, and both of them are wide.</p>
+
+  <p>That is structural. Front offices buy expensive bats one at a time. The first seven hundred thousand dollars per win on the open market goes to whoever the team needs most, and that is usually a star to anchor the order. The next seven hundred thousand is whoever is left on the market by the time the star is signed. So lineups grow up tall on one end and short on the other. The bottom-right corner is where the resource curve does not bend.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The Phillies are the most top-heavy. The Mets are different.</h3>
+
+  <p>Up in the top-left, the <strong>Philadelphia Phillies</strong> are the most extreme top-heavy team in the league: mean OPS .706 against a within-team standard deviation of <strong>.149</strong>. Kyle Schwarber and Bryce Harper are doing most of the offensive work; the rest of the order is below replacement. The <strong>Astros</strong> are the same shape with a better mean &mdash; Yordan &Aacute;lvarez has carried Houston this far.</p>
+
+  <p>The Mets, by contrast, do not have the variance to match their reputation. Mean OPS .671 (twenty-ninth in the majors) with a standard deviation of .100 (eleventh-lowest). They are not "stars-and-scrubs." They are <em>almost-scrubs-and-Soto.</em> Soto has played at .906; every other Met with at least one hundred plate appearances is between .607 and .726. The "outlier" gap appears only because the floor is so low. Compare the Mets' middle of the order to the Royals or the Cubs &mdash; clustered mediocrity, but at least everybody hits the same.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">The Mets do not have a stars-and-scrubs problem. They have a one-star-and-everyone-else-is-the-same-height problem.</p>
+    <cite>The Shape of a Roster</cite>
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The Mets lineup, ranked</h3>
+
+  <table class="lineup">
+    <thead><tr><th>Hitter</th><th>Pos</th><th>PA</th><th>OPS</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td class="name">Juan Soto</td><td class="mono">LF</td><td class="mono">218</td><td class="mono">.906</td></tr>
+      <tr><td class="name">Francisco &Aacute;lvarez</td><td class="mono">C</td><td class="mono">138</td><td class="mono">.726</td></tr>
+      <tr><td class="name">Carson Benge</td><td class="mono">RF</td><td class="mono">255</td><td class="mono">.714</td></tr>
+      <tr><td class="name">MJ Melendez</td><td class="mono">DH</td><td class="mono">112</td><td class="mono">.695</td></tr>
+      <tr><td class="name">A.J. Ewing</td><td class="mono">CF</td><td class="mono">110</td><td class="mono">.690</td></tr>
+      <tr><td class="name">Francisco Lindor</td><td class="mono">SS</td><td class="mono">105</td><td class="mono">.669</td></tr>
+      <tr><td class="name">Luis Robert Jr.</td><td class="mono">CF</td><td class="mono">98</td><td class="mono">.656</td></tr>
+      <tr><td class="name">Marcus Semien</td><td class="mono">2B</td><td class="mono">268</td><td class="mono">.620</td></tr>
+      <tr><td class="name">Brett Baty</td><td class="mono">3B</td><td class="mono">229</td><td class="mono">.619</td></tr>
+      <tr><td class="name">Mark Vientos</td><td class="mono">1B</td><td class="mono">204</td><td class="mono">.611</td></tr>
+      <tr><td class="name">Bo Bichette</td><td class="mono">3B</td><td class="mono">296</td><td class="mono">.607</td></tr>
+    </tbody>
+  </table>
+
+  <p>Soto is at one altitude. Eight Mets regulars are bunched between .607 and .726, the width of a single tier. The gap between Soto and the next regular (Francisco &Aacute;lvarez at .726, with only one hundred and thirty-eight plate appearances behind it) is <strong>.180 of OPS</strong> &mdash; the size of the gap between a good MLB hitter and a roster-average hitter. The gap from &Aacute;lvarez down to the bottom of the order is only one hundred and twenty points across eight names.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What this means for the trade deadline</h3>
+
+  <p>Adding a second .800-OPS hitter would do more for the Mets than for almost any other team in baseball, because their floor is so high above the league minimum but their middle is so low. The Phillies' problem is harder &mdash; they would have to lift four below-replacement bats out of the order to move the needle. The Mets have nine players who are all roughly the same near-replacement-level hitter; replacing the worst two with anything average raises the team mean OPS by roughly twenty-five points.</p>
+
+  <p>That is the case the Mets' front office will make in July. Whether the trade market lets them make it is a separate question. <strong>See Issue #76 ("Juan Soto Is 94 Spots From Help") for what the lineup looks like from the catcher's box, and the upcoming buy-or-sell tracker for what the next forty-eight days will say about it.</strong></p>
+
+  <div class="box" style="background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Reading the chart yourself</h3>
+    <p>Every team is a single dot positioned by its mean OPS (horizontal) and the standard deviation of OPS across its hitters (vertical). The dashed lines are the MLB medians, so the chart breaks into four roughly equal quadrants.</p>
+    <p>Top-right (top-heavy excellence) is where playoff favorites live: lineups that hit on average and have stars. Bottom-left (clustered mediocrity) is where rebuilding rosters live: lineups that do not hit and have no stars. Top-left (top-heavy mediocrity) is the saddest quadrant: a team where one or two bats are carrying the entire offense. Bottom-right (clustered excellence) is empty &mdash; nobody this year has assembled a uniformly above-average lineup.</p>
+  </div>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Cohort: every batter on every MLB roster with at least 50 plate appearances in the 2026 regular season through games of June 11. Stats pulled from the MLB Stats API. Mean OPS is plate-appearance-weighted within team; the standard deviation uses the same weights. Players are filtered by team affiliation as recorded by MLB; a player traded mid-season is counted under their current team. The MLB median for team mean OPS is .722; for standard deviation, .111. Mets and Astros' top hitters (Soto, &Aacute;lvarez) are anchoring much of the team-vs-team variance you see in this chart.</p>
+    <p style="color:#c8b99a">Standard deviation is a noisy measure on a 12-to-17-person sample; differences between similarly placed teams should not be over-interpreted. The four quadrant labels are an analytical shorthand, not a verdict on the front office.</p>
+  </div>
+
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
+    <span>The Sports Page &middot; Issue No. 95</span>
+    <span>The Shape of a Roster</span>
+    <span>June __, 2026 &middot; New York, NY</span>
+  </div>
+</div>]]></content:encoded>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/072-team-clustering.html</guid>
+    </item>
     <item>
       <title>#94: For Twenty Years You Couldn’t Win the Title Without Elite Recruits. Indiana Won It With an 8% Blue-Chip Ratio.</title>
       <link>https://thesportspage.net/published/091-cfb-rules-broke.html</link>
