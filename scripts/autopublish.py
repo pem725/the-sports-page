@@ -239,9 +239,18 @@ def update_deeper(content, issue_num, today):
     # Scope the date substitution to the datebar only — never the body — so
     # historical dates in the companion's text are never overwritten.
     date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2})?,?\s*\d{4}'
+
+    def _stamp_datebar(m):
+        db = re.sub(date_pattern, date_str, m.group(0))
+        # Some drafts use a literal TODO_DATE token instead of a month-name
+        # placeholder; the pattern above won't touch it, so handle it here.
+        # Scoped to the datebar so it can never clobber body content.
+        db = db.replace('TODO_DATE', date_str)
+        return db
+
     content = re.sub(
         r'<div class="datebar">.*?</div>',
-        lambda m: re.sub(date_pattern, date_str, m.group(0)),
+        _stamp_datebar,
         content,
         count=1,
         flags=re.DOTALL,
@@ -272,9 +281,18 @@ def update_article(content, issue_num, today):
     # overwritten with the publish date. Scope strictly to the datebar; the
     # <title> date is already handled above.
     date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2})?,?\s*\d{4}'
+
+    def _stamp_datebar(m):
+        db = re.sub(date_pattern, date_str, m.group(0))
+        # Some drafts use a literal TODO_DATE token instead of a month-name
+        # placeholder; the pattern above won't touch it, so handle it here.
+        # Scoped to the datebar so it can never clobber body content.
+        db = db.replace('TODO_DATE', date_str)
+        return db
+
     content = re.sub(
         r'<div class="datebar">.*?</div>',
-        lambda m: re.sub(date_pattern, date_str, m.group(0)),
+        _stamp_datebar,
         content,
         count=1,
         flags=re.DOTALL,
