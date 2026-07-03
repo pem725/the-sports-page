@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 404 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 403 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 96 issues (#1-96)
-Queue: 14 articles ready (073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 088-sorsby-supplemental-bet, 090-clark-distance-match, 092-nd-dynasty-call, 094-usa-250-worldcup, 095-allstar-screwball, _TEMPLATE, bobby-bonilla-day)
+Published: 97 issues (#1-97)
+Queue: 13 articles ready (073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 088-sorsby-supplemental-bet, 092-nd-dynasty-call, 094-usa-250-worldcup, 095-allstar-screwball, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 404 issues remaining of 500
-Last published: Issue #96 — "New Teams Are Supposed to Lose for Years. Las Vegas Won Three Titles in Twenty-Four Months." (093-vegas-expansion-curse.html) on July 2, 2026
+Goal: 403 issues remaining of 500
+Last published: Issue #97 — "We Searched 65 Years of NBA Legends for Caitlin Clark’s Twin. The Math Chose Oscar Robertson." (090-clark-distance-match.html) on July 3, 2026
