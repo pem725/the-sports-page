@@ -234,7 +234,7 @@ def update_deeper(content, issue_num, today):
     """Update Issue No. references and date in a Deeper Dive companion.
     Preserves the Deeper Dive's distinctive title (e.g., 'Deeper Dive — ...')."""
     date_str = today.strftime("%B %-d, %Y")
-    content = re.sub(r'Issue No\.\s*[_\d]+', f'Issue No. {issue_num}', content)
+    content = re.sub(r'(Vol\. I, No\.|Issue No\.)\s*[_\d]+', lambda m: f'{m.group(1)} {issue_num}', content)
     content = re.sub(r'Issue\s*#\s*\[TBD\]', f'Issue #{issue_num}', content)
     # Scope the date substitution to the datebar only — never the body — so
     # historical dates in the companion's text are never overwritten.
@@ -264,14 +264,16 @@ def update_article(content, issue_num, today):
     # Update <title>
     content = re.sub(
         r'<title>.*?</title>',
-        f'<title>The Sports Page — Issue No. {issue_num} — {date_str}</title>',
+        f'<title>The Sports Page — Vol. I, No. {issue_num} — {date_str}</title>',
         content,
     )
 
-    # Update Issue No. in datebar and footer (handles "Issue No. __", "Issue No. 11", etc.)
+    # Update the issue number in the datebar/footer. Journal style is
+    # "Vol. I, No. NN"; also accept legacy "Issue No. NN", keeping whichever
+    # label the file uses. Handles "__" and existing digits.
     content = re.sub(
-        r'Issue No\.\s*[_\d]+',
-        f'Issue No. {issue_num}',
+        r'(Vol\. I, No\.|Issue No\.)\s*[_\d]+',
+        lambda m: f'{m.group(1)} {issue_num}',
         content,
     )
 
