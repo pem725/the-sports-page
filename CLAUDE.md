@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 98 issues (#1-98)
+Published: 99 issues (#1-99)
 Queue: 12 articles ready (073-analog-year-2021, 074-predictability, 075-prediction-frameworks, 076-mets-analog, 077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 088-sorsby-supplemental-bet, 092-nd-dynasty-call, 095-allstar-screwball, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 402 issues remaining of 500
-Last published: Issue #98 — "Host Nations Reach the World Cup Semifinals 59% of the Time. America Is Hosting on Its 250th Birthday." (094-usa-250-worldcup.html) on July 4, 2026
+Goal: 401 issues remaining of 500
+Last published: Issue #99 — Sunday Edition No. 013 — "This Week Ran Against the Rules. All of Them." (sunday-013.html) on July 5, 2026

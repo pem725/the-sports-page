@@ -1,0 +1,329 @@
+<!-- PUBLISH-META
+topic: Sunday Edition
+tags: Sunday Edition, MLB:mlb, CFB, WNBA, Scorecard
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Sunday Edition No. 013 — July 5, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.masthead .kicker{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.masthead h1{font-family:'Playfair Display',Georgia,serif;font-size:2.6rem;font-weight:900;line-height:1.08;letter-spacing:-.02em;margin-bottom:.2rem}
+.masthead .subhed{font-family:'Libre Baskerville',Georgia,serif;font-style:italic;font-size:1.05rem;color:var(--muted);margin-bottom:.5rem}
+.datebar{max-width:820px;margin:.4rem auto .8rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.3rem 0;font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+.paper{max-width:820px;margin:0 auto;background:var(--cream);padding:2rem 2.5rem 2.5rem;border:1px solid var(--div)}
+
+/* stat row */
+.stat-row{display:flex;gap:1rem;margin-bottom:1.8rem;flex-wrap:wrap}
+.stat-card{flex:1;min-width:140px;background:var(--aged);border:1px solid var(--div);padding:.9rem 1rem;text-align:center}
+.stat-card .num{font-family:'Playfair Display',Georgia,serif;font-size:2.2rem;font-weight:900;color:var(--rust);line-height:1}
+.stat-card .lbl{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+section{margin-bottom:2rem}
+h2{font-family:'Playfair Display',Georgia,serif;font-size:1.45rem;font-weight:700;border-bottom:2px solid var(--ink);padding-bottom:.25rem;margin-bottom:.9rem}
+h3{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;margin:.9rem 0 .3rem}
+p{margin-bottom:.85rem}
+p:last-child{margin-bottom:0}
+a{color:var(--steel);text-decoration:none;border-bottom:1px solid var(--steel)}
+a:hover{color:var(--rust);border-bottom-color:var(--rust)}
+
+/* issue list */
+.issue-list{list-style:none}
+.issue-list li{display:flex;gap:.75rem;align-items:baseline;padding:.45rem 0;border-bottom:1px solid var(--div)}
+.issue-list li:last-child{border-bottom:none}
+.issue-list .inum{font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);min-width:3.5rem;flex-shrink:0}
+.issue-list .ihed{font-size:.95rem}
+.issue-list .ideck{font-size:.82rem;color:var(--muted);font-style:italic}
+
+/* prediction table */
+table.rec{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:.5rem}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .5rem;background:var(--ink);color:var(--cream);text-align:left}
+table.rec td{padding:.45rem .5rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr.hl td{background:#e8f4ec}
+table.rec tr.match td{background:#fdf6e3}
+table.rec tr.worse td{background:#faeae7}
+table.rec tr.na td{background:var(--aged)}
+.grade{font-family:'Roboto Mono',monospace;font-weight:600;font-size:.78rem}
+.grade.hit{color:var(--green)}
+.grade.partial{color:var(--gold)}
+.grade.miss{color:var(--rust)}
+.grade.pending{color:var(--steel)}
+.grade.na{color:var(--muted)}
+
+/* two-col */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:600px){.two-col{grid-template-columns:1fr}}
+.two-col .col h3{margin-top:0}
+
+/* pull quote */
+.pq{border-left:4px solid var(--rust);padding:.6rem 1rem;margin:1.4rem 0;font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-style:italic;color:var(--steel)}
+
+/* readership block */
+.readership{background:var(--aged);border:1px solid var(--div);padding:1rem 1.2rem;margin-bottom:1.8rem}
+.readership h3{font-size:1rem;margin:0 0 .6rem}
+.readership ol{margin-left:1.2rem;font-size:.88rem}
+.readership ol li{margin-bottom:.3rem}
+
+/* share / footer */
+.share-block{max-width:820px;margin:1.5rem auto 0;text-align:center;font-size:.82rem;color:var(--muted)}
+.share-block a{color:var(--steel)}
+footer{max-width:820px;margin:.8rem auto 0;text-align:center;font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--div);padding-top:.5rem}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="kicker">The Sports Page &mdash; Sunday Edition No. 013</div>
+  <h1>This Week Ran Against the Rules.<br>All of Them.</h1>
+  <div class="subhed">Six issues, four sports, one theme: patterns that held for twenty years weren&rsquo;t laws &mdash; they were local customs.</div>
+</div>
+<div class="datebar">
+  <span>Sunday, July 5, 2026</span>
+  <span>Issue No. 99</span>
+  <span>Sunday Edition No. 013</span>
+</div>
+
+<div class="paper">
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">6</div>
+      <div class="lbl">Issues this week</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">0/6</div>
+      <div class="lbl">Gradeable predictions</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">99</div>
+      <div class="lbl">Issues published</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">401</div>
+      <div class="lbl">Issues to 500</div>
+    </div>
+  </div>
+
+  <!-- READERSHIP BLOCK (auto-injected) -->
+  <!-- readership data unavailable this run — GoatCounter API unreachable via proxy -->
+  <div class="readership">
+    <h3>Most-Read This Week</h3>
+    <p style="font-size:.82rem;color:var(--muted);font-style:italic;">Readership data temporarily unavailable. Check <a href="https://thesportspage.goatcounter.com">thesportspage.goatcounter.com</a> for live stats.</p>
+  </div>
+
+  <!-- WEEK IN REVIEW -->
+  <section>
+    <h2>The Week in Review</h2>
+    <p>Six issues in six days. Every single one was retrospective, analytical, and deliberately ruthless about how it used the past to describe the present. There were no forward projections this week &mdash; no Bayesian posteriors waiting on a sample size, no &ldquo;check back in six weeks.&rdquo; The week made a different kind of argument: sometimes the data is already there, the pattern is already clear, and the only honest thing left to do is describe it plainly.</p>
+    <ul class="issue-list">
+      <li>
+        <span class="inum">#93</span>
+        <div>
+          <div class="ihed"><a href="071-half-life-1-framework.html">A Career Doesn&rsquo;t Decline. It Disappears. (Half-Life Series, Part I)</a></div>
+          <div class="ideck">MLB career survival curves show superstars don&rsquo;t slow down &mdash; they vanish. Median elite-level production ends at age 31.</div>
+        </div>
+      </li>
+      <li>
+        <span class="inum">#94</span>
+        <div>
+          <div class="ihed"><a href="091-cfb-rules-broke.html">For Twenty Years You Couldn&rsquo;t Win the Title Without Elite Recruits. Indiana Won It With an 8% Blue-Chip Ratio.</a></div>
+          <div class="ideck">Indiana&rsquo;s 2025 CFP title: 16-0, zero five-star recruits, national talent ranking #72. The first clean exception to a twenty-year iron law.</div>
+        </div>
+      </li>
+      <li>
+        <span class="inum">#95</span>
+        <div>
+          <div class="ihed"><a href="072-team-clustering.html">Every Team Has a Shape. The Mets&rsquo; Shape Is Soto, Alone.</a></div>
+          <div class="ideck">OPS clustering reveals the Mets&rsquo; roster is the most top-heavy in baseball: Soto at .906, everyone else averaging .671. The gap is .250.</div>
+        </div>
+      </li>
+      <li>
+        <span class="inum">#96</span>
+        <div>
+          <div class="ihed"><a href="093-vegas-expansion-curse.html">New Teams Are Supposed to Lose for Years. Las Vegas Won Three Titles in Twenty-Four Months.</a></div>
+          <div class="ideck">Golden Knights, Aces, Raiders. Three expansion franchises, three championships. The expansion curse is officially deceased.</div>
+        </div>
+      </li>
+      <li>
+        <span class="inum">#97</span>
+        <div>
+          <div class="ihed"><a href="090-clark-distance-match.html">We Searched 65 Years of NBA Legends for Caitlin Clark&rsquo;s Twin. The Math Chose Oscar Robertson.</a></div>
+          <div class="ideck">Euclidean distance across five statistical dimensions finds Oscar Robertson (1961) is Clark&rsquo;s nearest historical neighbor at d=0.026. Magic Johnson is next at d=0.146.</div>
+        </div>
+      </li>
+      <li>
+        <span class="inum">#98</span>
+        <div>
+          <div class="ihed"><a href="094-usa-250-worldcup.html">Host Nations Reach the World Cup Semifinals 59% of the Time. America Is Hosting on Its 250th Birthday.</a></div>
+          <div class="ideck">Thirteen of 22 World Cups: the host reached the semis. Published July 4. USA plays Belgium in the Round of 16 on July 6. The prior is on the table.</div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PREDICTION SCORECARD -->
+  <section>
+    <h2>Prediction Scorecard</h2>
+    <p>This was an analytical week. All six new issues were retrospective &mdash; historical data, established outcomes, no forward-looking quantitative claims. That means zero new predictions to grade. The scorecard this week is entirely carry-forward: live predictions from earlier issues, updated against the latest available data.</p>
+
+    <table class="rec">
+      <thead>
+        <tr>
+          <th>Issue</th>
+          <th>Prediction</th>
+          <th>Outcome</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- NEW ISSUES THIS WEEK — ALL N/A -->
+        <tr class="na">
+          <td>#93</td>
+          <td>Half-Life career survival framework (Part I of series)</td>
+          <td>Retrospective analysis only &mdash; no forward projection made</td>
+          <td><span class="grade na">N/A</span></td>
+        </tr>
+        <tr class="na">
+          <td>#94</td>
+          <td>CFB Blue-Chip Ratio title correlation (retrospective)</td>
+          <td>Indiana&rsquo;s 8% BCR title is the documented exception; no claim about future seasons</td>
+          <td><span class="grade na">N/A</span></td>
+        </tr>
+        <tr class="na">
+          <td>#95</td>
+          <td>Mets roster OPS clustering (descriptive snapshot, June 11 data)</td>
+          <td>Descriptive only; Mets now 36-52, lineup evolving post-Mendoza firing</td>
+          <td><span class="grade na">N/A</span></td>
+        </tr>
+        <tr class="na">
+          <td>#96</td>
+          <td>Las Vegas expansion curse (retrospective)</td>
+          <td>Historical analysis only &mdash; no forward claim</td>
+          <td><span class="grade na">N/A</span></td>
+        </tr>
+        <tr class="na">
+          <td>#97</td>
+          <td>Clark-Robertson distance match (partial season caveat explicit in article)</td>
+          <td>Clark 2026: 21.2 PPG / 8.2 APG / 4.0 RPG, Fever 9-7 (3rd East). Season ongoing &mdash; comparison premature</td>
+          <td><span class="grade pending">PENDING</span></td>
+        </tr>
+        <tr class="na">
+          <td>#98</td>
+          <td>Host nation World Cup semifinal rate (59% historical prior, explicitly labeled &ldquo;a prior, not a promise&rdquo;)</td>
+          <td>USA in Round of 16; beats Belgium on July 6 TBD; final July 19 MetLife. No grade possible yet.</td>
+          <td><span class="grade pending">PENDING</span></td>
+        </tr>
+
+        <!-- CARRY-FORWARD LIVE PREDICTIONS -->
+        <tr class="match">
+          <td>#90</td>
+          <td>Swanson true talent ~.183; regression from .234 start predicted</td>
+          <td>Swanson ~.199 as of June 27 (last confirmed). Direction right, hasn&rsquo;t reached model center yet. Mets 36-52 as of July 4.</td>
+          <td><span class="grade partial">PARTIAL</span></td>
+        </tr>
+        <tr class="hl">
+          <td>#82</td>
+          <td>Mets sell signal triggered: at .422 win rate they are below .500 threshold</td>
+          <td>Mets 36-52 (.409) through July 4 &mdash; sell signal confirmed and deepening. Trade deadline August 3.</td>
+          <td><span class="grade hit">HIT</span></td>
+        </tr>
+        <tr class="match">
+          <td>#83</td>
+          <td>Sorsby peer enforcement: Big 12 litigation and supplemental NFL draft mechanism as institutional checks</td>
+          <td>Big 12 lawsuit still active. NFL cancelled supplemental draft entirely &mdash; one of the two checks removed. Model needs revision.</td>
+          <td><span class="grade partial">PARTIAL</span></td>
+        </tr>
+        <tr class="match">
+          <td>#79</td>
+          <td>Mariners variance: high-variance roster projects to 84-88 wins with wide confidence interval</td>
+          <td>Last confirmed: 39-39 (Sunday #12). AL West trailing Rangers (45-43). Season on track with high variance as modeled.</td>
+          <td><span class="grade partial">PARTIAL</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WHAT WE GOT RIGHT / WRONG -->
+  <section>
+    <h2>Accountability</h2>
+    <div class="two-col">
+      <div class="col">
+        <h3>What We Got Right</h3>
+        <p>The Mets sell signal (#82) is the clearest hit on the board. The piece ran when the Mets were at 35-48. They are now 36-52 &mdash; one win in ten days while Atlanta dropped 14-3 on them July 4. The deadline is August 3. The signal was right, the window is closing, and every additional loss strengthens the case.</p>
+        <p>The Swanson regression (#90) is tracking correctly on direction. True talent .183 was always a floor estimate; .199 is the current reading. The half-life of overperformance is doing exactly what the model said it would do: bleed slowly, not crash.</p>
+        <p>The Clark-Robertson piece (#97) held its own epistemically. The article cited partial-season data explicitly and graded itself PENDING before publication. That&rsquo;s not hedging &mdash; that&rsquo;s the model being honest about what a sample can and cannot tell you.</p>
+      </div>
+      <div class="col">
+        <h3>What We Got Wrong</h3>
+        <p>The Mets clustering piece (#95) described the roster as it was through June 11. Since then, Carlos Mendoza was fired and the lineup has been evolving. The structural diagnosis &mdash; Soto alone, everyone else clustered at .671 &mdash; remains accurate, but the specific player configuration is in flux. The piece was correct about the problem. It cannot be credited for the solution, which hasn&rsquo;t arrived yet.</p>
+        <p>The Sorsby supplemental draft prediction (#83) is now a partial miss that requires a correction issue. The NFL eliminating the supplemental draft removes one of the two enforcement mechanisms the model cited. The Big 12 lawsuit is still live, but a two-variable model with one variable gone is a different model. That piece gets a revision in the queue &mdash; see Road Ahead below.</p>
+        <p>No other forecasting errors to report this week. An all-analytical week produces no new misses.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="pq">&ldquo;A 59% prior held across twenty-two World Cups spanning ninety-two years and five continents. The number is not a promise. It is a bet the history of the sport made before the current teams were born.&rdquo;<br><span style="font-size:.8rem;font-style:normal;color:var(--muted)">&mdash; Issue #98</span></div>
+
+  <!-- OVER/UNDER REACTIONS -->
+  <section>
+    <h2>Over- and Under-Reactions</h2>
+    <div class="two-col">
+      <div class="col">
+        <h3>Over-Reactions This Week</h3>
+        <p><strong>The national reaction to Indiana&rsquo;s title.</strong> Every sports media outlet treated Indiana&rsquo;s CFP win as proof that the transfer portal democratized college football. The portal was a mechanism, not a cause. Indiana&rsquo;s roster was assembled primarily through development and scheme. Crediting the portal for Indiana&rsquo;s title is like crediting the highway system for a road trip &mdash; it made movement possible, but it did not choose the destination. The over-reaction obscures what actually happened: a coaching staff built a culture that retained players who would have left under the old rules.</p>
+        <p><strong>July 4 World Cup coverage.</strong> Treating the USA&rsquo;s group-stage qualification as a semifinal destiny story. The 59% figure is a population average. It includes hosts who went out in the round of 16. It includes Brazil 2014. The prior is informative; it is not a booking.</p>
+      </div>
+      <div class="col">
+        <h3>Under-Reactions This Week</h3>
+        <p><strong>The aging curve implications from #93.</strong> The half-life framework is not just a historical curiosity &mdash; it is an active roster-construction tool. If elite production reliably ends at 31, every long-term extension signed for a player over 28 is a bet against the median. No front office covered this week pressed that implication. The story was filed under &ldquo;interesting stats.&rdquo; It should be filed under &ldquo;contract risk.&rdquo;</p>
+        <p><strong>The Mets&rsquo; Soto dependency.</strong> The clustering piece ran ten days ago. The Mets have gone 1-9 since. At some point the gap between Soto (.906 OPS) and the remaining lineup (.671) stops being a statistical observation and starts being the entire explanation for the record. No beat reporter has framed it that way yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROAD AHEAD -->
+  <section>
+    <h2>The Road Ahead</h2>
+    <p>The queue next week leads with the Sorsby revision. The NFL&rsquo;s decision to eliminate the supplemental draft removes one of the two enforcement mechanisms the original model cited. That is not a footnote &mdash; that is a fourth outcome the model never considered, and it warrants its own issue to map the new landscape. It publishes Monday.</p>
+    <p>After that, the Half-Life series continues: Parts II through IV examine career survival curves by position, by era, and then the key question &mdash; can you predict the disappearance before it happens? Three analytical issues, each building on the framework established in #93.</p>
+    <p>The Analog Year series (2021 Mets comp, Astros analog, cross-sport persistence) runs through mid-July. These are the pieces that ask whether this Mets team&rsquo;s trajectory is predictable from historical precedent. Given the current 36-52 record, the answer is coming into sharper focus.</p>
+    <p>The calendar&rsquo;s most important date is August 3: the MLB trade deadline. The sell signal has been live since Issue #82. If the Mets are still at or below .430 win percentage on August 1, the deadline piece writes itself. Two Notre Dame issues are queued for August, timed to CFB camp openings.</p>
+    <p>The World Cup final is July 19 at MetLife Stadium. Whatever happens between now and then &mdash; USA&rsquo;s round of 16 result Monday, quarterfinals, semis &mdash; gets covered as the tournament develops. The 59% prior is still live.</p>
+  </section>
+
+  <div class="pq">&ldquo;Ninety-nine issues in. Four hundred one to go. The rules keep breaking, and that is the point &mdash; not because rules are bad, but because every exception tells you something the rule was hiding.&rdquo;</div>
+
+</div><!-- .paper -->
+
+<div class="share-block">
+  <p>The Sports Page publishes Monday&ndash;Sunday at <a href="https://thesportspage.net">thesportspage.net</a>. Forward this to someone who still believes in the rules.</p>
+</div>
+
+<footer>
+  Sunday Edition No. 13 &middot; Issue No. 99 &middot; The Sports Page &middot; July 5, 2026<br>
+  Predictions tracked from Issues #79&ndash;#98
+</footer>
+
+</body>
+</html>
