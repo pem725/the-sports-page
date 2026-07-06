@@ -8,7 +8,116 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jul 2026 08:15:18 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 11:13:32 GMT</lastBuildDate>
+    <item>
+      <title>#100: Bank of America Says 2026 Is 1994. Baseball Says 2026 Is 2021.</title>
+      <link>https://thesportspage.net/published/073-analog-year-2021.html</link>
+      <description>Wall Street is bracing for a market shock modeled on a thirty-year-old precedent. We ran the same kind of pattern-matching exercise on Major League Baseball. The closest analog to 2026 in the data is not 1994 or 1968 or any year you would expect. It is the season that ended five summers ago. The reason is not flattering to the sport.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/073-analog-year-2021.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/073-analog-year-2021.png" alt="Bank of America Says 2026 Is 1994. Baseball Says 2026 Is 2021." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">Bank of America Says 2026 Is <em>1994</em>. Baseball Says 2026 Is <em>2021</em>.</h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">Wall Street is bracing for a market shock modeled on a thirty-year-old precedent. We ran the same kind of pattern-matching exercise on Major League Baseball. The closest analog to 2026 in the data is not 1994 or 1968 or any year you would expect. It is the season that ended five summers ago. The reason is not flattering to the sport.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; Method: nearest-neighbor in 8-feature standardized space &middot; Data: MLB Stats API, 1985&ndash;present</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v now" style="font-size:28px;font-weight:bold;line-height:1;display:block">2021</div><div class="l">Closest analog year</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">2.13</div><div class="l">Z-distance to 2026</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v good" style="font-size:28px;font-weight:bold;line-height:1;display:block">5/5</div><div class="l">Top analogs since 2017</div></div>
+  </div>
+
+  <p>This morning's Bank of America memo warned that today's stock market resembles 1994 &mdash; rising yields, sticky inflation, a Federal Reserve that is in no mood to deliver the rate cuts everyone has priced in. Wall Street's 1994 was a market that re-rated quickly when its assumptions about monetary policy turned out to be wrong. The BofA strategists are saying: that could happen again.</p>
+
+  <p>It is the kind of analysis that begs to be tried on baseball. Pick a year, build a feature vector of what its baseball looked like &mdash; how often pitchers struck batters out, how often they walked them, how many home runs the league produced per plate appearance, what the average earned-run average was &mdash; and ask, simply, which prior season the current one most resembles.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The method, briefly</h3>
+
+  <p>Eight league-rate features per season, every year from 1985 to 2025: walks per plate appearance, strikeouts per plate appearance, home runs per plate appearance, league OPS, league ERA, strikeouts per nine innings, walks per nine, home runs per nine. Standardize each feature across the historical years &mdash; that is, convert each measurement into how many standard deviations it sits above or below its forty-year average. Then compute, for 2026, the Euclidean distance from each prior year's feature vector to this season's. The year with the smallest distance is the closest analog.</p>
+
+  <p>We ran that. The answer was unambiguous: <strong>2021.</strong></p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; MLB league rates by year, 1985&ndash;2026 &middot; the K-rate revolution and 2026's neighborhood</div>
+<img src="https://thesportspage.net/assets/figures/073-analog-year-2021-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <p>The chart above is the visible reason. Each dot is one MLB season since 1985, plotted by how often the league struck batters out (horizontal) against how often the league walked them (vertical). The faint line traces the year-by-year drift &mdash; the contact-and-discipline game of the late eighties, the silver-bat era of the late nineties, the steady right-and-down strikeout revolution that began around 2010 and has lifted strikeout rates by more than fifty percent in fifteen years. The walking pace stays mostly flat, except for spikes.</p>
+
+  <p>The dot labeled <strong>2026</strong> sits squarely in the upper right of that long arc, inside a small loop that includes 2020, 2021, and 2023. Of the five years that score closest to this season, <em>all five</em> are from 2017 onward. Pre-2017 baseball, the era that produced most of the storylines and statistics we grew up using, is not in the conversation anymore.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Why 2021 wins (and what made it weird)</h3>
+
+  <table class="rank">
+    <thead><tr><th>Rank</th><th>Year</th><th>Z-distance</th><th>What that year was famous for</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td class="mono">1</td><td class="yr">2021</td><td class="mono">2.13</td><td>Sticky-stuff crackdown in June; Braves win WS as wild card</td></tr>
+      <tr><td class="mono">2</td><td class="yr">2023</td><td class="mono">2.31</td><td>Pitch clock debuts; shift restrictions; offense rebounds</td></tr>
+      <tr><td class="mono">3</td><td class="yr">2018</td><td class="mono">2.34</td><td>The "openers" era; Red Sox roll over the league</td></tr>
+      <tr><td class="mono">4</td><td class="yr">2020</td><td class="mono">2.50</td><td>60-game pandemic season; Dodgers finally win</td></tr>
+      <tr><td class="mono">5</td><td class="yr">2025</td><td class="mono">2.56</td><td>ABS challenge system; Yankees title</td></tr>
+      <tr><td class="mono">6</td><td class="yr">2009</td><td class="mono">2.73</td><td>The first year after the steroid hangover; Yankees title</td></tr>
+    </tbody>
+  </table>
+
+  <p>The feature pushing 2026 closer to 2021 than to last year is the walk rate. The league is walking nine-point-two percent of batters faced &mdash; the highest figure since the pandemic-shortened 2020. In 2025 it was eight-point-four percent. That is a ten-percent jump in a single season. We do not know yet whether to blame the second year of the automated ball-strike challenge system, a change in pitcher selection toward command-over-power arms, or something we have not measured. What we do know is that 2021's narrative was driven by exactly this kind of mid-year inflection, and that the second half of 2021 looked nothing like the first.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">The deepest finding is the absence of one: there is no 1994 in baseball anymore. The game has been rule-changed past its own historical record.</p>
+    <cite>The Analog Year</cite>
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What 2021 did, and what it suggests</h3>
+
+  <p>The 2021 season is recent enough that the headlines are not quite history yet, but it had three distinct shocks worth keeping in mind. <strong>One</strong>: on June 21, Major League Baseball began enforcing its sticky-substance rule, and spin rates collapsed almost overnight. Strikeouts dropped. Walks rose. The pitchers who had been overpowering hitters in May were merely good in July. <strong>Two</strong>: the trade deadline in late July saw five future Hall-of-Fame names change teams in a single week &mdash; Trea Turner and Max Scherzer to the Dodgers, Anthony Rizzo and Joey Gallo to the Yankees. The teams that did the most won the most. <strong>Three</strong>: the Atlanta Braves finished 88-73 and won the wild card, then beat the 95-win Astros in six games. The team most fans had stopped watching by August lifted the trophy.</p>
+
+  <p>If 2026 ends anything like 2021 did, the lessons for the next four months are concrete. The walk-rate spike is probably a marker of structural change, not noise &mdash; watch for an in-season league response, the way the sticky-stuff enforcement was triggered five years ago. The trade deadline will matter more than usual: contenders who buy hard look extreme in retrospect; contenders who stand pat look feckless. And the most likely World Series participant is not the team you would name if asked today.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The deeper finding</h3>
+
+  <p>Bank of America's market piece could reach back thirty-two years to a 1994 with comparable inflation, comparable yields, comparable Fed posture. We could not do the same for baseball. The closest pre-2017 analog to 2026 is <em>2009</em>, twenty places back in the standings, beaten out by every year from 2017 through 2025. The pre-modern game &mdash; the one with bunt singles and fifteen-percent strikeout rates and pitchers who threw eight innings &mdash; is statistically too far from 2026 to inform it.</p>
+
+  <p>That is partly a triumph of the modern game (more strikeouts, more strategy, more bullpens) and partly an indictment (rule changes every other year, baseball physics that shift with the contract for the supplier of the seams). Whichever way you read it, the practical effect is the same: this newsletter's house statistical history starts in roughly 2018, and the patterns before then have decreasing predictive value for the patterns ahead.</p>
+
+  <p>Wall Street can compare 2026 to 1994. Baseball cannot. We will have to settle for comparing it to <em>last summer.</em></p>
+
+  <div class="box" style="background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Reading the chart yourself</h3>
+    <p>Strikeouts per plate appearance are on the horizontal axis &mdash; left is more contact-y, right is more swing-and-miss. Walks per plate appearance are vertical &mdash; high is patient hitters or wild pitchers, low is the opposite. The faint line connecting the dots traces year by year from 1985 (far left) through 2026 (the red dot). The dashed red circle marks the cluster of five years that score closest to 2026 on the full eight-feature distance metric. Notice that the cluster is in the upper-right region &mdash; high strikeouts, high walks &mdash; and that no pre-2017 season is anywhere near it.</p>
+  </div>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Data: every player-season 1985&ndash;2025 plus partial 2026 through games of June 12, pulled from the MLB Stats API. League-level features computed by aggregating across all hitters (PA-weighted for OPS) and all pitchers (IP-weighted for ERA / K-9 / BB-9 / HR-9). Eight features used: OPS, K-per-PA, BB-per-PA, HR-per-PA, ERA, K-per-9, BB-per-9, HR-per-9. Each feature standardized (z-scored) across the forty historical years. Distance is Euclidean in the standardized space.</p>
+    <p style="color:#c8b99a">Caveats: 2026 is a partial season. Walk-rate estimates from the first ten weeks of a season often drift over the course of the year, both because pitch mixes change in warmer weather and because the leverage of close-game late-inning situations is heavier in July and August. The 2021 analog should be read as a hypothesis, not a forecast. Other reasonable methodologies (different feature weighting, longer historical windows that include strike years 1972 and 1981) might shift the top five but are unlikely to remove the structural break around 2017 that this analysis surfaces.</p>
+  </div>
+
+  <section class="almanac">
+  <h2 class="alm-hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">The Almanac &middot; <em>A Milestone Observance</em></h2>
+  <p class="alm-intro" style="background:#ede5d2;border-left:4px solid #2c4a6e;padding:14px 18px;margin:0 0 22px;font-size:16px;line-height:1.6">Every fiftieth issue of this newsletter is, by our
+  own coinage, an &ldquo;edition&rdquo; in the same fake-Latin manner that
+  the federal government has decreed 2026 the <em>semiquincentennial</em>
+  of the Republic. This is <strong>The Centennial Edition</strong>.
+  In observance, the Almanac looks back at what was actually happening at
+  the five prior fifty-year marks of our national life.</p>
+  <ul class="alm-list">
+    <li><span class="alm-yr">1776</span><span class="alm-age">(250 yrs ago)</span> &mdash; The Continental Congress sat in Philadelphia, debating whether thirteen colonies could become anything at all. The vote that mattered came on July 2.</li>
+    <li><span class="alm-yr">1826</span><span class="alm-age">(200 yrs ago)</span> &mdash; John Adams and Thomas Jefferson, the last surviving signers of the Declaration, both died on July 4 &mdash; fifty years to the day after independence. Adams's last words were reported to be &ldquo;Jefferson still survives.&rdquo; Jefferson had died five hours earlier.</li>
+    <li><span class="alm-yr">1876</span><span class="alm-age">(150 yrs ago)</span> &mdash; The presidential election that fall was decided not at the ballot box but by a fifteen-member electoral commission. Samuel Tilden (D) won the popular vote. Rutherford B. Hayes (R) was awarded the White House in exchange for ending Reconstruction.</li>
+    <li><span class="alm-yr">1926</span><span class="alm-age">(100 yrs ago)</span> &mdash; Robert Goddard launched the first liquid-fueled rocket in March, a 2.5-second flight that reached 41 feet over a Massachusetts farm.</li>
+    <li><span class="alm-yr">1976</span><span class="alm-age">(50 yrs ago)</span> &mdash; The unemployment rate averaged 7.7%. Inflation averaged 5.7%. The combination was called &ldquo;stagflation&rdquo; and was, until then, supposed to be impossible.</li>
+  </ul>
+</section>
+
+<div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
+    <span>The Sports Page &middot; Vol. I, No. 100</span>
+    <span>The Analog Year</span>
+    <span>June __, 2026 &middot; New York, NY</span>
+  </div>
+</div>]]></content:encoded>
+      <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/073-analog-year-2021.html</guid>
+    </item>
     <item>
       <title>#99: sunday-013.html</title>
       <link>https://thesportspage.net/published/sunday-013.html</link>
