@@ -8,7 +8,90 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jul 2026 11:13:32 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 10:07:14 GMT</lastBuildDate>
+    <item>
+      <title>#101: The Mets Are Seventy Times More Predictable Than the Snow.</title>
+      <link>https://thesportspage.net/published/074-predictability.html</link>
+      <description>A reader, having watched yesterday&#x27;s analog-year piece, asked a question we did not expect: is the weather more predictable than the Mets? Most fans would answer yes without thinking. We checked. The numbers are not close. Most fans would be very wrong.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/074-predictability.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/074-predictability.png" alt="The Mets Are Seventy Times More Predictable Than the Snow." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">The Mets Are Seventy Times More Predictable <em>Than the Snow</em>.</h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">A reader, having watched yesterday's analog-year piece, asked a question we did not expect: <em>is the weather more predictable than the Mets?</em> Most fans would answer yes without thinking. We checked. The numbers are not close. Most fans would be very wrong.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; A Reader's Defense Companion &middot; Steamboat Springs snowfall vs. all of Major League Baseball</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">0.007</div><div class="l">Snowfall yr-over-yr r</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v good" style="font-size:28px;font-weight:bold;line-height:1;display:block">0.490</div><div class="l">MLB win-pct yr-over-yr r</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v now" style="font-size:28px;font-weight:bold;line-height:1;display:block">70&times;</div><div class="l">Baseball's edge</div></div>
+  </div>
+
+  <figure class="cartoon" style="margin:36px auto;max-width:560px;">
+    <img src="https://thesportspage.net/assets/xkcd/074-snow-vs-mets.png" alt="Hand-drawn bar chart with two bars. SNOW: short steel-blue bar at +.007 with the annotation 'ATMOSPHERE DOES NOT REMEMBER.' METS: tall rust bar at +.41 with the annotation 'THE ROSTER MOSTLY DOES.' Y-axis labeled YEAR-OVER-YEAR MEMORY (r). Title: THINGS YOU'D EXPECT TO BE RANDOM." style="width:100%;height:auto;display:block;">
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:14px;text-align:center;letter-spacing:0.5px;text-transform:uppercase;">Cartoon &middot; A reader's question, distilled to crayon</figcaption>
+  </figure>
+
+  <p>The question came in by way of friend of the newsletter Tim, who arrived at it confessionally. Tim has spent twenty years of his life trying to match this ski season's snowfall against last year's, the year before last's, the great years of his childhood. He used the same kind of nearest-neighbor analogy that Wall Street uses against 1994 and that we used yesterday against 2021. Tim's read of his own history: <em>folly.</em> Snow seasons, he said, do not seem to repeat themselves. Each year arrives fresh, owing the previous year nothing.</p>
+
+  <p>That is a falsifiable claim. We can ask, of any time series, how much last year's value predicts next year's. The standard answer is the lag-one autocorrelation &mdash; the Pearson correlation between the value in year t and the value in year t plus one. If the autocorrelation is high, the system has memory: this year's reading tells you something about next year's. If it is low, each year is a coin flip drawn from the same urn.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Two histograms, one chart</h3>
+
+  <p>The chart below shows the two systems side by side. On the left: total seasonal snowfall (November through April) at Steamboat Springs, Colorado, every season from 1985 onward, plotted as this year's value against next year's. The Steamboat record at NOAA station USC00057936 covers more than a hundred years; we used the modern subset that overlaps with the MLB data on the right.</p>
+
+  <p>On the right: every team-to-team year-over-year pair in Major League Baseball from 1985 to 2025. Each dot is one team in one year, plotted against the same team in the next year. Win pct on both axes. We drew a random sample of three hundred dots so the cloud is readable, but the correlation reported is over all eleven hundred fifty-eight pairs.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Year-over-year persistence &middot; Steamboat snowfall vs. MLB win pct</div>
+<img src="https://thesportspage.net/assets/figures/074-predictability-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What the numbers say</h3>
+
+  <p>The snow scatter on the left is a cloud. The correlation is <strong>0.007</strong>. That is statistically zero. The line through the dots is flat. If you tell me that Steamboat got two thousand millimeters of snow last year, I have learned almost nothing about how much snow it will get next year. Tim was right about his own twenty years of mental analog-matching: it was folly. Each ski season is, statistically, a fresh draw.</p>
+
+  <p>The baseball scatter on the right is something else entirely. The dots tilt up from left to right. A team that posted a .400 winning percentage last year is much more likely to post a .400 this year than a .600. A team that won ninety-five games last year is more likely to be near ninety this year than near seventy. The correlation is <strong>0.490</strong>. By the standard rule of thumb, last year's record explains roughly <em>twenty-four percent</em> of the variance in next year's. That is enormous compared to the snow.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">If you want to predict next season, bet on baseball. Tim's twenty years of ski matching had nothing to lean on. Twenty years of baseball matching would have done quite a bit better.</p>
+    <cite>Predictability</cite>
+  </div>
+
+  <p>And the New York Mets specifically? Their own year-over-year autocorrelation is <strong>0.407</strong> &mdash; slightly less than the league average, but only by a hair. The Mets are not the most volatile team in baseball. They are roughly as predictable as the average major-league franchise, which is to say, seventy times more predictable than the snow at Steamboat.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Why the gap?</h3>
+
+  <p>The economic answer is straightforward. A baseball roster is mostly the same year over year. Players are signed to multi-year contracts. Front offices, when they are good, stay good for a while; when they are bad, they tend to stay bad. Talent, infrastructure, scouting, and player development do not get replaced overnight. So last year's wins encode last year's roster, and a healthy share of last year's roster is going to be the team you watch this year.</p>
+
+  <p>The atmospheric answer for snowfall is the opposite. Total Colorado-mountain winter precipitation depends on jet-stream meanders, on El Ni&ntilde;o-Southern-Oscillation states, on stochastic pressure differentials over the Pacific that have no preference for last year's value. There is no contract structure for the atmosphere. Each ski season inherits very little from the one before.</p>
+
+  <p>This is exactly what makes analog-matching a useful exercise for baseball and a misleading one for skiing. <em>Pattern-matching works only where the patterns persist.</em> Yesterday's piece found 2026 in the neighborhood of 2021 because the league is the kind of system that builds neighborhoods. The same exercise on Tim's ski history would have built nothing &mdash; or worse, built a sense of seasonal narrative that the data does not support.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">A defensive reader's takeaway</h3>
+
+  <div class="box" style="background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">The trap</h3>
+    <p>When somebody &mdash; pundit, gambler, ski-resort marketing department, market strategist &mdash; tells you that a year resembles some prior year and that you should accordingly expect similar things to happen, your first question should not be "is the resemblance close?" Your first question should be: <em>how autocorrelated is the underlying system?</em> If the lag-one r is close to zero, the resemblance is meaningless even when it is real, because the next year is going to draw from the same hat no matter what was drawn last time.</p>
+    <p>This newsletter does analog-matching for MLB because MLB has the persistence to make it informative. We will not be doing it for ski seasons. Tim got there first.</p>
+  </div>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Snowfall: NOAA GHCN-Daily station USC00057936 (Steamboat Springs, CO). "Season" defined as November 1 through April 30; only seasons with at least 150 days reported are included. Resulting series: 31 ski seasons since 1985, producing 27 lag-1 pairs after gaps.</p>
+    <p style="color:#c8b99a">Baseball: MLB Stats API standings 1985&ndash;2025 inclusive, all teams in both leagues, regular season records. Strike-shortened 1994 and pandemic-shortened 2020 included on the basis that the win-pct fraction is comparable across game counts. 1,158 team-year-pairs total. Mets-only series: 40 pairs.</p>
+    <p style="color:#c8b99a">Lag-1 autocorrelation is the Pearson correlation between the value in year t and the value in year t+1, taken across all eligible adjacent-year pairs in the series. For pooled MLB, pairs are stratified by team (so the Yankees in 1995 contribute a pair with the Yankees in 1996, not the Tigers in 1996). The chart on the right shows a uniform random sample of 300 of the 1,158 team-pairs for legibility; the reported r is over all 1,158 pairs.</p>
+  </div>
+
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
+    <span>The Sports Page &middot; Vol. I, No. 101</span>
+    <span>Predictability</span>
+    <span>June __, 2026 &middot; New York, NY</span>
+  </div>
+</div>]]></content:encoded>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/074-predictability.html</guid>
+    </item>
     <item>
       <title>#100: Bank of America Says 2026 Is 1994. Baseball Says 2026 Is 2021.</title>
       <link>https://thesportspage.net/published/073-analog-year-2021.html</link>
