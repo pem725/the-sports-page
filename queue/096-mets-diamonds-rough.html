@@ -1,0 +1,237 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, Prospects, Small Sample, Trade Deadline, Beta-Binomial
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+table.cmp{width:100%;border-collapse:collapse;font-size:.88rem;margin:1.2rem 0;background:#fff}
+table.cmp th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left;background:var(--card)}
+table.cmp td{padding:.5rem .6rem;border-bottom:1px solid var(--div);font-family:'Roboto Mono',monospace;font-size:.85rem}
+table.cmp td:first-child{font-family:'Playfair Display',serif;font-weight:700;color:var(--steel);font-size:.95rem}
+table.cmp tr.mets td{background:#fce4d4}
+table.cmp tr.mets td:first-child{color:var(--rust)}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+</style>
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="The Diamond in the Rough Is Mostly Rough.">
+<meta property="og:description" content="A losing team's summer means handing at-bats to kids and squinting for a future star. But a cup of coffee is almost statistically silent. Here is what the Mets' one Futures Game bat can and cannot prove.">
+<meta property="og:url" content="https://thesportspage.net/published/096-mets-diamonds-rough.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/096-mets-diamonds-rough.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Diamond in the Rough Is Mostly Rough.">
+<meta name="twitter:description" content="A losing team's summer means handing at-bats to kids and squinting for a future star. But a cup of coffee is almost statistically silent. Here is what the Mets' one Futures Game bat can and cannot prove.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/096-mets-diamonds-rough.png">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">The Diamond in the Rough <em>Is Mostly Rough.</em></h2>
+  <p class="deck">A lost season has one consolation: you get to hand at-bats to the kids and squint for a future star. But a cup of coffee is almost statistically silent &mdash; and that silence is exactly why the dream never dies. Here is what the Mets' one Futures Game bat can, and cannot, prove before the trade deadline.</p>
+  <p class="byline">The Sports Page &middot; Prospect Math at the Deadline &middot; Model: Beta-Binomial with a league-average prior</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">.191</div><div class="l">Clifford's Triple-A average</div></div>
+    <div class="sc"><div class="v good">108</div><div class="l">90th-pct exit velo (mph)</div></div>
+    <div class="sc"><div class="v bad">117</div><div class="l">Strikeouts &mdash; most in the Int'l League</div></div>
+  </div>
+
+  <p>Here is the shape of a losing July. The Mets are roughly fifteen games under .500, out of the race by any honest reading, and the front office is a seller with three weeks until the July 31 deadline. What a fan does with a season like this is what fans have always done: look past the big-league box score and down to the farm, hunting for the raw stone that turns into a franchise. Who, in the system, offers some promise?</p>
+
+  <p>The uncomfortable first answer is that the Mets already sold their best one. On January 21, they traded their No. 1 prospect, shortstop <strong>Jett Williams</strong>, and pitching prospect <strong>Brandon Sproat</strong> to Milwaukee for Freddy Peralta and Tobias Myers &mdash; a win-now swap made by a team that then lost early and often. The diamond you were going to wait on is now hitting in another organization's Triple-A.</p>
+
+  <p>What is left is thinner, and it is led by a genuinely fascinating case: <strong>Ryan Clifford</strong>, a 22-year-old first baseman/outfielder headed to the All-Star Futures Game in Philadelphia. He is going there on raw power that the radar guns love &mdash; a 90th-percentile exit velocity around 108 mph and a hard-hit rate north of 52 percent, some of the best contact-quality metrics in Triple-A. He is also hitting <strong>.191</strong>, and he leads the International League with <strong>117 strikeouts</strong>. He is, almost too neatly, the literal diamond in the rough: extraordinary raw material, unrefined contact.</p>
+
+  <h3 class="sh">The one statistical question</h3>
+
+  <p>The instinct that keeps hope alive on a bad team is that a small burst of good numbers means something. A September call-up hits .350 over his first three weeks and the fan base pencils him into next year's lineup. The math says: not so fast. A cup of coffee is one of the least informative samples in all of sports.</p>
+
+  <p>Use the newsletter's standard tool for a rate like batting average: the Beta-Binomial. Start with a league-average prior &mdash; a Beta distribution centered on a .250 hitter, with a strength of about 200 plate appearances of prior belief (alpha = 50, beta = 150). Now let a rookie go 14-for-40, a scorching .350 debut. Update the prior with those 14 hits and 26 outs and the posterior barely twitches:</p>
+
+  <table class="cmp">
+    <thead><tr><th>Belief about the hitter</th><th>Sample</th><th>Estimated true AVG</th></tr></thead>
+    <tbody>
+      <tr><td>Prior (league-average bat)</td><td>&mdash;</td><td>.250</td></tr>
+      <tr class="mets"><td>After a hot debut</td><td>14-for-40 (.350)</td><td>.267</td></tr>
+      <tr><td>After a full minor-league season</td><td>~130-for-520 (.250)</td><td>.250</td></tr>
+      <tr><td>After a cold debut</td><td>6-for-40 (.150)</td><td>.233</td></tr>
+    </tbody>
+  </table>
+
+  <p>A .350 explosion over 40 at-bats moves our estimate of the player's true ability from .250 all the way to .267 &mdash; seventeen points. A dreadful 6-for-40 pulls it down to .233. The cup of coffee, hot or cold, is almost inert. It cannot make a star and it cannot bury one, because forty at-bats simply do not contain enough information to overwrite what we already believed. This is not a quirk of the chosen prior; it is the arithmetic of small samples. The dream survives the audition precisely because the audition proves nothing.</p>
+
+  <div class="pull">
+    <p>A cup of coffee cannot make a prospect a star, and it cannot bury one. Forty at-bats do not contain enough information to overwrite what we already believed. The dream survives the audition because the audition proves nothing.</p>
+    <cite>Prospect Math at the Deadline</cite>
+  </div>
+
+  <h3 class="sh">Why Clifford is the interesting case, not the safe one</h3>
+
+  <p>Clifford is the exception that clarifies the rule, because his sample is no longer a cup of coffee. Through roughly 320 plate appearances in Triple-A this year, he has enough of a track record that the numbers <em>are</em> starting to speak &mdash; and what they say is genuinely ambiguous rather than empty. The power is real and it is elite; contact quality that good is a skill, not a fluke, and it stabilizes faster than batting average. The strikeouts are also real: a rate near 36 percent of plate appearances against Triple-A pitching, well north of the roughly 22 percent a big-league hitter runs, and strikeout rate is one of the fastest-stabilizing stats there is.</p>
+
+  <p>So the honest scouting line is not "wait and see." It is a specific, testable bet: the raw power is a finished asset and the contact is the open question. If the whiffs come down even to merely bad, the exit velocity plays and there is a middle-of-the-order bat here. If they do not, he is a Quadruple-A slugger &mdash; the kind of hitter whose Triple-A power never survives contact with a major-league breaking ball. The Futures Game invitation is a bet on the first outcome. The .191 is the market pricing in the second.</p>
+
+  <h3 class="sh">Who else is in the rough</h3>
+
+  <p>Below Clifford, the promise is real but comes with the same warning label: small samples, loud tools, quiet results so far.</p>
+
+  <table class="cmp">
+    <thead><tr><th>Player</th><th>Pos</th><th>Level</th><th>The stone, and the rough</th></tr></thead>
+    <tbody>
+      <tr class="mets"><td>Ryan Clifford</td><td>1B/OF</td><td>AAA</td><td>Elite exit velo, Futures Game bat; .191 and league-most strikeouts</td></tr>
+      <tr><td>Jonah Tong</td><td>RHP</td><td>AAA</td><td>Led all of the minors in strikeouts a year ago; Triple-A ERA has spiked into the 6s on shaky command</td></tr>
+      <tr><td>Jack Wenninger</td><td>RHP</td><td>AAA</td><td>Velocity near 98, a double-plus splitter; walk rate ballooned to ~13% at Triple-A</td></tr>
+    </tbody>
+  </table>
+
+  <p>Every one of them fits the pattern the model warns about. A tool loud enough to dream on, a result column that has not yet cooperated, and a sample too small &mdash; or a season too young &mdash; to settle the argument. That is what "prospect" means. It is not a promise; it is a probability with a wide error bar.</p>
+
+  <h3 class="sh">What it means at the deadline</h3>
+
+  <p>A seller in late July faces a choice the math frames cleanly. The Mets can cash their veterans for other teams' Cliffords &mdash; buying wide error bars in bulk and hoping a few resolve upward &mdash; or they can hand their own kids the at-bats a lost season makes cheap. Both are defensible. Neither should be confused with certainty. The great trap of a losing summer is that a two-week hot streak from a call-up feels like a discovery. The Beta-Binomial is there to remind you it is mostly noise, and that the only prospect whose numbers have earned the right to move your priors is the one who has been at it long enough to strike out 117 times.</p>
+
+  <p>The romance of the diamond in the rough is durable because it is unfalsifiable in small samples. Enjoy the dream &mdash; that is what a lost July is for &mdash; but price it honestly. Most rough stays rough. The rare stone that turns into a franchise does not announce itself in forty at-bats. It announces itself over the long, boring, statistically significant grind that separates the two.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Records and standings: New York Mets 2026 season record via MLB.com standings and Baseball-Reference. Roster move: the January 21, 2026 trade of Jett Williams and Brandon Sproat to Milwaukee for Freddy Peralta and Tobias Myers, per public reporting. Prospect statistics (Ryan Clifford, Jonah Tong, Jack Wenninger) via MiLB.com, Baseball America, and Amazin' Avenue prospect coverage; Clifford's Futures Game selection and exit-velocity metrics via MLB.com and MiLB.com.</p>
+    <p style="color:#c8b99a">Model: Beta-Binomial for a batting-average rate. Prior: Beta(&alpha;=50, &beta;=150), mean .250, prior strength 200 PA. Posterior mean after a sample of h hits in n at-bats is (&alpha;+h)/(&alpha;+&beta;+n). The illustrative debut lines (14-for-40, 6-for-40) are chosen to show the range; they are not attributed to any specific player. Strikeout- and contact-rate stabilization thresholds follow standard sabermetric reliability estimates (strikeout rate stabilizes within roughly 60 plate appearances; batting average requires several hundred).</p>
+    <p style="color:#c8b99a"><strong>Publish-time refresh required.</strong> Every number in this piece &mdash; the Mets' record, Clifford's slash line and strikeout total, Tong's ERA, the standings context, and whether any of these players has since been called up or traded &mdash; must be re-verified against at least three independent sources on the morning of publication. Prospect lines move weekly, and this draft was built from data as of early-to-mid July 2026.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Vol. I, No. __</span>
+    <span>Prospect Math at the Deadline</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</main>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/096-mets-diamonds-rough.html">
+
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+
+  <!-- SOCIAL SHARE BUTTONS -->
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+
+    <a href="https://twitter.com/intent/tweet?text=The%20Diamond%20in%20the%20Rough%20Is%20Mostly%20Rough.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/096-mets-diamonds-rough.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:background .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/096-mets-diamonds-rough.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/096-mets-diamonds-rough.html%3Futm_source%3Dlinkedin%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20The%20Diamond%20in%20the%20Rough%20Is%20Mostly%20Rough.&body=Thought%20you%27d%20enjoy%20this%3A%0A%0AThe%20Diamond%20in%20the%20Rough%20Is%20Mostly%20Rough.%0A%0AA%20lost%20season%20means%20handing%20at-bats%20to%20the%20kids%20and%20squinting%20for%20a%20future%20star.%20But%20a%20cup%20of%20coffee%20is%20almost%20statistically%20silent%2C%20and%20that%20silence%20is%20why%20the%20dream%20never%20dies.%20Here%20is%20what%20the%20Mets%27%20one%20Futures%20Game%20bat%20can%2C%20and%20cannot%2C%20prove%20before%20the%20trade%20deadline.%0A%0ARead%20it%20here%3A%20https%3A//thesportspage.net/published/096-mets-diamonds-rough.html%3Futm_source%3Demail%26utm_medium%3Dshare%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/096-mets-diamonds-rough.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+
+  </div>
+
+  <!-- DIVIDER -->
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+
+  <!-- QR CODE -- physical/in-person sharing -->
+  <a href="https://thesportspage.net/" style="text-decoration:none" target="_blank" rel="noopener"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none" target="_blank" rel="noopener"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)" target="_blank" rel="noopener">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:.35rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:.3rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</section>
+
+<!-- COPY-LINK INTERACTION -->
+<script>
+(function(){
+  var btn = document.getElementById('sp-copy-link');
+  if (!btn) return;
+  var label = document.getElementById('sp-copy-label');
+  var url = btn.getAttribute('data-url');
+  btn.addEventListener('click', function(){
+    try {
+      navigator.clipboard.writeText(url).then(function(){
+        label.textContent = 'Copied!';
+        btn.style.background = '#c9962a';
+        btn.style.color = '#1a1208';
+        setTimeout(function(){
+          label.textContent = 'Copy link';
+          btn.style.background = 'transparent';
+          btn.style.color = '#c9962a';
+        }, 1800);
+      });
+    } catch (e) {
+      window.prompt('Copy this link:', url);
+    }
+  });
+})();
+</script></body>
+</html>
