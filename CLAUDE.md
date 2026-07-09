@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 398 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 397 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 102 issues (#1-102)
-Queue: 9 articles ready (075-prediction-frameworks, 077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 088-sorsby-supplemental-bet, 092-nd-dynasty-call, 095-allstar-screwball, _TEMPLATE, bobby-bonilla-day)
+Published: 103 issues (#1-103)
+Queue: 9 articles ready (077-astros-analog, 078-cross-sport-persistence, 086-nd-dynasty-test, 088-sorsby-supplemental-bet, 092-nd-dynasty-call, 095-allstar-screwball, 096-mets-diamonds-rough, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 398 issues remaining of 500
-Last published: Issue #102 — "By the Numbers, the Mets Are the 2012 Mariners. By Strategy, They Have a Choice." (076-mets-analog.html) on July 8, 2026
+Goal: 397 issues remaining of 500
+Last published: Issue #103 — "A Fair Fight Was Asked For. We Ran Two. Snow Lost Both." (075-prediction-frameworks.html) on July 9, 2026
