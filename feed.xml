@@ -8,7 +8,89 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2026 10:01:32 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jul 2026 08:21:50 GMT</lastBuildDate>
+    <item>
+      <title>#105: Five Teams Have Looked Like the 2026 Astros. None Of Them Were Still a Dynasty.</title>
+      <link>https://thesportspage.net/published/077-astros-analog.html</link>
+      <description>After Issue #76 used the team-analog framework to find the Mets&#x27;s statistical twin, a reader asked us to check Houston. The result is bleaker than the Mets&#x27;s. The Astros&#x27;s closest match is the 2023 Cardinals, who had won 93 games the year before they collapsed; the four runners-up are all former contenders caught in the moment their window closed. Nobody from this lineage won a championship within five seasons. One reached one good playoff year. Two never quite came back.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/077-astros-analog.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/077-astros-analog.png" alt="Five Teams Have Looked Like the 2026 Astros. None Of Them Were Still a Dynasty." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">Five Teams Have Looked Like the 2026 Astros. <em>None Of Them Were Still a Dynasty.</em></h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">After Issue #76 used the team-analog framework to find the Mets's statistical twin, a reader asked us to check Houston. The result is bleaker than the Mets's. The Astros's closest match is the 2023 Cardinals, who had won 93 games the year before they collapsed; the four runners-up are all former contenders caught in the moment their window closed. Nobody from this lineage won a championship within five seasons. One reached one good playoff year. Two never quite came back.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; Team-Analog Framework, Part II &middot; Six-feature z-score nearest neighbor across 1,188 historical team-seasons</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">.451</div><div class="l">Astros 2026 win pct</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">4.90</div><div class="l">Astros 2026 team ERA</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v now" style="font-size:28px;font-weight:bold;line-height:1;display:block">2023</div><div class="l">Closest analog (Cardinals)</div></div>
+  </div>
+
+  <p>From 2017 through 2024 the Houston Astros were the most consistently dominant team in baseball. Eight winning seasons in eight years. Five 100-win campaigns. Two World Series titles. The window stretched longer than almost any team has managed in the era of the soft cap, the player-rest revolution, and the analytics arms race. It was the kind of run that gets written about in retrospect as the franchise's golden age.</p>
+
+  <p>The 2026 Astros are 33-40. Their team OPS sits at <strong>.730</strong> &mdash; respectable. Their team ERA is <strong>4.90</strong> &mdash; the worst it has been since 2014, a year when this franchise was supposed to lose. The 2026 club has, statistically, more in common with several years of mediocre baseball history than it does with itself two seasons ago.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The five nearest neighbors</h3>
+
+  <p>The team-analog framework from Issue #76 takes each 2026 team's six-feature profile &mdash; OPS, ERA, K-per-PA, BB-per-PA, HR-per-PA, and winning percentage &mdash; and finds the nearest historical (team, season) cell in standardized space. For Houston, the top five are not a varied set:</p>
+
+  <table class="cmp">
+    <thead><tr><th>Team</th><th>OPS</th><th>ERA</th><th>K/PA</th><th>BB/PA</th><th>HR/PA</th><th>Win pct</th><th>Year before</th></tr></thead>
+    <tbody>
+      <tr class="astros"><td>2026 Astros (so far)</td><td>.730</td><td>4.90</td><td>21.9%</td><td>9.0%</td><td>3.41%</td><td>.451</td><td>87&ndash;75</td></tr>
+      <tr><td>2023 Cardinals</td><td>.742</td><td>4.79</td><td>21.4%</td><td>9.2%</td><td>3.37%</td><td>.438</td><td>93 wins (NL Central champs)</td></tr>
+      <tr><td>2021 Twins</td><td>.737</td><td>4.83</td><td>23.1%</td><td>8.6%</td><td>3.75%</td><td>.451</td><td>2-time AL Central champs</td></tr>
+      <tr><td>2019 Angels</td><td>.746</td><td>5.12</td><td>20.4%</td><td>9.4%</td><td>3.52%</td><td>.444</td><td>prime Trout, never reached playoffs</td></tr>
+      <tr><td>2018 Blue Jays</td><td>.739</td><td>4.85</td><td>22.8%</td><td>8.2%</td><td>3.57%</td><td>.451</td><td>2015&ndash;16 ALCS run</td></tr>
+      <tr><td>2017 Mets</td><td>.754</td><td>5.01</td><td>20.9%</td><td>8.6%</td><td>3.63%</td><td>.432</td><td>2015 NL pennant</td></tr>
+    </tbody>
+  </table>
+
+  <p>Read the right-hand column carefully. The 2023 Cardinals had just won their division. The 2021 Twins had just won two in a row. The 2018 Blue Jays were two seasons removed from the ALCS. The 2017 Mets were the recent World Series losers. Every single team on this list was a recent contender whose previous season had ended in October.</p>
+
+  <p>The framework is not just identifying clubs that look like the 2026 Astros statistically. It is identifying a <em>category</em> of clubs &mdash; the post-window team, the recently-faded contender, the front office about to discover whether its run was the start of a dynasty or just the end of a moment.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Where they ended up</h3>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Win percentage trajectories for the five Astros analog teams in the years following their analog season</div>
+<img src="https://thesportspage.net/assets/figures/077-astros-analog-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <p>The chart traces all five trajectories. None of them recovered to championship form. <strong>The 2018 Blue Jays</strong> are the closest thing to a happy ending: after one more bad year in 2019, the Vladimir Guerrero Jr.-Bo Bichette generation broke through to multi-year contention, peaking at 94 wins in 2025. <strong>The 2017 Mets</strong> had one extraordinary year, the 101-win 2022 season, before relapsing. <strong>The 2021 Twins</strong> bounced back to a division title in 2023, then declined again. <strong>The 2023 Cardinals</strong> &mdash; the closest match &mdash; lifted their win pct to .512 and .481 in the two seasons after their collapse but have not yet returned to the playoffs. <strong>The 2019 Angels</strong> remain the cautionary tale: prime-era Mike Trout never reached the postseason again.</p>
+
+  <p>The headline number to keep is this: across the five teams that have most statistically resembled the 2026 Astros, the average win percentage in the season immediately after their analog year was <strong>.463</strong>. Five seasons out, the average was <strong>.490</strong>. Neither figure is even a wild-card threshold. No team from this lineage won a championship in any of the seven seasons we have data for.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">The Astros's dynasty was real. The data says it is over. The data also says it usually does not come back in the same form, even when the front office tries.</p>
+    <cite>Team Analog, Part II</cite>
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What it means for the next twenty months</h3>
+
+  <p>The Houston front office has decisions in front of it that look very different in light of the analog. Yordan &Aacute;lvarez turns 29 in late June. Kyle Tucker is twenty-nine. Alex Bregman has played in eight winning seasons in his nine-year career. None of those facts has changed; what has changed is the broader pitching staff, the bullpen depth, and the run-prevention infrastructure that turned every season since 2017 into a contention year.</p>
+
+  <p>The trade deadline will be the most important inflection point. If Houston buys, they are betting against the lineage in Figure 1 &mdash; betting that they are the 2024 Cubs (a team whose 2014 trough fell entirely off the analog map by year five) rather than the 2020 Angels (a team whose trough was the start of a six-year valley). If they sell or stand pat, they are accepting the lineage and reinvesting in 2028.</p>
+
+  <p>Either decision is defensible. The data does not declare a verdict. The data does, however, refuse to call this season noise. Three different years of context and five different historical analogs say the same thing: the Astros's championship window has closed in the way championship windows usually close in modern baseball &mdash; quickly, with the run-prevention falling apart first, and most of the recovery confined to one or two transient seasons rather than another sustained run.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Data: MLB Stats API team-stats endpoint, 1985 through 2025 historical, plus 2026 partial through games of June 12. Six features per (team, year) cell: PA-weighted team OPS, team ERA, K-per-PA, BB-per-PA, HR-per-PA, winning percentage. Vectors are z-scored across all 1,188 historical cells (excluding 2026). Distance from each 2026 team to each historical cell is Euclidean.</p>
+    <p style="color:#c8b99a">Astros 2026 numbers reflect games through June 12, 2026. Win percentage will move; rate stats are more stable but will also shift over the season. The analog should be read as a snapshot from the data we have now, not a guarantee of where the franchise ends 2026.</p>
+    <p style="color:#c8b99a">Historical context (preceding seasons) compiled from MLB standings: 2022 Cardinals 93-69, NL Central champs; 2019&ndash;2020 Twins back-to-back AL Central champs; 2018 Trout-Pujols Angels 80-82, never reached postseason with Trout's prime; 2015&ndash;16 Blue Jays reached the ALCS; 2015 Mets reached the World Series. Post-analog trajectories drawn from the same standings data. The 2017 Mets and 2019 Angels series include the 60-game 2020 season.</p>
+  </div>
+
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
+    <span>The Sports Page &middot; Vol. I, No. 105</span>
+    <span>Team Analog, Part II</span>
+    <span>June __, 2026 &middot; New York, NY</span>
+  </div>
+</div>]]></content:encoded>
+      <pubDate>Sat, 11 Jul 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/077-astros-analog.html</guid>
+    </item>
     <item>
       <title>#104: Notre Dame Is Building a Contender. That Is Not the Same as Building Alabama.</title>
       <link>https://thesportspage.net/published/086-nd-dynasty-test.html</link>

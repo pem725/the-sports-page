@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 396 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 395 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 104 issues (#1-104)
-Queue: 8 articles ready (077-astros-analog, 078-cross-sport-persistence, 088-sorsby-supplemental-bet, 092-nd-dynasty-call, 095-allstar-screwball, 096-mets-diamonds-rough, _TEMPLATE, bobby-bonilla-day)
+Published: 105 issues (#1-105)
+Queue: 7 articles ready (078-cross-sport-persistence, 088-sorsby-supplemental-bet, 092-nd-dynasty-call, 095-allstar-screwball, 096-mets-diamonds-rough, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 396 issues remaining of 500
-Last published: Issue #104 — "Notre Dame Is Building a Contender. That Is Not the Same as Building Alabama." (086-nd-dynasty-test.html) on July 10, 2026
+Goal: 395 issues remaining of 500
+Last published: Issue #105 — "Five Teams Have Looked Like the 2026 Astros. None Of Them Were Still a Dynasty." (077-astros-analog.html) on July 11, 2026
