@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 105 issues (#1-105)
+Published: 106 issues (#1-105 + Sunday Edition No. 014 as #106)
 Queue: 7 articles ready (078-cross-sport-persistence, 088-sorsby-supplemental-bet, 092-nd-dynasty-call, 095-allstar-screwball, 096-mets-diamonds-rough, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 395 issues remaining of 500
-Last published: Issue #105 — "Five Teams Have Looked Like the 2026 Astros. None Of Them Were Still a Dynasty." (077-astros-analog.html) on July 11, 2026
+Goal: 394 issues remaining of 500
+Last published: Issue #106 — "A Framework Week: Six Tools Built, Zero Bets Placed — Here's the Scorecard Anyway" (sunday-014.html) on July 12, 2026
