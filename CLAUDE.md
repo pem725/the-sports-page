@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 395 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 393 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 106 issues (#1-105 + Sunday Edition No. 014 as #106)
-Queue: 7 articles ready (078-cross-sport-persistence, 088-sorsby-supplemental-bet, 092-nd-dynasty-call, 095-allstar-screwball, 096-mets-diamonds-rough, _TEMPLATE, bobby-bonilla-day)
+Published: 107 issues (#1-107)
+Queue: 7 articles ready (088-sorsby-supplemental-bet, 092-nd-dynasty-call, 095-allstar-screwball, 096-mets-diamonds-rough, 097-acceleration-second-derivative, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 394 issues remaining of 500
-Last published: Issue #106 — "A Framework Week: Six Tools Built, Zero Bets Placed — Here's the Scorecard Anyway" (sunday-014.html) on July 12, 2026
+Goal: 393 issues remaining of 500
+Last published: Issue #107 — "The NBA's Last Year Is Worth a +65. The Pacific Northwest's La Niña Is Worth a Minus 19." (078-cross-sport-persistence.html) on July 13, 2026

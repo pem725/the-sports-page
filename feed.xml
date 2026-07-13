@@ -8,7 +8,103 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jul 2026 08:19:09 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 09:55:15 GMT</lastBuildDate>
+    <item>
+      <title>#107: The NBA&#x27;s Last Year Is Worth a +65. The Pacific Northwest&#x27;s La Niña Is Worth a Minus 19.</title>
+      <link>https://thesportspage.net/published/078-cross-sport-persistence.html</link>
+      <description>A reader pushed back on this newsletter&#x27;s predictability comparisons. Lag-one autocorrelation, last week&#x27;s metric, is the natural predictor for a sports league because the players carry over. It is not the natural predictor for snowfall — for that, you would use the El Niño-Southern-Oscillation state of the upcoming winter. We rebuilt the chart on each domain&#x27;s own best-known test and switched the axis to a number a reader can bite into: the predictor&#x27;s correlation with the outcome, on a scale of negative one hundred to positive one hundred. Sign tells direction. Magnitude tells you how much the predictor actually knows.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/078-cross-sport-persistence.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/078-cross-sport-persistence.png" alt="The NBA&#x27;s Last Year Is Worth a +65. The Pacific Northwest&#x27;s La Niña Is Worth a Minus 19." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">The NBA's Last Year Is Worth a +65. <em>The Pacific Northwest's La Ni&ntilde;a Is Worth a Minus 19.</em></h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">A reader pushed back on this newsletter's predictability comparisons. Lag-one autocorrelation, last week's metric, is the natural predictor for a sports league because the players carry over. It is not the natural predictor for snowfall &mdash; for that, you would use the El Ni&ntilde;o-Southern-Oscillation state of the upcoming winter. We rebuilt the chart on each domain's own best-known test and switched the axis to a number a reader can bite into: the predictor's correlation with the outcome, on a scale of negative one hundred to positive one hundred. Sign tells direction. Magnitude tells you how much the predictor actually knows.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; Method: Pearson correlation between predictor and outcome &middot; Cohort: 1985&ndash;2025 across four sports leagues and five U.S. snow regions</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v good" style="font-size:28px;font-weight:bold;line-height:1;display:block">+65</div><div class="l">NBA &mdash; last year predicts this year</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v now" style="font-size:28px;font-weight:bold;line-height:1;display:block">+20</div><div class="l">Utah/WY &mdash; La Ni&ntilde;a predicts snow</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">&minus;48</div><div class="l">Colorado &mdash; ENSO model goes the wrong way</div></div>
+  </div>
+
+  <figure class="cartoon" style="margin:36px auto;max-width:560px;">
+    <img src="https://thesportspage.net/assets/xkcd/078-cross-sport.png" alt="Hand-drawn horizontal bar chart. From top to bottom: NBA at +65, NHL at +62, MLB at +49, NFL at +34, and CO SNOW at -48 (extending to the left of zero). The CO SNOW bar has a rust annotation that reads 'WAIT WHAT.' Title: EACH DOMAIN, BEST-KNOWN PREDICTOR." style="width:100%;height:auto;display:block;">
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:14px;text-align:center;letter-spacing:0.5px;text-transform:uppercase;">Cartoon &middot; The whole argument, in one panel</figcaption>
+  </figure>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">A metric you can bite into</h3>
+
+  <p>The previous draft of this piece used something called percent reduction in root-mean-square error against a climatology baseline. That metric is technically correct and statistically unimpeachable. It is also impossible to feel. We replaced it with a number that even people who do not own a statistics textbook can grasp: the <strong>Pearson correlation between the predictor and the outcome, scaled to between negative one hundred and positive one hundred</strong>.</p>
+
+  <p>A score of +100 means the predictor is perfect. A score of 0 means it is useless. A score of &minus;100 means it is exactly backwards. A score of +50 is a strong predictor; +25 is modest; anything between &minus;15 and +15 is essentially noise. A negative number is not a sin &mdash; it just means the predictor's predictions and the actual outcomes tend to move in opposite directions, which is usually a sign that the predictor was wrong about the direction or that the sample was too small to learn the right one.</p>
+
+  <p>For sports we used the same lag-one predictor as before: take this team's win pct last year, regress it gently toward the league mean, and see how well it tracks the team's win pct this year. For snow we used the El Ni&ntilde;o-Southern-Oscillation state: take the predicted snowfall for each season as the average of every other season with the same ENSO classification (La Ni&ntilde;a, Neutral, or El Ni&ntilde;o), and see how well that tracks the actual snowfall that year. Same metric on both sides, computed the same way.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; The right test, cross-domain &middot; Pearson r &times; 100, leave-one-out cross-validated</div>
+<img src="https://thesportspage.net/assets/figures/078-cross-sport-persistence-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What the sports side shows</h3>
+
+  <p>The NBA leads at <strong>+65</strong>. The NHL at +62. Major League Baseball at +49. The NFL at +34. The order matches everything we know about roster geometry. Basketball has five players on the floor at a time and guaranteed max contracts that lock superstars in for half a decade; what your team was, your team mostly still is. The NFL has a hard cap, a sixteen-game season, and aggressive roster cycling; what your team was last year is meaningfully less informative about what your team is this year. All four sports score in the +30 to +70 band, which on this scale is the "useful predictor" zone. None of them is a bad place to start a season-preview column.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What the snow side shows</h3>
+
+  <p>The snow side is more dramatic, and worth reading carefully. <strong>Utah and Wyoming clear +20</strong>, which means knowing the upcoming winter's ENSO state actually tells you something about how much snow is coming. <strong>New Mexico and Vermont sit at +2 and &minus;5</strong>, essentially noise. <strong>The Pacific Northwest comes in at &minus;19</strong>, meaning the ENSO model's predictions and the actual snowfall move in slightly opposite directions over the data we have. <strong>Colorado is at &minus;48</strong>: the ENSO state's predictions are almost as wrong as randomly flipping the sign.</p>
+
+  <p>The negative scores want explanation. They do <em>not</em> mean that La Ni&ntilde;a doesn't matter. La Ni&ntilde;a absolutely matters &mdash; the regional-mean signal is real, and the table below makes that visible.</p>
+
+  <table class="regional">
+    <thead><tr><th>Region</th><th>Long-run mean</th><th>La Ni&ntilde;a vs El Ni&ntilde;o</th><th>Direction</th></tr></thead>
+    <tbody>
+      <tr><td>Pacific Northwest</td><td>5,742 mm</td><td>+15%</td><td class="signal">La Ni&ntilde;a wetter</td></tr>
+      <tr><td>Utah / Wyoming</td><td>1,815 mm</td><td>+36%</td><td class="signal">La Ni&ntilde;a wetter</td></tr>
+      <tr><td>Colorado</td><td>3,948 mm</td><td>+6%</td><td class="weak">essentially flat</td></tr>
+      <tr><td>Vermont</td><td>2,272 mm</td><td>+10%</td><td class="weak">slight, noisy</td></tr>
+      <tr><td>New Mexico</td><td>2,397 mm</td><td>&minus;16%</td><td class="reverse">El Ni&ntilde;o wetter</td></tr>
+    </tbody>
+  </table>
+
+  <p>Pacific Northwest stations sit higher on the absolute snowfall scale than any of the other regions. Mount Baker, a few mountains north of the stations in the index, holds the world record for seasonal snowfall &mdash; 1,140 inches in the winter of 1998-99, more than nine stories of snow in a single season. Utah's powder is famously light and dry. Vermont's snow is small in raw quantity but lives in a different precipitation regime entirely (governed primarily by the North Atlantic Oscillation, not ENSO). New Mexico, the desert Southwest, runs the opposite way from the Cascades because the same atmospheric circulation that delivers moisture to one region steals it from another.</p>
+
+  <p>All of that physical signal is in the means. The reason the Pearson r ends up negative for Colorado and the Pacific Northwest is that the within-state variance is much larger than the between-state means difference, and on small samples (twenty-four to thirty-seven seasons per region) the conditional model gets the direction of the deviation slightly wrong more often than it gets it right. Utah and Wyoming have a large enough mean signal &mdash; the +36% La Ni&ntilde;a-vs-El Ni&ntilde;o ratio &mdash; that even forty seasons is enough to surface a real positive correlation. Everywhere else, the within-state weather is louder than the between-state climate.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">A known directional signal is not the same thing as a useful predictor. Atmospheric science can tell you where the snow likes to fall. It cannot tell you, on any given winter, how much will fall in any particular range.</p>
+    <cite>The Right Test, Cross-Domain</cite>
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">For the skiers reading this</h3>
+
+  <p>A few practical takeaways for skiers and snow-followers. <strong>If you are picking a destination by ENSO state</strong>, Utah and Wyoming are the only region in this dataset where the predictor is genuinely informative. La Ni&ntilde;a years in the Wasatch have averaged roughly thirty-six percent more snow than El Ni&ntilde;o years over four decades. That is a real edge. The Cascades have a comparable mean signal but a much shorter usable record, so the noise eats the prediction.</p>
+
+  <p>If you are watching the Climate Prediction Center's October ENSO forecast and your home mountain is in <strong>Colorado or Vermont</strong>, the call has very little information for your particular winter. Plan as if it were any other year. If you ski <strong>New Mexico</strong>, an El Ni&ntilde;o forecast is actually mildly encouraging &mdash; the desert Southwest gets <em>more</em> snow when the Pacific runs warm. If you ski the <strong>Pacific Northwest</strong>, the absolute snowfall is so large that an off year is still an enormous year by most regional standards; Mount Baker's "bad" seasons would be all-time records anywhere east of the Mississippi. Sheer magnitude does some of the work that predictability does not.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">A note on the framework</h3>
+
+  <div class="box" style="background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">The deeper rule</h3>
+    <p>"Predictable" is not one thing. Every domain has covariates that physical or economic theory suggests should matter &mdash; last year's roster in sports; the ENSO state in winter precipitation; interest rates in stock prices. The work of the empirical analyst is to test which of those covariates actually deliver forecast skill on out-of-sample data when measured against a serious baseline. Last year's record clearly does for the NBA, modestly does for the NFL. La Ni&ntilde;a state clearly does for Utah and Wyoming, modestly does for the Cascades' means, not at all for the Rockies. The cross-domain comparison is fair only when each side is tested on the predictor its domain experts would themselves reach for &mdash; and only meaningful when the metric is one a reader can interpret without a textbook.</p>
+  </div>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Metric: Pearson correlation between the predictor's leave-one-out prediction for each observation and the actual observation, expressed times one hundred. For sports the prediction is the optimal-lag-1 regression toward the league mean using the pooled lag-1 r. For snow the prediction is the long-run mean of all other seasons sharing the same NOAA-classified ENSO state (La Ni&ntilde;a, Neutral, El Ni&ntilde;o).</p>
+    <p style="color:#c8b99a">Sports: MLB Stats API and ESPN sports API standings, 1985-2025. Snow: NOAA GHCN-Daily station data. Colorado &mdash; Aspen 1 SW, Crested Butte, Steamboat Springs, Telluride 4 WNW, Vail. Pacific Northwest &mdash; Stampede Pass (WA), Snoqualmie Falls (WA), Crater Lake (OR). Utah/Wyoming &mdash; Lake Yellowstone, Yellowstone Mammoth, Altamont, Angle. New Mexico &mdash; Red River, Dulce. Vermont &mdash; Saint Johnsbury, Island Pond, Burlington Intl. Regional index for a season is the cross-station mean snowfall, included only when at least half the region's stations report at least 150 days of the Nov-through-Apr ski-season window.</p>
+    <p style="color:#c8b99a">ENSO state from NOAA's DJF Oceanic Ni&ntilde;o Index averaged for the year ending the season: La Ni&ntilde;a if ONI &le; &minus;0.5, El Ni&ntilde;o if &ge; +0.5, Neutral otherwise. Snow regional sample sizes range from twenty-four seasons (Pacific Northwest, limited by Snoqualmie Falls's end date) to forty (Utah/Wyoming, Vermont).</p>
+    <p style="color:#c8b99a">Mount Baker's 1998-99 record of 1,140 inches (28.96 meters) of seasonal snowfall is the all-time world record for a single ski season at a measured weather station, certified by NOAA. The 2026 piece's regional index does not include Mount Baker as a station, but the surrounding Cascades stations track the broader Pacific Northwest signal.</p>
+  </div>
+
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
+    <span>The Sports Page &middot; Vol. I, No. 107</span>
+    <span>The Right Test, Cross-Domain</span>
+    <span>June __, 2026 &middot; New York, NY</span>
+  </div>
+</div>]]></content:encoded>
+      <pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/078-cross-sport-persistence.html</guid>
+    </item>
     <item>
       <title>#106: A Framework Week: Six Tools Built, Zero Bets Placed — Here’s the Scorecard Anyway</title>
       <link>https://thesportspage.net/published/sunday-014.html</link>
