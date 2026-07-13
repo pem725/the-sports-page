@@ -1,0 +1,285 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, All-Star Break, Run Differential, Pythagorean, Second Derivative, First-Half Review
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+table.cmp{width:100%;border-collapse:collapse;font-size:.85rem;margin:1.2rem 0;background:#fff}
+table.cmp th{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.35rem .55rem;text-align:left;background:var(--card)}
+table.cmp td{padding:.4rem .55rem;border-bottom:1px solid var(--div);font-family:'Roboto Mono',monospace;font-size:.82rem}
+table.cmp td:first-child{font-family:'Playfair Display',serif;font-weight:700;color:var(--steel);font-size:.92rem}
+table.cmp td.good{color:var(--green);font-weight:600}
+table.cmp td.bad{color:var(--rust);font-weight:600}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+</style>
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="At the Break, the Standings Lie Politely. The Second Derivative Doesn't.">
+<meta property="og:description" content="A reader sent us a finance essay about the second derivative — the rate at which a rate is changing. Applied to the 2026 first half, it says what the standings won't: the Rays' first place is bought on credit, the best team in baseball is quietly cooling, and the Mets' collapse was visible in the math a month early.">
+<meta property="og:url" content="https://thesportspage.net/published/097-acceleration-second-derivative.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/097-acceleration-second-derivative.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="At the Break, the Standings Lie Politely. The Second Derivative Doesn't.">
+<meta name="twitter:description" content="The rate at which a rate is changing, applied to three first-half teams. Two of them aren't what the standings say.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/097-acceleration-second-derivative.png">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">At the Break, the Standings Lie Politely. <em>The Second Derivative Doesn't.</em></h2>
+  <p class="deck">A reader sent along a finance essay about the second derivative &mdash; the rate at which a rate is changing &mdash; and asked whether it says anything about baseball. It says quite a lot. Applied to the 2026 first half, it tells you what the standings decline to: the Rays' first place is bought on credit, the best team in baseball is quietly cooling, and the Mets' collapse was legible in the math a month before the standings caught up. It also comes with one warning, which is the most important part.</p>
+  <p class="byline">The Sports Page &middot; The Professor &middot; From the Reader's Desk &middot; All figures verified against MLB Stats API game logs, through the All-Star break</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">+5.5</div><div class="l">Rays wins above what their runs earned</div></div>
+    <div class="sc"><div class="v bad">&minus;1.20</div><div class="l">Dodgers July runs/game &mdash; from +2.25 in May</div></div>
+    <div class="sc"><div class="v bad">&minus;64</div><div class="l">Mets run differential &mdash; the collapse, in one number</div></div>
+  </div>
+
+  <p>Every summer the All-Star break arrives and we all do the same thing: we look at the standings. It is the most natural act in sports and, statistically, one of the least informative. A won-lost record is a <em>level</em> &mdash; a running total of everything that has already happened, good luck and bad, blowouts and squeakers, all melted together into one number that cannot tell you which way it is heading. The standings are a photograph. What we usually want is the direction of travel.</p>
+
+  <p>The reader's essay was about markets, not baseball, but the lesson transfers cleanly. It draws a distinction economists live by and fans rarely make. There is the <strong>level</strong> (how big a thing is). There is the <strong>first derivative</strong> (how fast it is growing &mdash; its velocity). And there is the <strong>second derivative</strong> (whether that growth is itself speeding up or slowing down &mdash; its acceleration). The essay's unsettling point: the dangerous moment in a housing market is not when prices fall. It is when prices are still <em>rising</em> but the rate of increase has begun to slow. In 2006, mortgage delinquencies started climbing while home prices were still going up, because the <em>acceleration</em> had already turned. The level looked fine. The second derivative had rolled over. The level was the last to know.</p>
+
+  <h3 class="sh">Three speeds, not one</h3>
+
+  <p>Translate that into baseball and you get a clean instrument. The <strong>level</strong> is the record. The <strong>velocity</strong> is run differential per game &mdash; how decisively a team is out-scoring opponents right now. The <strong>acceleration</strong> is the change in that velocity from one stretch to the next: is the margin growing or bleeding away? A team can be climbing the standings (rising level) while its run differential per game quietly shrinks (negative acceleration). That is the baseball version of the 2006 signal, and the second derivative catches it weeks before the record does.</p>
+
+  <p>Below is the first half of 2026 for three teams, drawn from the games themselves. Read the lines as velocity. Read their <em>slopes</em> as acceleration.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Run differential per game, by month, first half 2026 &middot; the line is velocity, its slope is acceleration</div>
+<svg class="chart" viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect x="0" y="0" width="760" height="480" fill="#ede5d2"/>
+<text x="334.0" y="30" text-anchor="middle" font-family="Playfair Display" font-size="15" font-weight="700" fill="#1a1208">The engine, not the record: run differential per game, by month</text>
+<text x="334.0" y="48" text-anchor="middle" font-size="11" fill="#6b5e4a">The line is speed. Its slope is acceleration &mdash; whether a team is pulling away or bleeding out.</text>
+<line x1="78" y1="360.8" x2="590" y2="360.8" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="70" y="363.8" text-anchor="end" font-size="11" fill="#6b5e4a">-2</text>
+<line x1="78" y1="295.4" x2="590" y2="295.4" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="70" y="298.4" text-anchor="end" font-size="11" fill="#6b5e4a">-1</text>
+<line x1="78" y1="230.0" x2="590" y2="230.0" stroke="#1a1208" stroke-width="1.6"/>
+<text x="596" y="233.0" font-size="10" fill="#6b5e4a" font-style="italic">break-even</text>
+<text x="70" y="233.0" text-anchor="end" font-size="11" fill="#6b5e4a">+0</text>
+<line x1="78" y1="164.6" x2="590" y2="164.6" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="70" y="167.6" text-anchor="end" font-size="11" fill="#6b5e4a">+1</text>
+<line x1="78" y1="99.2" x2="590" y2="99.2" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="70" y="102.2" text-anchor="end" font-size="11" fill="#6b5e4a">+2</text>
+<text x="78.0" y="422.0" text-anchor="middle" font-size="12" fill="#1a1208">Apr</text>
+<text x="248.7" y="422.0" text-anchor="middle" font-size="12" fill="#1a1208">May</text>
+<text x="419.3" y="422.0" text-anchor="middle" font-size="12" fill="#1a1208">Jun</text>
+<text x="590.0" y="422.0" text-anchor="middle" font-size="12" fill="#1a1208">Jul</text>
+<text x="334.0" y="444.0" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">2026 first half, by month</text>
+<text transform="rotate(-90,22,230.0)" x="22" y="230.0" text-anchor="middle" font-size="12" fill="#1a1208" font-weight="600">runs per game (+/-)</text>
+<line x1="78" y1="60" x2="78" y2="400" stroke="#1a1208" stroke-width="2"/>
+<line x1="78" y1="400" x2="590" y2="400" stroke="#1a1208" stroke-width="2"/>
+<polyline points="78.0,86.8 248.7,82.9 419.3,147.6 590.0,308.5" fill="none" stroke="#2c4a6e" stroke-width="2.6"/>
+<circle cx="78.0" cy="86.8" r="3.4" fill="#2c4a6e" stroke="#fff" stroke-width="0.9"/>
+<circle cx="248.7" cy="82.9" r="3.4" fill="#2c4a6e" stroke="#fff" stroke-width="0.9"/>
+<circle cx="419.3" cy="147.6" r="3.4" fill="#2c4a6e" stroke="#fff" stroke-width="0.9"/>
+<circle cx="590.0" cy="308.5" r="3.4" fill="#2c4a6e" stroke="#fff" stroke-width="0.9"/>
+<polyline points="78.0,227.4 248.7,179.7 419.3,202.5 590.0,182.3" fill="none" stroke="#c9962a" stroke-width="2.6"/>
+<circle cx="78.0" cy="227.4" r="3.4" fill="#c9962a" stroke="#fff" stroke-width="0.9"/>
+<circle cx="248.7" cy="179.7" r="3.4" fill="#c9962a" stroke="#fff" stroke-width="0.9"/>
+<circle cx="419.3" cy="202.5" r="3.4" fill="#c9962a" stroke="#fff" stroke-width="0.9"/>
+<circle cx="590.0" cy="182.3" r="3.4" fill="#c9962a" stroke="#fff" stroke-width="0.9"/>
+<polyline points="78.0,328.1 248.7,178.3 419.3,302.6 590.0,367.3" fill="none" stroke="#b83a1e" stroke-width="2.6"/>
+<circle cx="78.0" cy="328.1" r="3.4" fill="#b83a1e" stroke="#fff" stroke-width="0.9"/>
+<circle cx="248.7" cy="178.3" r="3.4" fill="#b83a1e" stroke="#fff" stroke-width="0.9"/>
+<circle cx="419.3" cy="302.6" r="3.4" fill="#b83a1e" stroke="#fff" stroke-width="0.9"/>
+<circle cx="590.0" cy="367.3" r="3.4" fill="#b83a1e" stroke="#fff" stroke-width="0.9"/>
+<circle cx="590.0" cy="308.5" r="8" fill="none" stroke="#2c4a6e" stroke-width="1.6"/>
+<text x="580.0" y="332.5" text-anchor="end" font-size="10.5" fill="#2c4a6e" font-weight="700">Dodgers&rsquo; &ldquo;cliff&rdquo;</text>
+<rect x="616" y="300" width="138" height="96" fill="#fff" stroke="#c8b99a" stroke-width="1"/>
+<line x1="626" y1="322" x2="646" y2="322" stroke="#2c4a6e" stroke-width="3"/>
+<text x="652" y="326" font-size="11" fill="#1a1208">Dodgers</text>
+<line x1="626" y1="344" x2="646" y2="344" stroke="#c9962a" stroke-width="3"/>
+<text x="652" y="348" font-size="11" fill="#1a1208">Rays</text>
+<line x1="626" y1="366" x2="646" y2="366" stroke="#b83a1e" stroke-width="3"/>
+<text x="652" y="370" font-size="11" fill="#1a1208">Mets</text>
+<text x="82" y="78.0" font-size="10.5" fill="#6b5e4a" font-style="italic">Same Dodgers, two stories: the month says accel &minus;2.46; a smoothed 15-game window says just &minus;0.27.</text>
+</svg>
+  </div>
+
+  <h3 class="sh">The Rays: first place, bought on credit</h3>
+
+  <p>The Rays enter the break at 56&ndash;37, first in the AL East, the feel-good story of the first half. Look at the gold line, though: their velocity is modest and roughly flat &mdash; a run differential per game that has hovered near half a run all year and never accelerated. Their season run differential is only <strong>+38</strong>. A team that outscores opponents by that much "should," by the Pythagorean estimate, have won about <strong>50 games</strong>. They have won 56.</p>
+
+  <p>That six-win surplus is the credit line. It is financed not by dominance but by <em>sequencing</em> &mdash; timely hits, quiet losses, a knack for the close game. The Rays' second derivative is calm; they are not slowing down. But their <strong>level is richer than their engine</strong>, and the surplus is the kind that does not carry into the second half. This is the first of two different illnesses, and it hides in the standings, not the trend.</p>
+
+  <table class="cmp">
+    <thead><tr><th>Team (at the break)</th><th>Record</th><th>Run diff</th><th>Velocity, July</th><th>Accel (monthly)</th><th>Wins vs Pythagorean</th></tr></thead>
+    <tbody>
+      <tr><td>Rays</td><td>56&ndash;37</td><td class="good">+38</td><td>+0.73</td><td>+0.31</td><td class="bad">+5.5 (lucky)</td></tr>
+      <tr><td>Dodgers</td><td>61&ndash;35</td><td class="good">+151</td><td class="bad">&minus;1.20</td><td class="bad">&minus;2.46</td><td>&minus;2.1 (unlucky)</td></tr>
+      <tr><td>Mets</td><td>40&ndash;56</td><td class="bad">&minus;64</td><td class="bad">&minus;2.10</td><td class="bad">&minus;0.99</td><td>&minus;1.5</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sh">The Dodgers: the best team in baseball is cooling &mdash; and here is the trap</h3>
+
+  <p>Now the steel line, and the most important paragraph in this issue. The Dodgers are 61&ndash;35 with a <strong>+151</strong> run differential, the best in the sport by a wide margin. Nobody is worried about them, and by the level, nobody should be. But watch the velocity: <strong>+2.19</strong> runs per game in April, <strong>+2.25</strong> in May, then <strong>+1.26</strong> in June, then <strong>&minus;1.20</strong> in July. The engine that lapped the league has, by the calendar, fallen off a table. The month-over-month acceleration into July is <strong>&minus;2.46</strong> &mdash; a screaming, alarming number.</p>
+
+  <p>Here is the trap, and it is the whole reason to be careful with this tool. That &minus;2.46 is computed off <strong>ten July games</strong> &mdash; a single road trip's worth of baseball that happened to be the Dodgers' worst stretch of the year, isolated by the accident of where the calendar draws its lines. Smooth the same data with a rolling fifteen-game window instead of the month boundary, and the acceleration is only <strong>&minus;0.27</strong>: a mild cool-down, not a collapse. Same team, same day, same games &mdash; two completely different verdicts, and the only difference is the size of the window you chose.</p>
+
+  <div class="pull">
+    <p>The second derivative is the most sensitive instrument in the drawer &mdash; which is exactly why it is the easiest one to fool yourself with.</p>
+    <cite>The reason to smooth before you shout</cite>
+  </div>
+
+  <p>This is not a flaw you can wave away; it is arithmetic. Taking a rate of change amplifies noise. Taking the rate of change <em>of a rate of change</em> amplifies it twice. Feed a second derivative ten noisy games and it will manufacture drama on command. The honest reading of the Dodgers is the smoothed one: <strong>genuinely cooling, worth watching, nowhere near a crisis</strong> &mdash; and a standing reminder to mind your window before you trust the number.</p>
+
+  <h3 class="sh">The Mets: the collapse the math saw coming</h3>
+
+  <p>The rust line is where all of this stops being abstract. The Mets sit at 40&ndash;56 with a <strong>&minus;64</strong> run differential &mdash; the rare team whose ugly record and ugly math finally agree. But trace the path that got them there, because it contains the trap's twin. After a disastrous April (&minus;1.50 runs per game), the Mets posted a genuinely good May: <strong>+0.79</strong>, a velocity swing worth an acceleration of <strong>+2.29</strong>. To a fan reading momentum, that was the turnaround &mdash; the arrow finally pointing up.</p>
+
+  <p>It was a head-fake. The very same sensitivity that made May look like a launch was reading a small, lucky sample. June came in at &minus;1.11, July at &minus;2.10, and the front office that had bought the May acceleration spent the summer dismantling the roster instead. The lesson cuts both directions: an acceleration spike off a short window is as untrustworthy going up as the Dodgers' cliff is going down. The Mets' honest signal was never the exciting May bounce. It was the boring, stable, deeply negative <em>level</em> underneath it.</p>
+
+  <h3 class="sh">How to use this without fooling yourself</h3>
+
+  <p>Two instruments, then, and you need both, because they catch two different diseases. The <strong>Pythagorean gap</strong> &mdash; wins minus what the run differential earned &mdash; catches the mirage record: the Rays, whose level is richer than their engine. The <strong>second derivative</strong> &mdash; smoothed, never raw &mdash; catches the decaying engine under an intact record: the Dodgers, cooling while still on top. Neither lens alone flags both teams, and the standings flag neither.</p>
+
+  <p>And the rule that keeps the shiny tool from turning on you: <strong>smooth before you shout, and set a floor.</strong> A blip smaller than the noise is not acceleration; it is variance in a lab coat. Below some just-noticeable difference, the right answer is "nothing has changed yet" &mdash; the same discipline our pre-season forecasts use when two teams are too close to separate. The second derivative is a wonderful way to see the future a little early. It is an even better way to see a future that was never there. The difference is entirely in the window. If you want to argue with any of this &mdash; or send the next stat that does not add up &mdash; the door is at <a href="https://thesportspage.net/" target="_blank" rel="noopener">thesportspage.net</a>.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Data: MLB Stats API game-by-game results (statsapi.mlb.com), 2026 regular season through the games of the All-Star break. Velocity = run differential per game within a month. Acceleration = the change in that velocity from the prior month (or, where noted, the change in a rolling fifteen-game run-differential-per-game window). Every monthly split was reconciled against each team's actual won-lost record before use.</p>
+    <p style="color:#c8b99a">Pythagorean expectation uses the run-differential form with exponent 1.83. "Wins vs Pythagorean" is actual wins minus expected wins over games played; positive means a team has won more than its runs earned (luck/sequencing), negative means fewer.</p>
+    <p style="color:#c8b99a">The caution about small samples is not editorial hedging; it is the point. Differentiation amplifies noise, and second differentiation amplifies it twice, so any acceleration read off a short window (the Dodgers' ten July games, the Mets' good May) should be smoothed and floored before it is believed. Numbers move; a first-half snapshot is a snapshot, not a verdict. Story idea from a reader &mdash; keep them coming.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Vol. I, No. __</span>
+    <span>The Second Derivative</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</main>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/097-acceleration-second-derivative.html">
+
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+
+  <!-- SOCIAL SHARE BUTTONS -->
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+
+    <a href="https://twitter.com/intent/tweet?text=At%20the%20Break%2C%20the%20Standings%20Lie%20Politely.%20The%20Second%20Derivative%20Doesn%27t.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/097-acceleration-second-derivative.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:background .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/097-acceleration-second-derivative.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/097-acceleration-second-derivative.html%3Futm_source%3Dlinkedin%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20The%20Second%20Derivative&body=Thought%20you%27d%20enjoy%20this%3A%0A%0AAt%20the%20Break%2C%20the%20Standings%20Lie%20Politely.%20The%20Second%20Derivative%20Doesn%27t.%0A%0AThe%20rate%20at%20which%20a%20rate%20is%20changing%2C%20applied%20to%20three%20first-half%20teams.%20Two%20of%20them%20are%20not%20what%20the%20standings%20say.%0A%0ARead%20it%20here%3A%20https%3A//thesportspage.net/published/097-acceleration-second-derivative.html%3Futm_source%3Demail%26utm_medium%3Dshare%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/097-acceleration-second-derivative.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+
+  </div>
+
+  <!-- DIVIDER -->
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+
+  <!-- QR CODE -- physical/in-person sharing -->
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+
+</section>
+
+<!-- COPY-LINK INTERACTION -->
+<script>
+(function(){
+  var btn = document.getElementById('sp-copy-link');
+  if (!btn) return;
+  var label = document.getElementById('sp-copy-label');
+  var url = btn.getAttribute('data-url');
+  btn.addEventListener('click', function(){
+    try {
+      navigator.clipboard.writeText(url).then(function(){
+        label.textContent = 'Copied!';
+        btn.style.background = '#c9962a';
+        btn.style.color = '#1a1208';
+        setTimeout(function(){
+          label.textContent = 'Copy link';
+          btn.style.background = 'transparent';
+          btn.style.color = '#c9962a';
+        }, 1800);
+      });
+    } catch (e) {
+      window.prompt('Copy this link:', url);
+    }
+  });
+})();
+</script></body>
+</html>
