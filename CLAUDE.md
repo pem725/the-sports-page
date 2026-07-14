@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 393 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 392 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 107 issues (#1-107)
+Published: 108 issues (#1-108)
 Queue: 7 articles ready (088-sorsby-supplemental-bet, 092-nd-dynasty-call, 095-allstar-screwball, 096-mets-diamonds-rough, 097-acceleration-second-derivative, _TEMPLATE, bobby-bonilla-day)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 393 issues remaining of 500
-Last published: Issue #107 — "The NBA's Last Year Is Worth a +65. The Pacific Northwest's La Niña Is Worth a Minus 19." (078-cross-sport-persistence.html) on July 13, 2026
+Goal: 392 issues remaining of 500
+Last published: Issue #108 — "For One Year, the Trophy Was Always Somebody's. That Year Was 1986." (098-1986-mets-year.html) on July 14, 2026
