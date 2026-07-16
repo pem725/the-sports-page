@@ -8,7 +8,96 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jul 2026 08:56:28 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2026 08:42:11 GMT</lastBuildDate>
+    <item>
+      <title>#110: At the Break, the Standings Lie Politely. The Second Derivative Doesn&#x27;t.</title>
+      <link>https://thesportspage.net/published/097-acceleration-second-derivative.html</link>
+      <description>A reader sent along a finance essay about the second derivative — the rate at which a rate is changing — and asked whether it says anything about baseball. It says quite a lot. Applied to the 2026 first half, it tells you what the standings decline to: the Rays&#x27; first place is bought on credit, the best team in baseball is quietly cooling, and the Mets&#x27; collapse was legible in the math a month before the standings caught up. It also comes with one warning, which is the most important part.</description>
+      <content:encoded><![CDATA[<div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">At the Break, the Standings Lie Politely. <em>The Second Derivative Doesn't.</em></h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">A reader sent along a finance essay about the second derivative &mdash; the rate at which a rate is changing &mdash; and asked whether it says anything about baseball. It says quite a lot. Applied to the 2026 first half, it tells you what the standings decline to: the Rays' first place is bought on credit, the best team in baseball is quietly cooling, and the Mets' collapse was legible in the math a month before the standings caught up. It also comes with one warning, which is the most important part.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; The Professor &middot; From the Reader's Desk &middot; All figures verified against MLB Stats API game logs, through the All-Star break</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">+5.5</div><div class="l">Rays wins above what their runs earned</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">&minus;1.20</div><div class="l">Dodgers July runs/game &mdash; from +2.25 in May</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">&minus;64</div><div class="l">Mets run differential &mdash; the collapse, in one number</div></div>
+  </div>
+
+  <p>Every summer the All-Star break arrives and we all do the same thing: we look at the standings. It is the most natural act in sports and, statistically, one of the least informative. A won-lost record is a <em>level</em> &mdash; a running total of everything that has already happened, good luck and bad, blowouts and squeakers, all melted together into one number that cannot tell you which way it is heading. The standings are a photograph. What we usually want is the direction of travel.</p>
+
+  <p>The reader's essay was about markets, not baseball, but the lesson transfers cleanly. It draws a distinction economists live by and fans rarely make. There is the <strong>level</strong> (how big a thing is). There is the <strong>first derivative</strong> (how fast it is growing &mdash; its velocity). And there is the <strong>second derivative</strong> (whether that growth is itself speeding up or slowing down &mdash; its acceleration). The essay's unsettling point: the dangerous moment in a housing market is not when prices fall. It is when prices are still <em>rising</em> but the rate of increase has begun to slow. In 2006, mortgage delinquencies started climbing while home prices were still going up, because the <em>acceleration</em> had already turned. The level looked fine. The second derivative had rolled over. The level was the last to know.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Three speeds, not one</h3>
+
+  <p>Translate that into baseball and you get a clean instrument. The <strong>level</strong> is the record. The <strong>velocity</strong> is run differential per game &mdash; how decisively a team is out-scoring opponents right now. The <strong>acceleration</strong> is the change in that velocity from one stretch to the next: is the margin growing or bleeding away? A team can be climbing the standings (rising level) while its run differential per game quietly shrinks (negative acceleration). That is the baseball version of the 2006 signal, and the second derivative catches it weeks before the record does.</p>
+
+  <p>Below is the first half of 2026 for three teams, drawn from the games themselves. Read the lines as velocity. Read their <em>slopes</em> as acceleration.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Run differential per game, by month, first half 2026 &middot; the line is velocity, its slope is acceleration</div>
+<img src="https://thesportspage.net/assets/figures/097-acceleration-second-derivative-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The Rays: first place, bought on credit</h3>
+
+  <p>The Rays enter the break at 56&ndash;37, first in the AL East, the feel-good story of the first half. Look at the gold line, though: their velocity is modest and roughly flat &mdash; a run differential per game that has hovered near half a run all year and never accelerated. Their season run differential is only <strong>+38</strong>. A team that outscores opponents by that much "should," by the Pythagorean estimate, have won about <strong>50 games</strong>. They have won 56.</p>
+
+  <p>That six-win surplus is the credit line. It is financed not by dominance but by <em>sequencing</em> &mdash; timely hits, quiet losses, a knack for the close game. The Rays' second derivative is calm; they are not slowing down. But their <strong>level is richer than their engine</strong>, and the surplus is the kind that does not carry into the second half. This is the first of two different illnesses, and it hides in the standings, not the trend.</p>
+
+  <table class="cmp">
+    <thead><tr><th>Team (at the break)</th><th>Record</th><th>Run diff</th><th>Velocity, July</th><th>Accel (monthly)</th><th>Wins vs Pythagorean</th></tr></thead>
+    <tbody>
+      <tr><td>Rays</td><td>56&ndash;37</td><td class="good">+38</td><td>+0.73</td><td>+0.31</td><td class="bad">+5.5 (lucky)</td></tr>
+      <tr><td>Dodgers</td><td>61&ndash;35</td><td class="good">+151</td><td class="bad">&minus;1.20</td><td class="bad">&minus;2.46</td><td>&minus;2.1 (unlucky)</td></tr>
+      <tr><td>Mets</td><td>40&ndash;56</td><td class="bad">&minus;64</td><td class="bad">&minus;2.10</td><td class="bad">&minus;0.99</td><td>&minus;1.5</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The Dodgers: the best team in baseball is cooling &mdash; and here is the trap</h3>
+
+  <p>Now the steel line, and the most important paragraph in this issue. The Dodgers are 61&ndash;35 with a <strong>+151</strong> run differential, the best in the sport by a wide margin. Nobody is worried about them, and by the level, nobody should be. But watch the velocity: <strong>+2.19</strong> runs per game in April, <strong>+2.25</strong> in May, then <strong>+1.26</strong> in June, then <strong>&minus;1.20</strong> in July. The engine that lapped the league has, by the calendar, fallen off a table. The month-over-month acceleration into July is <strong>&minus;2.46</strong> &mdash; a screaming, alarming number.</p>
+
+  <p>Here is the trap, and it is the whole reason to be careful with this tool. That &minus;2.46 is computed off <strong>ten July games</strong> &mdash; a single road trip's worth of baseball that happened to be the Dodgers' worst stretch of the year, isolated by the accident of where the calendar draws its lines. Smooth the same data with a rolling fifteen-game window instead of the month boundary, and the acceleration is only <strong>&minus;0.27</strong>: a mild cool-down, not a collapse. Same team, same day, same games &mdash; two completely different verdicts, and the only difference is the size of the window you chose.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">The second derivative is the most sensitive instrument in the drawer &mdash; which is exactly why it is the easiest one to fool yourself with.</p>
+    <cite>The reason to smooth before you shout</cite>
+  </div>
+
+  <p>This is not a flaw you can wave away; it is arithmetic. Taking a rate of change amplifies noise. Taking the rate of change <em>of a rate of change</em> amplifies it twice. Feed a second derivative ten noisy games and it will manufacture drama on command. The honest reading of the Dodgers is the smoothed one: <strong>genuinely cooling, worth watching, nowhere near a crisis</strong> &mdash; and a standing reminder to mind your window before you trust the number.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The Mets: the collapse the math saw coming</h3>
+
+  <p>The rust line is where all of this stops being abstract. The Mets sit at 40&ndash;56 with a <strong>&minus;64</strong> run differential &mdash; the rare team whose ugly record and ugly math finally agree. But trace the path that got them there, because it contains the trap's twin. After a disastrous April (&minus;1.50 runs per game), the Mets posted a genuinely good May: <strong>+0.79</strong>, a velocity swing worth an acceleration of <strong>+2.29</strong>. To a fan reading momentum, that was the turnaround &mdash; the arrow finally pointing up.</p>
+
+  <p>It was a head-fake. The very same sensitivity that made May look like a launch was reading a small, lucky sample. June came in at &minus;1.11, July at &minus;2.10, and the front office that had bought the May acceleration spent the summer dismantling the roster instead. The lesson cuts both directions: an acceleration spike off a short window is as untrustworthy going up as the Dodgers' cliff is going down. The Mets' honest signal was never the exciting May bounce. It was the boring, stable, deeply negative <em>level</em> underneath it.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">How to use this without fooling yourself</h3>
+
+  <p>Two instruments, then, and you need both, because they catch two different diseases. The <strong>Pythagorean gap</strong> &mdash; wins minus what the run differential earned &mdash; catches the mirage record: the Rays, whose level is richer than their engine. The <strong>second derivative</strong> &mdash; smoothed, never raw &mdash; catches the decaying engine under an intact record: the Dodgers, cooling while still on top. Neither lens alone flags both teams, and the standings flag neither.</p>
+
+  <p>And the rule that keeps the shiny tool from turning on you: <strong>smooth before you shout, and set a floor.</strong> A blip smaller than the noise is not acceleration; it is variance in a lab coat. Below some just-noticeable difference, the right answer is "nothing has changed yet" &mdash; the same discipline our pre-season forecasts use when two teams are too close to separate. The second derivative is a wonderful way to see the future a little early. It is an even better way to see a future that was never there. The difference is entirely in the window. If you want to argue with any of this &mdash; or send the next stat that does not add up &mdash; the door is at <a href="https://thesportspage.net/" target="_blank" rel="noopener">thesportspage.net</a>.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Data: MLB Stats API game-by-game results (statsapi.mlb.com), 2026 regular season through the games of the All-Star break. Velocity = run differential per game within a month. Acceleration = the change in that velocity from the prior month (or, where noted, the change in a rolling fifteen-game run-differential-per-game window). Every monthly split was reconciled against each team's actual won-lost record before use.</p>
+    <p style="color:#c8b99a">Pythagorean expectation uses the run-differential form with exponent 1.83. "Wins vs Pythagorean" is actual wins minus expected wins over games played; positive means a team has won more than its runs earned (luck/sequencing), negative means fewer.</p>
+    <p style="color:#c8b99a">The caution about small samples is not editorial hedging; it is the point. Differentiation amplifies noise, and second differentiation amplifies it twice, so any acceleration read off a short window (the Dodgers' ten July games, the Mets' good May) should be smoothed and floored before it is believed. Numbers move; a first-half snapshot is a snapshot, not a verdict. Story idea from a reader &mdash; keep them coming.</p>
+  </div>
+
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
+    <span>The Sports Page &middot; Vol. I, No. 110</span>
+    <span>The Second Derivative</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</div>]]></content:encoded>
+      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/097-acceleration-second-derivative.html</guid>
+    </item>
     <item>
       <title>#109: Notre Dame Came Within a Game of the Title, Then Returned More of Its Roster Than Anyone in the Country. We’re Calling the Dynasty.</title>
       <link>https://thesportspage.net/published/092-nd-dynasty-call.html</link>
