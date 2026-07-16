@@ -6,7 +6,8 @@
     "book": {
       "title": "Statistics by Us for You (GradStats-Book)",
       "repo": "https://github.com/pem725/GradStats-Book",
-      "note": "Public naming/branding of the newsletter<->book link is pending the author's decision."
+      "branding": "arms-length companion textbook — neutral front door, no author-name emphasis in newsletter-facing copy",
+      "note": "Front door not yet stood up (GH Pages/subdomain 404s as of 2026-07-16); primer Tier-3 links are parked to the homepage until it exists."
     },
     "updated": "2026-07-16"
   },
@@ -25,7 +26,7 @@
     {"no": 12, "id": "pearson-correlation",             "title": "Pearson Correlation",                    "theme": "modeling",        "status": "published", "primer": "concepts/pearson-correlation.html",             "book_chapters": ["07-covariance.qmd"], "issues": []},
     {"no": 13, "id": "necessary-vs-sufficient",         "title": "Necessary vs. Sufficient",               "theme": "epistemics",      "status": "published", "primer": "concepts/necessary-vs-sufficient.html",         "book_chapters": [], "issues": []},
 
-    {"no": 14, "id": "measurement",                     "title": "Measurement: Building a Metric",         "theme": "measurement",     "status": "building",  "primer": "concepts/measurement-building-a-metric.html",   "book_chapters": ["10-reliability.qmd", "11-validity.qmd"], "issues": ["097-acceleration-second-derivative.html", "099-clark-three-dimension.html"],
+    {"no": 14, "id": "measurement",                     "title": "Measurement: Building a Metric",         "theme": "measurement",     "status": "published", "primer": "concepts/measurement-building-a-metric.html",   "book_chapters": ["10-reliability.qmd", "11-validity.qmd"], "issues": ["097-acceleration-second-derivative.html", "099-clark-three-dimension.html"],
       "summary": "A metric is built, not found: a number stands in for a trait you can't touch. Then the only two questions that matter — reliability (does it agree with itself?) and validity (does it measure what you claim?). Anchor issue: the 'acceleration' metric and its window problem."},
 
     {"no": 15, "id": "all-models-are-wrong",           "title": "All Models Are Wrong (and Overfitting)", "theme": "modeling",        "status": "ready",     "primer": null,                                            "book_chapters": ["12-GLMcovariance.qmd", "14-bivariateregression.qmd"], "issues": [],

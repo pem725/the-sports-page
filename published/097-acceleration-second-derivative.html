@@ -45,6 +45,12 @@ table.cmp td.good{color:var(--green);font-weight:600}
 table.cmp td.bad{color:var(--rust);font-weight:600}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <!-- Open Graph + Twitter Card for social previews -->
 <meta property="og:title" content="At the Break, the Standings Lie Politely. The Second Derivative Doesn&#x27;t.">
@@ -87,7 +93,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
   <h3 class="sh">Three speeds, not one</h3>
 
-  <p>Translate that into baseball and you get a clean instrument. The <strong>level</strong> is the record. The <strong>velocity</strong> is run differential per game &mdash; how decisively a team is out-scoring opponents right now. The <strong>acceleration</strong> is the change in that velocity from one stretch to the next: is the margin growing or bleeding away? A team can be climbing the standings (rising level) while its run differential per game quietly shrinks (negative acceleration). That is the baseball version of the 2006 signal, and the second derivative catches it weeks before the record does.</p>
+  <p>Translate that into baseball and you get a clean instrument. The <strong>level</strong> is the record. The <strong>velocity</strong> is run differential per game &mdash; how decisively a team is out-scoring opponents right now. The <span class="cc" data-preview="A metric is built, not found. First ask what we decided when we built it — then whether it's reliable and valid. Open the Measurement primer."><strong>acceleration</strong><a class="cc-i" href="../concepts/measurement-building-a-metric.html" target="_blank" rel="noopener" aria-label="What is a metric, and is this one any good? Open the Measurement primer.">i</a></span> is the change in that velocity from one stretch to the next: is the margin growing or bleeding away? A team can be climbing the standings (rising level) while its run differential per game quietly shrinks (negative acceleration). That is the baseball version of the 2006 signal, and the second derivative catches it weeks before the record does.</p>
 
   <p>Below is the first half of 2026 for three teams, drawn from the games themselves. Read the lines as velocity. Read their <em>slopes</em> as acceleration.</p>
 
