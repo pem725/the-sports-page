@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "The Sports Page — Concept Registry",
+    "purpose": "Maps each statistical concept across the 3-tier curriculum ladder: an ISSUE demonstrates it (see one), a PRIMER teaches it (play / do one), a GradStats-Book CHAPTER gives the full treatment (learn / teach one). A new concept is a new entry; empty 'issues' or null 'primer' marks a coverage gap to fill.",
+    "ladder": ["issue (the-sports-page)", "primer (concepts/*.html)", "chapter (GradStats-Book/*.qmd)"],
+    "book": {
+      "title": "Statistics by Us for You (GradStats-Book)",
+      "repo": "https://github.com/pem725/GradStats-Book",
+      "note": "Public naming/branding of the newsletter<->book link is pending the author's decision."
+    },
+    "updated": "2026-07-16"
+  },
+  "concepts": [
+    {"no": 1,  "id": "base-rate",                       "title": "Base Rate",                              "theme": "inference-traps", "status": "published", "primer": "concepts/base-rate.html",                       "book_chapters": [], "issues": []},
+    {"no": 2,  "id": "confirmation-bias",               "title": "Confirmation Bias",                      "theme": "judgment",        "status": "published", "primer": "concepts/confirmation-bias.html",               "book_chapters": [], "issues": []},
+    {"no": 3,  "id": "regression-to-the-mean",          "title": "Regression to the Mean",                 "theme": "inference-traps", "status": "published", "primer": "concepts/regression-to-the-mean.html",          "book_chapters": [], "issues": []},
+    {"no": 4,  "id": "survivorship-bias",               "title": "Survivorship Bias",                      "theme": "inference-traps", "status": "published", "primer": "concepts/survivorship-bias.html",               "book_chapters": [], "issues": []},
+    {"no": 5,  "id": "post-hoc",                         "title": "Post Hoc Ergo Propter Hoc",              "theme": "inference-traps", "status": "published", "primer": "concepts/post-hoc.html",                        "book_chapters": [], "issues": []},
+    {"no": 6,  "id": "sample-size",                      "title": "Sample Size",                            "theme": "inference-traps", "status": "published", "primer": "concepts/sample-size.html",                     "book_chapters": ["09-statisticalpower.qmd"], "issues": []},
+    {"no": 7,  "id": "precision-vs-accuracy",            "title": "Precision vs. Accuracy",                 "theme": "measurement",     "status": "published", "primer": "concepts/precision-vs-accuracy.html",           "book_chapters": ["10-reliability.qmd", "11-validity.qmd"], "issues": []},
+    {"no": 8,  "id": "counterfactuals",                  "title": "Counterfactuals",                        "theme": "inference-traps", "status": "published", "primer": "concepts/counterfactuals.html",                 "book_chapters": [], "issues": []},
+    {"no": 9,  "id": "conditioning-on-the-consequence",  "title": "Conditioning on the Consequence",        "theme": "inference-traps", "status": "published", "primer": "concepts/conditioning-on-the-consequence.html", "book_chapters": [], "issues": []},
+    {"no": 10, "id": "bayesian-inference",              "title": "Bayesian Inference",                     "theme": "uncertainty",     "status": "published", "primer": "concepts/bayesian-inference.html",              "book_chapters": ["08-hypothesistesting.qmd"], "issues": []},
+    {"no": 11, "id": "p-value",                          "title": "P-Value",                                "theme": "uncertainty",     "status": "published", "primer": "concepts/p-value.html",                         "book_chapters": ["08-hypothesistesting.qmd"], "issues": []},
+    {"no": 12, "id": "pearson-correlation",             "title": "Pearson Correlation",                    "theme": "modeling",        "status": "published", "primer": "concepts/pearson-correlation.html",             "book_chapters": ["07-covariance.qmd"], "issues": []},
+    {"no": 13, "id": "necessary-vs-sufficient",         "title": "Necessary vs. Sufficient",               "theme": "epistemics",      "status": "published", "primer": "concepts/necessary-vs-sufficient.html",         "book_chapters": [], "issues": []},
+
+    {"no": 14, "id": "measurement",                     "title": "Measurement: Building a Metric",         "theme": "measurement",     "status": "building",  "primer": "concepts/measurement-building-a-metric.html",   "book_chapters": ["10-reliability.qmd", "11-validity.qmd"], "issues": ["097-acceleration-second-derivative.html", "099-clark-three-dimension.html"],
+      "summary": "A metric is built, not found: a number stands in for a trait you can't touch. Then the only two questions that matter — reliability (does it agree with itself?) and validity (does it measure what you claim?). Anchor issue: the 'acceleration' metric and its window problem."},
+
+    {"no": 15, "id": "all-models-are-wrong",           "title": "All Models Are Wrong (and Overfitting)", "theme": "modeling",        "status": "ready",     "primer": null,                                            "book_chapters": ["12-GLMcovariance.qmd", "14-bivariateregression.qmd"], "issues": [],
+      "summary": "Box: all models are wrong, some useful. A line through every data point forecasts nothing (overfit); a useful model is honest about its error and ignores the outliers we fixate on. Anchor candidates: pre-season simulations, prediction-framework issues, 'the prior isn't a promise.'"},
+
+    {"no": 16, "id": "believe-data-model-theory",      "title": "Do We Believe the Data, the Model, or the Theory?", "theme": "epistemics", "status": "ready", "primer": null,                                            "book_chapters": [], "issues": [],
+      "summary": "Data-fitting vs model-fitting vs the theory a model instantiates. When the three disagree, which do we trust? The epistemic keystone — hardest to make sport-punchy, so it comes after 14 and 15 prove the template."}
+  ],
+  "themes": ["inference-traps", "measurement", "modeling", "uncertainty", "epistemics", "judgment"],
+  "backlog_note": "Deep frontier still to add as concepts: research design, communicating uncertainty, metric construction (sub of measurement), heuristics-and-biases vs Gigerenzer's ecological rationality. See project_stats_curriculum memory."
+}
