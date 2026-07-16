@@ -1,0 +1,251 @@
+<!-- PUBLISH-META
+topic: WNBA
+tags: WNBA, Caitlin Clark, Distance Matching, Three-Point Line, Part II
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+</style>
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="The Math Said She Was Oscar Robertson. Then We Handed Him a Three-Point Line.">
+<meta property="og:description" content="Part II. A distance-matching model chose Oscar Robertson as Caitlin Clark's statistical twin — but only after hiding the three-point line, because his era never had one. Put it back, and nearly half her points come from a shot Robertson was never allowed to attempt. On that axis her only equal is Stephen Curry.">
+<meta property="og:url" content="https://thesportspage.net/published/099-clark-three-dimension.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/099-clark-three-dimension.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Math Said She Was Oscar Robertson. Then We Handed Him a Three-Point Line.">
+<meta name="twitter:description" content="Part II: the dimension Caitlin Clark's statistical twin never had — and why it makes her a category of one.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/099-clark-three-dimension.png">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">The Math Said She Was Oscar Robertson. <em>Then We Handed Him a Three-Point Line.</em></h2>
+  <p class="deck">In Part I, a distance-matching model searched sixty-five years of NBA legends for Caitlin Clark's statistical twin and chose Oscar Robertson &mdash; but only after we deliberately left the three-point line out of the comparison, because Robertson's era never had one. Put it back, and the twin dissolves. Nearly half of Clark's points come from a shot Robertson was never permitted to attempt. On that single axis her only equal is Stephen Curry &mdash; who cannot do the other half of what she does. She is not a throwback, and she is not a gunner. She is the first player who is both.</p>
+  <p class="byline">By The Professor &middot; The Sports Page &middot; WNBA &amp; the Mathematics of Comparison &middot; Part II</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">47.6%</div><div class="l">of Clark's rookie points came from three</div></div>
+    <div class="sc"><div class="v bad">0%</div><div class="l">Oscar Robertson, career &mdash; the line did not exist</div></div>
+    <div class="sc"><div class="v good">122</div><div class="l">Clark's rookie threes &mdash; 2nd-most in any WNBA season, ever</div></div>
+  </div>
+
+  <p>Two weeks ago, in <a href="https://thesportspage.net/published/090-clark-distance-match.html" target="_blank" rel="noopener">Part I</a>, we asked the least sentimental question available about Caitlin Clark. Not whether she is good &mdash; a rookie who averages 19.2 points and a league-leading 8.4 assists, records the first two rookie triple-doubles in league history, and wins Rookie of the Year has settled that. The question was <em>who she is</em>: which all-time great does her statistical fingerprint most resemble? We converted every player's production to a share of a full team's output, so that eras and leagues could be compared honestly, and let the distance math choose. It chose Oscar Robertson, and it wasn't close. The original triple-double machine, the box-score-filling playmaking guard. Her assist share and his were nearly identical.</p>
+
+  <p>But we made Robertson a promise we did not keep in the piece, and it is time to keep it. We reached that answer by leaving one dimension out of the comparison entirely: the three-point line.</p>
+
+  <h3 class="sh">A shot that had not been invented</h3>
+
+  <p>The reason was fairness. Oscar Robertson played from 1960 to 1974. The NBA did not paint a three-point arc on the floor until the 1979&ndash;80 season, five years after he retired. To include three-point shooting in a comparison that reaches back to the 1960s would be to penalize every legend for declining to take a shot that did not exist. So we set it aside, and framed it, at the time, as "the dimension Clark adds." That was the honest way to find her twin. It was also a small deception, because the dimension we set aside is not a footnote to Caitlin Clark's game. It is closer to the center of it than anything else.</p>
+
+  <p>Consider the arithmetic on her rookie year alone. Clark made 122 three-pointers in 2024 &mdash; the second-highest total in any WNBA season in history, behind only Sabrina Ionescu's 128, and she did it as a first-year player. At three points each, those baskets accounted for 366 of her 769 points. <strong>Nearly half of everything she scored &mdash; 47.6 percent &mdash; came from behind a line that her statistical twin was never allowed to stand behind.</strong> The match that produced Oscar Robertson was a match on everything about Clark <em>except</em> the thing that most defines how she plays.</p>
+
+  <h3 class="sh">Put the line back on the floor</h3>
+
+  <p>So put it back, and ask the follow-up question: on that one axis &mdash; the share of a player's scoring that comes from three &mdash; who does Clark resemble now? The answer is nobody from Part I's list. It is a man who wasn't eligible for that search at all, because he is not retired and not a triple-double machine.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Share of points from three &middot; Clark lives where only Curry lives &mdash; and her twin is at zero</div>
+<svg class="chart" viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect x="0" y="0" width="760" height="430" fill="#ede5d2"/>
+<text x="380.0" y="34" text-anchor="middle" font-family="Playfair Display" font-size="19" font-weight="700" fill="#1a1208">The dimension her twin never had</text>
+<text x="380.0" y="56" text-anchor="middle" font-size="11.5" fill="#6b5e4a">Share of career points scored from three-point range &mdash; (threes made &times; 3) &divide; total points</text>
+<line x1="210.0" y1="86" x2="210.0" y2="388" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="210.0" y="406" text-anchor="middle" font-size="10.5" fill="#6b5e4a">0%</text>
+<line x1="302.3" y1="86" x2="302.3" y2="388" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="302.3" y="406" text-anchor="middle" font-size="10.5" fill="#6b5e4a">10%</text>
+<line x1="394.6" y1="86" x2="394.6" y2="388" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="394.6" y="406" text-anchor="middle" font-size="10.5" fill="#6b5e4a">20%</text>
+<line x1="486.9" y1="86" x2="486.9" y2="388" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="486.9" y="406" text-anchor="middle" font-size="10.5" fill="#6b5e4a">30%</text>
+<line x1="579.2" y1="86" x2="579.2" y2="388" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="579.2" y="406" text-anchor="middle" font-size="10.5" fill="#6b5e4a">40%</text>
+<line x1="671.5" y1="86" x2="671.5" y2="388" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="671.5" y="406" text-anchor="middle" font-size="10.5" fill="#6b5e4a">50%</text>
+<rect x="210" y="104.7" width="443.4" height="24" fill="#2c4a6e"/>
+<text x="200" y="120.7" text-anchor="end" font-family="Playfair Display" font-size="13.5" font-weight="700" fill="#2c4a6e">Stephen Curry</text>
+<text x="661.4" y="120.7" font-size="12" font-weight="700" fill="#2c4a6e">48.0%</text>
+<text x="222.0" y="120.7" font-size="10" font-style="italic" fill="#ffffff">4,248 threes — the most ever</text>
+<rect x="4" y="149.0" width="694" height="34.0" fill="#f7e3d8"/>
+<rect x="210" y="154.0" width="439.3" height="24" fill="#b83a1e"/>
+<text x="200" y="170.0" text-anchor="end" font-family="Playfair Display" font-size="13.5" font-weight="700" fill="#b83a1e">Caitlin Clark ’24</text>
+<text x="657.3" y="170.0" font-size="12" font-weight="700" fill="#b83a1e">47.6%</text>
+<text x="222.0" y="170.0" font-size="10" font-style="italic" fill="#ffffff">122 threes as a rookie</text>
+<rect x="210" y="203.3" width="82.5" height="24" fill="#9b8f78"/>
+<text x="200" y="219.3" text-anchor="end" font-family="Playfair Display" font-size="13.5" font-weight="400" fill="#1a1208">Larry Bird</text>
+<text x="300.5" y="219.3" font-size="12" font-weight="700" fill="#9b8f78">8.9%</text>
+<rect x="210" y="252.7" width="50.8" height="24" fill="#9b8f78"/>
+<text x="200" y="268.7" text-anchor="end" font-family="Playfair Display" font-size="13.5" font-weight="400" fill="#1a1208">Magic Johnson</text>
+<text x="268.8" y="268.7" font-size="12" font-weight="700" fill="#9b8f78">5.5%</text>
+<rect x="210" y="302.0" width="49.8" height="24" fill="#9b8f78"/>
+<text x="200" y="318.0" text-anchor="end" font-family="Playfair Display" font-size="13.5" font-weight="400" fill="#1a1208">Michael Jordan</text>
+<text x="267.8" y="318.0" font-size="12" font-weight="700" fill="#9b8f78">5.4%</text>
+<rect x="210" y="351.3" width="0.0" height="24" fill="#6b5e4a"/>
+<text x="200" y="367.3" text-anchor="end" font-family="Playfair Display" font-size="13.5" font-weight="400" fill="#6b5e4a">Oscar Robertson</text>
+<text x="218.0" y="367.3" font-size="12" font-weight="700" fill="#6b5e4a">0.0%</text>
+<text x="272.0" y="367.3" font-size="9.5" font-style="italic" fill="#6b5e4a">no three-point line, 1960–1974</text>
+<line x1="210" y1="86" x2="210" y2="388" stroke="#1a1208" stroke-width="1.5"/>
+<text x="380.0" y="422" text-anchor="middle" font-size="10" font-style="italic" fill="#6b5e4a">Totals: Basketball-Reference (career) &amp; 2024 WNBA season. Clark = 2024 rookie year.</text>
+</svg>
+  </div>
+
+  <p>The chart is computed the plainest way there is: threes made times three, divided by total points. No modeling, no adjustment &mdash; just what fraction of a career's scoring arrived from distance. And it sorts the sport into two worlds. The all-time legends who played <em>with</em> a three-point line still barely used it: Larry Bird got under nine percent of his points from deep, Magic Johnson and Michael Jordan around five. Oscar Robertson, of course, sits at absolute zero &mdash; the line was not there. And then, alone at the top, two names: Stephen Curry at 48.0 percent, and Caitlin Clark at 47.6.</p>
+
+  <div class="pull">
+    <p>Two different charts crown two different players. Caitlin Clark is the only name that sits at the top of both.</p>
+    <cite>The Mathematics of Comparison, Part II</cite>
+  </div>
+
+  <h3 class="sh">Two thrones, one occupant</h3>
+
+  <p>This is the whole point, and it is worth saying slowly. Part I built a chart of playmaking &mdash; assists, triple-doubles, the share of a team's offense a guard orchestrates &mdash; and at the top of that chart sat Oscar Robertson and Caitlin Clark. Part II builds a chart of range, and at the top of <em>that</em> chart sit Stephen Curry and Caitlin Clark. Robertson is not on the range chart. Curry is not on the playmaking one. The two archetypes have, for the entire history of basketball, been different people: the pass-first floor general who fills a box score, and the gravity-bending shooter who reorganizes a defense from thirty feet. No one had ever been the best living example of both at once. Clark is the intersection &mdash; the only player who appears near the summit of each.</p>
+
+  <p>That is not a claim that she is better than Robertson or Curry; both are among the greatest who ever lived, and Clark has played two full professional seasons. It is a claim about <em>shape</em>. Her fingerprint is not a copy of anyone's. It is a superposition of two fingerprints that had never belonged to the same hand. And she is not slowing down to prove it: through eighteen games of 2026 she is again averaging better than twenty points and nearly eight assists a night, still bombing from a distance the record book had to widen to hold her.</p>
+
+  <h3 class="sh">What that makes her</h3>
+
+  <p>The lazy way to introduce a young star is by analogy: she's the next so-and-so. The distance math is a machine built precisely to run that analogy honestly, and run twice, it returns a strange and better answer. Exclude the shot her era invented and she is Oscar Robertson. Include it and she is Stephen Curry. Ask for a single human being who has been both, and the machine has no one to offer &mdash; the cell is empty until you put her in it. That is what the word <em>legend</em> is supposed to mean, underneath the noise: not merely great, but the founding example of a kind. The honest conclusion of two weeks of arithmetic is that Caitlin Clark is not the next anyone. She is the first of her.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Share of points from three = (three-pointers made &times; 3) &divide; total points, computed from career totals (Basketball-Reference): Stephen Curry 4,248 threes / 26,528 points = 48.0%; Larry Bird 649 / 21,791 = 8.9%; Magic Johnson 325 / 17,707 = 5.5%; Michael Jordan 581 / 32,292 = 5.4%; Oscar Robertson 0 (the three-point line was introduced in 1979&ndash;80, after his 1974 retirement). Clark's figure is her 2024 WNBA rookie season: 122 threes &times; 3 = 366 of 769 points = 47.6%.</p>
+    <p style="color:#c8b99a">Clark 2024: 19.2 points, 8.4 assists (league-leading), 5.7 rebounds; 337 assists (a WNBA single-season record); first two rookie triple-doubles in league history; Rookie of the Year. Her 122 threes trail only Sabrina Ionescu's 128 for the most in any WNBA season. 2026 figures are partial (through 18 games): 20.5 points, 7.9 assists.</p>
+    <p style="color:#c8b99a">Two honest caveats. First, Clark has two full professional seasons; a fingerprint drawn from a short career will move, and this is a snapshot, not a verdict. Second, comparing a WNBA player's scoring shape to NBA legends is a comparison of <em>proportions</em>, not raw output &mdash; the point is the mix of a game, not a claim that any two players would score identically. Part I, the distance-matching method, and the Oscar Robertson result are in our previous issue. Story built on a reader's fascination &mdash; keep them coming.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Vol. I, No. __</span>
+    <span>The Mathematics of Comparison, Part II</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</main>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/099-clark-three-dimension.html">
+
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+
+  <!-- SOCIAL SHARE BUTTONS -->
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+
+    <a href="https://twitter.com/intent/tweet?text=The%20Math%20Said%20She%20Was%20Oscar%20Robertson.%20Then%20We%20Handed%20Him%20a%20Three-Point%20Line.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/099-clark-three-dimension.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:background .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/099-clark-three-dimension.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/099-clark-three-dimension.html%3Futm_source%3Dlinkedin%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20Caitlin%20Clark%2C%20a%20Category%20of%20One&body=Thought%20you%27d%20enjoy%20this%3A%0A%0AThe%20Math%20Said%20She%20Was%20Oscar%20Robertson.%20Then%20We%20Handed%20Him%20a%20Three-Point%20Line.%0A%0AExclude%20the%20three%20and%20Caitlin%20Clark%27s%20statistical%20twin%20is%20Oscar%20Robertson.%20Include%20it%20and%20it%27s%20Stephen%20Curry.%20No%20one%20else%20is%20both.%0A%0ARead%20it%20here%3A%20https%3A//thesportspage.net/published/099-clark-three-dimension.html%3Futm_source%3Demail%26utm_medium%3Dshare%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/099-clark-three-dimension.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+
+  </div>
+
+  <!-- DIVIDER -->
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+
+  <!-- QR CODE -- physical/in-person sharing -->
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+
+</section>
+
+<!-- COPY-LINK INTERACTION -->
+<script>
+(function(){
+  var btn = document.getElementById('sp-copy-link');
+  if (!btn) return;
+  var label = document.getElementById('sp-copy-label');
+  var url = btn.getAttribute('data-url');
+  btn.addEventListener('click', function(){
+    try {
+      navigator.clipboard.writeText(url).then(function(){
+        label.textContent = 'Copied!';
+        btn.style.background = '#c9962a';
+        btn.style.color = '#1a1208';
+        setTimeout(function(){
+          label.textContent = 'Copy link';
+          btn.style.background = 'transparent';
+          btn.style.color = '#c9962a';
+        }, 1800);
+      });
+    } catch (e) {
+      window.prompt('Copy this link:', url);
+    }
+  });
+})();
+</script></body>
+</html>
