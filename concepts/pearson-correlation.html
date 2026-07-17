@@ -30,6 +30,10 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
 .tier.deeper .tier-label{color:var(--steel)}
 .tier.deeper h3{color:var(--steel)}
 .tier.deeper strong{color:var(--steel)}
+.tier.textbook{background:#eef2f7;border-color:var(--steel)}
+.tier.textbook .tier-label{color:var(--steel)}
+.tier.textbook h3{color:var(--steel)}
+.tier.textbook a{color:var(--steel);font-weight:700}
 p{margin-bottom:1rem}
 .examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
 .examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
@@ -94,6 +98,12 @@ p{margin-bottom:1rem}
     <p>The second is <strong>outliers</strong>. A single weird point can move <em>r</em> by a lot, especially in small samples. Always plot the data before trusting the number.</p>
 
     <p>The third, and the one that powers more bad sports analysis than any other, is <strong>"correlation does not imply causation"</strong> &mdash; a sentence so worn out that most people roll their eyes when they hear it. Roll your eyes if you want. The sentence is still true. A correlation of +.7 between coffee consumption and home runs in a season is real. It does not mean caffeine causes home runs. It probably means both are correlated with summer, or with games played, or with something a third variable is doing. The correlation is the signal that there is something to investigate. It is not the answer to the investigation.</p>
+  </div>
+
+  <div class="tier textbook">
+    <div class="tier-label">Tier 3 &middot; Take It to the Textbook</div>
+    <h3>The full treatment.</h3>
+    <p>Covariance and correlation &mdash; the building block under the regression line &mdash; open the <em>Using Models</em> part of <strong>The Sports Page&rsquo;s companion statistics textbook</strong>, a free, open graduate text with the R code to try it yourself. <a href="https://pem725.github.io/GradStats-Book/" target="_blank" rel="noopener">Read it free here</a> &mdash; the same &ldquo;read, play, learn&rdquo; idea, one rung deeper.</p>
   </div>
 
   <div class="examples">
