@@ -45,6 +45,12 @@ table.rec .bad td{background:#fef0ec} table.rec .bad .mono{color:var(--rust);fon
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <!-- Open Graph + Twitter Card for social previews -->
@@ -136,7 +142,7 @@ predictive:      the next season's expected ERA is the
 
 <h2 class="sh">What the Mets Should Have Paid For</h2>
 
-<p>A defensible market price for Williams in 2026 would have averaged across his five-year window &mdash; including the rough 2025 &mdash; and discounted heavily for relief-pitcher volatility. The fair-market expected ERA going forward, on a Bayesian update with all available evidence, was probably somewhere between 2.80 and 3.30. The Mets paid for a 1.66-ERA pitcher and got a 5.00-ERA pitcher; the truth was always closer to 3.00. The contract was overpriced by a factor that the math could have caught and the front office, evidently, did not.</p>
+<p>A defensible market price for Williams in 2026 would have averaged across his five-year window &mdash; including the rough 2025 &mdash; and discounted heavily for relief-pitcher volatility. The fair-market expected ERA going forward, on a <span class="cc" data-preview="Update what you already believed with the new evidence -- in proportion to how much data you actually have. Open the Bayesian Inference primer."><em>Bayesian</em><a class="cc-i" href="../concepts/bayesian-inference.html" target="_blank" rel="noopener" aria-label="What is Bayesian inference? Open primer.">i</a></span> update with all available evidence, was probably somewhere between 2.80 and 3.30. The Mets paid for a 1.66-ERA pitcher and got a 5.00-ERA pitcher; the truth was always closer to 3.00. The contract was overpriced by a factor that the math could have caught and the front office, evidently, did not.</p>
 
 <p>None of this should be read as predicting that Williams will continue at 9.95. The same regression argument that says he was never the 0.33 pitcher also says he is not the 9.95 pitcher. The current twelve-and-two-thirds-inning sample is, statistically, even less reliable than the 27-IP 2020 sample at the other end. He will likely settle &mdash; the question is at what level. The career line through 2025 says somewhere between 2.80 and 3.50. That is good enough to keep his job. It is not good enough to justify the contract.</p>
 

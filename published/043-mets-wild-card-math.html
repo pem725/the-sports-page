@@ -44,6 +44,12 @@ table.rec .hl td{background:#e0f0e8}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <!-- Open Graph + Twitter Card for social previews -->
@@ -171,7 +177,7 @@ Final record:   87 W, 75 L   (.537)
 
 <p>Read the column labeled &ldquo;Games Under&rdquo; carefully. Of the five canonical second-half-comeback teams of the past fifty years, four were further underwater than the current Mets at the point of their famous turn. Only the 2011 Cardinals, who got their hole down to roughly six games and then closed in September, are a tighter comp. The lesson is not that the Mets&rsquo; situation is dire. The lesson is that the situations everyone remembers as dire were dire-er. The Mets, right now, are slumping. They are not in the cellar of any famous comeback narrative.</p>
 
-<p>One caveat is honest to put on the table. These five teams are remembered <em>because</em> they came back. The much larger population of teams that were 6 games under at game 46 and faded the rest of the way does not have a Wikipedia page. The base rate of teams that finish below .500 from this kind of start is, year over year, much higher than the base rate of teams that finish at 87 wins. The newsletter cannot, without a database of every team since 1995, give an exact number. What the newsletter can say is that the road, in arithmetic, is not steeper than the road the projections already had the Mets on.</p>
+<p>One caveat is honest to put on the table. These five teams are remembered <em>because</em> they came back. The much larger population of teams that were 6 games under at game 46 and faded the rest of the way does not have a Wikipedia page. The <span class="cc" data-preview="How often does this happen at all? The boring, important number every 'what are the odds' claim leans on. Open the Base Rate primer."><em>base rate</em><a class="cc-i" href="../concepts/base-rate.html" target="_blank" rel="noopener" aria-label="What is a base rate? Open primer.">i</a></span> of teams that finish below .500 from this kind of start is, year over year, much higher than the base rate of teams that finish at 87 wins. The newsletter cannot, without a database of every team since 1995, give an exact number. What the newsletter can say is that the road, in arithmetic, is not steeper than the road the projections already had the Mets on.</p>
 
 <h2 class="sh">Devin Williams, Subject of Issue #45, Closes One and Wins One</h2>
 
