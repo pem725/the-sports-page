@@ -34,7 +34,16 @@
       "summary": "Box: all models are wrong, some useful. A line through every data point forecasts nothing (overfit); a useful model is honest about its error and ignores the outliers we fixate on. Anchor candidates: pre-season simulations, prediction-framework issues, 'the prior isn't a promise.'"},
 
     {"no": 16, "id": "believe-data-model-theory",      "title": "Do We Believe the Data, the Model, or the Theory?", "theme": "epistemics", "status": "published", "primer": "concepts/believe-data-model-theory.html", "book_chapters": ["12-GLMcovariance.qmd"], "issues": [],
-      "summary": "Data-fitting vs model-fitting vs the theory a model instantiates. When the three disagree, which do we trust? The epistemic keystone — hardest to make sport-punchy, so it comes after 14 and 15 prove the template."}
+      "summary": "Data-fitting vs model-fitting vs the theory a model instantiates. When the three disagree, which do we trust? The epistemic keystone — hardest to make sport-punchy, so it comes after 14 and 15 prove the template."},
+
+    {"no": 17, "id": "research-design", "title": "Why Research Design Matters", "theme": "design", "status": "ready", "primer": null, "book_chapters": ["intro.qmd", "05-datacleaning.qmd"], "issues": [],
+      "summary": "The study you run decides what you are allowed to conclude — you cannot rescue a bad design with fancy statistics. What you measured, on whom, compared to what. The deepest frontier concept and arguably the most important."},
+
+    {"no": 18, "id": "communicating-uncertainty", "title": "Communicating Uncertainty", "theme": "uncertainty", "status": "ready", "primer": null, "book_chapters": ["09-statisticalpower.qmd"], "issues": [],
+      "summary": "How to say what you do not know without either false precision or useless hedging — ranges, intervals, 'best guess plus honest error.' Pairs with precision-vs-accuracy (No. 7) and the Sunday-Edition prediction scoring."},
+
+    {"no": 19, "id": "heuristics-and-ecological-rationality", "title": "Heuristics: Biases vs. Ecological Rationality", "theme": "judgment", "status": "ready", "primer": null, "book_chapters": [], "issues": [],
+      "summary": "Kahneman & Tversky: heuristics as systematic biases. Gerd Gigerenzer: fast-and-frugal heuristics as often optimal in the real world. The productive tension — when is a shortcut a bug, and when is it the smart move? Sports intuition is the proving ground."}
   ],
   "themes": ["inference-traps", "measurement", "modeling", "uncertainty", "epistemics", "judgment"],
   "backlog_note": "Deep frontier still to add as concepts: research design, communicating uncertainty, metric construction (sub of measurement), heuristics-and-biases vs Gigerenzer's ecological rationality. See project_stats_curriculum memory."

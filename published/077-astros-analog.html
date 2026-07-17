@@ -47,6 +47,12 @@ table.cmp tr.astros td{background:#fce4d4}
 table.cmp tr.astros td:first-child{color:var(--rust)}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <!-- Open Graph + Twitter Card for social previews -->
 <meta property="og:title" content="Five Teams Have Looked Like the 2026 Astros. None Of Them Were Still a Dynasty.">
@@ -202,7 +208,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 </svg>
   </div>
 
-  <p>The chart traces all five trajectories. None of them recovered to championship form. <strong>The 2018 Blue Jays</strong> are the closest thing to a happy ending: after one more bad year in 2019, the Vladimir Guerrero Jr.-Bo Bichette generation broke through to multi-year contention, peaking at 94 wins in 2025. <strong>The 2017 Mets</strong> had one extraordinary year, the 101-win 2022 season, before relapsing. <strong>The 2021 Twins</strong> bounced back to a division title in 2023, then declined again. <strong>The 2023 Cardinals</strong> &mdash; the closest match &mdash; lifted their win pct to .512 and .481 in the two seasons after their collapse but have not yet returned to the playoffs. <strong>The 2019 Angels</strong> remain the cautionary tale: prime-era Mike Trout never reached the postseason again.</p>
+  <p>The chart traces all five trajectories. None of them <span class="cc" data-preview="Extreme peaks drift back toward average; dynasties regress and rarely bounce back. Open the Regression-to-the-Mean primer."><em>recovered</em><a class="cc-i" href="../concepts/regression-to-the-mean.html" target="_blank" rel="noopener" aria-label="What is regression to the mean? Open primer.">i</a></span> to championship form. <strong>The 2018 Blue Jays</strong> are the closest thing to a happy ending: after one more bad year in 2019, the Vladimir Guerrero Jr.-Bo Bichette generation broke through to multi-year contention, peaking at 94 wins in 2025. <strong>The 2017 Mets</strong> had one extraordinary year, the 101-win 2022 season, before relapsing. <strong>The 2021 Twins</strong> bounced back to a division title in 2023, then declined again. <strong>The 2023 Cardinals</strong> &mdash; the closest match &mdash; lifted their win pct to .512 and .481 in the two seasons after their collapse but have not yet returned to the playoffs. <strong>The 2019 Angels</strong> remain the cautionary tale: prime-era Mike Trout never reached the postseason again.</p>
 
   <p>The headline number to keep is this: across the five teams that have most statistically resembled the 2026 Astros, the average win percentage in the season immediately after their analog year was <strong>.463</strong>. Five seasons out, the average was <strong>.490</strong>. Neither figure is even a wild-card threshold. No team from this lineage won a championship in any of the seven seasons we have data for.</p>
 

@@ -39,6 +39,12 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
 svg.chart{width:100%;height:auto;display:block}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <!-- Open Graph + Twitter Card for social previews -->
 <meta property="og:title" content="A Fair Fight Was Asked For. We Ran Two. Snow Lost Both.">
@@ -168,7 +174,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
   <p>To find out, we did the same thing on both sides. For each season, hold it out. Build a model on the remaining seasons. Predict the held-out year. Compute the root-mean-square error. For snow we tested the ENSO-conditional model (mean of held-out years sharing the same La Ni&ntilde;a / Neutral / El Ni&ntilde;o classification). For baseball we tested the three-nearest-neighbor profile match using a seven-feature standardized vector. Then we compared each model's RMSE to a climatology baseline that predicts every year as the mean of all the others.</p>
 
-  <p>The ENSO model loses to climatology by 5.4 percent on the regional snow index. (It did about the same losing at Steamboat alone.) The three groups &mdash; La Ni&ntilde;a, Neutral, El Ni&ntilde;o &mdash; have nearly identical means at the Colorado regional scale: 4,092, 3,987, and 3,845 millimeters respectively. The information ENSO carries about Colorado snow is real but small. After fitting on a sample this size, the model is overfitting the noise rather than capturing the signal.</p>
+  <p>The ENSO model loses to climatology by 5.4 percent on the regional snow index. (It did about the same losing at Steamboat alone.) The three groups &mdash; La Ni&ntilde;a, Neutral, El Ni&ntilde;o &mdash; have nearly identical means at the Colorado regional scale: 4,092, 3,987, and 3,845 millimeters respectively. The information ENSO carries about Colorado snow is real but small. After fitting on a sample this size, the model is <span class="cc" data-preview="A model that nails every past game usually whiffs on the next one -- why 'all models are wrong, some useful.' Open the primer."><em>overfitting</em><a class="cc-i" href="../concepts/all-models-are-wrong.html" target="_blank" rel="noopener" aria-label="What does 'all models are wrong' mean? Open primer.">i</a></span> the noise rather than capturing the signal.</p>
 
   <p>The profile model <em>beats</em> climatology by 48.4 percent on MLB OPS. The era effects are large, the seven-feature profile encodes them, and three nearest neighbors give a much better OPS prediction than the long-run mean. The same kind of pattern matching that fails ski seasons works enormously well for baseball.</p>
 
