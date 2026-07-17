@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Communicating Uncertainty</title>
+<meta name="description" content="A friendly primer on saying exactly what you know and not a decimal more — the difference between false precision, useless hedging, and an honest range.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+.tier.textbook{background:#eef2f7;border-color:var(--steel)}
+.tier.textbook .tier-label{color:var(--steel)}
+.tier.textbook h3{color:var(--steel)}
+.tier.textbook a{color:var(--steel);font-weight:700}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.1rem;margin:1.6rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+svg.chart{width:100%;height:auto;display:block}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 18</span><span>Communicating Uncertainty</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">A Decimal Is a Promise. <em>Don&rsquo;t Make One You Can&rsquo;t Keep.</em></h1>
+
+  <div class="deck">
+    A projection of 81.4 wins is not more honest than &ldquo;about 81.&rdquo; It is less. The extra digit claims a confidence the math does not have. Communicating uncertainty is the discipline of reporting exactly as much as you know &mdash; and not a decimal more.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>The number and your confidence are two different things.</h3>
+
+    <p>Here are two ways to tell you the same forecast. One: <strong>&ldquo;81.4 wins.&rdquo;</strong> Two: <strong>&ldquo;somewhere around 76 to 86, best guess 81.&rdquo;</strong> The first sounds sharper, more expert, more like the person has done the work. The second is the one telling the truth.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-label">A number carries a promise. Report only as much precision as the math has earned.</div>
+<svg class="chart" viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="660" height="300" fill="#ede5d2"/>
+<text x="335" y="30" text-anchor="middle" font-family="Playfair Display" font-size="17" font-weight="700" fill="#1a1208">The same projection, told two ways</text>
+<line x1="70" y1="250" x2="600" y2="250" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="118.2" y1="250" x2="118.2" y2="255" stroke="#1a1208" stroke-width="1"/>
+<text x="118.2" y="270" text-anchor="middle" font-size="10" fill="#6b5e4a">72</text>
+<line x1="214.5" y1="250" x2="214.5" y2="255" stroke="#1a1208" stroke-width="1"/>
+<text x="214.5" y="270" text-anchor="middle" font-size="10" fill="#6b5e4a">76</text>
+<line x1="310.9" y1="250" x2="310.9" y2="255" stroke="#1a1208" stroke-width="1"/>
+<text x="310.9" y="270" text-anchor="middle" font-size="10" fill="#6b5e4a">80</text>
+<line x1="407.3" y1="250" x2="407.3" y2="255" stroke="#1a1208" stroke-width="1"/>
+<text x="407.3" y="270" text-anchor="middle" font-size="10" fill="#6b5e4a">84</text>
+<line x1="503.6" y1="250" x2="503.6" y2="255" stroke="#1a1208" stroke-width="1"/>
+<text x="503.6" y="270" text-anchor="middle" font-size="10" fill="#6b5e4a">88</text>
+<line x1="600.0" y1="250" x2="600.0" y2="255" stroke="#1a1208" stroke-width="1"/>
+<text x="600.0" y="270" text-anchor="middle" font-size="10" fill="#6b5e4a">92</text>
+<text x="335" y="290" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1208">projected wins</text>
+<text x="70" y="96" text-anchor="start" font-size="10.5" font-weight="700" fill="#b83a1e">FALSE PRECISION</text>
+<circle cx="344.6" cy="120" r="6" fill="#b83a1e" stroke="#fff" stroke-width="1.2"/>
+<text x="344.6" y="109" text-anchor="middle" font-size="12" font-weight="700" fill="#b83a1e">&ldquo;81.4 wins&rdquo;</text>
+<text x="344.6" y="140" text-anchor="middle" font-size="9.5" font-style="italic" fill="#6b5e4a">a decimal it has not earned</text>
+<text x="70" y="183" text-anchor="start" font-size="10.5" font-weight="700" fill="#2a6e3f">HONEST</text>
+<line x1="214.5" y1="205" x2="455.5" y2="205" stroke="#2c4a6e" stroke-width="8" stroke-linecap="round" opacity="0.35"/>
+<line x1="214.5" y1="196" x2="214.5" y2="214" stroke="#2c4a6e" stroke-width="1.4"/>
+<line x1="455.5" y1="196" x2="455.5" y2="214" stroke="#2c4a6e" stroke-width="1.4"/>
+<circle cx="335.0" cy="205" r="5.5" fill="#2c4a6e" stroke="#fff" stroke-width="1.2"/>
+<text x="335.0" y="189" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2c4a6e">&ldquo;somewhere around 76&ndash;86, best guess 81&rdquo;</text>
+</svg>
+    </div>
+
+    <p>A number carries a hidden promise about how sure you are &mdash; its digits <em>are</em> the confidence claim (that idea has its own primer, <em>Precision vs. Accuracy</em>). &ldquo;81.4&rdquo; promises you can pin the season to a tenth of a win. Nobody can. So the whole skill of communicating uncertainty comes down to one habit: <strong>match the digits to your confidence.</strong> If you only know the win total within five games either way, you say &ldquo;mid-80s,&rdquo; not 81.4. The range is not you being wishy-washy. The range is the actual answer.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Two ways to lie about what you know.</h3>
+
+    <p>There are two opposite failures, and honest forecasting threads between them.</p>
+
+    <p>The first is <strong>false precision</strong> &mdash; over-claiming. The championship odds reported as 23.6%. The live win-probability that ticks to the tenth of a percent. The projection of 81.4 wins. Each is a quantity that is genuinely uncertain, dressed up in the costume of a quantity that is exactly known. It feels rigorous. It is the opposite: it is hiding the uncertainty instead of reporting it.</p>
+
+    <p>The second failure is the one people reach for when they get scolded about the first: <strong>useless hedging</strong> &mdash; under-claiming. &ldquo;Anything can happen.&rdquo; &ldquo;It&rsquo;s a coin flip.&rdquo; &ldquo;On any given Sunday.&rdquo; Refusing to commit sounds humble, but when a game is <em>not</em> a coin flip, calling it one throws away real information. A forecast that says nothing cannot be wrong, which is exactly why it is worthless.</p>
+
+    <p>The honest middle is a <strong>best guess plus an honest range</strong>: &ldquo;76 to 86, most likely 81.&rdquo; &ldquo;About a one-in-four chance.&rdquo; &ldquo;A slight favorite, maybe 60-40.&rdquo; Each says two things at once &mdash; what you believe, <em>and</em> how firmly. That second half is not an apology attached to the forecast. It <em>is</em> the forecast. A projection reported without its uncertainty is not a brave, clean number; it is an unfinished one.</p>
+  </div>
+
+  <div class="tier textbook">
+    <div class="tier-label">Tier 3 &middot; Take It to the Textbook</div>
+    <h3>The full treatment: where the range comes from.</h3>
+    <p>How uncertainty is actually measured &mdash; confidence and credible intervals, standard errors, the width of what you can honestly claim &mdash; is developed in <strong>The Sports Page&rsquo;s companion statistics textbook</strong>, a free, open, graduate-level text, with the R code to compute a range for yourself. <a href="https://pem725.github.io/GradStats-Book/" target="_blank" rel="noopener">Read it free here</a> &mdash; the same &ldquo;read, play, learn&rdquo; idea, one rung deeper.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li><em>Precision vs. Accuracy</em> (Concept No. 7) &mdash; the sibling idea: the digits you show are a claim about your confidence.</li>
+      <li>Sunday Editions &mdash; predictions are graded against ranges where possible, not single point estimates.</li>
+      <li>The <strong>&ldquo;acceleration&rdquo;</strong> issue &mdash; the whole warning was that a metric&rsquo;s value came with a wide, window-dependent uncertainty.</li>
+      <li>Any Bayesian recovery piece &mdash; the answer is a spread of outcomes, reported as percentiles, not a single date.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>
