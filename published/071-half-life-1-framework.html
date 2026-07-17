@@ -52,6 +52,12 @@ svg.chart{width:100%;height:auto;display:block}
 .tool-cta a:hover{background:var(--ink);color:var(--gold)}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <!-- Open Graph + Twitter Card for social previews -->
 <meta property="og:title" content="A Career Doesn&#x27;t Decline . It Disappears.">
@@ -214,7 +220,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
   <div class="box">
     <h3>The civic-mission note</h3>
-    <p>This piece is, in a sense, a sequel to The Reader's Defense on survivorship bias. The aging-curve question is where survivorship lives. The grizzled veteran you see hitting .280 in his sixteenth season is not evidence that baseball ages gently. He is evidence of the players you do not see &mdash; the dozens from his draft class who were already cut.</p>
+    <p>This piece is, in a sense, a sequel to The Reader's Defense on <span class="cc" data-preview="We only see who is left standing, which quietly warps the picture. Open the Survivorship Bias primer."><em>survivorship</em><a class="cc-i" href="../concepts/survivorship-bias.html" target="_blank" rel="noopener" aria-label="What is survivorship bias? Open primer.">i</a></span> bias. The aging-curve question is where survivorship lives. The grizzled veteran you see hitting .280 in his sixteenth season is not evidence that baseball ages gently. He is evidence of the players you do not see &mdash; the dozens from his draft class who were already cut.</p>
     <p>When a fan, a manager, or a general manager argues that "veterans hold up," ask the second question: <em>which veterans?</em> The ones still here, or all the ones who debuted alongside them?</p>
   </div>
 

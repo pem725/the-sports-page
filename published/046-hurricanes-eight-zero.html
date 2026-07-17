@@ -44,6 +44,12 @@ table.rec .hl td{background:#e0f0e8}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <!-- Open Graph + Twitter Card for social previews -->
@@ -135,7 +141,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
 <p>Read that table carefully. Three of the four historical 8&ndash;0 starts ended with the team winning the Stanley Cup. The fourth, the 1969 Blues, lost in the Finals to a Montreal dynasty in the middle of winning four straight Cups; a glass-half-empty reading would call that a loss, a glass-half-full reading would note that the Blues took a juggernaut to a long series before losing. None of the historical comps faced what the Hurricanes face now: two more rounds, both best-of-seven, against opponents who will absolutely not behave like the Senators and Flyers did.</p>
 
-<p>The smallness of the sample is itself the point. We are, statistically speaking, in territory the NHL has not been in often enough to estimate base rates. The four prior teams that started this way went 3&ndash;1 in winning the Cup. The fifth team is Carolina, and the data set will, by mid-June, contain a fifth entry.</p>
+<p>The smallness of the sample is itself the point. We are, statistically speaking, in territory the NHL has not been in often enough to estimate <span class="cc" data-preview="How often does this happen at all? The boring, important number every 'what are the odds' claim leans on. Open the Base Rate primer."><em>base rate</em><a class="cc-i" href="../concepts/base-rate.html" target="_blank" rel="noopener" aria-label="What is a base rate? Open primer.">i</a></span>s. The four prior teams that started this way went 3&ndash;1 in winning the Cup. The fifth team is Carolina, and the data set will, by mid-June, contain a fifth entry.</p>
 
 <div class="pull">
   <p>&ldquo;Carolina is doing the thing the analytics community has been predicting Carolina would do for six years. The unsettling part is that the analytics community has been wrong about Carolina, in some form, every spring since 2019.&rdquo;</p>

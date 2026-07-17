@@ -80,6 +80,12 @@ table.rec .worse .mono{color:var(--rust)}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <!-- Open Graph + Twitter Card for social previews -->
 <meta property="og:title" content="Vegas Did Something No Road Team Had Ever Done in a Cup Final. The Real Question Is How Much It Matters.">
@@ -141,7 +147,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   <div class="two-col">
     <div>
       <p>Start with the scary number for Carolina. Since the NHL went to a best-of-seven Final in 1939, the team that wins Game 1 has gone on to win the Cup 77.2% of the time &mdash; 61 of 79 series, according to NHL.com&rsquo;s Facts and Figures. That is a genuinely lopsided historical edge, and it is the number every Vegas fan is repeating this week.</p>
-      <p>But a historical base rate blends together heavy favorites who happened to win Game 1 with coin-flip matchups that could have gone either way. It answers &ldquo;how often has the Game 1 winner won?&rdquo; &mdash; not &ldquo;how much did winning Game 1, by itself, change the odds?&rdquo; For that, you have to strip out everything except the lead.</p>
+      <p>But a historical <span class="cc" data-preview="How often does this happen at all? The boring, important number every 'what are the odds' claim leans on. Open the Base Rate primer."><em>base rate</em><a class="cc-i" href="../concepts/base-rate.html" target="_blank" rel="noopener" aria-label="What is a base rate? Open primer.">i</a></span> blends together heavy favorites who happened to win Game 1 with coin-flip matchups that could have gone either way. It answers &ldquo;how often has the Game 1 winner won?&rdquo; &mdash; not &ldquo;how much did winning Game 1, by itself, change the odds?&rdquo; For that, you have to strip out everything except the lead.</p>
     </div>
     <div>
       <p>So do exactly that. Assume Carolina and Vegas are evenly matched &mdash; a true 50/50 each night, no home edge. Before puck drop, each team&rsquo;s series win probability is 50%. After Vegas wins Game 1, the series becomes a best-of-six in which Vegas needs 3 of 6 and Carolina needs 4 of 6. Run the binomial, and Vegas&rsquo;s win probability rises to about <strong>65.6%</strong> &mdash; up 15.6 points, not 27.</p>

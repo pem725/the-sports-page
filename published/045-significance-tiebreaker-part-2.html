@@ -47,6 +47,12 @@ table.rec .worse .mono{color:var(--rust);font-weight:700}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <!-- Open Graph + Twitter Card for social previews -->
@@ -126,7 +132,7 @@ For n = 13, the distribution looks like this:
 <p>Notice that 6 wins and 7 wins are <em>exactly equally likely</em> under the null &mdash; both have probability about 21%. A 7&ndash;6 split is the literal most-likely outcome of a thirteen-game series between two equally matched teams. (Tied for first with 6&ndash;7, of course; they are reflections of each other.) Seeing this result and concluding &ldquo;the team that went 7&ndash;6 is better&rdquo; is the same statistical move as flipping a coin thirteen times, getting seven heads, and concluding &ldquo;this coin is biased toward heads.&rdquo;</p>
 </div>
 
-<p>To formalize the procedure, we ask for the <em>p-value</em>: the probability of seeing an outcome at least as extreme as the observed one, under the null. For a two-sided binomial test of 7&ndash;6 in 13 games, that probability is essentially <strong>1.0</strong>. The 7&ndash;6 result is not only consistent with the null hypothesis. It is what the null hypothesis predicts.</p>
+<p>To formalize the procedure, we ask for the <em><span class="cc" data-preview="What a p-value is -- and the many things it is not. Open the P-Value primer."><em>p-value</em><a class="cc-i" href="../concepts/p-value.html" target="_blank" rel="noopener" aria-label="What is a p-value? Open primer.">i</a></span></em>: the probability of seeing an outcome at least as extreme as the observed one, under the null. For a two-sided binomial test of 7&ndash;6 in 13 games, that probability is essentially <strong>1.0</strong>. The 7&ndash;6 result is not only consistent with the null hypothesis. It is what the null hypothesis predicts.</p>
 
 <h2 class="sh">How Lopsided Does Head-to-Head Have to Be?</h2>
 
