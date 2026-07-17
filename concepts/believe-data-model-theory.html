@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Do We Believe the Data, the Model, or the Theory?</title>
+<meta name="description" content="A friendly primer on the three-rung stack behind every prediction — the data, the model, and the theory — and how to tell which one broke when a forecast fails.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+.tier.textbook{background:#eef2f7;border-color:var(--steel)}
+.tier.textbook .tier-label{color:var(--steel)}
+.tier.textbook h3{color:var(--steel)}
+.tier.textbook a{color:var(--steel);font-weight:700}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.1rem;margin:1.6rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+svg.chart{width:100%;height:auto;display:block}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 16</span><span>Data, Model, or Theory?</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Your Forecast Broke. <em>Which of Three Things Do You Stop Believing?</em></h1>
+
+  <div class="deck">
+    Behind every prediction is a stack of three claims &mdash; the data you measured, the model you fit to it, and the theory the model is only one version of. When the prediction fails, usually just one rung broke. Confusing which is the most expensive mistake in analytics.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>Three claims wearing one trench coat.</h3>
+
+    <p>When you say &ldquo;this team will win,&rdquo; it sounds like a single claim. It is three, stacked on top of each other: that the <strong>data</strong> is trustworthy (the stats measured what you think they did), that the <strong>model</strong> is right (the way you turned those stats into a prediction), and that the <strong>theory</strong> is right (the underlying idea that these stats are the ones that win games).</p>
+
+    <p>Now watch the best regular-season team lose in the playoffs &mdash; which happens constantly. What broke? It could be any of the three, and they are not the same problem:</p>
+
+    <p>Maybe the <strong>data</strong> lied &mdash; 108 wins against a soft schedule overstated how good the team actually was. Maybe the <strong>model</strong> was wrong &mdash; regular-season win totals are a weak predictor of a best-of-five series. Or maybe the <strong>theory</strong> was wrong &mdash; the whole idea that &ldquo;the best team wins in October&rdquo; is false, and baseball&rsquo;s playoffs are closer to a coin flip than a coronation.</p>
+
+    <p>Three diagnoses. Three completely different fixes &mdash; fire the scout, rebuild the model, or give up the belief. And you cannot do any of them until you know which rung cracked.</p>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-label">A belief sits three rungs above the number &mdash; a failure can strike any one of them</div>
+<svg class="chart" viewBox="0 0 660 412" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="660" height="412" fill="#ede5d2"/>
+<text x="240" y="30" text-anchor="middle" font-family="Playfair Display" font-size="17" font-weight="700" fill="#1a1208">One prediction. Three things that could be wrong.</text>
+<defs><marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6b5e4a"/></marker></defs>
+<line x1="240" y1="124" x2="240" y2="168" stroke="#6b5e4a" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="252" y="152" font-size="10.5" font-style="italic" fill="#6b5e4a">instantiated as</text>
+<line x1="240" y1="244" x2="240" y2="288" stroke="#6b5e4a" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="252" y="272" font-size="10.5" font-style="italic" fill="#6b5e4a">tested against</text>
+<rect x="48" y="52" width="384" height="72" rx="6" fill="#eef2f7" stroke="#2c4a6e" stroke-width="2"/>
+<text x="66" y="82" font-family="Playfair Display" font-size="17" font-weight="700" fill="#2c4a6e">THEORY</text>
+<text x="66" y="104" font-size="11.5" fill="#1a1208">The claim about what wins games</text>
+<line x1="432" y1="88" x2="448" y2="88" stroke="#2c4a6e" stroke-width="1.2" stroke-dasharray="3,3"/>
+<text x="454" y="92" font-size="11" font-weight="600" fill="#2c4a6e">Is the idea itself wrong?</text>
+<rect x="48" y="172" width="384" height="72" rx="6" fill="#faf3e2" stroke="#c9962a" stroke-width="2"/>
+<text x="66" y="202" font-family="Playfair Display" font-size="17" font-weight="700" fill="#c9962a">MODEL</text>
+<text x="66" y="224" font-size="11.5" fill="#1a1208">One math version of that claim</text>
+<line x1="432" y1="208" x2="448" y2="208" stroke="#c9962a" stroke-width="1.2" stroke-dasharray="3,3"/>
+<text x="454" y="212" font-size="11" font-weight="600" fill="#c9962a">Wrong math for a right idea?</text>
+<rect x="48" y="292" width="384" height="72" rx="6" fill="#f7ece7" stroke="#b83a1e" stroke-width="2"/>
+<text x="66" y="322" font-family="Playfair Display" font-size="17" font-weight="700" fill="#b83a1e">DATA</text>
+<text x="66" y="344" font-size="11.5" fill="#1a1208">What you actually measured</text>
+<line x1="432" y1="328" x2="448" y2="328" stroke="#b83a1e" stroke-width="1.2" stroke-dasharray="3,3"/>
+<text x="454" y="332" font-size="11" font-weight="600" fill="#b83a1e">Did we mismeasure?</text>
+<text x="240" y="398" text-anchor="middle" font-size="11" font-style="italic" fill="#6b5e4a">A broken forecast can come from any rung &mdash; and each needs a different fix.</text>
+</svg>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>The model is not the theory &mdash; and that trips up everyone.</h3>
+
+    <p>Here is the move that separates careful thinkers from confident ones. A model is an <strong>instantiation</strong> of a theory &mdash; one specific way to write an idea in math. That has two consequences almost everybody gets backwards.</p>
+
+    <p><strong>A model failing does not kill the theory.</strong> Maybe you just built a clumsy model of a perfectly good idea. &ldquo;Momentum isn&rsquo;t real, because my momentum stat didn&rsquo;t predict the next game&rdquo; &mdash; no; maybe your stat was a lousy instantiation of momentum, and a better one would have worked. <strong>And a model succeeding does not prove the theory.</strong> It can be right for the wrong reason: overfit to noise (see <em>All Models Are Wrong</em>), or quietly riding a lurking variable that has nothing to do with your story.</p>
+
+    <p>So each rung fails with its own signature, and you diagnose them differently. <strong>Data</strong> problems announce themselves when a result won&rsquo;t replicate, when other measurements disagree, or when the sample was tiny or hand-picked (base rate, survivorship). <strong>Model</strong> problems show up as a great fit on the past and a terrible one on the future, or as a simpler model doing just as well. <strong>Theory</strong> problems are the slow ones: model after model, measurement after measurement, the idea keeps losing &mdash; and at some point the belief itself is the thing that has to go.</p>
+
+    <p>That is the entire scientific method compressed into one habit: <strong>never let a single number confirm or destroy a belief.</strong> The number lives three rungs below the belief, and a great deal can go wrong on the climb up. George Box&rsquo;s warning applies to the middle rung &mdash; your model is always wrong &mdash; but the harder discipline is knowing whether it is a <em>useful</em> instantiation of a theory worth keeping, or a tidy wrapper around an idea that isn&rsquo;t.</p>
+  </div>
+
+  <div class="tier textbook">
+    <div class="tier-label">Tier 3 &middot; Take It to the Textbook</div>
+    <h3>The full treatment: from a study to a claim.</h3>
+    <p>Keeping these three rungs straight &mdash; designing a study, fitting a model to it, and deciding what a result can actually license &mdash; is the throughline of <strong>The Sports Page&rsquo;s companion statistics textbook</strong>, a free, open, graduate-level text, most concretely in its <em>Using Models</em> part, with the R code to try it yourself. <a href="https://pem725.github.io/GradStats-Book/" target="_blank" rel="noopener">Read it free here</a> &mdash; the same &ldquo;read, play, learn&rdquo; idea, one rung deeper.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li><em>All Models Are Wrong</em> (Concept No. 15) &mdash; the middle rung, in detail: a model is never the truth, only a version of it.</li>
+      <li><em>Base Rate</em> and <em>Survivorship Bias</em> (Concepts No. 1 and 4) &mdash; the bottom rung, where the data itself can&rsquo;t be trusted.</li>
+      <li>The <strong>&ldquo;acceleration&rdquo;</strong> issue &mdash; when the metric shocked us, we had to ask: bad window (data), wrong model, or wrong idea?</li>
+      <li>Sunday Editions &mdash; every scored prediction is a chance to ask which rung failed, out loud.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>
