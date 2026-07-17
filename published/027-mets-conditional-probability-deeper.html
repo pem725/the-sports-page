@@ -52,6 +52,12 @@ pre.code .fn{color:#88c8ff}
 .footer{border-top:3px double var(--steel);padding-top:.7rem;margin-top:2.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <!-- Open Graph + Twitter Card for social previews -->
@@ -126,7 +132,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
       <p style="margin-bottom:0">In the Mets case: people sometimes argue that bad starts don&rsquo;t matter because of the 2019 Nationals. That argument uses P(bad start | won the World Series) &mdash; which is small, but exists &mdash; and reads it as if it were P(makes the playoffs | started badly), which is what we actually want. The two are not interchangeable.</p>
     </div>
 
-    <p>The same shape of reasoning shows up everywhere. In medicine, P(has the disease | tested positive) and P(tests positive | has the disease) are routinely confused, even by clinicians. The first is what the patient cares about; the second is what the test reports. The first depends on the base rate. In law, the &ldquo;prosecutor&rsquo;s fallacy&rdquo; is the courtroom version of the same swap. In each case, the cure is the same: write the bar correctly, identify which side of it is the condition, and check which question you actually want answered.</p>
+    <p>The same shape of reasoning shows up everywhere. In medicine, P(has the disease | tested positive) and P(tests positive | has the disease) are routinely confused, even by clinicians. The first is what the patient cares about; the second is what the test reports. The first depends on the <span class="cc" data-preview="How often does this happen at all? The boring, important number every 'what are the odds' claim leans on. Open the Base Rate primer."><em>base rate</em><a class="cc-i" href="../concepts/base-rate.html" target="_blank" rel="noopener" aria-label="What is a base rate? Open primer.">i</a></span>. In law, the &ldquo;prosecutor&rsquo;s fallacy&rdquo; is the courtroom version of the same swap. In each case, the cure is the same: write the bar correctly, identify which side of it is the condition, and check which question you actually want answered.</p>
   </section>
 
   <!-- THE MATH -->

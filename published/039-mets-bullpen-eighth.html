@@ -45,6 +45,12 @@ table.rec .worse .mono{color:var(--rust);font-weight:700}
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <!-- Open Graph + Twitter Card for social previews -->
@@ -112,7 +118,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
 <p>The honest projection: Kimbrel, even at thirty-eight, is unlikely to keep this up. Career relievers with his profile typically post some terrible stretches and some fine ones, and the 4-ER inning is, in isolation, not predictive. Williams, similarly, has had bad stretches before and pitched out of them. There is a version of this season in which both pitchers find themselves by July, the bullpen stabilizes around a 4.00 ERA, and the Mets, somehow, climb back into the wild-card conversation.</p>
 
-<p>The less-honest projection: a $250 million team with two collapsing late-inning relievers will trade for someone at the deadline, sign a free agent next winter, and try this same strategy again, because there is no other obvious strategy when you have decided to spend money on a problem that does not yield to money. Late-inning relief, as the Yankees and Cardinals and Padres and now the Mets have all demonstrated, does not respond to payroll the way starting pitching or position-player depth does. It responds to the cruel arithmetic of small samples and aging arms.</p>
+<p>The less-honest projection: a $250 million team with two collapsing late-inning relievers will trade for someone at the deadline, sign a free agent next winter, and try this same strategy again, because there is no other obvious strategy when you have decided to spend money on a problem that does not yield to money. Late-inning relief, as the Yankees and Cardinals and Padres and now the Mets have all demonstrated, does not respond to payroll the way starting pitching or position-player depth does. It responds to the cruel arithmetic of <span class="cc" data-preview="A hot or cold stretch of a few games barely moves what we should believe. Why small samples prove little. Open the Sample Size primer."><em>small sample</em><a class="cc-i" href="../concepts/sample-size.html" target="_blank" rel="noopener" aria-label="Why do small samples prove little? Open primer.">i</a></span>s and aging arms.</p>
 
 <p>Tonight, the Mets play the Cubs, who are 26&ndash;12. Senga is not pitching. The bullpen, as currently constituted, is going to throw approximately three innings. Statistically speaking, you are about as likely to enjoy them as you were last night.</p>
 

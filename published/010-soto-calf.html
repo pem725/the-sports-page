@@ -115,6 +115,12 @@ textarea#qi::placeholder{color:#6b5e4a}
 .site-news a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,150,42,.35);transition:border-color .2s}
 .site-news a:hover{border-color:var(--gold)}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
@@ -282,7 +288,7 @@ It's replacement-level at the top of the order.</div>
 <div class="paper" style="margin-top:1.2rem">
 
   <div class="pull">
-    <p>&ldquo;The largest contract in sports history attached to a calf muscle that twitched while running first-to-third in the eighth game of the season. This is why Mets fans don&rsquo;t sleep well. But the Bayesian prior says: 40% chance it&rsquo;s nothing. Breathe.&rdquo;</p>
+    <p>&ldquo;The largest contract in sports history attached to a calf muscle that twitched while running first-to-third in the eighth game of the season. This is why Mets fans don&rsquo;t sleep well. But the <span class="cc" data-preview="Update what you already believed with the new evidence -- in proportion to how much data you actually have. Open the Bayesian Inference primer."><em>Bayesian</em><a class="cc-i" href="../concepts/bayesian-inference.html" target="_blank" rel="noopener" aria-label="What is Bayesian inference? Open primer.">i</a></span> prior says: 40% chance it&rsquo;s nothing. Breathe.&rdquo;</p>
     <cite>&mdash; The Sports Page, on $765 million and one calf muscle</cite>
   </div>
 

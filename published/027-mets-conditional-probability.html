@@ -43,6 +43,12 @@ table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(-
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <!-- Open Graph + Twitter Card for social previews -->
@@ -124,7 +130,7 @@ P(start &le; .400 | made playoffs) ≈ .04   ← the inverse conditional</div>
   </tbody>
 </table>
 
-<p>The 2024 Astros are the closest comp on this list to the 2026 Mets. They were 7-19 (.269) at game twenty-six &mdash; worse than the Mets at game twenty-six, when the Mets were 8-18 (.308). The Astros bottomed out, then reeled off a 41-22 stretch from May through July, finished 88-73, and won the division. One example is not a base rate. But it is also not nothing.</p>
+<p>The 2024 Astros are the closest comp on this list to the 2026 Mets. They were 7-19 (.269) at game twenty-six &mdash; worse than the Mets at game twenty-six, when the Mets were 8-18 (.308). The Astros bottomed out, then reeled off a 41-22 stretch from May through July, finished 88-73, and won the division. One example is not a <span class="cc" data-preview="How often does this happen at all? The boring, important number every 'what are the odds' claim leans on. Open the Base Rate primer."><em>base rate</em><a class="cc-i" href="../concepts/base-rate.html" target="_blank" rel="noopener" aria-label="What is a base rate? Open primer.">i</a></span>. But it is also not nothing.</p>
 
 <div class="pull">
   <p>&ldquo;Eleven percent is not zero. It is also not forty. The honest answer is the smaller number, said slowly, with the door left open.&rdquo;</p>

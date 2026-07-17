@@ -129,6 +129,12 @@ textarea#qi::placeholder{color:#6b5e4a}
 .spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
 @keyframes sp{to{transform:rotate(360deg)}}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
@@ -224,7 +230,7 @@ textarea#qi::placeholder{color:#6b5e4a}
   <!-- THE MATH -->
   <div class="box">
     <h3>The Math: Beta-Binomial Projection</h3>
-    <p>We used a Bayesian Beta-Binomial model — the standard tool for projecting batting averages — trained on Alonso's last three seasons (2023–2025: 435 hits in 1,779 at-bats, a .245 average). The model asks: given what we know about <em>recent</em> Pete Alonso, what's the distribution of possible 2026 batting averages?</p>
+    <p>We used a <span class="cc" data-preview="Update what you already believed with the new evidence -- in proportion to how much data you actually have. Open the Bayesian Inference primer."><em>Bayesian</em><a class="cc-i" href="../concepts/bayesian-inference.html" target="_blank" rel="noopener" aria-label="What is Bayesian inference? Open primer.">i</a></span> Beta-Binomial model — the standard tool for projecting batting averages — trained on Alonso's last three seasons (2023–2025: 435 hits in 1,779 at-bats, a .245 average). The model asks: given what we know about <em>recent</em> Pete Alonso, what's the distribution of possible 2026 batting averages?</p>
     <div class="math">Prior: Beta(α = 436, β = 1345)
   → where α = 1 + recent hits, β = 1 + recent outs
   → recent 3-yr BA: 435/1779 = .245

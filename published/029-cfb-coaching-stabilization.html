@@ -115,6 +115,12 @@ textarea#qi::placeholder{color:#6b5e4a}
 .site-news a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,150,42,.35);transition:border-color .2s}
 .site-news a:hover{border-color:var(--gold)}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
@@ -174,7 +180,7 @@ textarea#qi::placeholder{color:#6b5e4a}
       <p>The question every fan base asks when a new coach arrives: how long until we know? The conventional wisdom is five years &mdash; enough time to recruit &ldquo;his guys,&rdquo; install a system, and build a culture. Athletic directors write contracts around this assumption. Boosters fund facility upgrades based on it. And the data say it&rsquo;s mostly wrong. We simulated 10,000 coaching careers using a Beta-Binomial model calibrated to the real distribution of college football coaching talent. Each coach has a &ldquo;true&rdquo; win rate drawn from a population where the average is .562 and the range spans .283 to .825. Each season is 12 games. The question: when does the observed record converge to the truth?</p>
     </div>
     <div>
-      <p>The answer is uncomfortable for the patience crowd: Year 1 alone explains 60.2% of the variance in a coach&rsquo;s true ability (r&nbsp;=&nbsp;.776). By Year 2, the correlation reaches .867. By Year 3, it&rsquo;s .906 &mdash; meaning over 82% of what you&rsquo;ll ever know about this coach is already visible. Year 5 gets you to .940, but the marginal gain from Year 3 to Year 5 is just 6 percentage points. You&rsquo;re paying $10&nbsp;million per year for those 6 points. The 12-game college football season is a small sample &mdash; but coaching talent varies so enormously (from .300 to .900) that even 12 games is enough to separate the great from the terrible.</p>
+      <p>The answer is uncomfortable for the patience crowd: Year 1 alone explains 60.2% of the variance in a coach&rsquo;s true ability (r&nbsp;=&nbsp;.776). By Year 2, the correlation reaches .867. By Year 3, it&rsquo;s .906 &mdash; meaning over 82% of what you&rsquo;ll ever know about this coach is already visible. Year 5 gets you to .940, but the marginal gain from Year 3 to Year 5 is just 6 percentage points. You&rsquo;re paying $10&nbsp;million per year for those 6 points. The 12-game college football season is a <span class="cc" data-preview="A hot or cold stretch of a few games barely moves what we should believe. Why small samples prove little. Open the Sample Size primer."><em>small sample</em><a class="cc-i" href="../concepts/sample-size.html" target="_blank" rel="noopener" aria-label="Why do small samples prove little? Open primer.">i</a></span> &mdash; but coaching talent varies so enormously (from .300 to .900) that even 12 games is enough to separate the great from the terrible.</p>
     </div>
   </div>
 
