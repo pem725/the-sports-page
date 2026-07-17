@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 390 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 389 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 110 issues (#1-110)
-Queue: 6 articles ready (088-sorsby-supplemental-bet, 095-allstar-screwball, 096-mets-diamonds-rough, 099-clark-three-dimension, _TEMPLATE, bobby-bonilla-day)
+Published: 111 issues (#1-111)
+Queue: 5 articles ready (088-sorsby-supplemental-bet, 095-allstar-screwball, 096-mets-diamonds-rough, 100-deadline-sellers-market, _TEMPLATE)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 390 issues remaining of 500
-Last published: Issue #110 — "At the Break, the Standings Lie Politely. The Second Derivative Doesn't." (097-acceleration-second-derivative.html) on July 16, 2026
+Goal: 389 issues remaining of 500
+Last published: Issue #111 — "The Math Said She Was Oscar Robertson. Then We Handed Him a Three-Point Line." (099-clark-three-dimension.html) on July 17, 2026
