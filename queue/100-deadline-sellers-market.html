@@ -1,0 +1,245 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Trade Deadline, Winner's Curse, Standings
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+</style>
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="Eight Teams Have Quit. The Other Twenty-Two Are About to Overpay.">
+<meta property="og:description" content="The July 31 deadline is a seller's market: only 8 of 30 teams have clearly folded, and the 22 left standing will bid against each other for a thin supply of rentals. Basic auction math says whoever wins each bidding war is the one who most overpaid.">
+<meta property="og:url" content="https://thesportspage.net/published/100-deadline-sellers-market.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/100-deadline-sellers-market.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eight Teams Have Quit. The Other Twenty-Two Are About to Overpay.">
+<meta name="twitter:description" content="A seller's market, the winner's curse, and how little even the deadline's best prize actually moves the needle.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/100-deadline-sellers-market.png">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">Eight Teams Have Quit. <em>The Other Twenty-Two Are About to Overpay.</em></h2>
+  <p class="deck">With two weeks to the July 31 deadline, only eight of thirty clubs have clearly folded. The twenty-two still standing will bid against each other for a thin shelf of rentals &mdash; and basic auction math says whoever &ldquo;wins&rdquo; each of those bidding wars is, by definition, the team that most overpaid.</p>
+  <p class="byline">The Sports Page &middot; The Columnist &middot; Standings verified via the MLB Stats API, through July 16</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">8</div><div class="l">teams clearly selling (8+ games under .500)</div></div>
+    <div class="sc"><div class="v now">22</div><div class="l">teams still buying &mdash; or telling themselves they are</div></div>
+    <div class="sc"><div class="v good">~2</div><div class="l">extra wins even the deadline's best arm adds down the stretch</div></div>
+  </div>
+
+  <p>Start with the supply. Eight teams are eight or more games under .500 and out of realistic contention: the Royals and Angels (both 38&ndash;59), the Rockies (39&ndash;59), the Mets (41&ndash;57), the Athletics and Giants (both 41&ndash;55), the Reds (43&ndash;52) and the Tigers (44&ndash;52). Those are the sellers. Everyone else &mdash; twenty-two teams &mdash; is either a contender or close enough to convince itself it is one. That is the entire market in a sentence: a short shelf, and a crowd reaching for it.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; The 2026 deadline field &middot; supply (sellers) is thin; demand (buyers) is a crowd</div>
+<svg class="chart" viewBox="0 0 720 392" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="720" height="392" fill="#ede5d2"/>
+<text x="372" y="30" text-anchor="middle" font-family="Playfair Display" font-size="18" font-weight="700" fill="#1a1208">The deadline field: 8 teams have quit, 22 are still shopping</text>
+<text x="372" y="50" text-anchor="middle" font-size="11" fill="#6b5e4a">Every team by games over/under .500, through July 16 &mdash; a thin supply of sellers, a crowd of buyers</text>
+<rect x="54" y="104" width="190.8" height="204.0" fill="#f2ddd3" opacity="0.7"/>
+<line x1="346.6" y1="104" x2="346.6" y2="300" stroke="#1a1208" stroke-width="1.4" stroke-dasharray="2,3"/>
+<text x="346.6" y="330" text-anchor="middle" font-size="10.5" fill="#1a1208">.500</text>
+<line x1="54" y1="300" x2="690" y2="300" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="92.2" y1="300" x2="92.2" y2="305" stroke="#1a1208" stroke-width="1"/>
+<text x="92.2" y="318" text-anchor="middle" font-size="9.5" fill="#6b5e4a">-20</text>
+<line x1="155.8" y1="300" x2="155.8" y2="305" stroke="#1a1208" stroke-width="1"/>
+<text x="155.8" y="318" text-anchor="middle" font-size="9.5" fill="#6b5e4a">-15</text>
+<line x1="219.4" y1="300" x2="219.4" y2="305" stroke="#1a1208" stroke-width="1"/>
+<text x="219.4" y="318" text-anchor="middle" font-size="9.5" fill="#6b5e4a">-10</text>
+<line x1="283.0" y1="300" x2="283.0" y2="305" stroke="#1a1208" stroke-width="1"/>
+<text x="283.0" y="318" text-anchor="middle" font-size="9.5" fill="#6b5e4a">-5</text>
+<line x1="346.6" y1="300" x2="346.6" y2="305" stroke="#1a1208" stroke-width="1"/>
+<text x="346.6" y="318" text-anchor="middle" font-size="9.5" fill="#6b5e4a">+0</text>
+<line x1="410.2" y1="300" x2="410.2" y2="305" stroke="#1a1208" stroke-width="1"/>
+<text x="410.2" y="318" text-anchor="middle" font-size="9.5" fill="#6b5e4a">+5</text>
+<line x1="473.8" y1="300" x2="473.8" y2="305" stroke="#1a1208" stroke-width="1"/>
+<text x="473.8" y="318" text-anchor="middle" font-size="9.5" fill="#6b5e4a">+10</text>
+<line x1="537.4" y1="300" x2="537.4" y2="305" stroke="#1a1208" stroke-width="1"/>
+<text x="537.4" y="318" text-anchor="middle" font-size="9.5" fill="#6b5e4a">+15</text>
+<line x1="601.0" y1="300" x2="601.0" y2="305" stroke="#1a1208" stroke-width="1"/>
+<text x="601.0" y="318" text-anchor="middle" font-size="9.5" fill="#6b5e4a">+20</text>
+<line x1="664.6" y1="300" x2="664.6" y2="305" stroke="#1a1208" stroke-width="1"/>
+<text x="664.6" y="318" text-anchor="middle" font-size="9.5" fill="#6b5e4a">+25</text>
+<text x="372" y="342" text-anchor="middle" font-size="11" fill="#1a1208" font-weight="600">games over / under .500</text>
+<text x="149" y="94" text-anchor="middle" font-size="12" font-weight="700" fill="#b83a1e">8 SELLERS</text>
+<text x="467" y="94" text-anchor="middle" font-size="12" font-weight="700" fill="#2c4a6e">22 BUYERS &amp; HOPEFULS</text>
+<circle cx="79.4" cy="292.0" r="5.4" fill="#b83a1e" stroke="#fff" stroke-width="1"/>
+<circle cx="79.4" cy="279.6" r="5.4" fill="#b83a1e" stroke="#fff" stroke-width="1"/>
+<circle cx="92.2" cy="292.0" r="5.4" fill="#b83a1e" stroke="#fff" stroke-width="1"/>
+<circle cx="143.0" cy="292.0" r="5.4" fill="#b83a1e" stroke="#fff" stroke-width="1"/>
+<text x="143.0" y="283.0" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b83a1e">Mets</text>
+<circle cx="168.5" cy="292.0" r="5.4" fill="#b83a1e" stroke="#fff" stroke-width="1"/>
+<circle cx="168.5" cy="279.6" r="5.4" fill="#b83a1e" stroke="#fff" stroke-width="1"/>
+<circle cx="232.1" cy="292.0" r="5.4" fill="#b83a1e" stroke="#fff" stroke-width="1"/>
+<circle cx="244.8" cy="292.0" r="5.4" fill="#b83a1e" stroke="#fff" stroke-width="1"/>
+<circle cx="270.2" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="283.0" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="295.7" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="321.1" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="333.8" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="333.8" cy="279.6" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="333.8" cy="267.2" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="346.6" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="372.0" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="372.0" cy="279.6" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="384.7" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="410.2" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="410.2" cy="279.6" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="410.2" cy="267.2" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="435.6" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="473.8" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="499.2" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="499.2" cy="279.6" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="537.4" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="575.5" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="626.4" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<circle cx="664.6" cy="292.0" r="5.4" fill="#2c4a6e" stroke="#fff" stroke-width="1"/>
+<text x="664.6" y="283.0" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2c4a6e">Dodgers</text>
+</svg>
+  </div>
+
+  <h3 class="sh">Why the shelf is so bare</h3>
+
+  <p>Ten years ago half of this middle would already be waving the white flag. Not anymore. Since 2022 the playoffs have held twelve teams &mdash; six per league &mdash; and expanded gates change behavior. A club hovering at .500 in mid-July is not a also-ran; it is a wild-card hopeful two hot weeks from a bracket. Look at the pile in Figure 1: fifteen teams sit within seven games of .500, and almost none of them will sell, because selling means admitting something the standings have not yet forced them to admit. The format manufactures optimism, and optimism dries up supply.</p>
+
+  <h3 class="sh">The winner's curse, in cleats</h3>
+
+  <p>Here is the part that sounds like cynicism and is actually arithmetic. When many bidders chase a single item whose true value is uncertain &mdash; and the value of two months of a rental pitcher is deeply uncertain &mdash; each bidder offers something near its own private estimate. Some estimates are too high, some too low. The team that <em>wins</em> is not the team that valued the player correctly. It is the team that valued him the <strong>highest</strong> &mdash; which, across a field of honest guesses, is very likely the team that guessed <em>too</em> high. Auction theorists named this the winner&rsquo;s curse decades ago: in a bidding war, winning the bid and overpaying for it are nearly the same event.</p>
+
+  <p>With a dozen contenders reportedly circling the Tigers&rsquo; ace &mdash; the consensus prize of this deadline &mdash; the club that lands him will be the one that talked itself furthest up the prospect ladder. The headline will read that they &ldquo;won the deadline.&rdquo; The math reads that they paid the most.</p>
+
+  <div class="pull">
+    <p>The team that wins a bidding war is, by definition, the one that most overpaid. That is not cynicism. It is arithmetic.</p>
+    <cite>The winner&rsquo;s curse</cite>
+  </div>
+
+  <h3 class="sh">And the prize itself is smaller than it looks</h3>
+
+  <p>Now the other half of the trap. Even the best arm available is not a coronation. An elite starter over the roughly fifty-five games a team has left will make about eleven starts, worth on the order of <strong>two wins</strong> above the replacement-level arm he bumps from the rotation. Two wins is real &mdash; it can be the difference between playing in October and watching &mdash; but it is not the difference between a contender and a champion, and it nudges a team&rsquo;s title odds by a few percentage points, not by a tier. That figure is an estimate, not a promise; the point is its size. The market is a swarm of buyers overpaying, in a thin supply, for a couple of marginal wins whose value they are systematically prone to overstate.</p>
+
+  <p>The lone genuine rarity is at the bottom of the sellers&rsquo; list. The Mets carry the largest payroll in the sport and are dismantling it in July &mdash; Freddy Peralta, the late-inning lefties, whatever Clay Holmes can fetch. A team that expensive selling this early is close to unprecedented. But even a fire sale finds a crowd in this market: thin supply makes every seller, however embarrassed, a landlord.</p>
+
+  <h3 class="sh">What to watch on the 31st</h3>
+
+  <p>When the dust settles and the graphics rank the deadline&rsquo;s &ldquo;winners,&rdquo; keep one question in front of the noise: did that team get meaningfully <em>better</em>, or did it merely spend the most? Those are different sentences, and the crowd almost always confuses them. Watch the price, not the name. The clubs that quietly declined to chase the last two wins at four prospects apiece may look timid on July 31 and shrewd by October.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Standings from the MLB Stats API, regular season through the games of July 16, 2026. &ldquo;Sellers&rdquo; here are the eight clubs eight or more games under .500 (Royals, Angels, Rockies, Mets, Athletics, Giants, Reds, Tigers); &ldquo;buyers and hopefuls&rdquo; are the remaining twenty-two. The 8/22 split is a snapshot and will shift with a week&rsquo;s results. The deadline is July 31 at 6 p.m. ET; no trades are permitted afterward (rule in force since 2019). The 12-team playoff format has been in place since 2022.</p>
+    <p style="color:#c8b99a">The &ldquo;about two wins&rdquo; figure is a back-of-envelope estimate: an elite starter (roughly a five-to-six-win full-season pace) prorated over the ~11 starts left, measured against the replacement-level arm he displaces. It is a model, and all models are wrong; the claim is only that the marginal prize is measured in a couple of wins, not a tier of them. Buyer/seller landscape and player availability compiled from MLB.com and CBS Sports reporting; player movement is speculative until a deal is official.</p>
+    <p style="color:#c8b99a">The winner&rsquo;s curse is a result from auction theory: when many bidders compete for an item of uncertain common value, the highest bid tends to exceed the item&rsquo;s true worth, so winning correlates with overpaying. It applies cleanly to a deadline market with one scarce asset and many suitors.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Vol. I, No. __</span>
+    <span>The Deadline Market</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</main>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/100-deadline-sellers-market.html">
+
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+    <a href="https://twitter.com/intent/tweet?text=Eight%20Teams%20Have%20Quit.%20The%20Other%20Twenty-Two%20Are%20About%20to%20Overpay.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/100-deadline-sellers-market.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/100-deadline-sellers-market.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20The%20Deadline%20Market&body=Eight%20Teams%20Have%20Quit.%20The%20Other%20Twenty-Two%20Are%20About%20to%20Overpay.%0A%0AA%20seller%27s%20market%2C%20the%20winner%27s%20curse%2C%20and%20how%20little%20the%20deadline%27s%20best%20prize%20actually%20moves%20the%20needle.%0A%0Ahttps%3A//thesportspage.net/published/100-deadline-sellers-market.html%3Futm_source%3Demail%26utm_medium%3Dshare" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/100-deadline-sellers-market.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+  </div>
+
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+</section>
+
+<script>
+(function(){
+  var btn = document.getElementById('sp-copy-link');
+  if (!btn) return;
+  var label = document.getElementById('sp-copy-label');
+  var url = btn.getAttribute('data-url');
+  btn.addEventListener('click', function(){
+    try {
+      navigator.clipboard.writeText(url).then(function(){
+        label.textContent = 'Copied!'; btn.style.background = '#c9962a'; btn.style.color = '#1a1208';
+        setTimeout(function(){ label.textContent = 'Copy link'; btn.style.background = 'transparent'; btn.style.color = '#c9962a'; }, 1800);
+      });
+    } catch (e) { window.prompt('Copy this link:', url); }
+  });
+})();
+</script></body>
+</html>
