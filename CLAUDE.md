@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 389 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 388 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 111 issues (#1-111)
-Queue: 5 articles ready (088-sorsby-supplemental-bet, 095-allstar-screwball, 096-mets-diamonds-rough, 100-deadline-sellers-market, _TEMPLATE)
+Published: 112 issues (#1-112)
+Queue: 5 articles ready (088-sorsby-supplemental-bet, 096-mets-diamonds-rough, 100-deadline-sellers-market, 101-cfb-maturity-wins, _TEMPLATE)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 389 issues remaining of 500
-Last published: Issue #111 — "The Math Said She Was Oscar Robertson. Then We Handed Him a Three-Point Line." (099-clark-three-dimension.html) on July 17, 2026
+Goal: 388 issues remaining of 500
+Last published: Issue #112 — "Forty Summers Ago, Fernando Valenzuela Struck Out Five Straight All-Stars. He Was Only the Second Man Ever to Do It." (095-allstar-screwball.html) on July 18, 2026
