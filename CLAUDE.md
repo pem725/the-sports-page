@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 112 issues (#1-112)
+Published: 113 issues (#1-113, including Sunday Edition No. 015)
 Queue: 5 articles ready (088-sorsby-supplemental-bet, 096-mets-diamonds-rough, 100-deadline-sellers-market, 101-cfb-maturity-wins, _TEMPLATE)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 388 issues remaining of 500
-Last published: Issue #112 — "Forty Summers Ago, Fernando Valenzuela Struck Out Five Straight All-Stars. He Was Only the Second Man Ever to Do It." (095-allstar-screwball.html) on July 18, 2026
+Goal: 387 issues remaining of 500
+Last published: Issue #113 — "We Called Our Shot. Now We Wait for South Bend." (sunday-015.html) on July 19, 2026
