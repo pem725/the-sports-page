@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Information &amp; Surprise</title>
+<meta name="description" content="A friendly primer on why the game nobody can call teaches you the most — surprise, information, and the single unit that measures both: the bit.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+.tier.textbook{background:#eef2f7;border-color:var(--steel)}
+.tier.textbook .tier-label{color:var(--steel)}
+.tier.textbook h3{color:var(--steel)}
+.tier.textbook a{color:var(--steel);font-weight:700}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.1rem;margin:1.6rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+svg.chart{width:100%;height:auto;display:block}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 20</span><span>Information &amp; Surprise</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">The Blowout Told You Nothing. <em>The Coin-Flip Told You Everything.</em></h1>
+
+  <div class="deck">
+    A result you already saw coming teaches you nothing; a result you couldn&rsquo;t call teaches you a lot. That is not a mood &mdash; it is a measurable quantity. The unit is the bit, and the most informative game on any schedule is the one nobody can predict.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>Surprise is the thing you actually learn.</h3>
+
+    <p>Two games kick off Saturday. The first is a 30-point favorite against a cupcake; the second is a true toss-up between two heavyweights. Both end. Which one did you <em>learn</em> something from? The blowout confirmed what everyone already knew &mdash; you could have written the recap on Thursday. The toss-up answered a real question, and its answer rearranges everything downstream. <strong>The information in a result is the surprise in it</strong>, and there is more surprise in a game you couldn&rsquo;t call.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-label">The more of a toss-up it was, the more its result teaches you.</div>
+<svg class="chart" viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="660" height="300" fill="#ede5d2"/>
+<text x="330" y="26" text-anchor="middle" font-family="Playfair Display" font-size="16" font-weight="700" fill="#1a1208">How much a result teaches you</text>
+<line x1="64" y1="250.0" x2="600" y2="250.0" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="58" y="253.0" text-anchor="end" font-size="9" fill="#6b5e4a">none</text>
+<line x1="64" y1="162.0" x2="600" y2="162.0" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="58" y="165.0" text-anchor="end" font-size="9" fill="#6b5e4a">½ bit</text>
+<line x1="64" y1="74.1" x2="600" y2="74.1" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="58" y="77.1" text-anchor="end" font-size="9" fill="#6b5e4a">1 bit</text>
+<text x="64.0" y="270" text-anchor="middle" font-size="10" fill="#6b5e4a">sure loss</text>
+<text x="332.0" y="270" text-anchor="middle" font-size="10" fill="#6b5e4a">toss-up</text>
+<text x="600.0" y="270" text-anchor="middle" font-size="10" fill="#6b5e4a">sure win</text>
+<line x1="64" y1="60" x2="64" y2="250" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="64" y1="250" x2="600" y2="250" stroke="#1a1208" stroke-width="1.5"/>
+<polyline points="66.7,242.0 71.0,232.4 75.3,224.1 79.5,216.7 83.8,209.8 88.1,203.4 92.4,197.4 96.7,191.7 101.0,186.3 105.3,181.1 109.6,176.2 113.8,171.5 118.1,166.9 122.4,162.6 126.7,158.4 131.0,154.4 135.3,150.5 139.6,146.8 143.9,143.2 148.2,139.7 152.4,136.3 156.7,133.1 161.0,130.0 165.3,127.0 169.6,124.1 173.9,121.3 178.2,118.6 182.5,115.9 186.7,113.4 191.0,111.0 195.3,108.7 199.6,106.4 203.9,104.3 208.2,102.2 212.5,100.2 216.8,98.3 221.0,96.5 225.3,94.7 229.6,93.1 233.9,91.5 238.2,90.0 242.5,88.5 246.8,87.1 251.1,85.8 255.4,84.6 259.6,83.4 263.9,82.4 268.2,81.3 272.5,80.4 276.8,79.5 281.1,78.7 285.4,77.9 289.7,77.3 293.9,76.6 298.2,76.1 302.5,75.6 306.8,75.2 311.1,74.8 315.4,74.6 319.7,74.3 324.0,74.2 328.2,74.1 332.5,74.1 336.8,74.1 341.1,74.2 345.4,74.4 349.7,74.6 354.0,74.9 358.3,75.3 362.6,75.7 366.8,76.2 371.1,76.8 375.4,77.4 379.7,78.1 384.0,78.9 388.3,79.7 392.6,80.6 396.9,81.6 401.1,82.6 405.4,83.7 409.7,84.9 414.0,86.1 418.3,87.5 422.6,88.9 426.9,90.3 431.2,91.9 435.4,93.5 439.7,95.2 444.0,96.9 448.3,98.8 452.6,100.7 456.9,102.7 461.2,104.8 465.5,107.0 469.8,109.3 474.0,111.6 478.3,114.1 482.6,116.6 486.9,119.2 491.2,121.9 495.5,124.8 499.8,127.7 504.1,130.7 508.3,133.9 512.6,137.2 516.9,140.5 521.2,144.0 525.5,147.7 529.8,151.5 534.1,155.4 538.4,159.4 542.6,163.7 546.9,168.1 551.2,172.6 555.5,177.4 559.8,182.4 564.1,187.6 568.4,193.1 572.7,198.9 577.0,205.0 581.2,211.5 585.5,218.5 589.8,226.1 594.1,234.6" fill="none" stroke="#2c4a6e" stroke-width="2.6"/>
+<circle cx="332.0" cy="74.1" r="4" fill="#2a6e3f"/>
+<text x="332.0" y="66.1" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2a6e3f">the most a game can teach</text>
+<line x1="562.5" y1="116" x2="562.5" y2="181.6" stroke="#b83a1e" stroke-width="0.8" stroke-dasharray="2,2"/>
+<circle cx="562.5" cy="185.6" r="4" fill="#b83a1e"/>
+<text x="594" y="100" text-anchor="end" font-size="9.5" font-style="italic" fill="#b83a1e">a blowout you already</text>
+<text x="594" y="112" text-anchor="end" font-size="9.5" font-style="italic" fill="#b83a1e">saw coming: near zero</text>
+<text x="330" y="292" text-anchor="middle" font-size="9.5" font-style="italic" fill="#6b5e4a">The surprise in a result, by how sure you were beforehand. Measured in bits; a fair coin-flip = 1.</text>
+</svg>
+    </div>
+
+    <p>The curve peaks at the toss-up and sags to nothing at both ends. A game you were 99% sure about barely registers when it goes as expected &mdash; you already knew. A game you had no read on delivers the maximum: one full <strong>bit</strong>, the amount of surprise in a single fair coin-flip. So &ldquo;which games matter&rdquo; has a real answer. The ones that matter are the ones you can&rsquo;t call &mdash; and if you want to spend your Saturdays well, spend them on coin-flips.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Surprise has a formula, and its average has a name.</h3>
+
+    <p>Claude Shannon, in 1948, made this exact intuition precise. The <strong>surprise</strong> of an outcome that you thought had probability <em>p</em> is <em>log&#8322;(1/p)</em> &mdash; smaller when <em>p</em> was large (you expected it), larger when <em>p</em> was small (you didn&rsquo;t). An outcome you were certain of carries zero surprise; a one-in-a-thousand shock carries about ten bits. It is the same reason a headline reading &ldquo;sun rose today&rdquo; is worthless and &ldquo;sun failed to rise&rdquo; would be the story of the millennium.</p>
+
+    <p>Now average that surprise over both possible results of a game, weighted by how likely each was, and you get the game&rsquo;s <strong>entropy</strong> &mdash; its expected information, the height of the curve above. For a two-outcome event it is <em>H = &minus;p&#8202;log&#8322;p &minus; (1&minus;p)&#8202;log&#8322;(1&minus;p)</em>. That expression is maximized at exactly <em>p</em>&#8202;=&#8202;&frac12; &mdash; the coin-flip &mdash; where it equals one bit, and it falls to zero as <em>p</em> heads toward certainty in either direction. This is why the closest game is the most informative one: uncertainty going in <em>is</em> information coming out.</p>
+
+    <p>The idea does more than rank Saturdays. It is the engine under a good <strong>scoring rule</strong>: when you grade a forecaster, the fair penalty for being wrong is exactly the surprise their model assigned to what actually happened &mdash; the &ldquo;log loss&rdquo; that trains and tests prediction models. Confidently wrong is expensive precisely because it claimed there was no surprise to be had. A forecast, in the end, is a claim about how surprised you deserve to be &mdash; and information theory is how we keep score.</p>
+  </div>
+
+  <div class="tier textbook">
+    <div class="tier-label">Tier 3 &middot; Take It to the Textbook</div>
+    <h3>The full treatment: entropy, and keeping score.</h3>
+    <p>Where surprise, entropy, and the log-loss scoring that grades a model come from &mdash; and how to compute a forecast&rsquo;s information for yourself &mdash; is developed in <strong>The Sports Page&rsquo;s companion statistics textbook</strong>, a free, open, graduate-level text, with the R code to run it. <a href="https://pem725.github.io/GradStats-Book/" target="_blank" rel="noopener">Read it free here</a> &mdash; the same &ldquo;read, play, learn&rdquo; idea, one rung deeper.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li>The College Football <strong>&ldquo;which weeks matter&rdquo;</strong> issue &mdash; scores the 2026 schedule in bits: a toss-up between two contenders is worth nearly a full bit, a blowout almost none.</li>
+      <li><a href="communicating-uncertainty.html">Communicating Uncertainty</a> (Concept No. 18) &mdash; the sibling idea: a forecast has to report how firmly you believe it, not just what you believe.</li>
+      <li><a href="p-value.html">P-Value</a> (Concept No. 11) &mdash; another way of asking &ldquo;how surprising is this result, if nothing were going on?&rdquo;</li>
+      <li>Any pre-season simulation &mdash; the honest ones flag the coin-flip games as coin-flips instead of forcing a confident call.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>
