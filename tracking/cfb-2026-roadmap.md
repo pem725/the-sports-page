@@ -24,10 +24,20 @@ dark horses, key matchups, key weeks — and track it from now through the seaso
 2. **Contender shortlist + dark-horse board** *(buildable now-ish)*. Who has a
    "fighter's chance," who's the Cignetti-style dark horse, with the maturity/
    talent model as the engine.
-3. **"The weeks that matter" — a 2026 CFB marquee-week calendar** *(needs 2026
-   schedule)*. Answers the user's direct question: which weeks to focus on.
-   Flag rivalry week, marquee non-con, conference-decider weeks. Segment for
-   CFB-first vs NFL-first readers.
+3. **"The weeks that matter" — a 2026 CFB marquee-week calendar** *(BUILT 2026-07-18
+   as `queue/105-cfb-weeks-that-matter.html`)*. Answers the user's direct question:
+   which weeks to focus on. Statistical spine = **information content (Shannon
+   entropy)**: the highest-leverage games are contender-vs-contender toss-ups
+   (a coin-flip = 1 bit; a blowout ~ 0 bits). Pulled the real 2026 schedule +
+   opening lines from CFBD (`scratchpad/cfb_sched.py`, `cfb_entropy.py`): 22
+   contender-vs-contender games; only the Sept openers carry lines this far out
+   (Ohio State @ Texas -1.5 -> 0.99 bits; Oklahoma @ Michigan -2.5 -> 0.98; Clemson
+   @ LSU -11.5 -> 0.72). Six marquee weeks tabled (Wk2, 4, 6, 7, 10-11, 13). Segment
+   note for CFB-first vs NFL-first ("clear only three Saturdays: Sep 12, Oct 10,
+   Nov 28"). Figure = the entropy dome with the three priced games. Queued as the
+   non-MLB buffer between payroll #103 and #104. **Ideal Tier-2 follow-up: an
+   "Information & Surprise" concept primer** (entropy/bits) — wired here only to
+   the existing communicating-uncertainty primer as a stopgap.
 4. **CFB Pre-Season Simulation** *(late August — last weekend before Week 0/1)*.
    The existing tentpole. Uses the "Pre-Season Simulation Framework" methods
    piece + Vegas win totals as priors + JND threshold. Grade weekly in Sunday
