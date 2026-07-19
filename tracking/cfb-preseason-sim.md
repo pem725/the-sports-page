@@ -63,6 +63,21 @@ is the proof the pipeline is sound.
    logic and can only enter as an at-large.
 5. Consider blending SP+ with **Vegas season win totals** as a second prior when they post.
 
+## Scheduled cloud routine (set 2026-07-19)
+
+A one-time cloud routine is scheduled to build + publish this automatically:
+`trig_014MmrwW5Ln87kzjcArdEWRg`, fires **2026-08-29 05:30 UTC (1:30am EDT, Sat)** —
+before the autopublish bot's earliest run, so the sim becomes that day's issue and the
+bot stands down via its same-day `already_published_today` guard (the routine commits with
+a `Publish Issue #N:` prefix, which the guard detects). Model: claude-sonnet-4-6.
+Manage at https://claude.ai/code/routines/trig_014MmrwW5Ln87kzjcArdEWRg
+
+**BLOCKER the human must clear: `CFBD_KEY` in the cloud environment.** The cloud agent does
+NOT inherit the local `~/.zshrc` key, and a secret cannot be embedded in the routine prompt.
+Provision `CFBD_KEY` in the routine's cloud environment before Aug 29, or the routine will
+open a `publish-failure` GitHub issue and publish nothing (it will NOT fabricate numbers).
+Re-arm the routine each year (or convert to recurring) for future seasons.
+
 ## Build-day checklist (last weekend of August)
 
 1. Sync repo (fetch/pull --ff-only).
