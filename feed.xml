@@ -8,7 +8,104 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Jul 2026 08:16:57 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 09:42:49 GMT</lastBuildDate>
+    <item>
+      <title>#114: The Diamond in the Rough Is Mostly Rough.</title>
+      <link>https://thesportspage.net/published/096-mets-diamonds-rough.html</link>
+      <description>The Mets are fifteen games under .500 and selling before the deadline, so which prospects are actually worth dreaming on? Only one has enough at-bats to judge — and a late-season audition tells you almost nothing. Here is the math.</description>
+      <content:encoded><![CDATA[<div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">The Diamond in the Rough <em>Is Mostly Rough.</em></h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">The Mets are fifteen games under .500 and selling before the deadline, so which prospects are actually worth dreaming on? Only one has enough at-bats to judge &mdash; and a late-season audition tells you almost nothing. Here is the math.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; Prospect Math at the Deadline &middot; Model: Beta-Binomial with a league-average prior</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">.191</div><div class="l">Clifford's Triple-A average</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v good" style="font-size:28px;font-weight:bold;line-height:1;display:block">108</div><div class="l">90th-pct exit velo (mph)</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">117</div><div class="l">Strikeouts &mdash; most in the Int'l League</div></div>
+  </div>
+
+  <p>The question every fan of a losing team starts asking in July: who in the farm system is worth getting excited about? For the Mets &mdash; roughly fifteen games under .500 and selling before the July 31 deadline &mdash; there are three answers, and none is the one the romance of a prospect list wants.</p>
+
+  <p><strong>One: their best prospect is already gone.</strong> On January 21 the Mets traded their No. 1 prospect, shortstop <strong>Jett Williams</strong>, and pitching prospect <strong>Brandon Sproat</strong> to Milwaukee for Freddy Peralta and Tobias Myers &mdash; a win-now swap made by a team that then lost early and often. The prospect you were going to wait on is now in another organization's Triple-A.</p>
+
+  <p><strong>Two: the one bat left to dream on is hitting .191.</strong> That is <strong>Ryan Clifford</strong>, a 22-year-old first baseman/outfielder headed to the All-Star Futures Game in Philadelphia on the strength of raw power &mdash; a 90th-percentile exit velocity around 108 mph and a hard-hit rate north of 52 percent, some of the best contact-quality numbers in Triple-A. He also leads the International League with <strong>117 strikeouts</strong>. Elite raw material, unfinished contact.</p>
+
+  <p><strong>Three, and this is the part that matters most:</strong> for everyone below Clifford, the numbers so far are too small a sample to mean much. That is not a knock on the players. It is arithmetic, and it is the reason a losing team's summer feels more promising than it usually is.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The one statistical question</h3>
+
+  <p>The instinct that keeps hope alive on a bad team is that a small burst of good numbers means something. A September call-up hits .350 over his first three weeks and the fan base pencils him into next year's lineup. The math says: not so fast. A cup of coffee is one of the least informative samples in all of sports.</p>
+
+  <p>Use the newsletter's standard tool for a rate like batting average: the Beta-Binomial. Start with a league-average prior &mdash; a Beta distribution centered on a .250 hitter, with a strength of about 200 plate appearances of prior belief (alpha = 50, beta = 150). Now let a rookie go 14-for-40, a scorching .350 debut. Update the prior with those 14 hits and 26 outs and the posterior barely twitches:</p>
+
+  <table class="cmp">
+    <thead><tr><th>Belief about the hitter</th><th>Sample</th><th>Estimated true AVG</th></tr></thead>
+    <tbody>
+      <tr><td>Prior (league-average bat)</td><td>&mdash;</td><td>.250</td></tr>
+      <tr class="mets"><td>After a hot debut</td><td>14-for-40 (.350)</td><td>.267</td></tr>
+      <tr><td>After a full minor-league season</td><td>~130-for-520 (.250)</td><td>.250</td></tr>
+      <tr><td>After a cold debut</td><td>6-for-40 (.150)</td><td>.233</td></tr>
+    </tbody>
+  </table>
+
+  <p>A .350 explosion over 40 at-bats moves our estimate of the player's true ability from .250 all the way to .267 &mdash; seventeen points. A dreadful 6-for-40 pulls it down to .233. The cup of coffee, hot or cold, is almost inert. It cannot make a star and it cannot bury one, because forty at-bats simply do not contain enough information to overwrite what we already believed. This is not a quirk of the chosen prior; it is the arithmetic of small samples. The dream survives the audition precisely because the audition proves nothing.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; A 40-at-bat audition stays broad and uncertain; only a full season sharpens belief</div>
+<img src="https://thesportspage.net/assets/figures/096-mets-diamonds-rough-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">A cup of coffee cannot make a prospect a star, and it cannot bury one. Forty at-bats do not contain enough information to overwrite what we already believed. The dream survives the audition because the audition proves nothing.</p>
+    <cite>Prospect Math at the Deadline</cite>
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Why Clifford is the interesting case, not the safe one</h3>
+
+  <p>Clifford is the exception that clarifies the rule, because his sample is no longer a cup of coffee. Through roughly 320 plate appearances in Triple-A this year, he has enough of a track record that the numbers <em>are</em> starting to speak &mdash; and what they say is genuinely ambiguous rather than empty. The power is real and it is elite; contact quality that good is a skill, not a fluke, and it stabilizes faster than batting average. The strikeouts are also real: a rate near 36 percent of plate appearances against Triple-A pitching, well north of the roughly 22 percent a big-league hitter runs, and strikeout rate is one of the fastest-stabilizing stats there is.</p>
+
+  <p>So the honest scouting line is not "wait and see." It is a specific, testable bet: the raw power is a finished asset and the contact is the open question. If the whiffs come down even to merely bad, the exit velocity plays and there is a middle-of-the-order bat here. If they do not, he is a Quadruple-A slugger &mdash; the kind of hitter whose Triple-A power never survives contact with a major-league breaking ball. The Futures Game invitation is a bet on the first outcome. The .191 is the market pricing in the second.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Who else is in the rough</h3>
+
+  <p>Below Clifford, the promise is real but comes with the same warning label: small samples, loud tools, quiet results so far.</p>
+
+  <table class="cmp">
+    <thead><tr><th>Player</th><th>Pos</th><th>Level</th><th>The stone, and the rough</th></tr></thead>
+    <tbody>
+      <tr class="mets"><td>Ryan Clifford</td><td>1B/OF</td><td>AAA</td><td>Elite exit velo, Futures Game bat; .191 and league-most strikeouts</td></tr>
+      <tr><td>Jonah Tong</td><td>RHP</td><td>AAA</td><td>Led all of the minors in strikeouts a year ago; Triple-A ERA has spiked into the 6s on shaky command</td></tr>
+      <tr><td>Jack Wenninger</td><td>RHP</td><td>AAA</td><td>Velocity near 98, a double-plus splitter; walk rate ballooned to ~13% at Triple-A</td></tr>
+    </tbody>
+  </table>
+
+  <p>Every one of them fits the pattern the model warns about. A tool loud enough to dream on, a result column that has not yet cooperated, and a sample too small &mdash; or a season too young &mdash; to settle the argument. That is what "prospect" means. It is not a promise; it is a probability with a wide error bar.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What it means at the deadline</h3>
+
+  <p>A seller in late July faces a choice the math frames cleanly. The Mets can cash their veterans for other teams' Cliffords &mdash; buying wide error bars in bulk and hoping a few resolve upward &mdash; or they can hand their own kids the at-bats a lost season makes cheap. Both are defensible. Neither should be confused with certainty. The great trap of a losing summer is that a two-week hot streak from a call-up feels like a discovery. The Beta-Binomial is there to remind you it is mostly noise, and that the only prospect whose numbers have earned the right to move your priors is the one who has been at it long enough to strike out 117 times.</p>
+
+  <p>The romance of the diamond in the rough is durable because it is unfalsifiable in small samples. Enjoy the dream &mdash; that is what a lost July is for &mdash; but price it honestly. Most rough stays rough. The rare stone that turns into a franchise does not announce itself in forty at-bats. It announces itself over the long, boring, statistically significant grind that separates the two.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Records and standings: New York Mets 2026 season record via MLB.com standings and Baseball-Reference. Roster move: the January 21, 2026 trade of Jett Williams and Brandon Sproat to Milwaukee for Freddy Peralta and Tobias Myers, per public reporting. Prospect statistics (Ryan Clifford, Jonah Tong, Jack Wenninger) via MiLB.com, Baseball America, and Amazin' Avenue prospect coverage; Clifford's Futures Game selection and exit-velocity metrics via MLB.com and MiLB.com.</p>
+    <p style="color:#c8b99a">Model: Beta-Binomial for a batting-average rate. Prior: Beta(&alpha;=50, &beta;=150), mean .250, prior strength 200 PA. Posterior mean after a sample of h hits in n at-bats is (&alpha;+h)/(&alpha;+&beta;+n). The illustrative debut lines (14-for-40, 6-for-40) are chosen to show the range; they are not attributed to any specific player. Strikeout- and contact-rate stabilization thresholds follow standard sabermetric reliability estimates (strikeout rate stabilizes within roughly 60 plate appearances; batting average requires several hundred).</p>
+    <p style="color:#c8b99a"><strong>Publish-time refresh required.</strong> Every number in this piece &mdash; the Mets' record, Clifford's slash line and strikeout total, Tong's ERA, the standings context, and whether any of these players has since been called up or traded &mdash; must be re-verified against at least three independent sources on the morning of publication. Prospect lines move weekly, and this draft was built from data as of early-to-mid July 2026.</p>
+  </div>
+
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
+    <span>The Sports Page &middot; Vol. I, No. 114</span>
+    <span>Prospect Math at the Deadline</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</div>]]></content:encoded>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/096-mets-diamonds-rough.html</guid>
+    </item>
     <item>
       <title>#113: We Called Our Shot. Now We Wait for South Bend.</title>
       <link>https://thesportspage.net/published/sunday-015.html</link>
@@ -189,6 +286,12 @@
     btn.disabled=false;btn.textContent='Send';
   });
   </script>
+
+  <!-- EDITOR'S DEDICATION -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:1rem 1.2rem;margin:2rem 0 0;text-align:center">
+    <div style="font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">A Dedication &middot; From the Editor&rsquo;s Desk</div>
+    <div style="font-family:'Libre Baskerville',serif;font-style:italic;font-size:.95rem;color:var(--muted);line-height:1.6">This newsletter spends every issue insisting a number can mean something. Here is one it will keep off the record: two dates in July that add up to today, and seven years that never once needed a model to call. Happy anniversary &mdash; to the surest thing on the board.</div>
+  </div>
 
   <!-- FOOTER -->
   <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
