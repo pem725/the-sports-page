@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Rates of Change: Level, Velocity, Acceleration</title>
+<meta name="description" content="A friendly primer on the three questions hiding inside 'how's that team doing' — where it is, which way it's moving, and whether that motion is about to change. Level, velocity, acceleration.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+.tier.textbook{background:#eef2f7;border-color:var(--steel)}
+.tier.textbook .tier-label{color:var(--steel)}
+.tier.textbook h3{color:var(--steel)}
+.tier.textbook a{color:var(--steel);font-weight:700}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.1rem;margin:1.6rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+svg.chart{width:100%;height:auto;display:block}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 21</span><span>Rates of Change</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Where It Is. Where It&rsquo;s Going. <em>And Whether That&rsquo;s About to Change.</em></h1>
+
+  <div class="deck">
+    &ldquo;How good is that team?&rdquo; is really three questions wearing a trench coat. A number answers the first. Its slope answers the second. And the bend in that slope &mdash; the one almost nobody looks at &mdash; answers the only one that tells you what happens next.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>Your car has three gauges. So does a team.</h3>
+
+    <p>Think about driving. Your <strong>position</strong> is where you are on the road. Your <strong>speedometer</strong> is how fast you&rsquo;re moving, and which way. And the <strong>gas or brake</strong> is whether that speed is about to climb or drop. Three different facts. Knowing you&rsquo;re at mile 40 tells you nothing about whether you&rsquo;re parked or flying, and knowing you&rsquo;re doing 60 tells you nothing about whether you&rsquo;re flooring it or already braking.</p>
+
+    <p>A team is exactly the same. Its <strong>level</strong> is the record &mdash; where it sits right now. Its <strong>velocity</strong> is the direction it&rsquo;s trending, rising or falling. And its <strong>acceleration</strong> is whether that trend is strengthening or reversing. A .500 team could be a rocket on the way up or a good team coasting to a stop, and the record alone &mdash; the position &mdash; cannot tell the two apart.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-label">Two teams, identical at the dot &mdash; only the curvature says which one keeps rising.</div>
+<svg class="chart" viewBox="0 0 660 312" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="660" height="312" fill="#ede5d2"/>
+<text x="290" y="26" text-anchor="middle" font-family="Playfair Display" font-size="16" font-weight="700" fill="#1a1208">Same level, same speed &mdash; opposite acceleration</text>
+<line x1="54" y1="64" x2="54" y2="250" stroke="#1a1208" stroke-width="1.3"/>
+<line x1="54" y1="250" x2="644" y2="250" stroke="#1a1208" stroke-width="1.3"/>
+<text x="289" y="274" text-anchor="middle" font-size="9.5" fill="#6b5e4a">time &rarr;</text>
+<text transform="translate(16,157) rotate(-90)" text-anchor="middle" font-size="9.5" fill="#6b5e4a">how good</text>
+<polyline points="54.0,180.4 65.8,181.1 77.5,181.6 89.2,181.9 101.0,182.1 112.8,182.1 124.5,182.0 136.2,181.7 148.0,181.2 159.8,180.6 171.5,179.8 183.2,178.8 195.0,177.7 206.8,176.4 218.5,174.9 230.2,173.3 242.0,171.5 253.8,169.5 265.5,167.4 277.2,165.1 289.0,162.6 300.8,160.0 312.5,157.2 324.2,154.3 336.0,151.2 347.8,147.9 359.5,144.5 371.2,140.8 383.0,137.1 394.7,133.1 406.5,129.0 418.2,124.8 430.0,120.3 441.8,115.7 453.5,111.0 465.2,106.0 477.0,101.0 488.8,95.7 500.5,90.3 512.2,84.7 524.0,78.9" fill="none" stroke="#c9962a" stroke-width="2.6"/>
+<polyline points="54.0,246.3 65.8,240.6 77.5,235.0 89.2,229.6 101.0,224.3 112.8,219.2 124.5,214.3 136.2,209.5 148.0,204.9 159.8,200.5 171.5,196.2 183.2,192.1 195.0,188.2 206.8,184.4 218.5,180.8 230.2,177.4 242.0,174.1 253.8,171.0 265.5,168.0 277.2,165.3 289.0,162.6 300.8,160.2 312.5,157.9 324.2,155.8 336.0,153.8 347.8,152.0 359.5,150.4 371.2,148.9 383.0,147.6 394.7,146.5 406.5,145.5 418.2,144.7 430.0,144.1 441.8,143.6 453.5,143.3 465.2,143.1 477.0,143.2 488.8,143.3 500.5,143.7 512.2,144.2 524.0,144.9" fill="none" stroke="#2c4a6e" stroke-width="2.6"/>
+<line x1="289.0" y1="162.6" x2="289.0" y2="250" stroke="#1a1208" stroke-width="0.8" stroke-dasharray="2,2"/>
+<circle cx="289.0" cy="162.6" r="4" fill="#1a1208"/>
+<text x="289.0" y="153.6" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1208">same here</text>
+<circle cx="524.0" cy="78.9" r="3.5" fill="#c9962a"/>
+<text x="532.0" y="78.9" text-anchor="start" font-size="10" font-weight="700" fill="#c9962a">accelerating</text>
+<text x="532.0" y="89.9" text-anchor="start" font-size="8.5" fill="#a9781f">the climb steepens</text>
+<circle cx="524.0" cy="144.9" r="3.5" fill="#2c4a6e"/>
+<text x="532.0" y="144.9" text-anchor="start" font-size="10" font-weight="700" fill="#2c4a6e">decelerating</text>
+<text x="532.0" y="155.9" text-anchor="start" font-size="8.5" fill="#2c4a6e">the climb stalls</text>
+<text x="290" y="300" text-anchor="middle" font-size="9" font-style="italic" fill="#6b5e4a">At the dot both are equal and rising alike &mdash; only the curvature says which one keeps going.</text>
+</svg>
+    </div>
+
+    <p>At the black dot, the two programs are indistinguishable: same record, climbing at the same speed. A snapshot &mdash; or a rolling average, which is just a blurry snapshot &mdash; would call them equal. But one is bending up and the other is bending down, and a season later they live in different worlds. That bend is the whole point of this primer.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Velocity is the first derivative. Acceleration is the second.</h3>
+
+    <p>These three ideas have precise names. The <strong>level</strong> is just the value. The <strong>velocity</strong> is the rate the value is changing &mdash; the slope, the first derivative. The <strong>acceleration</strong> is the rate the <em>slope</em> is changing &mdash; the second derivative, the curvature of the line. Each one is built from the differences in the one before it, and each answers a question further into the future: the level is the past, the velocity is the present, and the acceleration is the earliest honest hint of what&rsquo;s next.</p>
+
+    <p>This is why a <strong>rolling average lags</strong>. An average is deliberately backward-looking &mdash; half of a four-year window is two and three years old &mdash; so by the time the average confirms a program is rising, the rise is old news. Acceleration is the opposite: it is the first thing to turn. A team&rsquo;s slope flips from falling to rising a full season or two before its average stops sinking, which is exactly how you catch a program &mdash; or a new coach &mdash; in the act, instead of reading a verdict the record has already delivered.</p>
+
+    <p>But there is a tax, and honesty requires naming it: <strong>every derivative amplifies noise.</strong> A single fluky season barely moves a level, wobbles a slope, and can wildly swing an acceleration. That is why we smooth first &mdash; a rolling average tames the noise &mdash; and smoothing reintroduces exactly the lag we were trying to escape. The real craft of reading change is this trade-off: smooth too little and the acceleration is all static; smooth too much and it arrives too late to matter. There is no free lunch, only a dial to set with judgment.</p>
+  </div>
+
+  <div class="tier textbook">
+    <div class="tier-label">Tier 3 &middot; Take It to the Textbook</div>
+    <h3>The full treatment: derivatives, and the signal in the noise.</h3>
+    <p>How rates of change are actually measured &mdash; finite differences, the calculus of the first and second derivative, smoothing and filtering, and the bias-variance trade-off that governs how hard to smooth before you trust a trend &mdash; is developed in <strong>The Sports Page&rsquo;s companion statistics textbook</strong>, a free, open, graduate-level text, with the R code to compute a velocity and an acceleration for yourself. <a href="https://pem725.github.io/GradStats-Book/" target="_blank" rel="noopener">Read it free here</a> &mdash; the same &ldquo;read, play, learn&rdquo; idea, one rung deeper.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li>The <strong>&ldquo;program trajectories&rdquo;</strong> issue &mdash; Indiana&rsquo;s average reads .500 a year after a title, while Nebraska looks like a faller yet owns the sharpest upward acceleration in the sport. The bend leads; the average lags.</li>
+      <li>The <strong>&ldquo;acceleration&rdquo;</strong> issue &mdash; building a second-derivative metric for a team&rsquo;s form, and the window problem that comes with it.</li>
+      <li><a href="regression-to-the-mean.html">Regression to the Mean</a> (Concept No. 3) &mdash; the level a program drifts back toward, which velocity and acceleration can quietly move.</li>
+      <li>Any pre-season projection &mdash; the honest ones ask not just how good a team is, but which way it&rsquo;s turning.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>

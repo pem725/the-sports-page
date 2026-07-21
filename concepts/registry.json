@@ -10,7 +10,7 @@
       "branding": "arms-length companion textbook — neutral front door, no author-name emphasis in newsletter-facing copy",
       "note": "Front door LIVE (GitHub Pages, HTTP 200, 'Statistics by Us for You') as of 2026-07-16. Note: URL path is case-sensitive (GradStats-Book, not gradstats-book). Book is being built out in a separate session — deep-link to chapters only once their rendered paths are stable; root front door is safe."
     },
-    "updated": "2026-07-19"
+    "updated": "2026-07-21"
   },
   "concepts": [
     {"no": 1,  "id": "base-rate",                       "title": "Base Rate",                              "theme": "inference-traps", "status": "published", "primer": "concepts/base-rate.html",                       "book_chapters": [], "issues": []},
@@ -46,8 +46,11 @@
       "summary": "Kahneman & Tversky: heuristics as systematic biases. Gerd Gigerenzer: fast-and-frugal heuristics as often optimal in the real world. The productive tension — when is a shortcut a bug, and when is it the smart move? Sports intuition is the proving ground."},
 
     {"no": 20, "id": "information-and-surprise", "title": "Information & Surprise", "theme": "uncertainty", "status": "published", "primer": "concepts/information-and-surprise.html", "book_chapters": [], "issues": ["105-cfb-weeks-that-matter.html"],
-      "summary": "A result you expected teaches nothing; one you couldn't call teaches a lot. Surprise = log2(1/p); its average is entropy, maximized at a coin-flip (1 bit). It grades forecasts via log loss. Anchor issue: which 2026 CFB weeks matter — toss-ups between contenders carry the most bits; blowouts carry almost none. Pairs with communicating-uncertainty (No. 18) and p-value (No. 11)."}
+      "summary": "A result you expected teaches nothing; one you couldn't call teaches a lot. Surprise = log2(1/p); its average is entropy, maximized at a coin-flip (1 bit). It grades forecasts via log loss. Anchor issue: which 2026 CFB weeks matter — toss-ups between contenders carry the most bits; blowouts carry almost none. Pairs with communicating-uncertainty (No. 18) and p-value (No. 11)."},
+
+    {"no": 21, "id": "rates-of-change", "title": "Rates of Change: Level, Velocity, Acceleration", "theme": "modeling", "status": "published", "primer": "concepts/rates-of-change.html", "book_chapters": [], "issues": ["097-acceleration-second-derivative.html", "109-cfb-trajectories.html"],
+      "summary": "Three questions inside 'how good is that team': level (the value), velocity (slope / 1st derivative — which way, how fast), acceleration (2nd derivative — is the trend strengthening or reversing). A rolling average lags by design; acceleration leads. The tax: every derivative amplifies noise, so you smooth, which reintroduces lag — a bias-variance dial. Anchor issues: CFB program trajectories (#109, Indiana's average lags a title / Nebraska's turn) and the acceleration metric (#097). Pairs with regression-to-the-mean (No. 3)."}
   ],
   "themes": ["inference-traps", "measurement", "modeling", "uncertainty", "epistemics", "judgment"],
-  "backlog_note": "Deep frontier still to add as concepts: causal inference / confounding, effect sizes vs significance, multiple comparisons. Recently added: research design (17), communicating uncertainty (18), heuristics vs ecological rationality (19), information & surprise (20). See project_stats_curriculum memory."
+  "backlog_note": "Deep frontier still to add as concepts: causal inference / confounding, effect sizes vs significance, multiple comparisons. Recently added: communicating uncertainty (18), heuristics vs ecological rationality (19), information & surprise (20), rates of change (21). See project_stats_curriculum memory."
 }
