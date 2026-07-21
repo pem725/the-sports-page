@@ -43,6 +43,23 @@ dark horses, key matchups, key weeks — and track it from now through the seaso
    piece + Vegas win totals as priors + JND threshold. Grade weekly in Sunday
    Editions. (See CLAUDE.md "Pre-Season Simulation" + scripts/build_cfb_jnd_dataset.py,
    fit_cfb_jnd_curves.py — CFB modeling infra already exists; Issue #022 used it.)
+5. **"Program trajectories" — rolling-average win% curves, who's rising / who's falling**
+   *(user-requested 2026-07-21; buildable now)*. The CFB counterpart to the pro
+   "regress to your own mean" pieces (MLB #107 / NFL #108) — but CFB has no payroll
+   and huge year-to-year flux, so the static mean is less useful than the **trajectory**.
+   Method: for every FBS program, a **3–4-year rolling average of win%** (user suggested
+   a 4-yr, maybe 3-yr window), plotted over ~20 years. Read the SLOPE (rising vs falling)
+   and, per the user, maybe the **second derivative / acceleration** (is the rise itself
+   speeding up or leveling off — reuse the acceleration work from Issue #097 /
+   project_acceleration_second_derivative). Named cases the user flagged: **Indiana =
+   clearly rising** (hard to argue), **Nebraska = falling**. This is also the honest home
+   for the user's coaching-evaluation instinct — "**how long before you know what you've
+   got in a coach**" (we have that issue — find it; the "Year 1 tells you ~60%" thesis in
+   CLAUDE.md's Sal example): a coach's early trajectory should show up in these curves, so
+   the rolling-average slope is a way to SEE the coach-signal-vs-noise timeline. Data:
+   win% by program by season is pullable from CFBD (`/records?year=YYYY` or /games), the
+   same key/API as the schedule work. Wire to regression-to-the-mean (No. 3) and possibly
+   a new "trajectory / derivatives" concept. Great candidate for the next CFB build.
 
 ## Key matchups to track (populate from the 2026 schedule)
 
