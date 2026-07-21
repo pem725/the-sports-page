@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 386 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 385 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 114 issues (#1-114)
-Queue: 8 articles ready (088-sorsby-supplemental-bet, 100-deadline-sellers-market, 101-cfb-maturity-wins, 102-cfb-contender-board, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, _TEMPLATE)
+Published: 115 issues (#1-115)
+Queue: 7 articles ready (088-sorsby-supplemental-bet, 100-deadline-sellers-market, 102-cfb-contender-board, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, _TEMPLATE)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 386 issues remaining of 500
-Last published: Issue #114 — "The Diamond in the Rough Is Mostly Rough." (096-mets-diamonds-rough.html) on July 20, 2026
+Goal: 385 issues remaining of 500
+Last published: Issue #115 — "A Champion Needs 50% Blue-Chip Talent. Indiana Won With 8%." (101-cfb-maturity-wins.html) on July 21, 2026
