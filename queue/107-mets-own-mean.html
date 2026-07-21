@@ -1,0 +1,309 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Mets, Regression, Payroll
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)} .sc .v.gold{color:var(--gold)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
+</style>
+<meta property="og:title" content="The Standings Say the Mets Should Bounce Back. The Franchise Says Otherwise.">
+<meta property="og:description" content="Regression to the mean is supposed to rescue a bad team. But every franchise regresses toward its OWN mean -- and the Mets' mean is 82 wins. Dead average, no matter the payroll.">
+<meta property="og:url" content="https://thesportspage.net/published/107-mets-own-mean.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/107-mets-own-mean.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Mets Regress to Their Own Mean. It's 82 Wins.">
+<meta name="twitter:description" content="Every franchise has its own gravity. The Mets paid like a 95-win team and keep coming home to 82. That's not a slump -- it's the institution.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/107-mets-own-mean.png">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">The Standings Say the Mets Should Bounce Back. <em>The Franchise Says Otherwise.</em></h2>
+  <p class="deck">Regression to the mean is supposed to rescue a bad team &mdash; drag the strugglers back up toward respectability. But every club regresses toward its <em>own</em> mean, not the league&rsquo;s. And the Mets&rsquo; mean, across twenty seasons, is eighty-two wins. Dead average. No matter what they spend.</p>
+  <p class="byline">The Sports Page &middot; The Columnist &middot; The dog days, and the teams that make them longer</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">82</div><div class="l">the Mets&rsquo; average wins over the last 20 seasons &mdash; their true level</div></div>
+    <div class="sc"><div class="v bad">11</div><div class="l">losing seasons in the last 20 &mdash; more often bad than good</div></div>
+    <div class="sc"><div class="v gold">40</div><div class="l">summers since the last title, in 1986</div></div>
+  </div>
+
+  <p>The Mets are on pace for a season in the mid-60s in wins &mdash; a face-plant for a roster carrying the second-biggest payroll in the sport &mdash; and every fan who has lived through a July like this reaches for the same consolation. It has a name and it is real: <span class="cc" data-preview="Extreme results tend to be followed by less-extreme ones -- a bad stretch is partly bad luck, and luck doesn't repeat. So a struggling team usually climbs back toward average next year. Open the Regression to the Mean primer."><em>regression to the mean</em><a class="cc-i" href="../concepts/regression-to-the-mean.html" target="_blank" rel="noopener" aria-label="What is regression to the mean? Open primer.">i</a></span>. A team this far below water is partly the victim of bad luck, and bad luck does not renew its lease. Run the numbers on twenty years of standings and the pattern is clean: a club keeps only about half of its distance from average from one season to the next, and gives the other half back. The Mets will climb. That part is not in doubt.</p>
+
+  <p>The doubt is about the destination. Because &ldquo;the mean&rdquo; in <em>regression to the mean</em> is doing quiet, load-bearing work, and almost everyone hears it wrong. They hear <em>.500</em>. They hear <em>the middle of the league</em>. What the math actually says is that a team regresses toward <em>its own</em> long-run level &mdash; and that level is different for every franchise.</p>
+
+  <h3 class="sh">Every team has its own gravity</h3>
+
+  <p>Look at where each club has actually lived across the last twenty years. The Dodgers average ninety-five wins a season; the Yankees, ninety-three. That is their gravity &mdash; when they have a down year, that is what pulls them back up. At the other end, the Pirates, Rockies, and Royals average about seventy-three. When one of them gets hot, that same force drags it back down. Nobody regresses to the league. Everybody regresses to themselves.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Twenty years of gravity &middot; the win level each franchise regresses toward</div>
+<svg class="chart" viewBox="0 0 720 556" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="720" height="556" fill="#ede5d2"/>
+<text x="360" y="30" text-anchor="middle" font-family="Playfair Display" font-size="18" font-weight="700" fill="#1a1208">Every franchise has its own gravity</text>
+<text x="360" y="50" text-anchor="middle" font-size="11" fill="#6b5e4a">Average wins per 162 games, 2006&ndash;2025 &mdash; the level each club keeps regressing back toward.</text>
+<line x1="368.1" y1="70" x2="368.1" y2="520" stroke="#1a1208" stroke-width="1.3" stroke-dasharray="4,3"/>
+<text x="368.1" y="65" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a1208">.500 (81 wins)</text>
+<text x="196.4" y="534" text-anchor="middle" font-size="9" fill="#6b5e4a">73</text>
+<text x="282.2" y="534" text-anchor="middle" font-size="9" fill="#6b5e4a">77</text>
+<text x="368.1" y="534" text-anchor="middle" font-size="9" fill="#6b5e4a">81</text>
+<text x="453.9" y="534" text-anchor="middle" font-size="9" fill="#6b5e4a">85</text>
+<text x="539.8" y="534" text-anchor="middle" font-size="9" fill="#6b5e4a">89</text>
+<text x="625.6" y="534" text-anchor="middle" font-size="9" fill="#6b5e4a">93</text>
+<line x1="368.1" y1="74.0" x2="668.5" y2="74.0" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="668.5" cy="74.0" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="77.0" text-anchor="end" font-size="9.5" fill="#1a1208">Dodgers</text>
+<text x="675.5" y="77.0" text-anchor="start" font-size="8.5" fill="#2c4a6e">95</text>
+<line x1="368.1" y1="89.2" x2="625.6" y2="89.2" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="625.6" cy="89.2" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="92.2" text-anchor="end" font-size="9.5" fill="#1a1208">Yankees</text>
+<text x="632.6" y="92.2" text-anchor="start" font-size="8.5" fill="#2c4a6e">93</text>
+<line x1="368.1" y1="104.5" x2="496.8" y2="104.5" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="496.8" cy="104.5" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="107.5" text-anchor="end" font-size="9.5" fill="#1a1208">Cardinals</text>
+<text x="503.8" y="107.5" text-anchor="start" font-size="8.5" fill="#2c4a6e">87</text>
+<line x1="368.1" y1="119.7" x2="475.4" y2="119.7" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="475.4" cy="119.7" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="122.7" text-anchor="end" font-size="9.5" fill="#1a1208">Red Sox</text>
+<text x="482.4" y="122.7" text-anchor="start" font-size="8.5" fill="#2c4a6e">86</text>
+<line x1="368.1" y1="135.0" x2="475.4" y2="135.0" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="475.4" cy="135.0" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="138.0" text-anchor="end" font-size="9.5" fill="#1a1208">Braves</text>
+<text x="482.4" y="138.0" text-anchor="start" font-size="8.5" fill="#2c4a6e">86</text>
+<line x1="368.1" y1="150.2" x2="475.4" y2="150.2" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="475.4" cy="150.2" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="153.2" text-anchor="end" font-size="9.5" fill="#1a1208">Rays</text>
+<text x="482.4" y="153.2" text-anchor="start" font-size="8.5" fill="#2c4a6e">86</text>
+<line x1="368.1" y1="165.4" x2="453.9" y2="165.4" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="453.9" cy="165.4" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="168.4" text-anchor="end" font-size="9.5" fill="#1a1208">Guardians</text>
+<text x="460.9" y="168.4" text-anchor="start" font-size="8.5" fill="#2c4a6e">85</text>
+<line x1="368.1" y1="180.7" x2="453.9" y2="180.7" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="453.9" cy="180.7" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="183.7" text-anchor="end" font-size="9.5" fill="#1a1208">Brewers</text>
+<text x="460.9" y="183.7" text-anchor="start" font-size="8.5" fill="#2c4a6e">85</text>
+<line x1="368.1" y1="195.9" x2="432.5" y2="195.9" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="432.5" cy="195.9" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="198.9" text-anchor="end" font-size="9.5" fill="#1a1208">Phillies</text>
+<text x="439.5" y="198.9" text-anchor="start" font-size="8.5" fill="#2c4a6e">84</text>
+<line x1="368.1" y1="211.2" x2="411.0" y2="211.2" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="411.0" cy="211.2" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="214.2" text-anchor="end" font-size="9.5" fill="#1a1208">Blue Jays</text>
+<text x="418.0" y="214.2" text-anchor="start" font-size="8.5" fill="#2c4a6e">83</text>
+<line x1="368.1" y1="226.4" x2="389.5" y2="226.4" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="389.5" cy="226.4" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="229.4" text-anchor="end" font-size="9.5" fill="#1a1208">Astros</text>
+<text x="396.5" y="229.4" text-anchor="start" font-size="8.5" fill="#2c4a6e">82</text>
+<line x1="368.1" y1="241.7" x2="389.5" y2="241.7" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="389.5" cy="241.7" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="244.7" text-anchor="end" font-size="9.5" fill="#1a1208">Cubs</text>
+<text x="396.5" y="244.7" text-anchor="start" font-size="8.5" fill="#2c4a6e">82</text>
+<line x1="368.1" y1="256.9" x2="389.5" y2="256.9" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="389.5" cy="256.9" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="259.9" text-anchor="end" font-size="9.5" fill="#1a1208">Giants</text>
+<text x="396.5" y="259.9" text-anchor="start" font-size="8.5" fill="#2c4a6e">82</text>
+<rect x="4" y="265.5" width="712" height="14.2" fill="#f3e6c8"/>
+<line x1="368.1" y1="272.1" x2="389.5" y2="272.1" stroke="#c9962a" stroke-width="2.4"/>
+<circle cx="389.5" cy="272.1" r="4.5" fill="#c9962a"/>
+<text x="122" y="275.1" text-anchor="end" font-size="9.5" font-weight="700" fill="#c9962a">Mets</text>
+<text x="396.5" y="275.1" text-anchor="start" font-size="8.5" font-weight="700" fill="#c9962a">82</text>
+<line x1="368.1" y1="287.4" x2="389.5" y2="287.4" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="389.5" cy="287.4" r="3.2" fill="#2c4a6e"/>
+<text x="122" y="290.4" text-anchor="end" font-size="9.5" fill="#1a1208">Angels</text>
+<text x="396.5" y="290.4" text-anchor="start" font-size="8.5" fill="#2c4a6e">82</text>
+<line x1="368.1" y1="302.6" x2="346.6" y2="302.6" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="346.6" cy="302.6" r="3.2" fill="#b83a1e"/>
+<text x="122" y="305.6" text-anchor="end" font-size="9.5" fill="#1a1208">Twins</text>
+<text x="339.6" y="305.6" text-anchor="end" font-size="8.5" fill="#b83a1e">80</text>
+<line x1="368.1" y1="317.9" x2="346.6" y2="317.9" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="346.6" cy="317.9" r="3.2" fill="#b83a1e"/>
+<text x="122" y="320.9" text-anchor="end" font-size="9.5" fill="#1a1208">Rangers</text>
+<text x="339.6" y="320.9" text-anchor="end" font-size="8.5" fill="#b83a1e">80</text>
+<line x1="368.1" y1="333.1" x2="346.6" y2="333.1" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="346.6" cy="333.1" r="3.2" fill="#b83a1e"/>
+<text x="122" y="336.1" text-anchor="end" font-size="9.5" fill="#1a1208">Athletics</text>
+<text x="339.6" y="336.1" text-anchor="end" font-size="8.5" fill="#b83a1e">80</text>
+<line x1="368.1" y1="348.3" x2="325.2" y2="348.3" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="325.2" cy="348.3" r="3.2" fill="#b83a1e"/>
+<text x="122" y="351.3" text-anchor="end" font-size="9.5" fill="#1a1208">Padres</text>
+<text x="318.2" y="351.3" text-anchor="end" font-size="8.5" fill="#b83a1e">79</text>
+<line x1="368.1" y1="363.6" x2="325.2" y2="363.6" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="325.2" cy="363.6" r="3.2" fill="#b83a1e"/>
+<text x="122" y="366.6" text-anchor="end" font-size="9.5" fill="#1a1208">Mariners</text>
+<text x="318.2" y="366.6" text-anchor="end" font-size="8.5" fill="#b83a1e">79</text>
+<line x1="368.1" y1="378.8" x2="325.2" y2="378.8" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="325.2" cy="378.8" r="3.2" fill="#b83a1e"/>
+<text x="122" y="381.8" text-anchor="end" font-size="9.5" fill="#1a1208">Tigers</text>
+<text x="318.2" y="381.8" text-anchor="end" font-size="8.5" fill="#b83a1e">79</text>
+<line x1="368.1" y1="394.1" x2="303.7" y2="394.1" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="303.7" cy="394.1" r="3.2" fill="#b83a1e"/>
+<text x="122" y="397.1" text-anchor="end" font-size="9.5" fill="#1a1208">D-backs</text>
+<text x="296.7" y="397.1" text-anchor="end" font-size="8.5" fill="#b83a1e">78</text>
+<line x1="368.1" y1="409.3" x2="282.2" y2="409.3" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="282.2" cy="409.3" r="3.2" fill="#b83a1e"/>
+<text x="122" y="412.3" text-anchor="end" font-size="9.5" fill="#1a1208">Reds</text>
+<text x="275.2" y="412.3" text-anchor="end" font-size="8.5" fill="#b83a1e">77</text>
+<line x1="368.1" y1="424.6" x2="282.2" y2="424.6" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="282.2" cy="424.6" r="3.2" fill="#b83a1e"/>
+<text x="122" y="427.6" text-anchor="end" font-size="9.5" fill="#1a1208">Nationals</text>
+<text x="275.2" y="427.6" text-anchor="end" font-size="8.5" fill="#b83a1e">77</text>
+<line x1="368.1" y1="439.8" x2="239.3" y2="439.8" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="239.3" cy="439.8" r="3.2" fill="#b83a1e"/>
+<text x="122" y="442.8" text-anchor="end" font-size="9.5" fill="#1a1208">White Sox</text>
+<text x="232.3" y="442.8" text-anchor="end" font-size="8.5" fill="#b83a1e">75</text>
+<line x1="368.1" y1="455.0" x2="239.3" y2="455.0" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="239.3" cy="455.0" r="3.2" fill="#b83a1e"/>
+<text x="122" y="458.0" text-anchor="end" font-size="9.5" fill="#1a1208">Orioles</text>
+<text x="232.3" y="458.0" text-anchor="end" font-size="8.5" fill="#b83a1e">75</text>
+<line x1="368.1" y1="470.3" x2="217.8" y2="470.3" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="217.8" cy="470.3" r="3.2" fill="#b83a1e"/>
+<text x="122" y="473.3" text-anchor="end" font-size="9.5" fill="#1a1208">Marlins</text>
+<text x="210.8" y="473.3" text-anchor="end" font-size="8.5" fill="#b83a1e">74</text>
+<line x1="368.1" y1="485.5" x2="196.4" y2="485.5" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="196.4" cy="485.5" r="3.2" fill="#b83a1e"/>
+<text x="122" y="488.5" text-anchor="end" font-size="9.5" fill="#1a1208">Royals</text>
+<text x="189.4" y="488.5" text-anchor="end" font-size="8.5" fill="#b83a1e">73</text>
+<line x1="368.1" y1="500.8" x2="196.4" y2="500.8" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="196.4" cy="500.8" r="3.2" fill="#b83a1e"/>
+<text x="122" y="503.8" text-anchor="end" font-size="9.5" fill="#1a1208">Rockies</text>
+<text x="189.4" y="503.8" text-anchor="end" font-size="8.5" fill="#b83a1e">73</text>
+<line x1="368.1" y1="516.0" x2="196.4" y2="516.0" stroke="#b83a1e" stroke-width="1.6"/>
+<circle cx="196.4" cy="516.0" r="3.2" fill="#b83a1e"/>
+<text x="122" y="519.0" text-anchor="end" font-size="9.5" fill="#1a1208">Pirates</text>
+<text x="189.4" y="519.0" text-anchor="end" font-size="8.5" fill="#b83a1e">73</text>
+<text x="423.5" y="275.1" text-anchor="start" font-size="9" font-style="italic" font-weight="700" fill="#c9962a">&larr; paid like 95, lives at 82</text>
+<text x="360" y="546" text-anchor="middle" font-size="9.5" font-style="italic" fill="#6b5e4a">Source: MLB regular-season records via MLB Stats API. Dot = 20-season mean; stem = distance from .500.</text>
+</svg>
+  </div>
+
+  <h3 class="sh">The Mets&rsquo; gravity is mediocrity</h3>
+
+  <p>Find the Mets on that chart and the whole season clarifies. Their twenty-year average is eighty-two wins &mdash; the exact center of the sport, a single win above break-even. They have finished below .500 in eleven of the last twenty years, more losing seasons than winning ones. They are not a bad franchise, in the way the Pirates are a bad franchise. They are something that hurts worse: a <em>perfectly average</em> one, wearing the second-biggest payroll in the game.</p>
+
+  <p>And this is the trap the standings set for the hopeful fan. The Mets spent like the Dodgers &mdash; the ninety-five-win club at the top of the chart &mdash; and the arithmetic of regression does not care. The 2026 team will climb back up from the mid-60s. But it will climb toward <em>eighty-two</em>, because that is the Mets&rsquo; mean, and eighty-two is the number the institution keeps handing back. You do not regress to the team you paid for. You regress to the team you are. The good years prove the same rule in the other direction: the ninety-seven wins of 2006, the pennant of 2015, the hundred-and-one of 2022 &mdash; each a spike, each dragged back to earth within a season or two by the same quiet force.</p>
+
+  <div class="pull">
+    <p>The Mets don&rsquo;t regress to .500. They regress to the Mets. That is the more expensive place to live.</p>
+    <cite>The gravity of a franchise</cite>
+  </div>
+
+  <h3 class="sh">Losing is learned, too</h3>
+
+  <p>Here is the part that should scare Queens, and comfort it in equal measure. A franchise&rsquo;s mean is not a law of physics. It moves &mdash; but only when the institution underneath it moves. The Cubs carried a hundred-and-eight-year drought and the Red Sox eighty-six, and neither broke because a single star arrived or a single check cleared. They broke when the whole operation was rebuilt from the studs: new front offices, new philosophies, a new definition of how the organization does its work. The gravity changed because the mass changed.</p>
+
+  <p>Winning, in other words, is a thing an organization <em>learns</em> &mdash; and so is losing. The most beaten-down fan bases in the sport are not cursed; they are the ones whose institutions have quietly gotten very, very good at one particular skill. Forty summers have passed since a Mets team last stood at the top of the sport, in 1986, and the payroll has told the world every winter that this year is different. The gravity has not agreed. Until the mass moves &mdash; until the organization itself becomes a different thing &mdash; regression to the mean is not a promise of recovery. It is a sentence, and the Mets keep serving it at eighty-two wins a year. September is coming, with all its magic. The math just counsels a colder kind of patience.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Franchise win levels are the mean of each club&rsquo;s regular-season winning percentage across the 2006&ndash;2025 seasons, from MLB regular-season records (MLB Stats API), expressed as wins per 162 games. The Mets&rsquo; twenty-year mean is a shade over .500 (about 82 wins), with 11 of 20 seasons finishing below .500. The 2026 team spent the back half of July well under .500, on a mid-60s win pace; those figures move daily, and this piece is about the destination of the climb, not its existence.</p>
+    <p style="color:#c8b99a">&ldquo;Keeps about half its distance from average&rdquo; refers to the year-over-year persistence of team winning percentage across the same window: regressing next season&rsquo;s win rate on this season&rsquo;s gives a slope of roughly one-half, the standard signature of regression to the mean. The comparison to the Mets&rsquo; payroll draws on this newsletter&rsquo;s earlier finding that money explains only a modest share of who wins. Championship drought lengths (Cubs, 108 years to 2016; Red Sox, 86 to 2004) are historical record. All numbers rounded; see the <a href="https://thesportspage.net/" style="color:#c9962a" target="_blank" rel="noopener">archive</a> for the companion pieces on payroll and wins.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Vol. I, No. __</span>
+    <span>Dog Days &middot; Regression</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</main>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/107-mets-own-mean.html">
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+    <a href="https://twitter.com/intent/tweet?text=The%20Mets%20don%27t%20regress%20to%20.500.%20They%20regress%20to%20the%20Mets%20%E2%80%94%20an%2082-win%20team%2C%20no%20matter%20the%20payroll.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/107-mets-own-mean.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/107-mets-own-mean.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20The%20Mets%20Regress%20to%20Their%20Own%20Mean&body=Regression%20to%20the%20mean%20is%20supposed%20to%20rescue%20a%20bad%20team.%20But%20every%20franchise%20regresses%20toward%20its%20OWN%20mean%20%E2%80%94%20and%20the%20Mets%27%20is%2082%20wins.%20Dead%20average%2C%20no%20matter%20the%20payroll.%0A%0Ahttps%3A//thesportspage.net/published/107-mets-own-mean.html%3Futm_source%3Demail%26utm_medium%3Dshare" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/107-mets-own-mean.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+  </div>
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('sp-copy-link'); if(!btn) return;
+  var label=document.getElementById('sp-copy-label'); var url=btn.getAttribute('data-url');
+  btn.addEventListener('click',function(){
+    try{ navigator.clipboard.writeText(url).then(function(){ label.textContent='Copied!'; btn.style.background='#c9962a'; btn.style.color='#1a1208'; setTimeout(function(){label.textContent='Copy link';btn.style.background='transparent';btn.style.color='#c9962a';},1800);});}catch(e){window.prompt('Copy this link:',url);}
+  });
+})();
+</script></body>
+</html>
