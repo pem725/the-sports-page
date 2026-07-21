@@ -1,0 +1,207 @@
+<!-- PUBLISH-META
+topic: CFB
+tags: CFB:cfb, College Football, Quarterbacks, Rankings, Reliability
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)} .sc .v.gold{color:var(--gold)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
+</style>
+<meta property="og:title" content="They Called It a Fool's Errand. Then They Ranked 138 Quarterbacks, 1 Through 138.">
+<meta property="og:description" content="A 1-to-138 quarterback ranking refutes itself: the same players draw opposite scout verdicts, and even if they agreed, you can't rank a QB out of the offense he plays in. A field guide to four errors.">
+<meta property="og:url" content="https://thesportspage.net/published/110-qb-tiers-critique.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/110-qb-tiers-critique.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="You Can't Rank a Quarterback 1 Through 138">
+<meta name="twitter:description" content="Same players, opposite scout verdicts; a QB's numbers are his team's numbers; and #1 went to the guy whose team won. The precision is borrowed. Here are the four errors.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/110-qb-tiers-critique.png">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">They Called It &ldquo;a Fool&rsquo;s Errand.&rdquo; <em>Then They Ranked 138 of Them.</em></h2>
+  <p class="deck">A new list ranks every projected college quarterback from 1 to 138 &mdash; and it opens by admitting the whole exercise is guesswork. It is right to admit it. The list refutes itself twice over: the scouts don&rsquo;t agree with each other, and even if they did, you cannot rank a quarterback out of the offense he plays in.</p>
+  <p class="byline">The Sports Page &middot; The Columnist &middot; The Reader&rsquo;s Defense &middot; a field guide to a bad ranking</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">138</div><div class="l">quarterbacks ranked, 1 through 138 &mdash; in a piece that calls projection a fool&rsquo;s errand</div></div>
+    <div class="sc"><div class="v gold">7</div><div class="l">tiers they bucket into &mdash; then rank <em>within</em> them anyway</div></div>
+    <div class="sc"><div class="v now">43%</div><div class="l">of dropbacks one dropped QB was pressured on &mdash; cited, and not adjusted for</div></div>
+  </div>
+
+  <p>Every summer the rankings arrive, and this one is ambitious: not a top 10, not a top 25, but a full census &mdash; all 138 projected starters, sorted into a strict order from first to last. The authors are candid up front that projecting quarterbacks is close to a fool&rsquo;s errand, which is the most honest sentence in the piece. Then they spend the rest of it doing the errand anyway, with the confidence of a number line. Their tool was not a formula or a vote; it was roughly three dozen anonymous coaches, general managers, and scouts, with the tiers drawn wherever the &ldquo;separations felt natural.&rdquo; Feel is doing a great deal of load-bearing work here, and it cannot hold the weight.</p>
+
+  <h3 class="sh">The rank is a borrowed number</h3>
+
+  <p>Start with the raters, because the piece hands you the evidence itself. On one quarterback, a Big Ten executive shrugs that he&rsquo;s &ldquo;just a game manager&rdquo; and overrated; on the same player, an ACC staffer says anyone who leaves him out of the top three is simply wrong. On another, a Power Four head coach calls him a little overhyped while an SEC general manager calls him top tier in the country. These are not fine distinctions. They are opposite verdicts on the same tape &mdash; and they get averaged into a single, tidy, confident integer. When your instrument gives wildly different readings depending on who holds it, the first thing to report is that <span class="cc" data-preview="Reliability asks whether a measure agrees with itself -- across raters, across occasions. If two scouts watching the same QB rank him ten tiers apart, the instrument is noise, and no amount of ranking precision fixes it. Open the Measurement primer."><em>the instrument disagrees with itself</em><a class="cc-i" href="../concepts/measurement-building-a-metric.html" target="_blank" rel="noopener" aria-label="What is reliability? Open the Measurement primer.">i</a></span> &mdash; not to publish the average to the nearest rank. The authors half-know this: they bucket the field into seven tiers, which is a quiet confession that the real resolution is coarse. Then they rank <em>inside</em> the tiers anyway, restoring the false precision with the other hand.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; The precision is borrowed &middot; scout opinion vs. the confident rank</div>
+<svg class="chart" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="680" height="300" fill="#ede5d2"/>
+<text x="340" y="26" text-anchor="middle" font-family="Playfair Display" font-size="16" font-weight="700" fill="#1a1208">One rank. A shouting match underneath.</text>
+<text x="340" y="45" text-anchor="middle" font-size="10.5" fill="#6b5e4a">The span of scout opinion the article itself prints &mdash; and the single number it picks.</text>
+<text x="233" y="60" text-anchor="middle" font-size="9" font-weight="700" fill="#2a6e3f">ELITE</text>
+<text x="549" y="60" text-anchor="middle" font-size="9" font-weight="700" fill="#b83a1e">REPLACEABLE</text>
+<line x1="233.4" y1="80" x2="428.4" y2="80" stroke="#c8b99a" stroke-width="10" stroke-linecap="round"/>
+<circle cx="233.4" cy="80" r="4" fill="#2a6e3f"/>
+<circle cx="428.4" cy="80" r="4" fill="#b83a1e"/>
+<text x="233.4" y="71" text-anchor="middle" font-size="8" font-style="italic" fill="#2a6e3f">&ldquo;top two or three&rdquo;</text>
+<text x="428.4" y="71" text-anchor="middle" font-size="8" font-style="italic" fill="#b83a1e">&ldquo;game manager, overrated&rdquo;</text>
+<path d="M 272.4 74 l 6 6 l -6 6 l -6 -6 z" fill="#1a1208"/>
+<text x="272.4" y="100" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1a1208">the rank</text>
+<text x="196" y="84" text-anchor="end" font-size="11" font-weight="700" fill="#1a1208">Julian Sayin</text>
+<line x1="233.4" y1="134" x2="397.2" y2="134" stroke="#c8b99a" stroke-width="10" stroke-linecap="round"/>
+<circle cx="233.4" cy="134" r="4" fill="#2a6e3f"/>
+<circle cx="397.2" cy="134" r="4" fill="#b83a1e"/>
+<text x="233.4" y="125" text-anchor="middle" font-size="8" font-style="italic" fill="#2a6e3f">&ldquo;top tier in the country&rdquo;</text>
+<text x="397.2" y="125" text-anchor="middle" font-size="8" font-style="italic" fill="#b83a1e">&ldquo;a little overhyped&rdquo;</text>
+<path d="M 291.9 128 l 6 6 l -6 6 l -6 -6 z" fill="#1a1208"/>
+<text x="291.9" y="154" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1a1208">the rank</text>
+<text x="196" y="138" text-anchor="end" font-size="11" font-weight="700" fill="#1a1208">Arch Manning</text>
+<line x1="245.1" y1="188" x2="490.8" y2="188" stroke="#c8b99a" stroke-width="10" stroke-linecap="round"/>
+<circle cx="245.1" cy="188" r="4" fill="#2a6e3f"/>
+<circle cx="490.8" cy="188" r="4" fill="#b83a1e"/>
+<text x="245.1" y="179" text-anchor="middle" font-size="8" font-style="italic" fill="#2a6e3f">preseason No. 3</text>
+<text x="490.8" y="179" text-anchor="middle" font-size="8" font-style="italic" fill="#b83a1e">dropped to Tier 3</text>
+<path d="M 389.4 182 l 6 6 l -6 6 l -6 -6 z" fill="#1a1208"/>
+<text x="389.4" y="208" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1a1208">the rank</text>
+<text x="196" y="192" text-anchor="end" font-size="11" font-weight="700" fill="#1a1208">LaNorris Sellers</text>
+<text x="340" y="286" text-anchor="middle" font-size="9" font-style="italic" fill="#6b5e4a">Bars span the opposing assessments quoted in the article; the diamond is the single tier it assigns.</text>
+</svg>
+  </div>
+
+  <h3 class="sh">Even if they agreed, they&rsquo;d be measuring the wrong thing</h3>
+
+  <p>Now grant the impossible &mdash; suppose the scouts all agreed. The ranking would still be broken, because it answers the wrong question. It treats &ldquo;quarterback quality&rdquo; as a property of the person, a trait you could bottle and carry from team to team. In football it is nothing of the kind. It is a property of the <em>offense</em> &mdash; five linemen, a set of receivers, a scheme, a play-caller, a game script &mdash; and the quarterback&rsquo;s box score is the whole machine&rsquo;s output, not his alone. Ranking the passer out of that context is like <span class="cc" data-preview="The unit of analysis is the thing you're actually measuring. If a QB's stats are produced by an 11-man offense, the offense is the unit -- and a number built to rank individuals is answering a question the data can't support. Open the Research Design primer."><em>ranking violinists by how good the symphonies sounded</em><a class="cc-i" href="../concepts/research-design.html" target="_blank" rel="noopener" aria-label="What is the unit-of-analysis problem? Open the Research Design primer.">i</a></span>. You cannot recover the soloist from the sound of the orchestra by ear, and no amount of scout-hours changes that.</p>
+
+  <p>The list even documents the confound and steps over it. One quarterback slides down a full tier &mdash; and in the very same breath the authors note he was pressured on nearly 43 percent of his dropbacks, the highest rate in his conference. That is not a footnote; that is the explanation, sitting right there, uncredited. An honest number would strip out the pressure, the drops, the run-game support, and the scheme, and rank only what is <em>left</em> &mdash; the part of a quarterback that travels when he changes teams. And the sport just ran that experiment for free: a whole class of passers switched programs through the transfer portal, the closest thing football has to swapping the orchestra while keeping the soloist. A ranking that ignored that natural experiment was never trying to isolate the player.</p>
+
+  <h3 class="sh">Ranking the results, and calling it the quarterback</h3>
+
+  <p>The last error is the oldest one in sports, and the list is built on it. The quarterback at No. 1 is there in large part because his team went deep in January. Another slides because his team dropped two late games. This is outcome bias with a clipboard: read the result, then pin it on the most visible man and call it a scouting report. The piece&rsquo;s own opening line gives the whole game away, praising a former two-star who &ldquo;vaulted his team to a national championship.&rdquo; Did he vault the team &mdash; or did a championship team vault him? The sentence quietly assumes the very thing a real evaluation is supposed to test.</p>
+
+  <div class="pull">
+    <p>You cannot recover the soloist from the sound of the orchestra. A quarterback&rsquo;s numbers are his team&rsquo;s numbers, wearing his name.</p>
+    <cite>The Reader&rsquo;s Defense</cite>
+  </div>
+
+  <h3 class="sh">What a ranking would need before you believed it</h3>
+
+  <p>None of this means quarterbacks are unknowable &mdash; only that a strict 1-to-138 order is the wrong instrument, worn with unearned confidence. A defensible version would look different in four ways. It would report a <strong>context-adjusted residual</strong>: performance after subtracting the line, the weapons, and the scheme &mdash; the part that is actually his. It would give a <strong>range, not a point</strong> &mdash; a floor and a ceiling &mdash; because coaches care about a quarterback&rsquo;s volatility, not just his average. It would carry <strong>error bars</strong>, since No. 7 versus No. 8 would not survive a single resampling of the evidence; rank with uncertainty attached, or do not rank. And it would show a <strong>backtest</strong>: how well did last year&rsquo;s tiers predict this year&rsquo;s results and draft stock? Publish the hit rate. If it lands near a coin flip, the exercise is entertainment &mdash; which is completely fine, and a good deal more honest than a number line.</p>
+
+  <p>That is the point of reading a ranking like this one with your guard up. It is a fun argument, engineered to make you defend your guy and quarrel with a stranger&rsquo;s &mdash; and there is nothing wrong with the quarrel. The trouble starts when the borrowed precision of &ldquo;No. 34&rdquo; gets mistaken for knowledge. Four small habits inoculate you: ask whether the raters even agree, whether the number belongs to the player or his team, whether it is describing skill or just results, and whether anyone has ever checked if last year&rsquo;s version came true. The fool&rsquo;s-errand line was the truest thing on the page. The rest is an engine for July.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">The ranking discussed is Antonio Morales and Sam Khan Jr., &ldquo;College football quarterback tiers 2026,&rdquo; The Athletic, July 21, 2026, which sorts 138 projected starters into seven tiers using the assessments of roughly three dozen anonymous coaches, general managers, and scouts, with no formal scoring system. All quotations, tiers, ranks, and the pressure figure (reported there as the highest in its conference) are as presented in that piece; this is a work of commentary and criticism, not a re-reporting of it. Figure 1&rsquo;s bars illustrate the range of the opposing assessments the article prints for each player, on a qualitative scale; they are our reading of the piece&rsquo;s own quotes, not new measurements.</p>
+    <p style="color:#c8b99a">The statistical ideas named here have their own primers: <em>reliability</em> and how a metric can disagree with itself (Measurement), the <em>unit-of-analysis</em> problem and what a design can support (Research Design), and the value of reporting ranges over false precision (Communicating Uncertainty). See the <a href="https://thesportspage.net/" style="color:#c9962a" target="_blank" rel="noopener">archive</a>.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Vol. I, No. __</span>
+    <span>The Reader&rsquo;s Defense</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</main>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/110-qb-tiers-critique.html">
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+    <a href="https://twitter.com/intent/tweet?text=They%20called%20ranking%20QBs%20a%20fool%27s%20errand%20%E2%80%94%20then%20ranked%20138%20of%20them%2C%201%20through%20138.%20Same%20players%2C%20opposite%20scout%20verdicts%3B%20a%20QB%27s%20numbers%20are%20his%20team%27s%20numbers.%20The%20precision%20is%20borrowed.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/110-qb-tiers-critique.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/110-qb-tiers-critique.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20You%20Can%27t%20Rank%20a%20QB%201%20Through%20138&body=A%20new%20list%20ranks%20138%20quarterbacks%201-to-138%20and%20opens%20by%20calling%20it%20a%20fool%27s%20errand.%20It%27s%20right.%20Same%20players%20draw%20opposite%20scout%20verdicts%2C%20and%20a%20QB%27s%20numbers%20are%20his%20team%27s%20numbers.%20A%20field%20guide%20to%20four%20errors.%0A%0Ahttps%3A//thesportspage.net/published/110-qb-tiers-critique.html%3Futm_source%3Demail%26utm_medium%3Dshare" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/110-qb-tiers-critique.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+  </div>
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('sp-copy-link'); if(!btn) return;
+  var label=document.getElementById('sp-copy-label'); var url=btn.getAttribute('data-url');
+  btn.addEventListener('click',function(){
+    try{ navigator.clipboard.writeText(url).then(function(){ label.textContent='Copied!'; btn.style.background='#c9962a'; btn.style.color='#1a1208'; setTimeout(function(){label.textContent='Copy link';btn.style.background='transparent';btn.style.color='#c9962a';},1800);});}catch(e){window.prompt('Copy this link:',url);}
+  });
+})();
+</script></body>
+</html>
