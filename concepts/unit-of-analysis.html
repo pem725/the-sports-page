@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The Unit of Analysis</title>
+<meta name="description" content="A friendly primer on the quietest error in sports statistics: measuring a team and blaming (or crediting) a person. Whose number is this, really?">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+.tier.textbook{background:#eef2f7;border-color:var(--steel)}
+.tier.textbook .tier-label{color:var(--steel)}
+.tier.textbook h3{color:var(--steel)}
+.tier.textbook a{color:var(--steel);font-weight:700}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.1rem;margin:1.6rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+svg.chart{width:100%;height:auto;display:block}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 22</span><span>The Unit of Analysis</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">A Pitcher Gets the Win. <em>But Winning Isn&rsquo;t His to Get.</em></h1>
+
+  <div class="deck">
+    Before you argue about what a number <em>means</em>, ask a smaller, sneakier question: what does it even describe? Half the bad takes in sports come from measuring one thing &mdash; a team, an offense, a season &mdash; and pinning it on another: a person.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>Whose number is this, really?</h3>
+
+    <p>A starting pitcher throws six good innings and gets the <strong>win</strong>. But a &ldquo;win&rdquo; is not something a pitcher does. It requires his offense to score, his bullpen to hold, his defense to catch the ball. It is a <em>team</em> outcome, wearing one man&rsquo;s name in the box score. Credit it to him and you have quietly swapped the thing you measured (what the team did) for the thing you wanted to know (how well he pitched). That swap has a name: a <strong>unit-of-analysis</strong> error &mdash; measuring at one level, and drawing your conclusion at another.</p>
+
+    <p>It is everywhere once you see it. A quarterback&rsquo;s passing numbers are produced by five linemen, a set of receivers, and a play-caller. A team&rsquo;s record gets hung on the coach. A running back&rsquo;s yards are half offensive line. In each case the number lives at the level of the group, and we read it as if it belonged to the individual standing in front.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-label">The box score is the whole offense&rsquo;s output &mdash; only a slice is the player.</div>
+<svg class="chart" viewBox="0 0 660 236" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="660" height="236" fill="#ede5d2"/>
+<text x="330" y="30" text-anchor="middle" font-family="Playfair Display" font-size="16" font-weight="700" fill="#1a1208">What a quarterback&rsquo;s stat line actually contains</text>
+<text x="330" y="49" text-anchor="middle" font-size="10.5" fill="#6b5e4a">You measure the whole bar. Then you credit one slice.</text>
+<text x="60" y="82" text-anchor="start" font-size="9" font-style="italic" fill="#6b5e4a">&larr; the box score (the whole offense&rsquo;s output) &rarr;</text>
+<rect x="60.0" y="96" width="129.6" height="46" fill="#6b5e4a" stroke="#ede5d2" stroke-width="2"/>
+<text x="124.8" y="160" text-anchor="middle" font-size="8.5" fill="#1a1208">Offensive line</text>
+<rect x="189.6" y="96" width="108.0" height="46" fill="#8a7a5c" stroke="#ede5d2" stroke-width="2"/>
+<text x="243.6" y="160" text-anchor="middle" font-size="8.5" fill="#1a1208">Receivers &amp; drops</text>
+<rect x="297.6" y="96" width="102.6" height="46" fill="#2c4a6e" stroke="#ede5d2" stroke-width="2"/>
+<text x="348.9" y="160" text-anchor="middle" font-size="8.5" fill="#1a1208">Scheme &amp; play-calling</text>
+<rect x="400.2" y="92" width="124.2" height="54" fill="#c9962a" stroke="#ede5d2" stroke-width="2"/>
+<text x="462.3" y="160" text-anchor="middle" font-size="8.5" font-weight="700" fill="#a9781f">The QB himself</text>
+<rect x="524.4" y="96" width="75.6" height="46" fill="#b0a184" stroke="#ede5d2" stroke-width="2"/>
+<text x="562.2" y="160" text-anchor="middle" font-size="8.5" fill="#1a1208">Luck / variance</text>
+<line x1="462.3" y1="88" x2="462.3" y2="66" stroke="#a9781f" stroke-width="0.8" stroke-dasharray="2,2"/>
+<text x="462.3" y="62" text-anchor="middle" font-size="9" font-style="italic" font-weight="700" fill="#a9781f">the only part that&rsquo;s actually him</text>
+<text x="330" y="222" text-anchor="middle" font-size="9" font-style="italic" fill="#6b5e4a">Illustration, not a measurement &mdash; the point is that the number lives at the team level, not the player&rsquo;s.</text>
+</svg>
+    </div>
+
+    <p>The fix is not fancy. It is a habit: before trusting a number about a person, ask whether a person is what it measured. If the answer is &ldquo;no, it measured the team he was on,&rdquo; then any ranking of people built on it is standing on sand.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>The world is nested. Your inference has to respect the levels.</h3>
+
+    <p>Data in sports come in <strong>nested levels</strong>: plays inside players, players inside teams, teams inside leagues. The unit-of-analysis error is what happens when you measure at one level and conclude at another. Reading an individual&rsquo;s skill off a team&rsquo;s output is the famous <strong>ecological fallacy</strong>; its mirror image &mdash; judging a whole group from one member &mdash; is just as common. Both come from forgetting which box the number actually lives in.</p>
+
+    <p>There is also a subtler tax. Teammates&rsquo; numbers are not independent &mdash; a great line lifts every back, a great quarterback flatters every receiver &mdash; so treating players as separate data points quietly counts the same team many times over, and makes a shaky ranking look sturdier than it is. The individual&rsquo;s true contribution is simply not recoverable from ensemble output alone. You need a <strong>design that varies the person against different casts</strong>: the same player across different teams. That is exactly why a trade or a transfer is so informative &mdash; it is the closest thing sports offer to swapping the orchestra while keeping the soloist, and it is how honest metrics (adjusted plus-minus, on/off splits) try to claw the individual back out of the group.</p>
+  </div>
+
+  <div class="tier textbook">
+    <div class="tier-label">Tier 3 &middot; Take It to the Textbook</div>
+    <h3>The full treatment: levels, and partitioning the variance.</h3>
+    <p>How nested data are handled properly &mdash; multilevel and mixed-effects models, fixed versus random effects, and the variance partitioning that says how much of an outcome belongs to the player, the team, and plain noise &mdash; is developed in <strong>The Sports Page&rsquo;s companion statistics textbook</strong>, a free, open, graduate-level text, with the R code to fit a model that keeps the levels straight. <a href="https://pem725.github.io/GradStats-Book/" target="_blank" rel="noopener">Read it free here</a> &mdash; the same &ldquo;read, play, learn&rdquo; idea, one rung deeper.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li>The <strong>quarterback-tiers</strong> issue &mdash; ranking passers 1 through 138 as if quality were a property of the man, not the offense. The anchor case for this whole idea.</li>
+      <li>Pitcher <strong>wins</strong>, <strong>RBIs</strong>, plus-minus &mdash; classic counting stats that belong to the team but get filed under one name.</li>
+      <li>The <strong>&ldquo;own mean&rdquo;</strong> franchise pieces &mdash; when a team is bad for a decade, is it the players, or the institution? Same question, one level up.</li>
+      <li><a href="research-design.html">Why Research Design Matters</a> (Concept No. 17) and <a href="measurement-building-a-metric.html">Measurement</a> (No. 14) &mdash; the siblings: what a design can support, and whether a metric measures what you claim.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>
