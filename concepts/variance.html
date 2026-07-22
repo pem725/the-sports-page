@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Variance</title>
+<meta name="description" content="A friendly primer on the most underrated idea in prediction: a number can only tell things apart to the extent that it moves. Why variance, not the average, is where outcomes are decided.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+.tier.textbook{background:#eef2f7;border-color:var(--steel)}
+.tier.textbook .tier-label{color:var(--steel)}
+.tier.textbook h3{color:var(--steel)}
+.tier.textbook a{color:var(--steel);font-weight:700}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.1rem;margin:1.6rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+svg.chart{width:100%;height:auto;display:block}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 23</span><span>Variance</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">The Average Tells You Where. <em>Only the Variance Tells You Who Wins.</em></h1>
+
+  <div class="deck">
+    Variance is just how much a number moves around its average &mdash; and it is the most underrated idea in prediction. A quantity that is the same for everyone cannot tell anyone apart. So the inputs worth your attention are never the biggest ones. They are the ones that swing.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>A number that doesn&rsquo;t move can&rsquo;t predict anything.</h3>
+
+    <p>Imagine two statistics you might use to guess which of two teams will win. The first, <strong>Predictor A</strong>, is nearly the same for every team &mdash; everyone scores about eight. The second, <strong>Predictor B</strong>, is all over the map &mdash; some teams at two, some at twenty. They have the same average. They are not remotely equally useful. Predictor A cannot separate a winner from a loser, because both teams have basically the same value; it cancels out. Every ounce of predictive power lives in Predictor B, the one that <em>varies</em>.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-label">Same average, opposite usefulness &mdash; only the one that spreads teams out can predict.</div>
+<svg class="chart" viewBox="0 0 660 268" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="660" height="268" fill="#ede5d2"/>
+<text x="330" y="28" text-anchor="middle" font-family="Playfair Display" font-size="16" font-weight="700" fill="#1a1208">A number that doesn&rsquo;t move can&rsquo;t tell anyone apart</text>
+<line x1="250.0" y1="70" x2="250.0" y2="212" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="250.0" y="228" text-anchor="middle" font-size="9" fill="#6b5e4a">0</text>
+<line x1="343.5" y1="70" x2="343.5" y2="212" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="343.5" y="228" text-anchor="middle" font-size="9" fill="#6b5e4a">6</text>
+<line x1="437.0" y1="70" x2="437.0" y2="212" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="437.0" y="228" text-anchor="middle" font-size="9" fill="#6b5e4a">12</text>
+<line x1="530.5" y1="70" x2="530.5" y2="212" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="530.5" y="228" text-anchor="middle" font-size="9" fill="#6b5e4a">18</text>
+<line x1="624.0" y1="70" x2="624.0" y2="212" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="624.0" y="228" text-anchor="middle" font-size="9" fill="#6b5e4a">24</text>
+<text x="437" y="244" text-anchor="middle" font-size="9.5" fill="#1a1208">value of the predictor across teams</text>
+<text x="234" y="92" text-anchor="end" font-size="10.5" font-weight="700" fill="#6b5e4a">Predictor A</text>
+<text x="234" y="105" text-anchor="end" font-size="8.5" fill="#6b5e4a">(barely varies)</text>
+<circle cx="363.8" cy="96" r="5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="368.4" cy="96" r="5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="371.6" cy="96" r="5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="373.1" cy="96" r="5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="374.7" cy="96" r="5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="376.2" cy="96" r="5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="377.8" cy="96" r="5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="380.9" cy="96" r="5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="385.6" cy="96" r="5" fill="#6b5e4a" opacity="0.8"/>
+<text x="374.7" y="78" text-anchor="middle" font-size="8.5" font-style="italic" fill="#6b5e4a">can&rsquo;t separate a winner from a loser</text>
+<text x="234" y="176" text-anchor="end" font-size="10.5" font-weight="700" fill="#b83a1e">Predictor B</text>
+<text x="234" y="189" text-anchor="end" font-size="8.5" fill="#b83a1e">(varies a lot)</text>
+<circle cx="287.4" cy="180" r="5" fill="#b83a1e" opacity="0.8"/>
+<circle cx="315.4" cy="180" r="5" fill="#b83a1e" opacity="0.8"/>
+<circle cx="340.4" cy="180" r="5" fill="#b83a1e" opacity="0.8"/>
+<circle cx="365.3" cy="180" r="5" fill="#b83a1e" opacity="0.8"/>
+<circle cx="393.4" cy="180" r="5" fill="#b83a1e" opacity="0.8"/>
+<circle cx="421.4" cy="180" r="5" fill="#b83a1e" opacity="0.8"/>
+<circle cx="455.7" cy="180" r="5" fill="#b83a1e" opacity="0.8"/>
+<circle cx="505.6" cy="180" r="5" fill="#b83a1e" opacity="0.8"/>
+<circle cx="564.8" cy="180" r="5" fill="#b83a1e" opacity="0.8"/>
+<text x="421.4" y="202" text-anchor="middle" font-size="8.5" font-style="italic" font-weight="700" fill="#b83a1e">this is where the outcome gets decided</text>
+<text x="330" y="258" text-anchor="middle" font-size="9" font-style="italic" fill="#6b5e4a">Same average, opposite usefulness. Only the predictor that spreads teams out can predict which one wins.</text>
+</svg>
+    </div>
+
+    <p>That is the whole idea in one picture. When you are looking for what drives a result, you are really looking for what <em>moves</em>. Chase the biggest number and you will keep landing on things that are the same for everyone &mdash; comforting, prominent, and useless for telling anybody apart.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>The variance of a total is the sum of its parts.</h3>
+
+    <p>Variance has a precise definition &mdash; the average squared distance from the mean &mdash; and one property that does most of the work: for pieces that move independently, <strong>the variance of a sum is the sum of the variances</strong>. If an outcome is built by adding up components (a fantasy score, a team&rsquo;s run total, a portfolio&rsquo;s return), then the swing of the whole is governed by the swings of the parts, and the biggest-variance parts dominate. A component that barely moves contributes almost nothing to where the total lands, no matter how many points it is nominally worth.</p>
+
+    <p>The same logic runs through any prediction model. A predictor&rsquo;s contribution to the outcome scales with its coefficient <em>times its own variance</em> &mdash; so two variables with the same relationship to the result are not equally useful; the one that varies more pulls more weight. A predictor pinned at a constant has zero variance and therefore zero influence, however important it seems in theory.</p>
+
+    <p>One honest guardrail, so this is not misused: variance is <strong>necessary but not sufficient</strong>. A number that swings wildly but has nothing to do with the outcome is not a predictor &mdash; it is just noise, and loud noise at that. The useful inputs are the ones that both vary <em>and</em> track the result. Fantasy football is the unusually clean case where that second condition comes for free, because the categories literally add up to the score; in the messier real world, you still have to check that the thing that moves is moving <em>with</em> what you are trying to predict.</p>
+  </div>
+
+  <div class="tier textbook">
+    <div class="tier-label">Tier 3 &middot; Take It to the Textbook</div>
+    <h3>The full treatment: variance, covariance, and explained spread.</h3>
+    <p>How variance is defined and used &mdash; standard deviation, covariance, the way a regression apportions the outcome&rsquo;s variance among predictors, and the R&sup2; that measures how much of it you have explained &mdash; is developed in <strong>The Sports Page&rsquo;s companion statistics textbook</strong>, a free, open, graduate-level text, with the R code to compute and decompose a variance yourself. <a href="https://pem725.github.io/GradStats-Book/" target="_blank" rel="noopener">Read it free here</a> &mdash; the same &ldquo;read, play, learn&rdquo; idea, one rung deeper.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li>The <strong>&ldquo;variance is king&rdquo;</strong> fantasy issue &mdash; a matchup is decided in the high-swing slots (a receiver&rsquo;s good week is ten times a bad one), never in the steady ones. The anchor case.</li>
+      <li>The <strong>&ldquo;own mean&rdquo;</strong> franchise pieces &mdash; a team&rsquo;s <em>average</em> tells you its level; its variance around that mean tells you whether it&rsquo;s a steady contender or a boom-or-bust wildcard.</li>
+      <li><a href="communicating-uncertainty.html">Communicating Uncertainty</a> (Concept No. 18) &mdash; the sibling: variance is the spread you are obligated to report, not hide.</li>
+      <li><a href="rates-of-change.html">Rates of Change</a> (Concept No. 21) &mdash; a related trap: each derivative you take amplifies variance, which is why higher-order signals are noisier.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>
