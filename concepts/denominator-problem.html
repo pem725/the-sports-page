@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The Denominator Problem</title>
+<meta name="description" content="A friendly primer on the most reliable way to fool yourself with a rate: divide by a very small number. Why the smallest towns, schools and franchises always top the rankings — in both directions.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+.tier.textbook{background:#eef2f7;border-color:var(--steel)}
+.tier.textbook .tier-label{color:var(--steel)}
+.tier.textbook h3{color:var(--steel)}
+.tier.textbook a{color:var(--steel);font-weight:700}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.1rem;margin:1.6rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+svg.chart{width:100%;height:auto;display:block}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 25</span><span>The Denominator Problem</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">The Smallest Places Always Win the Rankings. <em>And Always Lose Them Too.</em></h1>
+
+  <div class="deck">
+    Divide by a big number and you get a fact. Divide by a small one and you get a rumour with a decimal point. Whenever a rate is built on a handful of events, the extremes of the leaderboard belong to whoever had the fewest chances &mdash; in both directions at once.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>The same tiny towns top the best list and the worst list.</h3>
+
+    <p>Rank every county in a country by its rate of some rare disease and something strange happens. The counties with the <strong>highest</strong> rates are overwhelmingly small and rural. So are the counties with the <strong>lowest</strong>. The obvious explanations &mdash; clean country living, or else poor rural healthcare &mdash; cannot both be true, and neither is doing the work. The real cause is arithmetic. A county of four hundred people might record one case or none. One case is a sky-high rate. Zero is a perfect record. Neither number tells you anything about that county.</p>
+
+    <p>This is the single most reliable way to fool yourself with data, and it is everywhere: the &ldquo;best small school&rdquo; whose test scores collapse the following year, the surgeon with a perfect record after eleven operations, the hedge fund with three spectacular quarters, the franchise with a championship in its only good decade. Small denominators do not produce <em>wrong</em> numbers. They produce <strong>unstable</strong> ones, and instability climbs to the top of any list you sort.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-label">Every one of these units is identical underneath &mdash; only the number of chances differs.</div>
+<svg class="chart" viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="660" height="300" fill="#ede5d2"/>
+<text x="330" y="26" text-anchor="middle" font-family="Playfair Display" font-size="16" font-weight="700" fill="#1a1208">Fewer chances, wilder rates &mdash; and none of it is real</text>
+<text x="330" y="46" text-anchor="middle" font-size="10" fill="#6b5e4a">Units with an identical true rate of 25%. The band shows where chance alone puts them.</text>
+<path d="M95.0,70.0 L152.3,70.0 L198.2,70.0 L209.7,74.9 L232.6,84.0 L255.5,92.1 L278.4,99.4 L301.4,105.9 L324.3,111.7 L347.2,116.9 L370.2,121.5 L393.1,125.6 L416.0,129.3 L439.0,132.6 L461.9,135.5 L484.8,138.2 L507.7,140.5 L530.7,142.6 L553.6,144.4 L576.5,146.1 L588.0,146.9" fill="none" stroke="#2c4a6e" stroke-width="1.4" stroke-dasharray="4,3"/>
+<path d="M95.0,235.0 L152.3,235.0 L232.6,235.0 L244.0,231.8 L267.0,224.1 L289.9,217.2 L312.8,211.1 L335.8,205.6 L358.7,200.7 L381.6,196.4 L404.6,192.5 L427.5,189.0 L450.4,185.9 L473.4,183.1 L496.3,180.6 L519.2,178.4 L542.1,176.5 L565.1,174.7 L588.0,173.1" fill="none" stroke="#2c4a6e" stroke-width="1.4" stroke-dasharray="4,3"/>
+<line x1="95" y1="160" x2="588" y2="160" stroke="#1a1208" stroke-width="1.4"/>
+<text x="592" y="163" text-anchor="start" font-size="9" font-weight="700" fill="#1a1208">true rate</text>
+<text x="592" y="174" text-anchor="start" font-size="9" fill="#1a1208">25%</text>
+<circle cx="124.1" cy="85.0" r="4.5" fill="#b83a1e" opacity="0.85"/>
+<circle cx="124.1" cy="235.0" r="4.5" fill="#b83a1e" opacity="0.85"/>
+<circle cx="124.1" cy="160.0" r="4.5" fill="#b83a1e" opacity="0.85"/>
+<circle cx="165.1" cy="135.0" r="4.5" fill="#b83a1e" opacity="0.85"/>
+<circle cx="194.2" cy="122.5" r="4.5" fill="#b83a1e" opacity="0.85"/>
+<circle cx="235.2" cy="135.0" r="4.5" fill="#b83a1e" opacity="0.85"/>
+<circle cx="286.9" cy="175.0" r="4.5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="343.5" cy="166.4" r="4.5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="398.1" cy="125.0" r="4.5" fill="#6b5e4a" opacity="0.8"/>
+<circle cx="459.4" cy="164.1" r="4.5" fill="#2a6e3f" opacity="0.85"/>
+<circle cx="519.9" cy="155.5" r="4.5" fill="#2a6e3f" opacity="0.85"/>
+<circle cx="576.5" cy="153.6" r="4.5" fill="#2a6e3f" opacity="0.85"/>
+<text x="95" y="253" text-anchor="middle" font-size="9" fill="#6b5e4a">3</text>
+<text x="216.8" y="253" text-anchor="middle" font-size="9" fill="#6b5e4a">10</text>
+<text x="327.9" y="253" text-anchor="middle" font-size="9" fill="#6b5e4a">30</text>
+<text x="449.8" y="253" text-anchor="middle" font-size="9" fill="#6b5e4a">100</text>
+<text x="590" y="253" text-anchor="middle" font-size="9" fill="#6b5e4a">400</text>
+<text x="341" y="270" text-anchor="middle" font-size="9.5" fill="#1a1208">number of chances (the denominator)</text>
+<text x="86" y="88" text-anchor="end" font-size="9" fill="#6b5e4a">55%</text>
+<text x="86" y="163" text-anchor="end" font-size="9" fill="#6b5e4a">25%</text>
+<text x="86" y="238" text-anchor="end" font-size="9" fill="#6b5e4a">0%</text>
+<text x="105" y="212" text-anchor="start" font-size="8.5" font-style="italic" font-weight="700" fill="#b83a1e">same process, three different answers</text>
+<text x="330" y="290" text-anchor="middle" font-size="9" font-style="italic" fill="#6b5e4a">Every point is drawn from the same 25% process. The spread on the left is not a difference in quality.</text>
+</svg>
+    </div>
+
+    <p>Read the funnel from left to right. On the right, where the denominators are large, everything crowds onto the truth. On the left, where they are small, the same underlying process throws points from top to bottom of the chart. If you sorted this data and published the leaderboard, every name at both ends would come from the left side &mdash; and you would have discovered nothing at all.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Noise shrinks like the square root. Ratios don&rsquo;t forgive.</h3>
+
+    <p>The mechanism is one formula. The uncertainty in an observed rate scales with <strong>one over the square root of the denominator</strong>. Quadruple the number of chances and the noise only halves; cut the chances to a handful and the noise explodes. That square root is what gives the funnel its shape, and it is why the width of the band &mdash; not the height of any single point &mdash; is the first thing to look at in any ranking.</p>
+
+    <p>Ratios inherit a second problem on top of that. A rate is a random numerator divided by something that may itself be small, and dividing by a near-zero number sends the result anywhere. In the extreme the statistic simply ceases to exist: a franchise with no championships has an undefined cost-per-championship, and a franchise that wins its first one moves from infinity to a perfectly reasonable figure without having changed in any way. When a single event can move your metric from undefined to excellent, the metric is reporting the event, not the quality.</p>
+
+    <p>What to do instead is well established. <strong>Shrink</strong> the small-denominator estimates toward the overall average, by an amount that depends on how thin the evidence is &mdash; which is exactly what a <a href="bayesian-inference.html">Bayesian</a> prior does automatically, and why this newsletter models a hitter&rsquo;s April with his career behind it. Put confidence bands on the ranking and see how many of them overlap, which is usually all of them. Or refuse to rank at all below some minimum denominator, the way batting titles require a qualifying number of plate appearances. The instinct to demand a minimum sample before crowning anyone is not bureaucratic caution; it is the correct statistical response to the funnel.</p>
+  </div>
+
+  <div class="tier textbook">
+    <div class="tier-label">Tier 3 &middot; Take It to the Textbook</div>
+    <h3>The full treatment: standard errors, funnel plots, and shrinkage.</h3>
+    <p>Where the square-root law comes from, how to build and read a funnel plot, why ratio estimators misbehave, and how empirical-Bayes shrinkage repairs a noisy leaderboard &mdash; all of it is developed in <strong>The Sports Page&rsquo;s companion statistics textbook</strong>, a free, open, graduate-level text, with the R code to simulate your own funnel and watch the extremes appear from nothing. <a href="https://pem725.github.io/GradStats-Book/" target="_blank" rel="noopener">Read it free here</a> &mdash; the same &ldquo;read, play, learn&rdquo; idea, one rung deeper.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li>The <strong>Mets and Royals cost-per-title</strong> issue &mdash; two franchises, two trophies each, and a ratio that swings from undefined to thrifty on the strength of a single October. The anchor.</li>
+      <li><a href="sample-size.html">Sample Size</a> (Concept No. 6) &mdash; the parent idea: this is what happens when you build a rate on top of a small one.</li>
+      <li><a href="regression-to-the-mean.html">Regression to the Mean</a> (Concept No. 3) &mdash; the sequel: extreme small-denominator results are the ones that come back to earth next season.</li>
+      <li><a href="bayesian-inference.html">Bayesian Inference</a> (Concept No. 10) &mdash; the repair: a prior is a principled way to stop dividing by almost nothing.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>
