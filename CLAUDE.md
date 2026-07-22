@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 385 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 384 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 115 issues (#1-115)
-Queue: 7 articles ready (088-sorsby-supplemental-bet, 100-deadline-sellers-market, 102-cfb-contender-board, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, _TEMPLATE)
+Published: 116 issues (#1-116)
+Queue: 11 articles ready (088-sorsby-supplemental-bet, 102-cfb-contender-board, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, 107-mets-own-mean, 108-nfl-own-mean, 109-cfb-trajectories, 110-qb-tiers-critique, 111-drought-breaks, _TEMPLATE)
 New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
 Reserve: 1 evergreen piece
-Goal: 385 issues remaining of 500
-Last published: Issue #115 — "A Champion Needs 50% Blue-Chip Talent. Indiana Won With 8%." (101-cfb-maturity-wins.html) on July 21, 2026
+Goal: 384 issues remaining of 500
+Last published: Issue #116 — "Eight Teams Have Quit. The Other Twenty-Two Are About to Overpay." (100-deadline-sellers-market.html) on July 22, 2026
