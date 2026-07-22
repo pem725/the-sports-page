@@ -130,10 +130,27 @@ def standalone_svg(svg, w, h):
     return svg
 
 
+# Chrome renders a bare .svg inside a generated HTML document that carries the
+# UA default `body { margin: 8px }`, and its headless viewport is also SHORTER
+# than --window-size by a frame allowance that varies between --headless=old
+# and =new. Both effects crop the figure: earlier issues shipped emailed PNGs
+# missing their axis labels and source lines entirely.
+#
+# So don't try to predict the viewport. Serve a zero-margin page and let the
+# SVG scale to fit whatever viewport it lands in -- width/height 100% plus the
+# default preserveAspectRatio="xMidYMid meet" letterboxes on the cream paper
+# colour instead of cropping. Output dimensions are unchanged; a figure may sit
+# a few percent smaller, which is strictly better than losing its axis.
+PAGE = ("<!doctype html><meta charset=\"utf-8\">"
+        "<style>html,body{{margin:0;padding:0;width:100%;height:100%;"
+        "overflow:hidden;background:{bg}}}"
+        "svg{{display:block;width:100%;height:100%}}</style>{svg}")
+
+
 def rasterize(chrome, svg, w, h, out_png):
-    with tempfile.NamedTemporaryFile("w", suffix=".svg", delete=False,
+    with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False,
                                      encoding="utf-8") as tf:
-        tf.write(svg)
+        tf.write(PAGE.format(bg=CREAM, svg=svg))
         tmp = tf.name
     try:
         with tempfile.TemporaryDirectory() as profile:

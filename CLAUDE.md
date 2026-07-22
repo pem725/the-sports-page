@@ -281,8 +281,8 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 ## Current State (update this when publishing)
 
 Published: 116 issues (#1-116)
-Queue: 11 articles ready (088-sorsby-supplemental-bet, 102-cfb-contender-board, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, 107-mets-own-mean, 108-nfl-own-mean, 109-cfb-trajectories, 110-qb-tiers-critique, 111-drought-breaks, _TEMPLATE)
-New concept primer: concepts/necessary-vs-sufficient.html (Concept No. 13)
+Queue: 13 articles ready (088-sorsby-supplemental-bet, 102-cfb-contender-board, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, 107-mets-own-mean, 108-nfl-own-mean, 109-cfb-trajectories, 110-qb-tiers-critique, 111-drought-breaks, 112-variance-is-king, 113-pull-the-goalie, _TEMPLATE)
+Concept primers: 24 published (latest: concepts/objective-function.html, Concept No. 24)
 Reserve: 1 evergreen piece
 Goal: 384 issues remaining of 500
 Last published: Issue #116 — "Eight Teams Have Quit. The Other Twenty-Two Are About to Overpay." (100-deadline-sellers-market.html) on July 22, 2026
