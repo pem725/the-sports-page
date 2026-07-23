@@ -1,0 +1,224 @@
+<meta charset="utf-8">
+<title>The Misery Index — A Fan's Fever Chart</title>
+<style>
+@font-face{
+  font-family:'xkcd';
+  src:url(data:font/ttf;base64,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) format('truetype');
+  font-display:swap;
+}
+:root{
+  color-scheme:light;
+  --paper:#fbfbf5; --ink:#1a1a17; --pencil:#dedeD3; --pencil2:#c7c7ba;
+  --down:#c0392b; --up:#2c6fbb; --muted:#6b6b60;
+  --pm:#1a1a17; --sm:#b8611f; --tb:#2c6fbb; --pmk:#3f8f4e;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);
+  font-family:'xkcd','Comic Sans MS',cursive;
+  line-height:1.5;-webkit-font-smoothing:antialiased;
+  padding:2rem 1.2rem 4rem}
+.wrap{max-width:940px;margin:0 auto}
+h1{font-size:clamp(2.2rem,7vw,4rem);line-height:.95;text-transform:uppercase;
+  letter-spacing:.01em;text-wrap:balance;margin-bottom:.4rem}
+h1 .sub{display:block;font-size:.34em;color:var(--muted);text-transform:none;letter-spacing:.02em;margin-top:.5rem}
+.lede{font-size:1.05rem;max-width:60ch;color:var(--ink);margin:1.1rem 0 .3rem}
+.lede b{color:var(--down)}
+.lede i{color:var(--up);font-style:normal}
+.rule{height:3px;background:var(--ink);border-radius:2px;margin:1.4rem 0;
+  filter:url(#rough)}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 .4rem}
+.chip{font-family:inherit;font-size:1rem;cursor:pointer;background:var(--paper);
+  border:2.5px solid var(--ink);border-radius:22px;padding:.3rem .9rem .35rem;
+  display:inline-flex;align-items:center;gap:.5rem;color:var(--ink);
+  filter:url(#rough);transition:transform .08s}
+.chip:hover{transform:translateY(-2px)}
+.chip:focus-visible{outline:3px solid var(--up);outline-offset:2px}
+.chip .dot{width:14px;height:14px;border-radius:50%;background:var(--c)}
+.chip[aria-pressed="false"]{opacity:.4;border-color:var(--pencil2);color:var(--muted)}
+.chip[aria-pressed="false"] .dot{background:var(--pencil2)}
+.chartbox{position:relative;margin:.4rem 0 1rem}
+svg.chart{width:100%;height:auto;display:block;overflow:visible}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);
+  font-size:.82rem;line-height:1.35;padding:.5rem .65rem;border-radius:5px;
+  max-width:230px;opacity:0;transition:opacity .1s;z-index:5;transform:translate(-50%,-108%)}
+.tip b{color:#ffd7cf}.tip .g{color:#bcd6ff}
+.how{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.95rem;color:var(--muted);margin:.2rem 0 2rem}
+.how .k{display:inline-flex;align-items:center;gap:.4rem;color:var(--ink)}
+.how .k .swatch{width:26px;height:0;border-top:3px solid;border-radius:2px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
+@media(max-width:640px){.cards{grid-template-columns:1fr}}
+.card{border:2.5px solid var(--ink);border-radius:14px;padding:1rem 1.1rem 1.2rem;
+  filter:url(#rough);background:var(--paper)}
+.card h3{font-size:1.5rem;display:flex;align-items:baseline;gap:.5rem}
+.card h3 .who{color:var(--c)}
+.card .sub{font-size:.9rem;color:var(--muted);margin:.1rem 0 .5rem}
+.card .teams{font-size:.82rem;color:var(--muted);margin-bottom:.6rem}
+.card .teams b{color:var(--ink)}
+.spark{width:100%;height:auto;display:block;margin:.2rem 0 .7rem}
+.verdict{font-size:.92rem;line-height:1.45}
+.verdict .bad{color:var(--down)}
+.verdict .good{color:var(--up)}
+.amp{font-size:.82rem;color:var(--muted);margin-top:.5rem;border-top:2px dashed var(--pencil2);padding-top:.5rem}
+.foot{font-size:.85rem;color:var(--muted);max-width:64ch;margin-top:2.2rem;line-height:1.55}
+.foot b{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/></filter>
+  <filter id="rough2"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="11" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
+</defs></svg>
+
+<div class="wrap">
+  <h1>The Misery Index<span class="sub">a fan&rsquo;s fever chart &mdash; what hope did to you, one season at a time</span></h1>
+
+  <p class="lede">Fandom is hope minus reality. Each spring you walk in expecting roughly what last year became, nudged by which way it was heading. Then the season happens. When it comes in <b>under</b> what you hoped, that&rsquo;s misery &mdash; the line goes up. When it beats your hope, that&rsquo;s a <i>pleasant surprise</i> &mdash; the line dips below the floor. Here are four of us, 2005 to 2025.</p>
+
+  <div class="legend" id="legend" role="group" aria-label="Toggle each fan"></div>
+
+  <div class="chartbox">
+    <svg class="chart" id="mainchart" viewBox="0 0 900 400" role="img" aria-label="Misery trajectories, 2005 to 2025"></svg>
+    <div class="tip" id="tip"></div>
+  </div>
+
+  <div class="how">
+    <span class="k"><span class="swatch" style="border-color:var(--down)"></span>above the line = let down</span>
+    <span class="k"><span class="swatch" style="border-color:var(--up)"></span>below the line = better than hoped</span>
+    <span class="k">measured in &ldquo;typical season swings&rdquo; for that sport</span>
+  </div>
+
+  <div class="cards" id="cards"></div>
+
+  <p class="foot">
+    <b>How this is built.</b> Hope for a season is last year&rsquo;s winning percentage, nudged by its trend; misery is the gap between that hope and what actually happened, divided by how much a typical season swings in that sport &mdash; so a 12-game college season and a 162-game baseball season are put on the same footing (an 8&ndash;4 Notre Dame year isn&rsquo;t automatically &ldquo;wilder&rdquo; than a 90-win Mets year). Records are real: MLB and NFL game results, and Notre Dame football via the college-football data feed.
+    <br><br>
+    <b>The honest part:</b> nobody&rsquo;s average misery is much above zero, because hope quietly recalibrates &mdash; suffer enough and you stop expecting. So no fan base is a bigger sucker over the long haul. The difference is the <b>ride</b>: how far the line swings, and which team keeps yanking it.
+  </p>
+</div>
+
+<script>
+const DATA={"years":[2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"profiles":{"PM":{"label":"PM","sub":"the crusty old salt","teams":[["ND","Notre Dame","CFB",3],["NYM","Mets","MLB",2],["NYJ","Jets","NFL",1]],"rows":[{"y":2005,"m":-0.396,"driver":"Notre Dame","dv":-1.05},{"y":2006,"m":-0.548,"driver":"Jets","dv":-2.93},{"y":2007,"m":2.341,"driver":"Notre Dame","dv":2.81},{"y":2008,"m":-1.524,"driver":"Notre Dame","dv":-1.91},{"y":2009,"m":0.95,"driver":"Mets","dv":1.79},{"y":2010,"m":-0.825,"driver":"Mets","dv":-1.53},{"y":2011,"m":0.275,"driver":"Jets","dv":1.33},{"y":2012,"m":-0.6,"driver":"Notre Dame","dv":-1.43},{"y":2013,"m":0.475,"driver":"Notre Dame","dv":1.35},{"y":2014,"m":0.007,"driver":"Jets","dv":1.68},{"y":2015,"m":-1.393,"driver":"Notre Dame","dv":-1.35},{"y":2016,"m":2.087,"driver":"Notre Dame","dv":2.86},{"y":2017,"m":-1.1,"driver":"Notre Dame","dv":-2.94},{"y":2018,"m":-0.564,"driver":"Mets","dv":-1.27},{"y":2019,"m":-0.11,"driver":"Notre Dame","dv":0.56},{"y":2020,"m":0.618,"driver":"Mets","dv":1.79},{"y":2021,"m":-0.475,"driver":"Mets","dv":-1.21},{"y":2022,"m":-0.174,"driver":"Mets","dv":-1.96},{"y":2023,"m":0.723,"driver":"Mets","dv":3.28},{"y":2024,"m":-0.957,"driver":"Mets","dv":-2.25},{"y":2025,"m":0.7,"driver":"Mets","dv":1.07}],"amp":1.0,"worst":{"y":2007,"m":2.341,"driver":"Notre Dame","dv":2.81},"best":{"y":2008,"m":-1.524,"driver":"Notre Dame","dv":-1.91}},"SM":{"label":"Dr. SM","sub":"Vegas, always has a game on","teams":[["RAI","Raiders","NFL",2],["NYM","Mets","MLB",1]],"rows":[{"y":2005,"m":0.014,"driver":"Raiders","dv":0.49},{"y":2006,"m":0.09,"driver":"Raiders","dv":0.56},{"y":2007,"m":-0.11,"driver":"Raiders","dv":-0.84},{"y":2008,"m":-0.188,"driver":"Mets","dv":-0.42},{"y":2009,"m":0.689,"driver":"Mets","dv":1.79},{"y":2010,"m":-1.208,"driver":"Raiders","dv":-1.05},{"y":2011,"m":0.452,"driver":"Raiders","dv":0.42},{"y":2012,"m":0.999,"driver":"Raiders","dv":1.4},{"y":2013,"m":-0.409,"driver":"Raiders","dv":-0.56},{"y":2014,"m":0.079,"driver":"Raiders","dv":0.35},{"y":2015,"m":-1.3,"driver":"Raiders","dv":-1.54},{"y":2016,"m":-0.564,"driver":"Raiders","dv":-1.19},{"y":2017,"m":2.347,"driver":"Raiders","dv":2.79},{"y":2018,"m":-0.517,"driver":"Mets","dv":-1.27},{"y":2019,"m":-1.075,"driver":"Raiders","dv":-1.33},{"y":2020,"m":0.643,"driver":"Mets","dv":1.79},{"y":2021,"m":-0.639,"driver":"Mets","dv":-1.21},{"y":2022,"m":0.354,"driver":"Raiders","dv":1.51},{"y":2023,"m":0.305,"driver":"Mets","dv":3.28},{"y":2024,"m":0.303,"driver":"Raiders","dv":1.58},{"y":2025,"m":0.225,"driver":"Mets","dv":1.07}],"amp":0.8,"worst":{"y":2017,"m":2.347,"driver":"Raiders","dv":2.79},"best":{"y":2015,"m":-1.3,"driver":"Raiders","dv":-1.54}},"TB":{"label":"TB","sub":"Bills till the bitter end","teams":[["BUF","Bills","NFL",3],["NYM","Mets","MLB",2]],"rows":[{"y":2005,"m":0.716,"driver":"Bills","dv":1.82},{"y":2006,"m":-1.094,"driver":"Bills","dv":-1.26},{"y":2007,"m":0.706,"driver":"Mets","dv":1.35},{"y":2008,"m":-0.17,"driver":"Mets","dv":-0.42},{"y":2009,"m":0.925,"driver":"Mets","dv":1.79},{"y":2010,"m":-0.277,"driver":"Mets","dv":-1.53},{"y":2011,"m":-0.38,"driver":"Bills","dv":-0.98},{"y":2012,"m":0.248,"driver":"Bills","dv":0.28},{"y":2013,"m":-0.044,"driver":"Mets","dv":-0.11},{"y":2014,"m":-0.813,"driver":"Bills","dv":-1.05},{"y":2015,"m":0.129,"driver":"Bills","dv":0.77},{"y":2016,"m":0.399,"driver":"Mets","dv":0.68},{"y":2017,"m":0.079,"driver":"Mets","dv":1.46},{"y":2018,"m":0.288,"driver":"Bills","dv":1.33},{"y":2019,"m":-1.318,"driver":"Bills","dv":-1.82},{"y":2020,"m":0.422,"driver":"Mets","dv":1.79},{"y":2021,"m":0.322,"driver":"Bills","dv":1.34},{"y":2022,"m":-1.561,"driver":"Mets","dv":-1.96},{"y":2023,"m":2.088,"driver":"Mets","dv":3.28},{"y":2024,"m":-1.515,"driver":"Mets","dv":-2.25},{"y":2025,"m":0.783,"driver":"Mets","dv":1.07}],"amp":0.87,"worst":{"y":2023,"m":2.088,"driver":"Mets","dv":3.28},"best":{"y":2022,"m":-1.561,"driver":"Mets","dv":-1.96}},"pm":{"label":"pm","sub":"Seattle & the Irish","teams":[["ND","Notre Dame","CFB",3],["SEA","Seahawks","NFL",2],["SEA_M","Mariners","MLB",2]],"rows":[{"y":2005,"m":-1.364,"driver":"Mariners","dv":-1.66},{"y":2006,"m":0.577,"driver":"Seahawks","dv":1.96},{"y":2007,"m":0.775,"driver":"Notre Dame","dv":2.81},{"y":2008,"m":0.638,"driver":"Notre Dame","dv":-1.91},{"y":2009,"m":-1.051,"driver":"Mariners","dv":-3.21},{"y":2010,"m":0.555,"driver":"Mariners","dv":3.1},{"y":2011,"m":-0.433,"driver":"Mariners","dv":-1.44},{"y":2012,"m":-1.159,"driver":"Notre Dame","dv":-1.43},{"y":2013,"m":0.728,"driver":"Notre Dame","dv":1.35},{"y":2014,"m":-0.386,"driver":"Mariners","dv":-1.62},{"y":2015,"m":0.04,"driver":"Notre Dame","dv":-1.35},{"y":2016,"m":0.715,"driver":"Notre Dame","dv":2.86},{"y":2017,"m":-0.773,"driver":"Notre Dame","dv":-2.94},{"y":2018,"m":-0.704,"driver":"Mariners","dv":-1.31},{"y":2019,"m":0.847,"driver":"Mariners","dv":2.34},{"y":2020,"m":-0.7,"driver":"Mariners","dv":-1.22},{"y":2021,"m":0.227,"driver":"Seahawks","dv":2.03},{"y":2022,"m":0.293,"driver":"Notre Dame","dv":1.21},{"y":2023,"m":-0.246,"driver":"Notre Dame","dv":-0.87},{"y":2024,"m":-0.308,"driver":"Notre Dame","dv":-0.64},{"y":2025,"m":-0.263,"driver":"Seahawks","dv":-1.18}],"amp":0.68,"worst":{"y":2019,"m":0.847,"driver":"Mariners","dv":2.34},"best":{"y":2005,"m":-1.364,"driver":"Mariners","dv":-1.66}}},"teams":{"ND":{"name":"Notre Dame","sport":"CFB","series":{"2005":{"w":0.8182,"hope":0.597,"m":-1.053},"2006":{"w":0.8333,"hope":0.9273,"m":0.448},"2007":{"w":0.25,"hope":0.8393,"m":2.806},"2008":{"w":0.5,"hope":0.1,"m":-1.905},"2009":{"w":0.5,"hope":0.6,"m":0.476},"2010":{"w":0.5833,"hope":0.5,"m":-0.397},"2011":{"w":0.6667,"hope":0.6166,"m":-0.238},"2012":{"w":1.0,"hope":0.7001,"m":-1.428},"2013":{"w":0.6667,"hope":0.95,"m":1.349},"2014":{"w":0.5833,"hope":0.5334,"m":-0.238},"2015":{"w":0.8333,"hope":0.5499,"m":-1.349},"2016":{"w":0.3333,"hope":0.9333,"m":2.857},"2017":{"w":0.75,"hope":0.1333,"m":-2.937},"2018":{"w":1.0,"hope":0.9167,"m":-0.397},"2019":{"w":0.8333,"hope":0.95,"m":0.556},"2020":{"w":0.9091,"hope":0.7666,"m":-0.678},"2021":{"w":0.9167,"hope":0.9394,"m":0.108},"2022":{"w":0.6667,"hope":0.9197,"m":1.205},"2023":{"w":0.75,"hope":0.5667,"m":-0.873},"2024":{"w":0.9167,"hope":0.7833,"m":-0.635},"2025":{"w":0.8333,"hope":0.95,"m":0.556}}},"NYM":{"name":"Mets","sport":"MLB","series":{"2005":{"w":0.5123,"hope":0.4497,"m":-0.935},"2006":{"w":0.5988,"hope":0.5419,"m":-0.849},"2007":{"w":0.5432,"hope":0.6334,"m":1.346},"2008":{"w":0.5494,"hope":0.521,"m":-0.424},"2009":{"w":0.4321,"hope":0.5519,"m":1.788},"2010":{"w":0.4877,"hope":0.3852,"m":-1.53},"2011":{"w":0.4753,"hope":0.5099,"m":0.517},"2012":{"w":0.4568,"hope":0.4703,"m":0.202},"2013":{"w":0.4568,"hope":0.4494,"m":-0.11},"2014":{"w":0.4877,"hope":0.4568,"m":-0.461},"2015":{"w":0.5556,"hope":0.5001,"m":-0.829},"2016":{"w":0.537,"hope":0.5828,"m":0.683},"2017":{"w":0.4321,"hope":0.5296,"m":1.455},"2018":{"w":0.4753,"hope":0.3901,"m":-1.271},"2019":{"w":0.5309,"hope":0.4926,"m":-0.572},"2020":{"w":0.4333,"hope":0.5531,"m":1.789},"2021":{"w":0.4753,"hope":0.3943,"m":-1.21},"2022":{"w":0.6235,"hope":0.4921,"m":-1.961},"2023":{"w":0.463,"hope":0.6828,"m":3.28},"2024":{"w":0.5494,"hope":0.3988,"m":-2.248},"2025":{"w":0.5123,"hope":0.584,"m":1.07}}},"SEA_M":{"name":"Mariners","sport":"MLB","series":{"2005":{"w":0.4259,"hope":0.3148,"m":-1.658},"2006":{"w":0.4815,"hope":0.4407,"m":-0.609},"2007":{"w":0.5432,"hope":0.5037,"m":-0.589},"2008":{"w":0.3765,"hope":0.5679,"m":2.856},"2009":{"w":0.5247,"hope":0.3098,"m":-3.207},"2010":{"w":0.3765,"hope":0.584,"m":3.097},"2011":{"w":0.4136,"hope":0.3172,"m":-1.439},"2012":{"w":0.463,"hope":0.4284,"m":-0.516},"2013":{"w":0.4383,"hope":0.4828,"m":0.664},"2014":{"w":0.537,"hope":0.4284,"m":-1.621},"2015":{"w":0.4691,"hope":0.5765,"m":1.603},"2016":{"w":0.5309,"hope":0.4419,"m":-1.328},"2017":{"w":0.4815,"hope":0.5556,"m":1.106},"2018":{"w":0.5494,"hope":0.4617,"m":-1.308},"2019":{"w":0.4198,"hope":0.5766,"m":2.34},"2020":{"w":0.45,"hope":0.368,"m":-1.224},"2021":{"w":0.5556,"hope":0.4621,"m":-1.396},"2022":{"w":0.5556,"hope":0.5978,"m":0.63},"2023":{"w":0.5432,"hope":0.5556,"m":0.185},"2024":{"w":0.5247,"hope":0.5382,"m":0.202},"2025":{"w":0.5556,"hope":0.5173,"m":-0.572}}},"BUF":{"name":"Bills","sport":"NFL","series":{"2005":{"w":0.3125,"hope":0.6375,"m":1.816},"2006":{"w":0.4375,"hope":0.2125,"m":-1.257},"2007":{"w":0.4375,"hope":0.4875,"m":0.279},"2008":{"w":0.4375,"hope":0.4375,"m":0.0},"2009":{"w":0.375,"hope":0.4375,"m":0.349},"2010":{"w":0.25,"hope":0.35,"m":0.559},"2011":{"w":0.375,"hope":0.2,"m":-0.978},"2012":{"w":0.375,"hope":0.425,"m":0.279},"2013":{"w":0.375,"hope":0.375,"m":0.0},"2014":{"w":0.5625,"hope":0.375,"m":-1.047},"2015":{"w":0.5,"hope":0.6375,"m":0.768},"2016":{"w":0.4375,"hope":0.475,"m":0.209},"2017":{"w":0.5625,"hope":0.4125,"m":-0.838},"2018":{"w":0.375,"hope":0.6125,"m":1.327},"2019":{"w":0.625,"hope":0.3,"m":-1.816},"2020":{"w":0.8125,"hope":0.725,"m":-0.489},"2021":{"w":0.6471,"hope":0.8875,"m":1.343},"2022":{"w":0.8125,"hope":0.5809,"m":-1.294},"2023":{"w":0.6471,"hope":0.8787,"m":1.294},"2024":{"w":0.7647,"hope":0.5809,"m":-1.027},"2025":{"w":0.7059,"hope":0.8117,"m":0.591}}},"SEA":{"name":"Seahawks","sport":"NFL","series":{"2005":{"w":0.8125,"hope":0.5375,"m":-1.536},"2006":{"w":0.5625,"hope":0.9125,"m":1.955},"2007":{"w":0.625,"hope":0.4625,"m":-0.908},"2008":{"w":0.25,"hope":0.65,"m":2.235},"2009":{"w":0.3125,"hope":0.1,"m":-1.187},"2010":{"w":0.4375,"hope":0.3375,"m":-0.559},"2011":{"w":0.4375,"hope":0.4875,"m":0.279},"2012":{"w":0.6875,"hope":0.4375,"m":-1.397},"2013":{"w":0.8125,"hope":0.7875,"m":-0.14},"2014":{"w":0.75,"hope":0.8625,"m":0.628},"2015":{"w":0.625,"hope":0.725,"m":0.559},"2016":{"w":0.6562,"hope":0.575,"m":-0.454},"2017":{"w":0.5625,"hope":0.6687,"m":0.593},"2018":{"w":0.625,"hope":0.525,"m":-0.559},"2019":{"w":0.6875,"hope":0.65,"m":-0.209},"2020":{"w":0.75,"hope":0.7125,"m":-0.209},"2021":{"w":0.4118,"hope":0.775,"m":2.029},"2022":{"w":0.5294,"hope":0.2765,"m":-1.413},"2023":{"w":0.5294,"hope":0.5764,"m":0.263},"2024":{"w":0.5882,"hope":0.5294,"m":-0.328},"2025":{"w":0.8235,"hope":0.6117,"m":-1.183}}},"RAI":{"name":"Raiders","sport":"NFL","series":{"2005":{"w":0.25,"hope":0.3375,"m":0.489},"2006":{"w":0.125,"hope":0.225,"m":0.559},"2007":{"w":0.25,"hope":0.1,"m":-0.838},"2008":{"w":0.3125,"hope":0.3,"m":-0.07},"2009":{"w":0.3125,"hope":0.3375,"m":0.14},"2010":{"w":0.5,"hope":0.3125,"m":-1.047},"2011":{"w":0.5,"hope":0.575,"m":0.419},"2012":{"w":0.25,"hope":0.5,"m":1.397},"2013":{"w":0.25,"hope":0.15,"m":-0.559},"2014":{"w":0.1875,"hope":0.25,"m":0.349},"2015":{"w":0.4375,"hope":0.1625,"m":-1.536},"2016":{"w":0.75,"hope":0.5375,"m":-1.187},"2017":{"w":0.375,"hope":0.875,"m":2.793},"2018":{"w":0.25,"hope":0.225,"m":-0.14},"2019":{"w":0.4375,"hope":0.2,"m":-1.327},"2020":{"w":0.5,"hope":0.5125,"m":0.07},"2021":{"w":0.5882,"hope":0.525,"m":-0.353},"2022":{"w":0.3529,"hope":0.6235,"m":1.512},"2023":{"w":0.4706,"hope":0.2588,"m":-1.183},"2024":{"w":0.2353,"hope":0.5177,"m":1.578},"2025":{"w":0.1765,"hope":0.1412,"m":-0.197}}},"NYJ":{"name":"Jets","sport":"NFL","series":{"2005":{"w":0.25,"hope":0.725,"m":2.654},"2006":{"w":0.625,"hope":0.1,"m":-2.933},"2007":{"w":0.25,"hope":0.775,"m":2.933},"2008":{"w":0.5625,"hope":0.1,"m":-2.584},"2009":{"w":0.5625,"hope":0.6875,"m":0.698},"2010":{"w":0.6875,"hope":0.5625,"m":-0.698},"2011":{"w":0.5,"hope":0.7375,"m":1.327},"2012":{"w":0.375,"hope":0.425,"m":0.279},"2013":{"w":0.5,"hope":0.325,"m":-0.978},"2014":{"w":0.25,"hope":0.55,"m":1.676},"2015":{"w":0.625,"hope":0.15,"m":-2.654},"2016":{"w":0.3125,"hope":0.775,"m":2.584},"2017":{"w":0.3125,"hope":0.1875,"m":-0.698},"2018":{"w":0.25,"hope":0.3125,"m":0.349},"2019":{"w":0.4375,"hope":0.225,"m":-1.187},"2020":{"w":0.125,"hope":0.5125,"m":2.165},"2021":{"w":0.2353,"hope":0.1,"m":-0.756},"2022":{"w":0.4118,"hope":0.2794,"m":-0.74},"2023":{"w":0.4118,"hope":0.4824,"m":0.394},"2024":{"w":0.2941,"hope":0.4118,"m":0.658},"2025":{"w":0.1765,"hope":0.247,"m":0.394}}}}};
+
+const COLOR={PM:'--pm',SM:'--sm',TB:'--tb',pm:'--pmk'};
+// College programs go by school name and take no article ("Notre Dame did it");
+// pro clubs go by nickname and take "the" ("the Raiders did it").
+function art(name){const t=Object.values(DATA.teams).find(x=>x.name===name);return (t&&t.sport==='CFB')?'':'the ';}
+const cssv=k=>getComputedStyle(document.documentElement).getPropertyValue(k).trim();
+const YEARS=DATA.years, Y0=YEARS[0], Y1=YEARS[YEARS.length-1];
+const on={PM:true,SM:true,TB:true,pm:true};
+
+// ---- scales for main chart ----
+const MW=900,MH=400, mL=54,mR=120,mT=28,mB=44;
+const MMAX=3.2;
+const mx=y=>mL+(y-Y0)/(Y1-Y0)*(MW-mL-mR);
+const my=v=>mT+(MMAX-v)/(2*MMAX)*(MH-mT-mB);
+
+function path(pts){return 'M'+pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' L');}
+function el(tag,at){const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const k in at)e.setAttribute(k,at[k]);return e;}
+
+function drawMain(){
+  const svg=document.getElementById('mainchart');svg.innerHTML='';
+  // gridlines at integer swings
+  for(let v=-3;v<=3;v++){
+    svg.appendChild(el('line',{x1:mL,y1:my(v),x2:MW-mR,y2:my(v),
+      stroke:v===0?cssv('--ink'):cssv('--pencil'),'stroke-width':v===0?2.4:1,
+      'stroke-dasharray':v===0?'':'2,4',filter:'url(#rough2)'}));
+    const t=el('text',{x:mL-10,y:my(v)+4,'text-anchor':'end','font-size':13,fill:cssv('--muted')});
+    t.textContent=(v>0?'+':'')+v;svg.appendChild(t);
+  }
+  const up=el('text',{x:mL+4,y:my(3)+2,'font-size':13,fill:cssv('--down')});up.textContent='MORE MISERY \u2191';svg.appendChild(up);
+  const dn=el('text',{x:mL+4,y:my(-3)+2,'font-size':13,fill:cssv('--up')});dn.textContent='MORE JOY \u2193';svg.appendChild(dn);
+  // x labels
+  for(const y of YEARS){if(y%5!==0&&y!==Y1)continue;
+    const t=el('text',{x:mx(y),y:MH-mB+22,'text-anchor':'middle','font-size':13,fill:cssv('--muted')});
+    t.textContent="'"+String(y).slice(2);svg.appendChild(t);}
+  // lines
+  const ends=[];
+  for(const pid of Object.keys(COLOR)){
+    if(!on[pid])continue;
+    const rows=DATA.profiles[pid].rows;
+    const pts=rows.map(r=>[mx(r.y),my(r.m)]);
+    svg.appendChild(el('path',{d:path(pts),fill:'none',stroke:cssv(COLOR[pid]),
+      'stroke-width':3,'stroke-linejoin':'round','stroke-linecap':'round',filter:'url(#rough)',opacity:.92}));
+    ends.push({pid,y:my(rows[rows.length-1].m)});
+  }
+  // de-collide end labels: sort by y, enforce min gap
+  ends.sort((a,b)=>a.y-b.y);
+  const GAP=17;
+  for(let i=1;i<ends.length;i++){if(ends[i].y-ends[i-1].y<GAP)ends[i].y=ends[i-1].y+GAP;}
+  for(const e of ends){
+    const lab=el('text',{x:MW-mR+10,y:e.y+5,'font-size':15,fill:cssv(COLOR[e.pid])});
+    lab.textContent=DATA.profiles[e.pid].label;svg.appendChild(lab);
+  }
+  // hover targets
+  for(const y of YEARS){
+    const hit=el('rect',{x:mx(y)-((MW-mL-mR)/(Y1-Y0))/2,y:mT,
+      width:(MW-mL-mR)/(Y1-Y0),height:MH-mT-mB,fill:'transparent',style:'cursor:crosshair'});
+    hit.addEventListener('mousemove',e=>showTip(e,y));
+    hit.addEventListener('mouseleave',hideTip);
+    svg.appendChild(hit);
+  }
+}
+
+const tip=document.getElementById('tip');
+function showTip(e,y){
+  const box=document.querySelector('.chartbox').getBoundingClientRect();
+  let html='<b style="color:#fff">'+y+'</b>';let any=false;
+  for(const pid of Object.keys(COLOR)){
+    if(!on[pid])continue;
+    const r=DATA.profiles[pid].rows.find(r=>r.y===y);if(!r)continue;any=true;
+    const cls=r.m>0?'b':'g';const word=r.m>0?'let down':'surprised';
+    html+='<br>'+DATA.profiles[pid].label+': <span class="'+cls+'">'+(r.m>0?'+':'')+r.m+'</span> ('+r.driver+')';
+  }
+  if(!any){hideTip();return;}
+  tip.innerHTML=html;tip.style.opacity=1;
+  tip.style.left=(mx(y)/MW*box.width)+'px';
+  tip.style.top=(e.clientY-box.top-10)+'px';
+}
+function hideTip(){tip.style.opacity=0;}
+
+// ---- legend ----
+const legend=document.getElementById('legend');
+for(const pid of Object.keys(COLOR)){
+  const b=document.createElement('button');
+  b.className='chip';b.setAttribute('aria-pressed','true');
+  b.style.setProperty('--c',cssv(COLOR[pid]));
+  b.innerHTML='<span class="dot"></span>'+DATA.profiles[pid].label;
+  b.addEventListener('click',()=>{on[pid]=!on[pid];b.setAttribute('aria-pressed',on[pid]);drawMain();});
+  legend.appendChild(b);
+}
+
+// ---- per-fan cards with sparkline ----
+const SW=380,SH=90,sL=8,sR=8,sT=10,sB=10,SMAX=3.2;
+const sx=(y)=>sL+(y-Y0)/(Y1-Y0)*(SW-sL-sR);
+const sy=(v)=>sT+(SMAX-v)/(2*SMAX)*(SH-sT-sB);
+const cards=document.getElementById('cards');
+for(const pid of Object.keys(COLOR)){
+  const p=DATA.profiles[pid];const col=cssv(COLOR[pid]);
+  const c=document.createElement('div');c.className='card';c.style.setProperty('--c',col);
+  const teams=p.teams.map(t=>'<b>'+t[1]+'</b>').join(' &middot; ');
+  const rows=p.rows;
+  // sparkline path split into misery (above) and joy (below) — single line, zero baseline
+  const pts=rows.map(r=>[sx(r.y),sy(r.m)]);
+  const wsx=sx(p.worst.y),wsy=sy(p.worst.m),bsx=sx(p.best.y),bsy=sy(p.best.m);
+  const spark='<svg class="spark" viewBox="0 0 '+SW+' '+SH+'" aria-hidden="true">'
+    +'<line x1="'+sL+'" y1="'+sy(0)+'" x2="'+(SW-sR)+'" y2="'+sy(0)+'" stroke="'+cssv('--pencil2')+'" stroke-width="1.4" stroke-dasharray="2,3"/>'
+    +'<path d="'+path(pts)+'" fill="none" stroke="'+col+'" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" filter="url(#rough)"/>'
+    +'<circle cx="'+wsx+'" cy="'+wsy+'" r="4.5" fill="'+cssv('--down')+'"/>'
+    +'<circle cx="'+bsx+'" cy="'+bsy+'" r="4.5" fill="'+cssv('--up')+'"/>'
+    +'</svg>';
+  c.innerHTML='<h3><span class="who">'+p.label+'</span></h3>'
+    +'<div class="sub">'+p.sub+'</div>'
+    +'<div class="teams">'+teams+'</div>'
+    +spark
+    +'<div class="verdict"><span class="bad">Worst year: '+p.worst.y+'</span> &mdash; '+art(p.worst.driver)+p.worst.driver
+      +' did it. <span class="good">Best: '+p.best.y+'</span>, when '+art(p.best.driver)+p.best.driver+' beat the odds.</div>'
+    +'<div class="amp">Wildness of the ride: <b style="color:'+col+'">'+p.amp.toFixed(2)+'</b> swings '
+      +(p.amp>=0.95?'&mdash; a rollercoaster.':p.amp>=0.85?'&mdash; a bumpy road.':'&mdash; relatively steady nerves.')+'</div>';
+  cards.appendChild(c);
+}
+
+drawMain();
+</script>
