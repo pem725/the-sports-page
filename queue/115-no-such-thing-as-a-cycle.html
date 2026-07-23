@@ -1,0 +1,261 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Methods, Yankees, Time Series
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)} .sc .v.gold{color:var(--gold)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+table.tbl{width:100%;border-collapse:collapse;margin:1.4rem 0;font-family:'Roboto Mono',monospace;font-size:.8rem}
+table.tbl th{text-align:left;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .5rem}
+table.tbl td{padding:.45rem .5rem;border-bottom:1px solid var(--div)}
+table.tbl td.n{text-align:right}
+table.tbl tr.hi td{background:var(--card);font-weight:600}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
+</style>
+<meta property="og:title" content="Twenty-Six Franchises. Not One of Them Runs in Cycles.">
+<meta property="og:description" content="Every fan believes their team rises and falls on some hidden clock. I tested all 26 long-lived baseball franchises against a proper null and found exactly zero real cycles. What is actually there is simpler and far more useful: every franchise has a level it returns to, and a speed it returns at.">
+<meta property="og:url" content="https://thesportspage.net/published/115-no-such-thing-as-a-cycle.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/115-no-such-thing-as-a-cycle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="There Is No Such Thing as a Franchise Cycle">
+<meta name="twitter:description" content="No sine wave. No clock. Just a level each team snaps back to and a speed it snaps back at -- and the league's rulebook sets the speed.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/115-no-such-thing-as-a-cycle.png">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">Twenty-Six Baseball Franchises. <em>Not One of Them Runs in Cycles.</em></h2>
+  <p class="deck">Every fan believes their club rises and falls on some hidden clock &mdash; a good decade, a lean decade, a rebuild, a window. It is the most natural story in sports and it is not in the data. I tested all twenty-six long-lived franchises against a proper null and found zero real cycles. What is there instead is simpler, and you can actually use it: every franchise has a level it returns to, and a speed at which it returns.</p>
+  <p class="byline">The Sports Page &middot; The Professor &middot; a methods piece, in plain English</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">0</div><div class="l">of 26 franchises with a genuine periodic cycle</div></div>
+    <div class="sc"><div class="v gold">.564</div><div class="l">the level the Yankees keep snapping back to since 1970</div></div>
+    <div class="sc"><div class="v now">0.42 <span style="font-size:1.2rem">vs</span> 0.16</div><div class="l">how much of last year carries over &mdash; baseball, then football</div></div>
+  </div>
+
+  <p>Here is the belief, stated plainly enough to test. A franchise is supposed to move in waves: it climbs for some years, peaks, decays, bottoms out, and climbs again, on a period you could almost set a watch by. If that were true, the wave would show up in the record. So I took every club with a long continuous history, wrote down its winning percentage for each season from 1970 through 2025, and went looking for the wave.</p>
+
+  <h3 class="sh">How you actually test for a cycle</h3>
+
+  <p>The trap here is that you will always find one if you look casually. Any series with a bit of year-to-year momentum &mdash; where good years tend to sit next to good years &mdash; produces something that looks like a rolling wave to the eye, with no clock behind it at all. Economists worked this out in the 1920s and it embarrassed a generation of business-cycle theorists: smooth a run of pure noise and you manufacture handsome, entirely fictional cycles.</p>
+
+  <p>So the honest test needs a fair comparison. For each franchise I measured how strongly one season carries into the next, then simulated four thousand fake histories with exactly that much carry-over and no cycle whatsoever. Then I asked: is the strongest wave in the real record bigger than the strongest wave those fake histories throw up by luck? That is the whole method. You are not asking &ldquo;can I see a wave?&rdquo; &mdash; you always can. You are asking &ldquo;is this wave bigger than the waves randomness makes for free?&rdquo;</p>
+
+  <p>Across twenty-six franchises the answer was no, twenty-six times. One club cleared the five-percent bar &mdash; and its supposed cycle had a period of fifty-six years, which is the entire length of the record, so it is a drift, not a cycle. Testing twenty-six teams at that threshold, you expect about one such fluke anyway. There is no clock. There never was.</p>
+
+  <h3 class="sh">What is really there: two dials</h3>
+
+  <p>Killing the cycle leaves something better, because the record does have structure &mdash; just not periodic structure. Each franchise is described almost completely by two numbers. The first is its <strong>level</strong>: the winning percentage it keeps returning to. The second is its <strong>persistence</strong>: how much of this year's deviation from that level survives into next year. Persistence near zero means every season is a fresh draw. Persistence near one means the club drifts a long way from home before the elastic pulls it back.</p>
+
+  <table class="tbl">
+    <thead><tr><th>Franchise</th><th class="n">Level</th><th class="n">Persistence</th><th>Temperament</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td>Yankees</td><td class="n">.564</td><td class="n">0.52</td><td>high floor, ordinary elastic</td></tr>
+      <tr><td>Dodgers</td><td class="n">.552</td><td class="n">0.40</td><td>high floor, quick snap-back</td></tr>
+      <tr><td>Red Sox</td><td class="n">.537</td><td class="n">0.04</td><td>good, and with no memory at all</td></tr>
+      <tr><td>Braves</td><td class="n">.521</td><td class="n">0.73</td><td>long slow arcs, in both directions</td></tr>
+      <tr><td>Mets</td><td class="n">.497</td><td class="n">0.50</td><td>average, and stubborn about it</td></tr>
+      <tr><td>Royals</td><td class="n">.478</td><td class="n">0.50</td><td>below average, equally stubborn</td></tr>
+    </tbody>
+  </table>
+
+  <p>Read the Yankees row the way a fan never does. Their famous invincibility is a <em>level</em>, not a streak: since 1970 they return to about .564 &mdash; a ninety-one-win pace &mdash; and their bad years get erased at an unremarkable rate. The Red Sox are the strange ones. A strong level of .537 with persistence of essentially zero means Boston genuinely has no memory: last season tells you almost nothing about this one. Atlanta is the opposite animal, at 0.73 &mdash; when the Braves go somewhere, they stay a while, which is why their history reads as a long famine followed by a long feast and feels the most cyclical of anybody. It isn't. It is just slow.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Every franchise, on the only two dials that matter</div>
+<svg class="chart" viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="720" height="330" fill="#ede5d2"/>
+<text x="360" y="28" text-anchor="middle" font-family="Playfair Display" font-size="18" font-weight="700" fill="#1a1208">There is no cycle. There is a level, and an elastic.</text>
+<text x="360" y="48" text-anchor="middle" font-size="11" fill="#6b5e4a">Each dot is one franchise, 1970&ndash;2025. Right = wins more. Up = takes longer to come home.</text>
+<line x1="110" y1="250" x2="600" y2="250" stroke="#1a1208" stroke-width="1.2"/>
+<line x1="110" y1="72" x2="110" y2="250" stroke="#1a1208" stroke-width="1.2"/>
+<line x1="265.9" y1="72" x2="265.9" y2="250" stroke="#c8b99a" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="265.9" y="264" text-anchor="middle" font-size="8.5" fill="#6b5e4a">.500</text>
+<text x="132.3" y="264" text-anchor="middle" font-size="9" fill="#6b5e4a">.470</text>
+<text x="399.5" y="264" text-anchor="middle" font-size="9" fill="#6b5e4a">.530</text>
+<text x="488.6" y="264" text-anchor="middle" font-size="9" fill="#6b5e4a">.550</text>
+<text x="577.7" y="264" text-anchor="middle" font-size="9" fill="#6b5e4a">.570</text>
+<text x="355" y="282" text-anchor="middle" font-size="9.5" fill="#1a1208">the level a franchise returns to (winning percentage)</text>
+<text x="103" y="242" text-anchor="end" font-size="9" fill="#6b5e4a">0.0</text>
+<text x="103" y="159" text-anchor="end" font-size="9" fill="#6b5e4a">0.4</text>
+<text x="103" y="76" text-anchor="end" font-size="9" fill="#6b5e4a">0.8</text>
+<text x="20" y="95" text-anchor="start" font-size="9.5" fill="#1a1208">persistence</text>
+<text x="20" y="107" text-anchor="start" font-size="8.5" font-style="italic" fill="#6b5e4a">(how much of</text>
+<text x="20" y="118" text-anchor="start" font-size="8.5" font-style="italic" fill="#6b5e4a">last year</text>
+<text x="20" y="129" text-anchor="start" font-size="8.5" font-style="italic" fill="#6b5e4a">carries over)</text>
+<line x1="110" y1="206.0" x2="600" y2="206.0" stroke="#2a6e3f" stroke-width="1.4" stroke-dasharray="6,4"/>
+<text x="604" y="209" text-anchor="start" font-size="8.5" font-weight="700" fill="#2a6e3f">NFL avg</text>
+<text x="604" y="219" text-anchor="start" font-size="8.5" fill="#2a6e3f">0.16</text>
+<circle cx="359.3" cy="87.3" r="4.2" fill="#b83a1e" opacity="0.85"/>
+<circle cx="178.8" cy="103.2" r="4.2" fill="#b83a1e" opacity="0.85"/>
+<circle cx="275.1" cy="111.8" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="269.4" cy="116.7" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="321.4" cy="123.2" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="260.9" cy="126.0" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="550.0" cy="130.4" r="4.2" fill="#b83a1e" opacity="0.85"/>
+<circle cx="226.8" cy="131.8" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="327.5" cy="133.8" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="167.7" cy="134.6" r="4.2" fill="#b83a1e" opacity="0.85"/>
+<circle cx="253.6" cy="135.2" r="4.2" fill="#b83a1e" opacity="0.85"/>
+<circle cx="181.9" cy="135.4" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="199.2" cy="137.3" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="270.9" cy="150.0" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="497.2" cy="156.5" r="4.2" fill="#b83a1e" opacity="0.85"/>
+<circle cx="306.0" cy="163.2" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="165.2" cy="165.7" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="198.0" cy="172.0" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="215.3" cy="172.1" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="216.7" cy="176.0" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="139.4" cy="178.9" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="217.9" cy="181.9" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="253.0" cy="186.3" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="297.9" cy="200.2" r="4.2" fill="#6b5e4a" opacity="0.7"/>
+<circle cx="377.8" cy="223.4" r="4.2" fill="#b83a1e" opacity="0.85"/>
+<circle cx="432.6" cy="231.7" r="4.2" fill="#b83a1e" opacity="0.85"/>
+<text x="368" y="84" text-anchor="start" font-size="9.5" font-weight="700" fill="#b83a1e">Braves</text>
+<text x="368" y="95" text-anchor="start" font-size="8" font-style="italic" fill="#6b5e4a">long slow arcs</text>
+<text x="187" y="100" text-anchor="start" font-size="9.5" font-weight="700" fill="#b83a1e">Pirates</text>
+<text x="542" y="127" text-anchor="end" font-size="9.5" font-weight="700" fill="#b83a1e">Yankees</text>
+<text x="159" y="138" text-anchor="end" font-size="9.5" font-weight="700" fill="#b83a1e">Royals</text>
+<text x="262" y="139" text-anchor="start" font-size="9.5" font-weight="700" fill="#b83a1e">Mets</text>
+<text x="506" y="168" text-anchor="start" font-size="9.5" font-weight="700" fill="#b83a1e">Dodgers</text>
+<text x="386" y="227" text-anchor="start" font-size="9.5" font-weight="700" fill="#b83a1e">Cardinals</text>
+<text x="441" y="235" text-anchor="start" font-size="9.5" font-weight="700" fill="#b83a1e">Red Sox</text>
+<text x="441" y="245" text-anchor="start" font-size="8" font-style="italic" fill="#6b5e4a">no memory at all</text>
+<text x="360" y="304" text-anchor="middle" font-size="9" font-style="italic" fill="#6b5e4a">Sources: season records via the MLB Stats API; NFL comparison from public game results, 1999&ndash;2025.</text>
+<text x="360" y="320" text-anchor="middle" font-size="8.5" font-style="italic" fill="#6b5e4a">Persistence is how much of a season&rsquo;s deviation from the club&rsquo;s own level survives into the next season.</text>
+</svg>
+  </div>
+
+  <h3 class="sh">The rulebook sets the elastic</h3>
+
+  <p>Now the finding that makes this more than a curiosity. Run the identical calculation on the NFL from 1999 and the whole sport sits somewhere baseball never goes. Baseball's average persistence is <strong>0.42</strong>. Football's is <strong>0.16</strong>, and several clubs come out negative &mdash; actively anti-persistent, where a good year predicts a worse one.</p>
+
+  <p>That is not an accident of talent. It is design. Football runs a hard salary cap, a draft in reverse order of standing, enormous shared revenue and a seventeen-game season; every one of those is a machine for erasing last year. Baseball has none of them. So the elastic in football is short and violent, and the elastic in baseball is long enough that a franchise can be recognisably itself for thirty years. When people argue about whether a front office is smart or a market is big, they are arguing about a quantity the league office already largely decided.</p>
+
+  <div class="pull">
+    <p>There is no clock. There is a level you return to, and a rulebook that decides how fast.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh">Why this matters outside the ballpark</h3>
+
+  <p>The mistake this piece is really about is not a baseball mistake. Give anyone a wiggly line &mdash; a stock, a crime rate, a nation's mood, a franchise &mdash; and they will find a cycle in it, name it, and start forecasting the next turn. The cycle is almost always <span class="cc" data-preview="Extreme years are followed by less extreme ones, not because a cycle turned, but because extremes were partly luck and luck does not repeat. Chain that together across seasons and it looks like a wave. Open the Regression to the Mean primer."><em>mean reversion</em><a class="cc-i" href="../concepts/regression-to-the-mean.html" target="_blank" rel="noopener">i</a></span> wearing a costume: extreme years are partly luck, luck does not repeat, and the return toward normal reads as the downslope of a wave that was never there. The tell is that a real cycle predicts <em>when</em>. Mean reversion only predicts <em>which way</em> &mdash; and every genuine forecast anyone has ever made about a franchise is the second kind, dressed up as the first.</p>
+
+  <p>Which is oddly good news if your team is bad. A cycle would mean waiting your turn. A level and an elastic mean the only two things worth arguing about are whether you can raise the level, and how long the elastic will take &mdash; both of which are answerable, and neither of which is on a schedule.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Season records come from the MLB Stats API, 1901&ndash;2025; the analysis window is 1970&ndash;2025 and covers the twenty-six franchises with at least forty seasons in it. Persistence is the lag-one autocorrelation of a club&rsquo;s winning percentage around its own mean &mdash; a first-order autoregressive coefficient. The cycle test compares each club&rsquo;s largest periodogram peak against four thousand simulated series matched on that same persistence and variance, which is the fair null: it already contains all the wave-like wandering that momentum alone produces.</p>
+    <p style="color:#c8b99a">One club came in under five percent, at a period equal to the full length of the record, which is a trend rather than a cycle; across twenty-six tests roughly one such result is expected by chance. The NFL comparison uses public regular-season game results, 1999&ndash;2025, and the same calculation. Both leagues realigned, expanded and changed schedule length over these windows, which adds noise but cannot manufacture a periodicity that is absent.</p>
+    <p style="color:#c8b99a">The companion primer is <a href="../concepts/regression-to-the-mean.html" style="color:#c9962a" target="_blank" rel="noopener">Regression to the Mean</a> (Concept No. 3). A dedicated primer on autocorrelation &mdash; why a wandering line grows fake cycles, and how to test one honestly &mdash; is coming. And a reader-facing toy built on exactly this machinery, which will draw your own fandom trajectory from the teams you pick, is in the works; the arithmetic above is its engine. The archive lives at <a href="https://thesportspage.net/" style="color:#c9962a" target="_blank" rel="noopener">thesportspage.net</a>.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Vol. I, No. __</span>
+    <span>The Professor</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</main>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/115-no-such-thing-as-a-cycle.html">
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+    <a href="https://twitter.com/intent/tweet?text=I%20tested%20all%2026%20long-lived%20baseball%20franchises%20for%20cycles.%20Found%20zero.%20There%27s%20no%20clock%20%E2%80%94%20just%20a%20level%20each%20team%20returns%20to%20and%20a%20speed%20it%20returns%20at%2C%20and%20the%20league%27s%20rulebook%20sets%20the%20speed.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/115-no-such-thing-as-a-cycle.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/115-no-such-thing-as-a-cycle.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20There%20Is%20No%20Such%20Thing%20as%20a%20Franchise%20Cycle&body=Every%20fan%20believes%20their%20team%20runs%20in%20cycles.%20I%20tested%20all%2026%20long-lived%20baseball%20franchises%20and%20found%20exactly%20zero.%20What%27s%20really%20there%3A%20a%20level%20each%20club%20returns%20to%2C%20and%20a%20speed%20it%20returns%20at.%0A%0Ahttps%3A//thesportspage.net/published/115-no-such-thing-as-a-cycle.html%3Futm_source%3Demail%26utm_medium%3Dshare" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/115-no-such-thing-as-a-cycle.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+  </div>
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('sp-copy-link'); if(!btn) return;
+  var label=document.getElementById('sp-copy-label'); var url=btn.getAttribute('data-url');
+  btn.addEventListener('click',function(){
+    try{ navigator.clipboard.writeText(url).then(function(){ label.textContent='Copied!'; btn.style.background='#c9962a'; btn.style.color='#1a1208'; setTimeout(function(){label.textContent='Copy link';btn.style.background='transparent';btn.style.color='#c9962a';},1800);});}catch(e){window.prompt('Copy this link:',url);}
+  });
+})();
+</script></body>
+</html>

@@ -281,7 +281,7 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 ## Current State (update this when publishing)
 
 Published: 117 issues (#1-117)
-Queue: 13 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, 107-mets-own-mean, 108-nfl-own-mean, 109-cfb-trajectories, 110-qb-tiers-critique, 111-drought-breaks, 112-variance-is-king, 113-pull-the-goalie, 114-mets-royals-cost-per-title, _TEMPLATE)
+Queue: 14 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, 107-mets-own-mean, 108-nfl-own-mean, 109-cfb-trajectories, 110-qb-tiers-critique, 111-drought-breaks, 112-variance-is-king, 113-pull-the-goalie, 114-mets-royals-cost-per-title, 115-no-such-thing-as-a-cycle, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
 Goal: 383 issues remaining of 500
