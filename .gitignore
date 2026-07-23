@@ -10,3 +10,12 @@ analysis/*.log
 
 # Generated podcast audio — uploaded to Spotify, not hosted in-repo
 audio/
+
+# Source material for research — READ from these, never publish them.
+# This repo is public (GitHub Pages serves thesportspage.net), so a saved
+# article PDF or page source committed here is republishing someone else's
+# copyrighted work. Keep the files locally, keep them out of git.
+/*.pdf
+/*.eml
+/view-source_*.html
+/sources/
