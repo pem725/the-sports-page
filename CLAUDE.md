@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 383 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 382 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 117 issues (#1-117)
-Queue: 14 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, 107-mets-own-mean, 108-nfl-own-mean, 109-cfb-trajectories, 110-qb-tiers-critique, 111-drought-breaks, 112-variance-is-king, 113-pull-the-goalie, 114-mets-royals-cost-per-title, 115-no-such-thing-as-a-cycle, _TEMPLATE)
+Published: 118 issues (#1-118)
+Queue: 13 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, 107-mets-own-mean, 108-nfl-own-mean, 109-cfb-trajectories, 110-qb-tiers-critique, 111-drought-breaks, 112-variance-is-king, 113-pull-the-goalie, 115-no-such-thing-as-a-cycle, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 383 issues remaining of 500
-Last published: Issue #117 — "Twelve Playoff Spots. Five Real Title Threats." (102-cfb-contender-board.html) on July 23, 2026
+Goal: 382 issues remaining of 500
+Last published: Issue #118 — "The Royals Won Two. The Mets Won One. The Mets Spent $830 Million More." (114-mets-royals-cost-per-title.html) on July 24, 2026
