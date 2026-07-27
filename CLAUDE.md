@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 381 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 379 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 119 issues (#1-119)
-Queue: 14 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, 107-mets-own-mean, 109-cfb-trajectories, 110-qb-tiers-critique, 111-drought-breaks, 112-variance-is-king, 113-pull-the-goalie, 115-no-such-thing-as-a-cycle, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, _TEMPLATE)
+Published: 121 issues (#1-121)
+Queue: 13 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 105-cfb-weeks-that-matter, 109-cfb-trajectories, 110-qb-tiers-critique, 111-drought-breaks, 112-variance-is-king, 113-pull-the-goalie, 115-no-such-thing-as-a-cycle, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 381 issues remaining of 500
-Last published: Issue #119 — "Every NFL Team Spends the Same. The Jets Still Can’t Find January." (108-nfl-own-mean.html) on July 25, 2026
+Goal: 379 issues remaining of 500
+Last published: Issue #121 — "The Standings Say the Mets Should Bounce Back. The Franchise Says Otherwise." (107-mets-own-mean.html) on July 27, 2026
