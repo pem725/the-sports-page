@@ -16,6 +16,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QUEUE_DIR = os.path.join(REPO, "queue")
@@ -51,6 +52,39 @@ def fail(msg):
         check=False,
     )
     sys.exit(1)
+
+
+def safe_push(today):
+    """Push to origin/main, tolerant of lost races and transient blips.
+
+    GitHub's scheduled runs fire late and stack, so two runners can pass the
+    startup idempotency guard before either commits, then both try to push.
+    The loser's push is rejected as non-fast-forward. That is NOT a failure —
+    the day's issue is out — so we detect it with the same guard and exit 0
+    instead of filing a spurious publish-failure issue (the cause of the
+    same-day duplicate failures seen on 2026-06-29). A genuinely transient
+    error (a network blip, origin unchanged) is retried with backoff.
+
+    Note: a runner-acquisition failure ("job not acquired by Runner") happens
+    BEFORE any step runs and cannot be retried here — the multiple cron entries
+    plus this guard are what make that harmless (a later run publishes instead).
+    """
+    for attempt in range(3):
+        result = run("git push origin main", check=False)
+        if result.returncode == 0:
+            return
+        # Push failed. If another runner already published today's issue, our
+        # work is redundant, not broken — exit cleanly. (already_published_today
+        # fetches origin first, so it sees the winner's commit.)
+        if already_published_today(today):
+            print("Another runner published first — our push is redundant. "
+                  "Exiting cleanly.")
+            sys.exit(0)
+        # Otherwise treat it as transient and retry after a short backoff.
+        print(f"push attempt {attempt + 1}/3 failed; retrying...",
+              file=sys.stderr)
+        time.sleep(5 * (attempt + 1))
+    fail(f"git push failed after 3 attempts: {result.stderr.strip()}")
 
 
 def read_file(path):
@@ -588,7 +622,7 @@ def main():
     run(f'git add index.html "published/{filename}"{deeper_arg}{og_arg}{fig_arg} QUEUE_ORDER.txt CLAUDE.md feed.xml')
     commit_msg = f"Publish Issue #{issue_num}: {headline_plain[:60]}"
     run(f'git commit -m "{commit_msg}"')
-    run("git push origin main")
+    safe_push(today)
 
     print()
     print(f"Published Issue #{issue_num}: {headline_plain[:60]}")

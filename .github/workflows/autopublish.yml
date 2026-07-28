@@ -35,6 +35,14 @@ permissions:
   contents: write    # push commits
   issues: write      # create failure issues
 
+# A red ✗ reading "The job was not acquired by Runner of type hosted" is a
+# GitHub capacity hiccup, NOT a bug here: the job never started, so nothing
+# can retry it in-workflow. It is harmless — the stacked cron entries above
+# plus already_published_today() mean a later run publishes the day's issue
+# instead (as happened 2026-07-27). To stop the failure emails for these,
+# adjust GitHub notification settings, not this file. In-our-control transient
+# failures (the git-push race, network blips) are handled by safe_push() in
+# scripts/autopublish.py.
 jobs:
   publish:
     runs-on: ubuntu-latest
