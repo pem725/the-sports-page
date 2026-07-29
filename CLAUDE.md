@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 378 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 377 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 122 issues (#1-122)
-Queue: 12 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 109-cfb-trajectories, 110-qb-tiers-critique, 111-drought-breaks, 112-variance-is-king, 113-pull-the-goalie, 115-no-such-thing-as-a-cycle, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, _TEMPLATE)
+Published: 123 issues (#1-123)
+Queue: 11 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 109-cfb-trajectories, 110-qb-tiers-critique, 112-variance-is-king, 113-pull-the-goalie, 115-no-such-thing-as-a-cycle, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 378 issues remaining of 500
-Last published: Issue #122 — "The Line on Ohio State–Texas Is a Point and a Half." (105-cfb-weeks-that-matter.html) on July 28, 2026
+Goal: 377 issues remaining of 500
+Last published: Issue #123 — "The Cubs Waited 108 Years. The Red Sox, 86. The Same Man Ended Both." (111-drought-breaks.html) on July 29, 2026
