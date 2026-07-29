@@ -1,0 +1,227 @@
+<!-- PUBLISH-META
+topic: Betting
+tags: Betting:nfl, History, Point Spread, Probability
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)} .sc .v.gold{color:var(--gold)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+table.tbl{width:100%;border-collapse:collapse;margin:1.4rem 0;font-family:'Roboto Mono',monospace;font-size:.78rem}
+table.tbl th{text-align:left;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .5rem}
+table.tbl td{padding:.5rem .5rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.tbl td.y{white-space:nowrap;font-weight:600;color:var(--steel)}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
+</style>
+<meta property="og:title" content="A Math Teacher Invented the Point Spread. It Took Forty Years to Reach Your Living Room.">
+<meta property="og:description" content="Charles McNeil taught math to a young John F. Kennedy, then quit to become a Chicago bookmaker. His idea -- bet on the margin, not the winner -- became the most accurate probability estimate in sports. It just spent four decades in the shadows before it reached your Sunday pregame show.">
+<meta property="og:url" content="https://thesportspage.net/published/118-point-spread-history.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/118-point-spread-history.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A Math Teacher Invented the Point Spread">
+<meta name="twitter:description" content="The point spread is a probability in disguise -- and a remarkably accurate one. The story of how it went from a Chicago back room to your living room, and what it quietly taught America.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/118-point-spread-history.png">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">A Math Teacher Invented the Point Spread. <em>It Took Forty Years to Reach Your Living Room.</em></h2>
+  <p class="deck">Charles McNeil taught arithmetic to a young John F. Kennedy, then quit to become a Chicago bookmaker. His one idea &mdash; stop betting on who wins, bet on by how much &mdash; turned out to be the most accurate probability estimate in all of sports. It just spent four decades in the shadows before anyone was allowed to say it out loud on a Sunday pregame show.</p>
+  <p class="byline">The Sports Page &middot; The Professor &middot; a history of the number in the corner of the screen</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">70%</div><div class="l">a 7-point favorite&rsquo;s real chance of winning &mdash; a probability, not a lock</div></div>
+    <div class="sc"><div class="v gold">48%</div><div class="l">how often favorites actually cover the spread &mdash; essentially a coin flip</div></div>
+    <div class="sc"><div class="v bad">40 yrs</div><div class="l">the line&rsquo;s journey from a back room to national television</div></div>
+  </div>
+
+  <p>Look at the corner of the screen during any football game and you will find a small number almost nobody thinks of as remarkable: a team, and next to it, minus seven. It is the most quietly sophisticated object in American sports &mdash; a crowd&rsquo;s real-time estimate of a probability, about as accurate as anything humans forecast &mdash; and for forty years it was treated like a secret.</p>
+
+  <h3 class="sh">The bookmaker who taught the future president</h3>
+
+  <p>Charles Kline McNeil earned a master&rsquo;s degree at the University of Chicago and went to teach at the Riverdale Country School in New York, where his pupils included a boy named John F. Kennedy. His real gift, though, was with numbers, and by the late 1930s he had left teaching to gamble full time in Chicago&rsquo;s bookie joints. In the early 1940s he opened his own shop &mdash; and brought with him an idea that changed how a whole country watches sports.</p>
+
+  <p>Before McNeil, a bet was on <em>who would win</em>: you took the Bears or the Packers, and a mismatch was worthless to wager on because everyone knew the answer. McNeil&rsquo;s move was to stop pricing the winner and start pricing the <em>margin</em>. Make the Bears favorites by seven, and now the interesting question isn&rsquo;t whether they win &mdash; it&rsquo;s whether they win by <em>more</em> than seven. He called it &ldquo;wholesaling the odds,&rdquo; and it did something no moneyline ever had: it turned every game, even a blowout, into a coin flip you could bet on. The whole point was to move the line until the money split evenly &mdash; which meant the number had to land, as precisely as possible, on the game&rsquo;s true center of gravity.</p>
+
+  <h3 class="sh">Forty years to say it out loud</h3>
+
+  <p>Here is the odd part. McNeil had built a machine for measuring games with real accuracy, and the country spent forty years pretending it didn&rsquo;t exist. Bookmaking was illegal almost everywhere, newspapers were skittish about printing the line, and television wouldn&rsquo;t touch it &mdash; so the number was everywhere and nowhere at once, the organizing fact of how millions followed the games, and unspeakable on the air.</p>
+
+  <table class="tbl">
+    <thead><tr><th>When</th><th>The line steps further into the light</th></tr></thead>
+    <tbody>
+      <tr><td class="y">early 1940s</td><td>McNeil opens his Chicago book and offers &ldquo;wholesale odds&rdquo; &mdash; first on pro football, then on college games.</td></tr>
+      <tr><td class="y">1963</td><td>Jimmy &ldquo;the Greek&rdquo; Snyder begins a betting column in the <em>Las Vegas Sun</em>. Within a few years it is syndicated to more than two hundred newspapers.</td></tr>
+      <tr><td class="y">1976&ndash;1988</td><td>Snyder joins CBS&rsquo;s <em>The NFL Today</em>, beside Brent Musburger, and talks the line on national television &mdash; gently teaching a mass audience a subject that was still half-taboo.</td></tr>
+      <tr><td class="y">mid-1980s</td><td>Roughly three-quarters of American newspapers print NFL betting lines. The number is finally in the paper next to the box scores.</td></tr>
+      <tr><td class="y">1992 &rarr; 2018</td><td>A federal law confines legal sports betting to Nevada &mdash; until the Supreme Court strikes it down, and the line moves from the corner of the screen to the center of the broadcast.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sh">What the number actually is</h3>
+
+  <p>Strip away the smoke and a point spread is a single, honest sentence about the future: it is the market&rsquo;s estimate of the game&rsquo;s expected margin, and from it you can read off a <span class="cc" data-preview="Model the final margin as a bell curve centered on the spread, with a spread of scores about 13.5 points wide (the historical NFL standard deviation). The favorite's win probability is how much of that curve sits above zero. Open the Variance primer for the machinery."><em>probability directly</em><a class="cc-i" href="../concepts/variance.html" target="_blank" rel="noopener">i</a></span>. Treat the actual result as the spread give or take a typical game&rsquo;s worth of luck &mdash; about thirteen and a half points of scatter, in the NFL &mdash; and the favorite&rsquo;s chance of winning outright is just how much of that bell curve sits on their side of zero. A three-point favorite is a fifty-nine percent bet. Seven points is seventy. Fourteen is eighty-five. The spread was a probability all along; it simply never announced itself as one.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; A point spread, translated into the probability it always was</div>
+<svg class="chart" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="720" height="300" fill="#ede5d2"/>
+<text x="360" y="28" text-anchor="middle" font-family="Playfair Display" font-size="18" font-weight="700" fill="#1a1208">Every spread is a win probability in disguise</text>
+<text x="360" y="48" text-anchor="middle" font-size="11" fill="#6b5e4a">How often the favorite wins outright, given the number next to their name.</text>
+<line x1="95" y1="250" x2="600" y2="250" stroke="#1a1208" stroke-width="1.2"/>
+<line x1="95" y1="80" x2="95" y2="250" stroke="#1a1208" stroke-width="1.2"/>
+<line x1="95" y1="212.2" x2="600" y2="212.2" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="95" y1="174.4" x2="600" y2="174.4" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="95" y1="136.7" x2="600" y2="136.7" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="95" y1="98.9" x2="600" y2="98.9" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="88" y="253" text-anchor="end" font-size="9" fill="#6b5e4a">50%</text>
+<text x="88" y="215" text-anchor="end" font-size="9" fill="#6b5e4a">60%</text>
+<text x="88" y="177" text-anchor="end" font-size="9" fill="#6b5e4a">70%</text>
+<text x="88" y="140" text-anchor="end" font-size="9" fill="#6b5e4a">80%</text>
+<text x="88" y="102" text-anchor="end" font-size="9" fill="#6b5e4a">90%</text>
+<text x="95" y="266" text-anchor="middle" font-size="9" fill="#6b5e4a">pick</text>
+<text x="167.1" y="266" text-anchor="middle" font-size="9" fill="#6b5e4a">3</text>
+<text x="263.3" y="266" text-anchor="middle" font-size="9" fill="#6b5e4a">7</text>
+<text x="335.5" y="266" text-anchor="middle" font-size="9" fill="#6b5e4a">10</text>
+<text x="431.7" y="266" text-anchor="middle" font-size="9" fill="#6b5e4a">14</text>
+<text x="503.8" y="266" text-anchor="middle" font-size="9" fill="#6b5e4a">17</text>
+<text x="600" y="266" text-anchor="middle" font-size="9" fill="#6b5e4a">21</text>
+<text x="347" y="286" text-anchor="middle" font-size="9.5" fill="#1a1208">the point spread (how many points the favorite is laying)</text>
+<path fill="none" stroke="#2c4a6e" stroke-width="2.8" d="M95.0,250.0 L107.0,244.4 L119.0,238.8 L131.1,233.3 L143.1,227.8 L155.1,222.2 L167.1,216.8 L179.2,211.4 L191.2,206.0 L203.2,200.7 L215.2,195.4 L227.3,190.3 L239.3,185.2 L251.3,180.1 L263.3,175.2 L275.4,170.4 L287.4,165.7 L299.4,161.0 L311.4,156.5 L323.5,152.1 L335.5,147.8 L347.5,143.6 L359.5,139.5 L371.5,135.6 L383.6,131.8 L395.6,128.1 L407.6,124.5 L419.6,121.0 L431.7,117.7 L443.7,114.5 L455.7,111.5 L467.7,108.5 L479.8,105.7 L491.8,103.0 L503.8,100.4 L515.8,97.9 L527.9,95.6 L539.9,93.3 L551.9,91.2 L563.9,89.2 L576.0,87.3 L588.0,85.5 L600.0,83.7"/>
+<circle cx="167.1" cy="216.8" r="4.5" fill="#b83a1e"/>
+<text x="176" y="211" text-anchor="start" font-size="9.5" font-weight="700" fill="#b83a1e">3 &rarr; 59%</text>
+<circle cx="263.3" cy="175.2" r="4.5" fill="#b83a1e"/>
+<text x="263.3" y="167" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b83a1e">7 &rarr; 70%</text>
+<circle cx="431.7" cy="117.7" r="4.5" fill="#b83a1e"/>
+<text x="431.7" y="110" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b83a1e">14 &rarr; 85%</text>
+<text x="360" y="293" text-anchor="middle" font-size="8.5" font-style="italic" fill="#6b5e4a">Model: final margin as a bell curve centered on the spread, 13.5-point standard deviation (the NFL norm). Real results track it closely.</text>
+</svg>
+  </div>
+
+  <h3 class="sh">The proof that it&rsquo;s right</h3>
+
+  <p>How do we know the number is any good? Because of a statistic that sounds like failure and is actually the highest compliment a forecast can earn: against the spread, favorites win almost exactly <strong>half</strong> the time. Over the last ten NFL seasons they have covered about forty-eight percent of the time &mdash; a hair under even, and that hair is the bookmaker&rsquo;s cut. If the line were even slightly wrong &mdash; if seven-point favorites really won by eight on average &mdash; you could get rich taking one side of it. You cannot. A bettor who blindly backed every favorite for a decade would have <em>lost</em> about six cents on the dollar, bled away entirely by the &ldquo;juice.&rdquo; The line isn&rsquo;t beatable precisely because it isn&rsquo;t wrong. It is a probability so <span class="cc" data-preview="A well-calibrated forecast is right as often as it says it is: things it calls 70% happen about 70% of the time. That's the gold standard for a probability, and the closing point spread meets it. Open the Communicating Uncertainty primer."><em>well-calibrated</em><a class="cc-i" href="../concepts/communicating-uncertainty.html" target="_blank" rel="noopener">i</a></span> that thousands of sharp people, betting real money, cannot systematically improve on it.</p>
+
+  <div class="pull">
+    <p>A point spread is a probability so well-made that no one can beat it. That is not a gambling fact. It is the finest forecasting record in sports.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh">What it quietly taught us</h3>
+
+  <p>Which leaves the thing worth carrying out of the room, and it has nothing to do with wagering. For eighty years a small number in the corner of the screen has been teaching Americans to think in probabilities without ever using the word. A seven-point favorite is not &ldquo;going to win.&rdquo; It is a seventy-percent proposition, which means it loses about three times in ten &mdash; and the fan who screams that the line was &ldquo;wrong&rdquo; when the favorite falls has simply mistaken a likely thing for a sure one. That is the single most common error in all of human reasoning, and the point spread has been quietly inoculating people against it since before the Second World War.</p>
+
+  <p>Two honest cautions come with the gift. The line carries a tax &mdash; the vig &mdash; so &ldquo;the market is right&rdquo; and &ldquo;you can win betting it&rdquo; are not the same sentence. And the number tracks <em>money</em> as well as truth; a flood of public cash on a beloved team can nudge it a half-point off the real center. But those are footnotes to a genuinely astonishing fact: the most accurate everyday forecast most people ever encounter is sitting in the corner of a football broadcast, invented by a math teacher, and almost no one recognizes it for what it is.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Charles Kline McNeil (1903&ndash;1981) earned a master&rsquo;s at the University of Chicago and taught at the Riverdale Country School, where John F. Kennedy was among his students, before leaving to gamble full time and opening a Chicago book in the early 1940s; his &ldquo;wholesale odds&rdquo; are widely credited as the origin of the modern point spread. Jimmy &ldquo;the Greek&rdquo; Snyder began a syndicated betting column in 1963 and appeared on CBS&rsquo;s <em>The NFL Today</em> from 1976 to 1988. By the mid-1980s a large majority of U.S. newspapers printed NFL lines. The 1992 federal law is the Professional and Amateur Sports Protection Act; it was struck down by the Supreme Court in <em>Murphy v. NCAA</em> (2018).</p>
+    <p style="color:#c8b99a">The spread-to-probability figure is a model, stated plainly: it treats the final margin as normally distributed around the spread with a standard deviation of about 13.5 points, the long-run scatter of NFL game margins, and reads the favorite&rsquo;s win probability as the share of that curve above zero. This is the same normal-margin model behind this newsletter&rsquo;s earlier pieces on variance; empirical spread-to-win-rate tables track it closely. The cover-rate figure &mdash; NFL favorites at roughly 48% against the spread over the last ten seasons, a losing proposition after the standard vig &mdash; is the standard evidence that the market is efficient; exact figures vary by season and source.</p>
+    <p style="color:#c8b99a">The underpinnings have primers: <a href="../concepts/variance.html" style="color:#c9962a" target="_blank" rel="noopener">Variance</a> (Concept No. 23) for the bell-curve machinery, and <a href="../concepts/communicating-uncertainty.html" style="color:#c9962a" target="_blank" rel="noopener">Communicating Uncertainty</a> (Concept No. 18) for what a well-calibrated probability means. The full archive is at <a href="https://thesportspage.net/" style="color:#c9962a" target="_blank" rel="noopener">thesportspage.net</a>.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Vol. I, No. __</span>
+    <span>The Professor</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</main>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/118-point-spread-history.html">
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+    <a href="https://twitter.com/intent/tweet?text=A%20math%20teacher%20who%20taught%20a%20young%20JFK%20invented%20the%20point%20spread%20%E2%80%94%20the%20most%20accurate%20probability%20estimate%20in%20sports.%20It%20spent%2040%20years%20in%20the%20shadows%20before%20it%20reached%20your%20living%20room.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/118-point-spread-history.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/118-point-spread-history.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20A%20Math%20Teacher%20Invented%20the%20Point%20Spread&body=Charles%20McNeil%20taught%20math%20to%20a%20young%20JFK%2C%20then%20became%20a%20Chicago%20bookmaker%20and%20invented%20the%20point%20spread%20%E2%80%94%20the%20most%20accurate%20probability%20estimate%20in%20sports.%20It%20spent%2040%20years%20in%20the%20shadows%20before%20it%20reached%20your%20living%20room.%0A%0Ahttps%3A//thesportspage.net/published/118-point-spread-history.html%3Futm_source%3Demail%26utm_medium%3Dshare" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/118-point-spread-history.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+  </div>
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('sp-copy-link'); if(!btn) return;
+  var label=document.getElementById('sp-copy-label'); var url=btn.getAttribute('data-url');
+  btn.addEventListener('click',function(){
+    try{ navigator.clipboard.writeText(url).then(function(){ label.textContent='Copied!'; btn.style.background='#c9962a'; btn.style.color='#1a1208'; setTimeout(function(){label.textContent='Copy link';btn.style.background='transparent';btn.style.color='#c9962a';},1800);});}catch(e){window.prompt('Copy this link:',url);}
+  });
+})();
+</script></body>
+</html>
