@@ -1,0 +1,199 @@
+<!-- PUBLISH-META
+topic: Methods
+tags: Methods:cfb, Notre Dame, Money, Extrapolation
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)} .sc .v.gold{color:var(--gold)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
+</style>
+<meta property="og:title" content="No, Notre Dame Is Not About to Become Free">
+<meta property="og:description" content="The intuition is seductive: the endowment gets so enormous that the university runs on its investment income and stops charging tuition. Notre Dame's endowment is $20 billion. Here is why 'free for everyone' is exactly the kind of straight-line extrapolation that fools smart people -- and what the real numbers say instead.">
+<meta property="og:url" content="https://thesportspage.net/published/120-endowment-myth.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/120-endowment-myth.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="No, Notre Dame Is Not About to Become Free">
+<meta name="twitter:description" content="A $20 billion endowment sounds like enough to run a university for nothing. It spends 3.3% a year, that covers 39% of the bills, and 83% of it is spoken for. A lesson in the seduction of the big number.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/120-endowment-myth.png">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">No, Notre Dame Is Not <em>About to Become Free.</em></h2>
+  <p class="deck">The intuition is almost irresistible: the endowment keeps compounding, the numbers get silly, and one day the place is so rich it simply runs on its investment income and stops charging tuition. It is a lovely thought. It is also a textbook case of the single most seductive error in all of reasoning &mdash; drawing a straight line through a big number and following it off the edge of the map.</p>
+  <p class="byline">The Sports Page &middot; The Columnist &middot; a media-literacy lesson, disguised as a fantasy about free college</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v gold">$20.1B</div><div class="l">Notre Dame&rsquo;s endowment &mdash; ninth-largest in the country</div></div>
+    <div class="sc"><div class="v now">3.3%</div><div class="l">of it actually spent last year &mdash; you live on the yield, not the balance</div></div>
+    <div class="sc"><div class="v bad">39%</div><div class="l">of the bills that entire payout covers &mdash; tuition pays most of the rest</div></div>
+  </div>
+
+  <p>Start with the number that starts the daydream. Notre Dame&rsquo;s endowment stands at about <strong>twenty billion dollars</strong>, the ninth-largest of any university in the country. Say it out loud and the fantasy writes itself: surely a pile that size throws off enough to run the school forever, tuition-free, with plenty left to pay everyone handsomely. The arithmetic feels obvious. The arithmetic is wrong, and being precise about <em>why</em> is worth more than any number in this issue.</p>
+
+  <h3 class="sh">You live on the yield, not the pile</h3>
+
+  <p>The first mistake is treating an endowment like a checking account. It is not a balance you spend down; it is a permanent fund you are supposed to preserve forever, so you may spend only what it safely <em>throws off</em>. Notre Dame, like most schools, sets that <span class="cc" data-preview="A university spends a fixed small percentage of the endowment each year -- typically 4-5%, sometimes less -- chosen so the fund keeps pace with inflation and lasts in perpetuity. Spend the balance itself and the endowment is gone. Open the archive for the payroll pieces on money and winning."><em>payout at a few percent a year</em><a class="cc-i" href="https://thesportspage.net/" target="_blank" rel="noopener">i</a></span>. Last year it distributed about <strong>$655 million</strong> for spending &mdash; roughly 3.3 percent of the fund. The other ninety-seven percent stayed invested, exactly as it must, or there is no endowment next year. So the working number is not twenty billion. It is six hundred and fifty-five million, and that distinction is the whole ballgame.</p>
+
+  <h3 class="sh">The yield doesn&rsquo;t even cover the bills</h3>
+
+  <p>Now set that $655 million against what it costs to open the doors. Running Notre Dame takes about <strong>$1.67 billion</strong> a year. So the entire endowment payout &mdash; every dollar the twenty-billion-dollar fund contributes &mdash; covers only about <strong>thirty-nine percent</strong> of the operating budget. The majority of the bill is still paid the ordinary way: tuition, research grants, gifts, the money the football team throws off on a Saturday. Far from making the place free, the endowment does not even keep the lights on by itself.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; A $20 billion endowment, and what it actually pays for in a year</div>
+<svg class="chart" viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="720" height="250" fill="#ede5d2"/>
+<text x="360" y="30" text-anchor="middle" font-family="Playfair Display" font-size="18" font-weight="700" fill="#1a1208">The balance is huge. What it spends is not.</text>
+<text x="360" y="50" text-anchor="middle" font-size="11" fill="#6b5e4a">One year&rsquo;s figures. The endowment is a reservoir you sip from &mdash; and the sip doesn&rsquo;t cover the bills.</text>
+<line x1="250" y1="70" x2="250" y2="215" stroke="#c8b99a" stroke-width="1"/>
+<line x1="372.2" y1="70" x2="372.2" y2="215" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="494.4" y1="70" x2="494.4" y2="215" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="616.7" y1="70" x2="616.7" y2="215" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="250" y="230" text-anchor="middle" font-size="9" fill="#6b5e4a">$0</text>
+<text x="372.2" y="230" text-anchor="middle" font-size="9" fill="#6b5e4a">$0.5B</text>
+<text x="494.4" y="230" text-anchor="middle" font-size="9" fill="#6b5e4a">$1.0B</text>
+<text x="616.7" y="230" text-anchor="middle" font-size="9" fill="#6b5e4a">$1.5B</text>
+<rect x="250" y="82" width="408.2" height="30" fill="#2c4a6e" opacity="0.85"/>
+<text x="240" y="101" text-anchor="end" font-size="10.5" font-weight="700" fill="#2c4a6e">cost to run ND</text>
+<text x="662" y="101" text-anchor="start" font-size="10" font-weight="700" fill="#2c4a6e">$1.67B</text>
+<rect x="250" y="126" width="160.1" height="30" fill="#c9962a" opacity="0.9"/>
+<text x="240" y="145" text-anchor="end" font-size="10.5" font-weight="700" fill="#a5781f">endowment payout</text>
+<text x="418" y="145" text-anchor="start" font-size="10" font-weight="700" fill="#a5781f">$655M &mdash; 39% of the bill</text>
+<rect x="250" y="170" width="20.8" height="30" fill="#b83a1e" opacity="0.9"/>
+<text x="240" y="189" text-anchor="end" font-size="10.5" font-weight="700" fill="#b83a1e">&hellip;of it unrestricted</text>
+<text x="278" y="189" text-anchor="start" font-size="10" font-weight="700" fill="#b83a1e">$85M &mdash; free to spend as it likes</text>
+<text x="360" y="245" text-anchor="middle" font-size="8.5" font-style="italic" fill="#6b5e4a">Endowment $20.1B; 3.3% payout = $655M; ~13% of that payout ($85M) is unrestricted; operating budget ~$1.67B.</text>
+</svg>
+  </div>
+
+  <h3 class="sh">And most of it isn&rsquo;t the school&rsquo;s to spend</h3>
+
+  <p>Here is the constraint that finishes the fantasy off. Endowments are not one big pool; they are thousands of separate gifts, and most donors attach strings. This money endows a specific chair in theology; that fund pays for a named scholarship; this one maintains a particular laboratory. The university is legally bound to spend each gift on the purpose the donor named. Of Notre Dame&rsquo;s $655 million payout, only about <strong>thirteen percent</strong> &mdash; on the order of eighty-five million dollars &mdash; is unrestricted, free to be spent however leadership chooses. You cannot take the money someone left for a chemistry professorship and turn it into free tuition. It is not a slush fund; it is ten thousand promises.</p>
+
+  <p>So stack up what &ldquo;free for everyone&rdquo; would actually require. The endowment would have to cover the entire operating budget it currently covers a third of, <em>and</em> replace all the tuition revenue on top of that, <em>and</em> do it out of unrestricted money it has only a sliver of &mdash; forever, through every market crash, while costs keep rising. That is not a bigger version of today&rsquo;s endowment. It is an endowment several times larger, of a fundamentally different composition, and it is not arriving because compound interest felt inevitable at a cocktail party.</p>
+
+  <div class="pull">
+    <p>Twenty billion dollars is a reservoir, not a checking account. You may sip three percent a year &mdash; and even the whole sip doesn&rsquo;t cover the bills.</p>
+    <cite>The Columnist</cite>
+  </div>
+
+  <h3 class="sh">The error has a name, and it&rsquo;s everywhere</h3>
+
+  <p>None of this means the endowment is small or that rich schools don&rsquo;t get richer &mdash; they plainly do. It means the leap from &ldquo;enormous number&rdquo; to &ldquo;therefore, free&rdquo; skipped every constraint that actually governs the number: the payout discipline, the donor restrictions, the operating budget the money is already feeding, the simple fact that you spend the yield and not the pile. That leap is the reason this belongs in a sports newsletter, because it is the exact same move as &ldquo;the Mets are on pace for a hundred and ten wins&rdquo; in April, or &ldquo;this stock doubled last year, so in a decade it will be worth&hellip;&rdquo; It is the <span class="cc" data-preview="Taking a current rate or a big number and projecting it in a straight line, as if nothing pushes back. Growth meets friction; rates revert; constraints bind. The straight line is almost always the wrong shape. Open the Regression to the Mean primer."><em>straight-line extrapolation</em><a class="cc-i" href="../concepts/regression-to-the-mean.html" target="_blank" rel="noopener">i</a></span> that ignores friction &mdash; and reality is nothing but friction.</p>
+
+  <p>The number in the headline is almost never a lie. Notre Dame really does have twenty billion dollars. The lie is in the line you draw out of it. Big numbers invite big straight lines, and the straight line is nearly always the wrong shape &mdash; it forgets that the money is mostly spoken for, that you can spend only the yield, that the bills grow too. The rich get richer, yes. They do not get infinite, and they are not about to hand you a diploma for nothing. Next time a staggering figure tempts you to run it forward to its dazzling conclusion, do the boring thing first: ask what it&rsquo;s allowed to do, and what it&rsquo;s already doing.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Figures are from Notre Dame&rsquo;s 2025 financial reporting. The endowment stood at about $20.1 billion, ninth-largest among U.S. universities; the endowment payout distributed for spending was about $655 million, roughly a 3.3% distribution rate. Of that payout, about 13% was allocated to general operations (on the order of $85 million) and the balance to designated purposes &mdash; academic programs, research, and athletics &mdash; reflecting the donor restrictions typical of large endowments. University operating expenses were about $1.67 billion (the most recent full-year figure), so the endowment payout covered roughly 39% of operating costs. Exact figures shift year to year with markets and reporting; the proportions are what matter to the argument.</p>
+    <p style="color:#c8b99a">A note on the &ldquo;free&rdquo; thought experiment: making tuition free in perpetuity would require the endowment to fund the entire operating budget and replace tuition revenue out of unrestricted funds, which are a small fraction of the whole &mdash; implying an endowment several times the current size and of a very different (unrestricted) composition. This is illustrative arithmetic, not a Notre Dame plan; the university has not proposed anything of the kind.</p>
+    <p style="color:#c8b99a">The underlying error &mdash; straight-line extrapolation of a large number past the constraints that bind it &mdash; is treated in the primer on <a href="../concepts/regression-to-the-mean.html" style="color:#c9962a" target="_blank" rel="noopener">Regression to the Mean</a> (Concept No. 3). This newsletter&rsquo;s pieces on payroll and winning make the companion point about money in sports; see the <a href="https://thesportspage.net/" style="color:#c9962a" target="_blank" rel="noopener">archive</a>.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Vol. I, No. __</span>
+    <span>The Columnist</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</main>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/120-endowment-myth.html">
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+    <a href="https://twitter.com/intent/tweet?text=A%20%2420%20billion%20endowment%20sounds%20like%20enough%20to%20run%20a%20university%20for%20free.%20It%20spends%203.3%25%20a%20year%2C%20that%20covers%2039%25%20of%20the%20bills%2C%20and%2083%25%20of%20it%20is%20spoken%20for.%20A%20lesson%20in%20the%20seduction%20of%20the%20big%20number.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/120-endowment-myth.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/120-endowment-myth.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20No%2C%20Notre%20Dame%20Is%20Not%20About%20to%20Become%20Free&body=A%20%2420%20billion%20endowment%20sounds%20like%20enough%20to%20run%20a%20university%20for%20nothing.%20It%20spends%20only%203.3%25%20a%20year%2C%20that%20covers%2039%25%20of%20the%20bills%2C%20and%2083%25%20of%20it%20is%20restricted.%20A%20lesson%20in%20the%20seduction%20of%20the%20big%20number.%0A%0Ahttps%3A//thesportspage.net/published/120-endowment-myth.html%3Futm_source%3Demail%26utm_medium%3Dshare" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/120-endowment-myth.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+  </div>
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('sp-copy-link'); if(!btn) return;
+  var label=document.getElementById('sp-copy-label'); var url=btn.getAttribute('data-url');
+  btn.addEventListener('click',function(){
+    try{ navigator.clipboard.writeText(url).then(function(){ label.textContent='Copied!'; btn.style.background='#c9962a'; btn.style.color='#1a1208'; setTimeout(function(){label.textContent='Copy link';btn.style.background='transparent';btn.style.color='#c9962a';},1800);});}catch(e){window.prompt('Copy this link:',url);}
+  });
+})();
+</script></body>
+</html>
