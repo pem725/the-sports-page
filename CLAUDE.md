@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 377 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 376 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 123 issues (#1-123)
-Queue: 13 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 109-cfb-trajectories, 110-qb-tiers-critique, 112-variance-is-king, 113-pull-the-goalie, 115-no-such-thing-as-a-cycle, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, _TEMPLATE)
+Published: 124 issues (#1-124)
+Queue: 13 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 109-cfb-trajectories, 112-variance-is-king, 113-pull-the-goalie, 115-no-such-thing-as-a-cycle, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 377 issues remaining of 500
-Last published: Issue #123 — "The Cubs Waited 108 Years. The Red Sox, 86. The Same Man Ended Both." (111-drought-breaks.html) on July 29, 2026
+Goal: 376 issues remaining of 500
+Last published: Issue #124 — "They Called It “a Fool’s Errand.” Then They Ranked 138 of Them." (110-qb-tiers-critique.html) on July 30, 2026
