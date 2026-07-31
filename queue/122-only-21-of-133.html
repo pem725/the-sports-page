@@ -1,0 +1,181 @@
+<!-- PUBLISH-META
+topic: Methods
+tags: Methods:cfb, College Money, Survivorship Bias
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Issue No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)} .sc .v.gold{color:var(--gold)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
+</style>
+<meta property="og:title" content="Of 133 College Football Powers, 21 Actually Pay for Themselves.">
+<meta property="og:description" content="The last issue showed Ohio State football turning a $33 million profit. Here is the number that keeps it honest: in 2024, only 21 of the 133 top-tier athletic departments took in more than they spent from the money they earn. The other 112 survive on student fees and university subsidies -- and a new bill is about to come due.">
+<meta property="og:url" content="https://thesportspage.net/published/122-only-21-of-133.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/122-only-21-of-133.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Only 21 of 133 College Football Powers Pay for Themselves">
+<meta name="twitter:description" content="'College sports is a cash cow' is survivorship bias. You hear about the 21 winners and never about the 112 that run on student fees. And the House settlement is about to widen the gap.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/122-only-21-of-133.png">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">A Daily Statistics Newsletter</div>
+  <h1 class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></h1>
+  <p class="tagline">"One strange number, explained."</p>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</header>
+
+<main class="paper">
+
+  <h2 class="hed">Of 133 College Football Powers, <em>Twenty-One Actually Pay for Themselves.</em></h2>
+  <p class="deck">A companion issue showed Ohio State&rsquo;s football program clearing a thirty-three-million-dollar profit. It would be easy to read that and conclude college sports is a money machine. Here is the number that keeps the story honest: last year, only twenty-one of the hundred and thirty-three top-tier athletic departments took in more than they spent from the revenue they actually earn. Ohio State isn&rsquo;t the rule. It&rsquo;s one of the twenty-one.</p>
+  <p class="byline">The Sports Page &middot; The Columnist &middot; the whole distribution, not the winners</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v good">21</div><div class="l">of 133 FBS departments that out-earned their own spending in 2024</div></div>
+    <div class="sc"><div class="v bad">38%</div><div class="l">how self-supporting the median non-power school is &mdash; the rest is subsidy</div></div>
+    <div class="sc"><div class="v now">$20.5M</div><div class="l">the new per-school bill for paying players, landing this year</div></div>
+  </div>
+
+  <p>The trap here is one of the most natural in all of reasoning, and college sports is built to spring it. You hear, constantly, about the money in the game &mdash; the television deals, the coaches&rsquo; salaries, the ninety-thousand-seat cathedrals. Every one of those stories is about the same small handful of programs, because those are the only ones worth a broadcast. So the picture that forms in your head is assembled entirely from the winners, and the winners are wildly unrepresentative of the field they came from.</p>
+
+  <h3 class="sh">Twenty-one green dots</h3>
+
+  <p>The NCAA counts the money every year, and it draws a careful line between two kinds of revenue. There is <em>generated</em> revenue &mdash; tickets, media rights, donations, the things a department earns by being a sports operation &mdash; and there is <em>allocated</em> revenue, the polite term for a subsidy: student fees skimmed off tuition, and direct support from the university&rsquo;s general fund. A department is self-supporting only if the first kind covers its bills. In 2024, across all 133 schools in the top football tier, that was true of exactly <strong>twenty-one</strong> of them. The other 112 spent more than they earned and made up the difference with money that came, one way or another, out of students&rsquo; pockets and the university&rsquo;s.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Every top-tier athletic department, 2024 &mdash; the green ones pay their own way</div>
+<svg class="chart" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="720" height="300" fill="#ede5d2"/>
+<text x="360" y="34" text-anchor="middle" font-family="Playfair Display" font-size="18" font-weight="700" fill="#1a1208">133 athletic departments. 21 make more than they spend.</text>
+<text x="360" y="54" text-anchor="middle" font-size="11" fill="#6b5e4a">Each dot is one FBS school. Green = self-supporting on earned revenue; tan = propped up by subsidies.</text>
+<circle cx="70" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="103" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="136" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="169" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="202" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="235" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="268" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="301" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="334" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="367" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="400" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="433" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="466" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="499" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="532" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="565" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="598" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="631" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="664" cy="90" r="7.5" fill="#2a6e3f"/> <circle cx="70" cy="116" r="7.5" fill="#2a6e3f"/> <circle cx="103" cy="116" r="7.5" fill="#2a6e3f"/> <circle cx="136" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="169" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="202" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="235" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="268" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="301" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="334" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="367" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="400" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="433" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="466" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="499" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="532" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="565" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="598" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="631" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="664" cy="116" r="7.5" fill="#c2b8a3"/> <circle cx="70" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="103" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="136" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="169" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="202" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="235" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="268" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="301" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="334" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="367" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="400" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="433" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="466" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="499" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="532" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="565" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="598" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="631" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="664" cy="142" r="7.5" fill="#c2b8a3"/> <circle cx="70" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="103" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="136" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="169" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="202" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="235" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="268" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="301" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="334" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="367" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="400" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="433" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="466" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="499" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="532" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="565" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="598" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="631" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="664" cy="168" r="7.5" fill="#c2b8a3"/> <circle cx="70" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="103" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="136" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="169" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="202" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="235" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="268" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="301" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="334" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="367" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="400" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="433" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="466" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="499" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="532" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="565" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="598" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="631" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="664" cy="194" r="7.5" fill="#c2b8a3"/> <circle cx="70" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="103" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="136" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="169" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="202" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="235" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="268" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="301" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="334" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="367" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="400" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="433" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="466" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="499" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="532" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="565" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="598" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="631" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="664" cy="220" r="7.5" fill="#c2b8a3"/> <circle cx="70" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="103" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="136" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="169" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="202" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="235" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="268" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="301" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="334" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="367" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="400" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="433" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="466" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="499" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="532" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="565" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="598" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="631" cy="246" r="7.5" fill="#c2b8a3"/> <circle cx="664" cy="246" r="7.5" fill="#c2b8a3"/>
+<text x="360" y="284" text-anchor="middle" font-size="9" font-style="italic" fill="#6b5e4a">Source: NCAA Division I finances, 2024 &mdash; generated revenue vs. total expenses across all 133 FBS members.</text>
+</svg>
+  </div>
+
+  <h3 class="sh">Two universes, one label</h3>
+
+  <p>The green and the tan aren&rsquo;t two ends of a smooth spectrum. They are two different worlds that happen to share a name. Among the roughly three dozen &ldquo;autonomy&rdquo; schools &mdash; the biggest brands, the Southeastern and Big Ten money &mdash; earned revenue covers about <strong>eighty-nine percent</strong> of the budget; they are essentially self-funding, and a few clear real profits. Step down to the rest of the tier and earned revenue covers about <strong>forty-four percent</strong>. The median school outside the power leagues pays for only about <strong>thirty-eight cents</strong> of every athletics dollar out of what it earns; the other sixty-two cents is a subsidy. Same &ldquo;FBS&rdquo; on the schedule. Completely different balance sheet.</p>
+
+  <p>This is why the cash-cow story is so durable and so wrong. It is <span class="cc" data-preview="You judge the whole from the survivors you can see, because the failures are invisible. Reading college-sports economics off Ohio State and Texas is like judging startups by the ones that IPO'd -- you're studying the winners of a lottery, not the lottery. Open the Survivorship Bias primer."><em>survivorship bias</em><a class="cc-i" href="../concepts/survivorship-bias.html" target="_blank" rel="noopener">i</a></span> in its purest sporting form. The programs that earn a broadcast are, by definition, the ones with the money; the hundred that quietly bill their students a few hundred dollars a year for a team most of them never watch will never lead a segment. Reading the economics of college sports off Ohio State is like judging every restaurant by the three with a line out the door &mdash; you are looking at the survivors and calling it the industry.</p>
+
+  <h3 class="sh">And the bill just went up</h3>
+
+  <p>Now the timing, which turns a quiet imbalance into a coming reckoning. Starting this year, a landmark legal settlement lets schools pay their athletes directly, capped at about <strong>twenty and a half million dollars</strong> per school &mdash; roughly a fifth of the average power program&rsquo;s entire athletic revenue, and a number set to climb past thirty million within a decade. The richest twenty-one can absorb it; the Southeastern and Big Ten schools have already promised to pay the full freight. But drop a twenty-million-dollar cost onto a department that was already covering less than half its bills from what it earns, and there are only two places the money can come from: a bigger subsidy, or fewer sports. Group-of-five leagues are already asking permission to cut teams. The gap between the twenty-one green dots and the rest is not closing. It is about to become a canyon.</p>
+
+  <div class="pull">
+    <p>You hear about the twenty-one because they are the only ones worth televising. The economics of college sports live in the other hundred and twelve.</p>
+    <cite>The Columnist</cite>
+  </div>
+
+  <h3 class="sh">Look at the whole board</h3>
+
+  <p>None of this contradicts the companion issue; it completes it. There, the lesson was to draw the box in the right place &mdash; football profits, the department loses. Here it is to look at the whole board and not just the lit corner of it. &ldquo;College football makes money&rdquo; is true of twenty-one programs and false of a hundred and twelve, and which sentence you believe depends entirely on whether you counted the dots you couldn&rsquo;t see. Every field has its blue-bloods, and their winnings are real. But a distribution is not its richest member, and an industry is not its highlight reel. Before you generalize from the ones on television, count the ones that aren&rsquo;t.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">The central figures are from the NCAA&rsquo;s <em>Division I Athletics Finances: 10-Year Trends from 2015 to 2024</em> (December 2025). In fiscal 2024, generated revenue exceeded total expenses at 21 of the 133 Football Bowl Subdivision members. &ldquo;Generated&rdquo; revenue (tickets, media rights, donations, and the like) is distinguished from &ldquo;allocated&rdquo; revenue &mdash; student fees and direct institutional or government support, i.e., subsidies. Generated revenue covered about 89% of total revenue at FBS &ldquo;autonomy&rdquo; (power-conference) schools versus roughly 44% at non-autonomy FBS schools, and the median non-autonomy school was about 38% self-sufficient. The 133-dot figure fixes 21 as self-supporting and 112 as subsidy-dependent; it does not identify individual schools.</p>
+    <p style="color:#c8b99a">On the new cost: the House v. NCAA settlement, approved in June 2025 and effective July 1, 2025, permits schools to share revenue directly with athletes up to a cap of about $20.5 million per school for 2025&ndash;26 &mdash; roughly 22% of the average power-conference athletic budget &mdash; rising over the ten-year agreement toward $30 million and beyond. Every Southeastern and Big Ten school committed to funding the full amount. Figures are subject to revision as reporting and the settlement&rsquo;s implementation continue.</p>
+    <p style="color:#c8b99a">This is the companion to the previous issue on reading a college athletic budget at the right altitude. The error at its center &mdash; generalizing from the visible winners &mdash; is treated in the primer on <a href="../concepts/survivorship-bias.html" style="color:#c9962a" target="_blank" rel="noopener">Survivorship Bias</a> (Concept No. 4). The archive is at <a href="https://thesportspage.net/" style="color:#c9962a" target="_blank" rel="noopener">thesportspage.net</a>.</p>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Vol. I, No. __</span>
+    <span>The Columnist</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</main>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/122-only-21-of-133.html">
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+    <a href="https://twitter.com/intent/tweet?text=%22College%20sports%20is%20a%20cash%20cow%22%20is%20survivorship%20bias.%20Of%20133%20top-tier%20athletic%20departments%2C%20only%2021%20made%20more%20than%20they%20spent%20in%202024.%20The%20other%20112%20run%20on%20student%20fees%20%E2%80%94%20and%20the%20bill%20just%20went%20up.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/122-only-21-of-133.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/122-only-21-of-133.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20Only%2021%20of%20133%20College%20Football%20Powers%20Pay%20for%20Themselves&body=A%20companion%20issue%20showed%20Ohio%20State%20football%20clearing%20a%20%2433M%20profit.%20Here%27s%20the%20number%20that%20keeps%20it%20honest%3A%20of%20133%20top-tier%20athletic%20departments%2C%20only%2021%20out-earned%20their%20own%20spending%20in%202024.%20The%20other%20112%20run%20on%20student%20fees%20and%20subsidies%20%E2%80%94%20and%20a%20new%20bill%20is%20coming%20due.%0A%0Ahttps%3A//thesportspage.net/published/122-only-21-of-133.html%3Futm_source%3Demail%26utm_medium%3Dshare" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/122-only-21-of-133.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+  </div>
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('sp-copy-link'); if(!btn) return;
+  var label=document.getElementById('sp-copy-label'); var url=btn.getAttribute('data-url');
+  btn.addEventListener('click',function(){
+    try{ navigator.clipboard.writeText(url).then(function(){ label.textContent='Copied!'; btn.style.background='#c9962a'; btn.style.color='#1a1208'; setTimeout(function(){label.textContent='Copy link';btn.style.background='transparent';btn.style.color='#c9962a';},1800);});}catch(e){window.prompt('Copy this link:',url);}
+  });
+})();
+</script></body>
+</html>
