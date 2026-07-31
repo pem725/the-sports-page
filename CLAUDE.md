@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 376 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 375 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 124 issues (#1-124)
-Queue: 14 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 109-cfb-trajectories, 112-variance-is-king, 113-pull-the-goalie, 115-no-such-thing-as-a-cycle, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, _TEMPLATE)
+Published: 125 issues (#1-125)
+Queue: 14 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 109-cfb-trajectories, 112-variance-is-king, 113-pull-the-goalie, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 376 issues remaining of 500
-Last published: Issue #124 — "They Called It “a Fool’s Errand.” Then They Ranked 138 of Them." (110-qb-tiers-critique.html) on July 30, 2026
+Goal: 375 issues remaining of 500
+Last published: Issue #125 — "Twenty-Six Baseball Franchises. Not One of Them Runs in Cycles." (115-no-such-thing-as-a-cycle.html) on July 31, 2026
