@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Signal vs. Noise</title>
+<meta name="description" content="A friendly primer on the most useful question you can ask about any statistic: how much of it is real skill, and how much is luck? And the surprising fact that you can look up exactly how much data each number needs before you're allowed to believe it.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:760px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:760px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.15rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem;line-height:1.5}
+.tier{margin:1.8rem 0;border:1px solid var(--div);background:#fbf7ec;padding:1.6rem 1.8rem}
+.tier-label{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.6rem}
+.tier h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:.7rem;color:var(--ink)}
+.tier p{margin-bottom:.85rem;line-height:1.7}
+.tier p:last-child{margin-bottom:0}
+.tier strong{color:var(--rust)}
+.tier.deeper{background:var(--card);border-color:var(--steel)}
+.tier.deeper .tier-label{color:var(--steel)}
+.tier.deeper h3{color:var(--steel)}
+.tier.deeper strong{color:var(--steel)}
+.tier.textbook{background:#eef2f7;border-color:var(--steel)}
+.tier.textbook .tier-label{color:var(--steel)}
+.tier.textbook h3{color:var(--steel)}
+.tier.textbook a{color:var(--steel);font-weight:700}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.1rem;margin:1.6rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+svg.chart{width:100%;height:auto;display:block}
+p{margin-bottom:1rem}
+.examples{margin:1.6rem 0 .4rem;border-top:2px solid var(--ink);padding-top:1rem}
+.examples h4{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.examples ul{list-style:none;padding-left:0}
+.examples li{padding:.45rem 0;border-bottom:1px dotted var(--div);font-size:.95rem}
+.examples li:last-child{border-bottom:none}
+.examples a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
+.examples a:hover{border-bottom-style:solid}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+.footer a{color:var(--rust);text-decoration:none}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Concept Primer &middot; The Sports Page</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Concept No. 26</span><span>Signal vs. Noise</span>
+    <span><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">Back to The Sports Page &rarr;</a></span>
+  </div>
+</div>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Every Number Is Part Skill and Part Luck. <em>The Trick Is Knowing How Much of Each.</em></h1>
+
+  <div class="deck">
+    No statistic is pure. Each one is a real signal &mdash; the thing you actually want to measure &mdash; buried in noise you don&rsquo;t. The good news, and the whole of this idea: you can look up, for almost any number, exactly how much of it you need before the signal wins.
+  </div>
+
+  <div class="tier">
+    <div class="tier-label">Tier 1 &middot; The Two-Minute Version</div>
+    <h3>A small number is almost all luck. A big one lets the skill show.</h3>
+
+    <p>A hitter goes four-for-eight and his average reads .500. Nobody believes he is a .500 hitter, and rightly &mdash; eight at-bats is almost pure <strong>noise</strong>, the random luck of which balls found gloves. Let the season run to six hundred at-bats and the number settles into something real: the <strong>signal</strong>, his actual skill, has finally drowned out the luck. Every statistic works this way. It starts as mostly noise and, as the sample grows, slowly fills up with signal.</p>
+
+    <p>Here is the part that turns this from a truism into a tool. Different numbers fill up with signal at wildly different speeds. Some are trustworthy almost at once; others essentially never settle within the data you&rsquo;ll ever have. A pitcher&rsquo;s strikeout rate is mostly real after a few dozen batters. Whether hits happen to fall in against him barely becomes real across a whole career. Same box score, two numbers &mdash; one you can believe by April, one you should never quite trust.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-label">Same amount of data, two very different numbers &mdash; one fills with signal fast, one crawls.</div>
+<svg class="chart" viewBox="0 0 660 265" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono',monospace">
+<rect width="660" height="265" fill="#ede5d2"/>
+<text x="330" y="26" text-anchor="middle" font-family="Playfair Display" font-size="16" font-weight="700" fill="#1a1208">How much of the number is real, as the data piles up</text>
+<line x1="110" y1="70" x2="600" y2="70" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="102" y="74" text-anchor="end" font-size="9" fill="#6b5e4a">all skill</text>
+<line x1="110" y1="152.5" x2="600" y2="152.5" stroke="#1a1208" stroke-width="1.3" stroke-dasharray="5,4"/>
+<text x="606" y="149" text-anchor="start" font-size="9" font-weight="700" fill="#6b5e4a">half real</text>
+<text x="606" y="161" text-anchor="start" font-size="8.5" fill="#6b5e4a">(&ldquo;stabilized&rdquo;)</text>
+<line x1="110" y1="235" x2="600" y2="235" stroke="#1a1208" stroke-width="1.2"/>
+<text x="102" y="238" text-anchor="end" font-size="9" fill="#6b5e4a">all luck</text>
+<text x="110" y="252" text-anchor="middle" font-size="9" fill="#6b5e4a">0</text>
+<text x="355" y="252" text-anchor="middle" font-size="9" fill="#6b5e4a">a half-season</text>
+<text x="600" y="252" text-anchor="middle" font-size="9" fill="#6b5e4a">a full season</text>
+<text x="330" y="264" text-anchor="middle" font-size="9.5" fill="#1a1208" font-style="italic">how much data you&rsquo;ve collected &rarr;</text>
+<path fill="none" stroke="#2a6e3f" stroke-width="2.8" d="M110.0,235.0 L122.2,191.6 L134.5,166.2 L146.8,149.7 L159.0,137.9 L171.2,129.2 L183.5,122.5 L195.8,117.1 L208.0,112.8 L232.5,106.1 L269.2,99.2 L306.0,94.6 L355.0,90.3 L404.0,87.2 L465.2,84.5 L526.5,82.6 L600.0,80.8"/>
+<path fill="none" stroke="#b83a1e" stroke-width="2.8" d="M110.0,235.0 L122.2,230.5 L146.8,222.3 L171.2,214.9 L208.0,205.0 L244.8,196.4 L281.5,188.8 L318.2,182.1 L355.0,176.1 L391.8,170.7 L440.8,164.3 L489.8,158.7 L538.8,153.7 L600.0,148.2"/>
+<circle cx="600" cy="80.8" r="4.5" fill="#2a6e3f"/>
+<text x="592" y="77" text-anchor="end" font-size="10.5" font-weight="700" fill="#2a6e3f">a &ldquo;fast&rdquo; stat (strikeout rate)</text>
+<circle cx="600" cy="148.2" r="4.5" fill="#b83a1e"/>
+<text x="470" y="140" text-anchor="middle" font-size="10.5" font-weight="700" fill="#b83a1e">a &ldquo;slow&rdquo; stat (the hits that fall in)</text>
+</svg>
+    </div>
+
+    <p>So the useful question about any number is never just &ldquo;what does it say?&rdquo; It is &ldquo;how much of it is there, against how much it needs?&rdquo; A big, impressive figure built on a thin slice of data is a rumour. The same figure, once the sample is deep enough, is a fact. Learn to ask which one you&rsquo;re looking at, and you will stop being fooled by half the numbers people wave at you.</p>
+  </div>
+
+  <div class="tier deeper">
+    <div class="tier-label">Tier 2 &middot; If You Want to Go Deeper</div>
+    <h3>Reliability, and the sample where a stat &ldquo;stabilizes.&rdquo;</h3>
+
+    <p>Formally, what you observe is a sum: <strong>observed variation = true (skill) variation + error (luck) variation</strong>. The share that is real &mdash; the true part over the whole &mdash; is called <strong>reliability</strong>, and it runs from zero (all noise) to one (all signal). Collecting more data does not change a player&rsquo;s true skill; it shrinks the error term, so reliability climbs toward one as the sample grows. That rising curve is the shape in the figure above.</p>
+
+    <p>Analysts pin this down with a <strong>stabilization point</strong>: the sample size at which a statistic correlates about 0.7 with a separate, equal sample of the same player &mdash; the moment roughly half its variation is finally skill. Those points are startlingly different from stat to stat. For pitchers, a strikeout rate stabilizes near seventy batters faced; a walk rate near a hundred and seventy; the batting average on balls in play only near two thousand, which is to say never within a season. The number of events a stat needs is a direct read on how much of it the player actually controls. Skills that are the player&rsquo;s own &mdash; missing bats, throwing hard &mdash; firm up fast. Outcomes that the defense, the ballpark, and chance co-author firm up slowly, or not at all.</p>
+
+    <p>This is also the hinge between two ideas you already know. A number that stabilizes <em>slowly</em> is one whose early readings are mostly luck &mdash; so it will drift back toward the truth, which is <a href="regression-to-the-mean.html">regression to the mean</a>. A number that stabilizes <em>fast</em> is one you can trust early &mdash; so it, and not the noisy one, is what you use to forecast. The reliable measure is the one that predicts; the unreliable one is the one that fools you into predicting from noise. Same coin, two faces &mdash; and the stabilization point tells you which face you&rsquo;re holding.</p>
+  </div>
+
+  <div class="tier textbook">
+    <div class="tier-label">Tier 3 &middot; Take It to the Textbook</div>
+    <h3>The full treatment: reliability, signal-to-noise, and shrinkage.</h3>
+    <p>Where reliability comes from &mdash; the variance decomposition, the signal-to-noise ratio, split-half and test&ndash;retest correlation, Cronbach&rsquo;s alpha, and the shrinkage (empirical-Bayes) estimators that pull an unreliable number back toward the mean by exactly the right amount &mdash; is developed in <strong>The Sports Page&rsquo;s companion statistics textbook</strong>, a free, open, graduate-level text, with the R code to compute a stat&rsquo;s reliability and find its stabilization point yourself. <a href="https://pem725.github.io/GradStats-Book/" target="_blank" rel="noopener">Read it free here</a> &mdash; the same &ldquo;read, play, learn&rdquo; idea, one rung deeper.</p>
+  </div>
+
+  <div class="examples">
+    <h4>Where this concept shows up in The Sports Page</h4>
+    <ul>
+      <li>The <strong>&ldquo;radar gun knows first&rdquo;</strong> issue &mdash; velocity is the fastest-stabilizing number a pitcher owns, which is why it warns of decline long before the ERA does. The anchor case.</li>
+      <li>The <strong>Paul Skenes</strong> pieces &mdash; his skill stats (strikeouts, walks) held firm while his ERA and record, both slow and luck-soaked, wobbled. Signal steady, noise loud.</li>
+      <li><a href="sample-size.html">Sample Size</a> (Concept No. 6) &mdash; the parent idea: this is the grown-up version, with a number attached to &ldquo;how much is enough.&rdquo;</li>
+      <li><a href="regression-to-the-mean.html">Regression to the Mean</a> (Concept No. 3) &mdash; the sibling: the slow-stabilizing numbers are exactly the ones that revert.</li>
+      <li><a href="variance.html">Variance</a> (Concept No. 23) &mdash; the raw material: reliability is just how the total variance splits between signal and noise.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>The Sports Page &middot; Concept Primer</span>
+    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>
