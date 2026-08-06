@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 370 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 369 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 130 issues (#1-130)
-Queue: 16 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 109-cfb-trajectories, 113-pull-the-goalie, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars, 128-the-bullpen-nobody-needed, _TEMPLATE)
+Published: 131 issues (#1-131)
+Queue: 15 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 113-pull-the-goalie, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars, 128-the-bullpen-nobody-needed, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 370 issues remaining of 500
-Last published: Issue #130 — "Detroit Traded the Best Pitcher in Baseball While Two and a Half Games Out. It Cost Them One Percentage Point." (127-two-months-of-an-ace.html) on August 5, 2026
+Goal: 369 issues remaining of 500
+Last published: Issue #131 — "Indiana Just Won It All. Its Four-Year Average Still Says .500." (109-cfb-trajectories.html) on August 6, 2026
