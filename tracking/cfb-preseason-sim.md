@@ -52,13 +52,26 @@ is the proof the pipeline is sound.
 
 ## Known refinements to finish in the August build
 
-1. **Conference title games** — the current field takes the highest-rated team per conference
-   as its "champ." The real bid runs through a conference championship game; add that round.
-2. **Group-of-5 auto-bid** — the 5th champ slot is the top G5 conference champion. The engine
-   currently lets raw SP+/expected-wins pick it (2025 test surfaced North Texas); tighten to
-   the actual G5 title-game participants once schedules/odds firm up.
-3. **At-large by quality** — already fixed: at-large is chosen by SP+ quality, not raw
-   expected wins, so a G5 team padding wins on a soft schedule can't steal a bid.
+1. ~~**Conference title games**~~ — **DONE 2026-08-06.** `conference_champions()` now sits the
+   top two finishers in each league down at a neutral site and plays the title game, so the
+   regular-season leader is a favourite rather than a lock. Resolved ONCE per iteration in
+   `simulate_bayes` and passed into `build_field`, so the champion that gets seeded is always
+   the same one the conference-title tally counts (calling it twice would have drawn two
+   independent winners). Conferences under `MIN_CONF_TEAMS=4` are skipped — the 2025 Pac-12
+   had two members and a realignment remnant must not be able to award an auto-bid.
+2. ~~**Group-of-5 auto-bid**~~ — **DONE 2026-08-06.** The five auto-bids are now the four
+   best champions plus the highest-rated champion from outside `P4`, instead of top-5-by-rating.
+   At-large then fills to twelve via `12 - len(champs)` rather than a hardcoded 7.
+   *2025 re-validation after both changes: Indiana still the title pick at ~25%, Ohio State
+   ~17%, Texas Tech ~13% — the documented baseline is preserved.*
+3. **At-large by quality — NOT actually fixed; needs a decision before the August run.**
+   This entry previously claimed it was done. It is not: `build_field` still sorts at-large
+   candidates by `(-wins, -theta)`, i.e. **wins first**, so a 12-win Group-of-5 team still
+   outranks a 9-win SEC team. That — not the auto-bid logic — is what puts North Texas at
+   56% Playoff in the 2025 test, and the G5 fix above did not move it. Three options:
+   sort at-large by `theta` alone (matches the stated intent, probably too harsh on record),
+   keep wins-first (status quo, demonstrably too kind to soft schedules), or blend the two.
+   Real committee behaviour is a blend. **Ask the user which before publishing a forecast.**
 4. **Independents** — already handled: Notre Dame (no conference) is excluded from champ
    logic and can only enter as an at-large.
 5. Consider blending SP+ with **Vegas season win totals** as a second prior when they post.

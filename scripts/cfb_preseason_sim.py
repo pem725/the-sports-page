@@ -37,6 +37,8 @@ HFA = 2.5             # home-field advantage, points
 TAU = 6.0             # prior SD on true team strength around its SP+ estimate (preseason uncertainty)
 JND_P = 0.75          # confident-call boundary for --mode jnd
 INDEP = {"FBS Independents", None, ""}
+P4 = {"ACC", "Big Ten", "Big 12", "SEC"}   # power conferences; the rest are Group-of-5
+MIN_CONF_TEAMS = 4    # a realignment remnant (2025 Pac-12 had 2 teams) can't award an auto-bid
 NORM = NormalDist(0, SIGMA)
 
 
@@ -68,16 +70,39 @@ def play(theta, a, b, hfa_a):
     return a if (theta[a] - theta[b] + hfa_a + random.gauss(0, SIGMA)) > 0 else b
 
 
-def build_field(wins, theta, conf):
-    leader = {}
+def conference_champions(wins, theta, conf):
+    """Decide each conference's champion by playing its title game.
+
+    The top two finishers meet at a neutral site, so the regular-season leader
+    is a favourite and not a certainty -- which is how the bid actually works.
+    Conferences below MIN_CONF_TEAMS are skipped entirely.
+    """
+    standings = defaultdict(list)
     for t in sorted(wins, key=lambda t: (-wins[t], -theta[t])):
         c = conf.get(t)
-        if c and c not in INDEP and c not in leader:
-            leader[c] = t
-    champs = sorted(leader.values(), key=lambda t: -theta[t])[:5]
+        if c and c not in INDEP:
+            standings[c].append(t)
+    champs = {}
+    for c, ts in standings.items():
+        if len(ts) < MIN_CONF_TEAMS:
+            continue
+        champs[c] = ts[0] if len(ts) == 1 else play(theta, ts[0], ts[1], 0)
+    return champs
+
+
+def build_field(wins, theta, champs_by_conf):
+    """champs_by_conf comes from conference_champions() -- resolved ONCE per
+    iteration by the caller, so the champion seeded here is the same one the
+    conference-title tally counts."""
+    ranked = sorted(champs_by_conf.items(), key=lambda kv: -theta[kv[1]])
+    # Five auto-bids: the four best champions, plus the highest-rated Group-of-5
+    # champion, which the format guarantees the non-power conferences.
+    top4 = [t for _, t in ranked[:4]]
+    g5 = next((t for c, t in ranked if c not in P4 and t not in top4), None)
+    champs = top4 + ([g5] if g5 else [])
     cset = set(champs)
     at_large = sorted((t for t in wins if t not in cset),
-                      key=lambda t: (-wins[t], -theta[t]))[:7]
+                      key=lambda t: (-wins[t], -theta[t]))[:12 - len(champs)]
     seeds = sorted(champs, key=lambda t: -theta[t]) + sorted(at_large, key=lambda t: (-wins[t], -theta[t]))
     return seeds  # index 0..11 == seeds 1..12
 
@@ -117,16 +142,13 @@ def simulate_bayes(year, n_iter, seed):
             wins[w] += 1
         for t in teams:
             win_samples[t].append(wins[t])
-        seeds = build_field(wins, theta, conf)
+        # resolve the conference title games once, then use that same result for
+        # both the Playoff field and the conference-champion tally
+        champs_by_conf = conference_champions(wins, theta, conf)
+        seeds = build_field(wins, theta, champs_by_conf)
         for t in seeds:
             playoff[t] += 1
-        # conference champs this iteration (for confchamp prob)
-        leader = {}
-        for t in sorted(wins, key=lambda t: (-wins[t], -theta[t])):
-            c = conf.get(t)
-            if c and c not in INDEP and c not in leader:
-                leader[c] = t
-        for t in leader.values():
+        for t in champs_by_conf.values():
             confchamp[t] += 1
         champ[sim_bracket(seeds, theta)] += 1
     return dict(year=year, n=n_iter, ratings=ratings, conf=conf,
