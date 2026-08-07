@@ -64,14 +64,19 @@ is the proof the pipeline is sound.
    At-large then fills to twelve via `12 - len(champs)` rather than a hardcoded 7.
    *2025 re-validation after both changes: Indiana still the title pick at ~25%, Ohio State
    ~17%, Texas Tech ~13% — the documented baseline is preserved.*
-3. **At-large by quality — NOT actually fixed; needs a decision before the August run.**
-   This entry previously claimed it was done. It is not: `build_field` still sorts at-large
-   candidates by `(-wins, -theta)`, i.e. **wins first**, so a 12-win Group-of-5 team still
-   outranks a 9-win SEC team. That — not the auto-bid logic — is what puts North Texas at
-   56% Playoff in the 2025 test, and the G5 fix above did not move it. Three options:
-   sort at-large by `theta` alone (matches the stated intent, probably too harsh on record),
-   keep wins-first (status quo, demonstrably too kind to soft schedules), or blend the two.
-   Real committee behaviour is a blend. **Ask the user which before publishing a forecast.**
+3. ~~**At-large by quality**~~ — **DONE 2026-08-06, by user decision.** This entry had
+   previously been marked done when it was not: `build_field` was still sorting at-large
+   candidates **wins-first**, which is what put North Texas at 56% Playoff in the 2025 test.
+   The G5 auto-bid fix did not move it, because the bid was coming through at-large.
+   User chose a **blend** over pure-SP+ or status quo, on the grounds that the real committee
+   weighs both: at-large candidates now rank on `wins + theta/ATLARGE_W` with `ATLARGE_W = 8.0`,
+   i.e. **about 8 SP+ points of strength is worth one win**. The same key seeds them, so
+   selection and seeding can't disagree.
+   *2025 effect, exactly the intended direction:* North Texas 56% → **50%**, Ole Miss 45% →
+   **55%**, Oregon 31% → **47%**, Notre Dame 70% → **74%**. Title picks unchanged (Indiana
+   ~25%, Ohio State ~17%, Texas Tech ~12%), so the validated baseline still holds.
+   `ATLARGE_W` is the one knob here — lower it to punish soft schedules harder. It was not
+   tuned to any single team's number.
 4. **Independents** — already handled: Notre Dame (no conference) is excluded from champ
    logic and can only enter as an at-large.
 5. Consider blending SP+ with **Vegas season win totals** as a second prior when they post.

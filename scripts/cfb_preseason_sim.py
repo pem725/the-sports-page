@@ -39,6 +39,7 @@ JND_P = 0.75          # confident-call boundary for --mode jnd
 INDEP = {"FBS Independents", None, ""}
 P4 = {"ACC", "Big Ten", "Big 12", "SEC"}   # power conferences; the rest are Group-of-5
 MIN_CONF_TEAMS = 4    # a realignment remnant (2025 Pac-12 had 2 teams) can't award an auto-bid
+ATLARGE_W = 8.0       # SP+ points worth one win when ranking at-large candidates
 NORM = NormalDist(0, SIGMA)
 
 
@@ -101,9 +102,9 @@ def build_field(wins, theta, champs_by_conf):
     g5 = next((t for c, t in ranked if c not in P4 and t not in top4), None)
     champs = top4 + ([g5] if g5 else [])
     cset = set(champs)
-    at_large = sorted((t for t in wins if t not in cset),
-                      key=lambda t: (-wins[t], -theta[t]))[:12 - len(champs)]
-    seeds = sorted(champs, key=lambda t: -theta[t]) + sorted(at_large, key=lambda t: (-wins[t], -theta[t]))
+    rank = lambda t: -(wins[t] + theta[t] / ATLARGE_W)
+    at_large = sorted((t for t in wins if t not in cset), key=rank)[:12 - len(champs)]
+    seeds = sorted(champs, key=lambda t: -theta[t]) + sorted(at_large, key=rank)
     return seeds  # index 0..11 == seeds 1..12
 
 
