@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 368 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 367 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 132 issues (#1-132)
-Queue: 15 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 113-pull-the-goalie, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars, 129-one-in-one-hundred-nine, _TEMPLATE)
+Published: 133 issues (#1-133)
+Queue: 14 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars, 129-one-in-one-hundred-nine, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 368 issues remaining of 500
-Last published: Issue #132 — "The Mets Had the Third-Best Bullpen in Baseball. Nobody in Baseball Had Fewer Leads to Protect." (128-the-bullpen-nobody-needed.html) on August 7, 2026
+Goal: 367 issues remaining of 500
+Last published: Issue #133 — "Pulling the Goalie Makes Your Team Worse. That’s Exactly Why You Do It." (113-pull-the-goalie.html) on August 8, 2026
