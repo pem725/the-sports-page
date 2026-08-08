@@ -58,6 +58,16 @@ jobs:
           git config user.name "The Sports Page Bot"
           git config user.email "sports-page-bot@users.noreply.github.com"
 
+      # Without this the OG card generator cannot import PIL/cairosvg and every
+      # social share card fails to render. That went unnoticed for ~40 issues.
+      - name: Install Python dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libcairo2
+          python3 -m pip install --quiet --upgrade pip
+          python3 -m pip install --quiet -r requirements.txt
+          python3 -c "import PIL, cairosvg; print('deps ok:', PIL.__version__, cairosvg.__version__)"
+
       - name: Run autopublish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

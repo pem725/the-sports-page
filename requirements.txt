@@ -1,0 +1,11 @@
+# Python dependencies for The Sports Page build scripts.
+#
+# These are NOT optional. scripts/generate_og_images.py imports both, and it is
+# invoked by scripts/autopublish.py on every publish. Between roughly Issue #082
+# and 2026-08-08 the GitHub Actions runner had neither installed and no step to
+# install them, so every social share card silently failed to render — the call
+# site used check=False, so nothing ever surfaced the error. 40 issues shipped
+# without a card. Keep this file and the workflow's install step in sync.
+
+Pillow>=10.0        # raster compositing for the 1200x630 OG cards
+cairosvg>=2.7       # rasterises the inline SVG figures into those cards

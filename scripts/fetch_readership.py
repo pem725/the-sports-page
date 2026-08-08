@@ -51,8 +51,11 @@ def default_week():
 
 
 def fetch_hits(token, start, end):
+    # limit=200: a busy week (a campaign, a post that travels) can easily touch
+    # more than 50 distinct paths, and the API truncates silently rather than
+    # erroring — the dropped rows would just look like pages nobody visited.
     url = (f"{API}/stats/hits?"
-           f"start={start.isoformat()}&end={end.isoformat()}&limit=50")
+           f"start={start.isoformat()}&end={end.isoformat()}&limit=200")
     req = urllib.request.Request(
         url,
         headers={
@@ -84,17 +87,32 @@ def extract_headline(filepath):
     return " ".join(text.split())
 
 
+def normalize_path(path):
+    """Collapse the legacy GitHub Pages prefix onto the custom-domain path.
+
+    The site lived at pem725.github.io/the-sports-page/ before moving to
+    thesportspage.net, so the analytics history holds the same issue under two
+    paths. The old filter required a leading "/published/", which meant every
+    legacy hit was DISCARDED rather than merely split off — and at these volumes
+    a three-view difference silently reorders the entire top five.
+    """
+    if path.startswith("/the-sports-page/"):
+        return path[len("/the-sports-page"):]
+    if path == "/the-sports-page":
+        return "/"
+    return path
+
+
 def build_block(hits, start, end):
     """Render the top-N issues as an HTML block matching broadsheet style."""
-    # Filter to /published/*.html paths
-    issues = []
+    # Merge both path namespaces, then filter to /published/*.html
+    totals = {}
     for h in hits:
-        path = h.get("path", "")
-        count = h.get("count", 0)
+        path = normalize_path(h.get("path", ""))
         if not path.startswith("/published/") or not path.endswith(".html"):
             continue
-        issues.append((path, count))
-    issues = sorted(issues, key=lambda x: -x[1])[:MAX_ISSUES]
+        totals[path] = totals.get(path, 0) + h.get("count", 0)
+    issues = sorted(totals.items(), key=lambda x: -x[1])[:MAX_ISSUES]
 
     if not issues:
         return (
@@ -114,7 +132,8 @@ def build_block(hits, start, end):
         display_hed = hed if len(hed) < 75 else hed[:72] + "..."
         rows.append(
             f'  <tr><td class="mono">#{rank}</td>'
-            f'<td><a href="..{path}">{display_hed}</a></td>'
+            f'<td><a href="https://thesportspage.net{path}" '
+            f'target="_blank" rel="noopener">{display_hed}</a></td>'
             f'<td class="mono">{count}</td></tr>'
         )
     rows_html = "\n".join(rows)

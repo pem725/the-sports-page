@@ -41,6 +41,36 @@ def run(cmd, check=True):
     )
 
 
+# Steps that must not abort a publish, but must never fail silently either.
+# The issue still ships; main() exits non-zero at the very end (after the push)
+# so GitHub Actions emails a real alert instead of reporting a green run.
+SOFT_FAILURES = []
+
+
+def run_soft(cmd, label, expect_file=None):
+    """Run a non-fatal build step and actually verify it worked.
+
+    The previous version wrapped `run(..., check=False)` in a try/except. Because
+    check=False never raises, the except was dead code and the success message
+    printed unconditionally — so a broken step reported "rendered" for months.
+    Verify the return code AND, when given, that the artefact exists on disk.
+    """
+    res = run(cmd, check=False)
+    ok = res.returncode == 0
+    if ok and expect_file:
+        ok = os.path.isfile(os.path.join(REPO, expect_file))
+    if ok:
+        print(f"{label}: ok")
+        return True
+    detail = (res.stderr or res.stdout or "").strip().splitlines()
+    tail = detail[-1] if detail else f"exit {res.returncode}"
+    if expect_file and res.returncode == 0:
+        tail = f"command succeeded but {expect_file} was not created"
+    print(f"WARNING — {label} FAILED: {tail}", file=sys.stderr)
+    SOFT_FAILURES.append(f"{label}: {tail}")
+    return False
+
+
 def fail(msg):
     """Print error, create a GitHub issue (if gh is available), and exit."""
     print(f"ERROR: {msg}", file=sys.stderr)
@@ -563,13 +593,13 @@ def main():
     # Step 8.6: Render the per-issue Open Graph card (1200×630 PNG).
     # Must run BEFORE the share-section refresh so the inject step picks up
     # the new card path. Non-fatal if Pillow / fonts unavailable.
-    try:
-        run(f'python3 scripts/generate_og_images.py "{filename}"', check=False)
-        if deeper_published:
-            run(f'python3 scripts/generate_og_images.py "{deeper_filename}"', check=False)
-        print(f"OG card rendered for {filename}")
-    except Exception as e:
-        print(f"⚠ OG card render failed: {e}", file=sys.stderr)
+    run_soft(f'python3 scripts/generate_og_images.py "{filename}"',
+             f"OG card for {filename}",
+             expect_file=f'assets/og/{filename.replace(".html", ".png")}')
+    if deeper_published:
+        run_soft(f'python3 scripts/generate_og_images.py "{deeper_filename}"',
+                 f"OG card for {deeper_filename}",
+                 expect_file=f'assets/og/{deeper_filename.replace(".html", ".png")}')
 
     # Step 8.65: Rasterize the issue's chart figure(s) to PNG so they survive
     # email clients that strip inline SVG (Gmail, Outlook). Uses headless
@@ -577,13 +607,11 @@ def main():
     # website keeps the vector SVG; generate_rss.py swaps in the PNG for email.
     # Non-fatal: if Chrome is unavailable, the email falls back to a "view
     # online" link (handled in generate_rss.py).
-    try:
-        run(f'python3 scripts/generate_figures.py "published/{filename}"', check=False)
-        if deeper_published:
-            run(f'python3 scripts/generate_figures.py "published/{deeper_filename}"', check=False)
-        print(f"Chart figures rendered for {filename}")
-    except Exception as e:
-        print(f"⚠ figure render failed: {e}", file=sys.stderr)
+    run_soft(f'python3 scripts/generate_figures.py "published/{filename}"',
+             f"Chart figures for {filename}")
+    if deeper_published:
+        run_soft(f'python3 scripts/generate_figures.py "published/{deeper_filename}"',
+                 f"Chart figures for {deeper_filename}")
 
     # Step 8.7: Refresh share section + Open Graph meta tags on the just-moved file.
     # Idempotent: replaces any existing share block with the current canonical version.
@@ -611,8 +639,9 @@ def main():
     print("Updated CLAUDE.md")
 
     # Step 10.5: Refresh RSS feed for Buttondown subscribers
-    run("python3 scripts/generate_rss.py", check=False)
-    print("Refreshed feed.xml")
+    # feed.xml drives the Buttondown email send — a silent failure here means
+    # subscribers simply never receive the issue.
+    run_soft("python3 scripts/generate_rss.py", "RSS feed refresh", expect_file="feed.xml")
 
     # Step 11: Commit and push
     deeper_arg = f' "published/{deeper_filename}"' if deeper_published else ""
@@ -628,6 +657,17 @@ def main():
     print(f"Published Issue #{issue_num}: {headline_plain[:60]}")
     print(f"Live at: https://thesportspage.net/published/{filename}")
     print("Done.")
+
+    # The issue is published and pushed. If any non-fatal step failed, fail the
+    # JOB now so the failure email actually fires — a green run must mean the
+    # whole pipeline worked, not just the part that blocks publishing.
+    if SOFT_FAILURES:
+        print()
+        print(f"{len(SOFT_FAILURES)} non-fatal step(s) failed — the issue published, "
+              f"but these need attention:", file=sys.stderr)
+        for f in SOFT_FAILURES:
+            print(f"  - {f}", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

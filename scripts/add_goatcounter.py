@@ -70,6 +70,11 @@ def main():
     r = os.path.join(REPO, "reserve")
     if os.path.isdir(r):
         targets += [os.path.join(r, f) for f in os.listdir(r) if f.endswith(".html")]
+    # concepts/ — the primers. Omitted until 2026-08-08, which meant the entire
+    # Tier-2 rung of the curriculum was invisible to analytics: 26 pages, zero data.
+    c = os.path.join(REPO, "concepts")
+    if os.path.isdir(c):
+        targets += [os.path.join(c, f) for f in os.listdir(c) if f.endswith(".html")]
 
     print(f"HTML files found: {len(targets)}")
     injected = skipped = failed = 0
