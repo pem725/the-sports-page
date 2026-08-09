@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 133 issues (#1-133)
+Published: 134 issues (#1-134)
 Queue: 14 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 116-deepest-wound-same-shape, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars, 129-one-in-one-hundred-nine, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 367 issues remaining of 500
-Last published: Issue #133 — "Pulling the Goalie Makes Your Team Worse. That’s Exactly Why You Do It." (113-pull-the-goalie.html) on August 8, 2026
+Goal: 366 issues remaining of 500
+Last published: Issue #134 — "The Scoreboard Lied. The Numbers Held. Six Issues, One Honest Recap." (sunday-018.html) on August 9, 2026
