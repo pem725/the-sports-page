@@ -1,0 +1,509 @@
+<!-- PUBLISH-META
+topic: Recap
+tags: Sunday Edition:, MLB:mlb, Scorecard
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sports Page — Sunday Edition No. 018 — August 9, 2026</title>
+  <meta name="description" content="Six issues graded against reality — Detroit's arithmetic, Skenes' regression pending, and a goalie pulled for the right reason.">
+  <meta property="og:title" content="The Scoreboard Lied. The Numbers Held. Six Issues, One Honest Recap.">
+  <meta property="og:description" content="Week 18 Sunday Edition: grading predictions from Issues #128–133 against fresh data.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thesportspage.net/published/sunday-018.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1208;
+      --cream: #f5f0e8;
+      --aged: #e0d8c5;
+      --rust: #b83a1e;
+      --steel: #2c4a6e;
+      --gold: #c9962a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    .masthead {
+      border-top: 4px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      text-align: center;
+      padding: 1.5rem 1rem 1rem;
+      background: var(--cream);
+    }
+    .masthead-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .masthead-sub {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-top: 0.35rem;
+    }
+    .paper {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+    .kicker {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.6rem;
+    }
+    .datebar {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--steel);
+      border-top: 1px solid var(--aged);
+      border-bottom: 1px solid var(--aged);
+      padding: 0.4rem 0;
+      margin-bottom: 1.4rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    h1.hed {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+    }
+    h1.hed em { font-style: italic; font-weight: 400; }
+    .deck {
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 1.6rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .byline {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--steel);
+      border-bottom: 1px solid var(--aged);
+      padding-bottom: 0.8rem;
+      margin-bottom: 1.6rem;
+    }
+    .stat-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      flex: 1;
+      min-width: 140px;
+      background: var(--aged);
+      border-left: 4px solid var(--rust);
+      padding: 0.8rem 1rem;
+    }
+    .stat-card .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--rust);
+      line-height: 1;
+    }
+    .stat-card .label {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-top: 0.2rem;
+    }
+    p { margin-bottom: 1.1rem; }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 2rem 0 0.8rem;
+      border-bottom: 1px solid var(--aged);
+      padding-bottom: 0.3rem;
+    }
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 1.2rem 0 0.4rem;
+    }
+    .issue-list {
+      list-style: none;
+      margin: 0 0 1.8rem;
+      padding: 0;
+    }
+    .issue-list li {
+      border-bottom: 1px solid var(--aged);
+      padding: 0.6rem 0;
+      display: flex;
+      gap: 0.8rem;
+      align-items: baseline;
+    }
+    .issue-list .num {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--rust);
+      white-space: nowrap;
+      min-width: 3.5rem;
+    }
+    .issue-list a {
+      color: var(--steel);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .issue-list a:hover { text-decoration: underline; }
+    .issue-list .topic {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      color: #888;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    table.scorecard {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.8rem;
+      font-size: 0.88rem;
+    }
+    table.scorecard thead th {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: var(--cream);
+      padding: 0.5rem 0.6rem;
+      text-align: left;
+    }
+    table.scorecard tbody tr { border-bottom: 1px solid var(--aged); }
+    table.scorecard tbody td { padding: 0.55rem 0.6rem; vertical-align: top; }
+    table.scorecard tbody tr:nth-child(even) { background: rgba(224,216,197,0.3); }
+    .grade {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.15rem 0.45rem;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .grade.hit { background: #c8e6c9; color: #1b5e20; }
+    .grade.partial { background: #fff9c4; color: #f57f17; }
+    .grade.miss { background: #ffcdd2; color: #b71c1c; }
+    .grade.pending { background: #e3f2fd; color: #0d47a1; }
+    .grade.na { background: var(--aged); color: #666; }
+    table.scorecard tr.match td:first-child { border-left: 3px solid var(--gold); }
+    .pull-quote {
+      border-left: 4px solid var(--rust);
+      padding: 0.8rem 1.2rem;
+      margin: 1.8rem 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--rust);
+      line-height: 1.5;
+    }
+    .box {
+      border: 1px solid var(--aged);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      background: rgba(224,216,197,0.25);
+    }
+    .box.green-box { border-color: #a5d6a7; background: rgba(165,214,167,0.12); }
+    .box.steel-box { border-color: var(--steel); background: rgba(44,74,110,0.05); }
+    .box .box-head {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.5rem;
+    }
+    .box ul { padding-left: 1.2rem; margin-top: 0.4rem; }
+    .box ul li { margin-bottom: 0.35rem; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 560px) {
+      .two-col { grid-template-columns: 1fr; }
+      h1.hed { font-size: 1.75rem; }
+      .stat-card { min-width: 100px; }
+      .masthead-name { font-size: 2rem; }
+    }
+    .road-ahead ol { padding-left: 1.3rem; margin-top: 0.5rem; }
+    .road-ahead ol li { margin-bottom: 0.4rem; }
+    .footer-bar {
+      border-top: 2px solid var(--ink);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .share-section {
+      background: var(--aged);
+      border-top: 2px solid var(--ink);
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .share-section p {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin-bottom: 0.8rem;
+    }
+    .share-url {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.78rem;
+      background: var(--cream);
+      border: 1px solid var(--ink);
+      padding: 0.4rem 0.8rem;
+      word-break: break-all;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+    .copy-btn {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border: none;
+      cursor: pointer;
+    }
+    .copy-btn:hover { background: var(--rust); }
+  </style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-name">The Sports Page</div>
+  <div class="masthead-sub">Sunday Edition &mdash; Week 18 Recap &mdash; All Sports</div>
+</div>
+
+<div class="paper">
+
+  <div class="kicker">The Sunday Edition &middot; Week 18 Recap &middot; All Sports</div>
+
+  <div class="datebar">
+    <span>Sunday Edition No. 018 &middot; Issue No. 134</span>
+    <span>August 9, 2026</span>
+  </div>
+
+  <h1 class="hed">The Scoreboard Lied. The Numbers Held. <em>Six Issues, One Honest Recap.</em></h1>
+
+  <p class="deck">A week when the ERA said the pitcher was breaking down and the strikeouts said he wasn't; when the standings said Detroit quit and the math said they didn't; when a great bullpen sat on a last-place team doing nothing useful. Here's what we wrote, what reality returned, and where the receipts stand.</p>
+
+  <div class="byline">By The Sports Page &mdash; thesportspage.net</div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">133</div>
+      <div class="label">Issues published</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">1 partial / 1 pending</div>
+      <div class="label">Predictions this week</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">366</div>
+      <div class="label">Issues remaining to 500</div>
+    </div>
+  </div>
+
+  <h2>The Week in Issues</h2>
+
+  <ul class="issue-list">
+    <li>
+      <span class="num">#128</span>
+      <a href="125-skenes-full-circle.html">The Pitcher We Started With Is &ldquo;Struggling.&rdquo; The Numbers That Matter Say He Isn&rsquo;t.</a>
+      <span class="topic">MLB &middot; Aug 3</span>
+    </li>
+    <li>
+      <span class="num">#129</span>
+      <a href="126-which-numbers-predict.html">The Radar Gun Knows Before the ERA Does</a>
+      <span class="topic">MLB &middot; Aug 4</span>
+    </li>
+    <li>
+      <span class="num">#130</span>
+      <a href="127-two-months-of-an-ace.html">Detroit Traded the Best Pitcher in Baseball. Here&rsquo;s What the Math Says About What Happens Next.</a>
+      <span class="topic">MLB &middot; Aug 5</span>
+    </li>
+    <li>
+      <span class="num">#131</span>
+      <a href="109-cfb-trajectories.html">College Football&rsquo;s Hidden Trajectories</a>
+      <span class="topic">CFB &middot; Aug 6</span>
+    </li>
+    <li>
+      <span class="num">#132</span>
+      <a href="128-the-bullpen-nobody-needed.html">The Mets Built the Best Bullpen in Baseball. Then They Sold It.</a>
+      <span class="topic">MLB &middot; Aug 7</span>
+    </li>
+    <li>
+      <span class="num">#133</span>
+      <a href="113-pull-the-goalie.html">Pulling the Goalie Makes Your Team Worse. That&rsquo;s Exactly Why You Do It.</a>
+      <span class="topic">NHL &middot; Aug 8</span>
+    </li>
+  </ul>
+
+  <h2>Prediction Scorecard</h2>
+
+  <p>We make specific claims. On Sundays, we grade them. Two gradeable predictions from this week; four pieces made no forward forecast.</p>
+
+  <table class="scorecard">
+    <thead>
+      <tr>
+        <th>Issue</th>
+        <th>Claim</th>
+        <th>Fresh Data</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="match">
+        <td><strong>#130</strong><br><small>Detroit Trade</small></td>
+        <td>Without Skubal, Tigers&rsquo; playoff odds collapse to ~16%. Trade was rational but painful — a franchise acknowledging the window is shut.</td>
+        <td>Tigers now 57-60, ~20.5% FanGraphs odds (up from model&rsquo;s 16%, driven by AL Wild Card congestion). Editorial framing — trade was rational — confirmed.</td>
+        <td><span class="grade partial">Partially Hit</span></td>
+      </tr>
+      <tr>
+        <td><strong>#128</strong><br><small>Skenes Skill</small></td>
+        <td>ERA (3.90) is misleading noise. K/9 at 11.3, WHIP at 1.11 — the underlying ace is still there. ERA will regress toward skill.</td>
+        <td>Skenes now 9-10, ERA 3.96, K/9 11.3 (unchanged), WHIP 1.11. Skill metrics unmoved. Not enough data to confirm ERA regression yet.</td>
+        <td><span class="grade pending">Pending</span></td>
+      </tr>
+      <tr>
+        <td><strong>#129</strong><br><small>Radar Gun</small></td>
+        <td>Methodology explainer. No forward prediction.</td>
+        <td>N/A</td>
+        <td><span class="grade na">N/A</span></td>
+      </tr>
+      <tr>
+        <td><strong>#131</strong><br><small>CFB Trajectories</small></td>
+        <td>Analytical retrospective. No forward prediction.</td>
+        <td>N/A</td>
+        <td><span class="grade na">N/A</span></td>
+      </tr>
+      <tr>
+        <td><strong>#132</strong><br><small>Mets Bullpen</small></td>
+        <td>Trade-deadline documentary. No forward prediction.</td>
+        <td>N/A</td>
+        <td><span class="grade na">N/A</span></td>
+      </tr>
+      <tr>
+        <td><strong>#133</strong><br><small>Goalie Pull</small></td>
+        <td>Game-theory explainer (NHL offseason). No forward prediction.</td>
+        <td>N/A</td>
+        <td><span class="grade na">N/A</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pull-quote">
+    &ldquo;The purpose of the Sunday Edition isn&rsquo;t to celebrate being right. It&rsquo;s to keep the receipts — so that when we&rsquo;re wrong, there&rsquo;s no place to hide.&rdquo;
+  </div>
+
+  <div class="box green-box">
+    <div class="box-head">What We Got Right</div>
+    <ul>
+      <li><strong>Detroit trade framing (Issue #130):</strong> The editorial conclusion — trading Skubal was rational for a team that had honestly assessed its window — holds. Tigers sitting at 57-60 is exactly the kind of &ldquo;we tried, we know where we are&rdquo; record the model predicted.</li>
+      <li><strong>Skenes skill-vs-noise (Issue #128):</strong> The core argument — that ERA is lagging noise and K/9 is the leading signal — continues to hold. Eleven strikeouts per nine innings, unchanged week over week. The regression call is still pending, but nothing has contradicted the underlying thesis.</li>
+    </ul>
+  </div>
+
+  <div class="box steel-box">
+    <div class="box-head">Factual Updates Since Publication</div>
+    <ul>
+      <li><strong>Mets post-deadline:</strong> Now 51-67, rebuilding. The bullpen sell-off documented in Issue #132 was the capstone. This is not a forecasting failure — the piece was a documentary, not a prediction. The Mets are where they are.</li>
+      <li><strong>NHL:</strong> The Carolina Hurricanes won the 2026 Stanley Cup. The Rangers missed the playoffs for the second consecutive year. Issue #133&rsquo;s goalie-pull math remains valid regardless of the offseason context.</li>
+      <li><strong>Skenes win-loss:</strong> Now 9-10 (was 9-9 at publication). The extra loss sharpens the ERA-vs-skill tension without changing the underlying model. Still watching.</li>
+    </ul>
+  </div>
+
+  <h2>Over-Reactions &amp; Under-Reactions</h2>
+
+  <div class="two-col">
+    <div>
+      <h3>What We Over-Reacted To</h3>
+      <p>Two consecutive Skenes issues (Issues #128 and #129) were defensible editorially — the first graded his current performance, the second built out the methodology — but in retrospect they read as consecutive pitching issues on back-to-back days. The variety rule exists for a reason. A CFB or NHL piece between them would have served the reader better.</p>
+    </div>
+    <div>
+      <h3>What We Under-Reacted To</h3>
+      <p>The Mets rebuild is bigger than a single bullpen-sale piece. Going from a legitimate playoff contender to 51-67 involves decisions that span roster construction, contract strategy, and ownership direction. Issue #132 documented the symptoms. The diagnosis — how a 3.1 ERA bullpen ended up on a last-place team — deserved more space.</p>
+    </div>
+  </div>
+
+  <h2 class="sh">What Readers Read &middot; Aug 2&ndash;Aug 8</h2>
+  <p><em>Readership data pending &mdash; the analytics pipeline installed recently, and last week&rsquo;s counts were not captured. This section will populate starting with the first full week of data.</em></p>
+
+  <h2 class="road-ahead">The Road Ahead</h2>
+
+  <div class="road-ahead">
+    <p>Next week&rsquo;s queue, in order:</p>
+    <ol>
+      <li><strong>Issue #135 (Monday):</strong> &ldquo;109 Teams Have Been Where Boston Was. One Made the Playoffs.&rdquo; — The Red Sox Wild Card math. (129-one-in-one-hundred-nine.html)</li>
+      <li><strong>Issue #136:</strong> &ldquo;The Marlins Spend $299 Million Less Than the Mets. They&rsquo;re 22 Games Ahead.&rdquo; — Payroll vs. wins. (103-payroll-does-money-buy-wins.html)</li>
+      <li><strong>Issue #137:</strong> &ldquo;The Deepest Wound in Sports Is Always the Same Shape&rdquo; — Grief and the fan experience. (116-deepest-wound-same-shape.html)</li>
+      <li><strong>Issue #138:</strong> &ldquo;The Sweetest Moment in Sports Is the Same Shape Too&rdquo; — The mirror piece. (117-sweetest-moment-mirror.html)</li>
+      <li><strong>Issue #139:</strong> &ldquo;A Math Teacher Invented the Point Spread.&rdquo; — Betting history. (118-point-spread-history.html)</li>
+    </ol>
+    <p>College football season opens the last week of August. Expect the queue to shift toward CFB as that approaches.</p>
+  </div>
+
+  <div class="pull-quote">
+    &ldquo;The scorecard is the point. Not to celebrate the hits &mdash; to keep the misses honest. A prediction without accountability is just a story. We&rsquo;re keeping receipts.&rdquo;
+  </div>
+
+  <div class="footer-bar">
+    <span>Sunday Edition No. 018 &middot; Issue No. 134</span>
+    <span>thesportspage.net</span>
+    <span>Predictions tracked from Issues #128&ndash;133</span>
+  </div>
+
+</div><!-- /paper -->
+
+<div class="share-section">
+  <p>Forward this issue &mdash; Sunday Editions are public</p>
+  <div class="share-url">https://thesportspage.net/published/sunday-018.html</div><br>
+  <button class="copy-btn" onclick="navigator.clipboard.writeText('https://thesportspage.net/published/sunday-018.html').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy Link'},2000)})">Copy Link</button>
+</div>
+
+</body>
+</html>
