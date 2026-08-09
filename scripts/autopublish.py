@@ -530,6 +530,17 @@ def main():
 
     # Step 2: Parse metadata
     content = read_file(filepath)
+
+    # Guardrail for the pre-written frames in frames/. Those are drafted ahead of
+    # an event with {{SLOTS}} where the numbers go. Publishing one half-filled
+    # would put literal "{{HOME_TEAM}}" on the live site, so refuse outright —
+    # this is a hard fail, not a soft warning.
+    slots = sorted(set(re.findall(r"\{\{[A-Z0-9_]+\}\}", content)))
+    if slots:
+        fail(f"{filename} still has {len(slots)} unfilled frame slot(s): "
+             f"{', '.join(slots[:6])}{' …' if len(slots) > 6 else ''}. "
+             f"Fill them (or drop the file from QUEUE_ORDER) before it can publish.")
+
     meta = parse_meta(content)
     topic = meta.get("topic", "Unknown")
     tags_str = meta.get("tags", topic)

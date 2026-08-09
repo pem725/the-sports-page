@@ -12,6 +12,38 @@ endpoint returns 0 rows). Preseason SP+ typically posts in August. Publishing a 
 now would bake in stale, pre-camp expectations. So: engine now, **refresh + publish the
 last weekend of August**, once `--year 2026` returns a full ratings table.
 
+### UPDATE 2026-08-09 — the blocker has a way around it: use FPI
+
+`/ratings/sp?year=2026` still returns **0 rows**. But `/ratings/fpi?year=2026` now returns
+**138 teams**, and FPI is the same kind of quantity as SP+ — points above an average team —
+so it is a drop-in prior, not a different model.
+
+The scales are close enough to swap with one adjustment:
+
+| | n | mean | SD | range |
+|---|---|---|---|---|
+| FPI 2026 | 138 | 0.00 | **11.33** | −19.3 … +28.7 |
+| SP+ 2025 | 137 | +0.70 | **13.05** | −36.6 … +32.4 |
+
+FPI is slightly compressed. `TAU` and `SIGMA` were tuned against SP+'s spread, so either
+scale FPI by ≈1.15 (13.05/11.33) before feeding it in, or leave it and accept a marginally
+tighter distribution of outcomes. **Scaling is the better choice** — it keeps the engine's
+validated constants meaningful instead of silently changing what they mean.
+
+FPI 2026 top five: Ohio State +28.7, Texas +26.9, **Notre Dame +25.9**, Oregon +25.3,
+Georgia +24.8. (Consistent with the published FPI having ND at No. 3 while the preseason
+Coaches Poll has them 5th — a gap that is itself an issue.)
+
+`/lines?year=2026&week=1` also returns 99 rows, so the "blend in Vegas as a second prior"
+idea from refinement #5 is now actionable too.
+
+**Massey Ratings is not an option.** It was suggested as another source, but
+`masseyratings.com/robots.txt` carries `User-agent: ClaudeBot / Disallow: /`, plus
+`Content-Signal: ai-train=no, use=reference` and an express Article 4 reservation of
+rights, and the site's data endpoint is deliberately obfuscated. Do not scrape it. If those
+ratings are wanted as a prior, a human should retrieve them under their own browser session
+and drop the file in, the same way the headline dataset arrived.
+
 ## Methodology (encoded in the engine — TWO modes)
 
 Prior for both = **SP+ team-strength ratings** (points above average) from CollegeFootballData.

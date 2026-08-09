@@ -1,0 +1,940 @@
+{
+ "source": "us-sports-headlines-past-year.xlsx",
+ "contributed_by": "Sean",
+ "span": "2025-08 .. 2026-08",
+ "n": 103,
+ "schema": {
+  "type": "FIXED | RECURRING | OUTCOME",
+  "recurs_2027": "yes | no-olympics | no-mens-wc",
+  "coverage": "in-scope | GAP | excluded-by-policy"
+ },
+ "headlines": [
+  {
+   "month": "August 2025",
+   "week": "Aug 11",
+   "sport": "MLB",
+   "event": "MLB pennant races tighten as September call-ups loom",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "August 2025",
+   "week": "Aug 11",
+   "sport": "NFL",
+   "event": "NFL preseason games begin league-wide; rookie QB and depth battles in focus",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "August 2025",
+   "week": "Aug 18",
+   "sport": "Tennis",
+   "event": "US Open tennis begins in Flushing Meadows",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "August 2025",
+   "week": "Aug 18",
+   "sport": "College Football",
+   "event": "Teams open fall camp with season openers one week away",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "August 2025",
+   "week": "Aug 25",
+   "sport": "Tennis",
+   "event": "US Open tennis heads into its second week",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "August 2025",
+   "week": "Aug 25",
+   "sport": "College Football",
+   "event": "College football's opening weekend kicks off the 2025 season (Aug 30)",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "September 2025",
+   "week": "Sep 1",
+   "sport": "Tennis",
+   "event": "Carlos Alcaraz beats Jannik Sinner to win the US Open (Sept 7)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "September 2025",
+   "week": "Sep 1",
+   "sport": "Tennis",
+   "event": "Aryna Sabalenka defends her US Open women's title, beating Amanda Anisimova",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "September 2025",
+   "week": "Sep 8",
+   "sport": "NFL",
+   "event": "NFL Week 1 kicks off the 2025 season",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "September 2025",
+   "week": "Sep 8",
+   "sport": "College Football",
+   "event": "Week 2 headlines an early Heisman conversation",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "September 2025",
+   "week": "Sep 15",
+   "sport": "NFL",
+   "event": "NFL Week 2 storylines take shape",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "September 2025",
+   "week": "Sep 15",
+   "sport": "College Football",
+   "event": "Rankings shuffle after upset-filled weekends",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "September 2025",
+   "week": "Sep 22",
+   "sport": "Golf",
+   "event": "Team Europe wins the Ryder Cup at Bethpage Black, 15-13 (Sept 28)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "September 2025",
+   "week": "Sep 22",
+   "sport": "NFL",
+   "event": "Week 4 action continues amid early-season Patriots surge behind Drake Maye",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "October 2025",
+   "week": "Sep 29",
+   "sport": "MLB",
+   "event": "MLB regular season ends and wild-card round begins",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "October 2025",
+   "week": "Sep 29",
+   "sport": "WNBA",
+   "event": "WNBA Finals tip off between the Aces and Mercury (Oct 3)",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "October 2025",
+   "week": "Oct 6",
+   "sport": "WNBA",
+   "event": "Aces sweep Mercury 4-0 to win the 2025 WNBA championship (Oct 10)",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "October 2025",
+   "week": "Oct 6",
+   "sport": "MLB",
+   "event": "MLB Division Series play headlines the baseball calendar",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "October 2025",
+   "week": "Oct 13",
+   "sport": "MLB",
+   "event": "MLB Championship Series (ALCS/NLCS) determines World Series matchup",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "October 2025",
+   "week": "Oct 13",
+   "sport": "College Football",
+   "event": "Conference races intensify heading into November",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "October 2025",
+   "week": "Oct 20",
+   "sport": "NBA",
+   "event": "NBA regular season tips off",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "excluded-by-policy"
+  },
+  {
+   "month": "October 2025",
+   "week": "Oct 20",
+   "sport": "MLB",
+   "event": "World Series Game 1: Dodgers vs. Blue Jays (Oct 24)",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "October 2025",
+   "week": "Oct 27",
+   "sport": "MLB",
+   "event": "Dodgers become first repeat World Series champs in 25 years, Game 7 thriller (Nov 1-2)",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "October 2025",
+   "week": "Oct 27",
+   "sport": "MLB",
+   "event": "Yoshinobu Yamamoto named World Series MVP",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "November 2025",
+   "week": "Nov 3",
+   "sport": "NFL",
+   "event": "Trade deadline shakeup: Sauce Gardner to Jets, A.J. Brown to Patriots (Nov 4)",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "November 2025",
+   "week": "Nov 3",
+   "sport": "NFL",
+   "event": "MVP race narrows to Drake Maye and Matthew Stafford",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "November 2025",
+   "week": "Nov 10",
+   "sport": "NFL",
+   "event": "Week 10 playoff picture takes shape",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "November 2025",
+   "week": "Nov 10",
+   "sport": "College Football",
+   "event": "CFP rankings debate top contenders, incl. undefeated Indiana and Ohio State",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "November 2025",
+   "week": "Nov 17",
+   "sport": "NFL",
+   "event": "Weeks 11-12 storylines continue",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "November 2025",
+   "week": "Nov 17",
+   "sport": "College Basketball",
+   "event": "Season tips off with early-season tournaments",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "November 2025",
+   "week": "Nov 24",
+   "sport": "NFL",
+   "event": "Thanksgiving tripleheader draws national attention",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "November 2025",
+   "week": "Nov 24",
+   "sport": "College Football",
+   "event": "Rivalry week sets stage for conference championships",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "December 2025",
+   "week": "Dec 1",
+   "sport": "College Football",
+   "event": "Conference championship weekend - Indiana completes perfect regular season",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "December 2025",
+   "week": "Dec 1",
+   "sport": "College Football",
+   "event": "Big Ten and SEC title games shape the College Football Playoff field",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "December 2025",
+   "week": "Dec 8",
+   "sport": "College Football",
+   "event": "Fernando Mendoza (Indiana) wins the Heisman Trophy (Dec 13)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "December 2025",
+   "week": "Dec 8",
+   "sport": "NFL",
+   "event": "Week 15 playoff races heat up in both conferences",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "December 2025",
+   "week": "Dec 15",
+   "sport": "College Football",
+   "event": "College Football Playoff bracket is set",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "December 2025",
+   "week": "Dec 15",
+   "sport": "NFL",
+   "event": "Week 16 division races intensify",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "December 2025",
+   "week": "Dec 22",
+   "sport": "College Football",
+   "event": "Bowl season begins",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "December 2025",
+   "week": "Dec 22",
+   "sport": "NFL",
+   "event": "Week 17 playoff seeding battles continue",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "December 2025",
+   "week": "Dec 29",
+   "sport": "NFL",
+   "event": "Regular season finale (Week 18) decides playoff seeding",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "December 2025",
+   "week": "Dec 29",
+   "sport": "College Football",
+   "event": "College Football Playoff first-round games are played",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "January 2026",
+   "week": "Jan 5",
+   "sport": "College Football",
+   "event": "Montana State beats Illinois State for the FCS national championship (Jan 5)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "January 2026",
+   "week": "Jan 5",
+   "sport": "NFL",
+   "event": "NFL playoffs open with Wild Card Weekend",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "January 2026",
+   "week": "Jan 5",
+   "sport": "College Football",
+   "event": "College Football Playoff quarterfinals are played",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "January 2026",
+   "week": "Jan 12",
+   "sport": "NFL",
+   "event": "Divisional Round narrows the Super Bowl field",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "January 2026",
+   "week": "Jan 12",
+   "sport": "College Football",
+   "event": "CFP semifinals set the national title matchup",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "January 2026",
+   "week": "Jan 19",
+   "sport": "College Football",
+   "event": "Indiana beats Miami 27-21 to win the CFP National Championship (Jan 19)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "January 2026",
+   "week": "Jan 19",
+   "sport": "NFL",
+   "event": "Conference Championships: Patriots beat Broncos, Seahawks beat Rams (Jan 25)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "January 2026",
+   "week": "Jan 26",
+   "sport": "NFL",
+   "event": "Matthew Stafford named NFL MVP at NFL Honors",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "January 2026",
+   "week": "Jan 26",
+   "sport": "NFL",
+   "event": "Super Bowl LX week begins with Seahawks-Patriots buildup",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "February 2026",
+   "week": "Feb 2",
+   "sport": "Olympics",
+   "event": "Winter Olympics open in Milan-Cortina (Feb 6)",
+   "type": "RECURRING",
+   "recurs_2027": "no-olympics",
+   "coverage": "GAP"
+  },
+  {
+   "month": "February 2026",
+   "week": "Feb 2",
+   "sport": "NFL",
+   "event": "Super Bowl LX buildup continues; Bad Bunny halftime show a major storyline",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "February 2026",
+   "week": "Feb 9",
+   "sport": "NFL",
+   "event": "Seattle Seahawks beat New England Patriots 29-13 to win Super Bowl LX (Feb 8)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "February 2026",
+   "week": "Feb 9",
+   "sport": "Olympics",
+   "event": "Team USA hockey teams advance toward gold-medal games",
+   "type": "OUTCOME",
+   "recurs_2027": "no-olympics",
+   "coverage": "GAP"
+  },
+  {
+   "month": "February 2026",
+   "week": "Feb 16",
+   "sport": "Olympics",
+   "event": "Team USA hockey sweeps gold; men's and women's teams beat Canada in OT",
+   "type": "OUTCOME",
+   "recurs_2027": "no-olympics",
+   "coverage": "GAP"
+  },
+  {
+   "month": "February 2026",
+   "week": "Feb 16",
+   "sport": "Olympics",
+   "event": "Alysa Liu wins figure skating gold, ending a 20-year US medal drought",
+   "type": "OUTCOME",
+   "recurs_2027": "no-olympics",
+   "coverage": "GAP"
+  },
+  {
+   "month": "February 2026",
+   "week": "Feb 23",
+   "sport": "Olympics",
+   "event": "Winter Olympics close; Team USA sets record 12 golds, 33 total medals (Feb 22)",
+   "type": "FIXED",
+   "recurs_2027": "no-olympics",
+   "coverage": "GAP"
+  },
+  {
+   "month": "February 2026",
+   "week": "Feb 23",
+   "sport": "NBA",
+   "event": "NBA trade deadline reshapes contenders ahead of the playoff push",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "excluded-by-policy"
+  },
+  {
+   "month": "March 2026",
+   "week": "Mar 2",
+   "sport": "NHL",
+   "event": "Playoff races tighten across both conferences",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "March 2026",
+   "week": "Mar 2",
+   "sport": "College Basketball",
+   "event": "Conference tournaments begin",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "March 2026",
+   "week": "Mar 9",
+   "sport": "College Basketball",
+   "event": "Conference tournament championships crown automatic bids",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "March 2026",
+   "week": "Mar 9",
+   "sport": "College Basketball",
+   "event": "Selection Sunday sets the NCAA Tournament brackets (Mar 15)",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "March 2026",
+   "week": "Mar 16",
+   "sport": "College Basketball",
+   "event": "March Madness tips off with the First Four and opening rounds",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "March 2026",
+   "week": "Mar 16",
+   "sport": "College Basketball",
+   "event": "Upsets and Cinderella runs dominate the men's and women's brackets",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "March 2026",
+   "week": "Mar 23",
+   "sport": "College Basketball",
+   "event": "Sweet 16 and Elite Eight action sets the Final Four fields",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "March 2026",
+   "week": "Mar 30",
+   "sport": "College Basketball",
+   "event": "Men's and women's Final Four games set the national championship matchups",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "April 2026",
+   "week": "Apr 6",
+   "sport": "College Basketball",
+   "event": "Michigan beats UConn 69-63 to win men's NCAA championship (Apr 6)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "April 2026",
+   "week": "Apr 6",
+   "sport": "College Basketball",
+   "event": "UCLA wins the women's NCAA basketball championship",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "April 2026",
+   "week": "Apr 13",
+   "sport": "Golf",
+   "event": "Rory McIlroy wins the Masters for the second year in a row (Apr 12)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "April 2026",
+   "week": "Apr 13",
+   "sport": "NBA",
+   "event": "Playoff seeding races conclude",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "excluded-by-policy"
+  },
+  {
+   "month": "April 2026",
+   "week": "Apr 20",
+   "sport": "NHL",
+   "event": "Stanley Cup playoffs begin (Apr 18)",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "April 2026",
+   "week": "Apr 20",
+   "sport": "NBA",
+   "event": "Playoffs open across both conferences",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "excluded-by-policy"
+  },
+  {
+   "month": "April 2026",
+   "week": "Apr 27",
+   "sport": "NFL",
+   "event": "Fernando Mendoza goes No. 1 overall to the Las Vegas Raiders in the NFL Draft (Apr 23-25)",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "April 2026",
+   "week": "Apr 27",
+   "sport": "NBA",
+   "event": "First-round playoff series continue",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "excluded-by-policy"
+  },
+  {
+   "month": "April 2026",
+   "week": "Apr 27",
+   "sport": "NHL",
+   "event": "First-round playoff series continue",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 4",
+   "sport": "Horse Racing",
+   "event": "Golden Tempo wins the Kentucky Derby as a 30-1 long shot (May 2)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 4",
+   "sport": "NBA",
+   "event": "Conference semifinals get underway",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "excluded-by-policy"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 4",
+   "sport": "NHL",
+   "event": "Conference semifinals get underway",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 11",
+   "sport": "Horse Racing",
+   "event": "Napoleon Solo wins the Preakness Stakes",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 11",
+   "sport": "Golf",
+   "event": "PGA Championship week begins in Newtown Square, PA",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 18",
+   "sport": "Golf",
+   "event": "Aaron Rai wins the PGA Championship at Aronimink (May 14-17)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 18",
+   "sport": "NBA",
+   "event": "Conference finals begin",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "excluded-by-policy"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 18",
+   "sport": "NHL",
+   "event": "Conference finals begin",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 25",
+   "sport": "Auto Racing",
+   "event": "Felix Rosenqvist wins the Indianapolis 500 (May 24)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 25",
+   "sport": "NBA",
+   "event": "Knicks and Spurs advance to the NBA Finals",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "excluded-by-policy"
+  },
+  {
+   "month": "May 2026",
+   "week": "May 25",
+   "sport": "NHL",
+   "event": "Hurricanes and Golden Knights advance to the Stanley Cup Final",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "June 2026",
+   "week": "Jun 1",
+   "sport": "Horse Racing",
+   "event": "Golden Tempo wins the Belmont Stakes, taking two of three Triple Crown races (Jun 6)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "June 2026",
+   "week": "Jun 1",
+   "sport": "NBA",
+   "event": "NBA Finals begin between the Knicks and Spurs (Jun 3)",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "excluded-by-policy"
+  },
+  {
+   "month": "June 2026",
+   "week": "Jun 8",
+   "sport": "NBA",
+   "event": "Knicks win the NBA Finals over the Spurs 4-1, first title since 1973; Brunson named Finals MVP (Jun 13-14)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "excluded-by-policy"
+  },
+  {
+   "month": "June 2026",
+   "week": "Jun 8",
+   "sport": "NHL",
+   "event": "Carolina Hurricanes beat the Golden Knights to win the Stanley Cup, first title in 20 years (Jun 14)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "June 2026",
+   "week": "Jun 15",
+   "sport": "Soccer",
+   "event": "FIFA World Cup kicks off across the US, Mexico, and Canada (Jun 11)",
+   "type": "RECURRING",
+   "recurs_2027": "no-mens-wc",
+   "coverage": "GAP"
+  },
+  {
+   "month": "June 2026",
+   "week": "Jun 15",
+   "sport": "Golf",
+   "event": "Wyndham Clark wins the US Open golf championship at Shinnecock Hills (Jun 18-21)",
+   "type": "OUTCOME",
+   "recurs_2027": "yes",
+   "coverage": "GAP"
+  },
+  {
+   "month": "June 2026",
+   "week": "Jun 22",
+   "sport": "Soccer",
+   "event": "World Cup group stage wraps up and knockout rounds begin; USMNT run a major storyline",
+   "type": "RECURRING",
+   "recurs_2027": "no-mens-wc",
+   "coverage": "GAP"
+  },
+  {
+   "month": "July 2026",
+   "week": "Jun 29",
+   "sport": "Soccer",
+   "event": "World Cup Round of 16 and quarterfinals narrow the field",
+   "type": "FIXED",
+   "recurs_2027": "no-mens-wc",
+   "coverage": "GAP"
+  },
+  {
+   "month": "July 2026",
+   "week": "Jun 29",
+   "sport": "MLB",
+   "event": "All-Star break arrives at the season's midpoint",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "July 2026",
+   "week": "Jul 6",
+   "sport": "Soccer",
+   "event": "World Cup semifinals set the final matchup between Spain and Argentina",
+   "type": "FIXED",
+   "recurs_2027": "no-mens-wc",
+   "coverage": "GAP"
+  },
+  {
+   "month": "July 2026",
+   "week": "Jul 13",
+   "sport": "Soccer",
+   "event": "Spain beats Argentina 1-0 in extra time to win the FIFA World Cup final (Jul 19)",
+   "type": "OUTCOME",
+   "recurs_2027": "no-mens-wc",
+   "coverage": "GAP"
+  },
+  {
+   "month": "July 2026",
+   "week": "Jul 13",
+   "sport": "Soccer",
+   "event": "England beats France 6-4 in a high-scoring bronze-medal match",
+   "type": "OUTCOME",
+   "recurs_2027": "no-mens-wc",
+   "coverage": "GAP"
+  },
+  {
+   "month": "July 2026",
+   "week": "Jul 20",
+   "sport": "MLB",
+   "event": "Pennant races intensify as contenders position for the trade deadline",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "July 2026",
+   "week": "Jul 27",
+   "sport": "MLB",
+   "event": "Trade deadline reshapes contenders ahead of the stretch run (~Jul 31)",
+   "type": "FIXED",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "August 2026",
+   "week": "Aug 3",
+   "sport": "NFL",
+   "event": "Training camps and preseason games begin league-wide",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  },
+  {
+   "month": "August 2026",
+   "week": "Aug 3",
+   "sport": "MLB",
+   "event": "Pennant races head into the season's final stretch",
+   "type": "RECURRING",
+   "recurs_2027": "yes",
+   "coverage": "in-scope"
+  }
+ ]
+}
