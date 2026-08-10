@@ -1,0 +1,191 @@
+<!-- FRAME-META
+trigger:  a Week 1 favourite loses its opener (any season; fires ~Sep 10 2026)
+window:   2026-09-10 .. 2026-09-16
+sport:    NFL
+slots:    TEAM     - the favoured team that lost
+          OPPONENT - who beat them
+          SCORE    - final, loser first (e.g. 17-23)
+          SPREAD   - how many points TEAM was favoured by (numeral, e.g. 6.5)
+          WHEN     - date in prose (e.g. September 13)
+evidence: BAKED IN, computed 2026-08-10 from nflverse/nfldata games.csv, seasons
+          2002-2025. Unconditional: Week 1 winners reach the playoffs 54% of the
+          time (204/380), losers 25% (96/380). Conditioned on the closing spread
+          the gap SURVIVES: favourites 61% if they won (n=246) vs 32% if they
+          lost (n=133); underdogs 41% vs 21%. Datasets:
+          data/nfl-week1-vs-playoffs.json and -conditioned.json
+recheck:  add the new season's games and re-run before reuse in a later year.
+limits:   the control is binary favourite/underdog, not spread magnitude. A
+          finer control (win totals, or the spread in points) could shrink the
+          gap. Say so in the piece -- it already does.
+-->
+<!-- PUBLISH-META
+topic: NFL
+tags: NFL:nfl, Base Rates, Small Sample, Jets
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Vol. I, No. __ — {{WHEN}}, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+</style><meta property="og:title" content="Everyone Says Don't Overreact to Week 1. The Numbers Say Overreact.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta name="twitter:card" content="summary_large_image">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">National Football League &middot; Week One, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Vol. I, No. __</span><span>{{WHEN}}, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Everyone Will Tell You Not to Overreact to Week 1. <em>The Numbers Say Overreact.</em></h1>
+
+  <div class="deck">
+    {{TEAM}} were favoured by {{SPREAD}} and lost to {{OPPONENT}}, {{SCORE}}. The calming voices are already out. They are wrong, and it is not close: across 24 seasons, a favourite that loses its opener reaches the playoffs 32% of the time. A favourite that wins reaches them 61% of the time. One game out of seventeen, and the gap does not go away when you control for who was supposed to win.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; 760 team-seasons, 2002&ndash;2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v good">61%</div><div class="l">Favourites who won wk 1</div></div>
+    <div class="sc"><div class="v bad">32%</div><div class="l">Favourites who lost wk 1</div></div>
+    <div class="sc"><div class="v now">1</div><div class="l">Games that separates them</div></div>
+  </div>
+
+  <p>{{TEAM}} were the better team on paper. The market said so &mdash; they were laying {{SPREAD}}. Then {{OPPONENT}} beat them {{SCORE}}, and by Monday morning somebody will have said the sentence that gets said every September: <em>it's one game, don't read anything into it.</em></p>
+
+  <p>It is one game. You should read a great deal into it.</p>
+
+  <h2 class="sh">The Raw Number</h2>
+
+  <p>Every NFL season from 2002 through 2025 &mdash; 760 team-seasons, both sides of every opener. Teams that <strong>won</strong> in Week 1 made the playoffs <strong>54%</strong> of the time. Teams that <strong>lost</strong> made them <strong>25%</strong> of the time.</p>
+
+  <p>A 28-point swing, off a single game in a seventeen-game season.</p>
+
+  <p>The obvious objection is the right one, and it is the reason most people wave this away: <em>of course Week 1 winners make the playoffs more often &mdash; good teams win Week 1.</em> The result isn't causing anything. It's just revealing what was already true. That would make the 28 points an artifact of who was good to begin with, not information.</p>
+
+  <p>It's a good objection. It happens to be wrong.</p>
+
+  <h2 class="sh">Holding "Who Was Supposed to Win" Fixed</h2>
+
+  <p>The betting market prices every opener before kickoff. So split the teams by what the market expected &mdash; favourites and underdogs &mdash; and look inside each group. If the 28 points were really just team quality, the gap should mostly vanish once quality is held still.</p>
+
+  <figure class="chart">
+    <svg viewBox="0 0 760 290" role="img" aria-label="Playoff rates by Week 1 result, split by whether the team was favoured. Favourites who won Week 1 reached the playoffs 61 percent of the time versus 32 percent for favourites who lost, a 28 point gap. Underdogs who won reached them 41 percent versus 21 percent for underdogs who lost, a 20 point gap. The gap survives the control.">
+      <text x="150" y="34" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208">SHARE THAT REACHED THE PLAYOFFS</text>
+      <line x1="150" y1="52" x2="150" y2="235" stroke="#1a1208" stroke-width="1.2"></line>
+      <line x1="150" y1="235" x2="700" y2="235" stroke="#1a1208" stroke-width="1.2"></line>
+      <text x="140" y="80" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208" text-anchor="end">FAVOURED, WON</text>
+      <rect x="150" y="62" width="427" height="26" fill="#2a6e3f"></rect>
+      <text x="587" y="81" font-family="'Roboto Mono',monospace" font-size="12.5" font-weight="600" fill="#2a6e3f">61%</text>
+      <text x="140" y="124" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208" text-anchor="end">FAVOURED, LOST</text>
+      <rect x="150" y="106" width="224" height="26" fill="#b83a1e"></rect>
+      <text x="384" y="125" font-family="'Roboto Mono',monospace" font-size="12.5" font-weight="600" fill="#b83a1e">32%</text>
+      <text x="140" y="176" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208" text-anchor="end">UNDERDOG, WON</text>
+      <rect x="150" y="158" width="287" height="26" fill="#2c4a6e"></rect>
+      <text x="447" y="177" font-family="'Roboto Mono',monospace" font-size="12.5" font-weight="600" fill="#2c4a6e">41%</text>
+      <text x="140" y="220" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208" text-anchor="end">UNDERDOG, LOST</text>
+      <rect x="150" y="202" width="147" height="26" fill="#6b5e4a"></rect>
+      <text x="307" y="221" font-family="'Roboto Mono',monospace" font-size="12.5" font-weight="600" fill="#6b5e4a">21%</text>
+      <text x="425" y="262" font-family="'Roboto Mono',monospace" font-size="11" fill="#6b5e4a" text-anchor="middle">2002&ndash;2025 &middot; favoured/underdog taken from the closing Week 1 spread</text>
+    </svg>
+    <figcaption>The control does not rescue the comforting story. Among teams the market already liked, winning the opener is worth 28 points of playoff probability. Among teams the market doubted, 20. The gap is not an illusion created by good teams winning early games.</figcaption>
+  </figure>
+
+  <div class="pull">
+    <p>A favourite that loses its opener is about half as likely to play in January as a favourite that wins one. That is the whole finding, and it survives every control we could put on it.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Why One Game Can Matter This Much</h2>
+
+  <p>The instinct that one game out of seventeen cannot mean much comes from thinking about it as a fraction. Six per cent of a season. Rounding error.</p>
+
+  <p>But playoff berths are not decided by season-long averages. They are decided at a cutline, and the cutline is usually one or two games wide. Divisions get settled by tiebreakers between teams a single win apart. In a seventeen-game season with a fourteen-team field, one loss moves you a meaningful distance along a very crowded ladder &mdash; and it does it while also telling you something real about the team you actually have, as opposed to the team the projections had.</p>
+
+  <p>Both things are happening at once. The loss costs you position, <em>and</em> it updates the estimate. That is why the effect is bigger than the arithmetic suggests.</p>
+
+  <h2 class="sh">What To Take Home</h2>
+
+  <p>&ldquo;It's a small sample, don't overreact&rdquo; is usually good advice, and this newsletter has given it more than once. But it is advice, not a law, and it gets repeated in places it does not apply.</p>
+
+  <p>A single observation is uninformative when it is <em>mostly noise</em>. It is extremely informative when it is a rare, high-quality look at something you had only been guessing about. Week 1 is the first real evidence in eight months of guessing &mdash; the first time the projections meet a scoreboard. Of course it moves the estimate more than Week 9 does.</p>
+
+  <p>So the question to carry is not &ldquo;is this a small sample?&rdquo; It is <strong>&ldquo;small compared to what I already knew?&rdquo;</strong> When you knew almost nothing, one game is a lot. {{TEAM}} just gave everyone their first real look, and it was not the one anybody wanted.</p>
+
+  <div class="methods">
+    <b>How this was computed</b>
+    Games and closing spreads are from the public nflverse dataset, seasons 2002&ndash;2025 &mdash; 2002 is when the league reached 32 teams and eight divisions. Both teams in every opener are counted, ties dropped. &ldquo;Reached the playoffs&rdquo; means appearing in any postseason game that year, under whatever field size applied (12 teams through 2019, 14 from 2020). One honest limitation: the control is binary &mdash; favourite or underdog &mdash; not the size of the spread, so a team laying one point and a team laying ten are pooled together. A finer control could shrink the gap somewhat. It would have to shrink it a long way to change the conclusion.
+  </div>
+
+  <div class="footer"><span>The Sports Page</span><span>Vol. I, No. __ &middot; {{WHEN}}, 2026</span><span>One Question Per Issue, Answered With Numbers.</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>
+</body>
+</html>

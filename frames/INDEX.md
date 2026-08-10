@@ -57,12 +57,12 @@ actor unknown. That is what makes it pre-writable. Generated from
 | Aug 2027 | NFL | Training camps and preseason games begin league-wide |  |
 | Aug 2027 | MLB | Pennant races head into the season's final stretch |  |
 
-**48 recurring events.** 1 built, 47 to go.
+**48 recurring events.** 2 built, 46 to go.
 
 ## Build order (soonest first, weighted to gaps)
 
 1. `cfb-september-loss-base-rate` — **BUILT**, fires on the first top-10 upset
-2. NFL Week 1 overreaction — how little Week 1 predicts a season
+2. `nfl-week1-overreaction` — **BUILT**. Finding inverted the premise: Week 1 predicts a *lot*, and the gap survives controlling for the spread
 3. US Open tennis — first entry into a GAP sport; hold rates as base rates
 4. MLB elimination math — what 'still alive' actually means in late September
 5. Early MVP race — the September favourite's historical hit rate
