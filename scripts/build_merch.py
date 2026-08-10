@@ -114,54 +114,67 @@ def write(name, content):
 
 
 # ---------------------------------------------------------------- the S mark
-def s_mark(cx, cy, height, fill, chart=True, knock=CREAM):
-    """Playfair 'S' with an optional bar chart KNOCKED OUT of the letterform.
+def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.88, cscale=1.0):
+    """Playfair 'S' with a rising bar chart and arrow, drawn with a HALO.
 
-    The chart is drawn in the garment colour, not the ink colour. Drawing it in
-    ink (the obvious first attempt) merges it into the S and reads as a blob.
-    As a knockout it stays legible, and on a one-colour screen print it costs
-    nothing — the "chart" is simply unprinted fabric.
+    Three approaches were built before this one. Solid ink merges the chart into
+    the letter and reads as a blob. Knocking the chart out of the S reads as a
+    damaged letter -- measuring the glyph showed why: the S's thickest horizontal
+    band is only ~32% of its width, so there is not enough ink to cut into.
+
+    What works is what the original masthead does: put the chart in the OPEN
+    space and let the arrow cross the letterform, with a halo in the garment
+    colour wherever they overlap. On open ground the halo is invisible; over the
+    S it is a clean separation. Still ONE ink colour -- the halo is unprinted
+    fabric, so it costs no extra screen and no extra thread.
     """
     f = PF(900)
     upem = f["head"].unitsPerEm
-    size = height / 0.72                       # cap-height -> em size
+    size = height / 0.72
     d, adv = next(iter(glyphs(f, "S")))
     k = size / upem
     w = adv * k
     parts = [f'<path d="{d}" fill="{fill}" '
              f'transform="translate({cx - w/2:.3f},{cy + height/2:.3f}) '
              f'scale({k:.6f},{-k:.6f})"/>']
-    if chart:
-        # Sit the chart in the S's thick middle band, where there is solid ink
-        # on every side for the knockout to register against.
-        bw   = w * 0.088
-        gap  = bw * 0.62
-        base = cy + height * 0.20
-        n    = 4
-        span = n * bw + (n - 1) * gap
-        x0   = cx - span / 2
-        for i, hfrac in enumerate((0.11, 0.17, 0.24, 0.32)):
-            bh = height * hfrac
-            parts.append(f'<rect x="{x0 + i*(bw+gap):.3f}" y="{base-bh:.3f}" '
-                         f'width="{bw:.3f}" height="{bh:.3f}" fill="{knock}"/>')
-        ax0, ay0 = x0 - bw * 0.55, base - height * 0.055
-        ax1, ay1 = x0 + span + bw * 0.30, base - height * 0.40
-        parts.append(f'<path d="M{ax0:.2f},{ay0:.2f} L{ax1:.2f},{ay1:.2f}" '
-                     f'stroke="{knock}" stroke-width="{height*0.052:.3f}" '
-                     f'stroke-linecap="butt" fill="none"/>')
-        hl = height * 0.125
-        ang = math.atan2(ay1 - ay0, ax1 - ax0)
-        tipx, tipy = ax1 + math.cos(ang) * hl * 0.30, ay1 + math.sin(ang) * hl * 0.30
-        p1 = (tipx + math.cos(ang + 2.5) * hl, tipy + math.sin(ang + 2.5) * hl)
-        p2 = (tipx + math.cos(ang - 2.5) * hl, tipy + math.sin(ang - 2.5) * hl)
-        parts.append(f'<path d="M{tipx:.2f},{tipy:.2f} L{p1[0]:.2f},{p1[1]:.2f} '
-                     f'L{p2[0]:.2f},{p2[1]:.2f} Z" fill="{knock}"/>')
-    return "\n".join(parts), w
+    if not chart:
+        return "\n".join(parts), w
+
+    halo, ink = [], []
+    bw   = w * 0.115 * cscale
+    gap  = bw * 0.55
+    x0   = cx - w * 0.46
+    base = cy + height * 0.40
+    hw   = max(bw * 0.34, height * 0.022)      # halo thickness
+    for i in range(4):
+        h = height * (0.13 + 0.085 * i) * cscale
+        x = x0 + i * (bw + gap)
+        halo.append(f'<rect x="{x-hw:.2f}" y="{base-h-hw:.2f}" width="{bw+2*hw:.2f}" '
+                    f'height="{h+2*hw:.2f}" fill="{knock}"/>')
+        ink.append(f'<rect x="{x:.2f}" y="{base-h:.2f}" width="{bw:.2f}" '
+                   f'height="{h:.2f}" fill="{fill}"/>')
+    ax0, ay0 = x0 - bw * 0.5, base - height * 0.06
+    ax1, ay1 = cx + w * 0.52 * arrow_reach, cy - height * 0.46 * arrow_reach
+    sw  = height * 0.075 * cscale
+    ang = math.atan2(ay1 - ay0, ax1 - ax0)
+    hl  = height * 0.150 * cscale
+    p1 = (ax1 + math.cos(ang + 2.5) * hl, ay1 + math.sin(ang + 2.5) * hl)
+    p2 = (ax1 + math.cos(ang - 2.5) * hl, ay1 + math.sin(ang - 2.5) * hl)
+    for col, extra, lst in ((knock, hw * 2, halo), (fill, 0, ink)):
+        lst.append(f'<path d="M{ax0:.2f},{ay0:.2f} L{ax1:.2f},{ay1:.2f}" stroke="{col}" '
+                   f'stroke-width="{sw+extra:.2f}" stroke-linecap="round" fill="none"/>')
+        g = extra * 0.9
+        q1 = (p1[0] + math.cos(ang + 2.5) * g, p1[1] + math.sin(ang + 2.5) * g)
+        q2 = (p2[0] + math.cos(ang - 2.5) * g, p2[1] + math.sin(ang - 2.5) * g)
+        t  = (ax1 + math.cos(ang) * g,          ay1 + math.sin(ang) * g)
+        lst.append(f'<path d="M{t[0]:.2f},{t[1]:.2f} L{q1[0]:.2f},{q1[1]:.2f} '
+                   f'L{q2[0]:.2f},{q2[1]:.2f} Z" fill="{col}"/>')
+    return "\n".join(parts + halo + ink), w
 
 
 # ---------------------------------------------------------------- 1. badge
-def badge(size_mm=100, chart=True, ring=True, fill=NAVY, bg=None):
-    knock = bg or CREAM        # unused while chart=False; garment shows through
+def badge(size_mm=100, chart=True, ring=True, fill=NAVY, bg=None, s_frac=0.60, ground=None):
+    knock = ground or bg or CREAM   # halo must equal the colour BEHIND the art
     c = size_mm / 2
     r_out = size_mm * 0.47
     body = []
@@ -170,7 +183,7 @@ def badge(size_mm=100, chart=True, ring=True, fill=NAVY, bg=None):
                     f'stroke="{fill}" stroke-width="{size_mm*0.022:.3f}"/>')
     body.append(arc_text(PF(700), "THE SPORTS PAGE", size_mm * 0.088,
                          c, c, r_out - size_mm * 0.085, fill, tracking=0.10))
-    mark, _ = s_mark(c, c + size_mm * 0.055, size_mm * 0.42, fill,
+    mark, _ = s_mark(c, c + size_mm * 0.055, size_mm * s_frac, fill,
                      chart=chart, knock=knock)
     body.append(mark)
     return svg(size_mm, size_mm, "\n".join(body), bg)
@@ -193,7 +206,7 @@ def stacked_body(w_mm, fill, knock, tagline=True):
     s_h = lh * 2.60
     s_cx = pad + col_w + w_mm * 0.195
     s_cy = top + lh * 0.62
-    mark, _ = s_mark(s_cx, s_cy, s_h, fill, chart=False, knock=knock)
+    mark, _ = s_mark(s_cx, s_cy, s_h, fill, chart=True, knock=knock)
     body.append(mark)
     h = max(top + 2 * lh, s_cy + s_h / 2) + pad * 0.5
     if tagline:
@@ -205,8 +218,8 @@ def stacked_body(w_mm, fill, knock, tagline=True):
     return "\n".join(body), h
 
 
-def wordmark_stacked(w_mm=180, fill=NAVY, bg=None, tagline=True):
-    body, h = stacked_body(w_mm, fill, bg or CREAM, tagline)
+def wordmark_stacked(w_mm=180, fill=NAVY, bg=None, tagline=True, ground=None):
+    body, h = stacked_body(w_mm, fill, ground or bg or CREAM, tagline)
     return svg(round(w_mm, 2), round(h + w_mm * 0.02, 2), body, bg)
 
 
@@ -223,10 +236,10 @@ def wordmark_horizontal(w_mm=180, fill=NAVY, bg=None):
 
 
 # ------------------------------------------------------------------- 4. tees
-def tee_masthead(w_mm=280, fill=NAVY, bg=None):
+def tee_masthead(w_mm=280, fill=NAVY, bg=None, ground=None):
     """Stacked lockup, then a rule, then the URL — composed with explicit
     spacing rather than splicing another SVG's string (which collided)."""
-    knock = bg or CREAM
+    knock = ground or bg or CREAM
     body, h = stacked_body(w_mm, fill, knock, tagline=True)
     parts = [body]
     rule_y = h + w_mm * 0.026
@@ -289,19 +302,19 @@ print("Building merch art ->", OUT)
 # It was built and tested both as solid ink and as a knockout; at chest size and
 # in a single colour it reads as a damaged letter, not a chart. The plain S is
 # the apparel mark. See merch/README.md.
-write("logo-badge.svg",               badge(100, chart=False))
+write("logo-badge.svg",               badge(100, chart=True))
 write("wordmark-stacked.svg",         wordmark_stacked(180))
 write("wordmark-horizontal.svg",      wordmark_horizontal(180))
 
-write("polo-01-badge.svg",            badge(82, chart=False))
+write("polo-01-badge.svg",            badge(82, chart=True))
 write("polo-02-wordmark.svg",         wordmark_horizontal(82))
-write("polo-01-badge-reversed.svg",   badge(82, chart=False, fill=CREAM, bg=None))
+write("polo-01-badge-reversed.svg",   badge(82, chart=True, fill=CREAM, bg=None, ground=NAVY))
 write("polo-02-wordmark-reversed.svg", wordmark_horizontal(82, fill=CREAM, bg=None))
 
 write("tee-01-masthead.svg",          tee_masthead(280))
 write("tee-02-denominator.svg",       tee_denominator(280))
 write("tee-03-sixty-seven-five.svg",  tee_founding(280))
-write("tee-01-masthead-reversed.svg", tee_masthead(280, fill=CREAM, bg=None))
+write("tee-01-masthead-reversed.svg", tee_masthead(280, fill=CREAM, bg=None, ground=NAVY))
 write("tee-02-denominator-reversed.svg", tee_denominator(280, fill=CREAM, accent="#e8703f", bg=None))
 write("tee-03-sixty-seven-five-reversed.svg", tee_founding(280, fill=CREAM, accent="#e8703f", bg=None))
 print("done")

@@ -112,20 +112,43 @@ The `previews/*-reversed.png` files show them on navy so you can see the intent.
 
 ---
 
-## One design decision worth knowing
+## The chart is back — and how it works
 
-**The bar-chart-inside-the-S from the web logo is deliberately not here.**
+Earlier drafts shipped a plain S. The mark was clean but incomplete, so the
+chart was rebuilt. It took four attempts and the failures are worth recording:
 
-It was built and tested twice — once as solid ink, once knocked out of the
-letterform. Both failed. At chest size, and in a single colour, the chart reads
-as a damaged letter rather than a rising trend line. It works on screen at
-banner width because it has room and anti-aliasing; apparel has neither.
+1. **Chart in solid ink over the S** — merges into the letterform, reads as a blob.
+2. **Chart knocked out of the S** — reads as a *damaged letter*. Measuring the
+   glyph showed why: the S's thickest horizontal band is only about **32% of its
+   width**, so there is simply not enough ink to cut a chart into.
+3. **Bigger S, chart still inside** — same problem, larger.
+4. **What shipped:** a bigger S (0.60 of the badge, up from 0.42) with the chart
+   in the *open* space and the arrow crossing the letterform, carrying a **halo**
+   in the colour behind it. This is what the original masthead does.
 
-The plain Playfair S carries the mark on its own. If you want the chart back for
-a large-format application — a banner, a poster, signage — use the original
-`assets/banner.png` artwork, which was drawn for that context.
+**The halo costs nothing.** It is the garment colour, so on a one-colour screen
+print or a single thread it is simply unprinted fabric. Where the chart sits on
+open ground the halo is invisible; where it crosses the S it is a clean
+separation. Still one ink colour.
 
----
+### The consequence for reversed art
+
+The halo must match **what is behind the art**, not what the file's background is
+set to. Reversed files have no background rect (the garment supplies it) but
+their ground is still navy, so their halo is navy. The build separates these two
+ideas — `bg` paints a rectangle, `ground` says what the art sits on. Get them
+confused and the halo matches the ink, the chart vanishes, and you are back to a
+blobby S.
+
+If anyone recolours these for a new garment, **the halo colour has to change with
+the garment.** That is the one thing about this mark that is not automatic.
+
+### Minimum size just got stricter
+
+The chart adds detail, so the floor matters more than before. **Do not go below
+76 mm (3") on the badge.** It was checked at 3.25" and holds — the S, the arrow
+and four bars all still read — but there is less headroom than the plain mark
+had. Below 3", use `polo-02-wordmark.svg`.
 
 ## What to send the printer
 
