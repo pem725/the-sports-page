@@ -172,20 +172,43 @@ def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, weight=0.65,
 
 
 # ---------------------------------------------------------------- 1. badge
-def badge(size_mm=100, chart=True, ring=True, fill=NAVY, bg=None, s_frac=0.70, ground=None):
-    knock = ground or bg or CREAM   # halo must equal the colour BEHIND the art
+def badge_body(size_mm=100, chart=True, ring=True, fill=NAVY, knock=CREAM, s_frac=0.70,
+               dx=0.0, dy=0.0):
+    """The badge artwork itself, so it can be composed into larger lockups."""
     c = size_mm / 2
     r_out = size_mm * 0.47
     body = []
     if ring:
-        body.append(f'<circle cx="{c}" cy="{c}" r="{r_out:.3f}" fill="none" '
+        body.append(f'<circle cx="{c+dx:.3f}" cy="{c+dy:.3f}" r="{r_out:.3f}" fill="none" '
                     f'stroke="{fill}" stroke-width="{size_mm*0.022:.3f}"/>')
     body.append(arc_text(PF(700), "THE SPORTS PAGE", size_mm * 0.088,
-                         c, c, r_out - size_mm * 0.085, fill, tracking=0.10))
-    mark, _ = s_mark(c, c + size_mm * 0.055, size_mm * s_frac, fill,
+                         c + dx, c + dy, r_out - size_mm * 0.085, fill, tracking=0.10))
+    mark, _ = s_mark(c + dx, c + dy + size_mm * 0.055, size_mm * s_frac, fill,
                      chart=chart, knock=knock)
     body.append(mark)
-    return svg(size_mm, size_mm, "\n".join(body), bg)
+    return "\n".join(body)
+
+
+def badge(size_mm=100, chart=True, ring=True, fill=NAVY, bg=None, s_frac=0.70, ground=None):
+    knock = ground or bg or CREAM   # halo must equal the colour BEHIND the art
+    return svg(size_mm, size_mm,
+               badge_body(size_mm, chart, ring, fill, knock, s_frac), bg)
+
+
+def badge_with_url(size_mm=190, fill=NAVY, bg=None, ground=None, chart=True):
+    """Badge over the bare domain. Front-of-tee lockup.
+
+    No protocol and no www -- "thesportspage.net" is the whole address anyone
+    needs to type, and the extra characters only cost legibility on fabric.
+    """
+    knock = ground or bg or CREAM
+    us = size_mm * 0.062
+    gap = size_mm * 0.070
+    body = [badge_body(size_mm, chart, True, fill, knock)]
+    p, _ = text_paths(RM(600), "THESPORTSPAGE.NET", us, size_mm / 2,
+                      size_mm + gap + us * 0.78, fill, tracking=0.16, anchor="middle")
+    body.append(p)
+    return svg(round(size_mm, 2), round(size_mm + gap + us * 1.15, 2), "\n".join(body), bg)
 
 
 # ------------------------------------------------------- 2. stacked wordmark
@@ -307,6 +330,9 @@ def build():
     write("wordmark-horizontal.svg",      wordmark_horizontal(180))
 
     write("polo-01-badge.svg",            badge(82, chart=True))
+    write("tee-front-badge-url.svg",      badge_with_url(190))
+    write("tee-front-badge-url-reversed.svg",
+                                          badge_with_url(190, fill=CREAM, bg=None, ground=NAVY))
     write("polo-02-wordmark.svg",         wordmark_horizontal(82))
     write("polo-01-badge-reversed.svg",   badge(82, chart=True, fill=CREAM, bg=None, ground=NAVY))
     write("polo-02-wordmark-reversed.svg", wordmark_horizontal(82, fill=CREAM, bg=None))

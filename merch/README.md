@@ -24,12 +24,24 @@ Canvases are sized in real millimetres, so files drop into a print layout at 1:1
 
 ### T-shirt — everyone (screen print or DTG)
 
+**The house shirt is a two-position print:**
+
+| Position | File | Width | Colours |
+|---|---|---|---|
+| **Front** | `tee-front-badge-url.svg` | 190 mm | 1 (navy) |
+| **Back** | `tee-01-masthead.svg` | 280 mm | 1 (navy) |
+
+Front is the badge with the bare domain beneath it — no `http://`, no `www`.
+`thesportspage.net` is the whole address anyone needs to type, and the extra
+characters only cost legibility on fabric.
+
+Alternate front designs, single position:
+
 | File | Width | Colours | Notes |
 |---|---|---|---|
-| `tee-01-masthead.svg` | 280 mm | 1 (navy) | The house shirt. Cheapest to print |
 | `tee-02-denominator.svg` | 280 mm | 2 (navy + rust) | "ASK FOR THE DENOMINATOR" |
 | `tee-03-sixty-seven-five.svg` | 280 mm | 2 (navy + rust) | "67.5" — the founding stat |
-| `*-reversed.svg` | 280 mm | 1–2 on dark | For navy/charcoal garments |
+| `*-reversed.svg` | — | 1–2 on dark | For navy/charcoal garments |
 
 ### Master brand files
 
@@ -37,8 +49,10 @@ Canvases are sized in real millimetres, so files drop into a print layout at 1:1
 
 Use these for anything else — signage, stickers, hats. Scale freely; it's vector.
 
-`previews/` holds PNG renders of every file for quick reference. **Do not send
-the PNGs to the printer** — send the SVGs.
+`previews/` holds PNG renders of every file for quick reference, and
+`mockups/` holds flat-lay garment mockups drawn at true relative scale — useful
+for showing people what they are actually getting. **Do not send either to the
+printer** — send the SVGs.
 
 ---
 
@@ -77,18 +91,27 @@ to see the spool against the garment.
 - **Rough stitch estimate:** 7,000–9,000 stitches for the badge at 3.25".
   Useful for getting a quote; the digitiser will give you the real number.
 
+**The polo is EMBROIDERED, not printed.** Badge only, left chest, no domain and
+no back decoration. That restraint is the point — it should read as considered
+rather than promotional.
+
 **Recommended founder combination:** navy polo, cream badge
-(`polo-01-badge-reversed.svg`). It reads as considered rather than promotional,
-which is the point for a founder shirt.
+(`polo-01-badge-reversed.svg`).
 
 ---
 
 ## T-shirt specification
 
-- **Placement:** centred, top of art 75–90 mm below the collar seam.
-- **Size:** 280 mm (11") wide for adult M–XXL. Scale to 230 mm (9") for S and
-  youth. Never scale one film for all sizes; an 11" print on a small looks like
-  a billboard.
+Two positions, both screen printed.
+
+- **Front:** badge over the domain, **190 mm (7.5") wide**, centred, top of art
+  about 95 mm below the collar seam.
+- **Back:** the masthead lockup, **280 mm (11") wide**, centred, top of art about
+  80 mm below the collar seam.
+- Scale both to roughly 80% for S and youth. Never run one film across all
+  sizes; an 11" back print on a small reads as a billboard.
+- Two positions means **two set-ups**. Confirm the quote covers front *and* back
+  — shops often price a "one-colour tee" assuming a single position.
 - **Screen print:** `tee-01` is one colour and the cheapest thing here.
   `tee-02` and `tee-03` are two.
 - **Printing on dark garments costs more than you'd think.** Reversed art needs
