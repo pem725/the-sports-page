@@ -115,7 +115,7 @@ def write(name, content):
 
 # ---------------------------------------------------------------- the S mark
 def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.78,
-           weight=0.65, sag=0.22):
+           weight=0.65, sag=-0.20):
     """Playfair 'S' with a rising bar chart and arrow, drawn with a HALO.
 
     Three approaches were built before this one. Solid ink merges the chart into
@@ -141,46 +141,55 @@ def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.78,
     if not chart:
         return "\n".join(parts), w
 
-    # `weight` scales THICKNESS only. Pitch is fixed, so lightening the chart
-    # keeps its footprint instead of shrinking it into a corner -- the S stays
-    # the hero without the chart losing its shape.
+    # The line runs UPPER-LEFT to LOWER-RIGHT, parallel to the S's own diagonal
+    # spine, so it nests alongside the letterform instead of crossing it. Every
+    # version that rose left-to-right cut the spine at close to a right angle and
+    # buried the S, no matter how thin the stroke got.
+    #
+    # It therefore reads as a DESCENDING trend. That is deliberate and chosen
+    # with the tradeoff on the table -- the nesting geometry was worth more than
+    # the direction the arrow happens to point.
+    #
+    # `weight` scales THICKNESS only; bar spacing is fixed, so lightening the
+    # chart keeps its footprint instead of shrinking it into a corner.
     halo, ink = [], []
-    bw    = w * 0.115 * weight
-    pitch = w * 0.115 * 1.55
-    x0    = cx - w * 0.46
-    base  = cy + height * 0.40
-    hw    = max(bw * 0.34, height * 0.016)     # halo thickness
-    for i in range(4):
-        h = height * (0.13 + 0.085 * i)
-        x = x0 + i * pitch
-        halo.append(f'<rect x="{x-hw:.2f}" y="{base-h-hw:.2f}" width="{bw+2*hw:.2f}" '
-                    f'height="{h+2*hw:.2f}" fill="{knock}"/>')
-        ink.append(f'<rect x="{x:.2f}" y="{base-h:.2f}" width="{bw:.2f}" '
-                   f'height="{h:.2f}" fill="{fill}"/>')
-    # The S's spine runs upper-left to lower-right, so a STRAIGHT rising arrow
-    # crosses it almost perpendicular and fights the letterform. Bending the
-    # line concave-up (`sag`) makes it ride the lower bowl and sweep up the
-    # right side -- it now follows the S instead of slashing across it. It also
-    # reads as a growth curve rather than a straight line, which is truer to
-    # what this newsletter actually does.
-    ax0, ay0 = x0 - bw * 0.5, base - height * 0.06
-    ax1, ay1 = cx + w * 0.52 * arrow_reach, cy - height * 0.46 * arrow_reach
+    bw = w * 0.115 * weight
+    hw = max(bw * 0.34, height * 0.016)          # halo gap -- the tightest dimension
+    ax0, ay0 = cx - 0.50 * w, cy - 0.18 * height
+    ax1, ay1 = cx + 0.50 * w, cy + 0.36 * height
     mx, my = (ax0 + ax1) / 2, (ay0 + ay1) / 2
-    qx, qy = mx, my + height * sag                  # control point below the chord
-    sw  = height * 0.075 * weight
-    ang = math.atan2(ay1 - qy, ax1 - qx)            # end tangent of the quadratic
-    hl  = height * 0.150 * max(weight, 0.72)
-    p1 = (ax1 + math.cos(ang + 2.5) * hl, ay1 + math.sin(ang + 2.5) * hl)
-    p2 = (ax1 + math.cos(ang - 2.5) * hl, ay1 + math.sin(ang - 2.5) * hl)
+    qx, qy = mx, my + height * sag               # sag < 0 bows the line upward
+
+    def bez(t):
+        """Point on the quadratic. Bars are placed with this so their tops sit
+        ON the line -- otherwise the line floats above a separate set of bars and
+        the two read as unrelated objects rather than one chart."""
+        u = 1.0 - t
+        return (u*u*ax0 + 2*u*t*qx + t*t*ax1,
+                u*u*ay0 + 2*u*t*qy + t*t*ay1)
+
+    # Bars are SHORT stubs hanging off the line, not columns dropped to a
+    # baseline. Running them to a baseline made them full-height and they
+    # swallowed the S -- the opposite of the point.
+    bar_len = 0.18
+    n = 4
+    for i in range(n):
+        t = 0.17 + 0.68 * (i / (n - 1))          # spread along the line
+        px, py = bez(t)
+        bx = px - bw / 2
+        h  = height * bar_len                    # top meets the line exactly
+        halo.append(f'<rect x="{bx-hw:.2f}" y="{py-hw:.2f}" width="{bw+2*hw:.2f}" '
+                    f'height="{h+2*hw:.2f}" fill="{knock}"/>')
+        ink.append(f'<rect x="{bx:.2f}" y="{py:.2f}" width="{bw:.2f}" '
+                   f'height="{h:.2f}" fill="{fill}"/>')
+    # No arrowhead. The line is a trend line, not a pointer -- dropping the head
+    # also drops any claim about direction, and removes the fiddliest shape in
+    # the mark for the embroiderer.
+    sw = height * 0.075 * weight
     for col, extra, lst in ((knock, hw * 2, halo), (fill, 0, ink)):
         lst.append(f'<path d="M{ax0:.2f},{ay0:.2f} Q{qx:.2f},{qy:.2f} {ax1:.2f},{ay1:.2f}" '
-                   f'stroke="{col}" stroke-width="{sw+extra:.2f}" stroke-linecap="round" fill="none"/>')
-        g = extra * 0.9
-        q1 = (p1[0] + math.cos(ang + 2.5) * g, p1[1] + math.sin(ang + 2.5) * g)
-        q2 = (p2[0] + math.cos(ang - 2.5) * g, p2[1] + math.sin(ang - 2.5) * g)
-        t  = (ax1 + math.cos(ang) * g,          ay1 + math.sin(ang) * g)
-        lst.append(f'<path d="M{t[0]:.2f},{t[1]:.2f} L{q1[0]:.2f},{q1[1]:.2f} '
-                   f'L{q2[0]:.2f},{q2[1]:.2f} Z" fill="{col}"/>')
+                   f'stroke="{col}" stroke-width="{sw+extra:.2f}" stroke-linecap="round" '
+                   f'fill="none"/>')
     return "\n".join(parts + halo + ink), w
 
 

@@ -112,42 +112,49 @@ The `previews/*-reversed.png` files show them on navy so you can see the intent.
 
 ---
 
-## The chart, and why it curves
+## The chart, and how it sits on the S
 
-Earlier drafts shipped a plain S. Clean, but incomplete. Getting the chart back
-took five attempts, and each failure taught the next one something:
+Earlier drafts shipped a plain S. Clean, but incomplete. Getting the chart to
+coexist with the letter took several rounds, and the failures are the useful part:
 
 1. **Chart in solid ink over the S** — merges into the letter, reads as a blob.
 2. **Chart knocked out of the S** — reads as a *damaged letter*. Scanning the
    rendered glyph row by row showed why: the S's thickest horizontal band is only
-   about **32% of its width**. There is not enough ink to cut a chart into, at
-   any size. Making the S bigger does not help — the proportion is unchanged.
-3. **Chart in the open space, straight rising arrow, halo where it crosses** —
-   legible at last, but the arrow was too heavy and buried the S.
-4. **Lighter chart, bigger S** — better, but the arrow still fought the letter.
-5. **What shipped: the trend line curves.** The S's spine runs upper-left to
-   lower-right, so a *straight* rising arrow crosses it almost perpendicular and
-   competes with it no matter how thin you make it. Bending the line concave-up
-   makes it ride the S's lower bowl and sweep up its right side — it now
-   **follows** the letterform. It also reads as a growth curve instead of a
-   straight line, which is a truer picture of what this newsletter does.
+   about **32% of its width**. There is not enough ink to cut into, at any size.
+3. **Rising line across the S** — legible, but it fought the letterform. The
+   reason is geometric: **the S's spine runs upper-left to lower-right**, so any
+   line rising left-to-right crosses it at close to a right angle. Thinning the
+   stroke did not fix it, because the problem was the angle, not the weight.
+4. **What shipped: the line runs WITH the spine.** Upper-left to lower-right,
+   bowed slightly, so it nests alongside the S instead of cutting across it.
+
+Two consequences of that choice, both deliberate:
+
+- **The trend descends.** Running parallel to the spine means running downhill.
+  The nesting geometry was judged worth more than the direction.
+- **There is no arrowhead.** Without one the line makes no directional claim at
+  all — it is a trend line, not a pointer. It is also the fiddliest shape to
+  embroider, so losing it is a bonus.
+
+**The bars hang off the line**, their tops sitting exactly on the curve — they
+are positioned by evaluating the Bézier, not placed independently. An earlier
+version dropped them to a baseline instead, which made them full-height columns
+that swallowed the S. They are short stubs on purpose.
 
 Final proportions: **S at 0.70 of the badge** (up from 0.42), chart at **65%
-weight**, curve sag 0.22.
+weight**, sag −0.20, bar length 0.18.
 
 ### The halo
 
 Where the chart crosses the S it carries a halo in the colour *behind* the art.
 On open ground the halo is invisible. **It costs nothing** — the halo is the
-garment colour, so on a one-colour print or a single thread it is simply
-unprinted fabric. No extra screen, no extra thread.
+garment colour, so on a one-colour print or a single thread it is unprinted
+fabric. No extra screen, no extra thread.
 
 The halo must match **what is behind the art**, not the file's background
 setting. Reversed files have no background rect (the garment supplies it) but
 their ground is still navy, so their halo is navy. The build keeps these
-separate — `bg` paints a rectangle, `ground` says what the art sits on. Confuse
-them and the halo matches the ink, the chart vanishes, and you are back to a
-blobby S.
+separate — `bg` paints a rectangle, `ground` says what the art sits on.
 
 **If anyone recolours this for a new garment, the halo colour must change with
 the garment.** It is the one thing about this mark that is not automatic.
@@ -158,14 +165,13 @@ the garment.** It is the one thing about this mark that is not automatic.
 |---|---|
 | S cap height | 57.4 mm |
 | Bar width | 3.65 mm |
-| Curve stroke | 2.80 mm |
+| Line stroke | 2.80 mm |
 | **Halo gap** | **1.24 mm** ← the tightest dimension |
 
-The halo gap is the binding constraint. Practical satin-stitch minimum is about
-1.0–1.2 mm, so at 3.25" there is very little margin. **Do not go below 76 mm
-(3")** — the gap falls to 1.15 mm there and will start closing up. Tell the
-digitiser explicitly that the halo gap must stay open; it is what makes the
-chart legible against the S. Below 3", use `polo-02-wordmark.svg` instead.
+The halo gap is the binding constraint against a ~1.0–1.2 mm practical satin
+stitch. **Do not go below 76 mm (3")** — the gap falls to 1.15 mm there and
+starts closing. Tell the digitiser the gap must stay open; it is the only thing
+keeping the chart legible against the S. Below 3", use `polo-02-wordmark.svg`.
 
 ## What to send the printer
 
