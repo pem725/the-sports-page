@@ -115,7 +115,7 @@ def write(name, content):
 
 # ---------------------------------------------------------------- the S mark
 def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.78,
-           weight=0.65, sag=-0.20):
+           weight=0.65, sag=-0.10):
     """Playfair 'S' with a rising bar chart and arrow, drawn with a HALO.
 
     Three approaches were built before this one. Solid ink merges the chart into
@@ -155,33 +155,33 @@ def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.78,
     halo, ink = [], []
     bw = w * 0.115 * weight
     hw = max(bw * 0.34, height * 0.016)          # halo gap -- the tightest dimension
-    ax0, ay0 = cx - 0.50 * w, cy - 0.18 * height
-    ax1, ay1 = cx + 0.50 * w, cy + 0.36 * height
+    ax0, ay0 = cx - 0.50 * w, cy + 0.02 * height
+    ax1, ay1 = cx + 0.50 * w, cy + 0.34 * height
     mx, my = (ax0 + ax1) / 2, (ay0 + ay1) / 2
-    qx, qy = mx, my + height * sag               # sag < 0 bows the line upward
+    qx, qy = mx, my + height * sag
 
     def bez(t):
         """Point on the quadratic. Bars are placed with this so their tops sit
-        ON the line -- otherwise the line floats above a separate set of bars and
-        the two read as unrelated objects rather than one chart."""
+        exactly ON the line."""
         u = 1.0 - t
         return (u*u*ax0 + 2*u*t*qx + t*t*ax1,
                 u*u*ay0 + 2*u*t*qy + t*t*ay1)
 
-    # Bars are SHORT stubs hanging off the line, not columns dropped to a
-    # baseline. Running them to a baseline made them full-height and they
-    # swallowed the S -- the opposite of the point.
-    bar_len = 0.18
-    n = 4
+    # Bars RISE FROM A COMMON BASELINE with the line tracing their tops -- which
+    # is what a bar chart actually does. The previous version hung equal-length
+    # bars off the line instead, and a curved deck over evenly spaced piers reads
+    # unmistakably as a bridge.
+    base = cy + 0.46 * height
+    n = 5
     for i in range(n):
-        t = 0.17 + 0.68 * (i / (n - 1))          # spread along the line
+        t = 0.14 + 0.72 * (i / (n - 1))
         px, py = bez(t)
-        bx = px - bw / 2
-        h  = height * bar_len                    # top meets the line exactly
-        halo.append(f'<rect x="{bx-hw:.2f}" y="{py-hw:.2f}" width="{bw+2*hw:.2f}" '
+        h = max(base - py, height * 0.04)
+        halo.append(f'<rect x="{px-bw/2-hw:.2f}" y="{py-hw:.2f}" width="{bw+2*hw:.2f}" '
                     f'height="{h+2*hw:.2f}" fill="{knock}"/>')
-        ink.append(f'<rect x="{bx:.2f}" y="{py:.2f}" width="{bw:.2f}" '
+        ink.append(f'<rect x="{px-bw/2:.2f}" y="{py:.2f}" width="{bw:.2f}" '
                    f'height="{h:.2f}" fill="{fill}"/>')
+
     # No arrowhead. The line is a trend line, not a pointer -- dropping the head
     # also drops any claim about direction, and removes the fiddliest shape in
     # the mark for the embroiderer.

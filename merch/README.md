@@ -136,13 +136,17 @@ Two consequences of that choice, both deliberate:
   all — it is a trend line, not a pointer. It is also the fiddliest shape to
   embroider, so losing it is a bonus.
 
-**The bars hang off the line**, their tops sitting exactly on the curve — they
-are positioned by evaluating the Bézier, not placed independently. An earlier
-version dropped them to a baseline instead, which made them full-height columns
-that swallowed the S. They are short stubs on purpose.
+**The bars rise from a common baseline** and the line traces their tops — which
+is what a bar chart actually does. Two wrong turns got here: dropping them to a
+baseline under a full-diagonal line made them full-height columns that swallowed
+the S; hanging equal-length bars *off* the line fixed the height but produced a
+curved deck over evenly spaced piers, which reads unmistakably as a **bridge**.
+Bars from a baseline, with a shorter and flatter line, is the version that reads
+as a chart. Their tops are placed by evaluating the Bézier, not positioned
+independently, so they meet the line exactly.
 
 Final proportions: **S at 0.70 of the badge** (up from 0.42), chart at **65%
-weight**, sag −0.20, bar length 0.18.
+weight**, sag −0.10, 5 bars from a baseline at 0.46.
 
 ### The halo
 
