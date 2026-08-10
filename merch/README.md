@@ -112,10 +112,11 @@ The `previews/*-reversed.png` files show them on navy so you can see the intent.
 
 ---
 
-## The chart: a histogram under a normal curve
+## The mark: an S with a normal curve through it
 
-The mark is the S over a histogram and a bell curve. It took several rounds to
-get here and the failures are the useful record:
+The badge is the S with a bell curve sweeping through its lower half. Nothing
+else — no histogram bars, no axis. Getting here took several rounds and the
+failures are worth keeping:
 
 1. **Chart in solid ink over the S** — merges into the letter, reads as a blob.
 2. **Chart knocked out of the S** — reads as a *damaged letter*. Scanning the
@@ -125,26 +126,24 @@ get here and the failures are the useful record:
    thin the stroke got. The reason is geometric: **the S's spine runs upper-left
    to lower-right**, so any sloped line crosses it at close to a right angle. The
    problem was the angle, not the weight.
-4. **Line running parallel to the spine, bars hanging off it** — solved the
-   conflict but produced a curved deck over evenly spaced piers, which reads
-   unmistakably as a **bridge**.
-5. **What shipped: a normal curve.** It is horizontal and symmetric, so it sits
-   *beneath* the S rather than crossing the diagonal at all — the conflict simply
-   stops existing. And a histogram under a bell is the most recognisable
-   statistics image there is, which is what the newsletter is actually about.
-
-Nine bars, tops meeting the curve exactly (they are placed by evaluating the
-Gaussian, not positioned by hand), over a baseline axis.
+4. **Line parallel to the spine with bars hanging off it** — solved the conflict
+   but produced a curved deck over evenly spaced piers: a **bridge**.
+5. **Normal curve with a histogram beneath it** — read correctly at last, but the
+   bars crowded the letterform and were by far the hardest part to embroider.
+6. **What shipped: the curve alone.** A bell is horizontal and symmetric, so it
+   sits *across* the S rather than fighting the diagonal, and it says
+   "statistics" without any supporting furniture. Dropping the bars and the axis
+   removed the fiddliest elements in the mark and cost it nothing.
 
 Final proportions: **S at 0.70 of the badge** (up from 0.42), curve spanning
-1.20× the S width, peak 0.32, sigma 0.30, chart at 65% weight.
+1.35× the S width, peak 0.42, sigma 0.34, stroke at 65% weight.
 
 ### The halo
 
-Where the chart meets the S it carries a halo in the colour *behind* the art. On
-open ground the halo is invisible. **It costs nothing** — the halo is the garment
-colour, so on a one-colour print or a single thread it is unprinted fabric. No
-extra screen, no extra thread.
+Where the curve crosses the S it carries a halo in the colour *behind* the art.
+On open ground the halo is invisible. **It costs nothing** — the halo is the
+garment colour, so on a one-colour print or a single thread it is unprinted
+fabric. No extra screen, no extra thread.
 
 The halo must match **what is behind the art**, not the file's background
 setting. Reversed files have no background rect (the garment supplies it) but
@@ -159,17 +158,20 @@ the garment.** It is the one thing about this mark that is not automatic.
 | Element | Size |
 |---|---|
 | S cap height | 57.4 mm |
-| Curve span | 58.6 mm |
-| Bar width | 4.20 mm |
+| Curve span | 66.0 mm |
 | Curve stroke | 2.80 mm |
 | **Halo gap** | **1.54 mm** ← the tightest dimension |
-| Clearance to ring | 9.2 mm each side |
+| Clearance to ring | 5.6 mm each side |
 
 The halo gap is the binding constraint against a ~1.0–1.2 mm practical satin
-stitch — but at 1.54 mm the bell-curve mark has noticeably more margin than the
-diagonal version it replaced. **Do not go below 76 mm (3")**, where it falls to
-1.43 mm. Tell the digitiser the gap must stay open; it is what keeps the chart
-legible against the S. Below 3", use `polo-02-wordmark.svg`.
+stitch, and at 1.54 mm there is comfortable margin — noticeably more than the
+1.24 mm the earlier diagonal version had. **Do not go below 76 mm (3")**, where
+it falls to about 1.43 mm. Tell the digitiser the gap must stay open; it is what
+keeps the curve legible where it crosses the S. Below 3", use
+`polo-02-wordmark.svg`.
+
+The curve is now the only element besides the S and the ring, which makes this
+the simplest version of the mark to stitch by a wide margin.
 
 ## What to send the printer
 

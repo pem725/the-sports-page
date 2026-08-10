@@ -115,7 +115,7 @@ def write(name, content):
 
 # ---------------------------------------------------------------- the S mark
 def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, weight=0.65,
-           span=1.20, amp=0.32, ycen=0.40, bars=9, sigma=0.30):
+           span=1.35, amp=0.42, ycen=0.38, sigma=0.34):
     """Playfair 'S' over a histogram and a normal curve.
 
     How this arrived here, because the failures were instructive:
@@ -149,8 +149,8 @@ def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, weight=0.65,
 
     halo, ink = [], []
     W    = w * span                       # curve spans a little wider than the S
-    base = cy + ycen * height             # the x-axis
-    A    = height * amp                   # peak height above the axis
+    base = cy + ycen * height             # notional axis (not drawn)
+    A    = height * amp                   # peak height above it
     sw   = height * 0.075 * weight        # curve stroke
     hw   = max(sw * 0.55, height * 0.016) # halo gap -- the tightest dimension
 
@@ -158,27 +158,10 @@ def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, weight=0.65,
         """u runs -1..1 across the span; returns the y of the normal curve."""
         return base - A * math.exp(-(u * u) / (2 * sigma * sigma))
 
-    # histogram bars, tops meeting the curve exactly
-    bw = W / (bars * 1.55)
-    for i in range(bars):
-        u  = -1 + 2 * (i + 0.5) / bars
-        bx = cx + W * u / 2 - bw / 2
-        top = gauss(u)
-        h  = max(base - top, height * 0.03)
-        halo.append(f'<rect x="{bx-hw:.2f}" y="{top-hw:.2f}" width="{bw+2*hw:.2f}" '
-                    f'height="{h+2*hw:.2f}" fill="{knock}"/>')
-        ink.append(f'<rect x="{bx:.2f}" y="{top:.2f}" width="{bw:.2f}" '
-                   f'height="{h:.2f}" fill="{fill}"/>')
-
-    # the axis
-    ah = sw * 0.7
-    halo.append(f'<rect x="{cx-W/2-hw:.2f}" y="{base-hw:.2f}" width="{W+2*hw:.2f}" '
-                f'height="{ah+2*hw:.2f}" fill="{knock}"/>')
-    ink.append(f'<rect x="{cx-W/2:.2f}" y="{base:.2f}" width="{W:.2f}" '
-               f'height="{ah:.2f}" fill="{fill}"/>')
-
-    # the curve itself, sampled and drawn as one polyline
-    N = 64
+    # Curve only. Histogram bars and a drawn axis were both tried and dropped:
+    # they crowded the letterform and were the hardest part of the mark to
+    # embroider. A bare bell reads as "statistics" on its own.
+    N = 72
     pts = [(cx + W * (-1 + 2*i/N) / 2, gauss(-1 + 2*i/N)) for i in range(N + 1)]
     dpath = "M" + " L".join(f"{x:.2f},{y:.2f}" for x, y in pts)
     for col, extra, lst in ((knock, hw * 2, halo), (fill, 0, ink)):
