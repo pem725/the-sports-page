@@ -114,7 +114,8 @@ def write(name, content):
 
 
 # ---------------------------------------------------------------- the S mark
-def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.88, cscale=1.0):
+def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.78,
+           weight=0.65, sag=0.22):
     """Playfair 'S' with a rising bar chart and arrow, drawn with a HALO.
 
     Three approaches were built before this one. Solid ink merges the chart into
@@ -140,29 +141,40 @@ def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.88, csca
     if not chart:
         return "\n".join(parts), w
 
+    # `weight` scales THICKNESS only. Pitch is fixed, so lightening the chart
+    # keeps its footprint instead of shrinking it into a corner -- the S stays
+    # the hero without the chart losing its shape.
     halo, ink = [], []
-    bw   = w * 0.115 * cscale
-    gap  = bw * 0.55
-    x0   = cx - w * 0.46
-    base = cy + height * 0.40
-    hw   = max(bw * 0.34, height * 0.022)      # halo thickness
+    bw    = w * 0.115 * weight
+    pitch = w * 0.115 * 1.55
+    x0    = cx - w * 0.46
+    base  = cy + height * 0.40
+    hw    = max(bw * 0.34, height * 0.016)     # halo thickness
     for i in range(4):
-        h = height * (0.13 + 0.085 * i) * cscale
-        x = x0 + i * (bw + gap)
+        h = height * (0.13 + 0.085 * i)
+        x = x0 + i * pitch
         halo.append(f'<rect x="{x-hw:.2f}" y="{base-h-hw:.2f}" width="{bw+2*hw:.2f}" '
                     f'height="{h+2*hw:.2f}" fill="{knock}"/>')
         ink.append(f'<rect x="{x:.2f}" y="{base-h:.2f}" width="{bw:.2f}" '
                    f'height="{h:.2f}" fill="{fill}"/>')
+    # The S's spine runs upper-left to lower-right, so a STRAIGHT rising arrow
+    # crosses it almost perpendicular and fights the letterform. Bending the
+    # line concave-up (`sag`) makes it ride the lower bowl and sweep up the
+    # right side -- it now follows the S instead of slashing across it. It also
+    # reads as a growth curve rather than a straight line, which is truer to
+    # what this newsletter actually does.
     ax0, ay0 = x0 - bw * 0.5, base - height * 0.06
     ax1, ay1 = cx + w * 0.52 * arrow_reach, cy - height * 0.46 * arrow_reach
-    sw  = height * 0.075 * cscale
-    ang = math.atan2(ay1 - ay0, ax1 - ax0)
-    hl  = height * 0.150 * cscale
+    mx, my = (ax0 + ax1) / 2, (ay0 + ay1) / 2
+    qx, qy = mx, my + height * sag                  # control point below the chord
+    sw  = height * 0.075 * weight
+    ang = math.atan2(ay1 - qy, ax1 - qx)            # end tangent of the quadratic
+    hl  = height * 0.150 * max(weight, 0.72)
     p1 = (ax1 + math.cos(ang + 2.5) * hl, ay1 + math.sin(ang + 2.5) * hl)
     p2 = (ax1 + math.cos(ang - 2.5) * hl, ay1 + math.sin(ang - 2.5) * hl)
     for col, extra, lst in ((knock, hw * 2, halo), (fill, 0, ink)):
-        lst.append(f'<path d="M{ax0:.2f},{ay0:.2f} L{ax1:.2f},{ay1:.2f}" stroke="{col}" '
-                   f'stroke-width="{sw+extra:.2f}" stroke-linecap="round" fill="none"/>')
+        lst.append(f'<path d="M{ax0:.2f},{ay0:.2f} Q{qx:.2f},{qy:.2f} {ax1:.2f},{ay1:.2f}" '
+                   f'stroke="{col}" stroke-width="{sw+extra:.2f}" stroke-linecap="round" fill="none"/>')
         g = extra * 0.9
         q1 = (p1[0] + math.cos(ang + 2.5) * g, p1[1] + math.sin(ang + 2.5) * g)
         q2 = (p2[0] + math.cos(ang - 2.5) * g, p2[1] + math.sin(ang - 2.5) * g)
@@ -173,7 +185,7 @@ def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.88, csca
 
 
 # ---------------------------------------------------------------- 1. badge
-def badge(size_mm=100, chart=True, ring=True, fill=NAVY, bg=None, s_frac=0.60, ground=None):
+def badge(size_mm=100, chart=True, ring=True, fill=NAVY, bg=None, s_frac=0.70, ground=None):
     knock = ground or bg or CREAM   # halo must equal the colour BEHIND the art
     c = size_mm / 2
     r_out = size_mm * 0.47
@@ -297,24 +309,29 @@ def tee_founding(w_mm=280, fill=NAVY, accent=RUST, bg=None):
     return svg(round(w_mm, 2), round(h, 2), "\n".join(body), bg)
 
 
-print("Building merch art ->", OUT)
-# NOTE: the bar-chart-in-the-S detail from the web logo is deliberately omitted.
-# It was built and tested both as solid ink and as a knockout; at chest size and
-# in a single colour it reads as a damaged letter, not a chart. The plain S is
-# the apparel mark. See merch/README.md.
-write("logo-badge.svg",               badge(100, chart=True))
-write("wordmark-stacked.svg",         wordmark_stacked(180))
-write("wordmark-horizontal.svg",      wordmark_horizontal(180))
+def build():
+    print("Building merch art ->", OUT)
+    # NOTE: the bar-chart-in-the-S detail from the web logo is deliberately omitted.
+    # It was built and tested both as solid ink and as a knockout; at chest size and
+    # in a single colour it reads as a damaged letter, not a chart. The plain S is
+    # the apparel mark. See merch/README.md.
+    write("logo-badge.svg",               badge(100, chart=True))
+    write("wordmark-stacked.svg",         wordmark_stacked(180))
+    write("wordmark-horizontal.svg",      wordmark_horizontal(180))
 
-write("polo-01-badge.svg",            badge(82, chart=True))
-write("polo-02-wordmark.svg",         wordmark_horizontal(82))
-write("polo-01-badge-reversed.svg",   badge(82, chart=True, fill=CREAM, bg=None, ground=NAVY))
-write("polo-02-wordmark-reversed.svg", wordmark_horizontal(82, fill=CREAM, bg=None))
+    write("polo-01-badge.svg",            badge(82, chart=True))
+    write("polo-02-wordmark.svg",         wordmark_horizontal(82))
+    write("polo-01-badge-reversed.svg",   badge(82, chart=True, fill=CREAM, bg=None, ground=NAVY))
+    write("polo-02-wordmark-reversed.svg", wordmark_horizontal(82, fill=CREAM, bg=None))
 
-write("tee-01-masthead.svg",          tee_masthead(280))
-write("tee-02-denominator.svg",       tee_denominator(280))
-write("tee-03-sixty-seven-five.svg",  tee_founding(280))
-write("tee-01-masthead-reversed.svg", tee_masthead(280, fill=CREAM, bg=None, ground=NAVY))
-write("tee-02-denominator-reversed.svg", tee_denominator(280, fill=CREAM, accent="#e8703f", bg=None))
-write("tee-03-sixty-seven-five-reversed.svg", tee_founding(280, fill=CREAM, accent="#e8703f", bg=None))
-print("done")
+    write("tee-01-masthead.svg",          tee_masthead(280))
+    write("tee-02-denominator.svg",       tee_denominator(280))
+    write("tee-03-sixty-seven-five.svg",  tee_founding(280))
+    write("tee-01-masthead-reversed.svg", tee_masthead(280, fill=CREAM, bg=None, ground=NAVY))
+    write("tee-02-denominator-reversed.svg", tee_denominator(280, fill=CREAM, accent="#e8703f", bg=None))
+    write("tee-03-sixty-seven-five-reversed.svg", tee_founding(280, fill=CREAM, accent="#e8703f", bg=None))
+    print("done")
+
+
+if __name__ == "__main__":
+    build()
