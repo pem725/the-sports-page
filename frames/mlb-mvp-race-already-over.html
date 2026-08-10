@@ -1,0 +1,205 @@
+<!-- FRAME-META
+trigger:  a September "MVP race is heating up / narrowing" story appears
+window:   2026-09-01 .. 2026-10-05
+sport:    MLB
+slots:    LEAGUE - "American League" or "National League"
+          LEADER - the player leading that league in OPS on 31 August
+          RIVAL  - the challenger the coverage is pushing
+          WHEN   - date in prose (e.g. September 18)
+evidence: BAKED IN, computed 2026-08-10 from the MLB Stats API over 2011-2025
+          (2020 excluded), 28 league-seasons. The 31 August OPS leader went on
+          to win MVP 15 times (54%). The eventual MVP was already in the 31
+          August top three 24 times (86%). Only four winners came from outside
+          it, and TWO of those were pitchers an OPS leaderboard cannot see by
+          construction -- among position-player MVPs the top-three rate is
+          24/26 = 92%. Dataset: data/mlb-mvp-race-decided-by-august.json
+recheck:  add the new season and re-run before reusing in a later year.
+limits:   OPS is a proxy for "who is in the conversation", not the ballot. It
+          cannot rank pitchers at all, which the piece states plainly.
+-->
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Base Rates, Awards, Small Sample
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Vol. I, No. __ — {{WHEN}}, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+</style><meta property="og:title" content="The MVP Race Is Not Heating Up. It Was Over on Labour Day.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta name="twitter:card" content="summary_large_image">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Major League Baseball &middot; The Award Season, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Vol. I, No. __</span><span>{{WHEN}}, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">The MVP Race Is Not Heating Up. <em>It Was Over on Labour Day.</em></h1>
+
+  <div class="deck">
+    You are about to be told that {{LEADER}} and {{RIVAL}} are locked in a September duel for the {{LEAGUE}} MVP. Across fifteen seasons the player leading his league in OPS on 31 August went on to win the award 54% of the time, and the eventual winner was already in that top three 86% of the time. September does not decide it. September watches it.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; 28 league-seasons, 2011&ndash;2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v good">54%</div><div class="l">Aug 31 leader wins outright</div></div>
+    <div class="sc"><div class="v now">86%</div><div class="l">Winner already in the top 3</div></div>
+    <div class="sc"><div class="v bad">4</div><div class="l">Winners from outside it, of 28</div></div>
+  </div>
+
+  <p>{{LEADER}} leads the {{LEAGUE}} in OPS. {{RIVAL}} is close enough that somebody has written the word &ldquo;race.&rdquo; The next month will be covered as though the thing is genuinely open.</p>
+
+  <p>It is mostly not.</p>
+
+  <h2 class="sh">What September Actually Changes</h2>
+
+  <p>Take every league-season from 2011 through 2025, setting aside the shortened 2020 &mdash; 28 league-seasons in total. In each one, find the player leading his league in OPS on <strong>31 August</strong>, then see who actually won the MVP.</p>
+
+  <p>The 31 August leader won it <strong>15 times</strong>. That is 54% &mdash; a coin flip that lands on the leader slightly more often than not.</p>
+
+  <p>But the sharper number is the next one. The eventual MVP was <strong>already inside the 31 August top three in 24 of 28 seasons &mdash; 86%.</strong> Whatever September is doing, it is almost never introducing a new name.</p>
+
+  <figure class="chart">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Twenty-eight squares, one per league-season from 2011 to 2025. Fifteen green squares are seasons where the August 31 OPS leader won the MVP. Nine blue squares are seasons where the winner was in the August 31 top three but not leading. Four red squares are seasons where the winner came from outside the top three entirely.">
+      <text x="238" y="46" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#1a1208">28 LEAGUE-SEASONS, 2011&ndash;2025</text>
+      <g>
+      <rect x="238" y="84" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="282" y="84" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="326" y="84" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="370" y="84" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="414" y="84" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="458" y="84" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="502" y="84" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="238" y="128" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="282" y="128" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="326" y="128" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="370" y="128" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="414" y="128" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="458" y="128" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="502" y="128" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="238" y="172" width="36" height="36" rx="3" fill="#2a6e3f"/>
+      <rect x="282" y="172" width="36" height="36" rx="3" fill="#2c4a6e"/>
+      <rect x="326" y="172" width="36" height="36" rx="3" fill="#2c4a6e"/>
+      <rect x="370" y="172" width="36" height="36" rx="3" fill="#2c4a6e"/>
+      <rect x="414" y="172" width="36" height="36" rx="3" fill="#2c4a6e"/>
+      <rect x="458" y="172" width="36" height="36" rx="3" fill="#2c4a6e"/>
+      <rect x="502" y="172" width="36" height="36" rx="3" fill="#2c4a6e"/>
+      <rect x="238" y="216" width="36" height="36" rx="3" fill="#2c4a6e"/>
+      <rect x="282" y="216" width="36" height="36" rx="3" fill="#2c4a6e"/>
+      <rect x="326" y="216" width="36" height="36" rx="3" fill="#2c4a6e"/>
+      <rect x="370" y="216" width="36" height="36" rx="3" fill="#b83a1e"/>
+      <rect x="414" y="216" width="36" height="36" rx="3" fill="#b83a1e"/>
+      <rect x="458" y="216" width="36" height="36" rx="3" fill="#b83a1e"/>
+      <rect x="502" y="216" width="36" height="36" rx="3" fill="#b83a1e"/>
+      </g>
+      <rect x="238" y="228" width="16" height="16" rx="2" fill="#2a6e3f"></rect>
+      <text x="262" y="241" font-family="'Roboto Mono',monospace" font-size="11.5" fill="#1a1208">Aug 31 leader won it &mdash; 15</text>
+      <rect x="238" y="252" width="16" height="16" rx="2" fill="#2c4a6e"></rect>
+      <text x="262" y="265" font-family="'Roboto Mono',monospace" font-size="11.5" fill="#1a1208">Winner was in the Aug 31 top three &mdash; 9</text>
+      <rect x="238" y="276" width="16" height="16" rx="2" fill="#b83a1e"></rect>
+      <text x="262" y="289" font-family="'Roboto Mono',monospace" font-size="11.5" fill="#1a1208">Winner came from outside it &mdash; 4</text>
+    </svg>
+    <figcaption>One square per league-season. Only the four red squares represent a September that genuinely changed the answer &mdash; and two of those four were won by pitchers, whom an OPS leaderboard cannot rank at all.</figcaption>
+  </figure>
+
+  <div class="pull">
+    <p>Twenty-four times out of twenty-eight, the man who won the award was already standing in the top three when the calendar turned to September.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">The Four That Got Away &mdash; and Why Two Do Not Count</h2>
+
+  <p>Four winners came from outside the 31 August top three: Justin Verlander in 2011, Andrew McCutchen in 2013, Clayton Kershaw in 2014, and Christian Yelich in 2018.</p>
+
+  <p>Two of those are Verlander and Kershaw, and they expose a limit of the method rather than a September surge. <strong>They are pitchers.</strong> An OPS leaderboard cannot rank a pitcher at all, so those two were never going to appear in the top three no matter how the season went. That is the measure failing, not the race turning.</p>
+
+  <p>Strip out the seasons a pitcher won, and among position-player MVPs the winner came from the 31 August top three <strong>24 times out of 26 &mdash; 92%.</strong></p>
+
+  <h2 class="sh">What To Take Home</h2>
+
+  <p>September coverage has a job to do, and the job is to make a month of baseball feel consequential. So the language reaches for motion: the race <em>tightens</em>, a challenger <em>surges</em>, somebody <em>makes his case</em>. The words describe change because change is what holds attention.</p>
+
+  <p>The underlying quantity mostly is not changing. By 31 August a hitter has roughly 550 plate appearances behind him; September adds about a hundred more. A fifth of the evidence arriving last cannot often overturn the four-fifths that came first, and it does not.</p>
+
+  <p>That is the general shape worth carrying: <strong>when most of the data is already in, late data has to be extraordinary to matter</strong> &mdash; and it usually is not. It only feels decisive because it arrives while you are watching. Whenever someone tells you a contest is tightening, the useful question is not who is gaining. It is <em>how much is left to count.</em></p>
+
+  <div class="methods">
+    <b>How this was computed</b>
+    Leaders and award winners come from the MLB Stats API. For each league-season from 2011 through 2025, excluding the shortened 2020, the OPS leaders were pulled for games from opening day through 31 August and compared against the actual MVP. OPS is a stand-in for &ldquo;who is in the conversation&rdquo; rather than a model of the ballot &mdash; voters weigh defence, position and team success, and no single rate statistic reproduces that. Its clearest limitation is stated in the piece: it cannot rank pitchers, which is why two of the four outside-the-top-three winners are pitchers. Full dataset at <code>data/mlb-mvp-race-decided-by-august.json</code>.
+  </div>
+
+  <div class="footer"><span>The Sports Page</span><span>Vol. I, No. __ &middot; {{WHEN}}, 2026</span><span>One Question Per Issue, Answered With Numbers.</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>
+</body>
+</html>
