@@ -114,20 +114,26 @@ def write(name, content):
 
 
 # ---------------------------------------------------------------- the S mark
-def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.78,
-           weight=0.65, sag=-0.10):
-    """Playfair 'S' with a rising bar chart and arrow, drawn with a HALO.
+def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, weight=0.65,
+           span=1.20, amp=0.32, ycen=0.40, bars=9, sigma=0.30):
+    """Playfair 'S' over a histogram and a normal curve.
 
-    Three approaches were built before this one. Solid ink merges the chart into
-    the letter and reads as a blob. Knocking the chart out of the S reads as a
-    damaged letter -- measuring the glyph showed why: the S's thickest horizontal
-    band is only ~32% of its width, so there is not enough ink to cut into.
+    How this arrived here, because the failures were instructive:
 
-    What works is what the original masthead does: put the chart in the OPEN
-    space and let the arrow cross the letterform, with a halo in the garment
-    colour wherever they overlap. On open ground the halo is invisible; over the
-    S it is a clean separation. Still ONE ink colour -- the halo is unprinted
-    fabric, so it costs no extra screen and no extra thread.
+    * Chart in solid ink over the S merged into the letter and read as a blob.
+    * Knocking the chart out of the S read as a *damaged* letter. Scanning the
+      rendered glyph showed why -- the S's thickest horizontal band is only about
+      32% of its width, so there is not enough ink to cut into.
+    * A diagonal trend line fought the letterform no matter how thin: the S's
+      spine runs upper-left to lower-right, so any sloped line crosses it at
+      close to a right angle. The problem was the ANGLE, not the weight.
+    * Equal-length bars hung off a curved line produced a deck over evenly
+      spaced piers -- a bridge.
+
+    A normal curve solves all of it at once. It is horizontal and symmetric, so
+    it sits *beneath* the S instead of cutting across the diagonal, and a
+    histogram under a bell is the most recognisable statistics image there is --
+    which is the whole point of the newsletter.
     """
     f = PF(900)
     upem = f["head"].unitsPerEm
@@ -141,55 +147,44 @@ def s_mark(cx, cy, height, fill, chart=True, knock=CREAM, arrow_reach=0.78,
     if not chart:
         return "\n".join(parts), w
 
-    # The line runs UPPER-LEFT to LOWER-RIGHT, parallel to the S's own diagonal
-    # spine, so it nests alongside the letterform instead of crossing it. Every
-    # version that rose left-to-right cut the spine at close to a right angle and
-    # buried the S, no matter how thin the stroke got.
-    #
-    # It therefore reads as a DESCENDING trend. That is deliberate and chosen
-    # with the tradeoff on the table -- the nesting geometry was worth more than
-    # the direction the arrow happens to point.
-    #
-    # `weight` scales THICKNESS only; bar spacing is fixed, so lightening the
-    # chart keeps its footprint instead of shrinking it into a corner.
     halo, ink = [], []
-    bw = w * 0.115 * weight
-    hw = max(bw * 0.34, height * 0.016)          # halo gap -- the tightest dimension
-    ax0, ay0 = cx - 0.50 * w, cy + 0.02 * height
-    ax1, ay1 = cx + 0.50 * w, cy + 0.34 * height
-    mx, my = (ax0 + ax1) / 2, (ay0 + ay1) / 2
-    qx, qy = mx, my + height * sag
+    W    = w * span                       # curve spans a little wider than the S
+    base = cy + ycen * height             # the x-axis
+    A    = height * amp                   # peak height above the axis
+    sw   = height * 0.075 * weight        # curve stroke
+    hw   = max(sw * 0.55, height * 0.016) # halo gap -- the tightest dimension
 
-    def bez(t):
-        """Point on the quadratic. Bars are placed with this so their tops sit
-        exactly ON the line."""
-        u = 1.0 - t
-        return (u*u*ax0 + 2*u*t*qx + t*t*ax1,
-                u*u*ay0 + 2*u*t*qy + t*t*ay1)
+    def gauss(u):
+        """u runs -1..1 across the span; returns the y of the normal curve."""
+        return base - A * math.exp(-(u * u) / (2 * sigma * sigma))
 
-    # Bars RISE FROM A COMMON BASELINE with the line tracing their tops -- which
-    # is what a bar chart actually does. The previous version hung equal-length
-    # bars off the line instead, and a curved deck over evenly spaced piers reads
-    # unmistakably as a bridge.
-    base = cy + 0.46 * height
-    n = 5
-    for i in range(n):
-        t = 0.14 + 0.72 * (i / (n - 1))
-        px, py = bez(t)
-        h = max(base - py, height * 0.04)
-        halo.append(f'<rect x="{px-bw/2-hw:.2f}" y="{py-hw:.2f}" width="{bw+2*hw:.2f}" '
+    # histogram bars, tops meeting the curve exactly
+    bw = W / (bars * 1.55)
+    for i in range(bars):
+        u  = -1 + 2 * (i + 0.5) / bars
+        bx = cx + W * u / 2 - bw / 2
+        top = gauss(u)
+        h  = max(base - top, height * 0.03)
+        halo.append(f'<rect x="{bx-hw:.2f}" y="{top-hw:.2f}" width="{bw+2*hw:.2f}" '
                     f'height="{h+2*hw:.2f}" fill="{knock}"/>')
-        ink.append(f'<rect x="{px-bw/2:.2f}" y="{py:.2f}" width="{bw:.2f}" '
+        ink.append(f'<rect x="{bx:.2f}" y="{top:.2f}" width="{bw:.2f}" '
                    f'height="{h:.2f}" fill="{fill}"/>')
 
-    # No arrowhead. The line is a trend line, not a pointer -- dropping the head
-    # also drops any claim about direction, and removes the fiddliest shape in
-    # the mark for the embroiderer.
-    sw = height * 0.075 * weight
+    # the axis
+    ah = sw * 0.7
+    halo.append(f'<rect x="{cx-W/2-hw:.2f}" y="{base-hw:.2f}" width="{W+2*hw:.2f}" '
+                f'height="{ah+2*hw:.2f}" fill="{knock}"/>')
+    ink.append(f'<rect x="{cx-W/2:.2f}" y="{base:.2f}" width="{W:.2f}" '
+               f'height="{ah:.2f}" fill="{fill}"/>')
+
+    # the curve itself, sampled and drawn as one polyline
+    N = 64
+    pts = [(cx + W * (-1 + 2*i/N) / 2, gauss(-1 + 2*i/N)) for i in range(N + 1)]
+    dpath = "M" + " L".join(f"{x:.2f},{y:.2f}" for x, y in pts)
     for col, extra, lst in ((knock, hw * 2, halo), (fill, 0, ink)):
-        lst.append(f'<path d="M{ax0:.2f},{ay0:.2f} Q{qx:.2f},{qy:.2f} {ax1:.2f},{ay1:.2f}" '
-                   f'stroke="{col}" stroke-width="{sw+extra:.2f}" stroke-linecap="round" '
-                   f'fill="none"/>')
+        lst.append(f'<path d="{dpath}" stroke="{col}" stroke-width="{sw+extra:.2f}" '
+                   f'stroke-linecap="round" stroke-linejoin="round" fill="none"/>')
+
     return "\n".join(parts + halo + ink), w
 
 
