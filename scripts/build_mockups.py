@@ -1,0 +1,68 @@
+import os, sys, io
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+os.environ.setdefault("MERCH_FONT_DIR","/tmp/claude-1000/-home-pem725--claude-skills-sports-stat-storyteller/0a293660-1a5f-43ca-9112-8085fb4d42b2/scratchpad")
+import cairosvg
+from PIL import Image, ImageDraw
+import build_merch as B
+
+# Size-L flat-lay measurements in mm. Chest 560 across the body, sleeves take
+# the total to 780, body 720 long. Everything is drawn to this scale so the
+# artwork shows at TRUE relative size.
+BODY_W, TOTAL_W, BODY_L = 560, 780, 720
+PAD = 70
+W = TOTAL_W + PAD*2
+H = BODY_L + PAD*2 + 70
+BX = PAD + (TOTAL_W-BODY_W)/2          # body left edge
+TOP = PAD + 60
+
+def garment(kind, fabric, stitch):
+    L, R = BX, BX+BODY_W
+    nw = 96 if kind=="tee" else 74      # half neck width
+    cx = BX + BODY_W/2
+    sl_out, sl_dn, sl_in = PAD, 210, 165
+    neck = (f'M{cx-nw},{TOP} Q{cx},{TOP+74} {cx+nw},{TOP}' if kind=="tee"
+            else f'M{cx-nw},{TOP} L{cx-nw},{TOP+22} L{cx+nw},{TOP+22} L{cx+nw},{TOP}')
+    body = (f'M{cx-nw},{TOP} '
+            f'L{L+40},{TOP+20} '
+            f'L{sl_out},{TOP+96} L{sl_out+58},{TOP+sl_dn} L{L+34},{TOP+sl_in} '
+            f'L{L+18},{TOP+BODY_L} L{R-18},{TOP+BODY_L} '
+            f'L{R-34},{TOP+sl_in} L{PAD+TOTAL_W-58},{TOP+sl_dn} L{PAD+TOTAL_W},{TOP+96} '
+            f'L{R-40},{TOP+20} L{cx+nw},{TOP} Z')
+    out = [f'<path d="{body}" fill="{fabric}" stroke="{stitch}" stroke-width="2.5" stroke-linejoin="round"/>',
+           f'<path d="{neck}" fill="none" stroke="{stitch}" stroke-width="7"/>']
+    if kind=="polo":
+        out.append(f'<path d="M{cx-nw},{TOP+22} L{cx-14},{TOP+150} L{cx},{TOP+118} '
+                   f'L{cx+14},{TOP+150} L{cx+nw},{TOP+22}" fill="{fabric}" stroke="{stitch}" '
+                   f'stroke-width="2.5" stroke-linejoin="round"/>')
+        out.append(f'<line x1="{cx}" y1="{TOP+118}" x2="{cx}" y2="{TOP+232}" stroke="{stitch}" stroke-width="2.5"/>')
+        for yy in (150, 200):
+            out.append(f'<circle cx="{cx}" cy="{TOP+yy}" r="5.5" fill="none" stroke="{stitch}" stroke-width="2"/>')
+    # sleeve hems
+    out.append(f'<line x1="{sl_out}" y1="{TOP+96}" x2="{sl_out+58}" y2="{TOP+sl_dn}" stroke="{stitch}" stroke-width="5"/>')
+    out.append(f'<line x1="{PAD+TOTAL_W}" y1="{TOP+96}" x2="{PAD+TOTAL_W-58}" y2="{TOP+sl_dn}" stroke="{stitch}" stroke-width="5"/>')
+    out.append(f'<line x1="{L+18}" y1="{TOP+BODY_L-26}" x2="{R-18}" y2="{TOP+BODY_L-26}" stroke="{stitch}" stroke-width="2" opacity=".55"/>')
+    return "\n".join(out)
+
+def rsvg(t, px): return Image.open(io.BytesIO(cairosvg.svg2png(bytestring=t.encode(), output_width=px))).convert("RGBA")
+
+def build(kind, fabric, stitch, art_path, art_mm, xy, label, out, px=880):
+    doc=(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">'
+         f'<rect width="{W}" height="{H}" fill="#ddd6c6"/>{garment(kind,fabric,stitch)}</svg>')
+    base=rsvg(doc,px); sc=px/W
+    art=rsvg(open(art_path).read(), max(int(art_mm*sc),1))
+    base.alpha_composite(art,(int(xy[0]*sc), int(xy[1]*sc)))
+    ImageDraw.Draw(base).text((14,12), label, fill=(70,60,46))
+    base.save(out); print("  ", os.path.basename(out))
+
+M=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"merch")
+o=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"merch","mockups")
+os.makedirs(o, exist_ok=True)
+cx=BX+BODY_W/2
+build("polo","#16224a","#33436f",f"{M}/polo-01-badge-reversed.svg",82,(BX+112,TOP+215),
+      "POLO navy · badge 82mm (3.25in) left chest", f"{o}/polo-navy.png")
+build("polo","#f2ece0","#c3b9a6",f"{M}/polo-01-badge.svg",82,(BX+112,TOP+215),
+      "POLO cream · badge 82mm (3.25in) left chest", f"{o}/polo-cream.png")
+build("tee","#f2ece0","#c3b9a6",f"{M}/tee-01-masthead.svg",280,(cx-140,TOP+185),
+      "TEE cream · masthead 280mm (11in)", f"{o}/tee-cream-masthead.png")
+build("tee","#16224a","#33436f",f"{M}/tee-03-sixty-seven-five-reversed.svg",280,(cx-140,TOP+185),
+      "TEE navy · 67.5 reversed, 280mm (11in)", f"{o}/tee-navy-675.png")
