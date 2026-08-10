@@ -37,6 +37,44 @@ Coaches Poll has them 5th — a gap that is itself an issue.)
 `/lines?year=2026&week=1` also returns 99 rows, so the "blend in Vegas as a second prior"
 idea from refinement #5 is now actionable too.
 
+#### First 2026 run (FPI prior, 4,000 iterations)
+
+| Team | Wins (80%) | Playoff | Title |
+|---|---|---|---|
+| Ohio State | ~10 (8–12) | 89% | **21%** |
+| Texas | ~10 (8–12) | 80% | 16% |
+| **Notre Dame** | **~11 (10–12)** | **95%** | 11% |
+| Oregon | ~9 (8–11) | 77% | 11% |
+| Georgia | ~9 (7–11) | 70% | 10% |
+
+Note the Notre Dame shape, because it is the issue: **the most wins and the highest Playoff
+probability in the country, but only the third-best title odds.** An independent schedule
+with no conference title game to lose is the easiest path *into* the bracket; it does
+nothing once you are in it, where only strength matters. Wins and quality are different
+quantities and the bracket only prices one of them.
+
+#### CAUTION — do not publish the coin-flip number as a year-over-year change
+
+The JND pass returns **56% coin flips for 2026** against ~42% in 2024 and 2025. That looks
+like a parity explosion. Most of it is not.
+
+Same 2025 schedule, both priors:
+
+| | coin flips |
+|---|---|
+| 2025, SP+ | 42% |
+| 2025, FPI rescaled | **48%** |
+| 2026, FPI rescaled | **56%** |
+
+FPI is more compressed through the middle of the distribution than SP+ even after the
+standard deviations are matched, and that alone moves the figure ~6 points. So of the
+14-point jump, roughly **6 points is the instrument and 8 points is the season**.
+
+The honest published comparison is therefore **FPI-to-FPI: 48% → 56%.** Reporting
+"56%, up from 42%" would swap the measuring device and the subject at the same time and
+credit the world with the difference — which is precisely the confound this newsletter
+exists to name. If SP+ posts before the run, use it and the problem disappears.
+
 **Massey Ratings is not an option.** It was suggested as another source, but
 `masseyratings.com/robots.txt` carries `User-agent: ClaudeBot / Disallow: /`, plus
 `Content-Signal: ai-train=no, use=reference` and an express Article 4 reservation of

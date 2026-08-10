@@ -51,16 +51,63 @@ def fetch(path):
     return json.load(urllib.request.urlopen(req, timeout=90))
 
 
+PRIOR_LABEL = "SP+"      # set by load(); reported so the issue can disclose it
+
+
+def _sd(vals):
+    m = sum(vals) / len(vals)
+    return (sum((v - m) ** 2 for v in vals) / len(vals)) ** 0.5
+
+
 def load(year):
+    """Load the team-strength prior, preferring SP+ and falling back to FPI.
+
+    SP+ is what TAU/SIGMA were tuned against, so it is always tried first. But
+    SP+ posts late (2026 was still empty on Aug 9 while FPI already had all 138
+    teams), and a scheduled routine that dies on a missing prior is worse than
+    one that substitutes a comparable rating and says so.
+
+    FPI measures the same quantity as SP+ -- points above an average team -- but
+    on a slightly tighter spread. It is rescaled to the most recent season's SP+
+    standard deviation so the engine's tuned constants keep their meaning
+    instead of silently changing it.
+    """
+    global PRIOR_LABEL
     ratings = {x["team"]: x["rating"] for x in fetch(f"/ratings/sp?year={year}")
                if isinstance(x.get("rating"), (int, float)) and x.get("team")}
+    PRIOR_LABEL = "SP+"
+
+    if not ratings:
+        fpi = {x["team"]: float(x["fpi"]) for x in fetch(f"/ratings/fpi?year={year}")
+               if x.get("fpi") is not None and x.get("team")}
+        if not fpi:
+            sys.exit(f"Neither SP+ nor FPI is posted for {year}. No prior available.")
+        # calibrate against the newest season that actually has SP+
+        target = None
+        for back in range(1, 4):
+            prev = [x["rating"] for x in fetch(f"/ratings/sp?year={year-back}")
+                    if isinstance(x.get("rating"), (int, float))]
+            if len(prev) > 50:
+                target = _sd(prev)
+                ref_year = year - back
+                break
+        vals = list(fpi.values())
+        mean, sd = sum(vals) / len(vals), _sd(vals)
+        if target and sd > 0:
+            k = target / sd
+            ratings = {t: (v - mean) * k for t, v in fpi.items()}
+            PRIOR_LABEL = f"ESPN FPI, rescaled x{k:.2f} to {ref_year} SP+ spread"
+        else:
+            ratings = {t: v - mean for t, v in fpi.items()}
+            PRIOR_LABEL = "ESPN FPI (uncalibrated -- no SP+ season found to scale against)"
+        print(f"  NOTE: SP+ not posted for {year}; using {PRIOR_LABEL}.", file=sys.stderr)
+
     conf = {t.get("school"): t.get("conference") for t in fetch(f"/teams/fbs?year={year}")}
     games = fetch(f"/games?year={year}&seasonType=regular")
-    if not ratings:
-        sys.exit(f"No SP+ ratings posted for {year} yet -- the prior is not available. "
-                 f"Expected before late August. Try an earlier year to test the engine.")
     rated = [(g["homeTeam"], g["awayTeam"], bool(g.get("neutralSite")))
              for g in games if g.get("homeTeam") in ratings and g.get("awayTeam") in ratings]
+    if not rated:
+        sys.exit(f"No {year} games matched the rating table -- schedule may not be posted yet.")
     return ratings, conf, rated
 
 
@@ -168,7 +215,8 @@ def report_bayes(r):
     exp = {t: sum(v) / N for t, v in r["win_samples"].items()}
     order = sorted(exp, key=lambda t: (-r["champ"][t], -r["playoff"][t], -exp[t]))
     print(f"\n{'='*72}\n  CFB PRE-SEASON SIMULATION (Bayesian)  ·  {y}  ·  The Sports Page engine\n{'='*72}")
-    print(f"  Prior: SP+ ({len(ratings)} FBS teams), true strength ~ Normal(SP+, tau={TAU:.0f}).")
+    print(f"  Prior: {PRIOR_LABEL} ({len(ratings)} FBS teams), "
+          f"true strength ~ Normal(prior, tau={TAU:.0f}).")
     print(f"  {N:,} season simulations · game noise SD ~ {SIGMA:.0f} pts · HFA {HFA:.1f} pts.")
     print(f"  Reported as ranges, not point estimates -- 2 significant figures.\n")
     print(f"  {'TEAM':<17}{'WINS (80% range)':<20}{'PLAYOFF':>9}{'TITLE':>8}")
