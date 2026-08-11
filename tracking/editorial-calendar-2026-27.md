@@ -142,3 +142,50 @@ before it anchors an issue.
 
 *Rebuild the dataset: `data/headline-cycle-2025-26.csv` is generated from the source xlsx;
 the classifier lives in the session notes. Source files kept at repo root.*
+
+---
+
+## 6. 2027 fixed dates — now sourced, not inferred
+
+Sean contributed `2027-us-sports-calendar.xlsx` on 11 August (37 dated tentpoles).
+Preserved at `corpus/source-materials/2027-sports-calendar.md` and
+`data/sports-calendar-2027.csv`. It replaces the guesswork in section 4 for
+everything it covers, and it independently confirms **Super Bowl LXI, Sunday
+14 February 2027, SoFi Stadium** ✓.
+
+### Two entries in it are much bigger than one line of a spreadsheet
+
+**1. March Madness expands to 76 teams in 2027 — verified.**
+The field has been 68 since 2011. From 2027 it goes to 76: eight more at-large
+teams, a rebranded 12-game **"Opening Round"** replacing the First Four, after
+which 64 remain so the familiar first-round rhythm survives.
+
+*Why it is an issue:* **every historical seed-versus-seed win rate was measured
+on a field that will no longer exist.** Cinderella base rates, upset frequencies,
+the value of a 12-seed — all of it is calibrated on 68 teams, most of it on 64.
+That is the same error the newsletter has now documented twice: a base rate that
+outlives the structure it was measured on. And it lands in **March, the month we
+currently forfeit entirely** despite college basketball not being banned.
+
+**2. The Preakness moves three weeks after the Derby, and runs on a Sunday — verified.**
+2027 Preakness is 23 May, **22 days** after the 1 May Derby, instead of the
+traditional two weeks. First Triple Crown race ever run on a Sunday. From 2028
+through 2031 it locks to the Sunday of Memorial Day weekend.
+
+The reason is the story: trainers had stopped running Derby horses back in two
+weeks. **In 2026 the Preakness field contained no horses that had run the Derby
+at all.**
+
+*Why it is an issue:* the Triple Crown's difficulty was always the *spacing* —
+three races, ten distinct weeks, on two weeks' rest. Every Triple Crown winner in
+history did it under that constraint. Change the spacing and a future winner is
+not doing the same thing Secretariat did. It is a comparability problem wearing a
+schedule change, and it sits in **horse racing — a GAP sport we have never
+covered.**
+
+### One gap in the contributed calendar
+
+The **FIFA Women's World Cup, 24 June – 25 July 2027 in Brazil** (verified
+separately, first ever in South America) is not in the file. It is the largest
+single block of summer 2027 and partially fills the hole left by the men's World
+Cup not recurring.
