@@ -1,0 +1,191 @@
+<!-- PUBLISH-META
+topic: CBB
+tags: CBB:cbb, March Madness, Tournament Design, Base Rates
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Vol. I, No. __ — August 14, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+</style><meta property="og:title" content="The NCAA Is Expanding March Madness to 76. The Arithmetic Says Go to 365.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/130-march-madness-invite-everyone.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/130-march-madness-invite-everyone.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/130-march-madness-invite-everyone.png">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">College Basketball &middot; Tournament Design, 2027</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Vol. I, No. __</span><span>August 14, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">The NCAA Is Expanding March Madness to 76. <em>The Arithmetic Says Go to 365.</em></h1>
+
+  <div class="deck">
+    Starting in 2027 the field grows from 68 teams to 76 &mdash; eight more at-large bids and a rebranded opening round. It is the smallest interesting version of the idea. Invite every Division I team instead, seed them off ten games, and run a double-elimination bracket, and you get ten times the elimination games, <em>fewer</em> total games than today, and a tournament that is <strong>less</strong> random, not more.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; 365 programmes, 3,000 simulated seasons</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v good">728</div><div class="l">Elimination games, vs 75 today</div></div>
+    <div class="sc"><div class="v now">&minus;59%</div><div class="l">Total games played</div></div>
+    <div class="sc"><div class="v bad">0</div><div class="l">Teams out after one game</div></div>
+  </div>
+
+  <p>The NCAA has confirmed it: from 2027, March Madness goes from 68 teams to 76. Eight more at-large bids, a twelve-game &ldquo;Opening Round&rdquo; replacing the First Four, and after that the familiar bracket of 64 carries on exactly as before.</p>
+
+  <p>It is a strange size to land on. Big enough to annoy everyone who liked 64, small enough to change nothing structural. So here is the question worth asking instead: <em>what would it actually cost to invite everybody?</em></p>
+
+  <h2 class="sh">The Shape of the Alternative</h2>
+
+  <p>All 365 Division I programmes play a <strong>ten-game opening slate</strong>, every game televised. Those ten games do one job: they seed the bracket. Then everyone &mdash; all 365 &mdash; enters a <strong>double-elimination</strong> tournament. Two losses and you are out. Not a group stage; those turn the decisive games into arithmetic exercises about goal difference. Just: lose twice, go home.</p>
+
+  <p>Run it as two parallel brackets if you like &mdash; an elite division for the revenue programmes, a second division for those that do not generate revenue or decline to play the NIL game &mdash; and the numbers barely move. More on that below.</p>
+
+  <h2 class="sh">The Counting</h2>
+
+  <p>A double-elimination tournament of <em>N</em> teams takes <strong>2N &minus; 2</strong> games. Every team but the champion must lose twice, so the game count is simply linear in the size of the field. For 365 teams that is <strong>728 games</strong>.</p>
+
+  <p>Against the 76-team bracket&rsquo;s 75.</p>
+
+  <p>Now the part that surprises people. Today a Division I season runs 32 regular-season games per team, plus 31 conference tournaments, plus the national bracket &mdash; about <strong>6,245 games</strong> in total, of which 75 are elimination games. That is 1.2%.</p>
+
+  <p>The alternative plays 1,825 seeding games and 728 elimination games: <strong>2,553 in all</strong>. That is <strong>59% fewer games than the sport plays now</strong>, with almost ten times as many that end somebody&rsquo;s season. The proposal does not add basketball. It deletes about 3,700 low-stakes games and converts the survivors into games that matter.</p>
+
+  <figure class="chart">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Comparison of the 76-team single elimination format against a 365-team double elimination format. Elimination games rise from 75 to 728. Total games fall from 6,245 to 2,553. The probability that the best team in the country wins the title rises from 45 percent to 55 percent.">
+      <text x="40" y="34" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#1a1208">ELIMINATION GAMES</text>
+      <rect x="40" y="46" width="24" height="26" fill="#6b5e4a"></rect>
+      <text x="74" y="65" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#6b5e4a">75 &mdash; 76-team bracket</text>
+      <rect x="40" y="82" width="233" height="26" fill="#2a6e3f"></rect>
+      <text x="283" y="101" font-family="'Roboto Mono',monospace" font-size="12.5" font-weight="600" fill="#2a6e3f">728 &mdash; everyone, double elimination</text>
+
+      <text x="40" y="146" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#1a1208">TOTAL GAMES PLAYED ALL SEASON</text>
+      <rect x="40" y="158" width="500" height="26" fill="#6b5e4a"></rect>
+      <text x="550" y="177" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#6b5e4a">6,245 today</text>
+      <rect x="40" y="194" width="204" height="26" fill="#2c4a6e"></rect>
+      <text x="254" y="213" font-family="'Roboto Mono',monospace" font-size="12.5" font-weight="600" fill="#2c4a6e">2,553 &mdash; 59% fewer</text>
+
+      <text x="40" y="258" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#1a1208">P(THE BEST TEAM IN THE COUNTRY WINS IT)</text>
+      <rect x="40" y="270" width="178" height="20" fill="#6b5e4a"></rect>
+      <text x="228" y="285" font-family="'Roboto Mono',monospace" font-size="12" fill="#6b5e4a">45%</text>
+      <rect x="280" y="270" width="219" height="20" fill="#b83a1e"></rect>
+      <text x="509" y="285" font-family="'Roboto Mono',monospace" font-size="12" font-weight="600" fill="#b83a1e">55%  &mdash; more games, less luck</text>
+    </svg>
+    <figcaption>Ten times the elimination games, on 59% fewer games overall. The bottom bar is the one that decides the argument: a bigger field with second chances produces a <em>more</em> reliable champion, not a lottery.</figcaption>
+  </figure>
+
+  <h2 class="sh">The Objection, and Why It Is Backwards</h2>
+
+  <p>Everyone&rsquo;s first reaction is the same: invite 365 teams and the tournament becomes a coin-flipping contest. A bad night for a great team and the whole thing is nonsense.</p>
+
+  <p>It is the opposite, and the reason is elementary. Single elimination is the <em>most</em> random format ever devised &mdash; one bad shooting night ends a great season. Double elimination requires a team to be beaten twice, and requiring two independent bad nights is a far higher bar than requiring one.</p>
+
+  <p>Simulating three thousand seasons: under the 76-team single-elimination bracket, the best team in the country wins the title <strong>45%</strong> of the time. Open it to all 365 with two lives each and that rises to <strong>55%</strong>. The champion&rsquo;s median true rank in the country improves from second-best to <em>best</em>.</p>
+
+  <p>The extra 289 teams do not add chaos. They lose and go home, mostly in the first week. What adds order is the second life.</p>
+
+  <div class="pull">
+    <p>Single elimination is not a test of who is best. It is a test of who is best on one particular Thursday. That is a fine thing to televise, but it is not the same claim.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Two Things That Fall Out of the Maths</h2>
+
+  <p><strong>Splitting into two divisions is free.</strong> Because the game count is linear, an 80-team elite bracket plus a 285-team second bracket costs 726 games against 728 for one combined field. A difference of two. Whatever you think of separating the revenue programmes from everyone else, the arithmetic does not object.</p>
+
+  <p><strong>Ten games is not enough to seed anything, and that is a feature.</strong> A ten-game record correlates 0.87 with true team strength &mdash; genuinely informative. But it correctly identifies the single best team in the country as the top seed only <strong>4% of the time</strong>. Picking one maximum out of 365 from ten noisy games is close to hopeless.</p>
+
+  <p>Which quietly settles a design question. If seeding is that unreliable, chasing it is a poor use of the opening slate &mdash; so a coach can rationally spend those ten games sorting a rotation instead of stacking wins, and give up almost nothing. Under the current format, where one bad night ends everything, no coach can afford that. The format would create a real strategic choice where today there is only one sane answer.</p>
+
+  <h2 class="sh">What It Costs</h2>
+
+  <p>Honesty about the price. A champion would play about <strong>14 tournament games</strong>, up to 17 coming through the losers&rsquo; bracket, against seven today &mdash; call it six weeks rather than three. Total inventory falls by more than half, which is a genuine revenue question for any programme that depends on gate receipts from twenty home dates. And the ten-game slate would gut the non-conference scheduling economy that currently pays a lot of small athletic departments.</p>
+
+  <p>Those are real objections. None of them is <em>&ldquo;it would be too random&rdquo;</em>, which is the one everybody reaches for first and the only one the numbers actually refute.</p>
+
+  <h2 class="sh">What To Take Home</h2>
+
+  <p>The NCAA is expanding because more teams means more inventory and more money. Fine. But if the argument for 76 is that more access is good, the argument does not stop at 76 &mdash; it stops wherever someone decided to stop it, and 76 is a number chosen to disturb as little as possible.</p>
+
+  <p>The general lesson is about formats rather than basketball. <strong>Every tournament is a measuring instrument, and its design determines what it measures.</strong> Single elimination measures peak performance on a given day. Double elimination measures reliability. Round robin measures quality. None is more correct than the others &mdash; but a sport ought to know which question it is asking, and college basketball has never been asked to choose.</p>
+
+  <div class="methods">
+    <b>How this was computed</b>
+    Team counts and format details come from the NCAA&rsquo;s expansion announcement and the 2026&ndash;27 Division I membership (365 programmes: 361 full members plus four in transition), with the regular-season limit rising to 32 games. Game totals are arithmetic: a double-elimination bracket of N teams takes 2N &minus; 2 games; single elimination takes N &minus; 1. The current-season total assumes 32 games per team, 31 conference tournaments, and the 76-team bracket. The simulation runs 3,000 seasons with team strength drawn from a normal distribution and game outcomes from a logistic model calibrated so a top seed beats a bottom seed about 95% of the time &mdash; slightly kinder to underdogs than the real 1-vs-16 record, which makes the finding conservative: a tighter calibration widens the gap in favour of double elimination. The double-elimination bracket is simulated by pairing surviving teams each round and eliminating on a second loss, which approximates a formal winners/losers bracket without reproducing its exact seeding rules. Dataset at <code>data/march-madness-expansion-sim.json</code>.
+  </div>
+
+  <div class="footer"><span>The Sports Page</span><span>Vol. I, No. __ &middot; August 14, 2026</span><span>One Question Per Issue, Answered With Numbers.</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>
+</body>
+</html>
