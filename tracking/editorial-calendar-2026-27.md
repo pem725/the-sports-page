@@ -173,8 +173,11 @@ traditional two weeks. First Triple Crown race ever run on a Sunday. From 2028
 through 2031 it locks to the Sunday of Memorial Day weekend.
 
 The reason is the story: trainers had stopped running Derby horses back in two
-weeks. **In 2026 the Preakness field contained no horses that had run the Derby
-at all.**
+weeks. **In 2026 the Derby winner, Golden Tempo, skipped the Preakness entirely
+— the third time in five years the Derby winner has done so.** (Corrected
+2026-08-11: an earlier version of this note said the 2026 Preakness field
+contained no Derby horses at all. That was wrong — three of the fourteen had run
+the Derby. The claim came from an unverified search summary.)
 
 *Why it is an issue:* the Triple Crown's difficulty was always the *spacing* —
 three races, ten distinct weeks, on two weeks' rest. Every Triple Crown winner in
