@@ -1,0 +1,230 @@
+<!-- FRAME-META
+trigger:  a late-season "still alive / not mathematically eliminated / still in it"
+          story about a club that plainly is not
+window:   2026-09-01 .. 2026-10-01
+sport:    MLB
+slots:    TEAM   - the club being described as still alive
+          BACK   - its games behind the nearest playoff spot, e.g. "eleven and a half"
+          RECORD - its record, e.g. "62-76"
+          WHEN   - date in prose (e.g. September 12)
+evidence: BAKED IN, computed 2026-08-11 from the MLB Stats API. Standings on
+          1 September for 2012-2025 (2020 excluded), 390 team-seasons, matched
+          against the actual postseason field from the postseason schedule.
+          97% of teams are still mathematically alive on 1 September. Of the 175
+          more than six games back, ZERO reached the playoffs. The deepest
+          comeback in the window is five games (2024 Tigers). Meanwhile 18 of the
+          143 teams holding a spot on 1 September missed.
+          Dataset: data/mlb-september-elimination.json
+recheck:  add the completed season and re-run before reusing in a later year.
+          The field grew from 10 to 12 teams in 2022 -- if it changes again the
+          buckets must be re-split, not carried forward.
+limits:   deficit is to the NEAREST spot, so it understates the task: a chasing
+          team must pass a group, not one club. The zero is 0/175, not proof of
+          impossibility -- the honest ceiling is the 2.1% upper bound.
+-->
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Base Rates, Elimination, Small Sample
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Vol. I, No. __ &mdash; {{WHEN}}, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+.chart{background:var(--cream);border:1px solid var(--div);padding:1rem;margin:1.4rem 0}
+figure.chart figcaption{font-family:'Roboto Mono',monospace;font-size:.63rem;line-height:1.6;color:var(--muted);letter-spacing:.05em;margin-top:.8rem;text-align:left}
+.chart svg{display:block;width:100%;height:auto}
+.methods{border-left:3px solid var(--div);padding:.2rem 0 .2rem .9rem;margin:1.6rem 0 0;font-size:.82rem;line-height:1.65;color:var(--muted)}
+.methods b{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:.3rem;color:var(--ink)}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+</style><meta property="og:title" content="Your Team Is Not Still Alive. It Is Just Not Yet Eliminated.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta name="twitter:card" content="summary_large_image">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Major League Baseball &middot; The September Stretch, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Vol. I, No. __</span><span>{{WHEN}}, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Your Team Is Not Still Alive. <em>It Is Just Not Yet Eliminated.</em></h1>
+
+  <div class="deck">
+    The {{TEAM}} are {{RECORD}} and {{BACK}} games out, and somebody has told you they are still in it. Technically true. Across thirteen seasons, 97% of all teams were still mathematically alive on 1 September &mdash; and of the 175 sitting more than six games back, exactly none reached the playoffs.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; 390 team-seasons, 2012&ndash;2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">97%</div><div class="l">Still &ldquo;alive&rdquo; on 1 September</div></div>
+    <div class="sc"><div class="v bad">0 / 175</div><div class="l">More than 6 back who made it</div></div>
+    <div class="sc"><div class="v bad">18</div><div class="l">Held a spot on 1 Sep and missed</div></div>
+  </div>
+
+  <p>&ldquo;Still alive&rdquo; is one of the great load-bearing phrases in sport. It sounds like a status report. It is closer to a tautology.</p>
+
+  <p>A team is mathematically alive whenever the games remaining are enough to close the gap, however absurd the required run. That threshold is so low that on <strong>1 September it described 378 of 390 teams &mdash; 97% of the league &mdash; competing for twelve places.</strong> A word that applies to almost everyone is not telling you anything about anyone.</p>
+
+  <h2 class="sh">Where The Line Actually Falls</h2>
+
+  <p>Take every club from 2012 through 2025, setting aside the shortened 2020. On 1 September, measure how far each sat behind the nearest playoff position. Then check who actually got in.</p>
+
+  <figure class="chart">
+    <svg viewBox="0 0 760 340" role="img" aria-label="Horizontal bar chart of 390 major league team-seasons from 2012 to 2025. A band across the top shows that 378 of 390 teams, 97 percent, were still mathematically alive on September 1. The bars below show how many actually reached the playoffs: teams already holding a playoff spot, 87.4 percent; half a game to three games back, 23.7 percent; three and a half to six back, 11.8 percent. Every bucket beyond six games back is zero — none of those 175 teams made the playoffs.">
+  <text x="0" y="16" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#1a1208">GAMES BACK ON 1 SEPTEMBER &rarr; SHARE THAT REACHED THE PLAYOFFS</text>
+  <text x="0" y="32" font-family="'Roboto Mono',monospace" font-size="10.5" fill="#6b5e4a">390 team-seasons, 2012&ndash;2025 (2020 excluded)</text>
+
+  <text x="200" y="56" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="12" fill="#6b5e4a">By arithmetic</text>
+  <rect x="210.0" y="42" width="430.0" height="20" fill="#2c4a6e" opacity=".16"/>
+  <rect x="210.0" y="42" width="430.0" height="20" fill="none" stroke="#2c4a6e" stroke-width="1" opacity=".5"/>
+  <text x="425.0" y="56" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="11" fill="#1a1208">STILL &ldquo;ALIVE&rdquo; ON 1 SEPTEMBER &mdash; 378 OF 390 (97%)</text>
+
+  <rect x="210.0" y="186" width="430.0" height="114" fill="#b83a1e" opacity=".07"/>
+  <line x1="210.0" y1="70" x2="210.0" y2="300" stroke="#c8b99a" stroke-width="1"/>
+  <text x="210.0" y="316" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#6b5e4a">0%</text>
+  <line x1="317.5" y1="70" x2="317.5" y2="300" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/>
+  <text x="317.5" y="316" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#6b5e4a">25%</text>
+  <line x1="425.0" y1="70" x2="425.0" y2="300" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/>
+  <text x="425.0" y="316" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#6b5e4a">50%</text>
+  <line x1="532.5" y1="70" x2="532.5" y2="300" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/>
+  <text x="532.5" y="316" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#6b5e4a">75%</text>
+  <line x1="640.0" y1="70" x2="640.0" y2="300" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/>
+  <text x="640.0" y="316" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#6b5e4a">100%</text>
+  <text x="200" y="96" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208">Held a playoff spot</text>
+  <rect x="210.0" y="78" width="375.9" height="26" fill="#2a6e3f"/>
+  <text x="575.9" y="96" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="13" font-weight="600" fill="#f5f0e8">87.4%</text>
+  <text x="650" y="96" font-family="'Roboto Mono',monospace" font-size="11" fill="#6b5e4a">n = 143</text>
+  <text x="200" y="134" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208">0.5–3 games back</text>
+  <rect x="210.0" y="116" width="101.8" height="26" fill="#2c4a6e"/>
+  <text x="301.8" y="134" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="13" font-weight="600" fill="#f5f0e8">23.7%</text>
+  <text x="650" y="134" font-family="'Roboto Mono',monospace" font-size="11" fill="#6b5e4a">n = 38</text>
+  <text x="200" y="172" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208">3.5–6 games back</text>
+  <rect x="210.0" y="154" width="50.6" height="26" fill="#2c4a6e"/>
+  <text x="269.6" y="172" font-family="'Roboto Mono',monospace" font-size="13" font-weight="600" fill="#1a1208">11.8%</text>
+  <text x="650" y="172" font-family="'Roboto Mono',monospace" font-size="11" fill="#6b5e4a">n = 34</text>
+  <text x="200" y="210" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208">6.5–9 games back</text>
+  <rect x="210.0" y="192" width="3" height="26" fill="#b83a1e"/>
+  <text x="650" y="210" font-family="'Roboto Mono',monospace" font-size="11" fill="#6b5e4a">n = 37</text>
+  <text x="200" y="248" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208">9.5–12 games back</text>
+  <rect x="210.0" y="230" width="3" height="26" fill="#b83a1e"/>
+  <text x="650" y="248" font-family="'Roboto Mono',monospace" font-size="11" fill="#6b5e4a">n = 31</text>
+  <text x="200" y="286" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="12" fill="#1a1208">12 or more back</text>
+  <rect x="210.0" y="268" width="3" height="26" fill="#b83a1e"/>
+  <text x="650" y="286" font-family="'Roboto Mono',monospace" font-size="11" fill="#6b5e4a">n = 107</text>
+  <text x="252" y="238" font-family="'Playfair Display',serif" font-size="30" font-weight="900" fill="#b83a1e">0 for 175</text>
+  <text x="252" y="260" font-family="'Roboto Mono',monospace" font-size="11.5" fill="#1a1208">Thirteen seasons. No exceptions.</text>
+  <text x="252" y="278" font-family="'Roboto Mono',monospace" font-size="10.5" fill="#6b5e4a">95% upper bound on the true rate: 2.1%</text>
+</svg>
+    <figcaption>The band across the top is what &ldquo;still alive&rdquo; covers. The bars beneath are what happened. The gap between them is the whole point &mdash; and note that the bottom three rows are not a small number, they are 175 of the 390 team-seasons in the study.</figcaption>
+  </figure>
+
+  <p>Hold a spot on 1 September and you get in <strong>87%</strong> of the time. Sit within three games and it falls to <strong>24%</strong>. Between three and six, <strong>12%</strong>.</p>
+
+  <p>Past six games back, the record over thirteen seasons is <strong>0 for 175</strong>.</p>
+
+  <div class="pull">
+    <p>The deepest September comeback in thirteen years was five games. Not fifteen. Five.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Why Zero Is Not The Same As Impossible</h2>
+
+  <p>It would be easy, and wrong, to read 0 for 175 as a law. A zero in the numerator still carries uncertainty: the honest reading is that the true rate is <strong>somewhere below about 2%</strong>, not that it is nought. Some September, a club nine games out in the last week of August will run the table and get in, and nothing here forbids it.</p>
+
+  <p>What the number does establish is the <em>scale</em>. Arithmetic says thirty teams are in it. History says the field is the dozen or so within about half a week of the line. Everyone else is not competing for a playoff place; they are playing out a schedule.</p>
+
+  <p>The arithmetic of the chase explains why. With the same number of games left on both sides, one game in the standings costs one net win. A club six back on 1 September, with roughly twenty-seven to play, must beat a .550 rival by six games in twenty-seven &mdash; a <strong>.772 stretch, a 125-win pace</strong>. Ten back needs <strong>.920</strong>, which over a full season is 149 wins. Nobody has ever done that for a season, and doing it for a month is not the easier version of the task. It is the same task, run without a margin for a single bad week.</p>
+
+  <h2 class="sh">The Story Nobody Runs</h2>
+
+  <p>Here is the part the coverage almost never gets to. Over the same thirteen seasons, <strong>18 of the 143 teams holding a playoff position on 1 September failed to reach October</strong> &mdash; about one in eight.</p>
+
+  <p>Set that against four comebacks from outside three games. <strong>The collapse is roughly four times more common than the charge.</strong> September's real drama is not somebody climbing in. It is somebody falling out.</p>
+
+  <p>We do not tell it that way because a comeback has a hero and a collapse only has a victim. But if you want to know what September is likely to do to your team, the honest answer depends entirely on which side of the line it is standing on &mdash; and the danger, if it is inside, is larger than the hope, if it is outside.</p>
+
+  <h2 class="sh">What To Take Home</h2>
+
+  <p>The trick here is a definition doing work it was never built for. &ldquo;Mathematically alive&rdquo; is a statement about arithmetic possibility, and it is being handed to you as though it were a statement about likelihood. Those are different claims, and the first is nearly always true, which is precisely what makes it useless.</p>
+
+  <p>The general form shows up everywhere: <strong>a threshold that almost nothing fails is not a test.</strong> A drug that is &ldquo;not proven unsafe,&rdquo; a candidate with &ldquo;a path to victory,&rdquo; a business that is &ldquo;still solvent&rdquo; &mdash; each is a real statement, and each has been quietly swapped in for a much stronger one nobody actually made.</p>
+
+  <p>So when you next hear that a team is still alive, the useful question is not whether it is true. It is: <em>how many teams does that sentence describe?</em> If the answer is nearly all of them, you have been told nothing at all.</p>
+
+  <div class="methods">
+    <b>How this was computed</b>
+    Standings for 1 September of each season from 2012 through 2025, excluding the shortened 2020, come from the MLB Stats API; the actual postseason field comes from the same API's postseason schedule, which returns 10 qualifiers for 2012&ndash;2021 and 12 from 2022 &mdash; matching the real formats, which is the check that the field was read correctly. A team's deficit is the smaller of its divisional and wild-card games-back, so a club leading its division or holding a wild-card place counts as zero. That choice is deliberately generous to the chasing team and still understates the task, because a team six back of the line must pass every club between it and the line, not one. Rates are pooled across the 10- and 12-team eras; the 12-team era is a little kinder to chasers, as expected, and is reported separately in the dataset. The 2.1% figure is a Wilson 95% upper bound on 0 successes in 175 trials. Full dataset at <code>data/mlb-september-elimination.json</code>.
+  </div>
+
+  <div class="footer"><span>The Sports Page</span><span>Vol. I, No. __ &middot; {{WHEN}}, 2026</span><span>One Question Per Issue, Answered With Numbers.</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>
+</body>
+</html>

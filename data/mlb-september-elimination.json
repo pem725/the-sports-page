@@ -1,0 +1,2952 @@
+{
+ "title": "September 1 deficit vs. playoff berth",
+ "source": "MLB Stats API \u2014 standings by date, and postseason schedule for the actual field",
+ "seasons": "2012-2025, excluding the shortened 2020 season (13 seasons, 390 team-seasons)",
+ "computed": "2026-08-11",
+ "definition": "deficit = games behind the nearest playoff position on 1 September, taken as the smaller of divisional games-back and wild-card games-back; a team leading its division or holding a wild-card position is 0",
+ "note": "Format change mid-window: 10 playoff teams 2012-2021, 12 from 2022. Rates are reported for the pooled window and should be re-split if the field changes again.",
+ "headline": {
+  "mathematically_alive_on_sep1": 378,
+  "of_teams": 390,
+  "more_than_6_back": {
+   "n": 175,
+   "made": 0,
+   "wilson_95_upper": 0.021
+  },
+  "deepest_comeback": {
+   "year": 2024,
+   "team": "Tigers",
+   "deficit": 5.0,
+   "record": "70-68"
+  },
+  "held_spot_and_missed": {
+   "n": 18,
+   "of": 143,
+   "rate": 0.126
+  }
+ },
+ "buckets": [
+  {
+   "bucket": "held a playoff spot",
+   "n": 143,
+   "made": 125,
+   "rate": 0.8741
+  },
+  {
+   "bucket": "0.5-3 back",
+   "n": 38,
+   "made": 9,
+   "rate": 0.2368
+  },
+  {
+   "bucket": "3.5-6 back",
+   "n": 34,
+   "made": 4,
+   "rate": 0.1176
+  },
+  {
+   "bucket": "6.5-9 back",
+   "n": 37,
+   "made": 0,
+   "rate": 0.0
+  },
+  {
+   "bucket": "9.5-12 back",
+   "n": 31,
+   "made": 0,
+   "rate": 0.0
+  },
+  {
+   "bucket": "12+ back",
+   "n": 107,
+   "made": 0,
+   "rate": 0.0
+  }
+ ],
+ "comebacks": [
+  {
+   "year": 2024,
+   "team": "Tigers",
+   "deficit": 5.0,
+   "record": "70-68"
+  },
+  {
+   "year": 2025,
+   "team": "Guardians",
+   "deficit": 4.0,
+   "record": "68-68"
+  },
+  {
+   "year": 2025,
+   "team": "Reds",
+   "deficit": 4.0,
+   "record": "70-68"
+  },
+  {
+   "year": 2013,
+   "team": "Indians",
+   "deficit": 3.5,
+   "record": "72-64"
+  },
+  {
+   "year": 2019,
+   "team": "Brewers",
+   "deficit": 3.0,
+   "record": "70-66"
+  },
+  {
+   "year": 2021,
+   "team": "Cardinals",
+   "deficit": 2.5,
+   "record": "68-64"
+  },
+  {
+   "year": 2014,
+   "team": "Pirates",
+   "deficit": 2.0,
+   "record": "71-66"
+  },
+  {
+   "year": 2016,
+   "team": "Mets",
+   "deficit": 2.0,
+   "record": "69-65"
+  },
+  {
+   "year": 2023,
+   "team": "Marlins",
+   "deficit": 2.0,
+   "record": "68-67"
+  },
+  {
+   "year": 2023,
+   "team": "Blue Jays",
+   "deficit": 1.5,
+   "record": "74-61"
+  }
+ ],
+ "collapses": [
+  {
+   "year": 2013,
+   "team": "Rangers",
+   "record": "79-57"
+  },
+  {
+   "year": 2019,
+   "team": "Indians",
+   "record": "79-58"
+  },
+  {
+   "year": 2023,
+   "team": "Mariners",
+   "record": "76-58"
+  },
+  {
+   "year": 2024,
+   "team": "D-backs",
+   "record": "77-60"
+  },
+  {
+   "year": 2018,
+   "team": "Cardinals",
+   "record": "76-60"
+  },
+  {
+   "year": 2025,
+   "team": "Astros",
+   "record": "76-62"
+  },
+  {
+   "year": 2012,
+   "team": "White Sox",
+   "record": "72-60"
+  },
+  {
+   "year": 2018,
+   "team": "D-backs",
+   "record": "74-62"
+  },
+  {
+   "year": 2024,
+   "team": "Twins",
+   "record": "74-62"
+  },
+  {
+   "year": 2016,
+   "team": "Tigers",
+   "record": "72-61"
+  },
+  {
+   "year": 2019,
+   "team": "Cubs",
+   "record": "73-63"
+  },
+  {
+   "year": 2025,
+   "team": "Mets",
+   "record": "74-64"
+  },
+  {
+   "year": 2014,
+   "team": "Brewers",
+   "record": "73-64"
+  },
+  {
+   "year": 2021,
+   "team": "Reds",
+   "record": "72-63"
+  },
+  {
+   "year": 2021,
+   "team": "Padres",
+   "record": "72-63"
+  },
+  {
+   "year": 2023,
+   "team": "Cubs",
+   "record": "72-63"
+  },
+  {
+   "year": 2016,
+   "team": "Cardinals",
+   "record": "70-62"
+  },
+  {
+   "year": 2023,
+   "team": "Giants",
+   "record": "70-65"
+  }
+ ],
+ "rows": [
+  {
+   "year": 2012,
+   "team": "Yankees",
+   "record": "76-56",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2012,
+   "team": "Orioles",
+   "record": "73-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2012,
+   "team": "Rays",
+   "record": "72-61",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Red Sox",
+   "record": "62-72",
+   "deficit": 12.0,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Blue Jays",
+   "record": "60-72",
+   "deficit": 13.0,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "White Sox",
+   "record": "72-60",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Tigers",
+   "record": "71-61",
+   "deficit": 1.0,
+   "made": true
+  },
+  {
+   "year": 2012,
+   "team": "Royals",
+   "record": "59-73",
+   "deficit": 13.0,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Indians",
+   "record": "56-77",
+   "deficit": 16.5,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Twins",
+   "record": "55-78",
+   "deficit": 17.5,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Rangers",
+   "record": "78-54",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2012,
+   "team": "Athletics",
+   "record": "75-57",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2012,
+   "team": "Angels",
+   "record": "71-62",
+   "deficit": 2.5,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Mariners",
+   "record": "64-70",
+   "deficit": 10.0,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Nationals",
+   "record": "80-52",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2012,
+   "team": "Braves",
+   "record": "74-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2012,
+   "team": "Phillies",
+   "record": "64-69",
+   "deficit": 8.0,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Mets",
+   "record": "63-70",
+   "deficit": 9.0,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Marlins",
+   "record": "59-74",
+   "deficit": 13.0,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Reds",
+   "record": "81-53",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2012,
+   "team": "Cardinals",
+   "record": "72-61",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2012,
+   "team": "Pirates",
+   "record": "70-62",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Brewers",
+   "record": "64-68",
+   "deficit": 7.5,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Cubs",
+   "record": "51-81",
+   "deficit": 20.5,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Astros",
+   "record": "41-92",
+   "deficit": 31.0,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Giants",
+   "record": "75-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2012,
+   "team": "Dodgers",
+   "record": "71-63",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "D-backs",
+   "record": "66-68",
+   "deficit": 6.5,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Padres",
+   "record": "62-72",
+   "deficit": 10.5,
+   "made": false
+  },
+  {
+   "year": 2012,
+   "team": "Rockies",
+   "record": "54-77",
+   "deficit": 17.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Red Sox",
+   "record": "82-56",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2013,
+   "team": "Rays",
+   "record": "75-60",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2013,
+   "team": "Orioles",
+   "record": "72-63",
+   "deficit": 3.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Yankees",
+   "record": "72-64",
+   "deficit": 3.5,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Blue Jays",
+   "record": "62-75",
+   "deficit": 14.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Tigers",
+   "record": "80-57",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2013,
+   "team": "Indians",
+   "record": "72-64",
+   "deficit": 3.5,
+   "made": true
+  },
+  {
+   "year": 2013,
+   "team": "Royals",
+   "record": "70-66",
+   "deficit": 5.5,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Twins",
+   "record": "59-76",
+   "deficit": 16.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "White Sox",
+   "record": "56-79",
+   "deficit": 19.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Rangers",
+   "record": "79-57",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Athletics",
+   "record": "78-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2013,
+   "team": "Angels",
+   "record": "63-72",
+   "deficit": 12.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Mariners",
+   "record": "62-74",
+   "deficit": 13.5,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Astros",
+   "record": "45-91",
+   "deficit": 30.5,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Braves",
+   "record": "83-53",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2013,
+   "team": "Nationals",
+   "record": "69-67",
+   "deficit": 6.5,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Mets",
+   "record": "62-73",
+   "deficit": 13.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Phillies",
+   "record": "62-75",
+   "deficit": 14.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Marlins",
+   "record": "50-85",
+   "deficit": 25.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Pirates",
+   "record": "79-57",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2013,
+   "team": "Cardinals",
+   "record": "79-57",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2013,
+   "team": "Reds",
+   "record": "76-61",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2013,
+   "team": "Brewers",
+   "record": "59-77",
+   "deficit": 16.5,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Cubs",
+   "record": "58-78",
+   "deficit": 17.5,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Dodgers",
+   "record": "81-55",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2013,
+   "team": "D-backs",
+   "record": "69-66",
+   "deficit": 6.0,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Rockies",
+   "record": "65-73",
+   "deficit": 11.5,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Giants",
+   "record": "61-75",
+   "deficit": 14.5,
+   "made": false
+  },
+  {
+   "year": 2013,
+   "team": "Padres",
+   "record": "60-76",
+   "deficit": 15.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Orioles",
+   "record": "79-57",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2014,
+   "team": "Yankees",
+   "record": "70-65",
+   "deficit": 4.0,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Blue Jays",
+   "record": "69-67",
+   "deficit": 5.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Rays",
+   "record": "67-71",
+   "deficit": 8.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Red Sox",
+   "record": "60-77",
+   "deficit": 15.0,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Tigers",
+   "record": "75-62",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2014,
+   "team": "Royals",
+   "record": "75-62",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2014,
+   "team": "Indians",
+   "record": "71-65",
+   "deficit": 3.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "White Sox",
+   "record": "62-75",
+   "deficit": 13.0,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Twins",
+   "record": "60-77",
+   "deficit": 15.0,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Angels",
+   "record": "83-53",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2014,
+   "team": "Athletics",
+   "record": "79-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2014,
+   "team": "Mariners",
+   "record": "73-63",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Astros",
+   "record": "59-79",
+   "deficit": 16.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Rangers",
+   "record": "53-84",
+   "deficit": 22.0,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Nationals",
+   "record": "78-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2014,
+   "team": "Braves",
+   "record": "72-66",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Marlins",
+   "record": "67-69",
+   "deficit": 5.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Mets",
+   "record": "64-74",
+   "deficit": 9.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Phillies",
+   "record": "63-74",
+   "deficit": 10.0,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Cardinals",
+   "record": "74-63",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2014,
+   "team": "Brewers",
+   "record": "73-64",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Pirates",
+   "record": "71-66",
+   "deficit": 2.0,
+   "made": true
+  },
+  {
+   "year": 2014,
+   "team": "Reds",
+   "record": "66-71",
+   "deficit": 7.0,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Cubs",
+   "record": "62-76",
+   "deficit": 11.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Dodgers",
+   "record": "77-61",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2014,
+   "team": "Giants",
+   "record": "75-63",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2014,
+   "team": "Padres",
+   "record": "65-71",
+   "deficit": 7.5,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "D-backs",
+   "record": "57-80",
+   "deficit": 16.0,
+   "made": false
+  },
+  {
+   "year": 2014,
+   "team": "Rockies",
+   "record": "55-83",
+   "deficit": 18.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Blue Jays",
+   "record": "75-57",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2015,
+   "team": "Yankees",
+   "record": "73-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2015,
+   "team": "Rays",
+   "record": "66-66",
+   "deficit": 3.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Orioles",
+   "record": "63-69",
+   "deficit": 6.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Red Sox",
+   "record": "61-71",
+   "deficit": 8.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Royals",
+   "record": "80-51",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2015,
+   "team": "Twins",
+   "record": "68-63",
+   "deficit": 1.0,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Indians",
+   "record": "64-67",
+   "deficit": 5.0,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "White Sox",
+   "record": "61-69",
+   "deficit": 7.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Tigers",
+   "record": "61-70",
+   "deficit": 8.0,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Astros",
+   "record": "73-60",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2015,
+   "team": "Rangers",
+   "record": "69-62",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2015,
+   "team": "Angels",
+   "record": "66-66",
+   "deficit": 3.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Mariners",
+   "record": "62-71",
+   "deficit": 8.0,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Athletics",
+   "record": "58-75",
+   "deficit": 12.0,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Mets",
+   "record": "73-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2015,
+   "team": "Nationals",
+   "record": "66-65",
+   "deficit": 6.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Braves",
+   "record": "54-78",
+   "deficit": 19.0,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Marlins",
+   "record": "54-79",
+   "deficit": 19.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Phillies",
+   "record": "53-80",
+   "deficit": 20.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Cardinals",
+   "record": "86-46",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2015,
+   "team": "Pirates",
+   "record": "79-51",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2015,
+   "team": "Cubs",
+   "record": "75-56",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2015,
+   "team": "Brewers",
+   "record": "56-75",
+   "deficit": 19.0,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Reds",
+   "record": "54-77",
+   "deficit": 21.0,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Dodgers",
+   "record": "74-57",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2015,
+   "team": "Giants",
+   "record": "69-63",
+   "deficit": 5.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "D-backs",
+   "record": "65-68",
+   "deficit": 10.0,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Padres",
+   "record": "64-68",
+   "deficit": 10.5,
+   "made": false
+  },
+  {
+   "year": 2015,
+   "team": "Rockies",
+   "record": "53-78",
+   "deficit": 21.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Blue Jays",
+   "record": "76-57",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2016,
+   "team": "Red Sox",
+   "record": "74-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2016,
+   "team": "Orioles",
+   "record": "72-61",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2016,
+   "team": "Yankees",
+   "record": "69-63",
+   "deficit": 2.5,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Rays",
+   "record": "56-76",
+   "deficit": 15.5,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Indians",
+   "record": "76-56",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2016,
+   "team": "Tigers",
+   "record": "72-61",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Royals",
+   "record": "69-64",
+   "deficit": 3.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "White Sox",
+   "record": "63-70",
+   "deficit": 9.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Twins",
+   "record": "50-84",
+   "deficit": 22.5,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Rangers",
+   "record": "80-54",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2016,
+   "team": "Astros",
+   "record": "71-62",
+   "deficit": 1.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Mariners",
+   "record": "68-65",
+   "deficit": 4.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Angels",
+   "record": "59-74",
+   "deficit": 13.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Athletics",
+   "record": "57-76",
+   "deficit": 15.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Nationals",
+   "record": "78-55",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2016,
+   "team": "Mets",
+   "record": "69-65",
+   "deficit": 2.0,
+   "made": true
+  },
+  {
+   "year": 2016,
+   "team": "Marlins",
+   "record": "68-66",
+   "deficit": 3.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Phillies",
+   "record": "60-73",
+   "deficit": 10.5,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Braves",
+   "record": "51-83",
+   "deficit": 20.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Cubs",
+   "record": "86-47",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2016,
+   "team": "Cardinals",
+   "record": "70-62",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Pirates",
+   "record": "67-64",
+   "deficit": 2.5,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Brewers",
+   "record": "57-76",
+   "deficit": 13.5,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Reds",
+   "record": "55-77",
+   "deficit": 15.0,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Dodgers",
+   "record": "74-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2016,
+   "team": "Giants",
+   "record": "72-61",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2016,
+   "team": "Rockies",
+   "record": "64-69",
+   "deficit": 6.5,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "D-backs",
+   "record": "56-77",
+   "deficit": 14.5,
+   "made": false
+  },
+  {
+   "year": 2016,
+   "team": "Padres",
+   "record": "55-78",
+   "deficit": 15.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Red Sox",
+   "record": "77-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2017,
+   "team": "Yankees",
+   "record": "71-63",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2017,
+   "team": "Orioles",
+   "record": "69-66",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Rays",
+   "record": "68-68",
+   "deficit": 3.0,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Blue Jays",
+   "record": "62-73",
+   "deficit": 8.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Indians",
+   "record": "78-56",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2017,
+   "team": "Twins",
+   "record": "70-64",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2017,
+   "team": "Royals",
+   "record": "66-67",
+   "deficit": 3.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Tigers",
+   "record": "58-76",
+   "deficit": 12.0,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "White Sox",
+   "record": "52-81",
+   "deficit": 17.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Astros",
+   "record": "80-53",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2017,
+   "team": "Angels",
+   "record": "69-66",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Rangers",
+   "record": "67-67",
+   "deficit": 3.0,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Mariners",
+   "record": "67-68",
+   "deficit": 3.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Athletics",
+   "record": "58-76",
+   "deficit": 12.0,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Nationals",
+   "record": "81-53",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2017,
+   "team": "Marlins",
+   "record": "66-68",
+   "deficit": 6.0,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Braves",
+   "record": "59-74",
+   "deficit": 12.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Mets",
+   "record": "58-75",
+   "deficit": 13.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Phillies",
+   "record": "51-83",
+   "deficit": 21.0,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Cubs",
+   "record": "74-60",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2017,
+   "team": "Brewers",
+   "record": "71-64",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Cardinals",
+   "record": "68-66",
+   "deficit": 4.0,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Pirates",
+   "record": "63-72",
+   "deficit": 9.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Reds",
+   "record": "58-77",
+   "deficit": 14.5,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Dodgers",
+   "record": "92-41",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2017,
+   "team": "D-backs",
+   "record": "77-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2017,
+   "team": "Rockies",
+   "record": "72-62",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2017,
+   "team": "Padres",
+   "record": "59-75",
+   "deficit": 13.0,
+   "made": false
+  },
+  {
+   "year": 2017,
+   "team": "Giants",
+   "record": "53-84",
+   "deficit": 20.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Red Sox",
+   "record": "94-43",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2018,
+   "team": "Yankees",
+   "record": "86-50",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2018,
+   "team": "Rays",
+   "record": "72-63",
+   "deficit": 8.0,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Blue Jays",
+   "record": "61-74",
+   "deficit": 19.0,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Orioles",
+   "record": "40-96",
+   "deficit": 40.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Indians",
+   "record": "77-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2018,
+   "team": "Twins",
+   "record": "63-72",
+   "deficit": 14.0,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Tigers",
+   "record": "54-82",
+   "deficit": 23.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "White Sox",
+   "record": "54-82",
+   "deficit": 23.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Royals",
+   "record": "44-91",
+   "deficit": 33.0,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Astros",
+   "record": "83-53",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2018,
+   "team": "Athletics",
+   "record": "81-56",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2018,
+   "team": "Mariners",
+   "record": "76-60",
+   "deficit": 4.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Angels",
+   "record": "66-70",
+   "deficit": 14.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Rangers",
+   "record": "59-77",
+   "deficit": 21.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Braves",
+   "record": "75-60",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2018,
+   "team": "Phillies",
+   "record": "72-63",
+   "deficit": 3.0,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Nationals",
+   "record": "68-68",
+   "deficit": 7.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Mets",
+   "record": "60-75",
+   "deficit": 15.0,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Marlins",
+   "record": "54-82",
+   "deficit": 21.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Cubs",
+   "record": "80-55",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2018,
+   "team": "Cardinals",
+   "record": "76-60",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Brewers",
+   "record": "76-61",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2018,
+   "team": "Pirates",
+   "record": "66-70",
+   "deficit": 9.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Reds",
+   "record": "58-78",
+   "deficit": 17.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "D-backs",
+   "record": "74-62",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Dodgers",
+   "record": "74-62",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2018,
+   "team": "Rockies",
+   "record": "73-62",
+   "deficit": 0.5,
+   "made": true
+  },
+  {
+   "year": 2018,
+   "team": "Giants",
+   "record": "68-69",
+   "deficit": 6.5,
+   "made": false
+  },
+  {
+   "year": 2018,
+   "team": "Padres",
+   "record": "54-84",
+   "deficit": 21.0,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Yankees",
+   "record": "90-48",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2019,
+   "team": "Rays",
+   "record": "80-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2019,
+   "team": "Red Sox",
+   "record": "74-63",
+   "deficit": 5.0,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Blue Jays",
+   "record": "55-83",
+   "deficit": 24.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Orioles",
+   "record": "45-91",
+   "deficit": 33.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Twins",
+   "record": "84-52",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2019,
+   "team": "Indians",
+   "record": "79-58",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "White Sox",
+   "record": "60-76",
+   "deficit": 18.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Royals",
+   "record": "49-89",
+   "deficit": 30.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Tigers",
+   "record": "40-95",
+   "deficit": 38.0,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Astros",
+   "record": "89-49",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2019,
+   "team": "Athletics",
+   "record": "79-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2019,
+   "team": "Rangers",
+   "record": "67-71",
+   "deficit": 12.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Angels",
+   "record": "65-73",
+   "deficit": 14.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Mariners",
+   "record": "58-80",
+   "deficit": 21.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Braves",
+   "record": "84-54",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2019,
+   "team": "Nationals",
+   "record": "77-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2019,
+   "team": "Phillies",
+   "record": "70-65",
+   "deficit": 2.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Mets",
+   "record": "69-67",
+   "deficit": 4.0,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Marlins",
+   "record": "48-88",
+   "deficit": 25.0,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Cardinals",
+   "record": "76-60",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2019,
+   "team": "Cubs",
+   "record": "73-63",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Brewers",
+   "record": "70-66",
+   "deficit": 3.0,
+   "made": true
+  },
+  {
+   "year": 2019,
+   "team": "Reds",
+   "record": "64-73",
+   "deficit": 9.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Pirates",
+   "record": "60-77",
+   "deficit": 13.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Dodgers",
+   "record": "89-50",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2019,
+   "team": "D-backs",
+   "record": "70-67",
+   "deficit": 3.5,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Giants",
+   "record": "66-70",
+   "deficit": 7.0,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Padres",
+   "record": "64-72",
+   "deficit": 9.0,
+   "made": false
+  },
+  {
+   "year": 2019,
+   "team": "Rockies",
+   "record": "59-79",
+   "deficit": 15.0,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Rays",
+   "record": "84-49",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2021,
+   "team": "Yankees",
+   "record": "77-56",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2021,
+   "team": "Red Sox",
+   "record": "76-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2021,
+   "team": "Blue Jays",
+   "record": "70-62",
+   "deficit": 4.5,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Orioles",
+   "record": "41-91",
+   "deficit": 33.5,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "White Sox",
+   "record": "78-56",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2021,
+   "team": "Indians",
+   "record": "66-64",
+   "deficit": 7.5,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Tigers",
+   "record": "63-71",
+   "deficit": 12.5,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Royals",
+   "record": "59-73",
+   "deficit": 15.5,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Twins",
+   "record": "58-75",
+   "deficit": 17.0,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Astros",
+   "record": "78-55",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2021,
+   "team": "Athletics",
+   "record": "73-60",
+   "deficit": 2.0,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Mariners",
+   "record": "72-62",
+   "deficit": 3.5,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Angels",
+   "record": "66-68",
+   "deficit": 9.5,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Rangers",
+   "record": "47-86",
+   "deficit": 28.0,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Braves",
+   "record": "70-63",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2021,
+   "team": "Phillies",
+   "record": "68-64",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Mets",
+   "record": "65-67",
+   "deficit": 4.5,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Nationals",
+   "record": "55-76",
+   "deficit": 14.0,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Marlins",
+   "record": "55-78",
+   "deficit": 15.0,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Brewers",
+   "record": "82-52",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2021,
+   "team": "Reds",
+   "record": "72-63",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Cardinals",
+   "record": "68-64",
+   "deficit": 2.5,
+   "made": true
+  },
+  {
+   "year": 2021,
+   "team": "Cubs",
+   "record": "59-75",
+   "deficit": 12.5,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Pirates",
+   "record": "48-85",
+   "deficit": 23.0,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Dodgers",
+   "record": "85-49",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2021,
+   "team": "Giants",
+   "record": "84-49",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2021,
+   "team": "Padres",
+   "record": "72-63",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "Rockies",
+   "record": "61-72",
+   "deficit": 10.0,
+   "made": false
+  },
+  {
+   "year": 2021,
+   "team": "D-backs",
+   "record": "45-90",
+   "deficit": 27.0,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Yankees",
+   "record": "79-52",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Rays",
+   "record": "72-57",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Blue Jays",
+   "record": "70-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Orioles",
+   "record": "69-61",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Red Sox",
+   "record": "64-68",
+   "deficit": 7.5,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Guardians",
+   "record": "68-61",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Twins",
+   "record": "67-62",
+   "deficit": 1.0,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "White Sox",
+   "record": "65-66",
+   "deficit": 4.0,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Royals",
+   "record": "53-79",
+   "deficit": 16.5,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Tigers",
+   "record": "50-81",
+   "deficit": 19.0,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Astros",
+   "record": "84-47",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Mariners",
+   "record": "73-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Rangers",
+   "record": "58-72",
+   "deficit": 12.5,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Angels",
+   "record": "57-74",
+   "deficit": 14.0,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Athletics",
+   "record": "49-83",
+   "deficit": 22.5,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Mets",
+   "record": "84-48",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Braves",
+   "record": "81-51",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Phillies",
+   "record": "73-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Marlins",
+   "record": "55-75",
+   "deficit": 17.0,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Nationals",
+   "record": "45-86",
+   "deficit": 27.5,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Cardinals",
+   "record": "76-55",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Brewers",
+   "record": "69-61",
+   "deficit": 3.0,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Cubs",
+   "record": "56-75",
+   "deficit": 16.5,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Reds",
+   "record": "51-78",
+   "deficit": 20.5,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Pirates",
+   "record": "49-81",
+   "deficit": 23.0,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Dodgers",
+   "record": "90-40",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "Padres",
+   "record": "73-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2022,
+   "team": "D-backs",
+   "record": "62-68",
+   "deficit": 10.0,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Giants",
+   "record": "61-68",
+   "deficit": 10.5,
+   "made": false
+  },
+  {
+   "year": 2022,
+   "team": "Rockies",
+   "record": "56-76",
+   "deficit": 17.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Orioles",
+   "record": "83-51",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Rays",
+   "record": "82-53",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Blue Jays",
+   "record": "74-61",
+   "deficit": 1.5,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Red Sox",
+   "record": "69-66",
+   "deficit": 6.5,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Yankees",
+   "record": "66-69",
+   "deficit": 9.5,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Twins",
+   "record": "70-65",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Guardians",
+   "record": "65-70",
+   "deficit": 5.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Tigers",
+   "record": "61-74",
+   "deficit": 9.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "White Sox",
+   "record": "53-82",
+   "deficit": 17.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Royals",
+   "record": "42-94",
+   "deficit": 28.5,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Mariners",
+   "record": "76-58",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Astros",
+   "record": "77-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Rangers",
+   "record": "75-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Angels",
+   "record": "64-71",
+   "deficit": 11.5,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Athletics",
+   "record": "40-95",
+   "deficit": 35.5,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Braves",
+   "record": "89-45",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Phillies",
+   "record": "74-60",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Marlins",
+   "record": "68-67",
+   "deficit": 2.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Mets",
+   "record": "62-73",
+   "deficit": 8.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Nationals",
+   "record": "62-74",
+   "deficit": 8.5,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Brewers",
+   "record": "75-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Cubs",
+   "record": "72-63",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Reds",
+   "record": "70-67",
+   "deficit": 1.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Pirates",
+   "record": "62-73",
+   "deficit": 8.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Cardinals",
+   "record": "58-77",
+   "deficit": 12.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Dodgers",
+   "record": "83-51",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Giants",
+   "record": "70-65",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "D-backs",
+   "record": "70-65",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2023,
+   "team": "Padres",
+   "record": "63-73",
+   "deficit": 7.5,
+   "made": false
+  },
+  {
+   "year": 2023,
+   "team": "Rockies",
+   "record": "49-85",
+   "deficit": 20.5,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Yankees",
+   "record": "79-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "Orioles",
+   "record": "79-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "Red Sox",
+   "record": "70-67",
+   "deficit": 4.5,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Rays",
+   "record": "67-69",
+   "deficit": 7.0,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Blue Jays",
+   "record": "67-72",
+   "deficit": 8.5,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Guardians",
+   "record": "78-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "Twins",
+   "record": "74-62",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Royals",
+   "record": "75-63",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "Tigers",
+   "record": "70-68",
+   "deficit": 5.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "White Sox",
+   "record": "31-107",
+   "deficit": 44.0,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Astros",
+   "record": "75-62",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "Mariners",
+   "record": "69-68",
+   "deficit": 5.5,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Rangers",
+   "record": "65-72",
+   "deficit": 9.5,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Athletics",
+   "record": "59-78",
+   "deficit": 15.5,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Angels",
+   "record": "57-80",
+   "deficit": 17.5,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Phillies",
+   "record": "81-56",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "Braves",
+   "record": "74-63",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "Mets",
+   "record": "73-64",
+   "deficit": 1.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "Nationals",
+   "record": "61-76",
+   "deficit": 13.0,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Marlins",
+   "record": "51-86",
+   "deficit": 23.0,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Brewers",
+   "record": "80-57",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "Cubs",
+   "record": "71-66",
+   "deficit": 3.0,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Cardinals",
+   "record": "69-68",
+   "deficit": 5.0,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Reds",
+   "record": "65-73",
+   "deficit": 9.5,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Pirates",
+   "record": "63-73",
+   "deficit": 10.5,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Dodgers",
+   "record": "82-55",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "D-backs",
+   "record": "77-60",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Padres",
+   "record": "78-61",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2024,
+   "team": "Giants",
+   "record": "68-70",
+   "deficit": 6.5,
+   "made": false
+  },
+  {
+   "year": 2024,
+   "team": "Rockies",
+   "record": "51-87",
+   "deficit": 23.5,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Blue Jays",
+   "record": "79-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Yankees",
+   "record": "76-61",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Red Sox",
+   "record": "77-62",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Rays",
+   "record": "68-69",
+   "deficit": 4.5,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Orioles",
+   "record": "62-76",
+   "deficit": 11.0,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Tigers",
+   "record": "80-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Royals",
+   "record": "70-67",
+   "deficit": 2.5,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Guardians",
+   "record": "68-68",
+   "deficit": 4.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Twins",
+   "record": "62-75",
+   "deficit": 10.5,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "White Sox",
+   "record": "50-88",
+   "deficit": 23.0,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Astros",
+   "record": "76-62",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Mariners",
+   "record": "73-65",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Rangers",
+   "record": "72-67",
+   "deficit": 1.5,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Angels",
+   "record": "64-73",
+   "deficit": 8.5,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Athletics",
+   "record": "64-75",
+   "deficit": 9.5,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Phillies",
+   "record": "80-58",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Mets",
+   "record": "74-64",
+   "deficit": 0.0,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Marlins",
+   "record": "65-73",
+   "deficit": 9.0,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Braves",
+   "record": "62-76",
+   "deficit": 12.0,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Nationals",
+   "record": "54-83",
+   "deficit": 19.5,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Brewers",
+   "record": "85-54",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Cubs",
+   "record": "79-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Reds",
+   "record": "70-68",
+   "deficit": 4.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Cardinals",
+   "record": "68-71",
+   "deficit": 6.5,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Pirates",
+   "record": "61-77",
+   "deficit": 13.0,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Dodgers",
+   "record": "78-59",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Padres",
+   "record": "76-62",
+   "deficit": 0.0,
+   "made": true
+  },
+  {
+   "year": 2025,
+   "team": "Giants",
+   "record": "69-69",
+   "deficit": 5.0,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "D-backs",
+   "record": "68-71",
+   "deficit": 6.5,
+   "made": false
+  },
+  {
+   "year": 2025,
+   "team": "Rockies",
+   "record": "39-99",
+   "deficit": 35.0,
+   "made": false
+  }
+ ]
+}

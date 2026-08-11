@@ -18,7 +18,7 @@ actor unknown. That is what makes it pre-writable. Generated from
 | Sep 2026 | NFL | NFL Week 1 kicks off the 2025 season |  |
 | Sep 2026 | NFL | NFL Week 2 storylines take shape |  |
 | Sep 2026 | College Football | Rankings shuffle after upset-filled weekends | **BUILT** |
-| Oct 2026 | MLB | MLB regular season ends and wild-card round begins |  |
+| Oct 2026 | MLB | MLB regular season ends and wild-card round begins | **BUILT** |
 | Oct 2026 | College Football | Conference races intensify heading into November |  |
 | Oct 2026 | NBA | NBA regular season tips off | skip (NBA) |
 | Nov 2026 | NFL | MVP race narrows to Drake Maye and Matthew Stafford |  |
@@ -57,14 +57,17 @@ actor unknown. That is what makes it pre-writable. Generated from
 | Aug 2027 | NFL | Training camps and preseason games begin league-wide |  |
 | Aug 2027 | MLB | Pennant races head into the season's final stretch |  |
 
-**48 recurring events.** 3 built, 45 to go.
+**48 recurring events.** 4 built, 44 to go.
 
 ## Build order (soonest first, weighted to gaps)
 
 1. `cfb-september-loss-base-rate` — **BUILT**, fires on the first top-10 upset
 2. `nfl-week1-overreaction` — **BUILT**. Finding inverted the premise: Week 1 predicts a *lot*, and the gap survives controlling for the spread
 3. US Open tennis — first entry into a GAP sport. **BLOCKED:** the public ATP match CSVs (JeffSackmann/tennis_atp) 404 on every raw URL tried and the GitHub API would not return the default branch. Needs either a working source or the file dropped in by hand, the way the headline dataset arrived
-4. MLB elimination math — what 'still alive' actually means in late September
+4. `mlb-september-still-alive` — **BUILT**. The finding inverted twice. 97% of teams
+   are "mathematically alive" on 1 September, and of the 175 more than six games back,
+   **0 reached the playoffs** in thirteen seasons. Then the sharper one: 18 of 143
+   teams *holding* a spot missed, so the collapse is ~4× more common than the charge
 5. `mlb-mvp-race-already-over` — **BUILT**. The Aug-31 OPS leader wins 54% of the time and the winner is already in the top three 86% of the time; September rarely introduces a new name
 6. NFL trade deadline — the log5 swing, reusing the Skubal machinery
 7. First CFP rankings — how much the first poll predicts the final field
