@@ -42,16 +42,44 @@ Routes that exist, none of them quick:
 
 ## 2. What is already on the register
 
-At least one **SPORTS PAGE** registration has existed: Reg. No. 1362666, restaurant
-services, filed March 1985, registered September 1985, **cancelled July 2006** under
-Section 8. Dead marks do not block a new application, but their existence shows the
-term has been claimed before and is likely in use by others — restaurants and bars
-called "The Sports Page" are common across the country, and each one may hold
-common-law rights in its own trading area.
+Two searches were run independently — one here, one in a separate Claude
+conversation (shared 11 Aug 2026) that had the logo attached. Together they give
+a fuller picture than either alone.
 
-A full search of live marks could not be completed from here: the USPTO search API
-was unreachable and Justia returned 403 to automated requests. **This gap must be
-filled by an actual search before anything is filed.**
+**Dead registrations — these do not block anything:**
+
+| Mark | Services | Filed | Status |
+|---|---|---|---|
+| THE SPORTS PAGE | Bookstore services | 1977 | Cancelled 1985 |
+| SPORTS PAGE | Restaurant services | 1985 (Reg. 1362666) | Cancelled 2006 |
+
+**Live marks and common-law users — all in food and drink:**
+
+| Name | Nature |
+|---|---|
+| STEVIE TOMATO'S SPORTS PAGE SPORTS GRILL | **Active federal registration**, bar/restaurant services |
+| Sports Page Food & Spirits (Charlotte) | In use since 1987; likely unregistered common-law rights |
+| Various local "Sports Page" bars nationwide | Common-law rights in their own trading areas |
+
+**And the important negative finding:** neither search turned up a **live,
+registered "The Sports Page" mark for sports news, data, or statistics** — which
+is the lane this newsletter actually occupies. Class 41 appears to be open.
+
+Both analyses reached the same conclusion by different routes: **the wordmark is
+descriptive and vulnerable; the logo is the asset that will register cleanly.**
+Independent convergence is worth something here.
+
+### The merch makes the restaurant marks matter more than they look
+
+The other analysis flagged that the food-and-drink overlap becomes relevant *"if
+you ever expand into merch, events, or anything restaurant-adjacent."*
+
+That is not hypothetical. Polo shirts and t-shirts carrying the mark are being
+produced right now. Clothing is **Class 25**, and printed apparel sits closer to
+the restaurant-and-bar promotional world than a newsletter does. This does not
+make a filing impossible, but it means the Class 25 question should be asked
+specifically rather than treated as an afterthought — and it interacts with the
+licence problem in §4 below.
 
 ## 3. What we do own already
 
@@ -123,6 +151,8 @@ protects the thing a reader actually recognises.
 
 ---
 
-*Compiled 11 August 2026. Sources: USPTO guidance on descriptiveness refusals and
-acquired distinctiveness; public record of Reg. No. 1362666. The live-marks search
-is incomplete — see §2.*
+*Compiled 11 August 2026, merging two independent searches. Neither was a
+professional clearance: the USPTO search API was unreachable from here and Justia
+returns 403 to automated requests, so both relied on public secondary sources. A
+proper TESS search plus state and common-law checks is still required before
+filing — that is the one step nobody should skip.*
