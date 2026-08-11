@@ -18,6 +18,17 @@ NAVY  = "#051954"
 CREAM = "#f9f2de"
 RUST  = "#b83a1e"
 
+# Garment colours -- NOT brand colours. These exist only so the halo can be set
+# to the colour actually behind the art. Sampled from the vendor's own swatch and
+# product render; confirm against a physical sample before a run.
+#
+# Why this matters: the halo where the curve crosses the S is a painted stroke in
+# the ground colour, not an absence of ink. A screen printer treats it as a
+# knockout and the fabric fills it, so the hex is irrelevant. A DTG printer prints
+# the file literally -- a CREAM halo on a NATURAL shirt lays down a visibly
+# lighter ring. Always build light-garment art with the garment's own hex.
+NATURAL = "#e4dccf"   # Gildan Softstyle "Natural" -- dE 3.5 from the site's --aged
+
 _cache = {}
 def load(path, wght):
     key = (path, wght)
@@ -343,6 +354,14 @@ def build():
     write("tee-01-masthead-reversed.svg", tee_masthead(280, fill=CREAM, bg=None, ground=NAVY))
     write("tee-02-denominator-reversed.svg", tee_denominator(280, fill=CREAM, accent="#e8703f", bg=None))
     write("tee-03-sixty-seven-five-reversed.svg", tee_founding(280, fill=CREAM, accent="#e8703f", bg=None))
+
+    # -- THE ORDER: Natural tees. These are the two files that go to the printer.
+    # Identical to the light-garment art above except the halo is Natural rather
+    # than our cream, so a DTG machine cannot print a pale ring onto the shirt.
+    # Named for the garment on purpose -- it should be impossible to send the
+    # wrong file by picking the shorter name.
+    write("tee-front-badge-url-natural.svg", badge_with_url(190, ground=NATURAL))
+    write("tee-01-masthead-natural.svg",     tee_masthead(280, ground=NATURAL))
     print("done")
 
 

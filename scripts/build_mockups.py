@@ -87,6 +87,10 @@ def build(kind, fabric, stitch, art, art_mm, xy, label, out, back=False, px=880,
 CX = BX + BODY_W/2
 CREAM_F, CREAM_S = "#f2ece0", "#c3b9a6"
 NAVY_F,  NAVY_S  = "#16224a", "#33436f"
+# The garment actually ordered: Gildan Softstyle "Natural". Sampled from the
+# vendor's product render, so the mockup shows the real shirt rather than an
+# idealised cream. See build_merch.NATURAL.
+NAT_F,   NAT_S   = "#e4dccf", "#c6bdac"
 
 def main():
     # POLO -- embroidered badge, left chest, unchanged
@@ -95,9 +99,11 @@ def main():
     build("polo", CREAM_F, CREAM_S, "polo-01-badge.svg", 82, (BX+153, TOP+215),
           "POLO  cream  ·  EMBROIDERED badge 82mm (3.25in) left chest", "polo-cream.png")
     # TEE -- badge + domain on the front, masthead on the back
+    # "natural" is the shirt being ordered and uses the garment-matched halo art.
+    # "navy" stays as the dark-garment reference.
     for tag, fab, st, front, back_art in (
-            ("cream", CREAM_F, CREAM_S, "tee-front-badge-url.svg", "tee-01-masthead.svg"),
-            ("navy",  NAVY_F,  NAVY_S,  "tee-front-badge-url-reversed.svg", "tee-01-masthead-reversed.svg")):
+            ("natural", NAT_F,  NAT_S,  "tee-front-badge-url-natural.svg", "tee-01-masthead-natural.svg"),
+            ("navy",    NAVY_F, NAVY_S, "tee-front-badge-url-reversed.svg", "tee-01-masthead-reversed.svg")):
         build("tee", fab, st, front, 190, (CX, TOP+165),
               f"TEE  {tag}  ·  FRONT  ·  badge + domain, 190mm (7.5in)", f"tee-{tag}-front.png")
         build("tee", fab, st, back_art, 280, (CX, TOP+150),
