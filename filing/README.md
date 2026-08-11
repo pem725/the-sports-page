@@ -4,41 +4,35 @@ Everything needed to file, plus one thing that must be fixed first.
 
 ---
 
-## ⚠ BLOCKER: the badge is not in use on the site
+## ✓ Blocker cleared, 11 August 2026
 
-**Read this before filing anything.**
+**The problem was real and it is now fixed.**
 
-A use-based application (TEAS, Section 1(a)) requires you to declare **under
-penalty of perjury** that the mark is in use in commerce for the services listed.
+When this package was first assembled the circular badge appeared on **no page**
+of thesportspage.net — it was referenced in zero HTML files, existing publicly
+only as the apple-touch icon buried in a `<link>` tag. A Section 1(a)
+application declares **under penalty of perjury** that the mark is in use in
+commerce for the listed services. For the badge, that would have been untrue.
 
-The circular badge is referenced in **zero** HTML files on thesportspage.net. The
-homepage masthead is the words *The Sports Page* set in Playfair Display — a
-wordmark, not the badge. The badge exists publicly only as the apple-touch icon,
-which is a phone home-screen graphic and a poor specimen: an examiner wants the
-mark shown to consumers in connection with the services, not buried in a
-`<link rel>` tag.
+The badge is now displayed in the **homepage masthead**, to the left of the
+wordmark, where a reader plainly sees it in connection with the services. Live
+and verified on the served site, and `specimen-website.jpg` was recaptured from
+`https://thesportspage.net/` afterwards.
 
-So `specimen-website.jpg` in this folder **evidences the wordmark, not the badge.**
-It is included because it is genuinely useful — but it supports a different
-application than the one we want.
+A use-based (1(a)) filing is now supportable for **Class 41**.
 
-### Three ways forward
+**One caveat on the first-use date for the badge specifically.** The newsletter
+has been in continuous use since 29 March 2026, but *the badge in this form* went
+onto the site on **11 August 2026**. Those are different dates and an examiner
+may care about the difference. Options, for the attorney to settle:
 
-1. **Put the badge on the site, then file use-based.** Add it to the homepage
-   masthead or the About page, re-capture the specimen, file 1(a). Cleanest, and
-   it is a small change. *Recommended.*
-2. **File intent-to-use (Section 1(b)).** Perfectly legitimate: it secures your
-   priority date now and you file a Statement of Use once the badge is deployed.
-   Costs an extra fee later. Good if speed matters more than tidiness.
-3. **File on the lockup that IS in use.** `assets/banner.png` — the stacked
-   wordmark with the S — appears on the homepage and on ~172 published issues.
-   That is real, evidenced, continuous use. But the circular badge is the
-   distinctive asset, and this is not it.
+- Claim **29 March 2026** for the wordmark and the newsletter services, which the
+  git history proves, and let the design mark inherit the same service use; or
+- Claim **11 August 2026** for the design mark specifically — conservative,
+  unimpeachable, and it costs only a few months of priority.
 
-**Do not file 1(a) on the badge until it is actually displayed.** An inaccurate
-use declaration can void a registration later, and it is signed under oath.
-
----
+Given how new the badge is, **the conservative date is the safer claim** unless
+counsel says otherwise. Do not overstate it to gain four months.
 
 ## What is ready
 
@@ -46,7 +40,7 @@ use declaration can void a registration later, and it is signed under oath.
 |---|---|
 | `drawing-bw.jpg` | **Recommended drawing.** 944×944, 300dpi, RGB, tight-cropped |
 | `drawing-color.jpg` | Alternative, only if claiming colour |
-| `specimen-website.jpg` | Homepage capture with URL and date — **wordmark, see blocker** |
+| `specimen-website.jpg` | Homepage capture with URL and date, **showing the badge in use** |
 
 ### Why black and white
 
@@ -72,7 +66,7 @@ Both drawings meet the USPTO requirements: `.jpg`, 250–944 px on each side,
 | Mark description | A circular badge containing the stylised letter "S" with a bell-shaped curve passing across its lower half, encircled by the words "THE SPORTS PAGE" |
 | Literal element | THE SPORTS PAGE |
 | Disclaimer | Expect to disclaim **"THE SPORTS PAGE"** apart from the mark as shown — it is descriptive of a sports publication |
-| Filing basis | 1(a) use in commerce **once the blocker is cleared**, otherwise 1(b) intent to use |
+| Filing basis | **1(a) use in commerce** — supportable as of 11 Aug 2026 |
 | Class | **41** — the core filing |
 | Identification | *"Providing online non-downloadable publications in the nature of articles and newsletters in the field of sports statistics and analysis"* — **check against the USPTO ID Manual and use pre-approved wording verbatim if available; it avoids an office action** |
 | Date of first use anywhere | See below |
@@ -80,6 +74,8 @@ Both drawings meet the USPTO requirements: `.jpg`, 250–944 px on each side,
 | Specimen | Website screenshot showing the mark with the services |
 
 ### On the first-use date — claim what you can prove
+
+*(See also the badge-specific caveat above — the design went live 11 Aug 2026.)*
 
 `CLAUDE.md` says the newsletter launched on **27 March 2026** (MLB Opening Day),
 and Issue #1 carries that date. The earliest date the repository can *prove*
