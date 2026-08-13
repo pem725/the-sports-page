@@ -1,0 +1,98 @@
+A Daily Statistics Newsletter
+The Sports Page
+"One strange number, explained."
+Vol. I, No. 125
+July 31, 2026
+Distributed Free to Friends & Family
+Twenty-Six Baseball Franchises.
+Not One of Them Runs in Cycles.
+Every fan believes their club rises and falls on some hidden clock — a good decade, a lean decade, a rebuild, a window. It is the most natural story in sports and it is not in the data. I tested all twenty-six long-lived franchises against a proper null and found zero real cycles. What is there instead is simpler, and you can actually use it: every franchise has a level it returns to, and a speed at which it returns.
+The Sports Page · The Professor · a methods piece, in plain English
+0
+of 26 franchises with a genuine periodic cycle
+.564
+the level the Yankees keep snapping back to since 1970
+0.42
+vs
+0.16
+how much of last year carries over — baseball, then football
+Here is the belief, stated plainly enough to test. A franchise is supposed to move in waves: it climbs for some years, peaks, decays, bottoms out, and climbs again, on a period you could almost set a watch by. If that were true, the wave would show up in the record. So I took every club with a long continuous history, wrote down its winning percentage for each season from 1970 through 2025, and went looking for the wave.
+How you actually test for a cycle
+The trap here is that you will always find one if you look casually. Any series with a bit of year-to-year momentum — where good years tend to sit next to good years — produces something that looks like a rolling wave to the eye, with no clock behind it at all. Economists worked this out in the 1920s and it embarrassed a generation of business-cycle theorists: smooth a run of pure noise and you manufacture handsome, entirely fictional cycles.
+So the honest test needs a fair comparison. For each franchise I measured how strongly one season carries into the next, then simulated four thousand fake histories with exactly that much carry-over and no cycle whatsoever. Then I asked: is the strongest wave in the real record bigger than the strongest wave those fake histories throw up by luck? That is the whole method. You are not asking “can I see a wave?” — you always can. You are asking “is this wave bigger than the waves randomness makes for free?”
+Across twenty-six franchises the answer was no, twenty-six times. One club cleared the five-percent bar — and its supposed cycle had a period of fifty-six years, which is the entire length of the record, so it is a drift, not a cycle. Testing twenty-six teams at that threshold, you expect about one such fluke anyway. There is no clock. There never was.
+What is really there: two dials
+Killing the cycle leaves something better, because the record does have structure — just not periodic structure. Each franchise is described almost completely by two numbers. The first is its
+level
+: the winning percentage it keeps returning to. The second is its
+persistence
+: how much of this year's deviation from that level survives into next year. Persistence near zero means every season is a fresh draw. Persistence near one means the club drifts a long way from home before the elastic pulls it back.
+Franchise
+Level
+Persistence
+Temperament
+Yankees
+.564
+0.52
+high floor, ordinary elastic
+Dodgers
+.552
+0.40
+high floor, quick snap-back
+Red Sox
+.537
+0.04
+good, and with no memory at all
+Braves
+.521
+0.73
+long slow arcs, in both directions
+Mets
+.497
+0.50
+average, and stubborn about it
+Royals
+.478
+0.50
+below average, equally stubborn
+Read the Yankees row the way a fan never does. Their famous invincibility is a
+level
+, not a streak: since 1970 they return to about .564 — a ninety-one-win pace — and their bad years get erased at an unremarkable rate. The Red Sox are the strange ones. A strong level of .537 with persistence of essentially zero means Boston genuinely has no memory: last season tells you almost nothing about this one. Atlanta is the opposite animal, at 0.73 — when the Braves go somewhere, they stay a while, which is why their history reads as a long famine followed by a long feast and feels the most cyclical of anybody. It isn't. It is just slow.
+Figure 1 · Every franchise, on the only two dials that matter
+The rulebook sets the elastic
+Now the finding that makes this more than a curiosity. Run the identical calculation on the NFL from 1999 and the whole sport sits somewhere baseball never goes. Baseball's average persistence is
+0.42
+. Football's is
+0.16
+, and several clubs come out negative — actively anti-persistent, where a good year predicts a worse one.
+That is not an accident of talent. It is design. Football runs a hard salary cap, a draft in reverse order of standing, enormous shared revenue and a seventeen-game season; every one of those is a machine for erasing last year. Baseball has none of them. So the elastic in football is short and violent, and the elastic in baseball is long enough that a franchise can be recognisably itself for thirty years. When people argue about whether a front office is smart or a market is big, they are arguing about a quantity the league office already largely decided.
+There is no clock. There is a level you return to, and a rulebook that decides how fast.
+The Professor
+Why this matters outside the ballpark
+The mistake this piece is really about is not a baseball mistake. Give anyone a wiggly line — a stock, a crime rate, a nation's mood, a franchise — and they will find a cycle in it, name it, and start forecasting the next turn. The cycle is almost always
+mean reversion
+i
+wearing a costume: extreme years are partly luck, luck does not repeat, and the return toward normal reads as the downslope of a wave that was never there. The tell is that a real cycle predicts
+when
+. Mean reversion only predicts
+which way
+— and every genuine forecast anyone has ever made about a franchise is the second kind, dressed up as the first.
+Which is oddly good news if your team is bad. A cycle would mean waiting your turn. A level and an elastic mean the only two things worth arguing about are whether you can raise the level, and how long the elastic will take — both of which are answerable, and neither of which is on a schedule.
+Notes & sources
+Season records come from the MLB Stats API, 1901–2025; the analysis window is 1970–2025 and covers the twenty-six franchises with at least forty seasons in it. Persistence is the lag-one autocorrelation of a club’s winning percentage around its own mean — a first-order autoregressive coefficient. The cycle test compares each club’s largest periodogram peak against four thousand simulated series matched on that same persistence and variance, which is the fair null: it already contains all the wave-like wandering that momentum alone produces.
+One club came in under five percent, at a period equal to the full length of the record, which is a trend rather than a cycle; across twenty-six tests roughly one such result is expected by chance. The NFL comparison uses public regular-season game results, 1999–2025, and the same calculation. Both leagues realigned, expanded and changed schedule length over these windows, which adds noise but cannot manufacture a periodicity that is absent.
+The companion primer is
+Regression to the Mean
+(Concept No. 3). A dedicated primer on autocorrelation — why a wandering line grows fake cycles, and how to test one honestly — is coming. And a reader-facing toy built on exactly this machinery, which will draw your own fandom trajectory from the teams you pick, is in the works; the arithmetic above is its engine. The archive lives at
+thesportspage.net
+.
+Pass it on.
+A few minutes to read. A few seconds to send.
+Share on X
+Facebook
+LinkedIn
+Email
+Copy link
+Or scan, for sharing the old-fashioned way.
+thesportspage.net
+© 2026 The Sports Page · A Statistical Dispatch for Friends & Family

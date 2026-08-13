@@ -1,0 +1,95 @@
+A Daily Statistics Newsletter
+The Sports Page
+"One strange number, explained."
+Vol. I, No. 114
+July 20, 2026
+Distributed Free to Friends & Family
+The Diamond in the Rough
+Is Mostly Rough.
+The Mets are fifteen games under .500 and selling before the deadline, so which prospects are actually worth dreaming on? Only one has enough at-bats to judge — and a late-season audition tells you almost nothing. Here is the math.
+The Sports Page · Prospect Math at the Deadline · Model: Beta-Binomial with a league-average prior
+.191
+Clifford's Triple-A average
+108
+90th-pct exit velo (mph)
+117
+Strikeouts — most in the Int'l League
+The question every fan of a losing team starts asking in July: who in the farm system is worth getting excited about? For the Mets — roughly fifteen games under .500 and selling before the July 31 deadline — there are three answers, and none is the one the romance of a prospect list wants.
+One: their best prospect is already gone.
+On January 21 the Mets traded their No. 1 prospect, shortstop
+Jett Williams
+, and pitching prospect
+Brandon Sproat
+to Milwaukee for Freddy Peralta and Tobias Myers — a win-now swap made by a team that then lost early and often. The prospect you were going to wait on is now in another organization's Triple-A.
+Two: the one bat left to dream on is hitting .191.
+That is
+Ryan Clifford
+, a 22-year-old first baseman/outfielder headed to the All-Star Futures Game in Philadelphia on the strength of raw power — a 90th-percentile exit velocity around 108 mph and a hard-hit rate north of 52 percent, some of the best contact-quality numbers in Triple-A. He also leads the International League with
+117 strikeouts
+. Elite raw material, unfinished contact.
+Three, and this is the part that matters most:
+for everyone below Clifford, the numbers so far are too small a sample to mean much. That is not a knock on the players. It is arithmetic, and it is the reason a losing team's summer feels more promising than it usually is.
+The one statistical question
+The instinct that keeps hope alive on a bad team is that a small burst of good numbers means something. A September call-up hits .350 over his first three weeks and the fan base pencils him into next year's lineup. The math says: not so fast. A cup of coffee is one of the least informative samples in all of sports.
+Use the newsletter's standard tool for a rate like batting average: the Beta-Binomial. Start with a league-average prior — a Beta distribution centered on a .250 hitter, with a strength of about 200 plate appearances of prior belief (alpha = 50, beta = 150). Now let a rookie go 14-for-40, a scorching .350 debut. Update the prior with those 14 hits and 26 outs and the posterior barely twitches:
+Belief about the hitter
+Sample
+Estimated true AVG
+Prior (league-average bat)
+—
+.250
+After a hot debut
+14-for-40 (.350)
+.267
+After a full minor-league season
+~130-for-520 (.250)
+.250
+After a cold debut
+6-for-40 (.150)
+.233
+A .350 explosion over 40 at-bats moves our estimate of the player's true ability from .250 all the way to .267 — seventeen points. A dreadful 6-for-40 pulls it down to .233. The cup of coffee, hot or cold, is almost inert. It cannot make a star and it cannot bury one, because forty at-bats simply do not contain enough information to overwrite what we already believed. This is not a quirk of the chosen prior; it is the arithmetic of small samples. The dream survives the audition precisely because the audition proves nothing.
+Figure 1 · A 40-at-bat audition stays broad and uncertain; only a full season sharpens belief
+A cup of coffee cannot make a prospect a star, and it cannot bury one. Forty at-bats do not contain enough information to overwrite what we already believed. The dream survives the audition because the audition proves nothing.
+Prospect Math at the Deadline
+Why Clifford is the interesting case, not the safe one
+Clifford is the exception that clarifies the rule, because his sample is no longer a cup of coffee. Through roughly 320 plate appearances in Triple-A this year, he has enough of a track record that the numbers
+are
+starting to speak — and what they say is genuinely ambiguous rather than empty. The power is real and it is elite; contact quality that good is a skill, not a fluke, and it stabilizes faster than batting average. The strikeouts are also real: a rate near 36 percent of plate appearances against Triple-A pitching, well north of the roughly 22 percent a big-league hitter runs, and strikeout rate is one of the fastest-stabilizing stats there is.
+So the honest scouting line is not "wait and see." It is a specific, testable bet: the raw power is a finished asset and the contact is the open question. If the whiffs come down even to merely bad, the exit velocity plays and there is a middle-of-the-order bat here. If they do not, he is a Quadruple-A slugger — the kind of hitter whose Triple-A power never survives contact with a major-league breaking ball. The Futures Game invitation is a bet on the first outcome. The .191 is the market pricing in the second.
+Who else is in the rough
+Below Clifford, the promise is real but comes with the same warning label: small samples, loud tools, quiet results so far.
+Player
+Pos
+Level
+The stone, and the rough
+Ryan Clifford
+1B/OF
+AAA
+Elite exit velo, Futures Game bat; .191 and league-most strikeouts
+Jonah Tong
+RHP
+AAA
+Led all of the minors in strikeouts a year ago; Triple-A ERA has spiked into the 6s on shaky command
+Jack Wenninger
+RHP
+AAA
+Velocity near 98, a double-plus splitter; walk rate ballooned to ~13% at Triple-A
+Every one of them fits the pattern the model warns about. A tool loud enough to dream on, a result column that has not yet cooperated, and a sample too small — or a season too young — to settle the argument. That is what "prospect" means. It is not a promise; it is a probability with a wide error bar.
+What it means at the deadline
+A seller in late July faces a choice the math frames cleanly. The Mets can cash their veterans for other teams' Cliffords — buying wide error bars in bulk and hoping a few resolve upward — or they can hand their own kids the at-bats a lost season makes cheap. Both are defensible. Neither should be confused with certainty. The great trap of a losing summer is that a two-week hot streak from a call-up feels like a discovery. The Beta-Binomial is there to remind you it is mostly noise, and that the only prospect whose numbers have earned the right to move your priors is the one who has been at it long enough to strike out 117 times.
+The romance of the diamond in the rough is durable because it is unfalsifiable in small samples. Enjoy the dream — that is what a lost July is for — but price it honestly. Most rough stays rough. The rare stone that turns into a franchise does not announce itself in forty at-bats. It announces itself over the long, boring, statistically significant grind that separates the two.
+Notes & sources
+Records and standings: New York Mets 2026 season record via MLB.com standings and Baseball-Reference. Roster move: the January 21, 2026 trade of Jett Williams and Brandon Sproat to Milwaukee for Freddy Peralta and Tobias Myers, per public reporting. Prospect statistics (Ryan Clifford, Jonah Tong, Jack Wenninger) via MiLB.com, Baseball America, and Amazin' Avenue prospect coverage; Clifford's Futures Game selection and exit-velocity metrics via MLB.com and MiLB.com.
+Model: Beta-Binomial for a batting-average rate. Prior: Beta(α=50, β=150), mean .250, prior strength 200 PA. Posterior mean after a sample of h hits in n at-bats is (α+h)/(α+β+n). The illustrative debut lines (14-for-40, 6-for-40) are chosen to show the range; they are not attributed to any specific player. Strikeout- and contact-rate stabilization thresholds follow standard sabermetric reliability estimates (strikeout rate stabilizes within roughly 60 plate appearances; batting average requires several hundred).
+Publish-time refresh required.
+Every number in this piece — the Mets' record, Clifford's slash line and strikeout total, Tong's ERA, the standings context, and whether any of these players has since been called up or traded — must be re-verified against at least three independent sources on the morning of publication. Prospect lines move weekly, and this draft was built from data as of early-to-mid July 2026.
+Pass it on.
+A few minutes to read. A few seconds to send.
+Share on X
+Facebook
+LinkedIn
+Email
+Copy link
+Or scan, for sharing the old-fashioned way.
+thesportspage.net
+© 2026 The Sports Page · A Statistical Dispatch for Friends & Family

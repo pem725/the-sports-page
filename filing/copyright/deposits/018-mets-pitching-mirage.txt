@@ -1,0 +1,124 @@
+The Mets’ Pitching Isn’t the Problem. You’re Watching the
+Wrong Side
+of the Box Score.
+Five starters with ERAs under 3.10. A bullpen at 2.84. And yet the Mets are playing .500 ball. The culprit isn’t on the mound — it’s in the batter’s box, where a $765 million outfielder is on the injured list, a $341 million shortstop is hitting .135, and the franchise’s most expensive offseason addition is posting an OBP that starts with a “2.”
+By The Columnist · April 15, 2026
+2.30
+Avg Rotation ERA (5 Starters)
+.135
+Lindor BA (Post-Surgery)
+7–7
+Record Despite Elite Pitching
+The Rotation Nobody’s Talking About
+If you told a Mets fan in March that by mid-April their rotation would feature a converted closer posting a 1.50 ERA, a rookie with a 2.70 ERA and a 20-to-6 strikeout-to-walk ratio, a returning Kodai Senga striking out 16 in 11.2 innings, and Luis Severino at a career-best 2.14 — they would have called you delusional and ordered another round.
+And yet here we are. Clay Holmes, the man the Yankees used as a closer, has thrown 18 innings of 1.50-ERA ball as a starter. McLean, the 24-year-old who debuted last August, looks like the real thing: 20 strikeouts against 6 walks in 16.2 innings is the kind of command that doesn’t come from rookie luck. Senga is finally healthy after two lost seasons. Severino is 2-1 with an ERA that would be the envy of any rotation in baseball. And Freddy Peralta, acquired to be the ace, carries a 2.70 pedigree from Milwaukee.
+The bullpen? A 2.84 ERA with Devin Williams closing, Luke Weaver setting up, and Craig Kimbrel providing veteran depth. There is nothing wrong with this pitching staff.
+The Lineup That Can’t Score
+But a pitching staff this good should be anchoring a team well above .500. The Mets are 7-7 because they cannot hit.
+Juan Soto — the $765 million man — was hitting .355 with a home run and 5 RBI when his right calf gave out on April 3. He’s on the injured list until at least April 20, with manager Mendoza shutting down all baseball activity. That’s a .355 hitter replaced by a league-average bench player for three weeks.
+Francisco Lindor is hitting .135 with a .577 OPS. He had hamate bone surgery in February — the bone that controls grip strength and wrist torque. As we noted in
+Issue #8
+, the $467 million infield was hitting .128 through the first week. Lindor’s barely improved.
+Bo Bichette is at .200 with a .229 OBP. That OBP means he’s reaching base less often than some pitchers. His strikeout rate has settled at 25% — down from the 53% we flagged in Issue #8 but still well above his career 18%.
+And Pete Alonso? Gone. Hitting .176 in Baltimore with 2 hits in his last 28 at-bats. The Mets lost him and gained a lineup hole they haven’t filled.
+The Evidence: Pitchers vs Hitters
+Pitcher
+Role
+ERA
+IP
+K
+Verdict
+Holmes
+SP (converted)
+1.50
+18.0
+12
+Elite
+Severino
+SP
+2.14
+21.0
+—
+Elite (2-1)
+McLean
+SP (rookie)
+2.70
+16.2
+20
+Ace-caliber
+Senga
+SP (returning)
+3.09
+11.2
+16
+Back and sharp
+Bullpen
+Relief corps
+2.84
+—
+—
+Solid
+Hitter
+BA
+OPS
+Status
+Verdict
+Lindor
+.135
+.577
+Playing (hamate surgery Feb)
+Crisis
+Bichette
+.200
+.473
+Playing (K-rate elevated)
+Struggling
+Soto
+.355
+—
+IL since Apr 3 (calf)
+Absent — return ~Apr 20
+Alonso
+.176
+.538
+In Baltimore now
+Gone — and not missed
+“The Mets’ rotation is pitching like a first-place staff trapped inside a last-place offense. The pitchers are doing their job. The hitters are cashing their checks.”
+— The Columnist
+The Variance Decomposition
+In
+Issue #4
+, we said .500 after 6 games was noise. In
+Issue #8
+, we said the $467M infield was a small-sample panic dressed in dollar signs. Both were right — but they were pieces of the same story. Here’s the full picture:
+A team’s record is driven by two things: runs scored and runs allowed. The Mets’ rotation ERA of roughly 2.30 puts their run prevention among the best in the National League. But run
+production
+— with Soto absent, Lindor at .135, and Bichette at .200 — is dragging the record to .500 despite the pitching.
+This is a variance-attribution question:
+which side of the ball explains the Mets’ mediocre record?
+The answer is unambiguous. The pitching is performing at a 95+ win pace. The hitting is performing at a 70-win pace. Average the two and you get… roughly .500. The math checks out. The narrative doesn’t.
+Pythagorean expectation:
+  Win% ≈ RS² / (RS² + RA²)
+
+  If RS/game ≈ 3.2  and  RA/game ≈ 2.8
+  → Win% ≈ .567  → 92-win pace
+
+  But if RS drops to ≈ 2.5 (Soto absent, Lindor .135):
+  → Win% ≈ .444  → 72-win pace
+
+  The Mets are living in the gap between
+  what their pitching deserves and what
+  their lineup delivers.
+The Prediction
+Here is where the accountability pledge earns its keep. The Mets have a clear inflection point coming:
+Juan Soto’s return, expected April 20–27.
+Our prediction, dated April 15, 2026:
+In the 20 games after Soto returns, the Mets will win 12 or more
+— provided the rotation sustains its current pace. That’s a .600 clip, which is what a top-5 pitching staff deserves when paired with even a league-average offense. Soto hitting .355 before his injury was well above league-average. Even a post-IL Soto hitting .280 changes the lineup math dramatically.
+If the Mets DON’T win 12 of 20 post-Soto, one of two things happened: (1) the pitching regressed, or (2) Lindor’s .135 is structural (hamate damage) rather than temporary. Both are testable. We’ll grade this in the Sunday Edition when the 20-game window closes.
+PREDICTION LOGGED: Mets 12+ wins in 20 games post-Soto return. Evaluation date: ~May 15, 2026.
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

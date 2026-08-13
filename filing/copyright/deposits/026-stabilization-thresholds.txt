@@ -1,0 +1,95 @@
+When the Number Starts to
+Mean
+Something
+Every April, a hitter on a hot streak hits .450 and fans decide he is the MVP. Every April, the same hitter regresses and fans decide he is finished. Both readings are wrong for the same reason: the denominator is too small. Here is the reference card.
+By The Professor · The Sports Page · A Reader’s Pocket Guide
+150
+PA for Batting Average
+50
+IP for ERA (Weak)
+100
+Attempts for FG%
+Stabilization is a technical term. A statistic "stabilizes" at the sample size at which the player’s observed performance, regressed appropriately toward the league mean, correlates strongly with his true underlying talent. Below that sample, the stat is information-light: the league average is a better predictor of future performance than the player’s own hot or cold number. Above it, the player’s own number begins to carry real signal.
+The numbers below are the approximate stabilization thresholds — the points at which the reliability coefficient reaches roughly 0.5, meaning half the variance in observed performance reflects real ability.
+Reference Table
+Stat
+Sport
+Sample size for reliability
+Notes
+Strikeout rate (K%)
+MLB batting
+~60 PA
+Among the fastest to stabilize
+Walk rate (BB%)
+MLB batting
+~120 PA
+Approach is sticky
+Batting average
+MLB
+~910 PA
+Notoriously noisy; often requires multi-year samples
+On-base percentage
+MLB
+~460 PA
+Stabilizes faster than BA (walks help)
+Slugging / ISO
+MLB batting
+~550 PA
+Power is moderately sticky
+HR rate
+MLB
+~170 PA
+HR/PA stabilizes relatively quickly
+BABIP (batter)
+MLB
+~820 PA
+Mostly luck until very large samples
+ERA
+MLB pitching
+~150 IP
+Fragile at seasonal samples; regressing to FIP helps
+K-BB% (pitcher)
+MLB pitching
+~70 BF
+Very fast; usable quickly
+FG% (2-point)
+NBA / WNBA
+~100 attempts
+Shooters stabilize by ~25 games
+3-point %
+NBA / WNBA
+~750 attempts
+Takes a full season-plus
+Passer rating
+NFL
+~100 attempts
+One full game is not enough
+Kicker FG%
+NFL
+~30 attempts
+Roughly a full season at mid-range
+Save % (SV%)
+NHL goalies
+~1,400 shots
+A full season plus change
+How to Use This
+Three rules of thumb the table reduces to, for any sport:
+One:
+If a rate stat is below its stabilization threshold in games played, treat the player’s career rate (or a league baseline for rookies) as the better predictor than the current-season hot or cold streak. This is the canonical answer to "who is the MVP through April?" The MVP through April is usually whoever the MVP was last year.
+Two:
+Counting stats (home runs, sacks, goals) do not have stabilization thresholds in the same sense — they are cumulative, not rate. Their April values are literal and predictive within limits.
+Three:
+Peripheral rate stats — strikeout rate for a hitter, K-BB% for a pitcher — stabilize
+much
+faster than outcome stats like batting average or ERA. When someone wants to know in April whether a player is real, the right stats to look at are the peripherals, not the top-line.
+“The first stat to trust is the fastest one to stabilize. Strikeout rate tells you what batting average wants to be when it grows up.”
+— The Professor, on which April numbers are actually real
+Save this table. It is the reference we will point at whenever this newsletter, or a reader, is tempted to overreact to a
+small sample
+i
+.
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

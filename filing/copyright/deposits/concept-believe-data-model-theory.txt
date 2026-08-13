@@ -1,0 +1,65 @@
+Your Forecast Broke.
+Which of Three Things Do You Stop Believing?
+Behind every prediction is a stack of three claims — the data you measured, the model you fit to it, and the theory the model is only one version of. When the prediction fails, usually just one rung broke. Confusing which is the most expensive mistake in analytics.
+Tier 1 · The Two-Minute Version
+Three claims wearing one trench coat.
+When you say “this team will win,” it sounds like a single claim. It is three, stacked on top of each other: that the
+data
+is trustworthy (the stats measured what you think they did), that the
+model
+is right (the way you turned those stats into a prediction), and that the
+theory
+is right (the underlying idea that these stats are the ones that win games).
+Now watch the best regular-season team lose in the playoffs — which happens constantly. What broke? It could be any of the three, and they are not the same problem:
+Maybe the
+data
+lied — 108 wins against a soft schedule overstated how good the team actually was. Maybe the
+model
+was wrong — regular-season win totals are a weak predictor of a best-of-five series. Or maybe the
+theory
+was wrong — the whole idea that “the best team wins in October” is false, and baseball’s playoffs are closer to a coin flip than a coronation.
+Three diagnoses. Three completely different fixes — fire the scout, rebuild the model, or give up the belief. And you cannot do any of them until you know which rung cracked.
+A belief sits three rungs above the number — a failure can strike any one of them
+Tier 2 · If You Want to Go Deeper
+The model is not the theory — and that trips up everyone.
+Here is the move that separates careful thinkers from confident ones. A model is an
+instantiation
+of a theory — one specific way to write an idea in math. That has two consequences almost everybody gets backwards.
+A model failing does not kill the theory.
+Maybe you just built a clumsy model of a perfectly good idea. “Momentum isn’t real, because my momentum stat didn’t predict the next game” — no; maybe your stat was a lousy instantiation of momentum, and a better one would have worked.
+And a model succeeding does not prove the theory.
+It can be right for the wrong reason: overfit to noise (see
+All Models Are Wrong
+), or quietly riding a lurking variable that has nothing to do with your story.
+So each rung fails with its own signature, and you diagnose them differently.
+Data
+problems announce themselves when a result won’t replicate, when other measurements disagree, or when the sample was tiny or hand-picked (base rate, survivorship).
+Model
+problems show up as a great fit on the past and a terrible one on the future, or as a simpler model doing just as well.
+Theory
+problems are the slow ones: model after model, measurement after measurement, the idea keeps losing — and at some point the belief itself is the thing that has to go.
+That is the entire scientific method compressed into one habit:
+never let a single number confirm or destroy a belief.
+The number lives three rungs below the belief, and a great deal can go wrong on the climb up. George Box’s warning applies to the middle rung — your model is always wrong — but the harder discipline is knowing whether it is a
+useful
+instantiation of a theory worth keeping, or a tidy wrapper around an idea that isn’t.
+Tier 3 · Take It to the Textbook
+The full treatment: from a study to a claim.
+Keeping these three rungs straight — designing a study, fitting a model to it, and deciding what a result can actually license — is the throughline of
+The Sports Page’s companion statistics textbook
+, a free, open, graduate-level text, most concretely in its
+Using Models
+part, with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+All Models Are Wrong
+(Concept No. 15) — the middle rung, in detail: a model is never the truth, only a version of it.
+Base Rate
+and
+Survivorship Bias
+(Concepts No. 1 and 4) — the bottom rung, where the data itself can’t be trusted.
+The
+“acceleration”
+issue — when the metric shocked us, we had to ask: bad window (data), wrong model, or wrong idea?
+Sunday Editions — every scored prediction is a chance to ask which rung failed, out loud.

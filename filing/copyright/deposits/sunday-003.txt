@@ -1,0 +1,113 @@
+The Streak Broke. Soto’s Back. Lindor’s Hurt.
+The Math Doesn’t Care.
+A 12-game losing streak ended the same night Juan Soto returned from the IL — and the same night Francisco Lindor injured his calf and walked off. We made one strong prediction this week and it landed precisely. The 2026 NFL Draft delivered a roomful of fresh data points. And as always, we report on ourselves the way we report on anyone else: with the math.
+By The Sports Page · April 26, 2026 · Sunday Edition No. 3
+A week of plot beats. The Mets’ long losing streak finally ended on the same April night that Soto came off the IL and Lindor walked off with a calf strain — one slow-motion crisis resolved, another instantly created. The 2026 NFL Draft happened, and both New York teams are working with their new picks in the books. Our Soto injury model nailed the duration of his absence within a day. Two of the seven pieces this week generated genuinely scoreable outcomes; the rest are still cooking. As always, we report on ourselves the same way we report on anyone else — with the math.
+28
+Issues Published Through Saturday
+1 HIT
+Soto IL Length, Within a Day
+472
+Issues Remaining to Our 500 Goal
+The Week in Review: Issues #22–28
+#22
+Apr 20
+—
+Tennessee Lost Every Single Player
+— Star sensitivity analysis and why CFB roster turnover is misread.
+#23
+Apr 20
+—
+The WNBA and MLS Were Born the Same Year
+— One pays $84K, the other pays $300K. Why?
+#24
+Apr 21
+—
+Want to Know If the Mets Lost? Check the S&P 500.
+— A spurious correlation, lovingly explained.
+#25
+Apr 22
+—
+Fifty Years, One Hall of Famer
+— Three definitions of a Jets first-round bust. Sal’s sidebar debut.
+#26
+Apr 23
+—
+The 2026 Mets Are 7-14. The Math Is Unhappy, Not Final.
+— Bayesian posterior on a slow start.
+#27
+Apr 24
+—
+Same Stadium, Different Drafts
+— Jets vs. Giants, 50 years in: closer than fans think.
+#28
+Apr 25
+—
+The Mets Diaspora
+— Three years of departures and the replacements that haunt the team.
+The Prediction Scorecard
+#
+Prediction
+Outcome
+Grade
+7
+54.4% chance Soto misses 10+ games from calf strain
+Placed on IL April 3. Returned April 22. Missed exactly
+15 games
+.
+HIT — our cleanest call to date
+26
+Posterior projection: 80–82 record, 90% credible interval [70, 89]
+Streak ended at 12 the same week. Mets won the next game 10–8. Re-fit posterior virtually unchanged.
+PENDING — ~140 games to go; posterior holding
+25
+Jets’ 50-year first-round triple-bust rate: 27.8%; Hall of Famers produced: 1
+2026 pick (Sadiq, TE, Oregon at #16) far too young to evaluate. Historical claim stands as published.
+N/A — retrospective, not forecast
+27
+Giants’ superiority over Jets has come from non-first-round picks and trades, not first-round drafting
+Giants got two first-round picks this week (Reese #5, Mauigoa #10). Jets got one (Sadiq #16). Three more years before any of those careers say anything.
+PENDING — thesis stands; data still future
+28
+Díaz HIT (declining); Lugo MISS; Alonso TBD
+Díaz still on the IL with calf trouble for the Dodgers (HIT confirming). Lugo continues at All-Star pace elsewhere (MISS confirming). Alonso slow start in Baltimore (LEANING HIT but early).
+EARLY-CONFIRMING — framework working as intended
+22
+Tennessee’s star sensitivity: roster turnover overstated as a 2025 collapse trigger
+Spring practice reports favorable. No regression yet. Insufficient data.
+PENDING
+What We Got Right
+The Soto Call Lands Within a Day
+Issue #7 (April 4) ran a Bayesian severity model on Juan Soto’s calf tightness and assigned a 54.4% probability that he would miss 10 or more games. He missed exactly 15. That is not a near-miss; it is the kind of calibration the entire newsletter exists to test for. The Gamma prior over recovery times for calf strains, weighted by his contract value and the Mets’ medical staff’s historical conservatism, produced a posterior that landed squarely on the actual outcome.
+The slow-start posterior from Issue #26 is also holding up, in a less dramatic way. Our projection of 80–82 wins (90% credible interval [70, 89]) was published the day before the streak broke. The Mets won that game 3–2. The next, 10–8. The model didn’t move much — one good week against a 187-trial Beta posterior shifts the mean by about half a win — but the qualitative direction is right. The streak ending is what the math expected, eventually. It just happened sooner than the modal scenario.
+Draft Week: The New Picks on the Board
+What Both New York Teams Walked Out With
+Issues #25 and #27 framed the Jets’ 2026 first-round pick as the seventh selection. By draft night the slot was sixteenth — the kind of trade-down that happens routinely on draft week and that no pre-draft analysis tries to forecast. The historical claims in those pieces (the 50-year Jets first-round record, the Jets-Giants comparison) don’t depend on the slot. The 2026 player does.
+The Jets selected
+Kenyon Sadiq
+, a tight end from Oregon, at #16. The Giants made two first-round selections:
+Arvell Reese
+(LB, Ohio State) at #5 and
+Francis Mauigoa
+(OL, Miami) at #10 — doubling the Jets’ first-round inventory this year. By the three definitions used in Issue #25, none of these picks can be evaluated for several seasons; that is the point of those definitions. We’ll add all three to the dataset that powers the upcoming “After the Jets” series, slot the picks against their expected-AV curves at #5, #10, and #16, and check back in a Sunday Edition three years from now.
+“The streak ended. Soto came back. Lindor walked off. The Jets and Giants made their picks. Some predictions land within a day; some won’t resolve for years. The math doesn’t care which one feels better — it just keeps updating.”
+— The Sports Page, Sunday Edition No. 3
+Over-Reactions and Under-Reactions
+Over-Reactions
+Issue #26’s framing of the slow-start crisis was, in retrospect, slightly more cautious than the data demanded. The streak ended within 24 hours of publication. The Mets won the next game. The piece said "the math is unhappy, not final," and that read correctly — but the implicit emotional posture leaned toward "be ready for it to keep getting worse." The math wasn’t actually saying that. It was saying "wait." The streak ending is what wait looks like.
+Under-Reactions
+We did not capture how serious the Lindor calf situation might be. Issue #26 mentioned him in passing as part of the personnel drag. Issue #28 (the diaspora piece) didn’t mention him at all. He walked off during the streak-breaking game and the Mets are now without him for some unspecified stretch. The next Mets piece needs to model that absence explicitly. A win-probability projection without Lindor at shortstop is materially different from one with him there.
+What Readers Read · Apr 19–Apr 25
+Readership data pending — the analytics pipeline installed recently, and last week’s counts were not captured. This section will populate starting with the first full week of data.
+The Road Ahead
+Five pieces queued for the next five days. Monday: the signal-horizon piece on how few seasons it takes to know a coach or first-round pick is a bust. Tuesday: the JND of CFB rankings, drawing on 30 seasons of ranked-vs-ranked games. Wednesday: stabilization thresholds — a pocket reference card on when April numbers start meaning something.
+Thursday: the JUCO Detour
+, our first reader-credited piece, drawing on a reader pitch from Sean that arrived the week the article was being drafted. Friday: the Fan Misery Map.
+Plus the new Mets piece on the next 10 series, scheduled for the week ahead now that Lindor’s status is the key unknown. And the four-part “After the Jets” series begins May 4 with the league’s Hall-of-Fame harvest. Twenty-eight issues down. Four hundred and seventy-two to go.
+“Twenty-eight in. Four seventy-two to go. The first reader-pitched piece publishes Thursday. The math keeps working. So do we.”
+— The Sports Page, on the long game
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

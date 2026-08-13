@@ -1,0 +1,63 @@
+You Don't Find a Metric.
+You Build One.
+Nobody ever measured how good a team is. You can't reach into the world and pull it out. What you can do is build a number that stands in for it — and then ask the only two questions measurement cares about.
+Tier 1 · The Two-Minute Version
+The number is a decision, not a discovery.
+Here is a thing you cannot do: walk up to a baseball season and pick up "team quality." It isn't lying in the box score. It isn't a rock you can hold. "How good is this team, really?" is an
+idea
+— what measurement people call a
+construct
+— and ideas don't come with numbers attached.
+So to work with the idea, you have to
+build a stand-in number
+. That number is a metric. And every metric is a chain of decisions someone made: what to count, what to divide it by, over what stretch of time.
+We did exactly this a few issues back. We wanted to know whether a team was quietly getting better or worse — not its record, but its
+direction of travel
+. That trait wasn't sitting anywhere, so we built a number for it and called it
+acceleration
+: take run differential per game, then measure how much that is speeding up or slowing down. Nobody handed us "acceleration." We decided to compute it. It is a built thing.
+This is the first and most important habit of measurement:
+keep the thing and the number separate in your head.
+The trait you care about ("is this team declining?") is not the same as the stand-in you built ("acceleration was −2.46 in July"). Mistaking the number for the thing — treating the map as the territory — is where a startling share of bad sports takes are born.
+So the first question about any statistic is never "what does the number say?" It is
+"what did we decide when we built it?"
+Tier 2 · If You Want to Go Deeper
+Is your metric any good? There are only two questions.
+Once you have built a number, measurement interrogates it with two questions, and essentially only two. Every argument about whether a stat is worth trusting is one of these two in disguise.
+Reliability: does the metric agree with itself?
+If you measure the same thing twice, do you get the same answer? Our acceleration metric flunked a version of this test, and it was instructive. Computed by calendar month, it said the Dodgers had fallen off a cliff (−2.46). Computed over a rolling fifteen-game window, it said a mild −0.27. Same team, same day, two very different answers — because an arbitrary choice (where you draw the window) moved the number a lot. A metric that swings on a decision that shouldn't matter is not yet trustworthy. It is a first draft.
+Validity: does it measure what you claim it measures?
+This is the deeper trap, because a number can be perfectly reliable and still measure the wrong thing entirely — precise and wrong, like the tight cluster of darts six inches off the bullseye (see the
+Precision vs. Accuracy
+primer). "Acceleration" claims to flag teams whose real quality is fading. Does a negative reading actually predict future losing? Or is it just noise wearing a lab coat? Until you have checked that the number tracks the thing, you have a number, not a measure of anything.
+This is why the statistician George Box's line is the whole motto of measurement:
+all models are wrong, but some are useful.
+Your metric is a model of a trait you can never see directly. It will never
+be
+the trait. The right question is never "is it true?" — it isn't — but "is it useful, and do I know the ways it lies?"
+So the discipline, in order:
+(1)
+name the construct you actually care about;
+(2)
+build a number that stands in for it, out loud, so every decision is visible;
+(3)
+interrogate it — reliability, then validity — before you believe a word it says. Skip step three and all you have done is launder an opinion through a decimal point.
+Tier 3 · Take It to the Textbook
+The full treatment: reliability and validity.
+Measurement is a whole field, and the two questions above — reliability and validity — each get a proper chapter in
+The Sports Page’s companion statistics textbook
+: a free, open, graduate-level text, under the part called
+Checking Our Data
+, with the formal definitions and the R code to run them yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The
+“acceleration”
+issue — a metric we built from scratch, and its window problem is a live reliability lesson.
+The
+Caitlin Clark “share of points from three”
+piece — a constructed proportion, a built number standing in for “how much of her game is range.”
+Precision vs. Accuracy
+(sibling primer) — a reliable-but-wrong number is precise but inaccurate.
+Roster clustering (queued) — building a number for “how evenly is talent spread.”

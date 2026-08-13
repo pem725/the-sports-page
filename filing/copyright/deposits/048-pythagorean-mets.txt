@@ -1,0 +1,89 @@
+Bill James Says the Mets Should Be 22–24.
+The Bigger Story Is What That Means Over 162.
+In 1981, Bill James proposed a formula so simple a 12-year-old could compute it: take a team’s runs scored, square them, and divide by the sum of (runs scored squared) plus (runs allowed squared). The result, multiplied by games played, is the team’s expected wins. The Mets, through 46 games, have scored 176 runs and allowed 186. James’s formula says they should be
+22–24
+. They are 20–26. They have been, in close-game outcomes, a touch unlucky. The harder problem is that the same formula, projected forward, says this team is on pace to win
+76 games
+— not the 87 the wild card has historically required.
+By The Professor · The Sports Page · MLB · Wins Expected
+20–26
+Mets Actual Record
+22–24
+Pythagorean Expected
+76
+Wins Pace, Full Season
+One of the most useful things a statistician can do for a fan is to separate luck from skill. The standings give you the result; the result is a mix of how well the team has actually played and how the close games happened to fall. Bill James, the founder of modern baseball analytics, asked in 1981 whether the underlying play could be measured directly — using only runs scored and runs allowed — without contaminating the answer with the way the close games broke. The answer, after a decade of testing, turned out to be yes. The formula he produced is called the
+Pythagorean expectation
+, and forty-five years later it remains one of the cleanest predictors of baseball wins ever invented.
+The Formula, Built on a Napkin in 1981
+The original Pythagorean formula goes like this:
+Bill James, 1981, Two Lines of Math
+Win%  =  RS²  /  ( RS²  +  RA² )
+
+Expected wins  =  Win%  ×  Games played
+RS is total runs scored, RA is total runs allowed. The exponent of 2 is what gives the formula its name — if you think of RS and RA as the legs of a right triangle, the formula looks like the Pythagorean theorem with the legs squared. James later refined the exponent down from 2 to about 1.83, which fits actual MLB outcomes slightly better, but for any practical use the original power-of-two version is within rounding error.
+For the Mets at 46 games (176 RS, 186 RA):
+Win%  =  176²  /  ( 176²  +  186² )
+      =  30,976  /  ( 30,976 + 34,596 )
+      =  30,976  /  65,572
+      =  0.4724
+
+Expected wins in 46 games  =  21.7  ≈  22
+
+Expected record  =  22 W,  24 L
+The Mets are 20 and 26. The Pythagorean expectation says they should be 22 and 24. The difference is two wins. In statistical terms, the Mets have been roughly two wins worse than their underlying run differential predicts — a real but modest deviation that, in any 46-game sample, is well within the noise band Pythagorean produces.
+Why the Formula Works (and Why It Sometimes Doesn’t)
+Pythagorean expectation works for a reason that is statistically beautiful and intuitively unobvious:
+baseball runs are distributed in a way that mostly disconnects total runs from clutch timing
+. Across a 162-game season, a team that scores 5 runs per game and allows 4.5 runs per game will, given enough opportunities, win the right number of close games and lose the right number of blowouts that its record converges on what its run differential predicts. The luck factor — whether a particular bullpen meltdown happens to come in a one-run game or a six-run game — averages out.
+The formula sometimes misses, and the misses are themselves informative. A team that wins disproportionately many one-run games — what announcers love to call “clutch” — will outperform its Pythagorean record in the short run. A team with a great closer might do this systematically. A team with a brutal bullpen will underperform Pythagorean, losing close games at higher rates than their runs scored should produce. The 2012 Baltimore Orioles famously beat Pythagorean by eleven games, riding a 29–9 record in one-run games to a playoff berth their run differential said they did not deserve. The next year, they regressed almost exactly to what Pythagorean had said.
+The empirical literature, accumulated over four decades, says: Pythagorean predicts actual wins within
+±3 to 4 games
+for the average team over a 162-game season. That is, on a 162-game scale, remarkably precise — tighter than most preseason projection systems can manage.
+The Mets’ Real Problem Is Not the Two-Game Gap
+The two-game underperformance is interesting trivia. The much more important number is what the Mets’ run-scoring rate, sustained for the rest of the season, would produce. Through 46 games, the Mets are scoring
+3.83 runs per game
+(24th in MLB) and allowing
+4.04 runs per game
+(about league average). Projecting both rates forward across 162 games gives 621 runs scored and 657 runs allowed. Plug those into Pythagorean:
+Pace
+Runs Scored
+Runs Allowed
+Pythagorean Win%
+Expected Wins
+Current pace (162 g)
+621
+657
+.472
+76
+Required for WC3 (~87 W)
+~720
+~657
+.547
+87
+Preseason FanGraphs projection
+~735
+~650
+.561
+~88
+Read the gap. The Mets’ current pace produces a 76-win team. The wild card requires an 87-win team. Their preseason projection — the one this newsletter referenced last week as “what they need to play” — required them to score roughly 735 runs over the year. They are on pace for 621. The 100-run-shortfall in run scoring is the difference between “wild card team” and “sub-.500 finish.” The pitching is fine. The offense is the problem.
+“Pythagorean does not tell you the Mets are doomed. It tells you that, for the math to work, they have to start scoring runs at the rate they were projected to score them. They have not yet. The clock is now the second half of a 49-game window.”
+— The Sports Page, on what 76 wins actually means
+What Has to Change — and Probably Will
+Two pieces of context make the offensive shortfall less alarming than the raw number suggests. First,
+Francisco Lindor
+has missed time with a calf strain and
+Francisco Alvarez
+has been on the injured list with a hand injury. Lindor was projected by both PECOTA and ZiPS to produce a .350 wOBA-equivalent over a full season; Alvarez was projected at .335. Both bats, when healthy, are top-three on the team. The current run-scoring rate has been produced without either at full strength for most of the season. When both return — both are expected back before the end of May — the projection model implicitly assumes about half a run per game of offensive improvement. That alone, applied across the remaining 116 games, accounts for roughly 58 additional runs — well over half of the 100-run shortfall.
+Second, there is a structural reason to expect the bullpen to allow fewer runs in the second quarter than it did in the first.
+Devin Williams
+, examined statistically in Issue #45, was striking out batters at his historical rate and giving up contact at his historical rate; he was simply unlucky in run-prevention through April. Over his last six outings, including Sunday’s win against the Yankees, he has not allowed a run. A bullpen that gives back the runs Williams returns from suppressing should lower the team’s RA pace by 0.1–0.2 runs per game — another 15 to 30 runs of improvement across the remaining schedule.
+Add those two effects together, and the Mets’ rest-of-season Pythagorean projection plausibly climbs from 76 wins back into the low-to-mid 80s. That is still short of 87. It is closer. The wild card race is decided in the gap between “closer” and “close enough.”
+Are There Better Formulas? Yes, and No
+Pythagorean has been refined many times in the four decades since James proposed it. The two most important successors are
+Pythagenpat
+, which lets the exponent vary based on a team’s run environment (the right exponent for a high-scoring era is higher than 2; for a low-scoring era it is lower), and
+BaseRuns
+, which works at the granular level of plate-appearance outcomes and is what FanGraphs uses for its “underlying performance” calculations. Both improvements add accuracy, particularly for extreme teams. Both have at most a one-win improvement over the original Pythagorean across a 162-game season. The marginal accuracy gain is real but small.
+A future issue will work through the Pythagenpat refinement in detail and apply it to the Mets head-to-head against the classic version. For now, the simple Pythagorean has done what it was designed to do: take two season-to-date numbers and tell you, with two-or-three-win precision, what kind of team this actually is. It is the most useful low-effort statistical tool in baseball, and forty-five years after Bill James invented it, no replacement has come close to making it obsolete.
+A reader who wants to do the math at home can use the Pythagorean formula on any team: pull the team’s runs scored and runs allowed from Baseball-Reference, square each number, and divide. The result is the expected winning percentage. Multiply by games played, and you have the expected wins. The arithmetic is fifth-grade. The insight is sabermetric.

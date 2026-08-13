@@ -1,0 +1,59 @@
+Base Rate
+How often does
+anyone
+do this thing? That is the base rate. It is the boring, important number that almost every "what are the odds" question secretly depends on — and almost no one bothers to look up.
+Tier 1 · The Two-Minute Version
+If you only read this far, read this.
+Imagine you walk into a room and someone tells you, "Look, that guy over there hit a half-court shot at the buzzer.
+Unbelievable.
+" Is it unbelievable? Depends.
+If the guy is your cousin who has never touched a basketball, sure. If the guy is Steph Curry, and the room is a gym, and he has been firing half-court shots for an hour, then it would actually be unbelievable if he
+didn’t
+hit one eventually.
+The base rate is just
+how often this kind of thing happens, on average, to people in the same situation
+. It is the boring background number. It is "what most basketball players make from forty-seven feet" or "how often any team that has lost three in a row wins the next game" or "what fraction of debut major-league hitters are still in the lineup at year five."
+Here is the trick. The human brain is excellent at being amazed by single events. It is
+terrible
+at remembering that single events live inside a distribution. The base rate is the distribution. When you ignore it, every coincidence looks like destiny. When you check it, most coincidences look like Tuesday.
+The newsletter you are reading uses the base rate constantly. When two playoff champions both finish at sixteen-and-three in the same week, the right question is not "what are the odds." The right question is
+"compared to what."
+The base rate is what.
+Tier 2 · If You Want to Go Deeper
+Why the base rate is the question almost no one asks first.
+Formally, the base rate is the unconditional probability of an event.
+Unconditional
+meaning "before we know anything else about this specific case." It is the answer to "how often does this happen in the world, full stop."
+Where it matters most is in conditional probability. If you want to know "what is the probability my team makes the playoffs given they won today," you cannot answer that without two pieces of information:
+the base rate of teams making the playoffs
+, and
+how much winning today actually updates that probability
+. Most arguments about sports coincidences skip the first piece entirely. They jump straight to the conditional and forget the unconditional ever existed.
+This skip has a name. It is called
+base-rate neglect
+. Daniel Kahneman and Amos Tversky documented it across decades of experiments. People asked to judge whether a person fits a profile reliably ignore how common that profile actually is. Told "Steve is shy and detail-oriented," people guess librarian, not farmer — even though farmers are
+vastly
+more numerous than librarians and a shy, detail-oriented farmer is far more likely to exist by sheer count than a shy, detail-oriented librarian.
+In sports the same neglect powers a thousand bad takes. "This team is hot, they will keep winning" forgets the base rate of teams continuing hot streaks (low). "This player will never recover from this slump" forgets the base rate of slumps that look exactly this bad and then end (very high). "This coincidence is destiny" forgets the base rate of coincidences that look exactly this striking and turn out to be coincidences (close to one hundred percent).
+The corrective move is simple to state and disciplined to perform:
+before reacting to a specific case, look up how common the general case is
+. The number is almost never where you expect it to be. That gap is where most bad inference lives.
+And the part that should give you a little hope: once you have the habit, the world gets less amazing and more interesting. The amazement comes from "I cannot believe this is happening." The interest comes from "I now know how often this kind of thing happens, and this one is unusual in
+this
+specific way." That second move is the whole game.
+Tier 3 · Take It to the Textbook
+The full treatment.
+Probability — where base rates come from and why every inference leans on them — anchors the
+Making Inferences with Data
+part of
+The Sports Page’s companion statistics textbook
+, a free, open graduate text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+Issue #79 · How Do You Win Eight Straight and Then Lose by Six?
+— the base rate of variance-heavy lineups producing exactly this oscillation
+Issue #77 · We Made an Inference Error Yesterday
+— what happens when temporal contiguity tricks the eye into ignoring the base rate
+Sunday Edition No. 010 · Carolina Leads 3–2
+— Bayesian priors are formalized base rates

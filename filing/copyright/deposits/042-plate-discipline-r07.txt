@@ -1,0 +1,65 @@
+From a Reader
+Do Patient Teams Win More Games?
+Chris Kelly Asks.
+The Math Says: Not Really.
+A neighbor of the editor, Chris Kelly, writes: “I’ve noticed over the years that teams with more patience — more pitches taken per at-bat — tend to win more often than free-swinging teams. But I could be wrong.” Today’s issue is about that last clause. The intuition is reasonable. The team-level data does not, in fact, support it. The correlation between team pitches-per-plate-appearance and team winning percentage, across the modern era, hovers around
+r = 0.07
+. That number is, in practical terms, indistinguishable from zero.
+By The Professor · The Sports Page · Reader Submissions
+0.07
+r: Team P/PA ↔ Win %
+0.5%
+Variance in Wins Explained
+3.78–3.98
+2025 Team P/PA Range
+The first thing to say is that Chris is asking exactly the right kind of question. He has noticed a pattern over years of watching baseball — teams that work counts, draw walks, foul off two-strike pitches — and he is asking whether the pattern is real or whether his eye is finding a story the data does not support. That is, in the cleanest possible form, what statistics is for. The newsletter exists to answer exactly these questions.
+The answer is:
+your eye is half-right
+, but the part it is right about is not the part the headline number suggests.
+What the Correlation Actually Says
+Pitches per plate appearance (P/PA) measures, on average, how many pitches each hitter on a team sees before the at-bat resolves. A team with patient hitters drives this number up. A team of free swingers drives it down. The full league range, in any given season, runs from roughly 3.78 pitches per PA at the low end to about 3.98 at the high end — a spread of two-tenths of a pitch across thirty teams.
+Now correlate that with winning percentage. Several sabermetric studies, including a careful 2024 analysis, find
+r ≈ 0.07
+. To translate: P/PA explains roughly half of one percent of the variation in team wins. The relationship is, technically, positive — teams that work counts win marginally more — but the slope is so shallow and the noise so large that no statistical test would call it meaningfully different from zero. If a writer told you that “teams that take more pitches win more games,” they would be relying on a correlation about as strong as the one between, say, average daily temperature and morning bond prices. Real, perhaps, in some long stretch of data. Noise, in any practical sense, week to week.
+Why the Variance Is Compressed
+Here is the structural reason the correlation is so weak. The thirty Major League Baseball teams sit within a band of about 0.2 P/PA across the entire range from most-patient to least-patient. That is a remarkably narrow spread. Even if patience were perfectly converted into wins — a one-pitch increase in P/PA gave you, say, fifteen extra wins — the actual variation we observe (0.2 pitches) would translate into only three wins of separation across the league. The standings, of course, span seventy or eighty wins of separation. There is simply not enough variance in P/PA for it to do most of the explaining.
+This is the same statistical structure that produces low R² values in many sports-economics regressions. The independent variable doesn’t move enough across teams to track the dependent variable’s movement.
+If max(P/PA) - min(P/PA) = 0.2 pitches
+   and the full effect of one pitch is, say, 15 wins,
+then the maximum observable spread in wins from this variable alone = 3.
+
+The actual spread of wins = ~80. The rest is noise relative to this lever.
+Where the Intuition Is Right
+Chris’s observation is not wrong — it is, more precisely,
+about something else
+. There are three places where the patience effect is real, and one of them is the place where Chris’s eye probably caught the signal.
+Individual hitters benefit from patience.
+The correlation between an individual hitter’s P/PA and his OBP is much stronger than the team-level correlation between P/PA and wins. Patient hitters walk more, take better pitches to hit, and produce more runs per opportunity. The lever is real at the player level.
+Patient teams force opposing starters out earlier.
+Driving up the opposing pitcher’s pitch count by a hundred pitches over a series gets you into the back of the bullpen by the sixth inning of the third game. This is a small effect — perhaps half a win over a long season — but it is real and it is what the “wear them down” arguments are pointing at.
+The correlation gets stronger inside specific contexts.
+In high-leverage late-inning at-bats, patience is more valuable than in low-leverage early-inning at-bats. Aggregated across all PAs, the signal washes out. Sliced into context, it reappears.
+So Chris’s eye is catching real baseball. The mistake — if it is one — is treating a real
+individual-hitter
+phenomenon as if it explained team standings. It does not. The standings are dominated by other things: starting-pitching quality, defensive efficiency, the back of the bullpen, injury luck, and the cumulative effect of small advantages that do not include “works the count.”
+A Glance at 2026
+If patience were the strongest team-level lever, the 2026 standings should sort, more or less, by P/PA. They do not. The Atlanta Braves and the Chicago Cubs lead their divisions, and both have lineups with average-to-above-average plate discipline — consistent with Chris’s pattern. But the Houston Astros, who have been one of the most patient teams in baseball every year of the past decade, are 16–27 and at the bottom of the AL West. The Tampa Bay Rays, who lead the AL East at 28–13, are middle-of-the-pack on P/PA. The Pittsburgh Pirates, often a free-swinging team historically, are 23–19. The relationship, if you squint, is there. If you stop squinting, the dots are scattered.
+“Chris is half-right in the most useful possible way. The half he is right about is the half that helps individual hitters. The half he is wrong about is the half the standings actually rest on.”
+— The Professor, on the most common kind of useful intuition
+A Note on Asking the Right Question
+Folk theories about why teams win — clutch hitting, veteran leadership, patience at the plate, “wanting it more” — tend to be partly right at the individual level and partly wrong at the team level. The pattern is consistent enough that it is worth flagging as a general principle:
+when a sports columnist tells you that a team won because they were more patient/clutch/hungry, they are usually describing an individual-level effect that has been over-aggregated to the team level
+. The aggregation is where the signal gets lost.
+None of this diminishes Chris’s observation. The pattern he is seeing is real — it is just smaller and more local than the headline framing usually admits. If he writes back to ask about
+walk rate
+and winning percentage, or about
+OBP
+and winning percentage, the correlations are considerably stronger. OBP, the great Bill James-era insight, correlates with wins at
+r ≈ 0.6 to 0.7
+. That is the lever that actually moves the standings. Pitches per plate appearance is one of the inputs to it — not a direct lever in its own right.
+Thank you, Chris, for the question. Send more.
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

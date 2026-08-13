@@ -1,0 +1,86 @@
+The NCAA Is Expanding March Madness to 76.
+The Arithmetic Says Go to 365.
+Starting in 2027 the field grows from 68 teams to 76 — eight more at-large bids and a rebranded opening round. It is the smallest interesting version of the idea. Invite every Division I team instead, seed them off ten games, and run a double-elimination bracket, and you get ten times the elimination games,
+fewer
+total games than today, and a tournament that is
+less
+random, not more.
+By The Sports Page · 365 programmes, 3,000 simulated seasons
+728
+Elimination games, vs 75 today
+−59%
+Total games played
+0
+Teams out after one game
+The NCAA has confirmed it: from 2027, March Madness goes from 68 teams to 76. Eight more at-large bids, a twelve-game “Opening Round” replacing the First Four, and after that the familiar bracket of 64 carries on exactly as before.
+It is a strange size to land on. Big enough to annoy everyone who liked 64, small enough to change nothing structural. So here is the question worth asking instead:
+what would it actually cost to invite everybody?
+The Shape of the Alternative
+All 365 Division I programmes play a
+ten-game opening slate
+, every game televised. Those ten games do one job: they seed the bracket. Then everyone — all 365 — enters a
+double-elimination
+tournament. Two losses and you are out. Not a group stage; those turn the decisive games into arithmetic exercises about goal difference. Just: lose twice, go home.
+Run it as two parallel brackets if you like — an elite division for the revenue programmes, a second division for those that do not generate revenue or decline to play the NIL game — and the numbers barely move. More on that below.
+The Counting
+A double-elimination tournament of
+N
+teams takes
+2N − 2
+games. Every team but the champion must lose twice, so the game count is simply linear in the size of the field. For 365 teams that is
+728 games
+.
+Against the 76-team bracket’s 75.
+Now the part that surprises people. Today a Division I season runs 32 regular-season games per team, plus 31 conference tournaments, plus the national bracket — about
+6,245 games
+in total, of which 75 are elimination games. That is 1.2%.
+The alternative plays 1,825 seeding games and 728 elimination games:
+2,553 in all
+. That is
+59% fewer games than the sport plays now
+, with almost ten times as many that end somebody’s season. The proposal does not add basketball. It deletes about 3,700 low-stakes games and converts the survivors into games that matter.
+Ten times the elimination games, on 59% fewer games overall. The bottom bar is the one that decides the argument: a bigger field with second chances produces a
+more
+reliable champion, not a lottery.
+The Objection, and Why It Is Backwards
+Everyone’s first reaction is the same: invite 365 teams and the tournament becomes a coin-flipping contest. A bad night for a great team and the whole thing is nonsense.
+It is the opposite, and the reason is elementary. Single elimination is the
+most
+random format ever devised — one bad shooting night ends a great season. Double elimination requires a team to be beaten twice, and requiring two independent bad nights is a far higher bar than requiring one.
+Simulating three thousand seasons: under the 76-team single-elimination bracket, the best team in the country wins the title
+45%
+of the time. Open it to all 365 with two lives each and that rises to
+55%
+. The champion’s median true rank in the country improves from second-best to
+best
+.
+The extra 289 teams do not add chaos. They lose and go home, mostly in the first week. What adds order is the second life.
+Single elimination is not a test of who is best. It is a test of who is best on one particular Thursday. That is a fine thing to televise, but it is not the same claim.
+— The Sports Page
+Two Things That Fall Out of the Maths
+Splitting into two divisions is free.
+Because the game count is linear, an 80-team elite bracket plus a 285-team second bracket costs 726 games against 728 for one combined field. A difference of two. Whatever you think of separating the revenue programmes from everyone else, the arithmetic does not object.
+Ten games is not enough to seed anything, and that is a feature.
+A ten-game record correlates 0.87 with true team strength — genuinely informative. But it correctly identifies the single best team in the country as the top seed only
+4% of the time
+. Picking one maximum out of 365 from ten noisy games is close to hopeless.
+Which quietly settles a design question. If seeding is that unreliable, chasing it is a poor use of the opening slate — so a coach can rationally spend those ten games sorting a rotation instead of stacking wins, and give up almost nothing. Under the current format, where one bad night ends everything, no coach can afford that. The format would create a real strategic choice where today there is only one sane answer.
+What It Costs
+Honesty about the price. A champion would play about
+14 tournament games
+, up to 17 coming through the losers’ bracket, against seven today — call it six weeks rather than three. Total inventory falls by more than half, which is a genuine revenue question for any programme that depends on gate receipts from twenty home dates. And the ten-game slate would gut the non-conference scheduling economy that currently pays a lot of small athletic departments.
+Those are real objections. None of them is
+“it would be too random”
+, which is the one everybody reaches for first and the only one the numbers actually refute.
+What To Take Home
+The NCAA is expanding because more teams means more inventory and more money. Fine. But if the argument for 76 is that more access is good, the argument does not stop at 76 — it stops wherever someone decided to stop it, and 76 is a number chosen to disturb as little as possible.
+The general lesson is about formats rather than basketball.
+Every tournament is a measuring instrument, and its design determines what it measures.
+Single elimination measures peak performance on a given day. Double elimination measures reliability. Round robin measures quality. None is more correct than the others — but a sport ought to know which question it is asking, and college basketball has never been asked to choose.
+How this was computed
+Team counts and format details come from the NCAA’s expansion announcement and the 2026–27 Division I membership (365 programmes: 361 full members plus four in transition), with the regular-season limit rising to 32 games. Game totals are arithmetic: a double-elimination bracket of N teams takes 2N − 2 games; single elimination takes N − 1. The current-season total assumes 32 games per team, 31 conference tournaments, and the 76-team bracket. The simulation runs 3,000 seasons with team strength drawn from a normal distribution and game outcomes from a logistic model calibrated so a top seed beats a bottom seed about 95% of the time — slightly kinder to underdogs than the real 1-vs-16 record, which makes the finding conservative: a tighter calibration widens the gap in favour of double elimination. The double-elimination bracket is simulated by pairing surviving teams each round and eliminating on a second loss, which approximates a formal winners/losers bracket without reproducing its exact seeding rules. Dataset at
+data/march-madness-expansion-sim.json
+.
+Licensed under
+The Sports Page License
+· Borrow it, give it back better · Non-commercial, attribution required

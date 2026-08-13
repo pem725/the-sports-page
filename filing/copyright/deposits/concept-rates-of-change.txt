@@ -1,0 +1,55 @@
+Where It Is. Where It’s Going.
+And Whether That’s About to Change.
+“How good is that team?” is really three questions wearing a trench coat. A number answers the first. Its slope answers the second. And the bend in that slope — the one almost nobody looks at — answers the only one that tells you what happens next.
+Tier 1 · The Two-Minute Version
+Your car has three gauges. So does a team.
+Think about driving. Your
+position
+is where you are on the road. Your
+speedometer
+is how fast you’re moving, and which way. And the
+gas or brake
+is whether that speed is about to climb or drop. Three different facts. Knowing you’re at mile 40 tells you nothing about whether you’re parked or flying, and knowing you’re doing 60 tells you nothing about whether you’re flooring it or already braking.
+A team is exactly the same. Its
+level
+is the record — where it sits right now. Its
+velocity
+is the direction it’s trending, rising or falling. And its
+acceleration
+is whether that trend is strengthening or reversing. A .500 team could be a rocket on the way up or a good team coasting to a stop, and the record alone — the position — cannot tell the two apart.
+Two teams, identical at the dot — only the curvature says which one keeps rising.
+At the black dot, the two programs are indistinguishable: same record, climbing at the same speed. A snapshot — or a rolling average, which is just a blurry snapshot — would call them equal. But one is bending up and the other is bending down, and a season later they live in different worlds. That bend is the whole point of this primer.
+Tier 2 · If You Want to Go Deeper
+Velocity is the first derivative. Acceleration is the second.
+These three ideas have precise names. The
+level
+is just the value. The
+velocity
+is the rate the value is changing — the slope, the first derivative. The
+acceleration
+is the rate the
+slope
+is changing — the second derivative, the curvature of the line. Each one is built from the differences in the one before it, and each answers a question further into the future: the level is the past, the velocity is the present, and the acceleration is the earliest honest hint of what’s next.
+This is why a
+rolling average lags
+. An average is deliberately backward-looking — half of a four-year window is two and three years old — so by the time the average confirms a program is rising, the rise is old news. Acceleration is the opposite: it is the first thing to turn. A team’s slope flips from falling to rising a full season or two before its average stops sinking, which is exactly how you catch a program — or a new coach — in the act, instead of reading a verdict the record has already delivered.
+But there is a tax, and honesty requires naming it:
+every derivative amplifies noise.
+A single fluky season barely moves a level, wobbles a slope, and can wildly swing an acceleration. That is why we smooth first — a rolling average tames the noise — and smoothing reintroduces exactly the lag we were trying to escape. The real craft of reading change is this trade-off: smooth too little and the acceleration is all static; smooth too much and it arrives too late to matter. There is no free lunch, only a dial to set with judgment.
+Tier 3 · Take It to the Textbook
+The full treatment: derivatives, and the signal in the noise.
+How rates of change are actually measured — finite differences, the calculus of the first and second derivative, smoothing and filtering, and the bias-variance trade-off that governs how hard to smooth before you trust a trend — is developed in
+The Sports Page’s companion statistics textbook
+, a free, open, graduate-level text, with the R code to compute a velocity and an acceleration for yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The
+“program trajectories”
+issue — Indiana’s average reads .500 a year after a title, while Nebraska looks like a faller yet owns the sharpest upward acceleration in the sport. The bend leads; the average lags.
+The
+“acceleration”
+issue — building a second-derivative metric for a team’s form, and the window problem that comes with it.
+Regression to the Mean
+(Concept No. 3) — the level a program drifts back toward, which velocity and acceleration can quietly move.
+Any pre-season projection — the honest ones ask not just how good a team is, but which way it’s turning.

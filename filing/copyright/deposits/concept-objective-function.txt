@@ -1,0 +1,46 @@
+Before You Optimize Anything,
+Say Out Loud What You Are Maximizing.
+Almost every argument about strategy is really an argument about the goal, conducted by people who each think the goal is obvious. Maximizing your average and maximizing your chance of finishing ahead are different objectives — and they routinely recommend opposite moves.
+Tier 1 · The Two-Minute Version
+“Best” is meaningless until you name the thing being made biggest.
+An
+objective function
+is just the quantity a decision is trying to make as large as possible. It sounds like bookkeeping. It is the whole argument. Two people can agree on every fact, run the same arithmetic, and reach opposite conclusions because one of them is quietly maximizing the average result and the other is maximizing the chance of clearing a bar.
+Picture two paths to the same destination. Route A takes 30 minutes, every time. Route B averages 25 minutes, but ranges from 10 to 55. Which is better? If you are maximizing time saved across a year of commutes, take B and enjoy your five free minutes a day. If you must be there in 35 minutes or lose the job, take A — it never fails, and B fails often. Nothing about the routes changed. The
+bar
+changed, and with it the answer.
+Same two options, opposite winners — the deadline decides, not the average.
+So the first question in front of any optimization is not “which option is better?” It is
+“better at what?”
+When someone insists a choice is obviously right, the disagreement is usually hiding one rung down, in an objective neither side has bothered to say out loud.
+Tier 2 · If You Want to Go Deeper
+Averages love certainty. Thresholds love risk — when you are behind.
+The distinction has a sharp mathematical form. If your objective is an
+expected value
+— average points, average revenue, average goal differential — then spread is irrelevant to it. The average of a gamble does not care how wide the gamble is. Adding variance changes nothing you are being graded on.
+But if your objective is a
+probability of clearing a threshold
+— the chance you outscore them, the chance you make the cut — spread matters enormously, and its effect flips sign depending on where you stand. Your chance of finishing ahead depends on how far ahead you are
+measured in units of how much things move
+. Widen the spread and that ratio shrinks toward zero from whichever side you were on, which drives the probability toward one-half. So added variance is a cost to anyone above the bar and a benefit to anyone below it. This is why a trailing team pulls the goalie, fouls, throws deep, and onside-kicks — each move lowers its expected margin while raising its chance of winning — and why a leading team runs the ball and takes the sure field goal.
+The same fork shows up far from sports. A fund manager paid on average return and one paid a bonus for beating an index will hold different portfolios. A student who needs a passing grade and one maximizing expected points should study differently. And it shows up inside statistics itself: the mean is the estimate that minimizes squared error, the median minimizes absolute error, and they are different numbers — so even “what is the typical value?” has no answer until you say what error you are trying to make small.
+One guardrail. Naming the objective does not license chasing variance for its own sake. Volatility only pays when you are genuinely behind and the swing is genuinely large enough to matter; buy a little of it while giving up real ground on the average and you have simply made yourself worse in both directions. It is a
+necessary, not sufficient
+ingredient — and the honest question is always the exchange rate.
+Tier 3 · Take It to the Textbook
+The full treatment: loss functions, utility, and what “optimal” means.
+Objective functions are the backbone of estimation and decision theory — loss functions and why squared error gives you the mean, utility curves and risk aversion, and the way a formally stated objective turns a vague argument into a solvable problem. All of it is developed in
+The Sports Page’s companion statistics textbook
+, a free, open, graduate-level text, with the R code to try each loss function on your own data.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The
+“pull the goalie”
+issue — the sharpest case: the move lowers your expected goal margin and raises your chance of winning. The anchor.
+Variance
+(Concept No. 23) — the necessary companion: swing is what the objective is arguing about in the first place.
+Communicating Uncertainty
+(Concept No. 18) — you cannot weigh a threshold objective without the spread, which is why reporting it is not optional.
+Counterfactuals
+(Concept No. 8) — the discipline of grading a decision against what could have happened, rather than against how it happened to turn out.

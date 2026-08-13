@@ -1,0 +1,105 @@
+A Daily Statistics Newsletter
+The Sports Page
+"One strange number, explained."
+Vol. I, No. 102
+July 8, 2026
+Distributed Free to Friends & Family
+By the Numbers, the Mets Are the 2012 Mariners.
+By Strategy, They Have a Choice.
+We extended the historical-analog framework from the league to the team. The 2026 Mets's closest statistical neighbor in forty years of MLB rosters is the 2012 Seattle Mariners. The runner-up is the 2014 Chicago Cubs. The two teams started identically. They ended their next decade not even on the same map.
+The Sports Page · Team-Analog Framework, Part I · Cohort: 1,188 team-seasons (1985–2025)
+2012
+Closest analog (Mariners)
+2014
+Runner-up (Cubs)
+10 yrs
+Mariners to playoff return
+Yesterday's piece on conditional prediction left a methodological gift behind: a nearest-neighbor framework, built on standardized feature vectors, that can be turned on any unit of analysis. Issue #73 used it on league-level seasons. Today we extend it to teams. Six features per (team, season) cell — team OPS, team ERA, league-relative strikeout rate, walk rate, home-run rate, and winning percentage — standardized across 1,188 historical team-seasons since 1985. For each team in 2026, we compute the Euclidean distance to every cell. The closest one is the team's
+statistical twin
+, the historical roster that most resembles it in shape.
+For the New York Mets, the answer is unambiguous and not flattering. Their statistical twin is the
+2012 Seattle Mariners
+. Distance: 0.899 standard-deviations in the six-dimensional space, well clear of the next nearest match.
+Team
+OPS
+ERA
+K/PA
+BB/PA
+HR/PA
+Win pct
+2026 Mets (so far)
+.662
+3.90
+22.1%
+7.4%
+2.90%
+.449
+2012 Mariners
+.665
+3.76
+20.8%
+7.7%
+2.46%
+.463
+2014 Cubs
+.685
+3.91
+24.2%
+7.2%
+2.57%
+.451
+2022 Marlins
+.657
+3.87
+24.0%
+7.3%
+2.42%
+.426
+2015 Padres
+.685
+4.09
+22.1%
+7.1%
+2.46%
+.457
+The fit is the kind that statisticians love and front offices have to learn to read. Within a few hundredths on OPS, within a fifth of a run on ERA, within a percentage point on walks and within four wins on the season, the Mets are the Mariners. Roughly average pitching that is tolerably above league mean. Below-average offense with one anchor (Soto for the Mets; King Felix's pitching anchored the 2012 Mariners differently, but the structural pattern of a heavily carried roster is the same). A win percentage that is treading water around .450.
+What 2012 Seattle did next
+Eric Wedge was kept on as manager. The off-season acquisitions were modest — Kendrys Morales from the Angels, Jason Bay as a free agent. The big-name trade that had defined their 2012 was selling Ichiro to the Yankees in July, which had felt at the time like the end of an era and proved instead to be the start of a much longer one. The 2013 Mariners lost 91 games. The 2014 club briefly contended (87-75). The 2015 fell back. The 2016 contended again. By 2017 they were just over .500. By 2019 the floor fell out again.
+The Mariners did not make the playoffs in 2012. They did not make them in 2013. Or 2014. Or any year through 2021.
+The wait was twenty-one years.
+Lou Piniella was the last man to lead Seattle into October, in 2001. The 2012 Mariners began the period of that drought's final decade. They reached the postseason in 2022, ten full seasons after their analog year.
+What 2014 Chicago did next
+The Cubs began their 2014 season looking very much like the Mariners had two years earlier — .685 team OPS, 3.91 ERA, a young roster, no obvious immediate path to ninety wins. They finished 73-89, in fifth place in the National League Central. By any naive measure, statistical pattern matching included, they were the same kind of mid-tier club as Seattle had been.
+Then Theo Epstein's front office did three things in the off-season that the Mariners had not done.
+One
+: they fired manager Rick Renteria and hired Joe Maddon.
+Two
+: they signed Jon Lester to a six-year, $155 million contract — the priciest deal in club history at the time.
+Three
+: they brought up Kris Bryant in April 2015 and Kyle Schwarber in June, accelerating the timeline of the homegrown core they had spent four seasons building. The 2015 Cubs went 97-65 and reached the National League Championship Series. The 2016 club won 103 games and the World Series.
+From the statistical starting point of 2014, the Cubs took two seasons to a championship. From the statistical starting point of 2012, the Mariners took ten seasons to a wild-card berth. The data did not separate them. The strategy did.
+Figure 1 · Win percentage trajectories · 2012 Mariners vs 2014 Cubs over the ten years following their respective analog seasons
+What it means for the Mets
+The 2026 Mets are not the 2012 Mariners by accident. The roster shape we wrote about in Issue #72 — one star bat, eight bunched-near-replacement regulars, mid-tier pitching — is one of the most reliably mid-table configurations a major-league baseball team can assemble. The data correctly recognizes the family. The question is what the front office does about the membership.
+The 2012 Mariners were a small-market team with limited financial flexibility and a leadership group that valued continuity over reinvention. The 2014 Cubs were a large-market team with a new ownership group, a deep farm system, and a president of baseball operations who had already shown a willingness to spend big at the right moment. The Mets sit closer to the second pattern than the first — Steve Cohen owns the team, Juan Soto's contract is in place, the farm system has been replenished. But the
+shape
+of their roster, today, looks like the team that did nothing.
+The data tells you where you are. It does not tell you where you go. The Cubs and the Mariners proved that the same starting point has very different endings, and the difference was almost entirely choices made in a single off-season.
+Team Analog, Part I
+A note on the framework
+The other twenty-nine 2026 teams have analogs too, and a handful of those matches are sharper than the Mets'. The Texas Rangers most closely resemble the 2025 San Francisco Giants (distance 0.38). The Toronto Blue Jays match the 1994 New York Mets (0.43). The Houston Astros land near the 2023 St. Louis Cardinals (0.46), a comparison that will look ominous to Houston fans — the 2023 Cardinals lost 91 games one year after winning 93. We will publish those scorecards as a sortable tool in the coming days, similar to the Half-Life Explorer. The Mets's analog is the right place to start the series because the contrast between the two nearest matches happens to encode the most consequential decision a front office can make.
+Notes & sources
+Data: per-team season aggregates pulled from the MLB Stats API team-stats endpoint, 1985 through 2025 inclusive, plus 2026 partial through games of June 12. Hitting features per team: PA-weighted OPS, K-per-PA, BB-per-PA, HR-per-PA. Pitching feature: team ERA. Standings feature: winning percentage. Team-seasons with fewer than 1,000 plate appearances or 200 innings pitched were excluded (this affects only short-strike-year survivors).
+Standardization: each feature was z-scored across the 1,188 historical team-seasons (all years strictly prior to 2026). The 2026 vectors are then transformed using those historical mean and standard deviation parameters — no look-ahead.
+Distance: Euclidean in the six-dimensional standardized space. The Mets's distance to the 2012 Mariners is 0.899; the next four nearest matches all sit between 1.02 and 1.07. The clean separation between the top match and the runners-up is itself a sign that the analog is informative; if the top five had all sat within 0.05 of each other, that would have indicated a noisy fit.
+Historical record: 2012 Mariners 75-87 (4th AL West); 2014 Cubs 73-89 (5th NL Central). Subsequent win totals from MLB Stats API standings. Editorial framing (Wedge / Renteria, Lester signing, Bryant / Schwarber call-ups) is from public reporting and is offered as context for the off-season strategic decisions that distinguished the two clubs.
+Pass it on.
+A few minutes to read. A few seconds to send.
+Share on X
+Facebook
+LinkedIn
+Email
+Copy link
+Or scan, for sharing the old-fashioned way.
+thesportspage.net
+© 2026 The Sports Page · A Statistical Dispatch for Friends & Family

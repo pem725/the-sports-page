@@ -1,0 +1,154 @@
+How We Fit the
+CFB JND Curve
+The companion piece to Issue #31, “The Just-Noticeable Difference in College Football Rankings Is 13.” A 19th-century psychophysics framework, applied to thirty seasons of ranked matchups, fitted with twenty lines of Python. Three sections, three reader levels.
+Methodology Supplement · Issue #31 · Last updated April 28, 2026
+Three sections, jump to your level
+The Idea
+·
+The Math
+·
+The Code
+The Idea
+A 19th-century framework for telling things
+apart
+In the 1860s, the German psychophysicists Gustav Fechner and Ernst Weber asked a quiet, foundational question:
+how different must two stimuli be before a person can reliably tell them apart?
+Lift two weights with your eyes closed; if the difference between them is small enough, you can't say which is heavier. Their answer became the
+just-noticeable difference
+, or JND — a threshold below which the nervous system, under controlled conditions, fails to discriminate.
+Fast-forward to college football. Every Saturday afternoon, the AP poll asks the same question of two teams:
+which one is better?
+If the ranking system can reliably tell them apart, the higher-ranked team should win meaningfully more than half the time. If it can't, the games at small rank-deltas should look like coin flips. That's an empirical question with thirty years of data behind it.
+The piece in Issue #31 found the answer: the AP poll's JND is a rank delta of about 13. Below that, the ranking is doing only slightly more than guessing. Above that, it's doing real work.
+How this is commonly misread.
+“The AP poll predicts winners 68% of the time” is a true number you'll see in sports analytics writing. It's also misleading, because that 68% is an aggregate across all rank-deltas. At Δ=2 it's 61%. At Δ=20 it's 78%. Reporting one average hides the fact that the model carries radically different signal at different gaps. The JND framing fixes this: instead of asking “does the poll work?” (yes-but-noisily), it asks “at what gap does the poll start working
+well
+?” (around 13).
+The JND threshold for “works well” isn't arbitrary. It comes from signal detection theory: a discriminability of d′ = 1, which corresponds to a 75% correct rate in a two-alternative forced-choice task. That's the classical bar for “just noticeable.” Below 75%, the human (or the poll) is responding more to noise than to signal. Above it, real information is being transmitted.
+The Math
+Logistic regression on
+1,597 ranked matchups
+For every FBS game from 1995 through 2024 in which both teams appeared in that week's AP Top 25, we recorded two numbers per game: the rank delta Δ (the absolute difference between the two teams' AP ranks) and a binary outcome (1 if the higher-ranked team won, 0 if it lost). That gave us 1,597 rows. The natural model for a binary outcome that depends smoothly on a continuous predictor is logistic regression:
+P(higher rank wins |
+Δ
+) = 1 / (1 + exp(−(
+a
++
+b
+Δ)))
+Two parameters:
+a
+is the intercept (baseline log-odds at Δ=0, where teams are tied in rank), and
+b
+is the slope (how steeply the win probability rises with each additional rank of separation). Fitting this to the 1,597 games via maximum-likelihood gradient descent yields:
+a
+= 0.2636
+b
+= 0.0633
+To find the JND, we solve for the Δ at which the predicted win probability equals 0.75 (the d′=1 threshold). The algebra gives a clean closed form:
+0.75 = 1 / (1 + exp(−(a + bΔ)))
+   1 + exp(−(a + bΔ)) = 1/0.75 = 4/3
+       exp(−(a + bΔ)) = 1/3
+            −(a + bΔ) = ln(1/3)
+                a + bΔ = ln(3)
+Δ
+= (ln(3) − a) / b
+                       = (1.0986 − 0.2636) / 0.0633
+≈ 13.2
+For comparison, an ideal psychometric function — one in which the ranking system perfectly captured team quality — would have a much steeper slope. If the JND lived at Δ=4, the slope would be b = ln(3)/4 ≈ 0.275, four times the empirical fit. The empirical b is about 23% of the theoretical ideal. That ratio is the magnitude of the gap between “what rankings ought to do” and “what rankings actually do.”
+Worked example: #4 Alabama at #2 Georgia, September 28, 2024
+Two teams ranked two slots apart in the AP poll. Δ = 2.
+Logistic prediction:
+P(Georgia wins) = 1 / (1 + exp(−(0.2636 + 0.0633 × 2))) = 1 / (1 + exp(−0.39)) =
+0.595
+Actual outcome:
+Alabama 41, Georgia 34. The lower-ranked team won.
+What the model says:
+A 60/40 game in Georgia's favor was always going to break the “wrong” way 40% of the time. Δ=2 sits well below the 13.2 JND, so the AP poll's preference between these two teams is mostly noise.
+Verdict: outcome is fully consistent with the model's prediction. Below the JND, ranks are coin flips with a thumb on them.
+The key insight: the AP poll's slope at Δ=2 is so shallow that a 60% prediction is doing barely more than chance. That's not a failure of the poll; it's the poll honestly reporting low confidence. The piece's JND framing makes that low confidence quantitative.
+The Code
+Twenty lines that fit the curve,
+any sport, any era
+Two scripts produce the analysis. The first builds the dataset from the College Football Data API; the second fits the logistic regression and emits the SVG paths used in the article's figures. The methodological core of the second script — the gradient-descent fit and the JND formula — is below:
+import
+math
+def
+fit_logistic
+(xs, ys, lr=
+0.003
+, iters=
+5000
+):
+"""Maximum-likelihood logistic regression: P = 1/(1+exp(-(a + b*x)))"""
+a, b =
+0.0
+,
+0.0
+n =
+len
+(xs)
+for
+_
+in
+range
+(iters):
+        ga = gb =
+0.0
+for
+x, y
+in
+zip
+(xs, ys):
+            p =
+1.0
+/ (
+1.0
++ math.exp(-(a + b * x)))
+            ga += (y - p)
+            gb += (y - p) * x
+        a += lr * ga / n
+        b += lr * gb / n
+return
+a, b
+def
+jnd_from_params
+(a, b, target=
+0.75
+):
+"""Solve P=target for the rank delta at which we cross the JND threshold."""
+return
+(math.log(target / (
+1
+- target)) - a) / b
+# Usage: xs is a list of rank deltas (one per game), ys is a list of 0/1
+# for whether the higher-ranked team won. After the fit:
+#   a, b = fit_logistic(xs, ys)
+#   print(f"JND at delta = {jnd_from_params(a, b):.1f}")
+# For our 1,597-game dataset: a=0.26, b=0.063, JND=13.2
+Snapshot from this issue's analysis. The current production version — including SVG path generation and per-delta scatter rendering — lives at
+scripts/fit_cfb_jnd_curves.py
+in the repo. The data builder is at
+scripts/build_cfb_jnd_dataset.py
+.
+To reproduce Issue #31's numbers
+: get a free API key from
+collegefootballdata.com
+, set
+CFBD_KEY
+in your environment, then run:
+CFBD_KEY=<your_key> python3 scripts/build_cfb_jnd_dataset.py
+python3 scripts/fit_cfb_jnd_curves.py
+The first script fetches games and AP rankings for 30 seasons, joins them on (year, week, team), filters to ranked-vs-ranked matchups, and writes the dataset to
+scripts/data/cfb-ranked-matchups.csv
+. The second loads the CSV, fits the logistic, and prints the JND plus a per-delta breakdown.
+To run it on a different ranking system
+: replace the CFBD API call with whatever data source has your ranking + outcome pairs. The fit_logistic function doesn't care what the predictor is — it could be NBA Vegas line difference, NHL Elo gap, soccer Pythagorean expectation, anything. The JND framework generalizes to any ordinal-rank-vs-binary-outcome question.
+Caveats and known limitations
+Only AP poll rankings, not Coaches or CFP. The CFP era introduced its own committee ranking that may have different JND properties; we haven't fit it separately yet.
+No home-field adjustment. Home teams win ~58% of CFB games on average; that means our predictions are slightly miscalibrated when the lower-ranked team is at home.
+No Vegas line incorporated. The line is a far better predictor than the poll, and a JND analysis on point-spread outcomes would yield a tighter curve.
+Logistic regression assumes the relationship is monotonic in Δ. It mostly is, but the per-delta scatter shows a notable Δ=4 anomaly (63.5% across 137 games, lower than Δ=3 or Δ=5). The logistic fit smooths over that bump.
+FBS only. FCS, Division II, Division III matchups are excluded.
+Read the article that uses this analysis:
+The Just-Noticeable Difference in College Football Rankings Is 13 →

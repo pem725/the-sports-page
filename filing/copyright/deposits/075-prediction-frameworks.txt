@@ -1,0 +1,90 @@
+A Daily Statistics Newsletter
+The Sports Page
+"One strange number, explained."
+Vol. I, No. 103
+July 9, 2026
+Distributed Free to Friends & Family
+A Fair Fight Was Asked For.
+We Ran Two. Snow Lost Both.
+Yesterday's piece pitted snowfall at a single ski resort against thirty teams' worth of pooled baseball. A reader caught it: one cohort had been averaged smooth, the other had not. To find out whether the comparison's verdict survived, we built a Colorado-region snowfall index from five ski-belt stations and re-ran every test side by side at matching scales. The bigger fight is fairer. The bigger fight is also more lopsided.
+The Sports Page · Predictability, Part II · Sources: NOAA GHCN-Daily, ENSO ONI, MLB Stats API
+−0.01
+CO ski region lag-1 r
++0.70
+MLB league OPS lag-1 r
++48%
+League profile vs climatology
+The reader's objection was correct and worth taking seriously. Yesterday we computed a Pearson r of 0.49 for baseball by pooling more than a thousand year-over-year team pairs across all of Major League Baseball. We compared that to an r of 0.007 for snowfall at a single weather station in Steamboat Springs. Both numbers are honest; the comparison between them is not, because pooling thirty teams smooths a great deal of single-team noise while one station's worth of snow gets no comparable benefit.
+The fair comparisons go at the same level on both sides.
+Single unit on single unit
+: one ski station against one baseball team.
+Aggregate on aggregate
+: a regional snowfall index against the leaguewide hitting environment. We built both today, then ran each through the same two tests — last-year-predicts-this-year (the persistence channel) and profile-match-against-climatology (the conditional channel).
+Building the regional snow index
+We picked five long-running NOAA stations along the Colorado ski belt: Steamboat Springs, Aspen, Crested Butte, Telluride, and Vail. Each one contributes its Nov-through-Apr seasonal snowfall total for each year that the station reports for at least 150 days of the season. The regional index is the mean of those stations for each year in which at least three of the five report. Thirty-seven seasons since 1985 clear that bar.
+The result on the aggregate side: a regional snowfall index that smooths over micro-climates within Colorado but still describes the snow you would experience by skiing the state for the whole winter. That index averages 3,948 millimeters per season, with a one-standard-deviation spread of about 850 millimeters. It is a perfectly cromulent thing to predict.
+Figure 1 · Predictability scoreboard · lag-1 persistence + conditional model lift, both levels
+The persistence test, at both scales
+At the
+single-unit
+scale, the snow station in Steamboat Springs has a lag-one autocorrelation of
+0.007
+. The Mets have one of
+0.407
+. Both numbers are noisy by virtue of being one place or one team, but the Mets clearly carry sixty times more memory than Steamboat does.
+At the
+aggregate
+scale, the Colorado regional snowfall index has a lag-one autocorrelation of
+negative 0.010
+— that is, slightly negative and statistically indistinguishable from zero. Aggregating the snow across five ski-belt stations does not reveal any hidden persistence. There is none to reveal. Major League Baseball's leaguewide OPS, by contrast, has a lag-one r of
+0.697
+. Pooled, smoothed, and viewed across whole seasons, baseball gets
+more
+autocorrelated, not less, because the era-level trends in offense (the home-run revolution, the strikeout revolution, the rule-change adjustments) are now visible without being masked by team-specific noise.
+This is interesting on its own. Aggregating a noisy single series sometimes reveals a hidden signal; sometimes it doesn't. For baseball, smoothing reveals the trend. For Colorado snow, smoothing reveals that there was no trend.
+The conditional test, at the aggregate scale
+The second test is the one the reader explicitly pointed at.
+Pattern matching is not the same as persistence.
+Last year might tell you nothing, but maybe the El Niño-Southern-Oscillation state of the upcoming winter tells you a great deal. Maybe baseball's analog year matters for the same reason.
+To find out, we did the same thing on both sides. For each season, hold it out. Build a model on the remaining seasons. Predict the held-out year. Compute the root-mean-square error. For snow we tested the ENSO-conditional model (mean of held-out years sharing the same La Niña / Neutral / El Niño classification). For baseball we tested the three-nearest-neighbor profile match using a seven-feature standardized vector. Then we compared each model's RMSE to a climatology baseline that predicts every year as the mean of all the others.
+The ENSO model loses to climatology by 5.4 percent on the regional snow index. (It did about the same losing at Steamboat alone.) The three groups — La Niña, Neutral, El Niño — have nearly identical means at the Colorado regional scale: 4,092, 3,987, and 3,845 millimeters respectively. The information ENSO carries about Colorado snow is real but small. After fitting on a sample this size, the model is
+overfitting
+i
+the noise rather than capturing the signal.
+The profile model
+beats
+climatology by 48.4 percent on MLB OPS. The era effects are large, the seven-feature profile encodes them, and three nearest neighbors give a much better OPS prediction than the long-run mean. The same kind of pattern matching that fails ski seasons works enormously well for baseball.
+At single unit and at aggregate, by persistence and by profile match, baseball is more predictable than the snow. The reader's correction does not save the snow. It deepens the loss.
+Predictability, Part II
+Why aggregation rescues one and not the other
+The asymmetry is itself a finding. Pooling thirty MLB teams or the league's whole hitter population
+increases
+the apparent predictability, because what is left after the team-specific noise washes out is era-level trend. Pooling five Colorado ski stations
+does not
+increase predictability, because there is no underlying trend at all: snow is genuinely a fresh draw, every year, at every elevation, in every state.
+That distinction shows up in one of the oldest debates in forecasting science: which systems are
+structurally
+predictable and which are not? Baseball, when smoothed properly, looks like a slow trend with persistence layered on top. Colorado winter snowfall, even when smoothed, looks like white noise around a long-run mean. Different physics; different epistemic situations; different attitudes warranted from the people watching the systems.
+A note on the framework
+The two-axis question
+When a friend or a pundit says one thing is "more predictable" than another, two clarifications usually need to happen.
+Predictable how
+— via persistence, via conditional profile, via mechanistic model, via market price? And
+at what scale
+— a single instance, a regional aggregate, a national average? Reasonable answers to one question can flip the answer to the other. Yesterday we matched the wrong scale and ended up overstating baseball's edge for the wrong reason. Today the edge is, if anything, larger — but it is for the right reason now.
+That is the lesson worth keeping. Match the scale. Then match the method. Then check the lift over the simplest possible baseline.
+Notes & sources
+Snow: five NOAA GHCN-Daily stations in the Colorado ski belt — Steamboat Springs (USC00057936), Aspen 1 SW (USC00050372), Crested Butte (USC00051959), Telluride 4 WNW (USC00058204), Vail (USC00058575). Each station's seasonal total runs Nov 1 through Apr 30 and is included only when at least 150 days are reported. The regional index is the mean of all stations reporting that season, conditional on at least three reporting. Result: 37 valid seasons since 1985 producing 35 lag-1 pairs.
+ENSO state: NOAA Oceanic Niño Index, DJF average. La Niña if ONI ≤ −0.5; El Niño if ≥ +0.5; Neutral otherwise. Regional buckets: 13 La Niña, 10 Neutral, 14 El Niño seasons.
+Baseball: MLB Stats API 1985–2025, full population of hitters per season. League OPS is PA-weighted across the population. The seven-feature profile used in the conditional test: K-per-PA, BB-per-PA, HR-per-PA, ERA, K-per-9, BB-per-9, HR-per-9. League OPS is excluded from the profile because it is the target. Standardization for the conditional test is computed using only earlier years (no look-ahead). Lag-1 r on league OPS is computed across all 40 year pairs.
+All RMSE figures use leave-one-out cross-validation. Percent reduction = (RMSE_baseline − RMSE_model) / RMSE_baseline. Negative numbers indicate the conditional model is worse than predicting every year as the climatological mean — a real outcome when the covariate carries less information than the model burns in degrees of freedom.
+Pass it on.
+A few minutes to read. A few seconds to send.
+Share on X
+Facebook
+LinkedIn
+Email
+Copy link
+Or scan, for sharing the old-fashioned way.
+thesportspage.net
+© 2026 The Sports Page · A Statistical Dispatch for Friends & Family

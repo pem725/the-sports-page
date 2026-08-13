@@ -1,0 +1,79 @@
+Why Every Baseball Superstition
+Looks Like It Worked.
+Cal Raleigh showered in his uniform on May 12 and snapped a 38-at-bat hitless streak the next night. Wade Boggs ate chicken before every game of an 18-year Hall of Fame career and slashed .328 lifetime. Moisés Alou famously refused batting gloves and reportedly “toughened” his hands by an unsavory pre-at-bat ritual that we will not describe in print. The 1986 Mets turned their caps backwards in the seventh inning and beat the Red Sox in seven. Every one of these stories ends with the apparent confirmation that the superstition worked. The deeper question is why they all
+always
+seem to work, even though most of them, on rigorous examination, do not work at all. The answer comes from three statistical concepts the newsletter has now mentioned in three consecutive issues:
+regression to the mean
+i
+,
+confirmation bias
+i
+, and
+base rates
+i
+.
+By The Professor · The Sports Page · Methods · Superstition
+.328
+Wade Boggs Career BA (Chicken Era)
+63%
+P(Hit) for .222 Hitter Next Game After Slump
+~5-10%
+Genuine Placebo Effect, Best Estimate
+Baseball, more than any other major sport, is a game of superstition. Players who would scoff at a horoscope in the morning will spend forty-five minutes adjusting batting gloves with the precise motion they used on the day they last got two hits. They will avoid stepping on foul lines. They will wear the same socks unwashed for six weeks if the team is winning. They will eat the same pre-game meal for an entire career. Most of them know, when pressed, that none of it actually causes anything. They do it anyway. Today’s issue is about why — and about what the math says actually happens when a player or a team breaks out of a slump after invoking a ritual.
+The First Mechanism: Regression to the Mean
+Issue #053, on Cal Raleigh’s slump-busting shower, introduced the principle: a hitter mired in an 0-for-38 stretch is, by definition, in the worst portion of his probability distribution. The next day, with the same true talent, his probability of getting a hit is essentially unchanged from his career average. For Raleigh, that is roughly 22% per at-bat, which means his probability of
+some
+hit in his next game (typically four at-bats) is approximately:
+The Slump-Busting Math
+P(at least one hit in 4 ABs | career .222) = 1 - (1 - 0.222)^4
+                                            = 1 - 0.778^4
+                                            = 1 - 0.367
+                                            = 0.633
+
+About 63% probability the slump ends in the very next game,
+independent of any ritual performed beforehand.
+The same logic applies to any superstition invoked at the lowest point of a slump. By the time a player or coach reaches for the rally cap, the chicken, the shower, or the unwashed socks, the team or player is at the bottom of its current performance distribution. The next observation has nowhere to go but back toward the long-run average. The ritual is associated, after the fact, with the recovery — but the recovery would have happened with or without the ritual, because the prior performance was already a statistical outlier.
+This is the single most powerful explanation in the entire literature of human ritual: regression to the mean is the engine that makes nearly every “it worked” story work. The mechanism is invisible to the participant because participants do not naturally compute counterfactuals. The hitter never sees the alternate universe in which he didn’t shower; he only sees the one in which he did, and got a hit, and concluded that the shower mattered.
+The Second Mechanism: Confirmation Bias and Survivorship
+The second mechanism is sneakier. We remember the superstitions that “worked.” We forget the ones that didn’t. The 1986 Mets won the World Series wearing rally caps in Game 6, so the rally cap entered baseball folklore. The 1985 Cardinals lost the World Series to the Royals, also wearing rally caps, and nobody remembers. The 2003 Cubs wore them and lost. The 2017 Indians wore them, blew a 3-1 lead, and lost. Across a thirty-year sample of postseason rally-cap moments, the actual base rate of rallying after the cap is invoked is approximately the same as the base rate of rallying without it — about 25%, give or take a few points for survivorship in the sample of who we remember.
+Ritual
+Famous Example
+Actual Effect on Performance
+Rally cap
+1986 Mets, Game 6 NLCS & WS
+No measurable effect; base rate of rally ~25%
+Eat chicken before every game
+Wade Boggs, full 18-year career
+Confounded with elite-hitter skill
+Shared garments / unwashed uniform
+Cal Raleigh, May 2026; Giambi brothers
+Placebo only; tiny mental effect
+Brush teeth between innings, jump baselines
+Turk Wendell, full Mets career
+No effect on pitching peripherals
+Wear unwashed socks during win streak
+Many; especially 1980s
+No effect; offensive to teammates
+Drawing lines, avoiding the foul line
+Nomar Garciaparra, virtually all middle infielders
+Possible small anxiety-reduction; no batting effect
+The pattern is consistent across rituals: the impressive cases are the ones that made it into folklore, and the folklore is a
+survivor-selected
+i
+sample of the cases where the ritual happened to correlate with success. The non-survivors — the rituals that “didn’t work” — are forgotten, by definition, because they didn’t produce a memorable outcome to be remembered for.
+The Third Mechanism: The Genuine (but Small) Placebo Effect
+None of the above means superstition has zero effect. There is a small, real, measurable phenomenon called the
+placebo effect
+in performance contexts. Sports psychology research, including a well-cited 2010 study from the University of Cologne, has shown that athletes who perform a personal ritual or wear a “lucky” item before a task tend to perform about 5 to 10 percent better than identical athletes deprived of the ritual. The mechanism is not mystical — it is anxiety reduction. A ritual gives the player a focused attentional anchor, reduces nervous variation, and stabilizes performance under pressure. The effect is real. It is also small enough that, on any given at-bat, it is dwarfed by the underlying skill of the hitter and the unpredictability of the pitch.
+So the modest version of the “does superstition work?” question has a small but defensible yes:
+yes, by approximately one part in twenty, for reasons that have nothing to do with the supernatural and everything to do with psychology
+. The rally cap does not make the seventh-inning rally more likely. But it may, modestly, calm the nerves of a hitter who comes to the plate with a runner on second. Whether you call that “the superstition working” or “a ritual stabilizing anxiety” is a matter of language. The mechanism is real either way, and it is small either way.
+“Regression to the mean explains ninety percent of the apparent effect. Confirmation bias explains most of the rest. The genuine placebo effect — the part that actually helps the player — is approximately the same size as one bonus single per twenty at-bats. Real. Tiny. Worth doing anyway.”
+— The Sports Page, on what the math actually says about chicken
+The Wade Boggs Problem: Or, Confounded with Skill
+The hardest case for the “superstition does nothing” thesis is Wade Boggs. Boggs ate chicken before every game for the entirety of his 18-year career. He retired with 3,010 hits, a .328 batting average, and a plaque in Cooperstown. The chicken correlation is exact. The chicken explanation is, of course, ridiculous — Boggs was an elite hitter who happened to have a private routine. But the structure of the problem is interesting in its own right.
+What we have, statistically, is a 100% correlation between “Boggs ate chicken” and “Boggs hit .328 lifetime.” The correlation is meaningless because there is no counterfactual sample — no parallel universe in which Boggs didn’t eat chicken — against which to compare. Causation cannot be inferred from a one-observation correlation, regardless of how strong the observation looks. The math demands variance, and Boggs’ chicken routine provided none. He is, in epistemological terms, an unidentified case. The plausible reading is that he was an elite hitter who liked chicken. The other reading is, well, the chicken was a Hall of Fame talent. We cannot, from the data we have, distinguish.
+A Note on Cal Raleigh, Sealed by the Oblique
+This brings us back to where the series of issues began. Cal Raleigh showered in his uniform on May 12. He went 2-for-4 on May 13. He went on the injured list with an oblique strain on May 15. The shower, in the narrow window between the slump and the IL, appeared to work. The math, examined cleanly, says the slump was going to end anyway; the shower added perhaps 5-10% of probability lift on top of an already-63% base rate; and the underlying oblique was the actual cause of the entire six-week downturn. Three mechanisms, all real, none of them involving the laundered uniform.
+Baseball will continue to be baseball. The chicken will continue to be eaten. The unwashed socks will continue to offend laundromats. The rally cap will continue to be turned backwards, inside out, and occasionally upside down. None of it will hurt. None of it will, except modestly through anxiety reduction, actually help. And every superstition that survives, by the iron law of confirmation bias and survivorship in sports memory, will look like it worked — because the ones that didn’t are not, anymore, in the conversation.
+A reader who wants to test this in their own life can run the experiment: pick a personal ritual, deploy it on twenty occasions when you most need it to work, and track whether it “worked” honestly. The answer will be approximately the base rate of the outcome you wanted, plus a small placebo boost. The newsletter will return to other forms of the regression-to-the-mean trap in a future issue — specifically the “sophomore slump” in Rookies of the Year, which is the same mechanism dressed in a different uniform.

@@ -1,0 +1,56 @@
+Sample Size
+Three at-bats is not a hot streak. It is three at-bats. The law of large numbers is everyone’s friend — including the player you are about to give up on, and the rookie you are about to crown.
+Tier 1 · The Two-Minute Version
+Flip a fair coin five times. Now decide whether it is a fair coin.
+Take a coin out of your pocket. Flip it five times. Suppose it lands heads four times and tails once. Is the coin biased toward heads?
+You cannot tell. A perfectly fair coin lands four-of-five heads about
+nineteen percent of the time
+. That is roughly one out of every five coin sessions. If you decide the coin is biased every time you see a four-of-five result, you will be wrong about nineteen percent of the time, which is roughly the rate at which sports broadcasters anoint new superstars during spring training.
+Now flip the coin five thousand times. If it lands heads four thousand times, the coin is biased. Five thousand flips is a sample big enough that we can trust the pattern. Five flips is not.
+Sample size is just the question:
+how many readings do I have, and is it enough for the pattern to be real?
+Almost every "this is a trend" sentence in sports media is written about a sample that would not convince anyone if it were a coin in their own pocket. A pitcher with a 1.20 ERA through three starts? Tiny sample. A hitter who is 0-for-13? Tiny sample. A team that has won six of seven? Tiny sample.
+The corrective move is not to ignore short streaks. It is to
+discount them in proportion to how short they are
+. The pitcher’s real ERA, given his three starts, is somewhere between his three-start number and his career number. The hitter’s 0-for-13 means something, but probably less than it feels like it means. The team’s 6-of-7 stretch is real and also nearly meaningless about next month.
+The law of large numbers is the formal statement of why:
+as the sample gets bigger, the observed average gets closer to the true average
+. The math is patient. It just takes more flips than the brain wants to wait for.
+Tier 2 · If You Want to Go Deeper
+Why the same sample is "big enough" for one question and tiny for another.
+The first complication: there is no universal "big enough." Sample size only means something
+relative to what you are trying to detect
+. To distinguish a .250 hitter from a .350 hitter, you might only need a few hundred plate appearances. To distinguish a .280 hitter from a .290 hitter, you need
+thousands
+. Same sport, same data type, vastly different signal-to-noise ratios depending on the question.
+This is why "sample size" cannot be answered with a number. It has to be answered with a number
+and
+an effect size you are trying to see. The smaller the difference between the two hypotheses, the larger the sample you need to tell them apart. This is the same reason political polling needs different sample sizes for "is the race competitive" versus "is one candidate ahead by half a point."
+The second complication:
+not all observations are equally informative
+. Sixty plate appearances against the same pitcher is not the same as sixty plate appearances against sixty different pitchers. Five games in April against weak teams is not the same as five games in October against good ones. The math says "n=60" or "n=5," but the actual signal can be much smaller. When the newsletter discounts a short stretch, it is doing both: shrinking for sample size
+and
+shrinking for the quality of the sample.
+The third complication:
+the brain is allergic to admitting it does not know
+. The honest answer to "is this rookie’s 1.20 spring ERA real?" is "we cannot tell from the sample we have." The brain rejects that answer. The brain wants a verdict. The procedural defense of small samples is to write down the honest answer anyway, even if it reads like a non-answer, because the alternative is the brain producing the wrong answer with confidence.
+The Bayesian framing The Sports Page uses constantly is just sample-size discipline made formal.
+Start with the league average as your prior. Update toward the player’s observed performance, weighted by how much you observed.
+Three at-bats moves your estimate almost not at all. Three thousand moves it almost the whole way. The math handles the discount for you. All you have to do is trust the math more than you trust the gut, which is hard, because the gut is loud and the math is quiet.
+One last note. The "law of large numbers" sounds like a mystical sports cliche, but it is one of the most precise results in probability theory. Jacob Bernoulli proved it in 1713. For two centuries it has been telling us, with mathematical certainty, that
+given enough trials, the observed frequency of an event converges to its true probability
+. The trick is that "enough" is sometimes more trials than a player gets in a career. The law is true. It is also slow.
+Tier 3 · Take It to the Textbook
+The full treatment.
+How many observations you need before a rate stops jumping around is the subject of statistical power, in the
+Making Inferences with Data
+part of
+The Sports Page’s companion statistics textbook
+, a free, open graduate text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+Sunday Editions — the prediction scorecard discounts short stretches on purpose
+Half-Life series (queued) — the binary survival metric was chosen because batting-average shrinkage needs a much larger sample to mean anything
+Issue #79 · How Do You Win Eight Straight
+— the 8–3 and 7–1 are exactly the sample size where the brain wants to draw a conclusion the math says it shouldn’t

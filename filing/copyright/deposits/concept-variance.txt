@@ -1,0 +1,56 @@
+The Average Tells You Where.
+Only the Variance Tells You Who Wins.
+Variance is just how much a number moves around its average — and it is the most underrated idea in prediction. A quantity that is the same for everyone cannot tell anyone apart. So the inputs worth your attention are never the biggest ones. They are the ones that swing.
+Tier 1 · The Two-Minute Version
+A number that doesn’t move can’t predict anything.
+Imagine two statistics you might use to guess which of two teams will win. The first,
+Predictor A
+, is nearly the same for every team — everyone scores about eight. The second,
+Predictor B
+, is all over the map — some teams at two, some at twenty. They have the same average. They are not remotely equally useful. Predictor A cannot separate a winner from a loser, because both teams have basically the same value; it cancels out. Every ounce of predictive power lives in Predictor B, the one that
+varies
+.
+Same average, opposite usefulness — only the one that spreads teams out can predict.
+That is the whole idea in one picture. When you are looking for what drives a result, you are really looking for what
+moves
+. Chase the biggest number and you will keep landing on things that are the same for everyone — comforting, prominent, and useless for telling anybody apart.
+Tier 2 · If You Want to Go Deeper
+The variance of a total is the sum of its parts.
+Variance has a precise definition — the average squared distance from the mean — and one property that does most of the work: for pieces that move independently,
+the variance of a sum is the sum of the variances
+. If an outcome is built by adding up components (a fantasy score, a team’s run total, a portfolio’s return), then the swing of the whole is governed by the swings of the parts, and the biggest-variance parts dominate. A component that barely moves contributes almost nothing to where the total lands, no matter how many points it is nominally worth.
+The same logic runs through any prediction model. A predictor’s contribution to the outcome scales with its coefficient
+times its own variance
+— so two variables with the same relationship to the result are not equally useful; the one that varies more pulls more weight. A predictor pinned at a constant has zero variance and therefore zero influence, however important it seems in theory.
+One honest guardrail, so this is not misused: variance is
+necessary but not sufficient
+. A number that swings wildly but has nothing to do with the outcome is not a predictor — it is just noise, and loud noise at that. The useful inputs are the ones that both vary
+and
+track the result. Fantasy football is the unusually clean case where that second condition comes for free, because the categories literally add up to the score; in the messier real world, you still have to check that the thing that moves is moving
+with
+what you are trying to predict.
+Tier 3 · Take It to the Textbook
+The full treatment: variance, covariance, and explained spread.
+How variance is defined and used — standard deviation, covariance, the way a regression apportions the outcome’s variance among predictors, and the R² that measures how much of it you have explained — is developed in
+The Sports Page’s companion statistics textbook
+, a free, open, graduate-level text, with the R code to compute and decompose a variance yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The
+“variance is king”
+fantasy issue — a matchup is decided in the high-swing slots (a receiver’s good week is ten times a bad one), never in the steady ones. The anchor case.
+The
+“own mean”
+franchise pieces — a team’s
+average
+tells you its level; its variance around that mean tells you whether it’s a steady contender or a boom-or-bust wildcard.
+The
+“pull the goalie”
+issue — the sequel: variance drags every matchup toward the coin flip, so the favorite smothers it and the underdog goes hunting for it.
+The Objective Function
+(Concept No. 24) — the necessary partner: whether swing helps or hurts you depends entirely on what you are trying to maximize.
+Communicating Uncertainty
+(Concept No. 18) — the sibling: variance is the spread you are obligated to report, not hide.
+Rates of Change
+(Concept No. 21) — a related trap: each derivative you take amplifies variance, which is why higher-order signals are noisier.

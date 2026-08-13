@@ -1,0 +1,95 @@
+A Daily Statistics Newsletter
+The Sports Page
+"One strange number, explained."
+Vol. I, No. 133
+August 8, 2026
+Distributed Free to Friends & Family
+Pulling the Goalie Makes Your Team Worse.
+That’s Exactly Why You Do It.
+Down one, ninety seconds left. Skating six-on-five lowers your expected goal margin — you will now be scored on more often than you score. It also raises your chance of winning from about 3% to about 5%. That is not a paradox. It is the second half of the variance lesson: the favorite and the underdog are not maximizing the same thing.
+The Sports Page · The Professor · part two of the variance lesson
+−0.14
+goals of expected margin you give up by pulling him
+3.2 → 5.2%
+your chance of winning, bought with that sacrifice
+50%
+the number every ounce of added variance drags you toward
+The companion piece to this one made the case that a matchup is decided in the slots that
+swing
+, not the ones that score the most — that variance is where the outcome lives. It ended with a warning: variance is leverage, and leverage cuts both ways. The boom-or-bust flex is exactly where you win the week and exactly where you lose it. Today, the resolution. Whether you should reach for volatility or run from it does not depend on your roster, your nerve, or your temperament. It depends on one thing: whether you walked in ahead or behind.
+One line runs the whole thing
+Write down what you actually want. Not points — points are the currency, not the goal. What you want is for your total to land above theirs. If the projected margin between you is
+m
+and the week-to-week swing in that margin is
+s
+, then your chance of winning is governed by the ratio of the two:
+how far ahead you are, measured in units of how much things move
+. Everything follows from that fraction. Grow the numerator — get better players — and you win more. But grow the
+denominator
+, and the fraction shrinks toward zero no matter which side you are on, and a fraction of zero means a coin flip. Variance does not help you or hurt you. It drags every matchup toward 50–50. Which is a threat if you are the favorite and a lifeline if you are not.
+Figure 1 · Every ounce of swing pulls the matchup toward the coin flip
+In fantasy, the lever is real and almost useless
+So the underdog should crank up the swing. Can he? Honestly — barely, and this is the part the strategy columns never get to. Start with the good news: volatility is genuinely purchasable at no cost in projected points. Among 2024 flex starters projected between six and nine points a week, the steadiest third swung about ±4.5 points and the swingiest third swung about ±7 — same projection, half again as much motion. Jakobi Meyers and Travis Etienne were the metronomes; Amari Cooper and Tank Bigsby were the slot machines. If you are behind, take the slot machine. It is free.
+Now the bad news. One flex slot is roughly a seventh of your roster’s variance, and variance adds up as squares, so swapping the metronome for the slot machine moves the margin’s swing from about 25 points to about 25.5. For a manager projected to lose by twelve, that is worth
+less than half a percentage point
+of win probability. Build the
+entire
+lineup out of the swingiest third at every position and you do better — the margin’s swing goes from 23 to 28, and the underdog climbs from 30% to 34% while the favorite slides from 70% to 66%. Real, directionally certain, and still only about four points. There is a hard lesson in that: the law is exact, and the lever is short. In fantasy football you cannot buy enough variance to matter, because the roster is nine independent pieces and independent pieces average each other out.
+The lever that actually works: take away the trials
+Which is the clue. If independence is what smothers the swing, then the way to get real volatility is not to make each piece wilder — it is to
+use fewer pieces
+. A talent edge accumulates in proportion to the number of chances; the noise around it grows only with the square root of that number. Cut the game in half and you cut the favorite’s edge in half while shrinking the noise by just thirty percent. The gap closes. Play a game of one possession and the better team is a coin flip.
+Possessions each
+Favorite’s projected margin
+Swing in the margin
+Underdog’s chance
+60 — track meet
+−15
+24
+27%
+48 — normal game
+−12
+22
+29%
+24 — grind it out
+−6
+15
+35%
+12 — pure chaos
+−3
+11
+39%
+This is why the underdog runs the ball and lets the clock bleed, why the overmatched team huddles and the favorite wants tempo, why a seven-game series is kinder to the better team than a single elimination game, and why every March the one-seed’s nightmare is a team that walks the ball up the floor. None of it is timidity. Shortening the game is the most aggressive thing an underdog can do, because it is the only lever big enough to move the denominator.
+And the purest version is the goalie. Down one with ninety seconds left, keeping him in gives you a good defense and almost no offense: your model chance of winning is about 3%. Pull him, and you roughly double your own scoring rate while letting theirs run three or four times higher. Your
+expected
+goal margin over that ninety seconds falls by about a seventh of a goal — you have made your team measurably worse. Your chance of winning goes up by two-thirds, to about 5%, because the only outcome that was ever worth anything was the one where you score, and the empty net is the price of buying more of them. A coach who refuses to pull the goalie is optimizing his goal differential. He is not optimizing the thing that decides the season.
+Variance is not good or bad. It is a drag toward the coin flip — which is a threat when you are ahead and a lifeline when you are behind.
+The Professor
+What you are actually maximizing
+Underneath all of it is a question people almost never ask out loud before they start optimizing:
+what am I maximizing?
+i
+Expected points and probability of winning sound like the same goal and are not. When the payoff is a threshold — ahead or behind, in or out, made the cut or didn’t — the average stops being the thing to chase, and the right move can be one that makes your average worse. The favorite and the underdog face identical facts, run identical math, and correctly arrive at opposite strategies, because the same fraction is read from opposite sides of zero.
+Which is worth carrying past the arena, because the announcer almost never does. When the trailing coach onside-kicks and it fails, it was reckless; when the leading coach punts and holds on, it was disciplined. Both verdicts are handed down after the fact, from the result, about a decision that had to be made before it. “Conservative” and “aggressive” get talked about as if they were personality types. They are positions. If you are ahead, smother the swing. If you are behind, go find some. And if someone is telling you a decision was foolish because of how it turned out, they are grading the coin, not the call.
+Notes & sources
+Fantasy figures use 2024 regular-season weekly fantasy points (standard scoring) for genuine starters — at least twelve games — from nflverse weekly data, the same source as the companion piece. Win probabilities come from treating the margin between two lineups as normally distributed and reading off how many swings above zero the projection sits. The matched comparison is deliberate: across all flex-eligible starters, weekly average and weekly swing correlate at about 0.9, so the volatile players are usually just the
+better
+players. Comparing only within a narrow projection band (six to nine points) is what isolates volatility from talent — otherwise you would be measuring the wrong thing entirely.
+The possession table and the goalie calculation are models, not observed results, and are labeled as such: a favorite worth a quarter-point per possession with a typical per-possession scoring spread, and a hockey team down one with ninety seconds left whose pulled goalie doubles its own scoring rate and quadruples its opponent’s. Both conclusions are robust to reasonable changes in those inputs — the direction is arithmetic, the exact percentages are not gospel.
+Two primers sit underneath this one:
+Variance
+(Concept No. 23) for why swing decides outcomes at all, and
+The Objective Function
+(Concept No. 24) for the difference between maximizing an average and maximizing your chance of finishing ahead. The full archive is at
+thesportspage.net
+.
+Pass it on.
+A few minutes to read. A few seconds to send.
+Share on X
+Facebook
+LinkedIn
+Email
+Copy link
+Or scan, for sharing the old-fashioned way.
+thesportspage.net
+© 2026 The Sports Page · A Statistical Dispatch for Friends & Family

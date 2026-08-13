@@ -1,0 +1,60 @@
+Bayesian Inference
+A formal way to update your beliefs when new evidence shows up. It is the engine underneath every Sunday Edition prediction and every "the comp says 75%" sentence the newsletter publishes. Once you see it, you cannot unsee it.
+Tier 1 · The Two-Minute Version
+You think your team is .500. They win six in a row. How much should you update?
+Your team came into the season looking like a .500 team. Pitching was OK, lineup was fine, nothing about them suggested they would either contend or collapse. .500 was a reasonable guess.
+Then they win six in a row.
+The two wrong instincts:
+"they are still .500, the streak is meaningless"
+and
+"they are now an 85-win team, this streak proves something."
+The first instinct ignores the evidence. The second instinct ignores the prior. Both throw away half of what you know.
+The Bayesian instinct:
+they were probably .500, but the streak does shift the estimate — a little. How much depends on how strong your prior was and how informative six games actually are.
+If your .500 prior was based on a full off-season of scouting and a hundred-game track record from last year, six games barely moves it. If the prior was based on nothing but a vague feeling, six games moves it a lot. The math handles the tradeoff for you.
+That is the whole concept.
+Bayes’ rule is a recipe for combining a prior belief with new evidence to get an updated belief.
+The recipe says: the updated belief is proportional to the prior times the likelihood of the evidence under that prior. The proportionality constant just normalizes everything so the probabilities add up to one.
+The newsletter does this on purpose, everywhere. The Sunday Edition’s 75% Carolina comp is a Bayesian posterior: prior was the historical comp, evidence was the games that had been played, the answer was the updated probability. When Game 4 went against Carolina the prior held up — we wrote that explicitly — because one game of evidence does not move a well-formed prior very far. The patience was real because the math is patient.
+Tier 2 · If You Want to Go Deeper
+Reverend Thomas Bayes, 1763, and why the math has been quietly winning ever since.
+Thomas Bayes was an eighteenth-century English minister whose mathematical work was so obscure during his lifetime that the theorem now named after him was published two years after his death, by a friend who fished it out of his papers. The formal statement is one line. It says:
+the probability of A given B equals the probability of B given A times the probability of A, divided by the probability of B
+. In symbols: P(A|B) = P(B|A) × P(A) / P(B).
+Translated into English:
+after I see B, my best guess for how likely A is depends on how likely B was assuming A, weighted by how likely A was before I saw anything
+. The first piece is the
+likelihood
+. The second piece is the
+prior
+. The result is the
+posterior
+. Three words, one formula, a way of thinking.
+The fight, for two hundred years, was about the prior. Frequentist statisticians objected that priors are subjective — you have to make them up — and subjective inputs are scientifically suspect. Bayesians objected back that everyone has priors, that pretending you do not is the actual scientific sin, and that the right answer is to write the prior down where it can be argued with. The Bayesian position has been quietly winning since the 1980s, when cheap computers made the math tractable on real problems.
+In sports, the Bayesian framework is doing one main job everywhere:
+regularization
+. You have an observed performance — a batting average, an ERA, a power-play percentage. You have a prior belief about what a typical performance looks like — the league mean, weighted by some sample. The Bayesian estimator
+shrinks
+the observation toward the prior, by an amount that depends on how informative the observation is. Three at-bats? Shrink to the league mean almost entirely. Three thousand? Shrink almost not at all. The math handles the gradient for you.
+The reason this matters for the newsletter is that the Bayesian framework treats two things you usually want to treat together:
+"how much do I believe this is the player’s true talent"
+and
+"how much should I update when I see one more game"
+. Frequentist statistics has separate answers for those questions, sitting in different chapters of the textbook. Bayesian inference puts them in the same equation.
+One last thing. Bayesian inference is not magic. It is a discipline. The discipline is:
+write down your prior before you see the evidence
+. Then update. The pre-registration of the prior is the trick. If you let yourself adjust the prior after seeing the evidence, you can talk yourself into anything. If you pin the prior to a sentence before the games are played — "Carolina’s historical comp says 75%" — then the math has to do the work. That is what every Sunday Edition is for. The scorecard is the discipline.
+Tier 3 · Take It to the Textbook
+The full treatment.
+Updating a belief as evidence arrives — the engine under Bayesian inference — is developed in the
+Making Inferences with Data
+part of
+The Sports Page’s companion statistics textbook
+, a free, open graduate text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+Every Sunday Edition — the prediction scorecard is Bayesian update in public, with our name on it
+Sunday Edition No. 010
+— the 75% Carolina prior surviving a 31% mid-series scare is Bayesian patience working as designed
+Half-Life series (queued) — survival probabilities are posterior estimates given debut + observed seasons

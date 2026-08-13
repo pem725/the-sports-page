@@ -1,0 +1,50 @@
+A Pitcher Gets the Win.
+But Winning Isn’t His to Get.
+Before you argue about what a number
+means
+, ask a smaller, sneakier question: what does it even describe? Half the bad takes in sports come from measuring one thing — a team, an offense, a season — and pinning it on another: a person.
+Tier 1 · The Two-Minute Version
+Whose number is this, really?
+A starting pitcher throws six good innings and gets the
+win
+. But a “win” is not something a pitcher does. It requires his offense to score, his bullpen to hold, his defense to catch the ball. It is a
+team
+outcome, wearing one man’s name in the box score. Credit it to him and you have quietly swapped the thing you measured (what the team did) for the thing you wanted to know (how well he pitched). That swap has a name: a
+unit-of-analysis
+error — measuring at one level, and drawing your conclusion at another.
+It is everywhere once you see it. A quarterback’s passing numbers are produced by five linemen, a set of receivers, and a play-caller. A team’s record gets hung on the coach. A running back’s yards are half offensive line. In each case the number lives at the level of the group, and we read it as if it belonged to the individual standing in front.
+The box score is the whole offense’s output — only a slice is the player.
+The fix is not fancy. It is a habit: before trusting a number about a person, ask whether a person is what it measured. If the answer is “no, it measured the team he was on,” then any ranking of people built on it is standing on sand.
+Tier 2 · If You Want to Go Deeper
+The world is nested. Your inference has to respect the levels.
+Data in sports come in
+nested levels
+: plays inside players, players inside teams, teams inside leagues. The unit-of-analysis error is what happens when you measure at one level and conclude at another. Reading an individual’s skill off a team’s output is the famous
+ecological fallacy
+; its mirror image — judging a whole group from one member — is just as common. Both come from forgetting which box the number actually lives in.
+There is also a subtler tax. Teammates’ numbers are not independent — a great line lifts every back, a great quarterback flatters every receiver — so treating players as separate data points quietly counts the same team many times over, and makes a shaky ranking look sturdier than it is. The individual’s true contribution is simply not recoverable from ensemble output alone. You need a
+design that varies the person against different casts
+: the same player across different teams. That is exactly why a trade or a transfer is so informative — it is the closest thing sports offer to swapping the orchestra while keeping the soloist, and it is how honest metrics (adjusted plus-minus, on/off splits) try to claw the individual back out of the group.
+Tier 3 · Take It to the Textbook
+The full treatment: levels, and partitioning the variance.
+How nested data are handled properly — multilevel and mixed-effects models, fixed versus random effects, and the variance partitioning that says how much of an outcome belongs to the player, the team, and plain noise — is developed in
+The Sports Page’s companion statistics textbook
+, a free, open, graduate-level text, with the R code to fit a model that keeps the levels straight.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The
+quarterback-tiers
+issue — ranking passers 1 through 138 as if quality were a property of the man, not the offense. The anchor case for this whole idea.
+Pitcher
+wins
+,
+RBIs
+, plus-minus — classic counting stats that belong to the team but get filed under one name.
+The
+“own mean”
+franchise pieces — when a team is bad for a decade, is it the players, or the institution? Same question, one level up.
+Why Research Design Matters
+(Concept No. 17) and
+Measurement
+(No. 14) — the siblings: what a design can support, and whether a metric measures what you claim.

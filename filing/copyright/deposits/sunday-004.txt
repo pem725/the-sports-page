@@ -1,0 +1,124 @@
+The Week in Reference Cards: One Old Forecast Home, One New Variable, and a Mets Win That
+Proves Nothing
+Six issues in seven days — four were explicit methodology tools, one was a 54-year retrospective, and one landed a conditional probability the morning before the Mets went out and won 4–3. Meanwhile, a prediction from Week 1 finally closed. And Lindor’s calf is now a six-week factor nobody had priced in.
+By The Sports Page · May 3, 2026 · Sunday Edition No. 4
+Welcome to Sunday Edition No. 4. This week the newsletter ran four methodology tools, one historical retrospective, and one conditional probability piece that published the morning before the Mets went out and beat the Angels 4–3. Meanwhile, Paul Skenes’ ERA is now 3.27 through five starts — a number that quietly closes a prediction we have been tracking since Opening Day. The Mets are 11-21. Francisco Lindor is in a boot until early June. The NHL playoffs are down to eight teams in the second round. And the first reader-pitched piece in the newsletter’s history ran Thursday — the JUCO Detour, credited to Sean. Four tools, one closure, one win that doesn’t move the probability much. Here is the accounting.
+35
+Issues Published Through Saturday
+1 HIT
+Skenes ERA Recovery, Finally Closed
+464
+Issues Remaining to Our 500 Goal
+The Week in Review: Issues #30–35
+#30
+Apr 27
+—
+When We Know a Player or Coach Is a Bust
+— The statistical case that two seasons of data already tells you more than most front offices are willing to hear. The three reasons they stay patient anyway: sunk cost, counterfactual fragility, and honest uncertainty about scheme fit.
+#31
+Apr 28
+—
+The Just-Noticeable Difference in College Football Rankings Is 13
+— Thirty years of ranked-vs-ranked games, a logistic regression, and the finding that rankings within 13 positions are statistically indistinguishable during the regular season — but suddenly reliable in bowl games.
+#32
+Apr 29
+—
+When the Number Starts to Mean Something
+— A reference card for every sport: the sample sizes at which statistics earn their signal. Batting average at 910 PA. ERA at 150 IP. Save percentage at 1,400 shots. Save this one.
+#33
+Apr 30
+—
+The JUCO Detour: College Baseball’s Portal Workaround Is Already Here
+— EO Series Part 6, and the newsletter’s first reader-credited piece. Brady Ballinger went from a Las Vegas JUCO to Big 12 All-American without using his one portal transfer. The executive order builds a wall. The JUCO pipeline runs underneath it.
+#34
+May 1
+—
+You Can’t Choose Your Allegiances Unless You’re a Rat
+— 54 years, four teams, five championships, 32-year drought. The fan misery map, with math. Boston’s 14 titles. Buffalo’s zero. A 1-in-185 drought that still counting.
+#35
+May 2
+—
+The Mets Are 10-21. The Question Isn’t How Bad. It’s What Bad Means.
+— A short course in conditional probability, P(A|B) vs. P(B|A), and why eleven percent is not zero but is also not forty. The inverse fallacy, the Nationals’ 2019 redemption arc, and the honest answer about where this season ends.
+The Prediction Scorecard
+Four of this week’s six issues were methodology reference cards and retrospective analyses. They generate no graded predictions — they are built to make you a better reader of numbers, not to stake a claim on outcomes. The two that do generate stakes are long-horizon: the JUCO structural argument plays out over years; the Mets conditional probability plays out over 130 games. One carry-over from Week 1, however, finally has enough data to close.
+#
+Prediction
+Outcome
+Grade
+1
+Skenes’ 67.5 Opening Day ERA would dilute via denominator leverage within 4–5 starts; career ERA (1.97) is the Bayesian attractor
+After 2 starts ERA was still 9.53 (tracking behind). Through 5 starts:
+3.27 ERA overall
+,
+0.95 ERA / 0.53 WHIP / 29:5 K:BB across 28.1 IP
+in his last five starts. Recovery confirmed.
+HIT — mechanism correct; took 5 starts, projected 4–5
+26
+Posterior win projection: 80–82 wins, 90% credible interval [70, 89], based on 7-14 start (Apr 23)
+Mets now 11-21 through 32 games after winning May 2. Prior of ~83 preseason wins + 11W/32G observed shifts the central estimate. Issue #35’s independently-derived projection of 75–82 is consistent with the updated posterior.
+PENDING — posterior sliding toward 75–78; direction correct, updating
+35
+P(playoffs | 10-21 start) ≈ 11%; projected season record 75–82 wins
+Mets won 4–3 vs. Angels on May 2. Record now 11-21. One win in an 11% scenario is a single trial, not a signal. The probability does not move materially from one game.
+PENDING — 130 games remaining; model consistent with current data
+33
+The JUCO-to-D1 pipeline will grow as the EO’s one-transfer cap makes the JUCO detour structurally advantageous; Brady Ballinger is the prototype
+Ballinger is the 59th overall prospect for the 2026 MLB Draft and now playing outfield at Kansas. 2026 JUCO recruiting data not yet available to measure enrollment trends.
+PENDING — multi-year structural thesis; 2026 recruiting data needed
+30
+Year-1–2 coach/player performance correlates with final career outcome at r ≈ 0.5–0.65; stated explicitly as a hypothesis
+Stated as a hypothesis pending primary data analysis from 1970–2024. The Monday coaching stability piece tests this from scratch.
+N/A — hypothesis for future analysis, not a graded forecast
+31
+CFB ranking JND = 13.2 rank-delta; rankings are noise below that threshold during the regular season
+Historical analysis of 1,597 games across 30 seasons. No forward-looking prediction embedded.
+N/A — retrospective empirical analysis
+32
+Stabilization thresholds: published reference numbers for BA, ERA, SV%, FG%, etc.
+Reference card. No time-bound forecast.
+N/A — reference card
+34
+Four-team fan portfolio: 1-in-185 probability of a 32-year championship drought
+Retrospective calculation using 54 years of MLB, NFL, NHL, and CFB championship data.
+N/A — retrospective
+What We Got Right
+The Skenes Closure
+Issue #1 (March 27, Opening Day) argued that Paul Skenes’ 67.5 ERA was a mathematical artifact — a denominator problem, not a talent signal — and that the Gamma-Poisson model with his career ERA (1.97) as the Bayesian attractor would pull the observed rate back toward his true level within 4–5 starts. Two starts later, in Sunday Edition No. 1, his ERA was 9.53 and we noted the recovery was tracking a start behind schedule. We said the model had not failed; it needed more innings.
+It got them. Through five starts Skenes is 3-1 with a 3.27 ERA overall. Strip out the Opening Day disaster (⅔ of an inning, five runs allowed) and his last five starts produced a 0.95 ERA, 0.53 WHIP, and 29:5 K:BB across 28.1 innings. His 2.01 ERA through 61 career starts is now the lowest by any pitcher through 60 starts in the Live Ball Era. The denominator leverage worked exactly as described. The mechanism was correct, the timeframe was correct (5 starts, projected 4–5), and the career ERA acted as the anchor the model said it would. This is the cleanest model closure the newsletter has produced since the Soto injury call in Week 1.
+A note on honesty: his current overall ERA is 3.27, not the 1.97 career figure. He is not yet back at his baseline — he is back in the range of “normal elite ace.” The model said the ERA would normalize; it did not promise it would normalize to a specific decimal by a specific date. We called the direction and mechanism correctly. That is what we promised to grade.
+New Data (Not Misses)
+What Changed This Week That Updates the Prior Without Being a Forecasting Error
+Francisco Lindor’s calf.
+The Mets’ shortstop walked off during the streak-breaking game on April 22 and is now on the IL with a serious left calf strain. The Mets are privately expecting him to miss until early June — 30 or more games without a player earning $340 million over 10 years. Issue #35’s conditional probability analysis (11%) was built on historical comps for teams with poor starts. Few of those comparable teams were simultaneously playing without their franchise shortstop for six or more weeks. With Lindor’s absence now a known quantity, the real playoff probability is likely below 11%. Ronny Mauricio is filling in at short. The defense is different. The lineup construction is different. The model needs to update — and it will, in the Mets piece landing Tuesday.
+Devin Williams’ ERA is 9.95.
+The Mets’ $51 million closer started the season with five scoreless appearances. He has since allowed 8 earned runs in roughly two innings across his last four outings — a 36.00 ERA in that stretch. The newsletter has a piece on this in the queue. We have not published it yet because the data was still accumulating. It has now accumulated. This is new information that materially updates the conditional probability analysis in Issue #35: the bullpen the model assumed was healthy has not been healthy.
+Mets won on May 2, 4–3.
+Ronny Mauricio hit a solo homer to give the Mets a lead they held. Record now 11-21. One win in an 11% playoff-odds scenario is a single trial in a long distribution. The piece said “eleven percent is not zero.” Saturday provided one data point confirming that. It also didn’t change much else.
+“Denominator leverage was right. It just needed five starts instead of four. That is not a miss — that is a model performing at the edge of its precision window. The difference between ‘right’ and ‘right on schedule’ is smaller than most people want to admit.”
+— The Sports Page, on the Skenes closure
+Over-Reactions and Under-Reactions
+Over-Reactions
+Issue #31 (the CFB JND piece) correctly showed that rankings within 13 positions are statistically indistinguishable during the regular season. The piece drew the right conclusion: stop arguing about #8 vs. #11. But it may have undersold the complementary finding — that in bowl and playoff games, the rankings hit 89% accuracy even at small deltas. The tool works in January. It fails in November. We said this, but we said it quietly. The January finding is the more actionable one for anyone watching the CFP bracket form. Going forward: be louder about the seasonal exception alongside the seasonal limitation.
+Under-Reactions
+Issue #35 named Lindor’s calf injury as context but did not revise the conditional probability calculation to account for it explicitly. The 11% figure came from historical comps. A proper update needs to incorporate the Lindor variable: the Mets are not a randomly-selected bad-start team; they are a bad-start team playing without their best position player for six weeks. The corrected probability is probably 6–9%, not 11%. That difference matters. The Tuesday piece (“Mets: Next 17 Games”) will run the updated posterior with Lindor’s absence priced in.
+What Readers Read · Apr 26–May 2
+Readership data pending — the analytics pipeline installed recently, and last week’s counts were not captured. This section will populate starting with the first full week of data.
+The Road Ahead
+Five pieces in the next five days, and they land at the right moment.
+Monday:
+The data follow-up to Issue #30 (the signal horizon piece) — CFB coaching stabilization built from primary data on every head coach from 1970 to 2024. The tentative r ≈ 0.5–0.65 hypothesis from Issue #30 gets tested against the actual curve. If the hypothesis is wrong, we will say so.
+Tuesday:
+The Mets’ next 17 games — a piece that was in the queue before Lindor went on the IL and now arrives with significantly higher stakes. With Mauricio at short and Lindor in a boot for six weeks, the next 17 games will tell us more about this team than the previous 32. The conditional probability will be updated with Lindor’s absence explicitly modeled.
+Wednesday:
+The Hall-of-Fame Harvest — the first piece in the four-part “After the Jets” series on NFL Draft capital and organizational quality. How many future Hall of Famers will the 2026 draft class produce, by pick range, and how does this vary across the 32 franchises? The dataset goes back to 1970.
+Thursday:
+Mason Miller. The Padres’ closer (acquired from Oakland in July 2025) is posting numbers the statistical literature would classify as unsustainable. The question is not whether regression is coming — it is — but where the regression lands and when. Same framework as the Skenes piece: Gamma-Poisson, career ERA as the attractor.
+And sometime this week, finally: the Devin Williams collapse piece. A $51 million closer with a 9.95 ERA through eight outings, 36.00 over his last four. The data has accumulated. Thirty-five issues down. Four hundred and sixty-four to go.
+“Thirty-five issues. Four tools this week, one closure, one Mets win that didn’t change the math. The model keeps updating. Four sixty-four to go.”
+— The Sports Page, Sunday Edition No. 4
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

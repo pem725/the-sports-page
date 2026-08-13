@@ -1,0 +1,120 @@
+Significance Series · Part 1 of 4
+A Five-Game Lead at Season’s End Is
+Statistical Noise.
+Here’s the Math.
+A primer on the chi-square test, the oldest and most useful tool for asking the question every fan asks all summer:
+are those two teams actually different, or did the dice just roll their way?
+Today we set up the simplest possible case — the Mets and the Yankees, head to head, at four points in a hypothetical season — and discover the surprising number of games one team needs to be ahead before statistics will let us call them different. The answer, every quarter, is bigger than you think.
+By The Professor · The Sports Page · Methods · Significance Testing, Part 1
+13
+Wins Apart at 162 g for p < .05
+7
+Wins Apart at 40 g for p < .05
+3.841
+χ² Threshold, df = 1
+Every September, the sports world makes a decision that everyone watching agrees was rigorous and almost no one watching can defend: it sorts teams into “in the playoffs” and “out of the playoffs” on the basis of win totals. Two teams tied in wins? Apply tiebreakers — head-to-head, then common opponents, then division record — until one team comes out on top. The whole apparatus treats the win column as the truth. If you finished a game ahead, you were better. If you finished a game behind, you were worse. Period.
+Today’s issue is about whether that’s correct. The short answer is:
+often, no
+. The longer answer requires a tool the newsletter has not yet introduced. It is a tool you can apply at the kitchen table, on the back of a napkin, with one division and one square root. We will build it from scratch, using the two teams who play each other once a year on the 7 train. Welcome to Part 1 of the Significance Series.
+The Setup: One Table, Four Cells
+Suppose the Mets and the Yankees have each played the same number of games. We want to ask a single, very specific question:
+have the Mets and the Yankees, in the games they have actually played, won at different rates — or did they win at the same rate and only look different because of luck?
+That second possibility is what statisticians call the
+null hypothesis
+. The whole point of significance testing is to assess how confident we should be that the null hypothesis is wrong.
+To do that, we arrange the data the simplest possible way: a table with one row per team and one column per outcome.
+Wins
+Losses
+Mets
+W
+M
+L
+M
+Yankees
+W
+Y
+L
+Y
+This is called a
+two-by-two contingency table
+, and it is the most ubiquitous object in applied statistics. Drug trials use it. Political polling uses it. The CDC uses it to ask whether a vaccine works. We are using it to ask whether two New York teams are actually different from each other.
+Under the null hypothesis — that the two teams share a single, common, true winning percentage — we can compute what we would
+expect
+the table to look like. Suppose both teams have played N games and the combined record is, say, 81 wins and 81 losses out of 162. Then under the null, each team should be 40.5–40.5. Anything other than that — any deviation in either direction — is the gap the test is measuring.
+The Chi-Square, in Plain English
+Karl Pearson invented the chi-square statistic in 1900. He was trying to test whether observed counts in biology experiments matched theoretical predictions. The statistic he came up with does the same job for any contingency table: it adds up, across all the cells of the table, how far each observed count is from its expected count under the null, scaled by the size of the expected count. The formula looks like this:
+The Chi-Square Formula, Plus the One Shortcut We’ll Actually Use
+For a general two-by-two table, the chi-square statistic is:
+χ² = Σ [ (Observed - Expected)² / Expected ]
+summed over all four cells. The bigger χ² gets, the more the observed table diverges from what the null predicted, and the less plausible the null becomes.
+For our specific case — two teams each playing N games, with the combined win rate p — algebra collapses the general formula into something memorable. Let d be the gap in wins between the two teams (the Mets’ wins minus the Yankees’ wins). Then:
+χ² = d² / ( N · p · (1 - p) )
+
+When both teams are near .500 (p ≈ .5), this is just:
+
+χ² = 4 · d² / N
+Memorize the second line. It is the entire mechanism. If χ² exceeds
+3.841
+, the difference clears the conventional p < .05 threshold. Below 3.841, we cannot reject the null. We say the two teams are
+not statistically significantly different
+.
+That number, 3.841, comes from the chi-square distribution at one degree of freedom — a curve that the math says describes how the statistic should behave when the null is true. You do not need to derive it. You can keep it in your wallet next to your library card.
+The Four Quarters of a Hypothetical Season
+So: how far apart do the Mets and the Yankees actually need to be, in win totals, before the chi-square says “these are not the same team”? Working backwards from χ² > 3.841, the minimum gap d at each quarter of a 162-game season is:
+Games Each
+Min Gap d for p < .05
+Example Records
+Difference in Win %
+40 (quarter season)
+7 wins
+Mets 24–16, Yanks 17–23
+.600 vs .425 — a 175-point gap
+81 (half season)
+9 wins
+Mets 45–36, Yanks 36–45
+.556 vs .444 — a 112-point gap
+121 (three-quarter)
+11 wins
+Mets 66–55, Yanks 55–66
+.545 vs .455 — a 90-point gap
+162 (full season)
+13 wins
+Mets 88–74, Yanks 75–87
+.543 vs .463 — an 80-point gap
+Read the right-hand column carefully. To call the two teams “different” with 95% confidence at the end of a 162-game season, the winning percentages have to differ by
+at least 80 points
+. An 87-win team and an 81-win team — a six-game gap, the difference between a wild-card spot and watching October on the couch — are not statistically different. The math cannot distinguish them. The standings can. That is a distinction worth holding onto.
+“A five-game lead at season’s end is statistical noise. So is six. So, on a tight day, is seven. The math says the standings are mostly drawing distinctions that statistics will not back up.”
+— The Sports Page, on what 3.841 actually means
+Why the Gap Grows in Absolute Terms but Shrinks in Percentage Terms
+Notice something strange in the table. As the season lengthens, the
+absolute
+gap required for significance grows: 7 wins at quarter, 13 wins at full season. But the
+proportional
+gap shrinks: a 175-point win-percentage difference at quarter season collapses to an 80-point difference at full. This is the famous square-root law of statistics making its first appearance in the series.
+Roughly: doubling the sample size lets you detect a difference about √2 ≈ 1.41 times smaller in proportion. Quadrupling it lets you detect one about twice as small. The reason the gap-in-wins grows is that there is more sheer count to move around; the reason the gap-in-percentage shrinks is that the percentage is becoming a more stable estimate of the underlying skill. The longer the season, the less noise, the smaller the “real” difference you can reliably catch.
+This is why, when an analyst tells you a player’s .310 batting average over 600 at-bats is meaningfully different from .280, they may be right; and when the same analyst tells you a player’s .310 over 60 at-bats is meaningfully different from .280, they are almost certainly wrong. The sample size sets the floor on what you can claim.
+Why the Newsletter Needs Both Bayesian and Frequentist Thinking
+Up to now this newsletter has leaned almost entirely
+Bayesian
+i
+. Gamma-Poisson priors on pitchers, Beta-Binomial priors on hitters, log5 frameworks for matchup probabilities — all of those are tools for updating belief in light of new evidence. They answer the question
+what should I think now?
+The chi-square is different. It answers a stricter question:
+given that nothing is actually going on, how often would I see something this dramatic by chance alone?
+If the answer is “less than 5% of the time,” we cross a procedural threshold and call the difference significant. That is not the same as believing the difference is real with any particular probability — a subtlety that Part 4 of this series will live on. For now, both tools belong in the toolkit. Bayesian reasoning tells you what to believe; frequentist reasoning tells you what to be surprised by.
+The Takeaway, and What’s Next
+You now have everything you need to do a chi-square on your kitchen table. Write down two teams’ records. Compute the gap in wins. Square it. Multiply by four. Divide by the games-played-per-team. If the answer beats 3.841, the teams are statistically significantly different. If it does not, they are, for our purposes, the same team.
+Try it on the 2024 National League race: the Mets finished 89–73 and the Braves finished 89–73. Gap = 0. χ² = 0. By every standard a statistician would use, the two teams were
+identical
+. Yet the league’s tiebreaker rules sent one of them to a different seed. That gap — between what the math says and what the standings produce — is the subject of Part 2.
+Coming in This Series
+Part 2 · The Tiebreaker Trap.
+What happens when two teams finish dead even? The league’s tiebreaker rules — head-to-head, common opponents, division record — promise to settle questions that statistics cannot. We’ll show, with the 2024 Mets-Braves tie as our case, why those rules are closer to a coin flip in formal dress.
+Part 3 · When the Question Is Three Teams.
+What if four wild-card contenders are within six games of each other in late September? The chi-square scales to any number of rows — it just tells you that
+someone
+is different, without yet telling you who. The follow-up tests, and what they cost you.
+Part 4 · The Bayesian Alternative, and the Trap of p < .05.
+How the same comparison looks under Beta-Binomial priors. When each framework gives a sharper answer. And the most common mistake working analysts make: stopping at “significant” without ever asking how big the difference actually is.
+A reader who works through the math here is invited to compute χ² for any two real teams of interest. The newsletter would be especially curious to see what happens when readers run the test on the 2007 Mets and 2007 Phillies, the 1993 Giants and Braves, or the 2024 Mets and Braves — three of the closest pennant races of the past forty years, none of which involved teams the chi-square considered different.

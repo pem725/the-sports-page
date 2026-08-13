@@ -1,0 +1,164 @@
+Want to Know If the Mets Lost? Check the
+S&P 500.
+(Please Don’t.)
+We computed the phi coefficient between the S&P 500’s daily direction and six MLB teams’ win-loss records. The Mets came back with φ = −0.567,
+p < 0.05
+i
+. On days the market goes up, the Mets lose 90% of the time. The correlation is statistically significant. It is also the most dangerous kind of number in statistics: one that looks real and isn’t.
+By The Sports Page · The Professor · April 21, 2026
+−0.567
+Phi Coefficient (Mets vs S&P)
+90%
+Mets Loss Rate on Market-Up Days
+p < 0.05
+“Statistically Significant”
+The Discovery
+Here is what we did. We took every trading day between March 26 and April 21, 2026 — sixteen days when both the New York Stock Exchange and Major League Baseball were open for business. For each day, we recorded two things: did the S&P 500 go up or down? And did each of six MLB teams win or lose?
+Then we computed the phi coefficient — the standard measure of association between two binary variables — for each team. The phi coefficient works like a
+Pearson correlation
+i
+, but for data that comes in two categories (up/down, win/loss) instead of continuous numbers. It ranges from −1 (perfect inverse) to +1 (perfect alignment), with 0 meaning no association at all.
+Five teams came back with nothing interesting. The Dodgers — the best team in baseball — registered a phi of exactly 0.000. No correlation whatsoever. The Braves, Pirates, Reds, and Rays all landed in the range of −0.3 to +0.2, well within what random noise produces.
+And then there were the Mets.
+The Contingency Table
+Here is the 2×2 table for the Mets. Every cell is a count of days.
+Mets Win
+Mets Loss
+Total
+S&P Up
+1
+9
+10
+S&P Down
+2
+1
+3
+Total
+3
+10
+13
+Read it slowly. On the ten trading days when the S&P 500 went up, the Mets won exactly once. One win in ten tries — a 10% win rate. On the three days the market went down, the Mets won twice — a 67% win rate. The Mets were seven times more likely to win when the market dropped.
+If a hedge fund analyst showed you this table, you might ask for more data. If a research assistant showed it to a professor, the professor might nod approvingly. The numbers are clean. The pattern is stark. And the phi coefficient — −0.567 — crosses the threshold that academic journals have treated as “real” for nearly a century.
+It is, of course, nonsense.
+“The most dangerous number in statistics isn’t the wrong one. It’s the right one that means nothing.”
+— The Sports Page, on spurious correlation
+The Math (And Why It “Works”)
+The Phi Coefficient
+The phi coefficient for a 2×2 table is:
+φ = (ad − bc) / √[(a+b)(c+d)(a+c)(b+d)]
+
+Where:
+  a = Market UP & Team WIN    = 1
+  b = Market UP & Team LOSS   = 9
+  c = Market DOWN & Team WIN  = 2
+  d = Market DOWN & Team LOSS = 1
+
+φ = (1×1 − 9×2) / √(10 × 3 × 3 × 10)
+    = (1 − 18) / √900
+    = −17 / 30
+    = −0.567
+The chi-square test statistic is n × φ² = 13 × 0.321 = 4.17, which exceeds the critical value of 3.841 for p = 0.05 with one degree of freedom. By the standard most journals use, this result is “statistically significant.”
+That standard is the problem.
+The Full Lineup: Six Teams vs. the Market
+Team
+Record (Trading Days)
+Phi (φ)
+χ²
+p-value
+Direction
+New York Mets
+3-10
+−0.567
+4.17
+< 0.05
+Market UP → Mets LOSE
+Atlanta Braves
+10-3
+−0.300
+1.17
+> 0.10
+—
+Pittsburgh Pirates
+8-5
++0.225
+0.66
+> 0.10
+—
+Tampa Bay Rays
+6-6
+−0.192
+0.44
+> 0.10
+—
+Cincinnati Reds
+6-7
++0.141
+0.26
+> 0.10
+—
+Los Angeles Dodgers
+9-3
+0.000
+0.00
+1.00
+No correlation
+The Dodgers are the control group. The best team in baseball wins at the same rate regardless of what the market does. That is what “no correlation” actually looks like: a phi of 0.000, a chi-square of 0.00, a p-value of 1.00. The Dodgers don’t care about the S&P 500. Neither do the Mets. The difference is that the Mets’ losing streak happened to coincide with the market’s winning streak.
+Why We Found This (The Uncomfortable Part)
+The explanation is embarrassingly simple. The S&P 500 went up on 12 of 16 trading days in this period — a 75% up-day rate as the market recovered from its March lows. The Mets, meanwhile, went 3-10 on trading days — a 23% win rate during the worst stretch of their season.
+A team that loses 77% of the time during a period when the market rises 75% of the time will produce a negative phi coefficient by construction. It’s not a discovery. It’s arithmetic. The Mets lose most days. The market goes up most days. The days overlap. That’s it.
+But here is the part that matters:
+we tested six teams and found one with p < 0.05.
+That’s not a low hit rate. At a 5% significance level, the probability of finding at least one “significant” result when testing six independent hypotheses is:
+The Multiple Comparisons Problem
+P(at least one false positive) = 1 − (1 − 0.05)^n
+
+With 6 teams:  1 − 0.95^6  = 1 − 0.735 = 26.5%
+With 30 teams: 1 − 0.95^30 = 1 − 0.215 = 78.5%
+If we had tested all 30 MLB teams instead of six, there is a
+79% chance
+we would have found at least one “statistically significant” correlation with the stock market. Not because any team actually predicts the market. Because that is how probability works when you test enough hypotheses.
+This is called
+data dredging
+— or, less politely,
+p-hacking
+. You run enough tests, and something will cross the threshold. The threshold doesn’t know you ran the other tests. It only sees the one you showed it.
+Tyler Vigen’s Lesson
+In 2014, a Harvard Law student named Tyler Vigen built a website that became one of the most effective statistics lessons ever created. He wrote software to scan thousands of data sets and surface pairs with high correlations. The results were ridiculous and unforgettable:
+Per-capita cheese consumption
+correlates with
+deaths by bedsheet entanglement
+at r = 0.947.
+US crude oil imports from Norway
+correlate with
+drivers killed in collisions with trains
+at r = 0.953.
+Nobody believes cheese causes bedsheet deaths. The absurdity is the point. Vigen’s website teaches what a semester of statistics lectures sometimes fails to:
+correlation is a property of data sets, not a property of reality.
+Two things can move together perfectly in the data and have absolutely nothing to do with each other in the world.
+Our Mets-S&P correlation is the same lesson, wearing a baseball jersey. The phi coefficient is real. The p-value is real. The relationship is not.
+What This Actually Teaches
+There are three lessons here, and they compound.
+Lesson 1: “Statistically significant” does not mean “real.”
+The p < 0.05 threshold was proposed by Ronald Fisher in the 1920s as a convenient rule of thumb. It was never intended to be a binary gate between truth and fiction. A p-value tells you how surprising your data would be
+if the null hypothesis were true
+. It does not tell you the null hypothesis is false. It does not tell you the effect is meaningful. It does not tell you the correlation is causal. It tells you one thing: this particular arrangement of numbers would be unusual under pure chance. “Unusual” is not “impossible.”
+Lesson 2: The number of tests matters more than the result of any one test.
+If you test one hypothesis at α = 0.05 and get a significant result, you have a 5% chance of a false positive. If you test thirty hypotheses, you have a 79% chance that at least one of them crosses the threshold by accident. This is the multiple comparisons problem, and it is the most common source of irreproducible results in published research. Every time you read a headline that says “study finds link between X and Y,” ask: how many X’s did they test before they found this one?
+Lesson 3: Mechanism matters more than math.
+Before trusting any correlation, ask:
+why
+would these two things be connected? What is the mechanism? What is the causal chain? For the Mets and the S&P 500, there is no mechanism. Francisco Lindor does not check the Dow before his at-bat. The Federal Reserve does not set interest rates based on the Mets’ bullpen ERA. The absence of a plausible mechanism is the single strongest reason to dismiss a correlation — stronger than any p-value.
+“With 30 MLB teams, there is a 79% chance of finding a ‘significant’ market correlation. Not because any team predicts the market. Because that is how probability works when you test enough hypotheses.”
+— The Sports Page, on multiple comparisons
+So Should You Sell When the Mets Lose?
+No. Obviously not. But here is the uncomfortable truth: if we had published the first half of this article without the second half — just the phi coefficient, the contingency table, and the p-value — it would have looked like a finding. It had a number. It had a formula. It had a threshold it crossed. It had a table. It had everything a research paper has except the one thing that actually matters: a reason to believe it.
+The Mets are 7-14 because Juan Soto is on the injured list, Francisco Lindor had hamate surgery, and Bo Bichette is still adjusting to a new league. The S&P 500 rose because the tariff pause reduced uncertainty and earnings came in above expectations. These are two completely independent stories that happened to unfold on the same calendar. The phi coefficient measured the overlap of two timelines. It did not measure a relationship.
+The next time someone tells you that two things are “statistically correlated,” ask three questions: How many things did they test? What is the mechanism? And would Tyler Vigen put it on his website?
+If the answer to the third question is yes, the correlation belongs on a poster, not in a portfolio.
+“Correlation is a property of data sets, not a property of reality. Two things can move together perfectly in the numbers and have absolutely nothing to do with each other in the world.”
+— The Sports Page, The Professor
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

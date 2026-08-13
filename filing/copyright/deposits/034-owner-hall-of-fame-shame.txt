@@ -1,0 +1,228 @@
+The Hall of
+Fame
+and Hall of
+Shame
+of American Sports Owners.
+Most owner rankings rest on a single number — championships, usually — that overweights the lucky and underrates the patient. This piece builds an Owner Index that respects variance: three metrics, z-scored within league, averaged. The top and the bottom of that ranking are not who the headlines say.
+By The Columnist · The Sports Page · On Variance, Owners, and Bill James
+3
+Metrics in the Index
+21
+Owners Examined
+5
+Leagues Compared
+Sports owner rankings are a journalism cottage industry. Every off-season produces another list, and every list reaches roughly the same conclusion: the owners who won championships are the good ones, and the owners who didn’t are the bad ones. This is a useful first cut, and a deeply incomplete second one. It overweights the lucky — an owner who won a single Cup or Series in a thirty-year tenure ranks higher than the owner who finished above .500 in twenty-eight of those years — and it underweights the patient, the consistent, the well-run franchises that simply did not catch a break in October.
+The methodological move borrowed here from Bill James — specifically his 2002 Win Shares framework — is to combine multiple components rather than relying on one. James’s objection to single-stat MVP voting was that any single statistic is too noisy to support the weight a single-stat ranking puts on it. Three reasonable metrics, averaged, are more reliable than one outstanding metric, however celebrated. That is the variance argument: averaging across multiple inputs reduces the noise of any single one. The Deeper Dive companion to this piece walks through the math.
+The Owner Index, in Plain Terms
+Three Metrics, Z-Scored Within League, Averaged
+1. Championships per decade of ownership
+2. Lifetime team winning percentage during tenure
+3. Playoff appearance rate (% of seasons reaching postseason)
+
+Each metric → z-score within league → average
+Why z-score within league? Because a championship in the thirty-team NBA is not directly comparable to a championship in the thirty-team MLB — playoff structures, season lengths, and competitive parity differ. Standardizing each metric within its own league makes cross-league comparisons honest. The composite is the average of the three z-scores.
+An owner with a Composite around
++1.0
+is one full standard deviation above their league’s mean — consistently elite.
++2.0 or higher
+is generational.
+−1.0
+is the bottom decile of their league. These are the categories the table below uses.
+Hall of Fame — The Top Owners
+Rank
+Owner
+League
+Tenure
+Champs
+Win%
+Playoff%
+Index
+1
+Jerry Buss
+NBA
+1979-2013
+10
+.622
+~88%
++2.4
+2
+Robert Kraft
+NFL
+1994-pres.
+6
+.665
+~77%
++2.0
+3
+George Steinbrenner
+MLB
+1973-2010
+7
+.566
+~58%
++1.7
+4
+Mike Ilitch
+(Red Wings)
+NHL
+1982-2017
+4
+.580
+~71%
++1.4
+5
+John Henry
+(Red Sox)
+MLB
+2002-pres.
+4
+.557
+~48%
++1.3
+6
+Wyc Grousbeck (Celtics)
+NBA
+2002-2025
+2
+.580
+~87%
++1.0
+7
+Rooney Family (Steelers, mod. era)
+NFL
+1969-pres.
+6
+.565
+~67%
++0.9
+The top of the list looks roughly as expected and contains one mild surprise: the Steelers’ modern-era Rooney family rates lower than the Patriots, Lakers, or Yankees despite having the same championship count as Kraft. The reason is the win-percentage axis: the Steelers averaged .565 across the post-merger era; the Patriots under Kraft averaged .665. A century’s worth of patience is admirable; it does not produce the same composite as Kraft’s thirty-one years of relentless contention.
+Buss leads the index because his Lakers were elite on all three axes simultaneously. Ten titles in thirty-three years is the highest championship rate in the data. Sixteen Finals appearances out of thirty-three seasons is the highest title-game rate. And the .622 win percentage was sustained across multiple distinct rosters — the Showtime era, the Shaq-Kobe threepeat, the late-career Pau Gasol runs. No single component carries Buss’s ranking. All three do.
+The Quietly Elite Middle
+Owner
+League
+Tenure
+Champs
+Win%
+Playoff%
+Index
+Stuart Sternberg (Rays)
+MLB
+2005-pres.
+0
+.520
+~43%
++0.6
+Jerry Jones (Cowboys)
+NFL
+1989-pres.
+3
+.555
+~55%
++0.4
+Tom Ricketts (Cubs)
+MLB
+2009-pres.
+1
+.520
+~31%
++0.2
+Mara/Tisch (Giants)
+NFL
+1991-pres.
+2
+.505
+~50%
++0.1
+Jeremy Jacobs (Bruins)
+NHL
+1975-pres.
+1
+.550
+~70%
+0.0
+The middle is where the index does the most interesting work.
+Stu Sternberg’s Rays
+, by championship count, look indistinguishable from John Fisher’s Athletics — both zero. By the index, they are 1.5 standard deviations apart. Sternberg’s teams won at a .520 clip on the lowest payrolls in the league and reached the postseason in nine of twenty-one seasons; the Athletics, with comparable budgets, did not. The composite catches what a single-stat ranking misses: relative competence, not absolute glory.
+Jeremy Jacobs’s Bruins
+are an interesting case in the opposite direction. One Stanley Cup in fifty years is a single number that reads like the bottom-tier. The other two metrics rescue him: a .550 win percentage and roughly seventy percent playoff appearance rate across half a century. Jacobs is, by the index, the most patient elite owner in the dataset — not a champion, but rarely a disaster.
+Hall of Shame — The Bottom Owners
+Rank
+Owner
+League
+Tenure
+Champs
+Win%
+Playoff%
+Index
+17
+Jim Irsay (Colts)
+NFL
+1997-pres.
+1
+.560
+~55%
+−0.2*
+18
+John Fisher (Athletics)
+MLB
+2005-pres.
+0
+.495
+~35%
+−0.7
+19
+James Dolan
+(Knicks)
+NBA
+1999-pres.
+0
+.430
+~35%
+−1.1
+20
+Robert Wood Johnson IV
+(Jets)
+NFL
+2000-pres.
+0
+.431
+~24%
+−1.4
+21
+Mike Brown
+(Bengals)
+NFL
+1991-pres.
+0
+.418
+~30%
+−1.5
+22
+Daniel Snyder
+(Commanders)
+NFL
+1999-2024
+0
+.427
+~25%
+−1.6
+The bottom of the index is dense with NFL owners. Snyder, Brown, and Johnson all clear the −1.0 threshold — meaning each is at least one full standard deviation worse than the league mean across all three metrics simultaneously. That is the index’s most unforgiving verdict: it is one thing to be bad at championships and average elsewhere; it is another to fail at championships, win percentage,
+and
+playoff appearance rate. Snyder’s historic .427 across twenty-four years, paired with a .250 playoff record (two wins, six losses) when he occasionally got there, anchors his composite at the floor of the dataset.
+Mike Brown’s ranking is statistically identical to Snyder’s but worth a second look: a .418 win percentage across thirty-four years is a longer indictment than Snyder’s twenty-four. The Bengals’ recent run — Super Bowl LVI in 2022, two consecutive playoff appearances — has nudged the composite, but a third of a century is a deep enough sample to define the franchise. Brown’s tenure ranks last among the long-tenured bottom group because there is more of it to evaluate.
+James Dolan’s Knicks land in the same neighborhood despite a significantly different sport. The Knicks have not won a title since 1973; under Dolan they have not won a Finals game since 1999. The Knicks’ recent resurgence in the 2020s is real, but twenty-six years of evidence is what the index is measuring. The composite is patient, both ways.
+“A single number can crown an owner. Three numbers, averaged, can convict one.”
+— The Columnist, on the variance argument
+What This Doesn’t Capture
+The index does not include market size, era, payroll, league structural changes (the wild-card expansion, the salary cap, the introduction of free agency), or anything about the off-field. A list that did include those would shuffle the order — Sternberg’s Rays would rise; the Yankees might fall; Snyder’s ranking would worsen for reasons unrelated to win percentage.
+The index also says nothing about the WNBA. WNBA franchise ownership is largely tied to NBA franchises, and the league’s shorter history (founded 1996) makes within-league z-scoring unreliable for individual owners. A future installment will examine WNBA ownership specifically as the data accumulates.
+What the index does capture is the variance argument: that no single metric tells the story, that averaging multiple reasonable metrics produces a more stable verdict than fixating on any one of them, and that the bottom of professional sports ownership is concentrated in the NFL, where revenue-sharing protects bad owners from the consequences of their decisions. That last point is, perhaps, this piece’s most uncomfortable finding.
+Want to go deeper?
+This issue’s
+methodology supplement →
+teaches variance — what it is, why it matters, why averaging multiple z-scored metrics produces a more stable index than any single one, and how Bill James’s Win Shares framework is the canonical example of the same statistical move.
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

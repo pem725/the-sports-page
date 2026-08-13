@@ -1,0 +1,200 @@
+Conditional Probability and
+the Inverse Fallacy
+The companion piece to the Mets 10-21 article. Why P(A | B) and P(B | A) are different numbers, why the difference matters in courtrooms and clinics as much as in baseball, and a Python script that computes both directly from a CSV of season records.
+Methodology Supplement · Mets Conditional Probability · May 2, 2026
+Three sections, jump to your level
+The Idea
+·
+The Math
+·
+The Code
+The Idea
+Why
+information
+changes a probability
+An unconditional probability is what you would say if you knew nothing else. Pick a random MLB team in March: 12 of 30 make the playoffs, so P(playoffs) is 40%. That number is the answer when you have no information beyond “it’s a major league team in this era.”
+A
+conditional probability
+is what you would say if you knew one specific additional thing. Once you learn the team is 10-21 through 31 games, you are no longer reasoning about a random team — you are reasoning about a team in a specific category, the “sub-.400 starts” category. The right reference class is no longer all 30 teams; it is the historical set of teams that have started this poorly. Inside that smaller, harsher reference class, the playoff rate is much lower — around 11%.
+The vertical bar in the notation P(A | B) is doing all the work. It says:
+restrict your attention to the cases where B is true, and ask what fraction of those have A.
+Different B, different reference class, different fraction. Same A.
+The inverse fallacy.
+The most common error in conditional reasoning is to confuse P(A | B) with P(B | A). They are not the same number, and they are not symmetric. P(plays in the NBA | is over seven feet tall) is high. P(is over seven feet tall | plays in the NBA) is much lower. Same two facts, two different fractions.
+In the Mets case: people sometimes argue that bad starts don’t matter because of the 2019 Nationals. That argument uses P(bad start | won the World Series) — which is small, but exists — and reads it as if it were P(makes the playoffs | started badly), which is what we actually want. The two are not interchangeable.
+The same shape of reasoning shows up everywhere. In medicine, P(has the disease | tested positive) and P(tests positive | has the disease) are routinely confused, even by clinicians. The first is what the patient cares about; the second is what the test reports. The first depends on the
+base rate
+i
+. In law, the “prosecutor’s fallacy” is the courtroom version of the same swap. In each case, the cure is the same: write the bar correctly, identify which side of it is the condition, and check which question you actually want answered.
+The Math
+Bayes’ theorem, applied to
+10-21
+The two conditional probabilities — P(A | B) and P(B | A) — are related by Bayes’ theorem. The full statement:
+P(
+A
+|
+B
+) = P(
+B
+|
+A
+) × P(
+A
+) / P(
+B
+)
+For our case, let A = “makes the playoffs” and B = “starts the season at or below .400 through 31 games.” Then:
+P(playoffs | bad start) =
+    P(bad start | playoffs) × P(playoffs) / P(bad start)
+To turn this into numbers, we need three pieces of historical data. Working from the last ten seasons (2016–2025, n ≈ 300 team-seasons under varying playoff formats):
+P(
+playoffs
+)              = 12/30 = 0.400   (modern format)
+P(
+bad start
+)             ≈ 35/300 = 0.117   (sub-.400 at game 31)
+P(
+bad start
+|
+playoffs
+) ≈ 4/120 = 0.033   (4 of 120 playoff teams)
+Plugging in:
+P(playoffs | bad start)
+  = (0.033) × (0.400) / (0.117)
+  = 0.0132 / 0.117
+  =
+0.113
+(≈ 11%)
+The same answer arrives if we count directly: roughly 4 out of 35 sub-.400 starts made the playoffs, which is about 11%. Bayes’ theorem is a sanity check on the direct count, not a replacement for it. But it tells you something the direct count doesn’t: it shows you, in algebra, exactly how the inverse conditional (P(bad start | playoffs) = 3.3%) is related to the conditional you actually want (P(playoffs | bad start) = 11.3%). They differ by a factor of P(playoffs) / P(bad start) — in this case, about 3.4×. The base rates do that work.
+Worked example: the 2024 Astros, in conditional notation
+On May 2, 2026, the Astros were 7-19 (.269) through 26 games. A reader at the time, applying the framework correctly, would have written:
+· P(playoffs) = 0.40 (unconditional, modern format)
+· P(playoffs | start ≤ .300) ≈ very wide bar, n=8 over ten years, point estimate ~12%
+· The honest answer to a friend: “Probably out, but not certainly. Roughly one in eight, give or take a lot.”
+The Astros went on to finish 88-73 and win the AL West. That outcome is consistent with a ~12% probability event. It does not retroactively make the probability higher. Conditional probability is about what you should have said before you knew the answer. The Astros were always somewhere on the right tail of the distribution; they happened to be the realization that landed there.
+VERDICT · A 12% event happened. The framework is not invalidated; it predicted a 12% event would happen roughly 12% of the time.
+This is the trap that single-case reasoning lays. One memorable comeback — the Nationals, the Astros — can be read as evidence that comebacks are common, when in fact each one is a draw from a low-probability tail. The math does not say the comeback was impossible. The math says the comeback was, before it happened, a roughly one-in-ten event — and that calling it “probable” in advance would have been wrong.
+The Code
+Computing P(playoffs | start)
+from a CSV
+Below is a self-contained Python script that takes a CSV of historical seasons (one row per team-season, with columns for the early-season record and a binary playoffs indicator) and computes both conditional probabilities — the one we want and its inverse — alongside the underlying base rates. It is short on purpose. The whole point of conditional probability is that the arithmetic is trivial; the discipline is in asking the question correctly.
+Snapshot: this listing is illustrative. The production script that generated the numbers in the article lives at
+scripts/conditional-probability.py
+in the repo and ingests the same CSV format.
+# conditional-probability.py — compute P(playoffs | start) and its inverse
+import
+csv
+def
+load_seasons
+(path):
+# expects columns: team, year, wins_thru_31, losses_thru_31, made_playoffs (0/1)
+with
+open(path)
+as
+f:
+return
+list(csv.DictReader(f))
+def
+conditional_probs
+(rows, threshold=
+0.400
+):
+    n_total = len(rows)
+    n_playoffs = sum(
+1
+for
+r
+in
+rows
+if
+int(r[
+"made_playoffs"
+]))
+    n_badstart = sum(
+1
+for
+r
+in
+rows
+if
+_winpct(r) <= threshold)
+    n_both = sum(
+1
+for
+r
+in
+rows
+if
+_winpct(r) <= threshold
+and
+int(r[
+"made_playoffs"
+]))
+
+    P_A   = n_playoffs / n_total
+# P(playoffs)
+P_B   = n_badstart / n_total
+# P(bad start)
+P_AB  = n_both     / n_badstart
+if
+n_badstart
+else
+0
+# P(playoffs | bad)
+P_BA  = n_both     / n_playoffs
+if
+n_playoffs
+else
+0
+# P(bad | playoffs)
+return
+{
+"P(playoffs)"
+: P_A,
+"P(bad)"
+: P_B,
+"P(playoffs|bad)"
+: P_AB,
+"P(bad|playoffs)"
+: P_BA,
+"n_total"
+: n_total,
+"n_badstart"
+: n_badstart,
+"n_both"
+: n_both}
+def
+_winpct
+(r):
+    w, l = int(r[
+"wins_thru_31"
+]), int(r[
+"losses_thru_31"
+])
+return
+w / (w + l)
+if
+(w + l)
+else
+0
+if
+__name__ ==
+"__main__"
+:
+    rows = load_seasons(
+"seasons_2016_2025.csv"
+)
+    out  = conditional_probs(rows, threshold=
+0.400
+)
+for
+k, v
+in
+out.items():
+        print(
+f"{k:24s} {v}"
+)
+The two conditional probabilities are computed from the same three counts — n_total, n_badstart, and n_both. The numerator is the same in both directions. Only the denominator changes. Switching from P(A | B) to P(B | A) is a one-line change: divide by n_playoffs instead of n_badstart. That single change can move the answer by a factor of three or more, which is why the inverse fallacy is so dangerous and so hard to spot.
+What’s missing.
+Real season data has confounders this script does not handle: expansion of the playoff format from 10 to 12 teams in 2022, division alignment changing strength-of-schedule, COVID-shortened 2020. A more careful version would either restrict to post-2022 seasons or weight earlier seasons by the fraction of teams that made the playoffs in that year’s format. The article’s 11% estimate is robust to these adjustments at the first decimal place; it is not robust at the third. Conditional probability tells you which question you’re asking; the data tells you how confidently you can answer it.
+If you have a stat where the conditional you really want and the conditional people are quoting are not the same number, send it to the Stats Desk. Half the educational value of this newsletter is in spotting the swap before it does damage.

@@ -1,0 +1,62 @@
+109 Teams Have Been Exactly Where Boston Was on July 3.
+One
+Made the Playoffs.
+The Red Sox woke up that morning 37–48. They have gone 25–3 since — a run with roughly a one-in-seventy-thousand chance — and they are now 94% to reach October. This is not a story about belief being rewarded. It is a story about why you should distrust every lesson anybody draws from the team that got lucky.
+By The Sports Page · 27 seasons, 109 comparable clubs
+37–48
+Boston on July 3
+25–3
+Every game since
+1 of 109
+Comparable clubs that made it
+On the morning of July 3 the Boston Red Sox were 37–48, eleven games under .500, and going nowhere. Then they won fifteen in a row — tying the franchise record set in 1946 — and they have not really stopped. Since that morning they are
+25–3
+. They swept the Dodgers. They are 62–51, holding the second wild card by six games, and our model now gives them a
+94%
+chance of playing in October.
+It is the best story in baseball. It is also about to be used to teach a lesson it cannot support, so let us get the number on the table first.
+The Base Rate
+Go back through every season since 1998 — the whole 30-team era — and find every club that sat roughly where Boston sat in early July: a winning percentage between .415 and .455, somewhere around eighty-five games in. Boston's .435 lands in the middle of that band.
+There are
+109 such team-seasons.
+One of them made the playoffs.
+One square per team-season, 1998–2025, excluding the shortened 2020 season. Each is a club that stood between .415 and .455 roughly eighty-five games into its year — the neighbourhood Boston occupied on July 3. Only the 2024 Tigers, at .455, played a postseason game.
+One caveat, and it is a real one: the playoff field has grown. From 1998 to 2011 only eight clubs qualified and
+none
+of these 109 made it. The field went to ten, then to twelve in 2022, and the single success comes from that recent era. Restricted to 2022 onward the rate is one in eleven — too small a sample to trust, but enough to say the honest modern figure is higher than one percent. Call it somewhere under one in ten. It is still the long odds, not the short ones.
+How Unlikely the Run Itself Was
+Take Boston's record on July 3 at face value and ask what it implied about the team. Thirty-seven and forty-eight, run through the same Bayesian machinery this newsletter uses all year, says a club whose true quality was about
+.46
+— a bit below average, with a plausible range from roughly .41 to .52.
+A team of that quality wins 25 of its next 28 games about
+once in seventy thousand tries.
+The fifteen-game streak on its own is a one-in-fifty-thousand event.
+Those numbers are not an insult to the Red Sox. They are the point. Something happened here that the team's first eighty-five games gave almost no reason to expect. Maybe the roster was genuinely better than its record — that happens, and a .46 estimate carries real uncertainty. But nothing in the evidence available on July 3 justified predicting this, and anybody who says they saw it coming is describing a memory, not a forecast.
+We are about to spend two months hearing what the Red Sox teach us. They are the one square in a hundred and nine. They teach us almost nothing.
+— The Sports Page
+The Trap
+Here is what will happen next, because it always does. Boston will make the playoffs and a hundred columns will explain why: they never panicked, they bought at the deadline instead of selling, the clubhouse believed. Every one of those explanations will be built on a single case that was selected
+because
+it worked out.
+That is
+survivorship bias
+i
+in its purest form. The 108 other clubs also had clubhouses that believed. Some of them also bought at the deadline. They are not going to be written about, because nothing happened to them, and so the evidence that would let you judge whether belief or aggression actually works has been quietly removed from the record before the argument starts.
+The
+base rate
+i
+is the antidote, and it is almost never in the story. It is the denominator that the highlight reel is missing.
+What To Take Home
+None of this means Boston is fraudulent. They won the games. Their 94% is real, and if they win the World Series the trophy will not have an asterisk on it. Rare things happen; somebody has to be the one square, and this year it is them.
+What it means is narrower and more useful:
+you cannot learn a general rule from the case that was picked for being exceptional.
+When you next read that some company survived by refusing to give up, or that a fund returned 40% by ignoring the consensus, or that a coach was right to go for it — ask the only question that makes the claim testable.
+How many did the same thing and vanished?
+If nobody counted them, there is no lesson on offer. There is only a good story, which is a different product entirely.
+The Red Sox are having a wonderful summer. Enjoy it as a rare event, which is what it is, and be careful with anyone who tries to sell it to you as a method.
+How this was computed
+Records and results come from the MLB Stats API, filtered to regular-season games only. The comparison group is every team-season from 1998 through 2025 with a winning percentage between .415 and .455 measured in early July, between 78 and 92 games played; the shortened 2020 season is excluded as non-comparable. Postseason participation is taken from each season's actual postseason schedule, so “made the playoffs” means under that year's format, whatever it was — a moving target that the piece flags rather than hides. Boston's implied quality uses the newsletter's standard Beta-Binomial with a Beta(34, 34) prior, matching the observed spread of real MLB team talent; the streak probabilities integrate over that posterior rather than assuming a single fixed skill. The 94% figure comes from 200,000 simulated finishes to the American League season and, like every projection here, ignores schedule strength and injuries.
+Licensed under
+The Sports Page License
+· Borrow it, give it back better · Non-commercial, attribution required
+Not sure what counts as commercial? Take the 2-minute quiz →

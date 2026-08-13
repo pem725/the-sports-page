@@ -1,0 +1,57 @@
+Past the Pythagorean.
+BaseRuns Asks the Harder Question.
+Yesterday we used Bill James’ 1981 Pythagorean expectation to ask whether the Mets’ 20–26 record matches their underlying play. The answer was: close enough. Their 176 runs scored and 186 runs allowed predict a 22–24 record — two wins under, but inside the noise band. Pythagorean treats runs scored as a fact about the team. BaseRuns, the formula proposed by David Smyth in the 1990s and now standard at FanGraphs and Baseball Prospectus, treats runs scored itself as a thing that can be unlucky. It goes one level deeper. Today’s issue is about why that matters — and what it tells us about a Mets offense that has scored fewer runs than 23 of the 30 teams in baseball.
+By The Professor · The Sports Page · Methods · Wins Expected, Part 2
+176
+Mets Actual Runs Scored, 46 g
+RC = A·B/(B+C)+D
+The BaseRuns Shape
+~±3
+BaseRuns vs Actual, Typical Gap
+The Pythagorean expectation is a brilliant tool that rests on a quiet assumption. The assumption is that a team’s runs-scored total is itself an honest measure of the team’s offensive ability. If the Mets have scored 176 runs in 46 games, Pythagorean takes 176 as the input. It does not ask whether 176 is the “right” number — whether the team’s underlying offensive components (hits, walks, total bases) should have produced more runs, or fewer. It treats the runs total as data, not as itself an outcome that could be lucky or unlucky.
+BaseRuns, the runs estimator developed by David Smyth in the mid-1990s, refuses that assumption. It asks:
+given a team’s component statistics — singles, doubles, triples, home runs, walks, hit batters, and outs — how many runs should it have scored?
+The actual runs-scored total is then compared to the BaseRuns expected total, and the difference is interpreted as luck (good or bad), specifically luck of the form “hits with runners in scoring position” or “hits clustered into innings.”
+The Formula, in Approximate Form
+BaseRuns, Adapted for the Newsletter
+The full BaseRuns formula is a four-term expression that breaks runs into the product of three things plus home runs. In rough form:
+Runs ≈  ( A × B )  /  ( B + C )  +  D
+
+Where:
+  A = baserunners on (1B + 2B + 3B + BB + HBP)
+  B = advancement value (weighted total bases plus stolen-base credit)
+  C = outs made (typically ~3 × innings on offense)
+  D = home runs
+The intuition is:
+A
+measures how often you put men on,
+B/(B+C)
+measures how efficiently each baserunner becomes a run, and
+D
+captures the runs you score without needing teammates — the home run. A team’s expected runs is the product of how many men you put on times how efficient your team is at converting them, plus the home runs.
+BaseRuns is more accurate than Bill James’ original Runs Created formula because it correctly handles the fact that the “efficiency” of converting baserunners scales nonlinearly with how often you reach base. A team that doubles its baserunners does not score twice as many runs — it scores roughly three times as many. BaseRuns captures that nonlinearity. Pythagorean, working from runs totals only, never sees it at all.
+What BaseRuns Adds to the Pythagorean Picture
+Pythagorean tells you: given the runs scored and runs allowed your team has produced, what record should it have? BaseRuns tells you: given the offensive and defensive components your team has produced, what runs should it have scored and allowed? The two formulas, stacked, give you a two-stage diagnosis. Stage one: was the team unlucky in close games? (Pythagorean.) Stage two: was the run-scoring itself unlucky? (BaseRuns.)
+For the Mets through 46 games, Pythagorean said two-wins-unlucky — modest, within noise. The BaseRuns analysis, when it is run on FanGraphs at the end of any week of baseball, asks whether the runs total (176) is itself low because the bats are underperforming their underlying components, or whether 176 is roughly what the components have earned. The answer determines whether the Mets are a slumping team with hidden upside, or a thin team whose runs total accurately reflects its actual offensive ability.
+The thin-team reading is the one that fits most of the evidence. The Mets are 23rd in MLB in runs scored. They are 22nd in team OPS. They are 26th in slugging percentage. Their hits-per-game (8.1) and walks-per-game (3.2) place them in the bottom third of the league on both. BaseRuns, plugged into those components, returns a number very close to 176. The Mets are scoring roughly what they should be scoring, given how they are actually playing. The 76-win pace projected by Pythagorean is therefore not a luck-driven mirage. It is a thin offense returning its honest expected output.
+2025 MLB — Every Team’s Pythagorean Expected Wins vs. Actual Wins (Full Season)
+Scatter plot of all 30 MLB teams from the 2025 season. Each dot places a team’s Pythagorean expected wins (x-axis) against its actual wins (y-axis). The dashed diagonal is perfect agreement; the lighter lines mark the ±3 win band where most teams land.
+The 2025 White Sox (-12)
+are the starkest outlier: a team whose run differential predicted 72 wins but posted only 60 — twelve wins of close-game misfortune.
+Cleveland (+8)
+overperformed its Pythagorean by the widest margin, winning far more one-run games than expected.
+Texas (-8)
+was an 89-Pythagorean-win team that finished at .500.
+The 2025 Mets (-2)
+, circled in steel blue, sat comfortably inside the ±3 band — a normal two-win gap.
+The 2026 Mets
+, shown as the gold ring, project at their current pace to 70 actual wins against a 78-win Pythagorean expectation — an 8-win gap that, if sustained, would place them alongside Texas and Tampa Bay as one of the unluckiest teams in recent history. Axes start at the data range (35–100 wins), not at zero, because a zero-origin would compress all 30 teams into an unreadable cluster; the ±3 band provides the honest reference frame.
+“Pythagorean catches one kind of luck. BaseRuns catches a deeper kind. When both formulas agree that a team is mediocre, the team is, with high probability, mediocre. The cavalry is not coming from sequencing regression alone.”
+— The Sports Page, on the convergence of two estimators
+Where the Cavalry Can Still Come From
+This is, however, the moment where the components matter, because BaseRuns is computed from the players who have actually played — and the Mets’ component statistics through 46 games have been generated without Francisco Lindor (out with a calf strain), Francisco Alvarez (hand surgery, IL since late April), and parts of the Mark Vientos / Brett Baty rotation at third. When Lindor returns — expected before the end of May — the team’s baserunner generation rate (the A term) climbs. When Alvarez returns, the team’s home-run rate (the D term) climbs. Both improvements propagate through the BaseRuns formula in a way that, on PECOTA’s rest-of-season projection, adds roughly half a run per game to the Mets’ expected scoring — the same number Issue #048 used as the rough impact of the two returns.
+BaseRuns, in other words, agrees with the simpler Pythagorean diagnosis but adds a useful structural detail: the gap between current and required offense is not a sequencing-luck issue, it is a roster-composition issue. The path back is not bats hitting better in the clutch. It is bats being in the lineup at all. That is more solvable than “please be luckier,” and it is also more dependent on health.
+A Note on Stacking Estimators
+One discipline that working baseball analysts develop — and that this newsletter is now nudging readers into — is the habit of stacking estimators rather than relying on one. Pythagorean is great for the question “does the record match the run differential?” BaseRuns is great for the question “does the run total match the component performance?” xFIP (which we will reach in a future issue) is great for the question “does the pitcher’s ERA match what their underlying control suggests?” Each tool answers a narrower question than the previous tool, and each peels off a different layer of luck. When all three tools agree, your confidence in the diagnosis is high. When they disagree, the disagreement is itself the most interesting part of the analysis.
+For the 2026 Mets, the two-tool diagnosis (Pythagorean + BaseRuns) currently agrees: this offense is producing what its components earn, and its components are below playoff-level. The wild-card pace, if it arrives, will arrive because Lindor and Alvarez change the components — not because the team starts winning more close games at the same offensive output. A different kind of cavalry. A more measurable one.
+A reader curious about the precise BaseRuns calculation for the Mets can find it on FanGraphs under the team-batting page, in the “BsR” and “RC” columns. The newsletter’s next methods issue will turn the same lens on the rotation, introducing xFIP and SIERA — the pitching-side estimators that ask the parallel question: given strikeouts, walks, and ground-ball rate, what ERA should this pitcher have? — and apply them to the post-Holmes Mets staff.

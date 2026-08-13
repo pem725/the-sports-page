@@ -1,0 +1,51 @@
+Sometimes the Dumb Rule
+Beats the Smart Model.
+Kahneman and Tversky taught a generation that mental shortcuts are biases to be corrected. Gerd Gigerenzer spent his career showing the other half: in an uncertain world, a fast, frugal rule of thumb often beats the sophisticated model. The whole skill is knowing which world you are in.
+Tier 1 · The Two-Minute Version
+Two verdicts on the same shortcut.
+Your brain runs on shortcuts. Recognize a team’s name, lean toward it. Hear a number first, anchor to it. Judge how likely something is by how easily an example springs to mind. These are
+heuristics
+— fast rules of thumb that skip the full calculation — and there are two famous, opposite verdicts on them.
+The first verdict, from Daniel Kahneman and Amos Tversky, is the one you have probably absorbed: these shortcuts produce
+systematic, predictable errors
+. We ignore base rates, we anchor on irrelevant numbers, we mistake what is memorable for what is likely. In this telling, a heuristic is a
+bug
+— a bias to be caught and corrected by doing the real math.
+The second verdict, from Gerd Gigerenzer, is the one that gets left out: hold on. In the real world — where information is scarce, the future is uncertain, and you have to decide now — a simple rule frequently
+beats
+the elaborate model. Not despite its simplicity, but
+because
+of it. In that telling, a heuristic is a
+feature
+. So which is it? Both. It depends entirely on the world you are using it in.
+Tier 2 · If You Want to Go Deeper
+It depends on the environment — and this connects to overfitting.
+The reconciliation is one word:
+environment
+. In a stable, data-rich, well-understood world — the kind where the past really does resemble the future — the complex model wins; it can exploit every measured detail. But in an uncertain, small-sample, noisy world, the simple heuristic wins, and here is the reason it wins:
+it does not overfit.
+That is not a coincidence; it is the exact idea from
+All Models Are Wrong
+, wearing a psychologist’s hat. A shortcut ignores most of the available information on purpose. Ignoring the noise is what lets it generalize to the next case instead of memorizing the last one. A rule of thumb is just a very low-variance model — wrong on the details, but robust — which is precisely why Gigerenzer’s “less is more” effect is real: fewer moving parts, better forecasts, when the world is genuinely uncertain.
+Sports is the perfect proving ground because it is full of both worlds. A scout’s “he’s a gamer” is a heuristic; sometimes it is lazy bias, and sometimes it is picking up signal a spreadsheet cannot. The old claim that the “hot hand” is a pure illusion — a bias — itself turned out to be partly wrong; the players’ instinct was not as dumb as the experts first said. A coach’s fourth-down gut versus the analytics chart is the same tension, live, every Sunday.
+So the move is not “trust the model over your gut” (the naive lesson people take from Kahneman) and it is not “trust your gut over the model” (the folk wisdom). The move is to ask a better question:
+is this a world where a simple rule generalizes, or one where the shortcut systematically misleads?
+Answering that — not memorizing a list of biases — is what statistical maturity actually looks like.
+Tier 3 · Take It to the Textbook
+The full treatment: simple rules, complex models, and when each wins.
+Why a low-variance rule can out-forecast a high-variance model, and how to reason about the tradeoff instead of guessing — that runs through the modeling chapters of
+The Sports Page’s companion statistics textbook
+, a free, open, graduate-level text with the R code to see “less is more” happen on real data.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+All Models Are Wrong
+(Concept No. 15) — the mathematical twin: why a simpler rule generalizes when the world is uncertain.
+Base Rate
+,
+Confirmation Bias
+,
+Survivorship
+(Concepts No. 1, 2, 4) — the Kahneman-Tversky side, where shortcuts really do mislead.
+Pre-season simulations — a deliberately frugal rule (coin-flip anything inside the noise) instead of a false-precision bracket.
+Any “the eye test vs. the numbers” debate — usually a question about which environment you are in, in disguise.

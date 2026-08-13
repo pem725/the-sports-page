@@ -1,0 +1,350 @@
+Three Definitions of a
+Bust
+The companion piece to Issue #25, "Fifty Years, One Hall of Famer." Same data, three reader levels. Read the section that fits where you are. The math is the same in all three; only the scaffolding changes.
+Methodology Supplement · Issue #25 · Last updated April 22, 2026
+Three sections, jump to your level
+The Idea
+·
+The Math
+·
+The Code
+The Idea
+Why “
+bust
+” needs three definitions, not one
+Every fan has a definition of a draft bust. The problem is that everyone's definition is slightly different, and the differences matter. A player who never made a Pro Bowl might still have been a perfectly serviceable starter for a decade. A player with an outstanding career somewhere else might have done nothing for the team that drafted him. A player who was injured after two great years might be classified differently depending on what you care about.
+Issue #25 sidestepped this argument by running three definitions in parallel rather than picking one. Each definition captures something real:
+Definition A — "Never made a Pro Bowl."
+The harshest, simplest test. Pro Bowl is a peer-judged outcome metric — either a player was elite in a season or he wasn't.
+Definition B — "Career value below the slot's expected value."
+A pick at #5 should produce more career output than a pick at #25; comparing each player against what his slot historically delivers is a fair test.
+Definition C — "Fewer than four seasons as the drafting team's primary starter."
+Asks the team-specific question: did this pick justify itself to the franchise that spent it?
+How this is commonly misread.
+Single-metric definitions create unfair comparisons. Sam Darnold "never made a Pro Bowl with the Jets" but is currently a productive NFL starter elsewhere. By Definition A he's a bust; by a "career success" metric he isn't. The point of running three definitions is to acknowledge that neither single metric is enough — and that a player who fails ALL THREE is a bust about whom every reasonable observer agrees.
+The "triple-bust" rate (28% over fifty years) is the intersection of all three definitions, not the union. That's deliberate. The intersection is the strict test: it only counts players whose careers are unambiguously below replacement-level by every available lens. It produces a smaller, more defensible number than any single definition would.
+The Math
+From three definitions to a
+misery index
+Each definition is a binary classifier. For a given player, each definition returns a 0 or a 1: did the player meet this bust criterion or not?
+Def
+Question asked
+Returns 1 if
+A
+Did the player ever make a Pro Bowl?
+Pro Bowls = 0
+B
+Is the player's career Approximate Value below the historical average for his draft slot?
+Career AV < Expected AV(slot)
+C
+Did the player start at least four seasons for his drafting team?
+Starter years < 4
+The "Expected AV(slot)" function is a slot-by-slot lookup based on Chase Stuart's published expected-AV-per-pick research. Picks earlier in the first round historically yield higher career AV; the curve is monotonic but not linear. The lookup we used:
+EXPECTED_AV by draft slot:
+slot 1:
+72 AV
+slot 9:
+35 AV
+slot 17:
+21 AV
+slot 25:
+13 AV
+slot 2:
+66 AV
+slot 10:
+33 AV
+slot 18:
+20 AV
+slot 26:
+13 AV
+slot 3:
+60 AV
+slot 11:
+30 AV
+slot 19:
+19 AV
+slot 27:
+12 AV
+slot 4:
+54 AV
+slot 12:
+28 AV
+slot 20:
+18 AV
+slot 28:
+11 AV
+slot 5:
+49 AV
+slot 13:
+27 AV
+slot 21:
+17 AV
+slot 29:
+11 AV
+slot 6:
+45 AV
+slot 14:
+25 AV
+slot 22:
+16 AV
+slot 30:
+10 AV
+slot 7:
+41 AV
+slot 15:
+24 AV
+slot 23:
+15 AV
+slot 31:
+10 AV
+slot 8:
+38 AV
+slot 16:
+22 AV
+slot 24:
+14 AV
+slot 32:
+9 AV
+The "misery index" for a player is the sum of the three binary classifiers — integer from 0 (not a bust by any definition) to 3 (triple bust):
+misery_index
+(player) =
+A
+(player) +
+B
+(player) +
+C
+(player)
+The "triple-bust rate" of a franchise is the proportion of mature picks (i.e., picks made at least three years ago) for which misery_index = 3.
+Worked example: Vernon Gholston, Jets, 2008 #6
+Career stats: 0 Pro Bowls, career AV = 2, NYJ primary-starter seasons = 0.
+Definition A:
+Pro Bowls = 0 →
+1
+(bust)
+Definition B:
+AV (2) < Expected AV at slot 6 (45) →
+1
+(bust)
+Definition C:
+Starter years (0) < 4 →
+1
+(bust)
+misery_index = 1 + 1 + 1 = 3  →  TRIPLE BUST
+Why intersection over union? A union-based definition (any of A, B, or C is true → "bust") would label most NFL first-rounders as busts and lose discriminative power. The intersection forces agreement across three lenses, producing a number that survives skepticism from any direction.
+The Code
+Run it yourself, on any team, in
+any year
+The full pipeline (data acquisition + classification + summary statistics) is one Python file. The methodological core — the part that takes a player record and returns the three classifications — is below:
+# Expected career AV by first-round slot. From Chase Stuart's published
+# expected-AV-per-pick curve. Used as the slot-median proxy for Definition B.
+EXPECTED_AV = {
+1
+:
+72
+,
+2
+:
+66
+,
+3
+:
+60
+,
+4
+:
+54
+,
+5
+:
+49
+,
+6
+:
+45
+,
+7
+:
+41
+,
+8
+:
+38
+,
+9
+:
+35
+,
+10
+:
+33
+,
+11
+:
+30
+,
+12
+:
+28
+,
+13
+:
+27
+,
+14
+:
+25
+,
+15
+:
+24
+,
+16
+:
+22
+,
+17
+:
+21
+,
+18
+:
+20
+,
+19
+:
+19
+,
+20
+:
+18
+,
+21
+:
+17
+,
+22
+:
+16
+,
+23
+:
+15
+,
+24
+:
+14
+,
+25
+:
+13
+,
+26
+:
+13
+,
+27
+:
+12
+,
+28
+:
+11
+,
+29
+:
+11
+,
+30
+:
+10
+,
+31
+:
+10
+,
+32
+:
+9
+,
+}
+# Cutoff: only picks made at least three years ago are "mature" enough to
+# judge. A player drafted in 2024 has not had a fair chance to make four
+# Pro Bowls or four starter-year tenures.
+MATURE_CUTOFF =
+2022
+def
+classify
+(pick):
+"""Return the three bust flags + the misery index for one pick."""
+year, slot, name, pos, pb, av, styr, notes = pick
+    exp_av = EXPECTED_AV.get(slot,
+20
+)
+if
+year > MATURE_CUTOFF:
+return
+{
+"bust_A"
+:
+None
+,
+"bust_B"
+:
+None
+,
+"bust_C"
+:
+None
+,
+"misery"
+:
+None
+,
+"expected_av"
+: exp_av}
+return
+{
+"bust_A"
+: pb ==
+0
+,
+# never made a Pro Bowl
+"bust_B"
+: av < exp_av,
+# below slot's expected AV
+"bust_C"
+: styr <
+4
+,
+# under 4 NYJ starter years
+"expected_av"
+: exp_av,
+"misery"
+:
+sum
+([pb ==
+0
+, av < exp_av, styr <
+4
+]),
+    }
+Snapshot from this issue's analysis. The current production version — including the full PICKS dataset, CSV writer, and summary statistics — lives at
+scripts/build_jets_draft_dataset.py
+in the repo.
+To reproduce Issue #25's numbers
+: clone the repo, run
+python3 scripts/build_jets_draft_dataset.py
+, and the script writes
+scripts/data/jets-first-round-1976-2025.csv
+with one row per pick and a misery_index column.
+To run it on a different team
+: replace the PICKS list with that team's first-round data (same eight-tuple format: year, slot, name, position, career Pro Bowls, career AV, primary-starter seasons for the drafting team, notes). Everything else carries over.
+To run it across all 32 teams
+: the upcoming “After the Jets” series (May 2026) will publish that dataset and a generalized version of this script. Watch for Issues #31 through #40 in the queue.
+Caveats and known limitations
+Career AV figures are from Pro-Football-Reference and reflect totals as of early 2026; players still active will accumulate more.
+The Expected AV curve is a published average; individual slot-years vary considerably. Treat it as a benchmark, not a precise prediction.
+Definitions A, B, C have judgment calls baked in (4 years for "primary starter," 0 Pro Bowls as the cutoff). Reasonable people could move those thresholds and re-run.
+Dataset compilation involved manual recall and spot-verification for borderline cases. The CSV is the authoritative record; if any specific player line conflicts with the canonical PFR record, file a GitHub issue and we'll fix it.
+Read the article that uses this analysis:
+Fifty Years, One Hall of Famer, and a 28% Rate at the Top of the Draft →

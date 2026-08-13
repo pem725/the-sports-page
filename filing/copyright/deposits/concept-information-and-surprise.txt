@@ -1,0 +1,57 @@
+The Blowout Told You Nothing.
+The Coin-Flip Told You Everything.
+A result you already saw coming teaches you nothing; a result you couldn’t call teaches you a lot. That is not a mood — it is a measurable quantity. The unit is the bit, and the most informative game on any schedule is the one nobody can predict.
+Tier 1 · The Two-Minute Version
+Surprise is the thing you actually learn.
+Two games kick off Saturday. The first is a 30-point favorite against a cupcake; the second is a true toss-up between two heavyweights. Both end. Which one did you
+learn
+something from? The blowout confirmed what everyone already knew — you could have written the recap on Thursday. The toss-up answered a real question, and its answer rearranges everything downstream.
+The information in a result is the surprise in it
+, and there is more surprise in a game you couldn’t call.
+The more of a toss-up it was, the more its result teaches you.
+The curve peaks at the toss-up and sags to nothing at both ends. A game you were 99% sure about barely registers when it goes as expected — you already knew. A game you had no read on delivers the maximum: one full
+bit
+, the amount of surprise in a single fair coin-flip. So “which games matter” has a real answer. The ones that matter are the ones you can’t call — and if you want to spend your Saturdays well, spend them on coin-flips.
+Tier 2 · If You Want to Go Deeper
+Surprise has a formula, and its average has a name.
+Claude Shannon, in 1948, made this exact intuition precise. The
+surprise
+of an outcome that you thought had probability
+p
+is
+log₂(1/p)
+— smaller when
+p
+was large (you expected it), larger when
+p
+was small (you didn’t). An outcome you were certain of carries zero surprise; a one-in-a-thousand shock carries about ten bits. It is the same reason a headline reading “sun rose today” is worthless and “sun failed to rise” would be the story of the millennium.
+Now average that surprise over both possible results of a game, weighted by how likely each was, and you get the game’s
+entropy
+— its expected information, the height of the curve above. For a two-outcome event it is
+H = −p log₂p − (1−p) log₂(1−p)
+. That expression is maximized at exactly
+p
+= ½ — the coin-flip — where it equals one bit, and it falls to zero as
+p
+heads toward certainty in either direction. This is why the closest game is the most informative one: uncertainty going in
+is
+information coming out.
+The idea does more than rank Saturdays. It is the engine under a good
+scoring rule
+: when you grade a forecaster, the fair penalty for being wrong is exactly the surprise their model assigned to what actually happened — the “log loss” that trains and tests prediction models. Confidently wrong is expensive precisely because it claimed there was no surprise to be had. A forecast, in the end, is a claim about how surprised you deserve to be — and information theory is how we keep score.
+Tier 3 · Take It to the Textbook
+The full treatment: entropy, and keeping score.
+Where surprise, entropy, and the log-loss scoring that grades a model come from — and how to compute a forecast’s information for yourself — is developed in
+The Sports Page’s companion statistics textbook
+, a free, open, graduate-level text, with the R code to run it.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The College Football
+“which weeks matter”
+issue — scores the 2026 schedule in bits: a toss-up between two contenders is worth nearly a full bit, a blowout almost none.
+Communicating Uncertainty
+(Concept No. 18) — the sibling idea: a forecast has to report how firmly you believe it, not just what you believe.
+P-Value
+(Concept No. 11) — another way of asking “how surprising is this result, if nothing were going on?”
+Any pre-season simulation — the honest ones flag the coin-flip games as coin-flips instead of forcing a confident call.

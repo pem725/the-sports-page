@@ -1,0 +1,169 @@
+Goodbye, Polar Bear: A
+60.2%
+Chance Mets Fans Sleep Just Fine Tonight
+Pete Alonso is 1-for-6 in Baltimore. The Mets are 2-0 without him. And a Bayesian model trained on his last three seasons says there's a better-than-coin-flip probability he never cracks .250 again this year. Here's why the math was always on New York's side.
+By The Sports Page · March 29, 2026 · All figures through 2 games
+.228
+BA, 2023–24 Combined
+60.2%
+P(BA < .250 in '26)
+2–0
+Mets Record Without Him
+Pete Alonso tipped his helmet to the Camden Yards faithful on Opening Day. Then he went 0-for-3 with two strikeouts and a walk. One game later he singled off Taj Bradley in a 4-1 Orioles loss. Through two games as a Baltimore Oriole: 1-for-6, a .167 batting average, and the quiet hum of a $155 million contract beginning its five-year clock.
+Meanwhile, back in Queens, the Mets were busy demolishing Paul Skenes and walking off the Pirates. Jorge Polanco — the $20-million-a-year replacement who had never played first base in his life — singled, walked in a run, and looked perfectly comfortable at a position he learned in spring training.
+But two games is two games. We're not here to gloat about a sample of six at-bats. We're here because the numbers that
+actually matter
+— the ones from the last three full seasons — tell a story that should make every Mets fan exhale.
+In 2023, Alonso hit .217 — a career low. In 2024, he posted a .788 OPS — also a career low. Then came 2025: a .272 average, a Silver Slugger, a career year. The perfect audition reel. The Orioles bought the audition. The question is whether they bought the trend or the outlier.
+The Alonso File: Year by Year
+Year
+Team
+G
+BA
+HR
+RBI
+OPS
+2019
+NYM
+161
+.260
+53
+120
+.941
+2020
+NYM
+57
+.231
+16
+35
+.827
+2021
+NYM
+152
+.262
+37
+94
+.863
+2022
+NYM
+160
+.271
+40
+131
+.869
+2023
+NYM
+154
+.217
+46
+118
+.814
+2024
+NYM
+162
+.240
+34
+88
+.788
+2025
+NYM
+162
+.272
+38
+126
+.871
+2026
+BAL
+2
+.167
+0
+0
+—
+Look at that table. The 2025 season — the one that earned him $31 million a year — is bookended by two of his worst. In 2023-2024 combined, Alonso hit .228 across 1,125 at-bats. That's not a slump. That's a two-year body of evidence.
+"The Orioles bought the audition tape. The Mets had seen the whole movie."
+— The Sports Page, on the $155 million question
+The Math: Beta-Binomial Projection
+We used a
+Bayesian
+i
+Beta-Binomial model — the standard tool for projecting batting averages — trained on Alonso's last three seasons (2023–2025: 435 hits in 1,779 at-bats, a .245 average). The model asks: given what we know about
+recent
+Pete Alonso, what's the distribution of possible 2026 batting averages?
+Prior: Beta(α = 436, β = 1345)
+  → where α = 1 + recent hits, β = 1 + recent outs
+  → recent 3-yr BA: 435/1779 = .245
+
+Posterior predictive (200,000 simulations):
+  Median 2026 BA:     .243
+  P(BA < .250):       60.2%
+  P(BA < .230):       24.3%
+  P(BA ≥ .270):       10.1%  ← repeating 2025
+  P(BA ≥ .280):        4.5%
+Translation: there's roughly a
+6-in-10 chance
+Alonso finishes 2026 below .250. And only about a
+1-in-10 chance
+he matches the .270+ batting average that justified his contract. The model isn't cruel — it's just honest about what 1,779 recent at-bats suggest.
+The Decline Curve
+Rolling three-year batting averages don't lie. They smooth out the noise and reveal the trend beneath.
+Pete Alonso · Rolling 3-Year Batting Average
+The peak was 2020-2022 at .262. Since then, the curve drops below .250 and stays there. The 2025 bounce-back wasn't strong enough to reverse the slide — it only slowed it. The projected 2026 median? Right back at .243.
+2026 Projected BA by Percentile
+Percentile
+Projected BA
+What It Means
+10th
+.218
+Disaster. Worse than 2023.
+25th
+.230
+Below the Mendoza+ line. Tough to justify $31M.
+50th (median)
+.243
+Most likely outcome. A below-average regular.
+75th
+.257
+Decent. Roughly his career average.
+90th
+.272
+Best case. Repeats 2025. Only 10% likely.
+The Money: What the Mets Saved
+Pete Alonso signed for
+5 years, $155 million
+($31M/year) with Baltimore. The Mets replaced him with Jorge Polanco on a
+2 years, $40 million
+($20M/year) deal. That's
+$11 million per year
+the Mets didn't spend — money that helped them land Marcus Semien, Luis Robert Jr., and Devin Williams.
+Alonso contract:    $31M/year × 5 = $155M
+Polanco contract:   $20M/year × 2 =  $40M
+Annual savings:     $11M/year
+Total flexibility:  $115M less committed
+
+P(Alonso justifies $31M with BA ≥ .270): 10.1%
+P(Alonso posts sub-.250 season):         60.2%
+The Mets bet that Alonso's best years were behind him. The model says they have a
+6-in-10 chance
+of being right. And if Polanco gives them even 80% of Alonso's production at 65% of the cost, the math wins.
+They've Seen This Movie Before
+Albert Pujols · Cardinals → Angels, 2012
+.256
+BA with Angels (vs .328 with Cardinals)
+The greatest hitter of his generation left St. Louis for a 10-year, $240 million deal in Anaheim. He hit .217 in April 2012 — sound familiar? — and never posted a season above .285 again. With the Cardinals: .328/.420/.617 over 11 years. With the Angels: .256/.311/.448 over 10. The Cardinals won the 2011 World Series on his way out the door, then kept winning without him.
+Cardinals fans: vindicated
+Chris Davis · Orioles, 2016–2021
+.168
+Worst BA in MLB history (2018, qualified)
+The Orioles — yes, the same Orioles now paying Alonso — signed Davis to a 7-year, $161 million contract after he hit 47 home runs in 2015. By 2018, Davis posted a .168 average — the lowest in MLB history for a qualified hitter. He retired in 2021. Baltimore is still paying him through 2037. They did not learn.
+Cautionary tale: maximum
+The pattern is brutally consistent. Power-first first basemen who sign megadeals in their late twenties tend to decline faster than anyone expects. Alonso turned 31 in December. The Orioles are betting against a very stubborn actuarial table.
+Meanwhile, in Queens
+The Mets won 11-7 on Opening Day, chasing Paul Skenes after two outs. They walked off the Pirates 4-2 in 11 innings on Day 2 with a Luis Robert Jr. three-run bomb. Polanco singled, walked in a run, and played first base like he'd been doing it for years. Bo Bichette looked sharp at short. Marcus Semien settled into second.
+The 2026 Mets didn't just replace Alonso — they redistributed his salary across three positions and arguably got better. That's the real stat.
+"The best time to sell a stock is when someone else is willing to pay more than it's worth. The Orioles just paid full price for a three-year downtrend."
+— The Sports Page, channeling Warren Buffett in a baseball cap
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

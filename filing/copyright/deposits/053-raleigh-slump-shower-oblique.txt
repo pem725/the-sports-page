@@ -1,0 +1,50 @@
+Zero for Thirty-Eight.
+Then a Shower. Then the IL.
+Between April 30 and May 12, Seattle Mariners catcher Cal Raleigh went hitless in 38 consecutive at-bats — the longest slump of his career. Teammate Logan Gilbert convinced him, on the night of the 12th, to shower in full Mariners uniform to wash off the baseball juju. On May 13, Raleigh went 2-for-4 with a walk and three runs scored, the slump broken at last. Two days later, he was on the injured list with an oblique strain. The shower was a great story. The math says the streak was going to end anyway. The math also says the oblique was probably the reason it started.
+By The Professor · The Sports Page · MLB · Mariners
+38
+Hitless ABs, Raleigh’s 2026 Career Worst
+.161
+2026 BA Through 44 G (2nd-worst MLB)
+.222
+Career BA, the True Talent Estimate
+Cal Raleigh is, by reputation, a switch-hitting power catcher who carries the kind of career batting line that catchers carry — modest average, real power, durable enough to start most days behind the plate. His career numbers say he is a true-talent .222 hitter with thirty-home-run pop. Catchers like that are valuable. Catchers like that almost never lead the league in slumps. So what happened between April 30 and May 12, when one of the best young catchers in the American League went thirty-eight consecutive at-bats without recording a base hit, requires a real statistical explanation. Today’s issue offers two of them — one wrong, one probably right.
+How Rare Is Thirty-Eight Outs in a Row for a Career .222 Hitter?
+This is the easy math. If Raleigh’s true probability of recording a hit in any given at-bat is .222, his probability of
+not
+recording one is .778. The probability of stringing 38 consecutive outs is then 0.778 raised to the 38th power.
+The Binomial Calculation
+P(0-for-38 | true BA = .222) = 0.778^38
+                              = 0.0000792
+                              ≈ 1 in 12,600
+That is the probability of any specific 38-at-bat window producing zero hits. But a season has many such windows — for a starting catcher with 350 to 500 plate appearances, there are roughly 400 different 38-PA stretches that could potentially be hitless. The probability of seeing
+at least one
+0-for-38 streak across a full season, by random sequencing alone, is therefore much higher:
+P(at least one 0-for-38 streak in 400 windows) ≈ 1 - (1 - 0.0000792)^400
+                                                  ≈ 3.1%
+About one in thirty-two seasons. For a ten-year career, the expected number of seasons containing at least one 0-for-38 streak is approximately 0.3 — meaning a player like Raleigh would, by sheer random sequencing, expect to see one such streak roughly once every three or four full seasons of his career.
+So an 0-for-38 stretch is rare but not absurd for a career .222 hitter. It is approximately the kind of thing that happens by bad luck alone once or twice in a career. The streak does not, on its own, prove anything is wrong with the player.
+The Shower Explanation: Wrong, but Defensible
+On the night of Monday, May 12, after his 38th consecutive hitless at-bat, Raleigh accepted advice from Mariners starter Logan Gilbert:
+shower in your full uniform to wash off the baseball juju
+. Raleigh did. On Tuesday, May 13, he singled off Astros reliever Jayden Murray in the seventh inning to end the streak, then added another single in the ninth. The Mariners won. The clubhouse was very pleased.
+The shower did not break the streak. What broke the streak is what was going to break it anyway:
+regression to the mean
+i
+. A career .222 hitter who has gone 0-for-38 still has a per-AB hit probability of approximately .222 in his very next at-bat. The probability he goes 0-for-4 the next day is .778 to the fourth power, or about 37%. The probability he gets at least one hit on the next day is 63%. The probability that he gets two hits and a walk in four PAs — what he actually did — is around 11%. Unlikely but not freakish. The slump ending on May 13 was, statistically, the most likely outcome of the next game. A future Methods issue will work through the wider phenomenon of slump-busting superstitions and why they always appear to work; for now, the short version is:
+regression to the mean is the secret sauce, and the uniform shower is the placebo
+.
+The Oblique Explanation: Probably Right
+Here is where the story turns. On May 15 — two days after the slump-busting two-hit game — the Mariners placed Raleigh on the injured list with an oblique strain. The team said he would be shut down for a week before re-evaluation. Oblique strains in hitters are a known and brutal injury: they affect rotational power, contact quality, and bat speed long before they show up in the kind of pain that puts a player on the IL. A hitter playing through a developing oblique strain will typically suppress all three of those things by ten to twenty percent — enough to turn a .222 hitter into a .140 hitter, the way Raleigh has appeared to be hitting all spring.
+Through 44 games this year, Raleigh’s slash line was .161 / .243 / .317, with 7 home runs, 26 hits, and 31.5% strikeout rate — the second-worst batting average in MLB. None of that looks like the player his career numbers describe. It looks, in retrospect, like a hitter playing through an oblique strain that finally announced itself.
+The 0-for-38 streak, in this reading, is not a freak event randomly extracted from a normal season. It is the most visible symptom of a slowly-developing injury that affected Raleigh for the entire first six weeks of his year. The shower did not fix it. Regression to the mean briefly papered over it. The IL was the inevitable end.
+“The shower made for a great story. The math says the streak was always going to end on its own. The oblique is the explanation the headline writers missed.”
+— The Sports Page, on what May actually told us about Cal Raleigh
+A Bayesian Update on Raleigh’s True 2026 Talent
+For Mariners fans, the question now is:
+which Cal Raleigh comes back?
+The .161 hitter from the first six weeks, or the career .222 with power he has been for his whole MLB life? The Bayesian framework gives a clean answer. The prior on Raleigh’s true batting talent, built from over 1500 career plate appearances, is well-defined — roughly a Beta distribution centered at .222 with relatively tight bounds. The 2026 data — 161 batting average over 130-ish PAs — updates that prior, but not heavily, because (a) the sample is small, and (b) we now have a structural explanation for why the 2026 data is depressed (the oblique).
+The Bayesian posterior, after appropriate discounting of the injury-contaminated 2026 sample, lands somewhere around .215 — almost indistinguishable from his career number. The fan instinct that “Raleigh is the same hitter, just hurt” is, in this case, statistically defensible. When he returns from the IL, the betting expectation is a return to the player he has always been, not a continuation of the 2026 line.
+What This Costs the Mariners
+Seattle is 23–26 and sits second in the AL West behind a surprisingly competent Athletics team. With Raleigh out, the Mariners lose their primary catcher and one of their three highest-projected hitters by preseason wOBA. The replacement bats are well below Raleigh’s true talent, even at .161. The AL West is not a finished race — the Rangers, the Astros, and the Angels are all under .500 and look beatable. But every week Raleigh is on the IL is a week the Mariners are competing without one of the four position players who has to be on the field for them to win the division. The good news, for fans, is that the underlying problem appears to be one body part. Once the oblique is right, the bat should follow.
+For now, the shower remains a great story. The oblique remains the actual explanation. The newsletter will return to the subject of slump-busting superstitions in a future Methods issue, where we will work through why the placebo always seems to work, the role of regression to the mean in convincing us of false causation, and what Wade Boggs’ chicken, the Giambi brothers’ jock straps, and the rally cap have in common with Cal Raleigh’s uniform shower.

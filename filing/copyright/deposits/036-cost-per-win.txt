@@ -1,0 +1,95 @@
+The Cost of a Win, and Why That Sentence Is
+Mostly
+a Lie.
+The Mets are paying $17.7 million per win. The Marlins are paying $2.0 million per win. One of these teams is in last place. The other is also in last place. Today’s issue is about why the most popular ratio in sports economics tells you almost nothing.
+By The Professor · The Sports Page · On Ratios and the Trouble with Them
+$17.7M
+Mets’ Cost Per Win
+$2.0M
+Marlins’ Cost Per Win
+.014
+R²: Payroll → Wins
+Last night, the Colorado Rockies beat the Mets 6–2 at Citi Field. The Rockies, on a $85 million payroll, took two of three from the Mets, who are paying their roster $248 million. The Mets are 14–23, the second-worst record in the National League. Their payroll is the second-highest in baseball. If you divide one number by the other, you get a figure — cost per win — that is the most quoted ratio in sports economics, and one of the most misleading numbers in the entire enterprise.
+This issue is going to do two things at once. First, it is going to look at every team’s payroll and every team’s 2026 win column and make the obvious chart. Second, it is going to explain why that chart, despite being made of perfectly real numbers, can be drawn at least four different ways to support at least four different conclusions. The point is not that the chart lies. The point is that ratios with high variance in
+both
+the numerator and denominator are extraordinarily easy to misuse, even by people who are not trying to mislead anybody.
+The Chart Everyone Asks For
+Fig. 1 · 2026 Payroll vs. Wins (Through May 7)
+Each dot is one team. The red dashed line is the OLS linear fit: slope of +0.60 wins per $100M, R² = .014. Payroll, through 37 games, explains 1.4% of the variation in wins.
+The chart looks, at first glance, like it might tell a story: the Yankees and Braves and Cubs are near the top, the Marlins are at the bottom-left. The eye, helpfully, draws a line in the cloud and announces a trend. But look at the actual fit, the red dashed one, computed from the thirty real dots. It is almost flat. The slope is positive — an extra $100 million in payroll buys, on this evidence, about six-tenths of one win. The R² is 0.014. In a world where payroll determined wins, that number would be near one. In a world where payroll did not matter at all, it would be near zero. Through May 7, it is essentially zero. Payroll explains 1.4% of the variance in wins. The other 98.6% is being explained by something else.
+The Ratio That Eats Itself
+Now consider the headline ratio — cost per win. Divide payroll by wins for each team and you get a number that lower is better. By that ranking, here is the league’s most efficient front office through May 7:
+Rank
+Team
+Record
+Payroll
+$/Win
+1
+Miami Marlins
+17–21
+$34M
+$2.0M
+2
+Pittsburgh Pirates
+21–17
+$53M
+$2.5M
+3
+Tampa Bay Rays
+25–12
+$64M
+$2.6M
+…
+(twenty-six other teams)
+29
+Toronto Blue Jays
+16–21
+$245M
+$15.3M
+30
+New York Mets
+14–23
+$248M
+$17.7M
+This ranking has a problem that the chart did not. The Marlins are 17–21. They are, by any measure that involves looking at the standings, a mediocre team having a forgettable season. But by the ratio, they are the league’s most efficient organization. The Pirates are slightly above .500 and rank second. The Rays, who actually have the third-best record in the American League, rank third — and they earn it. But the top of this list is dominated by teams whose “efficiency” comes from refusing to spend money, not from converting money into wins.
+This is the first thing to know about ratios with variance in both terms:
+you can almost always optimize a ratio by minimizing the smaller number, even if the bigger number gets worse along the way.
+A team that pays its roster nothing and wins forty games has a brilliant cost-per-win. A team that pays its roster $400 million and wins one hundred games does not. The ratio says the first team is the smarter operation. The standings say it is in last place.
+Why Ratios Lie When Both Numbers Move
+If you take two normally distributed quantities X and Y, and form the ratio X/Y, the resulting variable is not normal. It has heavier tails, and small changes in Y — especially when Y is close to zero — produce wild swings in the ratio. Statisticians call this the
+delta-method problem
+: the variance of X/Y depends on the variance of both, and the covariance between them. In sports payroll terms: when wins are still small (we’re only 37 games in), the denominator is noisy, and the ratio bounces around even if nothing about the team has changed.
+This is why economists prefer to model wins as a function of payroll
+directly
+, rather than computing a ratio. The model can absorb the noise. The ratio cannot.
+a 14-23 team and a 17-23 team have very different "$/win" numbers
+even though they're functionally identical at this sample size
+The Same Data, Drawn Differently
+Now consider the chart again, but with the x-axis on a logarithmic scale. The same dots, the same wins, the same teams. But payroll is no longer a linear quantity from $0 to $400 million; it is the order of magnitude of payroll, which compresses the high end and stretches the low end.
+Fig. 2 · Same Data, Log Payroll Axis
+Identical numbers. Different x-axis transform. The fit line is still nearly horizontal (R² = .005 here, even worse than the linear version), but to a casual reader the chart now looks tidier — the cheap teams have been spread apart, the expensive teams compressed together, and the eye stops noticing how flat the trend actually is.
+The log chart gives a different impression even though nothing about the underlying relationship has changed. The bottom-left corner — the cheapest teams — has been stretched out, and you can suddenly see the Pirates and Rays separating themselves from the Marlins on win count. The high-payroll cluster on the right has been compressed, so the Mets’ bottom-right loneliness is muted. The line still has essentially no slope; the R² is, if anything, slightly worse. But the chart
+feels
+like it shows a relationship. Same numbers. Different shape. Different feeling. The reader who sees only this version walks away with the impression that more money buys more wins. The reader who sees only the linear version walks away thinking the Mets are uniquely broken. Neither impression is supported by the actual fit.
+Neither chart is wrong. Log scaling is a defensible choice for a quantity (like payroll) that is right-skewed and varies across orders of magnitude. The trouble is that the choice can be made
+after
+looking at the data, in service of the conclusion the writer wants to draw. A columnist who wants to argue that “the Mets are a uniquely failed organization” uses Fig. 1, where the Mets are the lonely outlier in the bottom-right. A columnist who wants to argue that “payroll matters, broadly, and the Mets are just having a bad month” uses Fig. 2, where the Mets sit closer to the trend line.
+“The chart did not lie. The chart was honest about a number that did not, by itself, mean very much.”
+— The Professor, on R² values that are not what the headline thinks they are
+What the Numbers Actually Say
+Through May 7, payroll explains 1.4% of the variation in wins among the thirty teams. That is not a typo. It is also not, by itself, an argument that payroll never matters; it is an argument that
+at this sample size
+, the signal payroll provides is buried inside the noise of thirty-seven games. The Yankees ($238M), Braves ($206M), and Cubs ($172M) are all 26–12. So is essentially nobody else with a payroll above $190M. Meanwhile the Pirates ($53M), Cardinals ($85M), and Rays ($64M) are all comfortably above .500, and the Mets and Blue Jays at the top of the spending charts are not. A linear regression looks at this scatter and reports back the only honest answer it can: there is barely any line to fit. The slope is +0.6 wins per $100 million. The standard error around that slope is large enough that the slope might as well be zero.
+That something includes injury luck, sequencing in bullpens, hot starts and cold ones, schedule strength, and the still-modest sample of thirty-seven games. The Pirates at $53 million are 21–17. The Mets at $248 million are 14–23. The cost-per-win ratio between these two teams is sevenfold. The actual gap in wins is seven games, on a sample where seven games is what you might call a normal week.
+The full-season relationship between payroll and wins is, in most years, a real and modest one. Studies of long stretches of MLB history put the R² somewhere between .15 and .30 — payroll matters, just not as much as the headlines imply. What we have here, in May, is a one-point-four-percent version of that relationship, because thirty-seven games is not enough to wash out injury luck, hot starts, and the schedule. The right question is not
+cost per win
+. The right question is something more like:
+given how much we spent, and given the players we acquired, are we getting the production we projected?
+That is a question with about four moving parts. Cost-per-win pretends it has only one.
+The Mets, this morning, are not paying $17.7 million per win because their front office is uniquely incompetent. They are paying $17.7 million per win because the denominator is fourteen, and fourteen is a small number, and any number divided by a small number is large. Wait three weeks. The denominator will move. The ratio will move with it. The team’s underlying quality may not have changed at all.
+That is the danger of ratios. They look like they tell you something simple. They are usually telling you something about the smaller number, hidden inside a sentence about the bigger one.
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

@@ -1,0 +1,97 @@
+Pre-Season Simulation:
+A Framework for Forecasts That Are Honestly Wrong.
+Most pre-season predictions hide their uncertainty in fake precision. ESPN's experts will rank thirty-two NFL teams to one decimal place; nobody can defend the difference between the seventeenth and eighteenth ranked team. Today we introduce a recurring format — the
+Pre-Season Simulation
+— that goes the other way. It uses consensus pre-season expectations as the prior, applies a just-noticeable-difference threshold cribbed from the Significance Series, and forecasts every regular-season game by one of two rules:
+higher-projected team wins
+, or
+coin flip
+. There is no middle ground, on purpose. The point is to lock in only what the data justifies and to explicitly mark the games that pre-season expectations cannot tell us about. The first sport up: NFL, in late August.
+By The Professor · The Sports Page · Methods · Forecasting
+272
+NFL Regular-Season Games / Year
+2.0
+Win-Total Gap for Lock (NFL)
+~40%
+Games Expected to Be Coin Flips
+Forecasting a full season of professional sports is, in the only way that matters, impossible. Injuries happen. Coordinators get hired and fired in October. Quarterbacks tear ACLs. A rookie defensive back has a Pro Bowl year nobody saw coming. Any model that pretends to predict an exact win-loss record team by team is asking the reader to trust a precision it has no right to.
+And yet some pre-season forecasting is genuinely useful. A team projected by consensus at 11 wins is meaningfully different from a team projected at 5. The matchup between them, all else equal, has a clear favorite. The forecasting problem is not whether forecasts are possible; it is which forecasts are
+defensible
+and which are theater. Today's issue introduces a framework that draws that line cleanly.
+The Framework, in Four Steps
+The Pre-Season Simulation Recipe
+Given a sport's regular-season schedule and a public consensus pre-season ranking, apply the following procedure to every game:
+1. Use Vegas pre-season win totals (or equivalent public consensus) as the prior
+   for each team's expected wins over the full regular season.
+
+2. For each individual game between Home and Away teams:
+     effective_home_total = home_win_total + home_field_adjustment
+       (HFA: +0.5 win-equivalent for NFL, +0.10 win-pct for MLB/CFB)
+     gap = effective_home_total - away_win_total
+
+3. Apply the just-noticeable-difference threshold (T):
+     NFL:  T = 2.0 wins (about 11.8% win-pct gap on a 17-game schedule)
+     MLB:  T = 12 wins  (about 7.4% win-pct gap on a 162-game schedule)
+     CFB:  T = 1.5 wins (about 12.5% win-pct gap on a 12-game schedule)
+
+4. Game prediction:
+     If gap >  T  →  HOME team wins  (locked)
+     If gap < -T  →  AWAY team wins  (locked)
+     If |gap| ≤ T →  COIN FLIP       (explicitly 50/50, not predicted)
+The output of this procedure is a list of locked wins, locked losses, and coin-flip games for every team. Summing the locked wins gives a floor; adding half the coin flips gives the expected total. The standings projection is the rank-ordered list of these expected totals.
+A Worked Example
+Consider two hypothetical 2026 NFL matchups, using the kind of pre-season win totals Vegas typically publishes in mid-summer:
+Matchup
+Pre-Season Win Totals
+Home Field
+Effective Gap
+Verdict
+Bills (away) at Jets (home)
+Bills 10.5, Jets 7.5
+Jets +0.5 → 8.0
+10.5 − 8.0 = +2.5 (Bills)
+BILLS WIN
+Chiefs (away) at Bills (home)
+Chiefs 10.0, Bills 10.5
+Bills +0.5 → 11.0
+11.0 − 10.0 = +1.0 (Bills)
+COIN FLIP
+Jaguars (away) at Chiefs (home)
+Jaguars 7.0, Chiefs 10.0
+Chiefs +0.5 → 10.5
+10.5 − 7.0 = +3.5 (Chiefs)
+CHIEFS WIN
+Read the middle row carefully. The Chiefs and the Bills are
+both
+projected as 10-win teams. Vegas does not know which one is better. The Pre-Season Simulation does not pretend to know either. It logs a coin flip and moves on. Over a full 272-game NFL schedule, we expect roughly forty percent of all matchups to fall into this band — not predicted, not avoided, just honestly flagged.
+Why the JND Threshold Is the Whole Point
+This newsletter's Significance Series (Part 1, the chi-square primer) established a principle: two teams are not statistically distinguishable until the gap in their performance exceeds a sample-dependent number of games. For a 162-game baseball season, that number is 13 wins. For a 17-game NFL season, the directly analogous chi-square threshold is closer to
+5 wins
+— meaning anything tighter than 11-6 vs 6-11 is not statistically significant after the fact.
+The Pre-Season Simulation operates on the same logic in reverse. Before the season, we do not yet have observed records — we have
+projected
+records. The question becomes: how big a projected-record gap is large enough to lock in a matchup prediction? The threshold of 2.0 wins on a 17-game NFL schedule is deliberately tighter than the full-season JND of 5 wins because pre-season projections are themselves uncertain. A 2.0-win gap in projections is roughly the smallest gap at which the projection itself is meaningfully different. Below that, two teams are projected as essentially the same; whatever happens in their actual matchup will be more about variance than about pre-season skill.
+The MLB threshold is set proportionally for the longer schedule. The CFB threshold accounts for the much shorter regular season (12 games) and the much wider talent spread across opponents.
+“A model that predicts everything is theater. A model that predicts only what it can defend, and explicitly flags the rest, is honest. The Pre-Season Simulation is built around that distinction.”
+— The Sports Page, on the discipline of admitting uncertainty
+What This Framework Does Not Try to Capture
+This is a deliberately narrow tool. It does not model in-season injuries (because by definition they happen after the simulation runs). It does not capture mid-season coaching changes, breakout rookies, late trade-deadline acquisitions, or hot streaks. It does not weight by recent performance because there is no recent performance yet. It treats every game on the schedule as a one-shot draw against the pre-season prior, nothing more.
+That sounds like a lot of weakness. It is, instead, the source of the framework's strength: by capturing only the pre-season expectations, the simulation produces a clean baseline that Sunday Editions can grade weekly against reality. When the actual season diverges from the simulation, the divergence is informative — it tells us where the pre-season consensus was wrong and which surprises were structural versus random.
+When Each Sport's Simulation Drops
+Sport
+Pre-Season Sim Drop Date
+What It Anchors
+NFL
+Last weekend of August 2026 (before Week 1 kickoff)
+Full 272-game regular season, playoff seeds, Super Bowl pick
+College Football
+Last weekend of August 2026 (before Week 0/1)
+Conference race projections, CFP top 12 forecast, championship pick
+MLB
+MLB Opening Day, March 2027 (newsletter anniversary)
+Full 2430-game schedule, division winners, wild cards, WS pick
+Each Pre-Season Sim becomes the standing reference document for that season. Every Sunday Edition during the season will grade actual results against the simulation. By the All-Star Break of MLB, the Bye Week of NFL teams, the end of CFB regular season, the simulation will have generated either credit (where it called things right) or honest visible misses (where it did not). Either outcome is useful. Hidden uncertainty is the only enemy.
+The Honest Close
+The first principle of forecasting is to know which of your predictions are defensible and which are theater. The Pre-Season Simulation framework was designed to separate the two as cleanly as the data allows. About forty percent of all NFL matchups, by the framework's own estimate, will be flagged as coin flips. The forty percent is not a failure of the model. It is the model telling the truth.
+By late August, when the 2026 NFL Pre-Season Simulation drops, this newsletter will publish a complete game-by-game projection of all 272 regular-season games, expected division standings, expected playoff seeds, and a Super Bowl pick. About a hundred games will be locked. About a hundred and ten will be coin flips. The remaining seventy will fall into the gray band where one team is favored but the projection is shaky. We will write all of it down. We will publish it. And every Sunday from Week 1 onward, this newsletter will grade itself in public against what it claimed in August. That is the entire point.
+The framework itself is sport-agnostic. Readers who want to apply it to other leagues — NHL, NBA, English Premier League, Champions League — can use the same recipe with the appropriate JND threshold. The arithmetic is portable. The discipline of being wrong on purpose is the part that travels.

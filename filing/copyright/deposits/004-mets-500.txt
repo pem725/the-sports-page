@@ -1,0 +1,101 @@
+Half the Games Go to Extra Innings. The Other Half, the
+Bats Go Silent.
+50% of Mets games have gone to extra innings through 6 games — a 1-in-99 event. The offense scored 22 runs total, but 11 came in one game. Remove the outlier and they averaged 2.2 runs per game. Three-and-three is the most boring start possible, and that's actually the good news.
+By The Sports Page · April 2, 2026 · Through 6 games
+3-3
+Record Through 6 Games
+50%
+Games Going to Extras
+1-for-29
+RISP in Cardinals Series
+Game-by-Game Results
+Date
+Opponent
+Score
+Extras?
+Key Moment
+Mar 26
+vs PIT
+W 11-7
+—
+Chased Skenes in 1st inning
+Mar 28
+vs PIT
+W 4-2
+11 inn
+Robert Jr. walk-off HR
+Mar 29
+vs PIT
+L 3-4
+10 inn
+O'Hearn go-ahead single
+Mar 30
+@ STL
+W 4-2
+—
+Williams 1st save, 12 pitches
+Mar 31
+@ STL
+L 0-3
+—
+Shut out, 3-hit game
+Apr 1
+@ STL
+L 1-2
+11 inn
+Winn walk-off, 0-for-11 RISP
+The Mets split the Pirates series 2-1 at home, then lost the Cardinals series 1-2 on the road. Three of six games went to extra innings — a pace that's 6x the historical MLB rate of 8.5%. The offense scored 22 runs total (~3.7/game), but 11 came in the Opening Day blowout against Skenes. Remove that outlier and they averaged 2.2 runs per game in their other 5 games. The bats are generating singles but not stringing them together — 1-for-29 with runners in scoring position across the Cardinals series, including 0-for-11 in the finale.
+The bullpen, meanwhile, has been the surprise bright spot. Devin Williams — the $51M replacement for Edwin Diaz — looked elite in his first save: 12 pitches, 10 strikes, perfect 9th inning against St. Louis. The pen allowed just 4 earned runs through the first 4 games. But here's the trap: extra-innings games expose the bullpen to extended duty. Three extras games in 6 forces the manager to burn arms that should be fresh in April. This pace is unsustainable in both directions — the bats will wake up, and the extras will stop. The question is which happens first.
+"The 2025 Mets started 45-24 and missed the playoffs. The 2026 Mets started 3-3 and that tells you exactly as much about October: nothing."
+— The Sports Page, on the information content of six games
+The Math: What .500 After 6 Games Actually Means
+We ran a Beta-Binomial model projecting the Mets' season from their 3-3 start, using a preseason prior of ~90 wins. The answer: six games is statistical noise.
+Prior: Beta(9.0, 7.2) ≈ 90-win team
+Updated with 3-3: Beta(12.0, 10.2)
+
+Season projection (200,000 simulations):
+  Median wins:      88
+  10th percentile:  65 wins
+  90th percentile: 110 wins
+  P(playoff ≥88W):  50.2%
+
+How much does the first week matter?
+  Start   Median Wins   P(Playoff)
+  0-6     63            8.3%
+  3-3     88            50.2%
+  6-0     112           92.1%
+
+The gap between 0-6 and 6-0 is enormous.
+The gap between 3-3 and the preseason projection? Trivial.
+Translation: .500 after 6 games is the most boring, least informative result possible. Your prior barely moves. Relax.
+The Extra-Innings Anomaly
+Historical MLB rate of extra-innings games: 8.5%
+Mets 2026 rate through 6 games:           50.0%
+
+P(≥3 of 6 games go to extras at 8.5%): 1.0%
+That's a 1-in-99 event.
+
+RISP in Cardinals series: 1-for-29 (.034)
+League average RISP BA:  .255
+P(≤1 hit in 29 AB at .255): 0.21%
+That's a 1-in-466 event.
+
+Both of these are unsustainable. Regression is coming.
+They've Seen This Movie Before
+2025 Mets — The Lying Hot Start
+45-24
+Best record in MLB, June 12, 2025
+The 2025 Mets started with the best record in baseball. They had a 96.2% probability of making the playoffs. Then they went 38-55 the rest of the way, endured three 7+ game losing streaks, and missed the postseason entirely. The hot start was a lie. A .500 start through 6 games is actually more honest — it says "we don't know yet," which is the truth.
+A .500 start is more honest than a hot one
+2007 Mets — The Original Collapse
+7-game lead
+With 17 to play, September 2007
+The Mets blew a 7-game lead with 17 games remaining, failing to make the playoffs. In 2008, they crashed out on the season's final day. Mets fans have generational PTSD. But here's the antidote: those collapses started from positions of strength. The 2026 Mets aren't collapsing from anything — they're at .500 after a week. There's nothing to collapse from. That's actually the good news.
+Can't collapse if you haven't climbed yet
+"Six games is 3.7% of a season. Your annual physical tells your doctor more about your health than six games tells you about October."
+— The Sports Page, on sample size and patience
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

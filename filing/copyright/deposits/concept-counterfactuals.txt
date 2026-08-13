@@ -1,0 +1,58 @@
+Counterfactuals
+What would have happened if it hadn’t. The fundamental question of cause and effect, asked about a world we will never get to observe.
+Tier 1 · The Two-Minute Version
+What if Buckner had caught it.
+Game Six of the 1986 World Series, tenth inning, Mookie Wilson hits a slow roller down the first-base line. Bill Buckner, the Red Sox first baseman, bends to field it. The ball goes through his legs. Ray Knight scores from second. The Mets win the game and, two nights later, the series.
+For forty years sports fans have argued the question:
+what would have happened if Buckner had caught it?
+That question is a counterfactual. It is a question about a world that did not happen but might have, if one small thing had gone differently. The world in which Buckner makes the play is right next door to the world we live in. We cannot visit it. We can only reason about it.
+Counterfactual reasoning is the bedrock of every claim about cause and effect, in sports and everywhere else. When you say
+the coach’s halftime adjustment turned the game around
+, you are making a counterfactual claim:
+if the coach had not made the adjustment, the team would have lost.
+When you say
+that trade saved the season,
+you are claiming
+without the trade, the season would have ended differently.
+The "cause" is always shorthand for "the world is different from the world that would have existed without it."
+The trouble is that we never get to see the world without it. We only see what happened. The counterfactual is always missing — it lives next door, and it cannot be visited.
+Good analysis takes counterfactuals seriously. Bad analysis pretends they are settled.
+Whenever a sports column tells you "X caused Y," ask: what is the counterfactual? What is the other world this claim depends on?
+If the answer is fuzzy, the causal claim is fuzzy too.
+Tier 2 · If You Want to Go Deeper
+The fundamental problem of causal inference, and how the math tries to sneak around it.
+The philosopher Donald Rubin and the economist James Heckman, working independently in the 1970s and 80s, gave the modern statistical version of counterfactual reasoning. The framework is sometimes called the
+potential outcomes
+approach. For every event — every play, every trade, every coaching change — there are at least two potential outcomes: what happens if the event occurs, and what happens if it does not. The world only lets us observe one. The other is the counterfactual, and the gap between them is the
+causal effect
+.
+This framing has a famous name:
+the fundamental problem of causal inference
+. We can never observe both outcomes for the same case. We see what happened to the Red Sox after Buckner missed. We do not see what would have happened if he had caught it. The two trajectories are in a relationship: their difference is the effect of the play. But we only get one of them.
+Analysts have three main tools for sneaking around this problem. The first is
+randomization
+: if we randomly assign which case gets the event and which does not, the two groups are exchangeable on average, and the difference between them estimates the counterfactual. This is why pharmaceutical trials use random assignment. It is also why sports do not, and why everything we say about coaching effects, player effects, lineup effects is harder than medical inference.
+The second tool is
+matching
+. We find another case that looks as similar as possible to ours
+except for the event
+, and treat its outcome as a stand-in for the counterfactual. The Sports Page does this constantly with historical comps: how did other teams that started 8–0 through two playoff rounds finish? The other teams are not the Hurricanes. They are stand-ins. The closeness of the match determines how much we should trust the stand-in.
+The third tool is
+modeling
+. We build a statistical model of how the world works and use it to simulate the counterfactual. Expected runs, expected wins, log5 win probabilities — all of these are counterfactual machines. They produce a number for what should have happened in expectation. The gap between the prediction and the observation is the causal effect of whatever made the world different from the model.
+None of these tools are perfect. Randomization is rare in sports. Matching depends on the quality of the comp. Modeling depends on the model being right. But all three are honest about the question they are trying to answer:
+what would have happened in the world we cannot see.
+The bad-inference version of counterfactual reasoning is the one that picks the counterfactual that makes the story work.
+If Buckner had caught it, the Sox would have won the series.
+Maybe. The game was tied. They still had to win the rest of the inning and a Game Seven. The counterfactual that makes the column read well is "they would have won." The counterfactual the math actually supports is "the probability they would have won went up by some amount." The first is a story. The second is the truth. The difference is the whole game.
+Tier 3 · Take It to the Textbook
+The full treatment.
+The ‘what would have happened otherwise’ that every causal claim smuggles in runs through the reasoning of
+The Sports Page’s companion statistics textbook
+, a free, open graduate text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+Sunday Editions — every prediction is a counterfactual; every grade is the comparison to what actually happened
+Issue #56 Carolina comp series — the historical analog is a stand-in for the counterfactual world in which we already knew what happens
+Issue #66 Pre-Season Simulation Framework — the whole methodology piece is about how to build counterfactual baselines honestly

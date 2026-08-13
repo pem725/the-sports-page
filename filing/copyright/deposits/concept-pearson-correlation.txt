@@ -1,0 +1,86 @@
+Pearson Correlation
+A number on a scale from negative one to plus one that tells you how tightly two things move together. The newsletter calls it
+r
+. It is the single most-used statistic in the catalog and one of the most-misread numbers in pop science.
+Tier 1 · The Two-Minute Version
+One number, from -1 to +1, that scores how tightly two things move together.
+Plot last year’s ERA on the x-axis. Plot this year’s ERA on the y-axis. Each pitcher is one dot. If high-ERA pitchers last year are also high-ERA pitchers this year, the dots cluster along a diagonal line going up-and-right. If they have no relationship, the dots scatter all over the plot like buckshot.
+The Pearson correlation, often written
+r
+, is one number that scores the tightness of that cluster.
++1 means perfect: a perfectly straight line up-and-right. -1 means perfect in the opposite direction: a perfectly straight line down-and-right (high last year means low this year). 0 means no relationship at all.
+The middle of the scale is where most of the interesting reading happens. An
+r
+of +.9 is a fantastically tight relationship — almost never seen in noisy human systems like sports. An
+r
+of +.5 is what people who do this work call "strong." An
+r
+of +.3 is "moderate." An
+r
+of +.1 is "weak but visible." An
+r
+of 0.0 is noise. Negative numbers are the same scale, in the opposite direction.
+One trap.
+The correlation in sports tends to look smaller than the underlying truth justifies.
+The reason is that everything in sports is shot through with single-season variance. A pitcher’s "true" ERA can be a constant from one year to the next while his observed ERA jumps around within a window of plus-or-minus half a run. Some of the year-to-year scatter is talent change. Most of it is noise. The Pearson correlation only sees the observed jumps. It does not know which ones were talent and which ones were dice.
+So when the newsletter reports an
+r
+of +.41 for some season-over-season metric, that is a strong relationship in the sports context. Not strong like a physics experiment. Strong like a thing that has a real signal underneath, fighting through a lot of noise to show up.
+Tier 2 · If You Want to Go Deeper
+Karl Pearson, 1895, and why the squared version matters more than the raw one.
+Karl Pearson formalized the statistic in 1895, building on earlier work by Francis Galton. The formula is one of the prettier ones in statistics: divide the covariance of two variables by the product of their standard deviations. The result is dimensionless and bounded between -1 and +1, which is why it is so portable.
+The thing the formula is actually measuring is
+shared linear variation
+. If you know one variable, how much of the variance in the other variable can you explain by drawing a straight line through the cloud of points? That is exactly what
+r
+answers, on a scaled-and-signed basis.
+Here is the move most people miss.
+The squared correlation, called R-squared or the coefficient of determination, is more interpretable than the raw
+r
+.
+An
+r
+of +.5 sounds halfway between random and perfect. The R-squared of the same relationship is 0.25, meaning only twenty-five percent of the variation in one variable is explained by a linear relationship with the other. The other seventy-five percent is something else — noise, other variables, nonlinearity, all of it.
+This is why the newsletter usually reports
+r
+-times-one-hundred on a -100-to-+100 scale rather than the raw +.41. The scaled version makes the magnitude feel like what it is:
+not zero
+, but also
+not the whole story
+. The headline metric of the newsletter’s cross-sport persistence piece (Issue #78) was that the NBA’s year-over-year predictor scores about +65 on that scale, MLB about +49, NFL about +34, and one snow-region predictor goes
+negative
+at -48. Translated back to raw Pearson terms: 0.65, 0.49, 0.34, and -0.48. All meaningful. All explaining only a portion of the variance, even at the top end.
+Three failure modes worth knowing. The first is
+nonlinearity
+. Pearson’s
+r
+only sees straight-line relationships. If two variables are tightly related but in a curve — say, performance versus age, which rises then falls — the correlation can come out near zero even though the underlying relationship is real. The fix is to look at the scatterplot, not just the number.
+The second is
+outliers
+. A single weird point can move
+r
+by a lot, especially in small samples. Always plot the data before trusting the number.
+The third, and the one that powers more bad sports analysis than any other, is
+"correlation does not imply causation"
+— a sentence so worn out that most people roll their eyes when they hear it. Roll your eyes if you want. The sentence is still true. A correlation of +.7 between coffee consumption and home runs in a season is real. It does not mean caffeine causes home runs. It probably means both are correlated with summer, or with games played, or with something a third variable is doing. The correlation is the signal that there is something to investigate. It is not the answer to the investigation.
+Tier 3 · Take It to the Textbook
+The full treatment.
+Covariance and correlation — the building block under the regression line — open the
+Using Models
+part of
+The Sports Page’s companion statistics textbook
+, a free, open graduate text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+Issue #74 · The Mets Are Seventy Times More Predictable Than the Snow
+— year-over-year
+r
+as the central metric
+Issue #78 · Cross-Sport Persistence
+—
+r
+-times-100 as the headline scale across four leagues plus snow
+Sunday Edition predictions occasionally use
+r
+for tracking-to-outcome scoring

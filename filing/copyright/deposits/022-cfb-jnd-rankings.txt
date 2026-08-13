@@ -1,0 +1,132 @@
+The
+Just-Noticeable Difference
+in College Football Rankings Is 13
+Every Saturday during the college football season, fans argue about whether their team should be ranked #8 or #11. Thirty years of data say those arguments are mathematically indistinguishable. Here is what the ranking can, and cannot, tell you — and the surprising way this changes across the season.
+By The Professor · The Sports Page · 30 Seasons, 1,597 Ranked Matchups
+68.8%
+Higher Rank Wins (Overall)
+13
+Rank Delta to Cross the JND
+1,597
+Ranked vs. Ranked Games, 1995–2024
+A Concept Borrowed from Psychophysics
+In the nineteenth century, Gustav Fechner and Ernst Weber asked a quiet question that turned out to be foundational.
+How different must two stimuli be before a person can reliably tell them apart?
+The answer became the just-noticeable difference, or JND — a threshold below which the nervous system treats two things as identical. The JND is why you cannot hear a one-decibel change in a loud room, and why a tailor asks you to lift your arms for the second fitting instead of eyeballing the first one again.
+The same question can be asked of a ranking. Given two teams with ranks
+A
+and
+B
+, how far apart do
+A
+and
+B
+have to be before the ranking actually distinguishes them — that is, before the higher-ranked team wins often enough to say the ranking is doing real work? Signal detection theory gives a clean target. A win rate of 75% corresponds roughly to a discriminability of d′ ≈ 1, the classical threshold for "just noticeable." Below that, the signal is swamped by noise. Above it, you have something reliable enough to bet on.
+We pulled every FBS game from 1995 through 2024 in which both teams appeared in that week’s AP Top 25. That is 1,597 matchups across 30 seasons. For each game we recorded the rank delta — the absolute difference in AP ranks — and whether the higher-ranked team won. The question is at what delta the win rate clears 75%.
+The JND Curve
+Rank Delta
+Games
+Higher Rank Won
+Rate
+Verdict
+1–2
+271
+165
+60.9%
+noise
+3–5
+387
+258
+66.7%
+noise
+6–10
+464
+315
+67.9%
+approaching
+11–15
+273
+202
+74.0%
+at the threshold
+16–20
+168
+130
+77.4%
+above JND
+21+
+34
+29
+85.3%
+well above JND
+A logistic regression fit to the 1,597-game dataset puts the JND at a rank delta of
+13.2
+. Below that, the ranking stays in the noise band: at a gap of 10, the higher-ranked team wins only 71% of the time — better than a coin flip, but well short of the threshold. Put differently: a #5 playing a #14 is a coin flip with a thumb on it. A #5 playing a #18 is the first time the ranking is doing more than whispering.
+The ranks carry information. They just carry less of it than the discourse surrounding them would suggest. To see
+how
+much less, it helps to draw both the curve the rankings
+ought
+to produce and the curve they
+do
+.
+Figure 1 · The Ogive We’d Expect
+If the AP poll were a reliable discriminator — if rank truly reflected team quality in a clean ordering — the win-probability curve would look like the one below. A rapidly rising ogive that clears the 75% JND line at a small rank delta and asymptotes toward certainty within a reasonable gap. This is the psychometric function of a well-calibrated sensor.
+Figure 2 · The Ogive We Actually See
+Now the same chart, this time fitted to thirty seasons of data. Each dot is one rank delta; dot size scales with the number of games observed at that delta. The fitted logistic is in rust. The ideal curve from Figure 1 is reproduced as a faint gray trace for direct comparison. The gap between them is the story.
+Three things about Figure 2 are worth saying plainly. First, the slope of the fitted ogive is a third of what it would be under the ideal. Rankings carry information per unit of rank delta, but not much. Second, the fitted curve never approaches 100% within the observed range; at a delta of 30 the asymptote is still short of 90%. There is no rank gap at which college football rankings become certain about the outcome. Third, the highlighted rust dot at delta = 4 sits visibly below both the fitted line and its neighbors. At a rank delta of exactly four, across 137 matchups, the higher-ranked team won 63.5% — lower than at delta 3 (65.4%) or delta 5 (71.9%). A clean non-monotonicity. The AP poll, in practice, does not know the difference between a team ranked #6 and a team ranked #10.
+"Fans argue weekly about whether a team should be ranked #8 or #11. Thirty years of data say those arguments are about two teams the ranking cannot, in practice, tell apart."
+— The Professor, on what the rank gap is actually measuring
+An Unexpected Second Finding
+We bucketed the same games by when in the season they were played. Something counterintuitive emerged.
+Phase
+Games at Δ≤10
+Higher-rank win rate
+Games at Δ≥11
+Higher-rank win rate
+Early (Wk 1–4)
+176
+62.5%
+81
+74.1%
+Mid (Wk 5–9)
+319
+63.3%
+169
+69.8%
+Late (Wk 10+)
+398
+55.8%
+175
+77.1%
+Bowls / CFP
+229
+89.1%
+50
+96.0%
+The late-season close games are
+noisier
+than the early-season close games, not cleaner. By Week 10, the AP poll has had nine weeks of data to sort the obvious talent gaps. The ranked-vs-ranked close matchups that remain are the ones the ranking has failed to distinguish — which means any close-rank game in the stretch run is, almost by definition, a toss-up. This is a textbook restriction-of-range problem. The ranking has not gotten dumber; the test has gotten harder.
+And then, in the bowls, the pattern inverts violently. Postseason rankings are right 89% of the time even at small deltas — more than twenty-five points higher than the late regular-season rate. The rankings finally get a fair test, across teams that did not play each other, after a full season of observation. They pass.
+The Methodology, Briefly
+Target  : 75% win rate for higher-ranked team
+          (≈ d′ = 1, classical JND threshold)
+Sample  : 1,597 FBS games, 1995–2024
+Source  : AP Top 25 (collegefootballdata.com)
+Filter  : Both teams AP-ranked at time of game
+Result  : JND at rank delta ≈ 12
+Overall : higher rank won 68.8% of all matchups
+Underlying dataset saved to
+scripts/data/cfb-ranked-matchups.csv
+. Script at
+scripts/build_cfb_jnd_dataset.py
+.
+What This Means on a Saturday
+Three practical takeaways, each the kind of thing worth keeping in mind the next time a rankings argument heats up.
+One:
+Two teams within ten ranks of each other are not, in any statistical sense, different teams. Argue about who you want to watch, not about who is better.
+Two:
+The rankings are not all one thing. A November poll is a worse predictor of a close game than an October poll — because by November the close games are the hard ones.
+Three:
+After New Year’s, everything changes. Bowl and playoff rankings are the one time of year when the poll has enough evidence to separate teams it previously could not. This is also, not coincidentally, when the rankings matter most.
+"The rankings you argue about in November are the ones with the least predictive power. The rankings you trust in January are the ones with the most."
+— The Professor, on the seasonal arc of signal

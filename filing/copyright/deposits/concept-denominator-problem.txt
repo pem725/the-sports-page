@@ -1,0 +1,45 @@
+The Smallest Places Always Win the Rankings.
+And Always Lose Them Too.
+Divide by a big number and you get a fact. Divide by a small one and you get a rumour with a decimal point. Whenever a rate is built on a handful of events, the extremes of the leaderboard belong to whoever had the fewest chances — in both directions at once.
+Tier 1 · The Two-Minute Version
+The same tiny towns top the best list and the worst list.
+Rank every county in a country by its rate of some rare disease and something strange happens. The counties with the
+highest
+rates are overwhelmingly small and rural. So are the counties with the
+lowest
+. The obvious explanations — clean country living, or else poor rural healthcare — cannot both be true, and neither is doing the work. The real cause is arithmetic. A county of four hundred people might record one case or none. One case is a sky-high rate. Zero is a perfect record. Neither number tells you anything about that county.
+This is the single most reliable way to fool yourself with data, and it is everywhere: the “best small school” whose test scores collapse the following year, the surgeon with a perfect record after eleven operations, the hedge fund with three spectacular quarters, the franchise with a championship in its only good decade. Small denominators do not produce
+wrong
+numbers. They produce
+unstable
+ones, and instability climbs to the top of any list you sort.
+Every one of these units is identical underneath — only the number of chances differs.
+Read the funnel from left to right. On the right, where the denominators are large, everything crowds onto the truth. On the left, where they are small, the same underlying process throws points from top to bottom of the chart. If you sorted this data and published the leaderboard, every name at both ends would come from the left side — and you would have discovered nothing at all.
+Tier 2 · If You Want to Go Deeper
+Noise shrinks like the square root. Ratios don’t forgive.
+The mechanism is one formula. The uncertainty in an observed rate scales with
+one over the square root of the denominator
+. Quadruple the number of chances and the noise only halves; cut the chances to a handful and the noise explodes. That square root is what gives the funnel its shape, and it is why the width of the band — not the height of any single point — is the first thing to look at in any ranking.
+Ratios inherit a second problem on top of that. A rate is a random numerator divided by something that may itself be small, and dividing by a near-zero number sends the result anywhere. In the extreme the statistic simply ceases to exist: a franchise with no championships has an undefined cost-per-championship, and a franchise that wins its first one moves from infinity to a perfectly reasonable figure without having changed in any way. When a single event can move your metric from undefined to excellent, the metric is reporting the event, not the quality.
+What to do instead is well established.
+Shrink
+the small-denominator estimates toward the overall average, by an amount that depends on how thin the evidence is — which is exactly what a
+Bayesian
+prior does automatically, and why this newsletter models a hitter’s April with his career behind it. Put confidence bands on the ranking and see how many of them overlap, which is usually all of them. Or refuse to rank at all below some minimum denominator, the way batting titles require a qualifying number of plate appearances. The instinct to demand a minimum sample before crowning anyone is not bureaucratic caution; it is the correct statistical response to the funnel.
+Tier 3 · Take It to the Textbook
+The full treatment: standard errors, funnel plots, and shrinkage.
+Where the square-root law comes from, how to build and read a funnel plot, why ratio estimators misbehave, and how empirical-Bayes shrinkage repairs a noisy leaderboard — all of it is developed in
+The Sports Page’s companion statistics textbook
+, a free, open, graduate-level text, with the R code to simulate your own funnel and watch the extremes appear from nothing.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The
+Mets and Royals cost-per-title
+issue — two franchises, two trophies each, and a ratio that swings from undefined to thrifty on the strength of a single October. The anchor.
+Sample Size
+(Concept No. 6) — the parent idea: this is what happens when you build a rate on top of a small one.
+Regression to the Mean
+(Concept No. 3) — the sequel: extreme small-denominator results are the ones that come back to earth next season.
+Bayesian Inference
+(Concept No. 10) — the repair: a prior is a principled way to stop dividing by almost nothing.

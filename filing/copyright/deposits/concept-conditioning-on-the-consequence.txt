@@ -1,0 +1,58 @@
+Conditioning on the Consequence
+Robyn Dawes’ name for the methodological sin that survivorship bias is a special case of. The general principle:
+do not pick your sample based on the outcome you are trying to explain
+. The most common version in sports media is "the championship teams all had..."
+Tier 1 · The Two-Minute Version
+The pickup-game coach with a perfect record.
+A pickup basketball coach down the street has a perfect record. He says it is because he always tells his guys to play defense first, share the ball, and run the floor. He has won every game he has coached.
+What he does not mention — because
+he does not know
+— is that he only counts the games he coached as games he coached. He does not have a name for the games where he showed up and his guys lost and he went home and never talked about it again.
+This is conditioning on the consequence.
+You define your sample by the outcome you want to explain.
+"Championship teams" is a sample defined by winning. "Successful coaches" is a sample defined by being called successful. "Players in the Hall of Fame" is a sample defined by being in the Hall of Fame. In every case, the outcome was used to decide who is in the room.
+The problem this creates:
+whatever is true about the sample, you cannot tell whether it is true because of the outcome, or in spite of it, or just by coincidence
+. The successful coach who emphasized defense might have had teams that won because they were talented. The losing coach down the road who also emphasized defense might just have had less talented teams. Both coaches emphasized defense. Only one shows up in the "successful coaches" sample, because we used the outcome to define the sample. The defense-emphasizing finding is meaningless until we count both kinds of coach.
+The corrective move is the same as for survivorship bias, generalized.
+Before you accept a claim of the form "all the [winners/champions/legends] did X," ask: how many [non-winners/non-champions/non-legends] also did X?
+If the answer is "a lot," the finding is decorative. If the answer is "almost none," the finding is potentially real.
+Tier 2 · If You Want to Go Deeper
+Why Robyn Dawes called this the most important methodological sin of the social sciences.
+Robyn Dawes was a psychologist at Carnegie Mellon who spent the second half of his career writing about how clinical, intuitive, expert judgment performs against simple actuarial models. His findings, summarized in
+House of Cards
+(1994) and a string of papers before and after, were that
+simple, transparent models routinely outperform expert intuition in domains where the experts are confident they are doing better
+. The reason, he argued, was almost always the same: the experts were
+conditioning on the consequence
+, and the models were not.
+The technical version of the diagnosis is what statisticians call
+selecting on the dependent variable
+. You have an outcome (the dependent variable). You pick your cases based on whether they show the outcome. You then ask the cases what they did. The answer is necessarily a list of things the outcome-showing cases did. The hidden assumption is that the non-outcome-showing cases did not do those things, or did them less. That assumption is rarely tested. Sometimes it is true. Often it is not.
+The Wald survivorship-bias story is the most famous example, but the general form runs through everything.
+"Successful entrepreneurs all dropped out of college."
+Most college dropouts are not successful entrepreneurs. The conditional probability of success given dropout is low. The conditional probability of dropout given success is high. These are different numbers and only one of them was being measured.
+"All the championship teams have a clear leader in the locker room."
+Most teams with clear locker-room leaders do not win championships. Same structure. Same error.
+The reason this matters so much in sports media is that
+the entire business model
+of post-game analysis is asking the winners what they did. Locker-room interviews, championship-coach books, "what we learned" columns: every one of them is implicitly a survey of the dependent-variable side. The losers are not interviewed, and even if they were, their answers do not get the same air time. The methodology that would correct this — comparing winners and losers on the same dimensions — is not commercial. It is also the only way to actually learn anything about cause.
+The deeper philosophical point Dawes kept returning to:
+the human brain is excellent at fitting a story to a sample. It is very bad at recognizing that the sample was chosen by the story already.
+The corrective is procedural. List the cases that did not produce the outcome. Ask whether they had the same trait. If they did, the trait is not the cause. If they did not, you have something worth investigating.
+The Sports Page tries to do this on purpose in two places. The first is the Pyrrhic Victory series, which looks at teams that hit a high-watermark performance and then collapsed — the dependent-variable-balanced version of "what champions did." The second is the Half-Life series, which uses every player who debuted in a window as the sample, not the players who lasted long enough to be remembered. Both are deliberate refusals to condition on the consequence. Both are more boring than the alternative. Both are more likely to be right.
+Tier 3 · Take It to the Textbook
+The full treatment.
+Conditional probability — how selecting on an outcome warps what you see — sits in the
+Making Inferences with Data
+part of
+The Sports Page’s companion statistics textbook
+, a free, open graduate text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+Half-Life series (queued) — every debutant, not just the survivors
+Pyrrhic Victory series · Sabres, Bobcats, Astros, Cincinnati — the high-water-mark teams that did not survive
+The closely related concept of
+survivorship bias
+is the specific case where the consequence we condition on is "still being here to be measured"

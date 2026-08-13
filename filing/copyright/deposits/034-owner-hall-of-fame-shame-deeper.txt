@@ -1,0 +1,217 @@
+Why
+Variance
+Matters, and Why Composite Indices Beat Single Stats
+The companion piece to the Owner Hall of Fame & Shame. Variance is the squared deviation from the mean — and it is the single most important concept in applied statistics, because it controls how much you can trust any individual measurement. Three sections, three reader levels.
+Methodology Supplement · Variance and Composite Indices · May 9, 2026
+Three sections, jump to your level
+The Idea
+·
+The Math
+·
+The Code
+The Idea
+The single most useful word in
+statistics
+Suppose you and a friend each measure the height of a flagpole and report your answers. Yours: thirty-two feet. Theirs: forty-one feet. The mean of your two answers is 36.5, and that mean is, on average, more accurate than either individual measurement. The reason is variance. Each of you, working alone, was subject to measurement error — a slightly off reading on the tape measure, a hand that wobbled. By averaging two independent measurements, you cancel out half the error.
+Variance is the formal name for that error. In statistics, it is the average squared distance of a set of numbers from their mean. A high-variance measurement is one that bounces around a lot, day to day or trial to trial; a low-variance measurement is one that lands close to its true value most of the time. Here is the foundational fact:
+when you average several measurements, the variance of the average is smaller than the variance of any single measurement.
+Specifically, for n independent measurements with the same variance, the variance of the mean is divided by n. Two measurements halve the error. Four quarter it. Sixteen reduce it by sixteen.
+Why this matters for owner rankings.
+A single championship is a high-variance measurement of an owner’s competence. Lots of luck, lots of timing, lots of factors outside the owner’s control. Win percentage is a more stable measurement — spread across hundreds of games — but still partial. Playoff appearance rate captures something else again. Each of these three numbers carries some signal about the owner and a lot of noise about everything else. Average them, and the noise partially cancels. The signal stays.
+This is the whole reason composite indices — in sports, in economics, in clinical trials — exist. The Consumer Price Index averages thousands of prices because any single price is noisy. The S&P 500 averages five hundred companies because any single company is noisy. Bill James’s Win Shares averages offense, defense, and pitching because any single component is noisy. The same statistical move, applied to different problems, with the same justification:
+the average is more reliable than its parts
+.
+The question, then, is which parts to combine and how to weight them. The honest answer is that there is no single right combination — but as long as each input is a reasonable measurement of the underlying thing you care about, averaging them reduces error. That is the only mathematical guarantee. It happens to be a very strong one.
+The Math
+The variance of the mean is
+variance over n
+The formal definition of variance, for a random variable X with mean μ:
+Var(
+X
+) = E[(X − μ)²]
+If you have n independent random variables X₁, X₂, …, Xₙ, each with the same variance σ², the variance of their average is:
+Var(mean of X) =
+σ²
+/
+n
+This single equation is the engine of almost everything in applied statistics. It is why polls report margins of error inversely proportional to the square root of sample size, why scientific experiments use replicate measurements, and why averaging three reasonable owner metrics is more reliable than fixating on one. The variance of a three-metric average is one-third the variance of a single metric (assuming the three are independent — in practice they are correlated, which softens but does not eliminate the gain).
+Z-scoring, the move used in the main piece, is a related discipline. It standardizes each metric by subtracting the league mean and dividing by the league standard deviation:
+z = (
+x
+− μ) / σ
+The result is a number that says, in standard-deviation units, where this owner sits relative to their peers. A z-score of +1 is one standard deviation above the league mean; +2 is two. Z-scores are dimensionless, so a z-score on championships per decade (an NBA-scale number around 1-3) and a z-score on win percentage (a fraction between 0 and 1) can be averaged together honestly. Without z-scoring, the championship metric would dominate the average because its raw values are larger.
+Worked example: Jerry Buss vs. James Dolan, in z-scores
+For the NBA owners in our dataset, the within-league means and standard deviations on each metric are approximately:
+· Champs/decade: μ = 1.0, σ = 1.1
+· Win percentage: μ = 0.510, σ = 0.080
+· Playoff%: μ = 0.59, σ = 0.21
+Buss: champs/decade = 3.03, win% = .622, playoff% = .88
+z ≈ (3.03 − 1.0)/1.1, (0.622 − 0.510)/0.080, (0.88 − 0.59)/0.21
+z ≈ +1.85, +1.40, +1.38
+Composite = (1.85 + 1.40 + 1.38) / 3 ≈
++1.54
+Dolan: champs/decade = 0, win% = .430, playoff% = .35
+z ≈ (0 − 1.0)/1.1, (0.430 − 0.510)/0.080, (0.35 − 0.59)/0.21
+z ≈ −0.91, −1.00, −1.14
+Composite = (−0.91 + −1.00 + −1.14) / 3 ≈
+−1.02
+VERDICT · Buss is roughly 2.5 standard deviations above Dolan in NBA owner space. A single-metric ranking on championships would say Buss-by-ten and Dolan-by-zero, which understates the gap because zero is the floor on champs but Dolan’s underperformance shows up across all three components.
+The cross-league rankings in the main piece use this same procedure, run within each league. Cross-league composites are then directly comparable because z-scores share a common scale — one standard deviation in the NBA is the same statistical distance from the mean as one standard deviation in the NFL. The MLB and NHL z-scores are computed analogously.
+The Code
+The Owner Index, in
+thirty lines of Python
+Below is a self-contained implementation. The input is a list of owners with their three raw metrics; the output is a sorted ranking with composite z-scores. The math is exactly what was described above; the code makes it explicit.
+Snapshot: this is illustrative. The actual Owner Index numbers in the article were computed from a slightly larger spreadsheet of inputs (including approximate playoff percentages for older owners). The methodology is identical to what’s shown below.
+# owner_index.py — z-scored composite of three owner metrics
+from
+statistics
+import
+mean, stdev
+from
+collections
+import
+defaultdict
+def
+z_score
+(value, values):
+    mu = mean(values)
+    sigma = stdev(values)
+return
+(value - mu) / sigma
+if
+sigma >
+0
+else
+0
+def
+owner_index
+(owners):
+# owners is a list of dicts with keys:
+#   league, champs_per_decade, win_pct, playoff_pct
+by_league = defaultdict(list)
+for
+o
+in
+owners:
+        by_league[o[
+"league"
+]].append(o)
+for
+league, group
+in
+by_league.items():
+        cpd = [o[
+"champs_per_decade"
+]
+for
+o
+in
+group]
+        wpc = [o[
+"win_pct"
+]
+for
+o
+in
+group]
+        ppc = [o[
+"playoff_pct"
+]
+for
+o
+in
+group]
+for
+o
+in
+group:
+            z1 = z_score(o[
+"champs_per_decade"
+], cpd)
+            z2 = z_score(o[
+"win_pct"
+],            wpc)
+            z3 = z_score(o[
+"playoff_pct"
+],        ppc)
+            o[
+"composite"
+] = (z1 + z2 + z3) /
+3
+return
+sorted(owners, key=
+lambda
+o: -o[
+"composite"
+])
+if
+__name__ ==
+"__main__"
+:
+# 21-row spreadsheet truncated for illustration
+data = [
+        {
+"name"
+:
+"Jerry Buss"
+,
+"league"
+:
+"NBA"
+,
+"champs_per_decade"
+:
+3.03
+,
+"win_pct"
+:
+0.622
+,
+"playoff_pct"
+:
+0.88
+},
+        {
+"name"
+:
+"James Dolan"
+,
+"league"
+:
+"NBA"
+,
+"champs_per_decade"
+:
+0.0
+,
+"win_pct"
+:
+0.430
+,
+"playoff_pct"
+:
+0.35
+},
+# ... 19 more owners, real data in spreadsheet
+]
+    ranked = owner_index(data)
+for
+o
+in
+ranked:
+        print(
+f"{o['name']:25s} {o['league']:5s} composite = {o['composite']:+.2f}"
+)
+Three notes on what the code does
+not
+do. First, it does not weight the three metrics — they are averaged equally. A more sophisticated index would weight by inverse variance or by predictive validity. Second, it treats the three metrics as independent, which they are not (good owners tend to be good at all three). The variance reduction from averaging correlated inputs is smaller than the equation in the math section suggests — but it is still positive. Third, it z-scores within league but not within era. An owner from the 1980s NBA faces a different competitive landscape than one from the 2020s NBA. A version that respected era would z-score within league-decade.
+Each of those refinements would shuffle the rankings somewhat. None of them would change the basic finding: composites are more stable than single stats, and Bill James’s methodological move — in 1985, in 2002, and now — remains the right one.
+The Bill James citation.
+The Win Shares system is documented in Bill James’s 2002 book
+Win Shares
+, but the underlying philosophy — that no single component captures a player’s contribution — runs through his entire body of work, including the early
+Baseball Abstract
+series (1977-1988) and his work on the Hall of Fame ballot (the
+Politics of Glory
+, 1994). The composite move is older than James — the Consumer Price Index dates to 1913, and statistical principal components to Karl Pearson in 1901 — but James popularized it for sports.
+If your favorite ranking is built on a single number, ask yourself how that number compares to two or three reasonable alternatives. If they all agree, the ranking is robust. If they disagree, the headline number is doing too much work.

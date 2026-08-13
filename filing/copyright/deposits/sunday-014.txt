@@ -1,0 +1,109 @@
+A Framework Week: Six Tools Built, Zero Bets Placed —
+Here’s the Scorecard Anyway
+Issues #100–105 built the statistical machinery. None contained a scoreable prediction. The Sunday Edition ran the scorecard anyway — and found two things worth watching closely before next Sunday.
+By The Sports Page · July 12, 2026 · Sunday Edition No. 014
+There’s a version of the Sunday Edition that exists only to catch predictions failing in real time. That version is satisfying — painfully so. This week doesn’t offer it. Issues #100–105 were a framework week: six consecutive pieces building the statistical machinery the newsletter uses to make predictions. The team-analog model. The predictability framework. The blue-chip ratio test. The championship-window logic. You can’t score the scaffolding.
+But you can test whether it holds weight. The Mets are now 36–52. The walk rate has moved. Notre Dame’s 2027 class just broke into the national top two. And the Astros are fighting. Starting next week, the frameworks get used. This Sunday, we describe what they are, where they stand, and name the two early signals worth watching.
+105
+Issues Published
+6 N/A
+Predictions This Week (Framework Only)
+395
+Issues Remaining to Our 500 Goal
+The Week in Review: Issues #100–105
+#100
+Mon Jul 6
+—
+Bank of America Says 2026 Is 1994. Baseball Says 2026 Is 2021.
+— Nearest-neighbor analysis across 1,188 historical MLB seasons finds 2026 most resembles 2021 (z-distance 2.13). The key driver: a 9.2% walk rate not seen since the pandemic season. The claim: structural change, not noise.
+#101
+Tue Jul 7
+—
+The Mets Are Seventy Times More Predictable Than the Snow.
+— Lag-1 autocorrelation: Steamboat Springs snowfall r = 0.007 vs. MLB win percentage r = 0.490. Mets specifically: r = 0.407. Baseball has persistence. Weather doesn’t. A methodology piece for every argument about streaks.
+#102
+Wed Jul 8
+—
+By the Numbers, the Mets Are the 2012 Mariners. By Strategy, They Have a Choice.
+— 6-feature z-score nearest-neighbor pegs the 2026 Mets’ closest match as the 2012 Mariners (distance 0.899). The 2012 Mariners took 21 years total to reach the playoffs. The 2014 Cubs, the runner-up (distance 1.02), won the World Series in 2. The data did not declare a verdict. The Mets’ record is starting to.
+#103
+Thu Jul 9
+—
+A Fair Fight Was Asked For. We Ran Two. Snow Lost Both.
+— Methodological follow-up to Issue #101. CO ski-region lag-1 r = −0.010. MLB league OPS lag-1 r = 0.697. Profile-match beats climatology +48.4% for baseball, −5.4% for the ENSO snow model. The framework is validated. Baseball is forecastable. Snow is not.
+#104
+Fri Jul 10
+—
+Notre Dame Is Building a Contender. That Is Not the Same as Building Alabama.
+— ND’s blue-chip ratio: ~69–73%, 8th nationally, clearing the 50% historical title threshold. But Alabama produced 16 first-round NFL picks (2021–25). Notre Dame produced 2. The necessary condition is met. The sufficient condition is not — not yet.
+#105
+Sat Jul 11
+—
+Five Teams Have Looked Like the 2026 Astros. None of Them Were Still a Dynasty.
+— The Astros at 33–40 (.451 win pct, ERA 4.90) find their five nearest historical analogs: 2023 Cardinals, 2021 Twins, 2019 Angels, 2018 Blue Jays, 2017 Mets. Average post-analog championship wins: zero. The structural argument: the window has closed. The trade deadline is the inflection point.
+The Prediction Scorecard
+All six issues this week were analytical or methodological frameworks. None contained a specific quantitative prediction with a near-term measurable outcome. The correct grade for all six is N/A — not because we were vague, but because frameworks aren’t predictions: they’re the instruments that make predictions possible. Two of the six have early signals worth naming now.
+#
+Analytical Claim
+Early Signal (as of July 12)
+Status
+#100
+MLB walk rate 9.2% = structural change, not adjustment noise
+Walk rate retreated from early-April ~10% to ~8.5% by early July. Pitchers adapted faster than “structural” implies. The spike was real; the word may have overstated its durability.
+TRACKING — regression faster than predicted
+#101
+Mets lag-1 autocorrelation r = 0.407; baseball is fundamentally more predictable than weather
+Methodological fact. Will be tested as second-half streak patterns emerge.
+N/A — statistical property, not a forward bet
+#102
+2026 Mets nearest analog: 2012 Mariners (z = 0.899); 2014 Cubs runner-up (z = 1.02)
+Mets now 36–52 (.409 win pct), down from .449 when the piece published July 8. Four days, four games. The Mariners trajectory is gaining probability with each loss.
+TRACKING — Mariners path accelerating
+#103
+Profile-match model beats climatology by +48.4%; baseball prediction framework validated
+Methodology. The framework is the deliverable; it will score predictions made with it.
+N/A — methodological validation, not a bet
+#104
+ND blue-chip ratio ~69–73% clears the title threshold; NFL first-round pick gap vs. Alabama is the remaining hurdle
+ND’s 2027 recruiting class now ranked #2 nationally (trailing only Texas A&M). Four five-star commits (Simien, Olubobola, Sesay, Folorunsho). Ratio building exactly as described. NFL pick production gap remains.
+N/A — tracking directionally; no scoreable near-term outcome
+#105
+Astros championship window closed; no near-analog team became a champion
+The Astros have played considerably better since Issue #105 was published Saturday. Short-term noise is louder than the structural claim allowed for. Trade deadline in 3 weeks is the real test.
+PENDING — season ongoing; deadline is the inflection point
+What We Got Right
+The Frameworks Are Holding
+The team-analog model’s central contribution is a testable claim: the 2026 Mets most resemble a team that took 21 years total to reach the playoffs. We didn’t predict an outcome; we described a distribution. The Mets at 36–52, having dropped from .449 win pct at the time of the Issue #102 to .409 four days later, are walking deeper into the Mariners tail of that distribution on their own. The framework didn’t need to make the call — the team is making it.
+The Notre Dame piece’s necessary-vs-sufficient framing is aging exactly right. Sunday morning’s recruiting data shows ND’s 2027 class at #2 nationally — the blue-chip ratio is clearly building, which is the necessary condition Issue #104 identified. But the sufficient condition (first-round NFL pick production at Alabama’s historic rate) remains unmet. Four five-stars don’t flip a 14-pick deficit overnight. The framing is crisp and the data is moving in the direction it should.
+The predictability framework’s core result — baseball has lag-1 persistence (r≈0.49), weather does not (r≈0.007) — is the methodological foundation for every Mets and Astros projection in the second half. It is not a prediction that could be wrong this week. But getting the infrastructure right matters, and it’s right.
+What We Got Wrong (or Are Watching Carefully)
+One Word That May Have Overstated the Case
+Issue #100 used the word “structural” to describe the 2026 walk-rate spike. The claim: the 9.2% early-season walk rate — driven in part by the automated ball-strike system standardizing the strike zone — was a durable shift, not a temporary adjustment. By early July, MLB’s walk rate has retreated to roughly 8.5%, near recent historical norms. The spike was real. Pitchers were adjusting to the ABS zone in April and hitters were benefiting. But the rate has normalized faster than “structural change” implies.
+The honest characterization may be: a persistent adjustment effect with an uncertain half-life, not a structural break. Pitchers adapted. We’ll revisit this at the trade deadline with a full first-half sample. If the July rate holds at 8.5%, the word to use is “overstated.”
+The Mets’ decline also arrived faster than the Issue #102 framing suggested. The piece presented the Mariners vs. Cubs split as a genuine choice still available to the front office — rebuild aggressively and follow the Cubs, or drift and follow the Mariners. At 36–52 with the trade deadline approaching, the choice is narrowing. Teams at .409 in mid-July are sellers, not buyers. The data isn’t wrong. The timeline compressed.
+“A framework week isn’t a week without predictions. It’s the week you sharpen the knife before you make the cut. Next week, we start cutting.”
+— The Sports Page, Sunday Edition No. 014
+Over-Reactions and Under-Reactions
+Over-Reaction
+“Structural change” for the walk rate. The word implies permanence. What the ABS data showed in April was a pitcher-adjustment lag that spiked walk rates to historically unusual levels, and the market has since partially cleared. The mechanism was real; the label overstated its durability. A better framing would have been: “a significant adjustment effect with an uncertain half-life.” We knew the ABS system was new. We should have weighted the uncertainty more before reaching for the stronger word. This is a note to self for the next time a stat looks structural in month one of a new regime.
+Under-Reaction
+The Astros’ residual fight. Issue #105 described a championship window that has structurally closed, and the evidence for that claim is solid: five historical analogs, zero subsequent championships. But the piece was published Saturday, and the Astros have been playing better than the 33–40 record suggested. The structural argument isn’t wrong — a good winning stretch doesn’t re-open a closed window. But the piece didn’t sufficiently emphasize how much noise a competitive team generates inside a closed window before the deadline forces a decision. The Astros are still a baseball team. After July 31, the analogs take over.
+What Readers Read · July 5 – July 11
+Readership data unavailable — the analytics API was unreachable from today’s publishing environment. Visit
+thesportspage.goatcounter.com
+to see last week’s top reads.
+The Road Ahead
+This week puts the frameworks to work.
+Monday
+brings “The Sorsby Supplemental Bet” — a look at how supplemental signals reshape baseline prediction models when the sample is thin.
+Midweek
+, “The ND Dynasty Call” follows up Issue #104’s necessary-vs-sufficient framework with a harder claim: given the 2027 recruiting class’s national ranking, does the probability assessment change? “Cross-Sport Persistence” then asks whether the lag-1 autocorrelation finding from Issues #101–103 transfers — does winning in football compound the way it does in baseball?
+Two Mets pieces are in queue as well: an All-Star angle (timely, with the break days away) and a diamonds-in-the-rough look at what the 36–52 record may be obscuring at the player level. Those pieces matter because the trade deadline is July 31 — less than three weeks out — and the Mets’ front office decisions will be the most statistically consequential in the NL East. We want the framework in place before the deals happen.
+And: the MLB All-Star break is the natural midpoint for the newsletter’s running prediction regrade — not the Sunday Edition scorecard, but the full-season audit against the pre-season framework we described in Issue #103. That piece is coming before the break ends. It will not be gentle.
+“105 issues published. 395 to go. The telescopes are built. Starting Monday, we point them at something.”
+— The Sports Page, on the long game
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

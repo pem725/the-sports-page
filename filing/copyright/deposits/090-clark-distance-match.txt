@@ -1,0 +1,51 @@
+We Searched 65 Years of NBA Legends for Caitlin Clark’s Twin.
+The Math Chose Oscar Robertson.
+She is already an all-time great, so the honest question isn’t whether Caitlin Clark is good. It’s who she’s
+like
+. Put every player on the same footing — their share of a full team’s output, washing out era and league — measure the distance, and one name comes back closer than all the rest, by both methods we tried: a 1961 rookie named Oscar Robertson.
+By The Professor · The Sports Page · WNBA & the Mathematics of Comparison
+337
+Clark’s 2024 Assists — The All-Time WNBA Single-Season Record, Set as a Rookie
+.408
+Clark’s Share of Her Team’s Assists — Oscar’s Rookie Mark Was .401
+1961
+The Rookie Season the Distance Math Matched Her To
+Caitlin Clark is not a prospect anymore, and she is not a curiosity. In her 2024 rookie season she set the all-time WNBA single-season assist record — 337, and to be clear, that is not the rookie record, it is
+the
+record — while also setting rookie marks for points (769) and three-pointers made (122) and winning Rookie of the Year on 66 of 67 ballots. The interesting question about a player like that is not whether she is great. It is who, across the long history of basketball, she is great
+like
+. And that question is much harder than it sounds.
+You cannot answer it by eye, and you certainly cannot answer it with raw box scores. Clark plays in the WNBA; the legends you would compare her to played in the NBA. She plays in 2026; they played in 1961, in 1971, in 1980. Points per game means almost nothing across leagues and eras with wildly different pace and scoring levels. To put Clark next to Oscar Robertson honestly, you first have to put them on the same footing.
+The Only Fair Way to Compare
+The footing we chose is
+share of team output
+. For each player, take their per-game points, assists, and rebounds and divide by what an entire average team produced per game in their own league that season. The result is a percentage — how much of a full team’s production this one player accounted for. It cancels pace (a faster league simply has a bigger denominator), it cancels the WNBA-to-NBA scoring gap, and what survives is the thing we actually want to compare across sixty-five years: the
+shape
+of a player’s dominance.
+We built Clark’s profile from her first two active seasons — her 2024 rookie year and her 2026 season, setting aside an injury-shortened 2025 — and measured it against the rookie-year profiles of the all-time greats, each normalized to their own era: Oscar Robertson, Jerry West, Pete Maravich, Magic Johnson, Larry Bird, and Michael Jordan.
+Share of a Full Team’s Per-Game Output — Clark vs. Her Two Closest All-Time Matches
+Each bar is the share of a full team’s per-game points, assists, or rebounds the player accounted for — the era-fair way to compare a 2026 WNBA guard with NBA rookies from 1961 and 1980. On assists, Clark (.408) and Oscar Robertson (.401) are the same number. Magic Johnson, the next-closest match, is the same archetype a clear step away.
+The Answer, and It Isn’t Close
+By straight-line (Euclidean) distance and by Mahalanobis distance — which accounts for the fact that scoring, passing, and rebounding tend to rise together — the same name finishes first, and finishes far ahead of the field:
+Oscar Robertson
+. Look at the assist share. Clark accounted for 40.8% of her team’s assists; Oscar, as a 1960–61 rookie, accounted for 40.1%. That is not similar. That is the same number. Their scoring shares (.238 to .258) and rebounding shares (.152 to .138) are nearly as close. The second-place match, Magic Johnson, is the very same archetype — the oversized playmaking guard who fills every column of the box score — but he sits a full, clear step away, and everyone else further still.
+Why Mahalanobis, and Not Just a Ruler
+The simplest way to measure how close two profiles are is to run a straight line through the three numbers — Euclidean distance. It works, and it put Oscar first. But it quietly assumes the three stats are independent, and they are not: players who pile up assists tend to pile up points too, because both flow from having the ball in your hands.
+Mahalanobis distance
+corrects for that. It stretches the measuring space along the directions the stats actually vary together, so a gap on a crowded, correlated axis counts for less, and a gap on a rare, independent one counts for more. It is the right tool for matching profiles.
+We ran both on purpose, because a result you can only get one way is a result you should not trust. The simple ruler and the careful one agreed completely: Oscar Robertson, first, by a wide margin. When the blunt tool and the precise tool point at the same name, the answer is real.
+What We Left Out — and Why It’s the Whole Point
+There is one dimension we deliberately kept out of the match: the three-point shot. We had no choice — Oscar Robertson, Jerry West, and the entire 1961 NBA played without a three-point line; it did not exist until 1979. But that omission turns out to be the most interesting thing the exercise produced. Clark’s profile is Oscar Robertson’s profile — the scoring, the league-leading passing, the rebounding from the guard spot — with a weapon bolted on that Oscar was never permitted to fire. She led her league in made threes as a rookie, from ranges that would have been geometrically pointless in 1961. So the honest summary is not “Caitlin Clark is the next Oscar Robertson.” It is something stranger and better: she has the Oscar Robertson profile, plus the one tool the original never got to use.
+“Clark accounted for 40.8% of her team’s assists. Oscar Robertson, as a 1961 rookie, accounted for 40.1%. That is not a resemblance. That is the same fingerprint, taken sixty-five years apart.”
+— The Sports Page
+What This Is, and What It Isn’t
+A few honest limits, because a comparison this clean invites overreach. We tested six legends, not the whole history of the sport; a wider net might surface another near-match, though to beat Oscar it would have to be another box-score-filling guard, and there are not many of those. We used three dimensions — points, assists, rebounds — because they are the ones recorded cleanly across every era; a richer profile (turnovers, defense, shooting efficiency) would sharpen the picture and is the obvious next step. And Clark’s 2026 line is a partial season still being written. None of that threatens the finding: measured two different ways, the all-time player Caitlin Clark most resembles is Oscar Robertson, and the rest of the Hall of Fame is not close.
+There is a particular kind of greatness that does not announce itself with one unbreakable number, but with a shape — a way of touching every part of the game at once. Oscar Robertson had it; he remains the only player to average a triple-double across a full season, and he managed it precisely because he did everything. Caitlin Clark has the same shape, in a different league, in a different century, with a longer-range weapon than the original was ever handed. The math did not set out to flatter her. We asked it a narrow question — who, across sixty-five years, does she most resemble — and it answered without hesitation. Spot the eminence, then go find its ancestor. Hers was a rookie in 1961.
+A note on the method and the data: each player’s profile is their per-game points, assists, and rebounds expressed as a share of league-average per-team-game output for that season (from Basketball-Reference league-average lines). Clark’s profile is a games-weighted blend of her 2024 (40 games) and 2026 (in progress; 21.2 pts / 8.2 ast / 4.0 reb per game to date) seasons; her 2024 rookie records — 337 single-season assists (an all-time WNBA record), 769 points, 122 three-pointers, Rookie of the Year — are from WNBA.com and Basketball-Reference. The comparison set is the rookie seasons of Oscar Robertson (1960–61), Jerry West (1960–61), Pete Maravich (1970–71), Magic Johnson (1979–80), Larry Bird (1979–80), and Michael Jordan (1984–85). Distances were computed with both Euclidean and Mahalanobis metrics on the three-dimensional share profile; both rank Oscar Robertson first by a wide margin (Euclidean 0.026; next-closest, Magic Johnson, 0.146). Three-point shooting is excluded because the NBA had no three-point line before 1979. Two caveats to be refreshed before this is treated as final: the league-average denominators come from a single reference, and the 2026 season is still in progress.
+Pitch a Story
+Noticed a weird stat? Saw something that doesn’t add up? Send it in. The best ideas become issues.
+Submit Idea
+or
+post on GitHub
+Sent! We read every pitch. The weird ones become issues.
+Something went wrong. Try the GitHub link instead.

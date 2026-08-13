@@ -1,0 +1,59 @@
+P-Value
+The number every academic paper reports and that almost nobody, including many of the authors, defines correctly. We will define it carefully, then we will tell you why a low one means less than it looks like.
+Tier 1 · The Two-Minute Version
+If the team were really a .500 team, how surprising is this streak?
+The p-value is the answer to one specific question, asked backwards.
+"If the world were boring — if my hypothesis-of-no-effect were true — how likely would I be to see something at least as weird as what I just saw?"
+Pretend your team is exactly .500. Pure coin flip. They play five games and win all five. How surprising is that,
+assuming
+they were really a .500 team the whole time?
+One half to the fifth power. Three point one two five percent.
+That number — 0.03125 — is the p-value of "five straight wins, given a true .500 team." It is the probability of seeing data at least this extreme,
+if
+the no-effect hypothesis (the team is .500) were true. A small p-value means the data are surprising under the boring hypothesis. A big p-value means they are not.
+Convention in most of science is to call results "significant" if the p-value is below 0.05, the magical "less than one in twenty" threshold. The threshold is arbitrary. Ronald Fisher, the statistician who proposed it in 1925, said so explicitly. It stuck anyway because thresholds always do.
+The single biggest source of bad inference about p-values is the one even careful people make:
+the p-value is NOT the probability that the hypothesis is wrong
+. It is the probability of
+seeing this kind of data
+if the hypothesis were right. Those are different statements. Confusing them is so common it has its own name: the
+prosecutor’s fallacy
+. The Sports Page tries to never make this swap, and you should not either.
+Tier 2 · If You Want to Go Deeper
+Why the p-value crisis is real, and why the newsletter mostly stays out of it.
+Three things have happened to p-values over the last century. First, they were proposed by Ronald Fisher as an informal way of measuring evidence against a null hypothesis — a "rule of thumb" for noticing when to look more carefully. Second, Jerzy Neyman and Egon Pearson formalized them into a rigid decision rule with thresholds and Type I and Type II errors. Third, scientific publishing took the threshold seriously and started rejecting papers whose p-values were above 0.05. By 2000, the p-value had stopped being a measure of evidence and started being a gatekeeper for publication. That is the version most academic sports research lives inside.
+The problems are two. The first is
+p-hacking
+: when the threshold determines what gets published, researchers have an incentive to slice the data, change the analysis, drop the inconvenient subgroup, until
+some
+p-value comes in below 0.05. By the 2010s, "p-hacking" had a name, a literature, and a replication crisis in psychology and biomedicine that has not finished playing out. The second is
+misinterpretation
+. A p-value of 0.04 does not mean there is a 4% chance the null is true. It means:
+if the null were true, there is a 4% chance of data this extreme
+. Those two sentences feel like they mean the same thing. They do not. The American Statistical Association issued a formal statement on this in 2016 because the confusion had become so widespread.
+The newsletter mostly stays out of the p-value game. The framework it uses instead is Bayesian: estimate the posterior probability of the hypothesis given the data, given a prior. That number
+is
+what most people thought a p-value was. The Bayesian framework is more honest about uncertainty, more direct about what is being claimed, and harder to game.
+But you will encounter p-values constantly when you read academic sports analytics or any paper from a peer-reviewed journal. Three things to do when you see one.
+Ask what the null was.
+The p-value only makes sense relative to a specific no-effect hypothesis.
+Ask what was tried before settling on this analysis.
+If the researchers ran twenty analyses and reported the one with the lowest p-value, the 0.05 threshold is a mirage.
+And ask how big the effect is, separately from how significant it is.
+A statistically significant difference can be too small to matter. A statistically non-significant difference can be large and important — the p-value just says you cannot rule out the boring story yet.
+The last point is the most important. Statistical significance and practical significance are different. A p-value tells you something about how much the data argue against a specific null. It does not tell you whether the result matters, whether it will replicate, or whether the researchers cherry-picked the analysis. Those are the questions worth asking. The p-value is a starting point, not a conclusion.
+Tier 3 · Take It to the Textbook
+The full treatment.
+What a p-value is, and the many things it is not, gets the careful treatment in the
+Making Inferences with Data
+part of
+The Sports Page’s companion statistics textbook
+, a free, open graduate text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The newsletter mostly does not use p-values directly — it uses Bayesian posteriors, which are more honest about the question being asked
+When peer-reviewed sports research is cited (occasionally, sparingly), the p-value will appear; we try to surface what the null was and how big the effect actually was, not just the threshold pass
+Related:
+Bayesian inference
+is the framework the newsletter prefers, for exactly the reasons in the deeper-dive above

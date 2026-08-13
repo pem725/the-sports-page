@@ -1,0 +1,50 @@
+Every Number Is Part Skill and Part Luck.
+The Trick Is Knowing How Much of Each.
+No statistic is pure. Each one is a real signal — the thing you actually want to measure — buried in noise you don’t. The good news, and the whole of this idea: you can look up, for almost any number, exactly how much of it you need before the signal wins.
+Tier 1 · The Two-Minute Version
+A small number is almost all luck. A big one lets the skill show.
+A hitter goes four-for-eight and his average reads .500. Nobody believes he is a .500 hitter, and rightly — eight at-bats is almost pure
+noise
+, the random luck of which balls found gloves. Let the season run to six hundred at-bats and the number settles into something real: the
+signal
+, his actual skill, has finally drowned out the luck. Every statistic works this way. It starts as mostly noise and, as the sample grows, slowly fills up with signal.
+Here is the part that turns this from a truism into a tool. Different numbers fill up with signal at wildly different speeds. Some are trustworthy almost at once; others essentially never settle within the data you’ll ever have. A pitcher’s strikeout rate is mostly real after a few dozen batters. Whether hits happen to fall in against him barely becomes real across a whole career. Same box score, two numbers — one you can believe by April, one you should never quite trust.
+Same amount of data, two very different numbers — one fills with signal fast, one crawls.
+So the useful question about any number is never just “what does it say?” It is “how much of it is there, against how much it needs?” A big, impressive figure built on a thin slice of data is a rumour. The same figure, once the sample is deep enough, is a fact. Learn to ask which one you’re looking at, and you will stop being fooled by half the numbers people wave at you.
+Tier 2 · If You Want to Go Deeper
+Reliability, and the sample where a stat “stabilizes.”
+Formally, what you observe is a sum:
+observed variation = true (skill) variation + error (luck) variation
+. The share that is real — the true part over the whole — is called
+reliability
+, and it runs from zero (all noise) to one (all signal). Collecting more data does not change a player’s true skill; it shrinks the error term, so reliability climbs toward one as the sample grows. That rising curve is the shape in the figure above.
+Analysts pin this down with a
+stabilization point
+: the sample size at which a statistic correlates about 0.7 with a separate, equal sample of the same player — the moment roughly half its variation is finally skill. Those points are startlingly different from stat to stat. For pitchers, a strikeout rate stabilizes near seventy batters faced; a walk rate near a hundred and seventy; the batting average on balls in play only near two thousand, which is to say never within a season. The number of events a stat needs is a direct read on how much of it the player actually controls. Skills that are the player’s own — missing bats, throwing hard — firm up fast. Outcomes that the defense, the ballpark, and chance co-author firm up slowly, or not at all.
+This is also the hinge between two ideas you already know. A number that stabilizes
+slowly
+is one whose early readings are mostly luck — so it will drift back toward the truth, which is
+regression to the mean
+. A number that stabilizes
+fast
+is one you can trust early — so it, and not the noisy one, is what you use to forecast. The reliable measure is the one that predicts; the unreliable one is the one that fools you into predicting from noise. Same coin, two faces — and the stabilization point tells you which face you’re holding.
+Tier 3 · Take It to the Textbook
+The full treatment: reliability, signal-to-noise, and shrinkage.
+Where reliability comes from — the variance decomposition, the signal-to-noise ratio, split-half and test–retest correlation, Cronbach’s alpha, and the shrinkage (empirical-Bayes) estimators that pull an unreliable number back toward the mean by exactly the right amount — is developed in
+The Sports Page’s companion statistics textbook
+, a free, open, graduate-level text, with the R code to compute a stat’s reliability and find its stabilization point yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The
+“radar gun knows first”
+issue — velocity is the fastest-stabilizing number a pitcher owns, which is why it warns of decline long before the ERA does. The anchor case.
+The
+Paul Skenes
+pieces — his skill stats (strikeouts, walks) held firm while his ERA and record, both slow and luck-soaked, wobbled. Signal steady, noise loud.
+Sample Size
+(Concept No. 6) — the parent idea: this is the grown-up version, with a number attached to “how much is enough.”
+Regression to the Mean
+(Concept No. 3) — the sibling: the slow-stabilizing numbers are exactly the ones that revert.
+Variance
+(Concept No. 23) — the raw material: reliability is just how the total variance splits between signal and noise.

@@ -1,0 +1,47 @@
+The 2026 Mets Are 7-14. The Math Is
+Unhappy
+, Not Final.
+Twenty-one games in. An eleven-game losing streak. The worst start the team has produced since 1983. What the historical base rate says about where this ends.
+By The Professor · The Sports Page · Small-Sample Baseball
+7-14
+Through 21 Games
+11
+Consecutive Losses
+1983
+Last Mets Start This Bad
+Twenty-one games. That is the sample. It is enough to lose an eleven-game streak in and enough to have the worst record in the National League, but it is not enough, by any honest statistical standard, to conclude the season. The right question is not whether the start looks bad. The start is 7 wins against 14 losses; the start, descriptively, is bad. The right question is what a 7-14 start through 21 games has historically implied about a team’s full season — and what it implies for a team whose preseason projection called for eighty-three wins.
+The Arithmetic of 21 Games
+The Mets have played 21 of 162 scheduled games. That is 13% of the season. Their winning percentage through 21 is .333; to finish at .500 — 81-81 — they would need to go 74-67 over the remaining 141 games, a .525 pace. That is reasonable: about what a league-average team produces over any 141-game stretch. To finish at their preseason projection of 83 wins, the required stretch pace is roughly .539. Still achievable. Difficult, but not fantastical.
+To miss the playoffs outright would require continuing at roughly the current pace for another month or two. That is not a prediction; it is a statement about what would have to be true.
+The Bayesian Update, Briefly
+Preseason prior (projection 83-79):  Beta(83, 79)
+Observed through 21:               7 wins, 14 losses
+Posterior:                         Beta(90, 93)
+Posterior mean win %:              .492
+Posterior 90% credible interval:   [.433, .551]
+Projected final record (at mean):  80 – 82
+The Beta-Binomial conjugate update treats the preseason projection as prior evidence and the 21 observed games as new data. The posterior pulls the season projection down by three wins — from 83 to 80 — but does not collapse it. The 90% credible interval spans roughly 70 to 89 wins. That is wide, because 21 games is wide. A genuine answer requires more games, not more anger.
+What Has Historically Happened to Teams Starting This Poorly
+Published base-rate analyses of slow starts are not universally consistent on exact thresholds, and a clean "P(playoffs | 7-14 start)" across every season since 1969 is not trivially available. What is clear from the cases:
+The
+2019 Washington Nationals
+were 19-31 at their fiftieth game — a noticeably worse position than the 2026 Mets have reached — and won the World Series. The
+2011 St. Louis Cardinals
+sat at or below .500 deep into August and are one of five teams with the worst regular-season records ever to win a World Series. The
+2005 Houston Astros
+started 15-30 and reached the World Series. The
+1991 Atlanta Braves
+famously "worst to first."
+The pattern is not "bad starts always recover." The pattern is that
+some
+teams starting at or below the Mets’ current pace have recovered all the way to a championship, and many more have recovered to respectability. What the history of slow starts tells us, as a class, is what the posterior above tells us: the start shifts the prior, but it does not determine the ending.
+“The start is bad. It is not final. Seven wins through twenty-one games is enough to make the summer difficult and not enough to decide what the summer will be.”
+— The Professor, on reading the box score in April
+What Would Actually Settle It
+Two numbers to watch over the next thirty games: the team’s run differential, which is less noisy than its win-loss record, and whether the bullpen continues to give back leads in the late innings. A Mets team that starts pushing run differential toward even has a path back to 80 wins. A Mets team that continues to hemorrhage runs in the seventh and eighth innings has a different conversation ahead.
+This newsletter will publish a prediction scorecard every Sunday. The 2026 Mets final-record projection will be rerun with fresh data each week. Today: 80-82, 90% credible interval [70, 89]. Check back.
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

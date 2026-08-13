@@ -1,0 +1,137 @@
+Significance Series · Part 2 of 4
+The Tiebreaker Pretends to Add Data.
+Instead, It Adds Noise.
+When two teams finish tied at 89–73, as the Mets and Braves did in 2024, the league reaches for the head-to-head record to break the tie. It looks rigorous. It is settled in advance, by formula, with no ambiguity. But the head-to-head record between two teams is built from a sample so small that, under statistical scrutiny, it cannot reliably distinguish the best team in baseball from the worst. The Braves won the 2024 NL tiebreaker over the Mets
+7–6
+. The probability of that outcome under the assumption that the two teams were equally good is, to four decimal places,
+1.0000
+.
+By The Professor · The Sports Page · Methods · Significance Testing, Part 2
+7–6
+2024 Mets-Braves H2H
+1.000
+p-value of the Tiebreaker
+11–2
+H2H Needed for p < .05
+Part 1 of this series ended with a teaser. The 2024 National League Mets and Braves both finished 89–73. By every statistical test we built — chi-square, contingency table, deviation from the null — the two teams were indistinguishable. The chi-square statistic on their full-season records was, exactly, zero. And yet, when the regular season ended and the league had to slot one team into the fifth seed and the other into the sixth, the rules did not say “coin flip” or “co-seed.” The rules said:
+look at the head-to-head record between them, and the team with more wins gets the better spot
+. The Braves had won the season series 7–6. They went to the fifth seed. The Mets went to the sixth.
+This issue is about whether that procedure makes statistical sense. The answer, as you can probably guess by now, is no. The longer answer is the point of Part 2.
+The MLB Tiebreaker, in Plain English
+In 2022, when MLB expanded the postseason from 10 teams to 12, the league quietly abolished one of its most beloved oddities: Game 163, the one-game tiebreaker. (Watch Bucky Dent home run footage if you need to mourn.) From 2022 onward, all regular-season ties — for division titles, for wild card seeding, for the final playoff spot — are settled by a strict mathematical hierarchy:
+Head-to-head record
+between the two tied teams.
+Intradivision record
+(each team’s record against opponents in its own division).
+Interdivision record
+(each team’s record against the rest of its league).
+Each criterion is applied in order. The first one that produces a winner stops the procedure. In the 2024 NL case, the first criterion (head-to-head) settled it. The Mets and Braves had played thirteen games against each other across the season, finishing on a doubleheader on September 30 in Atlanta. They split the doubleheader. The Braves walked away 7–6 in the season series. The procedure ended.
+What it ended on, however, is a sample of
+thirteen games
+. That is the entire body of evidence the tiebreaker considered. To anyone who worked through Part 1, the next question writes itself: how much can a thirteen-game sample really tell us?
+The Binomial Test, the Right Tool for This Job
+Part 1 introduced the chi-square test for comparing two independent samples — each team’s full record against the rest of the league. Head-to-head is a different situation. The two teams are playing each other, so the Mets’ wins are the Braves’ losses; the samples are not independent, they are perfectly linked. The right tool here is the
+binomial test
+.
+The setup is simple. Under the null hypothesis — that both teams have equal true winning probability against each other — each individual head-to-head game is, in effect, the flip of a fair coin. We ask:
+given thirteen flips of a fair coin, how unusual is it to see seven heads and six tails?
+The Math, with a Coin Instead of a Bat
+The probability of seeing exactly k wins in n games when both teams are equally matched is given by the binomial formula:
+P(k wins in n games | p = 0.5) = C(n,k) · 0.5^n
+
+For n = 13, the distribution looks like this:
+
+  k = 6:  C(13,6) / 2^13 = 1716 / 8192 = 0.2095
+  k = 7:  C(13,7) / 2^13 = 1716 / 8192 = 0.2095
+  k = 8:  C(13,8) / 2^13 = 1287 / 8192 = 0.1571
+  k = 9:  C(13,9) / 2^13 =  715 / 8192 = 0.0873
+  k = 10: C(13,10)/ 2^13 =  286 / 8192 = 0.0349
+  k = 11: C(13,11)/ 2^13 =   78 / 8192 = 0.0095
+Notice that 6 wins and 7 wins are
+exactly equally likely
+under the null — both have probability about 21%. A 7–6 split is the literal most-likely outcome of a thirteen-game series between two equally matched teams. (Tied for first with 6–7, of course; they are reflections of each other.) Seeing this result and concluding “the team that went 7–6 is better” is the same statistical move as flipping a coin thirteen times, getting seven heads, and concluding “this coin is biased toward heads.”
+To formalize the procedure, we ask for the
+p-value
+i
+: the probability of seeing an outcome at least as extreme as the observed one, under the null. For a two-sided binomial test of 7–6 in 13 games, that probability is essentially
+1.0
+. The 7–6 result is not only consistent with the null hypothesis. It is what the null hypothesis predicts.
+How Lopsided Does Head-to-Head Have to Be?
+Working backwards from the .05 threshold introduced in Part 1, the head-to-head ladder of significance looks like this:
+H2H Outcome
+Two-Sided p-value
+Statistical Verdict
+7–6
+1.000
+Most likely outcome under null
+8–5
+0.581
+Routine coin-flip variation
+9–4
+0.267
+Mildly notable, not significant
+10–3
+0.092
+On the edge, still not significant
+11–2
+0.022
+Statistically significant
+12–1
+0.003
+Highly significant
+13–0
+0.0002
+Effectively certain difference
+Read that table once and a striking thing emerges. To declare, with conventional 95% confidence, that the two teams actually have different head-to-head winning probabilities, the season series has to end at
+11–2
+or worse. Anything from a sweep-the-doubleheader 7–6 to a respectable 10–3 falls below the threshold. The tiebreaker rule, as written, will pick a winner from a 7–6 series and call it settled. The statistics say the series settled nothing.
+“A thirteen-game head-to-head sample, examined honestly, cannot distinguish two equally matched teams from two teams whose true win probabilities differ by ten percentage points. The tiebreaker activates anyway.”
+— The Sports Page, on what 7–6 means and doesn’t
+The Power Problem: Even Real Differences Get Missed
+The previous section asked:
+if the two teams are equally matched, how likely is the observed result?
+The other side of significance testing asks the harder question:
+if the two teams are NOT equally matched — if one really is better than the other — how likely is the test to catch it?
+This is called
+statistical power
+, and in a thirteen-game sample, the answer is bleak.
+Imagine the Braves really are a better team than the Mets — not by a lot, just modestly. Suppose their true probability of beating the Mets in any given game is 0.55 (versus 0.45 for the Mets). How often does a thirteen-game season series correctly identify them as the better team at p < .05? That is, how often does the series end at 11–2 or more lopsided in the Braves’ favor?
+True Win Probability (better team)
+Power: P(detect at p < .05 in 13 games)
+What It Means
+.550 vs .450
+2.7%
+Nearly invisible
+.600 vs .400
+5.8%
+One time in seventeen
+.650 vs .350
+11.7%
+One time in nine
+.700 vs .300
+20.2%
+One time in five
+.800 vs .200
+42.1%
+Coin flip on a giant skill gap
+The numbers in that right-hand column should be alarming. Consider a true skill gap of .600 vs .400 — the equivalent of a 97-win team playing a 65-win team, a yawning chasm. A thirteen-game series would correctly identify the 97-win team as better only about 5.8% of the time. Most of the time, even with that enormous gap, the series would end at something like 8–5 or 9–4, neither of which crosses the threshold.
+To put it bluntly: the head-to-head tiebreaker is a test that, for any realistic skill difference between two playoff-bubble teams, is wrong far more often than it is right. It produces a winner, certainly. It puts the better team in the better seed less than ten percent of the time.
+If Not the Tiebreaker, Then What?
+It would be unfair to leave this issue without acknowledging why the tiebreaker rules exist. They are, despite their statistical weakness, doing useful work of a different kind. They are providing a
+deterministic, advance-known procedure
+for resolving an ambiguity, so that nobody has to invent a fairness rule under playoff-pressure time constraints. Both teams have agreed to the rules in March. When September arrives, neither team can complain. That is not nothing.
+But it is also not statistics. A statistician handed the same problem would consider three alternatives:
+Co-seed the tied teams.
+Treat 89–73 and 89–73 as exactly what they are: identical. Both teams enter the playoffs at the same seed level. The bracket adjusts.
+Use a longer series to settle it.
+The pre-2022 Game 163 tiebreaker was bad because one game is even less informative than thirteen. A three-game playoff would be slightly better; a seven-game playoff would be meaningfully so. None of these is what the league reaches for, for understandable scheduling reasons.
+Build a Bayesian posterior.
+Use the full 162-game records of both teams, plus a sensible prior, to compute the posterior probability that one team has a higher true winning percentage than the other. Spoiler: for two teams at 89–73, this probability is approximately 0.50. The Bayesian framework will agree with the chi-square: these are not distinguishable teams.
+The third option is where this series is heading. Part 4 will work it out in detail and show how it reframes the entire question. For now, the takeaway is that the league’s tiebreaker rules are a procedural convenience masquerading as a fairness procedure. They settle ties not because the data warrants it, but because somebody has to.
+Coming in Part 3
+Three Teams, One Question, No Easy Answer
+Part 3 takes on what happens when the contenders are not two but three. In September 2024, with one weekend left to play, the Mets, Braves, and Diamondbacks were all alive for the final two NL wild card spots. The chi-square test scales up beyond a two-by-two table — it generalizes to any number of rows — but the result it produces is different in kind. It tells you that
+somebody
+is different. It does not tell you which one.
+Untangling that requires follow-up tests, which create their own statistical mischief. Part 3 walks the reader through the three-team chi-square, the multiple-comparison problem, and the unsettling truth that “significance” gets harder to claim the more comparisons you try to make.
+A reader who works through the math here is invited to compute the binomial p-value for any historical head-to-head tiebreaker. The newsletter is especially curious to see what readers find when applying the test to the 1993 Giants-Braves race (NL West, one game tiebreaker), the 1978 Yankees-Red Sox playoff (one-game, season series tied 8–7), or the 2007 Mets-Phillies collapse (NL East, season series tied 9–9). Each of these would be a statistical coin flip under a binomial test, regardless of which way the game went.

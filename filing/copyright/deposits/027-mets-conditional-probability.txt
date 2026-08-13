@@ -1,0 +1,92 @@
+The Mets Are 10-21. The Question Isn’t
+How Bad
+. It’s
+What Bad Means
+.
+A 10-21 record is a fact. The probability of recovering from it is something else entirely — and the way you ask the question changes the answer by an order of magnitude. A short course in conditional probability, with the Mets as the patient.
+By The Professor · The Sports Page · Conditional Probability
+10-21
+Through 31 Games
+.323
+Winning Percentage
+~10%
+P(Playoffs | This Start)
+Eight days ago this newsletter looked at the Mets at 7-14 and said: bad, but not final. The team has played ten more games and gone 3-7. The record is now 10-21. The win percentage has dropped from .333 to .323. The playoff probability has not moved much in absolute terms, but the question we should be asking has shifted — from
+how bad
+to
+what does “this kind of bad” mean for the rest of the season?
+That second question is what statisticians call a
+conditional probability
+. It is one of the most useful and one of the most misused tools in the discipline. This issue is a short course in it, with the Mets as the patient.
+Three Probabilities, Same Team
+Pick a random MLB team in spring training. Before any game has been played, what is the probability that team makes the playoffs? Under the current 12-team format, the answer is straightforward: 12 of 30 teams qualify, so the unconditional, no-information probability is forty percent. This is the
+prior
+.
+Now condition on a piece of information. Suppose we are told the team has played thirty-one games and is 10-21. What is the probability that team makes the playoffs? This is a different question. The answer must come from history. In the last ten seasons — thirty teams a year, three hundred team-seasons in total — roughly thirty to forty teams reached game thirty-one with a record at or below .400. Of those, four are widely cited as having made the playoffs: the 2019 Nationals (who started 19-31 by game fifty and won the World Series), the 2022 Phillies (21-29 by game fifty, made the World Series), the 2022 Mariners (21-29, snapped a twenty-one-year drought), and the 2024 Astros (7-19 through twenty-six games, won the AL West). Four out of roughly thirty-five is about
+eleven percent
+.
+That is a different number from forty percent. It is the same season, the same league, the same playoff format. Only the information has changed. The thing the information did was move the probability.
+The Notation, Briefly
+A conditional probability is written
+P(A | B)
+, read “the probability of A given B.” The vertical bar is the condition. Everything to the right of it is what we know; everything to the left is what we want to estimate.
+P(playoffs)                      = .40   ← prior, no info
+P(playoffs | start ≤ .400)      ≈ .11   ← conditional on bad start
+P(playoffs | start ≤ .300)      ≈ .12   ← n=8, very wide bar
+P(start ≤ .400 | made playoffs) ≈ .04   ← the inverse conditional
+Notice the last line. It looks similar to the second — same numbers, similar phrasing — but it is asking a different question. Eleven percent of bad-start teams make the playoffs. Four percent of playoff teams had bad starts. The two are not equal. They are not even close.
+The Inverse Conditional Trap
+This is where most public conversation about the Mets goes off the rails. A fan, citing reasonable evidence, says:
+The 2019 Nationals were 19-31 and won the World Series. So bad starts don’t mean much.
+What that argument is using is P(start was bad ··· the team won the World Series). It is conditioning on the outcome and reading backward. And the numerator there is small but non-zero: there are some World Series winners with terrible starts, in the same way that there are some Hall of Fame pitchers with bad first months. Selecting on the outcome and looking at the input always overstates the input.
+The question Mets fans actually want answered is the other direction:
+Given that this team is 10-21 right now, what is the probability they make the playoffs?
+That is P(playoffs | bad start). It is around eleven percent. It is not zero. It is also not forty percent. The math has moved, and pretending it has not is the same error as cherry-picking the Nationals to argue the start does not matter.
+This asymmetry between P(A | B) and P(B | A) is sometimes called the
+inverse fallacy
+, and it shows up everywhere — in courtrooms, in medicine, in sports media. Conditional probability is the right tool. Reading it in the wrong direction is the wrong use of the right tool.
+The Last Ten Years, Counted Honestly
+Team
+Year
+Bad-Start Mark
+Final Record
+Playoffs?
+Astros
+2024
+7-19 (.269)
+88-73
+AL West champ
+Phillies
+2022
+21-29 (.420)
+87-75
+NL pennant
+Mariners
+2022
+21-29 (.420)
+90-72
+Wild card
+Nationals
+2019
+19-31 (.380) at gm 50
+93-69
+World Series champ
+The 2024 Astros are the closest comp on this list to the 2026 Mets. They were 7-19 (.269) at game twenty-six — worse than the Mets at game twenty-six, when the Mets were 8-18 (.308). The Astros bottomed out, then reeled off a 41-22 stretch from May through July, finished 88-73, and won the division. One example is not a
+base rate
+i
+. But it is also not nothing.
+“Eleven percent is not zero. It is also not forty. The honest answer is the smaller number, said slowly, with the door left open.”
+— The Professor, on conditional probability done correctly
+What the Mets Have to Do
+To finish 81-81, the Mets must go 71-60 over their remaining 131 games — a .542 pace, roughly an 88-win team for the rest of the year. To reach a wild-card berth (typically requires 87-90 wins in the modern NL), they need closer to a .615 pace, or about a 100-win team going forward. Those are not impossible standards. They are also not the standards a 10-21 team has, in its current form, demonstrated it can meet.
+What is reasonable to expect — and what conditional probability is built to express — is a wide credible interval. The most likely landing spot for a team with this prior projection (preseason eighty-three wins) and this start (10-21) is somewhere between 75 and 82 wins. That includes a small but real probability of an Astros-style turn, a smaller probability of a Nationals-style championship, and a much larger probability of a 78-win finish that ends the year on the outside of October.
+The math is not telling you to give up. It is telling you the door is mostly closed and not entirely closed, and that the difference between “mostly” and “entirely” is where the season actually lives. That, more than any single number, is what conditional probability lets you see.
+Want to go deeper?
+This issue’s
+methodology supplement →
+walks through the full conditional probability framework: Bayes’ theorem, the inverse fallacy in detail, base-rate fallacy in legal and medical contexts, and a Python script that computes P(playoffs | start) directly from a CSV of historical season data.
+Pitch a stat →
+Send
+or GitHub
+Sent. The weird ones become issues.
+Failed — try the GitHub link.

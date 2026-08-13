@@ -1,0 +1,61 @@
+Every Model Is Wrong.
+The Useful Ones Know It.
+A model is a deliberate simplification of a messy world. It is never true. The only question worth asking is whether it is useful — and the fastest way to make one useless is to make it fit the past too well.
+Tier 1 · The Two-Minute Version
+The map is not the territory.
+The statistician George Box left us the one sentence you need:
+"All models are wrong, but some are useful."
+A model — a win projection, a weather forecast, a power ranking — is a stand-in for a world too complicated to hold in your hand. It throws away detail
+on purpose
+. That is not a defect. That is the job.
+So the question "is the model true?" is the wrong question. It is a little map; of course it is not the territory. The right question is
+"is it useful for the job I need it to do?"
+And in sports, the job is almost never to explain what already happened — you know what happened, you watched it. The job is
+the next game
+.
+Here is the twist that trips everyone up. Aiming at the next game flips what "a good model" even means. A model that explains the past
+perfectly
+is very often the worst possible tool for the future. To see why, we only need seven games and two curves.
+The overfit curve fits the past perfectly and forecasts the next game off the chart
+Tier 2 · If You Want to Go Deeper
+Overfitting: the model that studied too hard.
+Two models, same seven games. The
+rust curve
+threads every single point — it explains the past with zero error. The
+steel line
+misses every point by a little. Now bet on game eight. The wiggly curve, which looked so much smarter, has flown off the top of the chart. The straight line — wrong about all seven past games — lands right on what actually happened.
+That is
+overfitting
+: a model so eager to fit the data that it fits the
+noise
+— the flukes, the bad hops, the one cold night — and treats those accidents as if they were signal. The tell is exactly the thing that looks like a virtue:
+it has no visible errors on the past.
+A model that hits every historical point has not found the truth. It has memorized the accidents, and accidents do not repeat.
+And here is the part about us, not the math. We
+reward the overfit model for looking perfect and punish the honest one for its visible misses.
+The straight line wears its errors in the open — every point it missed is right there to criticize. The wiggly line hides in hindsight; its "hits" feel like genius even though it only hit because it was drawn
+after
+the games were played. We remember the honest forecaster's whiffs and forget the show-off's, because one shows its work and the other launders the past. Good forecasting means
+tolerating visible error to buy real generalization
+— being wrong in small, honest ways so you can be roughly right about the thing that hasn't happened yet.
+Which returns us to Box. The useful model is the humble one: simple enough to be wrong on the details, honest about how much it does not know, and aimed at the next case instead of the last one. When someone shows you a model that explains everything that already happened, do not be impressed. Ask it to call the next game, then watch where it lands.
+Tier 3 · Take It to the Textbook
+The full treatment: fitting models without fooling yourself.
+Where the honest line comes from (least squares), why more complexity is not more truth, and how statisticians guard against overfitting — all of it lives in the
+Using Models
+part of
+The Sports Page’s companion statistics textbook
+, a free, open, graduate-level text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The
+“acceleration”
+issue — reading a team’s trend off an arbitrary calendar boundary is overfitting to a fluke of the schedule; the smoothed version generalizes.
+Pre-season simulations
+— we call close games explicit coin flips rather than force a fake-precise bracket, which is a refusal to overfit to noise.
+The recurring line
+“the prior isn’t a promise”
+— a model’s past success does not guarantee the next result.
+Precision vs. Accuracy
+(sibling primer) — false precision is the overfit model’s favorite disguise.

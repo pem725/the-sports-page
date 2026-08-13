@@ -1,0 +1,54 @@
+Survivorship Bias
+The story you hear is told by the people who made it. The people who did not are not in the room. This is the most quietly destructive bias in sports analysis, and it has a famous origin story involving bullet holes.
+Tier 1 · The Two-Minute Version
+Abraham Wald, the bullet holes, and the planes that came home.
+In 1943, the U.S. Air Force had a problem. American bombers were getting shot down at unsustainable rates over Europe. The brass needed to know where to put extra armor on the planes — armor is heavy, you cannot armor everywhere — and they asked statisticians to help.
+The statisticians at the Statistical Research Group at Columbia were handed a stack of diagrams showing the bullet hole patterns on every bomber that had returned from a mission. The pattern was clear: holes everywhere on the wings, the fuselage, the tail.
+Almost no holes
+on the engines or the cockpit. The natural recommendation: armor the wings, fuselage, and tail. That is where the planes were getting hit.
+Abraham Wald, a Hungarian-Jewish refugee mathematician working in the group, said:
+armor the engines and the cockpit.
+Why? Because they were only looking at the planes that came home.
+Planes that got hit in the engines or the cockpit did not come home.
+The diagrams the brass were handing out were a sample of survivors. The places without bullet holes in the surviving planes were not safe spots. They were the places where a hit was fatal.
+This is survivorship bias.
+When you look at the people, teams, products, or strategies that made it, you are looking at a sample that has been pre-filtered by the very thing you are trying to study.
+The losers are not in your data because they did not survive to be measured.
+In sports it shows up constantly. The aging curve you read about? It is a chart of the players who lasted long enough to age. The "successful coach" book that tells you what successful coaches do? Almost certainly applies just as well to a long list of failed coaches who did exactly the same things. The "great teams have great chemistry" piece is written about teams that won. We do not interview the bad teams about how their chemistry was equally great.
+Tier 2 · If You Want to Go Deeper
+Why this is the bias that hides inside almost every success story.
+Robyn Dawes, the psychologist who spent the last third of his career fighting bad inference in clinical judgment, identified survivorship bias as a special case of a broader sin:
+conditioning on the dependent variable
+. You pick your sample based on the outcome you want to explain, and then you ask the sample what they did. The answer is necessarily a list of things the successful people did — and almost certainly also a list of things plenty of unsuccessful people did, who are not in the room to tell you.
+The corrective move requires you to find or imagine the people who did not survive. In Wald’s case, the answer was to flip the inference:
+the absence of bullet holes in surviving planes told you where fatal hits landed
+. In sports the move is harder because the unsuccessful players, coaches, and teams rarely get studied with the same intensity. Their stories are not written. Their methods are not interviewed.
+So you have to build the comparison group yourself. The Sports Page does this on purpose in several recurring places. The Half-Life series treats every player who ever appeared in a major-league game as a member of the sample — not just the players who lasted long enough to qualify for batting titles. The Pyrrhic Victory series asks "what fraction of high-watermark performances were followed by collapse" by looking at
+every
+team that had the watermark, not the ones who kept winning. Without the comparison, every triumph looks like a roadmap. With it, most triumphs look like luck.
+The standard rhetorical move that powers survivorship-bias-driven content is "they all did this."
+All the great closers visualize the pitch before they throw it.
+All the championship teams have a leader in the locker room.
+All the elite hitters have quiet hands.
+Maybe. But also: an enormous number of
+not
+-great pitchers visualized the pitch, plenty of
+not
+-championship teams had a vocal locker-room presence, and a lot of replacement-level hitters had hands as quiet as any hall-of-famer. The "all" in those sentences is a count over survivors. The base rate among non-survivors is the missing piece.
+The instructive truth:
+if you cannot list ten people who did exactly the thing the successful person did, and failed, you are reading a survivorship-bias-shaped narrative
+. The narrative might still be right. It is just not yet evidence.
+Tier 3 · Take It to the Textbook
+The full treatment.
+Who ends up in your sample — and who quietly drops out — is the sampling question at the heart of the
+The Basics
+part of
+The Sports Page’s companion statistics textbook
+, a free, open graduate text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+Issue #77 · We Made an Inference Error Yesterday
+— the Reader’s Defense series names the family of inference errors this concept belongs to
+The Half-Life series (queued) — every aging-curve piece you have ever read is the chart of survivors
+Pyrrhic Victory series · Sabres / Bobcats / Astros / Cincinnati — the watermark itself is the survival event

@@ -1,0 +1,63 @@
+Regression to the Mean
+Hot streaks cool off. Cold streaks warm up. Most of what we call
+clutch
+is the gravity of the average pulling everything back toward itself. The good news: the average is forgiving.
+Tier 1 · The Two-Minute Version
+The dice do not have a memory. You do.
+A guy on your softball team hits four home runs in a Tuesday-night game. He is the team’s third baseman. He has never hit four home runs in a game before. He will probably not do it again next week. Or next month. Or next decade.
+This is not because he
+tired himself out
+. It is not because the league
+adjusted
+. It is because
+he is not actually a four-homers-per-game hitter
+. He is, on average, the guy who shows up and hits one homer every five or six games. The Tuesday night where he hit four was the dice landing all sixes. The dice will land normally again on Saturday.
+Regression to the mean is the boring statistical name for this.
+Extreme observations tend to be followed by less-extreme ones
+, not because anyone got worse or better, but because extreme observations were never your guy’s typical ceiling in the first place.
+The reason this trips everyone up — commentators, fans, general managers, your uncle — is that we love to attach a
+reason
+to the cooling-off. The guy went four-for-four on Tuesday and oh-for-four on Saturday, and the natural human instinct is to say "he must have lost his focus" or "the pitcher figured him out." Sometimes those are true. Most of the time the much simpler explanation is:
+his Tuesday was an outlier, and his Saturday is closer to his real average.
+The same logic runs in the other direction. The guy who started the season oh-for-thirty? He is going to start hitting. Not because he made a swing adjustment, not because he had a heart-to-heart with the hitting coach. He is going to start hitting because oh-for-thirty was the dice landing all ones, and the dice will land normally again. The average is patient. The average always comes for everyone.
+Tier 2 · If You Want to Go Deeper
+Galton noticed this with peas. It applies to almost everything that varies.
+The phrase comes from Francis Galton, a Victorian polymath who in 1886 was measuring the heights of parents and their grown children. He noticed something odd. The tallest fathers tended to have tall sons — but their sons were, on average,
+less
+tall than they were. The shortest fathers had short sons whose sons were, on average,
+taller
+than they were. Both ends of the distribution drifted toward the middle in the next generation. Galton called this "regression to mediocrity" — later softened to "regression to the mean."
+What was actually happening was not biological. It was statistical. Any measured trait that combines a stable underlying value (genetic potential) with a noisy short-term reading (one measurement, one game, one season) will look like this. The reading sits on top of the value. The reading varies. The value does not. When you observe an extreme reading, you are observing both a high value and a positively-biased noise term. The next reading does not have that same positive noise term. It regresses.
+The applications are everywhere.
+The player who has a career year hits worse the following year
+— we call this the Sports Illustrated Cover Curse. It is not a curse. The career year was partly true talent and partly favorable noise. The next year is the noise leaving.
+The team that wins ninety games regresses toward eighty.
+The team that loses ninety regresses toward seventy-five.
+The rookie of the year almost never repeats.
+The breakout pitcher coughs up some of the breakout. None of these is a punishment. They are the gravity of the average doing its job.
+The interesting trap, and the one most analysts walk into, is mistaking regression for
+causation
+. The player who slumps after his career year did not get worse because his swing broke down. He had a career year because of favorable noise, and the favorable noise is gone. The pitcher who got better after spring training did not get better because of the new pitching coach. He had been unlucky, and the bad luck has run its course. These are
+statistical drifts wearing the costume of stories
+. The job of the careful reader is to peel the costume off.
+None of this means coaching does not matter, or that adjustments are fake, or that talent is just luck. It means:
+when something extreme happens, your default prior should be that some of it was the dice
+. The follow-up observation will tell you how much. If a player who had a career year keeps performing at that elevated level the next year, the career year was probably mostly real. If he reverts halfway back to his prior baseline, it was probably mostly noise. The pattern is your friend. Your friend is patient.
+One last thing. The reason this concept matters so much for The Sports Page — and the reason we use the Bayesian framework everywhere — is that
+the right way to estimate a player’s true talent is to regress their observed performance toward a prior
+. The prior is the league mean, weighted by how much information you have. Three at-bats? Regress almost all the way to the league mean. Three thousand? Regress barely at all. The math is doing what your gut would do if your gut were honest with itself.
+Tier 3 · Take It to the Textbook
+The full treatment.
+Regression is literally named after regression to the mean; you meet it in the
+Using Models
+part — covariance and the bivariate line — of
+The Sports Page’s companion statistics textbook
+, a free, open graduate text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+Issue #79 · How Do You Win Eight Straight and Then Lose by Six?
+— variance and regression are the same coin from different sides
+Sunday Edition No. 010 · Carolina Leads 3–2
+— the 75% Bayesian prior is itself a regression-to-the-mean machine
+Most Sunday Editions — the scorecard regresses our own predictions back to reality

@@ -1,0 +1,57 @@
+Detroit Traded the Best Pitcher in Baseball While Two and a Half Games Out. It Cost Them
+One Percentage Point.
+The Tigers sat 54–58 and inside the wild card race, and they sold Tarik Skubal anyway. Run the counterfactual — 200,000 simulated seasons, with him and without him — and the move that looked like surrender gave up nine-tenths of a point of championship odds. That was the whole prize.
+By The Sports Page · Monte Carlo, 200,000 seasons
+2.5
+Games out when they sold
+10
+Starts Skubal had left
+0.9
+Points of title odds at stake
+On Sunday the Detroit Tigers were 54–58, two and a half games out of the last American League wild card, and they traded Tarik Skubal to the Dodgers for three prospects.
+Skubal this season: a 2.8 ERA, a 0.91 WHIP, 116 strikeouts in 97 innings. He missed six weeks in the spring with loose bodies in his left elbow, came back on June 13, and made nine starts that answered the health question about as loudly as nine starts can — a 2.9 ERA since returning, and 27 strikeouts against four earned runs across his final three outings.
+So Detroit sold a healthy ace while standing inside the race. Every instinct says that is surrender. This issue asks the only question that can actually settle it:
+what would keeping him have been worth?
+What Ten Starts Buy
+Start with the denominator. Detroit has 50 games left. Skubal would have started about 10 of them — one game in five. At six innings a start, that is roughly 60 innings out of the 450 the Tigers still have to pitch.
+Swap those 60 innings from a 2.8 ERA to the roughly 5.0 a replacement fill-in gives you, and you save about 15 runs. At the usual exchange rate of ten runs to a win, that is
+a win and a half
+.
+A win and a half is real. It is also a win and a half, and Detroit needs to climb over four teams to use it.
+The Traffic Jam
+“Two and a half games back” is a distance. It quietly omits the crowd. Detroit is not two and a half games behind one club — the Twins sit a game up, the Rangers a game and a half, the Mariners two, and the Orioles are level with Detroit on identical records. Five teams, one spot.
+That is why a
+base rate
+i
+beats an instinct here. Simulating the rest of the American League 200,000 times — drawing each team's true quality from its record, then playing out every remaining game — Detroit reaches the playoffs
+16%
+of the time as currently constructed. Keep Skubal, and that rises to
+25%
+.
+Nine points. That sounds like a lot. Then the bracket gets hold of it.
+The Funnel Eats It
+Making the playoffs is not the prize. Winning is. And every round multiplies another coin flip onto the front of your odds — a best-of-three, then a best-of-five, then two best-of-sevens. Detroit's nine-point edge in October access shrinks to two points of pennant and one point of title.
+Detroit's 2026 postseason odds, with and without Skubal, from 200,000 simulated finishes to the American League season. The bars are on one common scale on purpose: the nine-point gap in playoff access is the widest that gap ever gets. By the World Series it is nine-tenths of a point.
+Keeping the best pitcher in baseball for two months would have moved Detroit's championship odds by nine-tenths of a percentage point. That was the entire prize.
+— The Sports Page
+And He Was Leaving in November
+Here is the part that closes the case. Skubal is not under contract next year. He beat the Tigers in arbitration last winter and was awarded $32 million for 2026 — the largest arbitration figure ever given a pitcher — and Detroit never put a long-term offer in front of him. He becomes a free agent this November, where he is expected to command north of $400 million.
+So the choice was never “keep Skubal or trade Skubal.” It was:
+rent ten starts, miss the playoffs three times in four, then watch him sign somewhere else — and own nothing.
+Against that, three prospects for nine-tenths of a point is not surrender. It is arithmetic.
+And Detroit was not making a one-off decision on a good offer. Before the deadline closed they also sent Casey Mize — a 2.7 ERA and a 0.99 WHIP over 87 innings — to San Diego. Two of their best starters, gone in a day. That is not a front office getting talked into something. That is a front office that had already done this math.
+What To Take Home
+The number that fooled everyone here was “two and a half games back.” It is a real number, honestly reported, and it is built to mislead. It measures a distance while saying nothing about how many bodies occupy that distance, and it invites you to picture one team ahead of you instead of four.
+The fix is not a better standings column. It is the habit of asking the
+counterfactual
+i
+question. Not “is this player good?” — Skubal is magnificent, and that was never in dispute. The question is
+what changes if we don't?
+Answer that one and a trade stops being a referendum on effort or nerve, and becomes what it always was: a price, and a thing you get for it.
+Detroit looked at nine-tenths of a percentage point and decided it wasn't for sale at that price. You can disagree. But now you know what you're disagreeing about.
+How this was computed
+Records and stat lines are from the MLB Stats API as of August 3, 2026. Each team's true quality was drawn from a Beta posterior on its record with a Beta(34, 34) prior — a spread matching the roughly six-point standard deviation of real MLB team talent — then remaining games were simulated 200,000 times, with the bracket resolved by log5. Skubal's value was set at 1.5 wins over 10 starts. The model treats all remaining games as equally difficult; it does not use actual schedules, park effects, or head-to-head matchups, so treat the odds as well-calibrated in shape rather than exact to the decimal.
+Licensed under
+The Sports Page License
+· Borrow it, give it back better · Non-commercial, attribution required
+Not sure what counts as commercial? Take the 2-minute quiz →

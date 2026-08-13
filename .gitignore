@@ -22,3 +22,9 @@ audio/
 
 # Contributed spreadsheets: the binary stays out, the content lives in corpus/
 *.xlsx
+
+# Copyright deposit ZIPs are derived from filing/copyright/deposits/ by
+# scripts/build_copyright_manifest.py. The text deposits and the manifests are
+# tracked -- they are the corpus record of what was filed and when. The ZIPs are
+# just those same files bundled for upload, so they are rebuilt, not stored.
+filing/copyright/batches/*/deposit.zip

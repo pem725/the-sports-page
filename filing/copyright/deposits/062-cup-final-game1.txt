@@ -1,0 +1,65 @@
+Vegas Did Something
+No Road Team Had Ever Done
+in a Cup Final. The Real Question Is How Much It Matters.
+Down 2–0 in Carolina, the Golden Knights stormed back to win Game 1, 5–4 — the first road team in NHL history to erase a multi-goal deficit in a Stanley Cup Final opener. History says the Game 1 winner lifts the Cup 77% of the time. The math of a single 1–0 lead says something more modest. Both are true.
+By The Sports Page · The Stanley Cup Final · Carolina vs. Vegas
+5–4
+Vegas Wins Game 1, in Carolina
+77.2%
+Historical Cup Rate, Game 1 Winner
+2–0
+Lead Carolina Blew at Home
+Twenty-five seconds into the Stanley Cup Final, Carolina’s Nikolaj Ehlers buried one — the fastest goal to open a Cup Final since Reggie Leach scored 21 seconds in for the Flyers back in 1976. He added a second before the first period was out, and the Hurricanes led 2–0 at home, in front of a building that had waited a long time for this. Then it came apart. Tomas Hertl scored the go-ahead goal with 3:24 left in the third on a give-and-go with Colton Sissons, and Vegas walked out of Lenovo Center with a 5–4 win and a 1–0 series lead.
+The record book had never seen this exact thing: per the NHL, Vegas became the
+first road team in league history to come back from a multi-goal deficit to win Game 1 of a Stanley Cup Final.
+It was also their seventh straight playoff win. That is the kind of fact that gets a banner sentence on every broadcast. The harder question — the one this newsletter exists to ask — is whether the
+manner
+of the win tells us anything the scoreboard doesn’t.
+History Says 77%. The Math Says Calm Down.
+Start with the scary number for Carolina. Since the NHL went to a best-of-seven Final in 1939, the team that wins Game 1 has gone on to win the Cup 77.2% of the time — 61 of 79 series, according to NHL.com’s Facts and Figures. That is a genuinely lopsided historical edge, and it is the number every Vegas fan is repeating this week.
+But a historical
+base rate
+i
+blends together heavy favorites who happened to win Game 1 with coin-flip matchups that could have gone either way. It answers “how often has the Game 1 winner won?” — not “how much did winning Game 1, by itself, change the odds?” For that, you have to strip out everything except the lead.
+So do exactly that. Assume Carolina and Vegas are evenly matched — a true 50/50 each night, no home edge. Before puck drop, each team’s series win probability is 50%. After Vegas wins Game 1, the series becomes a best-of-six in which Vegas needs 3 of 6 and Carolina needs 4 of 6. Run the binomial, and Vegas’s win probability rises to about
+65.6%
+— up 15.6 points, not 27.
+The gap between 65.6% and 77.2% is the part that
+isn’t
+about the lead. It’s about the fact that teams good enough to reach a Final and win the opener are usually the better team to begin with. The lead is worth roughly two-thirds of the way to a coin flip’s answer; the reputation does the rest.
+The Math: What a 1–0 Lead Is Actually Worth
+Two evenly matched teams, 50% per game, no home advantage. Vegas leads 1–0. Remaining games: best-of-six, Vegas needs 3, Carolina needs 4.
+P(Vegas wins series | up 1-0, p=0.50)
+  = P(Vegas wins >= 3 of remaining 6 games)
+
+  Binomial(6, 0.50), sum k = 3..6:
+    k=3: 20/64     k=4: 15/64
+    k=5:  6/64     k=6:  1/64
+                 ---------
+    total = 42/64 = 0.656
+
+RESULT
+────────────────────────────────────────
+  Pre-series:        50.0%
+  After Game 1 win:  65.6%   (+15.6 pts)
+  Historical rate:   77.2%
+
+  The lead alone explains ~16 points.
+  The other ~11 points is teams that
+  win Game 1 usually being better
+  ANYWAY -- selection, not the lead.
+Translation for Raleigh: a 1–0 hole is a real disadvantage, but it is one win away from gone. Take a game on home ice and the series resets toward a coin flip. The Hurricanes are not 77% doomed. They are about a third-of-a-game behind.
+Two Historic Runs, One Trophy
+Vegas — The Road Comeback
+7
+Straight playoff wins through Game 1 of the Final
+The Golden Knights have now won seven in a row in these playoffs, and Game 1 was the signature of the streak: down 2–0 on the road in a Cup Final and unbothered, with Karlsson, Howden, and Hertl answering in the third. No road team had ever dug out of a multi-goal Game 1 hole in a Final. Vegas made it look like a Tuesday.
+Up 1–0, ~65.6% by the math
+Carolina — The Fast Start That Vanished
+0:25
+Ehlers’ opener — fastest in a Cup Final since 1976
+The Hurricanes did almost everything you’d script: scored 25 seconds in, built a two-goal lead, got contributions from Staal and Gostisbehere, and 18 saves from Frederik Andersen. They lost anyway. The lesson the math offers is consolation: the lead they surrendered cost them about 16 points of win probability, not 27. It is recoverable — the lead alone is worth about a third of a game, and home ice is built to answer it.
+A 1–0 lead is a head start, not a verdict
+“The Game 1 winner takes the Cup 77% of the time. But most of that number is reputation, not the one-goal lead. The lead itself is worth about a third of a game — exactly what Carolina can win back on home ice.”
+— The Sports Page, on the difference between a base rate and a cause
+We flagged this matchup before either team got here, and now it’s real: two of the most interesting rosters in hockey, both arriving on historic runs, playing for the same trophy. Vegas struck first in the rarest possible way. The series is not 77% decided. One Carolina win evens it — which is why winning Game 1 is a head start, not a verdict, no matter how rare the road comeback that produced it.

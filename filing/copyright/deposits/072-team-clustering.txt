@@ -1,0 +1,117 @@
+A Daily Statistics Newsletter
+The Sports Page
+"One strange number, explained."
+Vol. I, No. 95
+July 1, 2026
+Distributed Free to Friends & Family
+Every Team Has a Shape.
+The Mets' Shape Is Soto, Alone.
+Yesterday's piece said Juan Soto was ninety-four spots from the next Met. Today we plotted all thirty teams against that gap. The Mets are not the most lopsided roster in baseball — but they may be the only one where the lopsidedness is mostly the floor's fault, not the ceiling's.
+The Sports Page · In-Season Data: 2026 through June 11 · All 30 MLB rosters
+.671
+Mets mean OPS (29th)
+.906
+Juan Soto's OPS
+.250
+Gap: Soto over team median
+Take every hitter on a major league roster who has logged at least fifty plate appearances this season. Plot them all. Compute the team's plate-appearance-weighted mean OPS — that is the team's offensive average, the height of the lineup. Then compute the standard deviation of OPS across the team's hitters — the spread, the gap between the brand of bats at the top and the bottom.
+You get a two-axis grid.
+Up
+means the bats are spread out: a few stars, then a drop.
+Right
+means the lineup, on average, hits.
+Down
+means the bats are bunched together; everyone looks like everyone else.
+Left
+means the lineup, on average, does not hit.
+Figure 1 · Every MLB roster, 2026 season-to-date · n=30 teams
+The empty quadrant
+The first thing to notice is the bottom-right corner.
+Nobody is there.
+No team in baseball this season has assembled a lineup that is both above-average and tightly bunched at the top. Clustered excellence — a roster of nine hitters who all post seven-fifty or eight-hundred OPS, the way you might draw it up at a whiteboard — does not exist. The Dodgers and Yankees come closest in mean offense, and both of them are wide.
+That is structural. Front offices buy expensive bats one at a time. The first seven hundred thousand dollars per win on the open market goes to whoever the team needs most, and that is usually a star to anchor the order. The next seven hundred thousand is whoever is left on the market by the time the star is signed. So lineups grow up tall on one end and short on the other. The bottom-right corner is where the resource curve does not bend.
+The Phillies are the most top-heavy. The Mets are different.
+Up in the top-left, the
+Philadelphia Phillies
+are the most extreme top-heavy team in the league: mean OPS .706 against a within-team standard deviation of
+.149
+. Kyle Schwarber and Bryce Harper are doing most of the offensive work; the rest of the order is below replacement. The
+Astros
+are the same shape with a better mean — Yordan Álvarez has carried Houston this far.
+The Mets, by contrast, do not have the variance to match their reputation. Mean OPS .671 (twenty-ninth in the majors) with a standard deviation of .100 (eleventh-lowest). They are not "stars-and-scrubs." They are
+almost-scrubs-and-Soto.
+Soto has played at .906; every other Met with at least one hundred plate appearances is between .607 and .726. The "outlier" gap appears only because the floor is so low. Compare the Mets' middle of the order to the Royals or the Cubs — clustered mediocrity, but at least everybody hits the same.
+The Mets do not have a stars-and-scrubs problem. They have a one-star-and-everyone-else-is-the-same-height problem.
+The Shape of a Roster
+The Mets lineup, ranked
+Hitter
+Pos
+PA
+OPS
+Juan Soto
+LF
+218
+.906
+Francisco Álvarez
+C
+138
+.726
+Carson Benge
+RF
+255
+.714
+MJ Melendez
+DH
+112
+.695
+A.J. Ewing
+CF
+110
+.690
+Francisco Lindor
+SS
+105
+.669
+Luis Robert Jr.
+CF
+98
+.656
+Marcus Semien
+2B
+268
+.620
+Brett Baty
+3B
+229
+.619
+Mark Vientos
+1B
+204
+.611
+Bo Bichette
+3B
+296
+.607
+Soto is at one altitude. Eight Mets regulars are bunched between .607 and .726, the width of a single tier. The gap between Soto and the next regular (Francisco Álvarez at .726, with only one hundred and thirty-eight plate appearances behind it) is
+.180 of OPS
+— the size of the gap between a good MLB hitter and a roster-average hitter. The gap from Álvarez down to the bottom of the order is only one hundred and twenty points across eight names.
+What this means for the trade deadline
+Adding a second .800-OPS hitter would do more for the Mets than for almost any other team in baseball, because their floor is so high above the league minimum but their middle is so low. The Phillies' problem is harder — they would have to lift four below-replacement bats out of the order to move the needle. The Mets have nine players who are all roughly the same near-replacement-level hitter; replacing the worst two with anything average raises the team mean OPS by roughly twenty-five points.
+That is the case the Mets' front office will make in July. Whether the trade market lets them make it is a separate question.
+See Issue #76 ("Juan Soto Is 94 Spots From Help") for what the lineup looks like from the catcher's box, and the upcoming buy-or-sell tracker for what the next forty-eight days will say about it.
+Reading the chart yourself
+Every team is a single dot positioned by its mean OPS (horizontal) and the standard deviation of OPS across its hitters (vertical). The dashed lines are the MLB medians, so the chart breaks into four roughly equal quadrants.
+Top-right (top-heavy excellence) is where playoff favorites live: lineups that hit on average and have stars. Bottom-left (clustered mediocrity) is where rebuilding rosters live: lineups that do not hit and have no stars. Top-left (top-heavy mediocrity) is the saddest quadrant: a team where one or two bats are carrying the entire offense. Bottom-right (clustered excellence) is empty — nobody this year has assembled a uniformly above-average lineup.
+Notes & sources
+Cohort: every batter on every MLB roster with at least 50 plate appearances in the 2026 regular season through games of June 11. Stats pulled from the MLB Stats API. Mean OPS is plate-appearance-weighted within team; the standard deviation uses the same weights. Players are filtered by team affiliation as recorded by MLB; a player traded mid-season is counted under their current team. The MLB median for team mean OPS is .722; for standard deviation, .111. Mets and Astros' top hitters (Soto, Álvarez) are anchoring much of the team-vs-team variance you see in this chart.
+Standard deviation is a noisy measure on a 12-to-17-person sample; differences between similarly placed teams should not be over-interpreted. The four quadrant labels are an analytical shorthand, not a verdict on the front office.
+Pass it on.
+A few minutes to read. A few seconds to send.
+Share on X
+Facebook
+LinkedIn
+Email
+Copy link
+Or scan, for sharing the old-fashioned way.
+thesportspage.net
+© 2026 The Sports Page · A Statistical Dispatch for Friends & Family

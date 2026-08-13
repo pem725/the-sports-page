@@ -1,0 +1,125 @@
+A Daily Statistics Newsletter
+The Sports Page
+"One strange number, explained."
+Vol. I, No. 105
+July 11, 2026
+Distributed Free to Friends & Family
+Five Teams Have Looked Like the 2026 Astros.
+None Of Them Were Still a Dynasty.
+After Issue #76 used the team-analog framework to find the Mets's statistical twin, a reader asked us to check Houston. The result is bleaker than the Mets's. The Astros's closest match is the 2023 Cardinals, who had won 93 games the year before they collapsed; the four runners-up are all former contenders caught in the moment their window closed. Nobody from this lineage won a championship within five seasons. One reached one good playoff year. Two never quite came back.
+The Sports Page · Team-Analog Framework, Part II · Six-feature z-score nearest neighbor across 1,188 historical team-seasons
+.451
+Astros 2026 win pct
+4.90
+Astros 2026 team ERA
+2023
+Closest analog (Cardinals)
+From 2017 through 2024 the Houston Astros were the most consistently dominant team in baseball. Eight winning seasons in eight years. Five 100-win campaigns. Two World Series titles. The window stretched longer than almost any team has managed in the era of the soft cap, the player-rest revolution, and the analytics arms race. It was the kind of run that gets written about in retrospect as the franchise's golden age.
+The 2026 Astros are 33-40. Their team OPS sits at
+.730
+— respectable. Their team ERA is
+4.90
+— the worst it has been since 2014, a year when this franchise was supposed to lose. The 2026 club has, statistically, more in common with several years of mediocre baseball history than it does with itself two seasons ago.
+The five nearest neighbors
+The team-analog framework from Issue #76 takes each 2026 team's six-feature profile — OPS, ERA, K-per-PA, BB-per-PA, HR-per-PA, and winning percentage — and finds the nearest historical (team, season) cell in standardized space. For Houston, the top five are not a varied set:
+Team
+OPS
+ERA
+K/PA
+BB/PA
+HR/PA
+Win pct
+Year before
+2026 Astros (so far)
+.730
+4.90
+21.9%
+9.0%
+3.41%
+.451
+87–75
+2023 Cardinals
+.742
+4.79
+21.4%
+9.2%
+3.37%
+.438
+93 wins (NL Central champs)
+2021 Twins
+.737
+4.83
+23.1%
+8.6%
+3.75%
+.451
+2-time AL Central champs
+2019 Angels
+.746
+5.12
+20.4%
+9.4%
+3.52%
+.444
+prime Trout, never reached playoffs
+2018 Blue Jays
+.739
+4.85
+22.8%
+8.2%
+3.57%
+.451
+2015–16 ALCS run
+2017 Mets
+.754
+5.01
+20.9%
+8.6%
+3.63%
+.432
+2015 NL pennant
+Read the right-hand column carefully. The 2023 Cardinals had just won their division. The 2021 Twins had just won two in a row. The 2018 Blue Jays were two seasons removed from the ALCS. The 2017 Mets were the recent World Series losers. Every single team on this list was a recent contender whose previous season had ended in October.
+The framework is not just identifying clubs that look like the 2026 Astros statistically. It is identifying a
+category
+of clubs — the post-window team, the recently-faded contender, the front office about to discover whether its run was the start of a dynasty or just the end of a moment.
+Where they ended up
+Figure 1 · Win percentage trajectories for the five Astros analog teams in the years following their analog season
+The chart traces all five trajectories. None of them
+recovered
+i
+to championship form.
+The 2018 Blue Jays
+are the closest thing to a happy ending: after one more bad year in 2019, the Vladimir Guerrero Jr.-Bo Bichette generation broke through to multi-year contention, peaking at 94 wins in 2025.
+The 2017 Mets
+had one extraordinary year, the 101-win 2022 season, before relapsing.
+The 2021 Twins
+bounced back to a division title in 2023, then declined again.
+The 2023 Cardinals
+— the closest match — lifted their win pct to .512 and .481 in the two seasons after their collapse but have not yet returned to the playoffs.
+The 2019 Angels
+remain the cautionary tale: prime-era Mike Trout never reached the postseason again.
+The headline number to keep is this: across the five teams that have most statistically resembled the 2026 Astros, the average win percentage in the season immediately after their analog year was
+.463
+. Five seasons out, the average was
+.490
+. Neither figure is even a wild-card threshold. No team from this lineage won a championship in any of the seven seasons we have data for.
+The Astros's dynasty was real. The data says it is over. The data also says it usually does not come back in the same form, even when the front office tries.
+Team Analog, Part II
+What it means for the next twenty months
+The Houston front office has decisions in front of it that look very different in light of the analog. Yordan Álvarez turns 29 in late June. Kyle Tucker is twenty-nine. Alex Bregman has played in eight winning seasons in his nine-year career. None of those facts has changed; what has changed is the broader pitching staff, the bullpen depth, and the run-prevention infrastructure that turned every season since 2017 into a contention year.
+The trade deadline will be the most important inflection point. If Houston buys, they are betting against the lineage in Figure 1 — betting that they are the 2024 Cubs (a team whose 2014 trough fell entirely off the analog map by year five) rather than the 2020 Angels (a team whose trough was the start of a six-year valley). If they sell or stand pat, they are accepting the lineage and reinvesting in 2028.
+Either decision is defensible. The data does not declare a verdict. The data does, however, refuse to call this season noise. Three different years of context and five different historical analogs say the same thing: the Astros's championship window has closed in the way championship windows usually close in modern baseball — quickly, with the run-prevention falling apart first, and most of the recovery confined to one or two transient seasons rather than another sustained run.
+Notes & sources
+Data: MLB Stats API team-stats endpoint, 1985 through 2025 historical, plus 2026 partial through games of June 12. Six features per (team, year) cell: PA-weighted team OPS, team ERA, K-per-PA, BB-per-PA, HR-per-PA, winning percentage. Vectors are z-scored across all 1,188 historical cells (excluding 2026). Distance from each 2026 team to each historical cell is Euclidean.
+Astros 2026 numbers reflect games through June 12, 2026. Win percentage will move; rate stats are more stable but will also shift over the season. The analog should be read as a snapshot from the data we have now, not a guarantee of where the franchise ends 2026.
+Historical context (preceding seasons) compiled from MLB standings: 2022 Cardinals 93-69, NL Central champs; 2019–2020 Twins back-to-back AL Central champs; 2018 Trout-Pujols Angels 80-82, never reached postseason with Trout's prime; 2015–16 Blue Jays reached the ALCS; 2015 Mets reached the World Series. Post-analog trajectories drawn from the same standings data. The 2017 Mets and 2019 Angels series include the 60-game 2020 season.
+Pass it on.
+A few minutes to read. A few seconds to send.
+Share on X
+Facebook
+LinkedIn
+Email
+Copy link
+Or scan, for sharing the old-fashioned way.
+thesportspage.net
+© 2026 The Sports Page · A Statistical Dispatch for Friends & Family

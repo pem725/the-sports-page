@@ -1,0 +1,59 @@
+Precision
+vs.
+Accuracy
+Two words that sound like they should be synonyms. They live on perpendicular axes. A measurement can be precisely wrong, or roughly right, and the difference matters.
+Tier 1 · The Two-Minute Version
+The dartboard. Two ways to throw.
+Imagine a dartboard. You throw five darts. They all land in a tight cluster — touching each other — about six inches from the bullseye.
+You are
+precise
+. The darts agree with each other. The grouping is small.
+You are
+not accurate
+. The grouping is in the wrong place.
+Now imagine throwing five darts that scatter all over the board — one hits the wall, one hits the bullseye, one lands in the twenty-five ring. The center of all five throws, averaged together, is right on the bullseye.
+You are
+accurate
+. On average, you hit the target.
+You are
+not precise
+. The grouping is huge.
+That is the whole concept.
+Accuracy is how close you are to the truth on average. Precision is how close your readings are to each other.
+A measurement can be precise and wrong (the tight cluster six inches off). A measurement can be accurate and noisy (the scattered average). The two have nothing to do with each other except that we keep using the words like they are synonyms, which they are not.
+This matters in sports because a lot of the numbers you read are presented as if they were precise
+and
+accurate. The expected runs allowed projection of 3.17. The expected wins of 81.4. The predicted championship probability of 23.6%. All three of those numbers are presented to two or three decimal places, which is a precision claim. Whether they are accurate is a separate question.
+Tier 2 · If You Want to Go Deeper
+Significant digits, false precision, and the 6.86-issues-a-week problem.
+The header of this newsletter says
+6.86 issues per week
+. That number is doing work. It is communicating something the more natural "about seven a week" would not. Specifically: the newsletter is committing to a cadence with
+three digits of precision
+. The 6.86 is not seven. It is something specific: roughly six issues most weeks, with the occasional bonus or skipped day, producing an average that is precisely 6.86 over enough weeks.
+The number of
+significant digits
+in a measurement is a statement about how much confidence the measurer has in the answer. Six-point-eight-six is making a stronger claim than seven. Seven is making a stronger claim than "about a half-dozen." Each step adds information. Each step also raises the bar for being right.
+This is where sports numbers go wrong constantly. A player’s "expected" batting average reported as .293 looks like it is communicating precision to the thousandths. The underlying calculation is not that confident. The model that produced it has a confidence interval that is probably twenty to fifty points wide. Reporting it as .293 is a false-precision claim. Reporting it as
+"around .28 to .32, best guess .29"
+is what the math actually justifies.
+The same problem haunts win-probability charts that update to the tenth of a percent in real time, projection systems that report fractional wins, and predicted-margin-of-victory numbers that read like the bookies have a crystal ball. All of those are precision-coded statements about quantities that are accuracy-bounded. The math knows its own uncertainty. The presentation often does not.
+The corrective move is to
+match the digits to the confidence
+. If you only know the win total within five games, report a range, not a number. If you know the championship probability to within ten percentage points, do not write 23.6%. Write "about a one-in-four chance" or "low twenties." The decimal point is a promise. Do not write a promise you cannot keep.
+One historical note. The accuracy-precision distinction was named in metrology — the science of measurement — and has been a quietly important idea in chemistry, physics, and engineering for a century. The same idea has only slowly migrated into the statistical conversation around sports. The newsletter holds it as a discipline:
+only show as many digits as the underlying math earns
+. That is also why the masthead says 6.86, not 7, and not 6.86458571. The first cheats up. The third cheats down. The middle is the truth.
+Tier 3 · Take It to the Textbook
+The full treatment.
+The two questions here — reliability and validity — each get a chapter in the
+Checking Our Data
+part of
+The Sports Page’s companion statistics textbook
+, a free, open graduate text with the R code to try it yourself.
+Read it free here
+— the same “read, play, learn” idea, one rung deeper.
+Where this concept shows up in The Sports Page
+The masthead "6.86 issues per week" is a precision-vs.-accuracy demonstration. Hover over the number on the homepage for the long version.
+Sunday Editions — predictions are scored against ranges where possible, not point estimates
+Half-Life series (queued) — the survival probabilities are reported to one digit on purpose
