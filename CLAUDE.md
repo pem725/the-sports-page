@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 363 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 362 issues remaining of 500
 
 ## Repository Structure
 
@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 137 issues (#1-137)
-Queue: 14 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars, 131-cinderella-base-rate-expires, 132-triple-crown-spacing, _TEMPLATE)
+Published: 138 issues (#1-138)
+Queue: 13 articles ready (088-sorsby-supplemental-bet, 103-payroll-does-money-buy-wins, 104-payroll-explosion-arms-race, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars, 131-cinderella-base-rate-expires, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 363 issues remaining of 500
-Last published: Issue #137 — "The NCAA Is Expanding March Madness to 76. The Arithmetic Says Go to 365." (130-march-madness-invite-everyone.html) on August 12, 2026
+Goal: 362 issues remaining of 500
+Last published: Issue #138 — "Racing Fixed the Triple Crown’s Two-Week Problem by Moving It In Front of the Longest Race." (132-triple-crown-spacing.html) on August 13, 2026
