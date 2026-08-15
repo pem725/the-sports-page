@@ -304,21 +304,16 @@ def update_deeper(content, issue_num, today):
     # historical dates in the companion's text are never overwritten.
     date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2})?,?\s*\d{4}'
 
-    def _stamp_datebar(m):
-        db = re.sub(date_pattern, date_str, m.group(0))
-        # Some drafts use a literal TODO_DATE token instead of a month-name
-        # placeholder; the pattern above won't touch it, so handle it here.
-        # Scoped to the datebar so it can never clobber body content.
-        db = db.replace('TODO_DATE', date_str)
-        return db
+    def _stamp_dates(m):
+        return re.sub(date_pattern, date_str, m.group(0))
 
-    content = re.sub(
-        r'<div class="datebar">.*?</div>',
-        _stamp_datebar,
-        content,
-        count=1,
-        flags=re.DOTALL,
-    )
+    for pattern, limit in ((r'<div class="datebar">.*?</div>', 1),
+                           (r'<div class="footer">.*?</div>', 0),
+                           (r'<div class="byline">.*?</div>', 0)):
+        content = re.sub(pattern, _stamp_dates, content, count=limit,
+                         flags=re.DOTALL)
+    content = content.replace('TODO_DATE', date_str)   # see update_article
+    content = re.sub(r'Companion to Issue\s+_+', f'Companion to Issue {issue_num}', content)
     return content
 
 
@@ -334,12 +329,15 @@ def update_article(content, issue_num, today):
 
     # Update the issue number in the datebar/footer. Journal style is
     # "Vol. I, No. NN"; also accept legacy "Issue No. NN", keeping whichever
-    # label the file uses. Handles "__" and existing digits.
+    # label the file uses. Handles "__", "[TBD]" and existing digits.
+    # [TBD] was missing from this class for a long time, which is how
+    # "Vol. I, No. [TBD]" ended up in the masthead of two live issues.
     content = re.sub(
-        r'(Vol\. I, No\.|Issue No\.)\s*[_\d]+',
+        r'(Vol\. I, No\.|Issue No\.)\s*(?:\[TBD\]|[_\d]+)',
         lambda m: f'{m.group(1)} {issue_num}',
         content,
     )
+    content = re.sub(r'Companion to Issue\s+_+', f'Companion to Issue {issue_num}', content)
 
     # Update the publish date ONLY inside the datebar span. A document-wide
     # date regex previously clobbered historical dates in the article body —
@@ -348,21 +346,30 @@ def update_article(content, issue_num, today):
     # <title> date is already handled above.
     date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2})?,?\s*\d{4}'
 
-    def _stamp_datebar(m):
-        db = re.sub(date_pattern, date_str, m.group(0))
-        # Some drafts use a literal TODO_DATE token instead of a month-name
-        # placeholder; the pattern above won't touch it, so handle it here.
-        # Scoped to the datebar so it can never clobber body content.
-        db = db.replace('TODO_DATE', date_str)
-        return db
+    def _stamp_dates(m):
+        return re.sub(date_pattern, date_str, m.group(0))
 
-    content = re.sub(
-        r'<div class="datebar">.*?</div>',
-        _stamp_datebar,
-        content,
-        count=1,
-        flags=re.DOTALL,
-    )
+    # The date is stamped into three containers, not one. All three are
+    # furniture -- masthead, dateline, credit line -- so a date regex is safe
+    # inside them and unsafe outside them. Only the datebar was covered before,
+    # which is how nine issues shipped a footer reading "June __, 2026" and one
+    # carried it in the byline. Note the footer is NOT count=1: a couple of
+    # layouts carry the dateline in more than one span.
+    for pattern, limit in ((r'<div class="datebar">.*?</div>', 1),
+                           (r'<div class="footer">.*?</div>', 0),
+                           (r'<div class="byline">.*?</div>', 0)):
+        content = re.sub(pattern, _stamp_dates, content, count=limit,
+                         flags=re.DOTALL)
+
+    # The literal token TODO_DATE is replaced EVERYWHERE, not scoped like the
+    # date pattern above, and the difference is deliberate. The month-name
+    # pattern has to be scoped because it matches real prose -- it once
+    # overwrote all twelve death dates in the Memorial Day roll of honour.
+    # "TODO_DATE" matches nothing but itself, so scoping it bought no safety
+    # and cost coverage: the token also appears in the article FOOTER dateline,
+    # outside the datebar, where it shipped unreplaced to readers in 21
+    # published issues before anyone noticed.
+    content = content.replace('TODO_DATE', date_str)
 
     # Safety net: if the publish date now appears suspiciously often, the
     # body was likely clobbered. Abort rather than publish bad dates.
@@ -569,6 +576,18 @@ def main():
 
     # Step 6: Update the article HTML
     updated_content = update_article(content, issue_num, today)
+
+    # Post-substitution guard. The check further up runs on the file as drafted,
+    # where TODO_DATE is a legitimate placeholder waiting to be filled. This one
+    # runs on what is about to be written, and asks the only question that
+    # matters to a reader: is there a placeholder still visible on the page?
+    # Added after TODO_DATE shipped in the footer of 21 issues.
+    leftovers = sorted(set(re.findall(r"TODO_[A-Z0-9_]+|\{\{[A-Z0-9_]+\}\}|\[TBD\]",
+                                      updated_content)))
+    if leftovers:
+        fail(f"{filename} still contains {len(leftovers)} placeholder(s) AFTER "
+             f"substitution: {', '.join(leftovers)}. Something the stamping step "
+             f"was supposed to fill did not get filled. Not publishing.")
 
     if dry_run:
         print("\n--- DRY RUN ---")
