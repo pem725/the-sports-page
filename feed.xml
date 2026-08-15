@@ -8,7 +8,77 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Aug 2026 07:57:52 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 15 Aug 2026 07:07:53 GMT</lastBuildDate>
+    <item>
+      <title>#140: The Marlins Spend $299 Million Less Than the Mets. They’re 22 Games Ahead.</title>
+      <link>https://thesportspage.net/published/103-payroll-does-money-buy-wins.html</link>
+      <description>Baseball’s cheapest roster is beating its second-most-expensive by twenty-two games in the standings. It is the loudest example of a quiet, four-year truth: payroll and winning are related, but barely. Money explains about fifteen percent of who wins. The rest is everything a check cannot buy.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/103-payroll-does-money-buy-wins.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/103-payroll-does-money-buy-wins.png" alt="The Marlins Spend $299 Million Less Than the Mets. They’re 22 Games Ahead." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">The Marlins Spend $299 Million Less Than the Mets. <em>They&rsquo;re 22 Games Ahead.</em></h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">Baseball&rsquo;s cheapest roster is beating its second-most-expensive by twenty-two games in the standings. It is the loudest example of a quiet, four-year truth: payroll and winning are related, but barely. Money explains about fifteen percent of who wins. The rest is everything a check cannot buy.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; The Columnist &middot; Payrolls current 2026 (and 2022&ndash;25); records verified via the MLB Stats API through July 18</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v now" style="font-size:28px;font-weight:bold;line-height:1;display:block">15%</div><div class="l">of winning that payroll explains (2022&ndash;25, 120 team-seasons)</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v good" style="font-size:28px;font-weight:bold;line-height:1;display:block">$299M</div><div class="l">the Marlins&rsquo; payroll deficit to the Mets</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">22</div><div class="l">games the Marlins lead the Mets by</div></div>
+  </div>
+
+  <p>The Miami Marlins carry the smallest payroll in Major League Baseball, about <strong>$82 million</strong>. The New York Mets carry the second-largest, about <strong>$381 million</strong>. That is a gap of <strong>$299 million</strong> &mdash; the Mets spend nearly five dollars for every one the Marlins do. And on the eighteenth of July, the Marlins are 52&ndash;46 and the Mets are 41&ndash;57: the cheap team is <em>twenty-two games ahead of the expensive one</em> in the standings. Nor is Miami a lonely accident. The Guardians, baseball&rsquo;s second-thriftiest roster, are also above .500. The second-richest team in the sport is sixteen games under it.</p>
+
+  <p>The natural reaction is that something has gone haywire this year. It hasn&rsquo;t. This is baseball behaving normally, just louder than usual.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Money works &mdash; at the very top</h3>
+
+  <p>First, the honest half of the story: spending is not useless. The Dodgers own the biggest checkbook in the sport, roughly $415 million, and they are 62&ndash;36, the best team in baseball. The Yankees, third in payroll, are eleven games over .500. At the extreme high end, money does mostly turn into wins. Anyone claiming payroll is meaningless has not looked at the top of the table.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Payroll vs. wins, all 30 teams &middot; a real but weak relationship, and two loud outliers</div>
+<img src="https://thesportspage.net/assets/figures/103-payroll-does-money-buy-wins-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">But mostly, it doesn&rsquo;t</h3>
+
+  <p>Now the larger half. We took every team&rsquo;s payroll and winning percentage for four full seasons &mdash; 2022 through 2025, a hundred and twenty team-seasons &mdash; and measured how tightly the two move together. The <span class="cc" data-preview="A positive correlation that is far weaker than the headlines assume -- money and wins move together, but only loosely. Open the Pearson Correlation primer."><em>correlation</em><a class="cc-i" href="https://thesportspage.net/concepts/pearson-correlation.html" target="_blank" rel="noopener" aria-label="What is a correlation, and how weak is 0.39? Open primer.">i</a></span> is <strong>0.39</strong>: real, positive, and weak. Translated out of statistics, payroll explains about <strong>fifteen percent</strong> of who wins. The other eighty-five percent is health, player development, a sharp front office, and plain luck &mdash; and none of those is for sale.</p>
+
+  <p>Even that fifteen percent is an average of wild year-to-year swings. In 2022 money explained about a third of the standings. In 2023 it explained almost nothing.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">2023: the year the checkbook went quiet</h3>
+
+  <p>Look at what one ordinary season can do to the theory. In 2023 the Baltimore Orioles won 101 games on the second-lowest payroll in baseball, about $52 million. The Tampa Bay Rays won 99 on $65 million. The Braves won 104. Meanwhile the Mets, that year the single most expensive roster in the sport at $334 million, won 75 and finished fourth in their division. The payroll-to-wins correlation for the entire 2023 season was 0.15 &mdash; money and winning were near-strangers for a full year, and nobody had to invent an excuse for it. That is simply how noisy the relationship is.</p>
+
+  <p>And the same names keep beating the odds. The Rays and Guardians do it almost annually; the Brewers won 97 games and the best record in baseball on a bottom-third payroll in 2025. High-priced disappointment recurs just as reliably &mdash; the Angels have paid for a decade of superstars and reached zero Octobers; the Mets have carried the largest or second-largest payroll for years and produced one good season in four. The thing that separates the overachievers from the flops is not the size of the check. It is the judgment behind it.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">Payroll and winning are correlated. They are also, four years running, mostly strangers.</p>
+    <cite>2022&ndash;2025, one hundred and twenty team-seasons</cite>
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The checks got twenty-one times bigger. Their grip didn&rsquo;t.</h3>
+
+  <p>Here is the number that should end the argument. League-wide spending has gone from about $295 million in 1988 to <strong>$6.1 billion</strong> in 2026 &mdash; more than a twenty-fold increase. The Dodgers&rsquo; 2026 payroll <em>by itself</em>, roughly $415 million, is larger than the entire league&rsquo;s combined payroll as recently as 1989. Through all of that explosion, money&rsquo;s hold on the standings has stayed right around the same modest fifteen percent. The arms race got deafening. Its effect on winning did not budge.</p>
+
+  <p>So the next time a team hoists a trophy and the reflex is &ldquo;of course &mdash; look at that payroll,&rdquo; remember the arithmetic. Payroll is a genuine advantage and a small one; it colors a corner of the picture and leaves the rest to everything a check cannot reach. The Marlins are this year&rsquo;s reminder, in the plainest terms the sport offers: you can be the poorest team in the room and still be the best one on the field. The check writes the roster. It does not play the games.</p>
+
+  <hr>
+
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Current 2026 payrolls (Dodgers $415.2M highest, Mets $381.0M second, Marlins $81.9M lowest) and full-season 2022&ndash;2025 team payrolls are the reported figures; records are from the MLB Stats API (2026 through July 18; 2022&ndash;25 full seasons). The Marlins&ndash;Mets gap is $381.0M &minus; $81.9M = $299.1M; their standings gap is (52&ndash;46) versus (41&ndash;57), or 22 games.</p>
+    <p style="color:#c8b99a">The correlation is the Pearson r between team payroll and winning percentage. By season: 2022, r = 0.60; 2023, r = 0.15; 2024, r = 0.35; 2025, r = 0.49. Pooled across those four full seasons (120 team-seasons), r &asymp; 0.39, so r&sup2; &asymp; 0.15 &mdash; payroll accounts for roughly 15% of the variance in winning percentage. (Pooling combines raw dollar figures across years; because payrolls inflate over time, the per-season correlations are the cleaner within-year measures, and they average to the same modest range.) The 2026 season is partial and unusually flat, r &asymp; 0.09.</p>
+    <p style="color:#c8b99a">League-wide payroll totals: about $294.9M in 1988 and $6.13B in 2026. In 1989 the league total was about $350.9M, less than the Dodgers&rsquo; 2026 payroll alone. Historical team examples (2023 Orioles $52M/101 wins, Rays $65M/99 wins, Mets $334M/75 wins; 2025 Brewers on a bottom-third payroll with the best record) are drawn from the same season-by-season payroll and standings data.</p>
+  </div>
+
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
+    <span>The Sports Page &middot; Vol. I, No. 140</span>
+    <span>Does Money Buy Wins?</span>
+    <span>TODO_DATE &middot; New York, NY</span>
+  </div>
+</div>]]></content:encoded>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/103-payroll-does-money-buy-wins.html</guid>
+    </item>
     <item>
       <title>#139: Every 12-Over-5 Number You Have Ever Heard Was Measured on a Bracket That Stops Existing in 2027.</title>
       <link>https://thesportspage.net/published/131-cinderella-base-rate-expires.html</link>
