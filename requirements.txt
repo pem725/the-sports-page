@@ -9,3 +9,5 @@
 
 Pillow>=10.0        # raster compositing for the 1200x630 OG cards
 cairosvg>=2.7       # rasterises the inline SVG figures into those cards
+textstat>=0.7       # Flesch-Kincaid scoring for scripts/check_readability.py
+beautifulsoup4>=4.12 # HTML parsing for the readability and copyright scripts

@@ -620,6 +620,14 @@ def main():
         deeper_published = True
         print(f"Moved queue/{deeper_filename} → published/{deeper_filename}")
 
+    # Step 8.5: Readability. A WARNING, never a block — the issue is already
+    # written and the day's publication should not hang on a style score. But the
+    # warning is real: it lands in SOFT_FAILURES, so main() exits non-zero and
+    # GitHub Actions sends the alert email, which is the monitoring signal we
+    # actually want. Target is sixth-grade; see the first Editorial Rule.
+    run_soft(f'python3 scripts/check_readability.py --quiet "published/{filename}"',
+             f"readability (target grade 6) for {filename}")
+
     # Step 8.6: Render the per-issue Open Graph card (1200×630 PNG).
     # Must run BEFORE the share-section refresh so the inject step picks up
     # the new card path. Non-fatal if Pillow / fonts unavailable.

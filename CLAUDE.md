@@ -192,6 +192,44 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 
 ## Editorial Rules
 
+- **BOTTOM LINE UP FRONT, AND WRITE IT PLAIN.** This is the first rule because a
+  reader told us on 2026-08-16 that the newsletter had become too opaque, and the
+  archive agreed: median Flesch-Kincaid grade **7.8**, consensus grade **9**, only
+  13 of 167 works at grade 6 or below. It had also drifted — the first twenty
+  issues ran grade **6.8** and ~1,000 words, the last twenty ran **7.9** and
+  ~1,270. Harder and longer, gradually, without anyone choosing it.
+
+  Two requirements, both checkable:
+
+  1. **The finding goes in the first breath.** The deck and the opening sentences
+     state what happened and the number it rests on. Do not build to it. Do not
+     set the scene. A reader who stops after two sentences should still have the
+     point. *"A weak team wins 29 games out of 100 over a full season. In one
+     sudden-death game it wins 48."* — that is an opening. *"Yesterday's piece
+     found that a fan's deepest wound is always the identical injury…"* is a
+     throat-clear.
+  2. **Target a sixth-grade reading level.** Flesch-Kincaid **≤ 6.0**;
+     6.0–7.0 is a warning; above 7.0 the draft is not ready. Practically: average
+     sentence under ~14 words, few sentences over 25, plain words over Latinate
+     ones (*about* not *approximately*, *shows* not *demonstrates*, *so* not
+     *consequently*), one idea per sentence.
+
+  **Run the check before queueing anything:**
+  ```
+  python3 scripts/check_readability.py queue/NNN-slug.html
+  ```
+  It reports the grade, flags long sentences, lists long words with short
+  replacements, names AI/opacity tells drawn from the `humanizer` skill, and says
+  whether a number appears in the opening. Autopublish runs it too, as a warning
+  rather than a block.
+
+  **Plain is not dumb, and plain is not soulless.** The `humanizer` skill
+  (`~/.claude/skills/humanizer/SKILL.md`) is the reference for voice: vary
+  sentence rhythm, have opinions, admit uncertainty, cut the promotional
+  adjectives. Short sentences with nothing behind them are worse than long ones.
+  The depth belongs in the concept primer and the methods box — the issue itself
+  should be readable at a bus stop.
+
 - **Triple-verify every number**: Every statistic, record, score, streak, or standing published in an issue MUST be verified against at least 3 independent sources (e.g., ESPN, Baseball-Reference, MLB.com). If sources disagree, resolve the discrepancy before publishing. Never infer a number from another number (e.g., don't assume a losing streak grew by 1 because the record changed — check the actual game-by-game results). A newsletter built on statistical credibility cannot publish wrong numbers.
 - **Single question per issue**: Every issue focuses on ONE statistical question.
 - **No holiday specials**: Sports content only, no seasonal gimmicks. The ONE exception is MLB Opening Day — see below.
