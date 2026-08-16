@@ -84,7 +84,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <div id="main-content" class="paper">
 
 <h1 class="hed">When the Number Starts to <em>Mean</em> Something</h1>
-<div class="deck">Every April, a hitter on a hot streak hits .450 and fans decide he is the MVP. Every April, the same hitter regresses and fans decide he is finished. Both readings are wrong for the same reason: the denominator is too small. Here is the reference card.</div>
+<div class="deck">A hitter goes .450 in April and fans call him the MVP. He cools off and they call him finished. Both readings are wrong for the same reason: too few at-bats. Batting average needs about <strong>910</strong> of them before it means much. Strikeout rate needs <strong>60</strong>. Here is the card.</div>
 <div class="byline">By The Professor &middot; The Sports Page &middot; A Reader&rsquo;s Pocket Guide</div>
 
 <div class="stat-row">
@@ -93,9 +93,13 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   <div class="sc"><div class="v good">100</div><div class="l">Attempts for FG%</div></div>
 </div>
 
-<p>Stabilization is a technical term. A statistic "stabilizes" at the sample size at which the player&rsquo;s observed performance, regressed appropriately toward the league mean, correlates strongly with his true underlying talent. Below that sample, the stat is information-light: the league average is a better predictor of future performance than the player&rsquo;s own hot or cold number. Above it, the player&rsquo;s own number begins to carry real signal.</p>
+<p>&ldquo;Stabilization&rdquo; sounds technical. It is simple.</p>
 
-<p>The numbers below are the approximate stabilization thresholds &mdash; the points at which the reliability coefficient reaches roughly 0.5, meaning half the variance in observed performance reflects real ability.</p>
+<p>A stat stabilizes at the point where a player&rsquo;s own number starts telling you more about him than the league average does.</p>
+
+<p>Below that point the number is nearly empty. You would predict his future better by ignoring his hot streak and using the league average. Above it, his own number carries real signal.</p>
+
+<p>The numbers below are those thresholds. Each is the point where about half of what you see is real ability and half is still luck.</p>
 
 <h2 class="sh">Reference Table</h2>
 
@@ -121,20 +125,24 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
 <h2 class="sh">How to Use This</h2>
 
-<p>Three rules of thumb the table reduces to, for any sport:</p>
+<p>The table comes down to three rules, and they work in any sport.</p>
 
-<p><strong>One:</strong> If a rate stat is below its stabilization threshold in games played, treat the player&rsquo;s career rate (or a league baseline for rookies) as the better predictor than the current-season hot or cold streak. This is the canonical answer to "who is the MVP through April?" The MVP through April is usually whoever the MVP was last year.</p>
+<p><strong>One.</strong> If a rate stat has not reached its threshold yet, trust the player&rsquo;s career rate instead of this season&rsquo;s streak. For a rookie, use a league baseline.</p>
 
-<p><strong>Two:</strong> Counting stats (home runs, sacks, goals) do not have stabilization thresholds in the same sense &mdash; they are cumulative, not rate. Their April values are literal and predictive within limits.</p>
+<p>That is the real answer to &ldquo;who is the MVP through April?&rdquo; The MVP through April is usually whoever won it last year.</p>
 
-<p><strong>Three:</strong> Peripheral rate stats &mdash; strikeout rate for a hitter, K-BB% for a pitcher &mdash; stabilize <em>much</em> faster than outcome stats like batting average or ERA. When someone wants to know in April whether a player is real, the right stats to look at are the peripherals, not the top-line.</p>
+<p><strong>Two.</strong> Counting stats are different. Home runs, sacks and goals pile up rather than average out, so they have no threshold in this sense. Ten home runs in April really are ten home runs.</p>
+
+<p><strong>Three.</strong> Some stats settle much faster than others. Strikeout rate for a hitter, or strikeouts minus walks for a pitcher, firm up long before batting average or ERA do.</p>
+
+<p>So when you want to know in April whether a player is real, look at those. Not the headline number.</p>
 
 <div class="pull">
   <p>&ldquo;The first stat to trust is the fastest one to stabilize. Strikeout rate tells you what batting average wants to be when it grows up.&rdquo;</p>
   <cite>&mdash; The Professor, on which April numbers are actually real</cite>
 </div>
 
-<p>Save this table. It is the reference we will point at whenever this newsletter, or a reader, is tempted to overreact to a <span class="cc" data-preview="A hot or cold stretch of a few games barely moves what we should believe. Why small samples prove little. Open the Sample Size primer."><em>small sample</em><a class="cc-i" href="https://thesportspage.net/concepts/sample-size.html" target="_blank" rel="noopener" aria-label="Why do small samples prove little? Open primer.">i</a></span>.</p>
+<p>Save this table. It is what we will point at whenever this newsletter, or a reader, is tempted to overreact to a <span class="cc" data-preview="A hot or cold stretch of a few games barely moves what we should believe. Why small samples prove little. Open the Sample Size primer."><em>small sample</em><a class="cc-i" href="https://thesportspage.net/concepts/sample-size.html" target="_blank" rel="noopener" aria-label="Why do small samples prove little? Open primer.">i</a></span>.</p>
 
   <!-- STORY IDEAS INBOX (compact) -->
   <aside id="pitch" style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.7rem 0;margin:1.6rem 0 .4rem;font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">

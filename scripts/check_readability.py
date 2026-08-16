@@ -70,7 +70,13 @@ def article_text(path):
     soup = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
     body = soup.find(id="main-content") or soup.body or soup
     body = BeautifulSoup(str(body), "html.parser")
-    for sel in ("script", "style", "nav", "svg", "figcaption"):
+    # Tables are scanned, not read. Flattening one into running text produces a
+    # nonsense "sentence" -- the reference card in Issue #026 came out as a
+    # single 181-word sentence and dragged the whole piece two grades. Excluding
+    # them scores the prose, which is the thing a reader actually reads through.
+    # The trade-off is real and worth stating: an argument buried in table cells
+    # is not measured. Keep arguments in paragraphs.
+    for sel in ("script", "style", "nav", "svg", "figcaption", "table"):
         for t in body.find_all(sel):
             t.decompose()
     for cls in ("footer", "skip-link", "methods", "datebar", "masthead"):

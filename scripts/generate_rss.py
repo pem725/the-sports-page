@@ -179,7 +179,15 @@ def get_index_dates():
                 dt = datetime.datetime.strptime(date_str, "%B %-d, %Y")
             except ValueError:
                 continue
-        result[filename] = (int(num), dt)
+        # Pin to UTC. strptime returns a NAIVE datetime, and .timestamp() then
+        # reads it in whatever timezone the machine happens to be in -- so the
+        # same index.html produced "00:00:00 GMT" on GitHub's UTC runner and
+        # "04:00:00 GMT" on a laptop in New York. Every one of the 140 pubDates
+        # changed depending on WHERE the script ran. An RSS-to-email bridge that
+        # treats a changed pubDate as a changed post could have mailed the entire
+        # back catalogue to every subscriber because someone regenerated the feed
+        # locally. Anchoring to UTC makes the output identical everywhere.
+        result[filename] = (int(num), dt.replace(tzinfo=datetime.timezone.utc))
     return result
 
 
