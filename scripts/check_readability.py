@@ -102,10 +102,16 @@ def bluf_check(path, text):
     """
     soup = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
     deck = soup.find(class_="deck")
-    opening = " ".join(sentences(text)[:2])
+    # First 60 WORDS, not first 2 sentences. Headlines are often two sentences
+    # by themselves ("A Math Teacher Invented the Point Spread. It Took Forty
+    # Years to Reach Your Living Room."), so a sentence-based window could stop
+    # before reaching the deck and report "no number" on a piece that leads with
+    # one. Words are the honest unit: it is roughly what a reader takes in
+    # before deciding to stay.
+    opening = " ".join(text.split()[:60])
     has_num = bool(re.search(r"\d", opening))
     deck_num = bool(re.search(r"\d", deck.get_text(" ", strip=True))) if deck else False
-    return has_num, deck_num, opening[:150]
+    return has_num, deck_num, opening[:170]
 
 
 def score(path, quiet=False):
