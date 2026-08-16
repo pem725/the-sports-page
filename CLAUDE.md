@@ -280,9 +280,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 140 issues (#1-140)
-Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars, _TEMPLATE)
+Published: 141 issues (#1-141)
+Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 117-sweetest-moment-mirror, 118-point-spread-history, 119-bet-became-a-stock, 120-endowment-myth, 121-football-money-calibration, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 360 issues remaining of 500
-Last published: Issue #140 — "The Marlins Spend $299 Million Less Than the Mets. They’re 22 Games Ahead." (103-payroll-does-money-buy-wins.html) on August 15, 2026
+Goal: 359 issues remaining of 500
+Last published: Issue #141 — "Six Issues, One Live Prediction, and a Deadline That Changed Everything." (sunday-019.html) on August 16, 2026

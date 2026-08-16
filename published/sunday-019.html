@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Sunday Edition No. 019 — August 16, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.desk{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.desk{padding:1.6rem 1.4rem}}
+
+/* ── SUNDAY EDITION EXTRAS ── */
+.intro{font-size:1.05rem;line-height:1.75;margin-bottom:1.8rem;padding:1.2rem 1.5rem;background:var(--card);border-left:4px solid var(--steel);color:var(--ink)}
+.issue-list{list-style:none;padding:0;margin:0 0 1.8rem}
+.issue-list li{font-size:.9rem;line-height:1.65;padding:.5rem 0;border-bottom:1px solid var(--div)}
+.issue-list li:last-child{border-bottom:none}
+.issue-list .inum{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;color:var(--steel);margin-right:.4rem}
+.issue-list .idate{font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);margin-right:.4rem}
+.issue-list a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3);font-weight:700;transition:border-color .2s}
+.issue-list a:hover{border-color:var(--rust)}
+.box.green-box{background:var(--green)}
+.box.green-box h3{color:#e0f0e8}
+.box.green-box p{color:#c8edcf}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="Six Issues, One Live Prediction, and a Deadline That Changed Everything">
+<meta property="og:description" content="The Sports Page Sunday Edition No. 019 — grading the week's work against reality.">
+<meta property="og:url" content="https://thesportspage.net/published/sunday-019.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Six Issues, One Live Prediction, and a Deadline That Changed Everything">
+<meta name="twitter:description" content="The Sports Page Sunday Edition No. 019 — grading the week's work against reality.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/banner.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Sunday Edition &middot; Week 19 Recap &middot; All Sports</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Sunday Edition No. 019 &middot; Issue No. 141</span>
+    <span>August 16, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Six Issues, One Live Prediction, and a Deadline <em>That Changed Everything.</em></h1>
+
+  <div class="deck">
+    This week the newsletter published five structural analyses and one live baseball probability. The deadline passed two weeks ago while the newsletter was writing about base rates and variance. The math held. The Red Sox acquired Adley Rutschman. The Mets stayed where they were. Accountability follows.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; August 16, 2026 &middot; Sunday Edition No. 019</div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    Welcome to Sunday Edition No. 019. This week was a structural week &mdash; tournament design, Triple Crown spacing, payroll correlations, the mathematics of heartbreak. Only one issue made a live probabilistic forecast with a scoreable near-term outcome: the Boston Red Sox&rsquo;s 94% chance of reaching October. That prediction gets a full update below. The rest of the week was analytical work that will be graded on longer timelines: March Madness 2027, the 2027 Triple Crown, the next three centuries of 12-over-5 upsets. This is the part where we account for what we can actually check today.
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">140</div><div class="l">Issues Published</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">1 Pending</div><div class="l">Live Prediction in Flight</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">360</div><div class="l">Issues to Our 500 Goal</div></div>
+  </div>
+
+  <!-- SECTION 1: THE WEEK IN REVIEW -->
+  <h2 class="sh">The Week in Review: Issues #135&ndash;140</h2>
+
+  <ol class="issue-list">
+    <li><span class="inum">#135</span><span class="idate">Aug 10</span> &mdash; <a href="129-one-in-one-hundred-nine.html" target="_blank" rel="noopener">109 Teams Have Been Exactly Where Boston Was on July 3. One Made the Playoffs.</a> &mdash; The 25&ndash;3 run is a one-in-seventy-thousand event. Base rates, survivorship bias, and why the story we&rsquo;re about to be sold about the Red Sox cannot teach what it claims to teach.</li>
+    <li><span class="inum">#136</span><span class="idate">Aug 11</span> &mdash; <a href="116-deepest-wound-same-shape.html" target="_blank" rel="noopener">The Deepest Wound in Sports Is Always the Same Shape.</a> &mdash; The 1993 Notre Dame field goal, the 2022 overtime coin toss, the 2011 World Series with two strikes twice. Three different sports. One wound. The math says why it always lands at the summit.</li>
+    <li><span class="inum">#137</span><span class="idate">Aug 12</span> &mdash; <a href="130-march-madness-invite-everyone.html" target="_blank" rel="noopener">The NCAA Is Expanding March Madness to 76. The Arithmetic Says Go to 365.</a> &mdash; Open the field to every Division I programme, run double elimination, and you get ten times the elimination games on 59% fewer total games &mdash; and a more reliable champion, not a worse one.</li>
+    <li><span class="inum">#138</span><span class="idate">Aug 13</span> &mdash; <a href="132-triple-crown-spacing.html" target="_blank" rel="noopener">Racing Fixed the Triple Crown&rsquo;s Two-Week Problem by Moving It In Front of the Longest Race.</a> &mdash; The 2027 Preakness gets an extra week of rest. The Belmont gets 13 days, down from 21 &mdash; and gets 20% longer at the same time. The window is identical. The squeeze moved.</li>
+    <li><span class="inum">#139</span><span class="idate">Aug 14</span> &mdash; <a href="131-cinderella-base-rate-expires.html" target="_blank" rel="noopener">Every 12-Over-5 Number You Have Ever Heard Was Measured on a Bracket That Stops Existing in 2027.</a> &mdash; Expansion pushes the 12-over-5 upset rate from ~33% to ~38%. Detecting that shift empirically requires roughly 300 years of March Madness. Nobody watching will ever know if we&rsquo;re right.</li>
+    <li><span class="inum">#140</span><span class="idate">Aug 15</span> &mdash; <a href="103-payroll-does-money-buy-wins.html" target="_blank" rel="noopener">The Marlins Spend $299 Million Less Than the Mets. They&rsquo;re 22 Games Ahead.</a> &mdash; Four seasons, 120 team-years, r&nbsp;&asymp;&nbsp;0.39. Payroll explains 15% of winning. The other 85% is what a check cannot buy.</li>
+  </ol>
+
+  <hr>
+
+  <!-- SECTION 2: THE PREDICTION SCORECARD -->
+  <h2 class="sh">The Prediction Scorecard</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>Issue</th><th>Prediction</th><th>Current Outcome</th><th>Grade</th></tr>
+    </thead>
+    <tbody>
+      <tr class="match">
+        <td class="mono">#135</td>
+        <td><strong>Boston Red Sox: 94% chance of reaching the October playoffs.</strong> Model input: 62&ndash;51, fresh off a 25&ndash;3 run. Playoff probability from 200,000 simulated AL season finishes.</td>
+        <td>Red Sox are 64&ndash;56 as of August 16, holding an AL Wild Card position. They also acquired catcher Adley Rutschman at the August 3 deadline &mdash; a meaningful upgrade for a team in genuine contention. They went 2&ndash;5 in the six days after the issue published, which trimmed their winning percentage from .549 to .533. Still in. Deadline acquisitions bolster the case.</td>
+        <td class="mono">PENDING &mdash; directionally on track. Wild Card slot held. Season finishes in late September.</td>
+      </tr>
+      <tr>
+        <td class="mono">#136</td>
+        <td>Structural argument: the champion&rsquo;s edge collapses from ~71% over a full season to ~52% in a single sudden-death moment. No scoreable near-term outcome.</td>
+        <td>N/A &mdash; mathematical framework, not a sports outcome prediction.</td>
+        <td class="mono">N/A</td>
+      </tr>
+      <tr>
+        <td class="mono">#137</td>
+        <td>Under double-elimination, the best team in the country wins the title 55% of the time vs. 45% under the 76-team single-elimination field.</td>
+        <td>N/A &mdash; 2027 format design. Cannot be scored until the first 365-team tournament runs.</td>
+        <td class="mono">N/A</td>
+      </tr>
+      <tr>
+        <td class="mono">#138</td>
+        <td>Structural argument: the 2027 schedule compresses pre-Belmont rest from 21 days to 13 while lengthening the race by 20%. No 2026 outcome to score.</td>
+        <td>N/A &mdash; 2027 event. Check back next June.</td>
+        <td class="mono">N/A</td>
+      </tr>
+      <tr>
+        <td class="mono">#139</td>
+        <td>The 12-over-5 upset rate will rise ~5 points (33% &rarr; 38%) under the 76-team field. Detecting this will take ~300 years.</td>
+        <td>N/A &mdash; the piece itself states this cannot be empirically resolved within a human lifetime. That is not a cop-out; it is the finding.</td>
+        <td class="mono">N/A</td>
+      </tr>
+      <tr>
+        <td class="mono">#140</td>
+        <td>Structural claim: payroll explains ~15% of winning. No directional prediction about specific 2026 outcomes.</td>
+        <td>Update: Mets are now 53&ndash;69 (were 41&ndash;57 on July 18 at the time of the analysis). They went 12&ndash;12 in the month since &mdash; which is, if anything, a worse return on $381M than the July snapshot suggested. The Marlins, per available splits, appear to have gone roughly 10&ndash;15 over the same stretch, narrowing their lead over the Mets from 22 games to approximately 8&ndash;9. The core thesis &mdash; that payroll explains ~15% of outcomes &mdash; is a structural claim about four seasons of data and does not hinge on any single month.</td>
+        <td class="mono">N/A for prediction scoring; factual update noted</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- SECTION 3: WHAT WE GOT RIGHT -->
+  <h2 class="sh">What We Got Right</h2>
+
+  <div class="box green-box">
+    <h3>The Wins</h3>
+    <p>The base-rate framing in Issue #135 is holding. Boston is still in a Wild Card slot. The 94% model was not predicting a specific game-by-game path; it was estimating the probability of an October appearance from that record. Six days later the record has wobbled (2&ndash;5 since the issue), but the destination probability has not materially changed. When the model says 94%, losing a short stretch while holding a playoff position is the expected experience, not a refutation of it.</p>
+    <p>The trade deadline update strengthens the case. Boston acquired Adley Rutschman &mdash; a genuine defensive upgrade at catcher and a more than passable bat. A team that was already 94% to reach October just improved its roster. If anything, the posterior probability is slightly higher today than it was when the model ran.</p>
+    <p>The payroll analysis from Issue #140 continues to describe the world accurately. The Mets are 53&ndash;69 on a $381M payroll. The core correlation figure (r&nbsp;&asymp;&nbsp;0.39, explaining ~15% of winning) is a structural estimate over four seasons and is not disturbed by any single month of play.</p>
+  </div>
+
+  <!-- SECTION 4: WHAT WE GOT WRONG -->
+  <h2 class="sh">What We Got Wrong (or Aren&rsquo;t Sure About)</h2>
+
+  <div class="box">
+    <h3>Factual Updates and Honest Gaps</h3>
+    <p>The newsletter published nothing about the trade deadline. The August 3 deadline was the most consequential day of the MLB mid-season &mdash; Dodgers acquired Tarik Skubal (two-time Cy Young winner), Red Sox got Rutschman, Cubs added Clay Holmes, Phillies got Luis Arraez. The newsletter was writing about tournament formats and base rates while the actual current roster-building moment of the season went unexamined. That is not a forecasting error; it is an editorial gap. The queue contains plenty of structural analysis. Timeliness on live deadline moves was sacrificed.</p>
+    <p>The Marlins&ndash;Mets payroll gap has narrowed. The article cited a 22-game lead for Miami as of July 18. Current available data suggests the lead has shrunk to roughly 8&ndash;9 games &mdash; the Mets have gone 12&ndash;12 over the past month while the Marlins appear to have gone about 10&ndash;15. Neither team is in playoff contention. The article made no prediction about the size of the gap in August; the narrowing is new data, not a miss. But it is worth noting that the &ldquo;loudest example of payroll mismatch&rdquo; has become less loud as the season progresses. Regression to the mean is doing what regression to the mean does.</p>
+    <p>Issue #135 claimed a one-in-seventy-thousand probability for Boston&rsquo;s 25&ndash;3 run. That probability was not a prediction; it was a description of what had already happened. The run is now over &mdash; Boston went 2&ndash;5 in the six days since the issue published. This is not a miss. The article explicitly warned against drawing lessons from the exceptional case. The exceptional run ended at the moment the article described it. Nothing about that sequence violates the model.</p>
+  </div>
+
+  <!-- PULL QUOTE 1 -->
+  <div class="pull">
+    <p>The 94% was not a promise. It was a probability. Six games later, they&rsquo;re still in. That is what 94% looks like from the inside &mdash; uncertain, then still in.</p>
+    <cite>&mdash; The Sports Page, Issue No. 141</cite>
+  </div>
+
+  <!-- SECTION 5: OVER-REACTIONS AND UNDER-REACTIONS -->
+  <h2 class="sh">Over-Reactions and Under-Reactions</h2>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--rust);margin-bottom:.6rem">Over-Reactions</h3>
+      <p>None this week in the strict sense. Every piece was careful about the scope of its claims. The March Madness piece said the 365-team proposal was a thought experiment, not an advocacy position. The Triple Crown piece measured days and furlongs, not horse outcomes. The base-rate piece on Boston explicitly told you not to draw a lesson from the survivor. None of these overclaimed.</p>
+      <p>The editorial gap on the trade deadline is probably the closest thing. Publishing a piece on payroll mechanics (Issue #140) on August 15 &mdash; twelve days after the deadline shifted rosters across the league &mdash; was structurally fine but editorially late. A timely deadline piece would have used live data from August 3, not July 18.</p>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--steel);margin-bottom:.6rem">Under-Reactions</h3>
+      <p>The Dodgers acquiring Tarik Skubal deserved its own issue. Moving a two-time Cy Young winner from a contender (Detroit) to a better-resourced contender (Los Angeles) is exactly the kind of transaction that deserves Bayesian analysis: how much does a true-talent ace shift a playoff series win probability? That piece is not in the queue. It should be.</p>
+      <p>The Boston streak cooling (2&ndash;5 since Issue #135) is not a crisis, but it is a signal worth tracking. A team that was 94% to reach October on a historic 25&ndash;3 run is now navigating the regression the model always implied was coming. The 94% was calculated from a posterior that said their true talent was roughly .460&ndash;.540. A 2&ndash;5 stretch is completely inside that range. We are watching the model in real time.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 5.5: WHAT READERS READ — auto-populated by scripts/fetch_readership.py -->
+  <h2 class="sh">What Readers Read &middot; Aug 9&ndash;Aug 15</h2>
+<p><em>Readership data pending &mdash; the analytics pipeline installed recently, and last week&rsquo;s counts were not captured. This section will populate starting with the first full week of data.</em></p>
+
+  <hr>
+
+  <!-- SECTION 6: THE ROAD AHEAD -->
+  <h2 class="sh">The Road Ahead</h2>
+
+  <p>The queue has a dense stretch of betting and money pieces: the origins of the point spread, how a sports bet became a liquid security on Kalshi, and the Notre Dame endowment myth. These are analytical pieces about structure &mdash; how money flows through sports, how probability estimates become prices. They sit well in August, when baseball is in its long final turn and football is three weeks from Week 1.</p>
+
+  <p>After those, a cluster of college football money pieces that will carry the newsletter into CFB season. The two-sport calendar &mdash; MLB pennant races and CFB opening weeks &mdash; is arriving on schedule. Expect more live predictions once the rosters are set and the games are real.</p>
+
+  <p>The Boston story resolves in late September. The model says 94%. The Red Sox say they&rsquo;re 64&ndash;56 and have Rutschman now. We&rsquo;ll all find out together.</p>
+
+  <!-- FINAL PULL QUOTE -->
+  <div class="pull">
+    <p>One hundred forty issues. Three hundred sixty to go. The math keeps running whether we watch it or not.</p>
+    <cite>&mdash; The Sports Page, on the long game</cite>
+  </div>
+
+  <!-- STORY IDEAS INBOX (compact) -->
+  <aside id="pitch" style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.7rem 0;margin:1.6rem 0 .4rem;font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <span style="text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600">Pitch a stat &rarr;</span>
+      <input type="text" name="sport" placeholder="Sport" style="font-family:inherit;font-size:.7rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;width:5rem">
+      <input type="text" name="idea" placeholder="The weird number you noticed" required style="font-family:'Libre Baskerville',serif;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;flex:1;min-width:12rem">
+      <button id="pitch-btn" type="submit" style="background:var(--ink);color:var(--cream);font-family:inherit;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.32rem .7rem;cursor:pointer">Send</button>
+      <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea" style="color:var(--steel);text-decoration:none;font-size:.6rem" target="_blank" rel="noopener">or GitHub</a>
+    </form>
+    <div id="pitch-ok" style="display:none;margin-top:.3rem;color:var(--green);font-size:.62rem">Sent. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;margin-top:.3rem;color:var(--rust);font-size:.62rem">Failed &mdash; try the GitHub link.</div>
+  </aside>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='…';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='Send';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Sunday Edition No. 019 &middot; Issue No. 141</span>
+    <span>Predictions tracked from Issues #135&ndash;140</span>
+    <span>See you next Sunday</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/sunday-019.html">
+
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+
+    <a href="https://twitter.com/intent/tweet?text=Six%20Issues%2C%20One%20Live%20Prediction%2C%20and%20a%20Deadline%20That%20Changed%20Everything%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/sunday-019.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:background .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/sunday-019.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/sunday-019.html%3Futm_source%3Dlinkedin%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20Six%20Issues%2C%20One%20Live%20Prediction%2C%20and%20a%20Deadline%20That%20Changed%20Everything&body=Read%20it%20here%3A%20https%3A//thesportspage.net/published/sunday-019.html%3Futm_source%3Demail%26utm_medium%3Dshare%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/sunday-019.html?utm_source=copylink&utm_medium=share"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+
+  </div>
+
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+
+  <a href="https://thesportspage.net/" style="text-decoration:none" target="_blank" rel="noopener"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none" target="_blank" rel="noopener"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)" target="_blank" rel="noopener">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+
+</section>
+
+<!-- COPY-LINK INTERACTION -->
+<script>
+(function(){
+  var btn = document.getElementById('sp-copy-link');
+  if (!btn) return;
+  var label = document.getElementById('sp-copy-label');
+  var url = btn.getAttribute('data-url');
+  btn.addEventListener('click', function(){
+    try {
+      navigator.clipboard.writeText(url).then(function(){
+        label.textContent = 'Copied!';
+        btn.style.background = '#c9962a';
+        btn.style.color = '#1a1208';
+        setTimeout(function(){
+          label.textContent = 'Copy link';
+          btn.style.background = 'transparent';
+          btn.style.color = '#c9962a';
+        }, 1800);
+      });
+    } catch (e) {
+      window.prompt('Copy this link:', url);
+    }
+  });
+})();
+</script>
+</body>
+</html>
