@@ -79,7 +79,14 @@ def article_text(path):
     for sel in ("script", "style", "nav", "svg", "figcaption", "table"):
         for t in body.find_all(sel):
             t.decompose()
-    for cls in ("footer", "skip-link", "methods", "datebar", "masthead"):
+    # Furniture, not prose. The byline and the stat cards are scanned like a
+    # dashboard, and flattening them produced two distinct measurement errors:
+    # they were reported as one enormous run-on "sentence" ("The Sports Page -
+    # The Professor - part two ... 29% an underdog's chance ..."), and they ate
+    # most of the 130-word window the reader's-contract check uses, so a piece
+    # that opened with a clearly stated question was scored as having none.
+    for cls in ("footer", "skip-link", "methods", "datebar", "masthead",
+                "byline", "stat-row", "sc", "chart-label", "chart-note"):
         for t in body.find_all(class_=cls):
             t.decompose()
     # Sourcing boxes are citations, not argument, and a different register --
@@ -120,6 +127,48 @@ def bluf_check(path, text):
     return has_num, deck_num, opening[:170]
 
 
+# ---------------------------------------------------------------- reader's contract
+#
+# Plain sentences are not the same as a clear piece. Issue #142 scored grade 5.0
+# and was still opaque, because a reader could not tell what question it was
+# answering, why the answer was surprising, or what to do with it. Simple words,
+# invisible purpose.
+#
+# So four things have to be findable near the top of every issue:
+#   1. the QUESTION it answers, written as a question
+#   2. the ANSWER, with its number   (covered by the bottom-line-up-front check)
+#   3. why the answer is SURPRISING -- what a reasonable person would have expected
+#   4. what the reader can TAKE HOME
+#
+# HONEST LIMIT: this detects the presence of those signals, not their quality. It
+# cannot tell a real question from a rhetorical one, or a genuine surprise from a
+# claimed one. It catches the piece that never tries. A human still has to read it.
+QUESTION_WINDOW = 130      # words
+
+SURPRISE = re.compile(
+    r"surpris|counterintuit|you would (expect|think)|most people (assume|think|expect)"
+    r"|the opposite|turns out|against intuition|everyone (assumes|thinks|believes)"
+    r"|nearly everyone|the answer is no|it is not|it isn't|wrong for the same reason"
+    r"|feels obvious|sounds like|you might think", re.I)
+
+TAKEAWAY = re.compile(
+    r"take home|take away|takeaway|the lesson|what (this|it) teaches"
+    r"|what to carry|worth carrying|what to do with", re.I)
+
+
+def contract(path, text):
+    """Returns (has_question, has_surprise, has_takeaway, the question found)."""
+    opening = " ".join(text.split()[:QUESTION_WINDOW])
+    q = None
+    for sent in sentences(opening):
+        if "?" in sent:
+            q = sent.strip()
+            break
+    soup = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
+    heads = " ".join(h.get_text(" ", strip=True) for h in soup.find_all(class_="sh"))
+    return bool(q), bool(SURPRISE.search(text)), bool(TAKEAWAY.search(heads)), q
+
+
 def score(path, quiet=False):
     text = article_text(path)
     words = text.split()
@@ -134,7 +183,17 @@ def score(path, quiet=False):
     hard = sorted({w: r for w, r in HARD_WORDS.items() if re.search(rf"\b{re.escape(w)}\b", low)}.items())
     has_num, deck_num, opening = bluf_check(path, text)
 
-    status = "PASS" if fk <= TARGET_GRADE else ("WARN" if fk <= WARN_GRADE else "FAIL")
+    has_q, has_s, has_t, the_q = contract(path, text)
+    missing = [n for n, ok in (("question", has_q), ("surprise", has_s),
+                               ("takeaway", has_t)) if not ok]
+
+    grade_status = ("PASS" if fk <= TARGET_GRADE else
+                    "WARN" if fk <= WARN_GRADE else "FAIL")
+    # A piece that reads easily but never says what it is for is not finished.
+    # Two or more missing frame elements is a fail on its own.
+    frame_status = "PASS" if not missing else ("WARN" if len(missing) == 1 else "FAIL")
+    status = max((grade_status, frame_status),
+                 key=lambda s: {"PASS": 0, "WARN": 1, "FAIL": 2}[s])
     if quiet and status == "PASS":
         return status
 
@@ -144,10 +203,21 @@ def score(path, quiet=False):
     print(f"  {len(words)} words, {len(ss)} sentences, "
           f"avg {len(words)/max(len(ss),1):.1f} words/sentence")
 
-    print(f"\n  BOTTOM LINE UP FRONT")
+    print(f"\n  BOTTOM LINE UP FRONT   [{grade_status} on grade]")
     print(f"    number in first two sentences : {'yes' if has_num else 'NO -- the piece is warming up'}")
     print(f"    number in the deck            : {'yes' if deck_num else 'NO'}")
     print(f"    opens: {opening!r}")
+
+    print(f"\n  READER'S CONTRACT   [{frame_status}]")
+    print(f"    states a QUESTION up front    : "
+          + (f"yes -- {the_q[:80]!r}" if has_q else
+             "NO -- reader cannot tell what is being asked"))
+    print(f"    names why it is SURPRISING    : "
+          + ("yes" if has_s else "NO -- reader cannot tell why the answer is news"))
+    print(f"    has a TAKEAWAY section        : "
+          + ("yes" if has_t else "NO -- reader cannot tell what to do with it"))
+    if missing:
+        print(f"    missing: {', '.join(missing)}")
 
     if long_ss:
         print(f"\n  LONG SENTENCES ({len(long_ss)} over {LONG_SENTENCE} words) -- split these:")

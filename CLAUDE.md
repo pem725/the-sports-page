@@ -192,7 +192,37 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 
 ## Editorial Rules
 
-- **BOTTOM LINE UP FRONT, AND WRITE IT PLAIN.** This is the first rule because a
+- **THE READER'S CONTRACT — say what the piece is FOR.** Added 2026-08-17 after
+  Issue #142 scored a Flesch-Kincaid grade of **5.0** and was still opaque. Simple
+  words, invisible purpose. A sixth-grader could read every sentence and still not
+  know why the piece existed.
+
+  So four things must be findable in the first ~130 words, plainly labelled:
+
+  1. **The question.** Written as an actual question, with a question mark.
+     *"Why does an upset feel so much better than an ordinary win?"*
+  2. **The answer, with its number.** *"A team that wins 29 of 100 over a season
+     wins 48 of 100 in one sudden-death game."*
+  3. **Why it is surprising.** Name what a reasonable person would have expected,
+     then say how the answer differs. *"Most people assume a one-game playoff
+     merely fails to protect the better team. It does something stronger."*
+  4. **What the reader gets.** What they will be able to see or do afterwards.
+
+  Then close with a **titled takeaway section** — "What to take home: …".
+
+  **The measured baseline, so the gap is not in doubt.** Across 146 published
+  issues: only **7%** had a takeaway section, only **12%** asked a question in the
+  opening, only **28%** ever named an expectation contrast. The frame was not
+  slipping; it was mostly absent.
+
+  `scripts/check_readability.py` now reports a READER'S CONTRACT verdict alongside
+  the grade, and the worse of the two decides PASS/WARN/FAIL. Two missing elements
+  is a fail on its own. **Honest limit, stated in the code too:** it detects
+  whether those signals are *present*, not whether they are *good*. It cannot tell
+  a real question from a rhetorical one. It catches the piece that never tries; a
+  human still has to read it.
+
+- **BOTTOM LINE UP FRONT, AND WRITE IT PLAIN.** This is the second rule because a
   reader told us on 2026-08-16 that the newsletter had become too opaque, and the
   archive agreed: median Flesch-Kincaid grade **7.8**, consensus grade **9**, only
   13 of 167 works at grade 6 or below. It had also drifted — the first twenty
