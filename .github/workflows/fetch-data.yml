@@ -18,7 +18,7 @@ on:
         required: true
         default: check
         type: choice
-        options: [check, cfb, youtube, discover-channels, channel-volume, all]
+        options: [check, cfb, youtube, discover-channels, filter-exclusive, channel-volume, top50-discover, all]
       query:
         description: "Comma-separated queries/programs (youtube, discover-channels)"
         required: false
@@ -61,6 +61,19 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
         run: python3 scripts/remote_fetch.py --discover "${{ inputs.query }}"
+
+      - name: Discover channels for the top N programs
+        if: ${{ inputs.what == 'top50-discover' }}
+        env:
+          CFBD_KEY: ${{ secrets.CFBD_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
+        run: python3 scripts/remote_fetch.py --top ${{ inputs.pages }}
+
+      - name: Keep only football-exclusive channels
+        if: ${{ inputs.what == 'filter-exclusive' }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
+        run: python3 scripts/remote_fetch.py --filter-exclusive
 
       - name: Channel-based volume
         if: ${{ inputs.what == 'channel-volume' }}

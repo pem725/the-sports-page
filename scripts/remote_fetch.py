@@ -201,6 +201,35 @@ def discover_channels(program, want=8):
     return out[:want]
 
 
+FOOTBALL = ("football","qb","quarterback","offense","defense","recruit","depth chart",
+            "spring game","fall camp","gameday","kickoff","touchdown","secondary","o-line",
+            "d-line","linebacker","wide receiver","running back","transfer portal","signing",
+            "bowl","playoff","cfb","gridiron","snap","coordinator","spring ball")
+OTHER_SPORT = ("basketball","hoops","volleyball","baseball","softball","soccer","hockey",
+               "wrestling","track","gymnastics","swimming","tennis","golf","lacrosse","rowing")
+
+
+def channel_football_share(ch, sample=50):
+    """What share of a channel's recent uploads are football? ~2 quota units.
+
+    This is the test for 'football-exclusive'. A name check cannot do it: an
+    official athletics channel is called 'Nebraska Huskers' and posts volleyball,
+    while 'Eleven Warriors' is entirely Ohio State football. Only the content
+    answers it. Heuristic, and stated as such -- it reads titles, not video."""
+    key = os.environ[YT]
+    p = {"part": "snippet", "playlistId": ch["uploads_playlist"], "maxResults": min(sample,50), "key": key}
+    try:
+        _, d = get(f"https://www.googleapis.com/youtube/v3/playlistItems?{urllib.parse.urlencode(p)}")
+    except urllib.error.HTTPError:
+        return None
+    titles = [i["snippet"]["title"].lower() for i in d.get("items", [])]
+    if len(titles) < 8:
+        return None
+    fb = sum(any(k in t for k in FOOTBALL) for t in titles)
+    ot = sum(any(k in t for k in OTHER_SPORT) for t in titles)
+    return {"sampled": len(titles), "football": fb/len(titles), "other_sport": ot/len(titles)}
+
+
 def channel_volume(channels, days=30):
     """Uploads and views per channel within the last `days`. ~2 units per channel."""
     key = os.environ[YT]
@@ -244,6 +273,21 @@ def channel_volume(channels, days=30):
     return vids
 
 
+def top_programs(n=50, year=2025):
+    """Top-N FBS programs by CFBD talent composite -- a defensible, verifiable
+    ranking rather than a hand-picked list. Talent is recruiting-based, so it
+    measures programs people invest in, which is the right frame for an
+    attention study."""
+    key = os.environ[CFBD]
+    h = {"Authorization": f"Bearer {key}", "Accept": "application/json"}
+    _, t = get(f"https://api.collegefootballdata.com/talent?year={year}", h)
+    _, fbs = get(f"https://api.collegefootballdata.com/teams/fbs?year={year}", h)
+    ok = {x["school"] for x in fbs}
+    rows = [x for x in t if x.get("school") in ok]
+    rows.sort(key=lambda x: -float(x.get("talent", 0)))
+    return [x["school"] for x in rows[:n]]
+
+
 def cfb():
     key = os.environ[CFBD]
     h = {"Authorization": f"Bearer {key}", "Accept": "application/json"}
@@ -267,10 +311,15 @@ def main():
     ap.add_argument("--discover", metavar="PROGRAMS", help="comma-separated; finds channels")
     ap.add_argument("--channel-volume", action="store_true")
     ap.add_argument("--days", type=int, default=30)
+    ap.add_argument("--top", type=int, help="discover channels for the top N CFBD programs")
+    ap.add_argument("--filter-exclusive", action="store_true",
+                    help="keep only channels whose recent uploads are mostly football")
+    ap.add_argument("--min-football", type=float, default=0.70)
+    ap.add_argument("--max-other", type=float, default=0.15)
     a = ap.parse_args()
     os.makedirs(DATA, exist_ok=True)
 
-    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume):
+    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume or a.top or a.filter_exclusive):
         print("credential smoke test:")
         return 0 if check() else 1
 
@@ -282,6 +331,45 @@ def main():
         print(f"  wrote {p}: {len(d['fbs_2026'])} FBS teams, "
               f"{len(d['nd_schedule_2026'])} ND games, "
               f"SP+ {'available' if isinstance(sp, list) else sp}")
+
+    if a.top:
+        progs = top_programs(a.top)
+        print(f"  top {a.top} programs by CFBD talent: {progs[0]}, {progs[1]}, ... {progs[-1]}")
+        print(f"  discovery cost ~{len(progs)*100:,} quota units")
+        out = {}
+        for i, pr in enumerate(progs, 1):
+            try:
+                ch = discover_channels(pr + " football")
+            except urllib.error.HTTPError as e:
+                print(f"    [{i}/{len(progs)}] {pr:<22} HTTP {e.code} -- stopping (quota?)"); break
+            out[pr] = ch
+            print(f"    [{i}/{len(progs)}] {pr:<22} {len(ch)} channels")
+        path = os.path.join(DATA, "youtube-channels.json")
+        json.dump(out, open(path, "w"), indent=1)
+        print(f"  wrote {path}")
+
+    if a.filter_exclusive:
+        path = os.path.join(DATA, "youtube-channels.json")
+        chans = json.load(open(path))
+        kept, dropped = {}, 0
+        for pr, ch in chans.items():
+            keep = []
+            for c in ch:
+                sh = channel_football_share(c)
+                if sh is None:
+                    dropped += 1; continue
+                c["football_share"] = round(sh["football"], 3)
+                c["other_sport_share"] = round(sh["other_sport"], 3)
+                if sh["football"] >= a.min_football and sh["other_sport"] <= a.max_other:
+                    keep.append(c)
+                else:
+                    dropped += 1
+            kept[pr] = keep
+            print(f"    {pr:<22} kept {len(keep)}/{len(ch)}")
+        json.dump(kept, open(path, "w"), indent=1)
+        n=sum(len(v) for v in kept.values())
+        print(f"  kept {n} football-exclusive channels, dropped {dropped}")
+        print(f"  thresholds: football >= {a.min_football:.0%}, other sport <= {a.max_other:.0%}")
 
     if a.discover:
         progs = [q.strip() for q in a.discover.split(",") if q.strip()]
