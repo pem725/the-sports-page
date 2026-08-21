@@ -1,0 +1,76 @@
+name: Fetch Data (credentialed)
+
+# Runs the calls that need an API key, INSIDE Actions, where the secrets live.
+#
+# GitHub Actions secrets are write-only: nothing can read one back out, so any
+# code needing a key has to run here rather than on a laptop. This job fetches,
+# commits the results into data/, and everything downstream then reads committed
+# data and needs no credential at all.
+#
+# Triggerable from a phone: repo -> Actions -> "Fetch Data (credentialed)" ->
+# "Run workflow". Choose what to fetch from the dropdown.
+
+on:
+  workflow_dispatch:
+    inputs:
+      what:
+        description: "What to fetch"
+        required: true
+        default: check
+        type: choice
+        options: [check, cfb, youtube, all]
+      query:
+        description: "YouTube search query (only used for youtube/all)"
+        required: false
+        default: "Notre Dame football"
+      pages:
+        description: "YouTube search pages (50 videos each; 100 quota units per page)"
+        required: false
+        default: "3"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Always smoke-test the credentials first and print the result. This is the
+      # "do the keys work" answer, produced where the keys actually are. It prints
+      # status codes and salted fingerprints, never a value.
+      - name: Credential smoke test
+        env:
+          CFBD_KEY: ${{ secrets.CFBD_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API }}
+        run: python3 scripts/remote_fetch.py --check
+
+      - name: Fetch CFB data
+        if: ${{ inputs.what == 'cfb' || inputs.what == 'all' }}
+        env:
+          CFBD_KEY: ${{ secrets.CFBD_KEY }}
+        run: python3 scripts/remote_fetch.py --cfb
+
+      - name: Fetch YouTube data
+        if: ${{ inputs.what == 'youtube' || inputs.what == 'all' }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API }}
+        run: python3 scripts/remote_fetch.py --youtube "${{ inputs.query }}" --pages ${{ inputs.pages }}
+
+      - name: Commit whatever was fetched
+        if: ${{ inputs.what != 'check' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "no data changes"
+          else
+            git commit -m "Fetch data: ${{ inputs.what }} (workflow run ${{ github.run_number }})"
+            git push
+          fi
