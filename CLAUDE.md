@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 355 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 354 issues remaining of 500
 
 ## Repository Structure
 
@@ -385,9 +385,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 145 issues (#1-145)
-Queue: 7 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 121-football-money-calibration, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars, _TEMPLATE)
+Published: 146 issues (#1-146)
+Queue: 6 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 122-only-21-of-133, 123-one-that-got-away, 124-how-many-stars, _TEMPLATE)
 Concept primers: 25 published (latest: concepts/denominator-problem.html, Concept No. 25)
 Reserve: 1 evergreen piece
-Goal: 355 issues remaining of 500
-Last published: Issue #145 — "The Bet Became a Stock. And a Stock Is Just a Probability With a Ticker." (119-bet-became-a-stock.html) on August 20, 2026
+Goal: 354 issues remaining of 500
+Last published: Issue #146 — "Ohio State Football Cleared $33 Million. The Athletic Department Lost $38 Million. Both Are True." (121-football-money-calibration.html) on August 21, 2026
