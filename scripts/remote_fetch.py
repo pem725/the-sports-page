@@ -282,10 +282,16 @@ def top_programs(n=50, year=2025):
     h = {"Authorization": f"Bearer {key}", "Accept": "application/json"}
     _, t = get(f"https://api.collegefootballdata.com/talent?year={year}", h)
     _, fbs = get(f"https://api.collegefootballdata.com/teams/fbs?year={year}", h)
+    # CFBD is inconsistent: /talent rows carry "team", /teams/fbs carry "school".
+    # Reading "school" off a talent row silently yields None for every row, which
+    # filtered the whole list to empty rather than erroring.
     ok = {x["school"] for x in fbs}
-    rows = [x for x in t if x.get("school") in ok]
+    rows = [x for x in t if x.get("team") in ok]
+    if not rows:
+        raise SystemExit(f"no talent rows matched FBS teams "
+                         f"(talent n={len(t)}, fbs n={len(fbs)}) -- check the field names")
     rows.sort(key=lambda x: -float(x.get("talent", 0)))
-    return [x["school"] for x in rows[:n]]
+    return [x["team"] for x in rows[:n]]
 
 
 def cfb():
