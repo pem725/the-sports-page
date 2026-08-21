@@ -196,11 +196,27 @@ def main():
               f"SP+ {'available' if isinstance(sp, list) else sp}")
 
     if a.youtube:
-        d = youtube_volume(a.youtube, a.pages)
-        slug = "".join(c if c.isalnum() else "-" for c in a.youtube.lower()).strip("-")
-        p = os.path.join(DATA, f"youtube-{slug}.json")
-        json.dump(d, open(p, "w"), indent=1)
-        print(f"  wrote {p}: {d['videos_found']} videos, {d['total_views']:,} total views")
+        # Comma-separated queries so a whole comparison set lands in one run.
+        # Quota arithmetic, because it is easy to blow through: search.list costs
+        # 100 units per page against 10,000/day, videos.list costs 1 per call of
+        # up to 50 ids. So N programs x P pages costs about N*P*100 units.
+        queries = [q.strip() for q in a.youtube.split(",") if q.strip()]
+        cost = len(queries) * a.pages * 100
+        print(f"  {len(queries)} queries x {a.pages} pages ~= {cost:,} quota units of 10,000/day")
+        if cost > 9000:
+            print("  refusing: that would exhaust the daily quota"); return 1
+        results = {}
+        for q in queries:
+            d = youtube_volume(q, a.pages)
+            results[q] = d
+            print(f"    {q:<26} {d['videos_found']:>4} videos  {d['total_views']:>12,} views")
+        if len(queries) == 1:
+            slug = "".join(c if c.isalnum() else "-" for c in queries[0].lower()).strip("-")
+            out = os.path.join(DATA, f"youtube-{slug}.json"); payload = results[queries[0]]
+        else:
+            out = os.path.join(DATA, "youtube-programs.json"); payload = results
+        json.dump(payload, open(out, "w"), indent=1)
+        print(f"  wrote {out}")
     return 0
 
 
