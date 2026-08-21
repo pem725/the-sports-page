@@ -47,7 +47,7 @@ jobs:
       - name: Credential smoke test
         env:
           CFBD_KEY: ${{ secrets.CFBD_KEY }}
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API }}
+          YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
         run: python3 scripts/remote_fetch.py --check
 
       - name: Fetch CFB data
@@ -59,7 +59,7 @@ jobs:
       - name: Fetch YouTube data
         if: ${{ inputs.what == 'youtube' || inputs.what == 'all' }}
         env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API }}
+          YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
         run: python3 scripts/remote_fetch.py --youtube "${{ inputs.query }}" --pages ${{ inputs.pages }}
 
       - name: Commit whatever was fetched
