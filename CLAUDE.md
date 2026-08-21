@@ -159,11 +159,17 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
    manufacture drama. A Sunday Edition that cannot find anything it got wrong is
    usually a Sunday Edition that did not look.
 
-   Then run all three checks before publishing:
+   Then run both checks before publishing:
    ```
    python3 scripts/check_readability.py queue/sunday-NNN.html
    python3 scripts/check_voice.py queue/sunday-NNN.html
    ```
+
+   **The template passes the frame check but is deliberately THIN on voice** —
+   its example prose is scaffolding, not writing. A filled template scores
+   `thin: you, imperative`, and that is a reminder, not a bug: the recap sections
+   are yours to write, in the second person, with the imperatives. If the finished
+   edition still reads thin, the sections were filled in rather than written.
 
 6. **Replace every example value in the working file** (`queue/sunday-NNN.html`):
    - Title and masthead: set correct Sunday Edition number, date, and reader-facing issue number (count published non-sunday issues + count of published sunday issues + 1)
