@@ -73,17 +73,42 @@ class _Editor:
         self.n += 1
 
 
+def _structure(text):
+    """Counts of the containers an edit must never disturb."""
+    return {t: (len(re.findall(rf"<{t}\b", text)), len(re.findall(rf"</{t}>", text)))
+            for t in ("svg", "div", "table", "figure")}
+
+
 @contextmanager
 def edit(path):
     original = open(path, encoding="utf-8").read()
     hed_before = HED.search(original)
+    struct_before = _structure(original)
     e = _Editor(original)
     yield e
+
     hed_after = HED.search(e.s)
     assert (hed_before is None) == (hed_after is None), "headline element vanished"
     if hed_before:
         assert hed_before.group(1) == hed_after.group(1), (
             "HEADLINE CHANGED -- refusing to write. The RSS title and the OG card "
             "both derive from it.")
+
+    # Structural guard, added after a hard lesson. During the readability pass a
+    # regex aimed at a paragraph matched a region that STARTED INSIDE AN <svg>,
+    # and deleting it took the chart's three data curves, five labels, two
+    # markers, the closing </svg>, the closing </div> and a section heading with
+    # it. Both affected issues then scored as PASSING -- because the unclosed
+    # <svg> swallowed the rest of the article, so the checker was grading a
+    # quarter of the piece. A broken figure shipped live and the metrics said
+    # everything was fine. Container counts must come out unchanged.
+    struct_after = _structure(e.s)
+    for tag, (o_b, c_b) in struct_before.items():
+        o_a, c_a = struct_after[tag]
+        assert (o_a, c_a) == (o_b, c_b), (
+            f"STRUCTURE CHANGED for <{tag}>: was {o_b} open/{c_b} close, "
+            f"now {o_a}/{c_a}. An edit crossed a container boundary. Refusing to write.")
+        assert o_a == c_a, f"<{tag}> is unbalanced ({o_a} open, {c_a} close)"
+
     open(path, "w", encoding="utf-8").write(e.s)
-    print(f"  {path}: {e.n} edits, headline intact")
+    print(f"  {path}: {e.n} edits, headline + structure intact")
