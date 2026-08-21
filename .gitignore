@@ -28,3 +28,9 @@ audio/
 # tracked -- they are the corpus record of what was filed and when. The ZIPs are
 # just those same files bundled for upload, so they are rebuilt, not stored.
 filing/copyright/batches/*/deposit.zip
+
+# Never. Secrets live in ~/.config/secrets/tokens.env, outside any repo.
+*.env
+!.env.example
+secrets/
+tokens.env

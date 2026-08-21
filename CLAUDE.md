@@ -214,6 +214,51 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 - **Analytical**: Trade analyses, historical comparisons, series pieces. Publish to fill gaps.
 - **Evergreen**: Off-season analyses, methodology explainers. Publish anytime.
 
+## Secrets — non-negotiable
+
+**Never expand a secret in a shell command. Ever.** Not to check it, not to
+confirm it exists, not "just this once."
+
+This rule exists because the same mistake leaked a live token into a chat
+transcript **twice in one week**, both times from a check that looked safe:
+
+```bash
+echo "TOKEN: ${TOKEN:+SET}${TOKEN:-unset}"     # LEAKS THE VALUE
+```
+
+`${VAR:-default}` substitutes the **value** when the variable is set. The
+`${VAR:+SET}` half is harmless; the `:-` half prints the secret, and the pair
+reads as a safe presence check. Being careful is not the fix — careful failed
+twice.
+
+**Where secrets live:** `~/.config/secrets/tokens.env`, mode 600, in a 700
+directory, sourced from `~/.zshrc`. Not in `~/.zshrc` itself, not in the repo,
+not in any file git can see. Reference them by name only: `$CFBD_KEY`.
+
+**To check one, use the tool, which has no code path that can print a value:**
+```bash
+python3 scripts/check_env.py                # all of them
+python3 scripts/check_env.py CFBD_KEY       # one
+```
+It reports SET/unset, length, and a salted SHA-256 fingerprint. The fingerprint
+is stable, so it confirms a rotation actually changed the token while revealing
+nothing about it.
+
+**Banned outright:**
+```bash
+echo $TOKEN            env | grep TOKEN         printenv TOKEN
+echo "${TOKEN:-x}"     set | grep TOKEN         curl -v -H "Authorization: $TOKEN"
+```
+Passing a secret to `curl -H` is fine. Adding `-v` or `--trace` to that same
+command is not — it echoes the header.
+
+**For CI**, use `gh secret set NAME` and paste at the prompt, or
+`gh secret set NAME < file`. Both read the value without echoing it. Never put a
+token in a workflow file.
+
+**If a secret is ever exposed, rotating it is the only remedy.** Moving it
+somewhere safer afterwards does nothing for the value that already leaked.
+
 ## Editorial Rules
 
 - **WRITE IN PATRICK'S TEACHING VOICE.** Added 2026-08-20. The house voice is not
