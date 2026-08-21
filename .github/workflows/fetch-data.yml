@@ -18,13 +18,13 @@ on:
         required: true
         default: check
         type: choice
-        options: [check, cfb, youtube, all]
+        options: [check, cfb, youtube, discover-channels, channel-volume, all]
       query:
-        description: "YouTube search query (only used for youtube/all)"
+        description: "Comma-separated queries/programs (youtube, discover-channels)"
         required: false
         default: "Notre Dame football"
       pages:
-        description: "YouTube search pages (50 videos each; 100 quota units per page)"
+        description: "search pages for 'youtube'; DAYS of history for 'channel-volume'"
         required: false
         default: "3"
 
@@ -55,6 +55,18 @@ jobs:
         env:
           CFBD_KEY: ${{ secrets.CFBD_KEY }}
         run: python3 scripts/remote_fetch.py --cfb
+
+      - name: Discover YouTube channels
+        if: ${{ inputs.what == 'discover-channels' }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
+        run: python3 scripts/remote_fetch.py --discover "${{ inputs.query }}"
+
+      - name: Channel-based volume
+        if: ${{ inputs.what == 'channel-volume' }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
+        run: python3 scripts/remote_fetch.py --channel-volume --days ${{ inputs.pages }}
 
       - name: Fetch YouTube data
         if: ${{ inputs.what == 'youtube' || inputs.what == 'all' }}

@@ -30,6 +30,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+import datetime as dt
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")
@@ -159,6 +160,90 @@ def youtube_volume(query, pages=3):
             "total_views": sum(v["views"] for v in vids), "videos": vids}
 
 
+
+# ---------------------------------------------------------------------------
+# Channel-based volume. The keyword version does not work.
+#
+# Searching "Michigan football" on a global platform returns Spanish-language
+# soccer -- one such clip was 672,435 views and over HALF of Michigan's measured
+# total. "Georgia football" matches the national team. Roughly 9-13% of every
+# program's keyword results were off-topic, and because views are so skewed,
+# that fraction drove the totals.
+#
+# Dedicated channels fix it: a channel about Notre Dame posts about Notre Dame.
+# It is also ~100x cheaper. search.list costs 100 quota units per call;
+# playlistItems.list and videos.list cost 1 each per 50 items. Discovery still
+# uses search (once per program), but the recurring measurement does not.
+# ---------------------------------------------------------------------------
+
+def discover_channels(program, want=8):
+    """Find candidate channels for a program. Costs 100 units per program."""
+    key = os.environ[YT]
+    p = {"part": "snippet", "q": program, "type": "channel",
+         "maxResults": 25, "order": "relevance", "key": key}
+    _, d = get(f"https://www.googleapis.com/youtube/v3/search?{urllib.parse.urlencode(p)}")
+    ids = [i["snippet"]["channelId"] for i in d.get("items", [])]
+    if not ids:
+        return []
+    p = {"part": "snippet,statistics,contentDetails", "id": ",".join(ids[:50]), "key": key}
+    _, d = get(f"https://www.googleapis.com/youtube/v3/channels?{urllib.parse.urlencode(p)}")
+    out = []
+    for c in d.get("items", []):
+        st = c.get("statistics", {})
+        out.append({
+            "channel_id": c["id"],
+            "title": c["snippet"]["title"],
+            "subscribers": int(st.get("subscriberCount", 0)) if not st.get("hiddenSubscriberCount") else None,
+            "video_count": int(st.get("videoCount", 0)),
+            "uploads_playlist": c["contentDetails"]["relatedPlaylists"]["uploads"],
+        })
+    out.sort(key=lambda c: -(c["subscribers"] or 0))
+    return out[:want]
+
+
+def channel_volume(channels, days=30):
+    """Uploads and views per channel within the last `days`. ~2 units per channel."""
+    key = os.environ[YT]
+    cutoff = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=days))
+    vids, seen = [], set()
+    for c in channels:
+        token, ids = None, []
+        while True:
+            p = {"part": "contentDetails", "playlistId": c["uploads_playlist"],
+                 "maxResults": 50, "key": key}
+            if token:
+                p["pageToken"] = token
+            try:
+                _, d = get(f"https://www.googleapis.com/youtube/v3/playlistItems?{urllib.parse.urlencode(p)}")
+            except urllib.error.HTTPError:
+                break                      # private or empty uploads playlist
+            stop = False
+            for i in d.get("items", []):
+                cd = i["contentDetails"]
+                pub = cd.get("videoPublishedAt")
+                if not pub:
+                    continue
+                if dt.datetime.fromisoformat(pub.replace("Z", "+00:00")) < cutoff:
+                    stop = True
+                    break
+                ids.append(cd["videoId"])
+            token = d.get("nextPageToken")
+            if stop or not token:
+                break
+        for i in range(0, len(ids), 50):
+            p = {"part": "statistics,snippet", "id": ",".join(ids[i:i + 50]), "key": key}
+            _, d = get(f"https://www.googleapis.com/youtube/v3/videos?{urllib.parse.urlencode(p)}")
+            for v in d.get("items", []):
+                if v["id"] in seen:        # a video can sit in two channels' feeds
+                    continue
+                seen.add(v["id"])
+                vids.append({"id": v["id"], "channel": v["snippet"]["channelTitle"],
+                             "title": v["snippet"]["title"],
+                             "published": v["snippet"]["publishedAt"],
+                             "views": int(v.get("statistics", {}).get("viewCount", 0))})
+    return vids
+
+
 def cfb():
     key = os.environ[CFBD]
     h = {"Authorization": f"Bearer {key}", "Accept": "application/json"}
@@ -179,10 +264,13 @@ def main():
     ap.add_argument("--cfb", action="store_true")
     ap.add_argument("--youtube", metavar="QUERY")
     ap.add_argument("--pages", type=int, default=3)
+    ap.add_argument("--discover", metavar="PROGRAMS", help="comma-separated; finds channels")
+    ap.add_argument("--channel-volume", action="store_true")
+    ap.add_argument("--days", type=int, default=30)
     a = ap.parse_args()
     os.makedirs(DATA, exist_ok=True)
 
-    if a.check or not (a.cfb or a.youtube):
+    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume):
         print("credential smoke test:")
         return 0 if check() else 1
 
@@ -194,6 +282,33 @@ def main():
         print(f"  wrote {p}: {len(d['fbs_2026'])} FBS teams, "
               f"{len(d['nd_schedule_2026'])} ND games, "
               f"SP+ {'available' if isinstance(sp, list) else sp}")
+
+    if a.discover:
+        progs = [q.strip() for q in a.discover.split(",") if q.strip()]
+        print(f"  discovering channels for {len(progs)} programs (~{len(progs)*100:,} units)")
+        out = {}
+        for pr in progs:
+            ch = discover_channels(pr)
+            out[pr] = ch
+            print(f"    {pr:<24} {len(ch)} channels, top: {ch[0]['title'][:34] if ch else '-'}")
+        path = os.path.join(DATA, "youtube-channels.json")
+        json.dump(out, open(path, "w"), indent=1)
+        print(f"  wrote {path} -- REVIEW AND EDIT THIS before measuring")
+
+    if a.channel_volume:
+        path = os.path.join(DATA, "youtube-channels.json")
+        chans = json.load(open(path))
+        res = {}
+        for pr, ch in chans.items():
+            vids = channel_volume(ch, a.days)
+            res[pr] = {"channels": [c["title"] for c in ch], "days": a.days,
+                       "videos": len(vids), "views": sum(v["views"] for v in vids),
+                       "detail": vids}
+            print(f"    {pr:<24} {len(vids):>4} uploads  {sum(v['views'] for v in vids):>12,} views"
+                  f"  ({len(vids)/a.days:.1f}/day)")
+        out = os.path.join(DATA, "youtube-channel-volume.json")
+        json.dump(res, open(out, "w"), indent=1)
+        print(f"  wrote {out}")
 
     if a.youtube:
         # Comma-separated queries so a whole comparison set lands in one run.
