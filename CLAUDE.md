@@ -192,6 +192,43 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 
 ## Editorial Rules
 
+- **WRITE IN PATRICK'S TEACHING VOICE.** Added 2026-08-20. The house voice is not
+  a generic "newsletter" voice; it is the voice of `GradStats-Book`. The full
+  comparison lives in `corpus/house-style.md` and every target is measured, not
+  asserted: 52,069 words of his teaching prose against 203,522 words of the
+  newsletter.
+
+  **The gap is person, not punctuation.** He writes *to* a reader; the newsletter
+  wrote *about* sport.
+
+  | | newsletter | his book |
+  |---|---|---|
+  | you / your | 5.91/1k | **15.67/1k** |
+  | we / us / our | 3.34/1k | **8.44/1k** |
+  | imperatives (Notice, Watch, Hold onto) | 0.23/1k | **1.20/1k** |
+  | semicolons | 1.94/1k | **4.51/1k** |
+
+  **Do NOT scrub em dashes.** The first pass measured a 200x "overuse" against the
+  book and it was an artifact: he uses the dash aside *more* than the newsletter
+  does (15.94 vs 12.25 per 1k), he simply types it as a spaced hyphen. Removing
+  them deletes his voice and replaces it with nothing.
+
+  **The classic AI tells are already at zero** across all 175 works: "it is worth
+  noting", "underscores", "testament to", "pivotal", "delve", "tapestry". Keep
+  them there, but do not go hunting for them. The real problem is a handful of
+  moves repeated into invisibility — the antithesis *"X is not A. It is B."*
+  appears in **78 of 175 pieces**, "exactly" 188 times. A tic is a frequency
+  problem, not a banned word.
+
+  **Moves to borrow from him:** name the misconception before correcting it;
+  address the reader constantly; state what they will be able to do; **admit your
+  own past error by name** ("including an old version of mine"); bold the term and
+  italicise the pivot; ask a question and answer it immediately; use homely
+  physical analogies; name stakes concretely; deadpan humour, never a joke for its
+  own sake; say the hard part plainly ("That 20% should bother you").
+
+  **Check it:** `python3 scripts/check_voice.py queue/NNN-slug.html`
+
 - **THE READER'S CONTRACT — say what the piece is FOR.** Added 2026-08-17 after
   Issue #142 scored a Flesch-Kincaid grade of **5.0** and was still opaque. Simple
   words, invisible purpose. A sixth-grader could read every sentence and still not
