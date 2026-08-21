@@ -41,10 +41,22 @@ class _Editor:
         self.missed = []
 
     def deck(self, new):
-        """Replace the deck, whether it is a <p class="deck"> or a <div>."""
-        m = re.search(r'<(p|div) class="deck">(?:(?!</\1>).)*?</\1>', self.s, re.S)
+        """Replace the deck's CONTENT, keeping whatever tag the file uses.
+
+        Older issues wrap the deck in <div class="deck">, newer ones in
+        <p class="deck">. Passing a literal replacement meant handing in a <p>
+        where a <div> lived, which silently changed the document's div count --
+        caught by the structural guard on sunday-018. Now only the inner HTML is
+        swapped, so the tag is whatever it always was.
+
+        `new` may be bare text or a full element; a wrapping <p>/<div> is stripped.
+        """
+        m = re.search(r'<(p|div) class="deck">((?:(?!</\1>).)*?)</\1>', self.s, re.S)
         assert m, "no deck found"
-        self.s = self.s[:m.start()] + new + self.s[m.end():]
+        inner = re.sub(r'^\s*<(p|div)[^>]*>|</(p|div)>\s*$', '', new.strip())
+        tag = m.group(1)
+        self.s = (self.s[:m.start()] + f'<{tag} class="deck">{inner}</{tag}>'
+                  + self.s[m.end():])
         self.n += 1
 
     def para(self, prefix, new, optional=False):

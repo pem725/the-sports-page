@@ -73,11 +73,11 @@ This is non-negotiable and applies to **every** invocation of this skill on **ev
 
 5. **Update the date**: Replace any placeholder or old date with today's date.
 
-6. **Cross-reference check**: Grep the file for "Issue #", "Issue No.", and "See Issue" — verify every reference points to an ALREADY PUBLISHED issue. If referencing an unpublished piece, change to "coming soon."
+7. **Cross-reference check**: Grep the file for "Issue #", "Issue No.", and "See Issue" — verify every reference points to an ALREADY PUBLISHED issue. If referencing an unpublished piece, change to "coming soon."
 
 7. **Add the entry to index.html**: Insert a new `<div class="issue">` block at the TOP of `<div class="issues">`, BEFORE all existing issues. Follow the exact HTML pattern of existing entries. Include: issue-num, issue-date, issue-hed (with link to `published/FILENAME`), issue-deck, and issue-tags.
 
-8. **Move the file**: `git mv queue/FILENAME.html published/FILENAME.html`
+9. **Move the file**: `git mv queue/FILENAME.html published/FILENAME.html`
 
 9. **Remove the published file from QUEUE_ORDER.txt**: Delete the line you just published so the next run picks the next file. This keeps the queue order accurate.
 
@@ -147,7 +147,25 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
    - Score the prediction: **HIT** (model matched outcome within a reasonable margin), **MISS** (materially wrong, explain why), **PARTIALLY HIT** (direction right, magnitude off), or **PENDING** (not enough data to judge yet)
    - Be honest about misses. Do not hide them. Misses are the point of the Sunday Edition.
 
-5. **Replace every example value in the working file** (`queue/sunday-NNN.html`):
+5. **Fill the READER'S CONTRACT block first.** The template carries four
+   slotted lines above "The Week in Review" — `{{N_ISSUES}}`, `{{N_GRADED}}`,
+   `{{N_HIT}}`, `{{N_MISS}}`, `{{N_PENDING}}`, `{{N_NOFORECAST}}` and
+   `{{THE_MISS}}`. They must be filled with the week's real numbers and must stay
+   **above the first section**: the checker reads the first 130 words, and the
+   week-in-review list alone eats that budget.
+
+   `{{THE_MISS}}` is the important one. Name the week's most interesting wrong
+   call plainly and say what it cost. **If the misses were dull, say so** — do not
+   manufacture drama. A Sunday Edition that cannot find anything it got wrong is
+   usually a Sunday Edition that did not look.
+
+   Then run all three checks before publishing:
+   ```
+   python3 scripts/check_readability.py queue/sunday-NNN.html
+   python3 scripts/check_voice.py queue/sunday-NNN.html
+   ```
+
+6. **Replace every example value in the working file** (`queue/sunday-NNN.html`):
    - Title and masthead: set correct Sunday Edition number, date, and reader-facing issue number (count published non-sunday issues + count of published sunday issues + 1)
    - Stat cards: current issue count, predictions-hit ratio, issues remaining to 500
    - Issue list: the 5–7 issues published in the past 7 days, with correct links
@@ -159,7 +177,7 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 
 6. **Cross-reference check**: Grep the working file for "Issue #", "Issue No.", and "See Issue" — verify every reference points to an ALREADY PUBLISHED issue.
 
-7. **Inject the readership block** (auto-populated from GoatCounter):
+8. **Inject the readership block** (auto-populated from GoatCounter):
    ```
    python3 scripts/fetch_readership.py --inject queue/sunday-NNN.html
    ```
@@ -170,9 +188,9 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
    git mv queue/sunday-NNN.html published/sunday-NNN.html
    ```
 
-9. **Add entry to `index.html`**: Insert a new `<div class="issue">` block at the top, with the correct reader-facing issue number, link, headline, and tags (use `.tag` for "Sunday Edition").
+10. **Add entry to `index.html`**: Insert a new `<div class="issue">` block at the top, with the correct reader-facing issue number, link, headline, and tags (use `.tag` for "Sunday Edition").
 
-10. **Commit and push**:
+11. **Commit and push**:
     ```
     git add index.html published/sunday-NNN.html
     git commit -m "Publish Sunday Edition No. NNN: week N recap"
