@@ -99,6 +99,18 @@ def article_text(path):
         if h and re.search(r"notes|sources|how this was computed",
                            h.get_text(strip=True), re.I):
             t.decompose()
+    # Terminate headings with a full stop before flattening. Without this a
+    # heading runs straight into the sentence beneath it -- "...out of students'
+    # pockets. Two universes, one label Look at the spread." -- which breaks
+    # sentence boundaries in two measurable ways: the heading and the following
+    # sentence are scored as one long run-on, and an imperative that OPENS a
+    # section is invisible to a "start of sentence" test. Section openers are
+    # exactly where imperatives live, so the voice check was under-counting the
+    # thing it exists to find.
+    for h in body.find_all(["h1", "h2", "h3", "h4", "h5"]):
+        txt = h.get_text(" ", strip=True)
+        if txt and txt[-1] not in ".?!:;":
+            h.string = txt + "."
     return re.sub(r"\s+", " ", html.unescape(body.get_text(" ", strip=True)))
 
 
