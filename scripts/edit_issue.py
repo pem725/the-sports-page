@@ -38,6 +38,7 @@ class _Editor:
     def __init__(self, text):
         self.s = text
         self.n = 0
+        self.missed = []
 
     def deck(self, new):
         """Replace the deck, whether it is a <p class="deck"> or a <div>."""
@@ -46,14 +47,26 @@ class _Editor:
         self.s = self.s[:m.start()] + new + self.s[m.end():]
         self.n += 1
 
-    def para(self, prefix, new):
-        """Replace the one <p> containing `prefix`, matching within that <p>."""
+    def para(self, prefix, new, optional=False):
+        """Replace the one <p> containing `prefix`, matching within that <p>.
+
+        Strict by default: a missed anchor aborts the whole edit rather than
+        writing a partial file. Pass optional=True for best-effort edits in a
+        large batch, where one bad anchor should not discard the other twenty.
+        Anchors must not straddle inline markup -- a prefix spanning an <em> or
+        <strong> can never match, which is the usual cause of a miss.
+        """
         rx = re.compile(r'<p[^>]*>(?:(?!</p>).)*?' + re.escape(prefix)
                         + r'(?:(?!</p>).)*?</p>', re.S)
         m = rx.search(self.s)
-        assert m, f"paragraph not found: {prefix[:60]!r}"
+        if not m:
+            if optional:
+                self.missed.append(prefix[:50])
+                return False
+            raise AssertionError(f"paragraph not found: {prefix[:60]!r}")
         self.s = self.s[:m.start()] + new + self.s[m.end():]
         self.n += 1
+        return True
 
     def swap(self, old, new, required=True):
         """Plain substring swap, for word-level tightening."""
@@ -111,4 +124,5 @@ def edit(path):
         assert o_a == c_a, f"<{tag}> is unbalanced ({o_a} open, {c_a} close)"
 
     open(path, "w", encoding="utf-8").write(e.s)
-    print(f"  {path}: {e.n} edits, headline + structure intact")
+    note = f" | MISSED {len(e.missed)}: {', '.join(e.missed)}" if e.missed else ""
+    print(f"  {path}: {e.n} edits, headline + structure intact{note}")
