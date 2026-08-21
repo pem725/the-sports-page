@@ -46,6 +46,30 @@ def fp(v):
     return hashlib.sha256(SALT + v.encode()).hexdigest()[:8]
 
 
+def shape(v, name):
+    """Structural diagnostics that reveal nothing about the value.
+
+    A 400 "API key not valid" from Google almost always means the STRING is
+    wrong, not that the API is off (a disabled API returns 403 with a different
+    message). The usual causes are a truncated paste, surrounding quotes, a
+    trailing newline, or an OAuth client ID pasted where an API key belongs.
+    None of that is visible from a fingerprint, and all of it is visible from
+    the shape. Booleans only -- no characters are ever printed."""
+    notes = [f"len {len(v)}"]
+    if name.startswith("YOUTUBE"):
+        # "AIza" is the universal prefix on every Google API key, so reporting
+        # whether it is present discloses nothing that is not already public.
+        notes.append("AIza-prefixed" if v.startswith("AIza") else "NOT AIza-prefixed")
+        notes.append("39 chars" if len(v) == 39 else f"expected 39")
+    if v != v.strip():
+        notes.append("HAS SURROUNDING WHITESPACE")
+    if v[:1] in "\"'" or v[-1:] in "\"'":
+        notes.append("HAS QUOTE CHARACTERS")
+    if any(c in v for c in "\n\r"):
+        notes.append("CONTAINS A NEWLINE")
+    return ", ".join(notes)
+
+
 def get(url, headers=None, timeout=45):
     req = urllib.request.Request(url, headers=headers or {})
     with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -77,13 +101,15 @@ def check():
             q = urllib.parse.urlencode({"part": "id", "forUsername": "GoogleDevelopers", "key": key})
             st, d = get(f"https://www.googleapis.com/youtube/v3/channels?{q}")
             print(f"  YOUTUBE_API_KEY  OK   fp {fp(key)}   HTTP {st}, quota responding")
+            print(f"                   shape: {shape(key, YT)}")
         except urllib.error.HTTPError as e:
             body = ""
             try:
                 body = json.load(e).get("error", {}).get("message", "")[:90]
             except Exception:
                 pass
-            print(f"  YOUTUBE_API_KEY  FAIL fp {fp(key)}   HTTP {e.code} {e.reason}  {body}"); ok = False
+            print(f"  YOUTUBE_API_KEY  FAIL fp {fp(key)}   HTTP {e.code} {e.reason}  {body}")
+            print(f"                   shape: {shape(key, YT)}"); ok = False
         except Exception as e:
             print(f"  YOUTUBE_API_KEY  FAIL fp {fp(key)}   {type(e).__name__}"); ok = False
 
