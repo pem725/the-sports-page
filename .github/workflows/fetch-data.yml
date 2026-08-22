@@ -18,7 +18,7 @@ on:
         required: true
         default: check
         type: choice
-        options: [check, cfb, youtube, discover-channels, filter-exclusive, channel-volume, top50-discover, seed-channels, locked-on, all]
+        options: [check, cfb, youtube, discover-channels, filter-exclusive, channel-volume, top50-discover, seed-channels, locked-on, lockedon-volume, all]
       query:
         description: "Comma-separated queries/programs (youtube, discover-channels)"
         required: false
@@ -78,6 +78,12 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
         run: python3 scripts/remote_fetch.py --locked-on
+
+      - name: Measure the Locked On set
+        if: ${{ inputs.what == 'lockedon-volume' }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
+        run: python3 scripts/remote_fetch.py --lockedon-volume --days ${{ inputs.pages }}
 
       - name: Resolve seed video URLs to channels
         if: ${{ inputs.what == 'seed-channels' }}

@@ -450,6 +450,7 @@ def main():
     ap.add_argument("--filter-exclusive", action="store_true",
                     help="keep only channels whose recent uploads are mostly football")
     ap.add_argument("--locked-on", action="store_true", help="build the matched Locked On set")
+    ap.add_argument("--lockedon-volume", action="store_true", help="measure the Locked On set")
     ap.add_argument("--seed-videos", metavar="URLS", help="resolve video URLs to channels")
     ap.add_argument("--seed-label", default="seed", help="program label for seeded channels")
     ap.add_argument("--min-football", type=float, default=0.70)
@@ -457,7 +458,7 @@ def main():
     a = ap.parse_args()
     os.makedirs(DATA, exist_ok=True)
 
-    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume or a.top or a.filter_exclusive or a.seed_videos or a.locked_on):
+    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume or a.top or a.filter_exclusive or a.seed_videos or a.locked_on or a.lockedon_volume):
         print("credential smoke test:")
         return 0 if check() else 1
 
@@ -469,6 +470,25 @@ def main():
         print(f"  wrote {p}: {len(d['fbs_2026'])} FBS teams, "
               f"{len(d['nd_schedule_2026'])} ND games, "
               f"SP+ {'available' if isinstance(sp, list) else sp}")
+
+    if a.lockedon_volume:
+        chans = json.load(open(os.path.join(DATA, "youtube-lockedon.json")))
+        res = {}
+        for prog, c in chans.items():
+            vids = channel_volume([c], a.days)
+            v = sorted(x["views"] for x in vids)
+            res[prog] = {"channel": c["title"], "subscribers": c["subscribers"],
+                         "days": a.days, "uploads": len(vids),
+                         "views": sum(v), "median_views": (v[len(v)//2] if v else 0),
+                         "detail": vids}
+            if v:
+                print(f"    {prog:<14} {len(v):>3} uploads  {sum(v):>9,} views  "
+                      f"median {v[len(v)//2]:>6,}  {sum(v)/len(v):>7,.0f} per upload")
+            else:
+                print(f"    {prog:<14} no uploads in {a.days} days")
+        out = os.path.join(DATA, "youtube-lockedon-volume.json")
+        json.dump(res, open(out, "w"), indent=1)
+        print(f"  wrote {out}")
 
     if a.locked_on:
         out, tried = {}, 0
