@@ -266,6 +266,78 @@ def channels_from_videos(urls):
     return out
 
 
+NICKNAMES = {
+ "Notre Dame":["notre dame","irish","freeman"], "Ohio State":["ohio state","buckeye","osu","day"],
+ "Alabama":["alabama","crimson","tide","bama"], "Michigan":["michigan","wolverine"],
+ "Georgia":["georgia","bulldog","dawg","uga","kirby"], "Texas":["texas","longhorn","horns","sarkisian"],
+ "USC":["usc","trojan","riley"], "Penn State":["penn state","nittany","psu","franklin"],
+ "Oregon":["oregon","duck","lanning"], "LSU":["lsu","tiger","kelly"],
+ "Nebraska":["nebraska","husker","rhule"], "Clemson":["clemson","tiger","swinney"],
+ "Tennessee":["tennessee","vol"], "Florida":["florida","gator"], "Auburn":["auburn"],
+ "Oklahoma":["oklahoma","sooner"], "Texas A&M":["texas a&m","aggie"], "Miami":["miami","hurricane"],
+ "Florida State":["florida state","seminole","fsu"], "Wisconsin":["wisconsin","badger"],
+}
+
+# Locked On runs a per-program daily show with the same format and cadence, which
+# makes it a MATCHED comparison rather than an apples-to-oranges one. Handles are
+# resolved with channels.list?forHandle at 1 quota unit each, instead of 100 for a
+# search -- and the resolved title is verified rather than trusted.
+LOCKED_ON = {
+ "Notre Dame":["LockedOnIrish","LockedOnNotreDame"], "Ohio State":["LockedOnBuckeyes"],
+ "Alabama":["LockedOnCrimsonTide","LockedOnBama","LockedOnAlabama"],
+ "Michigan":["LockedOnWolverines","LockedOnMichigan"], "Georgia":["LockedOnBulldogs","LockedOnGeorgia"],
+ "Texas":["LockedOnLonghorns","LockedOnTexas"], "USC":["LockedOnTrojans","LockedOnUSC"],
+ "Penn State":["LockedOnNittanyLions","LockedOnPennState"], "Oregon":["LockedOnDucks","LockedOnOregon"],
+ "LSU":["LockedOnLSU","LockedOnTigersLSU"], "Nebraska":["LockedOnHuskers","LockedOnNebraska"],
+ "Clemson":["LockedOnClemson","LockedOnTigers"], "Tennessee":["LockedOnVols","LockedOnTennessee"],
+ "Florida":["LockedOnGators","LockedOnFlorida"], "Auburn":["LockedOnAuburn","LockedOnTigersAuburn"],
+ "Oklahoma":["LockedOnSooners","LockedOnOklahoma"], "Texas A&M":["LockedOnAggies","LockedOnTexasAM"],
+ "Miami":["LockedOnCanes","LockedOnHurricanes"], "Florida State":["LockedOnSeminoles","LockedOnFSU"],
+ "Wisconsin":["LockedOnBadgers","LockedOnWisconsin"],
+}
+
+
+def channel_by_handle(handle):
+    """Resolve a @handle to a channel. 1 quota unit. Returns None if absent."""
+    key = os.environ[YT]
+    p = {"part": "snippet,statistics,contentDetails", "forHandle": handle, "key": key}
+    try:
+        _, d = get(f"https://www.googleapis.com/youtube/v3/channels?{urllib.parse.urlencode(p)}")
+    except urllib.error.HTTPError:
+        return None
+    items = d.get("items") or []
+    if not items:
+        return None
+    c = items[0]; st = c.get("statistics", {})
+    return {"channel_id": c["id"], "title": c["snippet"]["title"], "handle": handle,
+            "subscribers": int(st.get("subscriberCount", 0)) if not st.get("hiddenSubscriberCount") else None,
+            "video_count": int(st.get("videoCount", 0)),
+            "uploads_playlist": c["contentDetails"]["relatedPlaylists"]["uploads"]}
+
+
+def channel_program_share(ch, program, sample=50):
+    """What share of recent uploads mention THIS program? ~2 quota units.
+
+    This replaces the football-share filter, which was actively wrong. That test
+    read titles for football words and so kept national shows (Josh Pate titles
+    every video 'College Football...', scoring 100%) while discarding the very
+    channels a fan watches: Notre Dame Daily scored 0% football and Locked On
+    Irish 28%, because a daily pod is titled 'Marcus Freeman on the O-line
+    rotation'. Program-exclusivity is the question that was always meant."""
+    key = os.environ[YT]
+    keys = NICKNAMES.get(program, [program.lower()])
+    p = {"part": "snippet", "playlistId": ch["uploads_playlist"], "maxResults": min(sample, 50), "key": key}
+    try:
+        _, d = get(f"https://www.googleapis.com/youtube/v3/playlistItems?{urllib.parse.urlencode(p)}")
+    except urllib.error.HTTPError:
+        return None
+    titles = [i["snippet"]["title"].lower() for i in d.get("items", [])]
+    if len(titles) < 5:
+        return None
+    hit = sum(any(k in t for k in keys) for t in titles)
+    return {"sampled": len(titles), "program_share": hit / len(titles)}
+
+
 def channel_football_share(ch, sample=50):
     """What share of a channel's recent uploads are football? ~2 quota units.
 
@@ -377,6 +449,7 @@ def main():
     ap.add_argument("--top", type=int, help="discover channels for the top N CFBD programs")
     ap.add_argument("--filter-exclusive", action="store_true",
                     help="keep only channels whose recent uploads are mostly football")
+    ap.add_argument("--locked-on", action="store_true", help="build the matched Locked On set")
     ap.add_argument("--seed-videos", metavar="URLS", help="resolve video URLs to channels")
     ap.add_argument("--seed-label", default="seed", help="program label for seeded channels")
     ap.add_argument("--min-football", type=float, default=0.70)
@@ -384,7 +457,7 @@ def main():
     a = ap.parse_args()
     os.makedirs(DATA, exist_ok=True)
 
-    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume or a.top or a.filter_exclusive or a.seed_videos):
+    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume or a.top or a.filter_exclusive or a.seed_videos or a.locked_on):
         print("credential smoke test:")
         return 0 if check() else 1
 
@@ -396,6 +469,30 @@ def main():
         print(f"  wrote {p}: {len(d['fbs_2026'])} FBS teams, "
               f"{len(d['nd_schedule_2026'])} ND games, "
               f"SP+ {'available' if isinstance(sp, list) else sp}")
+
+    if a.locked_on:
+        out, tried = {}, 0
+        for prog, handles in LOCKED_ON.items():
+            for h in handles:
+                tried += 1
+                c = channel_by_handle(h)
+                if not c:
+                    continue
+                if "locked on" not in c["title"].lower():   # verify, do not trust
+                    print(f"    {prog:<14} @{h} resolved to {c['title'][:30]!r} -- rejected")
+                    continue
+                sh = channel_program_share(c, prog)
+                c["program_share"] = round(sh["program_share"], 3) if sh else None
+                out[prog] = c
+                print(f"    {prog:<14} {c['title'][:30]:<30} {str(c['subscribers'] or '-'):>8} subs "
+                      f"{c['video_count']:>5} vids  program {c['program_share']:.0%}" if sh else "")
+                break
+            else:
+                print(f"    {prog:<14} no Locked On channel found")
+        path = os.path.join(DATA, "youtube-lockedon.json")
+        json.dump(out, open(path, "w"), indent=1)
+        print(f"  resolved {len(out)}/{len(LOCKED_ON)} programs in {tried} handle lookups (~{tried} units)")
+        print(f"  wrote {path}")
 
     if a.seed_videos:
         chans = channels_from_videos(a.seed_videos)

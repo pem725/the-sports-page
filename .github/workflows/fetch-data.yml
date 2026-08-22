@@ -18,7 +18,7 @@ on:
         required: true
         default: check
         type: choice
-        options: [check, cfb, youtube, discover-channels, filter-exclusive, channel-volume, top50-discover, seed-channels, all]
+        options: [check, cfb, youtube, discover-channels, filter-exclusive, channel-volume, top50-discover, seed-channels, locked-on, all]
       query:
         description: "Comma-separated queries/programs (youtube, discover-channels)"
         required: false
@@ -72,6 +72,12 @@ jobs:
           CFBD_KEY: ${{ secrets.CFBD_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
         run: python3 scripts/remote_fetch.py --top ${{ inputs.pages }}
+
+      - name: Build the matched Locked On set
+        if: ${{ inputs.what == 'locked-on' }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
+        run: python3 scripts/remote_fetch.py --locked-on
 
       - name: Resolve seed video URLs to channels
         if: ${{ inputs.what == 'seed-channels' }}
