@@ -1,0 +1,171 @@
+<!-- PUBLISH-META
+topic: CFB
+tags: CFB:cfb, Rankings, Measurement, Just Noticeable Difference
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Vol. I, No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)} .sc .v.gold{color:var(--gold)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
+</style>
+<meta property="og:title" content="Two Teams a Rank Apart? The Higher One Wins 48.7% of the Time.">
+<meta property="og:description" content="You run a mediocre team and you get to raid a superteam. What's the fewest stars you'd need to steal to actually matter? The answer is different in every sport -- and the difference tells you what each sport really is.">
+<meta property="og:url" content="https://thesportspage.net/published/124-how-many-stars.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/124-how-many-stars.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Many Stars Does It Take to Flip a Team?">
+<meta name="twitter:description" content="Baseball needs about four. Basketball needs one. Football needs one -- if it's the quarterback. The count just reads back the structure of the sport.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/124-how-many-stars.png">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">College Football &middot; Opening Week, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+  <h2 class="hed">Two Teams a Rank Apart? <em>The Higher One Wins 48.7% of the Time.</em></h2>
+  <p class="deck">When #6 plays #7, the poll says one is better. The field says it is a coin flip, and slightly the wrong way. Two teams have to sit about <strong>ten places</strong> apart before a ranking tells you anything you could not have guessed.</p>
+  <p class="byline">The Sports Page &middot; The Professor &middot; what a ranking can and cannot measure</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">48.7%</div><div class="l">Better-ranked team wins, 1&ndash;2 apart</div></div>
+    <div class="sc"><div class="v now">~10</div><div class="l">Ranks needed before it means anything</div></div>
+    <div class="sc"><div class="v good">74.8%</div><div class="l">Better-ranked team wins &mdash; at home</div></div>
+  </div>
+
+  <p><strong>The question:</strong> how far apart do two teams have to be in the rankings before the ranking actually tells you who will win?</p>
+
+  <p><strong>The answer: about ten places.</strong> Below that, you are reading noise. Teams one or two ranks apart split their games <strong>48.7%</strong> to 51.3% &mdash; and the 48.7% belongs to the team the poll says is better.</p>
+
+  <p><strong>Here is the surprising part.</strong> We checked it two completely separate ways, and they agree. One asks the field; the other asks the raters. Neither knows about the other, and both land on ten.</p>
+
+  <p><strong>What you get from it:</strong> a way to look at any ranked list this autumn and know which gaps are real.</p>
+
+  <h3 class="sh">Borrowing a trick from psychophysics</h3>
+
+  <p>Put two weights in someone&rsquo;s hands and ask which is heavier. If they are identical, the answer is a guess and you get it right half the time. Make one heavier and heavier, and at some point people start getting it right reliably.</p>
+
+  <p>That crossing point has a name. It is the <em>just noticeable difference</em>, and by long convention we set it at <strong>75%</strong> &mdash; halfway between guessing and certainty.</p>
+
+  <p>So ask the same question about rankings. How much heavier does one team have to be before we can tell?</p>
+
+  <h3 class="sh">Test one: ask the field</h3>
+
+  <p>Take every game from 2015 through 2025 where both teams were ranked in that week&rsquo;s poll. That is <strong>493</strong> games. For each one, note the gap between them and whether the better-ranked team won.</p>
+
+  <p>Across all 493, the better-ranked team wins 62.3% of the time. That sounds respectable until you cut it by gap.</p>
+
+  <p>One or two apart: <strong>48.7%</strong>. Three or four: 53.8%. Five to seven: 58.8%. Not until the gap reaches the low teens does the curve cross 75%.</p>
+
+  <h3 class="sh">Test two: ask the raters</h3>
+
+  <p>Now forget who won. Massey Ratings collects <strong>25</strong> separate rating systems &mdash; polls, computers, prediction models &mdash; each ranking all 138 teams.</p>
+
+  <p>Treat them as 25 judges holding the same two weights. For every pair of teams, ask what share of the systems agree on which is better. That is <strong>9,453</strong> pairs.</p>
+
+  <p>Teams one rank apart in the composite: the systems agree only <strong>54.5%</strong> of the time. They do not cross 75% until the gap reaches nine to twelve.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Two tests, one answer</div>
+<svg viewBox="0 0 720 340" role="img" aria-label="Two curves rising from left to right against the gap between two teams in ranks. The blue curve is how often the better-ranked team actually won, starting at 48.7 percent for teams one to two ranks apart. The gold curve is how often 25 rating systems agreed on the order, starting at about 55 percent. A red dashed line marks 75 percent, the just-noticeable-difference criterion. Neither curve reaches it until the gap is around ten ranks."><text x="0" y="15" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#1a1208">HOW FAR APART BEFORE A RANKING MEANS ANYTHING</text><text x="0" y="31" font-family="'Roboto Mono',monospace" font-size="10.5" fill="#6b5e4a">Two independent tests. 493 ranked-vs-ranked games (2015&#8211;25); 25 rating systems, 9,453 pairs.</text><line x1="110" y1="243.2" x2="650" y2="243.2" stroke="#6b5e4a" stroke-width="1.6" stroke-dasharray="4 4"/><text x="656" y="247.2" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">coin flip</text><line x1="110" y1="138.6" x2="650" y2="138.6" stroke="#b83a1e" stroke-width="2.4" stroke-dasharray="8 5"/><text x="656" y="142.6" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#b83a1e">the 75% line</text><text x="102" y="246.2" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">50%</text><text x="102" y="204.4" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">60%</text><text x="102" y="162.5" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">70%</text><text x="102" y="120.7" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">80%</text><text x="102" y="78.9" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">90%</text><polyline fill="none" stroke="#2c4a6e" stroke-width="2.8" points="155.0,248.5 245.0,227.5 335.0,206.3 425.0,191.8 515.0,127.0 605.0,105.3"/><circle cx="155.0" cy="248.5" r="4.4" fill="#2c4a6e"/><circle cx="245.0" cy="227.5" r="4.4" fill="#2c4a6e"/><circle cx="335.0" cy="206.3" r="4.4" fill="#2c4a6e"/><circle cx="425.0" cy="191.8" r="4.4" fill="#2c4a6e"/><circle cx="515.0" cy="127.0" r="4.4" fill="#2c4a6e"/><circle cx="605.0" cy="105.3" r="4.4" fill="#2c4a6e"/><polyline fill="none" stroke="#c9962a" stroke-width="2.8" points="155.0,217.9 245.0,188.7 335.0,166.2 425.0,135.8 515.0,107.4 605.0,81.8"/><circle cx="155.0" cy="217.9" r="4.4" fill="#c9962a"/><circle cx="245.0" cy="188.7" r="4.4" fill="#c9962a"/><circle cx="335.0" cy="166.2" r="4.4" fill="#c9962a"/><circle cx="425.0" cy="135.8" r="4.4" fill="#c9962a"/><circle cx="515.0" cy="107.4" r="4.4" fill="#c9962a"/><circle cx="605.0" cy="81.8" r="4.4" fill="#c9962a"/><text x="155.0" y="303.0" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">1–2</text><text x="245.0" y="303.0" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">3–4</text><text x="335.0" y="303.0" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">5–7</text><text x="425.0" y="303.0" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">8–11</text><text x="515.0" y="303.0" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">12–16</text><text x="605.0" y="303.0" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">17–25</text><text x="380.0" y="321" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#1a1208">GAP BETWEEN THE TWO TEAMS, IN RANKS</text><circle cx="118" cy="61" r="4.4" fill="#2c4a6e"/><text x="128" y="65" font-family="'Roboto Mono',monospace" font-size="10" fill="#1a1208">did the better-ranked team win?</text><circle cx="118" cy="79" r="4.4" fill="#c9962a"/><text x="128" y="83" font-family="'Roboto Mono',monospace" font-size="10" fill="#1a1208">did the rating systems agree?</text></svg>
+  </div>
+
+  <p>Watch the two curves climb together. One is made of football; the other is made of arithmetic. They cross the line in the same place.</p>
+
+  <div class="pull">
+    <p>A ranking is <span class="cc" data-preview="Precision is how finely a number is reported; accuracy is whether it is right. A ranking reported to the nearest single place is precise to one rank and accurate to about ten. Open the Precision vs Accuracy primer."><em>more precise than it is accurate</em><a class="cc-i" href="https://thesportspage.net/concepts/precision-vs-accuracy.html" target="_blank" rel="noopener">i</a></span>. It is printed to the nearest single place and it is good to about ten.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh">How wrong can one number be?</h3>
+
+  <p>Look at what the 25 systems do to a single team. The middle team on the list has a range of <strong>41 ranks</strong> between its highest and lowest placement.</p>
+
+  <p>North Dakota State sits 83rd in the composite. The systems place it anywhere from <strong>23rd to 138th</strong>.</p>
+
+  <p>The top is much firmer: Ohio State is first, and no system has it worse than fourth. Notre Dame is fourth, with a range of first to ninth. So the poll is a real measurement at the very top and close to noise through the middle.</p>
+
+  <h3 class="sh">And one thing beats the ranking entirely</h3>
+
+  <p>Split those 493 games by where they were played, and something jumps out.</p>
+
+  <p>When the better-ranked team plays at home, it wins <strong>74.8%</strong> of the time. On the road, <strong>50.2%</strong>.</p>
+
+  <p>A ranked team away from home is a coin flip, whatever the number beside its name. Home field is worth more than twenty ranks of polling, and no poll shows you that.</p>
+
+  <h3 class="sh">What to take home: ask for the error bars</h3>
+
+  <p>None of this says rankings are worthless. The top ten is real, big gaps are real, and the systems agree strongly once teams are far apart.</p>
+
+  <p>It says the number is reported far more finely than it can support. We print a ranking as a single integer, and it deserves <span class="cc" data-preview="A number without an interval hides how much it could move. Reporting the range alongside the estimate is the difference between a measurement and a guess. Open the Communicating Uncertainty primer."><em>an interval around it</em><a class="cc-i" href="https://thesportspage.net/concepts/communicating-uncertainty.html" target="_blank" rel="noopener">i</a></span> about ten places wide.</p>
+
+  <p>So this autumn, when you see #6 play #7, do not ask which is better. Ask whether anything separates them at all &mdash; and then check who is at home.</p>
+
+  <p>The habit travels. Any time you meet a ranked list &mdash; universities, hospitals, countries, restaurants &mdash; the ranking is precise and the measurement underneath is not. Ask how far apart two things must be before the order survives a second opinion. Usually nobody has checked.</p>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Game data from the CollegeFootballData API: every regular-season game 2015&ndash;2025 in which both teams appeared in that week&rsquo;s AP poll, 493 in total. Ties excluded. The gap is the absolute difference in AP rank; the outcome is whether the better-ranked side won. Confidence intervals are Wilson 95%: 1&ndash;2 apart is 48.7% [0.38, 0.60], 12&ndash;16 is 77.8% [0.67, 0.86]. Note that no single band clears 0.75 with its whole interval &mdash; the point estimate crosses in the low teens, and the honest reading is &ldquo;around ten&rdquo; rather than an exact threshold.</p>
+    <p style="color:#c8b99a">Rating systems from a Massey Ratings composite export, 2026 preseason: 138 teams, 25 systems with sufficient coverage. Pairs required at least 15 systems rating both teams, giving 9,453 pairs. Agreement is the share of those systems ordering the pair the same way as the composite. Median across-system range per team, 41 ranks; median standard deviation, 10.2 ranks.</p>
+    <p style="color:#c8b99a">The 75% criterion is Thurstone&rsquo;s, from the law of comparative judgment (1927): two stimuli have a 50% chance of being ordered either way, so the halfway point between chance and certainty is 75%. The application of that idea to measures that are not physical &mdash; and the argument that a measure needs calibrating against behaviour before its numbers mean anything &mdash; is from Sechrest, McKnight &amp; McKnight, <em>Calibration of measures for psychotherapy outcome studies</em>, American Psychologist 51(10), 1996.</p>
+    <p style="color:#c8b99a">One limit worth stating: preseason ratings are the noisiest of the year, so the 41-rank median spread should tighten as real games arrive. We will re-run this in November and report whether it did.</p>
+  </div>
+
+  <div class="footer"><span>The Sports Page &middot; Vol. I, No. __</span><span>What a ranking measures</span><span>TODO_DATE &middot; New York, NY</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>
+</body>
+</html>
