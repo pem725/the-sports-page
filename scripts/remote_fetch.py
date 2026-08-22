@@ -31,6 +31,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import datetime as dt
+import re
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")
@@ -209,6 +210,62 @@ OTHER_SPORT = ("basketball","hoops","volleyball","baseball","softball","soccer",
                "wrestling","track","gymnastics","swimming","tennis","golf","lacrosse","rowing")
 
 
+def video_ids_from(urls):
+    """Pull video ids out of any YouTube URL form: watch?v=, youtu.be/, /live/,
+    /shorts/, or a bare id. Strips tracking params like ?si=."""
+    out = []
+    for u in re.split(r"[\s,]+", urls.strip()):
+        if not u:
+            continue
+        u = u.split("&")[0]
+        m = (re.search(r"[?&]v=([A-Za-z0-9_-]{11})", u)
+             or re.search(r"youtu\.be/([A-Za-z0-9_-]{11})", u)
+             or re.search(r"/(?:live|shorts|embed)/([A-Za-z0-9_-]{11})", u)
+             or re.fullmatch(r"([A-Za-z0-9_-]{11})", u))
+        if m:
+            out.append(m.group(1))
+    return out
+
+
+def channels_from_videos(urls):
+    """Resolve videos to the channels that published them. 1 quota unit per 50.
+
+    This is the antidote to search-based discovery. search.list ranks by YouTube
+    relevance, which surfaces big national shows and buries the small
+    program-specific channels a fan actually watches -- which is how Notre Dame
+    ended up with zero channels while Josh Pate's national show was filed under
+    six different programs. A human handing over four links they actually watch
+    is better evidence than the algorithm's guess."""
+    key = os.environ[YT]
+    ids = video_ids_from(urls)
+    if not ids:
+        raise SystemExit("no video ids found in that input")
+    p = {"part": "snippet", "id": ",".join(ids), "key": key}
+    _, d = get(f"https://www.googleapis.com/youtube/v3/videos?{urllib.parse.urlencode(p)}")
+    found = {}
+    for v in d.get("items", []):
+        sn = v["snippet"]
+        found[sn["channelId"]] = {"channel_id": sn["channelId"], "title": sn["channelTitle"],
+                                  "seed_video": v["id"], "seed_title": sn["title"][:90]}
+    missing = set(ids) - {v["id"] for v in d.get("items", [])}
+    if missing:
+        print(f"  could not resolve: {', '.join(sorted(missing))} (private/deleted?)")
+    if not found:
+        return []
+    p = {"part": "snippet,statistics,contentDetails", "id": ",".join(found), "key": key}
+    _, d = get(f"https://www.googleapis.com/youtube/v3/channels?{urllib.parse.urlencode(p)}")
+    out = []
+    for c in d.get("items", []):
+        st = c.get("statistics", {})
+        base = found[c["id"]]
+        out.append({**base,
+                    "title": c["snippet"]["title"],
+                    "subscribers": int(st.get("subscriberCount", 0)) if not st.get("hiddenSubscriberCount") else None,
+                    "video_count": int(st.get("videoCount", 0)),
+                    "uploads_playlist": c["contentDetails"]["relatedPlaylists"]["uploads"]})
+    return out
+
+
 def channel_football_share(ch, sample=50):
     """What share of a channel's recent uploads are football? ~2 quota units.
 
@@ -320,12 +377,14 @@ def main():
     ap.add_argument("--top", type=int, help="discover channels for the top N CFBD programs")
     ap.add_argument("--filter-exclusive", action="store_true",
                     help="keep only channels whose recent uploads are mostly football")
+    ap.add_argument("--seed-videos", metavar="URLS", help="resolve video URLs to channels")
+    ap.add_argument("--seed-label", default="seed", help="program label for seeded channels")
     ap.add_argument("--min-football", type=float, default=0.70)
     ap.add_argument("--max-other", type=float, default=0.15)
     a = ap.parse_args()
     os.makedirs(DATA, exist_ok=True)
 
-    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume or a.top or a.filter_exclusive):
+    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume or a.top or a.filter_exclusive or a.seed_videos):
         print("credential smoke test:")
         return 0 if check() else 1
 
@@ -337,6 +396,23 @@ def main():
         print(f"  wrote {p}: {len(d['fbs_2026'])} FBS teams, "
               f"{len(d['nd_schedule_2026'])} ND games, "
               f"SP+ {'available' if isinstance(sp, list) else sp}")
+
+    if a.seed_videos:
+        chans = channels_from_videos(a.seed_videos)
+        path = os.path.join(DATA, "youtube-seed-channels.json")
+        existing = json.load(open(path)) if os.path.exists(path) else {}
+        existing.setdefault(a.seed_label, [])
+        have = {c["channel_id"] for c in existing[a.seed_label]}
+        for c in chans:
+            if c["channel_id"] not in have:
+                existing[a.seed_label].append(c)
+        json.dump(existing, open(path, "w"), indent=1)
+        print(f"  resolved {len(chans)} channels for '{a.seed_label}':")
+        for c in chans:
+            sh = channel_football_share(c)
+            fb = f"{sh['football']:.0%} football, {sh['other_sport']:.0%} other" if sh else "unsampled"
+            print(f"    {c['title'][:34]:<34} {str(c['subscribers'] or '-'):>9} subs  {c['video_count']:>6} vids  [{fb}]")
+        print(f"  wrote {path}")
 
     if a.top:
         progs = top_programs(a.top)

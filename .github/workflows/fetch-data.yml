@@ -18,11 +18,15 @@ on:
         required: true
         default: check
         type: choice
-        options: [check, cfb, youtube, discover-channels, filter-exclusive, channel-volume, top50-discover, all]
+        options: [check, cfb, youtube, discover-channels, filter-exclusive, channel-volume, top50-discover, seed-channels, all]
       query:
         description: "Comma-separated queries/programs (youtube, discover-channels)"
         required: false
         default: "Notre Dame football"
+      seed_label:
+        description: "Program label for seed-channels (e.g. Notre Dame)"
+        required: false
+        default: "Notre Dame"
       pages:
         description: "search pages for 'youtube'; DAYS of history for 'channel-volume'"
         required: false
@@ -68,6 +72,12 @@ jobs:
           CFBD_KEY: ${{ secrets.CFBD_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
         run: python3 scripts/remote_fetch.py --top ${{ inputs.pages }}
+
+      - name: Resolve seed video URLs to channels
+        if: ${{ inputs.what == 'seed-channels' }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
+        run: python3 scripts/remote_fetch.py --seed-videos "${{ inputs.query }}" --seed-label "${{ inputs.seed_label }}"
 
       - name: Keep only football-exclusive channels
         if: ${{ inputs.what == 'filter-exclusive' }}
