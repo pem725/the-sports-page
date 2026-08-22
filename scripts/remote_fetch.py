@@ -423,6 +423,72 @@ def top_programs(n=50, year=2025):
     return [x["team"] for x in rows[:n]]
 
 
+def cfb_jnd(years=range(2015, 2026)):
+    """At what ranking gap does the better-ranked team win 75% of the time?
+
+    This is Thurstone's just-noticeable difference applied to polls. A JND is the
+    smallest difference two observers reliably agree on, and the conventional
+    criterion is 75% -- halfway between chance (50%) and certainty (100%). Here
+    the 'observers' are the games themselves: how far apart must two teams be
+    ranked before the poll's ordering is confirmed on the field 3 times in 4?
+
+    Uses the AP poll, joining each week's ranks to that week's games."""
+    key = os.environ[CFBD]
+    h = {"Authorization": f"Bearer {key}", "Accept": "application/json"}
+    pairs = []
+    for y in years:
+        try:
+            _, ranks = get(f"https://api.collegefootballdata.com/rankings?year={y}", h)
+            _, games = get(f"https://api.collegefootballdata.com/games?year={y}&seasonType=regular", h)
+        except urllib.error.HTTPError as e:
+            print(f"    {y}: HTTP {e.code}, skipping"); continue
+        # week -> {team: rank} for the AP poll
+        byweek = {}
+        for r in ranks:
+            wk = r.get("week")
+            for poll in r.get("polls", []):
+                if "AP" not in (poll.get("poll") or ""):
+                    continue
+                byweek.setdefault(wk, {}).update(
+                    {x["school"]: x["rank"] for x in poll.get("ranks", [])})
+        n = 0
+        for g in games:
+            wk = g.get("week")
+            hs, aw = g.get("homeTeam") or g.get("home_team"), g.get("awayTeam") or g.get("away_team")
+            hp, ap_ = g.get("homePoints") or g.get("home_points"), g.get("awayPoints") or g.get("away_points")
+            if hp is None or ap_ is None or hp == ap_:
+                continue
+            # rankings published BEFORE the game are the week's own poll
+            rk = byweek.get(wk, {})
+            if hs not in rk or aw not in rk:
+                continue
+            gap = abs(rk[hs] - rk[aw])
+            better_is_home = rk[hs] < rk[aw]
+            better_won = (hp > ap_) if better_is_home else (ap_ > hp)
+            pairs.append({"year": y, "week": wk, "gap": gap, "better_won": better_won,
+                          "better_home": better_is_home})
+            n += 1
+        print(f"    {y}: {n} ranked-vs-ranked games")
+    return pairs
+
+
+def cfb_upcoming(year=2026, week=1):
+    """Preseason poll plus the opening week's betting lines."""
+    key = os.environ[CFBD]
+    h = {"Authorization": f"Bearer {key}", "Accept": "application/json"}
+    out = {}
+    for name, url in [
+        ("rankings", f"https://api.collegefootballdata.com/rankings?year={year}&week=1&seasonType=regular"),
+        ("lines", f"https://api.collegefootballdata.com/lines?year={year}&week={week}&seasonType=regular"),
+        ("games", f"https://api.collegefootballdata.com/games?year={year}&week={week}&seasonType=regular"),
+    ]:
+        try:
+            _, out[name] = get(url, h)
+        except urllib.error.HTTPError as e:
+            out[name] = {"unavailable": f"HTTP {e.code}"}
+    return out
+
+
 def cfb():
     key = os.environ[CFBD]
     h = {"Authorization": f"Bearer {key}", "Accept": "application/json"}
@@ -451,6 +517,8 @@ def main():
                     help="keep only channels whose recent uploads are mostly football")
     ap.add_argument("--locked-on", action="store_true", help="build the matched Locked On set")
     ap.add_argument("--lockedon-volume", action="store_true", help="measure the Locked On set")
+    ap.add_argument("--cfb-jnd", action="store_true", help="rank-gap vs win-rate history")
+    ap.add_argument("--cfb-upcoming", action="store_true", help="preseason poll + week-1 lines")
     ap.add_argument("--seed-videos", metavar="URLS", help="resolve video URLs to channels")
     ap.add_argument("--seed-label", default="seed", help="program label for seeded channels")
     ap.add_argument("--min-football", type=float, default=0.70)
@@ -458,7 +526,7 @@ def main():
     a = ap.parse_args()
     os.makedirs(DATA, exist_ok=True)
 
-    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume or a.top or a.filter_exclusive or a.seed_videos or a.locked_on or a.lockedon_volume):
+    if a.check or not (a.cfb or a.youtube or a.discover or a.channel_volume or a.top or a.filter_exclusive or a.seed_videos or a.locked_on or a.lockedon_volume or a.cfb_jnd or a.cfb_upcoming):
         print("credential smoke test:")
         return 0 if check() else 1
 
@@ -470,6 +538,20 @@ def main():
         print(f"  wrote {p}: {len(d['fbs_2026'])} FBS teams, "
               f"{len(d['nd_schedule_2026'])} ND games, "
               f"SP+ {'available' if isinstance(sp, list) else sp}")
+
+    if a.cfb_jnd:
+        pairs = cfb_jnd()
+        out = os.path.join(DATA, "cfb-rank-jnd.json")
+        json.dump(pairs, open(out, "w"), indent=1)
+        print(f"  {len(pairs)} ranked-vs-ranked games -> {out}")
+
+    if a.cfb_upcoming:
+        d = cfb_upcoming()
+        out = os.path.join(DATA, "cfb-2026-week1.json")
+        json.dump(d, open(out, "w"), indent=1)
+        for k, v in d.items():
+            print(f"    {k}: {len(v) if isinstance(v, list) else v}")
+        print(f"  wrote {out}")
 
     if a.lockedon_volume:
         chans = json.load(open(os.path.join(DATA, "youtube-lockedon.json")))

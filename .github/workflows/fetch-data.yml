@@ -18,7 +18,7 @@ on:
         required: true
         default: check
         type: choice
-        options: [check, cfb, youtube, discover-channels, filter-exclusive, channel-volume, top50-discover, seed-channels, locked-on, lockedon-volume, all]
+        options: [check, cfb, youtube, discover-channels, filter-exclusive, channel-volume, top50-discover, seed-channels, locked-on, lockedon-volume, cfb-jnd, cfb-upcoming, all]
       query:
         description: "Comma-separated queries/programs (youtube, discover-channels)"
         required: false
@@ -78,6 +78,18 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.GOOGLE_SPORTSPAGE_API || secrets.YOUTUBE_API }}
         run: python3 scripts/remote_fetch.py --locked-on
+
+      - name: CFB rank-gap JND history
+        if: ${{ inputs.what == 'cfb-jnd' }}
+        env:
+          CFBD_KEY: ${{ secrets.CFBD_KEY }}
+        run: python3 scripts/remote_fetch.py --cfb-jnd
+
+      - name: CFB preseason poll and week-1 lines
+        if: ${{ inputs.what == 'cfb-upcoming' }}
+        env:
+          CFBD_KEY: ${{ secrets.CFBD_KEY }}
+        run: python3 scripts/remote_fetch.py --cfb-upcoming
 
       - name: Measure the Locked On set
         if: ${{ inputs.what == 'lockedon-volume' }}
