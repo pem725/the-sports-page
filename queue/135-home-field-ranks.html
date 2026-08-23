@@ -1,0 +1,182 @@
+<!-- PUBLISH-META
+topic: CFB
+tags: CFB:cfb, Home Field, Notre Dame, Measurement
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Vol. I, No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)} .sc .v.gold{color:var(--gold)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
+</style>
+<meta property="og:title" content="Home Field Is Worth Thirteen Ranks. Most of It Is the Road Team Losing Them.">
+<meta property="og:description" content="A ranked college football team at home wins 77% of the time. The same kind of team on the road wins 48%. Split it three ways and the crowd is not doing the work -- the bus is.">
+<meta property="og:url" content="https://thesportspage.net/published/135-home-field-ranks.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/135-home-field-ranks.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Field Is Worth Thirteen Ranks">
+<meta name="twitter:description" content="We call it home field advantage. The numbers say it is mostly a road penalty. Same effect, wrong name, different lesson.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/135-home-field-ranks.png">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">College Football &middot; Opening Week, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+  <h2 class="hed">Home Field Is Worth Thirteen Ranks. <em>Most of It Is the Road Team Losing Them.</em></h2>
+  <p class="deck">A ranked college football team at home wins <strong>77%</strong> of the time. The same sort of team on the road wins <strong>48%</strong>. Split that gap three ways and the crowd turns out not to be doing the work.</p>
+  <p class="byline">The Sports Page &middot; The Professor &middot; what a stadium is worth</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v gold">13</div><div class="l">Ranks the venue is worth</div></div>
+    <div class="sc"><div class="v good">77%</div><div class="l">Better-ranked team wins &mdash; at home</div></div>
+    <div class="sc"><div class="v bad">48%</div><div class="l">Same team &mdash; on the road</div></div>
+  </div>
+
+  <p><strong>The question:</strong> how much is home field worth? Not in points. In ranks &mdash; the unit fans already argue in.</p>
+
+  <p><strong>The answer: about thirteen ranks.</strong> A team playing at home wins about as often as a team thirteen places better playing away.</p>
+
+  <p><strong>Here is the surprising part.</strong> We split that thirteen into its two halves. Playing at home helps a little. Playing away hurts almost twice as much. We named the thing after the wrong team.</p>
+
+  <p><strong>What you get from it:</strong> one adjustment you can do in your head. Before you pick a game, take thirteen ranks off whoever is travelling.</p>
+
+  <h3 class="sh">Measure it in the unit people already use</h3>
+
+  <p>Bookmakers price a stadium in points. Fans do not talk that way. Fans say &ldquo;we are sixth and they are seventh, so we should win.&rdquo; Ranks are the currency at the table.</p>
+
+  <p>So put the venue in ranks. Take every game where both teams were ranked. Give a simple equation two facts: how many places apart the teams were, and where the game was played. Ask it one question back. How many ranks would you have to hand a team to buy what the home stadium buys? <span class="cc" data-preview="Turning an effect into a familiar unit is the whole job of a measure. A number nobody can picture is not yet a measurement. Open the Building a Metric primer."><em>That is what a measure is for</em><a class="cc-i" href="https://thesportspage.net/concepts/measurement-building-a-metric.html" target="_blank" rel="noopener">i</a></span>.</p>
+
+  <h3 class="sh">A game happens in one of three places</h3>
+
+  <p>Most people split games two ways, home and away. That throws away the most useful games of all &mdash; the ones at neither place.</p>
+
+  <p>From 2015 through 2025 there were <strong>493</strong> games with both teams ranked. Of those, 190 were at the better team&rsquo;s home field, 219 were at its opponent&rsquo;s, and <strong>84</strong> were at a neutral site.</p>
+
+  <p>The better-ranked team won 77% at home. It won 48% away. At neutral sites it won 67% &mdash; sitting between the two, exactly where it should.</p>
+
+  <p>That middle group is what makes the rest trustworthy. Neutral games are the control.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Three venues, one gap</div>
+<svg class="chart" viewBox="0 0 720 348" role="img" aria-label="Three fitted curves show how often the better-ranked college football team wins, against how many ranks better it is. At home the curve reaches 75 percent at a 6-rank edge, at a neutral site at 11 ranks, and on the road not until 19 ranks. The neutral curve sits closer to the home curve than to the road curve, showing the travel penalty is larger than the home boost."><text x="0" y="15" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#1a1208">THE ROAD COSTS MORE THAN HOME HELPS</text><text x="0" y="31" font-family="'Roboto Mono',monospace" font-size="10.5" fill="#6b5e4a">493 ranked-vs-ranked college football games, 2015&#8211;25. Fitted curves.</text><text x="0" y="46" font-family="'Roboto Mono',monospace" font-size="10.5" fill="#6b5e4a">Marks on the 75% line: the ranks you need to win three of every four.</text><line x1="120" y1="284.8" x2="632" y2="284.8" stroke="#6b5e4a" stroke-width="1.3" stroke-dasharray="3 4"/><text x="112" y="287.8" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">25%</text><line x1="120" y1="208.8" x2="632" y2="208.8" stroke="#6b5e4a" stroke-width="1.3" stroke-dasharray="3 4"/><text x="112" y="211.8" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">50%</text><line x1="120" y1="132.8" x2="632" y2="132.8" stroke="#1a1208" stroke-width="1.8" stroke-dasharray="5 4"/><text x="112" y="135.8" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" font-weight="700" fill="#1a1208">75%</text><polyline fill="none" stroke="#2a6e3f" stroke-width="3" points="120.0,168.0 141.3,160.6 162.7,153.5 184.0,146.6 205.3,140.0 226.7,133.8 248.0,127.8 269.3,122.2 290.7,116.9 312.0,111.9 333.3,107.3 354.7,103.0 376.0,98.9 397.3,95.2 418.7,91.8 440.0,88.6 461.3,85.7 482.7,83.1 504.0,80.6 525.3,78.4 546.7,76.3 568.0,74.5 589.3,72.8 610.7,71.3 632.0,69.9"/><text x="638" y="73.9" font-family="'Roboto Mono',monospace" font-size="10" font-weight="700" fill="#2a6e3f">AT HOME</text><polyline fill="none" stroke="#c9962a" stroke-width="3" points="120.0,206.4 141.3,198.3 162.7,190.3 184.0,182.4 205.3,174.6 226.7,167.0 248.0,159.7 269.3,152.6 290.7,145.7 312.0,139.2 333.3,132.9 354.7,127.0 376.0,121.4 397.3,116.2 418.7,111.3 440.0,106.7 461.3,102.4 482.7,98.4 504.0,94.7 525.3,91.4 546.7,88.2 568.0,85.4 589.3,82.7 610.7,80.3 632.0,78.1"/><text x="638" y="88.9" font-family="'Roboto Mono',monospace" font-size="10" font-weight="700" fill="#c9962a">NEUTRAL</text><polyline fill="none" stroke="#b83a1e" stroke-width="3" points="120.0,270.2 141.3,263.3 162.7,256.1 184.0,248.7 205.3,241.1 226.7,233.3 248.0,225.3 269.3,217.3 290.7,209.2 312.0,201.1 333.3,193.1 354.7,185.1 376.0,177.3 397.3,169.7 418.7,162.2 440.0,155.0 461.3,148.1 482.7,141.4 504.0,135.1 525.3,129.1 546.7,123.4 568.0,118.0 589.3,113.0 610.7,108.3 632.0,103.9"/><text x="638" y="107.9" font-family="'Roboto Mono',monospace" font-size="10" font-weight="700" fill="#b83a1e">ON THE ROAD</text><line x1="230.0" y1="125.8" x2="230.0" y2="139.8" stroke="#2a6e3f" stroke-width="4"/><text x="230.0" y="154.8" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="11" font-weight="700" fill="#2a6e3f">6</text><line x1="333.8" y1="125.8" x2="333.8" y2="139.8" stroke="#c9962a" stroke-width="4"/><text x="333.8" y="154.8" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="11" font-weight="700" fill="#c9962a">11</text><line x1="512.0" y1="125.8" x2="512.0" y2="139.8" stroke="#b83a1e" stroke-width="4"/><text x="512.0" y="154.8" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="11" font-weight="700" fill="#b83a1e">19</text><text x="452" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-style="italic" font-size="15" fill="#1a1208">home to road: 13 ranks</text><text x="120.0" y="318" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">1</text><text x="205.3" y="318" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">5</text><text x="312.0" y="318" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">10</text><text x="418.7" y="318" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">15</text><text x="525.3" y="318" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">20</text><text x="632.0" y="318" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">25</text><text x="376.0" y="336" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#1a1208">HOW MANY RANKS BETTER THE FAVOURITE IS</text></svg>
+  </div>
+
+  <h3 class="sh">Where to put the bar</h3>
+
+  <p>Pick a standard: winning three of every four. That is the same 75% line we used to ask how far apart two rankings must be before the order means anything.</p>
+
+  <p>At home, a team needs to be <strong>six</strong> ranks better to win that often. At a neutral site it needs <strong>eleven</strong>. On the road it needs <strong>nineteen</strong>.</p>
+
+  <p>Six to nineteen. That is the thirteen.</p>
+
+  <div class="pull">
+    <p>We call it home field advantage. The numbers call it a road penalty.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh">It is not home cooking. It is road sickness.</h3>
+
+  <p>Now use the neutral games as the zero point, and the thirteen comes apart.</p>
+
+  <p>Playing at home is worth about <strong>five</strong> ranks more than playing nowhere; playing on the road costs about <strong>eight</strong>. The penalty is a bit under twice the size of the boost.</p>
+
+  <p>There is more. The road penalty is large enough that we can be confident it is real. The home boost is small enough that we cannot rule out its being nothing at all.</p>
+
+  <p>Think about what that means. The crowd, the band, the familiar locker room &mdash; the part everybody points to &mdash; is the part the data is least sure of. The flight, the hotel, the strange field, the body clock: that is where the effect lives.</p>
+
+  <h3 class="sh">The check that had to pass first</h3>
+
+  <p>An obvious objection: maybe good teams just schedule easier opponents at home. Then home games would look easy because they are easy, and the stadium gets credit it did not earn.</p>
+
+  <p>So we checked. The average rank gap was 7.8 at home, 7.7 at neutral sites, and 8.3 on the road. Those are the same number.</p>
+
+  <p>The three groups faced equally hard opponents. Whatever is moving the win rate, it is not the schedule. <span class="cc" data-preview="Before you believe a comparison, ask what else differs between the groups. If the groups were already unequal, the difference you found may belong to the inequality. Open the Research Design primer."><em>Always ask what else changed</em><a class="cc-i" href="https://thesportspage.net/concepts/research-design.html" target="_blank" rel="noopener">i</a></span>.</p>
+
+  <h3 class="sh">Notre Dame opens with none of it</h3>
+
+  <p>On Sunday, September 6, Notre Dame plays Wisconsin at Lambeau Field. The Irish are the home team on the ticket. They will not be at home.</p>
+
+  <p>Green Bay is about 135 miles from Madison and about 250 from South Bend; it is a neutral site that leans the other way.</p>
+
+  <p>Run the numbers on it. Notre Dame gives up the five ranks it would have banked in South Bend. Wisconsin avoids the eight it would have paid on the road. The stadium does more for the Badgers than it does for the Irish.</p>
+
+  <p>It will not decide this one. The preseason composite has Notre Dame fourth and Wisconsin fifty-third, and thirteen ranks does not close forty-nine. But hold onto the habit, because most weeks the gap is small and the venue is the whole story.</p>
+
+  <h3 class="sh">What to take home: the name points at the wrong team</h3>
+
+  <p>&ldquo;Home field advantage&rdquo; is two words about the host. It sends you looking at the crowd. The evidence says look at the bus.</p>
+
+  <p>That matters because the name decides what people try to fix. Believe in home cooking and you build a louder stadium; believe in road sickness and you fly out a day early, and you spend the money on sleep.</p>
+
+  <p>Take the habit with you. When you meet an effect named as a bonus for one side, ask whether it is really a cost to the other. Hospitals with better outcomes, schools in better neighbourhoods, funds with better years &mdash; each one is a gap somebody named from one end.</p>
+
+  <p>Same number. Different cause. Different fix.</p>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Games from the CollegeFootballData API: every regular-season game 2015&ndash;2025 in which both teams appeared in that week&rsquo;s AP poll, 493 in total, ties excluded. Venue is taken from the API&rsquo;s neutral-site flag rather than inferred from the home-team field, which matters more than it sounds: 84 of the 493 are neutral-site games, and counting them as home games for the listed host is what produced the earlier, wrong figure of 75% at home.</p>
+    <p style="color:#c8b99a">One logistic regression, all 493 games, neutral site as the reference category. Rank gap +0.11 per rank (SE 0.020); home +0.52 (SE 0.30, p = 0.08); away &minus;0.89 (SE 0.28, p = 0.001). The conversion is (home &minus; away) divided by the gap coefficient: <strong>13.2 ranks</strong>, 95% confidence interval [7.2, 19.2] by the delta method. That interval is wide, so the honest reading is &ldquo;somewhere around a dozen,&rdquo; not thirteen exactly. Fitted rates track the raw bands within 3.4 percentage points in all six venue-by-gap cells.</p>
+    <p style="color:#c8b99a">Mean rank gap by venue: 7.8 home, 7.7 neutral, 8.3 away. The 75% criterion is Thurstone&rsquo;s, from the law of comparative judgment (1927). The argument that a measure has to be converted into a unit somebody can act on before its numbers mean anything is from Sechrest, McKnight &amp; McKnight, <em>Calibration of measures for psychotherapy outcome studies</em>, American Psychologist 51(10), 1996.</p>
+    <p style="color:#c8b99a">Notre Dame vs. Wisconsin, Lambeau Field, Sunday, September 6, 2026, 6:30 p.m. Central, confirmed against the Notre Dame athletics announcement, ESPN, and the CollegeFootballData schedule. Preseason ranks are the Massey composite of 25 rating systems.</p>
+    <p style="color:#c8b99a">A limit worth stating plainly. A rank is not a fixed amount of quality. The distance between first and second is far larger than the distance between fiftieth and fifty-first, so &ldquo;thirteen ranks&rdquo; is a rough currency and not a physical constant. It is most trustworthy in the middle of the poll, where nearly all of these games live.</p>
+  </div>
+
+  <div class="footer"><span>The Sports Page &middot; Vol. I, No. __</span><span>What a stadium is worth</span><span>TODO_DATE &middot; New York, NY</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>
+</body>
+</html>

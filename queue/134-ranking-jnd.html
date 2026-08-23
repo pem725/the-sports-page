@@ -51,17 +51,17 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
 </style>
 <meta property="og:title" content="Two Teams a Rank Apart? The Higher One Wins 48.7% of the Time.">
-<meta property="og:description" content="You run a mediocre team and you get to raid a superteam. What's the fewest stars you'd need to steal to actually matter? The answer is different in every sport -- and the difference tells you what each sport really is.">
-<meta property="og:url" content="https://thesportspage.net/published/124-how-many-stars.html">
+<meta property="og:description" content="When #6 plays #7, the poll says one is better. The field says it is a coin flip. Two teams have to sit about ten places apart before a ranking tells you anything.">
+<meta property="og:url" content="https://thesportspage.net/published/134-ranking-jnd.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Sports Page">
-<meta property="og:image" content="https://thesportspage.net/assets/og/124-how-many-stars.png">
+<meta property="og:image" content="https://thesportspage.net/assets/og/134-ranking-jnd.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How Many Stars Does It Take to Flip a Team?">
-<meta name="twitter:description" content="Baseball needs about four. Basketball needs one. Football needs one -- if it's the quarterback. The count just reads back the structure of the sport.">
-<meta name="twitter:image" content="https://thesportspage.net/assets/og/124-how-many-stars.png">
+<meta name="twitter:title" content="Two Teams a Rank Apart? The Higher One Wins 48.7% of the Time.">
+<meta name="twitter:description" content="A ranking is printed to the nearest single place and it is good to about ten. Two independent tests, one answer.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/134-ranking-jnd.png">
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </head>
@@ -83,7 +83,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   <div class="stat-row">
     <div class="sc"><div class="v bad">48.7%</div><div class="l">Better-ranked team wins, 1&ndash;2 apart</div></div>
     <div class="sc"><div class="v now">~10</div><div class="l">Ranks needed before it means anything</div></div>
-    <div class="sc"><div class="v good">74.8%</div><div class="l">Better-ranked team wins &mdash; at home</div></div>
+    <div class="sc"><div class="v good">77%</div><div class="l">Better-ranked team wins &mdash; at home</div></div>
   </div>
 
   <p><strong>The question:</strong> how far apart do two teams have to be in the rankings before the ranking actually tells you who will win?</p>
@@ -140,11 +140,11 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
   <h3 class="sh">And one thing beats the ranking entirely</h3>
 
-  <p>Split those 493 games by where they were played, and something jumps out.</p>
+  <p>Split those 493 games three ways &mdash; home, away, and neutral site &mdash; and something jumps out.</p>
 
-  <p>When the better-ranked team plays at home, it wins <strong>74.8%</strong> of the time. On the road, <strong>50.2%</strong>.</p>
+  <p>When the better-ranked team plays at home, it wins <strong>77%</strong> of the time. On the road, <strong>48%</strong>. At a neutral site, in between: 67%.</p>
 
-  <p>A ranked team away from home is a coin flip, whatever the number beside its name. Home field is worth more than twenty ranks of polling, and no poll shows you that.</p>
+  <p>A ranked team away from home is worse than a coin flip, whatever the number beside its name. Where a game is played is worth about <strong>thirteen ranks</strong> of polling, and no poll shows you that. We take that number apart in a companion piece later this week.</p>
 
   <h3 class="sh">What to take home: ask for the error bars</h3>
 
@@ -158,7 +158,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
   <div class="box" style="background:var(--ink)">
     <h3>Notes &amp; sources</h3>
-    <p style="color:#c8b99a">Game data from the CollegeFootballData API: every regular-season game 2015&ndash;2025 in which both teams appeared in that week&rsquo;s AP poll, 493 in total. Ties excluded. The gap is the absolute difference in AP rank; the outcome is whether the better-ranked side won. Confidence intervals are Wilson 95%: 1&ndash;2 apart is 48.7% [0.38, 0.60], 12&ndash;16 is 77.8% [0.67, 0.86]. Note that no single band clears 0.75 with its whole interval &mdash; the point estimate crosses in the low teens, and the honest reading is &ldquo;around ten&rdquo; rather than an exact threshold.</p>
+    <p style="color:#c8b99a">Game data from the CollegeFootballData API: every regular-season game 2015&ndash;2025 in which both teams appeared in that week&rsquo;s AP poll, 493 in total. Ties excluded. Of the 493, 190 were played at the better-ranked team&rsquo;s home field, 219 at its opponent&rsquo;s, and 84 at neutral sites. The gap is the absolute difference in AP rank; the outcome is whether the better-ranked side won. Confidence intervals are Wilson 95%: 1&ndash;2 apart is 48.7% [0.38, 0.60], 12&ndash;16 is 77.8% [0.67, 0.86]. Note that no single band clears 0.75 with its whole interval &mdash; the point estimate crosses in the low teens, and the honest reading is &ldquo;around ten&rdquo; rather than an exact threshold.</p>
     <p style="color:#c8b99a">Rating systems from a Massey Ratings composite export, 2026 preseason: 138 teams, 25 systems with sufficient coverage. Pairs required at least 15 systems rating both teams, giving 9,453 pairs. Agreement is the share of those systems ordering the pair the same way as the composite. Median across-system range per team, 41 ranks; median standard deviation, 10.2 ranks.</p>
     <p style="color:#c8b99a">The 75% criterion is Thurstone&rsquo;s, from the law of comparative judgment (1927): two stimuli have a 50% chance of being ordered either way, so the halfway point between chance and certainty is 75%. The application of that idea to measures that are not physical &mdash; and the argument that a measure needs calibrating against behaviour before its numbers mean anything &mdash; is from Sechrest, McKnight &amp; McKnight, <em>Calibration of measures for psychotherapy outcome studies</em>, American Psychologist 51(10), 1996.</p>
     <p style="color:#c8b99a">One limit worth stating: preseason ratings are the noisiest of the year, so the 41-rank median spread should tighten as real games arrive. We will re-run this in November and report whether it did.</p>
