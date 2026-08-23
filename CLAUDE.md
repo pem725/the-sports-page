@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 353 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 352 issues remaining of 500
 
 ## Repository Structure
 
@@ -454,9 +454,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 147 issues (#1-147)
-Queue: 8 articles ready (088-sorsby-supplemental-bet*, 104-payroll-explosion-arms-race*, 123-one-that-got-away, 124-how-many-stars, 133-nd-hype-floor, 134-ranking-jnd, 135-home-field-ranks, 136-streak-timing, _TEMPLATE)  [* = benched: in queue/ but deliberately not in QUEUE_ORDER]
+Published: 148 issues (#1-148)
+Queue: 9 articles ready (088-sorsby-supplemental-bet*, 104-payroll-explosion-arms-race*, 123-one-that-got-away, 124-how-many-stars, 133-nd-hype-floor, 134-ranking-jnd, 135-home-field-ranks, 136-streak-timing, 137-schedule-leverage, _TEMPLATE)  [* = benched: in queue/ but deliberately not in QUEUE_ORDER]
 Concept primers: 26 published (latest: concepts/signal-vs-noise.html, Concept No. 26)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 353 issues remaining of 500
-Last published: Issue #147 — "Of 133 College Football Powers, Twenty-One Actually Pay for Themselves." (122-only-21-of-133.html) on August 22, 2026
+Goal: 352 issues remaining of 500
+Last published: Issue #148 — Sunday Edition No. 020 (sunday-020.html) on August 23, 2026
