@@ -465,8 +465,14 @@ def cfb_jnd(years=range(2015, 2026)):
             gap = abs(rk[hs] - rk[aw])
             better_is_home = rk[hs] < rk[aw]
             better_won = (hp > ap_) if better_is_home else (ap_ > hp)
+            # Neutral-site games have a nominal "home" team and no home field.
+            # Counting them as home games would inflate the home effect with
+            # kickoff classics and bowl-style neutrals -- and week 1 is full of
+            # them, which is exactly when this gets published.
+            neutral = bool(g.get("neutralSite", g.get("neutral_site", False)))
             pairs.append({"year": y, "week": wk, "gap": gap, "better_won": better_won,
-                          "better_home": better_is_home})
+                          "better_home": better_is_home, "neutral": neutral,
+                          "home": hs, "away": aw, "home_pts": hp, "away_pts": ap_})
             n += 1
         print(f"    {y}: {n} ranked-vs-ranked games")
     return pairs
