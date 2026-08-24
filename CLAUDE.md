@@ -216,8 +216,16 @@ question is *evidence of a gap*. Two of the last fifteen issues came from
 readers; the goal is to raise that ratio.
 
 The front door is `ask.html`, linked from a block on `index.html` directly under
-the subscribe box. Two channels: the existing `mailto:` and a GitHub issue with
-the `reader-question` label.
+the subscribe box. Two channels: **`ideas@thesportspage.net`** and a GitHub issue
+with the `reader-question` label.
+
+**Use the domain address, never a personal one.** On 2026-08-24 all 23 public
+`mailto:` links were moved off `pem725@gmail.com` and onto
+`ideas@thesportspage.net`, matching the `license@thesportspage.net` already in
+use. `feed.xml` embeds full article bodies, so it carries these links too and
+must be regenerated after any such sweep — verify GUIDs, pubDates and item
+titles are unchanged before pushing, or Buttondown will treat items as new and
+re-send them to the list.
 
 **When a question arrives:**
 
