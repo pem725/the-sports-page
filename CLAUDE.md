@@ -455,7 +455,7 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 ## Current State (update this when publishing)
 
 Published: 149 issues (#1-149)
-Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 133-nd-hype-floor, 134-ranking-jnd, 135-home-field-ranks, 137-schedule-leverage, 138-hot-window, 139-overfit-grid, _TEMPLATE)
+Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 133-nd-hype-floor, 134-ranking-jnd, 135-home-field-ranks, 137-schedule-leverage, 138-hot-window, 139-overfit-grid, 140-one-kick, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
 Goal: 351 issues remaining of 500
