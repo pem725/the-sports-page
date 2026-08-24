@@ -286,6 +286,21 @@ twice.
 directory, sourced from `~/.zshrc`. Not in `~/.zshrc` itself, not in the repo,
 not in any file git can see. Reference them by name only: `$CFBD_KEY`.
 
+**Setting one requires a real terminal.** `set_secret.py` now refuses to run
+without a TTY. This is not fussiness: `getpass` silently falls back to a mode
+that ECHOES the input (`Warning: Password input may be echoed`), so running it
+through an agent, a pipe, or Claude Code's `!` prefix would print the live
+secret into the transcript. Discovered 2026-08-24 attempting to store the
+Porkbun keys; nothing leaked only because stdin happened to be empty.
+
+```bash
+# in a real terminal window:
+python3 scripts/set_secret.py PORKBUN_API_KEY
+
+# or, if the value is already in a file (file is shredded afterwards):
+python3 scripts/set_secret.py PORKBUN_API_KEY --from-file /path/to/keyfile
+```
+
 **To check one, use the tool, which has no code path that can print a value:**
 ```bash
 python3 scripts/check_env.py                # all of them

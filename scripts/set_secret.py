@@ -42,12 +42,41 @@ def current(text: str, name: str):
 
 
 def main() -> int:
-    if len(sys.argv) != 2:
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if "--from-file" in sys.argv:
+        i = sys.argv.index("--from-file")
+        if i + 1 < len(sys.argv):
+            args = [a for a in args if a != sys.argv[i + 1]]
+    if len(args) != 1:
         print(__doc__.strip().split("\n\n")[1])
         return 2
-    name = sys.argv[1]
+    name = args[0]
     if not re.fullmatch(r"[A-Z][A-Z0-9_]*", name):
         print(f"refusing: {name!r} does not look like an environment variable name")
+        return 2
+
+    from_file = None
+    if "--from-file" in sys.argv:
+        i = sys.argv.index("--from-file")
+        if i + 1 >= len(sys.argv):
+            print("  --from-file needs a path")
+            return 2
+        from_file = sys.argv[i + 1]
+
+    # HARD STOP without a terminal. getpass silently falls back to a mode that
+    # ECHOES the input ("Warning: Password input may be echoed"), which would
+    # print a live secret into whatever is capturing this session. That fallback
+    # is the same class of bug that leaked two tokens already, so it is refused
+    # rather than warned about.
+    if from_file is None and not (sys.stdin.isatty() and sys.stdout.isatty()):
+        print("  REFUSING: no terminal, so the hidden prompt is not available.")
+        print("  getpass would fall back to echoing your input in plain text.\n")
+        print("  Do one of these instead:")
+        print("    1. Run this in a real terminal window (not inside an agent or a pipe):")
+        print(f"         python3 scripts/set_secret.py {name}")
+        print("    2. Or put the value alone in a file and hand it over:")
+        print(f"         python3 scripts/set_secret.py {name} --from-file /path/to/keyfile")
+        print("       The file is overwritten and deleted once the value is stored.")
         return 2
 
     os.makedirs(os.path.dirname(PATH), mode=0o700, exist_ok=True)
@@ -56,7 +85,25 @@ def main() -> int:
     old = current(text, name)
     print(f"  {name}: {'currently ' + fp(old) if old else 'not currently set'}")
 
-    new = getpass.getpass(f"  paste new {name} (input hidden, nothing is echoed): ").strip()
+    if from_file:
+        if not os.path.exists(from_file):
+            print(f"  no such file: {from_file}")
+            return 2
+        with open(from_file, encoding="utf-8") as fh:
+            new = fh.read().strip()
+        # scrub it: overwrite the bytes, then unlink, so the value does not
+        # linger on disk after it has been stored properly
+        try:
+            n = os.path.getsize(from_file)
+            with open(from_file, "wb") as fh:
+                fh.write(os.urandom(max(n, 64)))
+                fh.flush()
+                os.fsync(fh.fileno())
+        finally:
+            os.remove(from_file)
+        print(f"  read from {from_file}, which has been overwritten and removed")
+    else:
+        new = getpass.getpass(f"  paste new {name} (input hidden, nothing is echoed): ").strip()
     if not new:
         print("  empty input; nothing changed")
         return 1
