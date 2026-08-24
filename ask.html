@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Ask Us Something</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.sh:first-of-type{margin-top:.5rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.lesson{border-left:3px solid var(--gold);padding:.8rem 1.2rem;margin:1rem 0;background:var(--card)}
+.lesson strong{color:var(--rust);font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem}
+.lesson p{font-size:.9rem;line-height:1.6;margin:0}
+
+.timeline{list-style:none;padding:0;margin:1rem 0}
+.timeline li{font-size:.88rem;line-height:1.6;padding:.4rem 0 .4rem 1.2rem;border-bottom:1px solid var(--div);position:relative}
+.timeline li:last-child{border-bottom:none}
+.timeline li::before{content:'';position:absolute;left:0;top:.7rem;width:8px;height:8px;border-radius:50%;background:var(--steel)}
+.timeline li.fix::before{background:var(--rust)}
+.timeline li.win::before{background:var(--green)}
+.timeline li .date{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);margin-right:.5rem}
+
+#peek-list{list-style:none;padding:0;margin:1rem 0}
+#peek-list li{font-size:.9rem;line-height:1.65;padding:.5rem 0;border-bottom:1px solid var(--div)}
+#peek-list li:last-child{border-bottom:none}
+#peek-list a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3);font-weight:700}
+#peek-list a:hover{border-color:var(--rust)}
+#peek-list .tag{font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .5rem;border:1px solid var(--div);color:var(--muted);background:var(--cream);margin-left:.5rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}.sc .v.bad{color:var(--rust)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">A Reader Asks</div>
+  <div class="title"><a href="index.html" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">How this newsletter got built, what broke, and what we learned</div>
+  <div class="datebar">
+    <span id="about-est">Est. March 2026</span>
+    <span id="about-stats">Loading...</span>
+    <span><a href="index.html" style="color:inherit;border:none" target="_blank" rel="noopener">&larr; Back to Archive</a></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Ask Us Something. <em>The Good Ones Become Issues.</em></h1>
+
+  <div class="deck" style="font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.4rem;line-height:1.5">
+    A reader named Gene stopped one of us on campus and asked why a season-long winning percentage seems to quit at the last second. It was a better question than it sounds. It became a concept primer and an issue with his name on it. Yours might too.
+  </div>
+
+  <h2 class="sh">What we are actually after</h2>
+
+  <p>Not trivia. We are not the people to ask who holds the record for stolen bases.</p>
+
+  <p>We want the thing you argued about and could not settle. The claim somebody made confidently that you suspected was wrong but could not say why. The number that sounded impressive and left you uneasy.</p>
+
+  <p>Those are the good ones because they usually turn out to be about something larger than the game they came from.</p>
+
+  <h2 class="sh">A test you can run in ten seconds</h2>
+
+  <p>A question is probably worth sending if all three are true.</p>
+
+  <p><strong>One: there is a number in it, or there could be.</strong> &ldquo;Is he clutch?&rdquo; becomes answerable the moment you ask what a clutch situation is and how often people succeed in one.</p>
+
+  <p><strong>Two: you could not settle it at the table.</strong> If two minutes of talking would have done it, it is not the kind we need.</p>
+
+  <p><strong>Three: a reasonable person could be wrong about it.</strong> The best questions have a trap in them &mdash; an answer that feels obvious and is not.</p>
+
+  <h2 class="sh">What happens to it</h2>
+
+  <p>We check it against what we have already published: 149 issues and 27 concept primers. If the answer is sitting in the archive we will send you the link, which is a perfectly good outcome and takes a day.</p>
+
+  <p>If it is genuinely missing &mdash; the way Gene&rsquo;s was &mdash; we go and get the data, run the numbers, and write it up. You get named unless you would rather not be. Say so and we will keep you out of it.</p>
+
+  <p>We will tell you honestly when the data cannot answer it. That happens more than you would like, and saying so is part of the job.</p>
+
+  <h2 class="sh">Two things we will not do</h2>
+
+  <p>We will not tell you who wins tonight, and we will not help you bet. Everything here is about what the numbers can and cannot support, which is a different trade entirely.</p>
+
+  <div style="border:2px solid var(--rust);background:var(--cream);padding:1.6rem 1.8rem;margin:2rem 0">
+    <div style="font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:.7rem">Send it</div>
+    <p style="margin-bottom:1rem">Either way works. Email is easier; GitHub is public, so others can pile on.</p>
+    <p style="margin-bottom:0">
+      <a href="mailto:pem725@gmail.com?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="display:inline-block;background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.55rem 1.1rem;text-decoration:none;margin-right:.6rem">Email your question</a>
+      <a href="https://github.com/pem725/the-sports-page/issues/new?title=Reader+Question:&labels=reader-question" style="display:inline-block;border:1px solid var(--steel);color:var(--steel);font-family:'Roboto Mono',monospace;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.55rem 1.1rem;text-decoration:none" target="_blank" rel="noopener">Ask in the open</a>
+    </p>
+  </div>
+
+  <h2 class="sh">The worked example</h2>
+
+  <p>Gene supports the Bears. His question was this: if a team wins 75% of its games across a season, why is the probability something else entirely when it comes down to one last play?</p>
+
+  <p>It passed all three tests. There is a number in it. Nobody was going to settle it standing up. And the obvious answer &mdash; that the team somehow performs differently under pressure &mdash; turns out to be the trap.</p>
+
+  <p>The real answer is that the 75% was never a fact about one game. It is a fact about a crowd of games, and the single game does not carry it around inside itself. Philosophers gave that distinction a name in 1894, and it explains a great deal more than football.</p>
+
+  <p>That became <a href="https://thesportspage.net/concepts/nomothetic-vs-idiographic.html">Concept Primer No. 27</a>, and an issue that also works out how his Bears stack up against our Jets. One question, asked in passing, on a Monday morning.</p>
+
+  <p style="margin-top:1.6rem"><strong>So: what have you been arguing about?</strong></p>
+
+  <div class="footer">
+    <span>The Sports Page &middot; A Reader Asks</span>
+    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+  </div>
+</div>
+</body>
+</html>

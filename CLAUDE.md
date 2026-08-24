@@ -209,6 +209,49 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 - Never publish stale numbers. If the data fetch fails, stop and alert — do not fall back to the template's example values.
 - The whole point of the Sunday Edition is public accountability. Misses are not embarrassing; hiding misses is.
 
+### A Reader Asks (the question pipeline)
+
+Reader questions are the highest-value input the newsletter has, because a real
+question is *evidence of a gap*. Two of the last fifteen issues came from
+readers; the goal is to raise that ratio.
+
+The front door is `ask.html`, linked from a block on `index.html` directly under
+the subscribe box. Two channels: the existing `mailto:` and a GitHub issue with
+the `reader-question` label.
+
+**When a question arrives:**
+
+1. **Log it** in `tracking/reader-questions.md` — date, first name, the question
+   compressed to one line, status `new`. **Never record an email address, phone
+   number, or any other contact detail** in the repo. First name and team
+   allegiance is the ceiling. The message itself stays in the inbox.
+
+2. **Vet it against the archive before writing anything.** Grep `published/` and
+   `concepts/`. Most questions are already answered, and replying with a link the
+   same day is a *good* outcome — mark it `answered-by-link`. Do not manufacture
+   a new issue for a question the corpus already covers.
+
+3. **Apply the three-part test** (also stated publicly on `ask.html`): is there a
+   number in it or could there be; could it not be settled at the table; could a
+   reasonable person be wrong about it. All three → it earns a piece.
+
+4. **Decide the tier.** A question about a *fact* becomes an issue. A question
+   about a *concept* — Gene's was — earns a concept primer as well, because the
+   gap it exposes is in the curriculum, not the archive. Check
+   `concepts/registry.json` for whether the concept already exists.
+
+5. **Name the reader** in the byline or the deck, first name only, unless they
+   asked not to be. Follow the existing pattern: "answering Gene", "answers Tim".
+   This is a deliberate exception to the no-name-dropping rule, which is about
+   family team allegiances, not readers who wrote in.
+
+6. **Answer honestly when the data cannot.** `ask.html` promises this in public.
+   A piece that says "we looked and the data will not support an answer" is a
+   legitimate outcome and often a better one.
+
+**Never** use a reader question as cover for a piece you wanted to write anyway.
+The vetting step in (2) exists to stop exactly that.
+
 ### Content Tiers:
 - **Timely**: Breaking news, injuries, game results. Publish immediately. Goes stale fast.
 - **Analytical**: Trade analyses, historical comparisons, series pieces. Publish to fill gaps.
