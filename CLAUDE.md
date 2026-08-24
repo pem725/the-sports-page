@@ -303,6 +303,21 @@ echo "${TOKEN:-x}"     set | grep TOKEN         curl -v -H "Authorization: $TOKE
 Passing a secret to `curl -H` is fine. Adding `-v` or `--trace` to that same
 command is not — it echoes the header.
 
+**Porkbun** (the registrar) issues a *pair*: `PORKBUN_API_KEY` and
+`PORKBUN_SECRET_KEY`. Both are stored the same way as everything else and are
+used together. Talk to it via `scripts/porkbun.py`, which passes them as
+`X-API-Key` / `X-Secret-API-Key` headers straight from `os.environ` and has no
+code path that prints either one:
+```bash
+python3 scripts/porkbun.py --ping                    # do the keys work?
+python3 scripts/porkbun.py --mx thesportspage.net    # is mail routable?
+```
+Two things worth knowing before reaching for it. **Email forwarding is not in
+the v3 API** — of 68 endpoints the only `/email` one is `setPassword`, for the
+paid mailbox product, and `addUrlForward` is *web* redirects. Forwarding is
+dashboard-only. And **API access must be enabled per-domain** in the Porkbun
+control panel, so a valid key pair can still return an error for a domain.
+
 **For CI**, use `gh secret set NAME` and paste at the prompt, or
 `gh secret set NAME < file`. Both read the value without echoing it. Never put a
 token in a workflow file.
