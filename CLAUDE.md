@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 350 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 349 issues remaining of 500
 
 ## Repository Structure
 
@@ -535,9 +535,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 150 issues (#1-150)
-Queue: 12 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 134-ranking-jnd, 135-home-field-ranks, 137-schedule-leverage, 138-hot-window, 139-overfit-grid, 140-one-kick, 141-al-east-luck, _TEMPLATE)
+Published: 151 issues (#1-151)
+Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 134-ranking-jnd, 135-home-field-ranks, 137-schedule-leverage, 139-overfit-grid, 140-one-kick, 141-al-east-luck, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 350 issues remaining of 500
-Last published: Issue #150 — "Notre Dame Gets Talked About All Summer. So Does Everybody Else." (133-nd-hype-floor.html) on August 25, 2026
+Goal: 349 issues remaining of 500
+Last published: Issue #151 — "Kansas City Has Won Seven Straight. They Are a .435 Team." (138-hot-window.html) on August 26, 2026
