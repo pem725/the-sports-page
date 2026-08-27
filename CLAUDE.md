@@ -447,6 +447,16 @@ somewhere safer afterwards does nothing for the value that already leaked.
   The depth belongs in the concept primer and the methods box — the issue itself
   should be readable at a bus stop.
 
+- **Refresh any live-standings piece the day before it publishes.** A queued issue
+  freezes its numbers on the day it was written, and a headline built on a live
+  standing can go false while it sits in the queue. This has now happened twice:
+  #141 was written 2026-08-25 on "Boston has the best run differential in the AL
+  East" and New York passed them two days later, +104 to +101, before it went
+  out. Before a date-sensitive piece publishes, re-pull and check that the
+  headline claim still holds. **Prefer a headline built on a gap that cannot flip
+  overnight** (Tampa Bay is 50+ runs behind both chasers) over one built on a
+  narrow lead (+101 vs +100).
+
 - **Triple-verify every number**: Every statistic, record, score, streak, or standing published in an issue MUST be verified against at least 3 independent sources (e.g., ESPN, Baseball-Reference, MLB.com). If sources disagree, resolve the discrepancy before publishing. Never infer a number from another number (e.g., don't assume a losing streak grew by 1 because the record changed — check the actual game-by-game results). A newsletter built on statistical credibility cannot publish wrong numbers.
 - **Single question per issue**: Every issue focuses on ONE statistical question.
 - **No holiday specials**: Sports content only, no seasonal gimmicks. The ONE exception is MLB Opening Day — see below.
