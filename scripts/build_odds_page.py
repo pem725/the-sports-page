@@ -56,6 +56,9 @@ color:var(--rust);font-weight:600;border-bottom:1px solid var(--div);padding-bot
 .tile{background:var(--card);border:1px solid var(--div);padding:.45rem .5rem .3rem;cursor:pointer;
 transition:background .12s,border-color .12s;position:relative}
 .tile:hover,.tile.on{background:#fbf7ec;border-color:var(--ink)}
+.tile.pin{background:#fbf7ec;border-color:var(--rust);box-shadow:inset 3px 0 0 var(--rust)}
+.pinflag{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-left:.6rem;vertical-align:.25em}
+.pinflag.dim{color:var(--muted)}
 .tile:focus-visible{outline:2px solid var(--rust);outline-offset:1px}
 .tile .ab{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em}
 .tile .pc{font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);float:right}
@@ -76,23 +79,25 @@ font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double v
 
 JS = """
 const D=DATA,W=D.dates.length;
+let pinned=null;
+const first=document.querySelector('.tile').dataset.id;                     // click pins a club; hover only previews
 const fmt=v=>(v>=0.999?'>99%':v<=0.001?'<1%':(v*100).toFixed(v<0.1?1:0)+'%');
 const nice=s=>{const[y,m,d]=s.split('-');return ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m]+' '+(+d);};
-function spark(a,col,w,h){
-  if(!a.length)return '';
-  const pts=a.map((v,i)=>[(i/(W-1))*w,h-v*h]);
-  return '<polyline fill="none" stroke="'+col+'" stroke-width="1.8" stroke-linejoin="round" points="'+
-    pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ')+'"/>'+
-    '<circle cx="'+pts[pts.length-1][0].toFixed(1)+'" cy="'+pts[pts.length-1][1].toFixed(1)+'" r="2.2" fill="'+col+'"/>';
-}
 function show(id){
-  const t=D.teams[id];
-  document.querySelectorAll('.tile').forEach(e=>e.classList.toggle('on',e.dataset.id===id));
+  const t=D.teams[id];if(!t)return;
+  document.querySelectorAll('.tile').forEach(e=>{
+    e.classList.toggle('on',e.dataset.id===id);
+    e.classList.toggle('pin',e.dataset.id===pinned);
+    e.setAttribute('aria-pressed',e.dataset.id===pinned);
+  });
   const po=t.po[W-1],dv=t.dv[W-1],po0=t.po[0];
-  const delta=po-po0, arrow=delta>0.02?'&#9650;':delta<-0.02?'&#9660;':'&#8213;';
+  const delta=po-po0,arrow=delta>0.02?'&#9650;':delta<-0.02?'&#9660;':'&#8213;';
   const col=delta>0.02?'var(--green)':delta<-0.02?'var(--rust)':'var(--muted)';
+  const tag=(id===pinned)
+    ?'<span class="pinflag">pinned &middot; click again to release</span>'
+    :'<span class="pinflag dim">click to pin</span>';
   document.getElementById('readout').innerHTML=
-    '<div class="rt">'+t.name+'</div>'+
+    '<div class="rt">'+t.name+tag+'</div>'+
     '<div class="rr">'+t.w+'-'+t.l+'</div>'+
     '<table><tr><td>Reach the playoffs</td><td>'+fmt(po)+'</td></tr>'+
     '<tr><td colspan="2"><div class="bar"><span style="width:'+(po*100).toFixed(1)+'%;background:var(--steel)"></span></div></td></tr>'+
@@ -101,14 +106,21 @@ function show(id){
     '</table><div class="hint" style="margin-top:.5rem;color:'+col+'">'+arrow+' '+
     nice(D.dates[0])+': '+fmt(po0)+' &rarr; '+nice(D.dates[W-1])+': '+fmt(po)+'</div>';
 }
+const restore=()=>show(pinned||first);
 document.querySelectorAll('.tile').forEach(e=>{
-  e.addEventListener('mouseenter',()=>show(e.dataset.id));
-  e.addEventListener('focus',()=>show(e.dataset.id));
-  e.addEventListener('click',()=>show(e.dataset.id));
+  const id=e.dataset.id;
+  e.addEventListener('mouseenter',()=>show(id));
+  e.addEventListener('focus',()=>show(id));
+  e.addEventListener('click',()=>{pinned=(pinned===id)?null:id;show(pinned||id);});
+  e.addEventListener('keydown',ev=>{
+    if(ev.key===' '||ev.key==='Enter'){ev.preventDefault();pinned=(pinned===id)?null:id;show(pinned||id);}
+  });
 });
-show(document.querySelector('.tile').dataset.id);
+// leaving the board reverts to whatever is pinned, instead of stranding a preview
+const board=document.getElementById('board');
+if(board)board.addEventListener('mouseleave',restore);
+show(first);
 """
-
 
 def build() -> str:
     D = json.loads(DATA.read_text())
@@ -162,7 +174,7 @@ def build() -> str:
     <span><i style="background:#c9962a"></i>chance of winning the division</span>
     <span>dashed line = 50%</span>
   </div>
-  {grid}
+  <div id="board">{grid}</div>
   <div class="readout" id="readout"></div>
   <p style="font-size:.8rem;color:var(--muted);margin-top:1.2rem;line-height:1.6">
     Odds come from simulating every remaining game 20,000 times from the real standings and the real
