@@ -1,0 +1,171 @@
+<!-- PUBLISH-META
+topic: MLB
+tags: MLB:mlb, Playoffs, Hope, Measurement, Reader Idea
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Vol. I, No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)} .sc .v.now{color:var(--steel)} .sc .v.good{color:var(--green)} .sc .v.gold{color:var(--gold)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart-wrap{background:var(--card);border:1px solid var(--div);padding:1.2rem;margin:1.5rem 0}
+.chart-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+svg.chart{width:100%;height:auto;display:block}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+.cc[data-preview]:hover::after{left:0;transform:none}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
+</style>
+<meta property="og:title" content="The Best Season to Watch Is Not the Best Season to Have.">
+<meta property="og:description" content="Clubs that surged from nowhere win 44.6% of their playoff series. Clubs that were never in doubt win 57.4%. The anxiety is not the price of success. You just pay it.">
+<meta property="og:url" content="https://thesportspage.net/published/142-hope-curve.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/142-hope-curve.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Measuring Hope, and Asking What It Buys">
+<meta name="twitter:description" content="A reader asked what the area under a playoff-odds curve means. It measures how much of the season you got to enjoy -- which turns out not to be the same thing as winning.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/142-hope-curve.png">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Baseball &middot; A Reader&rsquo;s Idea</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+  <h2 class="hed">The Best Season to Watch <em>Is Not the Best Season to Have.</em></h2>
+  <p class="deck">Clubs that surged from nowhere win <strong>44.6%</strong> of their playoff series. Clubs that were never in doubt win <strong>57.4%</strong>. The anxiety is not the price of success. You just pay it.</p>
+  <p class="byline">The Sports Page &middot; The Professor &middot; what a season is worth to live through</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">1.1</div><div class="l">The Mets&rsquo; hope index &mdash; lowest in baseball</div></div>
+    <div class="sc"><div class="v now">250</div><div class="l">Playoff clubs since 1998 we could test</div></div>
+    <div class="sc"><div class="v gold">0.055</div><div class="l">How close the answer came to counting</div></div>
+  </div>
+
+  <p><strong>The question,</strong> from a reader looking at our odds board. Shade in the area under a club&rsquo;s playoff-odds curve: what have you measured?</p>
+
+  <p><strong>The answer: how much of the season the fans got to enjoy.</strong> Not whether the club succeeds. Those turn out to be different numbers.</p>
+
+  <p><strong>Here is the surprising part.</strong> He guessed that the ideal shape is nothing early and a great swelling late &mdash; hope rising, everything feeling better. He is right that it feels best. It is also, if anything, the shape that wins <em>least</em>.</p>
+
+  <p><strong>What you get from it:</strong> a way to separate how good a season was from how good it felt.</p>
+
+  <h3 class="sh">Shading in the area</h3>
+
+  <p>Every week we work out each club&rsquo;s chance of reaching the playoffs. Draw those weekly numbers as a line and shade underneath, and the shaded part is the share of the year that club spent plausibly alive. Call it the <strong>hope index</strong>, from 0 to 100.</p>
+
+  <p>The 2026 Mets score <strong>1.1</strong>. It is the lowest in baseball. Their best week all season put them at seven percent, and they never got closer. Whatever else you want to say about that team, the number says the fans were never given anything to hold.</p>
+
+  <p>Boston is the opposite shape. Their index is only 36 &mdash; they banked almost no hope all year &mdash; and yet they finish above 99%. Everything arrived at the end. That is the reader&rsquo;s ideal curve, drawn in real life.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Thirty clubs, by how much hope and when it came</div>
+<svg class="chart" viewBox="0 0 720 372" role="img" aria-label="A scatter of all thirty clubs. The vertical axis is the share of the season a club spent likely to make the playoffs; the horizontal axis is when that hope lived, from all-in-April on the left to all-in-August on the right. Green dots, still alive, cluster to the right. Red dots, eliminated, cluster to the left and along the bottom. The Mets sit at the very bottom left with almost no area at all."><text x="0" y="16" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#1a1208">HOW MUCH HOPE, AND WHEN IT ARRIVED</text><text x="0" y="33" font-family="'Roboto Mono',monospace" font-size="10.5" fill="#6b5e4a">Up the page: the share of the season a club spent likely to make the playoffs.</text><text x="0" y="49" font-family="'Roboto Mono',monospace" font-size="10.5" fill="#6b5e4a">Across: when that hope lived. Left = all in April. Right = all in August.</text><line x1="397" y1="66" x2="397" y2="306" stroke="#c8b99a" stroke-width="1.2" stroke-dasharray="3 4"/><text x="397" y="60" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9" fill="#6b5e4a">evenly spread</text><line x1="112" y1="243.5" x2="596" y2="243.5" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/><text x="104" y="246.5" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">25%</text><line x1="112" y1="187.0" x2="596" y2="187.0" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/><text x="104" y="190.0" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">50%</text><line x1="112" y1="130.5" x2="596" y2="130.5" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/><text x="104" y="133.5" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">75%</text><circle cx="165.0" cy="286.3" r="5.5" fill="#b83a1e" opacity="0.95"/><text x="175.0" y="296.3" text-anchor="start" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#b83a1e">LAA</text><circle cx="415.5" cy="221.7" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="337.4" cy="261.3" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="535.3" cy="218.9" r="5.5" fill="#2a6e3f" opacity="0.95"/><text x="549.3" y="212.9" text-anchor="start" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#2a6e3f">BOS</text><circle cx="424.7" cy="136.5" r="3.8" fill="#2a6e3f" opacity="0.5"/><circle cx="201.6" cy="269.6" r="5.5" fill="#b83a1e" opacity="0.95"/><text x="189.6" y="277.6" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#b83a1e">CIN</text><circle cx="379.2" cy="152.7" r="3.8" fill="#2a6e3f" opacity="0.5"/><circle cx="161.5" cy="297.1" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="323.0" cy="252.4" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="503.1" cy="239.2" r="5.5" fill="#b83a1e" opacity="0.95"/><text x="515.1" y="249.2" text-anchor="start" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#b83a1e">HOU</text><circle cx="211.9" cy="288.4" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="402.3" cy="79.8" r="5.5" fill="#2a6e3f" opacity="0.95"/><text x="414.3" y="73.8" text-anchor="start" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#2a6e3f">LAD</text><circle cx="365.1" cy="254.6" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="221.5" cy="297.6" r="5.5" fill="#b83a1e" opacity="0.95"/><text x="235.5" y="301.6" text-anchor="start" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#b83a1e">NYM</text><circle cx="254.8" cy="237.5" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="303.5" cy="234.1" r="5.5" fill="#b83a1e" opacity="0.95"/><text x="291.5" y="226.1" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#b83a1e">PIT</text><circle cx="353.4" cy="198.3" r="3.8" fill="#2a6e3f" opacity="0.5"/><circle cx="371.3" cy="194.5" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="180.5" cy="297.0" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="342.6" cy="216.9" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="410.6" cy="87.5" r="3.8" fill="#2a6e3f" opacity="0.5"/><circle cx="384.3" cy="189.8" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="358.3" cy="258.2" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="352.8" cy="238.3" r="5.5" fill="#b83a1e" opacity="0.95"/><text x="340.8" y="230.3" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#b83a1e">MIN</text><circle cx="494.0" cy="208.5" r="5.5" fill="#2a6e3f" opacity="0.95"/><text x="506.0" y="202.5" text-anchor="start" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#2a6e3f">PHI</text><circle cx="398.5" cy="78.6" r="5.5" fill="#2a6e3f" opacity="0.95"/><text x="384.5" y="72.6" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#2a6e3f">ATL</text><circle cx="459.4" cy="157.4" r="5.5" fill="#2a6e3f" opacity="0.95"/><text x="471.4" y="167.4" text-anchor="start" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#2a6e3f">CWS</text><circle cx="414.0" cy="250.1" r="3.8" fill="#b83a1e" opacity="0.5"/><circle cx="402.8" cy="81.7" r="3.8" fill="#2a6e3f" opacity="0.5"/><circle cx="430.9" cy="103.6" r="5.5" fill="#2a6e3f" opacity="0.95"/><text x="442.9" y="113.6" text-anchor="start" font-family="'Roboto Mono',monospace" font-size="9.6" font-weight="700" fill="#2a6e3f">MIL</text><text x="116" y="322" font-family="'Roboto Mono',monospace" font-size="9.6" fill="#6b5e4a">hope came early</text><text x="592" y="322" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9.6" fill="#6b5e4a">hope came late</text><text x="354" y="340" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#1a1208">WHEN THE HOPE LIVED</text><circle cx="118" cy="356" r="4" fill="#2a6e3f"/><text x="128" y="360" font-family="'Roboto Mono',monospace" font-size="9.6" fill="#1a1208">finishing above 50%</text><circle cx="224" cy="356" r="4" fill="#b83a1e"/><text x="234" y="360" font-family="'Roboto Mono',monospace" font-size="9.6" fill="#1a1208">finishing below 50%</text></svg>
+  </div>
+
+  <h3 class="sh">The trap in the question</h3>
+
+  <p>Look at that chart and the conclusion seems obvious: hope arriving late goes with a season that ends well. Every club on the right is alive; almost everything on the left is dead.</p>
+
+  <p>Be careful, because a good deal of that is arithmetic rather than discovery. A curve that finishes high is <em>mechanically</em> weighted late; you cannot end the year at 99% and have your area sit in April. Measured this way, &ldquo;late hope goes with good endings&rdquo; is close to a definition.</p>
+
+  <p>So we asked a version that cannot cheat. Among clubs that <em>all</em> reached the playoffs, does it matter how they got there? And we measured the shape at the <strong>midpoint of the season</strong> &mdash; a fixed date, decided before anyone knew how the story ended.</p>
+
+  <div class="pull">
+    <p>A season has two values: where it finishes, and what it was like to sit through. Only one of them goes in the record book.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh">Two hundred and fifty teams, and a shrug</h3>
+
+  <p>So we rebuilt the weekly odds for every season from 1998 through 2025. That is 810 club-seasons, 250 of which reached October. Then we sorted those 250 by how likely they had looked at midseason.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 2 &middot; Playoff series won, by how the season had been going</div>
+<svg class="chart" viewBox="0 0 720 380" role="img" aria-label="Four horizontal intervals, one per group of playoff teams sorted by how likely they looked at the season midpoint. Clubs that surged from nowhere won 44.6 percent of their playoff series, those that climbed late 52.9, comfortable clubs 43.1, and clubs that cruised all year 57.4. All four confidence intervals overlap one another and all four cross or nearly cross the 50 percent line."><text x="0" y="16" font-family="'Roboto Mono',monospace" font-size="12.5" fill="#1a1208">DID IT MATTER HOW THEY GOT IN?</text><text x="0" y="33" font-family="'Roboto Mono',monospace" font-size="10.5" fill="#6b5e4a">250 clubs that reached the postseason, 1998&#8211;2025, grouped by how likely they looked</text><text x="0" y="49" font-family="'Roboto Mono',monospace" font-size="10.5" fill="#6b5e4a">at the season&#8217;s midpoint. Share of their playoff series won, with 95% intervals.</text><line x1="439" y1="76" x2="439" y2="270" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="5 4"/><text x="439" y="70" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#1a1208">a coin flip</text><line x1="285" y1="80" x2="285" y2="270" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/><line x1="362" y1="80" x2="362" y2="270" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/><line x1="516" y1="80" x2="516" y2="270" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/><line x1="593" y1="80" x2="593" y2="270" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2 4"/><text x="236" y="98" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="11" font-weight="700" fill="#1a1208">surged from nowhere</text><text x="236" y="111" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9" fill="#6b5e4a">1%–41% at midseason</text><text x="236" y="123" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9" fill="#6b5e4a">45 of 101 series</text><line x1="325.0" y1="96" x2="472.0" y2="96" stroke="#6b5e4a" stroke-width="2.4" opacity=".55"/><line x1="325.0" y1="90" x2="325.0" y2="102" stroke="#6b5e4a" stroke-width="2"/><line x1="472.0" y1="90" x2="472.0" y2="102" stroke="#6b5e4a" stroke-width="2"/><circle cx="397.0" cy="96" r="6" fill="#6b5e4a"/><text x="397.0" y="83" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10.5" font-weight="700" fill="#6b5e4a">44.6%</text><text x="236" y="146" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="11" font-weight="700" fill="#1a1208">climbed late</text><text x="236" y="159" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9" fill="#6b5e4a">42%–74%</text><text x="236" y="171" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9" fill="#6b5e4a">64 of 121 series</text><line x1="393.0" y1="144" x2="528.2" y2="144" stroke="#6b5e4a" stroke-width="2.4" opacity=".55"/><line x1="393.0" y1="138" x2="393.0" y2="150" stroke="#6b5e4a" stroke-width="2"/><line x1="528.2" y1="138" x2="528.2" y2="150" stroke="#6b5e4a" stroke-width="2"/><circle cx="461.3" cy="144" r="6" fill="#6b5e4a"/><text x="461.3" y="131" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10.5" font-weight="700" fill="#6b5e4a">52.9%</text><text x="236" y="194" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="11" font-weight="700" fill="#1a1208">comfortable</text><text x="236" y="207" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9" fill="#6b5e4a">75%–95%</text><text x="236" y="219" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9" fill="#6b5e4a">44 of 102 series</text><line x1="315.1" y1="192" x2="460.8" y2="192" stroke="#6b5e4a" stroke-width="2.4" opacity=".55"/><line x1="315.1" y1="186" x2="315.1" y2="198" stroke="#6b5e4a" stroke-width="2"/><line x1="460.8" y1="186" x2="460.8" y2="198" stroke="#6b5e4a" stroke-width="2"/><circle cx="386.0" cy="192" r="6" fill="#6b5e4a"/><text x="386.0" y="179" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10.5" font-weight="700" fill="#6b5e4a">43.1%</text><text x="236" y="242" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="11" font-weight="700" fill="#1a1208">cruised all year</text><text x="236" y="255" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9" fill="#6b5e4a">95%–100%</text><text x="236" y="267" text-anchor="end" font-family="'Roboto Mono',monospace" font-size="9" fill="#6b5e4a">70 of 122 series</text><line x1="427.5" y1="240" x2="560.9" y2="240" stroke="#6b5e4a" stroke-width="2.4" opacity=".55"/><line x1="427.5" y1="234" x2="427.5" y2="246" stroke="#6b5e4a" stroke-width="2"/><line x1="560.9" y1="234" x2="560.9" y2="246" stroke="#6b5e4a" stroke-width="2"/><circle cx="496.0" cy="240" r="6" fill="#6b5e4a"/><text x="496.0" y="227" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10.5" font-weight="700" fill="#6b5e4a">57.4%</text><text x="285" y="300" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">30%</text><text x="362" y="300" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">40%</text><text x="439" y="300" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">50%</text><text x="516" y="300" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">60%</text><text x="593" y="300" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9.5" fill="#6b5e4a">70%</text><text x="439" y="318" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#1a1208">SHARE OF PLAYOFF SERIES WON</text><line x1="0" y1="332" x2="700" y2="332" stroke="#c8b99a" stroke-width="1"/><text x="0" y="352" font-family="'Roboto Mono',monospace" font-size="10.5" fill="#1a1208">EVERY INTERVAL OVERLAPS EVERY OTHER ONE.</text><text x="0" y="368" font-family="'Roboto Mono',monospace" font-size="10" fill="#6b5e4a">And the order is not monotonic &#8212; the third group is the worst of the four.</text></svg>
+  </div>
+
+  <p>The clubs that surged from nowhere won <strong>44.6%</strong> of their playoff series. The clubs that cruised from April won <strong>57.4%</strong>. That is a gap of nearly thirteen points, and it points the wrong way for the fairytale.</p>
+
+  <p>Now the honest part, which matters more than the gap. That difference lands at <strong>p = 0.055</strong>, just the wrong side of the line we would need. Every interval in the chart overlaps every other one. And the order is not even tidy &mdash; the third group is the worst of the four, which is not how a real effect behaves.</p>
+
+  <p>Across all 250 clubs the relationship is <strong>r = +0.086</strong>. Champions had a median midseason chance of 78%, against 74% for playoff teams generally. That is nothing.</p>
+
+  <p>So we cannot tell you that cruising helps. We can tell you that surging does not, which was the claim on offer.</p>
+
+  <h3 class="sh">What the area is actually good for</h3>
+
+  <p>None of this makes the hope index useless. It is an excellent measure &mdash; of the thing it measures. Across all 810 club-seasons it correlates <strong>+0.79</strong> with reaching the playoffs, so it is certainly tracking something real.</p>
+
+  <p>It just is not a forecast; it is a description of what the summer was like. Seen that way, it answers a question nobody asks out loud. Not <em>was my team good</em>, but <em>did following them give me anything back</em>.</p>
+
+  <p>By that measure the 2026 Mets had the worst season in baseball, and it is not close. It also has almost nothing to do with their record.</p>
+
+  <h3 class="sh">What to take home: score the experience separately</h3>
+
+  <p>Keep the two apart. <strong>Where a thing ended</strong> is one number. <strong>What it was like along the way</strong> is another, and it is measurable too, if anyone bothers.</p>
+
+  <p>We hardly ever bother. A fund is judged on its return, not on the fourteen months you spent checking it at two in the morning. A degree is judged on whether you finished, not on the three years. A project ships or it does not.</p>
+
+  <p>The area under the curve is a way of putting a number on the part that gets thrown away. Sometimes the two numbers agree. Often they do not, and it is worth knowing which one somebody is quoting at you.</p>
+
+  <p>And to the reader who asked: your ideal curve really is the best one to live through. It is simply not a plan.</p>
+
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Weekly playoff odds were rebuilt for every season from 1998 through 2025, excluding 2020 for its 60-game schedule: 27 seasons, 810 club-seasons, roughly 23 weekly snapshots each. Records and run totals at each cutoff come from game-by-game results rather than from a summary, and the number of wild cards is set to the era &mdash; one per league through 2011, two through 2021, three since 2022. Each snapshot simulates every remaining game 4,000 times, with team strength a blend of record and Pythagorean expectation regressed toward .500, log5 game probabilities, and a .535 home-field adjustment.</p>
+    <p style="color:#c8b99a">The hope index is the mean of a club&rsquo;s weekly playoff probabilities across the season, expressed 0&ndash;100. It correlates +0.788 with reaching the playoffs across all 810 club-seasons, which is the check that it measures something.</p>
+    <p style="color:#c8b99a">The test uses the 250 clubs that reached the postseason and the 446 series they played. Shape is taken as the club&rsquo;s playoff probability at the midpoint of its season &mdash; deliberately not the centroid of the curve, because a curve that ends high is dragged late by that ending, and the centroid would then be partly a restatement of the outcome. Quartile series-win rates: 44.6% (45 of 101), 52.9% (64 of 121), 43.1% (44 of 102), 57.4% (70 of 122), Wilson intervals as drawn. Bottom against top quarter: z = 1.92, p = 0.055. Across all 250, r = +0.086, p = 0.175.</p>
+    <p style="color:#c8b99a">A limit worth stating. Playoff clubs win exactly half their series by construction, so these groups are being compared against each other rather than against a fixed standard. And 446 series is not many: an effect would have to be larger than about fifteen points for us to catch it reliably. The honest summary is a null with a lean in it, and the lean runs against the romantic story rather than for it.</p>
+    <p style="color:#c8b99a">The idea, and the framing of where the area sits rather than only how big it is, came from a reader looking at <a href="https://thesportspage.net/odds.html" target="_blank" rel="noopener">the odds board</a>. Underlying curves are in the repository as <em>data/hope-curves-1998-2025.json</em>.</p>
+  </div>
+
+  <div class="footer"><span>The Sports Page &middot; Vol. I, No. __</span><span>What a season is worth</span><span>TODO_DATE &middot; New York, NY</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>
+</body>
+</html>
