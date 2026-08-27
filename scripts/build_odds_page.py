@@ -63,13 +63,19 @@ transition:background .12s,border-color .12s;position:relative}
 .tile .ab{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em}
 .tile .pc{font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);float:right}
 .tile svg{width:100%;height:34px;display:block;margin-top:.15rem}
-.readout{border:2px solid var(--ink);background:var(--cream);padding:1rem 1.2rem;margin:1.4rem 0 0;min-height:118px}
+.readout{border:2px solid var(--ink);background:var(--cream);padding:1.1rem 1.3rem 1rem;margin:1.4rem 0 0}
 .readout .rt{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;line-height:1.2}
 .readout .rr{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.08em;margin-bottom:.5rem}
-.readout table{width:100%;border-collapse:collapse;font-family:'Roboto Mono',monospace;font-size:.76rem}
-.readout td{padding:.16rem 0}
-.readout td:last-child{text-align:right;font-weight:600}
-.readout .hint{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.06em}
+.readout .hint{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.06em;margin:.6rem 0 .1rem}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin:.7rem 0 0}
+@media(max-width:520px){.rgrid{grid-template-columns:1fr}}
+.rgrid .lab{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block}
+.rgrid .big2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;line-height:1.1}
+#big{width:100%;height:auto;display:block;margin:.4rem 0 0;cursor:crosshair;touch-action:none}
+.wkrow{display:flex;flex-wrap:wrap;gap:1.1rem;font-family:'Roboto Mono',monospace;font-size:.74rem;border-top:1px solid var(--div);padding-top:.5rem;margin-top:.1rem;align-items:baseline;min-height:1.9rem}
+.wkrow .wk{font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.68rem;color:var(--rust)}
+.wkrow .wv{font-weight:600}
+.wkrow .wl{color:var(--muted)}
 .bar{height:7px;background:var(--aged);position:relative;margin-top:.15rem}
 .bar span{position:absolute;left:0;top:0;bottom:0}
 .footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;
@@ -79,32 +85,90 @@ font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double v
 
 JS = """
 const D=DATA,W=D.dates.length;
-let pinned=null;
-const first=document.querySelector('.tile').dataset.id;                     // click pins a club; hover only previews
+let pinned=null,cur=null;
+const first=document.querySelector('.tile').dataset.id;
 const fmt=v=>(v>=0.999?'>99%':v<=0.001?'<1%':(v*100).toFixed(v<0.1?1:0)+'%');
-const nice=s=>{const[y,m,d]=s.split('-');return ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m]+' '+(+d);};
+const MON=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const nice=s=>{const p=s.split('-');return MON[+p[1]]+' '+(+p[2]);};
+const gbTxt=g=>g>0?'+'+g.toFixed(1)+' ahead':g<0?Math.abs(g).toFixed(1)+' back':'level';
+const BW=660,BH=250,L=46,R=16,Tp=18,Bt=42;
+const px=i=>L+(i/(W-1))*(BW-L-R);
+const py=v=>Tp+(1-v)*(BH-Tp-Bt);
+function bigChart(t){
+  let g='';
+  for(const v of [0,.25,.5,.75,1]){
+    g+='<line x1="'+L+'" y1="'+py(v).toFixed(1)+'" x2="'+(BW-R)+'" y2="'+py(v).toFixed(1)+
+       '" stroke="#c8b99a" stroke-width="1"'+(v===0||v===1?'':' stroke-dasharray="2 4"')+'/>'+
+       '<text x="'+(L-8)+'" y="'+(py(v)+3.5).toFixed(1)+'" text-anchor="end" font-family="Roboto Mono,monospace" font-size="10" fill="#6b5e4a">'+(v*100)+'%</text>';
+  }
+  for(let i=0;i<W;i+=3)
+    g+='<text x="'+px(i).toFixed(1)+'" y="'+(BH-Bt+18)+'" text-anchor="middle" font-family="Roboto Mono,monospace" font-size="10" fill="#6b5e4a">'+nice(D.dates[i])+'</text>';
+  const line=(a,c,w)=>'<polyline fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linejoin="round" points="'+
+    a.map((v,i)=>px(i).toFixed(1)+','+py(v).toFixed(1)).join(' ')+'"/>';
+  g+=line(t.dv,'#c9962a',2.6)+line(t.po,'#2c4a6e',3.2);
+  for(let i=0;i<W;i++){
+    g+='<circle cx="'+px(i).toFixed(1)+'" cy="'+py(t.po[i]).toFixed(1)+'" r="2.6" fill="#2c4a6e"/>'+
+       '<circle cx="'+px(i).toFixed(1)+'" cy="'+py(t.dv[i]).toFixed(1)+'" r="2.2" fill="#c9962a"/>';
+  }
+  g+='<line id="guide" x1="0" y1="'+Tp+'" x2="0" y2="'+(BH-Bt)+'" stroke="#1a1208" stroke-width="1" opacity="0"/>'+
+     '<rect id="hit" x="'+L+'" y="'+Tp+'" width="'+(BW-L-R)+'" height="'+(BH-Tp-Bt)+'" fill="transparent"/>';
+  return '<svg id="big" viewBox="0 0 '+BW+' '+BH+'" role="img" aria-label="Season trajectory for '+t.name+'">'+g+'</svg>';
+}
+function weekLine(t,i){
+  const r=t.rec[i];
+  return '<span class="wk">'+nice(D.dates[i])+'</span>'+
+    '<span class="wv">'+r[0]+'-'+r[1]+'</span>'+
+    '<span class="wl">'+gbTxt(r[2])+'</span>'+
+    '<span class="wv" style="color:#2c4a6e">'+fmt(t.po[i])+' playoffs</span>'+
+    '<span class="wv" style="color:#8a6a12">'+fmt(t.dv[i])+' division</span>';
+}
 function show(id){
-  const t=D.teams[id];if(!t)return;
+  const t=D.teams[id];if(!t)return;cur=t;
   document.querySelectorAll('.tile').forEach(e=>{
     e.classList.toggle('on',e.dataset.id===id);
     e.classList.toggle('pin',e.dataset.id===pinned);
     e.setAttribute('aria-pressed',e.dataset.id===pinned);
   });
-  const po=t.po[W-1],dv=t.dv[W-1],po0=t.po[0];
-  const delta=po-po0,arrow=delta>0.02?'&#9650;':delta<-0.02?'&#9660;':'&#8213;';
-  const col=delta>0.02?'var(--green)':delta<-0.02?'var(--rust)':'var(--muted)';
-  const tag=(id===pinned)
-    ?'<span class="pinflag">pinned &middot; click again to release</span>'
-    :'<span class="pinflag dim">click to pin</span>';
+  const po=t.po[W-1],dv=t.dv[W-1],po0=t.po[0],d=po-po0;
+  const arrow=d>0.02?'&#9650;':d<-0.02?'&#9660;':'&#8213;';
+  const col=d>0.02?'var(--green)':d<-0.02?'var(--rust)':'var(--muted)';
+  const tag=(id===pinned)?'<span class="pinflag">pinned &middot; click again to release</span>'
+                         :'<span class="pinflag dim">click to pin it here</span>';
   document.getElementById('readout').innerHTML=
     '<div class="rt">'+t.name+tag+'</div>'+
-    '<div class="rr">'+t.w+'-'+t.l+'</div>'+
-    '<table><tr><td>Reach the playoffs</td><td>'+fmt(po)+'</td></tr>'+
-    '<tr><td colspan="2"><div class="bar"><span style="width:'+(po*100).toFixed(1)+'%;background:var(--steel)"></span></div></td></tr>'+
-    '<tr><td>Win the division</td><td>'+fmt(dv)+'</td></tr>'+
-    '<tr><td colspan="2"><div class="bar"><span style="width:'+(dv*100).toFixed(1)+'%;background:var(--gold)"></span></div></td></tr>'+
-    '</table><div class="hint" style="margin-top:.5rem;color:'+col+'">'+arrow+' '+
-    nice(D.dates[0])+': '+fmt(po0)+' &rarr; '+nice(D.dates[W-1])+': '+fmt(po)+'</div>';
+    '<div class="rr">'+t.w+'-'+t.l+' &middot; '+gbTxt(t.rec[W-1][2])+'</div>'+
+    '<div class="rgrid">'+
+      '<div><span class="lab">Reach the playoffs</span><span class="big2">'+fmt(po)+'</span>'+
+        '<div class="bar"><span style="width:'+(po*100).toFixed(1)+'%;background:var(--steel)"></span></div></div>'+
+      '<div><span class="lab">Win the division</span><span class="big2">'+fmt(dv)+'</span>'+
+        '<div class="bar"><span style="width:'+(dv*100).toFixed(1)+'%;background:var(--gold)"></span></div></div>'+
+    '</div>'+
+    '<div class="hint" style="color:'+col+'">'+arrow+' '+nice(D.dates[0])+': '+fmt(po0)+' &rarr; '+nice(D.dates[W-1])+': '+fmt(po)+
+      ' <span style="color:var(--muted)">&middot; run along the chart to read any week</span></div>'+
+    bigChart(t)+
+    '<div class="wkrow" id="wkrow">'+weekLine(t,W-1)+'</div>';
+  wire();
+}
+function wire(){
+  const svg=document.getElementById('big'),hit=document.getElementById('hit'),
+        guide=document.getElementById('guide'),row=document.getElementById('wkrow');
+  if(!svg||!hit||!guide||!row)return;
+  // A zero-width box (hidden tab, print view, display:none ancestor) makes this
+  // divide by zero and hand NaN to weekLine, which then throws inside the
+  // handler and silently freezes the row. Bail out instead.
+  const at=ev=>{
+    const b=svg.getBoundingClientRect();
+    if(!b.width) return null;
+    const x=((ev.clientX-b.left)/b.width)*BW;
+    const i=Math.round(((x-L)/(BW-L-R))*(W-1));
+    return Number.isFinite(i)?Math.max(0,Math.min(W-1,i)):null;
+  };
+  const move=ev=>{const i=at(ev);if(i===null)return;
+    guide.setAttribute('x1',px(i));guide.setAttribute('x2',px(i));
+    guide.setAttribute('opacity','.45');row.innerHTML=weekLine(cur,i);};
+  hit.addEventListener('mousemove',move);
+  hit.addEventListener('touchmove',e=>{if(e.touches[0])move(e.touches[0]);},{passive:true});
+  svg.addEventListener('mouseleave',()=>{guide.setAttribute('opacity','0');row.innerHTML=weekLine(cur,W-1);});
 }
 const restore=()=>show(pinned||first);
 document.querySelectorAll('.tile').forEach(e=>{
@@ -112,11 +176,8 @@ document.querySelectorAll('.tile').forEach(e=>{
   e.addEventListener('mouseenter',()=>show(id));
   e.addEventListener('focus',()=>show(id));
   e.addEventListener('click',()=>{pinned=(pinned===id)?null:id;show(pinned||id);});
-  e.addEventListener('keydown',ev=>{
-    if(ev.key===' '||ev.key==='Enter'){ev.preventDefault();pinned=(pinned===id)?null:id;show(pinned||id);}
-  });
+  e.addEventListener('keydown',ev=>{if(ev.key===' '||ev.key==='Enter'){ev.preventDefault();pinned=(pinned===id)?null:id;show(pinned||id);}});
 });
-// leaving the board reverts to whatever is pinned, instead of stranding a preview
 const board=document.getElementById('board');
 if(board)board.addEventListener('mouseleave',restore);
 show(first);
