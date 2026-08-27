@@ -76,6 +76,10 @@ transition:background .12s,border-color .12s;position:relative}
 .wkrow .wk{font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.68rem;color:var(--rust)}
 .wkrow .wv{font-weight:600}
 .wkrow .wl{color:var(--muted)}
+.hope{font-family:'Roboto Mono',monospace;font-size:.72rem;margin:.35rem 0 .1rem;color:var(--ink)}
+.hope .hl{letter-spacing:.1em;text-transform:uppercase;font-size:.64rem;color:var(--muted)}
+.hope b{font-size:.95rem;color:var(--rust);margin:0 .35rem}
+.hope .hs{color:var(--muted)}
 .bar{height:7px;background:var(--aged);position:relative;margin-top:.15rem}
 .bar span{position:absolute;left:0;top:0;bottom:0}
 .footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;
@@ -129,6 +133,11 @@ function show(id){
     e.classList.toggle('pin',e.dataset.id===pinned);
     e.setAttribute('aria-pressed',e.dataset.id===pinned);
   });
+  const auc=t.po.reduce((a,b)=>a+b,0)/W;
+  const tot=t.po.reduce((a,b)=>a+b,0);
+  const cen=tot>1e-9?t.po.reduce((a,v,i)=>a+i*v,0)/tot/(W-1):null;
+  const shape=cen===null?'no hope to speak of':cen<0.35?'front-loaded &mdash; hope came early and left'
+    :cen>0.6?'back-loaded &mdash; hope arrived late and stayed':'evenly spread across the season';
   const po=t.po[W-1],dv=t.dv[W-1],po0=t.po[0],d=po-po0;
   const arrow=d>0.02?'&#9650;':d<-0.02?'&#9660;':'&#8213;';
   const col=d>0.02?'var(--green)':d<-0.02?'var(--rust)':'var(--muted)';
@@ -145,6 +154,8 @@ function show(id){
     '</div>'+
     '<div class="hint" style="color:'+col+'">'+arrow+' '+nice(D.dates[0])+': '+fmt(po0)+' &rarr; '+nice(D.dates[W-1])+': '+fmt(po)+
       ' <span style="color:var(--muted)">&middot; run along the chart to read any week</span></div>'+
+    '<div class="hope"><span class="hl">Hope index</span> <b>'+(auc*100).toFixed(0)+'</b>'+
+      '<span class="hs">share of the season spent likely to make it &middot; '+shape+'</span></div>'+
     bigChart(t)+
     '<div class="wkrow" id="wkrow">'+weekLine(t,W-1)+'</div>';
   wire();
