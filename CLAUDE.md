@@ -98,6 +98,39 @@ This is non-negotiable and applies to **every** invocation of this skill on **ev
 
 ### Autopublish (GitHub Actions — Mon-Sat)
 
+**Known problem: GitHub's cron is unreliable, and it is not our bug.** From
+2026-08-27 the scheduled runs began firing **11–12½ hours late**, with one slot
+dropped entirely on 08-28. Issues #152 and #153 went out at ~1:52pm and ~2:57pm
+ET instead of before dawn.
+
+Ruled out, with evidence, so nobody re-diagnoses this:
+- **Not our config** — the workflow file had not changed since 2026-08-08.
+- **Not Actions volume** — 08-21 had 69 workflow runs and 22 commits and
+  published 54 minutes late; 08-28 had 5 runs and 1 commit and published 12h26m
+  late. The relationship runs backwards.
+- **Not the script** — every run that fired succeeded, and the double-publish
+  guard held when four delayed runs landed together.
+
+It matches [community discussion #201738](https://github.com/orgs/community/discussions/201738)
+("delayed 8-14 hours, one day dropped entirely") and follows two GitHub Actions
+incidents declared on 2026-08-26.
+
+**Mitigations applied 2026-08-28:** crons moved off the congested `:00`/`:30`
+minutes to odd ones, a fifth slot added, and a *Report scheduling lateness* step
+added that prints the firing slot against the wall clock and raises a workflow
+warning past two hours. Editing the workflow file also re-registers the schedule,
+which is GitHub's own advice for a stuck one.
+
+**If it persists, cron is not fixable from inside the repo.** The reliable
+answer is an external nudge — `gh workflow run autopublish.yml -R pem725/the-sports-page`
+from a machine that is actually awake — because a `workflow_dispatch` fires
+immediately while a `schedule` does not.
+
+**Reader-facing impact:** Buttondown polls the RSS feed, so a late publish is a
+late *email*. That is the part subscribers notice.
+
+
+
 A GitHub Actions workflow (`.github/workflows/autopublish.yml`) runs at 4:30am ET Monday–Saturday. It calls `scripts/autopublish.py` which handles the full Regular Publishing Workflow deterministically. **Sunday Editions remain manual** — they require live data, prediction scoring, and editorial prose that a script cannot provide.
 
 **PUBLISH-META requirement**: Every queue file MUST include a metadata comment block at the very top (before `<!DOCTYPE html>`). The autopublish script uses this for variety checking and index.html tag generation. Format:

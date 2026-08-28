@@ -23,10 +23,15 @@ on:
     #   5:30 AM ET → delayed avg ~7:00 AM ET (3rd backup — final safety)
     #
     # During EST (Nov–Mar), subtract one hour from each ET time. Still fine.
-    - cron: '30 6 * * 1-6'   # 06:30 UTC — 2:30 AM EDT — earliest
-    - cron: '0 7 * * 1-6'    # 07:00 UTC — 3:00 AM EDT
-    - cron: '30 8 * * 1-6'   # 08:30 UTC — 4:30 AM EDT — was original primary
-    - cron: '30 9 * * 1-6'   # 09:30 UTC — 5:30 AM EDT — was original backup
+    # Minutes deliberately ODD and off the hour. GitHub's docs warn that :00 and
+    # :30 are the most congested slots, and every one of ours sat on them.
+    # Editing this file also re-registers the schedule, which is GitHub's own
+    # advice for workflows stuck on a stale/delayed schedule.
+    - cron: '7 6 * * 1-6'    # 06:07 UTC - 2:07 AM EDT - earliest
+    - cron: '23 7 * * 1-6'   # 07:23 UTC - 3:23 AM EDT
+    - cron: '41 8 * * 1-6'   # 08:41 UTC - 4:41 AM EDT
+    - cron: '13 10 * * 1-6'  # 10:13 UTC - 6:13 AM EDT
+    - cron: '29 11 * * 1-6'  # 11:29 UTC - 7:29 AM EDT - last resort
 
   # Manual trigger from GitHub UI (Actions tab → Run workflow)
   workflow_dispatch:
@@ -48,6 +53,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Report scheduling lateness
+        run: |
+          echo "event: ${{ github.event_name }}   slot: ${{ github.event.schedule }}"
+          echo "now:   $(date -u '+%Y-%m-%d %H:%M') UTC"
+          SLOT="${{ github.event.schedule }}"
+          if [ -n "$SLOT" ]; then
+            MI=$(echo $SLOT | cut -d" " -f1); HR=$(echo $SLOT | cut -d" " -f2)
+            DUE=$(date -u -d "today ${HR}:${MI}" +%s); NOW=$(date -u +%s)
+            [ $DUE -gt $NOW ] && DUE=$((DUE-86400))
+            LATE=$(( (NOW-DUE)/60 ))
+            echo "scheduled ${HR}:${MI} UTC, ran $(date -u +%H:%M) UTC -> ${LATE} minutes late"
+            [ $LATE -gt 120 ] && echo "::warning::scheduled run was ${LATE} minutes late"
+          fi
+
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
