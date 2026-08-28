@@ -79,7 +79,17 @@ transition:background .12s,border-color .12s;position:relative}
 .hope{font-family:'Roboto Mono',monospace;font-size:.72rem;margin:.35rem 0 .1rem;color:var(--ink)}
 .hope .hl{letter-spacing:.1em;text-transform:uppercase;font-size:.64rem;color:var(--muted)}
 .hope b{font-size:.95rem;color:var(--rust);margin:0 .35rem}
-.hope .hs{color:var(--muted)}
+.rhead{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;line-height:1.25;margin-bottom:.5rem}
+.rhead .vs{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.1em;margin:0 .2rem}
+.rgrid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem;margin:.2rem 0 .3rem}
+.rgrid2 .cn{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.rgrid2 .cr{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-bottom:.2rem}
+.rgrid2 .cv{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;line-height:1.05}
+.rgrid2 .cv2{font-family:'Roboto Mono',monospace;font-size:.76rem;margin-top:.1rem}
+.rgrid2 .cl{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rgrid2 .cn2{font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);margin-top:.3rem}
+.smoothnote{font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);line-height:1.5;border-top:1px solid var(--div);padding-top:.4rem;margin-top:.4rem}
+.tile.pin2{background:#fbf7ec;border-color:#b83a1e;box-shadow:inset 3px 0 0 #b83a1e}
 .bar{height:7px;background:var(--aged);position:relative;margin-top:.15rem}
 .bar span{position:absolute;left:0;top:0;bottom:0}
 .footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;
@@ -89,109 +99,133 @@ font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double v
 
 JS = """
 const D=DATA,W=D.dates.length;
-let pinned=null,cur=null;
+let sel=[];                                   // up to two pinned clubs
 const first=document.querySelector('.tile').dataset.id;
+const COL=['#2c4a6e','#b83a1e'];
 const fmt=v=>(v>=0.999?'>99%':v<=0.001?'<1%':(v*100).toFixed(v<0.1?1:0)+'%');
 const MON=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const nice=s=>{const p=s.split('-');return MON[+p[1]]+' '+(+p[2]);};
 const gbTxt=g=>g>0?'+'+g.toFixed(1)+' ahead':g<0?Math.abs(g).toFixed(1)+' back':'level';
-const BW=660,BH=250,L=46,R=16,Tp=18,Bt=42;
-const px=i=>L+(i/(W-1))*(BW-L-R);
-const py=v=>Tp+(1-v)*(BH-Tp-Bt);
-function bigChart(t){
+
+// Gaussian kernel smoother. Bandwidth in weeks; every point contributes,
+// weighted by distance, so the curve does not lurch at the ends the way a
+// boxcar moving average does.
+function smooth(a,bw){
+  const out=[];
+  for(let i=0;i<a.length;i++){
+    let num=0,den=0;
+    for(let j=0;j<a.length;j++){
+      const w=Math.exp(-((i-j)*(i-j))/(2*bw*bw));
+      num+=w*a[j]; den+=w;
+    }
+    out.push(num/den);
+  }
+  return out;
+}
+const BW=2.0;
+const resid=a=>{const sm=smooth(a,BW);return a.map((v,i)=>v-sm[i]);};
+const sd=a=>{const m=a.reduce((x,y)=>x+y,0)/a.length;
+  return Math.sqrt(a.reduce((x,y)=>x+(y-m)*(y-m),0)/a.length);};
+
+const CW=660,CH=250,L=46,R=16,Tp=18,Bt=42;
+const px=i=>L+(i/(W-1))*(CW-L-R);
+const py=v=>Tp+(1-v)*(CH-Tp-Bt);
+function chart(list){
   let g='';
   for(const v of [0,.25,.5,.75,1]){
-    g+='<line x1="'+L+'" y1="'+py(v).toFixed(1)+'" x2="'+(BW-R)+'" y2="'+py(v).toFixed(1)+
+    g+='<line x1="'+L+'" y1="'+py(v).toFixed(1)+'" x2="'+(CW-R)+'" y2="'+py(v).toFixed(1)+
        '" stroke="#c8b99a" stroke-width="1"'+(v===0||v===1?'':' stroke-dasharray="2 4"')+'/>'+
        '<text x="'+(L-8)+'" y="'+(py(v)+3.5).toFixed(1)+'" text-anchor="end" font-family="Roboto Mono,monospace" font-size="10" fill="#6b5e4a">'+(v*100)+'%</text>';
   }
   for(let i=0;i<W;i+=3)
-    g+='<text x="'+px(i).toFixed(1)+'" y="'+(BH-Bt+18)+'" text-anchor="middle" font-family="Roboto Mono,monospace" font-size="10" fill="#6b5e4a">'+nice(D.dates[i])+'</text>';
-  const line=(a,c,w)=>'<polyline fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linejoin="round" points="'+
+    g+='<text x="'+px(i).toFixed(1)+'" y="'+(CH-Bt+18)+'" text-anchor="middle" font-family="Roboto Mono,monospace" font-size="10" fill="#6b5e4a">'+nice(D.dates[i])+'</text>';
+  const poly=(a,c,w,extra)=>'<polyline fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linejoin="round" '+(extra||'')+' points="'+
     a.map((v,i)=>px(i).toFixed(1)+','+py(v).toFixed(1)).join(' ')+'"/>';
-  g+=line(t.dv,'#c9962a',2.6)+line(t.po,'#2c4a6e',3.2);
-  for(let i=0;i<W;i++){
-    g+='<circle cx="'+px(i).toFixed(1)+'" cy="'+py(t.po[i]).toFixed(1)+'" r="2.6" fill="#2c4a6e"/>'+
-       '<circle cx="'+px(i).toFixed(1)+'" cy="'+py(t.dv[i]).toFixed(1)+'" r="2.2" fill="#c9962a"/>';
-  }
-  g+='<line id="guide" x1="0" y1="'+Tp+'" x2="0" y2="'+(BH-Bt)+'" stroke="#1a1208" stroke-width="1" opacity="0"/>'+
-     '<rect id="hit" x="'+L+'" y="'+Tp+'" width="'+(BW-L-R)+'" height="'+(BH-Tp-Bt)+'" fill="transparent"/>';
-  return '<svg id="big" viewBox="0 0 '+BW+' '+BH+'" role="img" aria-label="Season trajectory for '+t.name+'">'+g+'</svg>';
-}
-function weekLine(t,i){
-  const r=t.rec[i];
-  return '<span class="wk">'+nice(D.dates[i])+'</span>'+
-    '<span class="wv">'+r[0]+'-'+r[1]+'</span>'+
-    '<span class="wl">'+gbTxt(r[2])+'</span>'+
-    '<span class="wv" style="color:#2c4a6e">'+fmt(t.po[i])+' playoffs</span>'+
-    '<span class="wv" style="color:#8a6a12">'+fmt(t.dv[i])+' division</span>';
-}
-function show(id){
-  const t=D.teams[id];if(!t)return;cur=t;
-  document.querySelectorAll('.tile').forEach(e=>{
-    e.classList.toggle('on',e.dataset.id===id);
-    e.classList.toggle('pin',e.dataset.id===pinned);
-    e.setAttribute('aria-pressed',e.dataset.id===pinned);
+  list.forEach((t,k)=>{
+    const c=COL[k];
+    g+=poly(t.dv,c,1.4,'stroke-dasharray="4 4" opacity=".45"');       // division, faint dashed
+    g+=poly(t.po,c,1.2,'opacity=".38"');                              // raw weekly, thin
+    for(let i=0;i<W;i++) g+='<circle cx="'+px(i).toFixed(1)+'" cy="'+py(t.po[i]).toFixed(1)+'" r="2.2" fill="'+c+'" opacity=".45"/>';
+    g+=poly(smooth(t.po,BW),c,3.4);                                   // the trend, bold
   });
-  const auc=t.po.reduce((a,b)=>a+b,0)/W;
-  const tot=t.po.reduce((a,b)=>a+b,0);
-  const cen=tot>1e-9?t.po.reduce((a,v,i)=>a+i*v,0)/tot/(W-1):null;
-  const shape=cen===null?'no hope to speak of':cen<0.35?'front-loaded &mdash; hope came early and left'
-    :cen>0.6?'back-loaded &mdash; hope arrived late and stayed':'evenly spread across the season';
-  const po=t.po[W-1],dv=t.dv[W-1],po0=t.po[0],d=po-po0;
-  const arrow=d>0.02?'&#9650;':d<-0.02?'&#9660;':'&#8213;';
-  const col=d>0.02?'var(--green)':d<-0.02?'var(--rust)':'var(--muted)';
-  const tag=(id===pinned)?'<span class="pinflag">pinned &middot; click again to release</span>'
-                         :'<span class="pinflag dim">click to pin it here</span>';
-  document.getElementById('readout').innerHTML=
-    '<div class="rt">'+t.name+tag+'</div>'+
-    '<div class="rr">'+t.w+'-'+t.l+' &middot; '+gbTxt(t.rec[W-1][2])+'</div>'+
-    '<div class="rgrid">'+
-      '<div><span class="lab">Reach the playoffs</span><span class="big2">'+fmt(po)+'</span>'+
-        '<div class="bar"><span style="width:'+(po*100).toFixed(1)+'%;background:var(--steel)"></span></div></div>'+
-      '<div><span class="lab">Win the division</span><span class="big2">'+fmt(dv)+'</span>'+
-        '<div class="bar"><span style="width:'+(dv*100).toFixed(1)+'%;background:var(--gold)"></span></div></div>'+
-    '</div>'+
-    '<div class="hint" style="color:'+col+'">'+arrow+' '+nice(D.dates[0])+': '+fmt(po0)+' &rarr; '+nice(D.dates[W-1])+': '+fmt(po)+
-      ' <span style="color:var(--muted)">&middot; run along the chart to read any week</span></div>'+
-    '<div class="hope"><span class="hl">Hope index</span> <b>'+(auc*100).toFixed(0)+'</b>'+
-      '<span class="hs">share of the season spent likely to make it &middot; '+shape+'</span></div>'+
-    bigChart(t)+
-    '<div class="wkrow" id="wkrow">'+weekLine(t,W-1)+'</div>';
-  wire();
+  g+='<line id="guide" x1="0" y1="'+Tp+'" x2="0" y2="'+(CH-Bt)+'" stroke="#1a1208" stroke-width="1" opacity="0"/>'+
+     '<rect id="hit" x="'+L+'" y="'+Tp+'" width="'+(CW-L-R)+'" height="'+(CH-Tp-Bt)+'" fill="transparent"/>';
+  return '<svg id="big" viewBox="0 0 '+CW+' '+CH+'" role="img" aria-label="Season trajectory for '+list.map(t=>t.name).join(' and ')+'">'+g+'</svg>';
 }
-function wire(){
+function weekLine(list,i){
+  let h='<span class="wk">'+nice(D.dates[i])+'</span>';
+  list.forEach((t,k)=>{
+    const r=t.rec[i];
+    h+='<span class="wv" style="color:'+COL[k]+'">'+t.abbr+' '+r[0]+'-'+r[1]+'</span>'+
+       '<span class="wl">'+gbTxt(r[2])+'</span>'+
+       '<span class="wv" style="color:'+COL[k]+'">'+fmt(t.po[i])+'</span>';
+  });
+  return h;
+}
+function show(ids){
+  const list=ids.map(i=>D.teams[i]).filter(Boolean);
+  if(!list.length)return;
+  document.querySelectorAll('.tile').forEach(e=>{
+    const k=sel.indexOf(e.dataset.id);
+    e.classList.toggle('on',ids.includes(e.dataset.id));
+    e.classList.toggle('pin',k===0); e.classList.toggle('pin2',k===1);
+    e.setAttribute('aria-pressed',k>=0);
+  });
+  let head='',body='';
+  list.forEach((t,k)=>{
+    const po=t.po[W-1],dv=t.dv[W-1];
+    const rs=resid(t.po), early=sd(rs.slice(0,Math.floor(W/2))), late=sd(rs.slice(Math.floor(W/2)));
+    const auc=t.po.reduce((a,b)=>a+b,0)/W;
+    body+='<div class="col"><div class="cn" style="color:'+COL[k]+'">'+t.name+'</div>'+
+      '<div class="cr">'+t.w+'-'+t.l+' &middot; '+gbTxt(t.rec[W-1][2])+'</div>'+
+      '<div class="cv">'+fmt(po)+' <span class="cl">playoffs</span></div>'+
+      '<div class="cv2">'+fmt(dv)+' <span class="cl">division</span> &middot; hope '+(auc*100).toFixed(0)+'</div>'+
+      '<div class="cn2">week-to-week wobble: &plusmn;'+(early*100).toFixed(0)+' pts early, &plusmn;'+(late*100).toFixed(0)+' late</div></div>';
+  });
+  const hint = sel.length===0 ? 'click a club to pin it &middot; pin a second to compare'
+             : sel.length===1 ? 'pinned &middot; click another club to overlay it, or click again to release'
+             : 'comparing two &middot; click either tile to drop it';
+  document.getElementById('readout').innerHTML=
+    '<div class="rhead">'+list.map((t,k)=>'<span style="color:'+COL[k]+'">&#9632;</span> '+t.name).join(' <span class="vs">vs</span> ')+
+      '<span class="pinflag'+(sel.length?'':' dim')+'">'+hint+'</span></div>'+
+    '<div class="rgrid2">'+body+'</div>'+
+    '<div class="smoothnote">Thick line: a smoothed trend. Faint line and dots: the raw weekly numbers. Dashed: chance of winning the division. The distance between thin and thick is the noise.</div>'+
+    chart(list)+
+    '<div class="wkrow" id="wkrow">'+weekLine(list,W-1)+'</div>';
+  wire(list);
+}
+function wire(list){
   const svg=document.getElementById('big'),hit=document.getElementById('hit'),
         guide=document.getElementById('guide'),row=document.getElementById('wkrow');
   if(!svg||!hit||!guide||!row)return;
-  // A zero-width box (hidden tab, print view, display:none ancestor) makes this
-  // divide by zero and hand NaN to weekLine, which then throws inside the
-  // handler and silently freezes the row. Bail out instead.
-  const at=ev=>{
-    const b=svg.getBoundingClientRect();
-    if(!b.width) return null;
-    const x=((ev.clientX-b.left)/b.width)*BW;
-    const i=Math.round(((x-L)/(BW-L-R))*(W-1));
-    return Number.isFinite(i)?Math.max(0,Math.min(W-1,i)):null;
-  };
+  const at=ev=>{const b=svg.getBoundingClientRect();if(!b.width)return null;
+    const x=((ev.clientX-b.left)/b.width)*CW;
+    const i=Math.round(((x-L)/(CW-L-R))*(W-1));
+    return Number.isFinite(i)?Math.max(0,Math.min(W-1,i)):null;};
   const move=ev=>{const i=at(ev);if(i===null)return;
     guide.setAttribute('x1',px(i));guide.setAttribute('x2',px(i));
-    guide.setAttribute('opacity','.45');row.innerHTML=weekLine(cur,i);};
+    guide.setAttribute('opacity','.45');row.innerHTML=weekLine(list,i);};
   hit.addEventListener('mousemove',move);
   hit.addEventListener('touchmove',e=>{if(e.touches[0])move(e.touches[0]);},{passive:true});
-  svg.addEventListener('mouseleave',()=>{guide.setAttribute('opacity','0');row.innerHTML=weekLine(cur,W-1);});
+  svg.addEventListener('mouseleave',()=>{guide.setAttribute('opacity','0');row.innerHTML=weekLine(list,W-1);});
 }
-const restore=()=>show(pinned||first);
+function toggle(id){
+  const k=sel.indexOf(id);
+  if(k>=0) sel.splice(k,1);
+  else if(sel.length<2) sel.push(id);
+  else sel=[sel[1],id];
+  show(sel.length?sel:[first]);
+}
 document.querySelectorAll('.tile').forEach(e=>{
   const id=e.dataset.id;
-  e.addEventListener('mouseenter',()=>show(id));
-  e.addEventListener('focus',()=>show(id));
-  e.addEventListener('click',()=>{pinned=(pinned===id)?null:id;show(pinned||id);});
-  e.addEventListener('keydown',ev=>{if(ev.key===' '||ev.key==='Enter'){ev.preventDefault();pinned=(pinned===id)?null:id;show(pinned||id);}});
+  e.addEventListener('mouseenter',()=>{if(!sel.length)show([id]);});
+  e.addEventListener('focus',()=>{if(!sel.length)show([id]);});
+  e.addEventListener('click',()=>toggle(id));
+  e.addEventListener('keydown',ev=>{if(ev.key===' '||ev.key==='Enter'){ev.preventDefault();toggle(id);}});
 });
 const board=document.getElementById('board');
-if(board)board.addEventListener('mouseleave',restore);
-show(first);
+if(board)board.addEventListener('mouseleave',()=>{if(!sel.length)show([first]);});
+show([first]);
 """
 
 def build() -> str:
