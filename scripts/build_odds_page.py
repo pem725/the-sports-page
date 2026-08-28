@@ -20,6 +20,43 @@ REPO = pathlib.Path(__file__).resolve().parent.parent
 DATA = REPO / "data" / "playoff-odds-trajectory.json"
 OUT = REPO / "odds.html"
 
+
+# Club colours. Where a club's primary is too pale to read on cream (#f5f0e8),
+# the darker of its official pair is used -- Milwaukee navy over gold, San Diego
+# brown over gold -- because legibility beats fidelity when the two conflict.
+TEAM_COLORS = {
+    "108": "#BA0021",  # Angels red
+    "109": "#A71930",  # D-backs sedona red
+    "110": "#DF4601",  # Orioles orange
+    "111": "#BD3039",  # Red Sox red
+    "112": "#0E3386",  # Cubs blue
+    "113": "#C6011F",  # Reds red
+    "114": "#00385D",  # Guardians navy
+    "115": "#33006F",  # Rockies purple
+    "116": "#0C2340",  # Tigers navy
+    "117": "#002D62",  # Astros navy
+    "118": "#004687",  # Royals blue
+    "119": "#005A9C",  # Dodgers blue
+    "120": "#AB0003",  # Nationals red
+    "121": "#FF5910",  # Mets orange (navy would collide with half the league)
+    "133": "#003831",  # Athletics green
+    "134": "#4A4239",  # Pirates -- black lightened so it is not just ink
+    "135": "#4A342A",  # Padres brown
+    "136": "#005C5C",  # Mariners teal
+    "137": "#FD5A1E",  # Giants orange
+    "138": "#C41E3A",  # Cardinals red
+    "139": "#092C5C",  # Rays navy
+    "140": "#003278",  # Rangers blue
+    "141": "#134A8E",  # Blue Jays blue
+    "142": "#D31145",  # Twins red (navy collides with Yankees/Rays)
+    "143": "#E81828",  # Phillies red
+    "144": "#CE1141",  # Braves scarlet
+    "145": "#3E3B36",  # White Sox -- black lightened
+    "146": "#00A3E0",  # Marlins blue
+    "147": "#0C2340",  # Yankees navy
+    "158": "#12284B",  # Brewers navy
+}
+
 DIVS = [(201, "AL East"), (202, "AL Central"), (200, "AL West"),
         (204, "NL East"), (205, "NL Central"), (203, "NL West")]
 
@@ -56,7 +93,7 @@ color:var(--rust);font-weight:600;border-bottom:1px solid var(--div);padding-bot
 .tile{background:var(--card);border:1px solid var(--div);padding:.45rem .5rem .3rem;cursor:pointer;
 transition:background .12s,border-color .12s;position:relative}
 .tile:hover,.tile.on{background:#fbf7ec;border-color:var(--ink)}
-.tile.pin{background:#fbf7ec;border-color:var(--rust);box-shadow:inset 3px 0 0 var(--rust)}
+.tile.pinned{background:#fbf7ec}
 .pinflag{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-left:.6rem;vertical-align:.25em}
 .pinflag.dim{color:var(--muted)}
 .tile:focus-visible{outline:2px solid var(--rust);outline-offset:1px}
@@ -89,7 +126,6 @@ transition:background .12s,border-color .12s;position:relative}
 .rgrid2 .cl{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .rgrid2 .cn2{font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);margin-top:.3rem}
 .smoothnote{font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);line-height:1.5;border-top:1px solid var(--div);padding-top:.4rem;margin-top:.4rem}
-.tile.pin2{background:#fbf7ec;border-color:#b83a1e;box-shadow:inset 3px 0 0 #b83a1e}
 .bar{height:7px;background:var(--aged);position:relative;margin-top:.15rem}
 .bar span{position:absolute;left:0;top:0;bottom:0}
 .footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;
@@ -101,7 +137,23 @@ JS = """
 const D=DATA,W=D.dates.length;
 let sel=[];                                   // up to two pinned clubs
 const first=document.querySelector('.tile').dataset.id;
-const COL=['#2c4a6e','#b83a1e'];
+const FALLBACK=['#2c4a6e','#b83a1e'];
+// sRGB -> CIE Lab, so we can tell when two clubs are too close to distinguish
+function lab(h){
+  let r=parseInt(h.slice(1,3),16)/255,g=parseInt(h.slice(3,5),16)/255,b=parseInt(h.slice(5,7),16)/255;
+  const f=v=>v>0.04045?Math.pow((v+0.055)/1.055,2.4):v/12.92; r=f(r);g=f(g);b=f(b);
+  let X=(r*.4124+g*.3576+b*.1805)/.95047,Y=r*.2126+g*.7152+b*.0722,Z=(r*.0193+g*.1192+b*.9505)/1.08883;
+  const t=v=>v>0.008856?Math.cbrt(v):7.787*v+16/116; X=t(X);Y=t(Y);Z=t(Z);
+  return [116*Y-16,500*(X-Y),200*(Y-Z)];
+}
+function dE(a,b){const p=lab(a),q=lab(b);
+  return Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]);}
+// colours for the current selection: club colours, unless they clash
+function colours(list){
+  const c=list.map(t=>TCOL[t.id]||FALLBACK[0]);
+  if(c.length===2&&dE(c[0],c[1])<26) return {cols:c,clash:true};
+  return {cols:c,clash:false};
+}
 const fmt=v=>(v>=0.999?'>99%':v<=0.001?'<1%':(v*100).toFixed(v<0.1?1:0)+'%');
 const MON=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const nice=s=>{const p=s.split('-');return MON[+p[1]]+' '+(+p[2]);};
@@ -127,10 +179,11 @@ const resid=a=>{const sm=smooth(a,BW);return a.map((v,i)=>v-sm[i]);};
 const sd=a=>{const m=a.reduce((x,y)=>x+y,0)/a.length;
   return Math.sqrt(a.reduce((x,y)=>x+(y-m)*(y-m),0)/a.length);};
 
-const CW=660,CH=250,L=46,R=16,Tp=18,Bt=42;
+const CW=660,CH=250,L=46,R=44,Tp=18,Bt=42;
 const px=i=>L+(i/(W-1))*(CW-L-R);
 const py=v=>Tp+(1-v)*(CH-Tp-Bt);
 function chart(list){
+  const {cols,clash}=colours(list);
   let g='';
   for(const v of [0,.25,.5,.75,1]){
     g+='<line x1="'+L+'" y1="'+py(v).toFixed(1)+'" x2="'+(CW-R)+'" y2="'+py(v).toFixed(1)+
@@ -142,33 +195,42 @@ function chart(list){
   const poly=(a,c,w,extra)=>'<polyline fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linejoin="round" '+(extra||'')+' points="'+
     a.map((v,i)=>px(i).toFixed(1)+','+py(v).toFixed(1)).join(' ')+'"/>';
   list.forEach((t,k)=>{
-    const c=COL[k];
-    g+=poly(t.dv,c,1.4,'stroke-dasharray="4 4" opacity=".45"');       // division, faint dashed
-    g+=poly(t.po,c,1.2,'opacity=".38"');                              // raw weekly, thin
-    for(let i=0;i<W;i++) g+='<circle cx="'+px(i).toFixed(1)+'" cy="'+py(t.po[i]).toFixed(1)+'" r="2.2" fill="'+c+'" opacity=".45"/>';
-    g+=poly(smooth(t.po,BW),c,3.4);                                   // the trend, bold
+    const c=cols[k];
+    const dash=(clash&&k===1)?' stroke-dasharray="9 5"':'';           // only if the pair is too close to tell apart
+    g+=poly(t.dv,c,1.4,'stroke-dasharray="3 4" opacity=".38"');       // division, faint dotted
+    g+=poly(t.po,c,1.2,'opacity=".34"');                              // raw weekly, thin
+    for(let i=0;i<W;i++) g+='<circle cx="'+px(i).toFixed(1)+'" cy="'+py(t.po[i]).toFixed(1)+'" r="2.2" fill="'+c+'" opacity=".42"/>';
+    g+=poly(smooth(t.po,BW),c,3.4,dash);                              // the trend, bold
+    // label the line itself, so identity never rests on colour alone
+    const sm=smooth(t.po,BW), yEnd=py(sm[W-1]);
+    const off=(list.length===2&&Math.abs(py(smooth(list[1-k].po,BW)[W-1])-yEnd)<14)?(k===0?-8:8):0;
+    g+='<text x="'+(CW-R+4)+'" y="'+(yEnd+4+off).toFixed(1)+'" font-family="Roboto Mono,monospace" font-size="10.5" font-weight="700" fill="'+c+'">'+t.abbr+'</text>';
   });
   g+='<line id="guide" x1="0" y1="'+Tp+'" x2="0" y2="'+(CH-Bt)+'" stroke="#1a1208" stroke-width="1" opacity="0"/>'+
      '<rect id="hit" x="'+L+'" y="'+Tp+'" width="'+(CW-L-R)+'" height="'+(CH-Tp-Bt)+'" fill="transparent"/>';
   return '<svg id="big" viewBox="0 0 '+CW+' '+CH+'" role="img" aria-label="Season trajectory for '+list.map(t=>t.name).join(' and ')+'">'+g+'</svg>';
 }
 function weekLine(list,i){
+  const {cols}=colours(list);
   let h='<span class="wk">'+nice(D.dates[i])+'</span>';
   list.forEach((t,k)=>{
     const r=t.rec[i];
-    h+='<span class="wv" style="color:'+COL[k]+'">'+t.abbr+' '+r[0]+'-'+r[1]+'</span>'+
+    h+='<span class="wv" style="color:'+cols[k]+'">'+t.abbr+' '+r[0]+'-'+r[1]+'</span>'+
        '<span class="wl">'+gbTxt(r[2])+'</span>'+
-       '<span class="wv" style="color:'+COL[k]+'">'+fmt(t.po[i])+'</span>';
+       '<span class="wv" style="color:'+cols[k]+'">'+fmt(t.po[i])+'</span>';
   });
   return h;
 }
 function show(ids){
-  const list=ids.map(i=>D.teams[i]).filter(Boolean);
+  const list=ids.filter(i=>D.teams[i]).map(i=>Object.assign({id:i},D.teams[i]));
   if(!list.length)return;
+  const {cols,clash}=colours(list);   // must precede the tile loop below, which reads it
   document.querySelectorAll('.tile').forEach(e=>{
     const k=sel.indexOf(e.dataset.id);
     e.classList.toggle('on',ids.includes(e.dataset.id));
-    e.classList.toggle('pin',k===0); e.classList.toggle('pin2',k===1);
+    e.classList.toggle('pinned',k>=0);
+    if(k>=0){ e.style.borderColor=cols[k]; e.style.boxShadow='inset 3px 0 0 '+cols[k]; }
+    else { e.style.borderColor=''; e.style.boxShadow=''; }
     e.setAttribute('aria-pressed',k>=0);
   });
   let head='',body='';
@@ -176,7 +238,7 @@ function show(ids){
     const po=t.po[W-1],dv=t.dv[W-1];
     const rs=resid(t.po), early=sd(rs.slice(0,Math.floor(W/2))), late=sd(rs.slice(Math.floor(W/2)));
     const auc=t.po.reduce((a,b)=>a+b,0)/W;
-    body+='<div class="col"><div class="cn" style="color:'+COL[k]+'">'+t.name+'</div>'+
+    body+='<div class="col"><div class="cn" style="color:'+cols[k]+'">'+t.name+'</div>'+
       '<div class="cr">'+t.w+'-'+t.l+' &middot; '+gbTxt(t.rec[W-1][2])+'</div>'+
       '<div class="cv">'+fmt(po)+' <span class="cl">playoffs</span></div>'+
       '<div class="cv2">'+fmt(dv)+' <span class="cl">division</span> &middot; hope '+(auc*100).toFixed(0)+'</div>'+
@@ -186,10 +248,10 @@ function show(ids){
              : sel.length===1 ? 'pinned &middot; click another club to overlay it, or click again to release'
              : 'comparing two &middot; click either tile to drop it';
   document.getElementById('readout').innerHTML=
-    '<div class="rhead">'+list.map((t,k)=>'<span style="color:'+COL[k]+'">&#9632;</span> '+t.name).join(' <span class="vs">vs</span> ')+
+    '<div class="rhead">'+list.map((t,k)=>'<span style="color:'+cols[k]+'">&#9632;</span> '+t.name).join(' <span class="vs">vs</span> ')+
       '<span class="pinflag'+(sel.length?'':' dim')+'">'+hint+'</span></div>'+
     '<div class="rgrid2">'+body+'</div>'+
-    '<div class="smoothnote">Thick line: a smoothed trend. Faint line and dots: the raw weekly numbers. Dashed: chance of winning the division. The distance between thin and thick is the noise.</div>'+
+    '<div class="smoothnote">'+(clash?'These two clubs wear nearly the same colour, so the second trend is dashed. ':'')+'Thick line: a smoothed trend. Faint line and dots: the raw weekly numbers. Dashed: chance of winning the division. The distance between thin and thick is the noise.</div>'+
     chart(list)+
     '<div class="wkrow" id="wkrow">'+weekLine(list,W-1)+'</div>';
   wire(list);
@@ -293,7 +355,7 @@ def build() -> str:
     <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
   </div>
 </div>
-<script>const DATA={json.dumps(D, separators=(",", ":"))};{JS}</script>
+<script>const DATA={json.dumps(D, separators=(",", ":"))};const TCOL={json.dumps(TEAM_COLORS, separators=(",", ":"))};{JS}</script>
 </body>
 </html>
 """
