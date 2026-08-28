@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 348 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 347 issues remaining of 500
 
 ## Repository Structure
 
@@ -545,9 +545,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 152 issues (#1-152)
-Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 135-home-field-ranks, 137-schedule-leverage, 139-overfit-grid, 140-one-kick, 141-al-east-luck, 142-hope-curve, _TEMPLATE)
+Published: 153 issues (#1-153)
+Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 135-home-field-ranks, 137-schedule-leverage, 139-overfit-grid, 140-one-kick, 142-hope-curve, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 348 issues remaining of 500
-Last published: Issue #152 — "Two Teams a Rank Apart? The Higher One Wins 48.7% of the Time." (134-ranking-jnd.html) on August 27, 2026
+Goal: 347 issues remaining of 500
+Last published: Issue #153 — "Tampa Bay Leads the AL East by Six. By Runs Scored, They Are Third." (141-al-east-luck.html) on August 28, 2026
