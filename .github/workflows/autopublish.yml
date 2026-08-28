@@ -92,6 +92,26 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/autopublish.py
 
+      # Refreshes the Odds Board. Deliberately piggybacks on this workflow rather
+      # than taking its own schedule: a second cron would inherit the same GitHub
+      # scheduling delays that already push this job hours late, and would then
+      # race this one for the push. Runs AFTER the publish so a failure here can
+      # never block an issue going out.
+      - name: Refresh the Odds Board
+        continue-on-error: true
+        run: |
+          python3 scripts/refresh_odds.py || { echo "::warning::odds refresh failed; the previous board stays up"; exit 0; }
+          if git diff --quiet -- odds.html data/playoff-odds-trajectory.json; then
+            echo "no change to the board"; exit 0
+          fi
+          git add odds.html data/playoff-odds-trajectory.json
+          git commit -m "Refresh the Odds Board ($(date -u '+%Y-%m-%d'))"
+          for i in 1 2 3; do
+            git pull --rebase --quiet origin main && git push --quiet origin main && { echo "board pushed"; exit 0; }
+            echo "push race on attempt $i; retrying"; sleep 5
+          done
+          echo "::warning::could not push the refreshed board after 3 attempts"
+
       - name: Verify push succeeded
         run: |
           echo "Last commit:"

@@ -133,6 +133,30 @@ late *email*. That is the part subscribers notice.
 
 A GitHub Actions workflow (`.github/workflows/autopublish.yml`) runs at 4:30am ET Monday–Saturday. It calls `scripts/autopublish.py` which handles the full Regular Publishing Workflow deterministically. **Sunday Editions remain manual** — they require live data, prediction scoring, and editorial prose that a script cannot provide.
 
+**The Odds Board refreshes on the same run.** `scripts/refresh_odds.py` runs
+after the publish step, recomputes every club's playoff and division odds from
+the live standings, and rebuilds `odds.html` via `scripts/build_odds_page.py`.
+It piggybacks on this workflow on purpose: a second schedule would inherit the
+same GitHub cron delays *and* race this job for the push. It is
+`continue-on-error` and runs last, so a failed refresh can never stop an issue
+going out — the previous board simply stays up.
+
+Two things about it worth knowing:
+
+- **The stored trajectory is a WEEKLY grid, and must stay one.** The page's
+  smoother uses a bandwidth counted in points, not days, so mixing weekly
+  points with daily ones would silently change how much time it averages over.
+  The script therefore recomputes today's numbers every day but only *appends*
+  a point once seven days have passed; otherwise it overwrites the most recent
+  point in place. Current numbers are always live; the curve stays evenly spaced.
+- **It refuses rather than guesses.** If any club's games played plus games
+  remaining does not equal 162, or a club in the file is missing from the API,
+  it exits without touching the data.
+
+It runs Monday–Saturday with the publish, so the board does not refresh on
+Sundays. Manual refresh: `python3 scripts/refresh_odds.py` (add `--dry-run` to
+compute and report without writing).
+
 **PUBLISH-META requirement**: Every queue file MUST include a metadata comment block at the very top (before `<!DOCTYPE html>`). The autopublish script uses this for variety checking and index.html tag generation. Format:
 
 ```html
