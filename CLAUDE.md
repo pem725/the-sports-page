@@ -566,6 +566,23 @@ somewhere safer afterwards does nothing for the value that already leaked.
   autopublished under any circumstances.
 - **NEVER auto-publish as Sal**: Sal is a guest columnist with a rare cadence (once every 2-3 weeks max). The scheduled agent must NEVER write in Sal's voice, publish a file bylined "By Sal", or generate Sal's Column content. Sal only writes when the human user explicitly invokes him ("let Sal take this one"). If a queued file is bylined as Sal, SKIP it and pick a different file. See SKILL.md "Sal's Column" section for the full persona/rules.
 
+### The family picks ledger
+
+`data/picks-ledger.json` records every confidence-pool pick with the model's
+probability, the spread it came from, and the public split. `tracking/picks-ledger.md`
+is the human-readable version. Update with `python3 scripts/picks_ledger.py --update`
+and read it with `--report`.
+
+**The point is calibration, not the score.** One 71% pick losing means nothing;
+71% picks lose 29% of the time by construction. The question is whether the whole
+band of 71% calls wins about 71% across a season, and that needs 25+ resolved
+games before it says anything. The report prints that warning itself so nobody
+reads a five-game sample as a verdict.
+
+By November this becomes an issue: a calibration curve of our own published
+forecasts. We ask other people for error bars constantly; this is the one place
+we can be held to the same standard.
+
 ## Team & Sport Priorities (in order)
 
 1. Notre Dame Fighting Irish football — always, year-round
