@@ -87,6 +87,13 @@ jobs:
           python3 -m pip install --quiet -r requirements.txt
           python3 -c "import PIL, cairosvg; print('deps ok:', PIL.__version__, cairosvg.__version__)"
 
+      # Must run BEFORE the publish so the block exists when the issue is stamped.
+      # continue-on-error: a missing leverage table removes its own marker and the
+      # issue ships without it. Never block a publish on a nice-to-have.
+      - name: Build the What to Watch block
+        continue-on-error: true
+        run: python3 scripts/daily_watch.py || echo "::warning::watch block unavailable; issue will ship without it"
+
       - name: Run autopublish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

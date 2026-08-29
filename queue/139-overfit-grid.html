@@ -49,6 +49,14 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
 .cc[data-preview]:hover::after{left:0;transform:none}
 .footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.8rem}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.5rem}
+.watch p{font-size:.92rem;line-height:1.65;margin-bottom:.6rem}
+.watch-lede{font-size:1.02rem !important}
+.watch-rest{list-style:none;margin:.2rem 0 .7rem;padding:0;font-size:.86rem;line-height:1.7}
+.watch-rest li{border-top:1px solid var(--div);padding-top:.25rem}
+.watch .wt{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted)}
+.watch-note{font-size:.76rem !important;color:var(--muted);border-top:1px solid var(--div);padding-top:.5rem;margin-bottom:0 !important}
 </style>
 <meta property="og:title" content="We Built 252 Ways to Predict the Playoffs. The Best One Lost to the Simplest One.">
 <meta property="og:description" content="The winner scored 59.2% on the data that chose it and as little as 48.9% on data it had never seen. A plain run differential, with nothing tuned at all, beat it.">
@@ -169,6 +177,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
     <p style="color:#c8b99a">One limit, stated plainly. None of this proves recent form is worthless in October. It shows that with the data baseball actually produces, we cannot tell whether it helps &mdash; and that a search over 252 options will hand you a confident answer anyway.</p>
   </div>
 
+  <!-- WATCH_BLOCK -->
   <div class="footer"><span>The Sports Page &middot; Vol. I, No. __</span><span>How a good number goes bad</span><span>TODO_DATE &middot; New York, NY</span></div>
   <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
 </div>

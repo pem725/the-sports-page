@@ -577,6 +577,22 @@ def main():
     # Step 6: Update the article HTML
     updated_content = update_article(content, issue_num, today)
 
+    # Inject the day's "What to Watch" block, if one was generated. Keyed on an
+    # explicit marker rather than inferred from the markup: a regex aimed at a
+    # <div> once ate two figures in this repo, so nothing here guesses. If the
+    # block is missing or generation failed, the marker is simply removed and the
+    # issue ships without it -- a leverage table is never worth blocking a publish.
+    watch_path = os.path.join(REPO, "data", "daily-watch.html")
+    if "<!-- WATCH_BLOCK -->" in updated_content:
+        if os.path.exists(watch_path):
+            with open(watch_path, encoding="utf-8") as _f:
+                block = _f.read().strip()
+            updated_content = updated_content.replace("<!-- WATCH_BLOCK -->", block, 1)
+            print("  injected the What to Watch block")
+        else:
+            updated_content = updated_content.replace("<!-- WATCH_BLOCK -->", "", 1)
+            print("  no What to Watch block available; marker removed")
+
     # Post-substitution guard. The check further up runs on the file as drafted,
     # where TODO_DATE is a legitimate placeholder waiting to be filled. This one
     # runs on what is about to be written, and asks the only question that

@@ -133,6 +133,34 @@ late *email*. That is the part subscribers notice.
 
 A GitHub Actions workflow (`.github/workflows/autopublish.yml`) runs at 4:30am ET Monday–Saturday. It calls `scripts/autopublish.py` which handles the full Regular Publishing Workflow deterministically. **Sunday Editions remain manual** — they require live data, prediction scoring, and editorial prose that a script cannot provide.
 
+**Every issue carries a "What to Watch" block.** `scripts/daily_watch.py` runs
+*before* the publish and writes `data/daily-watch.html`; `autopublish.py` swaps it
+in for the `<!-- WATCH_BLOCK -->` marker that every queue file now carries.
+
+**The block ranks games by measured importance, not by vibe.** For each game on
+the card it reports *championship leverage*: how much playoff probability changes
+hands depending on who wins. One simulation of the remaining season is run, then
+each game's outcome splits those seasons in two and the gap is the swing.
+Conditioning inside a single run is exact — games are independent given team
+strength — and about 30x cheaper than re-simulating each game twice. Verified
+2026-08-29: conditional gave +7.0/-7.9 for Mariners-Blue Jays, brute force gave
++7.1/-7.6.
+
+The result is reliably counterintuitive, which is the point: **the biggest game is
+rarely the one with the best teams.** It is the one where both clubs sit nearest a
+coin flip, because that is where a single win moves the most probability.
+
+**Fail-safe by design.** Generation is `continue-on-error`, and if the block is
+missing the publisher deletes the marker and ships the issue without it. A
+leverage table is never worth blocking an issue. Injection keys on an explicit
+marker rather than inferring a position from the markup — a regex aimed at a
+`<div>` destroyed two figures in this repo once already.
+
+New queue files must include `<!-- WATCH_BLOCK -->` immediately before
+`<div class="footer">`, plus the `.watch` styles in the `<style>` block. The
+template has both. Preview any day's block with
+`python3 scripts/daily_watch.py --print`.
+
 **The Odds Board refreshes on the same run.** `scripts/refresh_odds.py` runs
 after the publish step, recomputes every club's playoff and division odds from
 the live standings, and rebuilds `odds.html` via `scripts/build_odds_page.py`.
