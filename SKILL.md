@@ -260,6 +260,50 @@ below). Required sections:
     not redesign per piece. Inserted INSIDE the `.paper` div, immediately
     before `<div class="footer">`.
 
+### Step 5.5 — The What to Watch block (EVERY issue, no exceptions)
+
+Every daily issue ships with a **What to Watch** section immediately above the
+footer. It is generated, not written: `scripts/daily_watch.py` runs before the
+publish, writes `data/daily-watch.html`, and `autopublish.py` swaps it in for the
+`<!-- WATCH_BLOCK -->` marker.
+
+**Every new queue file MUST contain that marker** immediately before
+`<div class="footer">`, plus the `.watch` / `.w-*` styles in its `<style>` block.
+`queue/_TEMPLATE.html` has both — start from it and they come for free. A file
+without the marker silently ships without the section.
+
+**One game per league, chosen by a measure that fits the league:**
+
+| League | Measure | Why not the obvious thing |
+|---|---|---|
+| Baseball | championship leverage — playoff probability that changes hands on the result | "best teams" is wrong; a Dodgers game can be worth zero because they are already in |
+| College football | closeness to a coin flip among clubs that matter, via the rank-gap model in Issue #135 | twelve games and a committee cannot be simulated like a standings table |
+| Pro football | regular season and playoffs only (ESPN `season.type` 2 or 3) | a preseason game is the one football result carrying no information at all |
+
+**There is a quality bar, and it is the point.** A league whose best game is below
+it is dropped from the block and named in a single quiet line instead:
+
+- baseball below **4 points** of swing
+- college past **80/20**
+
+A section that lists something every day regardless of whether it matters trains
+the reader to skip it, which costs more than an empty day does. When nothing
+clears the bar, say so plainly — that is real information, and it is the
+difference between watching and having the television on.
+
+**It scores itself.** Each day's pick goes to `data/watch-ledger.json`, and the
+next day's block reports the result and what it did to the number we quoted. A
+block that makes a claim and never checks it is advertising.
+
+**Fail-safe, always.** Generation is `continue-on-error`; each league is guarded
+separately so one dead API costs only its own line; and if no block exists the
+publisher deletes the marker and ships the issue without it. **A leverage table is
+never worth blocking an issue.** Injection keys on the explicit marker and never
+infers a position from markup — a regex aimed at a `<div>` once destroyed two
+figures in this repo.
+
+Preview any day: `python3 scripts/daily_watch.py --print [--date YYYY-MM-DD]`.
+
 ### Step 6 — Skill Output
 
 Produce two files:

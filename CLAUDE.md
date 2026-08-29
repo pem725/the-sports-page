@@ -137,6 +137,13 @@ A GitHub Actions workflow (`.github/workflows/autopublish.yml`) runs at 4:30am E
 *before* the publish and writes `data/daily-watch.html`; `autopublish.py` swaps it
 in for the `<!-- WATCH_BLOCK -->` marker that every queue file now carries.
 
+**There is a quality bar, and enforcing it is the point.** A league whose best
+game is below it is dropped and named in one quiet line instead: baseball under
+**4 points** of swing, college past **80/20**. A section that prints something
+every day regardless of whether it matters teaches the reader to skip it, which
+costs more than an empty day. When nothing clears the bar the block says so —
+that is real information.
+
 **The block ranks games by measured importance, not by vibe.** For each game on
 the card it reports *championship leverage*: how much playoff probability changes
 hands depending on who wins. One simulation of the remaining season is run, then

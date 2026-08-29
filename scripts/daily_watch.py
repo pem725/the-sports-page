@@ -43,6 +43,13 @@ MLB = "https://statsapi.mlb.com/api/v1"
 CFBD = "https://api.collegefootballdata.com"
 NSIMS, BATCH = 60000, 6000
 
+# The bar. A block that lists something every day regardless of whether it
+# matters trains the reader to skip it, which costs more than an empty day does.
+# Below these thresholds a league is dropped from the block entirely and named in
+# a single quiet line instead.
+MIN_SWING = 0.04      # baseball: fewer than 4 points of playoff probability is noise
+MAX_LOPSIDED = 0.80   # college: anything past 80/20 teaches nobody anything
+
 # Issue #135's fitted model: neutral site is the reference category.
 B0, BGAP, BHOME, BAWAY = -0.0744, 0.1064, 0.5179, -0.8887
 
@@ -130,6 +137,10 @@ def mlb_watch(date):
             best = row
     if not best:
         return None
+    if best["swing"] < MIN_SWING:
+        return dict(sport="Baseball", quiet=True,
+                    note=f'nothing at stake &mdash; the biggest game on the card moves '
+                         f'{best["swing"]*100:.0f} points')
     both = 0.06 < min(best["hp"], best["ap"]) and max(best["hp"], best["ap"]) < 0.94
     best["why"] = (f'{best["swing"]*100:.0f} points of playoff probability ride on it. '
                    + ("Both clubs sit near a coin flip, which is where a single game is worth most."
@@ -195,23 +206,19 @@ def cfb_watch(date):
             best = row
     if not best:
         return None
+    if best["p"] > MAX_LOPSIDED:
+        return dict(sport="College Football", quiet=True,
+                    note=f'nothing close &mdash; the tightest game involving a ranked side is '
+                         f'{best["p"]*100:.0f}/{100-best["p"]*100:.0f}')
     fav = best["home"] if best["rh"] < best["ra"] else best["away"]
     best["why"] = (f'The ratings put these two {best["gap"]} places apart, making it '
                    f'{"an" if str(int(best["p"]*100))[0] in "18" else "a"} '
                    f'{best["p"]*100:.0f}/{100-best["p"]*100:.0f} game. '
                    + ("Neutral field, so neither side gets the thirteen ranks home advantage is worth."
                       if best["neutral"] else
-                      ("Close games between ranked teams are where a week's rankings actually move."
-                       if best["p"] < 0.75 else
-                       "Nothing on today's card is close, so the ratings are unlikely to learn much.")))
-    p = best["p"]
-    if p < 0.62:
-        best["tells"] = f'{fav} are favoured, and only just.'
-    elif p < 0.75:
-        best["tells"] = f'{fav} are favoured. Not a coin flip, but the closest thing on the card.'
-    else:
-        best["tells"] = (f'{fav} are heavy favourites. This is the <em>closest</em> game today involving a '
-                         f'ranked side, which tells you how thin the slate is.')
+                      "Close games between ranked teams are where a week's rankings actually move."))
+    best["tells"] = (f'{fav} are favoured, and only just.' if best["p"] < 0.62
+                     else f'{fav} are favoured, but not by enough to call it.')
     return best
 
 
@@ -288,14 +295,25 @@ def yesterday_result(date):
 # --------------------------------------------------------------------------- render
 def render(picks, yday, date):
     d = datetime.date.fromisoformat(date)
+    live = [p for p in picks if not p.get("quiet")]
+    quiet = [p for p in picks if p.get("quiet")]
     rows = ""
-    for p in picks:
+    for p in live:
         rows += (f'<div class="w-row"><div class="w-sport">{p["sport"]}</div>'
                  f'<div class="w-game"><strong>{p["away"]}</strong> at <strong>{p["home"]}</strong>'
                  f'{" &middot; neutral site" if p.get("neutral") else ""}'
                  f'<span class="w-time">{et(p["when"])}</span></div>'
                  f'<div class="w-why">{p["why"]} {p.get("tells","")}</div></div>')
     yblock = (f'<p class="w-yday"><span class="w-ylab">Yesterday</span> {yday}</p>' if yday else "")
+    if not live:
+        rows = ('<div class="w-row"><div class="w-why">Nothing today clears the bar. '
+                + "; ".join(f'<strong>{q["sport"]}</strong>: {q["note"]}' for q in quiet)
+                + '. Days like this are worth knowing about too &mdash; it is the difference '
+                  'between watching and merely having the television on.</div></div>')
+    elif quiet:
+        rows += ('<div class="w-row"><div class="w-why w-quiet">Quiet elsewhere. '
+                 + "; ".join(f'<strong>{q["sport"]}</strong>: {q["note"]}' for q in quiet)
+                 + '.</div></div>')
     return f'''<div class="watch">
   <div class="watch-label">What to Watch &middot; {d.strftime("%A, %B %-d")}</div>
   {yblock}{rows}
@@ -316,11 +334,14 @@ def main():
     for fn, label in ((mlb_watch, "MLB"), (cfb_watch, "CFB"), (nfl_watch, "NFL")):
         try:
             r = fn(a.date)
-            if r:
+            if r and r.get("quiet"):
+                picks.append(r)
+                print(f"  {label}: below the bar ({r['note'].replace('&mdash;','-')})")
+            elif r:
                 picks.append(r)
                 print(f"  {label}: {r['away']} at {r['home']}")
             else:
-                print(f"  {label}: no game today")
+                print(f"  {label}: no games")
         except Exception as e:
             print(f"  {label}: FAILED ({type(e).__name__}: {e})")
     if not picks:
@@ -339,7 +360,7 @@ def main():
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(html)
     led = json.load(open(LEDGER)) if os.path.exists(LEDGER) else {}
-    m = next((p for p in picks if p["sport"] == "Baseball"), None)
+    m = next((p for p in picks if p["sport"] == "Baseball" and not p.get("quiet")), None)
     led[a.date] = {"mlb": {k: m[k] for k in ("home", "away", "swing", "dh", "da")} if m else None}
     with open(LEDGER, "w", encoding="utf-8") as f:
         json.dump(led, f, indent=1)
