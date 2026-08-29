@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 347 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 346 issues remaining of 500
 
 ## Repository Structure
 
@@ -602,9 +602,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 153 issues (#1-153)
-Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 135-home-field-ranks, 137-schedule-leverage, 139-overfit-grid, 140-one-kick, 142-hope-curve, _TEMPLATE)
+Published: 154 issues (#1-154)
+Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 137-schedule-leverage, 139-overfit-grid, 140-one-kick, 142-hope-curve, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 347 issues remaining of 500
-Last published: Issue #153 — "Tampa Bay Leads the AL East by Six. By Runs Scored, They Are Third." (141-al-east-luck.html) on August 28, 2026
+Goal: 346 issues remaining of 500
+Last published: Issue #154 — "Home Field Is Worth Thirteen Ranks. Most of It Is the Road Team Losing Them." (135-home-field-ranks.html) on August 29, 2026
