@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; The Newsroom</title>
+<meta name="description" content="How The Sports Page decides what to run: the NEWSINESS metric, the current story pile, the queue, and the open questions. For the editorial board.">
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:15px;line-height:1.65;padding:1.4rem 1rem 3rem}
+.masthead{max-width:900px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.4rem);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.title a{color:inherit;text-decoration:none}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.9rem;color:var(--muted)}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:900px;margin:.8rem auto 0;background:var(--cream);padding:2rem 2.2rem 2.4rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:620px){.paper{padding:1.2rem 1rem}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:900;line-height:1.15;margin-bottom:.3rem}
+h1 em{color:var(--rust);font-style:italic}
+.deck{font-style:italic;color:var(--muted);border-left:3px solid var(--rust);padding-left:.85rem;margin:.6rem 0 1.4rem;line-height:1.5}
+h2{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:1.9rem 0 .8rem}
+p{margin-bottom:.75rem}
+.eq{font-family:'Roboto Mono',monospace;font-size:.82rem;background:var(--card);border:1px solid var(--div);padding:.7rem .9rem;margin:.7rem 0;overflow-x:auto;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:.84rem;margin:.5rem 0}
+th{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:right;padding:.3rem .35rem;border-bottom:1px solid var(--div)}
+th:nth-child(3){text-align:left}
+td{padding:.45rem .35rem;border-bottom:1px solid var(--div);vertical-align:top;text-align:right}
+td:nth-child(3),td:nth-child(4){text-align:left}
+.n{color:var(--muted);font-family:'Roboto Mono',monospace}
+.sc{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:900;color:var(--rust)}
+.sc2{font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted)}
+.g{font-weight:700;color:var(--steel)}
+.wy{font-size:.78rem;color:var(--muted);line-height:1.45;margin-top:.15rem}
+.nm{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--steel);margin-top:.15rem}
+.dt{font-family:'Roboto Mono',monospace;font-size:.74rem;text-align:left !important;white-space:nowrap}
+.tp{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--rust);text-align:left !important}
+.dc{font-family:'Roboto Mono',monospace;font-size:.7rem;text-align:left !important}
+.dn{color:var(--muted)}
+ul{margin:.4rem 0 .8rem 1.1rem} li{margin-bottom:.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--div);border:1px solid var(--div);margin:1rem 0}
+.cell{background:var(--card);padding:.8rem;text-align:center}
+.cell .v{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;line-height:1}
+.cell .l{font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+.ask{border:2px solid var(--steel);background:var(--card);padding:1rem 1.2rem;margin:1.4rem 0}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.7rem}
+.footer a{color:var(--rust);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="masthead">
+  <div class="kicker">For the Editorial Board &middot; Generated 30 August 2026</div>
+  <div class="title"><a href="https://thesportspage.net/">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>The Newsroom</span><span>155 issues published</span><span>Tim &middot; Sean &middot; Patrick jr</span></div>
+</div>
+<div class="paper">
+  <h1>How We Decide What Runs. <em>And What We Are Arguing About.</em></h1>
+  <div class="deck">One issue a day means every story competes with every other. This page is the argument, written down: what is in the pile, what it scored, what is already scheduled, and where we need you.</div>
+
+  <div class="grid">
+    <div class="cell"><div class="v">155</div><div class="l">Issues published</div></div>
+    <div class="cell"><div class="v">8</div><div class="l">Days of queue</div></div>
+    <div class="cell"><div class="v">7</div><div class="l">Stories under consideration</div></div>
+    <div class="cell"><div class="v">0/15</div><div class="l">Forecasts graded so far</div></div>
+  </div>
+
+  <h2>The metric</h2>
+  <p>Most sports desks pick the biggest event and hunt for numbers inside it. We do the reverse: pick the most interesting <strong>number</strong>, then explain the sport around it. <em>Stats driven by sports, not sports driven by stats.</em></p>
+  <div class="eq">NEWSINESS = (GRIP &divide; 10) &times; (0.35 TWIST + 0.25 CLOCK + 0.15 STACK + 0.25 CARRY)</div>
+  <p><strong>GRIP multiplies rather than adds.</strong> That is the editorial position, not a modelling convenience. A story with no number scores zero however good it sounds.</p>
+  <ul>
+    <li><strong>GRIP</strong> &mdash; the number. Ours? Defensible? Does it have an interval? A broadcast graphic is a 2; computed from primary data, verified three ways, with a stated limit, is a 10.</li>
+    <li><strong>TWIST</strong> &mdash; distance from what a reasonable fan expects. The best have a trap: an obvious answer that is wrong.</li>
+    <li><strong>CLOCK</strong> &mdash; what running it today buys over running it next month.</li>
+    <li><strong>STACK</strong> &mdash; audience, on the paper-stack scale. One page is a thousand plausible readers; a Super Bowl is about fourteen trees. <em>Deliberately the smallest weight.</em></li>
+    <li><strong>CARRY</strong> &mdash; does the lesson survive outside sport? &ldquo;A deficit is a fact, superiority is a rate&rdquo; carries. &ldquo;The Rays are lucky&rdquo; does not.</li>
+  </ul>
+  <p><strong>Answerability is a gate, not a term.</strong> If the data cannot settle it, the story is held rather than ranked &mdash; however well it scores.</p>
+
+  <h2>The pile, ranked</h2>
+  <table>
+    <tr><th></th><th>score</th><th>story</th><th>grip</th><th>twist</th><th>clock</th><th>stack</th><th>carry</th></tr>
+    <tr><td class="n">1</td><td class="sc">5.88</td><td><strong>After One Week, What Do We Actually Know?</strong><div class="wy">CFB is about to take over and the queue has nothing for Sep 12; the honest answer is probably 'less than you think', which is the house thesis</div><div class="nm">the number: how much a week-1 result predicts final record, 2015-2025 game logs already pulled</div></td><td class="g">8</td><td>7</td><td>8</td><td>6</td><td>8</td></tr><tr><td class="n">2</td><td class="sc">5.12</td><td><strong>Nine of Notre Dame's Twelve Games Cannot Help Them.</strong><div class="wy">ND is the paper's first priority and this is the structural cost of independence, not a complaint about the schedule</div><div class="nm">the number: resume weight by opponent: three games carry 89%</div></td><td class="g">8</td><td>7</td><td>4</td><td>8</td><td>7</td></tr><tr><td class="n">3</td><td class="sc">4.88</td><td><strong>The Athletics Ruined Somebody. Did We Call It?</strong><div class="wy">a metric that never checks itself is advertising; this is the follow-up #144 promises</div><div class="nm">the number: scoring #144's leverage claim against what actually happened</div></td><td class="g">8</td><td>5</td><td>9</td><td>4</td><td>6</td></tr><tr><td class="n">4</td><td class="sc">4.58</td><td><strong>Do First-Year Coaches Beat Their Spreads?</strong><div class="wy">Campbell to Penn State at 8% returning production is the live case; markets are known to price transitions badly</div><div class="nm">the number: every FBS coaching change vs closing spread, CFBD era</div></td><td class="g">7</td><td>8</td><td>5</td><td>5</td><td>7</td></tr><tr><td class="n">5</td><td class="sc">4.09</td><td><strong>Twelve of Fifteen AL Clubs Are Alive. Nine of Fifteen in the NL.</strong><div class="wy">reader-noticed, verified on every measure tried, and decays as September resolves</div><div class="nm">the number: SD of win pct .057 AL vs .070 NL, survives the Pythagorean check</div></td><td class="g">7</td><td>6</td><td>7</td><td>5</td><td>5</td></tr>
+  </table>
+  <p style="font-size:.82rem;color:var(--muted)"><strong>Held &mdash; good stories the data cannot settle yet:</strong></p>
+  <ul style="font-size:.86rem"><li><strong>We Told You 71% Thirty Times. Here Is How Often It Happened.</strong> <span class="sc2">would score 5.7</span><div class="wy">held: needs 25+ resolved picks; the ledger has 15 and none final</div></li><li><strong>The Biggest Game in Sport Is Fourteen Trees.</strong> <span class="sc2">would score 3.27</span><div class="wy">held: Stack anchors are illustrative and not yet verified to three sources</div></li></ul>
+
+  <h2>What is already scheduled</h2>
+  <table><tr><td class="dt">Mon Aug 31</td><td class="tp">MLB</td><td class="dc">hot<span class="dn"> &middot; days</span></td><td>The Mets Cannot Ruin Anybody. The Athletics Can Ruin Four Seasons.</td></tr><tr><td class="dt">Tue Sep 1</td><td class="tp">Methods</td><td class="dc">keeps<span class="dn"> &middot; any time</span></td><td>We Built 252 Ways to Predict the Playoffs. The Best One Lost to the Simplest One.</td></tr><tr><td class="dt">Wed Sep 2</td><td class="tp">MLB</td><td class="dc">dated<span class="dn"> &middot; has a deadline</span></td><td>The Mets Must Pass Seven Teams. They Play Two of Them.</td></tr><tr><td class="dt">Thu Sep 3</td><td class="tp">Methods</td><td class="dc">keeps<span class="dn"> &middot; any time</span></td><td>How Many Stars Does It Take to Flip a Team? Baseball: Four. Basketball: One.</td></tr><tr><td class="dt">Fri Sep 4</td><td class="tp">CFB</td><td class="dc">dated<span class="dn"> &middot; has a deadline</span></td><td>Two Teams Have Everything the Contenders Have. They Are Ranked 33rd and 35th.</td></tr><tr><td class="dt">Sat Sep 5</td><td class="tp">MLB</td><td class="dc">slow<span class="dn"> &middot; weeks</span></td><td>The Best Season to Watch Is Not the Best Season to Have.</td></tr><tr><td class="dt">Mon Sep 7</td><td class="tp">NFL</td><td class="dc">dated<span class="dn"> &middot; has a deadline</span></td><td>Kickers Make 80% From 43 Yards. That Told Chicago Nothing.</td></tr><tr><td class="dt">Tue Sep 8</td><td class="tp">MLB</td><td class="dc">keeps<span class="dn"> &middot; any time</span></td><td>Every Team Has Its Babe Ruth. The Mets Have Two.</td></tr></table>
+  <p style="font-size:.82rem;color:var(--muted)">Decay tags govern the order. <strong>3 evergreen pieces</strong> are banked as buffer &mdash; that is what lets a breaking story take tomorrow&rsquo;s slot without leaving a hole.</p>
+
+  <div class="ask">
+    <h2 style="margin-top:0">Where we actually need you</h2>
+    <ul>
+      <li><strong>Score the pile yourselves.</strong> Run the rubric and tell us where we are wrong &mdash; not &ldquo;I&rsquo;d run something else&rdquo; but &ldquo;your TWIST on that is a 4.&rdquo; A metric nobody argues with is a metric nobody is using, and the disagreements are how the weights get tuned.</li>
+      <li><strong>Bring questions, not topics.</strong> The best issues this year came from someone asking a question they could not settle at the table. Gene&rsquo;s produced a concept primer and an issue with his name on it.</li>
+      <li><strong>Tell us when a piece was boring.</strong> Nobody reports this and it is the most useful thing you can say.</li>
+    </ul>
+  </div>
+
+  <h2>The open questions</h2>
+  <ul>
+    <li><strong>Readership.</strong> The target is one reader per issue published &mdash; 155 today, and roughly a thousand before we hang a shingle. We have no weekly tracker for this yet; it is the next thing to build.</li>
+    <li><strong>Our own calibration.</strong> We keep telling readers a thing is 71% likely. The picks ledger will eventually say how often those happened. 0 of 15 graded so far; it needs 25+ before it can speak.</li>
+    <li><strong>Publishing the rejects.</strong> This page shows what we passed over. That record should itself become an issue &mdash; readers seeing the selection, not just the selected.</li>
+    <li><strong>The Stack&rsquo;s anchors.</strong> The audience scale is built but its readership figures are illustrative, and every one must be verified three ways before it appears in an issue.</li>
+  </ul>
+
+  <div class="footer">
+    <span>The Sports Page &middot; The Newsroom &middot; regenerated from live files</span>
+    <span><a href="https://thesportspage.net/">&larr; The Archive</a> &middot; <a href="https://thesportspage.net/ask.html">Ask us something</a></span>
+  </div>
+</div>
+</body>
+</html>

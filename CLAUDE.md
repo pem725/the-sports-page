@@ -352,6 +352,22 @@ re-send them to the list.
 **Never** use a reader question as cover for a piece you wanted to write anyway.
 The vetting step in (2) exists to stop exactly that.
 
+### The Newsroom page (for the editorial board)
+
+`newsroom.html`, built by `scripts/build_newsroom.py`, is the one page the board
+reads: the metric, the ranked pile, the held stories, the scheduled queue, and
+the open questions. **Everything on it is read from live files** — the candidate
+JSON, QUEUE_ORDER, the picks ledger, index.html — so it can never be a document
+someone forgot to update. Regenerate after changing candidates or the queue:
+
+```bash
+python3 scripts/build_newsroom.py
+```
+
+It is `noindex` and linked discreetly from the homepage. Not secret — the
+selection process is part of what we are willing to show — but not the front
+door either.
+
 ### NEWSINESS — the metric that picks the story
 
 `scripts/newsiness.py`, rubric in `SKILL.md` Step 0.5, candidates in
