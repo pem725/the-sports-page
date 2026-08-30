@@ -94,6 +94,22 @@ color:var(--rust);font-weight:600;border-bottom:1px solid var(--div);padding-bot
 transition:background .12s,border-color .12s;position:relative}
 .tile:hover,.tile.on{background:#fbf7ec;border-color:var(--ink)}
 .tile.pinned{background:#fbf7ec}
+.tabs{display:flex;gap:.4rem;border-bottom:3px double var(--ink);margin:0 0 1.2rem;padding-bottom:.5rem;flex-wrap:wrap}
+.tabs button{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+font-weight:600;padding:.45rem .9rem;border:1px solid var(--div);background:var(--card);color:var(--muted);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.pane[hidden]{display:none}
+.cfb-row{display:grid;grid-template-columns:2.1rem minmax(140px,1fr) minmax(120px,1.5fr) repeat(4,3.4rem);
+gap:.5rem;align-items:center;border-bottom:1px solid var(--div);padding:.5rem 0}
+@media(max-width:760px){.cfb-row{grid-template-columns:1.8rem 1fr repeat(2,3.2rem);row-gap:.3rem}
+.cfb-fig{grid-column:1/-1;order:9} .cfb-st:nth-of-type(n+3){display:none}}
+.cfb-rk{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:var(--muted);text-align:right}
+.cfb-nm{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;line-height:1.15}
+.cfb-sub{display:block;font-family:'Roboto Mono',monospace;font-size:.62rem;font-weight:400;color:var(--muted);letter-spacing:.03em;margin-top:.1rem}
+.cfb-fig{width:100%;height:26px;display:block}
+.cfb-st{text-align:right}
+.cfb-st b{display:block;font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:900;line-height:1}
+.cfb-st span{font-family:'Roboto Mono',monospace;font-size:.54rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .pinflag{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-left:.6rem;vertical-align:.25em}
 .pinflag.dim{color:var(--muted)}
 .tile:focus-visible{outline:2px solid var(--rust);outline-offset:1px}
@@ -288,7 +304,55 @@ document.querySelectorAll('.tile').forEach(e=>{
 const board=document.getElementById('board');
 if(board)board.addEventListener('mouseleave',()=>{if(!sel.length)show([first]);});
 show([first]);
+// tab switching. Panes use the hidden attribute so a hidden pane is also removed
+// from the accessibility tree, not merely painted out.
+document.querySelectorAll('.tabs button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected', x===b));
+    document.querySelectorAll('.pane').forEach(p=>{p.hidden = p.id!==b.getAttribute('aria-controls');});
+  });
+});
 """
+
+
+CFB_DATA = REPO / "data" / "cfb-odds.json"
+
+
+def cfb_rows():
+    """One row per top-25 club: rank and name left, season strip centre, numbers right."""
+    if not CFB_DATA.exists():
+        return "", ""
+    D = json.loads(CFB_DATA.read_text())
+    W, H = 300, 26
+    out = []
+    for t in D["teams"]:
+        n = len(t["sched"])
+        cw = W / max(n, 1)
+        bars = ""
+        for i, g in enumerate(t["sched"]):
+            x = i * cw
+            h = max(2.0, g["p"] * H)
+            if g["won"] is True:
+                c = "#2a6e3f"
+            elif g["won"] is False:
+                c = "#b83a1e"
+            else:
+                c = "#8fa8bd" if g["p"] >= .5 else "#d8b9ae"
+            bars += f'<rect x="{x:.1f}" y="{H-h:.1f}" width="{cw-1.6:.1f}" height="{h:.1f}" fill="{c}"><title>{g["opp"]} ({g["site"]}) {g["p"]*100:.0f}%</title></rect>'
+        bars += f'<line x1="0" y1="{H/2:.1f}" x2="{W}" y2="{H/2:.1f}" stroke="#c8b99a" stroke-width=".8" stroke-dasharray="2 3"/>'
+        rp = "&mdash;" if t["ret"] is None else f'{t["ret"]*100:.0f}%'
+        out.append(
+            f'<div class="cfb-row">'
+            f'<div class="cfb-rk">{t["rank"]}</div>'
+            f'<div class="cfb-nm">{t["team"]}<span class="cfb-sub">SP+ {t["sp"]:+.1f} &middot; talent {t["talent"]:.0f} &middot; returning {rp}</span></div>'
+            f'<svg class="cfb-fig" viewBox="0 0 {W} {H}" preserveAspectRatio="none" aria-label="Game by game win probability for {t["team"]}">{bars}</svg>'
+            f'<div class="cfb-st"><b>{t["proj"]:.1f}</b><span>proj wins</span></div>'
+            f'<div class="cfb-st"><b>{t["ten_plus"]*100:.0f}%</b><span>10+ wins</span></div>'
+            f'<div class="cfb-st"><b>{t["undefeated"]*100:.1f}%</b><span>unbeaten</span></div>'
+            f'<div class="cfb-st"><b>{t["sos"]:+.1f}</b><span>sched</span></div>'
+            f'</div>')
+    return "".join(out), D.get("method", "")
+
 
 def build() -> str:
     D = json.loads(DATA.read_text())
@@ -316,6 +380,7 @@ def build() -> str:
                 f'{dv}{po}</svg></div>')
         tiles.append("</div>")
     grid = "\n".join(tiles)
+    cfb, cfb_method = cfb_rows()
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -342,6 +407,11 @@ def build() -> str:
     <span><i style="background:#c9962a"></i>chance of winning the division</span>
     <span>dashed line = 50%</span>
   </div>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-mlb" aria-controls="p-mlb" aria-selected="true">Baseball</button>
+    <button role="tab" id="t-cfb" aria-controls="p-cfb" aria-selected="false">College Football</button>
+  </div>
+  <div class="pane" id="p-mlb" role="tabpanel">
   <div id="board">{grid}</div>
   <div class="readout" id="readout"></div>
   <p style="font-size:.8rem;color:var(--muted);margin-top:1.2rem;line-height:1.6">
@@ -350,6 +420,21 @@ def build() -> str:
     regressed toward .500. Ties are broken at random rather than by the real tiebreaker rules, so
     treat a number near a coin flip as a coin flip.
   </p>
+  </div>
+
+  <div class="pane" id="p-cfb" role="tabpanel" hidden>
+    <h1 style="font-size:clamp(1.4rem,3.5vw,2rem);margin-bottom:.3rem">The Top Twenty-Five, <em>Game by Game.</em></h1>
+    <div class="deck">Each strip is one club&rsquo;s season, left to right. Bar height is the chance of winning that game; green and red are results already in. A tall flat strip is a schedule that asks nothing.</div>
+    {cfb}
+    <p style="font-size:.8rem;color:var(--muted);margin-top:1.2rem;line-height:1.6">
+      {cfb_method}. SP+ is a points-above-average rating, so the difference between two clubs is an
+      expected margin and converts to a win probability at any gap &mdash; unlike a rank-difference
+      model, which breaks when the gap is large. Strength of schedule is the mean SP+ of the
+      opponents faced; Notre Dame&rsquo;s +3.0 against Texas&rsquo;s +13.7 is most of why their
+      unbeaten chance is so much higher despite a lower rating.
+    </p>
+  </div>
+
   <div class="footer">
     <span>The Sports Page &middot; The Odds Board</span>
     <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
