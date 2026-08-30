@@ -260,6 +260,43 @@ below). Required sections:
     not redesign per piece. Inserted INSIDE the `.paper` div, immediately
     before `<div class="footer">`.
 
+### Step 0.5 — Score it for NEWSINESS before writing a word
+
+There is one slot a day, so every story competes with every other. "This feels
+big" is not a reason anyone can argue with; a number is, which is the point.
+
+**The inversion that defines this paper.** Most sports desks pick the biggest
+event and hunt for numbers inside it. We pick the most interesting **number** and
+explain the sport around it. Stats driven by sports, not sports driven by stats.
+So GRIP does not sit alongside the other terms — it **multiplies** them:
+
+```
+NEWSINESS = (GRIP / 10) x (0.35 TWIST + 0.25 CLOCK + 0.15 STACK + 0.25 CARRY)
+```
+
+| | what it measures | note |
+|---|---|---|
+| **GRIP** | the number: ours? defensible? with an interval? | multiplies everything; 0 here is 0 overall |
+| **TWIST** | distance from what a reasonable fan expects | best twists have a trap — an obvious wrong answer |
+| **CLOCK** | what publishing today buys over publishing in a month | |
+| **STACK** | audience, on the paper-stack scale in `corpus/bometer-and-the-stack.md` | deliberately the SMALLEST weight |
+| **CARRY** | does the lesson survive outside sport? | the civic mission, scored |
+
+**Answerability is a gate, not a term.** If the data cannot settle it, the story
+is held rather than ranked, however well it scores. The Super Bowl-as-fourteen-
+trees piece scores maximum STACK and still ranks sixth, because its GRIP is 5 and
+its anchors are unverified. That is the metric working, not failing.
+
+```
+python3 scripts/newsiness.py             # rank the pile
+python3 scripts/newsiness.py --explain SLUG
+python3 scripts/newsiness.py --panel     # review sheet for Tim, Sean and Patrick jr
+```
+
+Candidates live in `data/story-candidates.json`. **Add every idea, including the
+ones we reject** — the record of what we passed over and why is itself an issue,
+and eventually a published ranking.
+
 ### Step 5.4 — Tag the decay before queueing
 
 Every new queue file carries `decay:` in its PUBLISH-META, under `topic:` —

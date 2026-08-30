@@ -352,6 +352,32 @@ re-send them to the list.
 **Never** use a reader question as cover for a piece you wanted to write anyway.
 The vetting step in (2) exists to stop exactly that.
 
+### NEWSINESS — the metric that picks the story
+
+`scripts/newsiness.py`, rubric in `SKILL.md` Step 0.5, candidates in
+`data/story-candidates.json`.
+
+```
+NEWSINESS = (GRIP / 10) x (0.35 TWIST + 0.25 CLOCK + 0.15 STACK + 0.25 CARRY)
+```
+
+**GRIP multiplies rather than adds, and that is the whole editorial position.**
+This paper is stats driven by sports, not sports driven by stats. A Super Bowl
+with a dull number scores near nothing; a Tuesday game between two eliminated
+clubs with a shocking number can lead. Audience (STACK) carries the smallest
+weight on purpose.
+
+Three things to keep doing with it:
+
+- **Score before writing.** It costs two minutes and it has already caught the
+  difference between a story we wanted to be true and one the data supports.
+- **Log the rejects too.** What we passed over, and why, is a future issue and
+  eventually a published ranking — readers should be able to see the selection,
+  not just the selected.
+- **Let the panel overrule it.** Tim, Sean and Patrick jr score independently
+  with `--panel`. A metric nobody can argue with is a metric nobody is using; the
+  disagreements are where the rubric gets tuned.
+
 ### One slot a day — so newsworthiness and decay decide the order
 
 There is exactly one issue per day. Every piece therefore competes with every

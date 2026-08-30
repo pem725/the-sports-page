@@ -1,0 +1,91 @@
+{
+ "note": "Candidate stories scored by NEWSINESS. See scripts/newsiness.py for the rubric.",
+ "candidates": [
+  {
+   "slug": "week1-signal",
+   "title": "After One Week, What Do We Actually Know?",
+   "grip": 8,
+   "twist": 7,
+   "clock": 8,
+   "stack": 6,
+   "carry": 8,
+   "answerable": true,
+   "number": "how much a week-1 result predicts final record, 2015-2025 game logs already pulled",
+   "why": "CFB is about to take over and the queue has nothing for Sep 12; the honest answer is probably 'less than you think', which is the house thesis"
+  },
+  {
+   "slug": "calibration-curve",
+   "title": "We Told You 71% Thirty Times. Here Is How Often It Happened.",
+   "grip": 10,
+   "twist": 6,
+   "clock": 2,
+   "stack": 4,
+   "carry": 10,
+   "answerable": false,
+   "held": "needs 25+ resolved picks; the ledger has 15 and none final",
+   "number": "our own forecast calibration from data/picks-ledger.json",
+   "why": "publishing our own calibration curve is the most honest thing this paper can do, and almost nobody does it"
+  },
+  {
+   "slug": "first-year-coach",
+   "title": "Do First-Year Coaches Beat Their Spreads?",
+   "grip": 7,
+   "twist": 8,
+   "clock": 5,
+   "stack": 5,
+   "carry": 7,
+   "answerable": true,
+   "number": "every FBS coaching change vs closing spread, CFBD era",
+   "why": "Campbell to Penn State at 8% returning production is the live case; markets are known to price transitions badly"
+  },
+  {
+   "slug": "mets-spoiler-followup",
+   "title": "The Athletics Ruined Somebody. Did We Call It?",
+   "grip": 8,
+   "twist": 5,
+   "clock": 9,
+   "stack": 4,
+   "carry": 6,
+   "answerable": true,
+   "number": "scoring #144's leverage claim against what actually happened",
+   "why": "a metric that never checks itself is advertising; this is the follow-up #144 promises"
+  },
+  {
+   "slug": "nd-nine-games",
+   "title": "Nine of Notre Dame's Twelve Games Cannot Help Them.",
+   "grip": 8,
+   "twist": 7,
+   "clock": 4,
+   "stack": 8,
+   "carry": 7,
+   "answerable": true,
+   "number": "resume weight by opponent: three games carry 89%",
+   "why": "ND is the paper's first priority and this is the structural cost of independence, not a complaint about the schedule"
+  },
+  {
+   "slug": "super-bowl-dull",
+   "title": "The Biggest Game in Sport Is Fourteen Trees.",
+   "grip": 5,
+   "twist": 8,
+   "clock": 1,
+   "stack": 10,
+   "carry": 8,
+   "answerable": false,
+   "held": "Stack anchors are illustrative and not yet verified to three sources",
+   "number": "the paper-stack scale from corpus/bometer-and-the-stack.md",
+   "why": "a unit that cannot say how small the biggest thing is was not calibrated"
+  },
+  {
+   "slug": "parity-al-nl",
+   "title": "Twelve of Fifteen AL Clubs Are Alive. Nine of Fifteen in the NL.",
+   "grip": 7,
+   "twist": 6,
+   "clock": 7,
+   "stack": 5,
+   "carry": 5,
+   "answerable": true,
+   "number": "SD of win pct .057 AL vs .070 NL, survives the Pythagorean check",
+   "why": "reader-noticed, verified on every measure tried, and decays as September resolves"
+  }
+ ]
+}
