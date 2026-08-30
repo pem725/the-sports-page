@@ -13,6 +13,7 @@ this file should ever hold; the email itself stays in the inbox.
 | date | who | question (compressed) | status | outcome |
 |---|---|---|---|---|
 | 2026-08-30 | Patrick jr | Can we have an unbiased regular-season strength of schedule that does not cater to the SEC? The rating systems are an interested party. | published | Issue #146 `146-sec-schedule-bias` — SEC wins by 0.4 pts; top league never separable from second in 5 seasons |
+| 2026-08-11 | Patrick sr | "Cleveland is where players go to die... the stats are going to prove me right about this." Do some franchises actually ruin players? | queued | candidate `where-players-go-to-die` — needs a within-player design; naive version is pure selection bias |
 | 2026-08-30 | Patrick jr | Rank the coaching: how does a coach fare against an AP top-10 team vs a top-25 team? "Choke artist" made measurable. | queued | candidate `coach-vs-ranked`, NEWSINESS 5.40 |
 | 2026-08-30 | Patrick jr | You can never fire a coach after one season — a first year is a jumping-off point, not a verdict. True? | queued | candidate `first-year-baseline`, NEWSINESS 5.68 |
 | 2026-08-30 | Patrick jr | Broadcasters cherry-pick stats for drama, not prediction. Can that be shown rather than asserted? | held | candidate `cherry-picked-stat` — needs a logged sample of real broadcast graphics first |
