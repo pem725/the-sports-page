@@ -107,12 +107,14 @@ jobs:
       - name: Refresh the Odds Board
         continue-on-error: true
         run: |
+          python3 scripts/refresh_about.py || echo "::warning::about.html refresh failed"
+          CFBD_KEY="${{ secrets.CFBD_KEY }}" python3 scripts/build_cfb_odds.py || echo "::warning::CFB projections unavailable; the board keeps yesterday's"
           python3 scripts/refresh_odds.py || { echo "::warning::odds refresh failed; the previous board stays up"; exit 0; }
-          if git diff --quiet -- odds.html data/playoff-odds-trajectory.json; then
+          if git diff --quiet -- odds.html data/playoff-odds-trajectory.json data/cfb-odds.json about.html; then
             echo "no change to the board"; exit 0
           fi
-          git add odds.html data/playoff-odds-trajectory.json
-          git commit -m "Refresh the Odds Board ($(date -u '+%Y-%m-%d'))"
+          git add odds.html data/playoff-odds-trajectory.json data/cfb-odds.json about.html
+          git commit -m "Refresh the board, CFB projections and about page ($(date -u '+%Y-%m-%d'))"
           for i in 1 2 3; do
             git pull --rebase --quiet origin main && git push --quiet origin main && { echo "board pushed"; exit 0; }
             echo "push race on attempt $i; retrying"; sleep 5

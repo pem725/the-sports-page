@@ -168,6 +168,19 @@ New queue files must include `<!-- WATCH_BLOCK -->` immediately before
 template has both. Preview any day's block with
 `python3 scripts/daily_watch.py --print`.
 
+**about.html refreshes too, and the board carries both sports.** The same
+workflow step runs three refreshers before committing: refresh_about.py rewrites
+the live figures fenced between the ABOUT_STATE markers, build_cfb_odds.py
+reprojects the college football top 25 from SP+, and refresh_odds.py rebuilds the
+board. about.html is hand-written and hand-written pages rot: on 2026-08-30 it
+still cited Issues #5, #7 and #8 as recent while the archive stood at 155. Only
+the numbers are generated; the prose stays hand-written.
+
+**Never put backticks inside a double-quoted shell string.** Writing a doc update
+as python3 -c "..." with backticked filenames in the text made the shell try to
+execute them. Use a heredoc for anything containing backticks, dollars or angle
+brackets.
+
 **The Odds Board refreshes on the same run.** `scripts/refresh_odds.py` runs
 after the publish step, recomputes every club's playoff and division odds from
 the live standings, and rebuilds `odds.html` via `scripts/build_odds_page.py`.
