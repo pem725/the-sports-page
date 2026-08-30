@@ -110,6 +110,45 @@ gap:.5rem;align-items:center;border-bottom:1px solid var(--div);padding:.5rem 0}
 .cfb-st{text-align:right}
 .cfb-st b{display:block;font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:900;line-height:1}
 .cfb-st span{font-family:'Roboto Mono',monospace;font-size:.54rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.fieldbar{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:.2rem 0 .8rem}
+.fbl{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);margin-right:.2rem}
+.fieldbar button{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.06em;
+  padding:.3rem .6rem;border:1px solid var(--aged);background:transparent;color:var(--ink);
+  cursor:pointer;border-radius:2px;transition:background .12s,border-color .12s}
+.fieldbar button:hover,.fieldbar button:focus{background:#fbf7ec;border-color:var(--ink);outline:none}
+.fieldbar button.fbc{color:var(--muted)}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.1rem .9rem;margin:.5rem 0 .2rem}
+.frow{display:grid;grid-template-columns:3.6rem 1fr 3rem 3rem 3.6rem;align-items:baseline;
+  gap:.3rem;padding:.14rem 0;border-bottom:1px solid rgba(224,216,197,.6);font-size:.76rem}
+.fab{font-family:'Roboto Mono',monospace;font-weight:600;font-size:.66rem}
+.fnm{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frec,.fpo,.fhope{font-family:'Roboto Mono',monospace;font-size:.66rem;text-align:right}
+.fpo{font-weight:600}.fhope{color:var(--muted)}
+.cfb-row{cursor:pointer;border-radius:3px;transition:background .12s}
+.cfb-row:hover,.cfb-row:focus,.cfb-row.on{background:#fbf7ec;outline:none}
+.cfb-row.on{box-shadow:inset 3px 0 0 var(--rust)}
+.cfb-bar{transition:opacity .1s}
+.cfb-bar.dim{opacity:.28}
+/* The schedule panel sticks to the bottom of the viewport so it stays readable
+   while the cursor is twenty rows up the list. */
+.cfb-detail{position:sticky;bottom:0;background:var(--cream);border-top:2px solid var(--ink);
+  margin-top:1rem;padding:.7rem 0 .5rem;min-height:2.4rem;z-index:5;
+  box-shadow:0 -10px 16px -8px rgba(26,18,8,.22)}
+.cfb-detail:empty{border-top:1px dashed var(--aged)}
+.cfb-detail:empty::before{content:'Hover a club above to see its schedule and the odds on every game.';
+  font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);letter-spacing:.04em}
+.cd-hd{font-family:'Playfair Display',serif;font-weight:900;font-size:1.05rem;margin-bottom:.45rem}
+.cd-hd span{font-family:'Roboto Mono',monospace;font-size:.62rem;font-weight:400;color:var(--muted);
+  letter-spacing:.05em;margin-left:.5rem}
+.cd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:.3rem .5rem}
+.cd-g{border-left:3px solid var(--aged);padding:.15rem 0 .15rem .4rem;font-size:.72rem;line-height:1.3}
+.cd-g.win{border-left-color:#2a6e3f}.cd-g.loss{border-left-color:#b83a1e}
+.cd-g.hot{background:#f2ead9;border-left-color:var(--gold)}
+.cd-o{font-weight:700;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cd-m{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.03em}
+.cd-p{font-family:'Roboto Mono',monospace;font-weight:600}
+@media(max-width:760px){.cfb-detail{position:static}.cd-grid{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}}
 .pinflag{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-left:.6rem;vertical-align:.25em}
 .pinflag.dim{color:var(--muted)}
 .tile:focus-visible{outline:2px solid var(--rust);outline-offset:1px}
@@ -151,7 +190,9 @@ font-size:.62rem;color:var(--muted);letter-spacing:.08em;border-top:3px double v
 
 JS = """
 const D=DATA,W=D.dates.length;
-let sel=[];                                   // up to two pinned clubs
+let sel=[];                                   // pinned clubs
+const MAXSEL=12;                              // a full playoff field, both leagues
+const MANY=t=>t>2;                            // past two, the chart drops to trend lines only
 const first=document.querySelector('.tile').dataset.id;
 const FALLBACK=['#2c4a6e','#b83a1e'];
 // sRGB -> CIE Lab, so we can tell when two clubs are too close to distinguish
@@ -210,17 +251,42 @@ function chart(list){
     g+='<text x="'+px(i).toFixed(1)+'" y="'+(CH-Bt+18)+'" text-anchor="middle" font-family="Roboto Mono,monospace" font-size="10" fill="#6b5e4a">'+nice(D.dates[i])+'</text>';
   const poly=(a,c,w,extra)=>'<polyline fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linejoin="round" '+(extra||'')+' points="'+
     a.map((v,i)=>px(i).toFixed(1)+','+py(v).toFixed(1)).join(' ')+'"/>';
+  const many=MANY(list.length);
+  // Twelve seasons on one axis is only readable if each line is ONE line. Past
+  // two clubs we drop the division line, the raw weekly line and the dots, and
+  // draw the smoothed trend alone.
+  const ends=list.map(t=>py(smooth(t.po,BW)[W-1]));
+  if(many){
+    // Half a playoff field sits at >99%, so their end labels land on the exact
+    // same pixel. Place them properly: sort by height, then walk down enforcing
+    // a minimum gap. Comparing each label only against the ones before it is
+    // not enough -- a label can clear its neighbours and still land back on a
+    // third one.
+    const GAP=10, order=list.map((t,k)=>k).sort((a,b)=>ends[a]-ends[b]);
+    for(let n=1;n<order.length;n++){
+      const a=order[n-1], b=order[n];
+      if(ends[b]-ends[a]<GAP) ends[b]=ends[a]+GAP;
+    }
+    // if the stack ran off the bottom, lift the whole column back inside
+    const over=ends[order[order.length-1]]-(CH-Bt);
+    if(over>0) order.forEach(k=>{ends[k]-=over;});
+  }
   list.forEach((t,k)=>{
     const c=cols[k];
     const dash=(clash&&k===1)?' stroke-dasharray="9 5"':'';           // only if the pair is too close to tell apart
-    g+=poly(t.dv,c,1.4,'stroke-dasharray="3 4" opacity=".38"');       // division, faint dotted
-    g+=poly(t.po,c,1.2,'opacity=".34"');                              // raw weekly, thin
-    for(let i=0;i<W;i++) g+='<circle cx="'+px(i).toFixed(1)+'" cy="'+py(t.po[i]).toFixed(1)+'" r="2.2" fill="'+c+'" opacity=".42"/>';
-    g+=poly(smooth(t.po,BW),c,3.4,dash);                              // the trend, bold
+    if(!many){
+      g+=poly(t.dv,c,1.4,'stroke-dasharray="3 4" opacity=".38"');     // division, faint dotted
+      g+=poly(t.po,c,1.2,'opacity=".34"');                            // raw weekly, thin
+      for(let i=0;i<W;i++) g+='<circle cx="'+px(i).toFixed(1)+'" cy="'+py(t.po[i]).toFixed(1)+'" r="2.2" fill="'+c+'" opacity=".42"/>';
+    }
+    g+=poly(smooth(t.po,BW),c,many?2.0:3.4,many?'opacity=".88"':dash);
     // label the line itself, so identity never rests on colour alone
-    const sm=smooth(t.po,BW), yEnd=py(sm[W-1]);
-    const off=(list.length===2&&Math.abs(py(smooth(list[1-k].po,BW)[W-1])-yEnd)<14)?(k===0?-8:8):0;
-    g+='<text x="'+(CW-R+4)+'" y="'+(yEnd+4+off).toFixed(1)+'" font-family="Roboto Mono,monospace" font-size="10.5" font-weight="700" fill="'+c+'">'+t.abbr+'</text>';
+    let yEnd=ends[k];
+    if(!many){
+      const off=(list.length===2&&Math.abs(ends[1-k]-yEnd)<14)?(k===0?-8:8):0;
+      yEnd+=off;
+    }
+    g+='<text x="'+(CW-R+4)+'" y="'+(yEnd+4).toFixed(1)+'" font-family="Roboto Mono,monospace" font-size="'+(many?9:10.5)+'" font-weight="700" fill="'+c+'">'+t.abbr+'</text>';
   });
   g+='<line id="guide" x1="0" y1="'+Tp+'" x2="0" y2="'+(CH-Bt)+'" stroke="#1a1208" stroke-width="1" opacity="0"/>'+
      '<rect id="hit" x="'+L+'" y="'+Tp+'" width="'+(CW-L-R)+'" height="'+(CH-Tp-Bt)+'" fill="transparent"/>';
@@ -229,6 +295,13 @@ function chart(list){
 function weekLine(list,i){
   const {cols}=colours(list);
   let h='<span class="wk">'+nice(D.dates[i])+'</span>';
+  if(MANY(list.length)){
+    // ranked by where they stood THAT week, which is the thing worth reading
+    list.map((t,k)=>({t,k})).sort((a,b)=>b.t.po[i]-a.t.po[i]).forEach(({t,k})=>{
+      h+='<span class="wv" style="color:'+cols[k]+'">'+t.abbr+' '+fmt(t.po[i])+'</span>';
+    });
+    return h;
+  }
   list.forEach((t,k)=>{
     const r=t.rec[i];
     h+='<span class="wv" style="color:'+cols[k]+'">'+t.abbr+' '+r[0]+'-'+r[1]+'</span>'+
@@ -249,7 +322,21 @@ function show(ids){
     else { e.style.borderColor=''; e.style.boxShadow=''; }
     e.setAttribute('aria-pressed',k>=0);
   });
+  const many=MANY(list.length);
   let head='',body='';
+  if(many){
+    // twelve full cards is a wall of text; one compact line each, ordered by
+    // hope -- the area under the curve, not just where they finished
+    list.map((t,k)=>({t,k,auc:t.po.reduce((a,b)=>a+b,0)/W}))
+        .sort((a,b)=>b.t.po[W-1]-a.t.po[W-1]||b.auc-a.auc)
+        .forEach(({t,k,auc})=>{
+      body+='<div class="frow"><span class="fab" style="color:'+cols[k]+'">&#9632; '+t.abbr+'</span>'+
+        '<span class="fnm">'+t.name+'</span>'+
+        '<span class="frec">'+t.w+'-'+t.l+'</span>'+
+        '<span class="fpo">'+fmt(t.po[W-1])+'</span>'+
+        '<span class="fhope">hope '+(auc*100).toFixed(0)+'</span></div>';
+    });
+  } else {
   list.forEach((t,k)=>{
     const po=t.po[W-1],dv=t.dv[W-1];
     const rs=resid(t.po), early=sd(rs.slice(0,Math.floor(W/2))), late=sd(rs.slice(Math.floor(W/2)));
@@ -260,14 +347,24 @@ function show(ids){
       '<div class="cv2">'+fmt(dv)+' <span class="cl">division</span> &middot; hope '+(auc*100).toFixed(0)+'</div>'+
       '<div class="cn2">week-to-week wobble: &plusmn;'+(early*100).toFixed(0)+' pts early, &plusmn;'+(late*100).toFixed(0)+' late</div></div>';
   });
-  const hint = sel.length===0 ? 'click a club to pin it &middot; pin a second to compare'
+  }
+  const hint = many ? (fieldSettled(ids) ? 'the settled field &middot; click any tile to drop it'
+                                         : 'projected field &mdash; not yet clinched &middot; click any tile to drop it')
+             : sel.length===0 ? 'click a club to pin it &middot; pin a second to compare'
              : sel.length===1 ? 'pinned &middot; click another club to overlay it, or click again to release'
              : 'comparing two &middot; click either tile to drop it';
+  const title = many
+    ? (fieldSettled(ids)?'The playoff field':'The projected playoff field')+
+      ' <span class="vs">'+list.length+' clubs</span>'
+    : list.map((t,k)=>'<span style="color:'+cols[k]+'">&#9632;</span> '+t.name).join(' <span class="vs">vs</span> ');
+  const note = many
+    ? 'One smoothed trend per club, so twelve seasons stay readable; the raw weekly points and the division line are hidden at this many. Clubs are listed by where they stand now, and &ldquo;hope&rdquo; is the area under the whole curve &mdash; how much of the season a club spent believing.'
+    : (clash?'These two clubs wear nearly the same colour, so the second trend is dashed. ':'')+'Thick line: a smoothed trend. Faint line and dots: the raw weekly numbers. Dashed: chance of winning the division. The distance between thin and thick is the noise.';
   document.getElementById('readout').innerHTML=
-    '<div class="rhead">'+list.map((t,k)=>'<span style="color:'+cols[k]+'">&#9632;</span> '+t.name).join(' <span class="vs">vs</span> ')+
+    '<div class="rhead">'+title+
       '<span class="pinflag'+(sel.length?'':' dim')+'">'+hint+'</span></div>'+
-    '<div class="rgrid2">'+body+'</div>'+
-    '<div class="smoothnote">'+(clash?'These two clubs wear nearly the same colour, so the second trend is dashed. ':'')+'Thick line: a smoothed trend. Faint line and dots: the raw weekly numbers. Dashed: chance of winning the division. The distance between thin and thick is the noise.</div>'+
+    '<div class="'+(many?'fgrid':'rgrid2')+'">'+body+'</div>'+
+    '<div class="smoothnote">'+note+'</div>'+
     chart(list)+
     '<div class="wkrow" id="wkrow">'+weekLine(list,W-1)+'</div>';
   wire(list);
@@ -290,9 +387,26 @@ function wire(list){
 function toggle(id){
   const k=sel.indexOf(id);
   if(k>=0) sel.splice(k,1);
-  else if(sel.length<2) sel.push(id);
-  else sel=[sel[1],id];
+  else if(sel.length<MAXSEL) sel.push(id);
+  else sel=sel.slice(1).concat(id);
   show(sel.length?sel:[first]);
+}
+// ---- the playoff field, overlaid ----------------------------------------
+// Asked for by a reader: once the field is set, put those seasons on one axis.
+// Six clubs per league make the field, so we take the six highest-probability
+// clubs and say plainly whether they are settled or still projected.
+function fieldOf(lg){
+  return Object.keys(D.teams)
+    .filter(i=>D.teams[i].lg===lg)
+    .sort((a,b)=>D.teams[b].po[W-1]-D.teams[a].po[W-1])
+    .slice(0,6);
+}
+function fieldSettled(ids){return ids.every(i=>D.teams[i].po[W-1]>=0.999);}
+function pickField(which){
+  sel = which==='both' ? fieldOf(103).concat(fieldOf(104))
+      : fieldOf(which==='al'?103:104);
+  show(sel);
+  document.getElementById('board').scrollIntoView({block:'nearest'});
 }
 document.querySelectorAll('.tile').forEach(e=>{
   const id=e.dataset.id;
@@ -303,6 +417,13 @@ document.querySelectorAll('.tile').forEach(e=>{
 });
 const board=document.getElementById('board');
 if(board)board.addEventListener('mouseleave',()=>{if(!sel.length)show([first]);});
+document.querySelectorAll('.fieldbar button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const w=b.dataset.field;
+    if(w==='clear'){sel=[];show([first]);}
+    else pickField(w);
+  });
+});
 show([first]);
 // tab switching. Panes use the hidden attribute so a hidden pane is also removed
 // from the accessibility tree, not merely painted out.
@@ -312,20 +433,91 @@ document.querySelectorAll('.tabs button').forEach(b=>{
     document.querySelectorAll('.pane').forEach(p=>{p.hidden = p.id!==b.getAttribute('aria-controls');});
   });
 });
+
+// ---- college football: the whole schedule, on hover ----------------------
+// Asked for by a reader who wanted the strip to say WHICH games it was drawing.
+// A 26-pixel bar can show that a game is hard; it cannot say who it is against.
+(function(){
+  const panel=document.getElementById('cfb-detail'), list=document.getElementById('cfb-list');
+  if(!panel||!list||typeof CFB==='undefined'||!CFB.length) return;
+  // Match the server-side formatter exactly, so the strip tooltip and the panel
+  // never disagree about the same game.
+  const pf=v=>v>=0.995?'&gt;99%':v<=0.005?'&lt;1%':(v*100).toFixed(0)+'%';
+  let pin=null, shown=null;
+
+  function card(ti,hot){
+    const t=CFB[ti];
+    let g='<div class="cd-hd">'+t.team+'<span>no. '+t.rank+' &middot; '+t.proj.toFixed(1)+
+          ' projected wins &middot; schedule '+(t.sos>=0?'+':'')+t.sos.toFixed(1)+
+          (pin===ti?' &middot; pinned, click again to release':'')+'</span></div><div class="cd-grid">';
+    t.sched.forEach((x,i)=>{
+      const cls=x.w===true?'win':x.w===false?'loss':'';
+      const mark=x.w===true?'W &middot; ':x.w===false?'L &middot; ':'';
+      g+='<div class="cd-g '+cls+(i===hot?' hot':'')+'">'+
+         '<span class="cd-o">'+(x.s==='away'?'at ':'vs ')+x.o+'</span>'+
+         '<span class="cd-m">'+nice(x.d)+'</span> <span class="cd-p">'+mark+pf(x.p)+'</span></div>';
+    });
+    return g+'</div>';
+  }
+  function draw(ti,hot){
+    if(ti===null){panel.innerHTML='';shown=null;
+      list.querySelectorAll('.cfb-row').forEach(r=>r.classList.remove('on'));
+      list.querySelectorAll('.cfb-bar').forEach(b=>b.classList.remove('dim'));return;}
+    panel.innerHTML=card(ti,hot); shown=ti;
+    list.querySelectorAll('.cfb-row').forEach(r=>r.classList.toggle('on',+r.dataset.t===ti));
+    const row=list.querySelector('.cfb-row[data-t="'+ti+'"]');
+    if(row) row.querySelectorAll('.cfb-bar').forEach(b=>b.classList.toggle('dim',hot!=null&&+b.dataset.g!==hot));
+  }
+  list.querySelectorAll('.cfb-row').forEach(row=>{
+    const ti=+row.dataset.t;
+    row.addEventListener('mouseenter',()=>{if(pin===null)draw(ti,null);});
+    row.addEventListener('focus',()=>{if(pin===null)draw(ti,null);});
+    row.addEventListener('click',()=>{pin=(pin===ti)?null:ti;draw(pin===null?ti:pin,null);});
+    row.addEventListener('keydown',e=>{
+      if(e.key===' '||e.key==='Enter'){e.preventDefault();pin=(pin===ti)?null:ti;draw(pin===null?ti:pin,null);}
+      if(e.key==='Escape'){pin=null;draw(null);}
+    });
+    const fig=row.querySelector('.cfb-fig');
+    if(fig){
+      fig.addEventListener('mousemove',e=>{
+        if(pin!==null&&pin!==ti)return;
+        const g=e.target&&e.target.dataset?e.target.dataset.g:null;
+        draw(ti,g==null?null:+g);
+      });
+      fig.addEventListener('mouseleave',()=>{if(shown===ti)draw(ti,null);});
+    }
+  });
+  list.addEventListener('mouseleave',()=>{if(pin===null)draw(null);});
+})();
 """
 
 
 CFB_DATA = REPO / "data" / "cfb-odds.json"
 
 
+def pfmt(p):
+    """Never print 100%. No game is certain, and a strip that says so teaches
+    the reader the wrong lesson about what a model can know."""
+    if p >= 0.995:
+        return "&gt;99%"
+    if p <= 0.005:
+        return "&lt;1%"
+    return f"{p*100:.0f}%"
+
+
 def cfb_rows():
-    """One row per top-25 club: rank and name left, season strip centre, numbers right."""
+    """One row per top-25 club: rank and name left, season strip centre, numbers right.
+
+    Each row carries its index so the browser can pull the full schedule out of
+    the embedded CFB blob on hover. The bars keep a native <title> as well, so
+    the information survives with scripting off.
+    """
     if not CFB_DATA.exists():
-        return "", ""
+        return "", "", "{}"
     D = json.loads(CFB_DATA.read_text())
     W, H = 300, 26
     out = []
-    for t in D["teams"]:
+    for ti, t in enumerate(D["teams"]):
         n = len(t["sched"])
         cw = W / max(n, 1)
         bars = ""
@@ -338,11 +530,14 @@ def cfb_rows():
                 c = "#b83a1e"
             else:
                 c = "#8fa8bd" if g["p"] >= .5 else "#d8b9ae"
-            bars += f'<rect x="{x:.1f}" y="{H-h:.1f}" width="{cw-1.6:.1f}" height="{h:.1f}" fill="{c}"><title>{g["opp"]} ({g["site"]}) {g["p"]*100:.0f}%</title></rect>'
+            bars += (f'<rect class="cfb-bar" data-g="{i}" x="{x:.1f}" y="{H-h:.1f}" '
+                     f'width="{cw-1.6:.1f}" height="{h:.1f}" fill="{c}">'
+                     f'<title>{g["opp"]} ({g["site"]}) {pfmt(g["p"])}</title></rect>')
         bars += f'<line x1="0" y1="{H/2:.1f}" x2="{W}" y2="{H/2:.1f}" stroke="#c8b99a" stroke-width=".8" stroke-dasharray="2 3"/>'
         rp = "&mdash;" if t["ret"] is None else f'{t["ret"]*100:.0f}%'
         out.append(
-            f'<div class="cfb-row">'
+            f'<div class="cfb-row" data-t="{ti}" tabindex="0" role="button" '
+            f'aria-label="Show the full schedule for {t["team"]}">'
             f'<div class="cfb-rk">{t["rank"]}</div>'
             f'<div class="cfb-nm">{t["team"]}<span class="cfb-sub">SP+ {t["sp"]:+.1f} &middot; talent {t["talent"]:.0f} &middot; returning {rp}</span></div>'
             f'<svg class="cfb-fig" viewBox="0 0 {W} {H}" preserveAspectRatio="none" aria-label="Game by game win probability for {t["team"]}">{bars}</svg>'
@@ -351,7 +546,11 @@ def cfb_rows():
             f'<div class="cfb-st"><b>{t["undefeated"]*100:.1f}%</b><span>unbeaten</span></div>'
             f'<div class="cfb-st"><b>{t["sos"]:+.1f}</b><span>sched</span></div>'
             f'</div>')
-    return "".join(out), D.get("method", "")
+    slim = [{"team": t["team"], "rank": t["rank"], "proj": t["proj"], "sos": t["sos"],
+             "sched": [{"o": g["opp"], "s": g["site"], "d": g["date"], "p": g["p"], "w": g["won"]}
+                       for g in t["sched"]]}
+            for t in D["teams"]]
+    return "".join(out), D.get("method", ""), json.dumps(slim, separators=(",", ":"))
 
 
 def build() -> str:
@@ -380,7 +579,7 @@ def build() -> str:
                 f'{dv}{po}</svg></div>')
         tiles.append("</div>")
     grid = "\n".join(tiles)
-    cfb, cfb_method = cfb_rows()
+    cfb, cfb_method, cfb_json = cfb_rows()
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -412,6 +611,13 @@ def build() -> str:
     <button role="tab" id="t-cfb" aria-controls="p-cfb" aria-selected="false">College Football</button>
   </div>
   <div class="pane" id="p-mlb" role="tabpanel">
+  <div class="fieldbar">
+    <span class="fbl">Overlay the playoff field:</span>
+    <button type="button" data-field="al">American League</button>
+    <button type="button" data-field="nl">National League</button>
+    <button type="button" data-field="both">All twelve</button>
+    <button type="button" data-field="clear" class="fbc">Clear</button>
+  </div>
   <div id="board">{grid}</div>
   <div class="readout" id="readout"></div>
   <p style="font-size:.8rem;color:var(--muted);margin-top:1.2rem;line-height:1.6">
@@ -424,8 +630,9 @@ def build() -> str:
 
   <div class="pane" id="p-cfb" role="tabpanel" hidden>
     <h1 style="font-size:clamp(1.4rem,3.5vw,2rem);margin-bottom:.3rem">The Top Twenty-Five, <em>Game by Game.</em></h1>
-    <div class="deck">Each strip is one club&rsquo;s season, left to right. Bar height is the chance of winning that game; green and red are results already in. A tall flat strip is a schedule that asks nothing.</div>
-    {cfb}
+    <div class="deck">Each strip is one club&rsquo;s season, left to right. Bar height is the chance of winning that game; green and red are results already in. A tall flat strip is a schedule that asks nothing. <strong>Hover any club</strong> &mdash; or tab to it &mdash; to read the whole schedule underneath.</div>
+    <div id="cfb-list">{cfb}</div>
+    <div class="cfb-detail" id="cfb-detail" aria-live="polite"></div>
     <p style="font-size:.8rem;color:var(--muted);margin-top:1.2rem;line-height:1.6">
       {cfb_method}. SP+ is a points-above-average rating, so the difference between two clubs is an
       expected margin and converts to a win probability at any gap &mdash; unlike a rank-difference
@@ -440,7 +647,7 @@ def build() -> str:
     <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
   </div>
 </div>
-<script>const DATA={json.dumps(D, separators=(",", ":"))};const TCOL={json.dumps(TEAM_COLORS, separators=(",", ":"))};{JS}</script>
+<script>const DATA={json.dumps(D, separators=(",", ":"))};const TCOL={json.dumps(TEAM_COLORS, separators=(",", ":"))};const CFB={cfb_json};{JS}</script>
 </body>
 </html>
 """
