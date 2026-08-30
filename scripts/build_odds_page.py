@@ -125,6 +125,12 @@ gap:.5rem;align-items:center;border-bottom:1px solid var(--div);padding:.5rem 0}
 .fnm{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .frec,.fpo,.fhope{font-family:'Roboto Mono',monospace;font-size:.66rem;text-align:right}
 .fpo{font-weight:600}.fhope{color:var(--muted)}
+/* NFL uses a three-letter code where college uses a rank, so the first column
+   needs more room and a smaller face or the code collides with the club name. */
+#nfl-list .cfb-row{grid-template-columns:3.1rem minmax(140px,1fr) minmax(120px,1.5fr) repeat(4,3.4rem)}
+@media(max-width:760px){#nfl-list .cfb-row{grid-template-columns:2.8rem 1fr repeat(2,3.2rem)}}
+.nfl-rk{font-size:.88rem;letter-spacing:.03em;font-weight:700;color:var(--ink)}
+.cfb-div{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:.9rem 0 .2rem;border-bottom:1px solid var(--aged);padding-bottom:.15rem}
 .cfb-row{cursor:pointer;border-radius:3px;transition:background .12s}
 .cfb-row:hover,.cfb-row:focus,.cfb-row.on{background:#fbf7ec;outline:none}
 .cfb-row.on{box-shadow:inset 3px 0 0 var(--rust)}
@@ -437,17 +443,17 @@ document.querySelectorAll('.tabs button').forEach(b=>{
 // ---- college football: the whole schedule, on hover ----------------------
 // Asked for by a reader who wanted the strip to say WHICH games it was drawing.
 // A 26-pixel bar can show that a game is hard; it cannot say who it is against.
-(function(){
-  const panel=document.getElementById('cfb-detail'), list=document.getElementById('cfb-list');
-  if(!panel||!list||typeof CFB==='undefined'||!CFB.length) return;
+function wireSchedule(listId, panelId, DATA){
+  const panel=document.getElementById(panelId), list=document.getElementById(listId);
+  if(!panel||!list||!DATA||!DATA.length) return;
   // Match the server-side formatter exactly, so the strip tooltip and the panel
   // never disagree about the same game.
   const pf=v=>v>=0.995?'&gt;99%':v<=0.005?'&lt;1%':(v*100).toFixed(0)+'%';
   let pin=null, shown=null;
 
   function card(ti,hot){
-    const t=CFB[ti];
-    let g='<div class="cd-hd">'+t.team+'<span>no. '+t.rank+' &middot; '+t.proj.toFixed(1)+
+    const t=DATA[ti];
+    let g='<div class="cd-hd">'+t.team+'<span>'+(typeof t.rank==='number'?'no. '+t.rank:t.rank)+' &middot; '+t.proj.toFixed(1)+
           ' projected wins &middot; schedule '+(t.sos>=0?'+':'')+t.sos.toFixed(1)+
           (pin===ti?' &middot; pinned, click again to release':'')+'</span></div><div class="cd-grid">';
     t.sched.forEach((x,i)=>{
@@ -488,7 +494,9 @@ document.querySelectorAll('.tabs button').forEach(b=>{
     }
   });
   list.addEventListener('mouseleave',()=>{if(pin===null)draw(null);});
-})();
+}
+wireSchedule('cfb-list','cfb-detail',typeof CFB!=='undefined'?CFB:null);
+wireSchedule('nfl-list','nfl-detail',typeof NFLD!=='undefined'?NFLD:null);
 """
 
 
@@ -553,6 +561,61 @@ def cfb_rows():
     return "".join(out), D.get("method", ""), json.dumps(slim, separators=(",", ":"))
 
 
+NFL_DATA = REPO / "data" / "nfl-odds.json"
+
+
+def nfl_rows():
+    """Same row shape as the college pane, grouped by division.
+
+    Reusing the .cfb-* classes on purpose: one hover behaviour, one stylesheet,
+    one place to fix a bug. The list id is what the script keys on, so the two
+    panes get independent panels without a second copy of the code.
+    """
+    if not NFL_DATA.exists():
+        return "", "", "{}"
+    D = json.loads(NFL_DATA.read_text())
+    W, H = 300, 26
+    order = ["AFC East", "AFC North", "AFC South", "AFC West",
+             "NFC East", "NFC North", "NFC South", "NFC West"]
+    byteam = {t["team"]: t for t in D["teams"]}
+    out, ti, slim = [], 0, []
+    for div in order:
+        mem = [t for t in D["teams"] if t["div"] == div]
+        mem.sort(key=lambda t: -t["po"])
+        out.append(f'<div class="cfb-div">{div}</div>')
+        for t in mem:
+            n = len(t["sched"]); cw = W / max(n, 1)
+            bars = ""
+            for i, g in enumerate(t["sched"]):
+                x = i * cw
+                h = max(2.0, g["p"] * H)
+                c = ("#2a6e3f" if g["won"] is True else "#b83a1e" if g["won"] is False
+                     else "#8fa8bd" if g["p"] >= .5 else "#d8b9ae")
+                bars += (f'<rect class="cfb-bar" data-g="{i}" x="{x:.1f}" y="{H-h:.1f}" '
+                         f'width="{cw-1.6:.1f}" height="{h:.1f}" fill="{c}">'
+                         f'<title>{g["opp"]} ({g["site"]}) {pfmt(g["p"])}</title></rect>')
+            bars += (f'<line x1="0" y1="{H/2:.1f}" x2="{W}" y2="{H/2:.1f}" stroke="#c8b99a" '
+                     f'stroke-width=".8" stroke-dasharray="2 3"/>')
+            out.append(
+                f'<div class="cfb-row" data-t="{ti}" tabindex="0" role="button" '
+                f'aria-label="Show the full schedule for the {t["name"]}">'
+                f'<div class="cfb-rk nfl-rk">{t["team"]}</div>'
+                f'<div class="cfb-nm">{t["name"]}<span class="cfb-sub">rating {t["rating"]:+.1f} '
+                f'&middot; schedule {t["sos"]:+.1f}</span></div>'
+                f'<svg class="cfb-fig" viewBox="0 0 {W} {H}" preserveAspectRatio="none" '
+                f'aria-label="Game by game win probability for the {t["name"]}">{bars}</svg>'
+                f'<div class="cfb-st"><b>{t["proj"]:.1f}</b><span>proj wins</span></div>'
+                f'<div class="cfb-st"><b>{t["po"]*100:.0f}%</b><span>playoffs</span></div>'
+                f'<div class="cfb-st"><b>{t["dv"]*100:.0f}%</b><span>division</span></div>'
+                f'<div class="cfb-st"><b>{t["played"]}</b><span>played</span></div>'
+                f'</div>')
+            slim.append({"team": t["name"], "rank": t["team"], "proj": t["proj"], "sos": t["sos"],
+                         "sched": [{"o": g["opp"], "s": g["site"], "d": g["date"],
+                                    "p": g["p"], "w": g["won"]} for g in t["sched"]]})
+            ti += 1
+    return "".join(out), D.get("method", ""), json.dumps(slim, separators=(",", ":"))
+
+
 def build() -> str:
     D = json.loads(DATA.read_text())
     teams = D["teams"]
@@ -580,6 +643,7 @@ def build() -> str:
         tiles.append("</div>")
     grid = "\n".join(tiles)
     cfb, cfb_method, cfb_json = cfb_rows()
+    nfl, nfl_method, nfl_json = nfl_rows()
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -609,6 +673,7 @@ def build() -> str:
   <div class="tabs" role="tablist">
     <button role="tab" id="t-mlb" aria-controls="p-mlb" aria-selected="true">Baseball</button>
     <button role="tab" id="t-cfb" aria-controls="p-cfb" aria-selected="false">College Football</button>
+    <button role="tab" id="t-nfl" aria-controls="p-nfl" aria-selected="false">NFL</button>
   </div>
   <div class="pane" id="p-mlb" role="tabpanel">
   <div class="fieldbar">
@@ -642,12 +707,27 @@ def build() -> str:
     </p>
   </div>
 
+  <div class="pane" id="p-nfl" role="tabpanel" hidden>
+    <h1 style="font-size:clamp(1.4rem,3.5vw,2rem);margin-bottom:.3rem">Thirty-Two Clubs, <em>Priced by the Market.</em></h1>
+    <div class="deck">Each strip is one club&rsquo;s season, left to right; bar height is the chance of winning that game. Before a season starts we have no results, so the ratings come from the betting market rather than from our opinion of anybody. <strong>Hover any club</strong> to read the schedule underneath.</div>
+    <div id="nfl-list">{nfl}</div>
+    <div class="cfb-detail" id="nfl-detail" aria-live="polite"></div>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:1.2rem;line-height:1.6">
+      {nfl_method}. A published spread is a statement about a difference &mdash; the home club
+      minus the away club, plus home advantage &mdash; so a hundred-odd of them form a linear
+      system in thirty-two unknowns that solves for a rating per club. We did not impose the home
+      advantage; it fell out of the fit at about a point and a half, which is close to what the
+      modern game is measured at, and is the main reason to trust the rest. Ties are broken at
+      random rather than by the real tiebreaker rules, so treat anything near a coin flip as one.
+    </p>
+  </div>
+
   <div class="footer">
     <span>The Sports Page &middot; The Odds Board</span>
     <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
   </div>
 </div>
-<script>const DATA={json.dumps(D, separators=(",", ":"))};const TCOL={json.dumps(TEAM_COLORS, separators=(",", ":"))};const CFB={cfb_json};{JS}</script>
+<script>const DATA={json.dumps(D, separators=(",", ":"))};const TCOL={json.dumps(TEAM_COLORS, separators=(",", ":"))};const CFB={cfb_json};const NFLD={nfl_json};{JS}</script>
 </body>
 </html>
 """
