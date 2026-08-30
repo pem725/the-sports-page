@@ -661,9 +661,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 154 issues (#1-154)
+Published: 155 issues (#1-155, incl. Sunday Edition No. 021)
 Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 137-schedule-leverage, 139-overfit-grid, 140-one-kick, 142-hope-curve, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 346 issues remaining of 500
-Last published: Issue #154 — "Home Field Is Worth Thirteen Ranks. Most of It Is the Road Team Losing Them." (135-home-field-ranks.html) on August 29, 2026
+Goal: 345 issues remaining of 500
+Last published: Issue #155 — "Five Structural Pieces and a Forecast That Landed." (sunday-021.html) on August 30, 2026
