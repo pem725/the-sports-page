@@ -126,6 +126,11 @@ ul{{margin:.4rem 0 .8rem 1.1rem}} li{{margin-bottom:.5rem}}
 .cell{{background:var(--card);padding:.8rem;text-align:center}}
 .cell .v{{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;line-height:1}}
 .cell .l{{font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}}
+.rub{{width:100%;border-collapse:collapse;font-size:.82rem;margin:.6rem 0}}
+.rub th{{text-align:left;vertical-align:top;white-space:nowrap;padding:.5rem .6rem .5rem 0;font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--rust);border-bottom:1px solid var(--div)}}
+.rub td{{text-align:left;padding:.5rem 0;border-bottom:1px solid var(--div);line-height:1.5}}
+.rub b{{color:var(--steel);font-family:'Roboto Mono',monospace;font-size:.78rem}}
+.rub em{{color:var(--muted)}}
 .ask{{border:2px solid var(--steel);background:var(--card);padding:1rem 1.2rem;margin:1.4rem 0}}
 .footer{{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.7rem}}
 .footer a{{color:var(--rust);text-decoration:none}}
@@ -153,13 +158,26 @@ ul{{margin:.4rem 0 .8rem 1.1rem}} li{{margin-bottom:.5rem}}
   <p>Most sports desks pick the biggest event and hunt for numbers inside it. We do the reverse: pick the most interesting <strong>number</strong>, then explain the sport around it. <em>Stats driven by sports, not sports driven by stats.</em></p>
   <div class="eq">NEWSINESS = (GRIP &divide; 10) &times; (0.35 TWIST + 0.25 CLOCK + 0.15 STACK + 0.25 CARRY)</div>
   <p><strong>GRIP multiplies rather than adds.</strong> That is the editorial position, not a modelling convenience. A story with no number scores zero however good it sounds.</p>
-  <ul>
-    <li><strong>GRIP</strong> &mdash; the number. Ours? Defensible? Does it have an interval? A broadcast graphic is a 2; computed from primary data, verified three ways, with a stated limit, is a 10.</li>
-    <li><strong>TWIST</strong> &mdash; distance from what a reasonable fan expects. The best have a trap: an obvious answer that is wrong.</li>
-    <li><strong>CLOCK</strong> &mdash; what running it today buys over running it next month.</li>
-    <li><strong>STACK</strong> &mdash; audience, on the paper-stack scale. One page is a thousand plausible readers; a Super Bowl is about fourteen trees. <em>Deliberately the smallest weight.</em></li>
-    <li><strong>CARRY</strong> &mdash; does the lesson survive outside sport? &ldquo;A deficit is a fact, superiority is a rate&rdquo; carries. &ldquo;The Rays are lucky&rdquo; does not.</li>
-  </ul>
+  <p>Score each 0&ndash;10. The anchors are below so two people scoring the same story land close &mdash; you should be able to do this from this page, on your phone, in five minutes.</p>
+  <table class="rub">
+    <tr><th>GRIP</th><td><em>the number itself &mdash; multiplies everything</em><br>
+      <b>0</b> no number &middot; <b>2</b> a number someone else published &middot;
+      <b>5</b> our number, one source &middot; <b>8</b> computed from primary data, verified &middot;
+      <b>10</b> computed, verified three ways, with an interval and a stated limit</td></tr>
+    <tr><th>TWIST</th><td><em>distance from what a reasonable fan expects</em><br>
+      <b>0</b> confirms what everyone assumes &middot; <b>3</b> mildly counterintuitive &middot;
+      <b>6</b> contradicts a reasonable prior &middot; <b>9</b> the obvious answer is wrong and we can show why</td></tr>
+    <tr><th>CLOCK</th><td><em>what today buys over next month</em><br>
+      <b>0</b> true forever &middot; <b>3</b> good for a season &middot;
+      <b>6</b> good for a fortnight &middot; <b>9</b> decays within days</td></tr>
+    <tr><th>STACK</th><td><em>audience, in printed pages &mdash; one page is a thousand readers</em><br>
+      <b>0</b> under a page &middot; <b>3</b> a few hundred &middot;
+      <b>6</b> a ream &middot; <b>9</b> a tree or more (a Super Bowl is about fourteen trees)</td></tr>
+    <tr><th>CARRY</th><td><em>does the lesson survive outside sport?</em><br>
+      <b>0</b> sport only &middot; <b>4</b> transfers to one other domain &middot;
+      <b>7</b> a general habit of thought &middot; <b>10</b> changes how you read any number<br>
+      <span class="wy">&ldquo;A deficit is a fact, superiority is a rate&rdquo; carries. &ldquo;The Rays are lucky&rdquo; does not.</span></td></tr>
+  </table>
   <p><strong>Answerability is a gate, not a term.</strong> If the data cannot settle it, the story is held rather than ranked &mdash; however well it scores.</p>
 
   <h2>The pile, ranked</h2>
@@ -177,7 +195,7 @@ ul{{margin:.4rem 0 .8rem 1.1rem}} li{{margin-bottom:.5rem}}
   <div class="ask">
     <h2 style="margin-top:0">Where we actually need you</h2>
     <ul>
-      <li><strong>Score the pile yourselves.</strong> Run the rubric and tell us where we are wrong &mdash; not &ldquo;I&rsquo;d run something else&rdquo; but &ldquo;your TWIST on that is a 4.&rdquo; A metric nobody argues with is a metric nobody is using, and the disagreements are how the weights get tuned.</li>
+      <li><strong>Pick one story above and give it five numbers.</strong> That is the whole ask &mdash; one story, five scores, sent back however you like. Then tell us which number of ours you would move and why: &ldquo;your TWIST on that is a 4&rdquo; is worth more than a paragraph of encouragement. A metric nobody argues with is a metric nobody is using.</li>
       <li><strong>Bring questions, not topics.</strong> The best issues this year came from someone asking a question they could not settle at the table. Gene&rsquo;s produced a concept primer and an issue with his name on it.</li>
       <li><strong>Tell us when a piece was boring.</strong> Nobody reports this and it is the most useful thing you can say.</li>
     </ul>
