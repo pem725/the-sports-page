@@ -64,6 +64,12 @@ printer** — send the SVGs.
 
 ## The garment: Gildan Softstyle, Natural
 
+> **The blank is under review.** Softstyle was picked on colour alone and it is
+> the slimmest-cut shirt in its price band. See [`blanks.md`](blanks.md) for a
+> priced comparison against a size-and-comfort brief, and for the three things
+> that do *not* transfer if the garment changes.
+
+
 The tee is **Gildan Softstyle Jersey in "Natural"** — unbleached cotton, with the
 faint dark flecks that come with it. Chosen for a measurable reason rather than a
 taste one.
