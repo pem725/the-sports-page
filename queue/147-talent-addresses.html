@@ -1,0 +1,234 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: keeps
+tags: CFB:cfb, Recruiting, Measurement, Reader Question
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Vol. I, No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+</style>
+<meta property="og:title" content="Where Do They Find These Guys? We Checked. It Is an Address, Not a Bloodline.">
+<meta property="og:description" content="One Florida boarding school produced 83 blue-chip recruits in eleven years. The median state produced 40. And 5,755 high schools produced none at all.">
+<meta property="og:url" content="https://thesportspage.net/published/147-talent-addresses.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/147-talent-addresses.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Where Do They Find These Guys?">
+<meta name="twitter:description" content="Nevada's talent is more concentrated than Hawaii's. Nobody has a genetic theory of Nevada.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/147-talent-addresses.png">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">College Football &middot; A Reader Asks</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+  <h2 class="hed">Where Do They Find These Guys? <em>It Is an Address, Not a Bloodline.</em></h2>
+  <p class="deck">A reader asked what stock the great linemen come from. We looked at 49,242 recruits over eleven years. One boarding school in Florida produced <strong>83</strong> blue-chip players. The median state produced <strong>40</strong>. And 5,755 high schools produced none at all.</p>
+  <p class="byline">The Sports Page &middot; The Professor &middot; answering Patrick jr</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">83</div><div class="l">Blue-chips from one school &mdash; twice the median state</div></div>
+    <div class="sc"><div class="v good">16%</div><div class="l">Of all elite recruits, from 50 schools out of 8,018</div></div>
+    <div class="sc"><div class="v bad">2.4x</div><div class="l">How much faster the South makes linemen than everywhere else</div></div>
+  </div>
+
+  <p><strong>The question:</strong> where do the freakish ones come from? Is there a place, a population, a stock?</p>
+
+  <p><strong>The answer: there is a place, and it is smaller than a state.</strong> Elite production is concentrated so hard that fifty high schools out of eight thousand supply a sixth of everybody.</p>
+
+  <p><strong>Why that is surprising.</strong> We expected the answer to be regional &mdash; the South, the Islands, Texas. It is not. It is <em>institutional</em>. And the most productive place in America does not grow its players. It admits them.</p>
+
+  <p><strong>What you get:</strong> a test you can run whenever someone tells you a group is naturally good at something.</p>
+
+  <h3 class="sh">First, the claim we were asked to check</h3>
+
+  <p>The claim was that offensive linemen are not produced in the South. Hold onto that one, because the data does something better than confirm or deny it.</p>
+
+  <p>The South produces offensive linemen <strong>faster than anywhere else in the country</strong> &mdash; 3.29 blue-chip linemen per million residents against 1.39 everywhere else. That is 2.4 times the rate. As stated, the claim is simply wrong.</p>
+
+  <p>And yet the feeling behind it is right. Ask instead how many offensive linemen the South makes <em>per defensive lineman</em>, and you get <strong>0.63</strong>. Everywhere else the figure is 0.98 &mdash; near enough one for one.</p>
+
+  <p>So a coach recruiting his own backyard in Georgia finds three defensive linemen for every two on offence. A coach in Ohio finds one of each. Both are standing in a rich field; only one of them keeps running short of the same thing. That is how a true feeling produces a false sentence.</p>
+
+  <h3 class="sh">Now the part that answers the real question</h3>
+
+  <p>Take every US high school that sent anyone to college football over eleven years. That is 8,018 schools. Then ask which of them produced the blue-chip recruits &mdash; the four- and five-star players, 4,969 in all.</p>
+
+  <p><strong>5,755 of those schools produced not one.</strong> Fifty schools produced 16% of them. Five hundred produced 55%.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; Eight thousand schools, and most of them never appear</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 450" width="100%" font-family="Libre Baskerville, Georgia, serif">
+<rect width="820" height="450" fill="#f5f0e8"/>
+<text x="78" y="30" font-size="15" font-weight="700" fill="#1a1208">ELITE FOOTBALL TALENT IS NOT SPREAD OUT. IT HAS ADDRESSES.</text>
+<text x="78" y="50" font-size="11.5" fill="#5a4c38">Every US high school that sent a recruit to college football, 2015&#8211;2026, ranked by how many blue-chips it produced.</text>
+<line x1="78" y1="378.0" x2="760" y2="378.0" stroke="#e0d8c5" stroke-width="1"/>
+<text x="70" y="382.0" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">0%</text>
+<line x1="78" y1="303.0" x2="760" y2="303.0" stroke="#e0d8c5" stroke-width="1"/>
+<text x="70" y="307.0" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">25%</text>
+<line x1="78" y1="228.0" x2="760" y2="228.0" stroke="#e0d8c5" stroke-width="1"/>
+<text x="70" y="232.0" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">50%</text>
+<line x1="78" y1="153.0" x2="760" y2="153.0" stroke="#e0d8c5" stroke-width="1"/>
+<text x="70" y="157.0" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">75%</text>
+<line x1="78" y1="78.0" x2="760" y2="78.0" stroke="#e0d8c5" stroke-width="1"/>
+<text x="70" y="82.0" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">100%</text>
+<line x1="78" y1="378.0" x2="760" y2="78.0" stroke="#e0d8c5" stroke-width="2" stroke-dasharray="5 5"/>
+<text x="754" y="108.0" font-size="10" fill="#8a7a60" text-anchor="end" font-style="italic">if every school produced equally</text>
+<polyline points="78.0,378.0 78.1,373.0 78.4,364.4 78.8,359.1 79.1,355.2 79.4,351.7 79.8,348.3 80.1,345.2 80.5,342.3 80.8,339.6 81.1,336.9 81.5,334.5 81.8,332.1 82.2,329.8 82.5,327.6 82.8,325.4 83.2,323.4 83.5,321.4 83.9,319.5 84.2,317.6 84.5,315.9 84.9,314.2 85.2,312.5 85.6,310.8 85.9,309.1 86.3,307.4 86.6,305.7 86.9,304.1 87.3,302.7 87.6,301.2 88.0,299.8 88.3,298.3 88.6,296.9 89.0,295.4 89.3,294.0 89.7,292.5 90.0,291.1 90.3,289.9 90.7,288.7 91.0,287.5 91.4,286.3 91.7,285.1 92.0,283.9 92.4,282.7 92.7,281.5 93.1,280.3 93.4,279.0 93.7,277.8 94.1,276.6 94.4,275.4 94.8,274.2 95.1,273.0 95.4,271.8 95.8,270.6 96.1,269.6 96.5,268.7 96.8,267.7 97.1,266.7 97.5,265.8 97.8,264.8 98.2,263.8 98.5,262.9 98.8,261.9 99.2,260.9 99.5,260.0 99.9,259.0 100.2,258.0 100.5,257.1 100.9,256.1 101.2,255.1 101.6,254.2 101.9,253.2 102.2,252.2 102.6,251.3 102.9,250.3 103.3,249.3 103.6,248.4 103.9,247.5 104.3,246.8 104.6,246.1 105.0,245.4 105.3,244.6 105.6,243.9 106.0,243.2 106.3,242.5 106.7,241.7 107.0,241.0 107.3,240.3 107.7,239.6 108.0,238.8 108.4,238.1 108.7,237.4 109.0,236.7 109.4,235.9 109.7,235.2 110.1,234.5 110.4,233.8 110.7,233.0 111.1,232.3 111.4,231.6 111.8,230.9 112.1,230.1 112.4,229.4 112.8,228.7 113.1,228.0 113.5,227.2 113.8,226.5 114.1,225.8 114.5,225.1 114.8,224.3 115.2,223.6 115.5,222.9 115.9,222.2 116.2,221.4 116.5,220.7 116.9,220.0 117.2,219.3 117.6,218.6 117.9,217.8 118.2,217.1 118.6,216.4 118.9,215.7 119.3,214.9 119.6,214.2 119.9,213.5 120.3,212.8 120.6,212.0 121.0,211.3 121.3,210.6 121.6,209.9 122.0,209.1 122.3,208.7 122.7,208.2 123.0,207.7 123.3,207.2 123.7,206.7 124.0,206.2 124.4,205.8 124.7,205.3 125.0,204.8 125.4,204.3 125.7,203.8 126.1,203.3 126.4,202.9 126.7,202.4 127.1,201.9 127.4,201.4 127.8,200.9 128.1,200.4 128.4,200.0 128.8,199.5 129.1,199.0 129.5,198.5 129.8,198.0 130.1,197.5 130.5,197.1 130.8,196.6 131.2,196.1 131.5,195.6 131.8,195.1 132.2,194.6 132.5,194.2 132.9,193.7 133.2,193.2 133.5,192.7 133.9,192.2 134.2,191.7 134.6,191.3 134.9,190.8 135.2,190.3 135.6,189.8 135.9,189.3 136.3,188.8 136.6,188.4 136.9,187.9 137.3,187.4 137.6,186.9 138.0,186.4 138.3,185.9 138.6,185.5 139.0,185.0 139.3,184.5 139.7,184.0 140.0,183.5 140.3,183.1 140.7,182.6 141.0,182.1 141.4,181.6 141.7,181.1 142.0,180.6 142.4,180.2 142.7,179.7 143.1,179.2 143.4,178.7 143.8,178.2 144.1,177.7 144.4,177.3 144.8,176.8 145.1,176.3 145.5,175.8 145.8,175.3 146.1,174.8 146.5,174.4 146.8,173.9 147.2,173.4 147.5,172.9 147.8,172.4 148.2,171.9 148.5,171.5 148.9,171.0 149.2,170.5 149.5,170.0 149.9,169.5 150.2,169.0 150.6,168.6 150.9,168.1 151.2,167.6 151.6,167.1 151.9,166.6 152.3,166.1 152.6,165.7 152.9,165.2 153.3,164.7 153.6,164.2 154.0,163.7 154.3,163.2 154.6,162.8 155.0,162.3 155.3,161.8 155.7,161.3 156.0,160.8 156.3,160.4 156.7,159.9 157.0,159.4 157.4,158.9 157.7,158.4 158.0,157.9 158.4,157.6 158.7,157.3 159.1,157.1 159.4,156.8 159.7,156.6 160.1,156.4 160.4,156.1 160.8,155.9 161.1,155.6 161.4,155.4 161.8,155.2 162.1,154.9 162.5,154.7 162.8,154.4 163.1,154.2 163.5,154.0 163.8,153.7 164.2,153.5 164.5,153.2 164.8,153.0 165.2,152.7 165.5,152.5 165.9,152.3 166.2,152.0 166.5,151.8 166.9,151.5 167.2,151.3 167.6,151.1 167.9,150.8 168.2,150.6 168.6,150.3 168.9,150.1 169.3,149.8 169.6,149.6 169.9,149.4 170.3,149.1 170.6,148.9 171.0,148.6 171.3,148.4 171.6,148.2 172.0,147.9 172.3,147.7 172.7,147.4 173.0,147.2 173.4,146.9 173.7,146.7 174.0,146.5 174.4,146.2 174.7,146.0 175.1,145.7 175.4,145.5 175.7,145.3 176.1,145.0 176.4,144.8 176.8,144.5 177.1,144.3 177.4,144.0 177.8,143.8 178.1,143.6 178.5,143.3 178.8,143.1 179.1,142.8 179.5,142.6 179.8,142.4 180.2,142.1 180.5,141.9 180.8,141.6 181.2,141.4 181.5,141.2 181.9,140.9 182.2,140.7 182.5,140.4 182.9,140.2 183.2,139.9 183.6,139.7 183.9,139.5 184.2,139.2 184.6,139.0 184.9,138.7 185.3,138.5 185.6,138.3 185.9,138.0 186.3,137.8 186.6,137.5 187.0,137.3 187.3,137.0 187.6,136.8 188.0,136.6 188.3,136.3 188.7,136.1 189.0,135.8 189.3,135.6 189.7,135.4 190.0,135.1 190.4,134.9 190.7,134.6 191.0,134.4 191.4,134.1 191.7,133.9 192.1,133.7 192.4,133.4 192.7,133.2 193.1,132.9 193.4,132.7 193.8,132.5 194.1,132.2 194.4,132.0 194.8,131.7 195.1,131.5 195.5,131.3 195.8,131.0 196.1,130.8 196.5,130.5 196.8,130.3 197.2,130.0 197.5,129.8 197.8,129.6 198.2,129.3 198.5,129.1 198.9,128.8 199.2,128.6 199.5,128.4 199.9,128.1 200.2,127.9 200.6,127.6 200.9,127.4 201.2,127.1 201.6,126.9 201.9,126.7 202.3,126.4 202.6,126.2 203.0,125.9 203.3,125.7 203.6,125.5 204.0,125.2 204.3,125.0 204.7,124.7 205.0,124.5 205.3,124.2 205.7,124.0 206.0,123.8 206.4,123.5 206.7,123.3 207.0,123.0 207.4,122.8 207.7,122.6 208.1,122.3 208.4,122.1 208.7,121.8 209.1,121.6 209.4,121.3 209.8,121.1 210.1,120.9 210.4,120.6 210.8,120.4 211.1,120.1 211.5,119.9 211.8,119.7 212.1,119.4 212.5,119.2 212.8,118.9 213.2,118.7 213.5,118.5 213.8,118.2 214.2,118.0 214.5,117.7 214.9,117.5 215.2,117.2 215.5,117.0 215.9,116.8 216.2,116.5 216.6,116.3 216.9,116.0 217.2,115.8 217.6,115.6 217.9,115.3 218.3,115.1 218.6,114.8 218.9,114.6 219.3,114.3 219.6,114.1 220.0,113.9 220.3,113.6 220.6,113.4 221.0,113.1 221.3,112.9 221.7,112.7 222.0,112.4 222.3,112.2 222.7,111.9 223.0,111.7 223.4,111.4 223.7,111.2 224.0,111.0 224.4,110.7 224.7,110.5 225.1,110.2 225.4,110.0 225.7,109.8 226.1,109.5 226.4,109.3 226.8,109.0 227.1,108.8 227.4,108.5 227.8,108.3 228.1,108.1 228.5,107.8 228.8,107.6 229.1,107.3 229.5,107.1 229.8,106.9 230.2,106.6 230.5,106.4 230.9,106.1 231.2,105.9 231.5,105.7 231.9,105.4 232.2,105.2 232.6,104.9 232.9,104.7 233.2,104.4 233.6,104.2 233.9,104.0 234.3,103.7 234.6,103.5 234.9,103.2 235.3,103.0 235.6,102.8 236.0,102.5 236.3,102.3 236.6,102.0 237.0,101.8 237.3,101.5 237.7,101.3 238.0,101.1 238.3,100.8 238.7,100.6 239.0,100.3 239.4,100.1 239.7,99.9 240.0,99.6 240.4,99.4 240.7,99.1 241.1,98.9 241.4,98.6 241.7,98.4 242.1,98.2 242.4,97.9 242.8,97.7 243.1,97.4 243.4,97.2 243.8,97.0 244.1,96.7 244.5,96.5 244.8,96.2 245.1,96.0 245.5,95.8 245.8,95.5 246.2,95.3 246.5,95.0 246.8,94.8 247.2,94.5 247.5,94.3 247.9,94.1 248.2,93.8 248.5,93.6 248.9,93.3 249.2,93.1 249.6,92.9 249.9,92.6 250.2,92.4 250.6,92.1 250.9,91.9 251.3,91.6 251.6,91.4 251.9,91.2 252.3,90.9 252.6,90.7 253.0,90.4 253.3,90.2 253.6,90.0 254.0,89.7 254.3,89.5 254.7,89.2 255.0,89.0 255.3,88.7 255.7,88.5 256.0,88.3 256.4,88.0 256.7,87.8 257.0,87.5 257.4,87.3 257.7,87.1 258.1,86.8 258.4,86.6 258.7,86.3 259.1,86.1 259.4,85.8 259.8,85.6 260.1,85.4 260.5,85.1 260.8,84.9 261.1,84.6 261.5,84.4 261.8,84.2 262.2,83.9 262.5,83.7 262.8,83.4 263.2,83.2 263.5,83.0 263.9,82.7 264.2,82.5 264.5,82.2 264.9,82.0 265.2,81.7 265.6,81.5 265.9,81.3 266.2,81.0 266.6,80.8 266.9,80.5 267.3,80.3 267.6,80.1 267.9,79.8 268.3,79.6 268.6,79.3 269.0,79.1 269.3,78.8 269.6,78.6 270.0,78.4 270.3,78.1 270.7,78.0 271.0,78.0 271.3,78.0 271.7,78.0 272.0,78.0 272.4,78.0 272.7,78.0 273.0,78.0 273.4,78.0 273.7,78.0 274.1,78.0 274.4,78.0 274.7,78.0 275.1,78.0 275.4,78.0 275.8,78.0 276.1,78.0 276.4,78.0 276.8,78.0 277.1,78.0 277.5,78.0 277.8,78.0 278.1,78.0 278.5,78.0 278.8,78.0 279.2,78.0 279.5,78.0 279.8,78.0 280.2,78.0 280.5,78.0 280.9,78.0 281.2,78.0 281.5,78.0 281.9,78.0 282.2,78.0 282.6,78.0 282.9,78.0 283.2,78.0 283.6,78.0 283.9,78.0 284.3,78.0 284.6,78.0 284.9,78.0 285.3,78.0 285.6,78.0 286.0,78.0 286.3,78.0 286.6,78.0 287.0,78.0 287.3,78.0 287.7,78.0 288.0,78.0 288.3,78.0 288.7,78.0 289.0,78.0 289.4,78.0 289.7,78.0 290.1,78.0 290.4,78.0 290.7,78.0 291.1,78.0 291.4,78.0 291.8,78.0 292.1,78.0 292.4,78.0 292.8,78.0 293.1,78.0 293.5,78.0 293.8,78.0 294.1,78.0 294.5,78.0 294.8,78.0 295.2,78.0 295.5,78.0 295.8,78.0 296.2,78.0 296.5,78.0 296.9,78.0 297.2,78.0 297.5,78.0 297.9,78.0 298.2,78.0 298.6,78.0 298.9,78.0 299.2,78.0 299.6,78.0 299.9,78.0 300.3,78.0 300.6,78.0 300.9,78.0 301.3,78.0 301.6,78.0 302.0,78.0 302.3,78.0 302.6,78.0 303.0,78.0 303.3,78.0 303.7,78.0 304.0,78.0 304.3,78.0 304.7,78.0 305.0,78.0 305.4,78.0 305.7,78.0 306.0,78.0 306.4,78.0 306.7,78.0 307.1,78.0 307.4,78.0 307.7,78.0 308.1,78.0 308.4,78.0 308.8,78.0 309.1,78.0 309.4,78.0 309.8,78.0 310.1,78.0 310.5,78.0 310.8,78.0 311.1,78.0 311.5,78.0 311.8,78.0 312.2,78.0 312.5,78.0 312.8,78.0 313.2,78.0 313.5,78.0 313.9,78.0 314.2,78.0 314.5,78.0 314.9,78.0 315.2,78.0 315.6,78.0 315.9,78.0 316.2,78.0 316.6,78.0 316.9,78.0 317.3,78.0 317.6,78.0 318.0,78.0 318.3,78.0 318.6,78.0 319.0,78.0 319.3,78.0 319.7,78.0 320.0,78.0 320.3,78.0 320.7,78.0 321.0,78.0 321.4,78.0 321.7,78.0 322.0,78.0 322.4,78.0 322.7,78.0 323.1,78.0 323.4,78.0 323.7,78.0 324.1,78.0 324.4,78.0 324.8,78.0 325.1,78.0 325.4,78.0 325.8,78.0 326.1,78.0 326.5,78.0 326.8,78.0 327.1,78.0 327.5,78.0 327.8,78.0 328.2,78.0 328.5,78.0 328.8,78.0 329.2,78.0 329.5,78.0 329.9,78.0 330.2,78.0 330.5,78.0 330.9,78.0 331.2,78.0 331.6,78.0 331.9,78.0 332.2,78.0 332.6,78.0 332.9,78.0 333.3,78.0 333.6,78.0 333.9,78.0 334.3,78.0 334.6,78.0 335.0,78.0 335.3,78.0 335.6,78.0 336.0,78.0 336.3,78.0 336.7,78.0 337.0,78.0 337.3,78.0 337.7,78.0 338.0,78.0 338.4,78.0 338.7,78.0 339.0,78.0 339.4,78.0 339.7,78.0 340.1,78.0 340.4,78.0 340.7,78.0 341.1,78.0 341.4,78.0 341.8,78.0 342.1,78.0 342.4,78.0 342.8,78.0 343.1,78.0 343.5,78.0 343.8,78.0 344.1,78.0 344.5,78.0 344.8,78.0 345.2,78.0 345.5,78.0 345.8,78.0 346.2,78.0 346.5,78.0 346.9,78.0 347.2,78.0 347.6,78.0 347.9,78.0 348.2,78.0 348.6,78.0 348.9,78.0 349.3,78.0 349.6,78.0 349.9,78.0 350.3,78.0 350.6,78.0 351.0,78.0 351.3,78.0 351.6,78.0 352.0,78.0 352.3,78.0 352.7,78.0 353.0,78.0 353.3,78.0 353.7,78.0 354.0,78.0 354.4,78.0 354.7,78.0 355.0,78.0 355.4,78.0 355.7,78.0 356.1,78.0 356.4,78.0 356.7,78.0 357.1,78.0 357.4,78.0 357.8,78.0 358.1,78.0 358.4,78.0 358.8,78.0 359.1,78.0 359.5,78.0 359.8,78.0 360.1,78.0 360.5,78.0 360.8,78.0 361.2,78.0 361.5,78.0 361.8,78.0 362.2,78.0 362.5,78.0 362.9,78.0 363.2,78.0 363.5,78.0 363.9,78.0 364.2,78.0 364.6,78.0 364.9,78.0 365.2,78.0 365.6,78.0 365.9,78.0 366.3,78.0 366.6,78.0 366.9,78.0 367.3,78.0 367.6,78.0 368.0,78.0 368.3,78.0 368.6,78.0 369.0,78.0 369.3,78.0 369.7,78.0 370.0,78.0 370.3,78.0 370.7,78.0 371.0,78.0 371.4,78.0 371.7,78.0 372.0,78.0 372.4,78.0 372.7,78.0 373.1,78.0 373.4,78.0 373.7,78.0 374.1,78.0 374.4,78.0 374.8,78.0 375.1,78.0 375.4,78.0 375.8,78.0 376.1,78.0 376.5,78.0 376.8,78.0 377.2,78.0 377.5,78.0 377.8,78.0 378.2,78.0 378.5,78.0 378.9,78.0 379.2,78.0 379.5,78.0 379.9,78.0 380.2,78.0 380.6,78.0 380.9,78.0 381.2,78.0 381.6,78.0 381.9,78.0 382.3,78.0 382.6,78.0 382.9,78.0 383.3,78.0 383.6,78.0 384.0,78.0 384.3,78.0 384.6,78.0 385.0,78.0 385.3,78.0 385.7,78.0 386.0,78.0 386.3,78.0 386.7,78.0 387.0,78.0 387.4,78.0 387.7,78.0 388.0,78.0 388.4,78.0 388.7,78.0 389.1,78.0 389.4,78.0 389.7,78.0 390.1,78.0 390.4,78.0 390.8,78.0 391.1,78.0 391.4,78.0 391.8,78.0 392.1,78.0 392.5,78.0 392.8,78.0 393.1,78.0 393.5,78.0 393.8,78.0 394.2,78.0 394.5,78.0 394.8,78.0 395.2,78.0 395.5,78.0 395.9,78.0 396.2,78.0 396.5,78.0 396.9,78.0 397.2,78.0 397.6,78.0 397.9,78.0 398.2,78.0 398.6,78.0 398.9,78.0 399.3,78.0 399.6,78.0 399.9,78.0 400.3,78.0 400.6,78.0 401.0,78.0 401.3,78.0 401.6,78.0 402.0,78.0 402.3,78.0 402.7,78.0 403.0,78.0 403.3,78.0 403.7,78.0 404.0,78.0 404.4,78.0 404.7,78.0 405.1,78.0 405.4,78.0 405.7,78.0 406.1,78.0 406.4,78.0 406.8,78.0 407.1,78.0 407.4,78.0 407.8,78.0 408.1,78.0 408.5,78.0 408.8,78.0 409.1,78.0 409.5,78.0 409.8,78.0 410.2,78.0 410.5,78.0 410.8,78.0 411.2,78.0 411.5,78.0 411.9,78.0 412.2,78.0 412.5,78.0 412.9,78.0 413.2,78.0 413.6,78.0 413.9,78.0 414.2,78.0 414.6,78.0 414.9,78.0 415.3,78.0 415.6,78.0 415.9,78.0 416.3,78.0 416.6,78.0 417.0,78.0 417.3,78.0 417.6,78.0 418.0,78.0 418.3,78.0 418.7,78.0 419.0,78.0 419.3,78.0 419.7,78.0 420.0,78.0 420.4,78.0 420.7,78.0 421.0,78.0 421.4,78.0 421.7,78.0 422.1,78.0 422.4,78.0 422.7,78.0 423.1,78.0 423.4,78.0 423.8,78.0 424.1,78.0 424.4,78.0 424.8,78.0 425.1,78.0 425.5,78.0 425.8,78.0 426.1,78.0 426.5,78.0 426.8,78.0 427.2,78.0 427.5,78.0 427.8,78.0 428.2,78.0 428.5,78.0 428.9,78.0 429.2,78.0 429.5,78.0 429.9,78.0 430.2,78.0 430.6,78.0 430.9,78.0 431.2,78.0 431.6,78.0 431.9,78.0 432.3,78.0 432.6,78.0 432.9,78.0 433.3,78.0 433.6,78.0 434.0,78.0 434.3,78.0 434.7,78.0 435.0,78.0 435.3,78.0 435.7,78.0 436.0,78.0 436.4,78.0 436.7,78.0 437.0,78.0 437.4,78.0 437.7,78.0 438.1,78.0 438.4,78.0 438.7,78.0 439.1,78.0 439.4,78.0 439.8,78.0 440.1,78.0 440.4,78.0 440.8,78.0 441.1,78.0 441.5,78.0 441.8,78.0 442.1,78.0 442.5,78.0 442.8,78.0 443.2,78.0 443.5,78.0 443.8,78.0 444.2,78.0 444.5,78.0 444.9,78.0 445.2,78.0 445.5,78.0 445.9,78.0 446.2,78.0 446.6,78.0 446.9,78.0 447.2,78.0 447.6,78.0 447.9,78.0 448.3,78.0 448.6,78.0 448.9,78.0 449.3,78.0 449.6,78.0 450.0,78.0 450.3,78.0 450.6,78.0 451.0,78.0 451.3,78.0 451.7,78.0 452.0,78.0 452.3,78.0 452.7,78.0 453.0,78.0 453.4,78.0 453.7,78.0 454.0,78.0 454.4,78.0 454.7,78.0 455.1,78.0 455.4,78.0 455.7,78.0 456.1,78.0 456.4,78.0 456.8,78.0 457.1,78.0 457.4,78.0 457.8,78.0 458.1,78.0 458.5,78.0 458.8,78.0 459.1,78.0 459.5,78.0 459.8,78.0 460.2,78.0 460.5,78.0 460.8,78.0 461.2,78.0 461.5,78.0 461.9,78.0 462.2,78.0 462.6,78.0 462.9,78.0 463.2,78.0 463.6,78.0 463.9,78.0 464.3,78.0 464.6,78.0 464.9,78.0 465.3,78.0 465.6,78.0 466.0,78.0 466.3,78.0 466.6,78.0 467.0,78.0 467.3,78.0 467.7,78.0 468.0,78.0 468.3,78.0 468.7,78.0 469.0,78.0 469.4,78.0 469.7,78.0 470.0,78.0 470.4,78.0 470.7,78.0 471.1,78.0 471.4,78.0 471.7,78.0 472.1,78.0 472.4,78.0 472.8,78.0 473.1,78.0 473.4,78.0 473.8,78.0 474.1,78.0 474.5,78.0 474.8,78.0 475.1,78.0 475.5,78.0 475.8,78.0 476.2,78.0 476.5,78.0 476.8,78.0 477.2,78.0 477.5,78.0 477.9,78.0 478.2,78.0 478.5,78.0 478.9,78.0 479.2,78.0 479.6,78.0 479.9,78.0 480.2,78.0 480.6,78.0 480.9,78.0 481.3,78.0 481.6,78.0 481.9,78.0 482.3,78.0 482.6,78.0 483.0,78.0 483.3,78.0 483.6,78.0 484.0,78.0 484.3,78.0 484.7,78.0 485.0,78.0 485.3,78.0 485.7,78.0 486.0,78.0 486.4,78.0 486.7,78.0 487.0,78.0 487.4,78.0 487.7,78.0 488.1,78.0 488.4,78.0 488.7,78.0 489.1,78.0 489.4,78.0 489.8,78.0 490.1,78.0 490.4,78.0 490.8,78.0 491.1,78.0 491.5,78.0 491.8,78.0 492.2,78.0 492.5,78.0 492.8,78.0 493.2,78.0 493.5,78.0 493.9,78.0 494.2,78.0 494.5,78.0 494.9,78.0 495.2,78.0 495.6,78.0 495.9,78.0 496.2,78.0 496.6,78.0 496.9,78.0 497.3,78.0 497.6,78.0 497.9,78.0 498.3,78.0 498.6,78.0 499.0,78.0 499.3,78.0 499.6,78.0 500.0,78.0 500.3,78.0 500.7,78.0 501.0,78.0 501.3,78.0 501.7,78.0 502.0,78.0 502.4,78.0 502.7,78.0 503.0,78.0 503.4,78.0 503.7,78.0 504.1,78.0 504.4,78.0 504.7,78.0 505.1,78.0 505.4,78.0 505.8,78.0 506.1,78.0 506.4,78.0 506.8,78.0 507.1,78.0 507.5,78.0 507.8,78.0 508.1,78.0 508.5,78.0 508.8,78.0 509.2,78.0 509.5,78.0 509.8,78.0 510.2,78.0 510.5,78.0 510.9,78.0 511.2,78.0 511.5,78.0 511.9,78.0 512.2,78.0 512.6,78.0 512.9,78.0 513.2,78.0 513.6,78.0 513.9,78.0 514.3,78.0 514.6,78.0 514.9,78.0 515.3,78.0 515.6,78.0 516.0,78.0 516.3,78.0 516.6,78.0 517.0,78.0 517.3,78.0 517.7,78.0 518.0,78.0 518.3,78.0 518.7,78.0 519.0,78.0 519.4,78.0 519.7,78.0 520.0,78.0 520.4,78.0 520.7,78.0 521.1,78.0 521.4,78.0 521.8,78.0 522.1,78.0 522.4,78.0 522.8,78.0 523.1,78.0 523.5,78.0 523.8,78.0 524.1,78.0 524.5,78.0 524.8,78.0 525.2,78.0 525.5,78.0 525.8,78.0 526.2,78.0 526.5,78.0 526.9,78.0 527.2,78.0 527.5,78.0 527.9,78.0 528.2,78.0 528.6,78.0 528.9,78.0 529.2,78.0 529.6,78.0 529.9,78.0 530.3,78.0 530.6,78.0 530.9,78.0 531.3,78.0 531.6,78.0 532.0,78.0 532.3,78.0 532.6,78.0 533.0,78.0 533.3,78.0 533.7,78.0 534.0,78.0 534.3,78.0 534.7,78.0 535.0,78.0 535.4,78.0 535.7,78.0 536.0,78.0 536.4,78.0 536.7,78.0 537.1,78.0 537.4,78.0 537.7,78.0 538.1,78.0 538.4,78.0 538.8,78.0 539.1,78.0 539.4,78.0 539.8,78.0 540.1,78.0 540.5,78.0 540.8,78.0 541.1,78.0 541.5,78.0 541.8,78.0 542.2,78.0 542.5,78.0 542.8,78.0 543.2,78.0 543.5,78.0 543.9,78.0 544.2,78.0 544.5,78.0 544.9,78.0 545.2,78.0 545.6,78.0 545.9,78.0 546.2,78.0 546.6,78.0 546.9,78.0 547.3,78.0 547.6,78.0 547.9,78.0 548.3,78.0 548.6,78.0 549.0,78.0 549.3,78.0 549.7,78.0 550.0,78.0 550.3,78.0 550.7,78.0 551.0,78.0 551.4,78.0 551.7,78.0 552.0,78.0 552.4,78.0 552.7,78.0 553.1,78.0 553.4,78.0 553.7,78.0 554.1,78.0 554.4,78.0 554.8,78.0 555.1,78.0 555.4,78.0 555.8,78.0 556.1,78.0 556.5,78.0 556.8,78.0 557.1,78.0 557.5,78.0 557.8,78.0 558.2,78.0 558.5,78.0 558.8,78.0 559.2,78.0 559.5,78.0 559.9,78.0 560.2,78.0 560.5,78.0 560.9,78.0 561.2,78.0 561.6,78.0 561.9,78.0 562.2,78.0 562.6,78.0 562.9,78.0 563.3,78.0 563.6,78.0 563.9,78.0 564.3,78.0 564.6,78.0 565.0,78.0 565.3,78.0 565.6,78.0 566.0,78.0 566.3,78.0 566.7,78.0 567.0,78.0 567.3,78.0 567.7,78.0 568.0,78.0 568.4,78.0 568.7,78.0 569.0,78.0 569.4,78.0 569.7,78.0 570.1,78.0 570.4,78.0 570.7,78.0 571.1,78.0 571.4,78.0 571.8,78.0 572.1,78.0 572.4,78.0 572.8,78.0 573.1,78.0 573.5,78.0 573.8,78.0 574.1,78.0 574.5,78.0 574.8,78.0 575.2,78.0 575.5,78.0 575.8,78.0 576.2,78.0 576.5,78.0 576.9,78.0 577.2,78.0 577.5,78.0 577.9,78.0 578.2,78.0 578.6,78.0 578.9,78.0 579.3,78.0 579.6,78.0 579.9,78.0 580.3,78.0 580.6,78.0 581.0,78.0 581.3,78.0 581.6,78.0 582.0,78.0 582.3,78.0 582.7,78.0 583.0,78.0 583.3,78.0 583.7,78.0 584.0,78.0 584.4,78.0 584.7,78.0 585.0,78.0 585.4,78.0 585.7,78.0 586.1,78.0 586.4,78.0 586.7,78.0 587.1,78.0 587.4,78.0 587.8,78.0 588.1,78.0 588.4,78.0 588.8,78.0 589.1,78.0 589.5,78.0 589.8,78.0 590.1,78.0 590.5,78.0 590.8,78.0 591.2,78.0 591.5,78.0 591.8,78.0 592.2,78.0 592.5,78.0 592.9,78.0 593.2,78.0 593.5,78.0 593.9,78.0 594.2,78.0 594.6,78.0 594.9,78.0 595.2,78.0 595.6,78.0 595.9,78.0 596.3,78.0 596.6,78.0 596.9,78.0 597.3,78.0 597.6,78.0 598.0,78.0 598.3,78.0 598.6,78.0 599.0,78.0 599.3,78.0 599.7,78.0 600.0,78.0 600.3,78.0 600.7,78.0 601.0,78.0 601.4,78.0 601.7,78.0 602.0,78.0 602.4,78.0 602.7,78.0 603.1,78.0 603.4,78.0 603.7,78.0 604.1,78.0 604.4,78.0 604.8,78.0 605.1,78.0 605.4,78.0 605.8,78.0 606.1,78.0 606.5,78.0 606.8,78.0 607.1,78.0 607.5,78.0 607.8,78.0 608.2,78.0 608.5,78.0 608.9,78.0 609.2,78.0 609.5,78.0 609.9,78.0 610.2,78.0 610.6,78.0 610.9,78.0 611.2,78.0 611.6,78.0 611.9,78.0 612.3,78.0 612.6,78.0 612.9,78.0 613.3,78.0 613.6,78.0 614.0,78.0 614.3,78.0 614.6,78.0 615.0,78.0 615.3,78.0 615.7,78.0 616.0,78.0 616.3,78.0 616.7,78.0 617.0,78.0 617.4,78.0 617.7,78.0 618.0,78.0 618.4,78.0 618.7,78.0 619.1,78.0 619.4,78.0 619.7,78.0 620.1,78.0 620.4,78.0 620.8,78.0 621.1,78.0 621.4,78.0 621.8,78.0 622.1,78.0 622.5,78.0 622.8,78.0 623.1,78.0 623.5,78.0 623.8,78.0 624.2,78.0 624.5,78.0 624.8,78.0 625.2,78.0 625.5,78.0 625.9,78.0 626.2,78.0 626.5,78.0 626.9,78.0 627.2,78.0 627.6,78.0 627.9,78.0 628.2,78.0 628.6,78.0 628.9,78.0 629.3,78.0 629.6,78.0 629.9,78.0 630.3,78.0 630.6,78.0 631.0,78.0 631.3,78.0 631.6,78.0 632.0,78.0 632.3,78.0 632.7,78.0 633.0,78.0 633.3,78.0 633.7,78.0 634.0,78.0 634.4,78.0 634.7,78.0 635.0,78.0 635.4,78.0 635.7,78.0 636.1,78.0 636.4,78.0 636.8,78.0 637.1,78.0 637.4,78.0 637.8,78.0 638.1,78.0 638.5,78.0 638.8,78.0 639.1,78.0 639.5,78.0 639.8,78.0 640.2,78.0 640.5,78.0 640.8,78.0 641.2,78.0 641.5,78.0 641.9,78.0 642.2,78.0 642.5,78.0 642.9,78.0 643.2,78.0 643.6,78.0 643.9,78.0 644.2,78.0 644.6,78.0 644.9,78.0 645.3,78.0 645.6,78.0 645.9,78.0 646.3,78.0 646.6,78.0 647.0,78.0 647.3,78.0 647.6,78.0 648.0,78.0 648.3,78.0 648.7,78.0 649.0,78.0 649.3,78.0 649.7,78.0 650.0,78.0 650.4,78.0 650.7,78.0 651.0,78.0 651.4,78.0 651.7,78.0 652.1,78.0 652.4,78.0 652.7,78.0 653.1,78.0 653.4,78.0 653.8,78.0 654.1,78.0 654.4,78.0 654.8,78.0 655.1,78.0 655.5,78.0 655.8,78.0 656.1,78.0 656.5,78.0 656.8,78.0 657.2,78.0 657.5,78.0 657.8,78.0 658.2,78.0 658.5,78.0 658.9,78.0 659.2,78.0 659.5,78.0 659.9,78.0 660.2,78.0 660.6,78.0 660.9,78.0 661.2,78.0 661.6,78.0 661.9,78.0 662.3,78.0 662.6,78.0 662.9,78.0 663.3,78.0 663.6,78.0 664.0,78.0 664.3,78.0 664.6,78.0 665.0,78.0 665.3,78.0 665.7,78.0 666.0,78.0 666.4,78.0 666.7,78.0 667.0,78.0 667.4,78.0 667.7,78.0 668.1,78.0 668.4,78.0 668.7,78.0 669.1,78.0 669.4,78.0 669.8,78.0 670.1,78.0 670.4,78.0 670.8,78.0 671.1,78.0 671.5,78.0 671.8,78.0 672.1,78.0 672.5,78.0 672.8,78.0 673.2,78.0 673.5,78.0 673.8,78.0 674.2,78.0 674.5,78.0 674.9,78.0 675.2,78.0 675.5,78.0 675.9,78.0 676.2,78.0 676.6,78.0 676.9,78.0 677.2,78.0 677.6,78.0 677.9,78.0 678.3,78.0 678.6,78.0 678.9,78.0 679.3,78.0 679.6,78.0 680.0,78.0 680.3,78.0 680.6,78.0 681.0,78.0 681.3,78.0 681.7,78.0 682.0,78.0 682.3,78.0 682.7,78.0 683.0,78.0 683.4,78.0 683.7,78.0 684.0,78.0 684.4,78.0 684.7,78.0 685.1,78.0 685.4,78.0 685.7,78.0 686.1,78.0 686.4,78.0 686.8,78.0 687.1,78.0 687.4,78.0 687.8,78.0 688.1,78.0 688.5,78.0 688.8,78.0 689.1,78.0 689.5,78.0 689.8,78.0 690.2,78.0 690.5,78.0 690.8,78.0 691.2,78.0 691.5,78.0 691.9,78.0 692.2,78.0 692.5,78.0 692.9,78.0 693.2,78.0 693.6,78.0 693.9,78.0 694.2,78.0 694.6,78.0 694.9,78.0 695.3,78.0 695.6,78.0 696.0,78.0 696.3,78.0 696.6,78.0 697.0,78.0 697.3,78.0 697.7,78.0 698.0,78.0 698.3,78.0 698.7,78.0 699.0,78.0 699.4,78.0 699.7,78.0 700.0,78.0 700.4,78.0 700.7,78.0 701.1,78.0 701.4,78.0 701.7,78.0 702.1,78.0 702.4,78.0 702.8,78.0 703.1,78.0 703.4,78.0 703.8,78.0 704.1,78.0 704.5,78.0 704.8,78.0 705.1,78.0 705.5,78.0 705.8,78.0 706.2,78.0 706.5,78.0 706.8,78.0 707.2,78.0 707.5,78.0 707.9,78.0 708.2,78.0 708.5,78.0 708.9,78.0 709.2,78.0 709.6,78.0 709.9,78.0 710.2,78.0 710.6,78.0 710.9,78.0 711.3,78.0 711.6,78.0 711.9,78.0 712.3,78.0 712.6,78.0 713.0,78.0 713.3,78.0 713.6,78.0 714.0,78.0 714.3,78.0 714.7,78.0 715.0,78.0 715.3,78.0 715.7,78.0 716.0,78.0 716.4,78.0 716.7,78.0 717.0,78.0 717.4,78.0 717.7,78.0 718.1,78.0 718.4,78.0 718.7,78.0 719.1,78.0 719.4,78.0 719.8,78.0 720.1,78.0 720.4,78.0 720.8,78.0 721.1,78.0 721.5,78.0 721.8,78.0 722.1,78.0 722.5,78.0 722.8,78.0 723.2,78.0 723.5,78.0 723.9,78.0 724.2,78.0 724.5,78.0 724.9,78.0 725.2,78.0 725.6,78.0 725.9,78.0 726.2,78.0 726.6,78.0 726.9,78.0 727.3,78.0 727.6,78.0 727.9,78.0 728.3,78.0 728.6,78.0 729.0,78.0 729.3,78.0 729.6,78.0 730.0,78.0 730.3,78.0 730.7,78.0 731.0,78.0 731.3,78.0 731.7,78.0 732.0,78.0 732.4,78.0 732.7,78.0 733.0,78.0 733.4,78.0 733.7,78.0 734.1,78.0 734.4,78.0 734.7,78.0 735.1,78.0 735.4,78.0 735.8,78.0 736.1,78.0 736.4,78.0 736.8,78.0 737.1,78.0 737.5,78.0 737.8,78.0 738.1,78.0 738.5,78.0 738.8,78.0 739.2,78.0 739.5,78.0 739.8,78.0 740.2,78.0 740.5,78.0 740.9,78.0 741.2,78.0 741.5,78.0 741.9,78.0 742.2,78.0 742.6,78.0 742.9,78.0 743.2,78.0 743.6,78.0 743.9,78.0 744.3,78.0 744.6,78.0 744.9,78.0 745.3,78.0 745.6,78.0 746.0,78.0 746.3,78.0 746.6,78.0 747.0,78.0 747.3,78.0 747.7,78.0 748.0,78.0 748.3,78.0 748.7,78.0 749.0,78.0 749.4,78.0 749.7,78.0 750.0,78.0 750.4,78.0 750.7,78.0 751.1,78.0 751.4,78.0 751.7,78.0 752.1,78.0 752.4,78.0 752.8,78.0 753.1,78.0 753.5,78.0 753.8,78.0 754.1,78.0 754.5,78.0 754.8,78.0 755.2,78.0 755.5,78.0 755.8,78.0 756.2,78.0 756.5,78.0 756.9,78.0 757.2,78.0 757.5,78.0 757.9,78.0 758.2,78.0 758.6,78.0 758.9,78.0 759.2,78.0 759.6,78.0 759.9,78.0" fill="none" stroke="#2c4a6e" stroke-width="2.6"/>
+<line x1="82.3" y1="378.0" x2="82.3" y2="329.2" stroke="#b83a1e" stroke-width="1.1" stroke-dasharray="3 3"/>
+<circle cx="82.3" cy="329.2" r="4.5" fill="#b83a1e"/>
+<text x="92.3" y="355.2" font-size="11" font-weight="700" fill="#b83a1e" text-anchor="start">top 50 schools: 16%</text>
+<line x1="120.5" y1="378.0" x2="120.5" y2="212.2" stroke="#b83a1e" stroke-width="1.1" stroke-dasharray="3 3"/>
+<circle cx="120.5" cy="212.2" r="4.5" fill="#b83a1e"/>
+<text x="132.5" y="200.2" font-size="11" font-weight="700" fill="#b83a1e" text-anchor="start">top 500: 55%</text>
+<line x1="270.5" y1="78.0" x2="760.0" y2="78.0" stroke="#c9962a" stroke-width="5" opacity="0.5"/>
+<text x="515.2" y="64.0" font-size="11" font-weight="700" fill="#8a6a10" text-anchor="middle">5,755 schools produced none at all</text>
+<text x="78" y="396.0" font-size="10" fill="#7a6a52" font-family="Roboto Mono, monospace">0</text>
+<text x="760" y="396.0" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">8,018</text>
+<text x="419" y="396.0" font-size="10" fill="#7a6a52" text-anchor="middle" font-style="italic">high schools, ranked by blue-chips produced</text>
+<text x="78" y="422" font-size="11.5" font-weight="700" fill="#1a1208">ONE BOARDING SCHOOL IN FLORIDA PRODUCED 83. THE MEDIAN STATE PRODUCED 40.</text>
+<text x="78" y="439" font-size="11" fill="#5a4c38">IMG Academy does not grow them. It recruits them. A genome cannot explain an admissions office.</text>
+</svg>
+  </div>
+
+  <p>Look at the top of that list and the mechanism gives itself away. The single most productive school in America is a private boarding academy in Florida with 83 blue-chips. It did not find them in its catchment area. <strong>It recruited them.</strong> Several others near the top are private and parochial programmes that draw students from across a metropolitan area or further.</p>
+
+  <div class="pull">
+    <p>A genome cannot explain an admissions office.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh">The islands, where this story is usually told</h3>
+
+  <p>The Polynesian lineman is the version of this everyone has heard, so we went and measured it.</p>
+
+  <p>Hawaii is genuinely above average, and genuinely tilted toward the line. It produces blue-chips at <strong>1.4 times</strong> the national rate. And <strong>38%</strong> of its recruits play in the trenches against 30% everywhere else &mdash; among its blue-chips, 43%. That is a real pattern; we are not going to explain it away.</p>
+
+  <p>But watch what happens next. <strong>58%</strong> of Hawaii&rsquo;s recruits come from just five of its 38 high schools.</p>
+
+  <p>Now hold that against Nevada, where the top five schools out of 44 account for <strong>63%</strong> &mdash; a tighter concentration than Hawaii&rsquo;s. Nobody has ever proposed a genetic theory of Nevada. What Nevada has is one enormously successful private programme in Las Vegas.</p>
+
+  <p>Utah sits at 27%. Iowa at 20%. So concentration itself varies hugely, and it tracks the presence of specific schools rather than the ancestry of specific populations. Two states, one fingerprint, and only one of them has an ancestry story attached. So the ancestry is not what you are looking at.</p>
+
+  <h3 class="sh">What about the sports gene?</h3>
+
+  <p>You will have heard there is one. There is a candidate, and it is worth knowing why it disappoints.</p>
+
+  <p><strong>ACTN3</strong> is the most-studied gene in this whole field. One version of it stops your fast-twitch muscle fibres from making a particular protein, and elite sprinters almost never carry two copies of that version. That sounds decisive until you learn the base rate: roughly <strong>one person in five worldwide</strong> carries two copies. Which means four in five of us carry the &ldquo;good&rdquo; version, and nearly all of us are slow.</p>
+
+  <p>A marker that four billion people share cannot explain why a few thousand are exceptional; it is a floor, not a ladder. And it is the <em>best</em> candidate anyone has.</p>
+
+  <p>Now the number that always gets quoted here: that a Samoan American man is dozens of times likelier to reach the NFL. We went looking for its source. We could not find one we would stand behind. Worse, the sum it claims to be cannot really be done. Pro rosters do not record ancestry, so the top of that fraction is itself a guess.</p>
+
+  <p>It is, in other words, exactly the kind of stat this newsletter exists to slow down. Repeated for decades, never sourced, and shaped like an answer.</p>
+
+  <h3 class="sh">What to take home: does the place make it, or collect it?</h3>
+
+  <p>Whenever you meet a wildly concentrated outcome, ask one question first. Ask it before you reach for any explanation about the people.</p>
+
+  <p><strong>Does this place produce the thing, or does it gather it?</strong></p>
+
+  <p>A school with 83 blue-chips has not found a gene. It has found a bus route, a scholarship budget, and a name that makes talented fifteen-year-olds move house. The concentration is real; it is just evidence about institutions, and we keep reading it as evidence about bloodlines.</p>
+
+  <p>You will use this outside sport within a week. The hospital with the best surgical outcomes may be selecting the healthiest patients; the school with the best results may be admitting the best students; the town that produces all the physicists may simply have the one teacher. Ask what the place does at the door before you theorise about what is in the water.</p>
+
+  <!-- WATCH_BLOCK -->
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">All recruiting figures from the CollegeFootballData API, high-school classes 2015 through 2026: 49,722 rated recruits, of whom 49,242 list a United States home state. &ldquo;Blue-chip&rdquo; means a four- or five-star rating, 4,969 players. Offensive line groups OT, OG, IOL and C; defensive line groups DL, DT, DE, EDGE, SDE and WDE. State populations are the 2020 census.</p>
+    <p style="color:#c8b99a">South is the Census South region. Blue-chip rates per million: offensive line 3.29 South against 1.39 elsewhere; defensive line 5.24 against 1.42. Ratio of offensive to defensive linemen 0.63 South, 0.98 elsewhere. Across all recruits rather than blue-chips only, the ratio is 0.83 against 1.11 &mdash; same direction, smaller gap.</p>
+    <p style="color:#c8b99a">Concentration: 8,018 distinct high schools appear; 2,263 produced at least one blue-chip and 5,755 produced none. Top 10 schools 6.6% of all blue-chips, top 50 16.3%, top 100 23.9%, top 500 55.3%. Gini across all 8,018 schools is 0.838. The most productive is IMG Academy in Bradenton, Florida, with 83; it is a private boarding school that enrols nationally, which is the point rather than an aside. Median state output was 40.</p>
+    <p style="color:#c8b99a">Hawaii: 367 recruits, 30 blue-chip, 20.6 per million against a national 15.0. Trench share 38.1% against 30.4% elsewhere, and 43.3% among its blue-chips. Five of 38 schools account for 58% of the state&rsquo;s recruits. Comparable top-five shares: Nevada 63% of 44 schools, Utah 27% of 82, Iowa 20% of 140.</p>
+    <p style="color:#c8b99a">On ACTN3: the R577X variant in its XX form removes functional alpha-actinin-3 from fast-twitch fibre. Population frequency of XX is roughly 18% worldwide and varies substantially between populations. Studies of elite sprinters have found the XX genotype to be rare or absent among them, but the samples are small and the variance the gene explains in ordinary populations is a few percent at most. Treat it as necessary-ish and nowhere close to sufficient.</p>
+    <p style="color:#c8b99a">Three limits, stated plainly. Star ratings are themselves scout opinions, so a school that scouts visit often will look more productive; that bias runs in the same direction as our finding and we cannot fully separate it. Hometown is where a player attended school, not where he was born, so a recruited boarding student is credited to the school that admitted him &mdash; again the point rather than a flaw. And none of this measures ancestry at all, because the data does not contain it; the Hawaii figures are a geographic proxy and a rough one.</p>
+    <p style="color:#c8b99a">Got a question the numbers could settle? <a href="https://thesportspage.net/ask.html" style="color:#e0d8c5" target="_blank" rel="noopener">thesportspage.net/ask.html</a>.</p>
+  </div>
+
+  <div class="footer"><span>The Sports Page &middot; Vol. I, No. __</span><span>Ask what the place does at the door</span><span>TODO_DATE &middot; New York, NY</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>
+</body>
+</html>
