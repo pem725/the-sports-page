@@ -352,6 +352,44 @@ re-send them to the list.
 **Never** use a reader question as cover for a piece you wanted to write anyway.
 The vetting step in (2) exists to stop exactly that.
 
+### One slot a day — so newsworthiness and decay decide the order
+
+There is exactly one issue per day. Every piece therefore competes with every
+other piece, and two things settle the order. Neither should live in anyone's
+head.
+
+**1. How fast it rots.** Every queue file declares `decay:` in its PUBLISH-META,
+directly under `topic:`:
+
+| decay | meaning | must publish within |
+|---|---|---|
+| `hot` | numbers move daily | ~3 days, or rewrite it |
+| `dated` | tied to a fixed event | before that event |
+| `slow` | season-bound, stable for weeks | ~3 weeks |
+| `keeps` | methods or history | any time |
+
+**2. Whether the rotation holds.** No two consecutive issues share a topic.
+
+Check both with **`python3 scripts/queue_health.py`**, which walks the real
+calendar and flags a clash, a piece that will be stale by its slot, or a thin
+buffer. Run it after any reorder — reordering by list index has already produced
+three back-to-back clashes in one go, because eyeballing a list is not the same
+as walking the dates.
+
+**The buffer is not padding, it is capacity.** Keep **at least two** `keeps`
+pieces in the queue at all times. They are what lets a breaking story jump the
+line without leaving a hole behind it. A queue of nothing but hot pieces cannot
+absorb news; a queue of nothing but evergreen ones is never about anything.
+
+**When news breaks, it wins.** A timely, stats-backed piece displaces a `keeps`
+piece, never the reverse. The displaced piece goes to the back, not the bin.
+
+**But the standard does not move.** Newsworthy is necessary, not sufficient —
+every issue is still built on a number we computed and can defend, still passes
+`check_readability.py` and `check_voice.py`, and still states its limits. A piece
+that is timely and thin costs more than an empty day, because it is the day's
+only slot.
+
 ### Content Tiers:
 - **Timely**: Breaking news, injuries, game results. Publish immediately. Goes stale fast.
 - **Analytical**: Trade analyses, historical comparisons, series pieces. Publish to fill gaps.

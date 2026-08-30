@@ -260,6 +260,21 @@ below). Required sections:
     not redesign per piece. Inserted INSIDE the `.paper` div, immediately
     before `<div class="footer">`.
 
+### Step 5.4 — Tag the decay before queueing
+
+Every new queue file carries `decay:` in its PUBLISH-META, under `topic:` —
+`hot`, `dated`, `slow`, or `keeps`. One issue a day means the order is decided by
+how fast a piece rots and whether the topic rotation holds, and both belong in
+the file rather than in someone's memory.
+
+Run `python3 scripts/queue_health.py` after queueing or reordering. It walks the
+actual publish calendar and reports back-to-back topics, pieces that will be
+stale by the time their slot arrives, and whether at least two evergreen pieces
+remain as buffer.
+
+Keep two `keeps` pieces banked at all times. That is what allows a breaking story
+to take tomorrow's slot without leaving a hole.
+
 ### Step 5.5 — The What to Watch block (EVERY issue, no exceptions)
 
 Every daily issue ships with a **What to Watch** section immediately above the
