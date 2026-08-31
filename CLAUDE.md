@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 346 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 344 issues remaining of 500
 
 ## Repository Structure
 
@@ -754,9 +754,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 155 issues (#1-155, incl. Sunday Edition No. 021)
-Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 137-schedule-leverage, 139-overfit-grid, 140-one-kick, 142-hope-curve, _TEMPLATE)
+Published: 156 issues (#1-156)
+Queue: 16 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 137-schedule-leverage, 139-overfit-grid, 140-one-kick, 142-hope-curve, 143-dark-horse, 145-week1-signal, 146-sec-schedule-bias, 147-talent-addresses, 148-tommy-john-success, 149-where-players-die, 150-why-log-odds, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 345 issues remaining of 500
-Last published: Issue #155 — "Five Structural Pieces and a Forecast That Landed." (sunday-021.html) on August 30, 2026
+Goal: 344 issues remaining of 500
+Last published: Issue #156 — "The Mets Cannot Ruin Anybody. The Athletics Can Ruin Four Seasons." (144-spoiler.html) on August 31, 2026
