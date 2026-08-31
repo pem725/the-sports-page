@@ -110,6 +110,27 @@ gap:.5rem;align-items:center;border-bottom:1px solid var(--div);padding:.5rem 0}
 .cfb-st{text-align:right}
 .cfb-st b{display:block;font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:900;line-height:1}
 .cfb-st span{font-family:'Roboto Mono',monospace;font-size:.54rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.bk-flag{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.06em;color:var(--rust);
+  border:1px solid var(--rust);padding:.3rem .6rem;display:inline-block;margin-bottom:1rem}
+.bk-lg{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--rust);font-weight:600;border-bottom:1px solid var(--div);padding-bottom:.25rem;margin:1.6rem 0 .8rem}
+.bk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.bk-hd{font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.4rem}
+.bk-series{border:1px solid var(--div);background:var(--card);margin-bottom:.6rem}
+.bk-team{display:grid;grid-template-columns:1.4rem 1fr auto;grid-template-areas:'seed nm spark' 'seed rec odds' 'seed sp sp';
+  gap:.1rem .45rem;align-items:center;padding:.45rem .55rem;border-bottom:1px solid rgba(200,185,154,.5)}
+.bk-team:last-child{border-bottom:none}
+.bk-seed{grid-area:seed;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--muted)}
+.bk-nm{grid-area:nm;font-family:'Playfair Display',serif;font-weight:700;font-size:.95rem;line-height:1.1}
+.bk-spark{grid-area:spark;width:74px;height:20px}
+.bk-rec{grid-area:rec;font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted)}
+.bk-sp{grid-area:sp;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.02em}
+.bk-odds{grid-area:odds;font-family:'Playfair Display',serif;font-weight:900;font-size:1rem;text-align:right;color:var(--steel)}
+.bk-odds.dim{color:var(--muted)}
+.bk-bye{grid-area:odds;font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--gold);text-align:right;letter-spacing:.06em}
+.bk-cond{font-size:.76rem;padding:.3rem 0;border-bottom:1px solid rgba(224,216,197,.7);line-height:1.35}
+.bk-cond b{font-family:'Roboto Mono',monospace;color:var(--steel)}
 .fieldbar{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:.2rem 0 .8rem}
 .fbl{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
   color:var(--muted);margin-right:.2rem}
@@ -561,6 +582,70 @@ def cfb_rows():
     return "".join(out), D.get("method", ""), json.dumps(slim, separators=(",", ":"))
 
 
+
+BRACKET_DATA = REPO / "data" / "bracket.json"
+
+
+def bracket_pane():
+    """October, laid out as a bracket, with each club's season drawn inside its tile.
+
+    The sparkline is the SAME playoff-odds trajectory the tiles above use, so a
+    reader can see at a glance which clubs were never in doubt and which ones
+    arrived late. That contrast is most of the fun of a bracket.
+    """
+    if not BRACKET_DATA.exists() or not DATA.exists():
+        return "", ""
+    B = json.loads(BRACKET_DATA.read_text())
+    TR = json.loads(DATA.read_text())["teams"]
+    W, H = 74, 20
+
+    def spark(tid):
+        t = TR.get(str(tid))
+        if not t:
+            return f'<svg class="bk-spark" viewBox="0 0 {W} {H}" aria-hidden="true"></svg>'
+        po = t["po"]; n = len(po)
+        pts = " ".join(f'{i/(n-1)*W:.1f},{H-v*H:.1f}' for i, v in enumerate(po))
+        return (f'<svg class="bk-spark" viewBox="0 0 {W} {H}" preserveAspectRatio="none" '
+                f'aria-label="Playoff odds across the season">'
+                f'<line x1="0" y1="{H/2}" x2="{W}" y2="{H/2}" stroke="#c8b99a" stroke-width=".6" stroke-dasharray="2 3"/>'
+                f'<polyline fill="none" stroke="#2c4a6e" stroke-width="1.6" points="{pts}"/></svg>')
+
+    def tile(c, note=""):
+        return (f'<div class="bk-team">'
+                f'<span class="bk-seed">{c["seed"]}</span>'
+                f'<span class="bk-nm">{c["name"]}</span>'
+                f'{spark(c["id"])}'
+                f'<span class="bk-rec">{c["w"]}-{c["l"]}</span>'
+                f'<span class="bk-sp">OPS {c["ops"] or "--"} &middot; ERA {c["era"] or "--"}</span>'
+                f'{note}</div>')
+
+    out = []
+    flag = "" if B["settled"] else f'<div class="bk-flag">{B["note"]}</div>'
+    out.append(flag)
+    for lgid in ("103", "104"):
+        b = B["brackets"][lgid]
+        seeds = {c["seed"]: c for c in b["seeds"]}
+        wc = [m for m in b["matchups"] if m["round"] == "Wild Card"]
+        out.append(f'<div class="bk-lg">{b["league"]}</div><div class="bk-grid">')
+        out.append('<div class="bk-col"><div class="bk-hd">Wild Card &middot; best of 3</div>')
+        for m in wc:
+            out.append('<div class="bk-series">')
+            out.append(tile(seeds[m["hi"]], f'<span class="bk-odds">{m["p"]*100:.0f}%</span>'))
+            out.append(tile(seeds[m["lo"]], f'<span class="bk-odds dim">{(1-m["p"])*100:.0f}%</span>'))
+            out.append('</div>')
+        out.append('</div>')
+        out.append('<div class="bk-col"><div class="bk-hd">Byes &middot; into the Division Series</div>')
+        for s in (1, 2):
+            out.append('<div class="bk-series">' + tile(seeds[s], '<span class="bk-bye">bye</span>') + '</div>')
+        out.append('</div>')
+        ds = [m for m in b["matchups"] if m["round"] == "Division Series"]
+        out.append('<div class="bk-col"><div class="bk-hd">Division Series &middot; if they meet</div>')
+        for m in ds:
+            out.append(f'<div class="bk-cond">{m["hi_name"]} over {m["lo_name"]} '
+                       f'<b>{m["p"]*100:.0f}%</b></div>')
+        out.append('</div></div>')
+    return "".join(out), B["note"]
+
 NFL_DATA = REPO / "data" / "nfl-odds.json"
 
 
@@ -644,6 +729,7 @@ def build() -> str:
     grid = "\n".join(tiles)
     cfb, cfb_method, cfb_json = cfb_rows()
     nfl, nfl_method, nfl_json = nfl_rows()
+    bracket, bracket_note = bracket_pane()
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -674,6 +760,7 @@ def build() -> str:
     <button role="tab" id="t-mlb" aria-controls="p-mlb" aria-selected="true">Baseball</button>
     <button role="tab" id="t-cfb" aria-controls="p-cfb" aria-selected="false">College Football</button>
     <button role="tab" id="t-nfl" aria-controls="p-nfl" aria-selected="false">NFL</button>
+    <button role="tab" id="t-bk" aria-controls="p-bk" aria-selected="false">October</button>
   </div>
   <div class="pane" id="p-mlb" role="tabpanel">
   <div class="fieldbar">
@@ -719,6 +806,21 @@ def build() -> str:
       advantage; it fell out of the fit at about a point and a half, which is close to what the
       modern game is measured at, and is the main reason to trust the rest. Ties are broken at
       random rather than by the real tiebreaker rules, so treat anything near a coin flip as one.
+    </p>
+  </div>
+
+  <div class="pane" id="p-bk" role="tabpanel" hidden>
+    <h1 style="font-size:clamp(1.4rem,3.5vw,2rem);margin-bottom:.3rem">The Bracket, <em>With Every Season Inside It.</em></h1>
+    <div class="deck">Each club carries the line it drew all year &mdash; its chance of reaching October, week by week. Some were never in doubt; some arrived in the last fortnight. The percentages are series odds, not game odds.</div>
+    {bracket}
+    <p style="font-size:.8rem;color:var(--muted);margin-top:1.2rem;line-height:1.6">
+      Series odds combine club strength by log5 and then add home field <strong>in log-odds</strong>,
+      which is the only space where the two adjustments can simply be added: a home edge worth a few
+      points to a .500 club is worth less to a .700 one, and adding it in probability space can push
+      a number past 1. The home edge is a single constant, +0.14 in log-odds, from the .535 home win
+      rate between evenly matched clubs. Strength blends record with the Pythagorean estimate from
+      runs scored and allowed, regressed toward .500 by a prior worth 69 games. Best-of-three is
+      played entirely at the higher seed; best-of-five splits 2&ndash;2&ndash;1.
     </p>
   </div>
 

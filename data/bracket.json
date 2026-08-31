@@ -1,0 +1,331 @@
+{
+ "generated": "2026-08-31",
+ "season": 2026,
+ "settled": false,
+ "note": "Projected from the standings as they stand; seeds are not yet decided",
+ "hfa_logodds": 0.0701,
+ "brackets": {
+  "103": {
+   "league": "American League",
+   "seeds": [
+    {
+     "id": 139,
+     "name": "Rays",
+     "seed": 1,
+     "w": 82,
+     "l": 54,
+     "rs": 616,
+     "ra": 562,
+     "ops": ".733",
+     "era": "3.77",
+     "whip": "1.15",
+     "avg": ".260",
+     "hr": 142,
+     "k": 1111,
+     "p": 0.5480366086750548
+    },
+    {
+     "id": 145,
+     "name": "White Sox",
+     "seed": 2,
+     "w": 72,
+     "l": 64,
+     "rs": 652,
+     "ra": 608,
+     "ops": ".728",
+     "era": "4.15",
+     "whip": "1.31",
+     "avg": ".238",
+     "hr": 180,
+     "k": 1137,
+     "p": 0.5203448255814692
+    },
+    {
+     "id": 117,
+     "name": "Astros",
+     "seed": 3,
+     "w": 69,
+     "l": 68,
+     "rs": 624,
+     "ra": 667,
+     "ops": ".726",
+     "era": "4.62",
+     "whip": "1.36",
+     "avg": ".241",
+     "hr": 182,
+     "k": 1199,
+     "p": 0.49108825331234635
+    },
+    {
+     "id": 147,
+     "name": "Yankees",
+     "seed": 4,
+     "w": 78,
+     "l": 59,
+     "rs": 622,
+     "ra": 505,
+     "ops": ".720",
+     "era": "3.21",
+     "whip": "1.17",
+     "avg": ".232",
+     "hr": 189,
+     "k": 1225,
+     "p": 0.5543806684301579
+    },
+    {
+     "id": 111,
+     "name": "Red Sox",
+     "seed": 5,
+     "w": 74,
+     "l": 63,
+     "rs": 609,
+     "ra": 525,
+     "ops": ".726",
+     "era": "3.57",
+     "whip": "1.23",
+     "avg": ".249",
+     "hr": 138,
+     "k": 1168,
+     "p": 0.5357908373105603
+    },
+    {
+     "id": 114,
+     "name": "Guardians",
+     "seed": 6,
+     "w": 69,
+     "l": 68,
+     "rs": 557,
+     "ra": 559,
+     "ops": ".686",
+     "era": "3.73",
+     "whip": "1.26",
+     "avg": ".237",
+     "hr": 127,
+     "k": 1274,
+     "p": 0.5006683253089278
+    }
+   ],
+   "matchups": [
+    {
+     "round": "Wild Card",
+     "best_of": 3,
+     "hi": 3,
+     "lo": 6,
+     "hi_name": "Astros",
+     "lo_name": "Guardians",
+     "p": 0.5119
+    },
+    {
+     "round": "Wild Card",
+     "best_of": 3,
+     "hi": 4,
+     "lo": 5,
+     "hi_name": "Yankees",
+     "lo_name": "Red Sox",
+     "p": 0.5542
+    },
+    {
+     "round": "Division Series",
+     "best_of": 5,
+     "hi": 1,
+     "lo": 4,
+     "hi_name": "Rays",
+     "lo_name": "Yankees",
+     "conditional": true,
+     "p": 0.4946
+    },
+    {
+     "round": "Division Series",
+     "best_of": 5,
+     "hi": 1,
+     "lo": 5,
+     "hi_name": "Rays",
+     "lo_name": "Red Sox",
+     "conditional": true,
+     "p": 0.5297
+    },
+    {
+     "round": "Division Series",
+     "best_of": 5,
+     "hi": 2,
+     "lo": 3,
+     "hi_name": "White Sox",
+     "lo_name": "Astros",
+     "conditional": true,
+     "p": 0.5612
+    },
+    {
+     "round": "Division Series",
+     "best_of": 5,
+     "hi": 2,
+     "lo": 6,
+     "hi_name": "White Sox",
+     "lo_name": "Guardians",
+     "conditional": true,
+     "p": 0.5434
+    }
+   ]
+  },
+  "104": {
+   "league": "National League",
+   "seeds": [
+    {
+     "id": 158,
+     "name": "Brewers",
+     "seed": 1,
+     "w": 85,
+     "l": 52,
+     "rs": 683,
+     "ra": 506,
+     "ops": ".735",
+     "era": "3.37",
+     "whip": "1.16",
+     "avg": ".255",
+     "hr": 126,
+     "k": 1320,
+     "p": 0.5845688205157457
+    },
+    {
+     "id": 119,
+     "name": "Dodgers",
+     "seed": 2,
+     "w": 82,
+     "l": 55,
+     "rs": 670,
+     "ra": 517,
+     "ops": ".757",
+     "era": "3.62",
+     "whip": "1.16",
+     "avg": ".258",
+     "hr": 169,
+     "k": 1249,
+     "p": 0.5714809919488154
+    },
+    {
+     "id": 144,
+     "name": "Braves",
+     "seed": 3,
+     "w": 82,
+     "l": 55,
+     "rs": 636,
+     "ra": 519,
+     "ops": ".724",
+     "era": "3.55",
+     "whip": "1.24",
+     "avg": ".248",
+     "hr": 173,
+     "k": 1162,
+     "p": 0.5633423407693742
+    },
+    {
+     "id": 143,
+     "name": "Phillies",
+     "seed": 4,
+     "w": 77,
+     "l": 60,
+     "rs": 622,
+     "ra": 592,
+     "ops": ".716",
+     "era": "4.05",
+     "whip": "1.29",
+     "avg": ".243",
+     "hr": 164,
+     "k": 1349,
+     "p": 0.528146248304787
+    },
+    {
+     "id": 112,
+     "name": "Cubs",
+     "seed": 5,
+     "w": 77,
+     "l": 60,
+     "rs": 725,
+     "ra": 598,
+     "ops": ".767",
+     "era": "4.14",
+     "whip": "1.26",
+     "avg": ".251",
+     "hr": 187,
+     "k": 1057,
+     "p": 0.5496288598301908
+    },
+    {
+     "id": 109,
+     "name": "D-backs",
+     "seed": 6,
+     "w": 73,
+     "l": 65,
+     "rs": 625,
+     "ra": 620,
+     "ops": ".714",
+     "era": "4.18",
+     "whip": "1.29",
+     "avg": ".244",
+     "hr": 136,
+     "k": 945,
+     "p": 0.5108867198789818
+    }
+   ],
+   "matchups": [
+    {
+     "round": "Wild Card",
+     "best_of": 3,
+     "hi": 3,
+     "lo": 6,
+     "hi_name": "Braves",
+     "lo_name": "D-backs",
+     "p": 0.6041
+    },
+    {
+     "round": "Wild Card",
+     "best_of": 3,
+     "hi": 4,
+     "lo": 5,
+     "hi_name": "Phillies",
+     "lo_name": "Cubs",
+     "p": 0.4939
+    },
+    {
+     "round": "Division Series",
+     "best_of": 5,
+     "hi": 1,
+     "lo": 4,
+     "hi_name": "Brewers",
+     "lo_name": "Phillies",
+     "conditional": true,
+     "p": 0.6121
+    },
+    {
+     "round": "Division Series",
+     "best_of": 5,
+     "hi": 1,
+     "lo": 5,
+     "hi_name": "Brewers",
+     "lo_name": "Cubs",
+     "conditional": true,
+     "p": 0.5728
+    },
+    {
+     "round": "Division Series",
+     "best_of": 5,
+     "hi": 2,
+     "lo": 3,
+     "hi_name": "Dodgers",
+     "lo_name": "Braves",
+     "conditional": true,
+     "p": 0.5221
+    },
+    {
+     "round": "Division Series",
+     "best_of": 5,
+     "hi": 2,
+     "lo": 6,
+     "hi_name": "Dodgers",
+     "lo_name": "D-backs",
+     "conditional": true,
+     "p": 0.6191
+    }
+   ]
+  }
+ }
+}
