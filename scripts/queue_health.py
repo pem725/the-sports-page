@@ -34,11 +34,37 @@ def meta(path):
     return g("topic"), (g("decay") or "untagged")
 
 
-def main():
-    files = [l.strip() for l in open(ORDER) if l.strip()]
-    d = datetime.date.today() + datetime.timedelta(days=1)
+def first_open_slot():
+    """The next day that still needs an issue.
+
+    Starting at tomorrow unconditionally was wrong on any morning before the
+    autopublish job had fired: it treated today's slot as spoken for, pushed the
+    whole queue a day late, and invited a reorder to "fix" a problem that did not
+    exist. GitHub's cron routinely runs hours late, so that window is not rare.
+
+    So: if today is a publishing day and today's date is not yet on the archive
+    page, today is still open.
+    """
+    d = datetime.date.today()
+    if d.weekday() != 6:
+        stamp = f"{d.strftime('%B')} {d.day}, {d.year}"
+        try:
+            with open(os.path.join(REPO, "index.html"), encoding="utf-8") as fh:
+                if stamp not in fh.read():
+                    return d, True
+        except OSError:
+            pass
+    d += datetime.timedelta(days=1)
     if d.weekday() == 6:
         d += datetime.timedelta(days=1)
+    return d, False
+
+
+def main():
+    files = [l.strip() for l in open(ORDER) if l.strip()]
+    d, today_open = first_open_slot()
+    if today_open:
+        print(f"  NOTE: {d:%a %b %d} has not published yet, so it is counted as open.\n")
     rows, prev, clashes, risks = [], None, 0, []
     for f in files:
         p = os.path.join(REPO, "queue", f)
