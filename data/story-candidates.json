@@ -11,7 +11,8 @@
       "carry": 8,
       "answerable": true,
       "number": "how much a week-1 result predicts final record, 2015-2025 game logs already pulled",
-      "why": "CFB is about to take over and the queue has nothing for Sep 12; the honest answer is probably 'less than you think', which is the house thesis"
+      "why": "CFB is about to take over and the queue has nothing for Sep 12; the honest answer is probably 'less than you think', which is the house thesis",
+      "status": "published"
     },
     {
       "slug": "calibration-curve",
@@ -98,7 +99,8 @@
       "answerable": true,
       "source": "Patrick jr, 2026-08-30 transcript",
       "number": "SOS computed two ways: opponent-adjusted from results only (SRS, no priors) vs SP+ (carries preseason reputation). The gap between them IS the bias.",
-      "why": "His exact ask: an unbiased SOS 'that does not completely cater to the SEC'. The trap is that most SOS numbers are partly circular -- a rating that already believes the SEC is strong will report SEC schedules as strong. Carry is enormous: same circularity runs credit scores, school rankings, hiring."
+      "why": "His exact ask: an unbiased SOS 'that does not completely cater to the SEC'. The trap is that most SOS numbers are partly circular -- a rating that already believes the SEC is strong will report SEC schedules as strong. Carry is enormous: same circularity runs credit scores, school rankings, hiring.",
+      "status": "published"
     },
     {
       "slug": "coach-vs-ranked",
@@ -191,7 +193,9 @@
       "answerable": true,
       "source": "Patrick sr, 2026-08-11 transcript (with Patrick jr)",
       "number": "within-player before/after: performance and workload change for players arriving at vs leaving a franchise, player fixed effects. Browns, Jets, Bengals named; 'overused' is separately testable as snap share against position norms.",
-      "why": "His claim, and he staked it: 'Cleveland is where players go to die... the stats are going to prove me right about this.' The trap is selection -- bad clubs ACQUIRE declining players, so the naive comparison confirms the claim spuriously. Only a within-player design can separate the institution from the intake. Carry is the whole ballgame: same confound as hospital mortality rates, school value-added, and every manager-effect study ever run. And he may be wrong, which would make it better."
+      "why": "His claim, and he staked it: 'Cleveland is where players go to die... the stats are going to prove me right about this.' The trap is selection -- bad clubs ACQUIRE declining players, so the naive comparison confirms the claim spuriously. Only a within-player design can separate the institution from the intake. Carry is the whole ballgame: same confound as hospital mortality rates, school value-added, and every manager-effect study ever run. And he may be wrong, which would make it better.",
+      "status": "published",
+      "outcome": "Issue #149 149-where-players-die -- claim REFUTED. Cleveland 9th of 32 for keeping careers alive (+6.4 pts adj), 4th among established starters; overuse 15th of 32. Arizona and Washington are the graveyards."
     },
     {
       "slug": "why-log-odds",
@@ -220,6 +224,19 @@
       "source": "Patrick sr, 2026-08-31",
       "number": "Kalshi and Polymarket World Series books, pulled 2026-08-31: mean absolute disagreement 0.15 percentage points across 29 clubs, largest 0.7 (Diamondbacks). Books sum to 100.2% and 100.8%.",
       "why": "Two venues with different mechanisms, currencies and regulators price the same 30 outcomes within a sixth of a point of each other. And neither quotes odds or a spread -- both sell a binary contract, so the PRICE IS THE PROBABILITY, no de-vigging. The overround comparison is the clean teachable: a bookmaker's margin is visible the moment you add the board up. Pairs with #150 on log-odds. VERIFY the typical sportsbook futures hold against three sources before printing a number for it."
+    },
+    {
+      "slug": "box-score-blind-spots",
+      "title": "The Positions the Box Score Cannot See",
+      "grip": 8,
+      "twist": 8,
+      "clock": 3,
+      "stack": 6,
+      "carry": 10,
+      "answerable": true,
+      "source": "Patrick sr, 2026-08-31, from watching USC's freshman edge",
+      "number": "by position, how well do college box-score stats predict where a man is actually drafted? Use NFL draft slot as the external criterion, college counting stats as the predictor. Expect near-zero for offensive line and low for edge; high for quarterback and receiver. The R-squared BY POSITION is the story.",
+      "why": "Came out of a real case: USC's Luke Wafle, national #6 recruit, put up 2 tackles and half a TFL in his opener. The stat line is not evidence against him -- it is evidence the tackle column cannot see an edge rusher's job. Crucially this is NOT a small-sample problem: a hundred more games of tackle counts still would not answer it, because the measure is wrong rather than noisy. That distinction -- INVALID versus NOISY -- is the deepest idea in the curriculum and almost nobody separates them. Carries straight to teacher evaluations, performance reviews, hospital metrics and citation counts."
     }
   ]
 }
