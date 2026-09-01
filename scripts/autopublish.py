@@ -139,6 +139,61 @@ def check_day():
     return today
 
 
+def missed_days(today, lookback=4):
+    """Publishing days in the recent past with no issue on them.
+
+    THE GAP THIS CLOSES. Double-fires are guarded twice over (a startup check and
+    a recheck after a failed push) and a misfire is loud, because a broken run
+    opens an issue. A NON-fire is silent: if GitHub's scheduler drops a slot
+    entirely -- which it did on 2026-08-28 -- nothing publishes, nothing fails,
+    and nobody is told. The newsletter just misses a day.
+
+    Rather than add a second schedule that would inherit the same unreliability,
+    this piggybacks on a run that is already happening and looks BACKWARDS. A late
+    run still catches the day before it.
+    """
+    gaps = []
+    for back in range(1, lookback + 1):
+        d = today - datetime.timedelta(days=back)
+        if d.weekday() == 6:          # Sundays are meant to be empty
+            continue
+        res = subprocess.run(
+            ['git', 'log', 'origin/main',
+             f'--since={d:%Y-%m-%d} 00:00', f'--until={d:%Y-%m-%d} 23:59',
+             '--grep=^Publish ', '--oneline'],
+            capture_output=True, text=True, cwd=REPO)
+        if not res.stdout.strip():
+            gaps.append(d)
+    return gaps
+
+
+def report_missed(gaps):
+    """One issue per missed day, and never a duplicate.
+
+    Deliberately does NOT try to back-fill by publishing two issues. A missed day
+    is a missed email; a double send is a worse one, and the reader cannot tell
+    the first from a mistake.
+    """
+    for d in gaps:
+        title = f"Missed publish: {d:%Y-%m-%d}"
+        found = subprocess.run(
+            ['gh', 'issue', 'list', '--state', 'all', '--search', title, '--json', 'title'],
+            capture_output=True, text=True, cwd=REPO)
+        if title in (found.stdout or ""):
+            print(f"  (already reported {d:%Y-%m-%d})")
+            continue
+        body = (f"No `Publish Issue #` commit landed on **{d:%A %d %B %Y}**, which was a "
+                f"publishing day.\n\nDetected by the next run's backward check. Nothing was "
+                f"back-filled on purpose: a missed day costs one email, a double send costs "
+                f"trust.\n\nMost likely cause is GitHub's scheduler dropping the slot. The "
+                f"reliable remedy is an external nudge:\n\n```\ngh workflow run autopublish.yml "
+                f"-R pem725/the-sports-page\n```")
+        subprocess.run(['gh', 'issue', 'create', '--title', title,
+                        '--label', 'publish-failure', '--body', body],
+                       capture_output=True, text=True, cwd=REPO)
+        print(f"  REPORTED a missed publishing day: {d:%A %Y-%m-%d}")
+
+
 def already_published_today(today):
     """Return True if a 'Publish Issue #' commit landed on main today.
 
@@ -527,6 +582,20 @@ def main():
     if already_published_today(today):
         print("An issue has already been published today. Skipping.")
         sys.exit(0)
+
+    # Step 0.6: Look BACKWARDS for days that silently produced nothing. Never
+    # fatal — a reporting failure must not stop today's issue going out.
+    try:
+        gaps = missed_days(today)
+        if gaps:
+            print(f"WARNING: {len(gaps)} publishing day(s) with no issue: "
+                  + ", ".join(f"{d:%a %d %b}" for d in gaps))
+            if not dry_run:
+                report_missed(gaps)
+        else:
+            print("Backward check: no missed publishing days.")
+    except Exception as exc:                    # noqa: BLE001
+        print(f"Backward check skipped: {type(exc).__name__}: {exc}")
 
     # Step 1: Get last topic and pick file
     last_topic = get_last_topic()
