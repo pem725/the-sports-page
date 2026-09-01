@@ -8,7 +8,121 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Aug 2026 13:38:13 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 11:35:03 GMT</lastBuildDate>
+    <item>
+      <title>#157: We Built 252 Ways to Predict the Playoffs. The Best One Lost to the Simplest One.</title>
+      <link>https://thesportspage.net/published/139-overfit-grid.html</link>
+      <description>Our winner picked 59.2% of postseason series correctly. Shown a season it had never seen, it fell to 48.9% — worse than a coin. A plain run differential, with nothing tuned at all, beat it.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/139-overfit-grid.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/139-overfit-grid.png" alt="We Built 252 Ways to Predict the Playoffs. The Best One Lost to the Simplest One." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">We Built 252 Ways to Predict the Playoffs. <em>The Best One Lost to the Simplest One.</em></h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">Our winner picked <strong>59.2%</strong> of postseason series correctly. Shown a season it had never seen, it fell to <strong>48.9%</strong> &mdash; worse than a coin. A plain run differential, with nothing tuned at all, beat it.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; The Professor &middot; how a good number goes bad</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v gold" style="font-size:28px;font-weight:bold;line-height:1;display:block">59.2%</div><div class="l">Our best metric, graded on its own homework</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">48.9%</div><div class="l">The same metric on a season it had not seen</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v good" style="font-size:28px;font-weight:bold;line-height:1;display:block">57.8%</div><div class="l">Run differential, nothing tuned at all</div></div>
+  </div>
+
+  <p><strong>The question:</strong> can you build a number that tells you who wins in October?</p>
+
+  <p><strong>We tried 252 of them. The answer is no.</strong></p>
+
+  <p><strong>Here is the surprising part.</strong> The failure was not that our metrics were bad. The best one looked <em>excellent</em>. It only fell apart when we showed it a season it had not already studied.</p>
+
+  <p><strong>What you get from it:</strong> the single question that separates a prediction from a story.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What we were trying to fix</h3>
+
+  <p>A reader raised a fair objection to measuring hot teams by run differential. A club that outscores people by 42 runs might have earned it, or it might have played the Rockies six times.</p>
+
+  <p>There is a standard fix. Add the average quality of everyone a club faced to its own run differential, then solve until all the ratings agree. Then blend that with how the club played over its last N games, and you have a measure of current form that does not reward beating up the helpless.</p>
+
+  <p>Two dials: how many recent games to count, and how much weight to give them against the full season. We tried every setting. Windows from 5 games to 60, weights from none to all. That is <strong>252</strong> different metrics, each one tested against every postseason series from 1998 through 2025 &mdash; 223 series in all.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">First, the part that worked</h3>
+
+  <p>Before the tuning, one plain result is worth your time. We asked how often each simple measure picks the winner of a playoff series.</p>
+
+  <p>Won-lost record: <strong>50.9%</strong>. The standings, the number every broadcast opens with, are a coin flip in October.</p>
+
+  <p>Run differential does better at 57.8%, and the schedule-adjusted last twenty games manages 57.4%. Real, but modest.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Then we optimised, and it felt wonderful</h3>
+
+  <p>Out of the 252, the best came in at <strong>59.2%</strong>: sixty-five percent weight on the season rating, thirty-five on the last twenty games.</p>
+
+  <p>That is better than anything simple. Written up carelessly it becomes a finding, with a name and a chart and a claim that we had beaten the standard measures.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; A winner, and what it was actually worth</div>
+<img src="https://thesportspage.net/assets/figures/139-overfit-grid-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Two honest tests. It failed both.</h3>
+
+  <p>A metric picked for fitting the past has to be tried on something it has not seen. We did that twice, in two different ways.</p>
+
+  <p>Hide one season, tune on the other twenty-six, predict the hidden one, repeat: <strong>48.9%</strong>. Worse than guessing.</p>
+
+  <p>Or be kinder and more realistic. Tune only on seasons that had already happened, then bet the next October, the way anyone actually would: <strong>56.4%</strong>.</p>
+
+  <p>Plain run differential over those same seasons: <strong>58.3%</strong>. Under neither test did our clever number beat the boring one.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">When the best window is never the same twice, there is no best window.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The tell we should have caught first</h3>
+
+  <p>Look again at the crowd of dots. Seventeen of the 252 sit within a single point of the winner. The champion was not a champion; it was the tallest blade of grass.</p>
+
+  <p>Worse, the settings never held still. Tuned year by year, the best window jumped between 10 games, 20 games and 30 games, and the weight wandered from 0.35 to 0.90. If the ideal window is ten games in one season and thirty in the next, there is no ideal window. There is only noise, and we kept renaming it.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Why it had to happen</h3>
+
+  <p>With 223 series, the uncertainty on any one of these rates is about six points either way. We were choosing among 252 numbers that all sat inside each other&rsquo;s error bars, which is another way of saying <span class="cc" data-preview="How much data you have decides how small a difference you could detect. Below that size, differences you find are differences you made. Open the Sample Size primer."><em>we never had enough games to tell them apart</em><a class="cc-i" href="https://thesportspage.net/concepts/sample-size.html" target="_blank" rel="noopener">i</a></span>.</p>
+
+  <p>Take the maximum of 252 noisy numbers and you have mostly <span class="cc" data-preview="Any measurement is a real quantity plus a random one. Searching for the largest value in a set finds whichever one got the biggest random push. Open the Signal vs Noise primer."><em>measured the noise</em><a class="cc-i" href="https://thesportspage.net/concepts/signal-vs-noise.html" target="_blank" rel="noopener">i</a></span>. Our winner beat the middle of the pack by four points; the error on any single one of them is larger than that.</p>
+
+  <p>And the ceiling was never high. Set the best measure in baseball, 57.8%, against the 75% we use as the point where a difference becomes noticeable, and it is under a third of the way from guessing to that line. To even prove 57.8% is not 50% would take about <strong>332</strong> series. Baseball produces eleven a year.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What to take home: ask what it had not seen</h3>
+
+  <p>When somebody shows you a number, ask one question. <strong>Was it tested on data it had never seen?</strong></p>
+
+  <p>If it was chosen for fitting the past, it is a description of the past. That can be worth having; it is simply not a prediction, and the two get sold at the same price.</p>
+
+  <p>You will meet this everywhere. A trading strategy that would have returned 40%. A diet study with the outcome picked after the data came in. A hiring model that is 94% accurate &mdash; on whom? Every one of them can be checked with the same question, and most of them have never been asked it.</p>
+
+  <p>We wanted the metric to work. That is exactly why we had to try to break it, and it is the part of this we would most like you to steal.</p>
+
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">All 223 postseason series from 1998 through 2025, built game by game from the MLB Stats API. 2020 is excluded for its 60-game season and 16-team field. Each series is scored by whether the club ahead on a given measure won it; series are labelled by team identifier rather than by seed, so no home-field or seeding information leaks into the comparison.</p>
+    <p style="color:#c8b99a">Schedule adjustment is the Simple Rating System: a club&rsquo;s run differential per game plus the mean rating of its opponents, solved by iteration until consistent, centred on zero. The grid is every combination of window length in {5, 10, 15 &hellip; 60} and season weight in {0.00, 0.05 &hellip; 1.00}, giving 252 candidates.</p>
+    <p style="color:#c8b99a">Single-measure results: won-lost record 50.9%, last-20 raw 53.4%, last-30 adjusted 52.9%, season SRS 56.5%, last-20 adjusted 57.4%, season run differential 57.8%, Pythagorean 57.8%. The apparent gap between raw and schedule-adjusted recent form rests on only 21 series where the two disagree; a McNemar exact test puts it at p = 0.19. We report it as a direction, not a result.</p>
+    <p style="color:#c8b99a">Honest testing: leave-one-season-out re-selects the window and weight on the other 26 seasons and predicts the held-out one, scoring 48.9% over 223 series. The walk-forward version selects only on seasons already played and predicts the next, scoring 56.4% over the 181 series from 2004 onward; plain run differential scores 58.3% over that same subset. The two honest tests differ by more than we would like, which is itself a sign of how little any of these numbers are pinned down.</p>
+    <p style="color:#c8b99a">One limit, stated plainly. None of this proves recent form is worthless in October. It shows that with the data baseball actually produces, we cannot tell whether it helps &mdash; and that a search over 252 options will hand you a confident answer anyway.</p>
+  </div>
+
+  <div class="watch">
+  <div class="watch-label">What to Watch &middot; Tuesday, September 1</div>
+  <div class="w-row"><div class="w-sport">Baseball</div><div class="w-game"><strong>Blue Jays</strong> at <strong>Guardians</strong><span class="w-time">6:40pm ET</span></div><div class="w-why">27 points of playoff probability ride on it. Both clubs sit near a coin flip, which is where a single game is worth most. If the Guardians win they go to 55%; if they lose, 40%.</div></div>
+  <p class="watch-note">Baseball is ranked by championship leverage: we simulate the rest of the
+     season 60,000 times, then split those seasons by who won each of today's games. College
+     football cannot be simulated that way, so it is ranked by how close to a coin flip the
+     ratings make it &mdash; a lopsided game teaches you nothing. Tomorrow this block reports what
+     happened to today's pick.</p>
+</div>
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a"><span>The Sports Page &middot; Vol. I, No. 157</span><span>How a good number goes bad</span><span>September 1, 2026 &middot; New York, NY</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>]]></content:encoded>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/139-overfit-grid.html</guid>
+    </item>
     <item>
       <title>#156: The Mets Cannot Ruin Anybody. The Athletics Can Ruin Four Seasons.</title>
       <link>https://thesportspage.net/published/144-spoiler.html</link>
