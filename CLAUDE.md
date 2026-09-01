@@ -527,6 +527,53 @@ somewhere safer afterwards does nothing for the value that already leaked.
 
 ## Editorial Rules
 
+- **HEADLINES OPEN THE GAP. THE DECK CLOSES IT.** Added 2026-09-01 after the
+  editor's verdict that the titles were not creating enough pull. The diagnosis
+  was not bad writing. Measured across the last 43 published pieces, **67% were
+  the two-beat antithesis** ("X. Now Y.") against a sensible ceiling of 25%, and
+  the median ran 13 words. The real fault was subtler: our headlines were
+  *finished*. "Home Field Is Worth Thirteen Ranks. Most of It Is the Road Team
+  Losing Them" states the finding, the mechanism and the size, so there is
+  nothing left to learn and no reason to open it.
+
+  We were obeying BLUF one step too early. The finding belongs in the first
+  breath **of the piece** — the deck. The headline's job is to make the gap
+  unbearable.
+
+  **The rules, each derived from a headline the editor accepted or threw out:**
+
+  1. **Numbers must count people or things, never statistics.** *"209 of Every
+     1,000 Never Pitch Again"* landed; *"2.98 Does Not Mean Three Times
+     Likelier"* was rejected on sight. 209 are men. 2.98 is a statistic about a
+     statistic and means nothing to anybody.
+  2. **Round in the headline, exact in the piece.** 5,755 schools became *"More
+     Than Five Thousand High Schools Produced Nobody"* — his edit, and he was
+     right. The rounded number is heard; the precise one is read.
+  3. **Admit error in the headline whenever you have earned it.** *"We Were Wrong
+     About Cleveland"* got the biggest reaction of anything tested. It is the
+     strongest headline this paper owns and it cannot be faked.
+  4. **Never headline the apparatus.** *"We Built a Schedule Rating That Cannot
+     Know Who the SEC Is"* — hated. Nobody opens a newspaper to read about the
+     newspaper's method. *"The SEC Has an Edge. It Is 0.4 Points."*
+  5. **A question works when a fan would actually say it out loud.** *"Where Do
+     They Find These Guys?"* survived because it is speech, not a rhetorical
+     setup.
+  6. **Absence is louder than abundance.** *Produced nobody. Never pitch again.
+     Nobody wins 102% of the time.* Reach for the zero before the count.
+  7. **The unequal comparison needs no number at all.** *"One Game Told Us More
+     Than the Whole Summer Did"* has no figure, no question and no absence, and
+     it works because a small thing beats a large one.
+  8. **Two beats maximum, and the second must land a NEW fact** — never explain
+     the first. Fourteen words is the hard ceiling; ten is the target.
+  9. **Cap the two-beat antithesis at one in four.** It is the same tic the body
+     copy has, and once the reader hears the rhythm every headline sounds alike.
+  10. **Juice only from the real number.** Never promise what the piece does not
+      pay. This is the line between a good headline and the cherry-picked
+      broadcast graphic we exist to slow down.
+
+  **Check it:** `python3 scripts/check_headline.py queue/NNN-slug.html`, and
+  `--corpus` for the tic rate across everything published.
+
 - **WRITE IN PATRICK'S TEACHING VOICE.** Added 2026-08-20. The house voice is not
   a generic "newsletter" voice; it is the voice of `GradStats-Book`. The full
   comparison lives in `corpus/house-style.md` and every target is measured, not
