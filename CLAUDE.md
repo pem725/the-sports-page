@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 342 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 341 issues remaining of 500
 
 ## Repository Structure
 
@@ -801,9 +801,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 158 issues (#1-158)
-Queue: 14 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 124-how-many-stars, 140-one-kick, 142-hope-curve, 143-dark-horse, 145-week1-signal, 146-sec-schedule-bias, 147-talent-addresses, 148-tommy-john-success, 149-where-players-die, 150-why-log-odds, _TEMPLATE)
+Published: 159 issues (#1-159)
+Queue: 13 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 140-one-kick, 142-hope-curve, 143-dark-horse, 145-week1-signal, 146-sec-schedule-bias, 147-talent-addresses, 148-tommy-john-success, 149-where-players-die, 150-why-log-odds, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 342 issues remaining of 500
-Last published: Issue #158 — "The Mets Must Pass Seven Teams. They Play Two of Them." (137-schedule-leverage.html) on September 2, 2026
+Goal: 341 issues remaining of 500
+Last published: Issue #159 — "How Many Stars Does It Take to Flip a Team? Baseball: Four. Basketball: One." (124-how-many-stars.html) on September 3, 2026
