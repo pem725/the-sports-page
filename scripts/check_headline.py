@@ -45,7 +45,11 @@ HEDGE = re.compile(r"\b(may|might|could|reportedly|seems|appears|possibly)\b", r
 
 def hed_of(path):
     t = open(path, encoding="utf-8").read()
-    m = re.search(r'<h2 class="hed">(.*?)</h2>', t, re.S)
+    # The archive uses h1.hed for the first 117 issues and h2.hed after a
+    # template change. Reading only one of them made the corpus statistics a
+    # measurement of the recent era rather than of the paper.
+    m = (re.search(r'<h2 class="hed">(.*?)</h2>', t, re.S)
+         or re.search(r'<h1 class="hed">(.*?)</h1>', t, re.S))
     if not m:
         return None
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", m.group(1)))).strip()
