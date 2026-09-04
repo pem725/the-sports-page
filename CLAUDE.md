@@ -552,7 +552,10 @@ somewhere safer afterwards does nothing for the value that already leaked.
   3. **Admit error in the headline whenever you have earned it.** *"We Were Wrong
      About Cleveland"* got the biggest reaction of anything tested. It is the
      strongest headline this paper owns and it cannot be faked.
-  4. **Never headline the apparatus.** *"We Built a Schedule Rating That Cannot
+  4. **Never headline the apparatus — unless you are confessing it failed.**
+     Describing our rig is dull; admitting it broke is rule 3 and outranks this.
+     *"Our Model Underestimated the Mets by 1.3 Wins"* is an admission, not an
+     advertisement. *"We Built a Schedule Rating That Cannot
      Know Who the SEC Is"* — hated. Nobody opens a newspaper to read about the
      newspaper's method. *"The SEC Has an Edge. It Is 0.4 Points."*
   5. **A question works when a fan would actually say it out loud.** *"Where Do
@@ -563,8 +566,13 @@ somewhere safer afterwards does nothing for the value that already leaked.
   7. **The unequal comparison needs no number at all.** *"One Game Told Us More
      Than the Whole Summer Did"* has no figure, no question and no absence, and
      it works because a small thing beats a large one.
-  8. **Two beats maximum, and the second must land a NEW fact** — never explain
-     the first. Fourteen words is the hard ceiling; ten is the target.
+  8. **Two beats, and the second must land a NEW fact** — never explain the
+     first. Ten words is the target. **But a third beat that delivers a
+     PUNCHLINE is exempt**, and this was learned by nearly deleting two of the
+     best headlines in the archive: *"The Jets Are the NFL's Second-Worst
+     Drafters in Rounds 1-3. The Worst Are the Patriots. The Patriots Won Six
+     Super Bowls."* and *"One Pays $584K. The Other Pays $633K. Guess Which Is
+     Which."* Length is not the fault when the beats build to something.
   9. **Cap the two-beat antithesis at one in four.** It is the same tic the body
      copy has, and once the reader hears the rhythm every headline sounds alike.
   10. **Juice only from the real number.** Never promise what the piece does not
@@ -573,6 +581,20 @@ somewhere safer afterwards does nothing for the value that already leaked.
 
   **Check it:** `python3 scripts/check_headline.py queue/NNN-slug.html`, and
   `--corpus` for the tic rate across everything published.
+
+
+  **What the sweep of the archive actually found, 2026-09-04.** Less than
+  expected, and the tool was most of the problem. Three real bugs in
+  `check_headline.py` were flagging good work: it read only `h2.hed` while 117 of
+  164 issues use `h1.hed`; it counted only digits, so *"Twelve Playoff Spots.
+  Five Real Title Threats."* registered as having no pull at all; and its
+  apparatus rule fired on confessions. **The daily issues are largely fine.** The
+  one systematic defect was the **Sunday Edition inventory title** — *"Six
+  Issues, Four Open Predictions, and Five Days to the Deadline"* — which is a
+  table of contents rather than a headline. Title a Sunday Edition by the week's
+  best story or its most interesting miss, never by the count of issues
+  published. Reference pages, methodology supplements and concept primers are
+  **exempt from all of this**: a page someone looks up wants a descriptive name.
 
 - **WRITE IN PATRICK'S TEACHING VOICE.** Added 2026-08-20. The house voice is not
   a generic "newsletter" voice; it is the voice of `GradStats-Book`. The full

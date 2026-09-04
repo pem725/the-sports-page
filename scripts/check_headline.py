@@ -75,7 +75,13 @@ def check(h):
     if len(b) == 2 and EXPLAINER.search(b[1]):
         out.append(("FAIL", "the second beat explains the first. It must land a NEW fact."))
 
-    if METHOD.search(h):
+    # Naming our own apparatus is dull when we are describing it and strongest
+    # when we are confessing it failed. "Our Model Underestimated the Mets by
+    # 1.3 Wins" is an admission, not an advertisement, so the two rules collide
+    # and admission wins.
+    CONFESSION = re.compile(r"\b(wrong|underestimated|overestimated|missed|failed|"
+                            r"got it wrong|blew|mistake|too high|too low)\b", re.I)
+    if METHOD.search(h) and not CONFESSION.search(h):
         out.append(("FAIL", "headlines our own apparatus. Report the finding, not the rig."))
 
     if BARE_DECIMAL.search(h) and not re.search(r"\b\d+\s*(of|in)\s", h, re.I):
@@ -92,7 +98,13 @@ def check(h):
         good.append("uses absence; a zero is louder than a count")
     if "?" in h:
         good.append("asks a question")
-    if re.search(r"\b\d", h):
+    # Spelled-out numerals count. Missing them made the checker report
+    # "Twelve Playoff Spots. Five Real Title Threats." as having no pull at all.
+    WORDNUM = (r"\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
+               r"thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|"
+               r"thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|"
+               r"billion|half|double|triple)\b")
+    if re.search(r"\b\d", h) or re.search(WORDNUM, h, re.I):
         good.append("carries a number")
     if re.search(r"\b(you|your)\b", h, re.I):
         good.append("second person")
