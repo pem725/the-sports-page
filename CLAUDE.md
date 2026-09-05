@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 340 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 339 issues remaining of 500
 
 ## Repository Structure
 
@@ -823,9 +823,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 160 issues (#1-160)
-Queue: 12 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 140-one-kick, 142-hope-curve, 145-week1-signal, 146-sec-schedule-bias, 147-talent-addresses, 148-tommy-john-success, 149-where-players-die, 150-why-log-odds, _TEMPLATE)
+Published: 161 issues (#1-161)
+Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 140-one-kick, 145-week1-signal, 146-sec-schedule-bias, 147-talent-addresses, 148-tommy-john-success, 149-where-players-die, 150-why-log-odds, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 340 issues remaining of 500
-Last published: Issue #160 — "Two Teams Have Everything the Contenders Have. They Are Ranked 33rd and 35th." (143-dark-horse.html) on September 4, 2026
+Goal: 339 issues remaining of 500
+Last published: Issue #161 — "The Best Season to Watch Is Not the Best Season to Have." (142-hope-curve.html) on September 5, 2026
