@@ -107,19 +107,36 @@ jobs:
       - name: Refresh the Odds Board
         continue-on-error: true
         run: |
-          python3 scripts/refresh_about.py || echo "::warning::about.html refresh failed"
-          CFBD_KEY="${{ secrets.CFBD_KEY }}" python3 scripts/build_cfb_odds.py || echo "::warning::CFB projections unavailable; the board keeps yesterday's"
-          python3 scripts/refresh_odds.py || { echo "::warning::odds refresh failed; the previous board stays up"; exit 0; }
-          if git diff --quiet -- odds.html data/playoff-odds-trajectory.json data/cfb-odds.json about.html; then
+          # Each refresher runs INDEPENDENTLY and a failure is recorded rather
+          # than fatal. The previous version ran refresh_odds.py with
+          #     || { echo "::warning::..."; exit 0; }
+          # which exited the whole step successfully on any failure -- throwing
+          # away the CFB and about-page refreshes that had already succeeded,
+          # and reporting green while doing it. The board went a week stale
+          # behind a passing tick.
+          failed=""
+          python3 scripts/refresh_about.py        || failed="$failed about"
+          CFBD_KEY="${{ secrets.CFBD_KEY }}" \
+            python3 scripts/build_cfb_odds.py     || failed="$failed cfb"
+          python3 scripts/build_bracket.py        || failed="$failed bracket"
+          python3 scripts/build_nfl_odds.py       || failed="$failed nfl"
+          python3 scripts/refresh_odds.py         || failed="$failed mlb"
+          # Rebuild the page from whatever data IS current, even if a feed died.
+          python3 scripts/build_odds_page.py      || failed="$failed page"
+          [ -n "$failed" ] && echo "::warning::refreshers failed:$failed (committing what did work)"
+
+          FILES="odds.html about.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json"
+          if git diff --quiet -- $FILES; then
             echo "no change to the board"; exit 0
           fi
-          git add odds.html data/playoff-odds-trajectory.json data/cfb-odds.json about.html
-          git commit -m "Refresh the board, CFB projections and about page ($(date -u '+%Y-%m-%d'))"
+          git add $FILES
+          git commit -m "Refresh the board, projections and about page ($(date -u '+%Y-%m-%d'))"
           for i in 1 2 3; do
             git pull --rebase --quiet origin main && git push --quiet origin main && { echo "board pushed"; exit 0; }
             echo "push race on attempt $i; retrying"; sleep 5
           done
-          echo "::warning::could not push the refreshed board after 3 attempts"
+          echo "::error::could not push the refreshed board after 3 attempts"
+          exit 1
 
       - name: Verify push succeeded
         run: |
