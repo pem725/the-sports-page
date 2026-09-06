@@ -57,3 +57,20 @@ What to Watch section. Start from `queue/_TEMPLATE.html` if in doubt.
 The queue was beating the payroll drum too hard. Bring it back when several
 weeks have passed without a money/payroll piece, and check the recent run before
 restoring it to `QUEUE_ORDER.txt`.
+
+## Benched 2026-09-06 — sport out of season, by editorial direction
+
+The paper alternates **college football and baseball only** until baseball ends,
+then college football and the NFL. These two are held, not dropped, and neither
+has rotted:
+
+- **`140-one-kick.html`** (NFL, kicking probability, answers Gene). *Revival
+  trigger:* the day the NFL becomes a rotation sport — when the baseball season
+  ends. It is `dated` only in the loose sense that it references a current
+  season; check its figures still hold before restoring.
+- **`149-where-players-die.html`** (NFL, the Cleveland refutation). *Revival
+  trigger:* same. This one is `keeps` and will not go stale — the within-player
+  design covers 2015–2022 and nothing about it decays.
+
+Neither is in QUEUE_ORDER, so autopublish cannot pick them up. Restore both by
+adding them back to the order once the NFL is in rotation.
