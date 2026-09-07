@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 339 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 337 issues remaining of 500
 
 ## Repository Structure
 
@@ -823,9 +823,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 162 issues (#1-162)
+Published: 163 issues (#1-163)
 Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 140-one-kick, 145-week1-signal, 146-sec-schedule-bias, 147-talent-addresses, 148-tommy-john-success, 149-where-players-die, 150-why-log-odds, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 338 issues remaining of 500
-Last published: Issue #162 — "We Ranked Them 33rd. They Jumped to 10th in Week One." (sunday-022.html) on September 6, 2026
+Goal: 337 issues remaining of 500
+Last published: Issue #163 — "Rutgers Was Favoured by Twenty-Nine. It Lost by Sixteen." (151-cfb-week1-review.html) on September 7, 2026
