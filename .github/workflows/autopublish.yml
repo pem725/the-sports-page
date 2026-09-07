@@ -105,7 +105,10 @@ jobs:
       # race this one for the push. Runs AFTER the publish so a failure here can
       # never block an issue going out.
       - name: Refresh the Odds Board
-        continue-on-error: true
+        # NOT continue-on-error. Refresher failures are already handled inside
+        # the step and are non-fatal; the only way out with a non-zero code is a
+        # failed PUSH, which genuinely loses work and is worth an alert email.
+        # Marking this green hid a real failure for a week.
         run: |
           # Each refresher runs INDEPENDENTLY and a failure is recorded rather
           # than fatal. The previous version ran refresh_odds.py with
@@ -132,7 +135,12 @@ jobs:
           git add $FILES
           git commit -m "Refresh the board, projections and about page ($(date -u '+%Y-%m-%d'))"
           for i in 1 2 3; do
-            git pull --rebase --quiet origin main && git push --quiet origin main && { echo "board pushed"; exit 0; }
+            # --autostash is load-bearing. Earlier steps (daily_watch.py and the
+            # ledger it updates) leave files dirty that are NOT in $FILES, so a
+            # plain rebase aborts with "cannot pull with rebase: You have
+            # unstaged changes" and the commit never reaches origin. That is
+            # exactly what happened on 2026-09-07.
+            git pull --rebase --autostash --quiet origin main && git push --quiet origin main && { echo "board pushed"; exit 0; }
             echo "push race on attempt $i; retrying"; sleep 5
           done
           echo "::error::could not push the refreshed board after 3 attempts"
