@@ -527,6 +527,36 @@ somewhere safer afterwards does nothing for the value that already leaked.
 
 ## Editorial Rules
 
+- **NEVER GRADE A FORECAST ON A SOURCE YOU CANNOT CONFIRM FROM A PRIMARY FEED.**
+  Added 2026-09-08 after Sunday Edition No. 022 led with a fabricated ranking.
+  It claimed South Carolina had "gone from unranked to No. 10 in the AP poll."
+  No such poll existed: week one ran through Labor Day, so the first in-season
+  AP poll did not appear until the Tuesday. When it did, South Carolina was not
+  in it. That issue went to the list.
+
+  **The mechanism is worth understanding, because it will happen again.** The
+  edition was assembled at 4:17am and asked a web search what the new poll said.
+  **A search summariser will answer that question whether or not the poll
+  exists**, reconstructing a plausible ranking out of a previous season. Every
+  surrounding fact was true &mdash; the 57&ndash;0 score, the opponent, our own
+  33rd-place ranking &mdash; which is precisely what made the single false link
+  survive. A fabrication embedded in accurate context is far harder to catch
+  than an invented story.
+
+  **Three rules, all checkable:**
+
+  1. **No poll, award, ranking or vote may be cited before its scheduled
+     release.** Check the calendar first. In-season AP polls land Sunday
+     afternoon, or Tuesday when week one runs through Labor Day.
+  2. **Anything that grades a prediction must trace to a primary feed** &mdash;
+     CFBD, MLB Stats API, nflverse, the venue itself. A web search may point you
+     at a fact; it may never be the source of one.
+  3. **Two independent confirmations for any number in a headline.** The Kent
+     State score had them. The ranking had none.
+
+  **Check it:** `python3 scripts/check_poll_claims.py published/sunday-NNN.html`
+  before publishing any Sunday Edition.
+
 - **HEADLINES OPEN THE GAP. THE DECK CLOSES IT.** Added 2026-09-01 after the
   editor's verdict that the titles were not creating enough pull. The diagnosis
   was not bad writing. Measured across the last 43 published pieces, **67% were
