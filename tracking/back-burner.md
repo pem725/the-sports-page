@@ -75,7 +75,13 @@ has rotted:
 Neither is in QUEUE_ORDER, so autopublish cannot pick them up. Restore both by
 adding them back to the order once the NFL is in rotation.
 
-## Held 2026-09-09 — waiting on a non-CFB slot
+## Released 2026-09-09 — `147-talent-addresses` is back in the order
+
+The Detroit run-differential piece (`153-one-run-luck`) landed as the baseball
+piece the rotation was short of, which was the stated trigger. 147 now publishes
+Wed 16 Sep. Section kept for the record.
+
+## Held 2026-09-09 — waiting on a non-CFB slot (RESOLVED)
 
 - **`147-talent-addresses.html`** (CFB, where elite recruits actually come from).
   `keeps`, so nothing rots. Held only because the queue currently carries three
