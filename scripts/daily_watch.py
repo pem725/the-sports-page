@@ -223,6 +223,76 @@ def cfb_watch(date):
 
 
 # --------------------------------------------------------------------------- NFL
+def cfb_upcoming(date, horizon=8):
+    """The biggest game still to come, for days with no college football on them.
+
+    Six days a week there is no college football, and a block that says "no games"
+    six times a week teaches the reader to stop looking. So on those days we look
+    FORWARD instead, and name the game that will matter most when it arrives.
+
+    Consequence is closeness multiplied by stakes. A coin flip between two poor
+    clubs decides nothing; a rout between two great ones decides nothing either.
+    The game worth waiting for is the one that is close AND involves clubs with
+    something to lose, which is the product of the two rather than either alone.
+    """
+    key = os.environ.get("CFBD_KEY")
+    if not key:
+        return None
+    hdr = {"Authorization": "Bearer " + key}
+    year = date[:4]
+    try:
+        sp = {r["team"]: r["rating"]
+              for r in jget(f"{CFBD}/ratings/sp?year={year}", hdr)}
+    except Exception:
+        return None
+    d0 = datetime.date.fromisoformat(date)
+    best = None
+    for wk in range(1, 17):
+        try:
+            games = jget(f"{CFBD}/games?year={year}&week={wk}&seasonType=regular", hdr)
+        except Exception:
+            continue
+        for x in games:
+            ds = (x.get("startDate") or "")[:10]
+            if not ds:
+                continue
+            try:
+                gd = datetime.date.fromisoformat(ds)
+            except ValueError:
+                continue
+            if not (d0 < gd <= d0 + datetime.timedelta(days=horizon)):
+                continue
+            h, a = x.get("homeTeam"), x.get("awayTeam")
+            if h not in sp or a not in sp:
+                continue
+            diff = sp[h] - sp[a] + (0 if x.get("neutralSite") else 2.5)
+            p = 0.5 * (1 + math.erf(diff / (16.5 * math.sqrt(2))))
+            closeness = 4 * p * (1 - p)                  # 1.0 at a coin flip
+            stakes = max(0.0, (sp[h] + sp[a]) / 2)       # both clubs' quality
+            score = closeness * stakes
+            if best is None or score > best["score"]:
+                best = dict(score=score, home=h, away=a, p=p, date=gd,
+                            sph=sp[h], spa=sp[a], neutral=bool(x.get("neutralSite")))
+        if best and wk >= 3:
+            break
+    if not best or best["score"] < 3:
+        return None
+    fav, dog = ((best["home"], best["away"]) if best["p"] >= .5
+                else (best["away"], best["home"]))
+    pf = best["p"] if best["p"] >= .5 else 1 - best["p"]
+    when = best["date"].strftime("%A")
+    site = "at a neutral site" if best["neutral"] else (
+        f"at {best['home']}" if fav == best["home"] else f"on the road")
+    return dict(sport="College Football", ahead=True, score=best["score"],
+                when=best["date"].isoformat(), home=best["home"], away=best["away"],
+                why=(f'<strong>{when}:</strong> {best["away"]} at {best["home"]}. '
+                     f'The closest game on the board between two clubs this good &mdash; '
+                     f'{fav} by {pf*100:.0f} to {100-pf*100:.0f}, which is near enough a '
+                     f'coin flip that the loser&rsquo;s season changes shape. Both sides rate '
+                     f'inside the top tier, so this is the rare game where the result is '
+                     f'genuinely in doubt AND genuinely matters.'))
+
+
 def nfl_watch(date):
     """Regular season and playoffs only.
 
@@ -331,9 +401,12 @@ def main():
     ap.add_argument("--print", dest="show", action="store_true")
     a = ap.parse_args()
     picks = []
-    for fn, label in ((mlb_watch, "MLB"), (cfb_watch, "CFB"), (nfl_watch, "NFL")):
+    # Two sports until the baseball season ends, then college football and the NFL.
+    for fn, label in ((mlb_watch, "MLB"), (cfb_watch, "CFB")):
         try:
             r = fn(a.date)
+            if r is None and fn is cfb_watch:
+                r = cfb_upcoming(a.date)      # dark today -> point at what is coming
             if r and r.get("quiet"):
                 picks.append(r)
                 print(f"  {label}: below the bar ({r['note'].replace('&mdash;','-')})")

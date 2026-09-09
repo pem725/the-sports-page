@@ -74,3 +74,11 @@ has rotted:
 
 Neither is in QUEUE_ORDER, so autopublish cannot pick them up. Restore both by
 adding them back to the order once the NFL is in rotation.
+
+## Held 2026-09-09 — waiting on a non-CFB slot
+
+- **`147-talent-addresses.html`** (CFB, where elite recruits actually come from).
+  `keeps`, so nothing rots. Held only because the queue currently carries three
+  college football pieces and two of anything else, which cannot be interleaved
+  without a clash. *Revival trigger:* the moment one more baseball piece lands —
+  the Detroit run-differential story is the obvious one.
