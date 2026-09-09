@@ -332,6 +332,20 @@ must be regenerated after any such sweep — verify GUIDs, pubDates and item
 titles are unchanged before pushing, or Buttondown will treat items as new and
 re-send them to the list.
 
+**Contributors send ideas the same way readers do** — straight to
+`ideas@thesportspage.net`, written by hand. There is no integration and none is
+wanted: the tap was never the bottleneck, having the idea is. What we DO ask for
+is shape, and `tracking/contributor-pipeline.md` holds the prompt block that gets
+an idea formatted with its number named, its source stated, and a NEWSINESS score
+already attached. It works in Claude, ChatGPT or Codex — whatever the contributor
+already has open.
+
+It carries one non-negotiable line, and the South Carolina correction is the
+worked example inside it: **an assistant may point you at a fact; it may never be
+the source of one.** A contributor unsure where a number came from should write
+"unknown" and let us chase it. A missing number costs an hour. A wrong one cost
+us a headline.
+
 **When a question arrives:**
 
 1. **Log it** in `tracking/reader-questions.md` — date, first name, the question
