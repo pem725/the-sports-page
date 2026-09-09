@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 336 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 335 issues remaining of 500
 
 ## Repository Structure
 
@@ -853,9 +853,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 164 issues (#1-164)
-Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 140-one-kick, 145-week1-signal, 146-sec-schedule-bias, 147-talent-addresses, 149-where-players-die, 150-why-log-odds, _TEMPLATE)
+Published: 165 issues (#1-165)
+Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 140-one-kick, 146-sec-schedule-bias, 147-talent-addresses, 149-where-players-die, 150-why-log-odds, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 336 issues remaining of 500
-Last published: Issue #164 — "209 of Every 1,000 Never Pitch Again." (148-tommy-john-success.html) on September 8, 2026
+Goal: 335 issues remaining of 500
+Last published: Issue #165 — "One Game Told Us More Than the Whole Summer Did." (145-week1-signal.html) on September 9, 2026
