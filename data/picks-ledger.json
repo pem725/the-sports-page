@@ -1,7 +1,7 @@
 {
  "pool": "family confidence pool - 4 players",
  "season": 2026,
- "method": "spread -> win probability via normal CDF, sd 13.5 points; confidence ranked by that probability, ties broken toward the side the public is NOT on",
+ "method": "spread -> win probability via normal CDF, sd 13.5 points; confidence ranked by that probability, ties broken toward the side the public is NOT on  From w2: blended 50% market line, 35% Massey composite (21 systems, updated post-week-1), 15% SP+ (barely moved off preseason, so down-weighted). Where the editor overrides the model, BOTH picks are stored -- `pick` is the model's, `submitted` is what was entered -- so the two can be graded against each other.",
  "weeks": {
   "2026-w1": {
    "submitted": "2026-08-29",
@@ -13,9 +13,9 @@
      "model_p": 0.97,
      "spread": -24.5,
      "public": 0.74,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "Miami Hurricanes",
+     "score": "Miami 45-6 Stanford",
+     "correct": true
     },
     {
      "pts": 14,
@@ -24,9 +24,9 @@
      "model_p": 0.97,
      "spread": -24.5,
      "public": 0.83,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "Penn State Nittany Lions",
+     "score": "Penn State 45-0 Marshall",
+     "correct": true
     },
     {
      "pts": 13,
@@ -35,9 +35,9 @@
      "model_p": 0.95,
      "spread": -22.5,
      "public": 0.69,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "Washington Huskies",
+     "score": "Washington 24-10 Washington St",
+     "correct": true
     },
     {
      "pts": 12,
@@ -46,9 +46,9 @@
      "model_p": 0.94,
      "spread": -20.5,
      "public": 0.7,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "Notre Dame Fighting Irish",
+     "score": "Notre Dame 41-13 Wisconsin",
+     "correct": true
     },
     {
      "pts": 11,
@@ -57,9 +57,9 @@
      "model_p": 0.84,
      "spread": -13.5,
      "public": 0.61,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "Northwestern Wildcats",
+     "score": "Northwestern 34-18 S Dakota St",
+     "correct": true
     },
     {
      "pts": 10,
@@ -68,9 +68,9 @@
      "model_p": 0.76,
      "spread": -9.5,
      "public": 0.71,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "LSU Tigers",
+     "score": "LSU 51-10 Clemson",
+     "correct": true
     },
     {
      "pts": 9,
@@ -79,9 +79,9 @@
      "model_p": 0.74,
      "spread": -8.5,
      "public": 0.65,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "Duke Blue Devils",
+     "score": "Duke 17-3 Tulane",
+     "correct": true
     },
     {
      "pts": 8,
@@ -90,9 +90,9 @@
      "model_p": 0.71,
      "spread": -7.5,
      "public": 0.74,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "Auburn Tigers",
+     "score": "Auburn 17-16 Baylor",
+     "correct": true
     },
     {
      "pts": 7,
@@ -101,9 +101,9 @@
      "model_p": 0.71,
      "spread": -7.5,
      "public": 0.77,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "North Carolina Tar Heels",
+     "score": "North Carolina 15-10 TCU",
+     "correct": false
     },
     {
      "pts": 6,
@@ -112,9 +112,9 @@
      "model_p": 0.71,
      "spread": -7.5,
      "public": 0.79,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "Cincinnati Bearcats",
+     "score": "Cincinnati 34-15 Boston College",
+     "correct": true
     },
     {
      "pts": 5,
@@ -123,9 +123,9 @@
      "model_p": 0.68,
      "spread": -6.5,
      "public": 0.53,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "Memphis Tigers",
+     "score": "Memphis 27-21 UNLV",
+     "correct": false
     },
     {
      "pts": 4,
@@ -134,9 +134,9 @@
      "model_p": 0.68,
      "spread": -6.5,
      "public": 0.72,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "North Dakota State Bison",
+     "score": "N Dakota St 33-7 Jax State",
+     "correct": true
     },
     {
      "pts": 3,
@@ -145,9 +145,9 @@
      "model_p": 0.68,
      "spread": -6.5,
      "public": 0.8,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "James Madison Dukes",
+     "score": "James Madison 20-13 Liberty",
+     "correct": true
     },
     {
      "pts": 2,
@@ -156,9 +156,9 @@
      "model_p": 0.68,
      "spread": -6.5,
      "public": 0.86,
-     "result": null,
-     "score": null,
-     "correct": null
+     "result": "Colorado Buffaloes",
+     "score": "Colorado 14-13 Georgia Tech",
+     "correct": false
     },
     {
      "pts": 1,
@@ -167,11 +167,200 @@
      "model_p": 0.66,
      "spread": -5.5,
      "public": 0.52,
+     "result": "Virginia Cavaliers",
+     "score": "Virginia 34-8 NC State",
+     "correct": true
+    }
+   ]
+  },
+  "2026-w2": {
+   "submitted": "2026-09-10",
+   "picks": [
+    {
+     "pts": 15,
+     "pick": "Alabama",
+     "opp": "Kentucky",
+     "model_p": 0.8,
+     "market_p": 0.74,
+     "massey_p": 0.93,
+     "sp_p": 0.71,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 14,
+     "pick": "Navy",
+     "opp": "Florida Atlantic",
+     "model_p": 0.78,
+     "market_p": 0.62,
+     "massey_p": 1.0,
+     "sp_p": 0.79,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 13,
+     "pick": "Pittsburgh",
+     "opp": "UCF",
+     "model_p": 0.78,
+     "market_p": 0.66,
+     "massey_p": 0.99,
+     "sp_p": 0.66,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 12,
+     "pick": "BYU",
+     "opp": "Arizona",
+     "model_p": 0.74,
+     "market_p": 0.68,
+     "massey_p": 0.86,
+     "sp_p": 0.66,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 11,
+     "pick": "Missouri",
+     "opp": "Kansas",
+     "model_p": 0.72,
+     "market_p": 0.63,
+     "massey_p": 0.91,
+     "sp_p": 0.57,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 10,
+     "pick": "Wake Forest",
+     "opp": "Purdue",
+     "model_p": 0.69,
+     "market_p": 0.57,
+     "massey_p": 0.96,
+     "sp_p": 0.45,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 9,
+     "pick": "Illinois",
+     "opp": "Duke",
+     "model_p": 0.67,
+     "market_p": 0.64,
+     "massey_p": 0.75,
+     "sp_p": 0.58,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 8,
+     "pick": "Syracuse",
+     "opp": "California",
+     "model_p": 0.63,
+     "market_p": 0.58,
+     "massey_p": 0.66,
+     "sp_p": 0.7,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 7,
+     "pick": "North Dakota State",
+     "opp": "Air Force",
+     "model_p": 0.62,
+     "market_p": 0.56,
+     "massey_p": 0.78,
+     "sp_p": 0.48,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 6,
+     "pick": "Minnesota",
+     "opp": "Mississippi State",
+     "model_p": 0.62,
+     "market_p": 0.53,
+     "massey_p": 0.77,
+     "sp_p": 0.56,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 5,
+     "pick": "Oklahoma",
+     "opp": "Michigan",
+     "model_p": 0.59,
+     "market_p": 0.63,
+     "massey_p": 0.5,
+     "sp_p": 0.66,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 4,
+     "pick": "Montana State",
+     "opp": "Nevada",
+     "model_p": 0.58,
+     "market_p": 0.58,
+     "massey_p": null,
+     "sp_p": null,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 3,
+     "pick": "Texas",
+     "opp": "Ohio State",
+     "model_p": 0.54,
+     "market_p": 0.54,
+     "massey_p": 0.58,
+     "sp_p": 0.45,
+     "result": null,
+     "score": null,
+     "correct": null
+    },
+    {
+     "pts": 2,
+     "pick": "Boston College",
+     "opp": "Rutgers",
+     "model_p": 0.53,
+     "market_p": 0.58,
+     "massey_p": 0.47,
+     "sp_p": 0.47,
+     "result": null,
+     "score": null,
+     "correct": null,
+     "submitted": "Rutgers",
+     "override_by": "editor",
+     "override_reason": "taking the points. Massey has Boston College 97th and Rutgers 87th, and our SP+ agrees the road side is better; only the market and 77% of the public are on BC."
+    },
+    {
+     "pts": 1,
+     "pick": "Army",
+     "opp": "South Florida",
+     "model_p": 0.52,
+     "market_p": 0.58,
+     "massey_p": 0.35,
+     "sp_p": 0.68,
      "result": null,
      "score": null,
      "correct": null
     }
    ]
   }
- }
+ },
+ "OPEN QUESTION": "Is this pool straight-up or against the spread? It changes everything. The ledger currently grades STRAIGHT UP -- Auburn beating Baylor 17-16 as a 7.5-point favourite was scored a WIN, which it would not be against the number. But the pool sheet prints a spread beside every club and the editor described his week-2 override as 'taking Rutgers WITH THE POINTS', which is spread language. If it is a spread pool, ranking confidence by straight-up win probability is simply the wrong quantity: against a fair line every game is near 50%, and confidence should be ranked by how far OUR number sits from the market's, not by who wins. Resolve before week 3."
 }
