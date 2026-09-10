@@ -1,0 +1,236 @@
+<!-- PUBLISH-META
+topic: Methods
+decay: keeps
+tags: Methods, We Were Wrong, Backtesting, Markets
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Vol. I, No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+</style>
+<meta property="og:title" content="Our Model Went 15 for 15. That Is How We Knew It Was Broken.">
+<meta property="og:description" content="A perfect backtest is a bug report. Rebuilt so leakage was impossible, it beat the spread 51.0% of 2,140 games — and the interval contains 50.">
+<meta property="og:url" content="https://thesportspage.net/published/154-no-edge.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/154-no-edge.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our Model Went 15 for 15. That Is How We Knew It Was Broken.">
+<meta name="twitter:description" content="A perfect score is not a triumph. It is a symptom.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/154-no-edge.png">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">Methods &middot; We Were Wrong</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+  <h2 class="hed">Our Model Went 15 for 15. <em>That Is How We Knew It Was Broken.</em></h2>
+  <p class="deck">A perfect backtest is not a triumph; it is a bug report. Rebuilt so that cheating was impossible, the same method beat the spread <strong>51.0%</strong> of the time across <strong>2,140</strong> games &mdash; and the interval around that contains 50.</p>
+  <p class="byline">The Sports Page &middot; The Professor &middot; marking our own homework, again</p>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v good">15/15</div><div class="l">What the broken test said</div></div>
+    <div class="sc"><div class="v bad">51.0%</div><div class="l">What the honest one said, over 2,140 games</div></div>
+    <div class="sc"><div class="v now">52.4%</div><div class="l">What you need just to break even</div></div>
+  </div>
+
+  <p><strong>The question:</strong> can our ratings beat a betting line?</p>
+
+  <p><strong>No. And for one afternoon we had convincing evidence that we could.</strong></p>
+
+  <p><strong>Why that is surprising.</strong> Not the answer &mdash; the answer is what anyone should expect. What is surprising is how <em>good</em> the wrong evidence looked, and that the thing which exposed it was the result being too good.</p>
+
+  <p><strong>What you get:</strong> the smell test that catches this in your own work.</p>
+
+  <h3 class="sh">The result that was too good</h3>
+
+  <p>We keep a ledger of picks in a family pool. Wanting to know whether our method was any use, we ran it backwards over a week of games already played.</p>
+
+  <p>It went <strong>15 for 15</strong>. Every pick, against the spread, in the correct order of confidence.</p>
+
+  <p>Now, that should feel wonderful for about four seconds. Fifteen coin flips landing the same way is roughly a one-in-thirty-three-thousand event. Which is the point: when a test hands you a number that good, the model is almost never the explanation.</p>
+
+  <p>So we measured the thing directly. Across all 51 games that week, the correlation between our edge and what actually happened against the spread was <strong>+0.842</strong>.</p>
+
+  <p>Nobody predicts closing lines at 0.84. A genuinely good model sits near <strong>+0.10</strong>. That number is not a discovery; it is a confession.</p>
+
+  <h3 class="sh">What we had done</h3>
+
+  <p>The ratings we fed the test were not the ratings that existed before the games. They were today&rsquo;s.</p>
+
+  <p>The data provider serves one set of ratings and overwrites them as results arrive. We had noticed the drift ourselves two days earlier &mdash; one club had moved from 32.7 to 30.0 &mdash; and then ran the test with the updated numbers anyway.</p>
+
+  <p>So the model was asked to predict games it had already watched. It did brilliantly. Anyone would.</p>
+
+  <div class="pull">
+    <p>Leakage does not announce itself with an error. It announces itself with a wonderful result.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh">Doing it so cheating was impossible</h3>
+
+  <p>The fix was to stop borrowing anybody&rsquo;s rating. We built our own from scratch, and rebuilt it every week of the season using <em>only the games played before that week</em>. A rating for week seven has never seen week seven. It cannot.</p>
+
+  <p>Then we let it pick against the closing line for every game of 2024 and 2025 &mdash; <strong>2,140 games</strong>.</p>
+
+  <p>It won <strong>51.0%</strong> of them. The 95% interval runs from <strong>48.9% to 53.1%</strong>. Break-even against a standard line is <strong>52.4%</strong>.</p>
+
+  <p>The interval contains 50. We cannot reject the possibility that our model knows nothing whatsoever about football.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; The test the ranking depends on, and fails</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="100%" font-family="Libre Baskerville, Georgia, serif">
+<rect width="880" height="450" fill="#f5f0e8"/>
+<text x="44" y="34" font-size="16.5" font-weight="700" fill="#1a1208">DISAGREEING HARDER WITH THE MARKET DOES NOT HELP</text>
+<text x="44" y="54" font-size="11.5" fill="#5a4c38">2,140 games, 2024&#8211;2025. How often our pick beat the spread, grouped by how far our number sat from the line.</text>
+<text x="44" y="70" font-size="11.5" fill="#5a4c38">If the model knew anything, the bars would climb to the right. They do not.</text>
+<line x1="120" y1="252.9" x2="710" y2="252.9" stroke="#1a1208" stroke-width="1.5"/>
+<text x="716" y="256.9" font-size="10" fill="#1a1208" font-family="Roboto Mono, monospace">a coin flip</text>
+<line x1="120" y1="212.4" x2="710" y2="212.4" stroke="#b83a1e" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="716" y="216.4" font-size="10" fill="#b83a1e" font-family="Roboto Mono, monospace">break even at &#8722;110</text>
+<text x="108" y="324.3" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">46%</text>
+<text x="108" y="290.6" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">48%</text>
+<text x="108" y="256.9" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">50%</text>
+<text x="108" y="223.1" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">52%</text>
+<text x="108" y="189.4" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">54%</text>
+<text x="108" y="155.7" font-size="10" fill="#7a6a52" text-anchor="end" font-family="Roboto Mono, monospace">56%</text>
+<rect x="159.4" y="252.9" width="67.2" height="11.8" fill="#2c4a6e" opacity=".78"/>
+<text x="193.0" y="281.7" font-size="12.5" font-weight="700" fill="#2c4a6e" text-anchor="middle" font-family="Roboto Mono, monospace">49.3%</text>
+<text x="193.0" y="376.0" font-size="11" fill="#1a1208" text-anchor="middle">0-3 pts</text>
+<text x="193.0" y="391.0" font-size="9.5" fill="#7a6a52" text-anchor="middle" font-family="Roboto Mono, monospace">n=980</text>
+<rect x="305.4" y="193.9" width="67.2" height="59.0" fill="#c9962a" opacity=".78"/>
+<text x="339.0" y="184.9" font-size="12.5" font-weight="700" fill="#c9962a" text-anchor="middle" font-family="Roboto Mono, monospace">53.5%</text>
+<text x="339.0" y="376.0" font-size="11" fill="#1a1208" text-anchor="middle">3-6 pts</text>
+<text x="339.0" y="391.0" font-size="9.5" fill="#7a6a52" text-anchor="middle" font-family="Roboto Mono, monospace">n=620</text>
+<rect x="451.4" y="234.3" width="67.2" height="18.5" fill="#2c4a6e" opacity=".78"/>
+<text x="485.0" y="225.3" font-size="12.5" font-weight="700" fill="#2c4a6e" text-anchor="middle" font-family="Roboto Mono, monospace">51.1%</text>
+<text x="485.0" y="376.0" font-size="11" fill="#1a1208" text-anchor="middle">6-10 pts</text>
+<text x="485.0" y="391.0" font-size="9.5" fill="#7a6a52" text-anchor="middle" font-family="Roboto Mono, monospace">n=354</text>
+<rect x="597.4" y="234.3" width="67.2" height="18.5" fill="#2c4a6e" opacity=".78"/>
+<text x="631.0" y="225.3" font-size="12.5" font-weight="700" fill="#2c4a6e" text-anchor="middle" font-family="Roboto Mono, monospace">51.1%</text>
+<text x="631.0" y="376.0" font-size="11" fill="#1a1208" text-anchor="middle">10+ pts</text>
+<text x="631.0" y="391.0" font-size="9.5" fill="#7a6a52" text-anchor="middle" font-family="Roboto Mono, monospace">n=186</text>
+<text x="412" y="410" font-size="10.5" fill="#5a4c38" text-anchor="middle" font-style="italic">how far our rating sat from the closing line</text>
+<text x="44" y="424" font-size="12" font-weight="700" fill="#1a1208">51.0% OVERALL. THE INTERVAL RUNS FROM 48.9% TO 53.1%.</text>
+<text x="44" y="441" font-size="11.5" fill="#5a4c38">It contains 50. We cannot reject the claim that the model knows nothing at all.</text>
+</svg>
+  </div>
+
+  <p>Look at what that figure does to the idea underneath the whole method. We rank our confidence by <em>how far our number sits from the line</em> &mdash; the bigger the disagreement, the more sure we are.</p>
+
+  <p>If that were sound, the bars would climb. They sit flat. A six-point disagreement wins 51.1% of the time; so does a disagreement of more than ten. The one band above break-even, at three to six points, is a lonely bar among four and we are not going to build anything on it.</p>
+
+  <h3 class="sh">Why the market is so hard to beat</h3>
+
+  <p>Worth saying plainly, because it is not a failure of our arithmetic.</p>
+
+  <p>A betting line is not a prediction. It is the price at which the money balances. Every injury report, every bit of local knowledge, every professional model already sits inside it. To beat it you do not need to be good; you need to know something several thousand motivated people have missed.</p>
+
+  <p>We did not. Almost nobody does.</p>
+
+  <h3 class="sh">What to take home: be suspicious of your best result</h3>
+
+  <p>Everyone knows to check a result that looks wrong. Almost nobody checks the one that looks wonderful, and that is where the errors live, because a mistake that flatters you does not feel like a mistake.</p>
+
+  <p>So keep one rule: <strong>when a number comes back better than it has any right to be, treat it as a bug until you have proved otherwise.</strong></p>
+
+  <p>The specific version, for anything predicting the future: ask what your inputs knew, and <em>when</em> they knew it. A rating that updates is a rating that has read the newspaper. A survey scored after the outcome is a survey that saw it. The past is remarkably easy to predict once it has happened.</p>
+
+  <p>We now write the ratings down every Thursday, before kickoff, and keep them. In November we will be able to answer this honestly. Today we cannot, and saying so costs less than the alternative.</p>
+
+  <!-- WATCH_BLOCK -->
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">The broken test: SP+ ratings from the CollegeFootballData API against mean closing spreads from the same source, on the 51 games of week one 2026 where both clubs were rated and a line existed. Fifteen of fifteen against the spread on the top-ranked card; correlation between our edge and the actual result against the spread +0.842. The endpoint serves current ratings and overwrites them as the season progresses; there is no historical snapshot.</p>
+    <p style="color:#c8b99a">The honest test: a Simple Rating System solved from scratch by iterating each club&rsquo;s value to the mean of its game margins plus its opponents&rsquo; values, margins capped at 28 points, 2.5 points removed for home field. For each week from week five onward it is rebuilt using only games from earlier weeks that season, then used to pick against that week&rsquo;s closing line. 2,140 games across 2024 and 2025, pushes excluded.</p>
+    <p style="color:#c8b99a">Result: 1,091 wins, 51.0%. Standard error on a proportion at this sample is 1.1 points, giving a 95% interval of 48.9% to 53.1%. Correlation between edge and result against the spread, +0.018. By season: 52.6% in 2024 (r = +0.039), 49.4% in 2025 (r = &minus;0.004). By edge band: 0&ndash;3 points 49.3% (n=980), 3&ndash;6 points 53.5% (n=620), 6&ndash;10 points 51.1% (n=354), above 10 points 51.1% (n=186).</p>
+    <p style="color:#c8b99a">Three limits. Beginning at week five means the early season, where a market is least settled and an edge most plausible, is excluded &mdash; that is a real cost of removing leakage, since a rating needs games before it exists. Our rating uses margins alone and no injury, weather or personnel information, so this bounds what a simple rating can do rather than what any model could. And 51.0% is not proof of no edge; it is a failure to detect one, which is a weaker and more honest claim.</p>
+    <p style="color:#c8b99a">Reproduce it: <code style="color:#e0d8c5">python3 scripts/snapshot_ratings.py</code> freezes each week&rsquo;s ratings before kickoff so that future tests need no reconstruction at all.</p>
+  </div>
+
+  <div class="footer"><span>The Sports Page &middot; Vol. I, No. __</span><span>Be suspicious of your best result</span><span>TODO_DATE &middot; New York, NY</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>
+</body>
+</html>

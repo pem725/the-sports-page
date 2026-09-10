@@ -80,7 +80,7 @@ def check(h):
     # 1.3 Wins" is an admission, not an advertisement, so the two rules collide
     # and admission wins.
     CONFESSION = re.compile(r"\b(wrong|underestimated|overestimated|missed|failed|"
-                            r"got it wrong|blew|mistake|too high|too low)\b", re.I)
+                            r"got it wrong|blew|mistake|too high|too low|broken|broke)\b", re.I)
     if METHOD.search(h) and not CONFESSION.search(h):
         out.append(("FAIL", "headlines our own apparatus. Report the finding, not the rig."))
 

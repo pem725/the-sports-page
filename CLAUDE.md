@@ -176,6 +176,20 @@ board. about.html is hand-written and hand-written pages rot: on 2026-08-30 it
 still cited Issues #5, #7 and #8 as recent while the archive stood at 155. Only
 the numbers are generated; the prose stays hand-written.
 
+**Regenerate OG cards with a cairosvg that parses quoted font families.** The
+chart figures ask for `font-family="'Roboto Mono',monospace"`. Older cairosvg
+treated that whole quoted-and-comma'd string as one family name, matched nothing,
+and fell back to its default serif -- so for months all 51 chart cards showed a
+different typeface than the article they linked to. It never got caught because
+the failure degraded to something that looked fine; tofu boxes get noticed in a
+day, a plausible serif never does. cairosvg 2.9.1 tokenises the list correctly and
+the cards now match the page.
+
+Do not settle a render disagreement by trusting the newer library. Settle it in
+the browser: load the published issue and read `getComputedStyle(textNode)
+.fontFamily`, because that is what readers actually see. Newer output that
+differs is a hypothesis, not an answer.
+
 **Never put backticks inside a double-quoted shell string.** Writing a doc update
 as python3 -c "..." with backticked filenames in the text made the shell try to
 execute them. Use a heredoc for anything containing backticks, dollars or angle
