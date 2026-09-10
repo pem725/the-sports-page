@@ -657,6 +657,17 @@ somewhere safer afterwards does nothing for the value that already leaked.
       pay. This is the line between a good headline and the cherry-picked
       broadcast graphic we exist to slow down.
 
+  **The punchline exemption is implemented, as of 2026-09-10.** Rule 8 had stated
+  it since the day it was written and the checker had never enforced it, so both
+  headlines the rule exists to protect still failed. A third beat is now exempt
+  when it is **six words or fewer** and does not merely explain &mdash; and the
+  word-count fail is waived with it, because length is not the fault when the
+  beats build. Across the archive that exempts 18 of 169 headlines, all of them
+  the intended class, and still catches the one real run-on. That is the fourth
+  time a headline rule was documented but unenforced; when the checker disagrees
+  with a headline you believe in, **read the checker before rewriting the
+  headline.**
+
   **Check it:** `python3 scripts/check_headline.py queue/NNN-slug.html`, and
   `--corpus` for the tic rate across everything published.
 

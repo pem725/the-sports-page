@@ -60,17 +60,42 @@ def beats(h):
     return [b for b in re.split(r"(?<=[.?!])\s+", h.strip()) if b.strip()]
 
 
+PUNCHLINE_MAX = 6
+
+
+def punchline(b):
+    """Is the third beat a PUNCHLINE rather than a run-on?
+
+    Rule 8 caps a headline at two beats but exempts a third that DELIVERS. The
+    rule was written after this checker nearly deleted two of the best headlines
+    in the archive -- the Jets/Patriots one and "Guess Which Is Which" -- and the
+    exemption was never implemented here, so both still failed. A punchline is
+    short and lands something new; a run-on is long or merely explains what came
+    before. Six words is the observed ceiling ("The Patriots Won Six Super
+    Bowls." is six, "Guess Which Is Which." is four).
+
+    When it applies, the word-count fail is waived too: length is not the fault
+    when the beats build to something.
+    """
+    return (len(b) == 3
+            and len(b[2].split()) <= PUNCHLINE_MAX
+            and not EXPLAINER.search(b[2]))
+
+
 def check(h):
     out, words = [], len(h.split())
     b = beats(h)
+    punch = punchline(b)
 
-    if words > 14:
+    if words > 14 and not punch:
         out.append(("FAIL", f"{words} words. Two beats max, and this is a paragraph."))
     elif words > 10 and len(b) < 2:
         out.append(("WARN", f"{words} words in a single beat -- can it be cut to ten?"))
 
-    if len(b) > 2:
+    if len(b) > 2 and not punch:
         out.append(("FAIL", f"{len(b)} beats. Two is the ceiling."))
+    elif punch:
+        out.append(("OK", f"third beat is a punchline ({len(b[2].split())} words), exempt under rule 8"))
 
     if len(b) == 2 and EXPLAINER.search(b[1]):
         out.append(("FAIL", "the second beat explains the first. It must land a NEW fact."))
@@ -150,7 +175,11 @@ def main():
         if not h:
             continue
         issues, good, w, nb = check(h)
-        worst = "FAIL" if any(k == "FAIL" for k, _ in issues) else ("WARN" if issues else "PASS")
+        # "OK" entries are informational notes (e.g. a rule-8 punchline exemption).
+        # They explain why something did NOT fail, so they must not themselves
+        # count as a finding -- otherwise a clean headline reports as WARN.
+        graded = [i for i in issues if i[0] != "OK"]
+        worst = "FAIL" if any(k == "FAIL" for k, _ in graded) else ("WARN" if graded else "PASS")
         bad += worst == "FAIL"
         print(f"\n  {p.split('/')[-1]}   [{worst}]  {w} words, {nb} beat(s)")
         print(f"    {h}")

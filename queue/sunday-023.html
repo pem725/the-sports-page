@@ -1,0 +1,475 @@
+<!--
+  ============================================================
+  SUNDAY EDITION TEMPLATE — DO NOT PUBLISH AS-IS
+  ============================================================
+  This file is the structural shell for every Sunday Edition.
+  The HTML structure, CSS, section ordering, and layout are
+  canonical — copy them exactly.
+
+  EVERYTHING ELSE IS AN EXAMPLE AND MUST BE REPLACED WITH
+  FRESH DATA PULLED SUNDAY MORNING BEFORE PUBLISHING:
+    - Title, masthead dates, Sunday Edition number
+    - Issue numbers (reader-facing)
+    - Stat cards (issue count, predictions hit, issues remaining)
+    - Issue list (past 7 days' published pieces with links)
+    - Prediction scorecard (rerun every model with fresh data)
+    - "What we got right" and "What we got wrong" sections
+    - Over/under reactions analysis
+    - Road ahead preview
+    - Pull quotes (update if appropriate, keep tone)
+
+  PROCESS: Copy this file to queue/sunday-NNN.html, then
+  replace every example value above. The template in reserve/
+  is read-only — never modify it in place. See CLAUDE.md
+  "Sunday Edition Workflow" for the full step-by-step process.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Sunday Edition No. 023 &mdash; September 13, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.desk{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.desk{padding:1.6rem 1.4rem}}
+.desk-hed{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:.2rem}
+.desk-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;color:#a09070;margin-bottom:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.chip{font-family:'Roboto Mono',monospace;font-size:.66rem;background:rgba(201,150,42,.12);border:1px solid rgba(201,150,42,.35);color:#b8982a;padding:.28rem .65rem;cursor:pointer;transition:background .15s}
+.chip:hover{background:rgba(201,150,42,.25);color:var(--gold)}
+.desk label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+textarea#qi{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(201,150,42,.4);color:#f0ead8;font-family:'Libre Baskerville',serif;font-size:.95rem;line-height:1.6;padding:.85rem 1rem;resize:vertical;min-height:90px;outline:none;transition:border-color .2s}
+textarea#qi:focus{border-color:var(--gold)}
+textarea#qi::placeholder{color:#6b5e4a}
+#ask-btn{margin-top:.7rem;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:none;padding:.72rem 1.8rem;cursor:pointer;transition:background .2s,transform .1s}
+#ask-btn:hover{background:#e0aa30;transform:translateY(-1px)}
+#ask-btn:disabled{background:#5a4a28;color:#3a3020;cursor:not-allowed;transform:none}
+.resp{margin-top:1.4rem;border-top:1px solid rgba(201,150,42,.3);padding-top:1.1rem;display:none}
+.resp.on{display:block}
+.resp-hed{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+#rtext{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.78;color:#e0d8c8;white-space:pre-wrap}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ── SITE NEWS BOX ── */
+.site-news{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.site-news{padding:1.6rem 1.4rem}}
+.site-news h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:.6rem}
+.site-news p{font-size:.92rem;color:#c8cabd;line-height:1.65;margin-bottom:.8rem}
+.site-news ul{list-style:none;padding:0;margin:0}
+.site-news li{font-size:.9rem;color:#e0d8c8;line-height:1.6;padding:.45rem 0;border-bottom:1px solid rgba(201,150,42,.15)}
+.site-news li:last-child{border-bottom:none}
+.site-news li strong{color:var(--gold)}
+.site-news a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,150,42,.35);transition:border-color .2s}
+.site-news a:hover{border-color:var(--gold)}
+
+/* ── SUNDAY EDITION EXTRAS ── */
+.intro{font-size:1.05rem;line-height:1.75;margin-bottom:1.8rem;padding:1.2rem 1.5rem;background:var(--card);border-left:4px solid var(--steel);color:var(--ink)}
+.issue-list{list-style:none;padding:0;margin:0 0 1.8rem}
+.issue-list li{font-size:.9rem;line-height:1.65;padding:.5rem 0;border-bottom:1px solid var(--div)}
+.issue-list li:last-child{border-bottom:none}
+.issue-list .inum{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;color:var(--steel);margin-right:.4rem}
+.issue-list .idate{font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);margin-right:.4rem}
+.issue-list a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3);font-weight:700;transition:border-color .2s}
+.issue-list a:hover{border-color:var(--rust)}
+.box.green-box{background:var(--green)}
+.box.green-box h3{color:#e0f0e8}
+.box.green-box p{color:#c8edcf}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="A Poll That Never Existed. A Backtest That Cheated. Both Ours.">
+<meta property="og:description" content="We caught ourselves twice this week: a ranking cited before it was published, and a pick model that went 15 for 15 because it had already seen the games.">
+<meta property="og:url" content="https://thesportspage.net/published/sunday-023.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/sunday-023.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A Poll That Never Existed. A Backtest That Cheated. Both Ours.">
+<meta name="twitter:description" content="A perfect backtest is not a triumph. It is a bug report.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/sunday-023.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Sunday Edition &middot; Week of September 7 &middot; All Sports</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Sunday Edition No. 023 &middot; Issue No. 169</span>
+    <span>September 13, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">A Poll That Never Existed. A Backtest That Cheated. <em>Both Ours.</em></h1>
+
+  <div class="deck">
+    We caught ourselves twice this week. One was a ranking we cited before it was published &mdash; it did not exist. The other was our own pick model returning a perfect 15 for 15, which is not a triumph but a symptom. Here is how both got through, and what changed.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; September 13, 2026 &middot; Sunday Edition No. 023</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">6</div><div class="l">Issues Published This Week</div></div>
+    <div class="sc"><div class="v good"><b style="color:var(--rust)">[SUNDAY]</b> &mdash;</div><div class="l">Predictions That Hit</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">331</div><div class="l">Issues Remaining to Our 500 Goal</div></div>
+  </div>
+
+  <!-- SECTION 1: THE WEEK IN REVIEW -->
+  <!-- READER'S CONTRACT -- required. See CLAUDE.md, Editorial Rules.
+       These four lines must survive into the published edition, with the
+       placeholders replaced by this week's real numbers. Keep them ABOVE the
+       first section: the checker looks in the first 130 words, and the week-in-
+       review list alone will eat that budget. -->
+  <p><strong>The question we ask every Sunday:</strong> what did we claim this week, and did reality agree?</p>
+
+  <p><strong>The scoreboard.</strong> 6 issues, <b style="color:var(--rust)">[SUNDAY]</b> {{N_GRADED}} gradeable predictions: {{N_HIT}} hit, {{N_MISS}} missed, {{N_PENDING}} still pending. Four of the six made no forecast at all &mdash; they reported base rates, history and a measured bias, which is the kind of issue a scorecard cannot touch.</p>
+
+  <p><strong>Here is the surprising part.</strong> The week&rsquo;s worst call was not about a game. It was our own pick model, which we backtested against a week already played and which returned 15 correct picks out of 15. We did not celebrate it, because a model that good is almost always a model that cheated &mdash; and this one had. It cost us the claim we most wanted to make.</p>
+
+  <p><strong>Why we bother:</strong> a prediction nobody grades is just a story. You are owed the scorecard, not only the forecast.</p>
+
+  <h2 class="sh">The Week in Review: Issues #163&ndash;168</h2>
+
+  <ol class="issue-list">
+    <li><span class="inum">#163</span><span class="idate">Sep 7</span> &mdash; <a href="https://thesportspage.net/published/151-cfb-week1-review.html" target="_blank" rel="noopener">Rutgers Was Favoured by Twenty-Nine. It Lost by Sixteen.</a> &mdash; Week one missed by a mean of 14.3 points against a prior of 11.2. The week was genuinely stranger than usual, and we said by how much.</li>
+    <li><span class="inum">#164</span><span class="idate">Sep 8</span> &mdash; <a href="https://thesportspage.net/published/148-tommy-john-success.html" target="_blank" rel="noopener">209 of Every 1,000 Never Pitch Again.</a> &mdash; Sean McKnight on the Tommy John ladder, in natural frequencies. Not a forecast &mdash; a base rate, and the myth it corrects.</li>
+    <li><span class="inum">#165</span><span class="idate">Sep 9</span> &mdash; <a href="https://thesportspage.net/published/145-week1-signal.html" target="_blank" rel="noopener">One Game Told Us More Than the Whole Summer Did.</a> &mdash; A week-one result is worth about 1.5 wins, and the gap survives inside every talent band. R-squared moved 0.136 to 0.206.</li>
+    <li><span class="inum">#166</span><span class="idate">Sep 10</span> &mdash; <a href="https://thesportspage.net/published/123-one-that-got-away.html" target="_blank" rel="noopener">Every Team Has Its Babe Ruth. The Mets Have Two.</a> &mdash; Nolan Ryan in 1971, and a second one in 2021. History, not prediction.</li>
+    <li><span class="inum">#167</span><span class="idate">Sep 11</span> &mdash; <a href="https://thesportspage.net/published/146-sec-schedule-bias.html" target="_blank" rel="noopener">The SEC Has an Edge. It Is 0.4 Points.</a> &mdash; Built from results alone. Across five seasons the top conference is never cleanly separable from the second; 81% of the variance is within conferences, not between them.</li>
+    <li><span class="inum">#168</span><span class="idate">Sep 12</span> &mdash; <a href="https://thesportspage.net/published/153-one-run-luck.html" target="_blank" rel="noopener">Detroit Outscored Its Opponents by 55 Runs. It Is Twelve Games Under.</a> &mdash; One-run games correlate at &minus;0.117 with record; everything else correlates at +0.567. The one genuine forecast of the week.</li>
+  </ol>
+
+  <hr>
+
+  <!-- SECTION 2: THE PREDICTION SCORECARD -->
+  <h2 class="sh">The Prediction Scorecard</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>#</th><th>Prediction</th><th>Outcome</th><th>Grade</th></tr>
+    </thead>
+    <tbody>
+    <tr class="hl">
+      <td class="mono">154</td>
+      <td>Our pick model beats the closing line; confidence ranked by size of disagreement</td>
+      <td>Backtested on a week already played: 15 of 15 against the spread, r = +0.842 between our edge and the result. Rebuilt so leakage was impossible: 51.0% over 2,140 games, r = +0.018.</td>
+      <td class="mono">MISS &mdash; and the perfect score is what exposed it</td>
+    </tr>
+    <tr class="hl">
+      <td class="mono">022</td>
+      <td>South Carolina rose from unranked to No. 10 in the AP poll</td>
+      <td>No such poll existed. Week one ran through Labor Day, so the first in-season AP poll landed on the Tuesday, and South Carolina was not in it.</td>
+      <td class="mono">MISS &mdash; fabricated. Corrected in 11 places, checker added</td>
+    </tr>
+    <tr>
+      <td class="mono">168</td>
+      <td>Detroit&rsquo;s 55-run differential outruns its record; the one-run gap is luck and regresses</td>
+      <td><b style="color:var(--rust)">[SUNDAY]</b> Pull final standings and the one-run splits Sunday morning. Grade on whether the gap narrowed, not on whether Detroit won.</td>
+      <td class="mono"><b style="color:var(--rust)">[SUNDAY]</b> PENDING</td>
+    </tr>
+    <tr>
+      <td class="mono">165</td>
+      <td>A week-one win is worth about 1.5 wins of final record, inside every talent band</td>
+      <td><b style="color:var(--rust)">[SUNDAY]</b> Not gradeable for months. Track whether week-one winners keep the gap as the sample grows.</td>
+      <td class="mono">PENDING &mdash; season-long by construction</td>
+    </tr>
+    <tr>
+      <td class="mono">167</td>
+      <td>The SEC&rsquo;s edge over the next-best conference is 0.4 points, not separable from zero</td>
+      <td><b style="color:var(--rust)">[SUNDAY]</b> Re-solve the SRS after week three and check that the interval still contains zero.</td>
+      <td class="mono"><b style="color:var(--rust)">[SUNDAY]</b> PENDING</td>
+    </tr>
+    <tr>
+      <td class="mono">160</td>
+      <td>Florida and South Carolina are dark horses with contender-level underlying numbers</td>
+      <td><b style="color:var(--rust)">[SUNDAY]</b> Both have played since. Pull results and re-run, and say plainly if the call is dead.</td>
+      <td class="mono"><b style="color:var(--rust)">[SUNDAY]</b> PENDING</td>
+    </tr>
+    <tr>
+      <td class="mono">158</td>
+      <td>The Mets must pass seven teams and play only two of them</td>
+      <td><b style="color:var(--rust)">[SUNDAY]</b> Grade against Sunday morning standings.</td>
+      <td class="mono"><b style="color:var(--rust)">[SUNDAY]</b> PENDING</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- SECTION 3: WHAT WE GOT RIGHT -->
+  <h2 class="sh">What We Got Right</h2>
+
+  <div class="box">
+    <h3>The Wins</h3>
+    <p><strong>Be honest about the shape of this week.</strong> Four of the six issues carried no forecast at all. They reported base rates, history, and a bias measured from results. A scorecard cannot grade those, and pretending otherwise would be the exact vice this section exists to resist. If you came for a win-loss record this week, you are owed the reason there is not much of one.</p>
+    <p>The one call we will stand behind is the week-one signal in #165. We expected the effect to be talent in disguise &mdash; good teams win openers, good teams win seasons. It survived inside every talent band, bottom quarter to top, at 1.4 to 1.9 wins. That is the pattern holding where we most expected it to dissolve. Watch it through October; if it survives a full season you can use it.</p>
+    <p><b style="color:var(--rust)">[SUNDAY]</b> Add anything from Saturday&rsquo;s card that genuinely landed. If nothing did, say nothing.</p>
+  </div>
+
+  <!-- SECTION 4: WHAT WE GOT WRONG -->
+  <h2 class="sh">What We Got Wrong (or Aren&rsquo;t Sure About)</h2>
+
+  <div class="box">
+    <h3>The Misses and Uncertainties</h3>
+    <p><strong>We cited a poll that had not happened.</strong> Last Sunday&rsquo;s edition led with South Carolina climbing to No. 10 in the AP poll. There was no poll. Week one ran through Labor Day, so the first in-season AP rankings did not appear until the Tuesday, and when they did South Carolina was not in them.</p>
+    <p>Notice what made it survive. Every fact around it was true &mdash; the 57&ndash;0 score, the opponent, our own ranking of them at 33rd. A fabrication wrapped in accurate context is far harder to catch than an invented story, because everything you check checks out. Notice how little protection your own scepticism gives you there. The edition was assembled before dawn and asked a search engine what the new poll said, and a search summariser will answer that question whether or not the poll exists.</p>
+    <p>The fix is not to be more careful; careful is what failed, and you should distrust anyone who offers care as a remedy for it. Nothing may now grade a forecast unless it traces to a primary feed, no ranking may be cited before its scheduled release, and <code>check_poll_claims.py</code> tests every ranking claim in a draft against the CollegeFootballData feed before it can publish.</p>
+    <p><strong>Then our own model lied to us.</strong> We backtested the pick method on a week already played and it went 15 for 15 against the spread, in the right order of confidence. The correlation between our edge and the actual result was +0.842, where an honest pregame model sits near +0.10. The ratings we fed it were current ones, updated after the games had been played. We had noticed that drift ourselves two days earlier and used them anyway.</p>
+    <p>Rebuilt so that cheating was structurally impossible, the same method wins 51.0% of 2,140 games. Break-even is 52.4%. The interval runs 48.9% to 53.1% and contains 50. Thursday&rsquo;s issue is that result in full.</p>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;Everyone knows to check the result that looks wrong. Almost nobody checks the one that looks wonderful, and that is where the errors live &mdash; because a mistake that flatters you does not feel like a mistake.&rdquo;</p>
+    <cite>&mdash; The Sports Page, Sunday Edition No. 023</cite>
+  </div>
+
+  <!-- SECTION 5: OVER-REACTIONS AND UNDER-REACTIONS -->
+  <h2 class="sh">Over-Reactions and Under-Reactions</h2>
+
+  <div class="two-col">
+    <div>
+      \g<0>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--steel);margin-bottom:.6rem">Under-Reactions</h3>
+      <p>We under-reacted to our own 15-for-15. The first instinct was to check the arithmetic, not the data lineage, and the arithmetic was fine. It took measuring the correlation at +0.842 to see it. A perfect score should have been the alarm on sight, not after the second pass.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 5.5: WHAT READERS READ — auto-populated by scripts/fetch_readership.py -->
+  <!-- READERSHIP_BLOCK -->
+
+  <hr>
+
+  <!-- SECTION 6: THE ROAD AHEAD -->
+  <h2 class="sh">What to take home, and the road ahead</h2>
+
+  <p><strong>What to take home:</strong> be suspicious of your best result. A number that comes back better than it has any right to be deserves the same scrutiny as one that comes back wrong, and it almost never gets it. Ask what your data knew, and when it knew it. If a rating updates, it has read the newspaper; if a survey was scored after the outcome, it saw the answer. The past is remarkably easy to predict once it has already happened.</p>
+
+  <p><strong>The week ahead.</strong> Monday we kill a pattern we found in forty games and could not reproduce in four hundred. Tuesday, why we take the log of odds rather than the odds. Wednesday, where football talent actually comes from &mdash; more than five thousand American high schools produced nobody. Thursday, the backtest in full.</p>
+
+  <p><b style="color:var(--rust)">[SUNDAY]</b> Name anything the weekend forces onto the schedule. News wins; the evergreen piece goes to the back, not the bin.</p>
+
+<!-- FINAL PULL QUOTE -->
+  <div class="pull">
+    <p>&ldquo;A prediction nobody grades is just a story. So is a model nobody tries to break.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the long game</cite>
+  </div>
+
+  <!-- STORY IDEAS INBOX (compact) -->
+  <aside id="pitch" style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.7rem 0;margin:1.6rem 0 .4rem;font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <span style="text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600">Pitch a stat &rarr;</span>
+      <input type="text" name="sport" placeholder="Sport" style="font-family:inherit;font-size:.7rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;width:5rem">
+      <input type="text" name="idea" placeholder="The weird number you noticed" required style="font-family:'Libre Baskerville',serif;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;flex:1;min-width:12rem">
+      <button id="pitch-btn" type="submit" style="background:var(--ink);color:var(--cream);font-family:inherit;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.32rem .7rem;cursor:pointer">Send</button>
+      <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea" style="color:var(--steel);text-decoration:none;font-size:.6rem" target="_blank" rel="noopener">or GitHub</a>
+    </form>
+    <div id="pitch-ok" style="display:none;margin-top:.3rem;color:var(--green);font-size:.62rem">Sent. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;margin-top:.3rem;color:var(--rust);font-size:.62rem">Failed &mdash; try the GitHub link.</div>
+  </aside>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='\u2026';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='Send';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Sunday Edition No. 023 &middot; Issue No. 169</span>
+    <span>Predictions tracked from Issues #163&ndash;168</span>
+    <span>See you next Sunday</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/sunday-recap-template.html">
+
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+
+  <!-- SOCIAL SHARE BUTTONS -->
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+
+    <a href="https://twitter.com/intent/tweet?text=Two%20Weeks%2C%20Ten%20Issues%2C%20and%20a%20Scorecard%20%3A%20Grading%20Our%20Predictions%20Against%20Reality%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/sunday-recap-template.html" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:background .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/sunday-recap-template.html" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/sunday-recap-template.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20Two%20Weeks%2C%20Ten%20Issues%2C%20and%20a%20Scorecard%20%3A%20Grading%20Our%20Predictions%20Against%20Reality&body=Thought%20you%27d%20enjoy%20this%3A%0A%0ATwo%20Weeks%2C%20Ten%20Issues%2C%20and%20a%20Scorecard%20%3A%20Grading%20Our%20Predictions%20Against%20Reality%0A%0A%0A%0ARead%20it%20here%3A%20https%3A//thesportspage.net/published/sunday-recap-template.html%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/sunday-recap-template.html"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+
+  </div>
+
+  <!-- DIVIDER -->
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+
+  <!-- QR CODE — physical/in-person sharing -->
+  <a href="https://thesportspage.net/" style="text-decoration:none" target="_blank" rel="noopener"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none" target="_blank" rel="noopener"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)" target="_blank" rel="noopener">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+
+</section>
+
+<!-- COPY-LINK INTERACTION (pure vanilla, no dependencies) -->
+<script>
+(function(){
+  var btn = document.getElementById('sp-copy-link');
+  if (!btn) return;
+  var label = document.getElementById('sp-copy-label');
+  var url = btn.getAttribute('data-url');
+  btn.addEventListener('click', function(){
+    try {
+      navigator.clipboard.writeText(url).then(function(){
+        label.textContent = 'Copied!';
+        btn.style.background = '#c9962a';
+        btn.style.color = '#1a1208';
+        setTimeout(function(){
+          label.textContent = 'Copy link';
+          btn.style.background = 'transparent';
+          btn.style.color = '#c9962a';
+        }, 1800);
+      });
+    } catch (e) {
+      // Fallback for older browsers: select-and-prompt
+      window.prompt('Copy this link:', url);
+    }
+  });
+})();
+</script><div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+
+
+</body>
+</html>
