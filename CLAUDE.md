@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 335 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 334 issues remaining of 500
 
 ## Repository Structure
 
@@ -867,9 +867,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 165 issues (#1-165)
-Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 123-one-that-got-away, 140-one-kick, 146-sec-schedule-bias, 147-talent-addresses, 149-where-players-die, 150-why-log-odds, _TEMPLATE)
+Published: 166 issues (#1-166)
+Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 146-sec-schedule-bias, 147-talent-addresses, 149-where-players-die, 150-why-log-odds, 152-returning-noise, 153-one-run-luck, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 335 issues remaining of 500
-Last published: Issue #165 — "One Game Told Us More Than the Whole Summer Did." (145-week1-signal.html) on September 9, 2026
+Goal: 334 issues remaining of 500
+Last published: Issue #166 — "Every Team Has Its Babe Ruth. The Mets Have Two." (123-one-that-got-away.html) on September 10, 2026
