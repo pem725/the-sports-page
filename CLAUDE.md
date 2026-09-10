@@ -546,6 +546,26 @@ paid mailbox product, and `addUrlForward` is *web* redirects. Forwarding is
 dashboard-only. And **API access must be enabled per-domain** in the Porkbun
 control panel, so a valid key pair can still return an error for a domain.
 
+**CFBD_KEY belongs to the paper, not to a person.** From 2026-09-10 there are two
+CollegeFootballData keys and they must not be confused. The pipeline's key is
+issued to the paper's own address and lives in `tokens.env` and in the GitHub
+Actions secret of the same name; both were set that day and fingerprint alike.
+Patrick's original key is now **personal research only** and must never be put
+back into this repo or its CI.
+
+Two reasons the split is worth keeping. CFBD rate-limits **per key**, so research
+pulls can no longer eat the quota the 4:30am autopublish run depends on. And the
+older key was exposed in a transcript, so it is not private even though it still
+works.
+
+Rotating here means asking CFBD to invalidate a key. Requesting one from a second
+address only *issues* a second key &mdash; the first stays live. Use the word
+"reissued" for that, and confirm any swap with
+`python3 scripts/check_env.py CFBD_KEY`, comparing the fingerprint against the
+value in `tokens.env` rather than the running shell: the Bash tool spawns bash,
+never reads `~/.zshrc`, and so keeps whatever it inherited at launch. A stale
+shell looks exactly like a failed rotation.
+
 **For CI**, use `gh secret set NAME` and paste at the prompt, or
 `gh secret set NAME < file`. Both read the value without echoing it. Never put a
 token in a workflow file.
