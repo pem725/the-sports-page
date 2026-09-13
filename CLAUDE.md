@@ -912,9 +912,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 168 issues (#1-168)
-Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 147-talent-addresses, 149-where-players-die, 150-why-log-odds, 152-returning-noise, 154-no-edge, _TEMPLATE, sunday-023)
+Published: 169 issues (#1-169)
+Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 147-talent-addresses, 149-where-players-die, 150-why-log-odds, 152-returning-noise, 154-no-edge, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 332 issues remaining of 500
-Last published: Issue #168 — "Detroit Outscored Its Opponents by 55 Runs. It Is Twelve Games Under." (153-one-run-luck.html) on September 12, 2026
+Goal: 331 issues remaining of 500
+Last published: Issue #169 — "We Made No Bets This Week. The Tigers Proved Our Point Anyway." (sunday-023.html) on September 13, 2026

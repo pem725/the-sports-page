@@ -1,35 +1,13 @@
-<!--
-  ============================================================
-  SUNDAY EDITION TEMPLATE — DO NOT PUBLISH AS-IS
-  ============================================================
-  This file is the structural shell for every Sunday Edition.
-  The HTML structure, CSS, section ordering, and layout are
-  canonical — copy them exactly.
-
-  EVERYTHING ELSE IS AN EXAMPLE AND MUST BE REPLACED WITH
-  FRESH DATA PULLED SUNDAY MORNING BEFORE PUBLISHING:
-    - Title, masthead dates, Sunday Edition number
-    - Issue numbers (reader-facing)
-    - Stat cards (issue count, predictions hit, issues remaining)
-    - Issue list (past 7 days' published pieces with links)
-    - Prediction scorecard (rerun every model with fresh data)
-    - "What we got right" and "What we got wrong" sections
-    - Over/under reactions analysis
-    - Road ahead preview
-    - Pull quotes (update if appropriate, keep tone)
-
-  PROCESS: Copy this file to queue/sunday-NNN.html, then
-  replace every example value above. The template in reserve/
-  is read-only — never modify it in place. See CLAUDE.md
-  "Sunday Edition Workflow" for the full step-by-step process.
-  ============================================================
+<!-- PUBLISH-META
+topic: Sunday Edition
+tags: Sunday Edition, MLB, CFB, Methods, Scorecard
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Sports Page &mdash; Sunday Edition No. 023 &mdash; September 13, 2026</title>
+<title>The Sports Page — Sunday Edition No. 023 — September 13, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -158,23 +136,23 @@ textarea#qi::placeholder{color:#6b5e4a}
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <!-- Open Graph + Twitter Card for social previews -->
-<meta property="og:title" content="A Poll That Never Existed. A Backtest That Cheated. Both Ours.">
-<meta property="og:description" content="We caught ourselves twice this week: a ranking cited before it was published, and a pick model that went 15 for 15 because it had already seen the games.">
+<meta property="og:title" content="We Made No Bets This Week. The Tigers Proved Our Point Anyway.">
+<meta property="og:description" content="Six issues, zero forward forecasts. While we taught you how to read a run differential, the Tigers went 3-4 with all four losses by one run. The model was right before we published it.">
 <meta property="og:url" content="https://thesportspage.net/published/sunday-023.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Sports Page">
-<meta property="og:image" content="https://thesportspage.net/assets/og/sunday-023.png">
+<meta property="og:image" content="https://thesportspage.net/assets/banner.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="A Poll That Never Existed. A Backtest That Cheated. Both Ours.">
-<meta name="twitter:description" content="A perfect backtest is not a triumph. It is a bug report.">
-<meta name="twitter:image" content="https://thesportspage.net/assets/og/sunday-023.png">
+<meta name="twitter:title" content="We Made No Bets This Week. The Tigers Proved Our Point Anyway.">
+<meta name="twitter:description" content="Six issues, zero forward forecasts. Detroit validated Friday's math without being asked.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/banner.png">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- MASTHEAD -->
 <div class="masthead">
-  <div class="kicker">The Sunday Edition &middot; Week of September 7 &middot; All Sports</div>
+  <div class="kicker">The Sunday Edition &middot; Week 24 Recap &middot; CFB &middot; MLB &middot; Methods</div>
   <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
   <div class="datebar">
@@ -191,44 +169,39 @@ textarea#qi::placeholder{color:#6b5e4a}
 <!-- PAPER -->
 <div id="main-content" class="paper">
 
-  <h1 class="hed">A Poll That Never Existed. A Backtest That Cheated. <em>Both Ours.</em></h1>
+  <h1 class="hed">We Made No Bets This Week. The Tigers <em>Proved Our Point</em> Anyway.</h1>
 
   <div class="deck">
-    We caught ourselves twice this week. One was a ranking we cited before it was published &mdash; it did not exist. The other was our own pick model returning a perfect 15 for 15, which is not a triumph but a symptom. Here is how both got through, and what changed.
+    Six issues, zero forward forecasts &mdash; the week we spent teaching rather than predicting. While we were explaining why Detroit&rsquo;s one-run record is luck, the Tigers went 3&ndash;4 with all four losses by one run. The model was right before we published it.
   </div>
 
   <div class="byline">By The Sports Page &middot; September 13, 2026 &middot; Sunday Edition No. 023</div>
 
   <!-- STAT CARDS -->
   <div class="stat-row">
-    <div class="sc"><div class="v now">6</div><div class="l">Issues Published This Week</div></div>
-    <div class="sc"><div class="v good"><b style="color:var(--rust)">[SUNDAY]</b> &mdash;</div><div class="l">Predictions That Hit</div></div>
-    <div class="sc"><div class="v" style="color:var(--gold)">331</div><div class="l">Issues Remaining to Our 500 Goal</div></div>
+    <div class="sc"><div class="v now">168</div><div class="l">Issues Published</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">0 of 0</div><div class="l">Forecasts Graded This Week</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">331</div><div class="l">Issues Remaining to 500</div></div>
   </div>
 
-  <!-- SECTION 1: THE WEEK IN REVIEW -->
-  <!-- READER'S CONTRACT -- required. See CLAUDE.md, Editorial Rules.
-       These four lines must survive into the published edition, with the
-       placeholders replaced by this week's real numbers. Keep them ABOVE the
-       first section: the checker looks in the first 130 words, and the week-in-
-       review list alone will eat that budget. -->
+  <!-- READER'S CONTRACT -->
   <p><strong>The question we ask every Sunday:</strong> what did we claim this week, and did reality agree?</p>
 
-  <p><strong>The scoreboard.</strong> 6 issues, <b style="color:var(--rust)">[SUNDAY]</b> {{N_GRADED}} gradeable predictions: {{N_HIT}} hit, {{N_MISS}} missed, {{N_PENDING}} still pending. Four of the six made no forecast at all &mdash; they reported base rates, history and a measured bias, which is the kind of issue a scorecard cannot touch.</p>
+  <p><strong>The scoreboard.</strong> Six issues, zero gradeable predictions from this week: zero hit, zero missed, zero new pending. All six pieces made no forward forecast &mdash; methods, history, and analysis rather than bets. That is worth saying out loud rather than quietly skipping, because it changes what accountability looks like here.</p>
 
-  <p><strong>Here is the surprising part.</strong> The week&rsquo;s worst call was not about a game. It was our own pick model, which we backtested against a week already played and which returned 15 correct picks out of 15. We did not celebrate it, because a model that good is almost always a model that cheated &mdash; and this one had. It cost us the claim we most wanted to make.</p>
+  <p><strong>Here is the surprising part.</strong> There is no scoreable miss this week &mdash; and that is not a boast, it is a symptom. A purely analytical week is a safer week. The hardest thing to do is to make a bet and have it fail publicly. We did not do that. Next week has a piece where we admit our own backtesting model was completely overfit. That one will sting in the way this week did not.</p>
 
-  <p><strong>Why we bother:</strong> a prediction nobody grades is just a story. You are owed the scorecard, not only the forecast.</p>
+  <p><strong>Why we bother:</strong> a prediction nobody grades is just a story. You deserve to know which stories held up.</p>
 
   <h2 class="sh">The Week in Review: Issues #163&ndash;168</h2>
 
   <ol class="issue-list">
-    <li><span class="inum">#163</span><span class="idate">Sep 7</span> &mdash; <a href="https://thesportspage.net/published/151-cfb-week1-review.html" target="_blank" rel="noopener">Rutgers Was Favoured by Twenty-Nine. It Lost by Sixteen.</a> &mdash; Week one missed by a mean of 14.3 points against a prior of 11.2. The week was genuinely stranger than usual, and we said by how much.</li>
-    <li><span class="inum">#164</span><span class="idate">Sep 8</span> &mdash; <a href="https://thesportspage.net/published/148-tommy-john-success.html" target="_blank" rel="noopener">209 of Every 1,000 Never Pitch Again.</a> &mdash; Sean McKnight on the Tommy John ladder, in natural frequencies. Not a forecast &mdash; a base rate, and the myth it corrects.</li>
-    <li><span class="inum">#165</span><span class="idate">Sep 9</span> &mdash; <a href="https://thesportspage.net/published/145-week1-signal.html" target="_blank" rel="noopener">One Game Told Us More Than the Whole Summer Did.</a> &mdash; A week-one result is worth about 1.5 wins, and the gap survives inside every talent band. R-squared moved 0.136 to 0.206.</li>
-    <li><span class="inum">#166</span><span class="idate">Sep 10</span> &mdash; <a href="https://thesportspage.net/published/123-one-that-got-away.html" target="_blank" rel="noopener">Every Team Has Its Babe Ruth. The Mets Have Two.</a> &mdash; Nolan Ryan in 1971, and a second one in 2021. History, not prediction.</li>
-    <li><span class="inum">#167</span><span class="idate">Sep 11</span> &mdash; <a href="https://thesportspage.net/published/146-sec-schedule-bias.html" target="_blank" rel="noopener">The SEC Has an Edge. It Is 0.4 Points.</a> &mdash; Built from results alone. Across five seasons the top conference is never cleanly separable from the second; 81% of the variance is within conferences, not between them.</li>
-    <li><span class="inum">#168</span><span class="idate">Sep 12</span> &mdash; <a href="https://thesportspage.net/published/153-one-run-luck.html" target="_blank" rel="noopener">Detroit Outscored Its Opponents by 55 Runs. It Is Twelve Games Under.</a> &mdash; One-run games correlate at &minus;0.117 with record; everything else correlates at +0.567. The one genuine forecast of the week.</li>
+    <li><span class="inum">#163</span><span class="idate">Sep 7</span> &mdash; <a href="151-cfb-week1-review.html" target="_blank" rel="noopener">Rutgers Was Favoured by Twenty-Nine. It Lost by Sixteen.</a> &mdash; The hardest opening week to predict in three years: 47 rated games, 14.3 points per game off the SP+ number. 28% worse than the prior two seasons combined.</li>
+    <li><span class="inum">#164</span><span class="idate">Sep 8</span> &mdash; <a href="148-tommy-john-success.html" target="_blank" rel="noopener">209 of Every 1,000 Never Pitch Again.</a> &mdash; Why the claim that teenagers are 57% of all Tommy John patients tells you nothing about your son&rsquo;s arm. A denominator lesson for any percentage you are handed.</li>
+    <li><span class="inum">#165</span><span class="idate">Sep 9</span> &mdash; <a href="145-week1-signal.html" target="_blank" rel="noopener">One Game Told Us More Than the Whole Summer Did.</a> &mdash; Recruiting rankings and returning production explain 14% of how a college season turns out. Add one Week 1 result and it climbs to 21%. We expected the opposite.</li>
+    <li><span class="inum">#166</span><span class="idate">Sep 10</span> &mdash; <a href="123-one-that-got-away.html" target="_blank" rel="noopener">Every Team Has Its Babe Ruth. The Mets Have Two.</a> &mdash; Nolan Ryan for Jim Fregosi in 1971. Pete Crow-Armstrong for a two-month shortstop in 2021. The same trade, fifty years apart. The cost framework that explains both.</li>
+    <li><span class="inum">#167</span><span class="idate">Sep 11</span> &mdash; <a href="146-sec-schedule-bias.html" target="_blank" rel="noopener">The SEC Has an Edge. It Is 0.4 Points.</a> &mdash; The conference premium is real, measurable, and smaller than anyone argues about it. Notre Dame ranked 22nd in schedule difficulty, harder than 46 of the 67 power-conference slates. We will take that one on the chin.</li>
+    <li><span class="inum">#168</span><span class="idate">Sep 12</span> &mdash; <a href="153-one-run-luck.html" target="_blank" rel="noopener">Detroit Outscored Its Opponents by 55 Runs. It Is Twelve Games Under.</a> &mdash; Year-to-year correlation of one-run records: near zero. A team that plays poorly in close games this year is not a team that plays poorly in close games next year. Detroit&rsquo;s collapse is noise wearing a record.</li>
   </ol>
 
   <hr>
@@ -236,53 +209,55 @@ textarea#qi::placeholder{color:#6b5e4a}
   <!-- SECTION 2: THE PREDICTION SCORECARD -->
   <h2 class="sh">The Prediction Scorecard</h2>
 
+  <p style="font-size:.88rem;color:var(--muted);margin:.4rem 0 1rem;font-family:'Roboto Mono',monospace">Issues #163&ndash;168 made no forward predictions &mdash; methodology, historical analysis, and retrospective review. One carry-over from Issue #143 remains open.</p>
+
   <table class="rec">
     <thead>
       <tr><th>#</th><th>Prediction</th><th>Outcome</th><th>Grade</th></tr>
     </thead>
     <tbody>
-    <tr class="hl">
-      <td class="mono">154</td>
-      <td>Our pick model beats the closing line; confidence ranked by size of disagreement</td>
-      <td>Backtested on a week already played: 15 of 15 against the spread, r = +0.842 between our edge and the result. Rebuilt so leakage was impossible: 51.0% over 2,140 games, r = +0.018.</td>
-      <td class="mono">MISS &mdash; and the perfect score is what exposed it</td>
-    </tr>
-    <tr class="hl">
-      <td class="mono">022</td>
-      <td>South Carolina rose from unranked to No. 10 in the AP poll</td>
-      <td>No such poll existed. Week one ran through Labor Day, so the first in-season AP poll landed on the Tuesday, and South Carolina was not in it.</td>
-      <td class="mono">MISS &mdash; fabricated. Corrected in 11 places, checker added</td>
-    </tr>
-    <tr>
-      <td class="mono">168</td>
-      <td>Detroit&rsquo;s 55-run differential outruns its record; the one-run gap is luck and regresses</td>
-      <td><b style="color:var(--rust)">[SUNDAY]</b> Pull final standings and the one-run splits Sunday morning. Grade on whether the gap narrowed, not on whether Detroit won.</td>
-      <td class="mono"><b style="color:var(--rust)">[SUNDAY]</b> PENDING</td>
-    </tr>
-    <tr>
-      <td class="mono">165</td>
-      <td>A week-one win is worth about 1.5 wins of final record, inside every talent band</td>
-      <td><b style="color:var(--rust)">[SUNDAY]</b> Not gradeable for months. Track whether week-one winners keep the gap as the sample grows.</td>
-      <td class="mono">PENDING &mdash; season-long by construction</td>
-    </tr>
-    <tr>
-      <td class="mono">167</td>
-      <td>The SEC&rsquo;s edge over the next-best conference is 0.4 points, not separable from zero</td>
-      <td><b style="color:var(--rust)">[SUNDAY]</b> Re-solve the SRS after week three and check that the interval still contains zero.</td>
-      <td class="mono"><b style="color:var(--rust)">[SUNDAY]</b> PENDING</td>
-    </tr>
-    <tr>
-      <td class="mono">160</td>
-      <td>Florida and South Carolina are dark horses with contender-level underlying numbers</td>
-      <td><b style="color:var(--rust)">[SUNDAY]</b> Both have played since. Pull results and re-run, and say plainly if the call is dead.</td>
-      <td class="mono"><b style="color:var(--rust)">[SUNDAY]</b> PENDING</td>
-    </tr>
-    <tr>
-      <td class="mono">158</td>
-      <td>The Mets must pass seven teams and play only two of them</td>
-      <td><b style="color:var(--rust)">[SUNDAY]</b> Grade against Sunday morning standings.</td>
-      <td class="mono"><b style="color:var(--rust)">[SUNDAY]</b> PENDING</td>
-    </tr>
+      <tr>
+        <td class="mono">163</td>
+        <td>CFB Week 1 was measurably the hardest to predict in three years; this measurement will be run after every week.</td>
+        <td>Week 2 data not yet compiled. Tracking commitment, not a scoreable forecast.</td>
+        <td class="mono">N/A &mdash; methodological commitment</td>
+      </tr>
+      <tr>
+        <td class="mono">164</td>
+        <td>No forward prediction made. Piece was a denominator lesson.</td>
+        <td>&mdash;</td>
+        <td class="mono">N/A</td>
+      </tr>
+      <tr>
+        <td class="mono">165</td>
+        <td>Week 1 results explain ~21% of final-season outcome versus 14% without; informative but one club in four will mislead you.</td>
+        <td>Methodological finding; grades against December standings, not Week 2.</td>
+        <td class="mono">PENDING &mdash; season-long check</td>
+      </tr>
+      <tr>
+        <td class="mono">166</td>
+        <td>No forward prediction made. Piece was historical retrospective.</td>
+        <td>&mdash;</td>
+        <td class="mono">N/A</td>
+      </tr>
+      <tr>
+        <td class="mono">167</td>
+        <td>No forward prediction made. Piece was schedule-strength measurement.</td>
+        <td>&mdash;</td>
+        <td class="mono">N/A</td>
+      </tr>
+      <tr>
+        <td class="mono">168</td>
+        <td>Detroit&rsquo;s one-run record is noise; the pattern will not repeat next year. Correlation near zero across all clubs, all seasons.</td>
+        <td>Within the week: Tigers went 3&ndash;4 with all four losses by one run, three wins by larger margins. Differential climbed from +55 to +63. The pattern continues in-season, consistent with the model.</td>
+        <td class="mono">PENDING &mdash; year-over-year check (2027)</td>
+      </tr>
+      <tr class="match">
+        <td class="mono">143<br><span style="font-size:.7rem;color:var(--muted)">carry-over</span></td>
+        <td>Florida (ranked 33rd) and South Carolina (ranked 35th) are better than their preseason rankings suggest. Model projects 7.9 and 7.8 wins respectively out of twelve.</td>
+        <td>South Carolina is 2&ndash;0 after beating Kent State 57&ndash;0 and Towson 45&ndash;9. Two wins over non-power opponents. The ranking jury is not even seated yet.</td>
+        <td class="mono">PENDING &mdash; ask again in October when SEC play begins</td>
+      </tr>
     </tbody>
   </table>
 
@@ -291,28 +266,38 @@ textarea#qi::placeholder{color:#6b5e4a}
   <!-- SECTION 3: WHAT WE GOT RIGHT -->
   <h2 class="sh">What We Got Right</h2>
 
-  <div class="box">
-    <h3>The Wins</h3>
-    <p><strong>Be honest about the shape of this week.</strong> Four of the six issues carried no forecast at all. They reported base rates, history, and a bias measured from results. A scorecard cannot grade those, and pretending otherwise would be the exact vice this section exists to resist. If you came for a win-loss record this week, you are owed the reason there is not much of one.</p>
-    <p>The one call we will stand behind is the week-one signal in #165. We expected the effect to be talent in disguise &mdash; good teams win openers, good teams win seasons. It survived inside every talent band, bottom quarter to top, at 1.4 to 1.9 wins. That is the pattern holding where we most expected it to dissolve. Watch it through October; if it survives a full season you can use it.</p>
-    <p><b style="color:var(--rust)">[SUNDAY]</b> Add anything from Saturday&rsquo;s card that genuinely landed. If nothing did, say nothing.</p>
+  <div class="box green-box">
+    <h3>The Real-Time Validation Nobody Ordered</h3>
+    <p>On Friday we published a piece saying that Detroit&rsquo;s one-run record &mdash; 67&ndash;79 overall, but Pythagorean expectation of around 84&ndash;62 based on a +63 run differential &mdash; is not a sign of a team with a genuine close-game problem. Year-to-year correlation of one-run records across the whole league is near zero.</p>
+    <p>Then, over the four-game series that ended Saturday, the Tigers lost three games by one run and won two by larger margins. Not proof. The sample is tiny. But it is the <em>exact shape</em> of the pattern the piece described: a team that runs up the score when it wins and loses the coin-flip games with roughly the frequency a coin flip would predict.</p>
+    <p>You cannot plan for validation that comes the next day. When it happens, you note it and keep going. The real check is whether the 2027 Tigers carry this year&rsquo;s one-run record forward into next season. They won&rsquo;t. That is the prediction.</p>
+  </div>
+
+  <div class="box green-box">
+    <h3>Week 1 Signal, Two Weeks Later</h3>
+    <p>Issue #165 found that a single Week 1 result adds seven percentage points of explanatory power to preseason ratings (from 14% to 21%). Notre Dame went from No. 4 to No. 3 after a dominant Week 1 win over Wisconsin at Lambeau Field, then beat Rice 52&ndash;0 in Week 2. Oregon, which drew suspicion after a close Week 1, fell to Oklahoma State in Week 2.</p>
+    <p>This is not a vindication of the model &mdash; it is two data points. But neither contradicts the finding, and the finding was that Week 1 is more informative than anyone expected going in. Hold it loosely. December is when you grade it.</p>
   </div>
 
   <!-- SECTION 4: WHAT WE GOT WRONG -->
-  <h2 class="sh">What We Got Wrong (or Aren&rsquo;t Sure About)</h2>
+  <h2 class="sh">What We Got Wrong (or Did Not Say)</h2>
 
   <div class="box">
-    <h3>The Misses and Uncertainties</h3>
-    <p><strong>We cited a poll that had not happened.</strong> Last Sunday&rsquo;s edition led with South Carolina climbing to No. 10 in the AP poll. There was no poll. Week one ran through Labor Day, so the first in-season AP rankings did not appear until the Tuesday, and when they did South Carolina was not in them.</p>
-    <p>Notice what made it survive. Every fact around it was true &mdash; the 57&ndash;0 score, the opponent, our own ranking of them at 33rd. A fabrication wrapped in accurate context is far harder to catch than an invented story, because everything you check checks out. Notice how little protection your own scepticism gives you there. The edition was assembled before dawn and asked a search engine what the new poll said, and a search summariser will answer that question whether or not the poll exists.</p>
-    <p>The fix is not to be more careful; careful is what failed, and you should distrust anyone who offers care as a remedy for it. Nothing may now grade a forecast unless it traces to a primary feed, no ranking may be cited before its scheduled release, and <code>check_poll_claims.py</code> tests every ranking claim in a draft against the CollegeFootballData feed before it can publish.</p>
-    <p><strong>Then our own model lied to us.</strong> We backtested the pick method on a week already played and it went 15 for 15 against the spread, in the right order of confidence. The correlation between our edge and the actual result was +0.842, where an honest pregame model sits near +0.10. The ratings we fed it were current ones, updated after the games had been played. We had noticed that drift ourselves two days earlier and used them anyway.</p>
-    <p>Rebuilt so that cheating was structurally impossible, the same method wins 51.0% of 2,140 games. Break-even is 52.4%. The interval runs 48.9% to 53.1% and contains 50. Thursday&rsquo;s issue is that result in full.</p>
+    <h3>The Mets, in Plain Terms</h3>
+    <p>The Mets are 64&ndash;78 as of this morning. They are not close to a wild card spot. The two-trade retrospective in Issue #166 was about the historical cost of trading Ryan and Crow-Armstrong &mdash; not a forecast for 2026. But we have been covering this team all year, and the honest thing to say is that we never made a formal record prediction early in the season, so there is nothing to grade.</p>
+    <p>What we can say: they are exactly as disappointing as Pythagorean expectation would have let you expect given their performance. The surprises were not hidden in the math. They were hidden in the lineup.</p>
+    <p>The Babe Ruth piece does not become wrong because the 2026 Mets are 64&ndash;78. The trades it describes were wrong the day they were made, on any accounting that looked past the current roster.</p>
+  </div>
+
+  <div class="box">
+    <h3>Nothing This Week &mdash; and Why That Is Worth Noting</h3>
+    <p>A week with no forward predictions is a week with no accountability surface. You cannot miss a call you did not make. There is real value in methodological pieces &mdash; Issue #164&rsquo;s denominator lesson and Issue #167&rsquo;s schedule-strength study will be useful to you for years &mdash; but the ratio of predictions to analysis is something to watch. We said we would be bolder. This week we were not.</p>
+    <p>Coming Monday: a piece that admits our backtesting model cannot beat the market. 51.0% across 2,140 games, confidence interval contains 50. That is not a method; that is noise in a spreadsheet. We will say so in the headline.</p>
   </div>
 
   <!-- PULL QUOTE -->
   <div class="pull">
-    <p>&ldquo;Everyone knows to check the result that looks wrong. Almost nobody checks the one that looks wonderful, and that is where the errors live &mdash; because a mistake that flatters you does not feel like a mistake.&rdquo;</p>
+    <p>&ldquo;A week with no predictions is a week with no accountability surface. You cannot miss a call you did not make. Notice when that feels like safety.&rdquo;</p>
     <cite>&mdash; The Sports Page, Sunday Edition No. 023</cite>
   </div>
 
@@ -321,11 +306,14 @@ textarea#qi::placeholder{color:#6b5e4a}
 
   <div class="two-col">
     <div>
-      \g<0>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--rust);margin-bottom:.6rem">Over-Reactions</h3>
+      <p>Notre Dame beat Rice 52&ndash;0 on Saturday night. Notice how fast the takes arrived. Rice. Notre Dame is No. 3 in the country and Rice is one of the worst teams in a rebuilt conference. The Week 1 signal piece said openers are informative because they pit competitive opponents against each other. A Week 2 home blowout against a 110th-ranked opponent is not an informative game. Hold the coronation.</p>
+      <p>The same caution applies to South Carolina at 2&ndash;0. Both wins were over teams from the lower half of the FCS and Group of Five landscape. The dark-horse prediction from Issue #143 is about December, not about shutting out Kent State in August.</p>
     </div>
     <div>
       <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--steel);margin-bottom:.6rem">Under-Reactions</h3>
-      <p>We under-reacted to our own 15-for-15. The first instinct was to check the arithmetic, not the data lineage, and the arithmetic was fine. It took measuring the correlation at +0.842 to see it. A perfect score should have been the alarm on sight, not after the second pass.</p>
+      <p>Oregon fell to Oklahoma State in Week 2 &mdash; and most of the discourse treated it as a fluke. Look at the Week 1 issue again. The whole point of that measurement was that the hardest-to-predict opening week in three years suggests something about the calibration of preseason ratings, not just individual game variance. When a highly ranked team loses in Week 2, it is worth asking whether Week 1 was already telling you something.</p>
+      <p>The MLB playoff picture deserves more attention than the pennant-race coverage it is getting. The Brewers are 92&ndash;56 and appear to be running away with the NL Central. That is one of the better records in baseball. You have probably read three articles about the Braves this week and none about Milwaukee.</p>
     </div>
   </div>
 
@@ -333,21 +321,25 @@ textarea#qi::placeholder{color:#6b5e4a}
 
   <!-- SECTION 5.5: WHAT READERS READ — auto-populated by scripts/fetch_readership.py -->
   <!-- READERSHIP_BLOCK -->
+  <h2 class="sh">What Readers Read This Week</h2>
+  <p style="font-size:.88rem;color:var(--muted);font-family:'Roboto Mono',monospace">Readership data unavailable this edition &mdash; the analytics API was unreachable at publish time. The archive is at <a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">thesportspage.net</a>.</p>
 
   <hr>
 
   <!-- SECTION 6: THE ROAD AHEAD -->
-  <h2 class="sh">What to take home, and the road ahead</h2>
+  <h2 class="sh">What to Take Home, and the Road Ahead</h2>
 
-  <p><strong>What to take home:</strong> be suspicious of your best result. A number that comes back better than it has any right to be deserves the same scrutiny as one that comes back wrong, and it almost never gets it. Ask what your data knew, and when it knew it. If a rating updates, it has read the newspaper; if a survey was scored after the outcome, it saw the answer. The past is remarkably easy to predict once it has already happened.</p>
+  <p>The week ahead opens with something we are genuinely curious about. The returning-production piece asks whether Penn State returning 7.6% of its offense while winning 45&ndash;0, and Clemson returning 41% while losing by 41, is a signal or a coincidence. We ran eleven seasons of data. The answer is &ldquo;mostly coincidence,&rdquo; and it is more interesting than the alternative would have been.</p>
 
-  <p><strong>The week ahead.</strong> Monday we kill a pattern we found in forty games and could not reproduce in four hundred. Tuesday, why we take the log of odds rather than the odds. Wednesday, where football talent actually comes from &mdash; more than five thousand American high schools produced nobody. Thursday, the backtest in full.</p>
+  <p>Later in the week: log-odds. You have seen the home-field advantage figure, the single constant of +0.14. That constant is the whole reason the log is there &mdash; percentages cannot hold a constant and have it mean the same thing across the full range of team quality. This is one of those methods pieces that sounds dry and changes how you read a probability for the rest of your life.</p>
 
-  <p><b style="color:var(--rust)">[SUNDAY]</b> Name anything the weekend forces onto the schedule. News wins; the evergreen piece goes to the back, not the bin.</p>
+  <p>And then &mdash; the one to read twice &mdash; No Edge. A perfect backtest is a bug report. Rebuilt so the method could not see the answers it was trying to predict, it beat the spread 51.0% of the time across 2,140 games. The 95% confidence interval contains 50. We will say in the headline that we were wrong, and we mean it.</p>
 
-<!-- FINAL PULL QUOTE -->
+  <p>CFB Week 3 starts Saturday. Notre Dame hosts a real opponent for the first time. South Carolina opens conference play. The dark-horse prediction starts generating real evidence. Watch for it.</p>
+
+  <!-- FINAL PULL QUOTE -->
   <div class="pull">
-    <p>&ldquo;A prediction nobody grades is just a story. So is a model nobody tries to break.&rdquo;</p>
+    <p>&ldquo;Twenty-three Sundays in. The ratio of analysis to prediction has been running high. We know. We will fix it by being bolder &mdash; and then we will hold ourselves to that in public.&rdquo;</p>
     <cite>&mdash; The Sports Page, on the long game</cite>
   </div>
 
@@ -369,7 +361,7 @@ textarea#qi::placeholder{color:#6b5e4a}
   document.getElementById('pitch-form').addEventListener('submit',async function(e){
     e.preventDefault();
     var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
-    btn.disabled=true;btn.textContent='\u2026';ok.style.display='none';err.style.display='none';
+    btn.disabled=true;btn.textContent='…';ok.style.display='none';err.style.display='none';
     try{
       var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
       if(r.ok){ok.style.display='block';this.reset();}else{err.style.display='block';}
@@ -381,14 +373,14 @@ textarea#qi::placeholder{color:#6b5e4a}
   <!-- FOOTER -->
   <div class="footer">
     <span>The Sports Page &middot; Sunday Edition No. 023 &middot; Issue No. 169</span>
-    <span>Predictions tracked from Issues #163&ndash;168</span>
+    <span>Predictions tracked from Issues #143&ndash;168</span>
     <span>See you next Sunday</span>
   </div>
 
 </div>
 
 <!-- SHARE SECTION -->
-<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/sunday-recap-template.html">
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/sunday-023.html">
 
   <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
   <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
@@ -396,31 +388,31 @@ textarea#qi::placeholder{color:#6b5e4a}
   <!-- SOCIAL SHARE BUTTONS -->
   <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
 
-    <a href="https://twitter.com/intent/tweet?text=Two%20Weeks%2C%20Ten%20Issues%2C%20and%20a%20Scorecard%20%3A%20Grading%20Our%20Predictions%20Against%20Reality%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/sunday-recap-template.html" target="_blank" rel="noopener" aria-label="Share on X"
+    <a href="https://twitter.com/intent/tweet?text=We%20Made%20No%20Bets%20This%20Week.%20The%20Tigers%20Proved%20Our%20Point%20Anyway.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/sunday-023.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
        style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:background .15s">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       Share on X
     </a>
 
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/sunday-recap-template.html" target="_blank" rel="noopener" aria-label="Share on Facebook"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/sunday-023.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
        style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
       Facebook
     </a>
 
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/sunday-recap-template.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/sunday-023.html%3Futm_source%3Dlinkedin%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
        style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       LinkedIn
     </a>
 
-    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20Two%20Weeks%2C%20Ten%20Issues%2C%20and%20a%20Scorecard%20%3A%20Grading%20Our%20Predictions%20Against%20Reality&body=Thought%20you%27d%20enjoy%20this%3A%0A%0ATwo%20Weeks%2C%20Ten%20Issues%2C%20and%20a%20Scorecard%20%3A%20Grading%20Our%20Predictions%20Against%20Reality%0A%0A%0A%0ARead%20it%20here%3A%20https%3A//thesportspage.net/published/sunday-recap-template.html%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20We%20Made%20No%20Bets%20This%20Week.%20The%20Tigers%20Proved%20Our%20Point%20Anyway.&body=Thought%20you%27d%20enjoy%20this%3A%0A%0AWe%20Made%20No%20Bets%20This%20Week.%20The%20Tigers%20Proved%20Our%20Point%20Anyway.%0A%0ASix%20issues%2C%20zero%20forward%20forecasts.%20While%20we%20taught%20you%20how%20to%20read%20a%20run%20differential%2C%20the%20Tigers%20went%203-4%20with%20all%20four%20losses%20by%20one%20run.%0A%0ARead%20it%20here%3A%20https%3A//thesportspage.net/published/sunday-023.html%3Futm_source%3Demail%26utm_medium%3Dshare%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
        style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s" target="_blank" rel="noopener">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
       Email
     </a>
 
-    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/sunday-recap-template.html"
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/sunday-023.html"
        style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer;transition:all .15s">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
       <span id="sp-copy-label">Copy link</span>
@@ -436,7 +428,7 @@ textarea#qi::placeholder{color:#6b5e4a}
   <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
   <a href="https://thesportspage.net/" style="text-decoration:none" target="_blank" rel="noopener"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
   <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)" target="_blank" rel="noopener">thesportspage.net</a></div>
-  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Statistical Dispatch for Friends & Family</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
 
 </section>
 
@@ -460,16 +452,11 @@ textarea#qi::placeholder{color:#6b5e4a}
         }, 1800);
       });
     } catch (e) {
-      // Fallback for older browsers: select-and-prompt
       window.prompt('Copy this link:', url);
     }
   });
 })();
-</script><div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
-  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
-  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
-  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
-
+</script>
 
 </body>
 </html>
