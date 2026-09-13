@@ -322,6 +322,50 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
     git push
     ```
 
+### Football season changes the Sunday Edition (September&ndash;January)
+
+From the first CFB Saturday to the Super Bowl, the Sunday Edition is **not** a
+generic weekly recap. It sits between the two things readers actually care about:
+Saturday just happened, and there is a full NFL card in a few hours. Set by the
+editor on 2026-09-13, after No. 023 went out reading as "too AI sloppy" with a
+bottom line that was "too flowery."
+
+The shape is fixed:
+
+1. **One line on whether we owe you a scorecard.** If nothing was forecast, say
+   exactly that and move on &mdash; *"Six issues, no forecasts. Nothing hit,
+   nothing missed, nothing to account for."* Do **not** spend three paragraphs
+   explaining how brave it is to be graded. That was the specific failure.
+2. **What yesterday's college football showed**, measured.
+3. **The improbability lesson.** This is why Sunday is the right day for it, and
+   it is the reason the edition exists when there is nothing to grade. The paper
+   is here to teach statistics; an unlikely result is the most teachable object
+   the week produces.
+4. **What to watch today, and why** &mdash; the NFL card ranked by *nearness to a
+   coin flip*, not by fame.
+
+**Generate it, do not recall it.** `scripts/sunday_football.py` emits blocks 2
+through 4 from live feeds and injects them at `<!-- CFB_RECAP_BLOCK -->` and
+`<!-- NFL_WATCH_BLOCK -->`. This exists because No. 023 was written by hand and
+carried **three wrong numbers about one baseball club, two of which contradicted
+each other inside the same piece**. Numbers recalled in prose at 4am are numbers
+that will be wrong.
+
+**It grades on FROZEN ratings and refuses to do otherwise.** The week's snapshot
+from `snapshot_ratings.py` is required; if it is missing the script exits rather
+than falling back to today's numbers. Grading Saturday on ratings that have
+already absorbed Saturday is the leakage that produced a 15-for-15 backtest.
+
+**The upset arithmetic is the whole lesson.** Summing every underdog's win
+probability gives the number of upsets a normal card should produce. Week 2:
+**11.4 expected, 15 actual, across 49 rated games** &mdash; and Oklahoma State
+over Oregon was 1 in 13 from the line. A long shot is startling in its own game
+and near-inevitable across fifty. That is the answer to every "nobody saw this
+coming" segment: somebody did, and they were wrong about which game.
+
+**Say when we have no forecast.** We hold no NFL model yet &mdash; two weeks is
+not a model. Print that plainly instead of dressing a guess as one.
+
 **CRITICAL rules for the Sunday Edition:**
 - The template at `reserve/sunday-recap-template.html` is READ-ONLY. If you find yourself editing it, STOP — you should be editing the copy in `queue/`, not the template itself.
 - Sunday editions are LONGER than regular issues (~1000 words vs ~500). They earn the extra length.
