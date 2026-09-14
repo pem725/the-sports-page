@@ -60,12 +60,33 @@ def first_open_slot():
     return d, False
 
 
+def last_published_topic():
+    """The topic of the most recently published issue.
+
+    The rotation rule spans the publish boundary -- "no two consecutive issues
+    share a topic" means consecutive ISSUES, not consecutive queue entries. Seeding
+    the walk with what actually went out last is the difference between catching a
+    clash and reporting "rotation clean" while tomorrow repeats today. Found
+    2026-09-14, when a CFB piece published in the morning and the next CFB piece
+    sat first in the queue; this function was not here and the tool said clean.
+    """
+    try:
+        with open(os.path.join(REPO, "index.html"), encoding="utf-8") as fh:
+            m = re.search(r'<div class="issue"[^>]*data-topic="([^"]*)"', fh.read())
+        return m.group(1) if m else None
+    except Exception:
+        return None
+
+
 def main():
     files = [l.strip() for l in open(ORDER) if l.strip()]
     d, today_open = first_open_slot()
     if today_open:
         print(f"  NOTE: {d:%a %b %d} has not published yet, so it is counted as open.\n")
-    rows, prev, clashes, risks = [], None, 0, []
+    published_prev = last_published_topic()
+    if published_prev:
+        print(f"  last published issue was {published_prev}; the first slot is checked against it.\n")
+    rows, prev, clashes, risks = [], published_prev, 0, []
     for f in files:
         p = os.path.join(REPO, "queue", f)
         if not os.path.exists(p):
