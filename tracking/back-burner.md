@@ -10,6 +10,23 @@ what stops autopublish taking it. Do not delete a benched file, and do not
 
 ---
 
+## The Mets season scorecard — not yet written
+
+**Status:** brief only, held until the regular season ends. **Trigger: 2026-09-30.**
+
+The Mets were eliminated 2026-09-15 at 69–81. The piece grades every Mets forecast
+we published this year, and the finding is that our gloomiest number was our most
+accurate while every upward revision was wrong. Full receipts, quoted from the
+archive, are in `tracking/mets-season-scorecard.md`.
+
+**Do not draft it early.** Grading a season with twelve games unplayed repeats the
+exact impatience the piece is about. Two hard preconditions before writing: the
+final record from the MLB Stats API rather than a projection, and a payroll figure
+verified from a named source — the ~$375M in circulation is unsourced session
+notes, and cost-per-win is the line everyone will quote.
+
+---
+
 ## `088-sorsby-supplemental-bet.html` — Sal's Column
 
 **Status:** held for a one-year follow-up. Do not publish as written.
