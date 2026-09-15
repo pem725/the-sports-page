@@ -8,7 +8,126 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Sep 2026 12:37:54 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 11:39:00 GMT</lastBuildDate>
+    <item>
+      <title>#171: Nobody Wins 102% of the Time.</title>
+      <link>https://thesportspage.net/published/150-why-log-odds.html</link>
+      <description>Home field in baseball is worth one number: +0.14. That single constant buys a coin-flip club 3.5 percentage points and a dominant club only 1.2. Percentages cannot hold a constant like that. Log-odds can, and that is the whole reason the log is there.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/150-why-log-odds.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/150-why-log-odds.png" alt="Nobody Wins 102% of the Time." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">Nobody Wins <em>102% of the Time.</em></h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">Home field in baseball is worth one number: <strong>+0.14</strong>. That single constant buys a coin-flip club <strong>3.5</strong> percentage points and a dominant club only <strong>1.2</strong>. Percentages cannot hold a constant like that. Log-odds can, and that is the whole reason the log is there.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; The Professor &middot; answering a question we were asked</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v now" style="font-size:28px;font-weight:bold;line-height:1;display:block">+0.14</div><div class="l">Home field, in log-odds, for every club alike</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v good" style="font-size:28px;font-weight:bold;line-height:1;display:block">+3.5</div><div class="l">What it buys a .500 club, in points</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">+1.2</div><div class="l">What the same number buys a .900 club</div></div>
+  </div>
+
+  <p><strong>The question,</strong> asked plainly: why do statisticians take the log of the odds instead of just using the odds? And what is an odds ratio actually for?</p>
+
+  <p><strong>The answer:</strong> because two advantages have to be added together, and probabilities refuse to be added.</p>
+
+  <p><strong>Why that is surprising.</strong> Most people assume you can just add a few percentage points for home field. You cannot, and the reason is not fussiness &mdash; do it and you will eventually claim a club wins 104% of the time.</p>
+
+  <p><strong>What you get:</strong> the ability to read the phrase &ldquo;odds ratio&rdquo; correctly, which most reporting does not.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The problem our own bracket handed us</h3>
+
+  <p>We built a postseason bracket this week. To fill it in we had to combine two separate things for every series: how good each club is, and who is at home.</p>
+
+  <p>Try that in percentages. Home clubs in baseball win about <strong>53.5%</strong> of the time, so home field looks like it is worth three and a half points. Hand those points to a club that already wins 90% of the time and you get 93.5%. Hand them to one that wins 99% and you get 102.5%.</p>
+
+  <p>The trouble is not that the last number is silly. The trouble is that the first one was wrong too, and it did not announce itself.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">First move: stop using probability, use odds</h3>
+
+  <p>Odds are just the probability of a thing against the probability of no thing.</p>
+
+  <p>A 75% chance is odds of <strong>3 to 1</strong>, because 75 divided by 25 is 3. A 50% chance is 1 to 1. A 90% chance is 9 to 1.</p>
+
+  <p>This helps, because odds have no ceiling. They run from zero to infinity, so nothing can overflow. Advantages now <em>multiply</em> rather than add: being twice as likely to win is a clean statement about odds.</p>
+
+  <p>But odds are still awkward, and lopsided in a way that will bite you. Doubling your odds from 1 to 2 is not the mirror image of halving them from 1 to 0.5, even though those are the same size of change. One has room to run and the other is squeezed against zero.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Second move: take the log</h3>
+
+  <p>Take the logarithm of the odds and both problems disappear at once.</p>
+
+  <p>Multiplying becomes adding. Zero means a coin flip. The scale runs from minus infinity to plus infinity and is <strong>symmetric</strong> &mdash; a step up is the exact mirror of the same step down. Nothing can escape, because when you convert back, every number on the line lands somewhere between 0 and 1.</p>
+
+  <p>Now home field is one constant, forever. Home clubs win 53.5%, so playing at home rather than away is worth <strong>0.14</strong> in log-odds. Add it. Convert back. Done.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; One constant, three different answers</div>
+<img src="https://thesportspage.net/assets/figures/150-why-log-odds-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <p>Look at what that single number does. To a club at 50% it is worth <strong>3.5</strong> points. To a good club at 70%, <strong>2.9</strong>. To a dominant one at 90%, only <strong>1.2</strong>.</p>
+
+  <p>That is not the constant misbehaving; that is the constant behaving. It is much harder to improve on 90% than on 50%, and the curve knows it. In percentages you would need a different home-field number for every club. In log-odds you need one.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">Percentages are what we report. Log-odds are where the arithmetic actually happens.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">So what is an odds ratio?</h3>
+
+  <p>Exactly what it says: one club&rsquo;s odds divided by another&rsquo;s. It is the natural way to answer &ldquo;how much does this thing help?&rdquo;</p>
+
+  <p>Use our own data from a fortnight ago. Of the college football teams that won their opening game, <strong>599</strong> finished at .500 or better and <strong>244</strong> did not &mdash; odds of 2.46. Of the teams that lost the opener, <strong>205</strong> finished at .500 or better and <strong>249</strong> did not &mdash; odds of 0.82.</p>
+
+  <p>Divide one by the other and the odds ratio is <strong>2.98</strong>. Winning the opener multiplies your odds of a winning season by three.</p>
+
+  <p>And because we did the arithmetic in logs, an interval comes almost free. The log of 2.98 is 1.09, its standard error is 0.12, and converting the ends back gives <strong>2.35 to 3.78</strong>. Try building that interval on the raw ratio and it comes out lopsided and wrong, because ratios are not symmetric. Logs are.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The mistake nearly everyone makes with it</h3>
+
+  <p>Here is the part to carry around, because you will meet it this month in a health story.</p>
+
+  <p>An odds ratio of 2.98 does <strong>not</strong> mean the teams were three times as likely to have a winning season.</p>
+
+  <p>Their actual chances were <strong>71%</strong> against <strong>45%</strong>. That is a ratio of <strong>1.57</strong> &mdash; barely more than half of 2.98. The odds ratio overstated the thing people think it measures by <strong>89%</strong>.</p>
+
+  <p>This is not a rounding quibble. Odds ratios and risk ratios agree only when the outcome is <em>rare</em>. When the outcome is common, as a winning season is, the odds ratio runs away and every headline that reads it as &ldquo;three times likelier&rdquo; is badly wrong.</p>
+
+  <p>So when a study reports an odds ratio, ask one follow-up: <strong>how common was the outcome?</strong> If it happened to a third of people, the odds ratio is not a risk. If it happened to one in a thousand, the two are near enough the same.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What to take home: logs are where you add things up</h3>
+
+  <p>You will now recognise this machinery everywhere, because almost everything runs on it.</p>
+
+  <p>Every time a study says it &ldquo;controlled for&rdquo; age and income and smoking, it added those effects together <strong>in log-odds</strong>. Credit scores work this way. So do medical risk calculators, spam filters and our bracket. The reason is always the one above: it is the only scale where separate advantages simply add and nothing can leave the interval.</p>
+
+  <p>And when the answer comes back out, remember it has been converted. <strong>The log-odds is where the work happens; the percentage is the translation.</strong> A constant effect in one is never a constant effect in the other &mdash; which is why the same home field is worth three points to a coin-flip club and one point to a great one.</p>
+
+  <div class="watch">
+  <div class="watch-label">What to Watch &middot; Tuesday, September 15</div>
+  <div class="w-row"><div class="w-sport">Baseball</div><div class="w-game"><strong>White Sox</strong> at <strong>Guardians</strong><span class="w-time">6:40pm ET</span></div><div class="w-why">31 points of playoff probability ride on it. Both clubs sit near a coin flip, which is where a single game is worth most. If the Guardians win they go to 72%; if they lose, 51%.</div></div>
+  <p class="watch-note">Baseball is ranked by championship leverage: we simulate the rest of the
+     season 60,000 times, then split those seasons by who won each of today's games. College
+     football cannot be simulated that way, so it is ranked by how close to a coin flip the
+     ratings make it &mdash; a lopsided game teaches you nothing. Tomorrow this block reports what
+     happened to today's pick.</p>
+</div>
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Definitions. Odds are p/(1&minus;p). Log-odds, also called the logit, are ln(p/(1&minus;p)); the inverse is p = 1/(1+e<sup>&minus;x</sup>). An odds ratio divides one group&rsquo;s odds by another&rsquo;s; a risk ratio divides one group&rsquo;s probability by another&rsquo;s. They are different quantities and coincide only when the outcome is rare in both groups.</p>
+    <p style="color:#c8b99a">Home field: major league home clubs win about 53.5% of games between evenly matched opponents, so the home-versus-away gap is ln(0.535/0.465) = 0.140 in log-odds, applied as &plusmn;0.070 to the two sides. Converting back: a club at .500 goes to .535 (+3.5 points), at .700 to .729 (+2.9), at .900 to .912 (+1.2). These are the figures marked on the chart.</p>
+    <p style="color:#c8b99a">The odds ratio worked example uses the same 1,297 FBS team-seasons (2015&ndash;2025, excluding 2020) behind our week-one piece. Winners of the opener: 599 finished at .500 or better, 244 below, odds 2.455. Losers: 205 and 249, odds 0.823. Odds ratio 2.98; log odds ratio 1.093 with standard error &radic;(1/599 + 1/244 + 1/205 + 1/249) = 0.121; 95% interval 2.35 to 3.78. Risk ratio 0.711/0.451 = 1.57.</p>
+    <p style="color:#c8b99a">The overstatement is 2.98/1.57 &minus; 1 = 89%, and it is a property of how common the outcome is rather than a mistake in either number. Both are computed correctly; they answer different questions.</p>
+    <p style="color:#c8b99a">A limit worth stating: the interval above assumes these team-seasons are independent, and they are not entirely &mdash; the same programmes recur across years. A proper interval would cluster by programme and would be somewhat wider. It would not move the point estimate, and it would not touch the argument about odds ratios against risk ratios, which is arithmetic rather than inference.</p>
+    <p style="color:#c8b99a">See the bracket this piece came from on the <a href="https://thesportspage.net/odds.html" style="color:#e0d8c5" target="_blank" rel="noopener">Odds Board</a>. Got a question the numbers could settle? <a href="https://thesportspage.net/ask.html" style="color:#e0d8c5" target="_blank" rel="noopener">thesportspage.net/ask.html</a>.</p>
+  </div>
+
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a"><span>The Sports Page &middot; Vol. I, No. 171</span><span>Logs are where you add things up</span><span>September 15, 2026 &middot; New York, NY</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>]]></content:encoded>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/150-why-log-odds.html</guid>
+    </item>
     <item>
       <title>#170: Michigan Nearly Lost to Western Michigan. Eight Days Later It Beat Oklahoma.</title>
       <link>https://thesportspage.net/published/155-miss-persistence.html</link>
