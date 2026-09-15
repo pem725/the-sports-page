@@ -908,69 +908,70 @@
    "as_entered": [
     {
      "pts": 15,
-     "pick": "Texas Tech"
+     "pick": "South Carolina"
     },
     {
      "pts": 14,
      "pick": "Kansas"
     },
     {
+     "pts": 13,
+     "pick": "James Madison"
+    },
+    {
      "pts": 12,
-     "pick": "Clemson"
-    },
-    {
-     "pts": 11,
-     "pick": "Texas State"
-    },
-    {
-     "pts": 10,
-     "pick": "Vanderbilt"
-    },
-    {
-     "pts": 9,
-     "pick": "Wyoming"
-    },
-    {
-     "pts": 8,
-     "pick": "SMU"
-    },
-    {
-     "pts": 7,
-     "pick": "South Carolina"
-    },
-    {
-     "pts": 6,
-     "pick": "East Carolina"
-    },
-    {
-     "pts": 5,
-     "pick": "Florida"
-    },
-    {
-     "pts": 4,
-     "pick": "South Alabama"
-    },
-    {
-     "pts": 3,
-     "pick": "UConn"
-    },
-    {
-     "pts": 2,
-     "pick": "Maryland"
-    },
-    {
-     "pts": 1,
      "pick": "Northwestern"
     },
     {
-     "pts": 1,
+     "pts": 11,
+     "pick": "UConn"
+    },
+    {
+     "pts": 10,
      "pick": "LSU"
+    },
+    {
+     "pts": 9,
+     "pick": "Florida"
+    },
+    {
+     "pts": 8,
+     "pick": "Texas Tech"
+    },
+    {
+     "pts": 7,
+     "pick": "Maryland"
+    },
+    {
+     "pts": 6,
+     "pick": "Texas State"
+    },
+    {
+     "pts": 5,
+     "pick": "Wyoming"
+    },
+    {
+     "pts": 4,
+     "pick": "Vanderbilt"
+    },
+    {
+     "pts": 3,
+     "pick": "Clemson"
+    },
+    {
+     "pts": 2,
+     "pick": "SMU"
+    },
+    {
+     "pts": 1,
+     "pick": "East Carolina"
     }
    ],
-   "deviation": "The entry does NOT match the stated method and the comparison must account for it. CBS assigns confidence by ROW POSITION and rows reorder only by dragging; that interface would not respond to synthetic events, real keypresses or the accessibility path, so the order is by kickoff time rather than by edge -- Texas Tech took 15 points and South Carolina, our largest edge, took 7. Separately the site kept putting the UNPICKED game in a live scoring slot, at one point stranding 13 points on it, so we play South Alabama (edge 0.0, meant to be dropped) and dropped James Madison (edge +4.5). Sides are the model's; weights are the calendar's.",
+   "deviation": "RESOLVED 2026-09-15. The first entry carried two deviations -- confidence ordered by kickoff time rather than edge, and South Alabama played in place of James Madison -- both forced by a drag interface that would not respond to automation. The editor reordered the entry by hand to the published method. Verified from the live page: all fifteen weights match edge order exactly, 15 down to 1, and Ohio/South Alabama is correctly unpicked. The committed rationale and the live entry now agree.",
    "expectation": "7 or 8 of 15. A coin flip, per #154. A win this week would be luck and will be called that.",
    "rationale_file": "tracking/sports-page-picks-2026-w3.md",
-   "protocol": "From week 4 The Sports Page enters and commits its reasoning BEFORE seeing any other slate. If concealment is wanted, commit the SHA-256 of the rationale at entry and publish the text after kickoff, so nobody has to take our word for the timestamp."
+   "protocol": "From week 4 The Sports Page enters and commits its reasoning BEFORE seeing any other slate. If concealment is wanted, commit the SHA-256 of the rationale at entry and publish the text after kickoff, so nobody has to take our word for the timestamp.",
+   "verified_live": "2026-09-15, read back from the CBS board: 15/15, tiebreaker saved, zero discrepancies"
   }
  }
 }

@@ -43,28 +43,22 @@ opinion of our own; the market's number is better than one we would invent.
 Ohio–South Alabama was the one game we had no opinion on at all, so the intention
 was to drop it.
 
-## What actually got entered, and where it deviates
+## What actually got entered
 
-**This matters and it is not a footnote.** The entry does not fully match the
-method above, and pretending otherwise would poison the comparison.
+**Entered exactly as specified above.** The first attempt carried two deviations — confidence
+ordered by kickoff time rather than by edge, and South Alabama playing in place of
+James Madison — both forced by a drag interface that would not respond to automation.
+Rather than let a misreported entry poison the comparison, those deviations were
+written down here first; the editor then reordered the entry by hand to match the
+published method.
 
-CBS assigns confidence points **by row position**, and rows are reordered by
-dragging. The drag interface would not respond to synthetic events, real
-keypresses, or the accessibility path, and after several attempts I stopped rather
-than keep manipulating a live pool entry. Two consequences:
+Verified by reading the live board back: all fifteen weights in edge order, 15 down
+to 1, Ohio/South Alabama correctly unpicked, tiebreaker saved. **The committed
+rationale and the live entry agree.**
 
-1. **The confidence order is by kickoff time, not by edge.** Texas Tech got 15
-   points and South Carolina — our largest edge of the week — got 7. That is not
-   the stated method. By our own evidence the ranking is flat anyway, so the
-   expected cost is near zero; but it is a deviation and it is on the record.
-2. **We play South Alabama and dropped James Madison.** The site kept placing the
-   unpicked game in a live scoring slot, at one point stranding 13 points on a game
-   we had not picked. Given the choice between a no-opinion pick in a scoring slot
-   and a wanted pick earning nothing, the first is worth more. So the game we
-   meant to drop is in at 4 points, and a +4.5 edge is out.
-
-Net: the *sides* are the model's on fourteen of fifteen games. The *weights* are
-the calendar's.
+Worth noting what that changes about the test. Ordered this way the two slates now
+disagree at the *top* rather than the bottom: our 14 on Kansas against the editor's 11
+on Arizona State, and our 7 on Maryland against the editor's 1 on Virginia Tech.
 
 ## The honest expectation
 
