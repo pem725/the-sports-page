@@ -868,6 +868,37 @@ somewhere safer afterwards does nothing for the value that already leaked.
   autopublished under any circumstances.
 - **NEVER auto-publish as Sal**: Sal is a guest columnist with a rare cadence (once every 2-3 weeks max). The scheduled agent must NEVER write in Sal's voice, publish a file bylined "By Sal", or generate Sal's Column content. Sal only writes when the human user explicitly invokes him ("let Sal take this one"). If a queued file is bylined as Sal, SKIP it and pick a different file. See SKILL.md "Sal's Column" section for the full persona/rules.
 
+### Sealed pre-registration (`scripts/seal.py`)
+
+From week 4 of the 2026 season, The Sports Page's own pool reasoning is
+**pre-registered**: written before kickoff, moved out of the repository, and
+committed only as a SHA-256 of its exact bytes. After the games `--reveal` puts
+the text back and recomputes the digest; a single changed character and the reveal
+is refused.
+
+```bash
+python3 scripts/seal.py --seal tracking/sports-page-picks-2026-w4.md --unlock 2026-09-25T19:00
+python3 scripts/seal.py --list
+python3 scripts/seal.py --reveal --week 4
+```
+
+**Why it exists.** This paper grades its own forecasts in public and the weakest
+link is the *reasoning*. Anyone can write a rationale after a result and sincerely
+believe they thought it beforehand &mdash; that is memory working normally, which
+is precisely why a promise not to do it is worth nothing. A digest is worth
+something: `sha256sum` settles it without anyone trusting us.
+
+**Three properties, all tested:** the plaintext leaves the working tree so
+"sealed" is not a fiction; `--reveal` refuses before the stated unlock time, which
+stops the subtler cheat of revealing early and selectively when the picks happen
+to be landing; and a tampered vault file produces a digest mismatch and publishes
+nothing.
+
+**Honest limit, stated in the code too:** this is not secrecy against an
+adversary. The vault is a plain file under `~/.local/share/sports-page/sealed/`
+and anyone with the machine can read it. It proves the text existed *unchanged at
+seal time*, which is the only property a scorecard's honesty actually needs.
+
 ### The family picks ledger
 
 `data/picks-ledger.json` records every confidence-pool pick with the model's
