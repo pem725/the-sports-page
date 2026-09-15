@@ -903,7 +903,74 @@
     "East Carolina over Old Dominion (editor's 4)",
     "we play Wyoming, which the editor dropped; the editor plays South Alabama, which we dropped"
    ],
-   "contrarian_points": 81
+   "contrarian_points": 81,
+   "entered_on_cbs": "2026-09-15, entry name 'The Sports Page', 15/15 saved, tiebreaker 53 (mean market over/under)",
+   "as_entered": [
+    {
+     "pts": 15,
+     "pick": "Texas Tech"
+    },
+    {
+     "pts": 14,
+     "pick": "Kansas"
+    },
+    {
+     "pts": 12,
+     "pick": "Clemson"
+    },
+    {
+     "pts": 11,
+     "pick": "Texas State"
+    },
+    {
+     "pts": 10,
+     "pick": "Vanderbilt"
+    },
+    {
+     "pts": 9,
+     "pick": "Wyoming"
+    },
+    {
+     "pts": 8,
+     "pick": "SMU"
+    },
+    {
+     "pts": 7,
+     "pick": "South Carolina"
+    },
+    {
+     "pts": 6,
+     "pick": "East Carolina"
+    },
+    {
+     "pts": 5,
+     "pick": "Florida"
+    },
+    {
+     "pts": 4,
+     "pick": "South Alabama"
+    },
+    {
+     "pts": 3,
+     "pick": "UConn"
+    },
+    {
+     "pts": 2,
+     "pick": "Maryland"
+    },
+    {
+     "pts": 1,
+     "pick": "Northwestern"
+    },
+    {
+     "pts": 1,
+     "pick": "LSU"
+    }
+   ],
+   "deviation": "The entry does NOT match the stated method and the comparison must account for it. CBS assigns confidence by ROW POSITION and rows reorder only by dragging; that interface would not respond to synthetic events, real keypresses or the accessibility path, so the order is by kickoff time rather than by edge -- Texas Tech took 15 points and South Carolina, our largest edge, took 7. Separately the site kept putting the UNPICKED game in a live scoring slot, at one point stranding 13 points on it, so we play South Alabama (edge 0.0, meant to be dropped) and dropped James Madison (edge +4.5). Sides are the model's; weights are the calendar's.",
+   "expectation": "7 or 8 of 15. A coin flip, per #154. A win this week would be luck and will be called that.",
+   "rationale_file": "tracking/sports-page-picks-2026-w3.md",
+   "protocol": "From week 4 The Sports Page enters and commits its reasoning BEFORE seeing any other slate. If concealment is wanted, commit the SHA-256 of the rationale at entry and publish the text after kickoff, so nobody has to take our word for the timestamp."
   }
  }
 }
