@@ -229,6 +229,13 @@ tags: MLB:mlb, Mets, Small Sample
 ```
 
 - `topic`: The primary topic/sport (used for the variety rule — no back-to-back same topic)
+- `allow_clash: true` — **optional, and the only way to overrule the variety rule.**
+  On 2026-09-15 the editor asked for a CFB piece to follow a CFB piece; the
+  variety check inside `autopublish.py` silently skipped it and published
+  something else, and nobody found out until the queue was inspected. Reordering
+  QUEUE_ORDER.txt is NOT enough — the script re-checks. The flag is per-file and
+  must be typed into the piece, so an override is always a recorded choice rather
+  than a standing exemption, and the run log announces it.
 - `tags`: Comma-separated, for the index.html entry. Use `Text:cssclass` to apply a color class (mlb, nfl, cfb, nhl), or plain `Text` for default styling.
 
 **When creating new queue files**, always include PUBLISH-META. Claude should add this automatically when generating new issues.

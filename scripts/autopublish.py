@@ -239,12 +239,27 @@ def pick_file(last_topic):
             print(f"  Skipping {filename} (Sal byline — requires manual publish)")
             continue
 
-        # Variety check
+        # Variety check.
+        #
+        # The editor can overrule this per file with `allow_clash: true` in
+        # PUBLISH-META. That exists because on 2026-09-15 the editor explicitly
+        # asked for a CFB piece to follow a CFB piece, and this check silently
+        # skipped it and published something else -- the automation vetoed a
+        # human decision and nobody found out until the queue was inspected.
+        #
+        # The flag is deliberately per-file and must be typed into the piece, so
+        # an override is always a recorded choice rather than a standing
+        # exemption. It is announced loudly here so a skim of the log shows it.
         meta = parse_meta(content)
         topic = meta.get("topic", "")
+        allow_clash = str(meta.get("allow_clash", "")).strip().lower() in ("true", "yes", "1")
         if topic and topic.lower() == last_topic.lower():
-            print(f"  Skipping {filename} (same topic as yesterday: {topic})")
-            continue
+            if allow_clash:
+                print(f"  {filename}: same topic as yesterday ({topic}), "
+                      f"but allow_clash is set — publishing anyway by editorial override.")
+            else:
+                print(f"  Skipping {filename} (same topic as yesterday: {topic})")
+                continue
 
         return filename, path
 

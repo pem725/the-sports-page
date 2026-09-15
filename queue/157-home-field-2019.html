@@ -1,0 +1,238 @@
+<!-- PUBLISH-META
+topic: NFL
+decay: keeps
+tags: NFL:nfl, Home Field, Natural Experiments, Causation
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Vol. I, No. __ &mdash; TODO_DATE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+</style>
+<meta property="og:title" content="Home Field Vanished in 2019. The Crowds Did Not Leave Until 2020.">
+<meta property="og:description" content="NFL home teams won by 2.4 points a game from 2016 to 2018. In 2019, with every seat sold, the edge was minus 0.14 &mdash; and the empty-stadium season that followed looked exactly the same.">
+<meta property="og:url" content="https://thesportspage.net/published/157-home-field-2019.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/157-home-field-2019.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Field Vanished in 2019. The Crowds Did Not Leave Until 2020.">
+<meta name="twitter:description" content="NFL home teams won by 2.4 points a game from 2016 to 2018. In 2019, with every seat sold, the edge was minus 0.14 &mdash; and the empty-stadium season that followed looked exactly the same.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/157-home-field-2019.png">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="masthead">
+  <div class="kicker">NFL &middot; Natural Experiments</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar"><span>Vol. I, No. __</span><span>TODO_DATE</span><span>Distributed Free to Friends &amp; Family</span></div>
+</div>
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+<div id="main-content" class="paper">
+
+  <h2 class="hed">Home Field Vanished in 2019. <em>The Crowds Did Not Leave Until 2020.</em></h2>
+  <p class="deck">NFL home teams won by 2.4 points a game from 2016 to 2018. In 2019, with every seat sold, the edge was minus 0.14 &mdash; and the empty-stadium season that followed looked exactly the same.</p>
+  <p class="byline">The Sports Page &middot; The Professor &middot; on the experiment that arrived a year late</p>
+
+  <div class="stat-row"><div class="sc"><div class="v bad">&minus;0.14</div><div class="l">Home margin in 2019, full stadiums</div></div><div class="sc"><div class="v now">+0.05</div><div class="l">Home margin in 2020, empty ones</div></div><div class="sc"><div class="v good">+2.42</div><div class="l">The three seasons before</div></div></div>
+
+  <p><strong>The question:</strong> does a home crowd win football games?</p>
+
+  <p><strong>Probably not the way you think.</strong> NFL home teams won by an average of 2.4 points from 2016 to 2018. In 2019, in front of full stadiums, that edge was <strong>&minus;0.14</strong>. It was already gone.</p>
+
+  <p><strong>Why that is surprising.</strong> 2020 was supposed to be the test. Empty stadiums, no noise, a natural experiment nobody could have run deliberately. But the effect had vanished a year early, with the crowds still there.</p>
+
+  <p><strong>What you get:</strong> a worked example of the thing that ruins most natural experiments.</p>
+
+  <h3 class="sh">What the seasons look like</h3>
+
+  <p>Home advantage is real and old. For decades a home team won about 57 games in 100. Then this happened.</p>
+
+  <div class="chart-wrap"><div class="chart-label">Figure 1</div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="100%" font-family="Libre Baskerville, Georgia, serif">
+<rect width="880" height="500" fill="#f5f0e8"/>
+<text x="44" y="30" font-size="16.5" font-weight="700" fill="#1a1208">HOME FIELD DISAPPEARED IN 2019, A YEAR BEFORE THE CROWDS DID</text>
+<text x="44" y="50" font-size="11.5" fill="#6b5e4a">Average margin for the home team, every NFL regular season. Bars are 95% intervals.</text>
+<rect x="321.3" y="80" width="125.1" height="312" fill="#c9962a" opacity=".10"/>
+<text x="383.9" y="72" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">already gone  |  no crowds</text>
+<line x1="86" y1="366.7" x2="836" y2="366.7" stroke="#c8b99a" stroke-width="0.7" stroke-dasharray="3,3"/>
+<text x="76" y="370.7" font-size="10.5" text-anchor="end" fill="#6b5e4a" font-family="Roboto Mono, monospace">-2</text>
+<line x1="86" y1="282.4" x2="836" y2="282.4" stroke="#c8b99a" stroke-width="1.7"/>
+<text x="76" y="286.4" font-size="10.5" text-anchor="end" fill="#6b5e4a" font-family="Roboto Mono, monospace">+0</text>
+<line x1="86" y1="198.1" x2="836" y2="198.1" stroke="#c8b99a" stroke-width="0.7" stroke-dasharray="3,3"/>
+<text x="76" y="202.1" font-size="10.5" text-anchor="end" fill="#6b5e4a" font-family="Roboto Mono, monospace">+2</text>
+<line x1="86" y1="113.7" x2="836" y2="113.7" stroke="#c8b99a" stroke-width="0.7" stroke-dasharray="3,3"/>
+<text x="76" y="117.7" font-size="10.5" text-anchor="end" fill="#6b5e4a" font-family="Roboto Mono, monospace">+4</text>
+<line x1="114.0" y1="240.6" x2="114.0" y2="107.8" stroke="#2c4a6e" stroke-width="1.6" opacity=".55"/>
+<circle cx="114.0" cy="174.0" r="4.4" fill="#2c4a6e"/>
+<text x="114.0" y="162.0" font-size="9.5" text-anchor="middle" fill="#2c4a6e" font-family="Roboto Mono, monospace" font-weight="400">+2.57</text>
+<text x="114.0" y="410" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">2016</text>
+<line x1="191.1" y1="253.3" x2="191.1" y2="102.3" stroke="#2c4a6e" stroke-width="1.6" opacity=".55"/>
+<circle cx="191.1" cy="177.8" r="4.4" fill="#2c4a6e"/>
+<text x="191.1" y="165.8" font-size="9.5" text-anchor="middle" fill="#2c4a6e" font-family="Roboto Mono, monospace" font-weight="400">+2.48</text>
+<text x="191.1" y="410" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">2017</text>
+<line x1="268.2" y1="263.8" x2="268.2" y2="115.4" stroke="#2c4a6e" stroke-width="1.6" opacity=".55"/>
+<circle cx="268.2" cy="189.6" r="4.4" fill="#2c4a6e"/>
+<text x="268.2" y="177.6" font-size="9.5" text-anchor="middle" fill="#2c4a6e" font-family="Roboto Mono, monospace" font-weight="400">+2.20</text>
+<text x="268.2" y="410" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">2018</text>
+<line x1="345.3" y1="365.0" x2="345.3" y2="211.5" stroke="#b83a1e" stroke-width="1.6" opacity=".55"/>
+<circle cx="345.3" cy="288.3" r="5.6" fill="#b83a1e"/>
+<text x="345.3" y="276.3" font-size="9.5" text-anchor="middle" fill="#b83a1e" font-family="Roboto Mono, monospace" font-weight="700">-0.14</text>
+<text x="345.3" y="410" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">2019</text>
+<line x1="422.4" y1="353.6" x2="422.4" y2="206.5" stroke="#b83a1e" stroke-width="1.6" opacity=".55"/>
+<circle cx="422.4" cy="280.3" r="5.6" fill="#b83a1e"/>
+<text x="422.4" y="268.3" font-size="9.5" text-anchor="middle" fill="#b83a1e" font-family="Roboto Mono, monospace" font-weight="700">+0.05</text>
+<text x="422.4" y="410" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">2020</text>
+<line x1="499.6" y1="287.4" x2="499.6" y2="132.7" stroke="#2c4a6e" stroke-width="1.6" opacity=".55"/>
+<circle cx="499.6" cy="210.3" r="4.4" fill="#2c4a6e"/>
+<text x="499.6" y="198.3" font-size="9.5" text-anchor="middle" fill="#2c4a6e" font-family="Roboto Mono, monospace" font-weight="400">+1.71</text>
+<text x="499.6" y="410" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">2021</text>
+<line x1="576.7" y1="260.9" x2="576.7" y2="136.9" stroke="#2c4a6e" stroke-width="1.6" opacity=".55"/>
+<circle cx="576.7" cy="198.9" r="4.4" fill="#2c4a6e"/>
+<text x="576.7" y="186.9" font-size="9.5" text-anchor="middle" fill="#2c4a6e" font-family="Roboto Mono, monospace" font-weight="400">+1.98</text>
+<text x="576.7" y="410" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">2022</text>
+<line x1="653.8" y1="241.5" x2="653.8" y2="96.9" stroke="#2c4a6e" stroke-width="1.6" opacity=".55"/>
+<circle cx="653.8" cy="169.4" r="4.4" fill="#2c4a6e"/>
+<text x="653.8" y="157.4" font-size="9.5" text-anchor="middle" fill="#2c4a6e" font-family="Roboto Mono, monospace" font-weight="400">+2.68</text>
+<text x="653.8" y="410" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">2023</text>
+<line x1="730.9" y1="276.1" x2="730.9" y2="131.0" stroke="#2c4a6e" stroke-width="1.6" opacity=".55"/>
+<circle cx="730.9" cy="203.5" r="4.4" fill="#2c4a6e"/>
+<text x="730.9" y="191.5" font-size="9.5" text-anchor="middle" fill="#2c4a6e" font-family="Roboto Mono, monospace" font-weight="400">+1.87</text>
+<text x="730.9" y="410" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">2024</text>
+<line x1="808.0" y1="266.4" x2="808.0" y2="124.3" stroke="#2c4a6e" stroke-width="1.6" opacity=".55"/>
+<circle cx="808.0" cy="195.1" r="4.4" fill="#2c4a6e"/>
+<text x="808.0" y="183.1" font-size="9.5" text-anchor="middle" fill="#2c4a6e" font-family="Roboto Mono, monospace" font-weight="400">+2.07</text>
+<text x="808.0" y="410" font-size="10" text-anchor="middle" fill="#6b5e4a" font-family="Roboto Mono, monospace">2025</text>
+<text x="30" y="236.0" font-size="11" text-anchor="middle" fill="#1a1208" transform="rotate(-90 30 236.0)">Home margin, points</text>
+<text x="44" y="448" font-size="11.5" font-weight="700" fill="#1a1208">2019 HAD FULL HOUSES AND NO HOME EDGE. 2020 HAD NEITHER, AND LOOKED THE SAME.</text>
+<text x="44" y="466" font-size="10.5" fill="#6b5e4a">The two are not separable from each other (t = 0.15). Both are separable from the three seasons before them.</text>
+<text x="44" y="484" font-size="10.5" fill="#6b5e4a">5,278 team-games from nflverse play-by-play. Single seasons are 256 to 272 games, so the intervals are wide on purpose.</text>
+</svg></div>
+
+  <p>Three seasons at roughly two and a half points. Then 2019 drops to nothing. Then 2020 &mdash; the empty one &mdash; sits at <strong>+0.05</strong>, which is the same as nothing.</p>
+
+  <p>Then it comes back, and stays back, through five seasons of full houses.</p>
+
+  <h3 class="sh">The comparison that matters</h3>
+
+  <p>Here is the test everybody wanted to run. Compare the season with crowds to the season without.</p>
+
+  <p>2019 was &minus;0.14. 2020 was +0.05. The difference is <strong>0.2 points</strong>, with a standard error of 1.3. That is a t of 0.15; the two seasons are not separable from each other at all.</p>
+
+  <p>Now compare each to the three seasons before them. 2016&ndash;2018 beats 2019 by 2.6 points (t = 2.4) and beats 2020 by 2.4 (t = 2.3). Both of those are real.</p>
+
+  <p>So the ordering is not <em>crowds, then no crowds, then crowds</em>. It is <strong>edge, then no edge, then no edge, then edge</strong> &mdash; and the crowds only left for the third of those.</p>
+
+  <div class="pull">
+    <p>The natural experiment arrived a year late. Whatever removed home-field advantage had already done it in front of a full house.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh">What we are not going to tell you</h3>
+
+  <p>We do not know what happened in 2019, and we are not going to invent something.</p>
+
+  <p>Plenty of people have theories. Better travel and sleep science. Fewer genuinely hostile buildings. Rules that moved the game toward the quarterback, who is the player least affected by noise. Officiating reviewed more closely than before. Each is plausible; none of them is measured here.</p>
+
+  <p>What we can say is narrower and firmer: <strong>if crowd noise were the engine, 2020 should have been the worst season on this chart.</strong> It was not. It was indistinguishable from the season before it, when every seat was sold.</p>
+
+  <h3 class="sh">What to take home: check the year before the shock</h3>
+
+  <p>This is the trap in every natural experiment, and it catches careful people.</p>
+
+  <p>You notice an event &mdash; a rule change, a shutdown, a new stadium &mdash; and you compare after to before. If the number moved, the event did it.</p>
+
+  <p>But that only works if the number was <em>steady</em> until the event. Here it was not. It had already fallen, a full season early, and anyone who compared 2020 to 2018 would have found a clean two-point drop and a tidy story about crowd noise.</p>
+
+  <p>So before you credit an event with a change, look at the period immediately before it. Ask whether the thing was already moving. If it was, the event is a suspect and not a cause &mdash; and you have a more interesting question than the one you started with.</p>
+
+
+  <!-- WATCH_BLOCK -->
+  <div class="box" style="background:var(--ink)">
+    <h3>Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Built from nflverse play-by-play, 2016 through 2025, aggregated to one row per team per game by <code style="color:#e0d8c5">scripts/build_nfl_history.py</code>: 5,278 team-games with scrimmage plays, yards, drive-level possession, turnovers, points and result. Analysis in <code style="color:#e0d8c5">scripts/nfl_predictive.py</code>.</p>
+    <p style="color:#c8b99a">Home margin by season, points, with 95% intervals: 2016 +2.57, 2017 +2.48, 2018 +2.20, 2019 &minus;0.14, 2020 +0.05, 2021 +1.71, 2022 +1.98, 2023 +2.68, 2024 +1.87, 2025 +2.07. Home win rates run 57.4%, 56.6%, 59.8%, 51.6%, 49.6%, 51.5%, 55.7%, 55.5%, 53.3%, 53.7%.</p>
+    <p style="color:#c8b99a">Grouped: 2016&ndash;2018 +2.42 (n=768), 2019 &minus;0.14 (n=256), 2020 +0.05 (n=256), 2021&ndash;2025 +2.06 (n=1,359). Differences with pooled standard errors: 2019 against 2020 is &minus;0.20, SE 1.29, t = &minus;0.15. 2016&ndash;2018 against 2019 is +2.56, SE 1.06, t = +2.42. 2016&ndash;2018 against 2020 is +2.36, SE 1.02, t = +2.31.</p>
+    <p style="color:#c8b99a">Three limits, and the first is the big one. A single season is 256 to 272 games, so its interval spans roughly three and a half points; "2019 and 2020 are indistinguishable" is partly a statement about low power, not proof they were the same. The comparison carrying real weight is the three pooled seasons against 2019. Second, 2020 was not only crowdless &mdash; no preseason, altered protocols, disrupted travel &mdash; so even a clean 2020 effect could not be attributed to noise alone. Third, this is margin, not win rate, and the two disagree slightly in 2019 and 2020; we lead with margin because it uses the whole scoreboard rather than only its sign.</p>
+
+  </div>
+
+  <div class="footer"><span>The Sports Page &middot; Vol. I, No. __</span><span>Check the year before the shock</span><span>TODO_DATE &middot; New York, NY</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>
+</body>
+</html>
