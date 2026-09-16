@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 329 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 328 issues remaining of 500
 
 ## Repository Structure
 
@@ -994,9 +994,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 171 issues (#1-171)
-Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 147-talent-addresses, 149-where-players-die, 152-returning-noise, 154-no-edge, 156-system-disagreement, _TEMPLATE)
+Published: 172 issues (#1-172)
+Queue: 13 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 147-talent-addresses, 149-where-players-die, 152-returning-noise, 154-no-edge, 156-system-disagreement, 158-possession-collapse, 159-turnover-persistence, 160-the-vig, 161-booth-stats, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 329 issues remaining of 500
-Last published: Issue #171 — "Nobody Wins 102% of the Time." (150-why-log-odds.html) on September 15, 2026
+Goal: 328 issues remaining of 500
+Last published: Issue #172 — "Home Field Vanished in 2019. The Crowds Did Not Leave Until 2020." (157-home-field-2019.html) on September 16, 2026
