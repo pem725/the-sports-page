@@ -60,6 +60,61 @@ def beats(h):
     return [b for b in re.split(r"(?<=[.?!])\s+", h.strip()) if b.strip()]
 
 
+# ---------------------------------------------------------------------------
+# PLAIN WORDS. Added 2026-09-16 on the editor's instruction: headlines were
+# "too complicated and they require too much information... if they're too
+# clever, they bury the lead."
+#
+# Measured across the queue, the split was stark. The headlines that worked --
+# "We Were Wrong About Cleveland", "The Crowd Splits Every Game in Half" -- used
+# plain verbs and things you can see. The ones that failed leaned on abstract
+# nouns: MARGIN, POSSESSION, SYSTEMS, PERCENT. "Carries three percent" is jargon
+# wearing short words, and syllable counts cannot see it.
+#
+# So this checks vocabulary, not length. A word outside everyday use is not
+# forbidden -- a team name has to be a team name -- but more than a third of them
+# means the reader is being asked to translate before they can be interested.
+#
+# HONEST LIMIT: the list below is hand-built and will always be incomplete. On
+# its first run it flagged "baseball", "spent" and "million" as hard words, which
+# is the instrument failing rather than the headline. When it flags something a
+# child plainly knows, add the word; do not rewrite the headline.
+PLAIN = set("""
+a an the and or but so if then than that this these those is are was were be been am do does did done
+have has had will would can could should may might must of in on at to for from by with about into over
+under up down out off again more most some any all no not only just very too as it its it's he she they
+we you i me him her them us who what when where why how which there here now new old good bad big small
+long short high low first last next best worse worst same other every each both few many much
+one two three four five six seven eight nine ten eleven twelve twenty thirty forty fifty hundred thousand
+million billion percent
+game games team teams win wins won lose loses lost play plays played player players score scores scored
+yard yards point points season seasons week weeks year years day days time times half field ball
+run runs ran pass passes passed throw throws throwing catch catches coach coaches fan fans watch watching
+money dollar dollars bet bets price prices odds chance luck lucky crowd stadium home away back front
+football baseball basketball hockey league playoff playoffs title champion cup draft pick picks
+spend spends spent cost costs pay pays paid buy buys bought sell sells sold worth
+tell tells told know knows knew think thinks say says said see sees saw look looks looked
+make makes made get gets got take takes took give gives gave come comes came go goes went
+keep keeps kept hold holds held leave leaves left stop stops stopped start starts started
+move moves moved fall falls fell rise rises rose beat beats better ahead behind close near far
+hard easy fast slow real true false right wrong nothing something anything nobody everybody
+mean means meant found find finds killed broken broke fixed turnover turnovers fumble fumbles
+kicker kickers booth model models number numbers pattern patterns system systems school schools
+today tomorrow yesterday never always often sometimes almost still yet even once twice
+""".split())
+
+HEADLINE_HARD_MAX = 0.34   # share of words outside the list before it reads as jargon
+
+
+def plainness(h):
+    """Share of words a child would have to translate. Numerals count as plain."""
+    words = [w for w in re.findall(r"[A-Za-z']+", h)]
+    if not words:
+        return 0.0, []
+    hard = [w for w in words if w.lower().strip("'") not in PLAIN]
+    return len(hard) / len(words), hard
+
+
 PUNCHLINE_MAX = 6
 
 
@@ -91,6 +146,14 @@ def check(h):
         out.append(("FAIL", f"{words} words. Two beats max, and this is a paragraph."))
     elif words > 10 and len(b) < 2:
         out.append(("WARN", f"{words} words in a single beat -- can it be cut to ten?"))
+
+    frac, hard = plainness(h)
+    if frac > HEADLINE_HARD_MAX:
+        out.append(("FAIL", f"{frac*100:.0f}% of the words are not everyday ones "
+                            f"({', '.join(hard[:4])}). Say it the way a fan would."))
+    elif frac > 0.25:
+        out.append(("WARN", f"{frac*100:.0f}% uncommon words ({', '.join(hard[:3])}) -- "
+                            "can any be swapped for something plainer?"))
 
     if len(b) > 2 and not punch:
         out.append(("FAIL", f"{len(b)} beats. Two is the ceiling."))
