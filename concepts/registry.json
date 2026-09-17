@@ -14,7 +14,8 @@
       "branding": "arms-length companion textbook — neutral front door, no author-name emphasis in newsletter-facing copy",
       "note": "Front door LIVE (GitHub Pages, HTTP 200, 'Statistics by Us for You') as of 2026-07-16. Note: URL path is case-sensitive (GradStats-Book, not gradstats-book). Book is being built out in a separate session — deep-link to chapters only once their rendered paths are stable; root front door is safe."
     },
-    "updated": "2026-08-24"
+    "updated": "2026-08-24",
+    "issues_backfilled": "2026-09-17 — issues[] rebuilt by scanning published/*.html for concept-primer links. Before this, 21 of 27 entries read as empty while the links existed in the issues themselves, so the registry understated coverage badly. Rerun the scan after any publish rather than hand-editing."
   },
   "concepts": [
     {
@@ -25,7 +26,22 @@
       "status": "published",
       "primer": "concepts/base-rate.html",
       "book_chapters": [],
-      "issues": []
+      "issues": [
+        "020-jets-first-round-busts",
+        "021-draft-hit-rate-jets-giants",
+        "027-mets-conditional-probability",
+        "027-mets-conditional-probability-deeper",
+        "043-mets-wild-card-math",
+        "046-hurricanes-eight-zero",
+        "055-superstition-baseball-math",
+        "060-mets-sell-or-hold",
+        "062-cup-final-game1",
+        "068-defensive-reader-1-temporal",
+        "082-sixteen-and-three",
+        "127-two-months-of-an-ace",
+        "129-one-in-one-hundred-nine",
+        "sunday-010"
+      ]
     },
     {
       "no": 2,
@@ -35,7 +51,9 @@
       "status": "published",
       "primer": "concepts/confirmation-bias.html",
       "book_chapters": [],
-      "issues": []
+      "issues": [
+        "055-superstition-baseball-math"
+      ]
     },
     {
       "no": 3,
@@ -45,7 +63,21 @@
       "status": "published",
       "primer": "concepts/regression-to-the-mean.html",
       "book_chapters": [],
-      "issues": []
+      "issues": [
+        "053-raleigh-slump-shower-oblique",
+        "055-superstition-baseball-math",
+        "064-mariners-streak",
+        "068-defensive-reader-1-temporal",
+        "070-defensive-reader-2-survivorship",
+        "077-astros-analog",
+        "107-mets-own-mean",
+        "108-nfl-own-mean",
+        "115-no-such-thing-as-a-cycle",
+        "120-endowment-myth",
+        "125-skenes-full-circle",
+        "126-which-numbers-predict",
+        "136-streak-timing"
+      ]
     },
     {
       "no": 4,
@@ -55,7 +87,13 @@
       "status": "published",
       "primer": "concepts/survivorship-bias.html",
       "book_chapters": [],
-      "issues": []
+      "issues": [
+        "055-superstition-baseball-math",
+        "071-half-life-1-framework",
+        "122-only-21-of-133",
+        "123-one-that-got-away",
+        "129-one-in-one-hundred-nine"
+      ]
     },
     {
       "no": 5,
@@ -77,7 +115,17 @@
       "book_chapters": [
         "09-statisticalpower.qmd"
       ],
-      "issues": []
+      "issues": [
+        "026-stabilization-thresholds",
+        "029-cfb-coaching-stabilization",
+        "039-mets-bullpen-eighth",
+        "041-portal-locked-rosters",
+        "078-cross-sport-persistence",
+        "086-nd-dynasty-test",
+        "101-cfb-maturity-wins",
+        "126-which-numbers-predict",
+        "139-overfit-grid"
+      ]
     },
     {
       "no": 7,
@@ -90,7 +138,9 @@
         "10-reliability.qmd",
         "11-validity.qmd"
       ],
-      "issues": []
+      "issues": [
+        "134-ranking-jnd"
+      ]
     },
     {
       "no": 8,
@@ -100,7 +150,13 @@
       "status": "published",
       "primer": "concepts/counterfactuals.html",
       "book_chapters": [],
-      "issues": []
+      "issues": [
+        "084-peer-enforcement",
+        "085-hs-still-holds",
+        "092-nd-dynasty-call",
+        "127-two-months-of-an-ace",
+        "136-streak-timing"
+      ]
     },
     {
       "no": 9,
@@ -110,7 +166,9 @@
       "status": "published",
       "primer": "concepts/conditioning-on-the-consequence.html",
       "book_chapters": [],
-      "issues": []
+      "issues": [
+        "083-ncaa-enforcement-collapse"
+      ]
     },
     {
       "no": 10,
@@ -122,7 +180,14 @@
       "book_chapters": [
         "08-hypothesistesting.qmd"
       ],
-      "issues": []
+      "issues": [
+        "001-skenes-era",
+        "002-alonso-orioles",
+        "010-soto-calf",
+        "014-star-sensitivity",
+        "035-devin-williams-collapse",
+        "044-significance-chi-square-part-1"
+      ]
     },
     {
       "no": 11,
@@ -134,7 +199,10 @@
       "book_chapters": [
         "08-hypothesistesting.qmd"
       ],
-      "issues": []
+      "issues": [
+        "019-spurious-correlation",
+        "045-significance-tiebreaker-part-2"
+      ]
     },
     {
       "no": 12,
@@ -146,7 +214,10 @@
       "book_chapters": [
         "07-covariance.qmd"
       ],
-      "issues": []
+      "issues": [
+        "019-spurious-correlation",
+        "103-payroll-does-money-buy-wins"
+      ]
     },
     {
       "no": 13,
@@ -156,7 +227,10 @@
       "status": "published",
       "primer": "concepts/necessary-vs-sufficient.html",
       "book_chapters": [],
-      "issues": []
+      "issues": [
+        "086-nd-dynasty-test",
+        "124-how-many-stars"
+      ]
     },
     {
       "no": 14,
@@ -170,8 +244,9 @@
         "11-validity.qmd"
       ],
       "issues": [
-        "097-acceleration-second-derivative.html",
-        "099-clark-three-dimension.html"
+        "097-acceleration-second-derivative",
+        "110-qb-tiers-critique",
+        "135-home-field-ranks"
       ],
       "summary": "A metric is built, not found: a number stands in for a trait you can't touch. Then the only two questions that matter — reliability (does it agree with itself?) and validity (does it measure what you claim?). Anchor issue: the 'acceleration' metric and its window problem."
     },
@@ -186,7 +261,10 @@
         "12-GLMcovariance.qmd",
         "14-bivariateregression.qmd"
       ],
-      "issues": [],
+      "issues": [
+        "040-three-lies-scatter-plot",
+        "075-prediction-frameworks"
+      ],
       "summary": "Box: all models are wrong, some useful. A line through every data point forecasts nothing (overfit); a useful model is honest about its error and ignores the outliers we fixate on. Anchor candidates: pre-season simulations, prediction-framework issues, 'the prior isn't a promise.'"
     },
     {
@@ -213,7 +291,9 @@
         "intro.qmd",
         "05-datacleaning.qmd"
       ],
-      "issues": [],
+      "issues": [
+        "135-home-field-ranks"
+      ],
       "summary": "The study you run decides what you are allowed to conclude — you cannot rescue a bad design with fancy statistics. What you measured, on whom, compared to what. The deepest frontier concept and arguably the most important."
     },
     {
@@ -226,7 +306,13 @@
       "book_chapters": [
         "09-statisticalpower.qmd"
       ],
-      "issues": [],
+      "issues": [
+        "102-cfb-contender-board",
+        "105-cfb-weeks-that-matter",
+        "118-point-spread-history",
+        "119-bet-became-a-stock",
+        "134-ranking-jnd"
+      ],
       "summary": "How to say what you do not know without either false precision or useless hedging — ranges, intervals, 'best guess plus honest error.' Pairs with precision-vs-accuracy (No. 7) and the Sunday-Edition prediction scoring."
     },
     {
@@ -249,7 +335,7 @@
       "primer": "concepts/information-and-surprise.html",
       "book_chapters": [],
       "issues": [
-        "105-cfb-weeks-that-matter.html"
+        "105-cfb-weeks-that-matter"
       ],
       "summary": "A result you expected teaches nothing; one you couldn't call teaches a lot. Surprise = log2(1/p); its average is entropy, maximized at a coin-flip (1 bit). It grades forecasts via log loss. Anchor issue: which 2026 CFB weeks matter — toss-ups between contenders carry the most bits; blowouts carry almost none. Pairs with communicating-uncertainty (No. 18) and p-value (No. 11)."
     },
@@ -262,8 +348,8 @@
       "primer": "concepts/rates-of-change.html",
       "book_chapters": [],
       "issues": [
-        "097-acceleration-second-derivative.html",
-        "109-cfb-trajectories.html"
+        "097-acceleration-second-derivative",
+        "111-drought-breaks"
       ],
       "summary": "Three questions inside 'how good is that team': level (the value), velocity (slope / 1st derivative — which way, how fast), acceleration (2nd derivative — is the trend strengthening or reversing). A rolling average lags by design; acceleration leads. The tax: every derivative amplifies noise, so you smooth, which reintroduces lag — a bias-variance dial. Anchor issues: CFB program trajectories (#109, Indiana's average lags a title / Nebraska's turn) and the acceleration metric (#097). Pairs with regression-to-the-mean (No. 3)."
     },
@@ -276,8 +362,11 @@
       "primer": "concepts/unit-of-analysis.html",
       "book_chapters": [],
       "issues": [
-        "108-nfl-own-mean.html",
-        "110-qb-tiers-critique.html"
+        "108-nfl-own-mean",
+        "110-qb-tiers-critique",
+        "111-drought-breaks",
+        "121-football-money-calibration",
+        "128-the-bullpen-nobody-needed"
       ],
       "summary": "What entity does a number actually describe? Measuring a team/offense/ensemble and pinning it on a person is a unit-of-analysis error (a pitcher's 'win', a QB's stat line, a coach's record). Data are nested (plays<players<teams<leagues); reading an individual off group output is the ecological fallacy, and teammates' non-independence makes a person-level ranking look sturdier than it is. Recover the individual only with a design that varies them across casts (trades/portal = natural experiment; adjusted plus-minus). Anchor issue: the QB-tiers critique (#110). Siblings: research-design (No. 17), measurement (No. 14)."
     },
@@ -290,7 +379,11 @@
       "primer": "concepts/variance.html",
       "book_chapters": [],
       "issues": [
-        "112-variance-is-king.html"
+        "113-pull-the-goalie",
+        "116-deepest-wound-same-shape",
+        "117-sweetest-moment-mirror",
+        "118-point-spread-history",
+        "119-bet-became-a-stock"
       ],
       "summary": "A number can only tell cases apart to the extent it varies; a constant predicts nothing. Var(sum)=Σ Var of the parts (independent), so the highest-variance components dominate an additive outcome, and a predictor's pull scales with coefficient×its own variance. Guardrail: variance is NECESSARY but not SUFFICIENT — it must also correlate with the outcome (fantasy is the clean case: categories ARE the score). Anchor issue: 'variance is king' fantasy (#112, a WR's good week = 10x a bad one; the matchup is decided in the high-swing slots). Part 2 waiting: favorites suppress variance, underdogs chase it. Siblings: communicating-uncertainty (No.18), rates-of-change (No.21)."
     },
@@ -302,7 +395,11 @@
       "status": "published",
       "primer": "concepts/objective-function.html",
       "book_chapters": [],
-      "issues": []
+      "issues": [
+        "113-pull-the-goalie",
+        "116-deepest-wound-same-shape",
+        "117-sweetest-moment-mirror"
+      ]
     },
     {
       "no": 25,
@@ -312,7 +409,9 @@
       "status": "published",
       "primer": "concepts/denominator-problem.html",
       "book_chapters": [],
-      "issues": []
+      "issues": [
+        "114-mets-royals-cost-per-title"
+      ]
     },
     {
       "no": 26,
@@ -322,7 +421,11 @@
       "status": "published",
       "primer": "concepts/signal-vs-noise.html",
       "book_chapters": [],
-      "issues": []
+      "issues": [
+        "128-the-bullpen-nobody-needed",
+        "138-hot-window",
+        "139-overfit-grid"
+      ]
     },
     {
       "no": 27,
