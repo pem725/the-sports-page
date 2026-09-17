@@ -238,6 +238,26 @@ tags: MLB:mlb, Mets, Small Sample
   than a standing exemption, and the run log announces it.
 - `tags`: Comma-separated, for the index.html entry. Use `Text:cssclass` to apply a color class (mlb, nfl, cfb, nhl), or plain `Text` for default styling.
 
+**Every queue file also gets a topic glyph beside the headline**, added by
+`python3 scripts/add_topic_glyph.py queue/NNN-slug.html`. Tim's suggestion,
+2026-09-17: the sport was named in the kicker and the archive tags but not next to
+the headline, which is the line a reader actually decides on.
+
+Two constraints he set, both binding. It must not lengthen the headline &mdash;
+the glyph carries the sport so the words do not have to. And it must be
+**generic**: league shields, team marks and wordmarks are all protected, so every
+glyph is a plain sporting object drawn from scratch. Nobody owns the shape of a
+football.
+
+The level problem is solved by the object rather than a label: a **college
+football has two stripes and a professional one does not**, which is a real
+difference between the balls and belongs to nobody. Striped ball for CFB, plain
+for NFL, baseball for MLB, puck for NHL, bars for Markets, a balance for Methods.
+
+Size them for 20 pixels and check them at 20 pixels. The first pair of footballs
+drew laces as a line plus three ticks, which looked fine at 4x and merged into a
+blob at display size.
+
 **When creating new queue files**, always include PUBLISH-META. Claude should add this automatically when generating new issues.
 
 To manually trigger: go to GitHub → Actions tab → "Autopublish Daily Issue" → "Run workflow."
