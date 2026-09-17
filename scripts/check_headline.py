@@ -21,6 +21,7 @@ closes it.
 import argparse
 import glob
 import html
+import pathlib
 import re
 import sys
 
@@ -101,17 +102,37 @@ hard easy fast slow real true false right wrong nothing something anything nobod
 mean means meant found find finds killed broken broke fixed turnover turnovers fumble fumbles
 kicker kickers booth model models number numbers pattern patterns system systems school schools
 today tomorrow yesterday never always often sometimes almost still yet even once twice
+rating ratings rank ranks ranked drop drops dropped raise raised instead because blame blames blamed
+line lines edge edges guess guesses guessed wrong right pick picks picked watch watched game's team's
+big small huge tiny most least anybody everyone someone everything
 """.split())
 
 HEADLINE_HARD_MAX = 0.34   # share of words outside the list before it reads as jargon
 
 
+def _proper_nouns():
+    """Team, city and mascot names, which are never the reason a headline is hard.
+
+    Without this the check is useless: every headline names somebody, and
+    "Mississippi State" alone would score 100% uncommon. A name is a name; the
+    rule is about abstractions like MARGIN and POSSESSION, not about Cleveland.
+    """
+    p = pathlib.Path(__file__).resolve().parent.parent / "data" / "proper-nouns.txt"
+    if not p.exists():
+        return set()
+    return {w.strip().lower() for w in p.read_text().split() if w.strip()}
+
+
+PROPER = _proper_nouns()
+
+
 def plainness(h):
-    """Share of words a child would have to translate. Numerals count as plain."""
+    """Share of words a child would have to translate. Numerals and names are plain."""
     words = [w for w in re.findall(r"[A-Za-z']+", h)]
     if not words:
         return 0.0, []
-    hard = [w for w in words if w.lower().strip("'") not in PLAIN]
+    hard = [w for w in words
+            if w.lower().strip("'") not in PLAIN and w.lower().strip("'") not in PROPER]
     return len(hard) / len(words), hard
 
 
