@@ -93,11 +93,11 @@ NAVY_F,  NAVY_S  = "#16224a", "#33436f"
 NAT_F,   NAT_S   = "#e4dccf", "#c6bdac"
 
 def main():
-    # POLO -- embroidered badge, left chest, unchanged
-    build("polo", NAVY_F, NAVY_S, "polo-01-badge-reversed.svg", 82, (BX+153, TOP+215),
-          "POLO  navy  ·  EMBROIDERED badge 82mm (3.25in) left chest", "polo-navy.png")
-    build("polo", CREAM_F, CREAM_S, "polo-01-badge.svg", 82, (BX+153, TOP+215),
-          "POLO  cream  ·  EMBROIDERED badge 82mm (3.25in) left chest", "polo-cream.png")
+    # POLO -- embroidered badge + bare domain, left chest
+    build("polo", NAVY_F, NAVY_S, "polo-01-badge-url-reversed.svg", 82, (BX+153, TOP+215),
+          "POLO  navy  ·  EMBROIDERED badge + domain 82mm (3.25in) left chest", "polo-navy.png")
+    build("polo", CREAM_F, CREAM_S, "polo-01-badge-url.svg", 82, (BX+153, TOP+215),
+          "POLO  light  ·  EMBROIDERED badge + domain 82mm (3.25in) left chest", "polo-cream.png")
     # TEE -- badge + domain on the front, masthead on the back
     # "natural" is the shirt being ordered and uses the garment-matched halo art.
     # "navy" stays as the dark-garment reference.

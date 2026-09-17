@@ -341,11 +341,14 @@ def build():
     write("wordmark-horizontal.svg",      wordmark_horizontal(180))
 
     write("polo-01-badge.svg",            badge(82, chart=True))
+    write("polo-01-badge-url.svg",        badge_with_url(82))
     write("tee-front-badge-url.svg",      badge_with_url(190))
     write("tee-front-badge-url-reversed.svg",
                                           badge_with_url(190, fill=CREAM, bg=None, ground=NAVY))
     write("polo-02-wordmark.svg",         wordmark_horizontal(82))
     write("polo-01-badge-reversed.svg",   badge(82, chart=True, fill=CREAM, bg=None, ground=NAVY))
+    write("polo-01-badge-url-reversed.svg",
+                                          badge_with_url(82, fill=CREAM, bg=None, ground=NAVY))
     write("polo-02-wordmark-reversed.svg", wordmark_horizontal(82, fill=CREAM, bg=None))
 
     write("tee-01-masthead.svg",          tee_masthead(280))

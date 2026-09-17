@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Sports Page — Founder Polo Shortlist</title>
+  <style>
+    :root {
+      --ink: #1a1208;
+      --paper: #f5f0e8;
+      --aged: #e0d8c5;
+      --rust: #b83a1e;
+      --navy: #051954;
+      --gold: #c9962a;
+      --muted: #6b5e4a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--aged);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.55;
+    }
+    main {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 2rem auto;
+      padding: clamp(1.25rem, 4vw, 3rem);
+      background: var(--paper);
+      border: 1px solid rgba(26, 18, 8, .2);
+      box-shadow: 0 18px 60px rgba(26, 18, 8, .16);
+    }
+    .masthead {
+      border-top: 4px double var(--ink);
+      border-bottom: 4px double var(--ink);
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .kicker, .price, .tag, .fine {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .kicker { color: var(--rust); font-size: .72rem; font-weight: 700; }
+    h1 { margin: .2rem 0; font-size: clamp(2.2rem, 7vw, 4.7rem); line-height: .98; }
+    .deck { max-width: 720px; margin: .7rem auto 0; color: var(--muted); font-style: italic; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(240px, .85fr) 1.15fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(26, 18, 8, .25);
+    }
+    .hero img { width: 100%; display: block; border: 1px solid rgba(26, 18, 8, .2); }
+    h2 { margin: .25rem 0 .5rem; font-size: clamp(1.7rem, 4vw, 2.7rem); line-height: 1.05; }
+    .tag { display: inline-block; padding: .22rem .55rem; background: var(--navy); color: var(--paper); font-size: .65rem; }
+    .price { color: var(--rust); font-size: 1.1rem; font-weight: 700; margin: .8rem 0; }
+    .button {
+      display: inline-block;
+      margin: .45rem .45rem .45rem 0;
+      padding: .72rem 1rem;
+      border: 1px solid var(--navy);
+      background: var(--navy);
+      color: white;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .button.secondary { background: transparent; color: var(--navy); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.4rem;
+    }
+    .card { border-top: 4px solid var(--ink); padding: 1rem 0; }
+    .card h3 { font-size: 1.45rem; line-height: 1.15; margin: .3rem 0; }
+    .card p { margin: .5rem 0; }
+    .specs { padding-left: 1.2rem; color: var(--muted); }
+    .note {
+      margin-top: 1.8rem;
+      padding: 1.2rem 1.4rem;
+      border: 2px solid var(--gold);
+      background: rgba(201, 150, 42, .07);
+    }
+    .note h3 { margin: 0 0 .4rem; }
+    .fine { margin-top: 1.5rem; font-size: .64rem; color: var(--muted); }
+    @media (max-width: 720px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .hero img { max-width: 440px; margin: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="masthead">
+      <div class="kicker">The Sports Page · Founder Apparel</div>
+      <h1>The Polo Shortlist</h1>
+      <p class="deck">Three high-quality navy polos that can carry the cream embroidered badge—with one clear winner.</p>
+    </header>
+
+    <section class="hero">
+      <img src="mockups/polo-navy.png" alt="The Sports Page cream badge embroidered on a navy polo">
+      <div>
+        <span class="tag">Top Pick</span>
+        <h2>Mercer+Mettle MM1000</h2>
+        <p class="price">From $41.25 embroidered</p>
+        <p>An 8.1-ounce cotton-rich diamond piqué with stretch, moisture control, and a button-backed collar. Its substantial knit is the strongest surface here for the detailed 8,000–11,000-stitch badge-and-domain lockup.</p>
+        <p><strong>Choose:</strong> Night Navy. Keep the complete badge-and-domain lockup at the full 82 mm width.</p>
+        <a class="button" href="https://embroideryinc.com/products/mercer-mettle-stretch-heavyweight-pique-polo-mm1000" target="_blank" rel="noopener">See the MM1000</a>
+        <a class="button secondary" href="polo-01-badge-url-reversed.svg" target="_blank">View embroidery artwork</a>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Alternative polo choices">
+      <article class="card">
+        <span class="tag">Classic Cotton</span>
+        <h3>Port Authority K8000 EZCotton</h3>
+        <p class="price">From $38.50 embroidered</p>
+        <ul class="specs">
+          <li>6.2-ounce, 100% cotton piqué</li>
+          <li>Curl-, shrink-, wrinkle-, pill-, and fade-resistant</li>
+          <li>Traditional fit; sizes XS–6XL</li>
+        </ul>
+        <a class="button" href="https://embroideryinc.com/products/port-authority-ezcotton-polo-k8000" target="_blank" rel="noopener">See the K8000</a>
+      </article>
+
+      <article class="card">
+        <span class="tag">Performance</span>
+        <h3>Eddie Bauer EB102</h3>
+        <p class="price">From $46.25 embroidered</p>
+        <ul class="specs">
+          <li>4.7-ounce cotton-rich performance fabric</li>
+          <li>Moisture and odor control; UPF 30</li>
+          <li>Includes an Eddie Bauer mark on the sleeve</li>
+        </ul>
+        <a class="button" href="https://embroideryinc.com/products/eddie-bauer-performance-polo-eb102" target="_blank" rel="noopener">See the EB102</a>
+      </article>
+    </section>
+
+    <aside class="note">
+      <h3>Before ordering</h3>
+      <p>Embroidery Inc lists a one-time $30 digitizing/setup charge, waived at 12 pieces and on reorders. Require real stitched proofs of both color treatments before production. Tell the digitizer to keep the 1.54 mm halo gap open, use navy thread on white and cream thread on Night Navy, retain the bare domain, and never add a background behind the transparent artwork.</p>
+    </aside>
+
+    <p class="fine">Prices observed September 17, 2026. Confirm current price, shipping, tax, size surcharges, and stock with the vendor.</p>
+  </main>
+</body>
+</html>

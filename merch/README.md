@@ -17,8 +17,10 @@ Canvases are sized in real millimetres, so files drop into a print layout at 1:1
 
 | File | Size | Use |
 |---|---|---|
-| `polo-01-badge.svg` | 82 mm | **Primary.** Left chest, light garments |
-| `polo-01-badge-reversed.svg` | 82 mm | Left chest, navy/dark garments |
+| `polo-01-badge-url.svg` | 82 mm | **Primary.** Badge + domain, left chest, light garments |
+| `polo-01-badge-url-reversed.svg` | 82 mm | **Primary.** Badge + domain, left chest, navy/dark garments |
+| `polo-01-badge.svg` | 82 mm | Badge-only alternate, light garments |
+| `polo-01-badge-reversed.svg` | 82 mm | Badge-only alternate, navy/dark garments |
 | `polo-02-wordmark.svg` | 82 mm | Understated alternative, no badge |
 | `polo-02-wordmark-reversed.svg` | 82 mm | Same, dark garments |
 
@@ -118,22 +120,25 @@ to see the spool against the garment.
 - **Placement:** left chest, centred roughly 190–215 mm down from the shoulder
   seam and 75–90 mm in from the placket. Confirm on an actual garment in the
   size you're ordering most — chest height varies more than people expect.
-- **Size:** 82 mm (3.25") wide as supplied.
+- **Size:** 82 mm (3.25") wide as supplied, including the domain lockup.
 - **Do not shrink below 76 mm (3").** The arced "THE SPORTS PAGE" sits at about
-  5 mm cap height at the supplied size, which is already near the floor for
-  legible embroidery. Below that the counters fill in and it turns to mush.
-  If you need smaller, use `polo-02-wordmark.svg` instead.
+  5 mm cap height at the supplied size, and the domain is smaller still. Both
+  are already near the floor for legible embroidery. Require a physical sew-out.
+  If the domain will not hold cleanly at 82 mm, enlarge the whole lockup to 90 mm
+  with approval rather than deleting it or shrinking its letters.
 - **Colours:** 2 thread colours maximum (ring + type in one, or all one colour).
   One-colour is cleanest and cheapest.
-- **Rough stitch estimate:** 7,000–9,000 stitches for the badge at 3.25".
-  Useful for getting a quote; the digitiser will give you the real number.
+- **Rough stitch estimate:** 8,000–11,000 stitches for the badge and domain at
+  3.25". Useful for getting a quote; the digitiser will give you the real number.
 
-**The polo is EMBROIDERED, not printed.** Badge only, left chest, no domain and
-no back decoration. That restraint is the point — it should read as considered
-rather than promotional.
+**The polo is EMBROIDERED, not printed.** The badge and bare domain are required,
+left chest, with no back decoration. Use `thesportspage.net` only — no protocol
+and no `www`. The domain is part of the founder-polo lockup, not optional copy.
 
 **Recommended founder combination:** navy polo, cream badge
-(`polo-01-badge-reversed.svg`).
+and domain (`polo-01-badge-url-reversed.svg`). For a white or light polo, use
+the navy version (`polo-01-badge-url.svg`). The two variants share the same
+geometry and may use one digitised stitch file with different thread assignments.
 
 ---
 
@@ -275,7 +280,15 @@ For the tee order as specified — Gildan Softstyle, Natural:
    already set to this garment. Reversed art is intentionally transparent; the
    garment is the background. Do not add a fill layer."*
 
-For the founder polos: `polo-01-badge-reversed.svg`, embroidered, navy garment.
+For the founder polos:
+
+1. **Night Navy:** `polo-01-badge-url-reversed.svg`, one cream thread.
+2. **White/light:** `polo-01-badge-url.svg`, one navy thread.
+3. Set the complete lockup to **82 mm (3.25") wide** on the left chest.
+4. The wider contrasting stroke where the curve crosses the S is a knockout to
+   open garment fabric, not another thread colour. Keep the 1.54 mm halo open.
+5. The domain is required. Do not remove it, add `www`, or add a protocol.
+6. Require physical sew-outs of both garment/thread combinations before the run.
 
 If a shop insists on `.ai` or `.eps`, any SVG here opens losslessly in
 Illustrator and can be saved out in one step. Nothing needs redrawing.
