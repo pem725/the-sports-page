@@ -190,6 +190,27 @@ the browser: load the published issue and read `getComputedStyle(textNode)
 .fontFamily`, because that is what readers actually see. Newer output that
 differs is a hypothesis, not an answer.
 
+**The OG card carries the topic glyph too**, composited into the top strip beside
+the wordmark, because the card is where a headline is most often seen &mdash; in a
+feed, or as the hero image on the emailed issue. The glyph and the wordmark are
+centred *as a pair*, so adding a mark never shifts the wordmark relative to the
+card.
+
+**Two entity traps live in the card generator and both have bitten.** SVG is XML,
+so only `&amp; &lt; &gt; &quot; &apos;` are predefined; everything else must be
+translated or numeric. The translator missed entities whose names contain a
+**digit** &mdash; `&sup2;` `&sup3;` `&frac12;` `&there4;` &mdash; because its
+pattern was `[a-zA-Z]+`. One `&sup2;` in a chart label made cairosvg reject the
+whole SVG and the card fell back to its stat row. `103-payroll` shipped the wrong
+hero image for weeks and nobody noticed, **because the fallback looks fine**. A
+bare `&` (Texas A&amp;M, R&amp;D) is now escaped rather than allowed to kill the
+file.
+
+That is the same lesson as the cairosvg font bug: a rendering failure that
+degrades to something plausible will not get reported. Check the hero-element
+tally after regenerating &mdash; if the chart count drops, a chart stopped
+rendering.
+
 **Never put backticks inside a double-quoted shell string.** Writing a doc update
 as python3 -c "..." with backticked filenames in the text made the shell try to
 execute them. Use a heredoc for anything containing backticks, dollars or angle

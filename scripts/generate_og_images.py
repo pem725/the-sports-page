@@ -102,7 +102,17 @@ def extract_chart_svg(text):
         if entity in ("&amp;", "&lt;", "&gt;", "&quot;", "&apos;"):
             return entity
         return unescape(entity)
-    svg = re.sub(r"&[a-zA-Z]+;|&#\d+;|&#x[\da-fA-F]+;", replace_entity, svg)
+    # NOTE the digit in the name class. The original pattern was [a-zA-Z]+, which
+    # silently missed every entity whose name contains a number -- &sup2; &sup3;
+    # &frac12; &frac34; &there4;. One of those in a chart label was enough to make
+    # cairosvg reject the whole SVG ("undefined entity"), and the card quietly fell
+    # back to its stat row. Found 2026-09-17 on 103-payroll, which had been
+    # shipping the wrong hero image for weeks without anyone noticing, because the
+    # fallback looks perfectly fine.
+    svg = re.sub(r"&[a-zA-Z][a-zA-Z0-9]*;|&#\d+;|&#x[\da-fA-F]+;", replace_entity, svg)
+    # Anything still loose is a bare ampersand -- "Texas A&M", "R&D" -- which is
+    # invalid XML on its own. Escape what is left rather than let it kill the file.
+    svg = re.sub(r"&(?!amp;|lt;|gt;|quot;|apos;|#)", "&amp;", svg)
     return svg
 
 
@@ -174,8 +184,49 @@ def pick_pull_font(draw, text, fs, max_width, max_lines):
     return font, lines
 
 
+# ---------- topic glyph (Tim's request, extended to the card) ----------
+# The card is where a headline is most often seen -- in a feed, or as the hero
+# image on the emailed issue -- and it was the one surface still not saying which
+# sport it was about. The page glyphs live in assets/glyph as SVG; here they are
+# rasterised once per card and composited into the top strip beside the branding.
+#
+# Recoloured by string substitution on `currentColor` before rasterising, because
+# cairosvg resolves currentColor against a CSS cascade this file does not have.
+GLYPH_DIR = REPO / "assets" / "glyph"
+TOPIC_GLYPH = {
+    "cfb": "cfb", "college football": "cfb", "ncaa": "cfb",
+    "nfl": "nfl", "pro football": "nfl",
+    "mlb": "mlb", "baseball": "mlb",
+    "nhl": "nhl", "hockey": "nhl",
+    "markets": "markets", "betting": "markets",
+    "methods": "methods", "statistics": "methods",
+}
+
+
+def topic_of(text):
+    m = re.search(r"^topic:\s*(.+)$", text, re.M)
+    return m.group(1).strip() if m else None
+
+
+def glyph_image(text, height=26, colour=GOLD):
+    """Rasterise this issue's topic glyph, or None if it has no topic we know."""
+    key = TOPIC_GLYPH.get((topic_of(text) or "").strip().lower())
+    if not key:
+        return None
+    src = GLYPH_DIR / f"{key}.svg"
+    if not src.exists():
+        return None
+    svg = src.read_text().replace("currentColor", colour)
+    m = re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', svg)
+    vw, vh = (float(m.group(1)), float(m.group(2))) if m else (26.0, 20.0)
+    width = max(1, int(round(height * vw / vh)))
+    png = cairosvg.svg2png(bytestring=svg.encode(), output_width=width,
+                           output_height=height, background_color=None)
+    return Image.open(io.BytesIO(png)).convert("RGBA")
+
+
 # ---------- branding strips (top + bottom) ----------
-def draw_branding(img, draw, fs, accent_color=GOLD):
+def draw_branding(img, draw, fs, accent_color=GOLD, glyph=None):
     # Top strip
     draw.rectangle([0, 0, W, TOP_STRIPE_H], fill=INK)
     kicker = "THE SPORTS PAGE"
@@ -183,8 +234,18 @@ def draw_branding(img, draw, fs, accent_color=GOLD):
     sep = "·"
     full = f"{kicker}   {sep}   {sub}"
     bbox = draw.textbbox((0, 0), full, font=fs["kicker"])
+    tw = bbox[2] - bbox[0]
+
+    # The glyph sits left of the wordmark, and the PAIR is centred -- otherwise
+    # adding a mark to some cards and not others shifts the wordmark between
+    # issues, which is exactly the "neat uniformity" the request was protecting.
+    gap = 16
+    gw = (glyph.width + gap) if glyph else 0
+    start = (W - (tw + gw)) // 2
+    if glyph:
+        img.paste(glyph, (start, (TOP_STRIPE_H - glyph.height) // 2), glyph)
     draw.text(
-        ((W - (bbox[2] - bbox[0])) // 2, (TOP_STRIPE_H - (bbox[3] - bbox[1])) // 2 - 4),
+        (start + gw, (TOP_STRIPE_H - (bbox[3] - bbox[1])) // 2 - 4),
         full, fill=GOLD, font=fs["kicker"],
     )
 
@@ -392,7 +453,7 @@ def render_card(path, fs):
                     hero_kind = "headline"
 
     # Redraw branding so it sits on top of any overflow
-    draw_branding(img, draw, fs)
+    draw_branding(img, draw, fs, glyph=glyph_image(text))
     return img, hero_kind
 
 
