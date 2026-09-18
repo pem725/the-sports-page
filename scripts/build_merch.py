@@ -28,6 +28,13 @@ RUST  = "#b83a1e"
 # the file literally -- a CREAM halo on a NATURAL shirt lays down a visibly
 # lighter ring. Always build light-garment art with the garment's own hex.
 NATURAL = "#e4dccf"   # Gildan Softstyle "Natural" -- dE 3.5 from the site's --aged
+# Comfort Colors 1717 "Ivory" -- the garment actually being ordered, chosen by the
+# editors on comfort. ESTIMATE, NOT VERIFIED: this is a screen approximation of a
+# garment-dyed fabric and garment dye varies lot to lot more than most blanks.
+# Pull a physical swatch and correct this before the run. It is the halo colour,
+# so getting it wrong lays a visible off-white patch where the curve crosses the S
+# -- the one failure this whole -natural/-ivory split exists to prevent.
+IVORY   = "#f2ece0"
 
 _cache = {}
 def load(path, wght):
@@ -269,7 +276,7 @@ def wordmark_horizontal(w_mm=180, fill=NAVY, bg=None):
 
 
 # ------------------------------------------------------------------- 4. tees
-def tee_masthead(w_mm=280, fill=NAVY, bg=None, ground=None):
+def tee_masthead(w_mm=280, fill=NAVY, bg=None, ground=None, url_scale=1.0):
     """Stacked lockup, then a rule, then the URL — composed with explicit
     spacing rather than splicing another SVG's string (which collided)."""
     knock = ground or bg or CREAM
@@ -278,7 +285,10 @@ def tee_masthead(w_mm=280, fill=NAVY, bg=None, ground=None):
     rule_y = h + w_mm * 0.026
     parts.append(f'<rect x="{w_mm*0.22:.2f}" y="{rule_y:.2f}" '
                  f'width="{w_mm*0.56:.2f}" height="{w_mm*0.0035:.2f}" fill="{fill}"/>')
-    us = w_mm * 0.028
+    # Tim, 2026-09-17: "might be a little more effective with a larger rendering
+    # of the website address". The address is the whole point of the back print --
+    # it is the only part that tells a stranger where to go.
+    us = w_mm * 0.028 * url_scale
     p, _ = text_paths(RM(600), "THESPORTSPAGE.NET", us, w_mm / 2,
                       rule_y + us * 1.75, fill, tracking=0.16, anchor="middle")
     parts.append(p)
@@ -365,6 +375,11 @@ def build():
     # wrong file by picking the shorter name.
     write("tee-front-badge-url-natural.svg", badge_with_url(190, ground=NATURAL))
     write("tee-01-masthead-natural.svg",     tee_masthead(280, ground=NATURAL))
+
+    # IVORY -- Comfort Colors 1717, the garment the editors chose. Same art, halo
+    # matched to this shirt instead, and a 45% larger domain on the back.
+    write("tee-front-badge-url-ivory.svg",   badge_with_url(190, ground=IVORY))
+    write("tee-01-masthead-ivory.svg",       tee_masthead(280, ground=IVORY, url_scale=1.45))
     print("done")
 
 

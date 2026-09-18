@@ -64,7 +64,30 @@ printer** — send the SVGs.
 
 ---
 
-## The garment: Gildan Softstyle, Natural
+## The garment: Comfort Colors 1717, Ivory
+
+> **Decided 2026-09-17 by the editors.** Tim: *"I'm good with the Comfort Colors
+> 1717 IVORY, with badge+domain front, masthead back."* This replaces the Gildan
+> Softstyle Natural spec below, which was chosen on colour alone and was the
+> slimmest cut in its price band. Comfort Colors is the highest-rated, roomiest,
+> garment-dyed option in `blanks.md`, at about $16.95 against Softstyle's $11.65.
+>
+> **Send the `-ivory` files.** `tee-front-badge-url-ivory.svg` and
+> `tee-01-masthead-ivory.svg`. They differ from the `-natural` pair only in the
+> halo, and that is the whole point: the halo is the garment colour, so art built
+> for Gildan Natural lays a visible off-white ring on an Ivory shirt. Rendered
+> side by side, it is obvious.
+>
+> **The Ivory hex here is an estimate and must be corrected from a physical
+> swatch.** `#f2ece0` is a screen approximation, and Comfort Colors is
+> garment-dyed, which varies lot to lot more than most blanks. Ask the printer
+> for a swatch, measure it, change `IVORY` in `scripts/build_merch.py`, rebuild.
+>
+> The back print also carries a **45% larger domain**, at Tim's request: *"might
+> be a little more effective with a larger rendering of the website address."*
+> The address is the only part of the back that tells a stranger where to go.
+
+## The old garment: Gildan Softstyle, Natural
 
 > **The blank is under review.** Softstyle was picked on colour alone and it is
 > the slimmest-cut shirt in its price band. See [`blanks.md`](blanks.md) for a
