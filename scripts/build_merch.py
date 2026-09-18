@@ -17,6 +17,9 @@ os.makedirs(OUT, exist_ok=True)
 NAVY  = "#051954"
 CREAM = "#f9f2de"
 RUST  = "#b83a1e"
+# Rust lightened so it still holds contrast against navy. Printing the light-
+# garment rust on a dark shirt reads as mud.
+RUST_DARK = "#e8703f"
 
 # Garment colours -- NOT brand colours. These exist only so the halo can be set
 # to the colour actually behind the art. Sampled from the vendor's own swatch and
@@ -296,6 +299,53 @@ def tee_masthead(w_mm=280, fill=NAVY, bg=None, ground=None, url_scale=1.0):
     return svg(round(w_mm, 2), round(total, 2), "\n".join(parts), bg)
 
 
+def _domain_line(body, w_mm, y, fill, scale=1.0):
+    """The address, under a rule. Tim, 2026-09-17: "The art should have the web
+    address included." A statement front is a curiosity; the domain is the only
+    thing that converts curiosity into a visit."""
+    body.append(f'<rect x="{w_mm*0.30:.2f}" y="{y:.2f}" width="{w_mm*0.40:.2f}" '
+                f'height="{w_mm*0.0032:.2f}" fill="{fill}"/>')
+    ds = w_mm * 0.030 * scale
+    pth, _ = text_paths(RM(600), "THESPORTSPAGE.NET", ds, w_mm / 2,
+                        y + ds * 1.55, fill, tracking=0.16, anchor="middle")
+    body.append(pth)
+    return y + ds * 2.3
+
+
+def tee_hundred_two(w_mm=280, fill=NAVY, accent=RUST, bg=None):
+    """NOBODY WINS / 102% / OF THE TIME.
+
+    Built to Tim's brief for a walking advertisement: readable at distance,
+    absurd enough at a glance that a stranger asks, and impossible to mistake for
+    something else. His objection to 67.5 was that it reads as a radio frequency
+    from across a room; a per-cent sign above one hundred cannot be anything but
+    a mistake somebody is about to explain.
+
+    From Issue #171, on why probabilities are handled in log-odds.
+    """
+    pad = w_mm * 0.04
+    big = "102%"
+    bs = (w_mm - pad * 2) * 0.72 / text_width(PF(900), big, 1.0)
+    ss = bs * 0.30
+    body = []
+    y1 = pad + ss * 0.78
+    pth, _ = text_paths(PF(900), "NOBODY WINS", ss, w_mm / 2, y1, fill,
+                        tracking=0.03, anchor="middle")
+    body.append(pth)
+    # The per-cent sign rides above the cap height of the digits in Playfair 900,
+    # so the usual 0.80 of a line drops it into the text above. Measured, not
+    # guessed: at 0.80 the % crosses the S of WINS.
+    y2 = y1 + bs * 0.98
+    pth, _ = text_paths(PF(900), big, bs, w_mm / 2, y2, accent, anchor="middle")
+    body.append(pth)
+    y3 = y2 + ss * 1.15
+    pth, _ = text_paths(PF(900), "OF THE TIME", ss, w_mm / 2, y3, fill,
+                        tracking=0.03, anchor="middle")
+    body.append(pth)
+    end = _domain_line(body, w_mm, y3 + ss * 0.55, fill)
+    return svg(round(w_mm, 2), round(end + pad * 0.4, 2), "\n".join(body), bg)
+
+
 def tee_denominator(w_mm=280, fill=NAVY, accent=RUST, bg=None):
     pad = w_mm * 0.04
     l1, l2 = "ASK FOR THE", "DENOMINATOR"
@@ -316,7 +366,8 @@ def tee_denominator(w_mm=280, fill=NAVY, accent=RUST, bg=None):
     p, _ = text_paths(RM(600), sub, ss, w_mm / 2, ry + ss * 1.5, fill,
                       tracking=0.16, anchor="middle")
     body.append(p)
-    return svg(round(w_mm, 2), round(ry + ss * 2.4 + pad * 0.5, 2), "\n".join(body), bg)
+    end = _domain_line(body, w_mm, ry + ss * 2.5, fill)
+    return svg(round(w_mm, 2), round(end + pad * 0.4, 2), "\n".join(body), bg)
 
 
 def tee_founding(w_mm=280, fill=NAVY, accent=RUST, bg=None):
@@ -336,8 +387,8 @@ def tee_founding(w_mm=280, fill=NAVY, accent=RUST, bg=None):
         p, _ = text_paths(RM(600), ln, cs, w_mm / 2, ry + cs * (1.6 + i * 1.45),
                           fill, tracking=0.14, anchor="middle")
         body.append(p)
-    h = ry + cs * (1.6 + 2 * 1.45) + pad
-    return svg(round(w_mm, 2), round(h, 2), "\n".join(body), bg)
+    end = _domain_line(body, w_mm, ry + cs * (1.6 + 2 * 1.45) + cs * 0.6, fill)
+    return svg(round(w_mm, 2), round(end + pad * 0.4, 2), "\n".join(body), bg)
 
 
 def build():
@@ -378,6 +429,9 @@ def build():
 
     # IVORY -- Comfort Colors 1717, the garment the editors chose. Same art, halo
     # matched to this shirt instead, and a 45% larger domain on the back.
+    write("tee-04-hundred-two.svg",          tee_hundred_two(280))
+    write("tee-04-hundred-two-reversed.svg",
+                                             tee_hundred_two(280, fill=CREAM, accent=RUST_DARK, bg=None))
     write("tee-front-badge-url-ivory.svg",   badge_with_url(190, ground=IVORY))
     write("tee-01-masthead-ivory.svg",       tee_masthead(280, ground=IVORY, url_scale=1.45))
     print("done")
