@@ -8,7 +8,117 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Sep 2026 11:35:18 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 11:07:54 GMT</lastBuildDate>
+    <item>
+      <title>#174: Our Model Went 15 for 15. That Is How We Knew It Was Broken.</title>
+      <link>https://thesportspage.net/published/154-no-edge.html</link>
+      <description>A perfect backtest is not a triumph; it is a bug report. Rebuilt so that cheating was impossible, the same method beat the spread 51.0% of the time across 2,140 games — and the interval around that contains 50.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/154-no-edge.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/154-no-edge.png" alt="Our Model Went 15 for 15. That Is How We Knew It Was Broken." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208"><span class="hed-glyph" style="color:var(--muted);font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208" title="Methods"><svg class="tg" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 3v13M6 16h14" stroke="currentColor" stroke-width="1.6"/><path d="M6.2 6.4h13.6" stroke="currentColor" stroke-width="1.5"/><path d="M6.9 6.6 4.2 11.4h5.4Z" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/><path d="M19.1 6.6 16.4 11.4h5.4Z" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/></svg></span>Our Model Went 15 for 15. <em>That Is How We Knew It Was Broken.</em></h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">A perfect backtest is not a triumph; it is a bug report. Rebuilt so that cheating was impossible, the same method beat the spread <strong>51.0%</strong> of the time across <strong>2,140</strong> games &mdash; and the interval around that contains 50.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; The Professor &middot; marking our own homework, again</p>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v good" style="font-size:28px;font-weight:bold;line-height:1;display:block">15/15</div><div class="l">What the broken test said</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">51.0%</div><div class="l">What the honest one said, over 2,140 games</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v now" style="font-size:28px;font-weight:bold;line-height:1;display:block">52.4%</div><div class="l">What you need just to break even</div></div>
+  </div>
+
+  <p><strong>The question:</strong> can our ratings beat a betting line?</p>
+
+  <p><strong>No. And for one afternoon we had convincing evidence that we could.</strong></p>
+
+  <p><strong>Why that is surprising.</strong> Not the answer &mdash; the answer is what anyone should expect. What is surprising is how <em>good</em> the wrong evidence looked, and that the thing which exposed it was the result being too good.</p>
+
+  <p><strong>What you get:</strong> the smell test that catches this in your own work.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The result that was too good</h3>
+
+  <p>We keep a ledger of picks in a family pool. Wanting to know whether our method was any use, we ran it backwards over a week of games already played.</p>
+
+  <p>It went <strong>15 for 15</strong>. Every pick, against the spread, in the correct order of confidence.</p>
+
+  <p>Now, that should feel wonderful for about four seconds. Fifteen coin flips landing the same way is roughly a one-in-thirty-three-thousand event. Which is the point: when a test hands you a number that good, the model is almost never the explanation.</p>
+
+  <p>So we measured the thing directly. Across all 51 games that week, the correlation between our edge and what actually happened against the spread was <strong>+0.842</strong>.</p>
+
+  <p>Nobody predicts closing lines at 0.84. A genuinely good model sits near <strong>+0.10</strong>. That number is not a discovery; it is a confession.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What we had done</h3>
+
+  <p>The ratings we fed the test were not the ratings that existed before the games. They were today&rsquo;s.</p>
+
+  <p>The data provider serves one set of ratings and overwrites them as results arrive. We had noticed the drift ourselves two days earlier &mdash; one club had moved from 32.7 to 30.0 &mdash; and then ran the test with the updated numbers anyway.</p>
+
+  <p>So the model was asked to predict games it had already watched. It did brilliantly. Anyone would.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">Leakage does not announce itself with an error. It announces itself with a wonderful result.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Doing it so cheating was impossible</h3>
+
+  <p>The fix was to stop borrowing anybody&rsquo;s rating. We built our own from scratch, and rebuilt it every week of the season using <em>only the games played before that week</em>. A rating for week seven has never seen week seven. It cannot.</p>
+
+  <p>Then we let it pick against the closing line for every game of 2024 and 2025 &mdash; <strong>2,140 games</strong>.</p>
+
+  <p>It won <strong>51.0%</strong> of them. The 95% interval runs from <strong>48.9% to 53.1%</strong>. Break-even against a standard line is <strong>52.4%</strong>.</p>
+
+  <p>The interval contains 50. We cannot reject the possibility that our model knows nothing whatsoever about football.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-label">Figure 1 &middot; The test the ranking depends on, and fails</div>
+<img src="https://thesportspage.net/assets/figures/154-no-edge-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+  </div>
+
+  <p>Look at what that figure does to the idea underneath the whole method. We rank our confidence by <em>how far our number sits from the line</em> &mdash; the bigger the disagreement, the more sure we are.</p>
+
+  <p>If that were sound, the bars would climb. They sit flat. A six-point disagreement wins 51.1% of the time; so does a disagreement of more than ten. The one band above break-even, at three to six points, is a lonely bar among four and we are not going to build anything on it.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Why the market is so hard to beat</h3>
+
+  <p>Worth saying plainly, because it is not a failure of our arithmetic.</p>
+
+  <p>A betting line is not a prediction. It is the price at which the money balances. Every injury report, every bit of local knowledge, every professional model already sits inside it. To beat it you do not need to be good; you need to know something several thousand motivated people have missed.</p>
+
+  <p>We did not. Almost nobody does.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What to take home: be suspicious of your best result</h3>
+
+  <p>Everyone knows to check a result that looks wrong. Almost nobody checks the one that looks wonderful, and that is where the errors live, because a mistake that flatters you does not feel like a mistake.</p>
+
+  <p>So keep one rule: <strong>when a number comes back better than it has any right to be, treat it as a bug until you have proved otherwise.</strong></p>
+
+  <p>The specific version, for anything predicting the future: ask what your inputs knew, and <em>when</em> they knew it. A rating that updates is a rating that has read the newspaper. A survey scored after the outcome is a survey that saw it. The past is remarkably easy to predict once it has happened.</p>
+
+  <p>We now write the ratings down every Thursday, before kickoff, and keep them. In November we will be able to answer this honestly. Today we cannot, and saying so costs less than the alternative.</p>
+
+  <div class="watch">
+  <div class="watch-label">What to Watch &middot; Friday, September 18</div>
+  <div class="w-row"><div class="w-sport">Baseball</div><div class="w-game"><strong>Blue Jays</strong> at <strong>Rangers</strong><span class="w-time">8:05pm ET</span></div><div class="w-why">38 points of playoff probability ride on it. Both clubs sit near a coin flip, which is where a single game is worth most. If the Rangers win they go to 53%; if they lose, 31%.</div></div>
+  <p class="watch-note">Baseball is ranked by championship leverage: we simulate the rest of the
+     season 60,000 times, then split those seasons by who won each of today's games. College
+     football cannot be simulated that way, so it is ranked by how close to a coin flip the
+     ratings make it &mdash; a lopsided game teaches you nothing. Tomorrow this block reports what
+     happened to today's pick.</p>
+</div>
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">The broken test: SP+ ratings from the CollegeFootballData API against mean closing spreads from the same source, on the 51 games of week one 2026 where both clubs were rated and a line existed. Fifteen of fifteen against the spread on the top-ranked card; correlation between our edge and the actual result against the spread +0.842. The endpoint serves current ratings and overwrites them as the season progresses; there is no historical snapshot.</p>
+    <p style="color:#c8b99a">The honest test: a Simple Rating System solved from scratch by iterating each club&rsquo;s value to the mean of its game margins plus its opponents&rsquo; values, margins capped at 28 points, 2.5 points removed for home field. For each week from week five onward it is rebuilt using only games from earlier weeks that season, then used to pick against that week&rsquo;s closing line. 2,140 games across 2024 and 2025, pushes excluded.</p>
+    <p style="color:#c8b99a">Result: 1,091 wins, 51.0%. Standard error on a proportion at this sample is 1.1 points, giving a 95% interval of 48.9% to 53.1%. Correlation between edge and result against the spread, +0.018. By season: 52.6% in 2024 (r = +0.039), 49.4% in 2025 (r = &minus;0.004). By edge band: 0&ndash;3 points 49.3% (n=980), 3&ndash;6 points 53.5% (n=620), 6&ndash;10 points 51.1% (n=354), above 10 points 51.1% (n=186).</p>
+    <p style="color:#c8b99a">Three limits. Beginning at week five means the early season, where a market is least settled and an edge most plausible, is excluded &mdash; that is a real cost of removing leakage, since a rating needs games before it exists. Our rating uses margins alone and no injury, weather or personnel information, so this bounds what a simple rating can do rather than what any model could. And 51.0% is not proof of no edge; it is a failure to detect one, which is a weaker and more honest claim.</p>
+    <p style="color:#c8b99a">Reproduce it: <code style="color:#e0d8c5">python3 scripts/snapshot_ratings.py</code> freezes each week&rsquo;s ratings before kickoff so that future tests need no reconstruction at all.</p>
+  </div>
+
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a"><span>The Sports Page &middot; Vol. I, No. 174</span><span>Be suspicious of your best result</span><span>September 18, 2026 &middot; New York, NY</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>]]></content:encoded>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/154-no-edge.html</guid>
+    </item>
     <item>
       <title>#173: Oregon Lost One Game. Now Nobody Can Agree How Good They Are.</title>
       <link>https://thesportspage.net/published/156-system-disagreement.html</link>
