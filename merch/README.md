@@ -26,17 +26,18 @@ Canvases are sized in real millimetres, so files drop into a print layout at 1:1
 
 ### T-shirt — everyone (screen print or DTG)
 
-**The house shirt is a two-position print on a NATURAL garment:**
+**The house shirt is a two-position print on an IVORY garment:**
 
 | Position | File | Width | Colours |
 |---|---|---|---|
-| **Front** | `tee-front-badge-url-natural.svg` | 190 mm | 1 (navy) |
-| **Back** | `tee-01-masthead-natural.svg` | 280 mm | 1 (navy) |
+| **Front** | `tee-front-badge-url-ivory.svg` | 190 mm | 1 (navy) |
+| **Back** | `tee-01-masthead-ivory.svg` | 280 mm | 1 (navy) |
 
-**Send the `-natural` files, not the plain ones.** They are identical except for
-the halo colour, and the reason is in "The halo" below. The plain
-`tee-front-badge-url.svg` and `tee-01-masthead.svg` remain as the generic
-light-garment masters for any future garment colour.
+**Send the `-ivory` files.** Every variant here is identical except for the halo
+colour, and the halo must match the garment — see "The halo" below. The
+`-natural` pair is for Gildan Softstyle Natural and will print a visible ring on
+Ivory. The plain `tee-front-badge-url.svg` and `tee-01-masthead.svg` remain the
+generic light-garment masters for any future colour.
 
 Front is the badge with the bare domain beneath it — no `http://`, no `www`.
 `thesportspage.net` is the whole address anyone needs to type, and the extra
