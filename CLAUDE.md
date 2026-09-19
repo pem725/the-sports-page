@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 326 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 325 issues remaining of 500
 
 ## Repository Structure
 
@@ -1035,9 +1035,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 174 issues (#1-174)
-Queue: 12 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 147-talent-addresses, 149-where-players-die, 152-returning-noise, 158-possession-collapse, 159-turnover-persistence, 160-the-vig, 161-booth-stats, 162-who-moved, _TEMPLATE)
+Published: 175 issues (#1-175)
+Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 147-talent-addresses, 149-where-players-die, 152-returning-noise, 158-possession-collapse, 159-turnover-persistence, 160-the-vig, 161-booth-stats, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 326 issues remaining of 500
-Last published: Issue #174 — "Our Model Went 15 for 15. That Is How We Knew It Was Broken." (154-no-edge.html) on September 18, 2026
+Goal: 325 issues remaining of 500
+Last published: Issue #175 — "Mississippi State Won by 25. The Numbers Say Minnesota Is Just Bad." (162-who-moved.html) on September 19, 2026
