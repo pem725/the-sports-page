@@ -289,16 +289,26 @@ the simplest version of the mark to stitch by a wide margin.
 
 ## What to send the printer
 
-For the tee order as specified — Gildan Softstyle, Natural:
+**THE ORDER, as decided by the editors on 2026-09-17.** Tim:
+*"I'm good with the Comfort Colors 1717 IVORY, with badge+domain front, masthead
+back."* That is the whole spec. The three statement fronts — denominator, 67.5,
+102% — are alternates for a later run and are **not** part of this one.
 
-1. **`tee-front-badge-url-natural.svg`** (front, 190 mm) and
-   **`tee-01-masthead-natural.svg`** (back, 280 mm). Not the previews, and not
-   the versions without `-natural`.
+1. **`tee-front-badge-url-ivory.svg`** (front, 190 mm) and
+   **`tee-01-masthead-ivory.svg`** (back, 280 mm). Not the previews, not the
+   plain versions, and **not the `-natural` pair** — those are built for a
+   different garment and will print a visible ring around the curve on Ivory.
 2. The Pantone number for the navy, flagged as **to be confirmed against physical
    chips** — it is easy to get too purple.
-3. Garment: **Gildan Softstyle Jersey, Natural**, with the size breakdown.
-   Remember Natural stops at 3XL.
-4. This note: *"All type is outlined. One colour, navy. The lighter stroke
+3. Garment: **Comfort Colors 1717, Ivory**, with the size breakdown. Confirm the
+   available size range with the supplier rather than assuming it matches the old
+   Gildan spec; it is a different blank.
+4. **Ask for a physical Ivory swatch before the run.** The halo in the art is set
+   to `#f2ece0`, which is a screen estimate. Comfort Colors is garment-dyed and
+   varies lot to lot. Measure the swatch, change `IVORY` in
+   `scripts/build_merch.py`, rebuild, resend. It is a two-minute job and it is the
+   difference between an invisible halo and a visible one.
+5. This note: *"All type is outlined. One colour, navy. The lighter stroke
    tracing the curve is a knockout to garment colour, not a second ink — it is
    already set to this garment. Reversed art is intentionally transparent; the
    garment is the background. Do not add a fill layer."*
