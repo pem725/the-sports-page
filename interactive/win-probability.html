@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Sports Page &mdash; How Many Points Do You Need?</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital@0;1&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif}
+.wrap{max-width:860px;margin:0 auto;padding:1.4rem 1.1rem 2.4rem;background:var(--cream)}
+h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.5rem,4.4vw,2.2rem);line-height:1.14;margin:.2rem 0 .5rem}
+.kick{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+p.deck{font-size:.98rem;line-height:1.55;margin:.2rem 0 1.1rem}
+figure{margin:0}
+svg{width:100%;height:auto;display:block;background:#fffdf7;border:1px solid var(--div)}
+.controls{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin:.7rem 0 .2rem}
+button{font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+ padding:.5rem .95rem;border:1px solid var(--ink);background:var(--ink);color:var(--cream);cursor:pointer}
+button.ghost{background:transparent;color:var(--ink)}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+input[type=range]{flex:1;min-width:180px;accent-color:var(--rust)}
+.yr{font-family:'Roboto Mono',monospace;font-weight:600;font-size:1.5rem;min-width:3.6em}
+.read{font-family:'Roboto Mono',monospace;font-size:.76rem;color:var(--muted);margin:.35rem 0 0;line-height:1.7}
+.read b{color:var(--ink)}
+.note{font-size:.8rem;line-height:1.6;color:var(--muted);border-top:1px solid var(--div);margin-top:1.3rem;padding-top:.9rem}
+a{color:var(--rust)}
+@media (prefers-reduced-motion:reduce){}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kick">The Sports Page &middot; Interactive</div>
+  <h1>How Many Points Do You Need to Win?</h1>
+  <p class="deck">Every NFL season from 1999 to 2025. The curve is the chance a team won, given only the points it scored. Watch where the coin flip sits.</p>
+
+  <figure>
+  <svg id="c" viewBox="0 0 860 470" role="img" aria-label="Animated chart of win probability against points scored, by season"></svg>
+  </figure>
+
+  <div class="controls">
+    <button id="play">Play</button>
+    <span class="yr" id="yr">1999</span>
+    <input id="scrub" type="range" min="0" max="0" value="0" step="1" aria-label="Season">
+    <button id="reset" class="ghost">Reset</button>
+  </div>
+  <p class="read" id="read"></p>
+
+  <p class="note"><b>How to read it.</b> The dark line is the season playing. The two faint lines are 1999 and 2025, fixed, so you can see the drift. The gold marker is the score at which a team is an even bet &mdash; a coin flip &mdash; and the small tick below it is that season&rsquo;s average points per team per game.<br><br>
+  <b>The thing to watch</b> is that those two very nearly never part company. Score the league average and you are an even bet; score above it and you are a favourite. The curve barely changes shape across twenty-seven years. It slides right, and it slides exactly as far as scoring inflates.<br><br>
+  <b>Method.</b> One logistic fit per season on every team-game, 13,928 in all, from nflverse play-by-play. The curve gives the chance of winning having scored <em>exactly</em> that many, which is not the same as scoring <em>at least</em> that many &mdash; the second is higher, because it includes every blowout above it. 1999 is as far back as the source reaches. <a href="https://thesportspage.net/">thesportspage.net</a></p>
+</div>
+
+<script>
+const FITS = {"1999":{"a":-3.22941,"b":0.15707,"p50":20.56,"mean":20.82,"n":494},"2000":{"a":-2.95224,"b":0.14511,"p50":20.35,"mean":20.66,"n":492},"2001":{"a":-3.22147,"b":0.16148,"p50":19.95,"mean":20.21,"n":496},"2002":{"a":-3.28144,"b":0.15192,"p50":21.6,"mean":21.67,"n":512},"2003":{"a":-3.46345,"b":0.16859,"p50":20.54,"mean":20.83,"n":512},"2004":{"a":-3.24568,"b":0.15376,"p50":21.11,"mean":21.48,"n":512},"2005":{"a":-3.71673,"b":0.18304,"p50":20.31,"mean":20.62,"n":512},"2006":{"a":-3.37206,"b":0.16445,"p50":20.5,"mean":20.66,"n":512},"2007":{"a":-3.47564,"b":0.16345,"p50":21.26,"mean":21.69,"n":512},"2008":{"a":-3.72353,"b":0.17067,"p50":21.82,"mean":22.03,"n":512},"2009":{"a":-3.7964,"b":0.17907,"p50":21.2,"mean":21.47,"n":512},"2010":{"a":-3.5197,"b":0.16118,"p50":21.84,"mean":22.04,"n":512},"2011":{"a":-4.09465,"b":0.18826,"p50":21.75,"mean":22.18,"n":512},"2012":{"a":-3.85857,"b":0.17139,"p50":22.51,"mean":22.76,"n":512},"2013":{"a":-3.83184,"b":0.16473,"p50":23.26,"mean":23.41,"n":512},"2014":{"a":-4.1565,"b":0.1873,"p50":22.19,"mean":22.59,"n":512},"2015":{"a":-3.88356,"b":0.17224,"p50":22.55,"mean":22.81,"n":512},"2016":{"a":-3.89458,"b":0.1707,"p50":22.81,"mean":22.78,"n":512},"2017":{"a":-3.80606,"b":0.17715,"p50":21.49,"mean":21.72,"n":512},"2018":{"a":-3.4722,"b":0.14899,"p50":23.3,"mean":23.34,"n":512},"2019":{"a":-3.88781,"b":0.17112,"p50":22.72,"mean":22.81,"n":512},"2020":{"a":-4.22004,"b":0.16954,"p50":24.89,"mean":24.79,"n":512},"2021":{"a":-4.01852,"b":0.17522,"p50":22.93,"mean":22.98,"n":544},"2022":{"a":-3.46732,"b":0.15915,"p50":21.79,"mean":21.88,"n":542},"2023":{"a":-3.82743,"b":0.17779,"p50":21.53,"mean":21.77,"n":544},"2024":{"a":-3.99474,"b":0.17632,"p50":22.66,"mean":22.91,"n":544},"2025":{"a":-3.7432,"b":0.16294,"p50":22.97,"mean":23.01,"n":544}};
+const YEARS = Object.keys(FITS).map(Number).sort((a,b)=>a-b);
+const NS="http://www.w3.org/2000/svg";
+const W=860,H=470,L=64,R=26,T=26,B=62;
+const PW=W-L-R, PH=H-T-B, XMAX=50;
+const sx=v=>L+v/XMAX*PW, sy=p=>T+(1-p)*PH;
+const P=(a,b,x)=>1/(1+Math.exp(-(a+b*x)));
+const svg=document.getElementById('c');
+function el(n,at){const e=document.createElementNS(NS,n);for(const k in at)e.setAttribute(k,at[k]);return e;}
+function path(a,b){let d="";for(let x=0;x<=XMAX;x+=0.5){d+=(x?"L":"M")+sx(x).toFixed(1)+" "+sy(P(a,b,x)).toFixed(1);}return d;}
+
+// static furniture
+const g=el('g',{});svg.appendChild(g);
+[0,.25,.5,.75,1].forEach(p=>{
+  g.appendChild(el('line',{x1:L,y1:sy(p),x2:L+PW,y2:sy(p),stroke:'#c8b99a','stroke-width':p===.5?1.5:.7,'stroke-dasharray':p===.5?'':'3,3'}));
+  const t=el('text',{x:L-10,y:sy(p)+4,'text-anchor':'end','font-size':11,fill:'#6b5e4a','font-family':'Roboto Mono, monospace'});
+  t.textContent=(p*100)+'%';g.appendChild(t);
+});
+[0,10,20,30,40,50].forEach(v=>{
+  g.appendChild(el('line',{x1:sx(v),y1:T,x2:sx(v),y2:T+PH,stroke:'#c8b99a','stroke-width':.7,'stroke-dasharray':'3,3'}));
+  const t=el('text',{x:sx(v),y:T+PH+20,'text-anchor':'middle','font-size':11,fill:'#6b5e4a','font-family':'Roboto Mono, monospace'});
+  t.textContent=v;g.appendChild(t);
+});
+const xl=el('text',{x:L+PW/2,y:T+PH+44,'text-anchor':'middle','font-size':12,fill:'#1a1208'});
+xl.textContent='Points your team scored';g.appendChild(xl);
+const yl=el('text',{x:16,y:T+PH/2,'text-anchor':'middle','font-size':12,fill:'#1a1208',transform:`rotate(-90 16 ${T+PH/2})`});
+yl.textContent='Chance you won';g.appendChild(yl);
+
+// ghosts
+const first=FITS[YEARS[0]], last=FITS[YEARS[YEARS.length-1]];
+svg.appendChild(el('path',{d:path(first.a,first.b),fill:'none',stroke:'#2c4a6e','stroke-width':2,opacity:.28}));
+svg.appendChild(el('path',{d:path(last.a,last.b),fill:'none',stroke:'#b83a1e','stroke-width':2,opacity:.28}));
+function tag(x,y,txt,col){const t=el('text',{x:x,y:y,'font-size':10.5,fill:col,'font-family':'Roboto Mono, monospace'});t.textContent=txt;svg.appendChild(t);}
+tag(sx(44),sy(P(first.a,first.b,44))+16,String(YEARS[0]),'#2c4a6e');
+tag(sx(44),sy(P(last.a,last.b,44))-8,String(YEARS[YEARS.length-1]),'#b83a1e');
+
+// live layer
+const live=el('path',{fill:'none',stroke:'#1a1208','stroke-width':3.4,'stroke-linecap':'round'});svg.appendChild(live);
+const mark=el('circle',{r:7,fill:'#c9962a',stroke:'#1a1208','stroke-width':1.6});svg.appendChild(mark);
+const mean=el('line',{stroke:'#6b5e4a','stroke-width':2});svg.appendChild(mean);
+const yrText=el('text',{x:L+16,y:T+34,'font-size':30,'font-family':'Roboto Mono, monospace','font-weight':600,fill:'#1a1208',opacity:.16});svg.appendChild(yrText);
+
+const $yr=document.getElementById('yr'), $read=document.getElementById('read'),
+      $scrub=document.getElementById('scrub'), $play=document.getElementById('play');
+$scrub.max=YEARS.length-1;
+
+function draw(i){
+  const y=YEARS[i], f=FITS[y];
+  live.setAttribute('d',path(f.a,f.b));
+  mark.setAttribute('cx',sx(f.p50)); mark.setAttribute('cy',sy(.5));
+  mean.setAttribute('x1',sx(f.mean)); mean.setAttribute('x2',sx(f.mean));
+  mean.setAttribute('y1',T+PH); mean.setAttribute('y2',T+PH-14);
+  yrText.textContent=y; $yr.textContent=y; $scrub.value=i;
+  $read.innerHTML='Coin flip at <b>'+f.p50.toFixed(1)+'</b> points &nbsp;&middot;&nbsp; league average <b>'
+    +f.mean.toFixed(1)+'</b> &nbsp;&middot;&nbsp; '+f.n+' team-games';
+}
+let i=0,timer=null;
+function stop(){clearInterval(timer);timer=null;$play.textContent='Play';}
+function play(){
+  if(timer){stop();return;}
+  if(i>=YEARS.length-1) i=0;
+  $play.textContent='Pause';
+  timer=setInterval(()=>{ i++; if(i>=YEARS.length){i=YEARS.length-1;draw(i);stop();return;} draw(i); },520);
+}
+$play.addEventListener('click',play);
+$scrub.addEventListener('input',e=>{stop();i=+e.target.value;draw(i);});
+document.getElementById('reset').addEventListener('click',()=>{stop();i=0;draw(0);});
+draw(0);
+</script>
+</body>
+</html>
