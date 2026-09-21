@@ -662,7 +662,63 @@
    "advice_given": "Recommended heavy points on the contrarian side where the model agreed -- Maryland, Northwestern, Kansas, Texas State -- on TOURNAMENT logic, not edge: the games are coin flips, so the only lever is differentiation from the field. The editor took Northwestern at 2 and Texas State at 7, and went the other way on Kansas and Maryland. Worth grading the advice separately from the picks.",
    "caveat": "No edge is claimed. Issue #154 measured this method at 51.0% over 2,140 games, interval containing 50.",
    "rationale_recorded": "2026-09-15, in the editor's own words",
-   "verified": "Head coaches checked against the CFBD feed. Corrected: Jon Sumrall (Florida), Clark Lea (Vanderbilt), Dave Doeren (NC State). Confirmed: Kiffin (LSU), Franklin (Virginia Tech), Dillingham (Arizona State), Beamer (South Carolina), Locksley (Maryland), Belichick (North Carolina). Could NOT confirm the Ole Miss head coach or the Clemson quarterback injury; neither is stated as fact."
+   "verified": "Head coaches checked against the CFBD feed. Corrected: Jon Sumrall (Florida), Clark Lea (Vanderbilt), Dave Doeren (NC State). Confirmed: Kiffin (LSU), Franklin (Virginia Tech), Dillingham (Arizona State), Beamer (South Carolina), Locksley (Maryland), Belichick (North Carolina). Could NOT confirm the Ole Miss head coach or the Clemson quarterback injury; neither is stated as fact.",
+   "result": {
+    "graded": "2026-09-21, from the CBS weekly standings",
+    "standings": [
+     {
+      "place": 1,
+      "entry": "Patrick jr",
+      "ats": "8/15",
+      "points": 70
+     },
+     {
+      "place": 2,
+      "entry": "Tim",
+      "ats": "8/15",
+      "points": 69
+     },
+     {
+      "place": 3,
+      "entry": "Brendan \u2014 angriest icon",
+      "ats": "8/15",
+      "points": 67
+     },
+     {
+      "place": 4,
+      "entry": "Kevin",
+      "ats": "8/15",
+      "points": 64
+     },
+     {
+      "place": 5,
+      "entry": "Patrick (editor)",
+      "ats": "9/15",
+      "points": 64
+     },
+     {
+      "place": 6,
+      "entry": "The Sports Page \u2014 model",
+      "ats": "8/15",
+      "points": 59
+     },
+     {
+      "place": 7,
+      "entry": "Lisa",
+      "ats": "8/15",
+      "points": 53
+     },
+     {
+      "place": 8,
+      "entry": "Cora \u2014 prettiest colours",
+      "ats": "5/15",
+      "points": 37
+     }
+    ],
+    "the_finding": "SIX OF EIGHT ENTRIES WENT EXACTLY 8/15. A rating model, four adults who follow football closely, and a child picking the angriest-looking mascot all landed on the same number. The methods did not separate. This is what the control group was for and it worked on its first week.",
+    "editor_vs_model": "The editor beat the model on BOTH games where they disagreed most. Arizona State covered (editor 11, model had Kansas at 14). Virginia Tech covered (editor 1, model had Maryland at 7) -- the James Franklin grudge call, the one thing the model had no way to represent, and the editor priced it at a single point.",
+    "caveat": "One week, 15 picks. Do not read it as the eye test beating the model; read it as eight methods failing to separate, which is the null result #154 predicted."
+   }
   }
  },
  "scoring": "AGAINST THE SPREAD, settled 2026-09-15 from the official CBS rules: 'Participants must select the team that will beat the Winning Margin.' The ledger previously graded STRAIGHT UP, which overstated week 1 as 11/14 when the true ATS record was 9/14.",
@@ -971,7 +1027,13 @@
    "expectation": "7 or 8 of 15. A coin flip, per #154. A win this week would be luck and will be called that.",
    "rationale_file": "tracking/sports-page-picks-2026-w3.md",
    "protocol": "From week 4 The Sports Page enters and commits its reasoning BEFORE seeing any other slate. If concealment is wanted, commit the SHA-256 of the rationale at entry and publish the text after kickoff, so nobody has to take our word for the timestamp.",
-   "verified_live": "2026-09-15, read back from the CBS board: 15/15, tiebreaker saved, zero discrepancies"
+   "verified_live": "2026-09-15, read back from the CBS board: 15/15, tiebreaker saved, zero discrepancies",
+   "result": {
+    "ats": "8/15",
+    "points": 59,
+    "place": "6th of 8",
+    "note": "Our two largest edges both lost: South Carolina at 15 (+5.9 edge) and Kansas at 14 (+4.9)."
+   }
   }
  }
 }
