@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 323 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 322 issues remaining of 500
 
 ## Repository Structure
 
@@ -1035,9 +1035,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 177 issues (#1-177)
-Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 147-talent-addresses, 149-where-players-die, 152-returning-noise, 158-possession-collapse, 159-turnover-persistence, 160-the-vig, _TEMPLATE)
+Published: 178 issues (#1-178)
+Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 149-where-players-die, 152-returning-noise, 158-possession-collapse, 159-turnover-persistence, 160-the-vig, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 323 issues remaining of 500
-Last published: Issue #177 — "The Booth Shows You Twelve Numbers. Eight of Them Mean Nothing." (161-booth-stats.html) on September 21, 2026
+Goal: 322 issues remaining of 500
+Last published: Issue #178 — "Where Do They Find These Guys? Five Thousand High Schools Never Made One." (147-talent-addresses.html) on September 22, 2026
