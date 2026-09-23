@@ -41,7 +41,7 @@
 
   <p>And yet the feeling behind it is right. Ask instead how many offensive linemen the South makes <em>per defensive lineman</em>, and you get <strong>0.63</strong>. Everywhere else the figure is 0.98 &mdash; near enough one for one.</p>
 
-  <p>So a coach recruiting his own backyard in Georgia finds three defensive linemen for every two on offence. A coach in Ohio finds one of each. Both are standing in a rich field; only one of them keeps running short of the same thing. That is how a true feeling produces a false sentence.</p>
+  <p>So a coach recruiting his own backyard in Georgia finds three defensive linemen for every two on offense. A coach in Ohio finds one of each. Both are standing in a rich field; only one of them keeps running short of the same thing. That is how a true feeling produces a false sentence.</p>
 
   <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Now the part that answers the real question</h3>
 
@@ -217,7 +217,7 @@
 
   <p>Those are two different claims and they get mixed up constantly.</p>
 
-  <p>A fumble can lose you a Sunday. But a ball hits the ground and bounces. Roughly half the time the offence gets it back. No coach changes the shape of a football.</p>
+  <p>A fumble can lose you a Sunday. But a ball hits the ground and bounces. Roughly half the time the offense gets it back. No coach changes the shape of a football.</p>
 
   <p>So a team that won the turnover battle all year is barely more likely to win it again.</p>
 
@@ -258,7 +258,7 @@
     <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
     <p style="color:#c8b99a">5,278 team-games, 2016&ndash;2025, from nflverse play-by-play. Each stat is a margin &mdash; own minus opponent &mdash; averaged over weeks 1 to 8, then correlated with win rate from week 9 on. 320 team-seasons with at least six games either side.</p>
     <p style="color:#c8b99a">The second column is a partial correlation holding point margin fixed. On its own, every stat here looks useful: third down percentage +0.280, first downs +0.290, turnover margin +0.245, possession +0.216. Holding the score fixed they fall to +0.033, +0.031, &minus;0.016 and &minus;0.003. The four that survive are yards per play +0.081, explosive plays +0.070, completion percentage +0.068 and total yards +0.061.</p>
-    <p style="color:#c8b99a">Penalties are credited to whoever committed them rather than assumed to be the offence. Red zone trips are counted once per drive, not once per play inside the twenty, which would reward stalling there.</p>
+    <p style="color:#c8b99a">Penalties are credited to whoever committed them rather than assumed to be the offense. Red zone trips are counted once per drive, not once per play inside the twenty, which would reward stalling there.</p>
     <p style="color:#c8b99a">Three limits. This predicts a team&rsquo;s remaining SEASON, not a single game; third down percentage plainly matters in the game you are watching. "Adds nothing" means adds nothing <em>beyond the score</em> &mdash; if you somehow knew the third down rate and not the result, you would still know something. And one oddity we are not explaining: penalty yards runs slightly the wrong way, so committing fewer penalties tracks a marginally worse second half. It is small, we have logged it, and we would rather leave it unexplained than invent a reason.</p>
     <p style="color:#c8b99a">Tools: <code style="color:#e0d8c5">scripts/build_nfl_broadcast_stats.py</code> and <code style="color:#e0d8c5">scripts/rank_broadcast_stats.py</code>.</p>
   </div>
@@ -270,12 +270,12 @@
       <guid isPermaLink="true">https://thesportspage.net/published/161-booth-stats.html</guid>
     </item>
     <item>
-      <title>#176: We Made No Bets. Kentucky Beat a 20-Point Favourite at Kyle Field.</title>
+      <title>#176: We Made No Bets. Kentucky Beat a 20-Point Favorite at Kyle Field.</title>
       <link>https://thesportspage.net/published/sunday-024.html</link>
       <description>Six issues, zero forward forecasts — a week we spent teaching you how a backtest breaks and why home field disappeared before the empty stadiums. While we did that, Kentucky walked into College Station as a 1-in-9 shot. The final was 31–21. Here is how to think about a number like that.</description>
       <content:encoded><![CDATA[<div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
 
-  <h1 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">We Made No Bets. Kentucky <em>Beat a 20-Point Favourite</em> at Kyle Field.</h1>
+  <h1 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">We Made No Bets. Kentucky <em>Beat a 20-Point Favorite</em> at Kyle Field.</h1>
 
   <div class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">
     Six issues, zero forward forecasts &mdash; a week we spent teaching you how a backtest breaks and why home field disappeared before the empty stadiums. While we did that, Kentucky walked into College Station as a 1-in-9 shot. The final was 31&ndash;21. Here is how to think about a number like that.
@@ -315,7 +315,7 @@
   <!-- CFB RECAP BLOCK -->
   <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The improbable thing that happened yesterday</h2>
 
-  <p>Kentucky beat Texas A&amp;M 31&ndash;21 in College Station. Texas A&amp;M was favoured by about 20 points.</p>
+  <p>Kentucky beat Texas A&amp;M 31&ndash;21 in College Station. Texas A&amp;M was favored by about 20 points.</p>
 
   <p>Turn that into a probability using our ratings, frozen Thursday before any of these games were played, and Kentucky had about a <strong>10.5%</strong> chance &mdash; call it <strong>1 in 9</strong>. Our frozen SP+ had Texas A&amp;M at 24.2 and Kentucky at 6.2, a gap of 18 points before you add home field. The number of times an underdog that far back wins its own game is roughly one in nine.</p>
 
@@ -342,7 +342,7 @@
   <p>The best game on a card is rarely the one with the best teams; it is the one nearest a coin flip, because that is where the result carries the most information.</p>
 
   <table class="rec" style="width:100%;border-collapse:collapse;font-size:14px;margin:16px 0">
-    <thead><tr><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Closest games</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Line</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Favourite wins</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Kickoff</th></tr></thead>
+    <thead><tr><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Closest games</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Line</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Favorite wins</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Kickoff</th></tr></thead>
     <tbody>
       <tr><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">CAR at ATL</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">ATL by 2.5</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">57%</td><td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">1:00 PM EDT</td></tr>
       <tr><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">CIN at HOU</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">HOU by 2.5</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">57%</td><td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">1:00 PM EDT</td></tr>
@@ -470,7 +470,7 @@
     </div>
     <div>
       <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--steel);margin-bottom:.6rem">Under-Reactions</h3>
-      <p>Texas A&amp;M losing at home to a 20-point underdog is not a small event. Our own ratings absorb new results more slowly than the market does, which is a design choice &mdash; but the market will move A&amp;M sharply this week. The team that opens next Saturday as an 8-point favourite will be a different A&amp;M in the market&rsquo;s eyes than the one that opened at &minus;20 yesterday. That recalibration is worth watching, not because the market is always right, but because the speed of its adjustment tells you something about how seriously it takes yesterday&rsquo;s evidence.</p>
+      <p>Texas A&amp;M losing at home to a 20-point underdog is not a small event. Our own ratings absorb new results more slowly than the market does, which is a design choice &mdash; but the market will move A&amp;M sharply this week. The team that opens next Saturday as an 8-point favorite will be a different A&amp;M in the market&rsquo;s eyes than the one that opened at &minus;20 yesterday. That recalibration is worth watching, not because the market is always right, but because the speed of its adjustment tells you something about how seriously it takes yesterday&rsquo;s evidence.</p>
       <p>MLB playoffs begin September 29. The Brewers at 92&ndash;56 are running away with the NL Central and generating almost no national coverage. That will not last.</p>
     </div>
   </div>
@@ -1052,7 +1052,7 @@
 
   <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What to take home: logs are where you add things up</h3>
 
-  <p>You will now recognise this machinery everywhere, because almost everything runs on it.</p>
+  <p>You will now recognize this machinery everywhere, because almost everything runs on it.</p>
 
   <p>Every time a study says it &ldquo;controlled for&rdquo; age and income and smoking, it added those effects together <strong>in log-odds</strong>. Credit scores work this way. So do medical risk calculators, spam filters and our bracket. The reason is always the one above: it is the only scale where separate advantages simply add and nothing can leave the interval.</p>
 
@@ -1109,7 +1109,7 @@
 
   <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Michigan, in seven days</h3>
 
-  <p>Week one, Michigan hosted Western Michigan as roughly a 27-point favourite and won <strong>13&ndash;12</strong>. Not a scare. A near-disaster, and by any honest reading they were outplayed.</p>
+  <p>Week one, Michigan hosted Western Michigan as roughly a 27-point favorite and won <strong>13&ndash;12</strong>. Not a scare. A near-disaster, and by any honest reading they were outplayed.</p>
 
   <p>You know what was said that night, because it is said every night: they are overrated, the ranking is fiction, this team is a fraud.</p>
 
@@ -1228,7 +1228,7 @@
   <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The Week in Review: Issues #163&ndash;168</h2>
 
   <ol class="issue-list" style="list-style:none;padding:0;margin:0 0 22px">
-    <li style="padding:8px 0;border-bottom:1px solid #c8b99a;font-size:15px;line-height:1.6"><span class="inum">#163</span><span class="idate">Sep 7</span> &mdash; <a href="151-cfb-week1-review.html" target="_blank" rel="noopener">Rutgers Was Favoured by Twenty-Nine. It Lost by Sixteen.</a> &mdash; The hardest opening week to predict in three years: 47 rated games, 14.3 points per game off the SP+ number. 28% worse than the prior two seasons combined.</li>
+    <li style="padding:8px 0;border-bottom:1px solid #c8b99a;font-size:15px;line-height:1.6"><span class="inum">#163</span><span class="idate">Sep 7</span> &mdash; <a href="151-cfb-week1-review.html" target="_blank" rel="noopener">Rutgers Was Favored by Twenty-Nine. It Lost by Sixteen.</a> &mdash; The hardest opening week to predict in three years: 47 rated games, 14.3 points per game off the SP+ number. 28% worse than the prior two seasons combined.</li>
     <li><span class="inum">#164</span><span class="idate">Sep 8</span> &mdash; <a href="148-tommy-john-success.html" target="_blank" rel="noopener">209 of Every 1,000 Never Pitch Again.</a> &mdash; Why the claim that teenagers are 57% of all Tommy John patients tells you nothing about your son&rsquo;s arm. A denominator lesson for any percentage you are handed.</li>
     <li><span class="inum">#165</span><span class="idate">Sep 9</span> &mdash; <a href="145-week1-signal.html" target="_blank" rel="noopener">One Game Told Us More Than the Whole Summer Did.</a> &mdash; Recruiting rankings and returning production explain 14% of how a college season turns out. Add one Week 1 result and it climbs to 21%. We expected the opposite.</li>
     <li><span class="inum">#166</span><span class="idate">Sep 10</span> &mdash; <a href="123-one-that-got-away.html" target="_blank" rel="noopener">Every Team Has Its Babe Ruth. The Mets Have Two.</a> &mdash; Nolan Ryan for Jim Fregosi in 1971. Pete Crow-Armstrong for a two-month shortstop in 2021. The same trade, fifty years apart. The cost framework that explains both.</li>
@@ -1241,7 +1241,7 @@
   <!-- SECTION 2: THE PREDICTION SCORECARD -->
   <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The improbable thing that happened yesterday</h2>
 
-  <p>Oklahoma State beat Oregon 39&ndash;31. Oregon was favoured by 23&frac14; points.</p>
+  <p>Oklahoma State beat Oregon 39&ndash;31. Oregon was favored by 23&frac14; points.</p>
 
   <p>Turn that spread into a probability and Oklahoma State had about a <strong>7.9%</strong> chance &mdash; call it <strong>1 in 13</strong>. Our own ratings, frozen before kickoff, were slightly kinder to them: Oregon by 20.3, or <strong>1 in 9</strong>.</p>
 
@@ -1271,7 +1271,7 @@
   <p>The best game on a card is rarely the one with the best teams; it is the one nearest a coin flip, because that is where the result carries the most information.</p>
 
   <table class="rec" style="width:100%;border-collapse:collapse;font-size:14px;margin:16px 0">
-    <thead><tr><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Closest games</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Line</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Favourite wins</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Kickoff</th></tr></thead>
+    <thead><tr><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Closest games</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Line</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Favorite wins</th><th style="font-family:monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6b5e4a;border-bottom:2px solid #1a1208;padding:6px 8px;text-align:left">Kickoff</th></tr></thead>
     <tbody><tr><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">BUF at HOU</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">BUF by 1.5</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">54%</td><td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">1:00 PM EDT</td></tr><tr><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">NYJ at TEN</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">TEN by 1.5</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">54%</td><td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">1:00 PM EDT</td></tr><tr><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">GB at MIN</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">MIN by 2.5</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">57%</td><td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">4:25 PM EDT</td></tr><tr><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">CHI at CAR</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">CHI by 3.0</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">59%</td><td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">1:00 PM EDT</td></tr><tr><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">DAL at NYG</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">DAL by 3.0</td><td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">59%</td><td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">8:20 PM EDT</td></tr></tbody>
   </table>
   <p style="font-size:.72rem;color:var(--muted)">Probabilities from the closing spread with a 13.5-point standard deviation. We hold no NFL forecast of our own yet &mdash; two weeks of data is not a model, and we would rather say that than dress a guess up as one.</p>
@@ -1529,7 +1529,7 @@
 
   <p>A sales team that hit target three quarters running is different from one that hit it once by a hair. A fund with a decade of returns is different from a fund with a good year. A surgeon with a thousand cases is different from one with forty. In each pair the headline number can be identical, and only persistence tells you which is which.</p>
 
-  <p>So when somebody hands you a record, ask what share of it will still be there next year. For Detroit&rsquo;s close-game collapse, the answer is about one per cent.</p>
+  <p>So when somebody hands you a record, ask what share of it will still be there next year. For Detroit&rsquo;s close-game collapse, the answer is about one percent.</p>
 
   <div class="watch">
   <div class="watch-label">What to Watch &middot; Saturday, September 12</div>
@@ -1615,7 +1615,7 @@
 
   <p>Florida played the third-hardest schedule in the country. Tennessee played the 54th. Both are in the SEC, and they are <strong>6.8 points</strong> apart &mdash; seventeen times the gap between the SEC and the Big Ten. UCLA and Maryland are both in the Big Ten and are 8.0 points apart.</p>
 
-  <p>So &ldquo;he plays an SEC schedule&rdquo; is close to meaningless as a defence of anyone. It tells you roughly nothing about the fixtures that were actually on his card. And notice which way it cuts: the strongest teams often draw the <em>easiest</em> schedules, because the one opponent you never have to play is yourself. Georgia ranked 37th. Ohio State ranked 33rd.</p>
+  <p>So &ldquo;he plays an SEC schedule&rdquo; is close to meaningless as a defense of anyone. It tells you roughly nothing about the fixtures that were actually on his card. And notice which way it cuts: the strongest teams often draw the <em>easiest</em> schedules, because the one opponent you never have to play is yourself. Georgia ranked 37th. Ohio State ranked 33rd.</p>
 
   <p>For the record, Notre Dame came 22nd, harder than 46 of the 67 power-conference schedules. We will take that one on the chin.</p>
 
@@ -2000,12 +2000,12 @@
       <guid isPermaLink="true">https://thesportspage.net/published/148-tommy-john-success.html</guid>
     </item>
     <item>
-      <title>#163: Rutgers Was Favoured by Twenty-Nine. It Lost by Sixteen.</title>
+      <title>#163: Rutgers Was Favored by Twenty-Nine. It Lost by Sixteen.</title>
       <link>https://thesportspage.net/published/151-cfb-week1-review.html</link>
       <description>Across all 47 rated games, week one missed its preseason number by 14.3 points a game. That is 28% worse than the last two seasons. The openers were not just loud — they were measurably the hardest to predict in three years.</description>
-      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/151-cfb-week1-review.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/151-cfb-week1-review.png" alt="Rutgers Was Favoured by Twenty-Nine. It Lost by Sixteen." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/151-cfb-week1-review.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/151-cfb-week1-review.png" alt="Rutgers Was Favored by Twenty-Nine. It Lost by Sixteen." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
 
-  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">Rutgers Was Favoured by Twenty-Nine. <em>It Lost by Sixteen.</em></h2>
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">Rutgers Was Favored by Twenty-Nine. <em>It Lost by Sixteen.</em></h2>
   <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">Across all 47 rated games, week one missed its preseason number by <strong>14.3 points</strong> a game. That is <strong>28%</strong> worse than the last two seasons. The openers were not just loud &mdash; they were measurably the hardest to predict in three years.</p>
   <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; The Professor &middot; the week, against what was expected of it</p>
 
@@ -2027,7 +2027,7 @@
 
   <p>Massachusetts went to Rutgers and won <strong>37&ndash;21</strong>.</p>
 
-  <p>Our preseason model made Rutgers a 38-point favourite. Three betting markets made them a 29-point favourite. Both were wrong by more than two touchdowns in the same direction, and the club they agreed on lost outright.</p>
+  <p>Our preseason model made Rutgers a 38-point favorite. Three betting markets made them a 29-point favorite. Both were wrong by more than two touchdowns in the same direction, and the club they agreed on lost outright.</p>
 
   <p>Put a probability on it and it comes out near <strong>1%</strong>. We do not get to wave that away as a bad model, because the money said the same thing.</p>
 
@@ -2040,11 +2040,11 @@
 
   <p>Look at the shape of that chart. The surprises are not upsets so much as <em>blowouts nobody ordered</em>.</p>
 
-  <p>Pittsburgh beat Miami of Ohio by 45 when 13 was the number. LSU beat Clemson by 41 when 10 was the number. Texas beat Texas State by 52. Those are favourites winning &mdash; by two or three times what anyone expected.</p>
+  <p>Pittsburgh beat Miami of Ohio by 45 when 13 was the number. LSU beat Clemson by 41 when 10 was the number. Texas beat Texas State by 52. Those are favorites winning &mdash; by two or three times what anyone expected.</p>
 
-  <p>And then Michigan, a 25-point favourite, survived Western Michigan <strong>13&ndash;12</strong>.</p>
+  <p>And then Michigan, a 25-point favorite, survived Western Michigan <strong>13&ndash;12</strong>.</p>
 
-  <p>So the week was not simply chaotic in the underdogs&rsquo; favour. It was chaotic in <strong>both</strong> directions at once, which is a different thing and a worse one for anybody holding a forecast.</p>
+  <p>So the week was not simply chaotic in the underdogs&rsquo; favor. It was chaotic in <strong>both</strong> directions at once, which is a different thing and a worse one for anybody holding a forecast.</p>
 
   <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
     <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">Eight upsets is a loud week. Missing by 14 points a game is an unusual one. They are not the same measurement.</p>
@@ -2059,7 +2059,7 @@
 
   <p>The week only looks strange when you stop counting <em>who won</em> and start measuring <em>by how much</em>. That is where 14.3 comes from, and it is 28% above the recent norm.</p>
 
-  <p>Those two numbers disagree because they answer different questions. Upsets count the times the favourite lost; the average miss counts how wrong the number was every time, including the games the favourite won.</p>
+  <p>Those two numbers disagree because they answer different questions. Upsets count the times the favorite lost; the average miss counts how wrong the number was every time, including the games the favorite won.</p>
 
   <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What to take home: count the misses, not the shocks</h3>
 
@@ -2533,7 +2533,7 @@
     <p style="color:#c8b99a">Method as in the companion piece on streak timing: team strength is a 50/50 blend of actual winning percentage and Pythagorean expectation, regressed toward .500 by 69 games; game probabilities use log5 with a home-field adjustment at a .535 league home win rate; every remaining game in both leagues is simulated, and ties are broken at random rather than by the real tiebreaker rules.</p>
     <p style="color:#c8b99a">The series comparison forces the Mets to exactly 25 wins in all cases, sweeps the named series, and distributes the remaining wins at random across the other games, so every row is the same record differing only in placement. 200,000 seasons per row gives a 95% interval of about &plusmn;0.07 points. Philadelphia at +0.63 clears that comfortably; Miami at +0.09 is small but separates from the control series; Washington at &minus;0.18 sits alongside the Yankees at &minus;0.20 and Milwaukee at &minus;0.21.</p>
     <p style="color:#c8b99a">An earlier pass at 40,000 seasons per row put Washington third and showed every series as a gain. That ordering was noise. It is quoted here because it is the ordinary way this kind of table goes wrong: the differences being measured were smaller than the error on the measurement, and nothing in the output says so.</p>
-    <p style="color:#c8b99a">One limit. Forcing a sweep hands over results without making the team better, and a real September sweep of a rival might carry information this exercise throws away. The direction of that bias favours the Mets, and it does not come close to closing the gap.</p>
+    <p style="color:#c8b99a">One limit. Forcing a sweep hands over results without making the team better, and a real September sweep of a rival might carry information this exercise throws away. The direction of that bias favors the Mets, and it does not come close to closing the gap.</p>
   </div>
 
   <div class="watch">
@@ -2644,7 +2644,7 @@
   <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
     <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
     <p style="color:#c8b99a">All 223 postseason series from 1998 through 2025, built game by game from the MLB Stats API. 2020 is excluded for its 60-game season and 16-team field. Each series is scored by whether the club ahead on a given measure won it; series are labelled by team identifier rather than by seed, so no home-field or seeding information leaks into the comparison.</p>
-    <p style="color:#c8b99a">Schedule adjustment is the Simple Rating System: a club&rsquo;s run differential per game plus the mean rating of its opponents, solved by iteration until consistent, centred on zero. The grid is every combination of window length in {5, 10, 15 &hellip; 60} and season weight in {0.00, 0.05 &hellip; 1.00}, giving 252 candidates.</p>
+    <p style="color:#c8b99a">Schedule adjustment is the Simple Rating System: a club&rsquo;s run differential per game plus the mean rating of its opponents, solved by iteration until consistent, centered on zero. The grid is every combination of window length in {5, 10, 15 &hellip; 60} and season weight in {0.00, 0.05 &hellip; 1.00}, giving 252 candidates.</p>
     <p style="color:#c8b99a">Single-measure results: won-lost record 50.9%, last-20 raw 53.4%, last-30 adjusted 52.9%, season SRS 56.5%, last-20 adjusted 57.4%, season run differential 57.8%, Pythagorean 57.8%. The apparent gap between raw and schedule-adjusted recent form rests on only 21 series where the two disagree; a McNemar exact test puts it at p = 0.19. We report it as a direction, not a result.</p>
     <p style="color:#c8b99a">Honest testing: leave-one-season-out re-selects the window and weight on the other 26 seasons and predicts the held-out one, scoring 48.9% over 223 series. The walk-forward version selects only on seasons already played and predicts the next, scoring 56.4% over the 181 series from 2004 onward; plain run differential scores 58.3% over that same subset. The two honest tests differ by more than we would like, which is itself a sign of how little any of these numbers are pinned down.</p>
     <p style="color:#c8b99a">One limit, stated plainly. None of this proves recent form is worthless in October. It shows that with the data baseball actually produces, we cannot tell whether it helps &mdash; and that a search over 252 options will hand you a confident answer anyway.</p>
@@ -2839,7 +2839,7 @@
       </tr>
       <tr>
         <td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">#149&ndash;152, #154<br>Aug 24&ndash;29</td>
-        <td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">Five structural analyses: streak timing, hype floors, ranking JND, run-differential luck, home-field rank splits. None made a checkable near-term forecast.</td>
+        <td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">Five structural analyzes: streak timing, hype floors, ranking JND, run-differential luck, home-field rank splits. None made a checkable near-term forecast.</td>
         <td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">N/A: retrospective or structural. The Kansas City streak (Issue #151) has since ended; the team's overall record of ~61&ndash;75 is consistent with the .435 characterization the piece made.</td>
         <td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">N/A &mdash; no forward claim to grade.</td>
       </tr>
@@ -2970,7 +2970,7 @@
 
   <p><strong>Here is the surprising part.</strong> We split that thirteen into its two halves. Playing at home helps a little. Playing away hurts almost twice as much. We named the thing after the wrong team.</p>
 
-  <p><strong>What you get from it:</strong> one adjustment you can do in your head. Before you pick a game, take thirteen ranks off whoever is travelling.</p>
+  <p><strong>What you get from it:</strong> one adjustment you can do in your head. Before you pick a game, take thirteen ranks off whoever is traveling.</p>
 
   <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Measure it in the unit people already use</h3>
 
@@ -3040,7 +3040,7 @@
 
   <p>That matters because the name decides what people try to fix. Believe in home cooking and you build a louder stadium; believe in road sickness and you fly out a day early, and you spend the money on sleep.</p>
 
-  <p>Take the habit with you. When you meet an effect named as a bonus for one side, ask whether it is really a cost to the other. Hospitals with better outcomes, schools in better neighbourhoods, funds with better years &mdash; each one is a gap somebody named from one end.</p>
+  <p>Take the habit with you. When you meet an effect named as a bonus for one side, ask whether it is really a cost to the other. Hospitals with better outcomes, schools in better neighborhoods, funds with better years &mdash; each one is a gap somebody named from one end.</p>
 
   <p>Same number. Different cause. Different fix.</p>
 
@@ -3244,7 +3244,7 @@
     <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
     <p style="color:#c8b99a">Game data from the CollegeFootballData API: every regular-season game 2015&ndash;2025 in which both teams appeared in that week&rsquo;s AP poll, 493 in total. Ties excluded. Of the 493, 190 were played at the better-ranked team&rsquo;s home field, 219 at its opponent&rsquo;s, and 84 at neutral sites. The gap is the absolute difference in AP rank; the outcome is whether the better-ranked side won. Confidence intervals are Wilson 95%: 1&ndash;2 apart is 48.7% [0.38, 0.60], 12&ndash;16 is 77.8% [0.67, 0.86]. Note that no single band clears 0.75 with its whole interval &mdash; the point estimate crosses in the low teens, and the honest reading is &ldquo;around ten&rdquo; rather than an exact threshold.</p>
     <p style="color:#c8b99a">Rating systems from a Massey Ratings composite export, 2026 preseason: 138 teams, 25 systems with sufficient coverage. Pairs required at least 15 systems rating both teams, giving 9,453 pairs. Agreement is the share of those systems ordering the pair the same way as the composite. Median across-system range per team, 41 ranks; median standard deviation, 10.2 ranks.</p>
-    <p style="color:#c8b99a">The 75% criterion is Thurstone&rsquo;s, from the law of comparative judgment (1927): two stimuli have a 50% chance of being ordered either way, so the halfway point between chance and certainty is 75%. The application of that idea to measures that are not physical &mdash; and the argument that a measure needs calibrating against behaviour before its numbers mean anything &mdash; is from Sechrest, McKnight &amp; McKnight, <em>Calibration of measures for psychotherapy outcome studies</em>, American Psychologist 51(10), 1996.</p>
+    <p style="color:#c8b99a">The 75% criterion is Thurstone&rsquo;s, from the law of comparative judgment (1927): two stimuli have a 50% chance of being ordered either way, so the halfway point between chance and certainty is 75%. The application of that idea to measures that are not physical &mdash; and the argument that a measure needs calibrating against behavior before its numbers mean anything &mdash; is from Sechrest, McKnight &amp; McKnight, <em>Calibration of measures for psychotherapy outcome studies</em>, American Psychologist 51(10), 1996.</p>
     <p style="color:#c8b99a">One limit worth stating: preseason ratings are the noisiest of the year, so the 41-rank median spread should tighten as real games arrive. We will re-run this in November and report whether it did.</p>
   </div>
 
@@ -3347,7 +3347,7 @@
     <p style="color:#c8b99a">Every completed regular-season game through the morning of August 23, 2026, pulled game by game from the MLB Stats API &mdash; 1,949 games in all. Each club&rsquo;s game log was checked against the official standings before anything was computed; all thirty reconciled exactly.</p>
     <p style="color:#c8b99a">Windows are the last 5, 10, 15, 20, 25, 30, 40 and 50 games for each club, counted from that morning. The &ldquo;swing&rdquo; is the difference between a club&rsquo;s best and worst window. Median swing .200; largest Kansas City at .540; smallest Baltimore at .125. Over five games, 7 of 30 clubs sit at .800 or better and 7 at .200 or worse; over fifty games, none reach .800.</p>
     <p style="color:#c8b99a">Run differentials are raw runs scored minus runs allowed over the window. Where the piece says the runs and the record agree, that is a Pythagorean expectation with a 1.83 exponent compared against actual winning percentage. Milwaukee over thirty games: expected .598, actual .600. Detroit over thirty: expected .648, actual .500. Kansas City over twenty: expected .505, actual .550.</p>
-    <p style="color:#c8b99a">Schedule adjustment is the Simple Rating System: each club&rsquo;s rating is its run differential per game plus the mean rating of its opponents, solved by iteration until the ratings are consistent, then centred on zero. Full-season strength of schedule spans only &minus;0.05 to +0.09 runs per game; across a 20-game window it spans &minus;0.57 to +0.48.</p><p style="color:#c8b99a">Playoff prediction uses all 223 postseason series from 1998 through 2025, with 2020 excluded for its 60-game season. For each series we ask whether the club ahead on a given measure won. Win percentage 50.9%; last-20 raw 53.4%; last-20 schedule-adjusted 57.4%; season run differential 57.8%. Two cautions. The gap between raw and adjusted rests on only 21 series where they disagree, and a McNemar test puts it at p = 0.19 &mdash; the direction is right, the sample cannot prove it. And separating 57.8% from a coin flip at conventional power would need about 332 series; we have 223, which is twenty years of Octobers.</p><p style="color:#c8b99a">We also tried to build a better one, and failed instructively. A grid of 252 candidate measures &mdash; every blend of season rating with every window from 5 to 60 games &mdash; produced a best of 59.2%. Tested honestly it did not survive. Held out one season at a time it scored 48.9%, worse than guessing; tuned only on prior seasons and used to bet the next one, 56.4%. Plain untuned run differential over the same seasons: 58.3%. Two different honest tests, and under neither did the optimised measure beat the boring one. Seventeen of the 252 sat within a point of the winner, and the tuned window jumped between 10, 20 and 30 games from year to year &mdash; when the best window is never the same twice, there is no best window.</p><p style="color:#c8b99a">A limit, and it matters. This shows that short windows produce extreme numbers; it does not show that recent form never carries information. It can. The narrower and more useful point: a claim built on a window somebody chose after seeing the results is worth nothing until you check a window they did not choose.</p>
+    <p style="color:#c8b99a">Schedule adjustment is the Simple Rating System: each club&rsquo;s rating is its run differential per game plus the mean rating of its opponents, solved by iteration until the ratings are consistent, then centered on zero. Full-season strength of schedule spans only &minus;0.05 to +0.09 runs per game; across a 20-game window it spans &minus;0.57 to +0.48.</p><p style="color:#c8b99a">Playoff prediction uses all 223 postseason series from 1998 through 2025, with 2020 excluded for its 60-game season. For each series we ask whether the club ahead on a given measure won. Win percentage 50.9%; last-20 raw 53.4%; last-20 schedule-adjusted 57.4%; season run differential 57.8%. Two cautions. The gap between raw and adjusted rests on only 21 series where they disagree, and a McNemar test puts it at p = 0.19 &mdash; the direction is right, the sample cannot prove it. And separating 57.8% from a coin flip at conventional power would need about 332 series; we have 223, which is twenty years of Octobers.</p><p style="color:#c8b99a">We also tried to build a better one, and failed instructively. A grid of 252 candidate measures &mdash; every blend of season rating with every window from 5 to 60 games &mdash; produced a best of 59.2%. Tested honestly it did not survive. Held out one season at a time it scored 48.9%, worse than guessing; tuned only on prior seasons and used to bet the next one, 56.4%. Plain untuned run differential over the same seasons: 58.3%. Two different honest tests, and under neither did the optimised measure beat the boring one. Seventeen of the 252 sat within a point of the winner, and the tuned window jumped between 10, 20 and 30 games from year to year &mdash; when the best window is never the same twice, there is no best window.</p><p style="color:#c8b99a">A limit, and it matters. This shows that short windows produce extreme numbers; it does not show that recent form never carries information. It can. The narrower and more useful point: a claim built on a window somebody chose after seeing the results is worth nothing until you check a window they did not choose.</p>
   </div>
 
   <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a"><span>The Sports Page &middot; Vol. I, No. 151</span><span>How to spot a real hot streak</span><span>August 26, 2026 &middot; New York, NY</span></div>
@@ -3382,7 +3382,7 @@
 
   <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What we measured, and why this one</h3>
 
-  <p>You cannot count hype. So we need a behaviour that stands in for it, and Wikipedia lookups are a good one; somebody had a thought about Notre Dame and went to read about it. Nobody looks a thing up by accident.</p>
+  <p>You cannot count hype. So we need a behavior that stands in for it, and Wikipedia lookups are a good one; somebody had a thought about Notre Dame and went to read about it. Nobody looks a thing up by accident.</p>
 
   <p>So take twelve programs, five and a half years of monthly pageviews, and split the calendar in two. September through December is the season. March through June is the dead zone. No games, no playoff, nothing but recruiting talk and spring practice.</p>
 
@@ -3426,7 +3426,7 @@
     <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
     <p style="color:#c8b99a">Pageviews are English Wikipedia, user traffic only (bots excluded), monthly, January 2021 through August 2026, from the Wikimedia REST pageviews API. The article for each program is its football page, not the university page. In-season is the median of all September&ndash;December months; dead season is the median of all March&ndash;June months; the floor is the ratio. Medians rather than means, because a playoff run puts a long tail on the in-season months.</p>
     <p style="color:#c8b99a">Floors: Nebraska 30.9%, Texas 29.1%, USC 28.2%, Clemson 27.8%, Ohio State 27.5%, Alabama 27.0%, Notre Dame 26.7%, Michigan 26.5%, Georgia 26.4%, Penn State 25.5%, LSU 25.1%, Oregon 20.8%. Correlation between a program&rsquo;s in-season level and its floor: r = +0.01, 95% CI &minus;0.57 to +0.58, i.e. nothing.</p>
-    <p style="color:#c8b99a"><strong>One limit worth stating.</strong> This measures people looking a program up, which is not the same behaviour as watching a video about it. The specific claim that Notre Dame&rsquo;s YouTube ecosystem is unlike anyone else&rsquo;s is <em>untested here</em> &mdash; YouTube publishes view counts only through an API key we do not hold, and their robots file puts the feeds out of bounds. It remains a live question, not a settled one.</p>
+    <p style="color:#c8b99a"><strong>One limit worth stating.</strong> This measures people looking a program up, which is not the same behavior as watching a video about it. The specific claim that Notre Dame&rsquo;s YouTube ecosystem is unlike anyone else&rsquo;s is <em>untested here</em> &mdash; YouTube publishes view counts only through an API key we do not hold, and their robots file puts the feeds out of bounds. It remains a live question, not a settled one.</p>
   </div>
 
   <section class="almanac">
@@ -3603,7 +3603,7 @@
   <!-- SECTION 2: THE PREDICTION SCORECARD -->
   <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The Prediction Scorecard</h2>
 
-  <p>This week produced no scoreable predictions. All six pieces were retrospective analyses, historical reconstructions, or mathematical frameworks. None made a claim about a future outcome with a checkable near-term result.</p>
+  <p>This week produced no scoreable predictions. All six pieces were retrospective analyzes, historical reconstructions, or mathematical frameworks. None made a claim about a future outcome with a checkable near-term result.</p>
 
   <p>One live prediction carries forward from Issue #135 (August 10): the Boston Red Sox have a 94% chance of reaching the October playoffs. That number came from 200,000 simulated AL season finishes, starting from their 62&ndash;51 record in early August.</p>
 
@@ -3885,7 +3885,7 @@
 
   <p><strong>The question:</strong> does college football make money or lose it? Both answers get quoted constantly, and both come with numbers.</p>
 
-  <p><strong>The answer.</strong> In 2024 Ohio State football took in about $111.6 million and spent $78.6 million &mdash; a profit north of $33 million. The athletic department it belongs to took in $254.9 million and spent $292.3 million &mdash; a loss of $37.7 million. Same organisation, same year.</p>
+  <p><strong>The answer.</strong> In 2024 Ohio State football took in about $111.6 million and spent $78.6 million &mdash; a profit north of $33 million. The athletic department it belongs to took in $254.9 million and spent $292.3 million &mdash; a loss of $37.7 million. Same organization, same year.</p>
 
   <p><strong>Why that is surprising.</strong> Both numbers are true. Which one you get depends entirely on where you draw the box.</p>
 
@@ -4189,13 +4189,13 @@
     <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">40 yrs</div><div class="l">the line&rsquo;s journey from a back room to national television</div></div>
   </div>
 
-  <p><strong>The question:</strong> how good is the most common number in American sports? Not who it favours &mdash; how <em>accurate</em> is it?</p>
+  <p><strong>The question:</strong> how good is the most common number in American sports? Not who it favors &mdash; how <em>accurate</em> is it?</p>
 
   <p><strong>The answer.</strong> That little number beside the team name is a probability in disguise. Minus three means the favorite wins about 59 times out of 100. Minus seven means 70. Minus fourteen means 85.</p>
 
-  <p><strong>Why that is surprising.</strong> You would expect a number invented by bookmakers to be tilted in the house&rsquo;s favour. It is not tilted at all. It is the most accurate everyday forecast most people ever encounter &mdash; and for forty years nobody was allowed to say so on television.</p>
+  <p><strong>Why that is surprising.</strong> You would expect a number invented by bookmakers to be tilted in the house&rsquo;s favor. It is not tilted at all. It is the most accurate everyday forecast most people ever encounter &mdash; and for forty years nobody was allowed to say so on television.</p>
 
-  <p><strong>What you get from it:</strong> a way to read any point spread as a probability, and a working defence against the most common mistake in sports talk.</p>
+  <p><strong>What you get from it:</strong> a way to read any point spread as a probability, and a working defense against the most common mistake in sports talk.</p>
 
   <p>It is the most carefully made forecast in American sports. For forty years nobody was allowed to say so on television.</p>
 
@@ -4388,13 +4388,13 @@
     <item>
       <title>#141: Six Issues, One Live Prediction, and a Deadline That Changed Everything.</title>
       <link>https://thesportspage.net/published/sunday-019.html</link>
-      <description>This week the newsletter published five structural analyses and one live baseball probability. The deadline passed two weeks ago while the newsletter was writing about base rates and variance. The math held. The Red Sox acquired Adley Rutschman. The Mets stayed where they were. Accountability follows.</description>
+      <description>This week the newsletter published five structural analyzes and one live baseball probability. The deadline passed two weeks ago while the newsletter was writing about base rates and variance. The math held. The Red Sox acquired Adley Rutschman. The Mets stayed where they were. Accountability follows.</description>
       <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/sunday-019.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/sunday-019.png" alt="Six Issues, One Live Prediction, and a Deadline That Changed Everything." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
 
   <h1 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208">Six Issues, One Live Prediction, and a Deadline <em>That Changed Everything.</em></h1>
 
   <div class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">
-    This week the newsletter published five structural analyses and one live baseball probability. The deadline passed two weeks ago while the newsletter was writing about base rates and variance. The math held. The Red Sox acquired Adley Rutschman. The Mets stayed where they were. Accountability follows.
+    This week the newsletter published five structural analyzes and one live baseball probability. The deadline passed two weeks ago while the newsletter was writing about base rates and variance. The math held. The Red Sox acquired Adley Rutschman. The Mets stayed where they were. Accountability follows.
   </div>
 
   <div class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">By The Sports Page &middot; August 16, 2026 &middot; Sunday Edition No. 019</div>
@@ -4683,7 +4683,7 @@
 
   <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Now the Uncomfortable Part</h2>
 
-  <p>The quoted rate rests on less evidence than its precision suggests. There are four 12-versus-5 games per tournament. Across the 64-team era &mdash; 1985 to 2025, with 2020 cancelled &mdash; that is 40 tournaments and <strong>160 games</strong>. A 33% rate measured on 160 games carries a 95% interval of roughly <strong>&plusmn;7 points</strong>.</p>
+  <p>The quoted rate rests on less evidence than its precision suggests. There are four 12-versus-5 games per tournament. Across the 64-team era &mdash; 1985 to 2025, with 2020 canceled &mdash; that is 40 tournaments and <strong>160 games</strong>. A 33% rate measured on 160 games carries a 95% interval of roughly <strong>&plusmn;7 points</strong>.</p>
 
   <p>So the predicted shift is <em>smaller than the uncertainty in the number it is shifting.</em></p>
 
@@ -4719,7 +4719,7 @@
 
   <div class="methods">
     <b>How this was computed</b>
-    365 Division I programmes were simulated across 31 conferences of unequal strength, with automatic bids decided by a noisy conference tournament rather than awarded to the best team, and at-large bids assigned by strength. Fields of 68 and 76 were then seeded and the 5-versus-12 matchups played 20,000 times. The game model is logistic in team strength and was <em>calibrated so the 68-team upset rate reproduces the roughly one-in-three figure the tournament has actually produced</em> &mdash; the finding is the five-point change and the mechanism behind it, not the level, which is an input rather than a result. The detectability curve is a standard two-proportion power calculation at 5% significance and 80% power. The 160-game figure counts four 12-versus-5 games in each of the 40 completed tournaments of the 64-team era, 1985 to 2025, excluding the cancelled 2020. Datasets at <code>data/cinderella-base-rate-shift.json</code> and <code>data/cinderella-detectability.json</code>.
+    365 Division I programmes were simulated across 31 conferences of unequal strength, with automatic bids decided by a noisy conference tournament rather than awarded to the best team, and at-large bids assigned by strength. Fields of 68 and 76 were then seeded and the 5-versus-12 matchups played 20,000 times. The game model is logistic in team strength and was <em>calibrated so the 68-team upset rate reproduces the roughly one-in-three figure the tournament has actually produced</em> &mdash; the finding is the five-point change and the mechanism behind it, not the level, which is an input rather than a result. The detectability curve is a standard two-proportion power calculation at 5% significance and 80% power. The 160-game figure counts four 12-versus-5 games in each of the 40 completed tournaments of the 64-team era, 1985 to 2025, excluding the canceled 2020. Datasets at <code>data/cinderella-base-rate-shift.json</code> and <code>data/cinderella-detectability.json</code>.
   </div>
 
   <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a"><span>The Sports Page</span><span>Vol. I, No. 139 &middot; August 18, 2026</span><span>One Question Per Issue, Answered With Numbers.</span></div>
@@ -4889,7 +4889,7 @@
     <cite>&mdash; The Sports Page</cite>
   </div>
 
-  <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Two Things That Fall Out of the Maths</h2>
+  <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Two Things That Fall Out of the Math</h2>
 
   <p><strong>Splitting into two divisions is free.</strong> Because the game count is linear, an 80-team elite bracket plus a 285-team second bracket costs 726 games against 728 for one combined field.</p>
 
@@ -4931,7 +4931,7 @@
 
   <div class="methods">
     <b>How this was computed</b>
-    Team counts and format details come from the NCAA&rsquo;s expansion announcement and the 2026&ndash;27 Division I membership (365 programmes: 361 full members plus four in transition), with the regular-season limit rising to 32 games. Game totals are arithmetic: a double-elimination bracket of N teams takes 2N &minus; 2 games; single elimination takes N &minus; 1. The current-season total assumes 32 games per team, 31 conference tournaments, and the 76-team bracket. The simulation runs 3,000 seasons with team strength drawn from a normal distribution and game outcomes from a logistic model calibrated so a top seed beats a bottom seed about 95% of the time &mdash; slightly kinder to underdogs than the real 1-vs-16 record, which makes the finding conservative: a tighter calibration widens the gap in favour of double elimination. The double-elimination bracket is simulated by pairing surviving teams each round and eliminating on a second loss, which approximates a formal winners/losers bracket without reproducing its exact seeding rules. Dataset at <code>data/march-madness-expansion-sim.json</code>.
+    Team counts and format details come from the NCAA&rsquo;s expansion announcement and the 2026&ndash;27 Division I membership (365 programmes: 361 full members plus four in transition), with the regular-season limit rising to 32 games. Game totals are arithmetic: a double-elimination bracket of N teams takes 2N &minus; 2 games; single elimination takes N &minus; 1. The current-season total assumes 32 games per team, 31 conference tournaments, and the 76-team bracket. The simulation runs 3,000 seasons with team strength drawn from a normal distribution and game outcomes from a logistic model calibrated so a top seed beats a bottom seed about 95% of the time &mdash; slightly kinder to underdogs than the real 1-vs-16 record, which makes the finding conservative: a tighter calibration widens the gap in favor of double elimination. The double-elimination bracket is simulated by pairing surviving teams each round and eliminating on a second loss, which approximates a formal winners/losers bracket without reproducing its exact seeding rules. Dataset at <code>data/march-madness-expansion-sim.json</code>.
   </div>
 
   <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a"><span>The Sports Page</span><span>Vol. I, No. 137 &middot; August 14, 2026</span><span>One Question Per Issue, Answered With Numbers.</span></div>
@@ -5093,7 +5093,7 @@
 
   <figure class="chart">
     <img src="https://thesportspage.net/assets/figures/129-one-in-one-hundred-nine-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
-    <figcaption>One square per team-season, 1998&ndash;2025, excluding the shortened 2020 season. Each is a club that stood between .415 and .455 roughly eighty-five games into its year &mdash; the neighbourhood Boston occupied on July 3. Only the 2024 Tigers, at .455, played a postseason game.</figcaption>
+    <figcaption>One square per team-season, 1998&ndash;2025, excluding the shortened 2020 season. Each is a club that stood between .415 and .455 roughly eighty-five games into its year &mdash; the neighborhood Boston occupied on July 3. Only the 2024 Tigers, at .455, played a postseason game.</figcaption>
   </figure>
 
   <p>One caveat, and it is real. The playoff field has grown.</p>
@@ -5898,7 +5898,7 @@
       </tr>
       <tr>
         <td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">#123, #124, #125, #126</td>
-        <td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">Issues #123 and #125 were retrospective analyses (drought breaks, franchise cycles). Issue #124 was a methodological critique of QB rankings. Issue #126 was a fantasy football teaching piece on variance.</td>
+        <td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">Issues #123 and #125 were retrospective analyzes (drought breaks, franchise cycles). Issue #124 was a methodological critique of QB rankings. Issue #126 was a fantasy football teaching piece on variance.</td>
         <td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">&mdash;</td>
         <td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top">N/A &mdash; retrospective or structural</td>
       </tr>
@@ -6141,7 +6141,7 @@
 
   <p>Now the finding that makes this more than a curiosity. Run the identical calculation on the NFL from 1999 and the whole sport sits somewhere baseball never goes. Baseball's average persistence is <strong>0.42</strong>. Football's is <strong>0.16</strong>, and several clubs come out negative &mdash; actively anti-persistent, where a good year predicts a worse one.</p>
 
-  <p>That is not an accident of talent. It is design. Football runs a hard salary cap, a reverse-order draft, huge shared revenue and a seventeen-game season; every one of those is a machine for erasing last year. Baseball has none of them. So football's elastic is short and violent. Baseball's is long enough that a franchise can be recognisably itself for thirty years. When people argue about whether a front office is smart or a market is big, they are arguing about a quantity the league office already largely decided.</p>
+  <p>That is not an accident of talent. It is design. Football runs a hard salary cap, a reverse-order draft, huge shared revenue and a seventeen-game season; every one of those is a machine for erasing last year. Baseball has none of them. So football's elastic is short and violent. Baseball's is long enough that a franchise can be recognizably itself for thirty years. When people argue about whether a front office is smart or a market is big, they are arguing about a quantity the league office already largely decided.</p>
 
   <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
     <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">There is no clock. There is a level you return to, and a rulebook that decides how fast.</p>
@@ -6272,7 +6272,7 @@
 
   <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The Cubs got worse on purpose</h3>
 
-  <p>Chicago is the cleaner demonstration, because the rebuild is impossible to miss in the win column. Epstein arrived in the fall of 2011. The very next season the Cubs won <em>sixty-one</em> games &mdash; their fewest in decades, a deliberate demolition. They followed it with sixty-six, then seventy-three. You would have watched a franchise apparently getting worse while being told to be patient. But that trough was the rebuild working, not failing. The young core, the draft picks, the whole new operating system were being assembled underneath a losing record. Then the line turns and does not stop &mdash; ninety-seven wins, then a hundred and three and the trophy. The drought &ldquo;ended&rdquo; in 2016. It actually broke in 2012, the moment the organisation changed. The trophy was just the part that showed up on the scoreboard four years later. That is the difference between the level and <span class="cc" data-preview="Level = where a team is; velocity = which way it's trending; acceleration = whether the trend is turning. A rebuild bends the curve years before it lifts the record -- the acceleration turns first. Open the Rates of Change primer."><em>the bend in the line</em><a class="cc-i" href="https://thesportspage.net/concepts/rates-of-change.html" target="_blank" rel="noopener" aria-label="What is the second derivative / the bend? Open primer.">i</a></span>: the record was the last thing to know.</p>
+  <p>Chicago is the cleaner demonstration, because the rebuild is impossible to miss in the win column. Epstein arrived in the fall of 2011. The very next season the Cubs won <em>sixty-one</em> games &mdash; their fewest in decades, a deliberate demolition. They followed it with sixty-six, then seventy-three. You would have watched a franchise apparently getting worse while being told to be patient. But that trough was the rebuild working, not failing. The young core, the draft picks, the whole new operating system were being assembled underneath a losing record. Then the line turns and does not stop &mdash; ninety-seven wins, then a hundred and three and the trophy. The drought &ldquo;ended&rdquo; in 2016. It actually broke in 2012, the moment the organization changed. The trophy was just the part that showed up on the scoreboard four years later. That is the difference between the level and <span class="cc" data-preview="Level = where a team is; velocity = which way it's trending; acceleration = whether the trend is turning. A rebuild bends the curve years before it lifts the record -- the acceleration turns first. Open the Rates of Change primer."><em>the bend in the line</em><a class="cc-i" href="https://thesportspage.net/concepts/rates-of-change.html" target="_blank" rel="noopener" aria-label="What is the second derivative / the bend? Open primer.">i</a></span>: the record was the last thing to know.</p>
 
   <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Boston&rsquo;s was quieter, and the same</h3>
 
@@ -8774,7 +8774,7 @@
 
 <p>For twenty years, the smartest shortcut in college football was to check a team&rsquo;s blue-chip ratio and cross off anyone beneath fifty. It was a good rule. It was right every time. And then it was wrong &mdash; completely, and at 16-0 &mdash; the moment the sport rearranged the furniture beneath it. Keep the rule if you like; it still describes most contenders in most years. But hold it the way you should hold every rule that has never been broken: as a streak, not a law, and one good portal class away from history.</p>
 
-<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on the data: the blue-chip ratio (the share of a team&rsquo;s signees over the prior four recruiting cycles who were four- or five-star recruits) was devised by Bud Elliott. The threshold finding &mdash; that every national champion of the modern era carried a ratio above 50% &mdash; and the championship ratios cited (Georgia 80% in 2021 and 77% in 2022, Michigan 54% in 2023, Ohio State 90% in 2024, the highest ever measured; Florida State and Clemson winning in the low fifties) are from CBS Sports and 247Sports. Indiana&rsquo;s 2025 figures &mdash; a blue-chip ratio of roughly 8%, seven four-star and zero five-star players, a No. 72 national talent ranking, one of the three least-talented playoff rosters since the talent composite began in 2015, and a 16-0 record capped by a 27-21 win over Miami &mdash; are from CBS Sports&rsquo; championship roster analyses. Curt Cignetti&rsquo;s record progression (Indiana 3-9 before his arrival, 11-2 in 2024, 16-0 in 2025) is from ESPN and NCAA records. Returning-production figures for 2026 (Notre Dame No. 1, Indiana No. 52) are from ESPN/SP+ preseason data &mdash; a single published source that weights offensive continuity most heavily; treat the exact ranks as provisional. Recruiting and talent figures reflect the 2025 season; 2026 composites are not yet final.</p>
+<p style="font-style:italic;color:var(--muted);font-size:.92rem;margin-top:1.5rem">A note on the data: the blue-chip ratio (the share of a team&rsquo;s signees over the prior four recruiting cycles who were four- or five-star recruits) was devised by Bud Elliott. The threshold finding &mdash; that every national champion of the modern era carried a ratio above 50% &mdash; and the championship ratios cited (Georgia 80% in 2021 and 77% in 2022, Michigan 54% in 2023, Ohio State 90% in 2024, the highest ever measured; Florida State and Clemson winning in the low fifties) are from CBS Sports and 247Sports. Indiana&rsquo;s 2025 figures &mdash; a blue-chip ratio of roughly 8%, seven four-star and zero five-star players, a No. 72 national talent ranking, one of the three least-talented playoff rosters since the talent composite began in 2015, and a 16-0 record capped by a 27-21 win over Miami &mdash; are from CBS Sports&rsquo; championship roster analyzes. Curt Cignetti&rsquo;s record progression (Indiana 3-9 before his arrival, 11-2 in 2024, 16-0 in 2025) is from ESPN and NCAA records. Returning-production figures for 2026 (Notre Dame No. 1, Indiana No. 52) are from ESPN/SP+ preseason data &mdash; a single published source that weights offensive continuity most heavily; treat the exact ranks as provisional. Recruiting and talent figures reflect the 2025 season; 2026 composites are not yet final.</p>
 
   <!-- STORY IDEAS INBOX -->
   <div id="pitch" style="border:2px solid var(--gold);background:var(--card);padding:1.5rem 1.8rem;margin:1.8rem 0">
@@ -9010,7 +9010,7 @@
       <tr class="match">
         <td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top;background:#fff3d6">#81</td>
         <td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top;background:#fff3d6">The NCAA&rsquo;s &ldquo;permanent ineligibility&rdquo; deterrent collapses by visibility &mdash; the next athlete reads the Sorsby ruling and concludes the penalty is a starting bid in court, not a terminal sentence.</td>
-        <td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top;background:#fff3d6">The court precedent holds: the Lubbock injunction overruled NCAA permanent ineligibility. But the labor market that was supposed to absorb Sorsby closed: the NFL declined to hold a supplemental draft in 2026 &mdash; the first time in league history the mechanism was cancelled with a declared applicant. Sorsby was told to prepare for the 2027 NFL Annual Draft. His attorney called the decision &ldquo;a violation of the CBA and the law.&rdquo; Texas Tech blocked him from playing regardless of the injunction.</td>
+        <td style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top;background:#fff3d6">The court precedent holds: the Lubbock injunction overruled NCAA permanent ineligibility. But the labor market that was supposed to absorb Sorsby closed: the NFL declined to hold a supplemental draft in 2026 &mdash; the first time in league history the mechanism was canceled with a declared applicant. Sorsby was told to prepare for the 2027 NFL Annual Draft. His attorney called the decision &ldquo;a violation of the CBA and the law.&rdquo; Texas Tech blocked him from playing regardless of the injunction.</td>
         <td class="mono" style="padding:7px 8px;border-bottom:1px solid #c8b99a;vertical-align:top;background:#fff3d6">PARTIALLY HIT &mdash; the deterrent collapsed in court exactly as modeled. The practical labor-market exit closed in a way that was not modeled. The legal precedent stands; the labor door was removed from the frame.</td>
       </tr>
 
@@ -9050,7 +9050,7 @@
     <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Honest Accounting</h3>
     <p>No forecasting errors this week. Issues #86 through #89 and #91 were analytical and retrospective &mdash; the Pyrrhic series finale, the ND outrage-asymmetry piece, the survivorship-bias explainer, the Wilson supporting-cast analysis. None made forward bets that could resolve in seven days, and Issue #91 was explicit about this: &ldquo;four seasons is a pattern, not a model, and this newsletter will not pretend otherwise.&rdquo; Calibrated hedges do not fail; they age.</p>
     <p>What is new data, not a forecasting error: David Peterson made his Cubs debut Saturday against Milwaukee and went 5&thinsp;&#x2154;&thinsp;innings, two earned runs, in an 8&ndash;2 Cubs win &mdash; first pitch surrendered as a leadoff homer to Jackson Chourio, decent outing otherwise. Issue #90 called Peterson &ldquo;reinforcements shipped directly to the firing squad.&rdquo; One start in, Peterson looked competent. Cole Mathis remains in the minors on the approximate 2029 timeline the piece assigned him. This is not a miss; the piece was describing the trade&rsquo;s immediate optics, not Peterson&rsquo;s career arc.</p>
-    <p>The Sorsby labor-market outcome was not fully modeled. Sunday Edition No.&nbsp;11 laid out three possible supplemental draft scenarios: an early-round pick (market prizes talent above the integrity discount), a late pick (market prices the discount), or undrafted (labor market enforces what the NCAA could not). The NFL generated a fourth: it declined to hold the supplemental draft at all. No supplemental draft has been cancelled before with a declared applicant. This is new data about how the NFL and the NCAA actually coexist &mdash; not a prediction failure &mdash; but the Sunday Edition records it as something we did not anticipate.</p>
+    <p>The Sorsby labor-market outcome was not fully modeled. Sunday Edition No.&nbsp;11 laid out three possible supplemental draft scenarios: an early-round pick (market prizes talent above the integrity discount), a late pick (market prices the discount), or undrafted (labor market enforces what the NCAA could not). The NFL generated a fourth: it declined to hold the supplemental draft at all. No supplemental draft has been canceled before with a declared applicant. This is new data about how the NFL and the NCAA actually coexist &mdash; not a prediction failure &mdash; but the Sunday Edition records it as something we did not anticipate.</p>
   </div>
 
   <!-- PULL QUOTE 1 -->
@@ -10680,7 +10680,7 @@ THE TAKEAWAY
 
 <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
   <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">&ldquo;The leap from temporal sequence to causal claim is always something the mind adds. It is the most useful thing the mind does and the most dangerous. A defensive reader learns to ask, every time, whether the leap has been earned.&rdquo;</p>
-  <cite>&mdash; The Sports Page, summarising David Hume in fewer words than he used</cite>
+  <cite>&mdash; The Sports Page, summarizing David Hume in fewer words than he used</cite>
 </div>
 
 <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The Series, Stated</h2>
@@ -16119,7 +16119,7 @@ After Year 1:
   <!-- SECTION 2: THE PREDICTION SCORECARD -->
   <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The Prediction Scorecard</h2>
 
-  <p>Four of this week&rsquo;s six issues were methodology reference cards and retrospective analyses. They generate no graded predictions &mdash; they are built to make you a better reader of numbers, not to stake a claim on outcomes. The two that do generate stakes are long-horizon: the JUCO structural argument plays out over years; the Mets conditional probability plays out over 130 games. One carry-over from Week 1, however, finally has enough data to close.</p>
+  <p>Four of this week&rsquo;s six issues were methodology reference cards and retrospective analyzes. They generate no graded predictions &mdash; they are built to make you a better reader of numbers, not to stake a claim on outcomes. The two that do generate stakes are long-horizon: the JUCO structural argument plays out over years; the Mets conditional probability plays out over 130 games. One carry-over from Week 1, however, finally has enough data to close.</p>
 
   <table class="rec" style="width:100%;border-collapse:collapse;font-size:14px;margin:16px 0">
     <thead>
@@ -17002,7 +17002,7 @@ PATH B: HIGH SCHOOL &rarr; JUCO &rarr; D1 (THE DETOUR)
 
 <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
   <span>The Sports Page &middot; Vol. I, No. 32</span>
-  <span>Sources: published stabilization analyses (Carleton, Fangraphs, et al.)</span>
+  <span>Sources: published stabilization analyzes (Carleton, Fangraphs, et al.)</span>
   <span>Not financial or wagering advice</span>
 </div>
 </div>
@@ -17224,13 +17224,13 @@ Overall : higher rank won 68.8% of all matchups</div>
 
 <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Coaches: the First Two Seasons Are Not Nothing</h2>
 
-<p>The conventional take is that a new head coach needs four years to "get his guys" and "install a system." That take is not wrong; it is just not quantitatively honest. Published analyses of NFL head-coaching performance suggest a robust pattern: the correlation between a coach&rsquo;s year-1&ndash;2 win percentage and his final career win percentage is meaningful &mdash; usually in the range of 0.5 to 0.65, depending on era and sample. By year three, that correlation climbs toward 0.7. By year four, there is very little additional information to be extracted.</p>
+<p>The conventional take is that a new head coach needs four years to "get his guys" and "install a system." That take is not wrong; it is just not quantitatively honest. Published analyzes of NFL head-coaching performance suggest a robust pattern: the correlation between a coach&rsquo;s year-1&ndash;2 win percentage and his final career win percentage is meaningful &mdash; usually in the range of 0.5 to 0.65, depending on era and sample. By year three, that correlation climbs toward 0.7. By year four, there is very little additional information to be extracted.</p>
 
 <p>This does not mean first-year coaches should be fired. It means that the fourth year is the one where we find out what we were already pretty sure about after two. Belichick in Cleveland was a counter-example that justifies patience in principle; he is one case and more recent data skews toward less forgiving.</p>
 
 <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Players: Year-Two AV Is More Predictive Than Year-Three</h2>
 
-<p>For first-round picks, the correlation between career Approximate Value and year-2 AV is higher than most fans would guess. By year two, a player&rsquo;s AV rank within his draft class predicts his final-career AV rank with r roughly in the 0.55&ndash;0.65 range. By year three, it climbs further. A player who is a bottom-quartile AV producer through two seasons almost never becomes a top-quartile career producer; published retrospective analyses of historical first-round classes make that pattern quite clear.</p>
+<p>For first-round picks, the correlation between career Approximate Value and year-2 AV is higher than most fans would guess. By year two, a player&rsquo;s AV rank within his draft class predicts his final-career AV rank with r roughly in the 0.55&ndash;0.65 range. By year three, it climbs further. A player who is a bottom-quartile AV producer through two seasons almost never becomes a top-quartile career producer; published retrospective analyzes of historical first-round classes make that pattern quite clear.</p>
 
 <p>The Zach Wilsons of the world do not usually un-Zach themselves. The Aaron Rodgerses &mdash; players whose first two years were limited by situation rather than ability &mdash; are genuine exceptions, not the rule they get cited as.</p>
 
@@ -17249,7 +17249,7 @@ Overall : higher rank won 68.8% of all matchups</div>
 
 <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Methodological Coda</h2>
 
-<p>The numbers cited above come from a mixture of published retrospective analyses and reasonable approximations of what the full empirical correlation curve would show. A follow-up issue of The Sports Page will build the curve from primary data: all head coaches 1970&ndash;2024 tracked year-by-year, and all first-round picks 1970&ndash;2022 tracked year-by-year. The tentative shape described above &mdash; r = 0.5 at year 1, 0.7 at year 3, near-asymptote at year 4 &mdash; is what that curve should look like if current understanding holds. We will check.</p>
+<p>The numbers cited above come from a mixture of published retrospective analyzes and reasonable approximations of what the full empirical correlation curve would show. A follow-up issue of The Sports Page will build the curve from primary data: all head coaches 1970&ndash;2024 tracked year-by-year, and all first-round picks 1970&ndash;2022 tracked year-by-year. The tentative shape described above &mdash; r = 0.5 at year 1, 0.7 at year 3, near-asymptote at year 4 &mdash; is what that curve should look like if current understanding holds. We will check.</p>
 
 <p>In the meantime: the next time a team announces they are "sticking with" a coach or player who has shown two years of below-expectation performance, remember that the statistical literature, reasonably interpreted, already says what the next two years will show. The signal is already there. What is missing is a front office willing to read it.</p>
 
@@ -17783,7 +17783,7 @@ Projected final record (at mean):  80 &ndash; 82</div>
 
 <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What Has Historically Happened to Teams Starting This Poorly</h2>
 
-<p>Published base-rate analyses of slow starts are not universally consistent on exact thresholds, and a clean "P(playoffs | 7-14 start)" across every season since 1969 is not trivially available. What is clear from the cases:</p>
+<p>Published base-rate analyzes of slow starts are not universally consistent on exact thresholds, and a clean "P(playoffs | 7-14 start)" across every season since 1969 is not trivially available. What is clear from the cases:</p>
 
 <p>The <strong>2019 Washington Nationals</strong> were 19-31 at their fiftieth game &mdash; a noticeably worse position than the 2026 Mets have reached &mdash; and won the World Series. The <strong>2011 St. Louis Cardinals</strong> sat at or below .500 deep into August and are one of five teams with the worst regular-season records ever to win a World Series. The <strong>2005 Houston Astros</strong> started 15-30 and reached the World Series. The <strong>1991 Atlanta Braves</strong> famously "worst to first."</p>
 

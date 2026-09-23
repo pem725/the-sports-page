@@ -665,6 +665,12 @@ token in a workflow file.
 **If a secret is ever exposed, rotating it is the only remedy.** Moving it
 somewhere safer afterwards does nothing for the value that already leaked.
 
+**This is an American newspaper. Use American spelling.** Checked by
+`python3 scripts/check_spelling.py --all`. The rule exists because a sweep on
+2026-09-23 found 102 British spellings across 46 files, 52 of them already
+published &mdash; *favourite, analyse, grey, defence, centred, cancelled*. Each one
+is invisible on its own, which is exactly why nobody caught them.
+
 ## The work queue
 
 **`TASKS.md` is the open list.** It states, for each task, the question, the data

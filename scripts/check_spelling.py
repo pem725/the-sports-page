@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+"""Catch British spellings. This is an American newspaper.
+
+    python3 scripts/check_spelling.py queue/*.html
+    python3 scripts/check_spelling.py --all
+
+WHY THIS EXISTS. On 2026-09-23 the editor read the word "maths" in a draft and
+pointed out the obvious: "I'm in the US. We don't say maths. We say math." A
+sweep found 102 British spellings across 46 files, including 52 already published
+-- favourite, analyse, grey, defence, centred, cancelled. Nobody had noticed
+because each one is individually invisible and collectively wrong.
+
+It checks prose only. Script and style blocks are skipped so CSS colour keywords
+and JavaScript identifiers are not flagged.
+
+KNOWN LIMIT: a proper noun that is legitimately British will trip this -- Centre
+College, the Labour Party, a person named Grey. There are none in the archive
+today, checked by hand at the time of the sweep. If one arrives, the right fix is
+an exception here, not a rewritten name.
+"""
+import argparse, glob, pathlib, re, sys
+
+PAIRS = [("maths","math"),("favourite","favorite"),("favour","favor"),("colour","color"),
+ ("behaviour","behavior"),("honour","honor"),("neighbour","neighbor"),("labour","labor"),
+ ("rumour","rumor"),("organis","organiz"),("recognis","recogniz"),("normalis","normaliz"),
+ ("summaris","summariz"),("prioritis","prioritiz"),("analyse","analyze"),("centre","center"),
+ ("metre","meter"),("defence","defense"),("offence","offense"),("practise","practice"),
+ ("licence","license"),("travelling","traveling"),("cancelled","canceled"),
+ ("modelling","modeling"),("learnt","learned"),("amongst","among"),("whilst","while"),
+ ("per cent","percent"),("grey","gray")]
+
+def prose(path):
+    t = pathlib.Path(path).read_text(encoding="utf-8", errors="replace")
+    return re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", t, flags=re.S | re.I)
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("paths", nargs="*")
+    ap.add_argument("--all", action="store_true")
+    a = ap.parse_args()
+    files = [f for p in a.paths for f in glob.glob(p)]
+    if a.all or not files:
+        files = sorted(glob.glob("published/*.html")) + sorted(glob.glob("queue/*.html")) \
+              + ["index.html", "about.html", "ask.html", "feed.xml"]
+    bad = 0
+    for f in files:
+        if not pathlib.Path(f).exists():
+            continue
+        t = prose(f)
+        for br, us in PAIRS:
+            for m in re.finditer(r"\b" + br, t, re.I):
+                bad += 1
+                ctx = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", t[max(0, m.start()-45):m.end()+45]))
+                print(f"  {pathlib.Path(f).name:<34}{m.group(0):<12}-> {us:<11}...{ctx.strip()[:60]}")
+    print(f"\n  {bad} British spelling(s)" + ("" if bad else " -- clean"))
+    return 1 if bad else 0
+
+if __name__ == "__main__":
+    sys.exit(main())

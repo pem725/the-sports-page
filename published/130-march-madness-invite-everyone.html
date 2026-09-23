@@ -190,7 +190,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
     <cite>&mdash; The Sports Page</cite>
   </div>
 
-  <h2 class="sh">Two Things That Fall Out of the Maths</h2>
+  <h2 class="sh">Two Things That Fall Out of the Math</h2>
 
   <p><strong>Splitting into two divisions is free.</strong> Because the game count is linear, an 80-team elite bracket plus a 285-team second bracket costs 726 games against 728 for one combined field.</p>
 
@@ -232,7 +232,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
   <div class="methods">
     <b>How this was computed</b>
-    Team counts and format details come from the NCAA&rsquo;s expansion announcement and the 2026&ndash;27 Division I membership (365 programmes: 361 full members plus four in transition), with the regular-season limit rising to 32 games. Game totals are arithmetic: a double-elimination bracket of N teams takes 2N &minus; 2 games; single elimination takes N &minus; 1. The current-season total assumes 32 games per team, 31 conference tournaments, and the 76-team bracket. The simulation runs 3,000 seasons with team strength drawn from a normal distribution and game outcomes from a logistic model calibrated so a top seed beats a bottom seed about 95% of the time &mdash; slightly kinder to underdogs than the real 1-vs-16 record, which makes the finding conservative: a tighter calibration widens the gap in favour of double elimination. The double-elimination bracket is simulated by pairing surviving teams each round and eliminating on a second loss, which approximates a formal winners/losers bracket without reproducing its exact seeding rules. Dataset at <code>data/march-madness-expansion-sim.json</code>.
+    Team counts and format details come from the NCAA&rsquo;s expansion announcement and the 2026&ndash;27 Division I membership (365 programmes: 361 full members plus four in transition), with the regular-season limit rising to 32 games. Game totals are arithmetic: a double-elimination bracket of N teams takes 2N &minus; 2 games; single elimination takes N &minus; 1. The current-season total assumes 32 games per team, 31 conference tournaments, and the 76-team bracket. The simulation runs 3,000 seasons with team strength drawn from a normal distribution and game outcomes from a logistic model calibrated so a top seed beats a bottom seed about 95% of the time &mdash; slightly kinder to underdogs than the real 1-vs-16 record, which makes the finding conservative: a tighter calibration widens the gap in favor of double elimination. The double-elimination bracket is simulated by pairing surviving teams each round and eliminating on a second loss, which approximates a formal winners/losers bracket without reproducing its exact seeding rules. Dataset at <code>data/march-madness-expansion-sim.json</code>.
   </div>
 
   <div class="footer"><span>The Sports Page</span><span>Vol. I, No. 137 &middot; August 14, 2026</span><span>One Question Per Issue, Answered With Numbers.</span></div>
