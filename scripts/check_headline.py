@@ -89,13 +89,21 @@ def beats(h):
 # verbs like hit, miss and kick. Added all three groups. Nothing was added
 # because it happened to sit in a headline under review; the test applied was
 # whether a child plainly knows the word.
+#
+# EXTENDED AGAIN 2026-09-23. The cardinal numbers jumped from `twelve` straight to
+# `twenty`, so a headline counting FIFTEEN games was told that "Fifteen" is an
+# uncommon word -- while "twelve" beside it was fine. Thirteen through nineteen
+# added, plus sixty/seventy/eighty/ninety and the everyday prepositions the list
+# had also skipped. Third time this list has been short; it will be short again.
 PLAIN = set("""
 a an the and or but so if then than that this these those is are was were be been am do does did done
 have has had will would can could should may might must of in on at to for from by with about into over
 under up down out off again more most some any all no not only just very too as it its it's he she they
 we you i me him her them us who what when where why how which there here now new old good bad big small
 long short high low first last next best worse worst same other every each both few many much
-one two three four five six seven eight nine ten eleven twelve twenty thirty forty fifty hundred thousand
+one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen
+sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand
+apart together between across along around since until while during without within
 million billion percent
 game games team teams win wins won lose loses lost play plays played player players score scores scored
 yard yards point points season seasons week weeks year years day days time times half field ball

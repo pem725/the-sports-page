@@ -104,6 +104,13 @@ def main():
         prev = topic
         d += datetime.timedelta(days=1)
         if d.weekday() == 6:
+            # A SUNDAY EDITION PUBLISHES IN THIS GAP, so the rotation is broken by
+            # a real issue and Saturday is not adjacent to Monday. This walked the
+            # dates around Sunday but carried `prev` straight across it, which
+            # reported a back-to-back clash between two pieces that a Sunday
+            # Edition sits between. Same fault as the original boundary bug: the
+            # calendar was modelled and the publishing was not.
+            prev = "Sunday Edition"
             d += datetime.timedelta(days=1)
     print(f"  {len(rows)} issues queued, running through {rows[-1][0]:%a %b %d}\n" if rows else "  queue empty\n")
     print(f"  {'date':<12}{'topic':<9}{'decay':<8}{'file'}")
