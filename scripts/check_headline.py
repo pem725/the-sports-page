@@ -80,6 +80,15 @@ def beats(h):
 # its first run it flagged "baseball", "spent" and "million" as hard words, which
 # is the instrument failing rather than the headline. When it flags something a
 # child plainly knows, add the word; do not rewrite the headline.
+#
+# EXTENDED 2026-09-23, same rule applied again. The list carried the object
+# pronouns -- him, her, them, us -- and almost none of the POSSESSIVES, so a
+# headline saying "Our New Rule" was told that "Our" is an uncommon word. A
+# survey of 59 indisputably everyday words found 42 missing, in three clear
+# categories: possessives, the ask/answer/want/try verbs, and plain sporting
+# verbs like hit, miss and kick. Added all three groups. Nothing was added
+# because it happened to sit in a headline under review; the test applied was
+# whether a child plainly knows the word.
 PLAIN = set("""
 a an the and or but so if then than that this these those is are was were be been am do does did done
 have has had will would can could should may might must of in on at to for from by with about into over
@@ -98,6 +107,9 @@ tell tells told know knows knew think thinks say says said see sees saw look loo
 make makes made get gets got take takes took give gives gave come comes came go goes went
 keep keeps kept hold holds held leave leaves left stop stops stopped start starts started
 move moves moved fall falls fell rise rises rose beat beats better ahead behind close near far
+my your our his their mine yours ours theirs rule rules order orders random hat fake
+ask asks asked answer answers name names need needs want wants try tries help helps hurt hurts
+hit hits kick kicks miss misses missed feel feels
 hard easy fast slow real true false right wrong nothing something anything nobody everybody
 mean means meant found find finds killed broken broke fixed turnover turnovers fumble fumbles
 kicker kickers booth model models number numbers pattern patterns system systems school schools

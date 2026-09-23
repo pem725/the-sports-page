@@ -1049,7 +1049,7 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 ## Current State (update this when publishing)
 
 Published: 178 issues (#1-178)
-Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 149-where-players-die, 152-returning-noise, 158-possession-collapse, 159-turnover-persistence, 160-the-vig, _TEMPLATE)
+Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 149-where-players-die, 152-returning-noise, 158-possession-collapse, 159-turnover-persistence, 160-the-vig, 163-beaten-by-a-hat, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
 Goal: 322 issues remaining of 500

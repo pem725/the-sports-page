@@ -118,6 +118,22 @@ def sentences(text):
     return [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
 
 
+# A NUMBER IS A NUMBER WHETHER OR NOT IT IS A DIGIT. Fixed 2026-09-23. This test
+# was `re.search(r"\d", ...)`, which is the same digit-blind bug check_headline.py
+# carried until it was fixed -- there it scored "Twelve Playoff Spots. Five Real
+# Title Threats." as having no pull at all.
+#
+# It matters more here, because headline rule 2 tells us to SPELL numbers out:
+# "Round in the headline, exact in the piece", the editor's own edit that turned
+# 5,755 schools into "More Than Five Thousand High Schools Produced Nobody". A
+# digit-only test marks the house style as a failure to lead with a number.
+NUMBER = re.compile(
+    r"\d|\b(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
+    r"thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|"
+    r"thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|"
+    r"billion|half|twice|double|triple|dozen|none|nobody|zero|every)\b",
+    re.I)
+
 def bluf_check(path, text):
     """Is the finding in the first breath, or buried?
 
@@ -134,8 +150,8 @@ def bluf_check(path, text):
     # one. Words are the honest unit: it is roughly what a reader takes in
     # before deciding to stay.
     opening = " ".join(text.split()[:60])
-    has_num = bool(re.search(r"\d", opening))
-    deck_num = bool(re.search(r"\d", deck.get_text(" ", strip=True))) if deck else False
+    has_num = bool(NUMBER.search(opening))
+    deck_num = bool(NUMBER.search(deck.get_text(" ", strip=True))) if deck else False
     return has_num, deck_num, opening[:170]
 
 

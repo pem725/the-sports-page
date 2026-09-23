@@ -11,9 +11,18 @@ still has to pass `check_readability.py`, `check_voice.py` and
 `check_headline.py`, and still has to state its limits.
 
 **The standing rule that matters most:** when a check disagrees with the data,
-suspect the check first. It has been the check five times running — the headline
-selector, the digit-blind number test, the confession exception, the rotation
-boundary, and the OG entity pattern.
+suspect the check first. It has now been the check **seven** times running — the
+headline selector, the digit-blind number test, the confession exception, the
+rotation boundary, the OG entity pattern, the missing possessive pronouns in
+`PLAIN`, and the digit-blind number test *again*, in `check_readability.py`.
+
+That last one is the tell. The same bug existed in two files and was fixed in
+only one, because nobody grepped for the pattern after fixing it the first time.
+**When you fix a checker, search the other checkers for the same mistake.**
+
+And one the checks could not catch at all: a figure's collision test compared
+text to text and passed, while a leader line ran straight through a word. Bounding
+boxes only find what you think to compare. **Render it and look at it.**
 
 ---
 
@@ -33,8 +42,11 @@ versus `measurement-building-a-metric.html`. Key off `primer`. A scan keyed on
 `id` reported the registry as broken when it was correct.
 
 ### A2. Four primers nothing points at
-`post-hoc`, `nomothetic-vs-idiographic`, `heuristics-and-ecological-rationality`,
-`believe-data-model-theory` are written, published, and orphaned.
+`nomothetic-vs-idiographic`, `heuristics-and-ecological-rationality`,
+`believe-data-model-theory` are written, published, and orphaned. **`post-hoc` is
+done** &mdash; `queue/163-beaten-by-a-hat.html` links it, and it was commissioned
+for the concept rather than retrofitted: a pool rule invented after seeing three
+weeks of results is the worked example.
 
 **Done:** one issue commissioned per concept that genuinely needs it — not a
 retrofit link dropped into an old piece. `post-hoc` is the easiest: half the
