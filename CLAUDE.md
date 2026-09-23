@@ -665,6 +665,13 @@ token in a workflow file.
 **If a secret is ever exposed, rotating it is the only remedy.** Moving it
 somewhere safer afterwards does nothing for the value that already leaked.
 
+## The work queue
+
+**`TASKS.md` is the open list.** It states, for each task, the question, the data
+source, what done looks like, and the trap already discovered in it. Read the trap
+before starting. If a better question turns up while working on one, write it down
+there rather than quietly substituting it.
+
 ## Editorial Rules
 
 - **NEVER GRADE A FORECAST ON A SOURCE YOU CANNOT CONFIRM FROM A PRIMARY FEED.**
