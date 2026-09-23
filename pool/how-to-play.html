@@ -32,6 +32,13 @@ input[type=range]{flex:1;min-width:170px;accent-color:var(--rust)}
 .bar i{display:block;height:100%;background:var(--rust);width:0}
 .bar span{position:absolute;top:-1.15rem;font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted)}
 .rule{font-family:'Playfair Display',serif;font-weight:700;font-size:1.02rem;color:var(--ink);margin:1.2rem 0 .3rem}
+
+.simlab{font-family:'Roboto Mono',monospace;font-size:.8rem;color:var(--ink);margin:.5rem 0 .9rem;min-height:2.6em}
+.twin{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media (max-width:560px){.twin{grid-template-columns:1fr}}
+.cap{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.cap.sub{text-transform:none;letter-spacing:0;font-size:.66rem;margin-top:.35rem;min-height:2.4em}
+.twin svg{width:100%;height:auto;background:#fffdf7;border:1px solid var(--div)}
 a{color:var(--rust)}
 .foot{font-size:.76rem;color:var(--muted);border-top:1px solid var(--div);margin-top:2rem;padding-top:.9rem}
 </style>
@@ -67,14 +74,27 @@ a{color:var(--rust)}
 
 <div class="sim">
   <div class="simrow">
-    <span class="out" id="out">5.1%</span>
     <input id="k" type="range" min="0" max="15" value="0" step="1" aria-label="Games you differ from the group on">
   </div>
-  <p class="lab" id="lab">You pick exactly what the group picks.</p>
-  <div class="bar"><span>fair share, 8 entrants: 12.5%</span><i id="bar"></i></div>
+  <p class="simlab" id="lab"></p>
+
+  <div class="twin">
+    <div>
+      <div class="cap">Your score &mdash; this never changes</div>
+      <svg id="sc" viewBox="0 0 320 130" role="img" aria-label="Distribution of your own score"></svg>
+      <div class="cap sub" id="scl"></div>
+    </div>
+    <div>
+      <div class="cap">Where you finish &mdash; this is what you control</div>
+      <svg id="pl" viewBox="0 0 320 130" role="img" aria-label="Distribution of your finishing place"></svg>
+      <div class="cap sub" id="pll"></div>
+    </div>
+  </div>
 </div>
 
-<p>The climb is steep and then it stops. Going from nought to three differences nearly triples your chances; going from five to fifteen adds almost nothing. <b>Three or four genuine disagreements is most of the benefit there is.</b></p>
+<p><b>Watch the left chart refuse to move.</b> Your own score has the same shape at every setting &mdash; centred on 60, give or take 18. You cannot make yourself score better by arranging the points differently, and the chart says so more honestly than we could.</p>
+<p>The right chart is the one that changes. At zero it bunches in the middle: you finish somewhere unremarkable, almost every week. Slide it right and it splits in two &mdash; more chance of winning, and just as much more chance of coming last. That is the trade, stated plainly. You are not buying a better result. You are buying a wider one.</p>
+<p>The climb is steep and then it stops. Nought to three roughly triples your chance of first; five to fifteen adds almost nothing. <b>Three or four genuine disagreements is most of the benefit there is.</b></p>
 
 <h2>So, four rules</h2>
 
@@ -97,20 +117,40 @@ a{color:var(--rust)}
 <p class="foot">Arithmetic and simulation by <a href="https://thesportspage.net/">The Sports Page</a>. Coin-flip figure from Issue&nbsp;#174, measured over 2,140 games. Win-chance curve from 60,000 simulated weeks per setting, eight entrants, field clustered at 75% agreement with a consensus sheet. Not a betting guide &mdash; there is no money in this pool, which is precisely why it is fun.</p>
 </div>
 <script>
-const SIM = {"0":5.1,"1":11.8,"2":15.2,"3":17.2,"4":19.0,"5":20.0,"6":21.4,"7":21.7,"8":22.5,"9":22.4,"10":22.7,"11":22.9,"12":22.9,"13":23.2,"14":23.5,"15":23.5};
-const k=document.getElementById('k'), out=document.getElementById('out'),
-      lab=document.getElementById('lab'), bar=document.getElementById('bar');
-const LABELS={0:"You pick exactly what the group picks.",
- 1:"One game where you break from the room.",
- 2:"Two breaks from the room.",
- 3:"Three breaks — most of the benefit is already here.",
- 4:"Four breaks.",5:"Five breaks — returns are flattening.",
- 15:"You disagree with the room on everything. Barely better than five."};
+const D = {"place":{"0":[5.7,9.1,18.5,14.8,22.2,12.8,12.5,4.5],"1":[12.3,12.6,14.6,9.5,13.3,11.0,15.8,10.9],"2":[15.9,11.0,12.8,9.4,13.2,9.4,13.6,14.7],"3":[17.9,11.3,12.3,7.8,10.7,9.1,14.0,16.9],"4":[19.7,10.6,11.0,8.2,11.0,8.2,13.0,18.3],"5":[20.6,10.5,11.1,6.9,10.0,8.2,13.0,19.7],"6":[21.8,10.4,10.1,7.0,9.9,7.5,12.5,20.7],"7":[22.1,10.2,10.2,6.8,9.2,7.7,12.5,21.5],"8":[22.7,10.2,9.8,6.7,9.2,7.4,12.4,21.5],"9":[23.0,10.0,9.7,6.6,9.1,7.3,12.2,22.1],"10":[23.5,9.8,9.7,6.5,8.9,7.4,12.0,22.2],"11":[23.8,9.8,9.6,6.6,8.8,7.3,11.7,22.3],"12":[23.5,9.9,9.7,6.5,8.8,7.2,11.8,22.6],"13":[23.5,9.7,9.6,6.4,8.7,7.4,11.9,22.8],"14":[23.6,9.6,9.6,6.5,8.9,7.2,12.0,22.6],"15":[23.9,9.7,9.4,6.4,8.9,7.3,12.0,22.5]},"win":{"0":5.7,"1":12.3,"2":15.9,"3":17.9,"4":19.7,"5":20.6,"6":21.8,"7":22.1,"8":22.7,"9":23.0,"10":23.5,"11":23.8,"12":23.5,"13":23.5,"14":23.6,"15":23.9},"se":{"0":0.08,"1":0.12,"2":0.13,"3":0.14,"4":0.14,"5":0.14,"6":0.15,"7":0.15,"8":0.15,"9":0.15,"10":0.15,"11":0.15,"12":0.15,"13":0.15,"14":0.15,"15":0.15},"mean":60.0,"sd":17.5,"score":[[0,0.1],[10,0.8],[20,3.2],[30,8.5],[40,15.5],[50,20.9],[60,21.0],[70,16.1],[80,9.1],[90,3.6],[100,0.9],[110,0.1],[120,0.0]]};
+const NS="http://www.w3.org/2000/svg";
+const el=(n,at)=>{const e=document.createElementNS(NS,n);for(const q in at)e.setAttribute(q,at[q]);return e;};
+function bars(svg, vals, labels, hi, colour){
+  svg.textContent="";
+  const W=320,H=130,L=8,R=8,T=10,B=26, PW=W-L-R, PH=H-T-B;
+  const max=Math.max(...vals,1), w=PW/vals.length;
+  vals.forEach((v,i)=>{
+    const h=v/max*PH;
+    svg.appendChild(el('rect',{x:L+i*w+w*0.13,y:T+PH-h,width:w*0.74,height:h,
+      fill:(hi!==null&&i===hi)?'#b83a1e':colour,opacity:(hi!==null&&i===hi)?1:.82}));
+    if(labels[i]!==null){
+      const tx=el('text',{x:L+i*w+w/2,y:H-9,'text-anchor':'middle','font-size':8.5,
+        fill:'#6b5e4a','font-family':'Roboto Mono, monospace'});
+      tx.textContent=labels[i]; svg.appendChild(tx);
+    }
+  });
+}
+const k=document.getElementById('k'), lab=document.getElementById('lab'),
+      sc=document.getElementById('sc'), pl=document.getElementById('pl'),
+      scl=document.getElementById('scl'), pll=document.getElementById('pll');
+const WORDS=["no games","one game","two games","three games","four games","five games",
+ "six games","seven games","eight games","nine games","ten games","eleven games",
+ "twelve games","thirteen games","fourteen games","all fifteen games"];
 function upd(){
-  const v=+k.value, p=SIM[v];
-  out.textContent=p.toFixed(1)+'%';
-  lab.textContent=LABELS[v]||(v+" breaks from the room.");
-  bar.style.width=Math.min(100,p*4)+'%';
+  const v=+k.value;
+  const place=D.place[v], win=D.win[v], se=D.se[v];
+  lab.innerHTML="You pick <b>"+WORDS[v]+"</b> differently from the group."+
+    (v===0?" Your sheet is the consensus sheet.":"");
+  bars(sc, D.score.map(s=>s[1]), D.score.map((s,i)=>i%3===0?s[0]:null), null, '#2c4a6e');
+  scl.innerHTML="Mean <b>"+D.mean+"</b>, spread <b>&plusmn;"+D.sd+"</b>. Identical at every setting of the slider.";
+  bars(pl, place, ['1st','2nd','3rd','4th','5th','6th','7th','8th'], 0, '#6b5e4a');
+  const lo=(win-1.96*se).toFixed(1), hi=(win+1.96*se).toFixed(1);
+  pll.innerHTML="First place <b>"+win.toFixed(1)+"%</b> <span style='opacity:.75'>(95% "+lo+"&ndash;"+hi+")</span>. Last place <b>"+place[7].toFixed(1)+"%</b>.";
 }
 k.addEventListener('input',upd); upd();
 </script>
