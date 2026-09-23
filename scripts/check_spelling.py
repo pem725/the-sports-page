@@ -27,7 +27,26 @@ PAIRS = [("maths","math"),("favourite","favorite"),("favour","favor"),("colour",
  ("metre","meter"),("defence","defense"),("offence","offense"),("practise","practice"),
  ("licence","license"),("travelling","traveling"),("cancelled","canceled"),
  ("modelling","modeling"),("learnt","learned"),("amongst","among"),("whilst","while"),
- ("per cent","percent"),("grey","gray")]
+ ("per cent","percent"),("grey","gray"),
+ # -ISE VERBS, ADDED 2026-09-23. Note these are spelled out rather than stemmed.
+ # The obvious shortcut is a stem like ("criticis","criticiz") and it is a trap:
+ # that flags CRITICISM, ("characteris") flags CHARACTERISTIC, ("specialis")
+ # flags SPECIALIST, ("realis") flags REALISM and REALIST, and ("agonis") flags
+ # AGONIST, which this paper will use the moment it writes about pharmacology.
+ # The two stems already here -- organis, recognis -- happen to be safe. Most are
+ # not, so each verb below is listed in full.
+ ("agonise","agonize"),("agonising","agonizing"),("agonised","agonized"),
+ ("realise","realize"),("realising","realizing"),("realised","realized"),
+ ("criticise","criticize"),("criticising","criticizing"),("criticised","criticized"),
+ ("emphasise","emphasize"),("emphasising","emphasizing"),("emphasised","emphasized"),
+ ("apologise","apologize"),("apologising","apologizing"),("apologised","apologized"),
+ ("specialise","specialize"),("specialising","specializing"),("specialised","specialized"),
+ ("characterise","characterize"),("characterising","characterizing"),("characterised","characterized"),
+ ("minimis","minimiz"),("maximis","maximiz"),("utilis","utiliz"),("penalis","penaliz"),
+ ("standardis","standardiz"),("randomis","randomiz"),
+ # optimis -> optimiz would flag OPTIMISM. Caught by the false-positive test.
+ ("optimise","optimize"),("optimising","optimizing"),("optimised","optimized"),
+ ("sceptic","skeptic"),("programme","program"),("storey","story"),("draught","draft")]
 
 def prose(path):
     t = pathlib.Path(path).read_text(encoding="utf-8", errors="replace")

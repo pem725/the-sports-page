@@ -85,9 +85,12 @@ has rotted:
   trigger:* the day the NFL becomes a rotation sport — when the baseball season
   ends. It is `dated` only in the loose sense that it references a current
   season; check its figures still hold before restoring.
-- **`149-where-players-die.html`** (NFL, the Cleveland refutation). *Revival
-  trigger:* same. This one is `keeps` and will not go stale — the within-player
-  design covers 2015–2022 and nothing about it decays.
+- ~~**`149-where-players-die.html`**~~ **RELEASED 2026-09-23** to Mon Sep 28. Its
+  trigger was "the day the NFL becomes a rotation sport," and that day had already
+  passed unnoticed — two NFL pieces were queued this week while this one sat
+  benched. It passes every check and its headline, *We Were Wrong About
+  Cleveland*, is the one `CLAUDE.md` calls the strongest the paper owns.
+  **Lesson for this file: a trigger nobody re-reads is not a trigger.**
 
 Neither is in QUEUE_ORDER, so autopublish cannot pick them up. Restore both by
 adding them back to the order once the NFL is in rotation.

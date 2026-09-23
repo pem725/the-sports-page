@@ -37,3 +37,7 @@ tokens.env
 
 # Codex local hook state, not shared config (AGENTS.md is)
 .codex/
+
+# Stan compiled models and fitted objects -- regenerate with analysis/pool-bayes/run_models.R
+# 99MB of binaries, and GitHub caps a single file at 100MB. Source is committed; fits are not.
+analysis/pool-bayes/**/*.rds

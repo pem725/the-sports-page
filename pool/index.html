@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Pool Desk &mdash; The Sports Page</title>
+<meta name="description" content="How football pools work, why picking better barely helps, and what actually decides who wins. Our own entry, graded in public.">
+<meta property="og:title" content="The Pool Desk">
+<meta property="og:description" content="How football pools work, why picking better barely helps, and what actually decides who wins.">
+<meta property="og:url" content="https://thesportspage.net/pool/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital@0;1&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;line-height:1.66}
+.wrap{max-width:740px;margin:0 auto;padding:1.6rem 1.15rem 3rem;background:var(--cream)}
+.kick{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.1;margin:.25rem 0 .6rem}
+.deck{font-size:1.04rem;font-style:italic;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.9rem 0 1.6rem}
+h2{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;margin:2rem 0 .6rem;padding-top:.9rem;border-top:1px solid var(--div)}
+p{margin:.75rem 0}
+a{color:var(--rust)}
+.card{display:block;border:2px solid var(--steel);background:#ede5d2;padding:1.1rem 1.3rem;margin:0 0 1rem;text-decoration:none;color:inherit}
+.card .l{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.35rem}
+.card .h{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;line-height:1.25;margin-bottom:.3rem}
+.card .d{font-size:.87rem;color:var(--muted);line-height:1.55}
+.card.quiet{border-color:var(--div);background:#f0ead9}
+.card.quiet .l{color:var(--muted)}
+.foot{font-size:.76rem;color:var(--muted);border-top:1px solid var(--div);margin-top:2.4rem;padding-top:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="kick">The Sports Page</div>
+<h1>The Pool Desk</h1>
+
+<div class="deck">
+A football pool is the best statistics classroom anybody ever built by accident.
+It has a real prize, a real opponent, and a scoreboard that settles arguments
+every Sunday. It is also almost universally misunderstood, which is what makes it
+worth a desk of its own.
+</div>
+
+<p>We run an entry in a family pool. We publish what we pick before kickoff, and
+we grade it afterwards whether it worked or not. So far it has mostly not worked,
+and saying so is the point &mdash; a strategy page written by somebody who hides
+their results is worth nothing.</p>
+
+<p><b>Nobody here is named.</b> Everyone in the pool is a letter. The interesting
+thing is the shape of what happens, never who it happened to.</p>
+
+<h2>Start here</h2>
+
+<a class="card" href="101.html">
+  <div class="l">The Introduction</div>
+  <div class="h">Football Pool 101</div>
+  <div class="d">Where your score actually comes from, why being good at picking
+  buys you less than you think, and the one free move that nearly doubles your
+  chance of winning. No math required. <span style="color:var(--rust)">Read it &rarr;</span></div>
+</a>
+
+<a class="card quiet" href="how-to-play.html">
+  <div class="l">Going Deeper</div>
+  <div class="h">The Strategy Notes</div>
+  <div class="d">The simulations behind the introduction, with the assumptions
+  written out and the limits stated. For anyone who wants to check the arithmetic
+  rather than take our word for it.</div>
+</a>
+
+<h2>What we have learned so far</h2>
+
+<p><b>We cannot pick.</b> Tested against 2,278 college games, the statistics we
+trust went 50.2% against the spread. Break-even is 52.4%. That is not a
+disappointing result, it is the normal one, and every strategy we publish assumes
+it.</p>
+
+<p><b>The ranking is worth nothing to your score and a great deal to your odds.</b>
+Over 120,000 simulated weeks, where you put your big numbers never moved the
+average score by more than a tenth of a point &mdash; and moved the chance of
+winning from 14.5% to 22.4%.</p>
+
+<p><b>We got beaten by a hat.</b> Our week-three entry scored at the 6th
+percentile of what randomly shuffling the same picks would have managed. We put
+our big numbers on losers. A rule we built afterwards to fix it also lost to
+random, and its reasoning turned out to be false in the same data that produced
+it.</p>
+
+<h2>How we keep ourselves honest</h2>
+
+<p>Anybody can write a rationale after a result and sincerely believe they thought
+it beforehand. That is memory working normally, which is exactly why a promise not
+to do it is worth nothing.</p>
+
+<p>So our reasoning is sealed before kickoff: written, moved out of the
+repository, and published only as a fingerprint of its exact bytes. After the
+games the text goes up and the fingerprint is recomputed. Change a single
+character and it will not match. You do not have to trust us; you can check.</p>
+
+<div class="foot">
+The Sports Page &mdash; one question per issue, answered with numbers.<br>
+Back to <a href="https://thesportspage.net/">the paper</a> &middot;
+see also <a href="https://thesportspage.net/odds.html">the Odds Board</a>.
+</div>
+
+</div>
+</body>
+</html>

@@ -234,6 +234,26 @@ help" is a publishable result in this paper.
 
 ## E. What today exposed (2026-09-23)
 
+### E0. Freeze the game-level file behind every ATS claim
+Codex's `analysis/pool-bayes/CLAIM-AUDIT.md` sorted every pool claim into
+observed arithmetic, generalization, and simulation. The arithmetic all
+reproduces. **Two empirical claims do not, and they are the two we lean on
+hardest:** the walk-forward yards-per-play coefficient (5.1, r=.47, N=1,441) and
+the 50.2% ATS backtest over 2,278 games. Both are quoted in published work.
+
+They are not wrong; they are *unarchived*. Each was computed by a script that
+re-fetches from CFBD, and upstream box scores and closing lines get revised, so
+re-running it next month can return a different number with no record of why.
+
+**Done:** a frozen row-per-game CSV carrying season, week, both teams, pregame YPP
+margins, final margin, the selected closing spread, push status, and every
+exclusion flag — committed, with the scripts reading the file rather than the API.
+
+**Trap:** the closing-line choice and the push rule are decisions, not facts.
+`picks_overlay.py` averages every book's spread, which is a choice nobody wrote
+down. Record it in the file, because a backtest whose inclusion rules live only in
+code is a backtest nobody can check.
+
 ### E1. The checkers share bugs, and nobody has ever grepped for that
 `check_readability.py` tested for a number with `re.search(r"\d")` — the exact
 digit-blind bug `check_headline.py` had already been fixed for. Two files, one
