@@ -8,7 +8,105 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2026 11:30:14 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 11:28:36 GMT</lastBuildDate>
+    <item>
+      <title>#179: Your Team Held the Ball Longer. That Just Means They Were Ahead.</title>
+      <link>https://thesportspage.net/published/158-possession-collapse.html</link>
+      <description>Time of possession predicts a team’s second half at +0.216. Account for the point margin and it falls to minus 0.003. Teams hold the ball because they are winning.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/158-possession-collapse.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/158-possession-collapse.png" alt="Your Team Held the Ball Longer. That Just Means They Were Ahead." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h2 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208"><span class="hed-glyph" style="color:var(--steel);font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208" title="NFL"><svg class="tg" viewBox="0 0 26 20" aria-hidden="true"><ellipse cx="13" cy="10" rx="10.6" ry="6.1" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 10h6" stroke="currentColor" stroke-width="1.7"/></svg></span>Your Team Held the Ball Longer. <em>That Just Means They Were Ahead.</em></h2>
+  <p class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">Time of possession predicts a team&rsquo;s second half at +0.216. Account for the point margin and it falls to minus 0.003. Teams hold the ball because they are winning.</p>
+  <p class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">The Sports Page &middot; The Professor &middot; answering an argument about the Bills</p>
+
+  <div class="stat-row" style="margin:0 0 22px"><div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v now" style="font-size:28px;font-weight:bold;line-height:1;display:block">+0.216</div><div class="l">Possession, on its own</div></div><div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">&minus;0.003</div><div class="l">Possession, once you know the score</div></div><div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v good" style="font-size:28px;font-weight:bold;line-height:1;display:block">5,278</div><div class="l">Team-games measured</div></div></div>
+
+  <p><strong>The question:</strong> your team held the ball for 36 minutes. Does that tell you anything?</p>
+
+  <p><strong>Nothing you did not already have.</strong> Time of possession correlates with a team&rsquo;s second half at +0.216. Account for the point margin and it falls to <strong>&minus;0.003</strong>.</p>
+
+  <p><strong>Why that is surprising.</strong> It is on the screen every week, so it must mean something. It does &mdash; it means the score, which is printed beside it.</p>
+
+  <p><strong>What you get:</strong> the difference between a number that matters and a number that repeats another number.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Where this came from</h3>
+
+  <p>Two people watched Buffalo beat Houston last Sunday and disagreed about what they saw.</p>
+
+  <p>One watched Houston hold the ball for 36:17 against 23:43, make 26 first downs to 20, and score on four of five red-zone trips. That is a team being pushed around.</p>
+
+  <p>The other saw Buffalo gain 7.9 yards a play against 5.2, commit no turnovers, and win on the road.</p>
+
+  <p>Both were reading the box score correctly. So we went and got ten seasons of it.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The test</h3>
+
+  <p>For every team season from 2016 to 2025 we measured each statistic over the first half of the schedule, then asked how well it predicted the win rate over the <em>second</em> half &mdash; games the statistic has never seen.</p>
+
+  <p>That last part matters. A statistic tested against the games it was computed from will look brilliant and mean nothing. We know; we published a backtest that went 15 for 15 for exactly that reason.</p>
+
+  <div class="chart-wrap"><div class="chart-label">Figure 1</div><img src="https://thesportspage.net/assets/figures/158-possession-collapse-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;"></div>
+
+  <p>The dark bars are each statistic on its own. Possession looks respectable at +0.216 &mdash; not huge, but not nothing, and it clears significance comfortably.</p>
+
+  <p>The light bars are the same statistics after the point margin is taken into account. Possession goes to <strong>&minus;0.003</strong>. Turnover margin goes to <strong>&minus;0.016</strong>. Both vanish.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">Teams hold the ball because they are winning. Not the other way round.</p>
+    <cite>The Professor</cite>
+  </div>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Why it happens</h3>
+
+  <p>Think about what a team ahead by ten in the fourth quarter does. It runs the ball. It takes the play clock down. It stops throwing incompletions, which stop the clock.</p>
+
+  <p>A team behind does the opposite, and scores faster when it scores at all.</p>
+
+  <p>So possession is downstream of the score. It is not a cause being measured; it is an effect being displayed. And the effect is shown next to the thing that caused it, which is why it looks informative.</p>
+
+  <p>The same logic empties out the turnover column, for a different reason we will come back to another day.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">One correction, ours</h3>
+
+  <p>We told a reader on Sunday that yards per play is the stat that really matters. Then we measured it.</p>
+
+  <p>On its own, yards-per-play margin predicts the second half at +0.368 &mdash; <em>worse</em> than simply looking at the won-lost record, which manages +0.414. After the point margin, it holds +0.081. That is real, and it is small, and it is not what we implied.</p>
+
+  <h3 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What to take home: ask what it adds</h3>
+
+  <p>A number can be significant and still be worthless. Possession clears any test you like for being non-zero. It adds nothing.</p>
+
+  <p>So when a statistic is offered as evidence, do not ask whether it correlates with winning. Almost everything in a box score correlates with winning. <strong>Ask what it adds once you already know the score.</strong></p>
+
+  <p>That question will empty most of the graphics you see on a Sunday. The ones that survive it are worth your attention.</p>
+
+
+  <div class="watch">
+  <div class="watch-label">What to Watch &middot; Wednesday, September 23</div>
+  <div class="w-row"><div class="w-sport">Baseball</div><div class="w-game"><strong>Mets</strong> at <strong>Rangers</strong><span class="w-time">8:05pm ET</span></div><div class="w-why">25 points of playoff probability ride on it. One club is on the bubble and the other is settled, so the whole swing lands on one side. If the Rangers win they go to 61%; if they lose, 36%.</div></div>
+  <p class="watch-note">Baseball is ranked by championship leverage: we simulate the rest of the
+     season 60,000 times, then split those seasons by who won each of today's games. College
+     football cannot be simulated that way, so it is ranked by how close to a coin flip the
+     ratings make it &mdash; a lopsided game teaches you nothing. Tomorrow this block reports what
+     happened to today's pick.</p>
+</div>
+  <div class="box" style="background:var(--ink);background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">Notes &amp; sources</h3>
+    <p style="color:#c8b99a">Built from nflverse play-by-play, 2016 through 2025, aggregated to one row per team per game by <code style="color:#e0d8c5">scripts/build_nfl_history.py</code>: 5,278 team-games with scrimmage plays, yards, drive-level possession, turnovers, points and result. Analysis in <code style="color:#e0d8c5">scripts/nfl_predictive.py</code>.</p>
+    <p style="color:#c8b99a">Each metric is a margin &mdash; own minus opponent &mdash; averaged over weeks 1 to 8, correlated with win rate from week 9 onward. 320 team-seasons with at least six games either side. Raw correlations: point margin +0.424, first-half win rate +0.414, yards-per-play margin +0.368, turnover margin +0.245, time of possession +0.216, plays run +0.117.</p>
+    <p style="color:#c8b99a">Partial correlations, holding the point margin fixed: yards per play +0.081, turnover margin &minus;0.016, time of possession &minus;0.003. Point margin holding yards per play fixed is +0.240, so the dependence runs one way.</p>
+    <p style="color:#c8b99a">Stable where you cut the season. Splitting at weeks 7, 8, 9, 10 and 11 leaves the ordering unchanged, with possession between +0.201 and +0.236 throughout.</p>
+    <p style="color:#c8b99a">Two limits. This predicts a team&rsquo;s remaining SEASON, not a single game; a piece claiming possession never matters in any particular game would be overclaiming, and this is not that piece. And a partial correlation near zero means possession adds nothing <em>beyond the point margin</em> &mdash; if you somehow knew the possession figures and not the score, you would still know something.</p>
+    <p style="color:#c8b99a">Buffalo 36, Houston 31, 13 September 2026. Box score via ESPN.</p>
+
+  </div>
+
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a"><span>The Sports Page &middot; Vol. I, No. 179</span><span>Ask what it adds</span><span>September 23, 2026 &middot; New York, NY</span></div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+</div>]]></content:encoded>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/158-possession-collapse.html</guid>
+    </item>
     <item>
       <title>#178: Where Do They Find These Guys? Five Thousand High Schools Never Made One.</title>
       <link>https://thesportspage.net/published/147-talent-addresses.html</link>
