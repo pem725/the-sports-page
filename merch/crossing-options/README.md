@@ -7,6 +7,37 @@ is the part that I don't like."*
 **Look at `COMPARE.png` first.** `COMPARE-crossing-detail.png` is the same thing
 cropped tight on the crossing, which is where the whole argument lives.
 
+## READ THIS FIRST — the halo was never knocked out
+
+The two Signal photographs in this folder are the physical sew-outs, and at
+magnification they settle the question:
+
+**On the white sew-out, the halo is stitched in WHITE THREAD.** It is not open
+fabric. The backing is a warm cream felt with visible loose fibers; the halo is a
+cold, bright, raised satin stitch with regular stitch direction and obvious sheen.
+They are plainly different materials. The written instruction was explicit —
+*"a knockout to open garment fabric, not an additional thread color... do not
+stitch or add a background"* — and it was not followed.
+
+**On the dark sew-out the roles are swapped.** The halo is white, the same color
+as the badge, so it disappears into the S — and the curve was stitched in **royal
+blue** to stay visible. Two thread colors again, where one was specified.
+
+**This matters more than it sounds.** The editor's objection was *"the knockout
+halo is the part that I don't like"* — but he has never seen a knockout halo. He
+is looking at a hard white stripe stitched through his logo, which reads as a
+third element and produces the racing-stripe effect. An actual knockout is
+recessive: garment fabric showing through, no sheen, no raised edge. It would look
+materially calmer than what is in these photographs.
+
+**So decide in this order.** First ask whether the design was ever executed. Only
+then ask whether the design is wrong. On this evidence option A has not yet been
+seen by anybody.
+
+Worth noting too: the dark version, its accident and all, is the better looking of
+the two, and for the reason option `D` exists — it separates the curve by color
+rather than by a gap.
+
 ## What the "knockout halo" actually is
 
 It is not a knockout. The curve is drawn **twice**, one stroke on top of the other:
