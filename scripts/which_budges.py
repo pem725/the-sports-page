@@ -63,12 +63,29 @@ def cfbd_key():
     return os.environ.get("CFBD_KEY")
 
 
-def load_nfl():
-    """(season, team, week, points_for, points_against)"""
+def load_nfl(metric="points"):
+    """(season, team, week, offense_value, defense_value).
+
+    For yards per play the defensive figure is the OPPONENT'S offense in the same
+    game, joined on game_id -- there is no separate 'yards allowed' column and
+    inventing one from the team's own row would silently measure the wrong thing.
+    """
+    rows = list(csv.DictReader(open(NFL)))
+    if metric == "points":
+        return [(int(r["season"]), r["team"], int(r["week"]),
+                 int(r["points_for"]), int(r["points_against"])) for r in rows]
+    off = {}
+    for r in rows:
+        pl = float(r["plays"] or 0)
+        if pl >= 20:
+            off[(r["game_id"], r["team"])] = float(r["yards"]) / pl
     out = []
-    for r in csv.DictReader(open(NFL)):
-        out.append((int(r["season"]), r["team"], int(r["week"]),
-                    int(r["points_for"]), int(r["points_against"])))
+    for r in rows:
+        a = off.get((r["game_id"], r["team"]))
+        b = off.get((r["game_id"], r["opp"]))
+        if a is None or b is None:
+            continue
+        out.append((int(r["season"]), r["team"], int(r["week"]), a, b))
     return out
 
 
@@ -122,7 +139,7 @@ def analyse(rows, label, min_games=8):
     bd = [statistics.pstdev([v[1] for v in ts.values()]) for ts in seasons.values() if len(ts) > 8]
     mo = statistics.mean([v[0] for ts in seasons.values() for v in ts.values()])
     print(f"\n  {len(seasons)} seasons, {sum(len(t) for t in seasons.values()):,} team-seasons"
-          f", league mean {mo:.1f} points\n")
+          f", league mean {mo:.2f}\n")
     print(f"  {'':<22}{'offense':>12}{'defense':>12}")
     print("  " + "-" * 46)
     print(f"  {'between clubs (SD)':<22}{statistics.mean(bo):>12.2f}{statistics.mean(bd):>12.2f}")
@@ -233,9 +250,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cfb", action="store_true")
     ap.add_argument("--both", action="store_true")
+    ap.add_argument("--metric", choices=["points", "ypp"], default="points")
     a = ap.parse_args()
     if a.both or not a.cfb:
-        analyse(load_nfl(), "NFL, 1999-2025 — points scored and allowed")
+        unit = "points scored and allowed" if a.metric == "points" else "yards per play, gained and allowed"
+        analyse(load_nfl(a.metric), f"NFL, 1999-2025 — {unit}")
     if a.both or a.cfb:
         analyse(load_cfb(), "COLLEGE FOOTBALL (FBS), 2005-2025", min_games=8)
     return 0
