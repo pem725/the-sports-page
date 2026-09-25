@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-24",
+ "generated": "2026-09-25",
  "season": 2026,
- "method": "Ratings solved by least squares from 64 published point spreads (residual 1.25 points); implied home advantage 1.08. 20,000 simulated seasons, margins normal with a 13.2-point spread",
+ "method": "Ratings solved by least squares from 64 published point spreads (residual 1.26 points); implied home advantage 1.10. 20,000 simulated seasons, margins normal with a 13.2-point spread",
  "teams": [
   {
    "team": "BUF",
@@ -13,128 +13,261 @@
      "opp": "Texans",
      "site": "away",
      "date": "2026-09-13",
-     "p": 0.5486,
+     "p": 0.5491,
      "won": true
     },
     {
      "opp": "Lions",
      "site": "home",
      "date": "2026-09-17",
-     "p": 0.6562,
+     "p": 0.6563,
      "won": true
     },
     {
      "opp": "Chargers",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.6855,
+     "p": 0.6859,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "home",
      "date": "2026-10-04",
-     "p": 0.6807,
+     "p": 0.6798,
      "won": null
     },
     {
      "opp": "Rams",
      "site": "away",
      "date": "2026-10-12",
-     "p": 0.4812,
+     "p": 0.4907,
      "won": null
     },
     {
      "opp": "Raiders",
      "site": "away",
      "date": "2026-10-18",
-     "p": 0.7698,
+     "p": 0.7699,
      "won": null
     },
     {
      "opp": "Ravens",
      "site": "home",
      "date": "2026-11-01",
-     "p": 0.5649,
+     "p": 0.5652,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "away",
      "date": "2026-11-09",
-     "p": 0.6481,
+     "p": 0.6476,
      "won": null
     },
     {
      "opp": "Jets",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.7454,
+     "p": 0.7405,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "home",
      "date": "2026-11-22",
-     "p": 0.8721,
+     "p": 0.8733,
      "won": null
     },
     {
      "opp": "Chiefs",
      "site": "home",
      "date": "2026-11-26",
-     "p": 0.6018,
+     "p": 0.6043,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "away",
      "date": "2026-12-06",
-     "p": 0.6202,
+     "p": 0.6181,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "away",
      "date": "2026-12-13",
-     "p": 0.6526,
+     "p": 0.6501,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "home",
      "date": "2026-12-19",
-     "p": 0.6978,
+     "p": 0.7003,
      "won": null
     },
     {
      "opp": "Broncos",
      "site": "away",
      "date": "2026-12-25",
-     "p": 0.5953,
+     "p": 0.5986,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.8347,
+     "p": 0.8353,
      "won": null
     },
     {
      "opp": "Jets",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.7949,
+     "p": 0.7915,
      "won": null
     }
    ],
-   "rating": 6.26,
-   "proj": 12.2,
+   "rating": 6.27,
+   "proj": 12.3,
    "played": 2,
-   "po": 0.9617,
-   "dv": 0.8516,
+   "po": 0.9625,
+   "dv": 0.8561,
    "sos": -0.03
+  },
+  {
+   "team": "CIN",
+   "name": "Bengals",
+   "div": "AFC North",
+   "conf": "AFC",
+   "sched": [
+    {
+     "opp": "Buccaneers",
+     "site": "home",
+     "date": "2026-09-13",
+     "p": 0.6307,
+     "won": true
+    },
+    {
+     "opp": "Texans",
+     "site": "away",
+     "date": "2026-09-20",
+     "p": 0.4254,
+     "won": true
+    },
+    {
+     "opp": "Steelers",
+     "site": "away",
+     "date": "2026-09-27",
+     "p": 0.5878,
+     "won": null
+    },
+    {
+     "opp": "Jaguars",
+     "site": "home",
+     "date": "2026-10-04",
+     "p": 0.5646,
+     "won": null
+    },
+    {
+     "opp": "Dolphins",
+     "site": "away",
+     "date": "2026-10-11",
+     "p": 0.7466,
+     "won": null
+    },
+    {
+     "opp": "Ravens",
+     "site": "away",
+     "date": "2026-10-25",
+     "p": 0.3768,
+     "won": null
+    },
+    {
+     "opp": "Titans",
+     "site": "home",
+     "date": "2026-11-01",
+     "p": 0.6998,
+     "won": null
+    },
+    {
+     "opp": "Falcons",
+     "site": "away",
+     "date": "2026-11-08",
+     "p": 0.6922,
+     "won": null
+    },
+    {
+     "opp": "Steelers",
+     "site": "home",
+     "date": "2026-11-15",
+     "p": 0.6513,
+     "won": null
+    },
+    {
+     "opp": "Commanders",
+     "site": "away",
+     "date": "2026-11-23",
+     "p": 0.6181,
+     "won": null
+    },
+    {
+     "opp": "Saints",
+     "site": "home",
+     "date": "2026-11-29",
+     "p": 0.6816,
+     "won": null
+    },
+    {
+     "opp": "Browns",
+     "site": "away",
+     "date": "2026-12-06",
+     "p": 0.7237,
+     "won": null
+    },
+    {
+     "opp": "Chiefs",
+     "site": "home",
+     "date": "2026-12-13",
+     "p": 0.4813,
+     "won": null
+    },
+    {
+     "opp": "Panthers",
+     "site": "away",
+     "date": "2026-12-20",
+     "p": 0.6125,
+     "won": null
+    },
+    {
+     "opp": "Colts",
+     "site": "away",
+     "date": "2026-12-27",
+     "p": 0.5039,
+     "won": null
+    },
+    {
+     "opp": "Ravens",
+     "site": "home",
+     "date": "2026-12-31",
+     "p": 0.4415,
+     "won": null
+    },
+    {
+     "opp": "Browns",
+     "site": "home",
+     "date": "2027-01-10",
+     "p": 0.7765,
+     "won": null
+    }
+   ],
+   "rating": 2.16,
+   "proj": 11.2,
+   "played": 2,
+   "po": 0.8825,
+   "dv": 0.5035,
+   "sos": -1.41
   },
   {
    "team": "KC",
@@ -146,7 +279,7 @@
      "opp": "Broncos",
      "site": "home",
      "date": "2026-09-14",
-     "p": 0.5904,
+     "p": 0.5931,
      "won": true
     },
     {
@@ -160,247 +293,114 @@
      "opp": "Dolphins",
      "site": "away",
      "date": "2026-09-27",
-     "p": 0.7872,
+     "p": 0.7864,
      "won": null
     },
     {
      "opp": "Raiders",
      "site": "away",
      "date": "2026-10-04",
-     "p": 0.7129,
+     "p": 0.7114,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "home",
      "date": "2026-10-18",
-     "p": 0.6206,
+     "p": 0.6192,
      "won": null
     },
     {
      "opp": "Seahawks",
      "site": "away",
      "date": "2026-10-25",
-     "p": 0.4659,
+     "p": 0.4602,
      "won": null
     },
     {
      "opp": "Broncos",
      "site": "away",
      "date": "2026-11-01",
-     "p": 0.5259,
+     "p": 0.5274,
      "won": null
     },
     {
      "opp": "Jets",
      "site": "home",
      "date": "2026-11-08",
-     "p": 0.7413,
+     "p": 0.7359,
      "won": null
     },
     {
      "opp": "Falcons",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.7389,
+     "p": 0.7364,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "home",
      "date": "2026-11-22",
-     "p": 0.7365,
+     "p": 0.7367,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "away",
      "date": "2026-11-26",
-     "p": 0.3982,
+     "p": 0.3957,
      "won": null
     },
     {
      "opp": "Rams",
      "site": "away",
      "date": "2026-12-03",
-     "p": 0.4116,
+     "p": 0.419,
      "won": null
     },
     {
      "opp": "Bengals",
      "site": "away",
      "date": "2026-12-13",
-     "p": 0.5218,
+     "p": 0.5187,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "home",
      "date": "2026-12-21",
-     "p": 0.6155,
+     "p": 0.6126,
      "won": null
     },
     {
      "opp": "49ers",
      "site": "home",
      "date": "2026-12-27",
-     "p": 0.5258,
+     "p": 0.5291,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.557,
+     "p": 0.5543,
      "won": null
     },
     {
      "opp": "Raiders",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.766,
+     "p": 0.7655,
      "won": null
     }
    ],
-   "rating": 3.93,
+   "rating": 3.88,
    "proj": 11.1,
    "played": 2,
-   "po": 0.884,
-   "dv": 0.6872,
-   "sos": 0.06
-  },
-  {
-   "team": "CIN",
-   "name": "Bengals",
-   "div": "AFC North",
-   "conf": "AFC",
-   "sched": [
-    {
-     "opp": "Buccaneers",
-     "site": "home",
-     "date": "2026-09-13",
-     "p": 0.6308,
-     "won": true
-    },
-    {
-     "opp": "Texans",
-     "site": "away",
-     "date": "2026-09-20",
-     "p": 0.4244,
-     "won": true
-    },
-    {
-     "opp": "Steelers",
-     "site": "away",
-     "date": "2026-09-27",
-     "p": 0.5895,
-     "won": null
-    },
-    {
-     "opp": "Jaguars",
-     "site": "home",
-     "date": "2026-10-04",
-     "p": 0.5639,
-     "won": null
-    },
-    {
-     "opp": "Dolphins",
-     "site": "away",
-     "date": "2026-10-11",
-     "p": 0.7454,
-     "won": null
-    },
-    {
-     "opp": "Ravens",
-     "site": "away",
-     "date": "2026-10-25",
-     "p": 0.3771,
-     "won": null
-    },
-    {
-     "opp": "Titans",
-     "site": "home",
-     "date": "2026-11-01",
-     "p": 0.703,
-     "won": null
-    },
-    {
-     "opp": "Falcons",
-     "site": "away",
-     "date": "2026-11-08",
-     "p": 0.6927,
-     "won": null
-    },
-    {
-     "opp": "Steelers",
-     "site": "home",
-     "date": "2026-11-15",
-     "p": 0.6517,
-     "won": null
-    },
-    {
-     "opp": "Commanders",
-     "site": "away",
-     "date": "2026-11-23",
-     "p": 0.6155,
-     "won": null
-    },
-    {
-     "opp": "Saints",
-     "site": "home",
-     "date": "2026-11-29",
-     "p": 0.6807,
-     "won": null
-    },
-    {
-     "opp": "Browns",
-     "site": "away",
-     "date": "2026-12-06",
-     "p": 0.7269,
-     "won": null
-    },
-    {
-     "opp": "Chiefs",
-     "site": "home",
-     "date": "2026-12-13",
-     "p": 0.4782,
-     "won": null
-    },
-    {
-     "opp": "Panthers",
-     "site": "away",
-     "date": "2026-12-20",
-     "p": 0.6095,
-     "won": null
-    },
-    {
-     "opp": "Colts",
-     "site": "away",
-     "date": "2026-12-27",
-     "p": 0.5026,
-     "won": null
-    },
-    {
-     "opp": "Ravens",
-     "site": "home",
-     "date": "2026-12-31",
-     "p": 0.4406,
-     "won": null
-    },
-    {
-     "opp": "Browns",
-     "site": "home",
-     "date": "2027-01-10",
-     "p": 0.7785,
-     "won": null
-    }
-   ],
-   "rating": 2.13,
-   "proj": 11.2,
-   "played": 2,
-   "po": 0.8837,
-   "dv": 0.4933,
-   "sos": -1.44
+   "po": 0.8812,
+   "dv": 0.6857,
+   "sos": 0.04
   },
   {
    "team": "BAL",
@@ -412,128 +412,261 @@
      "opp": "Colts",
      "site": "away",
      "date": "2026-09-13",
-     "p": 0.594,
+     "p": 0.595,
      "won": true
     },
     {
      "opp": "Saints",
      "site": "home",
      "date": "2026-09-20",
-     "p": 0.7583,
+     "p": 0.7589,
      "won": false
     },
     {
      "opp": "Cowboys",
      "site": "away",
      "date": "2026-09-27",
-     "p": 0.5906,
+     "p": 0.5927,
      "won": null
     },
     {
      "opp": "Titans",
      "site": "home",
      "date": "2026-10-04",
-     "p": 0.7776,
+     "p": 0.7747,
      "won": null
     },
     {
      "opp": "Falcons",
      "site": "away",
      "date": "2026-10-11",
-     "p": 0.7687,
+     "p": 0.7681,
      "won": null
     },
     {
      "opp": "Browns",
      "site": "away",
      "date": "2026-10-18",
-     "p": 0.7981,
+     "p": 0.7951,
      "won": null
     },
     {
      "opp": "Bengals",
      "site": "home",
      "date": "2026-10-25",
-     "p": 0.6229,
+     "p": 0.6232,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "away",
      "date": "2026-11-01",
-     "p": 0.4351,
+     "p": 0.4348,
      "won": null
     },
     {
      "opp": "Jaguars",
      "site": "home",
      "date": "2026-11-05",
-     "p": 0.6525,
+     "p": 0.6529,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "home",
      "date": "2026-11-16",
-     "p": 0.6561,
+     "p": 0.6567,
      "won": null
     },
     {
      "opp": "Panthers",
      "site": "away",
      "date": "2026-11-22",
-     "p": 0.6947,
+     "p": 0.6971,
      "won": null
     },
     {
      "opp": "Texans",
      "site": "away",
      "date": "2026-11-29",
-     "p": 0.5162,
+     "p": 0.5169,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "home",
      "date": "2026-12-13",
-     "p": 0.714,
+     "p": 0.7137,
      "won": null
     },
     {
      "opp": "Steelers",
      "site": "away",
      "date": "2026-12-20",
-     "p": 0.6763,
+     "p": 0.6745,
      "won": null
     },
     {
      "opp": "Browns",
      "site": "home",
      "date": "2026-12-27",
-     "p": 0.841,
+     "p": 0.8392,
      "won": null
     },
     {
      "opp": "Bengals",
      "site": "away",
      "date": "2026-12-31",
-     "p": 0.5594,
+     "p": 0.5585,
      "won": null
     },
     {
      "opp": "Steelers",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.7327,
+     "p": 0.7321,
      "won": null
     }
    ],
-   "rating": 5.18,
-   "proj": 11.1,
+   "rating": 5.21,
+   "proj": 11.0,
    "played": 2,
-   "po": 0.8759,
-   "dv": 0.4653,
-   "sos": -0.93
+   "po": 0.8752,
+   "dv": 0.4556,
+   "sos": -0.89
+  },
+  {
+   "team": "PHI",
+   "name": "Eagles",
+   "div": "NFC East",
+   "conf": "NFC",
+   "sched": [
+    {
+     "opp": "Commanders",
+     "site": "home",
+     "date": "2026-09-13",
+     "p": 0.7239,
+     "won": true
+    },
+    {
+     "opp": "Titans",
+     "site": "away",
+     "date": "2026-09-20",
+     "p": 0.6859,
+     "won": true
+    },
+    {
+     "opp": "Bears",
+     "site": "away",
+     "date": "2026-09-28",
+     "p": 0.5692,
+     "won": null
+    },
+    {
+     "opp": "Rams",
+     "site": "home",
+     "date": "2026-10-04",
+     "p": 0.4837,
+     "won": null
+    },
+    {
+     "opp": "Jaguars",
+     "site": "away",
+     "date": "2026-10-11",
+     "p": 0.5489,
+     "won": null
+    },
+    {
+     "opp": "Panthers",
+     "site": "home",
+     "date": "2026-10-18",
+     "p": 0.7189,
+     "won": null
+    },
+    {
+     "opp": "Cowboys",
+     "site": "home",
+     "date": "2026-10-26",
+     "p": 0.6171,
+     "won": null
+    },
+    {
+     "opp": "Commanders",
+     "site": "away",
+     "date": "2026-11-01",
+     "p": 0.6655,
+     "won": null
+    },
+    {
+     "opp": "Giants",
+     "site": "home",
+     "date": "2026-11-08",
+     "p": 0.6955,
+     "won": null
+    },
+    {
+     "opp": "Steelers",
+     "site": "home",
+     "date": "2026-11-22",
+     "p": 0.697,
+     "won": null
+    },
+    {
+     "opp": "Cowboys",
+     "site": "away",
+     "date": "2026-11-26",
+     "p": 0.5522,
+     "won": null
+    },
+    {
+     "opp": "Cardinals",
+     "site": "away",
+     "date": "2026-12-06",
+     "p": 0.6785,
+     "won": null
+    },
+    {
+     "opp": "Colts",
+     "site": "home",
+     "date": "2026-12-13",
+     "p": 0.6194,
+     "won": null
+    },
+    {
+     "opp": "Seahawks",
+     "site": "home",
+     "date": "2026-12-19",
+     "p": 0.5254,
+     "won": null
+    },
+    {
+     "opp": "Texans",
+     "site": "home",
+     "date": "2026-12-24",
+     "p": 0.5422,
+     "won": null
+    },
+    {
+     "opp": "49ers",
+     "site": "away",
+     "date": "2027-01-03",
+     "p": 0.4614,
+     "won": null
+    },
+    {
+     "opp": "Giants",
+     "site": "away",
+     "date": "2027-01-10",
+     "p": 0.6349,
+     "won": null
+    }
+   ],
+   "rating": 3.84,
+   "proj": 11.0,
+   "played": 2,
+   "po": 0.8513,
+   "dv": 0.7387,
+   "sos": 0.04
   },
   {
    "team": "SF",
@@ -545,21 +678,21 @@
      "opp": "Rams",
      "site": "away",
      "date": "2026-09-10",
-     "p": 0.4183,
+     "p": 0.423,
      "won": true
     },
     {
      "opp": "Dolphins",
      "site": "home",
      "date": "2026-09-20",
-     "p": 0.8358,
+     "p": 0.8343,
      "won": true
     },
     {
      "opp": "Cardinals",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.7421,
+     "p": 0.7401,
      "won": null
     },
     {
@@ -573,233 +706,100 @@
      "opp": "Seahawks",
      "site": "away",
      "date": "2026-10-11",
-     "p": 0.4727,
+     "p": 0.4643,
      "won": null
     },
     {
      "opp": "Commanders",
      "site": "home",
      "date": "2026-10-19",
-     "p": 0.7295,
+     "p": 0.7284,
      "won": null
     },
     {
      "opp": "Falcons",
      "site": "away",
      "date": "2026-10-25",
-     "p": 0.7444,
+     "p": 0.7398,
      "won": null
     },
     {
      "opp": "Raiders",
      "site": "home",
      "date": "2026-11-08",
-     "p": 0.7712,
+     "p": 0.7687,
      "won": null
     },
     {
      "opp": "Cowboys",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.5602,
+     "p": 0.5575,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "home",
      "date": "2026-11-22",
-     "p": 0.6498,
+     "p": 0.6462,
      "won": null
     },
     {
      "opp": "Seahawks",
      "site": "home",
      "date": "2026-11-29",
-     "p": 0.5379,
+     "p": 0.5308,
      "won": null
     },
     {
      "opp": "Giants",
      "site": "away",
      "date": "2026-12-06",
-     "p": 0.6388,
+     "p": 0.6399,
      "won": null
     },
     {
      "opp": "Rams",
      "site": "home",
      "date": "2026-12-13",
-     "p": 0.483,
+     "p": 0.4891,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "away",
      "date": "2026-12-17",
-     "p": 0.5637,
+     "p": 0.5584,
      "won": null
     },
     {
      "opp": "Chiefs",
      "site": "away",
      "date": "2026-12-27",
-     "p": 0.4742,
+     "p": 0.4709,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "home",
      "date": "2027-01-03",
-     "p": 0.5475,
+     "p": 0.5386,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.6865,
+     "p": 0.6833,
      "won": null
     }
    ],
-   "rating": 4.16,
-   "proj": 11.2,
+   "rating": 4.02,
+   "proj": 11.1,
    "played": 2,
-   "po": 0.8378,
-   "dv": 0.4046,
-   "sos": 0.14
-  },
-  {
-   "team": "PHI",
-   "name": "Eagles",
-   "div": "NFC East",
-   "conf": "NFC",
-   "sched": [
-    {
-     "opp": "Commanders",
-     "site": "home",
-     "date": "2026-09-13",
-     "p": 0.7169,
-     "won": true
-    },
-    {
-     "opp": "Titans",
-     "site": "away",
-     "date": "2026-09-20",
-     "p": 0.6863,
-     "won": true
-    },
-    {
-     "opp": "Bears",
-     "site": "away",
-     "date": "2026-09-28",
-     "p": 0.5626,
-     "won": null
-    },
-    {
-     "opp": "Rams",
-     "site": "home",
-     "date": "2026-10-04",
-     "p": 0.4681,
-     "won": null
-    },
-    {
-     "opp": "Jaguars",
-     "site": "away",
-     "date": "2026-10-11",
-     "p": 0.5451,
-     "won": null
-    },
-    {
-     "opp": "Panthers",
-     "site": "home",
-     "date": "2026-10-18",
-     "p": 0.7115,
-     "won": null
-    },
-    {
-     "opp": "Cowboys",
-     "site": "home",
-     "date": "2026-10-26",
-     "p": 0.6094,
-     "won": null
-    },
-    {
-     "opp": "Commanders",
-     "site": "away",
-     "date": "2026-11-01",
-     "p": 0.659,
-     "won": null
-    },
-    {
-     "opp": "Giants",
-     "site": "home",
-     "date": "2026-11-08",
-     "p": 0.6849,
-     "won": null
-    },
-    {
-     "opp": "Steelers",
-     "site": "home",
-     "date": "2026-11-22",
-     "p": 0.6936,
-     "won": null
-    },
-    {
-     "opp": "Cowboys",
-     "site": "away",
-     "date": "2026-11-26",
-     "p": 0.5454,
-     "won": null
-    },
-    {
-     "opp": "Cardinals",
-     "site": "away",
-     "date": "2026-12-06",
-     "p": 0.6731,
-     "won": null
-    },
-    {
-     "opp": "Colts",
-     "site": "home",
-     "date": "2026-12-13",
-     "p": 0.6127,
-     "won": null
-    },
-    {
-     "opp": "Seahawks",
-     "site": "home",
-     "date": "2026-12-19",
-     "p": 0.5229,
-     "won": null
-    },
-    {
-     "opp": "Texans",
-     "site": "home",
-     "date": "2026-12-24",
-     "p": 0.5355,
-     "won": null
-    },
-    {
-     "opp": "49ers",
-     "site": "away",
-     "date": "2027-01-03",
-     "p": 0.4525,
-     "won": null
-    },
-    {
-     "opp": "Giants",
-     "site": "away",
-     "date": "2027-01-10",
-     "p": 0.6246,
-     "won": null
-    }
-   ],
-   "rating": 3.66,
-   "proj": 10.9,
-   "played": 2,
-   "po": 0.8309,
-   "dv": 0.726,
-   "sos": 0.1
+   "po": 0.8409,
+   "dv": 0.4058,
+   "sos": 0.09
   },
   {
    "team": "SEA",
@@ -811,128 +811,128 @@
      "opp": "Patriots",
      "site": "home",
      "date": "2026-09-09",
-     "p": 0.6169,
+     "p": 0.6189,
      "won": true
     },
     {
      "opp": "Cardinals",
      "site": "away",
      "date": "2026-09-20",
-     "p": 0.6818,
+     "p": 0.6855,
      "won": true
     },
     {
      "opp": "Commanders",
      "site": "away",
      "date": "2026-09-27",
-     "p": 0.6679,
+     "p": 0.6727,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "home",
      "date": "2026-10-04",
-     "p": 0.6221,
+     "p": 0.6255,
      "won": null
     },
     {
      "opp": "49ers",
      "site": "home",
      "date": "2026-10-11",
-     "p": 0.5273,
+     "p": 0.5357,
      "won": null
     },
     {
      "opp": "Broncos",
      "site": "away",
      "date": "2026-10-15",
-     "p": 0.5274,
+     "p": 0.534,
      "won": null
     },
     {
      "opp": "Chiefs",
      "site": "home",
      "date": "2026-10-25",
-     "p": 0.5341,
+     "p": 0.5398,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "home",
      "date": "2026-11-02",
-     "p": 0.6352,
+     "p": 0.6409,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "home",
      "date": "2026-11-08",
-     "p": 0.7378,
+     "p": 0.7421,
      "won": null
     },
     {
      "opp": "Raiders",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.7142,
+     "p": 0.717,
      "won": null
     },
     {
      "opp": "49ers",
      "site": "away",
      "date": "2026-11-29",
-     "p": 0.4621,
+     "p": 0.4692,
      "won": null
     },
     {
      "opp": "Cowboys",
      "site": "home",
      "date": "2026-12-07",
-     "p": 0.6187,
+     "p": 0.6246,
      "won": null
     },
     {
      "opp": "Giants",
      "site": "home",
      "date": "2026-12-13",
-     "p": 0.6935,
+     "p": 0.7024,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "away",
      "date": "2026-12-19",
-     "p": 0.4771,
+     "p": 0.4746,
      "won": null
     },
     {
      "opp": "Rams",
      "site": "home",
      "date": "2026-12-25",
-     "p": 0.4777,
+     "p": 0.4916,
      "won": null
     },
     {
      "opp": "Panthers",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.6622,
+     "p": 0.6673,
      "won": null
     },
     {
      "opp": "Rams",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.4131,
+     "p": 0.4255,
      "won": null
     }
    ],
-   "rating": 3.98,
-   "proj": 10.8,
+   "rating": 4.1,
+   "proj": 10.9,
    "played": 2,
-   "po": 0.7772,
-   "dv": 0.3218,
-   "sos": 0.88
+   "po": 0.7966,
+   "dv": 0.3422,
+   "sos": 0.79
   },
   {
    "team": "LA",
@@ -944,128 +944,128 @@
      "opp": "49ers",
      "site": "home",
      "date": "2026-09-10",
-     "p": 0.5817,
+     "p": 0.577,
      "won": false
     },
     {
      "opp": "Giants",
      "site": "home",
      "date": "2026-09-21",
-     "p": 0.74,
+     "p": 0.7375,
      "won": true
     },
     {
      "opp": "Broncos",
      "site": "away",
      "date": "2026-09-27",
-     "p": 0.5818,
+     "p": 0.5753,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "away",
      "date": "2026-10-04",
-     "p": 0.5319,
+     "p": 0.5163,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "home",
      "date": "2026-10-12",
-     "p": 0.5188,
+     "p": 0.5093,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "home",
      "date": "2026-10-18",
-     "p": 0.7806,
+     "p": 0.7747,
      "won": null
     },
     {
      "opp": "Raiders",
      "site": "away",
      "date": "2026-10-25",
-     "p": 0.7591,
+     "p": 0.7513,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "home",
      "date": "2026-11-01",
-     "p": 0.6731,
+     "p": 0.6644,
      "won": null
     },
     {
      "opp": "Commanders",
      "site": "away",
      "date": "2026-11-08",
-     "p": 0.7163,
+     "p": 0.7095,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.7292,
+     "p": 0.7216,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "home",
      "date": "2026-11-25",
-     "p": 0.699,
+     "p": 0.6888,
      "won": null
     },
     {
      "opp": "Chiefs",
      "site": "home",
      "date": "2026-12-03",
-     "p": 0.5884,
+     "p": 0.581,
      "won": null
     },
     {
      "opp": "49ers",
      "site": "away",
      "date": "2026-12-13",
-     "p": 0.517,
+     "p": 0.5109,
      "won": null
     },
     {
      "opp": "Cowboys",
      "site": "home",
      "date": "2026-12-20",
-     "p": 0.6699,
+     "p": 0.6636,
      "won": null
     },
     {
      "opp": "Seahawks",
      "site": "away",
      "date": "2026-12-25",
-     "p": 0.5223,
+     "p": 0.5084,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.673,
+     "p": 0.6621,
      "won": null
     },
     {
      "opp": "Seahawks",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.5869,
+     "p": 0.5745,
      "won": null
     }
    ],
-   "rating": 5.8,
-   "proj": 10.6,
+   "rating": 5.48,
+   "proj": 10.4,
    "played": 2,
-   "po": 0.753,
-   "dv": 0.2678,
-   "sos": 1.02
+   "po": 0.7369,
+   "dv": 0.2455,
+   "sos": 1.0
   },
   {
    "team": "DET",
@@ -1077,128 +1077,128 @@
      "opp": "Saints",
      "site": "home",
      "date": "2026-09-13",
-     "p": 0.6779,
+     "p": 0.6789,
      "won": true
     },
     {
      "opp": "Bills",
      "site": "away",
      "date": "2026-09-17",
-     "p": 0.3438,
+     "p": 0.3437,
      "won": false
     },
     {
      "opp": "Jets",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.6926,
+     "p": 0.6889,
      "won": null
     },
     {
      "opp": "Panthers",
      "site": "away",
      "date": "2026-10-04",
-     "p": 0.6066,
+     "p": 0.6096,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "away",
      "date": "2026-10-11",
-     "p": 0.6273,
+     "p": 0.6288,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "home",
      "date": "2026-10-25",
-     "p": 0.5932,
+     "p": 0.5923,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "home",
      "date": "2026-11-01",
-     "p": 0.5884,
+     "p": 0.5897,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "away",
      "date": "2026-11-08",
-     "p": 0.7429,
+     "p": 0.7442,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "home",
      "date": "2026-11-15",
-     "p": 0.5594,
+     "p": 0.559,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "home",
      "date": "2026-11-22",
-     "p": 0.6279,
+     "p": 0.6278,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "home",
      "date": "2026-11-26",
-     "p": 0.5783,
+     "p": 0.5818,
      "won": null
     },
     {
      "opp": "Falcons",
      "site": "away",
      "date": "2026-12-06",
-     "p": 0.69,
+     "p": 0.6896,
      "won": null
     },
     {
      "opp": "Titans",
      "site": "home",
      "date": "2026-12-13",
-     "p": 0.7003,
+     "p": 0.6972,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "away",
      "date": "2026-12-20",
-     "p": 0.5238,
+     "p": 0.5239,
      "won": null
     },
     {
      "opp": "Giants",
      "site": "home",
      "date": "2026-12-28",
-     "p": 0.6397,
+     "p": 0.6468,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.5135,
+     "p": 0.5158,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.5287,
+     "p": 0.5266,
      "won": null
     }
    ],
-   "rating": 2.03,
+   "rating": 2.06,
    "proj": 10.2,
    "played": 2,
-   "po": 0.6833,
-   "dv": 0.4098,
-   "sos": -1.39
+   "po": 0.6994,
+   "dv": 0.4348,
+   "sos": -1.38
   },
   {
    "team": "MIN",
@@ -1210,70 +1210,70 @@
      "opp": "Packers",
      "site": "home",
      "date": "2026-09-13",
-     "p": 0.5375,
+     "p": 0.5359,
      "won": true
     },
     {
      "opp": "Bears",
      "site": "away",
      "date": "2026-09-20",
-     "p": 0.4571,
+     "p": 0.4586,
      "won": true
     },
     {
      "opp": "Buccaneers",
      "site": "away",
      "date": "2026-09-27",
-     "p": 0.5084,
+     "p": 0.5063,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "home",
      "date": "2026-10-04",
-     "p": 0.75,
+     "p": 0.7516,
      "won": null
     },
     {
      "opp": "Saints",
      "site": "away",
      "date": "2026-10-11",
-     "p": 0.5622,
+     "p": 0.5613,
      "won": null
     },
     {
      "opp": "Colts",
      "site": "home",
      "date": "2026-10-25",
-     "p": 0.5084,
+     "p": 0.5102,
      "won": null
     },
     {
      "opp": "Lions",
      "site": "away",
      "date": "2026-11-01",
-     "p": 0.4116,
+     "p": 0.4103,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "home",
      "date": "2026-11-09",
-     "p": 0.3519,
+     "p": 0.3524,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.4722,
+     "p": 0.4694,
      "won": null
     },
     {
      "opp": "49ers",
      "site": "away",
      "date": "2026-11-22",
-     "p": 0.3502,
+     "p": 0.3538,
      "won": null
     },
     {
@@ -1287,184 +1287,51 @@
      "opp": "Panthers",
      "site": "home",
      "date": "2026-12-06",
-     "p": 0.6151,
+     "p": 0.6185,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "away",
      "date": "2026-12-10",
-     "p": 0.438,
+     "p": 0.4357,
      "won": null
     },
     {
      "opp": "Lions",
      "site": "home",
      "date": "2026-12-20",
-     "p": 0.4762,
+     "p": 0.4761,
      "won": null
     },
     {
      "opp": "Commanders",
      "site": "home",
      "date": "2026-12-27",
-     "p": 0.6211,
+     "p": 0.6241,
      "won": null
     },
     {
      "opp": "Jets",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.5785,
+     "p": 0.5724,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.5223,
+     "p": 0.5251,
      "won": null
     }
    ],
-   "rating": 0.16,
+   "rating": 0.17,
    "proj": 9.9,
    "played": 2,
-   "po": 0.6133,
-   "dv": 0.318,
-   "sos": -0.52
-  },
-  {
-   "team": "HOU",
-   "name": "Texans",
-   "div": "AFC South",
-   "conf": "AFC",
-   "sched": [
-    {
-     "opp": "Bills",
-     "site": "home",
-     "date": "2026-09-13",
-     "p": 0.4514,
-     "won": false
-    },
-    {
-     "opp": "Bengals",
-     "site": "home",
-     "date": "2026-09-20",
-     "p": 0.5756,
-     "won": false
-    },
-    {
-     "opp": "Colts",
-     "site": "away",
-     "date": "2026-09-27",
-     "p": 0.5459,
-     "won": null
-    },
-    {
-     "opp": "Cowboys",
-     "site": "home",
-     "date": "2026-10-04",
-     "p": 0.6066,
-     "won": null
-    },
-    {
-     "opp": "Titans",
-     "site": "away",
-     "date": "2026-10-11",
-     "p": 0.6837,
-     "won": null
-    },
-    {
-     "opp": "Jaguars",
-     "site": "away",
-     "date": "2026-10-18",
-     "p": 0.5422,
-     "won": null
-    },
-    {
-     "opp": "Giants",
-     "site": "home",
-     "date": "2026-10-25",
-     "p": 0.6823,
-     "won": null
-    },
-    {
-     "opp": "Chargers",
-     "site": "away",
-     "date": "2026-11-08",
-     "p": 0.546,
-     "won": null
-    },
-    {
-     "opp": "Browns",
-     "site": "away",
-     "date": "2026-11-15",
-     "p": 0.7619,
-     "won": null
-    },
-    {
-     "opp": "Colts",
-     "site": "home",
-     "date": "2026-11-19",
-     "p": 0.6099,
-     "won": null
-    },
-    {
-     "opp": "Ravens",
-     "site": "home",
-     "date": "2026-11-29",
-     "p": 0.4838,
-     "won": null
-    },
-    {
-     "opp": "Steelers",
-     "site": "away",
-     "date": "2026-12-06",
-     "p": 0.6312,
-     "won": null
-    },
-    {
-     "opp": "Commanders",
-     "site": "away",
-     "date": "2026-12-13",
-     "p": 0.6564,
-     "won": null
-    },
-    {
-     "opp": "Jaguars",
-     "site": "home",
-     "date": "2026-12-20",
-     "p": 0.6063,
-     "won": null
-    },
-    {
-     "opp": "Eagles",
-     "site": "away",
-     "date": "2026-12-24",
-     "p": 0.4645,
-     "won": null
-    },
-    {
-     "opp": "Packers",
-     "site": "away",
-     "date": "2027-01-04",
-     "p": 0.5747,
-     "won": null
-    },
-    {
-     "opp": "Titans",
-     "site": "home",
-     "date": "2027-01-10",
-     "p": 0.7395,
-     "won": null
-    }
-   ],
-   "rating": 3.57,
-   "proj": 9.2,
-   "played": 2,
-   "po": 0.5878,
-   "dv": 0.4288,
-   "sos": 0.14
+   "po": 0.6337,
+   "dv": 0.3411,
+   "sos": -0.51
   },
   {
    "team": "DEN",
@@ -1476,21 +1343,21 @@
      "opp": "Chiefs",
      "site": "away",
      "date": "2026-09-14",
-     "p": 0.4096,
+     "p": 0.4069,
      "won": false
     },
     {
      "opp": "Jaguars",
      "site": "home",
      "date": "2026-09-20",
-     "p": 0.5599,
+     "p": 0.556,
      "won": true
     },
     {
      "opp": "Rams",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.4182,
+     "p": 0.4247,
      "won": null
     },
     {
@@ -1504,100 +1371,233 @@
      "opp": "Chargers",
      "site": "away",
      "date": "2026-10-11",
-     "p": 0.4986,
+     "p": 0.4938,
      "won": null
     },
     {
      "opp": "Seahawks",
      "site": "home",
      "date": "2026-10-15",
-     "p": 0.4726,
+     "p": 0.466,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "away",
      "date": "2026-10-25",
-     "p": 0.6263,
+     "p": 0.6234,
      "won": null
     },
     {
      "opp": "Chiefs",
      "site": "home",
      "date": "2026-11-01",
-     "p": 0.4741,
+     "p": 0.4726,
      "won": null
     },
     {
      "opp": "Panthers",
      "site": "away",
      "date": "2026-11-08",
-     "p": 0.6056,
+     "p": 0.6041,
      "won": null
     },
     {
      "opp": "Raiders",
      "site": "home",
      "date": "2026-11-22",
-     "p": 0.7186,
+     "p": 0.7164,
      "won": null
     },
     {
      "opp": "Steelers",
      "site": "away",
      "date": "2026-11-27",
-     "p": 0.5855,
+     "p": 0.5793,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "home",
      "date": "2026-12-06",
-     "p": 0.792,
+     "p": 0.7907,
      "won": null
     },
     {
      "opp": "Jets",
      "site": "away",
      "date": "2026-12-13",
-     "p": 0.6319,
+     "p": 0.6224,
      "won": null
     },
     {
      "opp": "Raiders",
      "site": "away",
      "date": "2026-12-20",
-     "p": 0.6609,
+     "p": 0.6574,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "home",
      "date": "2026-12-25",
-     "p": 0.4047,
+     "p": 0.4014,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.4932,
+     "p": 0.4869,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.5637,
+     "p": 0.5601,
      "won": null
     }
    ],
-   "rating": 2.0,
+   "rating": 1.88,
    "proj": 9.3,
    "played": 2,
-   "po": 0.5844,
-   "dv": 0.2279,
-   "sos": 0.24
+   "po": 0.5837,
+   "dv": 0.2296,
+   "sos": 0.22
+  },
+  {
+   "team": "HOU",
+   "name": "Texans",
+   "div": "AFC South",
+   "conf": "AFC",
+   "sched": [
+    {
+     "opp": "Bills",
+     "site": "home",
+     "date": "2026-09-13",
+     "p": 0.4509,
+     "won": false
+    },
+    {
+     "opp": "Bengals",
+     "site": "home",
+     "date": "2026-09-20",
+     "p": 0.5746,
+     "won": false
+    },
+    {
+     "opp": "Colts",
+     "site": "away",
+     "date": "2026-09-27",
+     "p": 0.5456,
+     "won": null
+    },
+    {
+     "opp": "Cowboys",
+     "site": "home",
+     "date": "2026-10-04",
+     "p": 0.6085,
+     "won": null
+    },
+    {
+     "opp": "Titans",
+     "site": "away",
+     "date": "2026-10-11",
+     "p": 0.6778,
+     "won": null
+    },
+    {
+     "opp": "Jaguars",
+     "site": "away",
+     "date": "2026-10-18",
+     "p": 0.54,
+     "won": null
+    },
+    {
+     "opp": "Giants",
+     "site": "home",
+     "date": "2026-10-25",
+     "p": 0.6876,
+     "won": null
+    },
+    {
+     "opp": "Chargers",
+     "site": "away",
+     "date": "2026-11-08",
+     "p": 0.5441,
+     "won": null
+    },
+    {
+     "opp": "Browns",
+     "site": "away",
+     "date": "2026-11-15",
+     "p": 0.7575,
+     "won": null
+    },
+    {
+     "opp": "Colts",
+     "site": "home",
+     "date": "2026-11-19",
+     "p": 0.6107,
+     "won": null
+    },
+    {
+     "opp": "Ravens",
+     "site": "home",
+     "date": "2026-11-29",
+     "p": 0.4831,
+     "won": null
+    },
+    {
+     "opp": "Steelers",
+     "site": "away",
+     "date": "2026-12-06",
+     "p": 0.628,
+     "won": null
+    },
+    {
+     "opp": "Commanders",
+     "site": "away",
+     "date": "2026-12-13",
+     "p": 0.6573,
+     "won": null
+    },
+    {
+     "opp": "Jaguars",
+     "site": "home",
+     "date": "2026-12-20",
+     "p": 0.6053,
+     "won": null
+    },
+    {
+     "opp": "Eagles",
+     "site": "away",
+     "date": "2026-12-24",
+     "p": 0.4578,
+     "won": null
+    },
+    {
+     "opp": "Packers",
+     "site": "away",
+     "date": "2027-01-04",
+     "p": 0.571,
+     "won": null
+    },
+    {
+     "opp": "Titans",
+     "site": "home",
+     "date": "2027-01-10",
+     "p": 0.7351,
+     "won": null
+    }
+   ],
+   "rating": 3.54,
+   "proj": 9.1,
+   "played": 2,
+   "po": 0.5703,
+   "dv": 0.4139,
+   "sos": 0.18
   },
   {
    "team": "NE",
@@ -1609,128 +1609,128 @@
      "opp": "Seahawks",
      "site": "away",
      "date": "2026-09-09",
-     "p": 0.3831,
+     "p": 0.3811,
      "won": false
     },
     {
      "opp": "Steelers",
      "site": "home",
      "date": "2026-09-20",
-     "p": 0.6235,
+     "p": 0.6241,
      "won": true
     },
     {
      "opp": "Jaguars",
      "site": "away",
      "date": "2026-09-27",
-     "p": 0.4689,
+     "p": 0.4695,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "away",
      "date": "2026-10-04",
-     "p": 0.3193,
+     "p": 0.3202,
      "won": null
     },
     {
      "opp": "Raiders",
      "site": "home",
      "date": "2026-10-11",
-     "p": 0.6963,
+     "p": 0.699,
      "won": null
     },
     {
      "opp": "Jets",
      "site": "home",
      "date": "2026-10-18",
-     "p": 0.6685,
+     "p": 0.6656,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "away",
      "date": "2026-10-22",
-     "p": 0.4866,
+     "p": 0.4899,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "away",
      "date": "2026-11-01",
-     "p": 0.7207,
+     "p": 0.7229,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "home",
      "date": "2026-11-08",
-     "p": 0.5668,
+     "p": 0.567,
      "won": null
     },
     {
      "opp": "Lions",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.4406,
+     "p": 0.441,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "away",
      "date": "2026-11-29",
-     "p": 0.4727,
+     "p": 0.4736,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "home",
      "date": "2026-12-06",
-     "p": 0.3798,
+     "p": 0.3819,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "home",
      "date": "2026-12-10",
-     "p": 0.562,
+     "p": 0.5643,
      "won": null
     },
     {
      "opp": "Chiefs",
      "site": "away",
      "date": "2026-12-21",
-     "p": 0.3845,
+     "p": 0.3874,
      "won": null
     },
     {
      "opp": "Jets",
      "site": "away",
      "date": "2026-12-27",
-     "p": 0.6072,
+     "p": 0.603,
      "won": null
     },
     {
      "opp": "Broncos",
      "site": "home",
      "date": "2027-01-03",
-     "p": 0.5068,
+     "p": 0.5131,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.773,
+     "p": 0.7758,
      "won": null
     }
    ],
-   "rating": 1.14,
+   "rating": 1.21,
    "proj": 9.1,
    "played": 2,
-   "po": 0.5284,
-   "dv": 0.1248,
-   "sos": -0.1
+   "po": 0.5323,
+   "dv": 0.1202,
+   "sos": -0.07
   },
   {
    "team": "NO",
@@ -1742,128 +1742,128 @@
      "opp": "Lions",
      "site": "away",
      "date": "2026-09-13",
-     "p": 0.3221,
+     "p": 0.3211,
      "won": false
     },
     {
      "opp": "Ravens",
      "site": "away",
      "date": "2026-09-20",
-     "p": 0.2417,
+     "p": 0.2411,
      "won": true
     },
     {
      "opp": "Raiders",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.5798,
+     "p": 0.5813,
      "won": null
     },
     {
      "opp": "Falcons",
      "site": "home",
      "date": "2026-10-05",
-     "p": 0.6101,
+     "p": 0.6103,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "home",
      "date": "2026-10-11",
-     "p": 0.4378,
+     "p": 0.4387,
      "won": null
     },
     {
      "opp": "Giants",
      "site": "away",
      "date": "2026-10-18",
-     "p": 0.4262,
+     "p": 0.432,
      "won": null
     },
     {
      "opp": "Steelers",
      "site": "home",
      "date": "2026-10-25",
-     "p": 0.5009,
+     "p": 0.5,
      "won": null
     },
     {
      "opp": "Browns",
      "site": "home",
      "date": "2026-11-08",
-     "p": 0.6479,
+     "p": 0.645,
      "won": null
     },
     {
      "opp": "Panthers",
      "site": "home",
      "date": "2026-11-15",
-     "p": 0.5216,
+     "p": 0.5254,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "away",
      "date": "2026-11-22",
-     "p": 0.3646,
+     "p": 0.3663,
      "won": null
     },
     {
      "opp": "Bengals",
      "site": "away",
      "date": "2026-11-29",
-     "p": 0.3193,
+     "p": 0.3184,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "home",
      "date": "2026-12-06",
-     "p": 0.4426,
+     "p": 0.4413,
      "won": null
     },
     {
      "opp": "Panthers",
      "site": "away",
      "date": "2026-12-13",
-     "p": 0.4563,
+     "p": 0.459,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "away",
      "date": "2026-12-20",
-     "p": 0.4139,
+     "p": 0.4122,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "home",
      "date": "2026-12-27",
-     "p": 0.5431,
+     "p": 0.5455,
      "won": null
     },
     {
      "opp": "Falcons",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.5461,
+     "p": 0.5451,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.4786,
+     "p": 0.478,
      "won": null
     }
    ],
-   "rating": -2.99,
+   "rating": -2.97,
    "proj": 8.3,
    "played": 2,
-   "po": 0.4793,
-   "dv": 0.4442,
-   "sos": -1.6
+   "po": 0.4828,
+   "dv": 0.4436,
+   "sos": -1.59
   },
   {
    "team": "JAX",
@@ -1875,128 +1875,128 @@
      "opp": "Browns",
      "site": "home",
      "date": "2026-09-13",
-     "p": 0.7543,
+     "p": 0.7522,
      "won": true
     },
     {
      "opp": "Broncos",
      "site": "away",
      "date": "2026-09-20",
-     "p": 0.4401,
+     "p": 0.444,
      "won": false
     },
     {
      "opp": "Patriots",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.5311,
+     "p": 0.5305,
      "won": null
     },
     {
      "opp": "Bengals",
      "site": "away",
      "date": "2026-10-04",
-     "p": 0.4361,
+     "p": 0.4354,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "home",
      "date": "2026-10-11",
-     "p": 0.4549,
+     "p": 0.4511,
      "won": null
     },
     {
      "opp": "Texans",
      "site": "home",
      "date": "2026-10-18",
-     "p": 0.4578,
+     "p": 0.46,
      "won": null
     },
     {
      "opp": "Colts",
      "site": "home",
      "date": "2026-11-01",
-     "p": 0.5363,
+     "p": 0.5388,
      "won": null
     },
     {
      "opp": "Ravens",
      "site": "away",
      "date": "2026-11-05",
-     "p": 0.3475,
+     "p": 0.3471,
      "won": null
     },
     {
      "opp": "Titans",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.6142,
+     "p": 0.6094,
      "won": null
     },
     {
      "opp": "Giants",
      "site": "away",
      "date": "2026-11-22",
-     "p": 0.5488,
+     "p": 0.555,
      "won": null
     },
     {
      "opp": "Titans",
      "site": "home",
      "date": "2026-11-29",
-     "p": 0.6751,
+     "p": 0.6717,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "away",
      "date": "2026-12-06",
-     "p": 0.485,
+     "p": 0.4872,
      "won": null
     },
     {
      "opp": "Steelers",
      "site": "home",
      "date": "2026-12-14",
-     "p": 0.622,
+     "p": 0.6215,
      "won": null
     },
     {
      "opp": "Texans",
      "site": "away",
      "date": "2026-12-20",
-     "p": 0.3937,
+     "p": 0.3947,
      "won": null
     },
     {
      "opp": "Cowboys",
      "site": "away",
      "date": "2026-12-27",
-     "p": 0.4677,
+     "p": 0.47,
      "won": null
     },
     {
      "opp": "Commanders",
      "site": "home",
      "date": "2027-01-03",
-     "p": 0.6475,
+     "p": 0.651,
      "won": null
     },
     {
      "opp": "Colts",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.4711,
+     "p": 0.4724,
      "won": null
     }
    ],
-   "rating": 1.09,
+   "rating": 1.12,
    "proj": 8.7,
    "played": 2,
-   "po": 0.4785,
-   "dv": 0.3163,
-   "sos": 0.22
+   "po": 0.4792,
+   "dv": 0.3216,
+   "sos": 0.24
   },
   {
    "team": "CHI",
@@ -2008,128 +2008,128 @@
      "opp": "Panthers",
      "site": "away",
      "date": "2026-09-13",
-     "p": 0.5615,
+     "p": 0.5617,
      "won": true
     },
     {
      "opp": "Vikings",
      "site": "home",
      "date": "2026-09-20",
-     "p": 0.5429,
+     "p": 0.5414,
      "won": false
     },
     {
      "opp": "Eagles",
      "site": "home",
      "date": "2026-09-28",
-     "p": 0.4374,
+     "p": 0.4308,
      "won": null
     },
     {
      "opp": "Jets",
      "site": "home",
      "date": "2026-10-04",
-     "p": 0.6508,
+     "p": 0.6442,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "away",
      "date": "2026-10-11",
-     "p": 0.4826,
+     "p": 0.4776,
      "won": null
     },
     {
      "opp": "Falcons",
      "site": "away",
      "date": "2026-10-18",
-     "p": 0.6481,
+     "p": 0.6449,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "home",
      "date": "2026-10-22",
-     "p": 0.5134,
+     "p": 0.5101,
      "won": null
     },
     {
      "opp": "Seahawks",
      "site": "away",
      "date": "2026-11-02",
-     "p": 0.3648,
+     "p": 0.3591,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "home",
      "date": "2026-11-08",
-     "p": 0.5834,
+     "p": 0.5805,
      "won": null
     },
     {
      "opp": "Saints",
      "site": "home",
      "date": "2026-11-22",
-     "p": 0.6354,
+     "p": 0.6337,
      "won": null
     },
     {
      "opp": "Lions",
      "site": "away",
      "date": "2026-11-26",
-     "p": 0.4217,
+     "p": 0.4182,
      "won": null
     },
     {
      "opp": "Jaguars",
      "site": "home",
      "date": "2026-12-06",
-     "p": 0.515,
+     "p": 0.5128,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "away",
      "date": "2026-12-13",
-     "p": 0.7043,
+     "p": 0.7031,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "away",
      "date": "2026-12-19",
-     "p": 0.3022,
+     "p": 0.2997,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "home",
      "date": "2026-12-25",
-     "p": 0.5478,
+     "p": 0.544,
      "won": null
     },
     {
      "opp": "Lions",
      "site": "home",
      "date": "2027-01-03",
-     "p": 0.4865,
+     "p": 0.4842,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.4777,
+     "p": 0.4749,
      "won": null
     }
    ],
-   "rating": 0.5,
-   "proj": 8.8,
+   "rating": 0.44,
+   "proj": 8.7,
    "played": 2,
-   "po": 0.3838,
-   "dv": 0.1533,
-   "sos": -0.18
+   "po": 0.3899,
+   "dv": 0.1532,
+   "sos": -0.13
   },
   {
    "team": "IND",
@@ -2141,7 +2141,7 @@
      "opp": "Ravens",
      "site": "home",
      "date": "2026-09-13",
-     "p": 0.406,
+     "p": 0.405,
      "won": false
     },
     {
@@ -2155,114 +2155,114 @@
      "opp": "Texans",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.4541,
+     "p": 0.4544,
      "won": null
     },
     {
      "opp": "Commanders",
      "site": "away",
      "date": "2026-10-04",
-     "p": 0.5814,
+     "p": 0.5821,
      "won": null
     },
     {
      "opp": "Steelers",
      "site": "away",
      "date": "2026-10-11",
-     "p": 0.5548,
+     "p": 0.5512,
      "won": null
     },
     {
      "opp": "Titans",
      "site": "home",
      "date": "2026-10-18",
-     "p": 0.6717,
+     "p": 0.6666,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "away",
      "date": "2026-10-25",
-     "p": 0.4916,
+     "p": 0.4898,
      "won": null
     },
     {
      "opp": "Jaguars",
      "site": "away",
      "date": "2026-11-01",
-     "p": 0.4637,
+     "p": 0.4612,
      "won": null
     },
     {
      "opp": "Cowboys",
      "site": "home",
      "date": "2026-11-08",
-     "p": 0.5292,
+     "p": 0.5309,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "home",
      "date": "2026-11-15",
-     "p": 0.7689,
+     "p": 0.7696,
      "won": null
     },
     {
      "opp": "Texans",
      "site": "away",
      "date": "2026-11-19",
-     "p": 0.3901,
+     "p": 0.3893,
      "won": null
     },
     {
      "opp": "Giants",
      "site": "home",
      "date": "2026-11-29",
-     "p": 0.6091,
+     "p": 0.6145,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "away",
      "date": "2026-12-13",
-     "p": 0.3873,
+     "p": 0.3806,
      "won": null
     },
     {
      "opp": "Titans",
      "site": "away",
      "date": "2026-12-20",
-     "p": 0.6106,
+     "p": 0.604,
      "won": null
     },
     {
      "opp": "Bengals",
      "site": "home",
      "date": "2026-12-27",
-     "p": 0.4974,
+     "p": 0.4961,
      "won": null
     },
     {
      "opp": "Browns",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.6968,
+     "p": 0.6916,
      "won": null
     },
     {
      "opp": "Jaguars",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.5289,
+     "p": 0.5276,
      "won": null
     }
    ],
-   "rating": 0.96,
+   "rating": 0.93,
    "proj": 8.2,
    "played": 2,
-   "po": 0.3799,
-   "dv": 0.2299,
-   "sos": -0.18
+   "po": 0.3746,
+   "dv": 0.2337,
+   "sos": -0.16
   },
   {
    "team": "DAL",
@@ -2274,261 +2274,128 @@
      "opp": "Giants",
      "site": "away",
      "date": "2026-09-13",
-     "p": 0.5485,
+     "p": 0.5518,
      "won": false
     },
     {
      "opp": "Commanders",
      "site": "home",
      "date": "2026-09-20",
-     "p": 0.6472,
+     "p": 0.648,
      "won": true
     },
     {
      "opp": "Ravens",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.4094,
+     "p": 0.4073,
      "won": null
     },
     {
      "opp": "Texans",
      "site": "away",
      "date": "2026-10-04",
-     "p": 0.3934,
+     "p": 0.3915,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "home",
      "date": "2026-10-08",
-     "p": 0.6003,
+     "p": 0.5973,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "away",
      "date": "2026-10-18",
-     "p": 0.4999,
+     "p": 0.4948,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "away",
      "date": "2026-10-26",
-     "p": 0.3906,
+     "p": 0.3829,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "home",
      "date": "2026-11-01",
-     "p": 0.6614,
+     "p": 0.6612,
      "won": null
     },
     {
      "opp": "Colts",
      "site": "away",
      "date": "2026-11-08",
-     "p": 0.4708,
+     "p": 0.4691,
      "won": null
     },
     {
      "opp": "49ers",
      "site": "home",
      "date": "2026-11-15",
-     "p": 0.4398,
+     "p": 0.4425,
      "won": null
     },
     {
      "opp": "Titans",
      "site": "home",
      "date": "2026-11-22",
-     "p": 0.6748,
+     "p": 0.6687,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "home",
      "date": "2026-11-26",
-     "p": 0.4546,
+     "p": 0.4478,
      "won": null
     },
     {
      "opp": "Seahawks",
      "site": "away",
      "date": "2026-12-07",
-     "p": 0.3813,
+     "p": 0.3754,
      "won": null
     },
     {
      "opp": "Rams",
      "site": "away",
      "date": "2026-12-20",
-     "p": 0.3301,
+     "p": 0.3364,
      "won": null
     },
     {
      "opp": "Jaguars",
      "site": "home",
      "date": "2026-12-27",
-     "p": 0.5323,
+     "p": 0.53,
      "won": null
     },
     {
      "opp": "Giants",
      "site": "home",
      "date": "2027-01-03",
-     "p": 0.6124,
+     "p": 0.6167,
      "won": null
     },
     {
      "opp": "Commanders",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.5847,
+     "p": 0.5843,
      "won": null
     }
    ],
-   "rating": 1.08,
+   "rating": 1.01,
    "proj": 8.4,
    "played": 2,
-   "po": 0.3422,
-   "dv": 0.16,
-   "sos": 0.87
-  },
-  {
-   "team": "GB",
-   "name": "Packers",
-   "div": "NFC North",
-   "conf": "NFC",
-   "sched": [
-    {
-     "opp": "Vikings",
-     "site": "away",
-     "date": "2026-09-13",
-     "p": 0.4625,
-     "won": false
-    },
-    {
-     "opp": "Jets",
-     "site": "away",
-     "date": "2026-09-20",
-     "p": 0.5737,
-     "won": true
-    },
-    {
-     "opp": "Falcons",
-     "site": "home",
-     "date": "2026-09-24",
-     "p": 0.6935,
-     "won": null
-    },
-    {
-     "opp": "Buccaneers",
-     "site": "away",
-     "date": "2026-10-04",
-     "p": 0.5035,
-     "won": null
-    },
-    {
-     "opp": "Bears",
-     "site": "home",
-     "date": "2026-10-11",
-     "p": 0.5174,
-     "won": null
-    },
-    {
-     "opp": "Cowboys",
-     "site": "home",
-     "date": "2026-10-18",
-     "p": 0.5001,
-     "won": null
-    },
-    {
-     "opp": "Lions",
-     "site": "away",
-     "date": "2026-10-25",
-     "p": 0.4068,
-     "won": null
-    },
-    {
-     "opp": "Panthers",
-     "site": "home",
-     "date": "2026-10-29",
-     "p": 0.6104,
-     "won": null
-    },
-    {
-     "opp": "Patriots",
-     "site": "away",
-     "date": "2026-11-08",
-     "p": 0.4332,
-     "won": null
-    },
-    {
-     "opp": "Vikings",
-     "site": "home",
-     "date": "2026-11-15",
-     "p": 0.5278,
-     "won": null
-    },
-    {
-     "opp": "Rams",
-     "site": "away",
-     "date": "2026-11-25",
-     "p": 0.301,
-     "won": null
-    },
-    {
-     "opp": "Saints",
-     "site": "away",
-     "date": "2026-12-06",
-     "p": 0.5574,
-     "won": null
-    },
-    {
-     "opp": "Bills",
-     "site": "home",
-     "date": "2026-12-13",
-     "p": 0.3474,
-     "won": null
-    },
-    {
-     "opp": "Dolphins",
-     "site": "home",
-     "date": "2026-12-20",
-     "p": 0.7461,
-     "won": null
-    },
-    {
-     "opp": "Bears",
-     "site": "away",
-     "date": "2026-12-25",
-     "p": 0.4522,
-     "won": null
-    },
-    {
-     "opp": "Texans",
-     "site": "home",
-     "date": "2027-01-04",
-     "p": 0.4253,
-     "won": null
-    },
-    {
-     "opp": "Lions",
-     "site": "home",
-     "date": "2027-01-10",
-     "p": 0.4713,
-     "won": null
-    }
-   ],
-   "rating": -0.0,
-   "proj": 8.5,
-   "played": 2,
-   "po": 0.3302,
-   "dv": 0.1188,
-   "sos": -0.02
+   "po": 0.348,
+   "dv": 0.1535,
+   "sos": 0.86
   },
   {
    "team": "CAR",
@@ -2540,128 +2407,128 @@
      "opp": "Bears",
      "site": "home",
      "date": "2026-09-13",
-     "p": 0.4385,
+     "p": 0.4383,
      "won": false
     },
     {
      "opp": "Falcons",
      "site": "away",
      "date": "2026-09-20",
-     "p": 0.5571,
+     "p": 0.5529,
      "won": true
     },
     {
      "opp": "Browns",
      "site": "away",
      "date": "2026-09-27",
-     "p": 0.5962,
+     "p": 0.5889,
      "won": null
     },
     {
      "opp": "Lions",
      "site": "home",
      "date": "2026-10-04",
-     "p": 0.3934,
+     "p": 0.3904,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "away",
      "date": "2026-10-18",
-     "p": 0.2885,
+     "p": 0.2811,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "home",
      "date": "2026-10-25",
-     "p": 0.4897,
+     "p": 0.4859,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "away",
      "date": "2026-10-29",
-     "p": 0.3896,
+     "p": 0.3841,
      "won": null
     },
     {
      "opp": "Broncos",
      "site": "home",
      "date": "2026-11-08",
-     "p": 0.3944,
+     "p": 0.3959,
      "won": null
     },
     {
      "opp": "Saints",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.4784,
+     "p": 0.4746,
      "won": null
     },
     {
      "opp": "Ravens",
      "site": "home",
      "date": "2026-11-22",
-     "p": 0.3053,
+     "p": 0.3029,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "away",
      "date": "2026-11-30",
-     "p": 0.4248,
+     "p": 0.4199,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "away",
      "date": "2026-12-06",
-     "p": 0.3849,
+     "p": 0.3815,
      "won": null
     },
     {
      "opp": "Saints",
      "site": "home",
      "date": "2026-12-13",
-     "p": 0.5437,
+     "p": 0.541,
      "won": null
     },
     {
      "opp": "Bengals",
      "site": "home",
      "date": "2026-12-20",
-     "p": 0.3905,
+     "p": 0.3875,
      "won": null
     },
     {
      "opp": "Steelers",
      "site": "away",
      "date": "2026-12-27",
-     "p": 0.4468,
+     "p": 0.4415,
      "won": null
     },
     {
      "opp": "Seahawks",
      "site": "home",
      "date": "2027-01-03",
-     "p": 0.3378,
+     "p": 0.3327,
      "won": null
     },
     {
      "opp": "Falcons",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.6207,
+     "p": 0.6178,
      "won": null
     }
    ],
-   "rating": -2.62,
-   "proj": 7.5,
+   "rating": -2.71,
+   "proj": 7.4,
    "played": 2,
-   "po": 0.3079,
-   "dv": 0.2727,
-   "sos": -0.52
+   "po": 0.2888,
+   "dv": 0.2505,
+   "sos": -0.47
   },
   {
    "team": "TB",
@@ -2673,128 +2540,128 @@
      "opp": "Bengals",
      "site": "away",
      "date": "2026-09-13",
-     "p": 0.3692,
+     "p": 0.3693,
      "won": false
     },
     {
      "opp": "Browns",
      "site": "home",
      "date": "2026-09-20",
-     "p": 0.6968,
+     "p": 0.6951,
      "won": false
     },
     {
      "opp": "Vikings",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.4916,
+     "p": 0.4937,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "home",
      "date": "2026-10-04",
-     "p": 0.4965,
+     "p": 0.4963,
      "won": null
     },
     {
      "opp": "Cowboys",
      "site": "away",
      "date": "2026-10-08",
-     "p": 0.3997,
+     "p": 0.4027,
      "won": null
     },
     {
      "opp": "Steelers",
      "site": "home",
      "date": "2026-10-18",
-     "p": 0.5548,
+     "p": 0.5551,
      "won": null
     },
     {
      "opp": "Panthers",
      "site": "away",
      "date": "2026-10-25",
-     "p": 0.5103,
+     "p": 0.5141,
      "won": null
     },
     {
      "opp": "Falcons",
      "site": "home",
      "date": "2026-11-01",
-     "p": 0.661,
+     "p": 0.6623,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "away",
      "date": "2026-11-08",
-     "p": 0.4166,
+     "p": 0.4195,
      "won": null
     },
     {
      "opp": "Lions",
      "site": "away",
      "date": "2026-11-22",
-     "p": 0.3721,
+     "p": 0.3722,
      "won": null
     },
     {
      "opp": "Panthers",
      "site": "home",
      "date": "2026-11-30",
-     "p": 0.5752,
+     "p": 0.5801,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "home",
      "date": "2026-12-06",
-     "p": 0.4675,
+     "p": 0.4692,
      "won": null
     },
     {
      "opp": "Ravens",
      "site": "away",
      "date": "2026-12-13",
-     "p": 0.286,
+     "p": 0.2863,
      "won": null
     },
     {
      "opp": "Saints",
      "site": "home",
      "date": "2026-12-20",
-     "p": 0.5861,
+     "p": 0.5878,
      "won": null
     },
     {
      "opp": "Falcons",
      "site": "away",
      "date": "2026-12-27",
-     "p": 0.5992,
+     "p": 0.5994,
      "won": null
     },
     {
      "opp": "Rams",
      "site": "home",
      "date": "2027-01-03",
-     "p": 0.327,
+     "p": 0.3379,
      "won": null
     },
     {
      "opp": "Saints",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.5214,
+     "p": 0.522,
      "won": null
     }
    ],
-   "rating": -1.2,
+   "rating": -1.14,
    "proj": 7.3,
    "played": 2,
-   "po": 0.2752,
-   "dv": 0.2411,
-   "sos": -0.79
+   "po": 0.2676,
+   "dv": 0.2314,
+   "sos": -0.8
   },
   {
    "team": "PIT",
@@ -2806,128 +2673,261 @@
      "opp": "Falcons",
      "site": "home",
      "date": "2026-09-13",
-     "p": 0.6403,
+     "p": 0.6419,
      "won": true
     },
     {
      "opp": "Patriots",
      "site": "away",
      "date": "2026-09-20",
-     "p": 0.3765,
+     "p": 0.3759,
      "won": false
     },
     {
      "opp": "Bengals",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.4105,
+     "p": 0.4122,
      "won": null
     },
     {
      "opp": "Browns",
      "site": "away",
      "date": "2026-10-01",
-     "p": 0.6162,
+     "p": 0.6135,
      "won": null
     },
     {
      "opp": "Colts",
      "site": "home",
      "date": "2026-10-11",
-     "p": 0.4452,
+     "p": 0.4488,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "away",
      "date": "2026-10-18",
-     "p": 0.4452,
+     "p": 0.4449,
      "won": null
     },
     {
      "opp": "Saints",
      "site": "away",
      "date": "2026-10-25",
-     "p": 0.4991,
+     "p": 0.5,
      "won": null
     },
     {
      "opp": "Browns",
      "site": "home",
      "date": "2026-11-01",
-     "p": 0.677,
+     "p": 0.6755,
      "won": null
     },
     {
      "opp": "Bengals",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.3483,
+     "p": 0.3487,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "away",
      "date": "2026-11-22",
-     "p": 0.3064,
+     "p": 0.303,
      "won": null
     },
     {
      "opp": "Broncos",
      "site": "home",
      "date": "2026-11-27",
-     "p": 0.4145,
+     "p": 0.4207,
      "won": null
     },
     {
      "opp": "Texans",
      "site": "home",
      "date": "2026-12-06",
-     "p": 0.3688,
+     "p": 0.372,
      "won": null
     },
     {
      "opp": "Jaguars",
      "site": "away",
      "date": "2026-12-14",
-     "p": 0.378,
+     "p": 0.3785,
      "won": null
     },
     {
      "opp": "Ravens",
      "site": "home",
      "date": "2026-12-20",
-     "p": 0.3237,
+     "p": 0.3255,
      "won": null
     },
     {
      "opp": "Panthers",
      "site": "home",
      "date": "2026-12-27",
-     "p": 0.5532,
+     "p": 0.5585,
      "won": null
     },
     {
      "opp": "Titans",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.5244,
+     "p": 0.5206,
      "won": null
     },
     {
      "opp": "Ravens",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.2673,
+     "p": 0.2679,
      "won": null
     }
    ],
-   "rating": -1.94,
+   "rating": -1.87,
    "proj": 7.6,
    "played": 2,
-   "po": 0.2326,
-   "dv": 0.036,
-   "sos": -0.18
+   "po": 0.2335,
+   "dv": 0.0358,
+   "sos": -0.14
+  },
+  {
+   "team": "GB",
+   "name": "Packers",
+   "div": "NFC North",
+   "conf": "NFC",
+   "sched": [
+    {
+     "opp": "Vikings",
+     "site": "away",
+     "date": "2026-09-13",
+     "p": 0.4641,
+     "won": false
+    },
+    {
+     "opp": "Jets",
+     "site": "away",
+     "date": "2026-09-20",
+     "p": 0.5698,
+     "won": true
+    },
+    {
+     "opp": "Falcons",
+     "site": "home",
+     "date": "2026-09-24",
+     "p": 0.6954,
+     "won": false
+    },
+    {
+     "opp": "Buccaneers",
+     "site": "away",
+     "date": "2026-10-04",
+     "p": 0.5037,
+     "won": null
+    },
+    {
+     "opp": "Bears",
+     "site": "home",
+     "date": "2026-10-11",
+     "p": 0.5224,
+     "won": null
+    },
+    {
+     "opp": "Cowboys",
+     "site": "home",
+     "date": "2026-10-18",
+     "p": 0.5052,
+     "won": null
+    },
+    {
+     "opp": "Lions",
+     "site": "away",
+     "date": "2026-10-25",
+     "p": 0.4077,
+     "won": null
+    },
+    {
+     "opp": "Panthers",
+     "site": "home",
+     "date": "2026-10-29",
+     "p": 0.6159,
+     "won": null
+    },
+    {
+     "opp": "Patriots",
+     "site": "away",
+     "date": "2026-11-08",
+     "p": 0.433,
+     "won": null
+    },
+    {
+     "opp": "Vikings",
+     "site": "home",
+     "date": "2026-11-15",
+     "p": 0.5306,
+     "won": null
+    },
+    {
+     "opp": "Rams",
+     "site": "away",
+     "date": "2026-11-25",
+     "p": 0.3112,
+     "won": null
+    },
+    {
+     "opp": "Saints",
+     "site": "away",
+     "date": "2026-12-06",
+     "p": 0.5587,
+     "won": null
+    },
+    {
+     "opp": "Bills",
+     "site": "home",
+     "date": "2026-12-13",
+     "p": 0.3499,
+     "won": null
+    },
+    {
+     "opp": "Dolphins",
+     "site": "home",
+     "date": "2026-12-20",
+     "p": 0.7495,
+     "won": null
+    },
+    {
+     "opp": "Bears",
+     "site": "away",
+     "date": "2026-12-25",
+     "p": 0.456,
+     "won": null
+    },
+    {
+     "opp": "Texans",
+     "site": "home",
+     "date": "2027-01-04",
+     "p": 0.429,
+     "won": null
+    },
+    {
+     "opp": "Lions",
+     "site": "home",
+     "date": "2027-01-10",
+     "p": 0.4734,
+     "won": null
+    }
+   ],
+   "rating": 0.08,
+   "proj": 7.8,
+   "played": 3,
+   "po": 0.2278,
+   "dv": 0.0709,
+   "sos": -0.03
   },
   {
    "team": "NYG",
@@ -2939,394 +2939,128 @@
      "opp": "Cowboys",
      "site": "home",
      "date": "2026-09-13",
-     "p": 0.4515,
+     "p": 0.4482,
      "won": true
     },
     {
      "opp": "Rams",
      "site": "away",
      "date": "2026-09-21",
-     "p": 0.26,
+     "p": 0.2625,
      "won": false
     },
     {
      "opp": "Titans",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.5985,
+     "p": 0.5882,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "home",
      "date": "2026-10-04",
-     "p": 0.5842,
+     "p": 0.5801,
      "won": null
     },
     {
      "opp": "Commanders",
      "site": "away",
      "date": "2026-10-11",
-     "p": 0.5041,
+     "p": 0.4998,
      "won": null
     },
     {
      "opp": "Saints",
      "site": "home",
      "date": "2026-10-18",
-     "p": 0.5738,
+     "p": 0.568,
      "won": null
     },
     {
      "opp": "Texans",
      "site": "away",
      "date": "2026-10-25",
-     "p": 0.3177,
+     "p": 0.3124,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "away",
      "date": "2026-11-08",
-     "p": 0.3151,
+     "p": 0.3045,
      "won": null
     },
     {
      "opp": "Commanders",
      "site": "home",
      "date": "2026-11-12",
-     "p": 0.5691,
+     "p": 0.566,
      "won": null
     },
     {
      "opp": "Jaguars",
      "site": "home",
      "date": "2026-11-22",
-     "p": 0.4512,
+     "p": 0.445,
      "won": null
     },
     {
      "opp": "Colts",
      "site": "away",
      "date": "2026-11-29",
-     "p": 0.3909,
+     "p": 0.3855,
      "won": null
     },
     {
      "opp": "49ers",
      "site": "home",
      "date": "2026-12-06",
-     "p": 0.3612,
+     "p": 0.3601,
      "won": null
     },
     {
      "opp": "Seahawks",
      "site": "away",
      "date": "2026-12-13",
-     "p": 0.3065,
+     "p": 0.2976,
      "won": null
     },
     {
      "opp": "Browns",
      "site": "home",
      "date": "2026-12-20",
-     "p": 0.6857,
+     "p": 0.6771,
      "won": null
     },
     {
      "opp": "Lions",
      "site": "away",
      "date": "2026-12-28",
-     "p": 0.3603,
+     "p": 0.3532,
      "won": null
     },
     {
      "opp": "Cowboys",
      "site": "away",
      "date": "2027-01-03",
-     "p": 0.3876,
+     "p": 0.3833,
      "won": null
     },
     {
      "opp": "Eagles",
      "site": "home",
      "date": "2027-01-10",
-     "p": 0.3754,
+     "p": 0.3651,
      "won": null
     }
    ],
-   "rating": -1.61,
-   "proj": 7.8,
+   "rating": -1.81,
+   "proj": 7.7,
    "played": 2,
-   "po": 0.219,
-   "dv": 0.0945,
+   "po": 0.2177,
+   "dv": 0.0898,
    "sos": 0.49
-  },
-  {
-   "team": "LAC",
-   "name": "Chargers",
-   "div": "AFC West",
-   "conf": "AFC",
-   "sched": [
-    {
-     "opp": "Cardinals",
-     "site": "home",
-     "date": "2026-09-13",
-     "p": 0.6581,
-     "won": false
-    },
-    {
-     "opp": "Raiders",
-     "site": "home",
-     "date": "2026-09-20",
-     "p": 0.6916,
-     "won": false
-    },
-    {
-     "opp": "Bills",
-     "site": "away",
-     "date": "2026-09-27",
-     "p": 0.3145,
-     "won": null
-    },
-    {
-     "opp": "Seahawks",
-     "site": "away",
-     "date": "2026-10-04",
-     "p": 0.3779,
-     "won": null
-    },
-    {
-     "opp": "Broncos",
-     "site": "home",
-     "date": "2026-10-11",
-     "p": 0.5014,
-     "won": null
-    },
-    {
-     "opp": "Chiefs",
-     "site": "away",
-     "date": "2026-10-18",
-     "p": 0.3794,
-     "won": null
-    },
-    {
-     "opp": "Rams",
-     "site": "away",
-     "date": "2026-11-01",
-     "p": 0.3269,
-     "won": null
-    },
-    {
-     "opp": "Texans",
-     "site": "home",
-     "date": "2026-11-08",
-     "p": 0.454,
-     "won": null
-    },
-    {
-     "opp": "Ravens",
-     "site": "away",
-     "date": "2026-11-16",
-     "p": 0.3439,
-     "won": null
-    },
-    {
-     "opp": "Jets",
-     "site": "home",
-     "date": "2026-11-22",
-     "p": 0.6636,
-     "won": null
-    },
-    {
-     "opp": "Patriots",
-     "site": "home",
-     "date": "2026-11-29",
-     "p": 0.5273,
-     "won": null
-    },
-    {
-     "opp": "Buccaneers",
-     "site": "away",
-     "date": "2026-12-06",
-     "p": 0.5325,
-     "won": null
-    },
-    {
-     "opp": "Raiders",
-     "site": "away",
-     "date": "2026-12-13",
-     "p": 0.6318,
-     "won": null
-    },
-    {
-     "opp": "49ers",
-     "site": "home",
-     "date": "2026-12-17",
-     "p": 0.4363,
-     "won": null
-    },
-    {
-     "opp": "Dolphins",
-     "site": "away",
-     "date": "2026-12-27",
-     "p": 0.7161,
-     "won": null
-    },
-    {
-     "opp": "Chiefs",
-     "site": "home",
-     "date": "2027-01-03",
-     "p": 0.443,
-     "won": null
-    },
-    {
-     "opp": "Broncos",
-     "site": "away",
-     "date": "2027-01-10",
-     "p": 0.4363,
-     "won": null
-    }
-   ],
-   "rating": 0.96,
-   "proj": 7.1,
-   "played": 2,
-   "po": 0.1697,
-   "dv": 0.0425,
-   "sos": 1.01
-  },
-  {
-   "team": "LV",
-   "name": "Raiders",
-   "div": "AFC West",
-   "conf": "AFC",
-   "sched": [
-    {
-     "opp": "Dolphins",
-     "site": "home",
-     "date": "2026-09-13",
-     "p": 0.6242,
-     "won": true
-    },
-    {
-     "opp": "Chargers",
-     "site": "away",
-     "date": "2026-09-20",
-     "p": 0.3084,
-     "won": true
-    },
-    {
-     "opp": "Saints",
-     "site": "away",
-     "date": "2026-09-27",
-     "p": 0.4202,
-     "won": null
-    },
-    {
-     "opp": "Chiefs",
-     "site": "home",
-     "date": "2026-10-04",
-     "p": 0.2871,
-     "won": null
-    },
-    {
-     "opp": "Patriots",
-     "site": "away",
-     "date": "2026-10-11",
-     "p": 0.3037,
-     "won": null
-    },
-    {
-     "opp": "Bills",
-     "site": "home",
-     "date": "2026-10-18",
-     "p": 0.2302,
-     "won": null
-    },
-    {
-     "opp": "Rams",
-     "site": "home",
-     "date": "2026-10-25",
-     "p": 0.2409,
-     "won": null
-    },
-    {
-     "opp": "Jets",
-     "site": "away",
-     "date": "2026-11-01",
-     "p": 0.4365,
-     "won": null
-    },
-    {
-     "opp": "49ers",
-     "site": "away",
-     "date": "2026-11-08",
-     "p": 0.2288,
-     "won": null
-    },
-    {
-     "opp": "Seahawks",
-     "site": "home",
-     "date": "2026-11-15",
-     "p": 0.2858,
-     "won": null
-    },
-    {
-     "opp": "Broncos",
-     "site": "away",
-     "date": "2026-11-22",
-     "p": 0.2814,
-     "won": null
-    },
-    {
-     "opp": "Browns",
-     "site": "away",
-     "date": "2026-11-29",
-     "p": 0.5384,
-     "won": null
-    },
-    {
-     "opp": "Chargers",
-     "site": "home",
-     "date": "2026-12-13",
-     "p": 0.3682,
-     "won": null
-    },
-    {
-     "opp": "Broncos",
-     "site": "home",
-     "date": "2026-12-20",
-     "p": 0.3391,
-     "won": null
-    },
-    {
-     "opp": "Titans",
-     "site": "home",
-     "date": "2026-12-27",
-     "p": 0.5103,
-     "won": null
-    },
-    {
-     "opp": "Cardinals",
-     "site": "away",
-     "date": "2027-01-03",
-     "p": 0.4306,
-     "won": null
-    },
-    {
-     "opp": "Chiefs",
-     "site": "away",
-     "date": "2027-01-10",
-     "p": 0.234,
-     "won": null
-    }
-   ],
-   "rating": -4.56,
-   "proj": 7.2,
-   "played": 2,
-   "po": 0.1657,
-   "dv": 0.0423,
-   "sos": 0.4
   },
   {
    "team": "NYJ",
@@ -3338,660 +3072,394 @@
      "opp": "Titans",
      "site": "away",
      "date": "2026-09-13",
-     "p": 0.4762,
+     "p": 0.4761,
      "won": true
     },
     {
      "opp": "Packers",
      "site": "home",
      "date": "2026-09-20",
-     "p": 0.4263,
+     "p": 0.4302,
      "won": false
     },
     {
      "opp": "Lions",
      "site": "away",
      "date": "2026-09-27",
-     "p": 0.3074,
+     "p": 0.3111,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "away",
      "date": "2026-10-04",
-     "p": 0.3492,
+     "p": 0.3558,
      "won": null
     },
     {
      "opp": "Browns",
      "site": "home",
      "date": "2026-10-11",
-     "p": 0.6324,
+     "p": 0.6344,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "away",
      "date": "2026-10-18",
-     "p": 0.3315,
+     "p": 0.3344,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "home",
      "date": "2026-10-25",
-     "p": 0.6535,
+     "p": 0.6604,
      "won": null
     },
     {
      "opp": "Raiders",
      "site": "home",
      "date": "2026-11-01",
-     "p": 0.5635,
+     "p": 0.5702,
      "won": null
     },
     {
      "opp": "Chiefs",
      "site": "away",
      "date": "2026-11-08",
-     "p": 0.2587,
+     "p": 0.2641,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "home",
      "date": "2026-11-15",
-     "p": 0.2546,
+     "p": 0.2595,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "away",
      "date": "2026-11-22",
-     "p": 0.3364,
+     "p": 0.3406,
      "won": null
     },
     {
      "opp": "Dolphins",
      "site": "away",
      "date": "2026-11-29",
-     "p": 0.5913,
+     "p": 0.5975,
      "won": null
     },
     {
      "opp": "Broncos",
      "site": "home",
      "date": "2026-12-13",
-     "p": 0.3681,
+     "p": 0.3776,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "away",
      "date": "2026-12-20",
-     "p": 0.4615,
+     "p": 0.4678,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "home",
      "date": "2026-12-27",
-     "p": 0.3928,
+     "p": 0.397,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "home",
      "date": "2027-01-03",
-     "p": 0.4215,
+     "p": 0.4276,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.2051,
-     "won": null
-    }
-   ],
-   "rating": -3.53,
-   "proj": 7.1,
-   "played": 2,
-   "po": 0.1616,
-   "dv": 0.0232,
-   "sos": -0.56
-  },
-  {
-   "team": "ARI",
-   "name": "Cardinals",
-   "div": "NFC West",
-   "conf": "NFC",
-   "sched": [
-    {
-     "opp": "Chargers",
-     "site": "away",
-     "date": "2026-09-13",
-     "p": 0.3419,
-     "won": true
-    },
-    {
-     "opp": "Seahawks",
-     "site": "home",
-     "date": "2026-09-20",
-     "p": 0.3182,
-     "won": false
-    },
-    {
-     "opp": "49ers",
-     "site": "away",
-     "date": "2026-09-27",
-     "p": 0.2579,
-     "won": null
-    },
-    {
-     "opp": "Giants",
-     "site": "away",
-     "date": "2026-10-04",
-     "p": 0.4158,
-     "won": null
-    },
-    {
-     "opp": "Lions",
-     "site": "home",
-     "date": "2026-10-11",
-     "p": 0.3727,
-     "won": null
-    },
-    {
-     "opp": "Rams",
-     "site": "away",
-     "date": "2026-10-18",
-     "p": 0.2194,
-     "won": null
-    },
-    {
-     "opp": "Broncos",
-     "site": "home",
-     "date": "2026-10-25",
-     "p": 0.3737,
-     "won": null
-    },
-    {
-     "opp": "Cowboys",
-     "site": "away",
-     "date": "2026-11-01",
-     "p": 0.3386,
-     "won": null
-    },
-    {
-     "opp": "Seahawks",
-     "site": "away",
-     "date": "2026-11-08",
-     "p": 0.2622,
-     "won": null
-    },
-    {
-     "opp": "Rams",
-     "site": "home",
-     "date": "2026-11-15",
-     "p": 0.2708,
-     "won": null
-    },
-    {
-     "opp": "Chiefs",
-     "site": "away",
-     "date": "2026-11-22",
-     "p": 0.2635,
-     "won": null
-    },
-    {
-     "opp": "Commanders",
-     "site": "home",
-     "date": "2026-11-29",
-     "p": 0.5173,
-     "won": null
-    },
-    {
-     "opp": "Eagles",
-     "site": "home",
-     "date": "2026-12-06",
-     "p": 0.3269,
-     "won": null
-    },
-    {
-     "opp": "Jets",
-     "site": "home",
-     "date": "2026-12-20",
-     "p": 0.5385,
-     "won": null
-    },
-    {
-     "opp": "Saints",
-     "site": "away",
-     "date": "2026-12-27",
-     "p": 0.4569,
-     "won": null
-    },
-    {
-     "opp": "Raiders",
-     "site": "home",
-     "date": "2027-01-03",
-     "p": 0.5694,
-     "won": null
-    },
-    {
-     "opp": "49ers",
-     "site": "home",
-     "date": "2027-01-10",
-     "p": 0.3135,
+     "p": 0.2085,
      "won": null
     }
    ],
    "rating": -3.34,
-   "proj": 6.5,
+   "proj": 7.2,
    "played": 2,
-   "po": 0.0675,
-   "dv": 0.0057,
-   "sos": 1.53
+   "po": 0.1768,
+   "dv": 0.0236,
+   "sos": -0.55
   },
   {
-   "team": "WAS",
-   "name": "Commanders",
-   "div": "NFC East",
-   "conf": "NFC",
+   "team": "LAC",
+   "name": "Chargers",
+   "div": "AFC West",
+   "conf": "AFC",
    "sched": [
     {
-     "opp": "Eagles",
-     "site": "away",
+     "opp": "Cardinals",
+     "site": "home",
      "date": "2026-09-13",
-     "p": 0.2831,
+     "p": 0.6604,
      "won": false
     },
     {
-     "opp": "Cowboys",
-     "site": "away",
+     "opp": "Raiders",
+     "site": "home",
      "date": "2026-09-20",
-     "p": 0.3528,
+     "p": 0.693,
      "won": false
+    },
+    {
+     "opp": "Bills",
+     "site": "away",
+     "date": "2026-09-27",
+     "p": 0.3141,
+     "won": null
     },
     {
      "opp": "Seahawks",
-     "site": "home",
-     "date": "2026-09-27",
-     "p": 0.3321,
-     "won": null
-    },
-    {
-     "opp": "Colts",
-     "site": "home",
+     "site": "away",
      "date": "2026-10-04",
-     "p": 0.4186,
+     "p": 0.3745,
      "won": null
     },
     {
-     "opp": "Giants",
+     "opp": "Broncos",
      "site": "home",
      "date": "2026-10-11",
-     "p": 0.4959,
+     "p": 0.5062,
+     "won": null
+    },
+    {
+     "opp": "Chiefs",
+     "site": "away",
+     "date": "2026-10-18",
+     "p": 0.3808,
+     "won": null
+    },
+    {
+     "opp": "Rams",
+     "site": "away",
+     "date": "2026-11-01",
+     "p": 0.3356,
+     "won": null
+    },
+    {
+     "opp": "Texans",
+     "site": "home",
+     "date": "2026-11-08",
+     "p": 0.4559,
+     "won": null
+    },
+    {
+     "opp": "Ravens",
+     "site": "away",
+     "date": "2026-11-16",
+     "p": 0.3433,
+     "won": null
+    },
+    {
+     "opp": "Jets",
+     "site": "home",
+     "date": "2026-11-22",
+     "p": 0.6594,
+     "won": null
+    },
+    {
+     "opp": "Patriots",
+     "site": "home",
+     "date": "2026-11-29",
+     "p": 0.5264,
+     "won": null
+    },
+    {
+     "opp": "Buccaneers",
+     "site": "away",
+     "date": "2026-12-06",
+     "p": 0.5308,
+     "won": null
+    },
+    {
+     "opp": "Raiders",
+     "site": "away",
+     "date": "2026-12-13",
+     "p": 0.6322,
      "won": null
     },
     {
      "opp": "49ers",
-     "site": "away",
-     "date": "2026-10-19",
-     "p": 0.2705,
+     "site": "home",
+     "date": "2026-12-17",
+     "p": 0.4416,
      "won": null
     },
     {
-     "opp": "Eagles",
+     "opp": "Dolphins",
+     "site": "away",
+     "date": "2026-12-27",
+     "p": 0.7171,
+     "won": null
+    },
+    {
+     "opp": "Chiefs",
      "site": "home",
-     "date": "2026-11-01",
-     "p": 0.341,
+     "date": "2027-01-03",
+     "p": 0.4457,
+     "won": null
+    },
+    {
+     "opp": "Broncos",
+     "site": "away",
+     "date": "2027-01-10",
+     "p": 0.4399,
+     "won": null
+    }
+   ],
+   "rating": 0.98,
+   "proj": 7.1,
+   "played": 2,
+   "po": 0.1686,
+   "dv": 0.0423,
+   "sos": 0.98
+  },
+  {
+   "team": "LV",
+   "name": "Raiders",
+   "div": "AFC West",
+   "conf": "AFC",
+   "sched": [
+    {
+     "opp": "Dolphins",
+     "site": "home",
+     "date": "2026-09-13",
+     "p": 0.6255,
+     "won": true
+    },
+    {
+     "opp": "Chargers",
+     "site": "away",
+     "date": "2026-09-20",
+     "p": 0.307,
+     "won": true
+    },
+    {
+     "opp": "Saints",
+     "site": "away",
+     "date": "2026-09-27",
+     "p": 0.4187,
+     "won": null
+    },
+    {
+     "opp": "Chiefs",
+     "site": "home",
+     "date": "2026-10-04",
+     "p": 0.2886,
+     "won": null
+    },
+    {
+     "opp": "Patriots",
+     "site": "away",
+     "date": "2026-10-11",
+     "p": 0.301,
+     "won": null
+    },
+    {
+     "opp": "Bills",
+     "site": "home",
+     "date": "2026-10-18",
+     "p": 0.2301,
      "won": null
     },
     {
      "opp": "Rams",
      "site": "home",
-     "date": "2026-11-08",
-     "p": 0.2837,
+     "date": "2026-10-25",
+     "p": 0.2487,
      "won": null
     },
     {
-     "opp": "Giants",
+     "opp": "Jets",
      "site": "away",
-     "date": "2026-11-12",
-     "p": 0.4309,
+     "date": "2026-11-01",
+     "p": 0.4298,
      "won": null
     },
     {
-     "opp": "Bengals",
+     "opp": "49ers",
+     "site": "away",
+     "date": "2026-11-08",
+     "p": 0.2313,
+     "won": null
+    },
+    {
+     "opp": "Seahawks",
      "site": "home",
-     "date": "2026-11-23",
-     "p": 0.3845,
+     "date": "2026-11-15",
+     "p": 0.283,
+     "won": null
+    },
+    {
+     "opp": "Broncos",
+     "site": "away",
+     "date": "2026-11-22",
+     "p": 0.2836,
+     "won": null
+    },
+    {
+     "opp": "Browns",
+     "site": "away",
+     "date": "2026-11-29",
+     "p": 0.5331,
+     "won": null
+    },
+    {
+     "opp": "Chargers",
+     "site": "home",
+     "date": "2026-12-13",
+     "p": 0.3678,
+     "won": null
+    },
+    {
+     "opp": "Broncos",
+     "site": "home",
+     "date": "2026-12-20",
+     "p": 0.3426,
+     "won": null
+    },
+    {
+     "opp": "Titans",
+     "site": "home",
+     "date": "2026-12-27",
+     "p": 0.5053,
      "won": null
     },
     {
      "opp": "Cardinals",
      "site": "away",
-     "date": "2026-11-29",
-     "p": 0.4827,
-     "won": null
-    },
-    {
-     "opp": "Titans",
-     "site": "away",
-     "date": "2026-12-06",
-     "p": 0.4975,
-     "won": null
-    },
-    {
-     "opp": "Texans",
-     "site": "home",
-     "date": "2026-12-13",
-     "p": 0.3436,
-     "won": null
-    },
-    {
-     "opp": "Falcons",
-     "site": "home",
-     "date": "2026-12-20",
-     "p": 0.6147,
-     "won": null
-    },
-    {
-     "opp": "Vikings",
-     "site": "away",
-     "date": "2026-12-27",
-     "p": 0.3789,
-     "won": null
-    },
-    {
-     "opp": "Jaguars",
-     "site": "away",
      "date": "2027-01-03",
-     "p": 0.3525,
+     "p": 0.4308,
      "won": null
     },
     {
-     "opp": "Cowboys",
-     "site": "home",
+     "opp": "Chiefs",
+     "site": "away",
      "date": "2027-01-10",
-     "p": 0.4153,
+     "p": 0.2345,
      "won": null
     }
    ],
-   "rating": -2.83,
-   "proj": 6.1,
+   "rating": -4.58,
+   "proj": 7.1,
    "played": 2,
-   "po": 0.0522,
-   "dv": 0.0195,
-   "sos": 0.9
-  },
-  {
-   "team": "CLE",
-   "name": "Browns",
-   "div": "AFC North",
-   "conf": "AFC",
-   "sched": [
-    {
-     "opp": "Jaguars",
-     "site": "away",
-     "date": "2026-09-13",
-     "p": 0.2457,
-     "won": false
-    },
-    {
-     "opp": "Buccaneers",
-     "site": "away",
-     "date": "2026-09-20",
-     "p": 0.3032,
-     "won": true
-    },
-    {
-     "opp": "Panthers",
-     "site": "home",
-     "date": "2026-09-27",
-     "p": 0.4038,
-     "won": null
-    },
-    {
-     "opp": "Steelers",
-     "site": "home",
-     "date": "2026-10-01",
-     "p": 0.3838,
-     "won": null
-    },
-    {
-     "opp": "Jets",
-     "site": "away",
-     "date": "2026-10-11",
-     "p": 0.3676,
-     "won": null
-    },
-    {
-     "opp": "Ravens",
-     "site": "home",
-     "date": "2026-10-18",
-     "p": 0.2019,
-     "won": null
-    },
-    {
-     "opp": "Titans",
-     "site": "away",
-     "date": "2026-10-25",
-     "p": 0.376,
-     "won": null
-    },
-    {
-     "opp": "Steelers",
-     "site": "away",
-     "date": "2026-11-01",
-     "p": 0.323,
-     "won": null
-    },
-    {
-     "opp": "Saints",
-     "site": "away",
-     "date": "2026-11-08",
-     "p": 0.3521,
-     "won": null
-    },
-    {
-     "opp": "Texans",
-     "site": "home",
-     "date": "2026-11-15",
-     "p": 0.2381,
-     "won": null
-    },
-    {
-     "opp": "Raiders",
-     "site": "home",
-     "date": "2026-11-29",
-     "p": 0.4616,
-     "won": null
-    },
-    {
-     "opp": "Bengals",
-     "site": "home",
-     "date": "2026-12-06",
-     "p": 0.2731,
-     "won": null
-    },
-    {
-     "opp": "Falcons",
-     "site": "home",
-     "date": "2026-12-13",
-     "p": 0.4927,
-     "won": null
-    },
-    {
-     "opp": "Giants",
-     "site": "away",
-     "date": "2026-12-20",
-     "p": 0.3143,
-     "won": null
-    },
-    {
-     "opp": "Ravens",
-     "site": "away",
-     "date": "2026-12-27",
-     "p": 0.159,
-     "won": null
-    },
-    {
-     "opp": "Colts",
-     "site": "home",
-     "date": "2027-01-03",
-     "p": 0.3032,
-     "won": null
-    },
-    {
-     "opp": "Bengals",
-     "site": "away",
-     "date": "2027-01-10",
-     "p": 0.2215,
-     "won": null
-    }
-   ],
-   "rating": -6.92,
-   "proj": 5.9,
-   "played": 2,
-   "po": 0.0517,
-   "dv": 0.0054,
-   "sos": -0.56
-  },
-  {
-   "team": "TEN",
-   "name": "Titans",
-   "div": "AFC South",
-   "conf": "AFC",
-   "sched": [
-    {
-     "opp": "Jets",
-     "site": "home",
-     "date": "2026-09-13",
-     "p": 0.5238,
-     "won": false
-    },
-    {
-     "opp": "Eagles",
-     "site": "home",
-     "date": "2026-09-20",
-     "p": 0.3137,
-     "won": false
-    },
-    {
-     "opp": "Giants",
-     "site": "away",
-     "date": "2026-09-27",
-     "p": 0.4015,
-     "won": null
-    },
-    {
-     "opp": "Ravens",
-     "site": "away",
-     "date": "2026-10-04",
-     "p": 0.2224,
-     "won": null
-    },
-    {
-     "opp": "Texans",
-     "site": "home",
-     "date": "2026-10-11",
-     "p": 0.3163,
-     "won": null
-    },
-    {
-     "opp": "Colts",
-     "site": "away",
-     "date": "2026-10-18",
-     "p": 0.3283,
-     "won": null
-    },
-    {
-     "opp": "Browns",
-     "site": "home",
-     "date": "2026-10-25",
-     "p": 0.624,
-     "won": null
-    },
-    {
-     "opp": "Bengals",
-     "site": "away",
-     "date": "2026-11-01",
-     "p": 0.297,
-     "won": null
-    },
-    {
-     "opp": "Jaguars",
-     "site": "home",
-     "date": "2026-11-15",
-     "p": 0.3858,
-     "won": null
-    },
-    {
-     "opp": "Cowboys",
-     "site": "away",
-     "date": "2026-11-22",
-     "p": 0.3252,
-     "won": null
-    },
-    {
-     "opp": "Jaguars",
-     "site": "away",
-     "date": "2026-11-29",
-     "p": 0.3249,
-     "won": null
-    },
-    {
-     "opp": "Commanders",
-     "site": "home",
-     "date": "2026-12-06",
-     "p": 0.5025,
-     "won": null
-    },
-    {
-     "opp": "Lions",
-     "site": "away",
-     "date": "2026-12-13",
-     "p": 0.2997,
-     "won": null
-    },
-    {
-     "opp": "Colts",
-     "site": "home",
-     "date": "2026-12-20",
-     "p": 0.3894,
-     "won": null
-    },
-    {
-     "opp": "Raiders",
-     "site": "away",
-     "date": "2026-12-27",
-     "p": 0.4897,
-     "won": null
-    },
-    {
-     "opp": "Steelers",
-     "site": "home",
-     "date": "2027-01-03",
-     "p": 0.4756,
-     "won": null
-    },
-    {
-     "opp": "Texans",
-     "site": "away",
-     "date": "2027-01-10",
-     "p": 0.2605,
-     "won": null
-    }
-   ],
-   "rating": -3.82,
-   "proj": 5.6,
-   "played": 2,
-   "po": 0.0512,
-   "dv": 0.025,
-   "sos": 0.23
+   "po": 0.1629,
+   "dv": 0.0423,
+   "sos": 0.4
   },
   {
    "team": "ATL",
@@ -4003,70 +3471,70 @@
      "opp": "Steelers",
      "site": "away",
      "date": "2026-09-13",
-     "p": 0.3597,
+     "p": 0.3581,
      "won": false
     },
     {
      "opp": "Panthers",
      "site": "home",
      "date": "2026-09-20",
-     "p": 0.4429,
+     "p": 0.4471,
      "won": false
     },
     {
      "opp": "Packers",
      "site": "away",
      "date": "2026-09-24",
-     "p": 0.3065,
-     "won": null
+     "p": 0.3046,
+     "won": true
     },
     {
      "opp": "Saints",
      "site": "away",
      "date": "2026-10-05",
-     "p": 0.3899,
+     "p": 0.3897,
      "won": null
     },
     {
      "opp": "Ravens",
      "site": "home",
      "date": "2026-10-11",
-     "p": 0.2313,
+     "p": 0.2319,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "home",
      "date": "2026-10-18",
-     "p": 0.3519,
+     "p": 0.3551,
      "won": null
     },
     {
      "opp": "49ers",
      "site": "home",
      "date": "2026-10-25",
-     "p": 0.2556,
+     "p": 0.2602,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "away",
      "date": "2026-11-01",
-     "p": 0.339,
+     "p": 0.3377,
      "won": null
     },
     {
      "opp": "Bengals",
      "site": "home",
      "date": "2026-11-08",
-     "p": 0.3073,
+     "p": 0.3078,
      "won": null
     },
     {
      "opp": "Chiefs",
      "site": "home",
      "date": "2026-11-15",
-     "p": 0.2611,
+     "p": 0.2636,
      "won": null
     },
     {
@@ -4080,51 +3548,583 @@
      "opp": "Lions",
      "site": "home",
      "date": "2026-12-06",
-     "p": 0.31,
+     "p": 0.3104,
      "won": null
     },
     {
      "opp": "Browns",
      "site": "away",
      "date": "2026-12-13",
-     "p": 0.5073,
+     "p": 0.5033,
      "won": null
     },
     {
      "opp": "Commanders",
      "site": "away",
      "date": "2026-12-20",
-     "p": 0.3853,
+     "p": 0.3878,
      "won": null
     },
     {
      "opp": "Buccaneers",
      "site": "home",
      "date": "2026-12-27",
-     "p": 0.4008,
+     "p": 0.4006,
      "won": null
     },
     {
      "opp": "Saints",
      "site": "home",
      "date": "2027-01-03",
-     "p": 0.4539,
+     "p": 0.4549,
      "won": null
     },
     {
      "opp": "Panthers",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.3793,
+     "p": 0.3822,
      "won": null
     }
    ],
-   "rating": -5.6,
-   "proj": 5.2,
-   "played": 2,
-   "po": 0.0471,
-   "dv": 0.042,
+   "rating": -5.57,
+   "proj": 5.9,
+   "played": 3,
+   "po": 0.0872,
+   "dv": 0.0745,
    "sos": -0.42
+  },
+  {
+   "team": "ARI",
+   "name": "Cardinals",
+   "div": "NFC West",
+   "conf": "NFC",
+   "sched": [
+    {
+     "opp": "Chargers",
+     "site": "away",
+     "date": "2026-09-13",
+     "p": 0.3396,
+     "won": true
+    },
+    {
+     "opp": "Seahawks",
+     "site": "home",
+     "date": "2026-09-20",
+     "p": 0.3145,
+     "won": false
+    },
+    {
+     "opp": "49ers",
+     "site": "away",
+     "date": "2026-09-27",
+     "p": 0.2599,
+     "won": null
+    },
+    {
+     "opp": "Giants",
+     "site": "away",
+     "date": "2026-10-04",
+     "p": 0.4199,
+     "won": null
+    },
+    {
+     "opp": "Lions",
+     "site": "home",
+     "date": "2026-10-11",
+     "p": 0.3712,
+     "won": null
+    },
+    {
+     "opp": "Rams",
+     "site": "away",
+     "date": "2026-10-18",
+     "p": 0.2253,
+     "won": null
+    },
+    {
+     "opp": "Broncos",
+     "site": "home",
+     "date": "2026-10-25",
+     "p": 0.3766,
+     "won": null
+    },
+    {
+     "opp": "Cowboys",
+     "site": "away",
+     "date": "2026-11-01",
+     "p": 0.3388,
+     "won": null
+    },
+    {
+     "opp": "Seahawks",
+     "site": "away",
+     "date": "2026-11-08",
+     "p": 0.2579,
+     "won": null
+    },
+    {
+     "opp": "Rams",
+     "site": "home",
+     "date": "2026-11-15",
+     "p": 0.2784,
+     "won": null
+    },
+    {
+     "opp": "Chiefs",
+     "site": "away",
+     "date": "2026-11-22",
+     "p": 0.2633,
+     "won": null
+    },
+    {
+     "opp": "Commanders",
+     "site": "home",
+     "date": "2026-11-29",
+     "p": 0.519,
+     "won": null
+    },
+    {
+     "opp": "Eagles",
+     "site": "home",
+     "date": "2026-12-06",
+     "p": 0.3215,
+     "won": null
+    },
+    {
+     "opp": "Jets",
+     "site": "home",
+     "date": "2026-12-20",
+     "p": 0.5322,
+     "won": null
+    },
+    {
+     "opp": "Saints",
+     "site": "away",
+     "date": "2026-12-27",
+     "p": 0.4545,
+     "won": null
+    },
+    {
+     "opp": "Raiders",
+     "site": "home",
+     "date": "2027-01-03",
+     "p": 0.5692,
+     "won": null
+    },
+    {
+     "opp": "49ers",
+     "site": "home",
+     "date": "2027-01-10",
+     "p": 0.3167,
+     "won": null
+    }
+   ],
+   "rating": -3.38,
+   "proj": 6.5,
+   "played": 2,
+   "po": 0.0751,
+   "dv": 0.0066,
+   "sos": 1.49
+  },
+  {
+   "team": "TEN",
+   "name": "Titans",
+   "div": "AFC South",
+   "conf": "AFC",
+   "sched": [
+    {
+     "opp": "Jets",
+     "site": "home",
+     "date": "2026-09-13",
+     "p": 0.5239,
+     "won": false
+    },
+    {
+     "opp": "Eagles",
+     "site": "home",
+     "date": "2026-09-20",
+     "p": 0.3141,
+     "won": false
+    },
+    {
+     "opp": "Giants",
+     "site": "away",
+     "date": "2026-09-27",
+     "p": 0.4118,
+     "won": null
+    },
+    {
+     "opp": "Ravens",
+     "site": "away",
+     "date": "2026-10-04",
+     "p": 0.2253,
+     "won": null
+    },
+    {
+     "opp": "Texans",
+     "site": "home",
+     "date": "2026-10-11",
+     "p": 0.3222,
+     "won": null
+    },
+    {
+     "opp": "Colts",
+     "site": "away",
+     "date": "2026-10-18",
+     "p": 0.3334,
+     "won": null
+    },
+    {
+     "opp": "Browns",
+     "site": "home",
+     "date": "2026-10-25",
+     "p": 0.6255,
+     "won": null
+    },
+    {
+     "opp": "Bengals",
+     "site": "away",
+     "date": "2026-11-01",
+     "p": 0.3002,
+     "won": null
+    },
+    {
+     "opp": "Jaguars",
+     "site": "home",
+     "date": "2026-11-15",
+     "p": 0.3906,
+     "won": null
+    },
+    {
+     "opp": "Cowboys",
+     "site": "away",
+     "date": "2026-11-22",
+     "p": 0.3313,
+     "won": null
+    },
+    {
+     "opp": "Jaguars",
+     "site": "away",
+     "date": "2026-11-29",
+     "p": 0.3283,
+     "won": null
+    },
+    {
+     "opp": "Commanders",
+     "site": "home",
+     "date": "2026-12-06",
+     "p": 0.5107,
+     "won": null
+    },
+    {
+     "opp": "Lions",
+     "site": "away",
+     "date": "2026-12-13",
+     "p": 0.3028,
+     "won": null
+    },
+    {
+     "opp": "Colts",
+     "site": "home",
+     "date": "2026-12-20",
+     "p": 0.396,
+     "won": null
+    },
+    {
+     "opp": "Raiders",
+     "site": "away",
+     "date": "2026-12-27",
+     "p": 0.4947,
+     "won": null
+    },
+    {
+     "opp": "Steelers",
+     "site": "home",
+     "date": "2027-01-03",
+     "p": 0.4794,
+     "won": null
+    },
+    {
+     "opp": "Texans",
+     "site": "away",
+     "date": "2027-01-10",
+     "p": 0.2649,
+     "won": null
+    }
+   ],
+   "rating": -3.65,
+   "proj": 5.7,
+   "played": 2,
+   "po": 0.0576,
+   "dv": 0.0307,
+   "sos": 0.25
+  },
+  {
+   "team": "CLE",
+   "name": "Browns",
+   "div": "AFC North",
+   "conf": "AFC",
+   "sched": [
+    {
+     "opp": "Jaguars",
+     "site": "away",
+     "date": "2026-09-13",
+     "p": 0.2478,
+     "won": false
+    },
+    {
+     "opp": "Buccaneers",
+     "site": "away",
+     "date": "2026-09-20",
+     "p": 0.3049,
+     "won": true
+    },
+    {
+     "opp": "Panthers",
+     "site": "home",
+     "date": "2026-09-27",
+     "p": 0.4111,
+     "won": null
+    },
+    {
+     "opp": "Steelers",
+     "site": "home",
+     "date": "2026-10-01",
+     "p": 0.3865,
+     "won": null
+    },
+    {
+     "opp": "Jets",
+     "site": "away",
+     "date": "2026-10-11",
+     "p": 0.3656,
+     "won": null
+    },
+    {
+     "opp": "Ravens",
+     "site": "home",
+     "date": "2026-10-18",
+     "p": 0.2049,
+     "won": null
+    },
+    {
+     "opp": "Titans",
+     "site": "away",
+     "date": "2026-10-25",
+     "p": 0.3745,
+     "won": null
+    },
+    {
+     "opp": "Steelers",
+     "site": "away",
+     "date": "2026-11-01",
+     "p": 0.3245,
+     "won": null
+    },
+    {
+     "opp": "Saints",
+     "site": "away",
+     "date": "2026-11-08",
+     "p": 0.355,
+     "won": null
+    },
+    {
+     "opp": "Texans",
+     "site": "home",
+     "date": "2026-11-15",
+     "p": 0.2425,
+     "won": null
+    },
+    {
+     "opp": "Raiders",
+     "site": "home",
+     "date": "2026-11-29",
+     "p": 0.4669,
+     "won": null
+    },
+    {
+     "opp": "Bengals",
+     "site": "home",
+     "date": "2026-12-06",
+     "p": 0.2763,
+     "won": null
+    },
+    {
+     "opp": "Falcons",
+     "site": "home",
+     "date": "2026-12-13",
+     "p": 0.4967,
+     "won": null
+    },
+    {
+     "opp": "Giants",
+     "site": "away",
+     "date": "2026-12-20",
+     "p": 0.3229,
+     "won": null
+    },
+    {
+     "opp": "Ravens",
+     "site": "away",
+     "date": "2026-12-27",
+     "p": 0.1608,
+     "won": null
+    },
+    {
+     "opp": "Colts",
+     "site": "home",
+     "date": "2027-01-03",
+     "p": 0.3084,
+     "won": null
+    },
+    {
+     "opp": "Bengals",
+     "site": "away",
+     "date": "2027-01-10",
+     "p": 0.2235,
+     "won": null
+    }
+   ],
+   "rating": -6.78,
+   "proj": 5.9,
+   "played": 2,
+   "po": 0.0563,
+   "dv": 0.005,
+   "sos": -0.54
+  },
+  {
+   "team": "WAS",
+   "name": "Commanders",
+   "div": "NFC East",
+   "conf": "NFC",
+   "sched": [
+    {
+     "opp": "Eagles",
+     "site": "away",
+     "date": "2026-09-13",
+     "p": 0.2761,
+     "won": false
+    },
+    {
+     "opp": "Cowboys",
+     "site": "away",
+     "date": "2026-09-20",
+     "p": 0.352,
+     "won": false
+    },
+    {
+     "opp": "Seahawks",
+     "site": "home",
+     "date": "2026-09-27",
+     "p": 0.3273,
+     "won": null
+    },
+    {
+     "opp": "Colts",
+     "site": "home",
+     "date": "2026-10-04",
+     "p": 0.4179,
+     "won": null
+    },
+    {
+     "opp": "Giants",
+     "site": "home",
+     "date": "2026-10-11",
+     "p": 0.5002,
+     "won": null
+    },
+    {
+     "opp": "49ers",
+     "site": "away",
+     "date": "2026-10-19",
+     "p": 0.2716,
+     "won": null
+    },
+    {
+     "opp": "Eagles",
+     "site": "home",
+     "date": "2026-11-01",
+     "p": 0.3345,
+     "won": null
+    },
+    {
+     "opp": "Rams",
+     "site": "home",
+     "date": "2026-11-08",
+     "p": 0.2905,
+     "won": null
+    },
+    {
+     "opp": "Giants",
+     "site": "away",
+     "date": "2026-11-12",
+     "p": 0.434,
+     "won": null
+    },
+    {
+     "opp": "Bengals",
+     "site": "home",
+     "date": "2026-11-23",
+     "p": 0.3819,
+     "won": null
+    },
+    {
+     "opp": "Cardinals",
+     "site": "away",
+     "date": "2026-11-29",
+     "p": 0.481,
+     "won": null
+    },
+    {
+     "opp": "Titans",
+     "site": "away",
+     "date": "2026-12-06",
+     "p": 0.4893,
+     "won": null
+    },
+    {
+     "opp": "Texans",
+     "site": "home",
+     "date": "2026-12-13",
+     "p": 0.3427,
+     "won": null
+    },
+    {
+     "opp": "Falcons",
+     "site": "home",
+     "date": "2026-12-20",
+     "p": 0.6122,
+     "won": null
+    },
+    {
+     "opp": "Vikings",
+     "site": "away",
+     "date": "2026-12-27",
+     "p": 0.3759,
+     "won": null
+    },
+    {
+     "opp": "Jaguars",
+     "site": "away",
+     "date": "2027-01-03",
+     "p": 0.349,
+     "won": null
+    },
+    {
+     "opp": "Cowboys",
+     "site": "home",
+     "date": "2027-01-10",
+     "p": 0.4157,
+     "won": null
+    }
+   ],
+   "rating": -2.9,
+   "proj": 6.0,
+   "played": 2,
+   "po": 0.0562,
+   "dv": 0.018,
+   "sos": 0.88
   },
   {
    "team": "MIA",
@@ -4136,128 +4136,128 @@
      "opp": "Raiders",
      "site": "away",
      "date": "2026-09-13",
-     "p": 0.3758,
+     "p": 0.3745,
      "won": false
     },
     {
      "opp": "49ers",
      "site": "away",
      "date": "2026-09-20",
-     "p": 0.1642,
+     "p": 0.1657,
      "won": false
     },
     {
      "opp": "Chiefs",
      "site": "home",
      "date": "2026-09-27",
-     "p": 0.2128,
+     "p": 0.2136,
      "won": null
     },
     {
      "opp": "Vikings",
      "site": "away",
      "date": "2026-10-04",
-     "p": 0.25,
+     "p": 0.2484,
      "won": null
     },
     {
      "opp": "Bengals",
      "site": "home",
      "date": "2026-10-11",
-     "p": 0.2546,
+     "p": 0.2534,
      "won": null
     },
     {
      "opp": "Jets",
      "site": "away",
      "date": "2026-10-25",
-     "p": 0.3465,
+     "p": 0.3396,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "home",
      "date": "2026-11-01",
-     "p": 0.2793,
+     "p": 0.2771,
      "won": null
     },
     {
      "opp": "Lions",
      "site": "home",
      "date": "2026-11-08",
-     "p": 0.2571,
+     "p": 0.2558,
      "won": null
     },
     {
      "opp": "Colts",
      "site": "away",
      "date": "2026-11-15",
-     "p": 0.2311,
+     "p": 0.2304,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "away",
      "date": "2026-11-22",
-     "p": 0.1279,
+     "p": 0.1267,
      "won": null
     },
     {
      "opp": "Jets",
      "site": "home",
      "date": "2026-11-29",
-     "p": 0.4087,
+     "p": 0.4025,
      "won": null
     },
     {
      "opp": "Broncos",
      "site": "away",
      "date": "2026-12-06",
-     "p": 0.208,
+     "p": 0.2093,
      "won": null
     },
     {
      "opp": "Bears",
      "site": "home",
      "date": "2026-12-13",
-     "p": 0.2957,
+     "p": 0.2969,
      "won": null
     },
     {
      "opp": "Packers",
      "site": "away",
      "date": "2026-12-20",
-     "p": 0.2539,
+     "p": 0.2505,
      "won": null
     },
     {
      "opp": "Chargers",
      "site": "home",
      "date": "2026-12-27",
-     "p": 0.2839,
+     "p": 0.2829,
      "won": null
     },
     {
      "opp": "Bills",
      "site": "home",
      "date": "2027-01-03",
-     "p": 0.1653,
+     "p": 0.1647,
      "won": null
     },
     {
      "opp": "Patriots",
      "site": "away",
      "date": "2027-01-10",
-     "p": 0.227,
+     "p": 0.2242,
      "won": null
     }
    ],
-   "rating": -7.66,
+   "rating": -7.7,
    "proj": 3.8,
    "played": 2,
-   "po": 0.0032,
-   "dv": 0.0004,
-   "sos": 1.18
+   "po": 0.0028,
+   "dv": 0.0002,
+   "sos": 1.19
   }
  ]
 }
