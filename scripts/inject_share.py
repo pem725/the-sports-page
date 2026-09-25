@@ -195,8 +195,14 @@ def og_tags(filename, hed, deck):
 # the matching </div> or </section> inside HTML that contains nested divs.
 # Share sections are always at the END of the file by design, so anchoring
 # to </body> is safe and idempotent.
+# MATCH THE LEGACY MARKER TOO. This recognised only '<!-- SHARE SECTION -->'.
+# Twenty-three issues carried an older '<!-- SHARE -->' block, which the pattern
+# could not see, so every run appended a SECOND share section underneath the
+# first -- two complete share panels and a duplicate id, in published work. The
+# docstring claimed idempotence and it was only ever idempotent against blocks
+# already carrying the new marker.
 SHARE_BLOCK_RE = re.compile(
-    r'<!-- SHARE SECTION -->.*?(?=</body>)',
+    r'<!--\s*SHARE(?:\s+SECTION)?\s*-->.*?(?=</body>)',
     re.DOTALL,
 )
 OG_BLOCK_RE = re.compile(
