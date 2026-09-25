@@ -146,8 +146,19 @@ def mlb_watch(date):
                    + ("Both clubs sit near a coin flip, which is where a single game is worth most."
                       if both else
                       "One club is on the bubble and the other is settled, so the whole swing lands on one side."))
-    best["tells"] = (f'If the {best["home"]} win they go to {(best["hp"]+abs(best["dh"])/2)*100:.0f}%; '
-                     f'if they lose, {(best["hp"]-abs(best["dh"])/2)*100:.0f}%.')
+    # NAME THE CLUB THAT ACTUALLY MOVES, not whichever happens to be at home.
+    # This reported the home club unconditionally, so on 2026-09-24 -- Astros at
+    # Athletics, 28 points of swing, every one of them Houston's -- it printed
+    # "If the Athletics win they go to 0%; if they lose, 0%" directly beneath a
+    # sentence saying 28 points rode on the game. An eliminated club is 0% either
+    # way; that is WHY the swing is one-sided, and printing its flat line as the
+    # evidence contradicts the claim above it. Three published issues carry that
+    # sentence. The fix is to report whichever side the probability belongs to.
+    mover, mp, md = ((best["home"], best["hp"], best["dh"])
+                     if abs(best["dh"]) >= abs(best["da"])
+                     else (best["away"], best["ap"], best["da"]))
+    best["tells"] = (f'If the {mover} win they go to {(mp+abs(md)/2)*100:.0f}%; '
+                     f'if they lose, {(mp-abs(md)/2)*100:.0f}%.')
     return best
 
 
