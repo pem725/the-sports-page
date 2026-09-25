@@ -133,7 +133,7 @@ the pandemic season absorb an explanation it cannot have caused.
 
 ---
 
-## C. Analyses already specified, not yet built
+## C. Analyses specified, not yet built
 
 ### C1. "A stat is a gauge, not a target" — concept primer
 The editor's framing, from the Sep 18 meeting: *"Your cholesterol is a biomarker.
