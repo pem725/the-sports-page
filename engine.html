@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Engine &mdash; How The Sports Page Is Made</title>
+<meta name="description" content="One editor, one machine, 180 issues in 181 days. The full architecture of a small daily newspaper built on statistics: what it checks, what it got wrong, and how to take it.">
+<meta property="og:title" content="The Engine — How The Sports Page Is Made">
+<meta property="og:description" content="One editor, one machine, 180 issues in 181 days. The whole apparatus, including the failures, given away.">
+<meta property="og:url" content="https://thesportspage.net/engine.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital@0;1&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:1.6rem 1.15rem 4rem;background:var(--cream)}
+.kick{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust)}
+h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.9rem,5.5vw,2.9rem);line-height:1.08;margin:.3rem 0 .7rem}
+h2{font-family:'Playfair Display',serif;font-weight:700;font-size:1.28rem;margin:2.6rem 0 .7rem;padding-top:1rem;border-top:2px solid var(--ink)}
+h3{font-family:'Playfair Display',serif;font-weight:700;font-size:1.03rem;margin:1.6rem 0 .4rem}
+p{margin:.8rem 0}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.08rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:1rem;margin:1rem 0 1.6rem;line-height:1.6}
+.creed{background:var(--ink);color:#e8dcc4;padding:1.8rem 2rem;margin:2rem 0;text-align:center}
+.creed p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.22rem;line-height:1.5;color:#f5f0e8;margin:0}
+.creed cite{display:block;font-family:'Roboto Mono',monospace;font-style:normal;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:.9rem}
+table{width:100%;border-collapse:collapse;margin:1.1rem 0;font-size:.83rem}
+th,td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--div);vertical-align:top}
+th{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+td.n{font-family:'Roboto Mono',monospace;text-align:right;white-space:nowrap}
+code{font-family:'Roboto Mono',monospace;font-size:.85em;background:var(--card);padding:.1rem .3rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:1.6rem 0}
+@media(max-width:560px){.stats{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:.9rem .6rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;line-height:1;color:var(--steel)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:.35rem;line-height:1.35}
+.fail{border-left:3px solid var(--rust);background:#f0e6da;padding:.9rem 1.1rem;margin:1rem 0;font-size:.88rem}
+.fail b{color:var(--rust)}
+.note{font-size:.86rem;color:var(--muted);border-top:1px solid var(--div);padding-top:.7rem;margin-top:1.6rem}
+a{color:var(--rust)}
+.foot{font-size:.78rem;color:var(--muted);border-top:2px solid var(--ink);margin-top:3rem;padding-top:1rem}
+ul{margin:.7rem 0 .7rem 1.1rem;padding:0}
+li{margin:.35rem 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="kick">The Sports Page &middot; Open Engine</div>
+<h1>The Engine</h1>
+
+<div class="deck">
+One editor and one machine have put out 180 issues in 181 days. This page is the
+whole apparatus &mdash; the architecture, the editorial rules, the seven automated
+checks, and the complete list of things it got wrong. Take any of it. None of it
+is behind a wall.
+</div>
+
+<div class="stats">
+  <div class="sc"><div class="v">180</div><div class="l">issues in 181 days</div></div>
+  <div class="sc"><div class="v">6.96</div><div class="l">issues per week</div></div>
+  <div class="sc"><div class="v">75</div><div class="l">scripts, 15,718 lines</div></div>
+  <div class="sc"><div class="v">1</div><div class="l">person writing it</div></div>
+</div>
+
+<h2>Why this exists</h2>
+
+<p>Statistics is the most useful thing almost nobody is taught properly. It is the
+difference between being persuaded and being informed, and it is currently sold
+as a specialism &mdash; priced, credentialed, and kept behind institutions.</p>
+
+<p>The bet here is that sport is the best possible smuggling route. People already
+argue about numbers on a Sunday. They already have intuitions about luck, streaks,
+small samples and regression; they just do not have the words. Give them the
+words, using something they already care about, and the skill goes home with
+them &mdash; to a medical decision, a mortgage, a ballot, a headline.</p>
+
+<div class="creed">
+  <p>We question uncertainty with curiosity,<br>but we brave uncertainty with purpose.</p>
+  <cite>The Sports Page</cite>
+</div>
+
+<p>There are too many people born into mud and held there. Our species does better
+when everybody gets to rise to their potential, and the cheapest lever anybody has
+ever found for that is a printing press that does not ask who you are before it
+prints. This is the same idea with different machinery.</p>
+
+<p>So: no paywall, no silo, no credential. The skills are the product and the
+product is free.</p>
+
+<h2>What one person plus a machine actually looks like</h2>
+
+<p>The honest division of labor, because this is the part the industry asks about
+and the part most people are vague on.</p>
+
+<table>
+<tr><th>The editor does</th><th>The machine does</th></tr>
+<tr>
+  <td>Decides what matters. Supplies the voice, the judgment, the taste, and the
+  line nobody can compute. Kills the piece that is technically fine and
+  spiritually empty. Says "that is too flowery" and means it.</td>
+  <td>Pulls the data, computes the thing, drafts to a house style, runs every
+  check, builds the figure, renders the card, publishes at 4:30am, and keeps a
+  written record of every mistake so the same one is harder to make twice.</td>
+</tr>
+<tr>
+  <td>Owns being wrong in public.</td>
+  <td>Makes being wrong <em>discoverable</em>, which is the only reason the first
+  column is possible.</td>
+</tr>
+</table>
+
+<p>The thing that surprises people: the machine's most valuable output is not
+prose. It is <b>refusal</b>. A script that says <code>UNRATEABLE</code> rather than
+inventing a projection, or that exits rather than grading a forecast against
+ratings that have already absorbed the result, is worth more than a thousand
+competent paragraphs.</p>
+
+<h2>The architecture</h2>
+
+<p>Flat files. No database, no CMS, no framework. The site is static HTML on
+GitHub Pages; every issue is a self-contained page with its own styles and its own
+inline SVG figures. This is a deliberate choice, not a limitation &mdash; a
+newspaper should outlive its toolchain, and a folder of HTML will still open in
+thirty years.</p>
+
+<h3>The daily run</h3>
+
+<p>A scheduled job wakes, and in order:</p>
+
+<ul>
+<li><b>Refuses to run on Sunday.</b> Sundays are the accountability edition and
+they are written by hand.</li>
+<li><b>Guards against double-publishing</b>, then looks <em>backwards</em> for days
+that silently produced nothing. A missed day is a failure that reports itself.</li>
+<li><b>Picks the next piece</b> from an explicit running order, enforcing one rule
+that cannot be overridden by accident: no two consecutive issues on the same
+topic.</li>
+<li><b>Stamps</b> the issue number and date, derived from the archive rather than
+stored anywhere that can drift.</li>
+<li><b>Cross-references</b> every "see Issue #N" against what has actually
+published, so a piece cannot cite the future.</li>
+<li><b>Runs the checks</b> &mdash; readability, then layout, on the file as it will
+actually ship rather than the draft.</li>
+<li><b>Renders</b> the social card and rasterizes the figures so they survive
+email.</li>
+<li><b>Rebuilds</b> the feed, the odds board, and the about page's live figures,
+because hand-written pages rot.</li>
+<li><b>Commits and pushes.</b> Every step that fails softly still marks the run as
+failed, so the alert email arrives. The alerts are the monitoring and they are
+deliberately never muted.</li>
+</ul>
+
+<h3>How a story gets chosen</h3>
+
+<p>Not by vibe. Every candidate is scored:</p>
+
+<p style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.9rem;margin:1.2rem 0">
+NEWSINESS = (GRIP / 10) &times; (0.35&thinsp;TWIST + 0.25&thinsp;CLOCK + 0.15&thinsp;STACK + 0.25&thinsp;CARRY)</p>
+
+<p><b>GRIP multiplies rather than adds, and that is the whole editorial position.</b>
+This is statistics driven by sport, not sport driven by statistics. A championship
+game with a dull number scores near nothing. A Tuesday fixture between two
+eliminated clubs with a shocking number can lead. Audience &mdash; STACK &mdash;
+carries the smallest weight on purpose.</p>
+
+<p>The rejects are logged too, with reasons. What a paper passed over is a more
+honest account of its judgment than what it ran.</p>
+
+<h2>The seven checks</h2>
+
+<p>Every draft passes through these before it can publish. Each one states its own
+honest limit, in its own source, because a check that oversells itself is worse
+than no check.</p>
+
+<table>
+<tr><th>Check</th><th>What it measures</th><th>What it cannot see</th></tr>
+<tr><td><code>readability</code></td><td>Flesch-Kincaid against a sixth-grade
+target, plus whether the piece states its question, its answer, why it is
+surprising, and what the reader gets</td><td>whether the question is a real
+question or a rhetorical one</td></tr>
+<tr><td><code>voice</code></td><td>Person. Second-person address, first-person
+plural, imperatives and semicolons per thousand words, measured against 52,069
+words of the editor's own teaching prose</td><td>whether the writing is any
+good</td></tr>
+<tr><td><code>headline</code></td><td>Beats, length, plain vocabulary, whether a
+number counts things rather than statistics, and the rate of the house's own worst
+tic</td><td>whether the headline is true to the piece</td></tr>
+<tr><td><code>layout</code></td><td>Whether the page declares what it uses &mdash;
+undefined classes and variables, nested anchors, duplicate ids, unbalanced
+tags</td><td>collisions and overflow; those need a browser</td></tr>
+<tr><td><code>spelling</code></td><td>British spellings in an American
+paper</td><td>words spelled correctly and used wrongly</td></tr>
+<tr><td><code>poll claims</code></td><td>Any ranking or award cited before its
+scheduled release</td><td>a fabrication that happens to land after the release
+date</td></tr>
+<tr><td><code>queue health</code></td><td>Walks the real calendar for topic
+clashes, pieces that will be stale by their slot, and buffer depth</td><td>whether
+any of the queued pieces are worth running</td></tr>
+</table>
+
+<p>There is one standing rule about all of them, learned expensively:
+<b>when a check disagrees with the work, suspect the check first.</b> It has been
+the check nine times running.</p>
+
+<h2>What broke</h2>
+
+<p>This is the section other people leave out, and it is the most useful one. Every
+item below actually happened and is recorded in the repository with the fix.</p>
+
+<div class="fail">
+<b>A fabricated ranking led a Sunday edition.</b> The piece claimed a team had
+gone from unranked to tenth in a poll. No such poll existed &mdash; the week ran
+through a holiday and the first in-season poll had not been published. Asked what
+the new poll said, a search summarizer answered <em>as if it existed</em>,
+reconstructing a plausible ranking from a previous season. Every surrounding fact
+was correct, which is exactly what let the false one survive.
+<br><br><b>The rule now:</b> a search may point you at a fact; it may never be the
+source of one. Anything that grades a forecast traces to a primary feed. Nothing
+is cited before its scheduled release.
+</div>
+
+<div class="fail">
+<b>A model went 15 for 15 and that was the bug.</b> A backtest graded past games
+against ratings that had already absorbed those games' results. Perfect accuracy
+was the symptom. The grader now requires a frozen weekly snapshot and exits rather
+than falling back to current numbers.
+</div>
+
+<div class="fail">
+<b>Fifty-one social cards used the wrong typeface for months.</b> An older
+rendering library could not parse a quoted font list, matched nothing, and fell
+back to a default serif. Nobody reported it because <em>a plausible serif looks
+fine</em>. Tofu boxes get noticed in a day; a wrong-but-reasonable font never does.
+</div>
+
+<div class="fail">
+<b>One character silently destroyed a card.</b> A superscript-two entity in a
+chart label made the renderer reject the whole image, and the generator fell back
+to a plain stat row. The article shipped with the wrong hero image for weeks. The
+entity translator's pattern matched letters only, so every entity whose name
+contains a digit was invisible to it.
+</div>
+
+<div class="fail">
+<b>The topic icons rendered at 642&times;494 pixels.</b> They were drawn for 20.
+The archive and the email feed both copy the headline markup out of the issue, but
+the stylesheet that sized them lives inside the issue and did not travel. An SVG
+with no intrinsic size expands to fill its container.
+</div>
+
+<div class="fail">
+<b>Twenty issues lost a panel's margins; twenty-three printed a share block
+twice.</b> Same root cause, twice: markup copied to a place its CSS was not, and a
+find-and-replace that recognized only the newer of two markers. Both were visible
+on the page for weeks. Both were found by writing a checker, not by looking.
+</div>
+
+<div class="fail">
+<b>A sign error returned a perfect week.</b> An against-the-spread calculation
+added where it should have subtracted and reported 14 from 14. It was caught by
+disbelieving the result, which is the only reason it was caught at all.
+</div>
+
+<p>The pattern across every one of these is worth stating plainly, because it is
+the real lesson of building anything like this:</p>
+
+<p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;line-height:1.5;margin:1.2rem 0">
+The failures that survive are the ones that still look fine. Nothing was blank,
+nothing errored, and every broken thing rendered as a slightly worse version of
+the intended thing.</p>
+
+<p>Which is why the answer is never "be more careful." Careful has already failed
+by the time you find out. The answer is an instrument that looks at the artifact
+as printed, and a written record so the same mistake costs less the second time.</p>
+
+<h2>The accountability edition</h2>
+
+<p>Every Sunday the paper grades itself in public. Predictions from the week are
+re-run against what actually happened and marked hit, miss, partial or pending.
+Misses are the point; a Sunday edition that cannot find anything it got wrong is
+usually one that did not look.</p>
+
+<p>For anything involving our own forecasting, the reasoning is <b>sealed before
+kickoff</b> &mdash; written, moved out of the repository, and published only as a
+cryptographic digest of its exact bytes. Afterwards the text goes up and the
+digest is recomputed. Change one character and it will not match.</p>
+
+<p>This exists because anybody can write a rationale after a result and sincerely
+believe they thought it beforehand. That is memory working normally, which is
+precisely why a promise not to do it is worth nothing and a hash is worth
+something.</p>
+
+<h2>Take it</h2>
+
+<p>The entire repository is public: the scripts, the checks, the editorial rules,
+the failure log, the prompts. If you are a writer with a subject and no engine,
+this is the engine. If you are a newsroom wondering whether this works, the answer
+is that it produced a daily paper for six months with one person's judgment in
+front of it, and the judgment is still the expensive part.</p>
+
+<p><b>What you actually need:</b> a subject you know better than your reader, a
+source of real data with a primary feed, a willingness to publish your misses, and
+about a two weeks of setup. Not a newsroom. Not a budget.</p>
+
+<p><b>What you should copy first:</b> not the code. The failure log. Start the
+document that records what went wrong and what the fix was, on day one, before you
+have anything to put in it. Everything else here grew out of that file.</p>
+
+<p class="note">The Sports Page is licensed for non-commercial use with
+attribution. Borrow it and give it back better. If you want to do something
+commercial with it, the door is open &mdash; please knock. Full terms at
+<a href="https://thesportspage.net/license.html">thesportspage.net/license.html</a>.</p>
+
+<div class="foot">
+<b>The Sports Page</b> &mdash; one question per issue, answered with numbers.<br>
+Every figure on this page was measured from the repository on 25 September 2026.<br>
+<a href="https://thesportspage.net/">The paper</a> &middot;
+<a href="https://thesportspage.net/newsroom.html">The newsroom</a> &middot;
+<a href="https://thesportspage.net/ask.html">Ask us something</a>
+</div>
+
+</div>
+</body>
+</html>

@@ -529,6 +529,28 @@ second card.** Three blocks had piled up between the archive heading and the fir
 issue; the fix took it to one. The measure that matters is how far a reader
 scrolls before reaching an actual story.
 
+### `engine.html` — the guts, opened up
+
+The public account of how this paper is built: architecture, the daily run, the
+NEWSINESS metric, the seven checks with each one's stated limit, and **an
+unvarnished list of everything that broke**. Written 2026-09-25 on the editor's
+instruction to open the engine so other people can take it.
+
+Two things about it that matter.
+
+**Every figure on it was measured, and it says so with a date.** 180 issues in
+181 days, 6.96 a week, 75 scripts, 15,718 lines. Those go stale. When they are
+refreshed, re-measure rather than edit — the commands are the ones in this file —
+and move the date line in the footer.
+
+**The failure log is the point, not the architecture.** Anybody can publish a
+diagram of their pipeline. The section that is actually worth something to another
+newsroom is the one listing the fabricated ranking, the 15-for-15 leak, the font
+that was wrong for months, and the share panel that printed twice — because every
+one of those failed while still looking fine. Do not quietly drop an item from it
+once it is fixed. A fixed bug that is no longer recorded is a bug that costs full
+price the next time.
+
 ### NEWSINESS — the metric that picks the story
 
 `scripts/newsiness.py`, rubric in `SKILL.md` Step 0.5, candidates in
