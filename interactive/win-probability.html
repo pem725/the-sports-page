@@ -33,7 +33,7 @@ a{color:var(--rust)}
 <div class="wrap">
   <div class="kick">The Sports Page &middot; Interactive</div>
   <h1>How Many Points Do You Need to Win?</h1>
-  <p class="deck">Two questions on one pair of axes. How many must you <em>score</em> &mdash; and how few must you <em>allow</em>? Every NFL season from 1999 to 2025.</p>
+  <p class="deck">Two questions on one pair of axes &mdash; with, it turns out, one answer. How many must you <em>score</em> &mdash; and how few must you <em>allow</em>? Every NFL season from 1999 to 2025.</p>
 
   <svg id="c" viewBox="0 0 880 490" role="img" aria-label="Win probability against points scored and points allowed, animated by season"></svg>
 
@@ -55,6 +55,12 @@ a{color:var(--rust)}
   <b>Why the two curves cross at 50%, and why that is not a finding.</b> They have to. Every game in which one team <em>scored</em> 24 is the same game in which the other <em>allowed</em> 24 &mdash; so the chance of winning having allowed x points is, by construction, one minus the chance of winning having scored x. The two curves are mirror images through the halfway line, and in the data they sum to 1.000 at every score. The only slack is ties, which are 30 of 13,928 team-games.
 
   This page previously read that as evidence that offense and defense are worth the same. <b>That was wrong</b> &mdash; it is an identity, not a measurement, and it would hold in any league in any sport regardless of how the game were played. Corrected 25 September 2026, after a reader asked the obvious question we had not.<br><br>
+
+  <b>Is it ipsative? The outcome is. The performance is not.</b> Worth separating, because the two get conflated constantly. A football result is zero-sum by the rules &mdash; across 6,964 complete games the two teams&rsquo; wins sum to exactly one, with 15 ties the only exception. That constraint is what the curves inherit, and it makes them ipsative in the strict sense: they correlate at <b>&minus;0.9999</b> and sum to <b>1.00</b>.
+  <br><br>
+  But a <em>team&rsquo;s</em> offense and defense are not ipsative at all. Over 861 team-seasons, points scored and points allowed correlate <b>&minus;0.15</b>, and their sum runs from 462 to 1,011. Nothing forces a club to trade one for the other; plenty are good at both and plenty are bad at both. So the zero-sum lives in <em>who won</em>, never in <em>how well anyone played</em>.
+  <br><br>
+  One consequence, stated plainly: <b>the red curve carries no information the blue one does not.</b> It is the same measurement relabeled. Drawing both is a convenience &mdash; "how few must I allow" is a question people genuinely ask &mdash; but it is one finding shown twice, not two findings. The <em>height</em> of the crossing is forced; only its <em>position</em> along the bottom is measured.<br><br>
 
   <b>What is actually empirical here</b> is the shape and where it sits. The dots are the observed win rate in each band of points, with 95% intervals and a dot that grows with the number of games behind it; the smooth line is a fit to those dots and nothing more. Watch the whole thing slide right as the years run &mdash; the 50% point moves from <b>20.6</b> points in 1999 to <b>23.0</b> in 2025, tracking the league&rsquo;s own scoring almost exactly.<br><br>
 
