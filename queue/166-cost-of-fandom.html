@@ -1,0 +1,258 @@
+<!-- PUBLISH-META
+topic: Markets
+decay: keeps
+tags: Markets, Money, Compounding, Financial Literacy
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Two Fans Spent the Same $84,000. One of Them Has $167,000.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Two Fans Spent the Same $84,000. One of Them Has $167,000.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/166-cost-of-fandom.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/166-cost-of-fandom.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Two Fans Spent the Same $84,000. One of Them Has $167,000.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/166-cost-of-fandom.png">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Markets &middot; thesportspage.net, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. 186</span>
+    <span>October 1, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--gold)" title="Markets"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M3.6 16h18.8" stroke="currentColor" stroke-width="1.6"/><rect x="5.6" y="9.4" width="3.8" height="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11.1" y="4.6" width="3.8" height="11.4" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="16.6" y="11.4" width="3.8" height="4.6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>Two Fans Spent the Same $84,000. <em>One of Them Has $167,000.</em></h1>
+
+  <div class="deck">
+    A hundred dollars a week, every week of the football season, for forty seasons. One of them put it through a betting pool. The other bought a plain index fund and did nothing. We ran it on the real market, every starting year since 1970, and the gap at the end is larger than everything either of them ever paid in.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; 56 years of real weekly closes</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">$84,000</div><div class="l">what each one paid in</div></div>
+    <div class="sc"><div class="v bad">$80,182</div><div class="l">the bettor ends with</div></div>
+    <div class="sc"><div class="v good">$167,377</div><div class="l">the index fund ends with</div></div>
+  </div>
+
+
+  <p><b>What does it really cost to bet on football?</b> Not the losing weeks. The whole thing, measured against what the same money would have done somewhere dull.</p>
+
+  <p>Take two fans. Both spend <b>$100 a week</b> through the season &mdash; eighteen weeks and the playoffs, about twenty-one weeks, $2,100 a year. One runs it through a pool at standard prices. The other buys a plain index fund and forgets about it.</p>
+
+  <p>After forty seasons they have each paid in <b>$84,000</b>. The bettor has <b>$80,182</b>. The index fund has <b>$167,377</b>.</p>
+
+  <p>Most people expect the bettor to be the one who lost money. He is not &mdash; he is down less than four thousand dollars. What happened is that the other man's money was busy the whole time, and by the end you will see why that gap is bigger than the entire amount either of them spent.</p>
+
+  <h2 class="sh">The price of one week</h2>
+
+  <p>A standard football line is priced at &minus;110 on both sides. That means you risk $110 to win $100, whichever side you take. Two sides at that price add up to <b>104.76%</b> &mdash; and since no game has a 104.76% chance of happening, the extra 4.76 points are the house's.</p>
+
+  <p>Run it through and a bettor who picks at a true coin flip loses <b>4.545%</b> of everything he stakes. Not of what he loses. Of what he <em>puts through</em>. It is a toll on the money; it is collected whether you win or lose.</p>
+
+  <p>On $100 a week that is about <b>$4.55</b>. That is the number, and honestly, it is small. Four dollars and fifty-five cents for a week of caring about the one o'clock games is not a scandal. Over a season it is $95. You would pay that for a decent seat.</p>
+
+  <div class="pull">
+    <p>Four dollars and fifty-five cents a week is not the problem. Four dollars and fifty-five cents a week for forty years, against money that was compounding instead, is the problem.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Watch the two lines separate</h2>
+
+  <p>We did not assume a rate of return. We used the actual weekly closes of the S&amp;P 500 back to 1970 and ran the whole thing from <em>every</em> starting year, so each figure is something that happened to somebody real.</p>
+
+  <figure style="margin:2rem 0">
+  <svg viewBox="0 0 720 360" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One hundred dollars a week through a football season, bet or invested, over forty seasons. The betting line stays just below the money paid in. The index line curves away, reaching about 167,000 dollars against 80,000." font-family="'Roboto Mono',monospace">
+  <rect width="720" height="360" fill="var(--cream)"/>
+  <polygon points="74.0,269.0 89.8,265.5 105.6,261.9 121.4,257.5 137.2,253.0 153.0,248.4 168.8,243.6 184.6,238.6 200.4,233.0 216.2,227.8 231.9,222.3 247.7,216.9 263.5,211.7 279.3,206.4 295.1,200.3 310.9,194.1 326.7,187.7 342.5,180.9 358.3,174.1 374.1,166.3 389.9,158.5 405.7,150.7 421.5,143.4 437.3,136.6 453.1,129.2 468.9,120.4 484.7,111.8 500.5,103.2 516.3,93.9 532.1,84.0 547.8,91.4 563.6,82.8 579.4,72.5 595.2,62.5 611.0,52.5 626.8,41.6 642.6,30.0 658.4,46.6 674.2,46.0 690.0,36.3 690.0,96.7 674.2,109.5 658.4,117.1 642.6,124.2 626.8,130.8 611.0,137.3 595.2,144.0 579.4,149.7 563.6,154.9 547.8,160.4 532.1,166.7 516.3,172.9 500.5,178.3 484.7,183.8 468.9,188.9 453.1,193.8 437.3,198.7 421.5,203.0 405.7,207.0 389.9,211.3 374.1,215.7 358.3,219.9 342.5,224.3 326.7,228.3 310.9,232.2 295.1,235.8 279.3,239.4 263.5,242.9 247.7,245.9 231.9,248.6 216.2,251.0 200.4,253.1 184.6,255.3 168.8,257.5 153.0,259.8 137.2,261.9 121.4,263.9 105.6,265.9 89.8,267.7 74.0,269.5" fill="var(--steel)" opacity=".16"/>
+  <polyline points="74.0,269.2 89.8,266.3 105.6,263.3 121.4,260.3 137.2,257.1 153.0,253.9 168.8,250.9 184.6,247.3 200.4,243.9 216.2,240.3 231.9,236.4 247.7,232.4 263.5,228.1 279.3,224.0 295.1,219.4 310.9,215.5 326.7,211.7 342.5,207.7 358.3,203.1 374.1,198.0 389.9,192.9 405.7,187.7 421.5,182.4 437.3,176.6 453.1,170.5 468.9,163.3 484.7,156.9 500.5,150.7 516.3,144.0 532.1,136.7 547.8,130.2 563.6,123.3 579.4,115.9 595.2,107.7 611.0,100.2 626.8,92.1 642.6,83.8 658.4,75.6 674.2,67.3 690.0,57.5" fill="none" stroke="var(--steel)" stroke-width="2.6"/>
+  <polyline points="74.0,269.3 89.8,266.6 105.6,263.9 121.4,261.2 137.2,258.5 153.0,255.9 168.8,253.2 184.6,250.5 200.4,247.8 216.2,245.1 231.9,242.4 247.7,239.7 263.5,237.0 279.3,234.3 295.1,231.6 310.9,228.9 326.7,226.3 342.5,223.6 358.3,220.9 374.1,218.2 389.9,215.5 405.7,212.8 421.5,210.1 437.3,207.4 453.1,204.7 468.9,202.0 484.7,199.3 500.5,196.7 516.3,194.0 532.1,191.3 547.8,188.6 563.6,185.9 579.4,183.2 595.2,180.5 611.0,177.8 626.8,175.1 642.6,172.4 658.4,169.7 674.2,167.1 690.0,164.4" fill="none" stroke="var(--muted)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <polyline points="74.0,269.4 89.8,266.9 105.6,264.3 121.4,261.7 137.2,259.2 153.0,256.6 168.8,254.0 184.6,251.5 200.4,248.9 216.2,246.3 231.9,243.7 247.7,241.2 263.5,238.6 279.3,236.0 295.1,233.5 310.9,230.9 326.7,228.3 342.5,225.8 358.3,223.2 374.1,220.6 389.9,218.1 405.7,215.5 421.5,212.9 437.3,210.4 453.1,207.8 468.9,205.2 484.7,202.6 500.5,200.1 516.3,197.5 532.1,194.9 547.8,192.4 563.6,189.8 579.4,187.2 595.2,184.7 611.0,182.1 626.8,179.5 642.6,177.0 658.4,174.4 674.2,171.8 690.0,169.3" fill="none" stroke="var(--rust)" stroke-width="2.6"/>
+  <line x1="74" y1="272.0" x2="690" y2="272.0" stroke="var(--div)" stroke-width=".8"/>
+  <text x="66" y="276.0" font-size="10.5" fill="var(--muted)" text-anchor="end">$0k</text>
+  <line x1="74" y1="207.9" x2="690" y2="207.9" stroke="var(--div)" stroke-width=".8"/>
+  <text x="66" y="211.9" font-size="10.5" fill="var(--muted)" text-anchor="end">$50k</text>
+  <line x1="74" y1="143.9" x2="690" y2="143.9" stroke="var(--div)" stroke-width=".8"/>
+  <text x="66" y="147.9" font-size="10.5" fill="var(--muted)" text-anchor="end">$100k</text>
+  <line x1="74" y1="79.8" x2="690" y2="79.8" stroke="var(--div)" stroke-width=".8"/>
+  <text x="66" y="83.8" font-size="10.5" fill="var(--muted)" text-anchor="end">$150k</text>
+  <text x="74.0" y="290" font-size="10.5" fill="var(--muted)" text-anchor="middle">1</text>
+  <text x="216.2" y="290" font-size="10.5" fill="var(--muted)" text-anchor="middle">10</text>
+  <text x="374.1" y="290" font-size="10.5" fill="var(--muted)" text-anchor="middle">20</text>
+  <text x="532.1" y="290" font-size="10.5" fill="var(--muted)" text-anchor="middle">30</text>
+  <text x="690.0" y="290" font-size="10.5" fill="var(--muted)" text-anchor="middle">40</text>
+  <text x="382" y="310" font-size="10.5" fill="var(--muted)" text-anchor="middle" letter-spacing="1">FOOTBALL SEASONS OF $100 A WEEK</text>
+  <text x="684.0" y="49.5" font-size="11.5" fill="var(--steel)" text-anchor="end" font-weight="600">index &#183; $167,377</text>
+  <text x="684.0" y="161.3" font-size="11.5" fill="var(--rust)" text-anchor="end" font-weight="600">bet it &#183; $80,182</text>
+  <text x="78" y="42" font-size="10.5" fill="var(--muted)">shaded band = best and worst real starting year, 1970&#8211;2026</text>
+  </svg>
+  <figcaption style="font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);margin-top:.8rem;text-align:center;letter-spacing:.04em">THE SHADED BAND IS THE BEST AND WORST REAL STARTING YEAR. THE DASHED LINE IS THE MONEY PAID IN.</figcaption>
+  </figure>
+
+  <p>Notice the first ten seasons. The lines are almost touching. For a decade this looks like an argument about nothing, and if you quit reading here you would be entitled to think the whole thing is overblown.</p>
+
+  <p>Then look right. Nothing changes about the weekly amount, the odds, or the market. The only thing that changes is that it keeps happening.</p>
+
+  <h2 class="sh">The part we cannot dress up</h2>
+
+  <p>Over a <b>single season</b> the index lost money in the worst starting years &mdash; $2,100 in, $1,938 out. The bettor's loss was capped at $95. In 9 of every 100 starting years, the bettor finished the season ahead of the investor.</p>
+
+  <table style="width:100%;border-collapse:collapse;font-family:'Roboto Mono',monospace;font-size:.8rem;margin:1.2rem 0">
+    <tr style="border-bottom:2px solid var(--ink)"><th style="text-align:left;padding:.4rem 0">after</th><th style="text-align:right">paid in</th><th style="text-align:right">bet it</th><th style="text-align:right">index, middle</th><th style="text-align:right">index won</th></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">1 season</td><td style="text-align:right">$2,100</td><td style="text-align:right">$2,005</td><td style="text-align:right">$2,158</td><td style="text-align:right">91%</td></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">10 seasons</td><td style="text-align:right">$21,000</td><td style="text-align:right">$20,046</td><td style="text-align:right">$24,708</td><td style="text-align:right">96%</td></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">20 seasons</td><td style="text-align:right">$42,000</td><td style="text-align:right">$40,091</td><td style="text-align:right">$57,719</td><td style="text-align:right">100%</td></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">40 seasons</td><td style="text-align:right">$84,000</td><td style="text-align:right">$80,182</td><td style="text-align:right">$167,377</td><td style="text-align:right">100%</td></tr>
+  </table>
+
+  <p>That last column is the honest version of the argument. <b>Over one season this is close to a coin flip. Over twenty it stopped being one.</b> Anybody who tells you the market always wins is wrong about one season and right about twenty, and the difference between those two sentences is the whole of investing.</p>
+
+  <h2 class="sh">What happens if you let it ride</h2>
+
+  <p>Everything above assumes the sensible version: you stake $100, you pocket what comes back, you start fresh next week. Now suppose you do what people actually do on a good run and put the whole balance back through.</p>
+
+  <p>Your bankroll climbs for a while and then stops; it settles, permanently, at about <b>$2,100</b> &mdash; no matter whether you do it for ten years or fifty. There is a formula for where it settles and it is short: your weekly stake, divided by the house's cut. That is the ceiling; everything above it gets eaten as fast as you add it.</p>
+
+  <p>Keep that picture. A losing edge does not drain you to nothing. It finds a level and holds you there, and it will hold you there for as long as you keep feeding it.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>Ask what the money would otherwise be doing. That is the whole skill, and it has a name &mdash; opportunity cost &mdash; and it is the reason Charlie Munger spent fifty years telling people to think about decisions backwards. The bettor never made a bad bet. He made forty years of small, reasonable, individually defensible bets, and the thing that cost him was not on the ticket.</p>
+
+  <p><b>None of which means do not bet.</b> Bart Giamatti spent a book arguing that sport is where we go to practice being free, and if a wager is what makes a Sunday matter to you, $4.55 is a fair price for that. Buying a thing you enjoy is not a mistake. <em>Not knowing what you paid for it</em> is the mistake.</p>
+
+  <p>So price it deliberately. Write down what a season costs you &mdash; the pool, the subscriptions, the seats, the bar &mdash; and then look at what that money does over forty years if it is doing something else. Then decide. Some people will look at $87,000 and keep betting, and that is a completely defensible answer as long as it is the answer to a question you actually asked.</p>
+
+  <p><b>Where we made it easy on ourselves,</b> and every one of these favors the bettor: the index figures exclude dividends, worth roughly two points a year, so the real gap is wider. There is no tax, no fee and no inflation on either side. And we assumed the bettor picks at exactly 50%, which our own testing says is about right &mdash; we went 50.2% against the spread over 2,278 games &mdash; but a genuinely skilled bettor would do better than this.</p>
+
+  <p>Run it yourself on any number you like; the script is public. More at <a href="https://thesportspage.net/" target="_blank" rel="noopener">thesportspage.net</a>, and the arithmetic behind the price is in <a href="https://thesportspage.net/pool/101.html" target="_blank" rel="noopener">Football Pool 101</a>.</p>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. 186 &middot; October 1, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
