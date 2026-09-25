@@ -1,0 +1,255 @@
+<!-- PUBLISH-META
+topic: Markets
+decay: keeps
+tags: Markets, Probability, Money, Financial Literacy
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Three Hundred Million Tickets. One Expected Winner.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Three Hundred Million Tickets. One Expected Winner.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/167-lottery-priced-honestly.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/167-lottery-priced-honestly.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Three Hundred Million Tickets. One Expected Winner.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/167-lottery-priced-honestly.png">
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Markets &middot; thesportspage.net, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. 188</span>
+    <span>October 3, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--gold)" title="Markets"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M3.6 16h18.8" stroke="currentColor" stroke-width="1.6"/><rect x="5.6" y="9.4" width="3.8" height="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11.1" y="4.6" width="3.8" height="11.4" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="16.6" y="11.4" width="3.8" height="4.6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>Three Hundred Million Tickets. <em>One Expected Winner.</em></h1>
+
+  <div class="deck">
+    There are 292,201,338 ways to fill in a Powerball ticket. If every person in the United States bought exactly one, you would expect a single winner. This is not a piece about people who buy tickets being foolish. It is a piece about who is selling them, and what the money they keep gets called.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; 1,997 draws, from the state's own open data</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">292,201,338</div><div class="l">ways to fill in a ticket</div></div>
+    <div class="sc"><div class="v bad">1,381</div><div class="l">drawn in ten years</div></div>
+    <div class="sc"><div class="v good">0</div><div class="l">of them ever repeated</div></div>
+  </div>
+
+
+  <p><b>What are you actually buying when you buy a lottery ticket?</b> Let us do the arithmetic properly, and then let us be careful about who the arithmetic is aimed at.</p>
+
+  <p>We pulled every Powerball draw New York has published &mdash; <b>1,997 of them</b>, back to 2010. Then we worked out the game from its own results, not from a press release. You pick five numbers from 69, plus one from 26. That gives <b>292,201,338</b> different tickets.</p>
+
+  <p>Here is the number that makes it real. There are about 335 million people in the United States. <b>If every single one of them bought one ticket, you would expect one winner.</b> Not one each. One.</p>
+
+  <h2 class="sh">What buying more tickets does</h2>
+
+  <p>People know the odds are long. What they do not have is a feel for how the odds respond when you try harder, so look at what happens as you buy more.</p>
+
+  <figure style="margin:2rem 0">
+  <svg viewBox="0 0 720 310" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chance of winning the Powerball jackpot against tickets bought. The line is flat against zero until many millions of tickets. A coin-flip chance needs 202 million." font-family="'Roboto Mono',monospace">
+  <rect width="720" height="310" fill="var(--cream)"/>
+  <line x1="66" y1="86.0" x2="676" y2="86.0" stroke="var(--green)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="66" y="79.0" font-size="10.5" fill="var(--green)">a 50/50 chance</text>
+  <polyline points="66.0,222.0 68.5,222.0 71.1,222.0 73.6,222.0 76.2,222.0 78.7,222.0 81.2,222.0 83.8,222.0 86.3,222.0 88.9,222.0 91.4,222.0 94.0,222.0 96.5,222.0 99.0,222.0 101.6,222.0 104.1,222.0 106.7,222.0 109.2,222.0 111.8,222.0 114.3,222.0 116.8,222.0 119.4,222.0 121.9,222.0 124.5,222.0 127.0,222.0 129.5,222.0 132.1,222.0 134.6,222.0 137.2,222.0 139.7,222.0 142.2,222.0 144.8,222.0 147.3,222.0 149.9,222.0 152.4,222.0 155.0,222.0 157.5,222.0 160.0,222.0 162.6,222.0 165.1,222.0 167.7,222.0 170.2,222.0 172.8,222.0 175.3,222.0 177.8,222.0 180.4,222.0 182.9,222.0 185.5,222.0 188.0,222.0 190.5,222.0 193.1,222.0 195.6,222.0 198.2,222.0 200.7,222.0 203.2,222.0 205.8,222.0 208.3,222.0 210.9,222.0 213.4,222.0 216.0,222.0 218.5,222.0 221.0,222.0 223.6,222.0 226.1,222.0 228.7,222.0 231.2,222.0 233.8,222.0 236.3,222.0 238.8,222.0 241.4,222.0 243.9,222.0 246.5,222.0 249.0,222.0 251.5,222.0 254.1,222.0 256.6,222.0 259.2,222.0 261.7,222.0 264.2,222.0 266.8,222.0 269.3,222.0 271.9,222.0 274.4,222.0 277.0,222.0 279.5,222.0 282.0,222.0 284.6,222.0 287.1,222.0 289.7,222.0 292.2,222.0 294.8,222.0 297.3,222.0 299.8,222.0 302.4,222.0 304.9,222.0 307.5,222.0 310.0,222.0 312.5,222.0 315.1,222.0 317.6,222.0 320.2,222.0 322.7,222.0 325.2,222.0 327.8,222.0 330.3,222.0 332.9,222.0 335.4,222.0 338.0,222.0 340.5,222.0 343.0,222.0 345.6,222.0 348.1,222.0 350.7,222.0 353.2,222.0 355.8,222.0 358.3,222.0 360.8,222.0 363.4,222.0 365.9,222.0 368.5,222.0 371.0,222.0 373.5,222.0 376.1,222.0 378.6,222.0 381.2,222.0 383.7,222.0 386.2,222.0 388.8,222.0 391.3,222.0 393.9,222.0 396.4,222.0 399.0,222.0 401.5,222.0 404.0,222.0 406.6,222.0 409.1,222.0 411.7,222.0 414.2,221.9 416.8,221.9 419.3,221.9 421.8,221.9 424.4,221.9 426.9,221.9 429.5,221.9 432.0,221.9 434.5,221.9 437.1,221.9 439.6,221.9 442.2,221.9 444.7,221.9 447.2,221.9 449.8,221.8 452.3,221.8 454.9,221.8 457.4,221.8 460.0,221.8 462.5,221.8 465.0,221.7 467.6,221.7 470.1,221.7 472.7,221.7 475.2,221.7 477.8,221.6 480.3,221.6 482.8,221.6 485.4,221.5 487.9,221.5 490.5,221.4 493.0,221.4 495.5,221.3 498.1,221.3 500.6,221.2 503.2,221.2 505.7,221.1 508.3,221.0 510.8,220.9 513.3,220.9 515.9,220.8 518.4,220.7 521.0,220.5 523.5,220.4 526.0,220.3 528.6,220.2 531.1,220.0 533.7,219.8 536.2,219.7 538.8,219.5 541.3,219.3 543.8,219.0 546.4,218.8 548.9,218.5 551.5,218.2 554.0,217.9 556.5,217.6 559.1,217.2 561.6,216.8 564.2,216.4 566.7,215.9 569.2,215.4 571.8,214.9 574.3,214.3 576.9,213.7 579.4,213.0 582.0,212.3 584.5,211.5 587.0,210.7 589.6,209.7 592.1,208.7 594.7,207.7 597.2,206.5 599.8,205.3 602.3,203.9 604.8,202.5 607.4,200.9 609.9,199.3 612.5,197.5 615.0,195.5 617.5,193.5 620.1,191.2 622.6,188.8 625.2,186.3 627.7,183.5 630.2,180.6 632.8,177.5 635.3,174.1 637.9,170.5 640.4,166.7 643.0,162.7 645.5,158.4 648.0,153.8 650.6,149.0 653.1,143.9 655.7,138.6 658.2,132.9 660.8,127.0 663.3,120.8 665.8,114.3 668.4,107.6 670.9,100.6 673.5,93.4 676.0,86.0" fill="none" stroke="var(--steel)" stroke-width="2.6"/>
+  <line x1="66" y1="222" x2="676" y2="222" stroke="var(--ink)" stroke-width="1.4"/>
+  <line x1="66.0" y1="20" x2="66.0" y2="217.0" stroke="var(--rust)" stroke-width=".8" stroke-dasharray="2 3" opacity=".65"/>
+  <circle cx="66.0" cy="222.0" r="4" fill="var(--rust)"/>
+  <text x="70.0" y="16" font-size="10.2" fill="var(--rust)" text-anchor="start">one ticket</text>
+  <line x1="227.3" y1="20" x2="227.3" y2="217.0" stroke="var(--rust)" stroke-width=".8" stroke-dasharray="2 3" opacity=".65"/>
+  <circle cx="227.3" cy="222.0" r="4" fill="var(--rust)"/>
+  <text x="231.3" y="16" font-size="10.2" fill="var(--rust)" text-anchor="start">every draw for a year</text>
+  <line x1="352.0" y1="35" x2="352.0" y2="217.0" stroke="var(--rust)" stroke-width=".8" stroke-dasharray="2 3" opacity=".65"/>
+  <circle cx="352.0" cy="222.0" r="4" fill="var(--rust)"/>
+  <text x="356.0" y="31" font-size="10.2" fill="var(--rust)" text-anchor="start">every draw for fifty years</text>
+  <line x1="528.7" y1="20" x2="528.7" y2="215.1" stroke="var(--rust)" stroke-width=".8" stroke-dasharray="2 3" opacity=".65"/>
+  <circle cx="528.7" cy="220.1" r="4" fill="var(--rust)"/>
+  <text x="532.7" y="16" font-size="10.2" fill="var(--rust)" text-anchor="start">a thousand a week for life</text>
+  <line x1="676.0" y1="35" x2="676.0" y2="81.0" stroke="var(--rust)" stroke-width=".8" stroke-dasharray="2 3" opacity=".65"/>
+  <circle cx="676.0" cy="86.0" r="4" fill="var(--rust)"/>
+  <text x="672.0" y="31" font-size="10.2" fill="var(--rust)" text-anchor="end">a coin-flip chance</text>
+  <text x="66.0" y="239" font-size="10" fill="var(--muted)" text-anchor="middle">1</text>
+  <text x="212.9" y="239" font-size="10" fill="var(--muted)" text-anchor="middle">10^2</text>
+  <text x="359.7" y="239" font-size="10" fill="var(--muted)" text-anchor="middle">10^4</text>
+  <text x="506.6" y="239" font-size="10" fill="var(--muted)" text-anchor="middle">10^6</text>
+  <text x="653.5" y="239" font-size="10" fill="var(--muted)" text-anchor="middle">10^8</text>
+  <text x="371" y="260" font-size="10.5" fill="var(--muted)" text-anchor="middle" letter-spacing="1">TICKETS BOUGHT (EACH STEP IS A HUNDREDFOLD)</text>
+  </svg>
+  <figcaption style="font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);margin-top:.8rem;text-align:center;letter-spacing:.04em">EACH STEP ALONG THE BOTTOM IS A HUNDRED TIMES MORE TICKETS THAN THE LAST.</figcaption>
+  </figure>
+
+  <p>Read the flat part, because the flat part is nearly the whole picture. There are about <b>157 draws a year</b> now. Play every single one of them for <b>fifty years</b> &mdash; 7,850 tickets, a lifetime of never missing &mdash; and your chance of a jackpot is <b>1 in 37,224</b>. The line has not visibly left the floor.</p>
+
+  <p>Put it the other way round. Playing every draw, you would expect to win once every <b>1.86 million years</b>. Our species is about 300,000 years old. You would have needed to start buying tickets six times before there were people.</p>
+
+  <p>And in ten years of draws since the current format began, the machine has produced <b>1,381 different combinations</b> &mdash; four ten-thousandths of one percent of what it could produce. Not one has ever repeated. That is not a fluke; that is what a space that size looks like.</p>
+
+  <div class="pull">
+    <p>Play every draw for fifty years and the line has not visibly left the floor. That is the product.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">What the same habit does somewhere else</h2>
+
+  <p>Twenty dollars a week is an ordinary lottery habit. Put that into a plain index fund instead, and run it on the real market from every starting year since 1970:</p>
+
+  <table style="width:100%;border-collapse:collapse;font-family:'Roboto Mono',monospace;font-size:.82rem;margin:1.2rem 0">
+    <tr style="border-bottom:2px solid var(--ink)"><th style="text-align:left;padding:.4rem 0">after</th><th style="text-align:right">paid in</th><th style="text-align:right">index, middle</th><th style="text-align:right">worst start</th></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">10 years</td><td style="text-align:right">$10,400</td><td style="text-align:right">$16,779</td><td style="text-align:right">$7,873</td></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">20 years</td><td style="text-align:right">$20,800</td><td style="text-align:right">$53,192</td><td style="text-align:right">$27,613</td></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">40 years</td><td style="text-align:right">$41,600</td><td style="text-align:right">$292,341</td><td style="text-align:right">$224,736</td></tr>
+  </table>
+
+  <p>Note the worst column. Even starting in the worst year the market offered, forty years of twenty dollars a week came to <b>$224,736</b>. That is the comparison, and we are going to stop making it now, because the obvious next sentence is the one we do not think is true.</p>
+
+  <h2 class="sh">The part that is not about the players</h2>
+
+  <p>The obvious next sentence is <em>so buy the index instead</em>. Here is why we are not writing that.</p>
+
+  <p>Lottery play is heaviest among people with the least money. Someone choosing between twenty dollars of groceries and twenty dollars of maybe is not making a math error that a chart will fix. They are buying the only lottery ticket on offer. Telling a person in that spot that they have failed at compound interest is useless, and a little obscene.</p>
+
+  <p>So point the arithmetic where it belongs. <b>The prize money comes from the tickets.</b> There is no outside benefactor. The pot is what players paid in, minus what the state keeps, and the amount the state keeps <em>is</em> the amount the players lost. That is not a criticism, it is a definition, and it survives every argument about whether the game is fair.</p>
+
+  <p>Many states set that money aside for schools. So "the lottery funds education" really means something harder. <b>Schools are paid for by the gap between what players put in and what they get back.</b> The worse the odds, the better the funding. Now watch what that does to the people who set the odds.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>Ask where money comes from before you ask where it goes. This one comes from a losing bet, sold hardest to the people who can least carry it. That is not free money for schools. It is a tax that only looks voluntary, and it is collected in proportion to hope.</p>
+
+  <p>And notice the shape of the thing being sold. It is not really a ticket. It is permission to spend a few days imagining a different life, which is a real good, worth real money, and would be worth defending if it were sold honestly as that. <b>Sell people a daydream and call it a daydream.</b> The dishonesty is not in the odds, which are printed. It is in calling the proceeds a gift to the next generation.</p>
+
+  <p>There is a better version, and it is simple. Take the money that now rewards a one-in-292-million accident. Use it to reward people for rising to what they are capable of &mdash; all of them, measurably, with no drawing at all. We would all be better off. Our species does better when everybody gets to flourish.</p>
+
+  <p><b>What we did not check,</b> and will not claim: how much of the money reaches schools in any one state, and whether it adds to school budgets or quietly replaces money already there. Both can be answered. Neither is answered here. We worked out the odds ourselves from the draw history and used real market prices; the rest is arithmetic or argument, and we have tried to mark which is which.</p>
+
+  <p>The rest of the paper, including the same comparison run for sports betting, is at <a href="https://thesportspage.net/" target="_blank" rel="noopener">thesportspage.net</a>.</p>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. 188 &middot; October 3, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

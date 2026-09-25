@@ -112,6 +112,7 @@ money dollar dollars bet bets price prices odds chance luck lucky crowd stadium 
 football baseball basketball hockey league playoff playoffs title champion cup draft pick picks
 spend spends spent cost costs pay pays paid buy buys bought sell sells sold worth
 record records tie ties tied winning losing beaten drew draw streak run runs
+ticket tickets winner winners loser losers prize prizes draws expect expects expected odds
 rank ranks ranked odds chance chances
 tell tells told know knows knew think thinks say says said see sees saw look looks looked
 make makes made get gets got take takes took give gives gave come comes came go goes went

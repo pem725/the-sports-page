@@ -49,7 +49,7 @@ companion primer is `post-hoc`, already published.
 briefly and fairly, or build the example from published tout records and say that
 is what you did. A straw man here would be the exact sin the piece is about.
 
-### 3. The Lottery, Priced Honestly
+### 3. The Lottery, Priced Honestly — DONE, 3 Oct
 The editor's own framing: what if the money that goes into lotteries went into
 rewarding people for rising to their potential. Start with the arithmetic — a
 ticket's expected value, the share that reaches education in a given state, and
