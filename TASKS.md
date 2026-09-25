@@ -234,6 +234,82 @@ help" is a publishable result in this paper.
 
 ---
 
+## F. For Codex — the heavy, parallel, mechanical work
+
+These are chosen because they are large, well-specified, and need patience rather
+than taste. Each states what done looks like and what will go wrong.
+
+### F1. The CFB box-score pull, which unlocks three tasks at once
+`data/cfb-team-games.csv` holds scores only. Three open tasks all need **plays and
+yards** per team per game, which means `/games/teams` rather than `/games`:
+**B2** (the college broadcast-stat ranking), **C6b** (college opponent
+adjustment), and the college half of `which_budges.py`.
+
+**Done:** one cached CSV, 2005–2025, one row per team per game, carrying plays,
+yards, first downs, third-down attempts and conversions, penalties, turnovers.
+Committed, with the fetch script separate from the analysis so nothing re-hits the
+API to answer a question.
+
+**Traps.** FCS opponents must be flagged, not dropped silently — `nd_matchup.py`
+prints UNRATEABLE rather than inventing a projection, and that is the standard.
+The CFBD key is rate-limited **per key**; the paper's key also runs the 4:30am
+publish, so throttle and cache rather than hammering. And upstream box scores get
+revised, so stamp the file with its fetch date.
+
+### F2. Sweep the pool simulation across its whole assumption space
+You built `weekly_competition_documented.stan` and it already showed why this
+matters: your implementation put the three strategies at 16.3/13.7/10.5 where ours
+put them at 22.4/19.3/14.5 — six points apart on the level, and **1.55 against
+1.54 on the ratio.**
+
+**Done:** a grid over field size (6–16), herd correlation (0.5–0.95), number of
+disagreements (2–14), and tie policy, reporting for each cell both the absolute
+win probability and the best-to-worst ratio. Then the answer to the question that
+actually matters: **which published quantity is robust and which is an artifact of
+one parameter setting?**
+
+**Trap:** do not report the grid. Report the boundary. We need to know where the
+ordering flips, if it ever does, not 4,000 rows of cells that agree.
+
+### F3. Freeze the ATS backtest (was E0)
+The 50.2% figure and the 5.1-point yards-per-play coefficient are quoted in
+published work and neither reproduces from committed data, because both scripts
+re-fetch from an API whose scores and closing lines get revised.
+
+**Done:** a frozen row-per-game CSV with season, week, both teams, pregame margins,
+final margin, the selected closing spread, push status, and every exclusion flag —
+plus the scripts reading the file rather than the network.
+
+**Trap:** the closing-line choice and the push rule are decisions, not facts.
+`picks_overlay.py` averages every book's spread, which is a choice nobody wrote
+down. Record it in the file.
+
+### F4. In-game state (was B3)
+nflverse play-by-play carries `qtr`, `game_seconds_remaining` and
+`score_differential`, and `build_nfl_history.py` streams straight past all three.
+The board asked directly for "down 28 at half, what are the odds?" and we cannot
+answer it.
+
+**Done:** a team-game-state table, then the comeback question — has trailing by
+four scores at half become more survivable than in the 1990s?
+
+**Trap:** conditioning on half-time state selects for teams that were losing,
+which correlates with being worse. Hold team strength fixed or say plainly that
+you did not.
+
+### F5. Pre-1999 NFL scores, or a written dead end
+Everything stops at 1999 because our sources do. Already ruled out with evidence:
+nflverse play-by-play and its games release, nfldata/habitatring, ESPN's
+scoreboard API. Pro-Football-Reference has it to 1920 and its terms forbid
+scraping.
+
+**Done:** either a licensed or openly-licensed source identified **with its terms
+quoted**, or a written conclusion that none exists and 1999 is permanent. **Do not
+scrape PFR.** A properly evidenced negative closes this honestly and is worth as
+much as a positive.
+
+---
+
 ## D. Standing hygiene
 
 - **Thursdays:** `python3 scripts/snapshot_ratings.py`. Without it,

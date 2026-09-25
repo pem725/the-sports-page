@@ -176,11 +176,17 @@ pick and number for number, you would hold your lead over <em>that one person</e
 for ever. You would also be helpless against the other eight.</p>
 
 <div class="box">
-<b>What these numbers assume.</b> Fifteen independent games, each a true coin
-flip. Nine opponents, each taking the consensus side about three times in four and
-ranking their confidence at random. Ties count as a loss for you. Change any of
-those and the figures move &mdash; the direction has held everywhere we have
-tested it, the exact percentages have not.
+<b>What these numbers assume, and what survived an independent check.</b> Fifteen
+independent games, each a true coin flip. Nine opponents, each taking the
+consensus side about three times in four and ranking their confidence at random.
+Ties count as a loss for you.
+<br><br>
+A second implementation, written separately in Stan against its own assumptions,
+got <b>16.3%, 13.7% and 10.5%</b> where ours got 22.4%, 19.3% and 14.5%. The
+levels are six points apart. <b>The ratio between best and worst is 1.55 in one
+and 1.54 in the other.</b> So read the ratio, not the percentage: weighting your
+disagreements is worth about half as much again as burying them, and that holds
+across two models that agree on very little else.
 </div>
 
 <h2>6. Why people get this wrong</h2>
