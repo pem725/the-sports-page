@@ -23,7 +23,22 @@ import argparse, glob, pathlib, re, sys
 PAIRS = [("maths","math"),("favourite","favorite"),("favour","favor"),("colour","color"),
  ("behaviour","behavior"),("honour","honor"),("neighbour","neighbor"),("labour","labor"),
  ("rumour","rumor"),("organis","organiz"),("recognis","recogniz"),("normalis","normaliz"),
- ("summaris","summariz"),("prioritis","prioritiz"),("analyse","analyze"),("centre","center"),
+ ("summaris","summariz"),("prioritis","prioritiz"),("centre","center"),
+ # ANALYSE, BUT NOT ANALYSES. "Analyses" is the plural of "analysis" and is
+ # correct American English. The matcher is a STEM matcher -- it anchors with \b
+ # at the START of a word and nothing at the end, which is exactly why
+ # ("organis","organiz") correctly catches organise, organising and organisation.
+ # The same behaviour made "analyse" fire inside "analyses", flagging a section
+ # heading that had been right all along.
+ #
+ # NOTE THE ENTRIES GO STRAIGHT INTO A REGEX. The first attempt at a fix used
+ # ("analyse.","analyze.") meaning "analyse followed by a period" -- but the dot
+ # is a wildcard, so it matched "analyses" even harder. Anything added here that
+ # contains . ? * + ( ) [ ] is a pattern, not a literal.
+ #
+ # HONEST LIMIT: "he analyses the data" is British for "analyzes" and the
+ # lookahead will miss it. Missing a rare verb beats flagging every correct plural.
+ ("analyse(?!s)","analyze"),("analysing","analyzing"),
  ("metre","meter"),("defence","defense"),("offence","offense"),("practise","practice"),
  ("licence","license"),("travelling","traveling"),("cancelled","canceled"),
  ("modelling","modeling"),("learnt","learned"),("amongst","among"),("whilst","while"),
