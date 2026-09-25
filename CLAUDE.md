@@ -516,6 +516,19 @@ It is `noindex` and linked discreetly from the homepage. Not secret — the
 selection process is part of what we are willing to show — but not the front
 door either.
 
+**ONE STICKY CARD ABOVE THE ARCHIVE. THE REST IS NEWS.** Set by the editor on
+2026-09-25: *"there's only one headliner that's sticky and the rest is the news.
+We're burying the news with way too much material."* The Odds Board is that card,
+and the Pool Desk and the Newsroom are a quiet one-line strip inside it rather
+than cards of their own. **A Reader Asks** sits *above* the archive heading, under
+the subscribe box, which is where this file always said it belonged before it
+drifted below the cards.
+
+Anything new that wants promoting joins the strip inside the card. **Do not add a
+second card.** Three blocks had piled up between the archive heading and the first
+issue; the fix took it to one. The measure that matters is how far a reader
+scrolls before reaching an actual story.
+
 ### NEWSINESS — the metric that picks the story
 
 `scripts/newsiness.py`, rubric in `SKILL.md` Step 0.5, candidates in
