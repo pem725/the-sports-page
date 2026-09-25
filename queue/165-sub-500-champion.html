@@ -1,28 +1,14 @@
 <!-- PUBLISH-META
-topic: TODO_PRIMARY_TOPIC
-tags: TODO:tagclass, TODO_tag2, TODO_tag3
--->
-<!--
-  TEMPLATE FILE — DO NOT PUBLISH.
-  Skipped by autopublish because the filename starts with "_".
-  To start a new issue:
-    cp queue/_TEMPLATE.html queue/NNN-slug.html
-  …then replace every TODO_ marker and the headline/deck/body content.
-  When ready, add the filename to QUEUE_ORDER.txt at the desired position.
-
-  This template carries the modern issue scaffolding:
-    - Broadsheet CSS (Playfair / Libre Baskerville / Roboto Mono)
-    - Concept-primer (i) component CSS (.cc and .cc-i)
-    - OG + Twitter card meta tags
-    - Skip-link for accessibility
-    - Stat-row, share-section, hook for xkcd cartoon
+topic: MLB
+decay: hot
+tags: MLB:mlb, Records, Playoff Races
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Sports Page — TODO_TITLE</title>
+<title>The Sports Page — Two Teams Are Tied With Losing Records. One Is Going to the Playoffs.</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -92,24 +78,23 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
 .w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
 .watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
-.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
-.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
-.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
-.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
 </style>
 <!-- Open Graph + Twitter Card -->
-<meta property="og:title" content="TODO_OG_TITLE">
+<meta property="og:title" content="Two Teams Are Tied With Losing Records. One Is Going to the Playoffs.">
 <meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
-<meta property="og:url" content="https://thesportspage.net/published/TODO_SLUG.html">
+<meta property="og:url" content="https://thesportspage.net/published/165-sub-500-champion.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Sports Page">
-<meta property="og:image" content="https://thesportspage.net/assets/og/TODO_SLUG.png">
+<meta property="og:image" content="https://thesportspage.net/assets/og/165-sub-500-champion.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TODO_OG_TITLE">
+<meta name="twitter:title" content="Two Teams Are Tied With Losing Records. One Is Going to the Playoffs.">
 <meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
-<meta name="twitter:image" content="https://thesportspage.net/assets/og/TODO_SLUG.png">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/165-sub-500-champion.png">
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </head>
@@ -118,12 +103,12 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 
 <!-- MASTHEAD -->
 <div class="masthead">
-  <div class="kicker">TODO_KICKER &middot; TODO_DOMAIN, 2026</div>
+  <div class="kicker">MLB &middot; thesportspage.net, 2026</div>
   <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
   <div class="datebar">
-    <span>Vol. I, No. TODO_NN</span>
-    <span>TODO_DATE</span>
+    <span>Vol. I, No. 182</span>
+    <span>September 26, 2026</span>
     <span>Distributed Free to Friends &amp; Family</span>
   </div>
 </div>
@@ -134,46 +119,85 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <!-- PAPER -->
 <div id="main-content" class="paper">
 
-  <h1 class="hed">TODO_HEADLINE <em>TODO_HEADLINE_ITALIC_TAIL</em></h1>
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>Two Teams Are Tied With Losing Records. <em>One Is Going to the Playoffs.</em></h1>
 
   <div class="deck">
-    TODO_DECK &mdash; the one-paragraph hook. Keep it specific. Set up the question the issue answers. End with a sentence that makes the reader curious enough to keep reading.
+    Houston and Texas are both 79 and 80 with three games left, and one of them will win the AL West. In 57 years, 270 teams have won a division and not one finished with a losing record. There is a 70% chance this one is the worst ever.
   </div>
 
-  <div class="byline">By The Sports Page &middot; TODO_BYLINE_NOTE</div>
+  <div class="byline">By The Sports Page &middot; MLB Stats API, 1969&ndash;2026</div>
 
   <!-- STAT CARDS -->
   <div class="stat-row">
-    <div class="sc"><div class="v bad">TODO_V1</div><div class="l">TODO_L1</div></div>
-    <div class="sc"><div class="v now">TODO_V2</div><div class="l">TODO_L2</div></div>
-    <div class="sc"><div class="v good">TODO_V3</div><div class="l">TODO_L3</div></div>
+    <div class="sc"><div class="v now">270</div><div class="l">division winners since 1969</div></div>
+    <div class="sc"><div class="v good">0</div><div class="l">with a losing record</div></div>
+    <div class="sc"><div class="v bad">70%</div><div class="l">chance this year breaks it</div></div>
   </div>
 
-  <!-- Optional: xkcd cartoon as lede figure
-  <figure class="cartoon" style="margin:36px auto;max-width:560px;">
-    <img src="../assets/xkcd/TODO_SLUG.png" alt="TODO accessible description" style="width:100%;height:auto;display:block;">
-    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:14px;text-align:center;letter-spacing:0.5px;text-transform:uppercase;">Cartoon &middot; TODO short caption</figcaption>
+
+  <p><b>Can a team with a losing record win its division?</b> Right now Houston and Texas are both <b>79 and 80</b>. Three games each. They do not play each other, and one of them is going to the playoffs.</p>
+
+  <p>It has never happened. We pulled every division winner since divisions began in 1969 &mdash; <b>270 of them</b> &mdash; and not one finished below .500. The worst was the 2005 San Diego Padres at 82 and 80.</p>
+
+  <p>Most people assume a division winner is a good team. That is what the trophy is for. But a division is just five clubs, and if all five are bad, somebody still wins it. This week you get to watch that happen.</p>
+
+  <h2 class="sh">What has to happen for this to be normal</h2>
+
+  <p>Both clubs need to sweep to reach 82 and 80, which only ties the worst mark ever. Houston plays the Athletics, who are 63 and 96. Texas plays Minnesota, who are 74 and 85. We give Houston a 58% chance each game and Texas 51%.</p>
+
+  <p>So here is where the champion lands:</p>
+
+  <figure style="margin:2rem 0">
+  <svg viewBox="0 0 720 320" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where the 2026 AL West champion finishes. 82-80 at 30 percent would tie the worst division winner ever; 81-81 at 52 percent and 80-82 at 18 percent would each be a record low." font-family="'Roboto Mono',monospace">
+  <rect width="720" height="320" fill="var(--cream)"/>
+  <rect x="150" y="48" width="287.4" height="40" fill="var(--gold)" opacity=".85"/>
+  <text x="140" y="65" font-size="13" fill="var(--ink)" text-anchor="end" font-weight="600">82-80</text>
+  <text x="140" y="80" font-size="10.5" fill="var(--muted)" text-anchor="end">0.506</text>
+  <text x="446.4" y="66" font-size="13" fill="var(--gold)" font-weight="600">30%</text>
+  <text x="489.4" y="66" font-size="10.5" fill="var(--muted)">would tie the worst ever</text>
+  <rect x="150" y="102" width="497.6" height="40" fill="var(--steel)" opacity=".85"/>
+  <text x="140" y="119" font-size="13" fill="var(--ink)" text-anchor="end" font-weight="600">81-81</text>
+  <text x="140" y="134" font-size="10.5" fill="var(--muted)" text-anchor="end">0.500</text>
+  <text x="656.6" y="120" font-size="13" fill="var(--steel)" font-weight="600">52%</text>
+  <text x="637.6" y="127" font-size="10.5" fill="var(--cream)" text-anchor="end">first .500 champion ever</text>
+  <rect x="150" y="156" width="170.7" height="40" fill="var(--rust)" opacity=".85"/>
+  <text x="140" y="173" font-size="13" fill="var(--ink)" text-anchor="end" font-weight="600">80-82</text>
+  <text x="140" y="188" font-size="10.5" fill="var(--muted)" text-anchor="end">0.494</text>
+  <text x="329.7" y="174" font-size="13" fill="var(--rust)" font-weight="600">18%</text>
+  <text x="372.7" y="174" font-size="10.5" fill="var(--muted)">first losing champion ever</text>
+  <rect x="150" y="210" width="8.7" height="40" fill="var(--rust)" opacity=".85"/>
+  <text x="140" y="227" font-size="13" fill="var(--ink)" text-anchor="end" font-weight="600">79-83</text>
+  <text x="140" y="242" font-size="10.5" fill="var(--muted)" text-anchor="end">0.488</text>
+  <text x="167.7" y="228" font-size="13" fill="var(--rust)" font-weight="600">1%</text>
+  <line x1="150" y1="32" x2="690" y2="32" stroke="var(--green)" stroke-width="1.6"/>
+  <text x="150" y="26" font-size="10.8" fill="var(--green)" font-weight="600">every bar below the first would be the worst division winner in 57 years</text>
+  <text x="420" y="274" font-size="10.8" fill="var(--muted)" text-anchor="middle" letter-spacing="1">200,000 SIMULATED SEASONS FROM 79-80 WITH THREE TO PLAY</text>
+  </svg>
+  <figcaption style="font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);margin-top:.8rem;text-align:center;letter-spacing:.04em">ONLY THE TOP BAR HAS EVER HAPPENED BEFORE. THE OTHER THREE WOULD ALL BE NEW.</figcaption>
   </figure>
-  -->
 
-  <p>TODO body paragraph one &mdash; the lede setup in prose.</p>
-
-  <p>TODO body paragraph two &mdash; the question, framed.</p>
-
-  <h2 class="sh">TODO Section Heading</h2>
-
-  <p>TODO body. Use the concept-primer component to give readers the (i) link to a primer when a named concept appears:</p>
-
-  <p>For example, the question is really about the <span class="cc" data-preview="One-line preview of the concept — what the primer will explain.">named concept<a class="cc-i" href="https://thesportspage.net/concepts/concept-slug.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> that drives the whole inference.</p>
+  <p>Read the bars, not the winner. Only the top one &mdash; 82 and 80, a 30% chance &mdash; matches anything in the record book, and even that only ties it. <b>Everything else is a record.</b> The single most likely finish is 81 and 81, dead even, which no division winner has ever managed.</p>
 
   <div class="pull">
-    <p>TODO &mdash; the pullquote. Distill the issue's single best sentence.</p>
+    <p>A division is five clubs. If all five are bad, one of them still wins it and still gets the trophy.</p>
     <cite>&mdash; The Sports Page</cite>
   </div>
 
-  <h2 class="sh">TODO Second Section Heading</h2>
+  <h2 class="sh">Why now and not before</h2>
 
-  <p>TODO &mdash; more body. End the piece with the civic-mission close: what the reader should take with them as a way of thinking, not just a fact about this game.</p>
+  <p>Two things changed. Divisions got smaller &mdash; six clubs became five when Houston moved leagues &mdash; and a small division has fewer chances to contain a good team. And the playoff field got bigger, so winning a weak division is worth more than it used to be; nobody is trading away a September in a race like this.</p>
+
+  <p>We are not saying the AL West is rigged or broken. We are saying the math allows this, it always did, and for 57 years it simply had not come up.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>A ranking tells you who finished first. It does not tell you how good first was. Those feel like the same fact and they are not, and the gap between them is where most bad sports arguments live.</p>
+
+  <p>You will hear somebody this week say the AL West champion does not deserve to be there. They are wrong about the rule and right about the team. Both of those can be true, and keeping them apart is most of what reading a table well amounts to.</p>
+
+  <p><b>One honest limit:</b> our game odds come from season records, which is a crude measure in the last week when clubs rest starters and play out the string. The history is exact; the forecast is not. We will publish what actually happened.</p>
+
+  <p>Check it yourself &mdash; the standings are public, and so is <a href="https://thesportspage.net/odds.html" target="_blank" rel="noopener">our odds board</a>. The rest of the paper is at <a href="https://thesportspage.net/" target="_blank" rel="noopener">thesportspage.net</a>.</p>
 
   <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
   <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
@@ -189,7 +213,7 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
   <!-- WATCH_BLOCK -->
   <div class="footer">
     <span>The Sports Page</span>
-    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>Vol. I, No. 182 &middot; September 26, 2026</span>
     <span>One Question Per Issue, Answered With Numbers.</span>
   </div>
   <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
