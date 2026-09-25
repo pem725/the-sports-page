@@ -59,7 +59,7 @@ TOPIC_TO_COLOUR = {
 
 CSS = """
 .hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
-.hed-glyph svg{width:1.02em;height:.68em}
+.hed-glyph svg{width:.66em;height:.51em}
 """
 
 MARKER = '<span class="hed-glyph"'
@@ -85,6 +85,14 @@ def apply(path, check=False):
         return f"{p.name}: would add {key}"
 
     svg = (GLYPHS / f"{key}.svg").read_text().strip()
+    # INTRINSIC SIZE, NOT JUST CSS. An <svg> with a viewBox and no width/height
+    # expands to fill its container when the stylesheet is not there. The glyph
+    # markup gets copied verbatim into index.html and into feed.xml, neither of
+    # which carries .hed-glyph -- so the archive rendered these at 642x494 px.
+    # Explicit attributes make the glyph correct anywhere it is pasted; CSS then
+    # scales it where the stylesheet exists.
+    svg = svg.replace('<svg class="tg" viewBox',
+                      '<svg class="tg" width="26" height="20" viewBox', 1)
     colour = TOPIC_TO_COLOUR.get(key, "var(--muted)")
     span = f'<span class="hed-glyph" style="color:{colour}" title="{topic}">{svg}</span>'
 

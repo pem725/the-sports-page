@@ -279,6 +279,21 @@ Size them for 20 pixels and check them at 20 pixels. The first pair of footballs
 drew laces as a line plus three ticks, which looked fine at 4x and merged into a
 blob at display size.
 
+**Give the `<svg>` explicit `width` and `height`, not just CSS.** An SVG with a
+viewBox and no intrinsic size expands to fill its container wherever the
+stylesheet is absent &mdash; and the glyph markup is copied verbatim into
+`index.html` and into `feed.xml`, neither of which carried `.hed-glyph`. The
+archive rendered every glyph at **642&times;494 px** against a 20-pixel design
+target, and the same markup sat in the feed that Buttondown mails out. Both now
+carry `width="26" height="20"`, so the glyph is correct anywhere it is pasted and
+CSS only scales it where a stylesheet exists.
+
+That is the third time a component has broken by being moved somewhere its CSS
+was not: it is the same shape of fault as the OG card entity bug. **When markup
+gets copied into another file, check what it depends on that did not travel with
+it.** Editing `feed.xml` is safe only if GUIDs, pubDates, titles and links are
+byte-identical afterwards &mdash; verify that before pushing, every time.
+
 **When creating new queue files**, always include PUBLISH-META. Claude should add this automatically when generating new issues.
 
 To manually trigger: go to GitHub → Actions tab → "Autopublish Daily Issue" → "Run workflow."
