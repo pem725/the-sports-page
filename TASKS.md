@@ -193,7 +193,27 @@ And the filter is not neutral: it removes more snaps from teams that get blown
 out, so the surviving sample is tilted toward good teams. Say so, or hold strength
 fixed.
 
-### C6. Our yards-per-play numbers do not adjust for opponent
+### C6. Opponent adjustment — BUILT 2026-09-25, and it is nearly decoration in the NFL
+`scripts/adjust_schedule.py` solves every offense and defense at once
+(`ypp = mu + off[i] + def[j]`, alternating least squares) so each unit is credited
+against what it actually faced.
+
+**The honest result: it changes almost nothing in the NFL.** Adjusted correlates
+with raw at 0.98 on offense and 0.95 on defense, the median club moves 0.13–0.21
+SD, and predicting next season's raw figure from the adjusted one is worth +0.005
+on offense and **−0.001** on defense. The league already balances its own
+fixtures, so there is little schedule to remove.
+
+**Still open, and this is where it will matter:** the same adjustment for COLLEGE,
+where a team can miss most of its conference. Expect it to be large there. The
+script is metric-agnostic; it needs a CFB loader with plays and yards, which means
+`/games/teams` rather than the cached scores file.
+
+**Trap:** do not keep an adjustment because it sounds rigorous. The script's
+`--check` exists to answer whether it earns its place, and in the NFL the answer
+is no.
+
+### C6b. Original note, kept for the record
 `scripts/picks_overlay.py` prints season-to-date yards per play straight. A team
 that has played three overmatched opponents looks elite, and in September nearly
 everyone has. This is the most-used number in the pipeline and it is raw.
