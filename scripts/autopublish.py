@@ -728,6 +728,20 @@ def main():
     run_soft(f'python3 scripts/check_readability.py --quiet "published/{filename}"',
              f"readability (target grade 6) for {filename}")
 
+    # Step 8.55: THE COPY EDIT, run on the file as it will actually ship. Added
+    # 2026-09-25 on the editor's instruction: "we need a copy editor, someone that
+    # looks at the final copy edit before it goes to print."
+    #
+    # It runs AFTER the move into published/ and after the date and issue number
+    # are stamped, because that is the object a reader gets. Running it on the
+    # queue file would miss anything the publisher itself introduces.
+    #
+    # Soft, like readability: the issue is written and the day should not hang on
+    # it. But it lands in SOFT_FAILURES, so the run exits non-zero and the alert
+    # email arrives -- which is the monitoring signal the editor asked us to keep.
+    run_soft(f'python3 scripts/check_layout.py "published/{filename}"',
+             f"layout / copy edit for {filename}")
+
     # Step 8.6: Render the per-issue Open Graph card (1200×630 PNG).
     # Must run BEFORE the share-section refresh so the inject step picks up
     # the new card path. Non-fatal if Pillow / fonts unavailable.

@@ -84,6 +84,16 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
 /* ── FOOTER ── */
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+.arch-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:0 0 1rem;font-family:'Roboto Mono',monospace;font-size:.64rem}
+.arch-bar .lbl{color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-right:.2rem}
+.arch-chip{border:1px solid var(--div);background:transparent;color:var(--muted);padding:.22rem .55rem;cursor:pointer;font:inherit;letter-spacing:.06em;text-transform:uppercase}
+.arch-chip:hover{border-color:var(--steel);color:var(--steel)}
+.arch-chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.arch-count{margin-left:auto;color:var(--muted)}
+.arch-more{display:block;width:100%;margin:1.2rem 0 0;padding:.75rem;border:1px solid var(--div);background:var(--card);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.arch-more:hover{border-color:var(--steel);color:var(--steel)}
+.issue[hidden]{display:none}
 </style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
@@ -156,6 +166,10 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
       <a href="pool/" style="color:var(--rust);text-decoration:none">The Pool Desk &mdash; Football Pool 101 &rarr;</a>
       <a href="newsroom.html" style="color:var(--steel);text-decoration:none">The Newsroom &mdash; how we pick what runs &rarr;</a>
     </div>
+  </div>
+
+  <div class="arch-bar" id="archbar" hidden>
+    <span class="lbl">Filter</span>
   </div>
 
   <div class="issues">
@@ -3235,6 +3249,81 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
     footerEst.textContent = 'The Sports Page · Est. '
       + months[first.getMonth()] + ' ' + first.getFullYear();
   }
+})();
+</script>
+
+<script>
+/* Archive paging. PROGRESSIVE ENHANCEMENT ON PURPOSE: the markup ships with every
+   issue visible, and this hides them at runtime. With JavaScript off, or if this
+   script throws, the reader still gets the whole archive -- which is the same
+   thing they had before. Nothing here touches the markup autopublish writes, so a
+   new <div class="issue"> inserted at the top of .issues just works. */
+(function () {
+  var STEP = 20;
+  var list = document.querySelector('.issues');
+  var bar  = document.getElementById('archbar');
+  if (!list || !bar) return;
+  var all = [].slice.call(list.querySelectorAll('.issue'));
+  if (all.length <= STEP) return;
+
+  var shown = STEP, topic = null;
+
+  var counts = {};
+  all.forEach(function (el) {
+    var k = el.getAttribute('data-topic') || 'Other';
+    counts[k] = (counts[k] || 0) + 1;
+  });
+  var top = Object.keys(counts).filter(function (k) { return counts[k] >= 5; })
+              .sort(function (a, b) { return counts[b] - counts[a]; });
+
+  var count = document.createElement('span');
+  count.className = 'arch-count';
+
+  function matches(el) { return !topic || (el.getAttribute('data-topic') === topic); }
+
+  function render() {
+    var seen = 0;
+    all.forEach(function (el) {
+      var ok = matches(el);
+      el.hidden = !(ok && seen < shown);
+      if (ok) seen++;
+    });
+    count.textContent = Math.min(shown, seen) + ' of ' + seen +
+                        (topic ? ' in ' + topic : ' issues');
+    more.hidden = shown >= seen;
+    more.textContent = 'Show ' + Math.min(STEP, seen - shown) + ' more';
+  }
+
+  var more = document.createElement('button');
+  more.className = 'arch-more';
+  more.type = 'button';
+  more.addEventListener('click', function () { shown += STEP; render(); });
+  list.parentNode.insertBefore(more, list.nextSibling);
+
+  function chip(label, value) {
+    var b = document.createElement('button');
+    b.className = 'arch-chip';
+    b.type = 'button';
+    b.textContent = label;
+    b.setAttribute('aria-pressed', value === topic ? 'true' : 'false');
+    b.addEventListener('click', function () {
+      topic = value; shown = STEP;
+      [].forEach.call(bar.querySelectorAll('.arch-chip'), function (o) {
+        o.setAttribute('aria-pressed', 'false');
+      });
+      b.setAttribute('aria-pressed', 'true');
+      render();
+      list.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    });
+    bar.appendChild(b);
+    return b;
+  }
+
+  chip('All', null);
+  top.forEach(function (k) { chip(k + ' ' + counts[k], k); });
+  bar.appendChild(count);
+  bar.hidden = false;
+  render();
 })();
 </script>
 </body>

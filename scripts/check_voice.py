@@ -41,7 +41,8 @@ except ImportError:
 TARGETS = {
     "you / your":      (r"\byou\b|\byour\b",                15.67, 6.0),
     "we / us / our":   (r"\bwe\b|\bus\b|\bour\b",            8.44, 3.0),
-    "imperative open": (r"(?m)(^|\.\s+)(Ask|Notice|Watch|Look|Consider|Try|Remember|Hold)\b",
+    "imperative open": (r"(?m)(^|\.\s+)(Ask|Notice|Watch|Look|Consider|Try|Remember|Hold|Read|Check"
+    r"|Count|Compare|Picture|Start|Keep|Forget|Follow|Take)\b",
                                                              1.20, 0.4),
     "semicolon":       (r";",                                4.51, 1.5),
 }
