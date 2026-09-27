@@ -71,6 +71,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <meta name="twitter:title" content="The Pitcher We Started With Is “Struggling.” The Numbers That Matter Say He Isn’t.">
 <meta name="twitter:description" content="This newsletter was born, on Opening Day, on a Paul Skenes number: a 67.5 ERA that looked like the end of the world and meant absolutely nothing, because it came from a single ugly inning. More…">
 <meta name="twitter:image" content="https://thesportspage.net/assets/og/125-skenes-full-circle.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </head>

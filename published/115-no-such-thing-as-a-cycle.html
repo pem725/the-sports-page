@@ -76,6 +76,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <meta name="twitter:title" content="Twenty-Six Baseball Franchises. Not One of Them Runs in Cycles.">
 <meta name="twitter:description" content="Every fan believes their club rises and falls on some hidden clock — a good decade, a lean decade, a rebuild, a window. It is the most natural story in sports and it is not in the data. I tested…">
 <meta name="twitter:image" content="https://thesportspage.net/assets/og/115-no-such-thing-as-a-cycle.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </head>

@@ -92,6 +92,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <meta name="twitter:title" content="Home Teams Stopped Winning in 2019. The Crowds Left in 2020.">
 <meta name="twitter:description" content="NFL home teams won by 2.4 points a game from 2016 to 2018. In 2019, with every seat sold, the edge was minus 0.14 &mdash; and the empty-stadium season that followed looked exactly the same.">
 <meta name="twitter:image" content="https://thesportspage.net/assets/og/157-home-field-2019.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <!-- Open Graph + Twitter Card for social previews -->

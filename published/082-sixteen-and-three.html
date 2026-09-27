@@ -86,6 +86,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <meta name="twitter:title" content="Two Trophies. Same Record. Twenty-Four Hours Apart.">
 <meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
 <meta name="twitter:image" content="https://thesportspage.net/assets/og/082-sixteen-and-three.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </head>

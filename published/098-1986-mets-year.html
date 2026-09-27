@@ -55,6 +55,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <meta name="twitter:title" content="For One Year, the Trophy Was Always Somebody&#x27;s. That Year Was 1986.">
 <meta name="twitter:description" content="A reader asked us to look back forty years, to 1986 — the greatest single year the sports calendar has ever assembled, and the last time the Mets stood alone on top of it. What follows is a diary…">
 <meta name="twitter:image" content="https://thesportspage.net/assets/og/098-1986-mets-year.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </head>

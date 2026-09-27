@@ -116,6 +116,15 @@ textarea#qi::placeholder{color:#6b5e4a}
 .watch-table tr:last-child td{border-bottom:none}
 .watch-table .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
 </style>
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <meta property="og:title" content="Two Hundred Seventy Division Champions. This Year's Will Be the Worst of Them.">

@@ -82,6 +82,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 .state p{font-size:.86rem;margin:0}
 .state a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)}
 </style>
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </head>

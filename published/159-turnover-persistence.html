@@ -95,6 +95,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <meta name="twitter:title" content="Turnovers Win Games. They Do Not Win Seasons.">
 <meta name="twitter:description" content="A season&rsquo;s turnover margin explains 3% of the next season&rsquo;s. How a team moves the ball explains 15%. Turnovers feel like character and behave like weather.">
 <meta name="twitter:image" content="https://thesportspage.net/assets/og/159-turnover-persistence.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <!-- Open Graph + Twitter Card for social previews -->

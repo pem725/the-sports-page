@@ -78,6 +78,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <meta name="twitter:title" content="The Line on Ohio State–Texas Is a Point and a Half.">
 <meta name="twitter:description" content="Twenty-two times this fall, two playoff contenders will line up across from each other. But not all collisions are equal. The Saturdays that actually decide the bracket are the ones where nobody…">
 <meta name="twitter:image" content="https://thesportspage.net/assets/og/105-cfb-weeks-that-matter.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </head>

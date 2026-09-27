@@ -95,12 +95,20 @@ def normalize_path(path):
     paths. The old filter required a leading "/published/", which meant every
     legacy hit was DISCARDED rather than merely split off — and at these volumes
     a three-view difference silently reorders the entire top five.
+
+    ALSO FOLDS /index.html INTO /. Added 2026-09-27: the homepage was being
+    counted four ways -- /, /index.html, /the-sports-page and
+    /the-sports-page/index.html -- and across six months that split 243 views of
+    one page into four entries. The tracking snippet now normalizes before
+    sending, so this only has to repair the history.
     """
     if path.startswith("/the-sports-page/"):
-        return path[len("/the-sports-page"):]
-    if path == "/the-sports-page":
-        return "/"
-    return path
+        path = path[len("/the-sports-page"):]
+    elif path == "/the-sports-page":
+        path = "/"
+    if path.endswith("/index.html"):
+        path = path[:-len("index.html")]
+    return path or "/"
 
 
 def build_block(hits, start, end):

@@ -58,6 +58,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <meta name="twitter:title" content="No, Notre Dame Is Not About to Become Free">
 <meta name="twitter:description" content="A $20 billion endowment sounds like enough to run a university for nothing. It spends 3.3% a year, that covers 39% of the bills, and 83% of it is spoken for. A lesson in the seduction of the big number.">
 <meta name="twitter:image" content="https://thesportspage.net/assets/og/120-endowment-myth.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <!-- Open Graph + Twitter Card for social previews -->

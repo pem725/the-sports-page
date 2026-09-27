@@ -95,6 +95,15 @@ hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
 <meta name="twitter:title" content="Your Team Held the Ball Longer. That Just Means They Were Ahead.">
 <meta name="twitter:description" content="Time of possession predicts a team&rsquo;s second half at +0.216. Account for the point margin and it falls to minus 0.003. Teams hold the ball because they are winning.">
 <meta name="twitter:image" content="https://thesportspage.net/assets/og/158-possession-collapse.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <!-- Open Graph + Twitter Card for social previews -->
