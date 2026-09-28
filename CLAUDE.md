@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 318 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 316 issues remaining of 500
 
 ## Repository Structure
 
@@ -1098,9 +1098,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 183 issues (#1-183)
-Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 149-where-players-die, 152-returning-noise, 163-beaten-by-a-hat, 164-where-you-put-them, 166-cost-of-fandom, 167-lottery-priced-honestly, 168-which-budges, _TEMPLATE)
+Published: 184 issues (#1-184)
+Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 149-where-players-die, 152-returning-noise, 164-where-you-put-them, 166-cost-of-fandom, 167-lottery-priced-honestly, 168-which-budges, 169-fastball-denominator, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 317 issues remaining of 500
-Last published: Issue #183 — "Two Hundred Seventy Division Champions. Not One Finished Below .500. Now One Does." (sunday-025.html) on September 27, 2026
+Goal: 316 issues remaining of 500
+Last published: Issue #184 — "Our New Rule Beat Our Old One. Random Numbers Beat Them Both." (163-beaten-by-a-hat.html) on September 28, 2026
