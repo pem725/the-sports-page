@@ -1,0 +1,286 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: slow
+tags: MLB:mlb, Base Rates, Denominators, Contributor
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — He Threw 104. The Box Score Said He Climbed Three Levels. It Did Not.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="He Threw 104. The Box Score Said He Climbed Three Levels. It Did Not.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/169-fastball-denominator.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/169-fastball-denominator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="He Threw 104. The Box Score Said He Climbed Three Levels. It Did Not.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/169-fastball-denominator.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">MLB &middot; thesportspage.net, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. 191</span>
+    <span>October 6, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>He Threw 104. The Box Score Said He Climbed Three Levels. <em>It Did Not.</em></h1>
+
+  <div class="deck">
+    A 22-year-old in Las Vegas threw seventeen fastballs and not one came in under 101.5. His season line reads Single-A, Double-A, Triple-A &mdash; a prospect tearing through the system. The transaction log says something else, and the difference is the whole lesson.
+  </div>
+
+  <p class="byline">By Sean McKnight &middot; reported from Las Vegas Ballpark</p>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">104</div><div class="l">miles an hour, top pitch</div></div>
+    <div class="sc"><div class="v now">17</div><div class="l">fastballs, none under 101.5</div></div>
+    <div class="sc"><div class="v good">1</div><div class="l">actual promotion, not three</div></div>
+  </div>
+
+
+  <p><b>What does one great pitch actually tell you?</b> On September 26 I sat at Las Vegas Ballpark and watched number 44 throw seventeen fastballs. Every one came in at 101.5 or better. The fastest hit <b>104</b>.</p>
+
+  <p>Two questions came with it. How often does a pitcher climb from Single-A to Triple-A in a single season? And does being tall explain throwing that hard?</p>
+
+  <p>Most people assume the way to answer a question like this is to find other pitchers who did the same thing. That is the natural move and it is the wrong one, because it counts only the people you already noticed. The answer comes from <b>counting everybody who belongs in the calculation</b> &mdash; and once we did, it turns out the box score was describing something that never happened.</p>
+
+  <h2 class="sh">First, check what actually happened</h2>
+
+  <p>The pitcher was Jarlin Susana, of the Rochester Red Wings. He is listed at six foot six and 235 pounds &mdash; not the six foot eight I heard at the ballpark &mdash; and he is 22.</p>
+
+  <p>His season line reads High-A, then Double-A, then Triple-A. That looks like a prospect climbing three rungs in one summer.</p>
+
+  <p>The transaction log says otherwise, and we went and read it. He had already reached Double-A in <b>April 2025</b>. His August 2026 appearance at High-A Wilmington is listed as a <b>rehabilitation assignment</b> &mdash; he was coming back from the 60-day injured list. Then in September he moved up to Triple-A.</p>
+
+  <p>So: one genuine promotion, not three. The season line is accurate and the story it tells us is wrong, which is a combination we should all find unsettling.</p>
+
+  <div class="pull">
+    <p>The numbers can be right while the category is wrong. That is misclassification, and no amount of careful arithmetic afterwards will fix it.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <p>This matters beyond one pitcher. Suppose you wanted to study how often prospects advance quickly. Count rehab stops as promotions and you have put the wrong players in your sample before computing anything. The trouble happens when you <em>classify</em>, not when you calculate.</p>
+
+  <h2 class="sh">Promoted compared with whom</h2>
+
+  <p>Say you want to know whether fast promotion predicts a big-league career. First you have to define fast. Starting at Single-A and reaching Triple-A is one journey; starting at High-A is another. You have to strip out rehab trips. You have to separate a first climb from a return to a level already reached.</p>
+
+  <p>Then you have to decide what counts as success. One big-league appearance? Fifty innings? Three seasons? A pitcher can clear the first bar without coming near the third.</p>
+
+  <p>And then the part people skip. <b>The denominator depends on the question.</b> Asking how often pitchers climb from A to Triple-A means starting with every eligible A-level pitcher. Asking how often those climbers reach the majors means starting with the climbers. Same subject, different bottom of the fraction, wildly different answer.</p>
+
+  <p>A list of famous pitchers who moved fast cannot settle it. It leaves out every player whose name you never learned &mdash; and that is the group the answer depends on.</p>
+
+  <h2 class="sh">Tall compared with whom</h2>
+
+  <p>Now the second question. Susana is six foot six. F&eacute;lix Bautista is six foot eight and has been reported at 102 and 103. Yordano Ventura was five foot eleven and also touched 102. Those examples prove that extreme velocity happens at several heights. They do not tell you how <em>common</em> it is at any of them.</p>
+
+  <p>Suppose a study found that most pitchers reaching 102 were tall. Watch what that does and does not mean.</p>
+
+  <figure style="margin:2rem 0">
+  <svg viewBox="0 0 720 360" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left: of the twenty pitchers who reach 102 miles an hour, sixteen are tall, which is 80 percent. Right: the rate of reaching 102 is 2 percent among tall pitchers and 2 percent among short pitchers. Same data, two different questions." font-family="'Roboto Mono',monospace">
+  <rect width="720" height="360" fill="var(--cream)"/>
+  <text x="46" y="34" font-size="12.5" fill="var(--ink)" font-weight="600">Of the 20 pitchers who reach 102&#8230;</text>
+  <circle cx="56" cy="60" r="9" fill="var(--rust)"/>
+  <circle cx="82" cy="60" r="9" fill="var(--rust)"/>
+  <circle cx="108" cy="60" r="9" fill="var(--rust)"/>
+  <circle cx="134" cy="60" r="9" fill="var(--rust)"/>
+  <circle cx="160" cy="60" r="9" fill="var(--rust)"/>
+  <circle cx="56" cy="86" r="9" fill="var(--rust)"/>
+  <circle cx="82" cy="86" r="9" fill="var(--rust)"/>
+  <circle cx="108" cy="86" r="9" fill="var(--rust)"/>
+  <circle cx="134" cy="86" r="9" fill="var(--rust)"/>
+  <circle cx="160" cy="86" r="9" fill="var(--rust)"/>
+  <circle cx="56" cy="112" r="9" fill="var(--rust)"/>
+  <circle cx="82" cy="112" r="9" fill="var(--rust)"/>
+  <circle cx="108" cy="112" r="9" fill="var(--rust)"/>
+  <circle cx="134" cy="112" r="9" fill="var(--rust)"/>
+  <circle cx="160" cy="112" r="9" fill="var(--rust)"/>
+  <circle cx="56" cy="138" r="9" fill="var(--rust)"/>
+  <circle cx="82" cy="138" r="9" fill="var(--div)"/>
+  <circle cx="108" cy="138" r="9" fill="var(--div)"/>
+  <circle cx="134" cy="138" r="9" fill="var(--div)"/>
+  <circle cx="160" cy="138" r="9" fill="var(--div)"/>
+  <text x="46" y="188" font-size="11.5" fill="var(--rust)" font-weight="600">16 are tall</text>
+  <text x="46" y="205" font-size="11.5" fill="var(--muted)">4 are not</text>
+  <text x="46" y="232" font-size="17" fill="var(--ink)" font-weight="700">80% tall</text>
+  <text x="46" y="252" font-size="11" fill="var(--muted)">the number people quote</text>
+  <line x1="330" y1="30" x2="330" y2="300" stroke="var(--div)" stroke-width="1.4"/>
+  <text x="360" y="34" font-size="12.5" fill="var(--ink)" font-weight="600">&#8230;but how often does each group get there?</text>
+  <text x="360" y="68" font-size="11.5" fill="var(--muted)">tall pitchers &#183; 16 of 800</text>
+  <rect x="360" y="78" width="200" height="22" fill="var(--div)" opacity=".5"/>
+  <rect x="360" y="78" width="4.0" height="22" fill="var(--rust)"/>
+  <text x="572" y="94" font-size="15" fill="var(--rust)" font-weight="700">2%</text>
+  <text x="360" y="148" font-size="11.5" fill="var(--muted)">short pitchers &#183; 4 of 200</text>
+  <rect x="360" y="158" width="200" height="22" fill="var(--div)" opacity=".5"/>
+  <rect x="360" y="158" width="4.0" height="22" fill="var(--rust)"/>
+  <text x="572" y="174" font-size="15" fill="var(--rust)" font-weight="700">2%</text>
+  <text x="360" y="232" font-size="17" fill="var(--ink)" font-weight="700">Identical.</text>
+  <text x="360" y="252" font-size="11" fill="var(--muted)">being tall does not help at all</text>
+  <rect x="46" y="276" width="628" height="40" fill="var(--ink)"/>
+  <text x="360" y="301" font-size="12.5" fill="var(--cream)" text-anchor="middle">The 80% is not an advantage. It is just how many tall pitchers there are.</text>
+  <text x="360" y="338" font-size="10.5" fill="var(--muted)" text-anchor="middle" letter-spacing="1">ILLUSTRATIVE NUMBERS, NOT MEASURED BASEBALL RATES</text>
+  </svg>
+  <figcaption style="font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);margin-top:.8rem;text-align:center;letter-spacing:.04em">THE SAME TWENTY PITCHERS, COUNTED TWO WAYS. ONLY ONE OF THEM ANSWERS THE QUESTION.</figcaption>
+  </figure>
+
+  <p>Eighty percent of the hardest throwers are tall. And being tall does not help at all. Both come from the same twenty pitchers, and the second is the answer to the question we actually asked.</p>
+
+  <p>The 80% only counts the pitchers who already threw 102. It never asks how many tall pitchers there were to begin with. <b>The share of fast pitchers who are tall is not the share of tall pitchers who are fast.</b></p>
+
+  <h2 class="sh">What the research can and cannot say</h2>
+
+  <p>A 2022 study in PLOS ONE measured 64 adult pitchers at a professional tryout in Taiwan. Height mattered in a model that also used jump and sprint tests, and together those measures accounted for about <b>23%</b> of the differences in velocity.</p>
+
+  <p>Read that carefully. It does not mean height explained 23%. It does not mean you could pick out 23% of future big leaguers. It means those measurements together covered part of the variation <em>in that sample</em> &mdash; and most of the variation stayed unexplained.</p>
+
+  <p>There is a deeper problem too. Pro pitchers have already survived years of selection. A short pitcher who got that far probably has something else going for him. Study only the survivors and you get a different answer than studying everyone who started out.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>Let the thing you noticed start the investigation, not finish it. Check what actually happened before you explain it. Decide who belongs in the comparison. Then count the denominator &mdash; including everyone we never had a reason to notice, because they are the ones holding the answer.</p>
+
+  <p>You can use this tonight, on any number a broadcast gives you. When somebody says most of the people who did X share some trait, ask the other question: <b>of everyone with that trait, how many did X?</b> Those are different fractions and only one of them is usually being sold to you.</p>
+
+  <p>I went to the ballpark to watch baseball. Number 44 gave me a reason to think about statistics instead. The fastball was spectacular; the questions it raised were worth the trouble.</p>
+
+  <p><b>What we are not claiming.</b> We have not measured how often pitchers really do climb three levels, or how much height really contributes to velocity. Both would need a proper game-level study with the follow-up period held equal, and neither is done here. The height numbers in the figure are invented to show the arithmetic, and are labeled as such.</p>
+
+  <p>Susana&rsquo;s details come from his official profile and transaction history; the velocity from the league&rsquo;s own report. More at <a href="https://thesportspage.net/" target="_blank" rel="noopener">thesportspage.net</a>.</p>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. 191 &middot; October 6, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

@@ -113,6 +113,8 @@ football baseball basketball hockey league playoff playoffs title champion cup d
 spend spends spent cost costs pay pays paid buy buys bought sell sells sold worth
 record records tie ties tied winning losing beaten drew draw streak run runs
 ticket tickets winner winners loser losers prize prizes draws expect expects expected odds
+threw thrown box boxes climb climbs climbed pitch pitches pitcher pitchers level levels
+hit hitter hitters bat bats swing swings mile miles speed
 rank ranks ranked odds chance chances
 tell tells told know knows knew think thinks say says said see sees saw look looks looked
 make makes made get gets got take takes took give gives gave come comes came go goes went
