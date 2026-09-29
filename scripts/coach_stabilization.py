@@ -87,7 +87,7 @@ def fetch(lo=1970, hi=2025, existing=None):
                 time.sleep(wait)
         if d is None:
             raise SystemExit(f"{yr} failed after 4 attempts -- refusing to "
-                             f"analyse a silently truncated window")
+                             f"analyze a silently truncated window")
         time.sleep(1.2)
         for c in d:
             name = f"{c.get('firstName','')} {c.get('lastName','')}".strip()
