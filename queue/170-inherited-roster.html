@@ -1,0 +1,273 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: keeps
+tags: CFB:cfb, Coaching, Attribution, Methods
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — He Inherited the Roster. He Wins One Game Fewer Than It Should.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="He Inherited the Roster. He Wins One Game Fewer Than It Should.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/170-inherited-roster.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/170-inherited-roster.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="He Inherited the Roster. He Wins One Game Fewer Than It Should.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/170-inherited-roster.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">CFB &middot; thesportspage.net, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. 192</span>
+    <span>October 8, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>He Inherited the Roster. <em>He Wins One Game Fewer Than It Should.</em></h1>
+
+  <div class="deck">
+    Everybody says give him three years. Nobody says what changes in those three years. So we counted the recruiting classes on every roster since 2000. A first-year coach finishes a full win below what his inherited talent should deliver. He climbs out of the hole at almost exactly the rate the roster becomes his.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; 2,685 coach-seasons, 441 coaches</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">&minus;1.0</div><div class="l">wins below his roster, first season</div></div>
+    <div class="sc"><div class="v now">0%</div><div class="l">of that roster he recruited</div></div>
+    <div class="sc"><div class="v good">+0.5</div><div class="l">wins above it, by his fifth</div></div>
+  </div>
+
+
+  <p><b>When does a team stop being the last guy's team?</b> Everybody has an opinion and nobody has a number. So we built one.</p>
+
+  <p>A college roster is roughly the last four recruiting classes. A class belongs to the new coach only if he signed it. That gives a share with no judgment in it. In his first season <b>none</b> of the roster is his. In his second, a quarter. Then half, then three quarters, and by his fifth season all of it.</p>
+
+  <p>Then the question becomes answerable. Do coaches beat the talent they were handed, and does the answer change as the talent becomes theirs?</p>
+
+  <h2 class="sh">The answer, across 2,685 seasons</h2>
+
+  <p>First, the exchange rate. One standard deviation of recruiting &mdash; roughly the gap between the twentieth-best class in the country and the fiftieth &mdash; is worth <b>0.086</b> of winning percentage. About one win a season. That is what talent buys.</p>
+
+  <p>Now watch what coaches do against it.</p>
+
+  <figure style="margin:2rem 0">
+  <svg viewBox="0 0 720 340" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A coach wins 8.3 points of winning percentage less than his inherited roster should in his first season, and climbs to 4.5 points above by his fifth, as the share of the roster he recruited goes from zero to all of it." font-family="'Roboto Mono',monospace">
+  <rect width="720" height="340" fill="var(--cream)"/>
+  <rect x="84" y="58" width="576" height="67.5" fill="var(--green)" opacity=".06"/>
+  <rect x="84" y="125.5" width="576" height="112.5" fill="var(--rust)" opacity=".06"/>
+  <line x1="84" y1="125.5" x2="660" y2="125.5" stroke="var(--ink)" stroke-width="1.6"/>
+  <text x="664" y="130" font-size="10.5" fill="var(--ink)">par</text>
+  <polyline points="84.0,218.9 228.0,151.4 372.0,130.0 516.0,90.6 660.0,74.9" fill="none" stroke="var(--steel)" stroke-width="3"/>
+  <circle cx="84.0" cy="218.9" r="6.5" fill="var(--rust)"/>
+  <text x="84.0" y="202.9" font-size="12.5" fill="var(--rust)" text-anchor="middle" font-weight="600">-0.083</text>
+  <text x="84.0" y="258" font-size="11.5" fill="var(--ink)" text-anchor="middle">first</text>
+  <text x="84.0" y="274" font-size="10.5" fill="var(--muted)" text-anchor="middle">0% his</text>
+  <text x="84.0" y="288" font-size="9.5" fill="var(--div)" text-anchor="middle">n=523</text>
+  <circle cx="228.0" cy="151.4" r="6.5" fill="var(--rust)"/>
+  <text x="228.0" y="135.4" font-size="12.5" fill="var(--rust)" text-anchor="middle" font-weight="600">-0.023</text>
+  <text x="228.0" y="258" font-size="11.5" fill="var(--ink)" text-anchor="middle">second</text>
+  <text x="228.0" y="274" font-size="10.5" fill="var(--muted)" text-anchor="middle">25% his</text>
+  <text x="228.0" y="288" font-size="9.5" fill="var(--div)" text-anchor="middle">n=451</text>
+  <circle cx="372.0" cy="130.0" r="6.5" fill="var(--rust)"/>
+  <text x="372.0" y="114.0" font-size="12.5" fill="var(--rust)" text-anchor="middle" font-weight="600">-0.004</text>
+  <text x="372.0" y="258" font-size="11.5" fill="var(--ink)" text-anchor="middle">third</text>
+  <text x="372.0" y="274" font-size="10.5" fill="var(--muted)" text-anchor="middle">51% his</text>
+  <text x="372.0" y="288" font-size="9.5" fill="var(--div)" text-anchor="middle">n=385</text>
+  <circle cx="516.0" cy="90.6" r="6.5" fill="var(--green)"/>
+  <text x="516.0" y="110.6" font-size="12.5" fill="var(--green)" text-anchor="middle" font-weight="600">+0.031</text>
+  <text x="516.0" y="258" font-size="11.5" fill="var(--ink)" text-anchor="middle">fourth</text>
+  <text x="516.0" y="274" font-size="10.5" fill="var(--muted)" text-anchor="middle">76% his</text>
+  <text x="516.0" y="288" font-size="9.5" fill="var(--div)" text-anchor="middle">n=310</text>
+  <circle cx="660.0" cy="74.9" r="6.5" fill="var(--green)"/>
+  <text x="660.0" y="94.9" font-size="12.5" fill="var(--green)" text-anchor="middle" font-weight="600">+0.045</text>
+  <text x="660.0" y="258" font-size="11.5" fill="var(--ink)" text-anchor="middle">fifth+</text>
+  <text x="660.0" y="274" font-size="10.5" fill="var(--muted)" text-anchor="middle">100% his</text>
+  <text x="660.0" y="288" font-size="9.5" fill="var(--div)" text-anchor="middle">n=1016</text>
+  <text x="74" y="75" font-size="10.5" fill="var(--green)" text-anchor="end">beats</text>
+  <text x="74" y="88" font-size="10.5" fill="var(--green)" text-anchor="end">his roster</text>
+  <text x="74" y="219" font-size="10.5" fill="var(--rust)" text-anchor="end">loses to</text>
+  <text x="74" y="232" font-size="10.5" fill="var(--rust)" text-anchor="end">his roster</text>
+  <text x="372" y="36" font-size="11.5" fill="var(--muted)" text-anchor="middle">2,685 coach-seasons, 2000&#8211;2025 &#183; win percentage above or below what the roster should win</text>
+  </svg>
+  <figcaption style="font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);margin-top:.8rem;text-align:center;letter-spacing:.04em">THE CLIMB TRACKS THE ROSTER TURNING OVER, ALMOST EXACTLY.</figcaption>
+  </figure>
+
+  <p>A first-year coach finishes <b>8.3 points of winning percentage below</b> what his inherited roster should have produced. Over twelve games that is a full win. He is not just failing to improve the team; he is getting less out of it than the talent on hand says he should.</p>
+
+  <p>Then it climbs, steadily, and it stops being negative at almost exactly the point where half the roster is his. By the fifth season he is <b>4.5 points above</b> par. The swing from first season to fifth is about a win and a half.</p>
+
+  <div class="pull">
+    <p>The first year is not a small sample of the coach. It is a clean measurement of somebody else's players learning a new system.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">The obvious objection, and why it does not hold</h2>
+
+  <p>You might think this is survivorship; bad coaches get fired before their fourth season, so of course the men still standing in year five look good. The curve could be selection and nothing else.</p>
+
+  <p>So we tested it inside careers. Take only the 265 coaching spells that actually reached a fifth season, and look back at what those same men did earlier:</p>
+
+  <table style="width:100%;border-collapse:collapse;font-family:'Roboto Mono',monospace;font-size:.82rem;margin:1.2rem 0">
+    <tr style="border-bottom:2px solid var(--ink)"><th style="text-align:left;padding:.4rem 0">season</th><th style="text-align:right">all coaches</th><th style="text-align:right">only those who lasted five years</th></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">first</td><td style="text-align:right">&minus;0.083</td><td style="text-align:right">&minus;0.063</td></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">second</td><td style="text-align:right">&minus;0.023</td><td style="text-align:right">+0.001</td></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">third</td><td style="text-align:right">&minus;0.004</td><td style="text-align:right">+0.024</td></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">fourth</td><td style="text-align:right">+0.031</td><td style="text-align:right">+0.058</td></tr>
+  </table>
+
+  <p>The men who survived five years were <em>also</em> underwater in year one. The climb happens inside their own careers, so survival is not creating it. <b>Even the coaches who turned out to be good looked bad with somebody else's players.</b></p>
+
+  <h2 class="sh">So what does a first season tell you?</h2>
+
+  <p>Less than the shouting suggests, and something different from what people think they are watching. A first-year record is mostly a measurement of the roster, run through a staff that has not had a signing day yet. The number to compare against is not .500. It is whatever that roster should have won, minus about a win.</p>
+
+  <p>So the honest version of "give him three years" is not patience; it is arithmetic. Three years is roughly when the roster crosses from mostly his predecessor's to mostly his. That is the first season whose record describes the man you hired.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>Before you judge anybody's first year at anything, ask what they inherited and how much of it they chose. Not as generosity; as measurement. A new manager, a new principal, a new head of a department &mdash; the outcomes you see in year one were mostly set in motion before they arrived.</p>
+
+  <p>The useful question is never "did it get better." It is <b>"did it get better than what they were handed should have produced"</b>. Then, separately: how much of that did they pick?</p>
+
+  <p><b>Where this is generous to coaches, and it is generous in three places.</b> Recruiting rankings are a market forecast, not a measurement, and they price the same hype a big-name hire generates. They ignore transfers completely, which in the portal era is a large and growing hole. And attrition is not random: struggling teams lose their best players. Every one of those pushes toward crediting a coach for talent he did not develop, so read the whole curve as flattering.</p>
+
+  <p><b>And one result we are not publishing as a finding.</b> Beating your roster persists better on an inherited one (r = 0.45) than on your own (0.31), which is backwards from what you would expect. The likely explanation is uncomfortable. On an inherited roster, part of what we measure is a stable gap between a school&rsquo;s recruiting rankings and its real quality. That is a property of the school, not the coach. We are working on it.</p>
+
+  <p>The script is public. More at <a href="https://thesportspage.net/" target="_blank" rel="noopener">thesportspage.net</a>.</p>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. 192 &middot; October 8, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
