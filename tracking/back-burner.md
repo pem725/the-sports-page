@@ -81,10 +81,12 @@ The paper alternates **college football and baseball only** until baseball ends,
 then college football and the NFL. These two are held, not dropped, and neither
 has rotted:
 
-- **`140-one-kick.html`** (NFL, kicking probability, answers Gene). *Revival
-  trigger:* the day the NFL becomes a rotation sport — when the baseball season
-  ends. It is `dated` only in the loose sense that it references a current
-  season; check its figures still hold before restoring.
+- ~~**`140-one-kick.html`**~~ **RELEASED 2026-09-30** to Thu 8 Oct. The trigger
+  fired when the regular season ended on 27 September. Figures checked before
+  restoring, as the note required: the piece rests on kickers making 80.3% from
+  43 yards, which is a historical base rate and does not decay, and Gene's
+  question stands whenever it is answered. The `dated` tag refers to the week-1
+  moment that prompted it, not to anything the argument depends on.
 - ~~**`149-where-players-die.html`**~~ **RELEASED 2026-09-23** to Mon Sep 28. Its
   trigger was "the day the NFL becomes a rotation sport," and that day had already
   passed unnoticed — two NFL pieces were queued this week while this one sat

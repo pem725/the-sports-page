@@ -1,0 +1,372 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: slow
+tags: CFB:cfb, Calibration, Probability, Contributor
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Twenty-Four Times in a Hundred. This Was One of Them.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Twenty-Four Times in a Hundred. This Was One of Them.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/171-calibration-wisconsin.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/171-calibration-wisconsin.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Twenty-Four Times in a Hundred. This Was One of Them.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/171-calibration-wisconsin.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">CFB &middot; thesportspage.net, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. 193</span>
+    <span>October 8, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>Twenty-Four Times in a Hundred. <em>This Was One of Them.</em></h1>
+
+  <div class="deck">
+    Wisconsin fell behind No. 13 Penn State 17&ndash;0 and won 24&ndash;20. The market had given the Badgers about one chance in four. That is the whole point: a forecast that never lets the underdog through is not cautious, it is broken.
+  </div>
+
+  <p class="byline">By Sean McKnight &middot; Wisconsin alumnus, reluctant bettor</p>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">24%</div><div class="l">Wisconsin&rsquo;s pregame chance</div></div>
+    <div class="sc"><div class="v bad">17&ndash;0</div><div class="l">the hole they dug</div></div>
+    <div class="sc"><div class="v good">3:31</div><div class="l">left when they took the lead back</div></div>
+  </div>
+
+
+  <p><b>When an underdog wins, was the forecast wrong?</b> Almost everyone says yes without thinking about it. The answer is usually no, and once you see why, you will never hear a pundit the same way again.</p>
+
+  <p>I am a Wisconsin alumnus. I always root for the Badgers and I almost never bet on them. Somewhere in the fan part of my brain lives the suspicion that my money causes the missed tackle.</p>
+
+  <p>On September 26 that part of my brain had plenty to work with. Wisconsin fell behind No. 13 Penn State <b>17&ndash;0</b>, then won <b>24&ndash;20</b>. Two touchdown passes inside the last 3:31 finished it &mdash; an 11-yarder, then a 72-yarder with 1:13 left.</p>
+
+  <p>The fan's reaction: unbelievable. The statistician's question: how unlikely was it, really?</p>
+
+  <h2 class="sh">The number hiding behind the word &ldquo;underdog&rdquo;</h2>
+
+  <p>Penn State was favored by about ten. Wisconsin to win outright was priced at <b>+300</b>; Penn State at <b>&minus;380</b>.</p>
+
+  <p>Translate those. At +300, a winning $100 bet returns $300 profit, so the price breaks even at a 25% win rate &mdash; one win covers three losses. Penn State's price breaks even at about 79.2%.</p>
+
+  <p>Add them: <b>104.2%</b>. Not 100. The extra 4.2 points are the house's cut, and you have to remove it before the numbers mean anything. Divide each by the total and Wisconsin lands at <b>24%</b>, Penn State at 76%.</p>
+
+  <p>Now notice what changed. &ldquo;Ten-point underdog&rdquo; sounds like a wasted afternoon. &ldquo;Roughly one chance in four&rdquo; sounds like a football game worth watching.</p>
+
+  <div class="pull">
+    <p>Those 24 upsets are not the forecast failing. They are the forecast. If the favorites always won, the price would have been wrong.</p>
+    <cite>&mdash; Sean McKnight</cite>
+  </div>
+
+  <h2 class="sh">What a 24% forecast is actually promising</h2>
+
+  <p>Calibration asks a simple question of any prediction: when something is given a 24% chance, does it happen about 24 times in 100?</p>
+
+  <figure style="margin:2rem 0">
+  <svg viewBox="0 0 720 392" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One hundred squares. Twenty-four are filled red, showing how often an underdog priced at 24 percent wins. Wisconsin was one of the twenty-four." font-family="'Roboto Mono',monospace">
+  <rect width="720" height="392" fill="var(--cream)"/>
+  <text x="46" y="30" font-size="13" fill="var(--ink)" font-weight="600">One hundred games priced like this one.</text>
+  <text x="46" y="48" font-size="11" fill="var(--rust)">Wisconsin was the square with the outline.</text>
+  <rect x="46" y="64" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="73" y="64" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="100" y="64" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="127" y="64" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="154" y="64" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="181" y="64" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="208" y="64" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="235" y="64" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="262" y="64" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="289" y="64" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="46" y="91" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="73" y="91" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="100" y="91" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="127" y="91" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="154" y="91" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="181" y="91" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="208" y="91" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="235" y="91" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="262" y="91" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="289" y="91" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="46" y="118" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="73" y="118" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="100" y="118" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="127" y="118" width="23" height="23" fill="var(--rust)" opacity="1"/>
+  <rect x="154" y="118" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="181" y="118" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="208" y="118" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="235" y="118" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="262" y="118" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="289" y="118" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="46" y="145" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="73" y="145" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="100" y="145" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="127" y="145" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="154" y="145" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="181" y="145" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="208" y="145" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="235" y="145" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="262" y="145" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="289" y="145" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="46" y="172" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="73" y="172" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="100" y="172" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="127" y="172" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="154" y="172" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="181" y="172" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="208" y="172" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="235" y="172" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="262" y="172" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="289" y="172" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="46" y="199" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="73" y="199" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="100" y="199" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="127" y="199" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="154" y="199" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="181" y="199" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="208" y="199" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="235" y="199" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="262" y="199" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="289" y="199" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="46" y="226" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="73" y="226" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="100" y="226" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="127" y="226" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="154" y="226" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="181" y="226" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="208" y="226" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="235" y="226" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="262" y="226" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="289" y="226" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="46" y="253" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="73" y="253" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="100" y="253" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="127" y="253" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="154" y="253" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="181" y="253" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="208" y="253" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="235" y="253" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="262" y="253" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="289" y="253" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="46" y="280" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="73" y="280" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="100" y="280" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="127" y="280" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="154" y="280" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="181" y="280" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="208" y="280" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="235" y="280" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="262" y="280" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="289" y="280" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="46" y="307" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="73" y="307" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="100" y="307" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="127" y="307" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="154" y="307" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="181" y="307" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="208" y="307" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="235" y="307" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="262" y="307" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="289" y="307" width="23" height="23" fill="var(--div)" opacity="0.55"/>
+  <rect x="46" y="64" width="23" height="23" fill="none" stroke="var(--ink)" stroke-width="2.6"/>
+  <text x="346" y="94" font-size="30" fill="var(--rust)" font-weight="700">24</text>
+  <text x="346" y="114" font-size="11.5" fill="var(--rust)">the underdog wins</text>
+  <text x="346" y="164" font-size="30" fill="var(--muted)" font-weight="700">76</text>
+  <text x="346" y="184" font-size="11.5" fill="var(--muted)">the favorite wins</text>
+  <rect x="46" y="344" width="628" height="34" fill="var(--ink)"/>
+  <text x="360" y="366" font-size="12.5" fill="var(--cream)" text-anchor="middle">The red squares are not forecast failures. They are the forecast.</text>
+  </svg>
+  <figcaption style="font-family:'Roboto Mono',monospace;font-size:.66rem;color:var(--muted);margin-top:.8rem;text-align:center;letter-spacing:.04em">AN ILLUSTRATION OF CALIBRATION, NOT A COUNT OF REAL GAMES. ANY PARTICULAR HUNDRED WILL VARY.</figcaption>
+  </figure>
+
+  <p>Look at the red squares before you read on. A well-priced 24% underdog is <em>supposed</em> to win two dozen of those hundred games. One of them landing tells you nothing about whether the price was right.</p>
+
+  <p>To judge the forecast you need many predictions made before kickoff, and the results that followed. If 24% underdogs kept winning closer to 40% over a large sample, <em>then</em> you would have found something.</p>
+
+  <p>Calibration is not the whole of forecasting skill. Someone who gives every game the same probability can be perfectly calibrated and useless; he never separates a mismatch from a coin flip. But it is the right place to start, and it is why a favorite losing discredits nobody.</p>
+
+  <h2 class="sh">How often does the underdog actually win?</h2>
+
+  <p>One analysis of BCS-team games from 1999 to 2010 found these outright underdog win rates:</p>
+
+  <table style="width:100%;border-collapse:collapse;font-family:'Roboto Mono',monospace;font-size:.82rem;margin:1.2rem 0">
+    <tr style="border-bottom:2px solid var(--ink)"><th style="text-align:left;padding:.4rem 0">underdog getting</th><th style="text-align:right">won outright</th></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">+7 points</td><td style="text-align:right">about 31%</td></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">+10 points</td><td style="text-align:right">about 23%</td></tr>
+    <tr style="border-bottom:1px solid var(--div)"><td style="padding:.4rem 0">+14 points</td><td style="text-align:right">about 17%</td></tr>
+  </table>
+
+  <p>Treat those as historical benchmarks, not laws. The dataset counts some matchups twice and is not restricted to top-ranked opponents. But the point survives: <b>even a two-touchdown favorite loses roughly one time in six</b>, with nothing supernatural involved.</p>
+
+  <p>Keep two distinctions straight while you watch. A ranking and a line answer different questions: being No. 5 is a poll's opinion of a season, while being favored by 14 is a price on one game. A ranked team can be the underdog.</p>
+
+  <p>And winning outright is not covering. Wisconsin could have lost by seven and still covered ten. On this Saturday they did both.</p>
+
+  <h2 class="sh">The Saturdays we remember</h2>
+
+  <p>Wisconsin fans carry a long memory for these afternoons. In 1981 the Badgers beat No. 1 Michigan 21&ndash;14. In 1984 they beat No. 6 Ohio State 16&ndash;14 in Madison. A year later they won 12&ndash;7 in Columbus against No. 3.</p>
+
+  <p>Those stay with us. The routine losses blur.</p>
+
+  <p>And there is the trap. <b>A highlight reel is not a sample.</b> To learn how often ranked teams lose as big favorites you have to count every qualifying game, including all the comfortable wins nobody retells forty years later. The denominator belongs in the story too.</p>
+
+  <h2 class="sh">What changes the odds after kickoff</h2>
+
+  <p>Injuries can be part of it. In 2007 Stanford beat USC 24&ndash;23 as a 41-point underdog; the USC quarterback hurt his throwing hand in the second quarter and threw four interceptions, and USC turned it over five times. Stanford was starting a replacement quarterback making his first career start.</p>
+
+  <p>That shows an injury <em>can</em> matter. It does not show injuries explain most upsets, and I could not find a reliable figure for how often they do. You would need to compare injured favorites who lost against injured favorites who won, holding opponent strength fixed.</p>
+
+  <p>Timing matters too. An absence known beforehand is already in the price. One that happens in the second quarter is not. And an upset needs no single cause: a turnover, a fourth-down stop, a missed kick. Wisconsin won this one while throwing three interceptions.</p>
+
+  <p>There is also a real mathematical case for an underdog taking more risk. Accept a worse average result for a wider spread of outcomes, and you raise the chance of the one outcome that counts. That is a reason for calculated aggression. It is not proof that every underdog tries harder.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>We judge probabilities as though they were promises. A 76% favorite loses and we say the forecast was wrong. A 24% underdog wins and we call it impossible. Neither follows from one game.</p>
+
+  <p>Ask the calibration question instead, and you can ask it of anything: <b>when someone says this has a one-in-four chance, how often does it actually happen across all the comparable cases?</b> That works on football, on weather, on a surgeon's odds, on anything anybody tells you about an uncertain future.</p>
+
+  <p>My wager cannot make Wisconsin miss a tackle. It can only make me remember the tackle. The Badgers supplied the comeback; the odds had already left room for one.</p>
+
+  <p><b>Where the numbers come from.</b> The 24% is one sportsbook's published game-day price with the margin removed proportionally. It is an estimate from one market, not a measurement of true chances. It is also a pregame number, not Wisconsin's odds once they trailed 17&ndash;0. The historical rates are entry-weighted descriptive counts, not sample estimates with intervals. This piece teaches calibration; it does not claim to measure a modern rate of ranked teams losing as double-digit favorites, or how much of that is injuries. Those are separate pieces.</p>
+
+  <p>More at <a href="https://thesportspage.net/" target="_blank" rel="noopener">thesportspage.net</a>.</p>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. 193 &middot; October 8, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
