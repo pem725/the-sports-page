@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 315 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 314 issues remaining of 500
 
 ## Repository Structure
 
@@ -1098,9 +1098,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 185 issues (#1-185)
-Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 152-returning-noise, 164-where-you-put-them, 166-cost-of-fandom, 167-lottery-priced-honestly, 168-which-budges, 169-fastball-denominator, _TEMPLATE)
+Published: 186 issues (#1-186)
+Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 152-returning-noise, 166-cost-of-fandom, 167-lottery-priced-honestly, 168-which-budges, 169-fastball-denominator, 170-inherited-roster, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 315 issues remaining of 500
-Last published: Issue #185 — "We Were Wrong About Cleveland." (149-where-players-die.html) on September 29, 2026
+Goal: 314 issues remaining of 500
+Last published: Issue #186 — "The Same Fifteen Picks. Fifty Points Apart." (164-where-you-put-them.html) on September 30, 2026
