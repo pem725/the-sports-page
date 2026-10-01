@@ -1,0 +1,12 @@
+# The Sports Page — https://thesportspage.net/
+# The archive is meant to be found. Two things are not.
+
+User-agent: *
+Allow: /
+
+# The editorial board's budget sheet. Unlisted, not secret: GitHub Pages cannot
+# authenticate anybody, so this keeps it out of search results and nothing more.
+Disallow: /board/
+
+# The newsroom page carries the ranked candidate pile and the held stories.
+Disallow: /newsroom.html

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>The Sports Page &mdash; The Budget</title>
+<style>
+:root{
+  --ink:#1a1208; --paper:#f5f0e8; --ground:#e0d8c5; --rule:#c8b99a;
+  --rust:#b83a1e; --steel:#2c4a6e; --gold:#9a7320; --muted:#6b5e4a;
+  --card:#ede5d2; --shadow:0 6px 40px rgba(26,18,8,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#ece2cf;--paper:#1d1810;--ground:#120e08;--rule:#453a28;
+  --rust:#e07050;--steel:#7fa8d4;--gold:#d6a949;--muted:#9c8d75;
+  --card:#262013;--shadow:0 6px 40px rgba(0,0,0,.5);}
+}
+:root[data-theme="dark"]{--ink:#ece2cf;--paper:#1d1810;--ground:#120e08;--rule:#453a28;
+  --rust:#e07050;--steel:#7fa8d4;--gold:#d6a949;--muted:#9c8d75;
+  --card:#262013;--shadow:0 6px 40px rgba(0,0,0,.5);}
+:root[data-theme="light"]{--ink:#1a1208;--paper:#f5f0e8;--ground:#e0d8c5;--rule:#c8b99a;
+  --rust:#b83a1e;--steel:#2c4a6e;--gold:#9a7320;--muted:#6b5e4a;
+  --card:#ede5d2;--shadow:0 6px 40px rgba(26,18,8,.18);}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;padding:1.5rem 1rem 4rem;background:var(--ground);color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.68;
+  -webkit-text-size-adjust:100%}
+.disp{font-family:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif}
+.wrap{max-width:920px;margin:0 auto}
+.mast{text-align:center;border-top:4px solid var(--ink);padding-top:.5rem}
+.eyebrow{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.64rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.mast h1{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+  font-size:clamp(2rem,6vw,3.1rem);font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;line-height:1.08;margin:.15rem 0 .1rem;text-wrap:balance}
+.mast .tag{font-style:italic;color:var(--muted);font-size:.95rem;margin:0}
+.rulebar{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.63rem;letter-spacing:.1em;
+  color:var(--muted);border-top:1px solid var(--ink);border-bottom:3px double var(--ink);
+  padding:.35rem 0;margin-top:.45rem;font-variant-numeric:tabular-nums}
+.sheet{background:var(--paper);border:1px solid var(--rule);box-shadow:var(--shadow);
+  padding:2.2rem 2.4rem 2.6rem;margin-top:.9rem}
+@media(max-width:620px){.sheet{padding:1.4rem 1.2rem 1.8rem}}
+.lede{font-size:1.06rem;margin:0 0 1.6rem;max-width:62ch}
+.lede strong{color:var(--rust)}
+h2.sh{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+  font-size:1.12rem;font-weight:700;text-transform:uppercase;letter-spacing:.055em;
+  border-bottom:2px solid var(--rust);padding-bottom:.22rem;margin:2.4rem 0 .3rem;
+  text-wrap:balance}
+h2.sh:first-of-type{margin-top:.4rem}
+.shnote{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.63rem;
+  letter-spacing:.09em;color:var(--muted);text-transform:uppercase;margin:0 0 1.1rem}
+.slot{display:grid;grid-template-columns:5.4rem 1fr;gap:0 1.25rem;
+  border-top:1px solid var(--rule);padding:.95rem 0}
+.slot:first-of-type{border-top:none}
+.slot.is-hot{border-left:3px solid var(--rust);padding-left:.8rem;margin-left:-.8rem}
+.when{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.7rem;
+  letter-spacing:.04em;color:var(--muted);font-variant-numeric:tabular-nums;
+  padding-top:.3rem;line-height:1.5}
+.when b{display:block;color:var(--ink);font-weight:600;font-size:.76rem}
+.hed{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+  font-size:1.2rem;font-weight:700;line-height:1.28;margin:0 0 .3rem;text-wrap:balance}
+.deck{font-size:.93rem;color:var(--muted);margin:0 0 .5rem;max-width:64ch;line-height:1.6}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+.chip{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.59rem;
+  letter-spacing:.11em;text-transform:uppercase;padding:.18rem .44rem;
+  border:1px solid var(--rule);color:var(--muted);border-radius:2px}
+.chip.topic{border-color:var(--steel);color:var(--steel);font-weight:600}
+.chip.d-hot{border-color:var(--rust);color:var(--rust);font-weight:600}
+.chip.d-dated{border-color:var(--gold);color:var(--gold);font-weight:600}
+.chip.d-slow{border-color:var(--steel);color:var(--steel)}
+.chip.d-keeps{border-color:var(--rule);color:var(--muted)}
+.sunday{display:grid;grid-template-columns:5.4rem 1fr;gap:0 1.25rem;
+  border-top:1px solid var(--rule);padding:.5rem 0;align-items:center}
+.sunday .when{padding-top:0}
+.sunday p{margin:0;font-size:.82rem;font-style:italic;color:var(--muted)}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:.45rem 1.1rem;
+  margin:1rem 0 0;font-size:.82rem;color:var(--muted)}
+.legend .chip{margin-right:.35rem}
+.test{margin:0;padding:0;list-style:none;counter-reset:t}
+.test li{counter-increment:t;position:relative;padding:.55rem 0 .55rem 2.3rem;
+  border-top:1px solid var(--rule);font-size:.97rem}
+.test li:first-child{border-top:none}
+.test li::before{content:counter(t);position:absolute;left:0;top:.62rem;
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;font-weight:600;color:var(--rust)}
+.test em{color:var(--muted)}
+.formula{background:var(--card);border:1px solid var(--rule);padding:1rem 1.1rem;
+  margin:1.1rem 0;overflow-x:auto}
+.formula code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;
+  color:var(--ink);white-space:pre;display:block;line-height:1.75}
+.formula .k{color:var(--rust);font-weight:600}
+.send{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin:1.1rem 0 0}
+.send > div{background:var(--paper);padding:1rem 1.1rem}
+.send h3{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.63rem;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 .4rem;font-weight:600}
+.send p{margin:0;font-size:.92rem;line-height:1.6}
+a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.38)}
+a:hover{border-bottom-color:var(--rust)}
+a:focus-visible{outline:2px solid var(--steel);outline-offset:3px;border-radius:1px}
+.board{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+.board span{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.68rem;
+  letter-spacing:.09em;border:1px solid var(--rule);padding:.26rem .6rem;color:var(--muted)}
+.foot{border-top:3px double var(--ink);margin-top:2.4rem;padding-top:.7rem;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem;
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.6rem;
+  letter-spacing:.07em;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">For the Editorial Board &middot; Unlisted</div>
+    <h1 class="disp">The Budget</h1>
+    <p class="tag">What runs, when it runs, and what we still need</p>
+    <div class="rulebar">
+      <span>186 issues published</span>
+      <span>9 slots scheduled</span>
+      <span>Through Sat 10 Oct 2026</span>
+    </div>
+  </header>
+
+  <div class="sheet">
+
+    <p class="lede">This is the running order, rebuilt automatically every publishing day &mdash;
+    so whenever you open it, it is current. One issue a day, Monday through Saturday, and the
+    Sunday Edition on Sundays, which means every piece competes with every other piece for a
+    single slot. <strong>If you have an idea, it displaces something on this page.</strong>
+    That is the whole reason you are looking at it.</p>
+
+    <h2 class="sh">The Running Order</h2>
+    <p class="shnote">1 hot &middot; 4 evergreen in reserve &middot; no two consecutive days share a topic</p>
+
+    <div class="slot">
+      <div class="when"><b>Thu 1</b>Oct</div>
+      <div>
+        <p class="hed disp">Two Fans Spent the Same $84,000. One of Them Has $167,000.</p>
+        <p class="deck">A hundred dollars a week, every week of the football season, for forty seasons. One of them put it through a betting pool. The other bought a plain index fund and did nothing. We ran it on the real market, every starting year since 1970, and the gap at the end is larger than everything either of them ever paid in.</p>
+        <div class="chips"><span class="chip topic">Markets</span><span class="chip d-keeps">keeps</span><span class="chip">Money</span><span class="chip">Compounding</span><span class="chip">Financial Literacy</span></div>
+      </div>
+    </div>
+    <div class="slot is-hot">
+      <div class="when"><b>Fri 2</b>Oct</div>
+      <div>
+        <p class="hed disp">The Mets Got One Day of Hope. The Cubs Got 126.</p>
+        <p class="deck">Which is worse — a season that was over by June, or one that carried you to October and then died in forty-eight hours? We can measure half of that question. Add up a club's playoff probability across every day it was alive and the Cubs banked 126 days of real hope. The Mets banked one. Both finished with nothing.</p>
+        <div class="chips"><span class="chip topic">MLB</span><span class="chip d-hot">hot</span><span class="chip">Cubs</span><span class="chip">Mets</span><span class="chip">Behavioral</span></div>
+      </div>
+    </div>
+    <div class="slot">
+      <div class="when"><b>Sat 3</b>Oct</div>
+      <div>
+        <p class="hed disp">We Found a Pattern in Forty Games. Then We Killed It.</p>
+        <p class="deck">Penn State returned 7.6% of last year’s offense, hired a new coach, lost 48 players — and won 45–0. Clemson returned 41%, kept everybody, and lost by 41. The pattern held across the whole week. Then we gave it eleven seasons and it fell apart.</p>
+        <div class="chips"><span class="chip topic">CFB</span><span class="chip d-slow">slow</span><span class="chip">Methods</span><span class="chip">We Checked</span><span class="chip">Small Samples</span></div>
+      </div>
+    </div>
+    <div class="sunday">
+      <div class="when">Sun 4</div>
+      <p>Sunday Edition &mdash; the weekly scorecard runs instead. No regular issue, ever.</p>
+    </div>
+    <div class="slot">
+      <div class="when"><b>Mon 5</b>Oct</div>
+      <div>
+        <p class="hed disp">Three Hundred Million Tickets. One Expected Winner.</p>
+        <p class="deck">There are 292,201,338 ways to fill in a Powerball ticket. If every person in the United States bought exactly one, you would expect a single winner. This is not a piece about people who buy tickets being foolish. It is a piece about who is selling them, and what the money they keep gets called.</p>
+        <div class="chips"><span class="chip topic">Markets</span><span class="chip d-keeps">keeps</span><span class="chip">Probability</span><span class="chip">Money</span><span class="chip">Financial Literacy</span></div>
+      </div>
+    </div>
+    <div class="slot">
+      <div class="when"><b>Tue 6</b>Oct</div>
+      <div>
+        <p class="hed disp">Defense Moves More Than Offense. Measure It Better and It Does Not.</p>
+        <p class="deck">You take over a bad team. Do you fix the offense or the defense? Counted in points, the defense is the one that budges — 4 points likelier to jump a full standard deviation, and the interval clears zero. Count the same 797 clubs in yards per play and the gap falls to 1.5 and stops being a gap at all.</p>
+        <div class="chips"><span class="chip topic">Methods</span><span class="chip d-keeps">keeps</span><span class="chip">NFL</span><span class="chip">CFB</span><span class="chip">Measurement</span></div>
+      </div>
+    </div>
+    <div class="slot">
+      <div class="when"><b>Wed 7</b>Oct</div>
+      <div>
+        <p class="hed disp">He Threw 104. The Box Score Said He Climbed Three Levels. It Did Not.</p>
+        <p class="deck">A 22-year-old in Las Vegas threw seventeen fastballs and not one came in under 101.5. His season line reads Single-A, Double-A, Triple-A — a prospect tearing through the system. The transaction log says something else, and the difference is the whole lesson.</p>
+        <div class="chips"><span class="chip topic">MLB</span><span class="chip d-slow">slow</span><span class="chip">Base Rates</span><span class="chip">Denominators</span><span class="chip">Contributor</span></div>
+      </div>
+    </div>
+    <div class="slot">
+      <div class="when"><b>Thu 8</b>Oct</div>
+      <div>
+        <p class="hed disp">He Inherited the Roster. He Wins One Game Fewer Than It Should.</p>
+        <p class="deck">Everybody says give him three years. Nobody says what changes in those three years. So we counted the recruiting classes on every roster since 2000. A first-year coach finishes a full win below what his inherited talent should deliver. He climbs out of the hole at almost exactly the rate the roster becomes his.</p>
+        <div class="chips"><span class="chip topic">CFB</span><span class="chip d-keeps">keeps</span><span class="chip">Coaching</span><span class="chip">Attribution</span><span class="chip">Methods</span></div>
+      </div>
+    </div>
+    <div class="slot">
+      <div class="when"><b>Fri 9</b>Oct</div>
+      <div>
+        <p class="hed disp">Kickers Make 80% From 43 Yards. That Told Chicago Nothing.</p>
+        <p class="deck">Gene, a Bears man, asks a good question. If the long run is so reliable, why does it seem to quit at the last second? Kickers make 80.3% from 43 yards. It never quit; it was never a fact about one kick.</p>
+        <div class="chips"><span class="chip topic">NFL</span><span class="chip d-dated">dated</span><span class="chip">Bears</span><span class="chip">Probability</span><span class="chip">Reader Question</span></div>
+      </div>
+    </div>
+    <div class="slot">
+      <div class="when"><b>Sat 10</b>Oct</div>
+      <div>
+        <p class="hed disp">Twenty-Four Times in a Hundred. This Was One of Them.</p>
+        <p class="deck">Wisconsin fell behind No. 13 Penn State 17–0 and won 24–20. The market had given the Badgers about one chance in four. That is the whole point: a forecast that never lets the underdog through is not cautious, it is broken.</p>
+        <div class="chips"><span class="chip topic">CFB</span><span class="chip d-slow">slow</span><span class="chip">Calibration</span><span class="chip">Probability</span><span class="chip">Contributor</span></div>
+      </div>
+    </div>
+
+    <div class="legend"><div><span class="chip d-hot">hot</span> numbers move daily &middot; publish within ~3 days or rewrite</div><div><span class="chip d-dated">dated</span> tied to a fixed event &middot; must run before it</div><div><span class="chip d-slow">slow</span> season-bound &middot; stable for about three weeks</div><div><span class="chip d-keeps">keeps</span> methods or history &middot; runs any time</div></div>
+
+    <h2 class="sh">What Makes an Idea Run</h2>
+    <p class="shnote">Three questions. It needs all three, not two.</p>
+
+    <ol class="test">
+      <li><strong>Is there a number in it, or could there be?</strong>
+        <em>You do not need the number. You need to believe one exists.</em></li>
+      <li><strong>Could it not be settled at the table?</strong>
+        <em>If somebody can end the argument with their phone, it is a fact, not an issue.</em></li>
+      <li><strong>Could a reasonable person be wrong about it?</strong>
+        <em>This is the one that matters. If nobody holds the wrong belief, there is nothing to correct.</em></li>
+    </ol>
+
+    <p style="margin:1.4rem 0 0;font-size:.97rem">When several ideas clear the bar on the same day,
+    this decides the order:</p>
+
+    <div class="formula">
+      <code><span class="k">NEWSINESS</span> = (GRIP / 10) &times; (0.35 TWIST + 0.25 CLOCK + 0.15 STACK + 0.25 CARRY)</code>
+    </div>
+
+    <p style="margin:0;font-size:.95rem;max-width:62ch"><strong>GRIP multiplies rather than adds,
+    and that is the editorial position.</strong> This paper is statistics driven by sport, not sport
+    driven by statistics. A Super Bowl with a dull number scores near nothing. A Tuesday game between
+    two eliminated clubs with a shocking number can lead. Audience &mdash; STACK &mdash; carries the
+    smallest weight on purpose.</p>
+
+    <h2 class="sh">Send It</h2>
+    <p class="shnote">Hand-written, in your own words. There is no form and none is wanted.</p>
+
+    <div class="send">
+      <div>
+        <h3>By email</h3>
+        <p><a href="mailto:ideas@thesportspage.net?subject=Idea%20for%20The%20Sports%20Page">ideas@thesportspage.net</a><br>
+        Half an idea is fine. A question you lost an argument about is better.</p>
+      </div>
+      <div>
+        <h3>What helps most</h3>
+        <p>Where you saw it, and roughly when. If you are not sure where a number came from, write
+        <em>unknown</em> and we will chase it.</p>
+      </div>
+      <div>
+        <h3>One hard rule</h3>
+        <p>An assistant may point you at a fact. It may never be the source of one. A missing number
+        costs an hour; a wrong one costs us a headline.</p>
+      </div>
+    </div>
+
+    <h2 class="sh">The Board</h2>
+    <p class="shnote">Scores independently. Disagreement is where the rubric gets tuned.</p>
+    <div class="board"><span>Sean</span><span>Tim</span><span>Patrick jr</span><span>Patrick</span></div>
+    <p style="margin:1rem 0 0;font-size:.93rem;max-width:62ch;color:var(--muted)">A metric nobody can
+    argue with is a metric nobody is using. If you think something on this page is the wrong call,
+    that is the most useful thing you can send.</p>
+
+    <div class="foot">
+      <span>The Sports Page</span>
+      <span>Rebuilt 1 Oct 2026</span>
+      <span>Unlisted &middot; please do not forward</span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

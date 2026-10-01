@@ -126,9 +126,14 @@ jobs:
           python3 scripts/refresh_odds.py         || failed="$failed mlb"
           # Rebuild the page from whatever data IS current, even if a feed died.
           python3 scripts/build_odds_page.py      || failed="$failed page"
+          # The board's budget sheet. Generated, never hand-written: newsroom.html
+          # was written by hand and sat unchanged from 30 Aug while the archive
+          # moved 155 -> 186. A page describing a moving thing has to be rebuilt
+          # or it lies quietly.
+          python3 scripts/build_budget.py         || failed="$failed budget"
           [ -n "$failed" ] && echo "::warning::refreshers failed:$failed (committing what did work)"
 
-          FILES="odds.html about.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json"
+          FILES="odds.html about.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json"
           if git diff --quiet -- $FILES; then
             echo "no change to the board"; exit 0
           fi
