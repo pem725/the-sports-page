@@ -137,7 +137,7 @@ window.goatcounter = { path: function (p) {
     <p>The vertical bar in the notation P(A | B) is doing all the work. It says: <em>restrict your attention to the cases where B is true, and ask what fraction of those have A.</em> Different B, different reference class, different fraction. Same A.</p>
 
     <div class="callout">
-      <strong>The inverse fallacy.</strong> The most common error in conditional reasoning is to confuse P(A | B) with P(B | A). They are not the same number, and they are not symmetric. P(plays in the NBA | is over seven feet tall) is high. P(is over seven feet tall | plays in the NBA) is much lower. Same two facts, two different fractions.</p>
+      <strong>The inverse fallacy.</strong> The most common error in conditional reasoning is to confuse P(A | B) with P(B | A). They are not the same number, and they are not symmetric. P(plays in the NBA | is over seven feet tall) is high. P(is over seven feet tall | plays in the NBA) is much lower. Same two facts, two different fractions.
       <p style="margin-bottom:0">In the Mets case: people sometimes argue that bad starts don&rsquo;t matter because of the 2019 Nationals. That argument uses P(bad start | won the World Series) &mdash; which is small, but exists &mdash; and reads it as if it were P(makes the playoffs | started badly), which is what we actually want. The two are not interchangeable.</p>
     </div>
 
@@ -235,7 +235,7 @@ P(<span class="accent">bad start</span> | <span class="accent">playoffs</span>) 
     <p>The two conditional probabilities are computed from the same three counts &mdash; n_total, n_badstart, and n_both. The numerator is the same in both directions. Only the denominator changes. Switching from P(A | B) to P(B | A) is a one-line change: divide by n_playoffs instead of n_badstart. That single change can move the answer by a factor of three or more, which is why the inverse fallacy is so dangerous and so hard to spot.</p>
 
     <div class="callout">
-      <strong>What&rsquo;s missing.</strong> Real season data has confounders this script does not handle: expansion of the playoff format from 10 to 12 teams in 2022, division alignment changing strength-of-schedule, COVID-shortened 2020. A more careful version would either restrict to post-2022 seasons or weight earlier seasons by the fraction of teams that made the playoffs in that year&rsquo;s format. The article&rsquo;s 11% estimate is robust to these adjustments at the first decimal place; it is not robust at the third. Conditional probability tells you which question you&rsquo;re asking; the data tells you how confidently you can answer it.</p>
+      <strong>What&rsquo;s missing.</strong> Real season data has confounders this script does not handle: expansion of the playoff format from 10 to 12 teams in 2022, division alignment changing strength-of-schedule, COVID-shortened 2020. A more careful version would either restrict to post-2022 seasons or weight earlier seasons by the fraction of teams that made the playoffs in that year&rsquo;s format. The article&rsquo;s 11% estimate is robust to these adjustments at the first decimal place; it is not robust at the third. Conditional probability tells you which question you&rsquo;re asking; the data tells you how confidently you can answer it.
     </div>
   </section>
 

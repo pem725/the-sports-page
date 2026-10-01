@@ -280,6 +280,12 @@ def main():
         return 0
     bad = 0
     for p in paths:
+        # The template is SUPPOSED to carry TODO_HEADLINE. check_layout.py already
+        # skips files starting with "_" and this one did not, so a clean queue
+        # still reported a FAIL and taught everyone to ignore the output. Two
+        # checkers disagreeing about what counts as a real file is task E1.
+        if pathlib.Path(p).name.startswith("_"):
+            continue
         h = hed_of(p)
         if not h:
             continue
