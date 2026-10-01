@@ -1,0 +1,182 @@
+# Putting the board's budget sheet behind real authentication
+
+Decided 2026-10-01. The budget sheet at `/board/k7q2-desk-9f4m/` is currently
+**unlisted, not private** — GitHub Pages serves static files and cannot
+authenticate anybody. Cloudflare Access puts a real login in front of it, free
+for up to 50 users, and costs each editor one emailed six-digit code.
+
+Four readers, all of them family or close to it: Sean (brother), Tim, Patrick jr
+(son), Patrick. **Their email addresses are entered at Cloudflare and are not
+recorded in this repo**, same rule as reader questions.
+
+---
+
+## The part a human has to do, and why
+
+Claude cannot create accounts or authenticate to a dashboard, so steps marked
+**[you]** are yours. Everything else is already done or is checkable from here.
+
+---
+
+## PRE-FLIGHT: the zone as it stands
+
+Captured from public DNS on 2026-10-01, before any change. **This is the rollback
+reference.** If anything goes wrong, these are the records that must exist.
+
+```
+NS      maceio.ns.porkbun.com / salvador / curitiba / fortaleza
+
+A       @     185.199.108.153
+A       @     185.199.109.153
+A       @     185.199.110.153
+A       @     185.199.111.153
+
+AAAA    @     2606:50c0:8000::153
+AAAA    @     2606:50c0:8001::153
+AAAA    @     2606:50c0:8002::153
+AAAA    @     2606:50c0:8003::153
+
+CNAME   www   pem725.github.io
+
+MX      @     10 fwd1.porkbun.com
+MX      @     20 fwd2.porkbun.com
+
+TXT     @     "v=spf1 include:_spf.porkbun.com ~all"
+```
+
+---
+
+## THE TRAP, stated first because it is the expensive one
+
+**Moving the zone to Cloudflare moves ALL of it.** The free plan requires full
+nameserver delegation; you cannot hand over one subdomain and keep the rest.
+
+That means the **MX and SPF records above must be recreated at Cloudflare or
+`ideas@thesportspage.net` stops receiving mail.** That address is:
+
+- the reader-question front door, promised in public on `ask.html`
+- in **23 `mailto:` links** across the published archive
+- **embedded in `feed.xml` article bodies**, which Buttondown mails to the list
+
+It would fail *silently*. Nothing errors; mail simply stops arriving, and we
+would not notice until somebody mentioned they wrote in and heard nothing. That
+is the same shape as every other failure in this paper's log: it degrades to
+something that looks fine.
+
+Porkbun's email **forwarding configuration stays at Porkbun** — it is
+dashboard-only and not in the v3 API — but the MX records that *route* to it
+must be replicated in Cloudflare's DNS.
+
+**Verify mail still works after the switch before considering this done.**
+
+---
+
+## Steps
+
+### 1. [you] Create the Cloudflare account and add the site
+cloudflare.com → Sign Up → **Add a site** → `thesportspage.net` → **Free** plan.
+
+Cloudflare scans the existing zone and imports what it finds. **Do not trust the
+import.** Compare what it shows against the pre-flight block above, record by
+record, and add anything missing. The MX and TXT lines are the ones that get
+dropped.
+
+### 2. [you] Set SSL mode to Full before changing nameservers
+SSL/TLS → Overview → **Full** (or Full (strict)).
+
+GitHub Pages forces HTTPS. Cloudflare's default **Flexible** mode talks to the
+origin over HTTP, so Pages redirects to HTTPS, which Cloudflare answers over
+HTTP again — an infinite redirect loop that takes the whole site down. This is
+the single most common way this migration breaks.
+
+### 3. [you] Point the apex and www records through the proxy
+The four A records, the four AAAA records, and the `www` CNAME must be
+**Proxied** (orange cloud). Access only works on proxied traffic.
+
+MX records are never proxied. Leave them grey/DNS-only — that is correct, not an
+error.
+
+### 4. [you] Change the nameservers at Porkbun
+Porkbun → thesportspage.net → Authoritative Nameservers → replace the four
+`*.ns.porkbun.com` entries with the two Cloudflare gives you.
+
+Propagation is usually minutes, occasionally a few hours. The site stays up
+throughout **if** step 1 was done honestly.
+
+### 5. [you] Create the Access application
+Zero Trust → Access → Applications → **Add an application** → *Self-hosted*.
+
+```
+Application name    The Budget
+Session duration    1 month        <- so nobody re-authenticates weekly
+Domain              thesportspage.net
+Path                board
+```
+
+Policy:
+
+```
+Policy name   Editorial board
+Action        Allow
+Include       Emails  ->  the four board addresses
+```
+
+Leave the identity provider as **One-time PIN**. No accounts to create: an
+editor enters their email, Cloudflare mails a code, they are in for a month.
+
+**Scope the path to `board` and nothing else.** An application left at the apex
+puts the entire newspaper behind a login, which is the opposite of the point —
+this paper gives its statistics away.
+
+### 6. Consider adding newsroom.html
+`/newsroom.html` carries the ranked candidate pile and the held stories. It is
+now disallowed in `robots.txt` but is still linked from the homepage and
+readable by anyone. Either add it to the same Access application as a second
+path, or accept that it is public. A decision either way, not an oversight.
+
+---
+
+## Verify — do not skip this
+
+```bash
+# 1. the board asks for a login (expect 302 to cloudflareaccess.com)
+curl -sI https://thesportspage.net/board/k7q2-desk-9f4m/ | head -3
+
+# 2. the PAPER does not (expect 200, no redirect to a login)
+curl -sI https://thesportspage.net/ | head -3
+curl -sI https://thesportspage.net/odds.html | head -3
+
+# 3. mail still routes  <- the one that fails silently
+dig +short MX thesportspage.net
+dig +short TXT thesportspage.net
+#    expect: 10 fwd1.porkbun.com / 20 fwd2.porkbun.com
+#            "v=spf1 include:_spf.porkbun.com ~all"
+
+# 4. and actually send one from outside
+#    email ideas@thesportspage.net and confirm it arrives
+```
+
+Step 3 passing is not sufficient. **Send the real email.** DNS records can be
+right while forwarding is broken.
+
+---
+
+## If it goes wrong
+
+Set the nameservers at Porkbun back to the four `*.ns.porkbun.com` entries in the
+pre-flight block. Porkbun's own DNS records are still there and untouched;
+reverting the delegation restores the previous state within the hour.
+
+---
+
+## What this does and does not buy
+
+**Does:** a real login on the budget sheet. No shared password, no link that
+works forever once forwarded, and you can revoke one person without moving
+anything.
+
+**Does not:** protect the repository. The budget page is generated from
+`QUEUE_ORDER.txt` and the queue files, and **the repo is public** — anyone who
+wants the running order can read it there. Access protects the convenient view,
+not the underlying facts. If the queue itself needs to be private, that is a
+different and much larger decision about the repo.
