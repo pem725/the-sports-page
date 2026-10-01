@@ -1,0 +1,266 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: hot
+tags: MLB:mlb, Cubs, Mets, Behavioral
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The Mets Got One Day of Hope. The Cubs Got 126.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="The Mets Got One Day of Hope. The Cubs Got 126.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/172-hope-days.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/172-hope-days.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Mets Got One Day of Hope. The Cubs Got 126.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/172-hope-days.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Postseason &middot; Major League Baseball, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>The Mets Got One Day of Hope. <em>The Cubs Got 126.</em></h1>
+
+  <div class="deck">
+    Which is worse &mdash; a season that was over by June, or one that carried you to October and then died in forty-eight hours? We can measure half of that question. Add up a club's playoff probability across every day it was alive and the Cubs banked 126 days of real hope. The Mets banked one. Both finished with nothing.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Answering a question from the editor</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">1</div><div class="l">Mets hope-days</div></div>
+    <div class="sc"><div class="v now">126</div><div class="l">Cubs hope-days</div></div>
+    <div class="sc"><div class="v good">0</div><div class="l">Titles between them</div></div>
+  </div>
+
+  <!-- Optional: xkcd cartoon as lede figure
+  <figure class="cartoon" style="margin:36px auto;max-width:560px;">
+    <img src="../assets/xkcd/172-hope-days.png" alt="TODO accessible description" style="width:100%;height:auto;display:block;">
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:14px;text-align:center;letter-spacing:0.5px;text-transform:uppercase;">Cartoon &middot; TODO short caption</figcaption>
+  </figure>
+  -->
+
+  <p>Which season would you rather have lived through? One that was settled before the Fourth of July, or one that carried you all the way to October and then ended inside forty-eight hours?</p>
+
+  <p>You can measure half of that. Since April this paper has stored every club's playoff probability on a weekly grid. Add those probabilities up across the days they cover and you get a number: <strong>hope-days</strong>. From 15 April to 26 September the Cubs banked 126 of them. The Mets banked one.</p>
+
+  <p>Most people assume the Cubs fan got the worse deal, because the ending was so much uglier. Look again. <em>The ending was identical.</em> Both clubs finished with no championship, same as twenty-eight others. Everything that actually differed between those two seasons happened in the middle. By the end of this you will have a way to price any season you have sat through &mdash; by its area, not by how it stopped.</p>
+
+  <h2 class="sh">What a Hope-Day Is</h2>
+
+  <p>Hold a 50% chance for a hundred days and you have had fifty hope-days. That is the same belief fifty days of certainty would have given you. It is just the area under the curve of your club's playoff odds. Nothing clever. But it measures the thing a season hands you day by day, instead of the thing you remember about it afterward.</p>
+
+  <p>The ceiling is 164, because that is how many days our grid covers. The Braves came closest at 162 &mdash; they were never once in doubt. Here is what the two clubs in question actually received.</p>
+
+  <figure style="margin:2rem 0 1.4rem">
+    <svg viewBox="0 0 780 340" width="100%" height="auto" role="img"
+         aria-label="Playoff probability for the Cubs and Mets from 15 April to 26 September 2026. The Cubs curve rises to 94 percent in May, falls to 23 percent in June, and climbs back above 95 percent from August. The Mets curve starts at 7 percent and reaches zero by late June. The area under the Cubs curve is 126 probability-days; under the Mets curve it is one."
+         style="display:block;background:#f5f0e8;font-family:'Roboto Mono',monospace">
+      <line x1="72" y1="276" x2="726" y2="276" stroke="#1a1208" stroke-width="1.5"/>
+      <line x1="72" y1="44" x2="72" y2="276" stroke="#c8b99a" stroke-width="1"/>
+      <line x1="72" y1="44" x2="726" y2="44" stroke="#c8b99a" stroke-width="1" stroke-dasharray="2,3"/>
+      <text x="64" y="48" text-anchor="end" font-size="10" fill="#6b5e4a">100%</text>
+      <text x="64" y="279" text-anchor="end" font-size="10" fill="#6b5e4a">0</text>
+      <text x="136" y="291" text-anchor="middle" font-size="10" fill="#6b5e4a">MAY</text>
+      <text x="259" y="291" text-anchor="middle" font-size="10" fill="#6b5e4a">JUN</text>
+      <text x="379" y="291" text-anchor="middle" font-size="10" fill="#6b5e4a">JUL</text>
+      <text x="503" y="291" text-anchor="middle" font-size="10" fill="#6b5e4a">AUG</text>
+      <text x="626" y="291" text-anchor="middle" font-size="10" fill="#6b5e4a">SEP</text>
+      <path d="M72.0,276.0 L72.0,183.3 L99.9,111.5 L127.8,101.7 L155.7,57.3 L183.7,68.8 L211.6,108.0 L239.5,169.4 L267.4,176.8 L295.3,222.6 L323.2,196.5 L351.1,153.4 L379.1,88.5 L407.0,91.5 L434.9,95.0 L462.8,87.0 L490.7,60.6 L518.6,49.4 L546.5,44.9 L574.5,46.8 L614.3,51.3 L726.0,51.5 L726.0,276.0 Z" fill="#b83a1e" fill-opacity="0.17"/>
+      <path d="M72.0,276.0 L72.0,259.1 L99.9,273.0 L127.8,274.6 L155.7,272.0 L183.7,272.3 L211.6,270.8 L239.5,274.5 L267.4,269.9 L295.3,272.7 L323.2,271.7 L351.1,275.6 L379.1,275.9 L407.0,276.0 L434.9,276.0 L462.8,276.0 L490.7,276.0 L518.6,276.0 L546.5,276.0 L574.5,276.0 L614.3,276.0 L726.0,276.0 L726.0,276.0 Z" fill="#2c4a6e" fill-opacity="0.55"/>
+      <path d="M72.0,183.3 L99.9,111.5 L127.8,101.7 L155.7,57.3 L183.7,68.8 L211.6,108.0 L239.5,169.4 L267.4,176.8 L295.3,222.6 L323.2,196.5 L351.1,153.4 L379.1,88.5 L407.0,91.5 L434.9,95.0 L462.8,87.0 L490.7,60.6 L518.6,49.4 L546.5,44.9 L574.5,46.8 L614.3,51.3 L726.0,51.5" fill="none" stroke="#b83a1e" stroke-width="2.4"/>
+      <path d="M72.0,259.1 L99.9,273.0 L127.8,274.6 L155.7,272.0 L183.7,272.3 L211.6,270.8 L239.5,274.5 L267.4,269.9 L295.3,272.7 L323.2,271.7 L351.1,275.6 L379.1,275.9 L407.0,276.0 L434.9,276.0 L462.8,276.0 L490.7,276.0 L518.6,276.0 L546.5,276.0 L574.5,276.0 L614.3,276.0 L726.0,276.0" fill="none" stroke="#2c4a6e" stroke-width="2.4"/>
+      <text x="470" y="128" font-size="13" font-weight="600" fill="#b83a1e">CUBS</text>
+      <text x="470" y="144" font-size="11" fill="#b83a1e">126 hope-days</text>
+      <text x="298" y="248" font-size="10" fill="#6b5e4a">23% on 10 June,</text>
+      <text x="298" y="263" font-size="10" fill="#6b5e4a">and they came back</text>
+      <text x="150" y="268" font-size="11" font-weight="600" fill="#2c4a6e">METS &mdash; 1 hope-day</text>
+      <line x1="726" y1="44" x2="726" y2="276" stroke="#1a1208" stroke-width="1.5"/>
+      <text x="736" y="150" font-size="10" fill="#1a1208" transform="rotate(90 736 150)" text-anchor="middle">BOTH END AT ZERO</text>
+    </svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:11px;color:#6b5e4a;margin-top:12px;letter-spacing:.5px;line-height:1.6">
+      The shaded area <em>is</em> the argument. Playoff probability for both clubs, measured weekly from 15 April to 26 September 2026. The Cubs curve encloses 126 probability-days; the Mets curve encloses one. The right-hand edge is where both seasons finished: the same place.
+    </figcaption>
+  </figure>
+
+  <p>Notice what the Cubs curve does in June. It falls to 23%. For about three weeks that season looked finished, and then it climbed back and sat above 95% from the second week of August onward. That recovery is not a footnote. It is more hope, not less: they got the collapse <em>and</em> the comeback, and both of them counted.</p>
+
+  <p>The Mets curve does not do anything. It opens at 7% on 15 April and reaches a hard zero by 24 June. Your instinct said July. The arithmetic says the Mets were mathematically finished a week before the All-Star rosters were announced, and functionally finished in April.</p>
+
+  <div class="pull">
+    <p>Hope is not the same thing as winning. The Mets won sixteen more games than the Rockies and ended up with less of it.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">The Ending Was the Only Part That Matched</h2>
+
+  <p>That pullquote is the strangest number in the file. Colorado lost 103 games. New York won 73, sixteen more, and still finished dead last in hope-days &mdash; one, against Colorado's two. The Mets' highest playoff probability all season was 7%, the lowest peak of any club in baseball.</p>
+
+  <p>That is the whole lesson in one line. Wins you collect while nobody is watching the standings do not convert into anything. Hope needs a race to live in.</p>
+
+  <p>Meanwhile the Cubs went to San Diego and lost 8&ndash;0 and 4&ndash;1. One run in two games, and out. It was a miserable way to finish and it is the part everyone will remember.</p>
+
+  <h2 class="sh">Why Your Memory Disagrees With the Arithmetic</h2>
+
+  <p>Your memory is not lying to you; it is summarizing. People retrieve an experience by two things: its most intense moment and its final one. The peak-end rule, it is called. By that accounting the Cubs season is a disaster, because the end was an annihilation and it is the freshest thing in the file.</p>
+
+  <p>But peak-end is a rule about <em>recall</em>, not about what happened. The sum &mdash; what you actually lived through, hour by hour &mdash; says something else entirely. Normally these two measures agree enough that nobody notices. Here they disagree as hard as they can. One season held a hundred times the hope of the other, and both finished in the same place.</p>
+
+  <p>So the honest answer to "which fan is happier" depends on a question nobody asks out loud: what are you adding up? That is an <span class="cc" data-preview="Every comparison secretly optimizes for something. Name it, or the metric picks for you.">objective function<a class="cc-i" href="https://thesportspage.net/concepts/objective-function.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> problem, and almost every argument about fandom is really an unstated fight over which one counts.</p>
+
+  <p>Pick the ending and you want the Mets season, because at least it did not ambush you. Pick the area and it is not close. The Cubs fan got 126 days of a thing worth having. None of it gets clawed back on elimination night. You do not get a refund on the vacation because the flight home was bad.</p>
+
+  <h2 class="sh">What We Cannot Tell You</h2>
+
+  <p>Four things, and the first one cuts against us hardest.</p>
+
+  <p>Our grid starts on 15 April, so <strong>opening-day optimism is not in these numbers.</strong> Every club begins a season somewhere near its forecast, and for a club that collapses early that lost hope was real and we did not count it. The Mets almost certainly started March with more than one day's worth. Read every figure here as "from mid-April onward."</p>
+
+  <p>Second, probability is not feeling. Fans are not calibrated and do not want to be. Somebody sitting at 2% may believe completely; that belief is most of what being a supporter is. We measured what the standings delivered, not what anyone experienced. Third, the grid is weekly, so a crash and recovery inside a single week is invisible to us. And fourth, playoff odds are only one kind of hope &mdash; a club out of the race can still sell you a rookie, a chase, a rivalry night.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>When you catch yourself grading a season, a job, or a year by how it ended, stop and ask what the area under it looked like. Endings are vivid and they are one data point. The sum is almost always the larger number, and it is the one you actually lived.</p>
+
+  <p>And the next time somebody tells you a disappointing season was wasted, ask them what the alternative was. For 2026 the alternative is sitting right there, in the same division race, with one hope-day to its name.</p>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
