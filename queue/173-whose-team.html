@@ -1,0 +1,296 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: keeps
+tags: CFB:cfb, Coaching, Attribution, Contributor
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The New Coach Recruited None of Them. We Start Counting Anyway.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="The New Coach Recruited None of Them. We Start Counting Anyway.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/173-whose-team.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/173-whose-team.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The New Coach Recruited None of Them. We Start Counting Anyway.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/173-whose-team.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Coaching &middot; College Football, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>The New Coach Recruited None of Them. <em>We Start Counting Anyway.</em></h1>
+
+  <div class="deck">
+    Whose team is a new coach actually coaching? In his first season, none of it &mdash; every recruiting class on the roster was signed by the man he replaced. It is half his by year three and all his by year five. And the research says firing a middling coach makes the team <em>worse</em>.
+  </div>
+
+  <div class="byline">By Sean McKnight, MD &middot; with The Sports Page</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">0%</div><div class="l">His roster, year one</div></div>
+    <div class="sc"><div class="v now">51%</div><div class="l">By year three</div></div>
+    <div class="sc"><div class="v good">2,685</div><div class="l">Coach-seasons measured</div></div>
+  </div>
+
+  <!-- Optional: xkcd cartoon as lede figure
+  <figure class="cartoon" style="margin:36px auto;max-width:560px;">
+    <img src="../assets/xkcd/173-whose-team.png" alt="TODO accessible description" style="width:100%;height:auto;display:block;">
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:14px;text-align:center;letter-spacing:0.5px;text-transform:uppercase;">Cartoon &middot; TODO short caption</figcaption>
+  </figure>
+  -->
+
+  <p>A new head coach holds up the jersey at the press conference. He talks about culture, discipline, development, a new direction. Then something strange happens: before he has recruited a single freshman or coached a single practice, we start keeping score.</p>
+
+  <p>So ask the question plainly. <strong>Whose team is he actually coaching?</strong></p>
+
+  <p>That sounds like a philosophical question. It is really a question about counting, and you can answer it. A college roster is roughly the last four recruiting classes. In a coach's first season, every one of those four was signed by the man he replaced. <strong>None of it is his.</strong> Not some of it &mdash; none.</p>
+
+  <figure style="margin:2rem 0 1.4rem">
+    <svg viewBox="0 0 780 290" width="100%" height="auto" role="img"
+         aria-label="How much of a college roster a head coach recruited himself, by season in the job. First season zero percent, second 25 percent, third 51 percent, fourth 76 percent, fifth and after 100 percent. Measured across 2,685 coach-seasons."
+         style="display:block;background:#f5f0e8;font-family:'Roboto Mono',monospace">
+      <text x="186" y="34" font-size="11" fill="#6b5e4a" letter-spacing="1.5">SHARE OF THE ROSTER HE RECRUITED HIMSELF</text>
+      <text x="174" y="74" text-anchor="end" font-size="12" fill="#1a1208">First season</text>
+      <rect x="186" y="56" width="514" height="26" fill="#e0d8c5"/>
+      <text x="194" y="74" font-size="12" font-weight="600" fill="#6b5e4a">0%</text>
+      <text x="710" y="74" font-size="10" fill="#6b5e4a">n=523</text>
+      <text x="174" y="115" text-anchor="end" font-size="12" fill="#1a1208">Second</text>
+      <rect x="186" y="97" width="514" height="26" fill="#e0d8c5"/>
+      <rect x="186" y="97" width="128.5" height="26" fill="#b83a1e"/>
+      <text x="306" y="115" text-anchor="end" font-size="12" font-weight="600" fill="#f5f0e8">25%</text>
+      <text x="710" y="115" font-size="10" fill="#6b5e4a">n=451</text>
+      <text x="174" y="156" text-anchor="end" font-size="12" fill="#1a1208">Third</text>
+      <rect x="186" y="138" width="514" height="26" fill="#e0d8c5"/>
+      <rect x="186" y="138" width="262.1" height="26" fill="#b83a1e"/>
+      <text x="439" y="156" text-anchor="end" font-size="12" font-weight="600" fill="#f5f0e8">51%</text>
+      <text x="710" y="156" font-size="10" fill="#6b5e4a">n=385</text>
+      <text x="174" y="197" text-anchor="end" font-size="12" fill="#1a1208">Fourth</text>
+      <rect x="186" y="179" width="514" height="26" fill="#e0d8c5"/>
+      <rect x="186" y="179" width="390.6" height="26" fill="#b83a1e"/>
+      <text x="568" y="197" text-anchor="end" font-size="12" font-weight="600" fill="#f5f0e8">76%</text>
+      <text x="710" y="197" font-size="10" fill="#6b5e4a">n=310</text>
+      <text x="174" y="238" text-anchor="end" font-size="12" fill="#1a1208">Fifth and after</text>
+      <rect x="186" y="220" width="514" height="26" fill="#e0d8c5"/>
+      <rect x="186" y="220" width="514.0" height="26" fill="#b83a1e"/>
+      <text x="691" y="238" text-anchor="end" font-size="12" font-weight="600" fill="#f5f0e8">100%</text>
+      <text x="710" y="238" font-size="10" fill="#6b5e4a">n=1,016</text>
+      <text x="186" y="268" font-size="10" fill="#6b5e4a">0</text>
+      <text x="700" y="268" font-size="10" fill="#6b5e4a" text-anchor="end">every class on the roster is his</text>
+      <line x1="186" y1="252" x2="700" y2="252" stroke="#c8b99a" stroke-width="1"/>
+    </svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:11px;color:#6b5e4a;margin-top:12px;letter-spacing:.5px;line-height:1.6">
+      A roster is roughly the last four recruiting classes. A class counts as his only if it was signed after he arrived. 2,685 coach-seasons, 441 coaches, every FBS program since 2000.
+    </figcaption>
+  </figure>
+
+  <p>By his third season about half the roster is his. By his fifth, all of it. That curve is the whole argument, and notice what it does <em>not</em> do: it never jumps. There is no moment when the team stops being inherited and starts being his. It bleeds over, one signing class at a time.</p>
+
+  <h2 class="sh">The Coach Is New. The Observations Are Not.</h2>
+
+  <p>Here is the trap. The coach changes overnight; the team does not. The returning players were recruited by someone else and developed in someone else's weight room. The schedule was set. Some assistants stayed. The budget, the facilities, the conference &mdash; none of that moved because a man walked through a door.</p>
+
+  <p>Yet the record gets his name on it immediately.</p>
+
+  <p>And there is not one clock here, there are four, running at different speeds. He can change the lineup on Monday &mdash; that clock starts at once. Changing an athlete takes months. Recruiting takes years. Changing what a program <em>is</em> &mdash; the relationships, the expectations, who returns a phone call &mdash; may take longer than he gets.</p>
+
+  <div class="pull">
+    <p>The coach is new. The observations are not.</p>
+    <cite>&mdash; Sean McKnight</cite>
+  </div>
+
+  <h2 class="sh">Year One Will Fool You</h2>
+
+  <p>A team goes 4&ndash;8. New coach arrives. Next year it goes 8&ndash;4. He doubled the wins, obviously.</p>
+
+  <p>Maybe. Or the previous staff's good class finally matured. Or the quarterback came back healthy. Or the three one-score games that went the wrong way went the right way. Or the schedule softened. Or &mdash; and this is the one almost nobody accounts for &mdash; <strong>4&ndash;8 was simply an unusually bad year, and unusual years are followed by ordinary ones.</strong></p>
+
+  <p>A school fires its coach at the moment performance looks worst. That is close to a definition of the moment improvement was coming anyway. You cannot tell those two stories apart from a before-and-after comparison, because both predict exactly the same thing.</p>
+
+  <p>Somebody did the work properly. Adler, Berry and Doherty matched programs that replaced their coach against comparable programs that kept theirs, across 1997 to 2010. For the genuinely bad teams, replacing the coach bought <em>little improvement</em> over the ones who stood pat. And for teams with middling records &mdash; the ones where a new man's conditions look most favorable &mdash; the ones who fired their coach did <strong>worse</strong> in the following years than the ones who did not.</p>
+
+  <p>Read that twice. The fire-him-and-move-on move, in the exact case where it feels most justified, was associated with getting worse.</p>
+
+  <h2 class="sh">The Treatment Changes the Subject</h2>
+
+  <p>Now the modern wrinkle, and it is a strange one.</p>
+
+  <p>Under current NCAA rules, a player whose head coach leaves gets <strong>an additional 30-day window to enter the transfer portal</strong>, opening the day after the departure. The Division I Council approved that framework on 9 October 2024.</p>
+
+  <p>So firing the coach does not hold the roster still while you swap the man at the top. It opens a door in the roster. The new coach is then judged, in part, on a disruption <em>caused by the event that hired him</em>.</p>
+
+  <p>In an experiment you would call that contamination. The treatment changed the subject it was being tested on. Statisticians dislike that sort of thing for good reason: once it happens, you can no longer say what you were measuring.</p>
+
+  <p>It cuts both ways, which is what makes it interesting rather than merely unfair. The portal lets a coach rebuild faster than any coach could in 2005, so he arguably <span class="cc" data-preview="Credit for an outcome should rise with how much opportunity the person actually had to cause it.">earns attribution<a class="cc-i" href="https://thesportspage.net/concepts/counterfactuals.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> sooner than this chart suggests. It also means he inherits more volatility. Faster credit, faster blame.</p>
+
+  <h2 class="sh">Ask a Better Question</h2>
+
+  <p>&ldquo;Give him three years&rdquo; is not a statistical claim. It is a number somebody picked because it sounds patient.</p>
+
+  <p>The better question is not how long he deserves. It is <strong>what evidence should exist by now.</strong> After ten games you can judge whether his fourth-down decisions make sense. After one season you can judge organization and whether anybody got visibly better. After two signing cycles you can start judging talent acquisition. After four years the roster is his and the excuses are gone.</p>
+
+  <p>The evidence accumulates gradually. Your confidence should too.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>This is not really about football, and you will use it within the week. New leaders inherit old staff. New principals inherit teachers and students. New doctors inherit patients whose treatment started somewhere else. <strong>Organizations have memory, and so do datasets.</strong></p>
+
+  <p>So when something improves or collapses after a change at the top, do not start with &ldquo;did the new person cause this?&rdquo; Start with the question that has to come first: <em>how much opportunity have they actually had to cause anything?</em></p>
+
+  <p>In sport the inherited team does eventually become the coach's team. The interesting part &mdash; the part worth counting &mdash; is working out when.</p>
+
+  <div class="box">
+    <h3>Where these numbers come from</h3>
+    <p>Recruiting-class ratings for every FBS program since 2000, standardized within each year, matched to coaching tenures from the same source. A roster is modeled as the four most recent classes; a class is the coach's only if it was signed in or after his arrival year. 2,685 coach-seasons with at least three classes on file, 441 coaches.</p>
+    <p><strong>What it cannot do.</strong> Recruiting rankings are a market forecast, not a measurement &mdash; they price the same hype a coach's reputation feeds. They ignore transfers entirely, which in the portal era is a widening hole. And attrition is not random: bad teams lose their best players. Every one of those pushes toward crediting a coach for talent he did not develop, so read this as generous to the coach, not harsh.</p>
+    <p>On Friday we take the next step and ask what the inherited year actually costs him, in wins.</p>
+  </div>
+
+  <div class="box" style="background:#2c4a6e">
+    <h3>Sources</h3>
+    <p>Adler ES, Berry MJ, Doherty D. Pushing &ldquo;Reset&rdquo;: The Conditional Effects of Coaching Replacements on College Football Performance. <em>Social Science Quarterly</em> 2013;94(1):1&ndash;28.</p>
+    <p>Humphreys BR, Paul RJ, Weinbach AP. Performance expectations and the tenure of head coaches: Evidence from NCAA football. <em>Research in Economics</em> 2016;70(3):482&ndash;492.</p>
+    <p>Johnson J, Matz D, Householder A, Jones J. Is Winning the Only Thing That Matters? An Analysis of Team Sport Head Coach Tenure in the NCAA Power Five and Group of Five Conferences. <em>Journal of Sport Behavior</em> 2023;46(2).</p>
+    <p>NCAA Division I Council, decision of 9 October 2024, notification-of-transfer windows.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

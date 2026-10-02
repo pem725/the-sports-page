@@ -96,6 +96,10 @@ def beats(h):
 # added, plus sixty/seventy/eighty/ninety and the everyday prepositions the list
 # had also skipped. Third time this list has been short; it will be short again.
 PLAIN = set("""
+don't doesn't didn't won't wouldn't can't couldn't shouldn't isn't aren't wasn't weren't hasn't haven't hadn't it's he's she's they're you're we're that's there's here's who's what's let's i'm i've you've we've they've ain't y'all nobody's
+
+none count counts counting counted recruit recruits recruited recruiting anyway zero shape shapes sports issues math data world worked rough triple hall wound spent banked owed share shares
+
 a an the and or but so if then than that this these those is are was were be been am do does did done
 have has had will would can could should may might must of in on at to for from by with about into over
 under up down out off again more most some any all no not only just very too as it its it's he she they
@@ -153,7 +157,7 @@ PROPER = _proper_nouns()
 
 def plainness(h):
     """Share of words a child would have to translate. Numerals and names are plain."""
-    words = [w for w in re.findall(r"[A-Za-z']+", h)]
+    words = [w for w in re.findall(r"[A-Za-z’']+", h.replace("’", "'"))]
     if not words:
         return 0.0, []
     hard = [w for w in words
