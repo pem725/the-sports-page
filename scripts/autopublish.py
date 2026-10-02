@@ -399,11 +399,20 @@ def update_article(content, issue_num, today):
 
     # Update the issue number in the datebar/footer. Journal style is
     # "Vol. I, No. NN"; also accept legacy "Issue No. NN", keeping whichever
-    # label the file uses. Handles "__", "[TBD]" and existing digits.
+    # label the file uses. Handles "__", "[TBD]", "TODO_NN" and existing digits.
     # [TBD] was missing from this class for a long time, which is how
     # "Vol. I, No. [TBD]" ended up in the masthead of two live issues.
+    #
+    # TODO_NN was missing for longer and was worse: it is the token
+    # queue/_TEMPLATE.html actually emits, so every issue drafted from the
+    # current template was unpublishable. On 2026-10-02 all five slots failed
+    # and #188 did not go out. THE TEMPLATE AND THE PUBLISHER HAD DRIFTED APART
+    # -- the template was updated to a new placeholder and this regex was not.
+    # The post-substitution guard caught it and refused to ship a page reading
+    # "Vol. I, No. TODO_NN", which is the guard doing its job exactly right;
+    # the fault was upstream of it.
     content = re.sub(
-        r'(Vol\. I, No\.|Issue No\.)\s*(?:\[TBD\]|[_\d]+)',
+        r'(Vol\. I, No\.|Issue No\.)\s*(?:\[TBD\]|TODO_NN|[_\d]+)',
         lambda m: f'{m.group(1)} {issue_num}',
         content,
     )

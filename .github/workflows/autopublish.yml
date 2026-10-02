@@ -94,6 +94,16 @@ jobs:
         continue-on-error: true
         run: python3 scripts/daily_watch.py || echo "::warning::watch block unavailable; issue will ship without it"
 
+      # Drift detector between queue/_TEMPLATE.html and the stamping regexes in
+      # autopublish.py. On 2026-10-02 the template emitted TODO_NN, the publisher
+      # only understood "__", "[TBD]" and digits, and all five slots failed with
+      # Issue #188 never going out. A warning rather than a hard failure: if this
+      # trips, every NEW article is unpublishable but older queue files are fine,
+      # so the paper should still go out while somebody fixes it.
+      - name: Check the publisher can stamp its own template
+        continue-on-error: true
+        run: python3 scripts/check_template_tokens.py || echo "::warning::template/publisher placeholder drift -- new articles will fail to publish"
+
       - name: Run autopublish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
