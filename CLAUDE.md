@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 312 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 311 issues remaining of 500
 
 ## Repository Structure
 
@@ -1098,9 +1098,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 188 issues (#1-188)
-Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 152-returning-noise, 167-lottery-priced-honestly, 168-which-budges, 169-fastball-denominator, 170-inherited-roster, 171-calibration-wisconsin, 173-whose-team, _TEMPLATE)
+Published: 189 issues (#1-189)
+Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 167-lottery-priced-honestly, 168-which-budges, 169-fastball-denominator, 170-inherited-roster, 171-calibration-wisconsin, 173-whose-team, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 312 issues remaining of 500
-Last published: Issue #188 — "The Mets Got One Day of Hope. The Cubs Got 126." (172-hope-days.html) on October 2, 2026
+Goal: 311 issues remaining of 500
+Last published: Issue #189 — "We Found a Pattern in Forty Games. Then We Killed It." (152-returning-noise.html) on October 3, 2026
