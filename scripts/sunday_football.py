@@ -144,8 +144,9 @@ def nfl_today(date=None):
 def blocks(sat, nfl):
     u = sat["upsets"]
     top = u[0] if u else None
+    hl = ' class="hl"'
     rows = "".join(
-        f'      <tr{" class=\"hl\"" if i == 0 else ""}><td>{g["winner"]} beat {g["loser"]}</td>'
+        f'      <tr{hl if i == 0 else ""}><td>{g["winner"]} beat {g["loser"]}</td>'
         f'<td class="mono">{g["ws"]}&ndash;{g["ls"]}</td>'
         f'<td class="mono">1 in {1/g["p"]:.0f}</td></tr>\n'
         for i, g in enumerate(u[:5]))
