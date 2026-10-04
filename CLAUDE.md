@@ -1098,9 +1098,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 189 issues (#1-189)
+Published: 190 issues (#1-190)
 Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 167-lottery-priced-honestly, 168-which-budges, 169-fastball-denominator, 170-inherited-roster, 171-calibration-wisconsin, 173-whose-team, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 311 issues remaining of 500
-Last published: Issue #189 — "We Found a Pattern in Forty Games. Then We Killed It." (152-returning-noise.html) on October 3, 2026
+Goal: 310 issues remaining of 500
+Last published: Issue #190 — "One Month, Six Pieces, One Miss: The Astros Made History and Then We Watched Them Lose It" (sunday-026.html) on October 4, 2026
