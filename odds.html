@@ -61,6 +61,11 @@ gap:.5rem;align-items:center;border-bottom:1px solid var(--div);padding:.5rem 0}
 .bk-lg{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
   color:var(--rust);font-weight:600;border-bottom:1px solid var(--div);padding-bottom:.25rem;margin:1.6rem 0 .8rem}
 .bk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+/* bk-col is a grid item and was never defined -- it leaned entirely on the grid.
+   min-width:0 is the part that matters: grid items default to min-width:auto and
+   refuse to shrink below their content, so a long club name pushes the column
+   wider than its track and the board scrolls sideways on a phone. */
+.bk-col{min-width:0}
 .bk-hd{font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
   color:var(--muted);margin-bottom:.4rem}
 .bk-series{border:1px solid var(--div);background:var(--card);margin-bottom:.6rem}
