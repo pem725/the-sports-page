@@ -101,9 +101,33 @@ def report(led):
     print(f"  {hit} of {len(done)} correct   {got} of {poss} points banked\n")
     print(f"  {'pts':>4} {'pick':<20}{'model':>7}{'result':>8}   score")
     for p in sorted(done, key=lambda x: -x["pts"]):
-        print(f'  {p["pts"]:>4} {p["pick"]:<20}{p["model_p"]:>7.0%}'
+        # Weeks 3-5 recorded a spread and a confidence rank but NO stated
+        # probability, so there is nothing to show in the model column. Print a
+        # dash rather than crash.
+        mp = p.get("model_p")
+        mps = f"{mp:>7.0%}" if isinstance(mp, (int, float)) else f"{'--':>7}"
+        print(f'  {p["pts"]:>4} {p["pick"]:<20}{mps}'
               f'{"  WIN " if p["correct"] else "  loss":>8}   {p["score"]}')
-    print("\n  === CALIBRATION: do the percentages mean anything? ===")
+
+    # CALIBRATION ONLY MEANS SOMETHING WHERE A PROBABILITY WAS STATED. Weeks 1-2
+    # carry model_p and weeks 3-5 do not. Averaging over whichever picks happen
+    # to have the field would report a curve built from a third of the season as
+    # though it covered all of it -- the quiet kind of wrong this paper exists
+    # to slow down.
+    stated = [p for p in done if isinstance(p.get("model_p"), (int, float))]
+    if not stated:
+        print("\n  No stated probabilities on any graded pick -- nothing to calibrate.")
+        return
+    skipped = len(done) - len(stated)
+    print(f"\n  === CALIBRATION: do the percentages mean anything? ===")
+    if skipped:
+        print(f"  {len(stated)} of {len(done)} picks stated a probability; "
+              f"{skipped} did not and are excluded.")
+    done = stated
+    # hit was counted over ALL graded picks above; recount it over the calibrated
+    # subset or the comparison comes out of two different denominators and reads
+    # as "19.5 ahead of the model" when it is nothing of the kind.
+    hit = sum(1 for p in done if p["correct"])
     band = [(.90, 1.01, "90-100%"), (.75, .90, "75-90%"), (.65, .75, "65-75%")]
     print(f"  {'we said':<10}{'n':>4}{'we won':>9}{'expected':>10}")
     for lo, hi, lab in band:

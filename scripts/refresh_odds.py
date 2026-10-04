@@ -43,6 +43,27 @@ def season_state(date):
     """Standings and remaining schedule as of `date`, reconciled to 162 games."""
     d = get(f"/standings?leagueId=103,104&season={date[:4]}"
             f"&standingsTypes=regularSeason&date={date}")
+
+    # THE REGULAR SEASON ENDS AND THE ENDPOINT GOES SILENT. Asked for any date
+    # after the final day, /standings?standingsTypes=regularSeason returns zero
+    # records -- not an error, just nothing. The caller then reported "clubs in
+    # the file are missing from the API" and listed all thirty, which reads like
+    # a feed outage and is actually a calendar boundary. Walk back to the last
+    # day that answers, so the board freezes on the final standings instead of
+    # breaking. There is nothing left to project once every club has played 162;
+    # the right behaviour is to stop updating, not to guess.
+    if not d.get("records"):
+        probe = datetime.date.fromisoformat(date)
+        for back in range(1, 31):
+            alt = (probe - datetime.timedelta(days=back)).isoformat()
+            d = get(f"/standings?leagueId=103,104&season={date[:4]}"
+                    f"&standingsTypes=regularSeason&date={alt}")
+            if d.get("records"):
+                print(f"  regular season is over; standings frozen at {alt}")
+                date = alt
+                break
+        else:
+            raise SystemExit(f"no regular-season standings within 30 days of {date}")
     T = {}
     for rec in d["records"]:
         for t in rec["teamRecords"]:
@@ -67,7 +88,26 @@ def season_state(date):
     for a, h in games:
         if a in left: left[a] += 1
         if h in left: left[h] += 1
-    bad = [T[t]["name"] for t in T if T[t]["w"] + T[t]["l"] + left[t] != 162]
+    # Mid-season the invariant is exact: played + remaining == 162, and anything
+    # else means the schedule or the standings are wrong and we should not guess.
+    #
+    # AT SEASON'S END IT IS NOT 162. A rained-out game that cannot change the
+    # standings is simply never made up, so clubs finish short -- in 2026 the
+    # Yankees and the Orioles both ended 161-162. The exact check was written for
+    # a season in progress and turned every October into a refusal. When nothing
+    # is left to play the honest invariant is "played at most 162, none
+    # remaining", and a short finish is a fact about the schedule rather than an
+    # error in the feed.
+    over = all(left[t] == 0 for t in T)
+    if over:
+        bad = [T[t]["name"] for t in T if not 0 < T[t]["w"] + T[t]["l"] <= 162]
+        short = [f'{T[t]["name"]} {T[t]["w"]+T[t]["l"]}' for t in T
+                 if T[t]["w"] + T[t]["l"] != 162]
+        if short:
+            print(f"  season complete; {len(short)} club(s) finished short of 162: "
+                  f"{', '.join(sorted(short))}")
+    else:
+        bad = [T[t]["name"] for t in T if T[t]["w"] + T[t]["l"] + left[t] != 162]
     if bad:
         raise SystemExit(f"REFUSING: these clubs do not reconcile to 162 games: {bad}")
     # games ahead(+) / behind(-) within the division
@@ -143,6 +183,22 @@ def main() -> int:
     missing = [t for t in D["teams"] if t not in T]
     if missing:
         raise SystemExit(f"REFUSING: clubs in the file are missing from the API: {missing}")
+
+    # NO GAMES LEFT MEANS NO PROBABILITIES LEFT. Playoff odds answer "how often
+    # does this club get in, across the seasons that could still happen" -- and
+    # once the last game is played there is exactly one season left and it has
+    # already happened. Every club is at 0 or 1, which a simulation cannot tell
+    # you anything about and which this file is not shaped to hold.
+    #
+    # So stop, and leave the final in-season board standing. That board is the
+    # last honest thing the data supports. Simulating zero games used to crash
+    # here on an empty array, which at least had the virtue of not publishing
+    # a number; this says why instead.
+    if not games:
+        print("  the regular season is complete -- no games remain to simulate.")
+        print("  Playoff odds are now outcomes, not probabilities. Leaving the")
+        print("  final in-season board in place and writing nothing.")
+        return 0
     po, div = simulate(T, games)
 
     append = gap >= 7
