@@ -50,6 +50,10 @@ def main():
                 continue
             sched.setdefault(me, []).append(dict(
                 opp=opp, site=("neutral" if g.get("neutralSite") else site),
+                # `site` above is overwritten to "neutral" for neutral-site
+                # games, which loses which side WE were -- so keep it. Without
+                # this, every bowl and kickoff-classic score reads backwards.
+                was_home=(me == h),
                 date=(g.get("startDate") or "")[:10],
                 hp=g.get("homePoints"), ap=g.get("awayPoints"),
                 won=(None if g.get("homePoints") is None else
@@ -85,8 +89,18 @@ def main():
             ten_plus=round(float((sims >= 10).mean()), 3),
             losing=round(float((sims < n / 2).mean()), 3),
             sos=round(float(np.mean(opp_sp)), 1) if opp_sp else None,
+            # Carry the SCORE through for games already played. hp/ap were
+            # already being fetched and then dropped here, so the board could
+            # colour a bar win-green or loss-red and still not tell you 24-21.
+            # Stored from THIS team's point of view (us-them) so the renderer
+            # never has to know which side was home.
             sched=[dict(opp=g["opp"], site=g["site"], date=g["date"], p=g["p"],
-                        won=g["won"]) for g in gs]))
+                        won=g["won"],
+                        us=(None if g["hp"] is None else
+                            (g["hp"] if g["was_home"] else g["ap"])),
+                        them=(None if g["hp"] is None else
+                              (g["ap"] if g["was_home"] else g["hp"])))
+                   for g in gs]))
     json.dump(dict(generated=__import__("datetime").date.today().isoformat(),
                    method=f"SP+ difference through a normal CDF, sd {SD}, home field {HFA}; "
                           f"{NSIMS:,} season simulations per club",

@@ -172,11 +172,17 @@ def main():
             opp = r["away_team"] if home else r["home_team"]
             mu = rate[t] - rate[opp] + (hfa if home else -hfa)
             p = 0.5 * (1 + math.erf(mu / (MARGIN_SD * math.sqrt(2))))
-            won = None
+            won = us = them = None
             if r["home_score"] not in ("", None) and r["away_score"] not in ("", None):
-                won = (float(r["home_score"]) > float(r["away_score"])) == home
+                hs, as_ = int(float(r["home_score"])), int(float(r["away_score"]))
+                won = (hs > as_) == home
+                # Scores from THIS club's point of view, matching the college
+                # board so the shared hover panel does not need to know which
+                # feed a row came from.
+                us, them = (hs, as_) if home else (as_, hs)
             games.append(dict(opp=NAME[opp], site="home" if home else "away",
-                              date=r["gameday"], p=round(p, 4), won=won))
+                              date=r["gameday"], p=round(p, 4), won=won,
+                              us=us, them=them))
         return games
 
     out = []

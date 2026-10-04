@@ -180,6 +180,9 @@ gap:.5rem;align-items:center;border-bottom:1px solid var(--div);padding:.5rem 0}
 .cd-o{font-weight:700;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cd-m{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.03em}
 .cd-p{font-family:'Roboto Mono',monospace;font-weight:600}
+/* The pre-game forecast, kept beside a settled result. Quiet on purpose: the
+   score is the answer, the forecast is the accountability. */
+.cd-said{font-family:'Roboto Mono',monospace;font-size:.55rem;color:var(--muted);letter-spacing:.03em;display:block}
 @media(max-width:760px){.cfb-detail{position:static}.cd-grid{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}}
 .pinflag{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-left:.6rem;vertical-align:.25em}
 .pinflag.dim{color:var(--muted)}
@@ -485,9 +488,16 @@ function wireSchedule(listId, panelId, DATA){
     t.sched.forEach((x,i)=>{
       const cls=x.w===true?'win':x.w===false?'loss':'';
       const mark=x.w===true?'W &middot; ':x.w===false?'L &middot; ':'';
+      // A played game leads with the SCORE and keeps the forecast as a quiet
+      // second line. The native <title> on a bar takes about a second to
+      // appear; this panel redraws the instant the row is hovered, so it is
+      // the one that actually answers "how did that go" at a glance.
+      const played=(x.u!==null&&x.u!==undefined&&x.t!==null&&x.t!==undefined);
+      const val=played?(mark+x.u+'&ndash;'+x.t):(mark+pf(x.p));
+      const said=played?'<span class="cd-said">said '+pf(x.p)+'</span>':'';
       g+='<div class="cd-g '+cls+(i===hot?' hot':'')+'">'+
          '<span class="cd-o">'+(x.s==='away'?'at ':'vs ')+x.o+'</span>'+
-         '<span class="cd-m">'+nice(x.d)+'</span> <span class="cd-p">'+mark+pf(x.p)+'</span></div>';
+         '<span class="cd-m">'+nice(x.d)+'</span> <span class="cd-p">'+val+'</span>'+said+'</div>';
     });
     return g+'</div>';
   }
@@ -529,6 +539,27 @@ wireSchedule('nfl-list','nfl-detail',typeof NFLD!=='undefined'?NFLD:null);
 CFB_DATA = REPO / "data" / "cfb-odds.json"
 
 
+def scoreline(g):
+    """What a bar says on hover: the result if it happened, the forecast if not.
+
+    Asked for by the editor, 2026-10-04: "put the scores on games played as
+    hover overs -- I want to be able to quickly see the outcomes as I hover."
+
+    A played game should not still be quoting a probability. The bar is already
+    coloured win-green or loss-red, so the forecast has been settled; what the
+    reader wants from it now is the number. Unplayed games keep the forecast,
+    which is the only thing there is to say about them.
+    """
+    us, them = g.get("us"), g.get("them")
+    if us is None or them is None:
+        return pfmt(g["p"])
+    wl = "W" if us > them else ("L" if us < them else "T")
+    # The pre-game forecast is kept alongside the result on purpose: a win the
+    # model gave you 31% is a different fact from a win it gave you 97%, and
+    # that gap is the whole reason this paper keeps a scorecard.
+    return f"{wl} {us}&ndash;{them} &middot; we said {pfmt(g['p'])}"
+
+
 def pfmt(p):
     """Never print 100%. No game is certain, and a strip that says so teaches
     the reader the wrong lesson about what a model can know."""
@@ -566,7 +597,7 @@ def cfb_rows():
                 c = "#8fa8bd" if g["p"] >= .5 else "#d8b9ae"
             bars += (f'<rect class="cfb-bar" data-g="{i}" x="{x:.1f}" y="{H-h:.1f}" '
                      f'width="{cw-1.6:.1f}" height="{h:.1f}" fill="{c}">'
-                     f'<title>{g["opp"]} ({g["site"]}) {pfmt(g["p"])}</title></rect>')
+                     f'<title>{g["opp"]} ({g["site"]}) {scoreline(g)}</title></rect>')
         bars += f'<line x1="0" y1="{H/2:.1f}" x2="{W}" y2="{H/2:.1f}" stroke="#c8b99a" stroke-width=".8" stroke-dasharray="2 3"/>'
         rp = "&mdash;" if t["ret"] is None else f'{t["ret"]*100:.0f}%'
         out.append(
@@ -581,7 +612,8 @@ def cfb_rows():
             f'<div class="cfb-st"><b>{t["sos"]:+.1f}</b><span>sched</span></div>'
             f'</div>')
     slim = [{"team": t["team"], "rank": t["rank"], "proj": t["proj"], "sos": t["sos"],
-             "sched": [{"o": g["opp"], "s": g["site"], "d": g["date"], "p": g["p"], "w": g["won"]}
+             "sched": [{"o": g["opp"], "s": g["site"], "d": g["date"], "p": g["p"], "w": g["won"],
+                        "u": g.get("us"), "t": g.get("them")}
                        for g in t["sched"]]}
             for t in D["teams"]]
     return "".join(out), D.get("method", ""), json.dumps(slim, separators=(",", ":"))
@@ -683,7 +715,7 @@ def nfl_rows():
                      else "#8fa8bd" if g["p"] >= .5 else "#d8b9ae")
                 bars += (f'<rect class="cfb-bar" data-g="{i}" x="{x:.1f}" y="{H-h:.1f}" '
                          f'width="{cw-1.6:.1f}" height="{h:.1f}" fill="{c}">'
-                         f'<title>{g["opp"]} ({g["site"]}) {pfmt(g["p"])}</title></rect>')
+                         f'<title>{g["opp"]} ({g["site"]}) {scoreline(g)}</title></rect>')
             bars += (f'<line x1="0" y1="{H/2:.1f}" x2="{W}" y2="{H/2:.1f}" stroke="#c8b99a" '
                      f'stroke-width=".8" stroke-dasharray="2 3"/>')
             out.append(
@@ -701,7 +733,7 @@ def nfl_rows():
                 f'</div>')
             slim.append({"team": t["name"], "rank": t["team"], "proj": t["proj"], "sos": t["sos"],
                          "sched": [{"o": g["opp"], "s": g["site"], "d": g["date"],
-                                    "p": g["p"], "w": g["won"]} for g in t["sched"]]})
+                                    "p": g["p"], "w": g["won"], "u": g.get("us"), "t": g.get("them")} for g in t["sched"]]})
             ti += 1
     return "".join(out), D.get("method", ""), json.dumps(slim, separators=(",", ":"))
 
