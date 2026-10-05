@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 311 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 309 issues remaining of 500
 
 ## Repository Structure
 
@@ -1098,9 +1098,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 190 issues (#1-190)
-Queue: 10 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 167-lottery-priced-honestly, 168-which-budges, 169-fastball-denominator, 170-inherited-roster, 171-calibration-wisconsin, 173-whose-team, _TEMPLATE)
+Published: 191 issues (#1-191)
+Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 168-which-budges, 169-fastball-denominator, 170-inherited-roster, 171-calibration-wisconsin, 173-whose-team, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 310 issues remaining of 500
-Last published: Issue #190 — "One Month, Six Pieces, One Miss: The Astros Made History and Then We Watched Them Lose It" (sunday-026.html) on October 4, 2026
+Goal: 309 issues remaining of 500
+Last published: Issue #191 — "Three Hundred Million Tickets. One Expected Winner." (167-lottery-priced-honestly.html) on October 5, 2026
