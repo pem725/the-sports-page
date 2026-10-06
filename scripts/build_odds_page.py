@@ -738,8 +738,37 @@ def nfl_rows():
     return "".join(out), D.get("method", ""), json.dumps(slim, separators=(",", ":"))
 
 
+def board_freshness():
+    """Newest refresh across ALL the boards, not just the baseball one.
+
+    The masthead used to print D["generated"], which is the BASEBALL trajectory's
+    last date. That was correct mid-season and became wrong the moment the
+    regular season ended: that file is now frozen at 2026-09-26 for good, so the
+    page would have advertised "Updated 26 September" all winter while the
+    college and NFL boards refreshed underneath it every single day.
+
+    A page that UNDERSTATES its own freshness is still telling the reader
+    something false, and it is the kind of false that makes a live thing look
+    abandoned.
+    """
+    newest = ""
+    for fn in ("playoff-odds-trajectory.json", "cfb-odds.json", "nfl-odds.json"):
+        p = REPO / "data" / fn
+        if not p.exists():
+            continue
+        try:
+            d = json.loads(p.read_text())
+        except Exception:
+            continue
+        g = d.get("generated") or (d.get("dates") or [None])[-1]
+        if g:
+            newest = max(newest, str(g)[:10])
+    return newest
+
+
 def build() -> str:
     D = json.loads(DATA.read_text())
+    FRESH = board_freshness() or D["generated"]
     teams = D["teams"]
     tiles = []
     for div, label in DIVS:
@@ -780,10 +809,10 @@ def build() -> str:
 </head>
 <body>
 <div class="masthead">
-  <div class="kicker">The Odds Board &middot; Updated {D["generated"]}</div>
+  <div class="kicker">The Odds Board &middot; Updated {FRESH}</div>
   <div class="title"><a href="https://thesportspage.net/">The Sports Page</a></div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
-  <div class="datebar"><span>Playoff Odds</span><span>{D["generated"]}</span><span>30 Clubs &middot; {len(D["dates"])} Weeks</span></div>
+  <div class="datebar"><span>Playoff Odds</span><span>{FRESH}</span><span>30 Clubs &middot; {len(D["dates"])} Weeks</span></div>
 </div>
 <div class="paper">
   <h1>Thirty Seasons at Once. <em>Hover Any One of Them.</em></h1>
