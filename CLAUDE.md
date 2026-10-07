@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 308 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 307 issues remaining of 500
 
 ## Repository Structure
 
@@ -1098,9 +1098,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 192 issues (#1-192)
-Queue: 8 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 169-fastball-denominator, 170-inherited-roster, 171-calibration-wisconsin, 173-whose-team, _TEMPLATE)
+Published: 193 issues (#1-193)
+Queue: 7 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 140-one-kick, 169-fastball-denominator, 170-inherited-roster, 171-calibration-wisconsin, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 308 issues remaining of 500
-Last published: Issue #192 — "Defense Moves More Than Offense. Measure It Better and It Does Not." (168-which-budges.html) on October 6, 2026
+Goal: 307 issues remaining of 500
+Last published: Issue #193 — "The New Coach Recruited None of Them. We Start Counting Anyway." (173-whose-team.html) on October 7, 2026
