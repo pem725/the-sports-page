@@ -1,0 +1,272 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: hot
+tags: CFB:cfb, Upsets, We Checked, Base Rates
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Ninety-One Chances. Six Upsets.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Ninety-One Chances. Six Upsets.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/174-ninety-one-chances.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/174-ninety-one-chances.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ninety-One Chances. Six Upsets.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/174-ninety-one-chances.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">We Checked &middot; College Football, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>Ninety-One Chances. <em>Six Upsets.</em></h1>
+
+  <div class="deck">
+    The Athletic reported this week that unranked teams have beaten ranked ones only six times through Week 5, the fewest since 2019. We checked it. The six is right. What nobody printed is the other number: there were <em>more</em> chances at an upset this season than in any year since 2019, and the favorites held anyway.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Testing a number from The Athletic</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">6</div><div class="l">Upsets, weeks 1&ndash;5</div></div>
+    <div class="sc"><div class="v now">91</div><div class="l">Chances at one</div></div>
+    <div class="sc"><div class="v good">12.6</div><div class="l">Normally expected</div></div>
+  </div>
+
+  <!-- Optional: xkcd cartoon as lede figure
+  <figure class="cartoon" style="margin:36px auto;max-width:560px;">
+    <img src="../assets/xkcd/174-ninety-one-chances.png" alt="TODO accessible description" style="width:100%;height:auto;display:block;">
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:14px;text-align:center;letter-spacing:0.5px;text-transform:uppercase;">Cartoon &middot; TODO short caption</figcaption>
+  </figure>
+  -->
+
+  <p><strong>Is this season really stranger than usual, or does it only look that way?</strong> The Athletic reported this week, from TruMedia, that unranked teams have beaten ranked ones just six times through Week 5. That is tied with 2023 for the fewest since 2019.</p>
+
+  <p>We went and counted. <strong>The six is right.</strong> We get six too, using the AP Top 25 a team actually carried into the week, and counting only wins by teams that play in the same division.</p>
+
+  <p>But the comparison is doing the wrong job. &ldquo;Fewest since 2019&rdquo; is a <em>rank</em>, and a rank hides the thing you want to know: fewest out of how many tries? Here is the number nobody printed. <strong>There were ninety-one chances at an upset this season, more than in any year since 2019 &mdash; and the favorites held anyway.</strong> By the end of this you will know why that distinction matters every time somebody shows you a record.</p>
+
+  <figure style="margin:2rem 0 1.4rem">
+    <svg viewBox="0 0 780 345" width="100%" height="auto" role="img"
+         aria-label="Chances at an upset against upsets delivered, by season. 2022 and 2026 both had 91 ranked-versus-unranked games; 2022 produced 14 upsets and 2026 produced 6. The dashed line is the 13.9 percent rate of 2019 to 2025."
+         style="display:block;background:#f5f0e8;font-family:'Roboto Mono',monospace">
+      <text x="92" y="28" font-size="11" fill="#6b5e4a" letter-spacing="1.4">UPSETS DELIVERED vs CHANCES AT ONE</text>
+      <line x1="92" y1="300" x2="720" y2="300" stroke="#1a1208" stroke-width="1.4"/>
+      <line x1="92" y1="48" x2="92" y2="300" stroke="#1a1208" stroke-width="1.4"/>
+      <line x1="263.3" y1="247.5" x2="720.0" y2="107.5" stroke="#c9962a" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="716" y="98" font-size="10" fill="#9a7320" text-anchor="end">the usual rate, 13.9%</text>
+      <circle cx="651.5" cy="123.6" r="4.2" fill="#8a7c62" fill-opacity="0.5"/>
+      <text x="651.5" y="111.6" font-size="11" font-weight="400" fill="#8a7c62" text-anchor="middle">2019</text>
+      <circle cx="297.5" cy="186.6" r="4.2" fill="#8a7c62" fill-opacity="0.5"/>
+      <text x="297.5" y="174.6" font-size="11" font-weight="400" fill="#8a7c62" text-anchor="middle">2020</text>
+      <circle cx="594.4" cy="85.8" r="4.2" fill="#8a7c62" fill-opacity="0.5"/>
+      <text x="594.4" y="73.8" font-size="11" font-weight="400" fill="#8a7c62" text-anchor="middle">2021</text>
+      <circle cx="611.5" cy="123.6" r="6.5" fill="#2c4a6e" fill-opacity="1"/>
+      <text x="611.5" y="111.6" font-size="11" font-weight="600" fill="#2c4a6e" text-anchor="middle">2022</text>
+      <circle cx="634.4" cy="211.8" r="4.2" fill="#8a7c62" fill-opacity="0.5"/>
+      <text x="634.4" y="199.8" font-size="11" font-weight="400" fill="#8a7c62" text-anchor="middle">2023</text>
+      <circle cx="571.6" cy="174.0" r="4.2" fill="#8a7c62" fill-opacity="0.5"/>
+      <text x="571.6" y="162.0" font-size="11" font-weight="400" fill="#8a7c62" text-anchor="middle">2024</text>
+      <circle cx="571.6" cy="186.6" r="4.2" fill="#8a7c62" fill-opacity="0.5"/>
+      <text x="571.6" y="174.6" font-size="11" font-weight="400" fill="#8a7c62" text-anchor="middle">2025</text>
+      <circle cx="611.5" cy="224.4" r="6.5" fill="#b83a1e" fill-opacity="1"/>
+      <text x="611.5" y="212.4" font-size="11" font-weight="600" fill="#b83a1e" text-anchor="middle">2026</text>
+      <text x="320" y="318" font-size="10" fill="#6b5e4a" text-anchor="middle">40</text>
+      <text x="492" y="318" font-size="10" fill="#6b5e4a" text-anchor="middle">70</text>
+      <text x="663" y="318" font-size="10" fill="#6b5e4a" text-anchor="middle">100</text>
+      <text x="82" y="241" font-size="10" fill="#6b5e4a" text-anchor="end">5</text>
+      <text x="82" y="178" font-size="10" fill="#6b5e4a" text-anchor="end">10</text>
+      <text x="82" y="115" font-size="10" fill="#6b5e4a" text-anchor="end">15</text>
+      <text x="406" y="336" font-size="11" fill="#1a1208" text-anchor="middle">games where exactly one side was ranked &rarr;</text>
+      <text transform="translate(26,174) rotate(-90)" font-size="11" fill="#1a1208" text-anchor="middle">&larr; upsets</text>
+    </svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:11px;color:#6b5e4a;margin-top:12px;letter-spacing:.5px;line-height:1.6">
+      2022 and 2026 each offered exactly 91 chances. One produced fourteen upsets, the other six. AP Top 25, the poll each team entered the week holding, FBS winners only.
+    </figcaption>
+  </figure>
+
+  <p>Look at 2022 and 2026. Both offered ninety-one games with one side ranked and one not. <strong>2022 produced fourteen upsets. This year produced six.</strong> Identical opportunity, less than half the result.</p>
+
+  <h2 class="sh">How Strange Is Six?</h2>
+
+  <p>Count the seven seasons before this one and the unranked side won <strong>80 of 576</strong> such games &mdash; 13.9% of the time. That is the base rate, and it is the only honest yardstick here.</p>
+
+  <p>Apply it to this season's ninety-one games and you would expect about <strong>12.6 upsets</strong>, give or take 3.3. We got six.</p>
+
+  <p>That is two standard deviations below normal, or about a one-in-forty-five season. Not a freak and not a glitch; rare, in the sense of the sort of thing you might see twice in a lifetime of Saturdays. You are watching one now.</p>
+
+  <div class="pull">
+    <p>A rank tells you where a season finished in a list. A rate tells you whether anything happened.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Where Our Count Parts Company</h2>
+
+  <p>Being straight about this, because we checked their number and ours only matches on one of the four.</p>
+
+  <p>Use the same rule that reproduces their 2026 figure and their older seasons come out higher for us. We count <strong>17 in 2021, not 14</strong>; <strong>7 in 2023, not 6</strong>; <strong>9 in 2025, not 8</strong>. So on our count this season is not tied with 2023 at all. It stands alone at the bottom.</p>
+
+  <p>We tried to find the difference and could not. Swapping the Coaches poll for the AP brings 2021 to fourteen. But then this season becomes ten, and their headline falls apart. Trimming to four weeks fixes 2023 and breaks 2021. No single rule we tried reproduces all four of their numbers at once, so we are not going to invent a reconciliation and pretend we found one.</p>
+
+  <p>None of this touches their point. Six is six, and six is the fewest.</p>
+
+  <h2 class="sh">The Trap We Nearly Fell Into</h2>
+
+  <p>One thing worth showing you, because it is the sort of error that produces a confident wrong answer.</p>
+
+  <p>To call a game an upset you need to know who was ranked <em>before kickoff</em>. Polls come out mid-week; a database filing one under &ldquo;week 5&rdquo; might mean the poll that opened that week, or the one that closed it. Use the wrong one and every upset is graded against a poll that already knows the result. The ranked team has dropped out, so the upset disappears.</p>
+
+  <p>We checked rather than assumed. Virginia entered week three ranked 25th, lost that week, and was gone from the following poll. So the poll filed under a week is the one teams <span class="cc" data-preview="Judging a forecast with information that only existed after the fact.">carried into it<a class="cc-i" href="https://thesportspage.net/concepts/conditioning-on-the-consequence.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span>, which is the one we want.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>When a number arrives as a ranking &mdash; fewest since, most since, worst in a decade &mdash; ask what it is a fraction <em>of</em>. The count alone cannot tell you whether the world changed or whether there were simply fewer chances for it to.</p>
+
+  <p>Here there were more chances than usual and fewer upsets, which is the harder and more interesting fact. Favorites are not merely winning; they are winning on a card that gave them more room than usual to slip.</p>
+
+  <div class="box">
+    <h3>How we counted</h3>
+    <p>Every regular-season game from 2019 through week five of 2026 in which one team and only one appeared in that week's AP Top 25, from the CollegeFootballData API. An upset is a win by the unranked side. Winners outside the top division are excluded &mdash; one in 2021, Montana over Washington &mdash; because The Athletic's framing is about ranked teams losing to their peers.</p>
+    <p><strong>What it cannot do.</strong> It cannot tell you <em>why</em>. Fewer upsets could mean stronger favorites, weaker challengers, a softer schedule, or luck. A base rate says this season is unusual; it does not say what made it so. And 91 games is a small enough card that a single wild Saturday would move the number noticeably &mdash; two standard deviations is rare, not impossible.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

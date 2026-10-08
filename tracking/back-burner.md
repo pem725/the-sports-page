@@ -27,6 +27,24 @@ notes, and cost-per-win is the line everyone will quote.
 
 ---
 
+## `170-inherited-roster.html` — held on rotation, not on merit
+
+**Status:** finished, verified, and OUT of `QUEUE_ORDER.txt` as of 2026-10-08.
+
+Nothing is wrong with it. The queue simply ran down to three CFB pieces and one
+NFL piece, and three CFB cannot be separated by one of anything. Scheduling it
+produced a back-to-back clash with `171-calibration-wisconsin`, and leaving a
+clash in the order is worse than holding the piece: autopublish re-checks the
+variety rule, would skip it silently, and would then find nothing else to run.
+
+**Trigger: the moment a non-CFB piece enters the queue.** Put it straight back in
+behind that piece. It is a `keeps`, so nothing about it decays.
+
+**The piece that should fill the hole** is the Mets season scorecard, whose own
+trigger passed on 2026-09-30 and which is MLB — exactly the topic the rotation is
+short of. Brief and receipts are in `tracking/mets-season-scorecard.md`.
+
+---
 ## `088-sorsby-supplemental-bet.html` — Sal's Column
 
 **Status:** held for a one-year follow-up. Do not publish as written.
