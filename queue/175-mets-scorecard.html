@@ -1,0 +1,270 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: slow
+tags: MLB:mlb, Mets, We Were Wrong, Uncertainty
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — We Said Ninety Wins. They Won Seventy-Four.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="We Said Ninety Wins. They Won Seventy-Four.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/175-mets-scorecard.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/175-mets-scorecard.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="We Said Ninety Wins. They Won Seventy-Four.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/175-mets-scorecard.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Scorecard &middot; Major League Baseball, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>We Said Ninety Wins. <em>They Won Seventy-Four.</em></h1>
+
+  <div class="deck">
+    We published five forecasts about the Mets this season and the gloomiest one was the most accurate. Every time we talked ourselves up from a bleak number, we got further from the truth. The one thing that survived the year was not a number at all &mdash; it was an interval.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Grading ourselves, in full</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">16</div><div class="l">Wins our prior missed by</div></div>
+    <div class="sc"><div class="v now">74&ndash;88</div><div class="l">Where they finished</div></div>
+    <div class="sc"><div class="v good">2</div><div class="l">Our best call&rsquo;s error</div></div>
+  </div>
+
+  <!-- Optional: xkcd cartoon as lede figure
+  <figure class="cartoon" style="margin:36px auto;max-width:560px;">
+    <img src="../assets/xkcd/175-mets-scorecard.png" alt="TODO accessible description" style="width:100%;height:auto;display:block;">
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:14px;text-align:center;letter-spacing:0.5px;text-transform:uppercase;">Cartoon &middot; TODO short caption</figcaption>
+  </figure>
+  -->
+
+  <p><strong>How wrong were we about the Mets, and which kind of wrong was it?</strong> We published five forecasts this season. They finished <strong>74&ndash;88</strong>, fifth in their division and thirteenth of fifteen in the league.</p>
+
+  <p>Our March number was ninety wins. We missed by sixteen. You are owed the whole list, so here it is.</p>
+
+  <p>But the interesting failure is not the size of that miss. It is the pattern underneath, and you would probably guess it backwards. <strong>Our gloomiest number was our most accurate.</strong> Every time we talked ourselves up from a bleak figure, we got further from the truth. By the end of this you will have a cheap test for whether a forecast is being reasoned with or reasoned away.</p>
+
+  <figure style="margin:2rem 0 1.4rem">
+    <svg viewBox="0 0 780 306" width="100%" height="auto" role="img"
+         aria-label="Five Mets forecasts against the final 74 wins. The March prior said 90. The April estimate said 81 with a 90 percent interval from 70 to 89, which contained the answer. May argued up to the low 80s. June's untouched Pythagorean said 72, closest of the year."
+         style="display:block;background:#f5f0e8;font-family:'Roboto Mono',monospace">
+      <line x1="384.3" y1="34" x2="384.3" y2="266" stroke="#1a1208" stroke-width="2"/>
+      <text x="384.3" y="26" font-size="12" font-weight="600" fill="#1a1208" text-anchor="middle">they won 74</text>
+      <text x="234" y="66" text-anchor="end" font-size="12" fill="#1a1208">Preseason prior</text>
+      <text x="234" y="79" text-anchor="end" font-size="9.5" fill="#6b5e4a">March &middot; before a pitch was thrown</text>
+      <circle cx="652.9" cy="62" r="6" fill="#b83a1e"/>
+      <text x="652.9" y="51.0" font-size="11" font-weight="600" fill="#b83a1e" text-anchor="middle">90</text>
+      <text x="234" y="106" text-anchor="end" font-size="12" fill="#1a1208">After a 7–14 start</text>
+      <text x="234" y="119" text-anchor="end" font-size="9.5" fill="#6b5e4a">April &middot; the only one with error bars</text>
+      <line x1="317.1" y1="102" x2="636.1" y2="102" stroke="#2a6e3f" stroke-width="7" stroke-opacity=".30" stroke-linecap="round"/>
+      <text x="317.1" y="121" font-size="9.5" fill="#2a6e3f">90% interval &mdash; and it is the only thing here that held</text>
+      <circle cx="501.8" cy="102" r="6" fill="#b83a1e"/>
+      <text x="501.8" y="91.0" font-size="11" font-weight="600" fill="#b83a1e" text-anchor="middle">81</text>
+      <text x="234" y="146" text-anchor="end" font-size="12" fill="#1a1208">Pythagorean, talked up</text>
+      <text x="234" y="159" text-anchor="end" font-size="9.5" fill="#6b5e4a">May &middot; computed 76, argued to the low-80s</text>
+      <circle cx="535.4" cy="142" r="6" fill="#b83a1e"/>
+      <text x="535.4" y="131.0" font-size="11" font-weight="600" fill="#b83a1e" text-anchor="middle">83</text>
+      <text x="234" y="186" text-anchor="end" font-size="12" fill="#1a1208">Pythagorean, left alone</text>
+      <text x="234" y="199" text-anchor="end" font-size="9.5" fill="#6b5e4a">June &middot; no argument laid on top</text>
+      <circle cx="350.7" cy="182" r="6" fill="#2a6e3f"/>
+      <text x="350.7" y="171.0" font-size="11" font-weight="600" fill="#2a6e3f" text-anchor="middle">72</text>
+      <text x="234" y="226" text-anchor="end" font-size="12" fill="#1a1208">Must pass seven teams</text>
+      <text x="234" y="239" text-anchor="end" font-size="9.5" fill="#6b5e4a">September &middot; passed none</text>
+      <text x="384.3" y="226" font-size="11" fill="#6b5e4a" text-anchor="middle">no number &mdash; a claim about standings</text>
+      <line x1="250" y1="272" x2="720" y2="272" stroke="#c8b99a"/>
+      <text x="317.1" y="286" font-size="10" fill="#6b5e4a" text-anchor="middle">70</text><text x="401.1" y="286" font-size="10" fill="#6b5e4a" text-anchor="middle">75</text><text x="485.0" y="286" font-size="10" fill="#6b5e4a" text-anchor="middle">80</text><text x="568.9" y="286" font-size="10" fill="#6b5e4a" text-anchor="middle">85</text><text x="652.9" y="286" font-size="10" fill="#6b5e4a" text-anchor="middle">90</text>
+      <text x="485" y="301" font-size="11" fill="#1a1208" text-anchor="middle">projected wins</text>
+    </svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:11px;color:#6b5e4a;margin-top:12px;letter-spacing:.5px;line-height:1.6">
+      Every Mets forecast this paper published in 2026, against the final 74&ndash;88. Green is within two wins. The one green bar is an interval, not an estimate.
+    </figcaption>
+  </figure>
+
+  <h2 class="sh">The Five Calls, Graded</h2>
+
+  <p><strong>March, before a pitch.</strong> We ran a Beta-Binomial on a 3&ndash;3 start using a preseason prior of about ninety wins, and concluded six games was noise. That part was correct. The prior was not.</p>
+
+  <p><strong>April, at 7&ndash;14.</strong> We said 80&ndash;82 wins with a 90% credible interval of <strong>[70, 89]</strong>. The point estimate missed by seven. <em>The interval contained the answer.</em> Hold on to that one; it is the only thing on this page that worked.</p>
+
+  <p><strong>May, at 20&ndash;26.</strong> The arithmetic gave a 76-win pace. We then wrote that the projection <em>&ldquo;plausibly climbs from 76 wins back into the low-to-mid 80s.&rdquo;</em> It did not climb. This was the worst call of the year, and it is the one worth studying, because the number was nearly right before we improved it.</p>
+
+  <p><strong>June, at 25&ndash;33.</strong> We said <em>&ldquo;on pace for approximately 72 wins&rdquo;</em> and left it alone. Final answer 74. <strong>Off by two</strong> &mdash; the best forecast we made all season, and the one with the least argument attached.</p>
+
+  <p><strong>September.</strong> We ran a piece called <em>&ldquo;The Mets Must Pass Seven Teams.&rdquo;</em> They passed none.</p>
+
+  <div class="pull">
+    <p>In May the arithmetic said 76. We talked it up to the low 80s. The arithmetic was off by two; our improvement was off by nine.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">The Prior That Would Not Die</h2>
+
+  <p>Watch the order. Ninety in March. Eighty-one in April. Eighty-three in May. Seventy-two in June. The number walks down all year, which is what a model is supposed to do as evidence arrives &mdash; except for May, where it walks back <em>up</em>.</p>
+
+  <p>That is the signature of a prior holding on too hard. We began with a ninety-win team in our heads, so each bad month read as something to regress away rather than something to learn from. The May piece is the cleanest specimen. The Pythagorean told us 76; we spent the rest of that paragraph explaining how it would get better &mdash; healthier arms, an easier schedule, regression to a mean we had assumed.</p>
+
+  <p>None of those mechanisms were measured. They were reasons, and reasons are how a forecast gets talked out of what it just computed. <strong>The unadorned number was nearly right. The reasoning laid on top of it was the error.</strong></p>
+
+  <h2 class="sh">The One Thing That Worked</h2>
+
+  <p>April's forecast was wrong by seven wins and is still the most useful thing we published, because it came with <strong>[70, 89]</strong> attached and 74 sits comfortably inside.</p>
+
+  <p>That is the whole argument for <span class="cc" data-preview="A range that states how sure you are. Wider when you know less; honest either way.">publishing error bars<a class="cc-i" href="https://thesportspage.net/concepts/communicating-uncertainty.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> rather than numbers. We get to make it at our own expense, which is the only way you should accept it from anybody. A point estimate can only be wrong. An interval can be honest.</p>
+
+  <p>Notice what that interval cost us, though. Nineteen wins wide is not a bold forecast; it is close to admitting we did not know. That is exactly why it survived, and it is the trade nobody wants: the forecast that holds up is the one that sounds least impressive in April.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>Here is the test, and it costs nothing. When you meet a projection, find the raw number first &mdash; the one the arithmetic produced &mdash; and then read what was said about it afterwards. If the commentary moves the number, ask what new <em>measurement</em> moved it. If the answer is a list of reasons rather than a quantity, you are watching someone talk a model out of its own result.</p>
+
+  <p>We did that to ourselves in May, in print, and it cost us nine wins of accuracy. The number knew. We argued with it.</p>
+
+  <div class="box">
+    <h3>How this was graded, and what is missing</h3>
+    <p>Final record from the MLB Stats API: 74&ndash;88, 699 runs scored and 731 allowed, a differential of &minus;32. Their Pythagorean expectation was about 77.7 wins, so they finished 3.7 below even that. Every forecast above is quoted from our own published archive, with the issue it ran in.</p>
+    <p><strong>No payroll figure appears in this piece, deliberately.</strong> Cost-per-win is the line everyone wants from a season like this. The roughly $375M in circulation is unsourced; it came from working notes, not a named source. Both references we tried refused automated access. Our own rule is two independent confirmations for any number a reader will quote, and we have zero, so it stays out until somebody can stand behind it.</p>
+    <p><strong>What this cannot show.</strong> Five forecasts is a tiny sample, and one season cannot tell you whether this paper is systematically optimistic or simply was about one club in one year. The pattern is suggestive and it is not yet evidence. The calibration curve in November, built on every forecast we have published, is the test that can actually answer it.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

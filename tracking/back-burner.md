@@ -12,7 +12,10 @@ what stops autopublish taking it. Do not delete a benched file, and do not
 
 ## The Mets season scorecard — not yet written
 
-**Status:** brief only, held until the regular season ends. **Trigger: 2026-09-30.**
+**Status:** WRITTEN. Trigger fired; published as `175-mets-scorecard.html`, queued Tue 13 Oct.
+Final record 74-88 confirmed from the MLB Stats API. The payroll precondition was NOT
+met -- Spotrac 403s and Cot's serves a bot-protection page -- so the piece carries no
+cost-per-win line and says why.
 
 The Mets were eliminated 2026-09-15 at 69–81. The piece grades every Mets forecast
 we published this year, and the finding is that our gloomiest number was our most
@@ -24,64 +27,6 @@ exact impatience the piece is about. Two hard preconditions before writing: the
 final record from the MLB Stats API rather than a projection, and a payroll figure
 verified from a named source — the ~$375M in circulation is unsourced session
 notes, and cost-per-win is the line everyone will quote.
-
----
-
-## `170-inherited-roster.html` — held on rotation, not on merit
-
-**Status:** finished, verified, and OUT of `QUEUE_ORDER.txt` as of 2026-10-08.
-
-Nothing is wrong with it. The queue simply ran down to three CFB pieces and one
-NFL piece, and three CFB cannot be separated by one of anything. Scheduling it
-produced a back-to-back clash with `171-calibration-wisconsin`, and leaving a
-clash in the order is worse than holding the piece: autopublish re-checks the
-variety rule, would skip it silently, and would then find nothing else to run.
-
-**Trigger: the moment a non-CFB piece enters the queue.** Put it straight back in
-behind that piece. It is a `keeps`, so nothing about it decays.
-
-**The piece that should fill the hole** is the Mets season scorecard, whose own
-trigger passed on 2026-09-30 and which is MLB — exactly the topic the rotation is
-short of. Brief and receipts are in `tracking/mets-season-scorecard.md`.
-
----
-## `088-sorsby-supplemental-bet.html` — Sal's Column
-
-**Status:** held for a one-year follow-up. Do not publish as written.
-
-**Two independent reasons it is benched, and both must clear:**
-
-1. **It is Sal's Column.** Per CLAUDE.md, the scheduled agent must NEVER publish
-   in Sal's voice. Sal writes only when the human explicitly invokes him. This
-   file can therefore never be autopublished, whatever the calendar says.
-2. **The story is not finished.** The piece's own stat line reads *"2027 — the
-   earliest he may now reach the NFL — a year, gone."* It was written in June
-   2026, about a month into the argument. Its subject is the five institutions
-   that each offered Brendan Sorsby a door and then declined to open it; the
-   supplemental draft has chosen exactly one player since 2019.
-
-**The revival trigger — "where is he now":**
-
-| When | Why then |
-|---|---|
-| **Late April 2027**, the NFL Draft | The first moment the question has a factual answer rather than a projection |
-| **July 2027**, the supplemental draft | The mechanism the original piece was actually about |
-| ~**May–June 2027** | One year from the case itself, if the anniversary is the better hook |
-
-**What the follow-up has to establish before a word is written** — none of this
-is knowable now, and all of it must be sourced, not inferred:
-
-- Where he actually is: roster, league, or out of football entirely
-- Whether any club used a supplemental pick on him, and whether one was even held
-- What the five institutions did afterwards — the original piece's real subject
-  was them, not him, and the follow-up should stay pointed there
-- Whether the base rate moved: one supplemental selection since 2019 was the
-  spine of the argument
-
-**Technical note if it is revived:** this file has no `<div class="footer">` and
-therefore never received the `<!-- WATCH_BLOCK -->` marker or the `.watch`
-styles. Both must be added before publishing, or it ships without the daily
-What to Watch section. Start from `queue/_TEMPLATE.html` if in doubt.
 
 ---
 
