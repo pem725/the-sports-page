@@ -1098,9 +1098,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 196 issues (#1-196)
+Published: 197 issues (#1-197)
 Queue: 6 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 170-inherited-roster, 171-calibration-wisconsin, 175-mets-scorecard, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 304 issues remaining of 500
-Last published: Issue #196 — "Kickers Make 80% From 43 Yards. That Told Chicago Nothing." (140-one-kick.html) on October 10, 2026
+Goal: 303 issues remaining of 500
+Last published: Issue #197 — "Oklahoma Had a One-in-Three Shot. It Hit." (sunday-027.html) on October 11, 2026
