@@ -1,0 +1,268 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: hot
+tags: MLB:mlb, Postseason, Baselines, Small Samples
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Everybody Stopped Hitting. One Team Did Not.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Everybody Stopped Hitting. One Team Did Not.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/176-october-offense.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/176-october-offense.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Everybody Stopped Hitting. One Team Did Not.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/176-october-offense.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Postseason &middot; Major League Baseball, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>Everybody Stopped Hitting. <em>One Team Did Not.</em></h1>
+
+  <div class="deck">
+    Three of the four clubs left alive are scoring more than a run a game below their own regular-season rate. The fourth is scoring <em>more</em> than it did all summer &mdash; and it is the one that won the fewest games. October does something to offense, and measuring it against the right yardstick changes who looks like they are collapsing.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Measured against each club&rsquo;s own season</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">&minus;1.78</div><div class="l">Dodgers runs lost</div></div>
+    <div class="sc"><div class="v now">3 of 4</div><div class="l">Clubs scoring less</div></div>
+    <div class="sc"><div class="v good">+0.81</div><div class="l">Cleveland, the exception</div></div>
+  </div>
+
+  <!-- Optional: xkcd cartoon as lede figure
+  <figure class="cartoon" style="margin:36px auto;max-width:560px;">
+    <img src="../assets/xkcd/176-october-offense.png" alt="TODO accessible description" style="width:100%;height:auto;display:block;">
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:14px;text-align:center;letter-spacing:0.5px;text-transform:uppercase;">Cartoon &middot; TODO short caption</figcaption>
+  </figure>
+  -->
+
+  <p><strong>Is the best team in baseball collapsing, or is this just what October looks like?</strong> Los Angeles is scoring <strong>1.78 fewer runs a game</strong> than it did all summer, and the temptation is to call that a collapse.</p>
+
+  <p>Then you check the other three. Milwaukee is down 1.47. Tampa Bay is down 1.29. <strong>Three of the four clubs still alive are scoring more than a run a game below their own regular-season rate</strong> &mdash; which means the thing happening to the Dodgers is happening to nearly everyone, and most people would have called it a Dodgers story.</p>
+
+  <p>By the end of this you will have the habit that separates those two readings, and it costs us one extra column of arithmetic. Watch what it does to the standings.</p>
+
+  <figure style="margin:2rem 0 1.4rem">
+    <svg viewBox="0 0 780 308" width="100%" height="auto" role="img"
+         aria-label="Runs scored per game in the regular season versus the postseason for the four remaining clubs. Milwaukee down 1.47, Los Angeles down 1.78, Tampa Bay down 1.29, Cleveland up 0.81."
+         style="display:block;background:#f5f0e8;font-family:'Roboto Mono',monospace">
+      <text x="230" y="30" font-size="11" fill="#6b5e4a" letter-spacing="1.4">GRAY = THEIR SUMMER &nbsp;&middot;&nbsp; COLOR = THEIR OCTOBER</text>
+      <text x="214" y="64" text-anchor="end" font-size="13" font-weight="600" fill="#1a1208">Brewers</text>
+      <text x="214" y="78" text-anchor="end" font-size="9.5" fill="#6b5e4a">103-59 in the regular season</text>
+      <line x1="630.3" y1="60" x2="407.4" y2="60" stroke="#b83a1e" stroke-width="3"/>
+      <circle cx="630.3" cy="60" r="5" fill="#8a7c62"/>
+      <circle cx="407.4" cy="60" r="6.5" fill="#b83a1e"/>
+      <text x="407.4" y="47.0" font-size="11" font-weight="600" fill="#b83a1e" text-anchor="middle">-1.47</text>
+      <text x="214" y="116" text-anchor="end" font-size="13" font-weight="600" fill="#1a1208">Dodgers</text>
+      <text x="214" y="130" text-anchor="end" font-size="9.5" fill="#6b5e4a">100-62 in the regular season</text>
+      <line x1="599.9" y1="112" x2="331.6" y2="112" stroke="#b83a1e" stroke-width="3"/>
+      <circle cx="599.9" cy="112" r="5" fill="#8a7c62"/>
+      <circle cx="331.6" cy="112" r="6.5" fill="#b83a1e"/>
+      <text x="331.6" y="99.0" font-size="11" font-weight="600" fill="#b83a1e" text-anchor="middle">-1.78</text>
+      <text x="214" y="168" text-anchor="end" font-size="13" font-weight="600" fill="#1a1208">Rays</text>
+      <text x="214" y="182" text-anchor="end" font-size="9.5" fill="#6b5e4a">98-64 in the regular season</text>
+      <line x1="539.3" y1="164" x2="343.7" y2="164" stroke="#b83a1e" stroke-width="3"/>
+      <circle cx="539.3" cy="164" r="5" fill="#8a7c62"/>
+      <circle cx="343.7" cy="164" r="6.5" fill="#b83a1e"/>
+      <text x="343.7" y="151.0" font-size="11" font-weight="600" fill="#b83a1e" text-anchor="middle">-1.29</text>
+      <text x="214" y="220" text-anchor="end" font-size="13" font-weight="600" fill="#1a1208">Guardians</text>
+      <text x="214" y="234" text-anchor="end" font-size="9.5" fill="#6b5e4a">85-77 in the regular season</text>
+      <line x1="486.2" y1="216" x2="609.0" y2="216" stroke="#2a6e3f" stroke-width="3"/>
+      <circle cx="486.2" cy="216" r="5" fill="#8a7c62"/>
+      <circle cx="609.0" cy="216" r="6.5" fill="#2a6e3f"/>
+      <text x="609.0" y="203.0" font-size="11" font-weight="600" fill="#2a6e3f" text-anchor="middle">+0.81</text>
+      <line x1="230" y1="276" x2="700" y2="276" stroke="#c8b99a"/>
+      <text x="305.8" y="292" font-size="10" fill="#6b5e4a" text-anchor="middle">3</text><text x="457.4" y="292" font-size="10" fill="#6b5e4a" text-anchor="middle">4</text><text x="609.0" y="292" font-size="10" fill="#6b5e4a" text-anchor="middle">5</text>
+      <text x="465" y="305" font-size="11" fill="#1a1208" text-anchor="middle">runs scored per game</text>
+    </svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:11px;color:#6b5e4a;margin-top:12px;letter-spacing:.5px;line-height:1.6">
+      Each bar runs from a club&rsquo;s regular-season scoring rate to its postseason rate. Three bars point left. Cleveland&rsquo;s points right &mdash; and Cleveland had the worst record of the four.
+    </figcaption>
+  </figure>
+
+  <h2 class="sh">Measure a Team Against Itself</h2>
+
+  <p>A raw postseason number tells you almost nothing. The clubs left in October are not a random sample, and neither are the pitchers they face. Compare each club against <em>its own</em> summer instead.</p>
+
+  <p>Do that and the ranking inverts. Cleveland is scoring <strong>0.81 runs a game more</strong> than it managed over six months &mdash; the only club in the final four that improved. And Cleveland had the <em>worst</em> record of the four at 85&ndash;77.</p>
+
+  <p>Everyone else got worse. The Guardians got better. That is the story, and the raw scoreboard hides it.</p>
+
+  <div class="pull">
+    <p>Three clubs are hitting worse than they did all year. The one that is hitting better won the fewest games.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Milwaukee Is Not the Underdog</h2>
+
+  <p>Stop here a moment, because the framing everywhere is Brewers-as-upstart against the two-time champions, and we have been repeating it too.</p>
+
+  <p>Milwaukee went <strong>103&ndash;59</strong>. Los Angeles went 100&ndash;62. The Brewers scored 5.14 runs a game, the Dodgers 4.94. <strong>Milwaukee was the better team in the regular season by record and by offense</strong>, and they are up two games to none.</p>
+
+  <p>That is not an upset. It is the better club winning, dressed up as a surprise because one of them has rings and the other does not. A reputation is not a <span class="cc" data-preview="What you expect before the evidence. Useful when it comes from data; misleading when it comes from memory.">prior<a class="cc-i" href="https://thesportspage.net/concepts/bayesian-inference.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> you should be using.</p>
+
+  <h2 class="sh">About Ohtani</h2>
+
+  <p>He is 3 for 20 with no extra-base hits and no runs batted in. His slugging is <strong>.150</strong> against a regular-season mark of .512, which is another way of saying all three hits were singles.</p>
+
+  <p>That is bad, and you are right to notice it. But do the arithmetic before we build a theory on it. For a .275 hitter, going 3-for-20 or worse has about a <strong>one in six</strong> chance in any given stretch. He had roughly twenty-six separate twenty-at-bat windows this season, and you would expect about <strong>four of them</strong> to be this bad.</p>
+
+  <p>So a slump this deep is close to an annual event for him. The only unusual thing is where it landed. October did not break Shohei Ohtani; October is just the stretch where everybody is watching.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>When a number looks alarming, ask what it should be compared with, and prefer the subject's own history over anybody else's. &ldquo;Los Angeles is scoring 3.17&rdquo; means nothing. &ldquo;Los Angeles is scoring 1.78 below its own rate, in a month where almost everyone is down more than a run&rdquo; means something, and it means something different.</p>
+
+  <p>The same move rescues Ohtani from a narrative and hands Cleveland the credit nobody is giving them.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p>Regular-season records and run totals from the MLB Stats API as of the final day, 27 September. Postseason rates from every completed game through 12 October: six each for Milwaukee, Los Angeles and Cleveland, four for Tampa Bay.</p>
+    <p><strong>These are tiny samples and the piece does not pretend otherwise.</strong> Four to six games cannot establish that a club has changed; it can only establish what has happened so far. Cleveland&rsquo;s +0.81 could evaporate in two nights. The point is not that the Guardians have become a better offense &mdash; it is that the comparison most people are making, against nothing at all, is worse than the comparison against a club&rsquo;s own season.</p>
+    <p>Nor does this explain WHY October scoring falls. Shorter rotations, better bullpens pitching earlier, colder weather and tighter umpiring have all been offered. This measures the drop; it does not diagnose it.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
