@@ -41,3 +41,9 @@ tokens.env
 # Stan compiled models and fitted objects -- regenerate with analysis/pool-bayes/run_models.R
 # 99MB of binaries, and GitHub caps a single file at 100MB. Source is committed; fits are not.
 analysis/pool-bayes/**/*.rds
+
+# Regenerable CFBD cache for scripts/hangover.py. 39 MB of per-game advanced
+# stats; rebuild with `python3 scripts/hangover.py --pull` rather than carrying
+# it in history forever. The 3 MB season-level file IS committed, because the
+# measurement model depends on it and it is small enough to keep.
+data/cfb-game-advanced.json
