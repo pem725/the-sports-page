@@ -1,0 +1,256 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: hot
+tags: MLB:mlb, Postseason, Hot Hand, Small Samples
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — A Coin That Hits Like Ohtani Slumps More Than He Does</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="A Coin That Hits Like Ohtani Slumps More Than He Does">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/177-ohtani-cold-hand.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/177-ohtani-cold-hand.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A Coin That Hits Like Ohtani Slumps More Than He Does">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/177-ohtani-cold-hand.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Postseason &middot; MLB, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>A Coin That Hits Like Ohtani <em>Slumps More Than He Does.</em></h1>
+
+  <div class="deck">
+    Shohei Ohtani went 3 for 20 in his first six playoff games, with no home runs. Pure chance makes a hitter with his exact talent go that cold about four times a season. The real Ohtani does it about once. Streaks are not something extra on top of chance. They are what chance looks like up close &mdash; unless something hurts.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; The Professor &middot; Data: MLB Stats API, through NLCS Game 2</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">3&ndash;20</div><div class="l">Ohtani, first six playoff games</div></div>
+    <div class="sc"><div class="v now">~4</div><div class="l">cold spells a year, coin-flip Ohtani</div></div>
+    <div class="sc"><div class="v good">~1</div><div class="l">cold spells a year, real Ohtani</div></div>
+  </div>
+
+  <p><strong>Is Shohei Ohtani in a slump, or is this just baseball?</strong> Here is the answer, with its number. His first six playoff games: 24 trips to the plate, 3 hits, 7 strikeouts, no homers. A hitter with his talent, if every at-bat were a fair coin, would have a stretch that cold about four times a year. The real Ohtani has had about one a year since 2021.</p>
+
+  <p>That should surprise you. Most people think a slump is something added to chance &mdash; a cold hand, a lost swing, nerves. The numbers say the opposite. Chance makes <em>more</em> slumps than he does. By the end of this you will have a two-question test for any slump you hear about on the broadcast.</p>
+
+  <h2 class="sh">The Hot Hand and the Cold Hand Are One Argument</h2>
+
+  <p>You have heard of the hot hand: the shooter who cannot miss. In 1985, Thomas Gilovich and two colleagues looked at basketball shots and found streaks no longer than a coin would make. Fans were furious. In 2018, Joshua Miller and Adam Sanjurjo found a flaw in the way streaks had been counted. Fixed, it left a small hot hand &mdash; real, but far smaller than it feels from the couch.</p>
+
+  <p>Now notice something. Every argument about the hot hand is also an argument about the cold one. If a hot streak is mostly chance, so is a cold one. You do not get to believe in one and not the other.</p>
+
+  <p>So we ran the test on Ohtani himself. We took every game he played from 2021 through this September, nearly 4,000 plate appearances. Then we built a fake Ohtani. Same walk rate, same homer rate, same everything &mdash; but each at-bat is a fresh roll of the dice, with no memory. We played his real schedule 400 times over and counted how often he went this cold for six games.</p>
+
+  <figure style="margin:2rem 0 1.4rem">
+    <svg viewBox="0 0 780 320" width="100%" height="auto" role="img" aria-label="Distribution of Shohei Ohtani's six-game OPS since 2021, real versus a simulated coin-flip hitter with the same rates. The shapes nearly match; the coin-flip version has a fatter cold tail. His October 2026 stretch sits at about .41." style="display:block;background:#f5f0e8;font-family:'Roboto Mono',monospace">
+<rect x="62.0" y="260.0" width="53.5" height="0.0" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="119.5" y="254.3" width="53.5" height="5.7" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="177.0" y="185.4" width="53.5" height="74.6" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="234.5" y="107.4" width="53.5" height="152.6" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="292.0" y="73.8" width="53.5" height="186.2" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="349.5" y="108.2" width="53.5" height="151.8" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="407.0" y="173.0" width="53.5" height="87.0" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="464.5" y="213.2" width="53.5" height="46.8" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="522.0" y="242.0" width="53.5" height="18.0" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="579.5" y="251.8" width="53.5" height="8.2" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="637.0" y="258.4" width="53.5" height="1.6" fill="#2c4a6e" fill-opacity=".75"/>
+<rect x="694.5" y="259.2" width="53.5" height="0.8" fill="#2c4a6e" fill-opacity=".75"/>
+<polyline points="60.0,258.7 117.5,258.7 117.5,243.8 175.0,243.8 175.0,190.4 232.5,190.4 232.5,115.6 290.0,115.6 290.0,77.8 347.5,77.8 347.5,105.1 405.0,105.1 405.0,163.3 462.5,163.3 462.5,215.0 520.0,215.0 520.0,243.5 577.5,243.5 577.5,255.1 635.0,255.1 635.0,258.7 692.5,258.7 692.5,259.7 750.0,259.7" fill="none" stroke="#c9962a" stroke-width="2.5"/>
+<line x1="178.2" y1="34" x2="178.2" y2="260" stroke="#b83a1e" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="184.2" y="42" font-size="12" font-weight="600" fill="#b83a1e">first six playoff games: 3 for 20</text>
+<text x="184.2" y="57" font-size="10" fill="#b83a1e">everything left of this line is as cold or colder</text>
+<rect x="520" y="80" width="14" height="10" fill="#2c4a6e" fill-opacity=".75"/><text x="540" y="89" font-size="11" fill="#1a1208">the real Ohtani, 2021&#8211;26</text>
+<line x1="520" y1="105" x2="534" y2="105" stroke="#c9962a" stroke-width="2.5"/><text x="540" y="109" font-size="11" fill="#1a1208">a coin that hits like him</text>
+<line x1="60" y1="260" x2="750" y2="260" stroke="#c8b99a"/>
+<text x="60.0" y="276" font-size="10" fill="#6b5e4a" text-anchor="middle">0</text>
+<text x="175.0" y="276" font-size="10" fill="#6b5e4a" text-anchor="middle">.4</text>
+<text x="290.0" y="276" font-size="10" fill="#6b5e4a" text-anchor="middle">.8</text>
+<text x="405.0" y="276" font-size="10" fill="#6b5e4a" text-anchor="middle">1.2</text>
+<text x="520.0" y="276" font-size="10" fill="#6b5e4a" text-anchor="middle">1.6</text>
+<text x="635.0" y="276" font-size="10" fill="#6b5e4a" text-anchor="middle">2.0</text>
+<text x="721.2" y="276" font-size="10" fill="#6b5e4a" text-anchor="middle">2.2+</text>
+<text x="405.0" y="294" font-size="11" fill="#1a1208" text-anchor="middle">OPS over six straight games</text>
+<text x="52" y="190.7" font-size="10" fill="#6b5e4a" text-anchor="end">10%</text>
+<text x="52" y="117.3" font-size="10" fill="#6b5e4a" text-anchor="end">20%</text>
+<text x="52" y="44.0" font-size="10" fill="#6b5e4a" text-anchor="end">30%</text>
+<text x="60" y="24" font-size="10" fill="#6b5e4a">share of stretches</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:11px;color:#6b5e4a;margin-top:12px;letter-spacing:.5px;line-height:1.6">
+      Every six-game stretch Ohtani played, 2021&ndash;2026 (bars), against a coin that hits like him (gold line). The shapes nearly match. The coin has the fatter cold tail.
+    </figcaption>
+  </figure>
+
+  <p>Look at the left edge of the chart. The coin goes this cold in about 1 stretch out of 40. The real Ohtani does it in about 1 out of 130. Over a season of roughly 150 stretches, that is four slumps for the coin and one for the man. The middle of the two shapes is nearly identical. A dice-rolling Ohtani is <em>streakier</em> than the real one.</p>
+
+  <div class="pull">
+    <p>If a hot streak is mostly chance, so is a cold one. You do not get to believe in one and not the other.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">But First, Check for a Sore Arm</h2>
+
+  <p>Here is the hard part, and it should bother you. Chance is the default, not the verdict. On September 11 the Dodgers put Ohtani on the injured list with right biceps inflammation, back-dated to September 8. He came back on the 23rd. He has not hit like himself since.</p>
+
+  <p>We have seen this movie. In May, Cal Raleigh went 38 at-bats without a hit, then landed on the injured list with a sore oblique two days after it ended. <a href="https://thesportspage.net/published/053-raleigh-slump-shower-oblique.html" target="_blank" rel="noopener">Issue #63</a> argued the injury probably started the slump. A slump that is <em>ordinary in size</em> can still have a cause. The math tells you how often chance alone would do this. It cannot tell you whether his arm hurts.</p>
+
+  <h2 class="sh">Is He Clutch? The Data Cannot Say Yet</h2>
+
+  <p>Some players seem to rise when it matters. Maybe a few do. But look at what it takes to show it. Ohtani has 184 career playoff plate appearances. His playoff OPS is about .87; in the regular season since 2021 it is about .98. That looks like a drop. It is not one you can trust. With 184 trips, the honest margin is about &plusmn;.12 either way. The gap fits inside it.</p>
+
+  <p>That is the <span class="cc" data-preview="Small samples swing wildly. A rate needs enough trials before it settles near the truth.">sample-size problem<a class="cc-i" href="https://thesportspage.net/concepts/sample-size.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> in one line. Missouri fans have it right: <em>show me.</em> Playoff samples are too small to show you anyone&rsquo;s clutch gene. A league-wide look at who keeps rising, year after year, is coming soon.</p>
+
+  <h2 class="sh">Does a Slumping Ohtani Mean the Dodgers Lose?</h2>
+
+  <p>Ask the Braves. Ohtani went 2 for 13 in the Division Series. The Dodgers won it three games to one. In the first two games against Milwaukee he went 1 for 7, and Los Angeles lost both. One hitter gets about one plate appearance in nine. He matters a great deal; he is not the whole lineup.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+    <p>When you hear that a player is slumping, ask two questions. <strong>First: how often would chance alone do this?</strong> For a great hitter over six games, the answer is &ldquo;a few times a year.&rdquo; <strong>Second: did anything change?</strong> An injury, a new pitch, a new role. If the answer to the second is no, the slump is weather. If the answer is yes, it may be climate.</p>
+    <p>Hold onto the first question longest. It works on hot streaks, on stocks, on a good month at work. Most streaks are the dice talking.</p>
+
+  <p style="font-size:.8rem;color:var(--muted)"><em>How we did it.</em> Game logs from the MLB Stats API, regular season 2021&ndash;2026 (3,980 plate appearances). Six-game windows, overlapping. The coin-flip hitter draws each plate appearance on its own from Ohtani&rsquo;s rates of singles, doubles, triples, homers, walks and outs. It plays his real game-by-game schedule, 400 times. OPS here leaves out sacrifice flies in the window figures, which shifts both shapes equally. Playoff pitching is tougher than regular-season pitching, so a cold October is a little less surprising than these numbers say.</p>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

@@ -95,6 +95,10 @@ def beats(h):
 # uncommon word -- while "twelve" beside it was fine. Thirteen through nineteen
 # added, plus sixty/seventy/eighty/ninety and the everyday prepositions the list
 # had also skipped. Third time this list has been short; it will be short again.
+#
+# EXTENDED 2026-10-14. "coin" and "like" -- a child knows both -- and the slump
+# family, which belongs beside "streak" as a plain sporting word. Flagged on the
+# Ohtani cold-hand headline; added by the same test, not because it was in one.
 PLAIN = set("""
 don't doesn't didn't won't wouldn't can't couldn't shouldn't isn't aren't wasn't weren't hasn't haven't hadn't it's he's she's they're you're we're that's there's here's who's what's let's i'm i've you've we've they've ain't y'all nobody's
 
@@ -127,6 +131,7 @@ move moves moved fall falls fell rise rises rose beat beats better ahead behind 
 my your our his their mine yours ours theirs rule rules order orders random hat fake
 ask asks asked answer answers name names need needs want wants try tries help helps hurt hurts
 hit hits kick kicks miss misses missed feel feels
+coin like slump slumps slumped slumping
 hard easy fast slow real true false right wrong nothing something anything nobody everybody
 mean means meant found find finds killed broken broke fixed turnover turnovers fumble fumbles
 kicker kickers booth model models number numbers pattern patterns system systems school schools
