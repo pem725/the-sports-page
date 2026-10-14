@@ -1,0 +1,275 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: hot
+tags: CFB:cfb, NFL:nfl, Predictions, Bayes
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The Bills and Notre Dame Will Be Champions. Book It. We Are Probably Wrong.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="The Bills and Notre Dame Will Be Champions. Book It. We Are Probably Wrong.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/178-book-it-bills-notre-dame.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/178-book-it-bills-notre-dame.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Bills and Notre Dame Will Be Champions. Book It. We Are Probably Wrong.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/178-book-it-bills-notre-dame.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Call &middot; NFL &amp; College Football, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>The Bills and Notre Dame Will Be Champions. Book It. <em>We Are Probably Wrong.</em></h1>
+
+  <div class="deck">
+    Our call: the Bills win the Super Bowl and Notre Dame wins the national title. Our own simulations make the Bills the single likeliest champion in the NFL and Notre Dame the second likeliest in college. Even so, the Bills win it about 15 times in 100 and Notre Dame about 16. Both at once: about 1 season in 40. We believe it. We do not know it. This piece is about the difference.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; The Professor &middot; Graded in public in January and February</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">15%</div><div class="l">Bills win the Super Bowl</div></div>
+    <div class="sc"><div class="v now">16%</div><div class="l">Notre Dame wins the title</div></div>
+    <div class="sc"><div class="v bad">1 in 40</div><div class="l">both, the same season</div></div>
+  </div>
+
+  <p><strong>How sure should you be when you say &ldquo;book it&rdquo;?</strong> Here is our answer, with its number. We are picking the Bills and Notre Dame, and our own models agree they are among the best bets on the board. The Bills are the NFL&rsquo;s likeliest champion at about 15%. Notre Dame is college football&rsquo;s second likeliest at about 16%.</p>
+
+  <p>That should stop you. Most people think the favorite is likely to win. In a playoff, the favorite is the best single bet and still loses most of the time. It is one team against the whole field. By the end of this you will be able to tell, in your own head, what you believe from what you know.</p>
+
+  <h2 class="sh">The Call, in Writing</h2>
+
+  <p>We said Notre Dame in July. <a href="https://thesportspage.net/published/092-nd-dynasty-call.html" target="_blank" rel="noopener">Issue #109</a> called the 2026 national title for the Irish, dated so you could hold us to it. Six games later they are 6&ndash;0. They have beaten Wisconsin, Michigan State and North Carolina, and nobody has come closer than eleven points. We are not backing off.</p>
+
+  <p>Now we add the Bills. They are 4&ndash;1, with wins over the Lions and the Rams. Our ratings, built from 107 point spreads this season, rank them first in the league.</p>
+
+  <p>So write it down: <strong>Bills in February. Notre Dame in January.</strong> We will grade both, in public, whatever happens.</p>
+
+  <h2 class="sh">Before You Read On, Write Your Number</h2>
+
+  <p>Stop here and try this. Pick a team you love. Write down the chance, out of 100, that it wins the title this year. Do not look anything up. Then write one line: <em>why</em> that number?</p>
+
+  <p>Hold onto it. We will come back to it.</p>
+
+  <figure style="margin:2rem 0 1.4rem">
+    <svg viewBox="0 0 780 300" width="100%" height="auto" role="img" aria-label="Title odds from our simulations. Super Bowl: Bills 15 percent, 49ers 12, Chiefs 11, Seahawks 8, Jaguars 8, Rams 6. National title: Georgia 18 percent, Notre Dame 17, Miami 16, Ohio State 13, Indiana 13, Utah 6. Both of our picks are at or near the top, and both are more likely to lose than win." style="display:block;background:#f5f0e8;font-family:'Roboto Mono',monospace">
+<text x="20" y="28" font-size="13" font-weight="600" fill="#1a1208">Win the Super Bowl</text>
+<line x1="130" y1="40" x2="130" y2="264" stroke="#c8b99a"/>
+<text x="122" y="65" font-size="12" fill="#1a1208" font-weight="600" text-anchor="end">Bills</text>
+<rect x="130" y="52" width="160.6" height="18" fill="#b83a1e" fill-opacity="1"/>
+<text x="296.6" y="65" font-size="11" fill="#b83a1e" font-weight="600">15%</text>
+<text x="122" y="101" font-size="12" fill="#1a1208" font-weight="400" text-anchor="end">49ers</text>
+<rect x="130" y="88" width="129.8" height="18" fill="#2c4a6e" fill-opacity="0.6"/>
+<text x="265.8" y="101" font-size="11" fill="#2c4a6e" font-weight="400">12%</text>
+<text x="122" y="137" font-size="12" fill="#1a1208" font-weight="400" text-anchor="end">Chiefs</text>
+<rect x="130" y="124" width="123.2" height="18" fill="#2c4a6e" fill-opacity="0.6"/>
+<text x="259.2" y="137" font-size="11" fill="#2c4a6e" font-weight="400">11%</text>
+<text x="122" y="173" font-size="12" fill="#1a1208" font-weight="400" text-anchor="end">Seahawks</text>
+<rect x="130" y="160" width="92.4" height="18" fill="#2c4a6e" fill-opacity="0.6"/>
+<text x="228.4" y="173" font-size="11" fill="#2c4a6e" font-weight="400">8%</text>
+<text x="122" y="209" font-size="12" fill="#1a1208" font-weight="400" text-anchor="end">Jaguars</text>
+<rect x="130" y="196" width="83.6" height="18" fill="#2c4a6e" fill-opacity="0.6"/>
+<text x="219.6" y="209" font-size="11" fill="#2c4a6e" font-weight="400">8%</text>
+<text x="122" y="245" font-size="12" fill="#1a1208" font-weight="400" text-anchor="end">Rams</text>
+<rect x="130" y="232" width="70.4" height="18" fill="#2c4a6e" fill-opacity="0.6"/>
+<text x="206.4" y="245" font-size="11" fill="#2c4a6e" font-weight="400">6%</text>
+<text x="410" y="28" font-size="13" font-weight="600" fill="#1a1208">Win the national title</text>
+<line x1="520" y1="40" x2="520" y2="264" stroke="#c8b99a"/>
+<text x="512" y="65" font-size="12" fill="#1a1208" font-weight="400" text-anchor="end">Georgia</text>
+<rect x="520" y="52" width="193.6" height="18" fill="#2c4a6e" fill-opacity="0.6"/>
+<text x="719.6" y="65" font-size="11" fill="#2c4a6e" font-weight="400">18%</text>
+<text x="512" y="101" font-size="12" fill="#1a1208" font-weight="600" text-anchor="end">Notre Dame</text>
+<rect x="520" y="88" width="181.5" height="18" fill="#b83a1e" fill-opacity="1"/>
+<text x="707.5" y="101" font-size="11" fill="#b83a1e" font-weight="600">16%</text>
+<text x="512" y="137" font-size="12" fill="#1a1208" font-weight="400" text-anchor="end">Miami</text>
+<rect x="520" y="124" width="177.1" height="18" fill="#2c4a6e" fill-opacity="0.6"/>
+<text x="703.1" y="137" font-size="11" fill="#2c4a6e" font-weight="400">16%</text>
+<text x="512" y="173" font-size="12" fill="#1a1208" font-weight="400" text-anchor="end">Ohio State</text>
+<rect x="520" y="160" width="139.7" height="18" fill="#2c4a6e" fill-opacity="0.6"/>
+<text x="665.7" y="173" font-size="11" fill="#2c4a6e" font-weight="400">13%</text>
+<text x="512" y="209" font-size="12" fill="#1a1208" font-weight="400" text-anchor="end">Indiana</text>
+<rect x="520" y="196" width="138.6" height="18" fill="#2c4a6e" fill-opacity="0.6"/>
+<text x="664.6" y="209" font-size="11" fill="#2c4a6e" font-weight="400">13%</text>
+<text x="512" y="245" font-size="12" fill="#1a1208" font-weight="400" text-anchor="end">Utah</text>
+<rect x="520" y="232" width="70.4" height="18" fill="#2c4a6e" fill-opacity="0.6"/>
+<text x="596.4" y="245" font-size="11" fill="#2c4a6e" font-weight="400">6%</text>
+<text x="390" y="290" font-size="10.5" fill="#6b5e4a" text-anchor="middle">our picks in rust &#183; 20,000 simulated seasons each &#183; as of Oct. 14</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:11px;color:#6b5e4a;margin-top:12px;letter-spacing:.5px;line-height:1.6">
+      Each season simulated 20,000 times from our published game odds, then run through the playoff bracket. Our two picks are near the top of their charts. Neither is close to even money.
+    </figcaption>
+  </figure>
+
+  <h2 class="sh">Believe It or Know It?</h2>
+
+  <p>Here is the idea at the heart of <span class="cc" data-preview="Start with what you believe, as a probability. Let each new piece of evidence move it. The result is what you should believe now.">Bayesian statistics<a class="cc-i" href="https://thesportspage.net/concepts/bayesian-inference.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span>. A belief is a number. You start with one &mdash; your <strong>prior</strong>. Each game is evidence, and it moves the number up or down. Where you end up is your <strong>posterior</strong>: what the evidence lets you believe now.</p>
+
+  <p>Notice what &ldquo;book it&rdquo; does in that system. It says 100%. And a prior of 100% has a strange property: <em>no evidence can ever move it.</em> Bayes&rsquo; rule multiplies your prior by the weight of the evidence. Multiply certainty by anything and you still have certainty. Short of the team being knocked out, nothing moves it. A fan who is sure cannot learn from the season. That is not a figure of speech; it is the arithmetic.</p>
+
+  <p>So go back to your number. Was it near 100? If you love the team, it probably was. Ours would be, if we let it. The gap between that number and the honest one is your bias, and now you can measure it.</p>
+
+  <div class="pull">
+    <p>A fan who is sure cannot learn from the season. That is not a figure of speech; it is the arithmetic.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Our Biases, Named</h2>
+
+  <p>We should say the hard part plainly. This paper covers Notre Dame first, every year. We picked the teams we write about most. That should make you <em>more</em> suspicious of the call, not less.</p>
+
+  <p>Here is how we keep ourselves honest. The pick is our belief. The 15% and 16% are what the evidence allows. We publish both, side by side, so you can see how far our hearts run ahead of our numbers. If the Bills win, the model was not wrong; 15% things happen about one year in seven. If they lose, our pick was not foolish; it was the best bet on a board where every bet is likely to lose.</p>
+
+  <h2 class="sh">A New Thread: What Do You Believe?</h2>
+
+  <p>This starts a series. Every fan carries a set of stats they think matter. Wins in close games. A quarterback&rsquo;s record. &ldquo;He just knows how to win.&rdquo; We want to ask three questions about each. <strong>Which stat do you trust? Why do you trust it? Do you believe it, or do you know it?</strong></p>
+
+  <p>Send us yours. The best ones become issues, and we will test them in the open, the same way we will test this call.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>When someone says &ldquo;book it,&rdquo; ask them for a number. If they say 100, they have told you they cannot be persuaded. If they give you a real number, you can have a real argument.</p>
+
+  <p>Try it on yourself first. It works on teams, on stocks and on elections. Put a number on the thing you are sure of. Then watch what the season does to it.</p>
+
+  <p style="font-size:.8rem;color:var(--muted)"><em>How we did it.</em> NFL: team ratings solved from 107 published point spreads, so they carry the betting market&rsquo;s view as well as ours. Remaining games played out 20,000 times, seven playoff seeds per conference, higher seed at home. College: SP+ ratings turned into game odds, the rest of the season played out 20,000 times. The twelve-team field is our stand-in for the committee: fewest losses, then strength. We skip conference title games and automatic bids, so treat the college numbers as rough &mdash; give or take a few points. Records checked against ESPN and CollegeFootballData. As of October 14.</p>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
