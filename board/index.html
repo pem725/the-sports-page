@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>The Board — The Sports Page</title>
+<style>
+:root{--ink:#1a1208;--paper:#f5f0e8;--ground:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--muted:#6b5e4a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#ece2cf;--paper:#1d1810;--ground:#120e08;--rust:#e07050;--steel:#7fa8d4;--muted:#9c8d75}}
+:root[data-theme="dark"]{--ink:#ece2cf;--paper:#1d1810;--ground:#120e08;--rust:#e07050;--steel:#7fa8d4;--muted:#9c8d75}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:var(--ground);color:var(--ink);font-family:Georgia,'Times New Roman',serif;padding:1rem}
+.gate{background:var(--paper);max-width:380px;width:100%;padding:2rem 1.6rem 1.6rem;text-align:center;
+  border-top:4px solid var(--ink);box-shadow:0 6px 40px rgba(26,18,8,.18)}
+.gate img{width:72px;height:72px;display:block;margin:0 auto .6rem}
+.eyebrow{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.64rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted)}
+h1{font-size:1.7rem;margin:.2rem 0 1.1rem;letter-spacing:.03em;text-transform:uppercase}
+input[type=password]{width:100%;font:inherit;font-size:1rem;padding:.6rem .75rem;border:1px solid var(--muted);
+  background:#fff;color:#1a1208}
+label.rem{display:flex;gap:.4rem;align-items:center;justify-content:center;margin:.7rem 0 0;
+  font-size:.8rem;color:var(--muted)}
+button{margin-top:.9rem;width:100%;background:var(--rust);color:#fff;border:none;padding:.65rem;
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.75rem;letter-spacing:.16em;
+  text-transform:uppercase;cursor:pointer}
+.err{color:var(--rust);font-size:.85rem;min-height:1.2em;margin:.6rem 0 0}
+.note{font-size:.78rem;color:var(--muted);margin:1rem 0 0;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="gate">
+  <img src="https://thesportspage.net/assets/logo-badge.png" alt="" width="72" height="72">
+  <div class="eyebrow">For the Editorial Board</div>
+  <h1>The Board</h1>
+  <p class="note" style="font-size:.95rem">The board is being locked. It will open here, behind a passphrase, shortly.</p>
+</div>
+</body>
+</html>

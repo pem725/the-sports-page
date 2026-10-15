@@ -40,7 +40,8 @@ REPO = pathlib.Path(__file__).resolve().parent.parent
 ORDER = REPO / "QUEUE_ORDER.txt"
 # Unguessable path. Changing it invalidates every link already shared, so do not
 # rotate it casually -- the whole point is that it gets sent round once.
-SLUG = "board/k7q2-desk-9f4m"
+SLUG = "board/k7q2-desk-9f4m"   # the old unlisted address; now only redirects
+HOME = "board"                    # thesportspage.net/board/ -- the easy one (2026-10-15)
 
 DECAY_NOTE = {
     "hot": "numbers move daily &middot; publish within ~3 days or rewrite",
@@ -171,6 +172,11 @@ body{{margin:0;padding:1.5rem 1rem 4rem;background:var(--ground);color:var(--ink
   font-size:clamp(2rem,6vw,3.1rem);font-weight:700;letter-spacing:.04em;
   text-transform:uppercase;line-height:1.08;margin:.15rem 0 .1rem;text-wrap:balance}}
 .mast .tag{{font-style:italic;color:var(--muted);font-size:.95rem;margin:0}}
+.desk{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem;margin:1rem 0 0}}
+.desk a{{display:block;background:var(--card);border-left:3px solid var(--steel);padding:.55rem .75rem;
+  color:var(--ink);text-decoration:none;font-weight:700;font-size:.95rem;line-height:1.3}}
+.desk a:hover{{border-left-color:var(--rust)}}
+.desk small{{display:block;font-weight:400;font-size:.78rem;color:var(--muted)}}
 .rulebar{{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;
   font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.63rem;letter-spacing:.1em;
   color:var(--muted);border-top:1px solid var(--ink);border-bottom:3px double var(--ink);
@@ -249,7 +255,7 @@ a:focus-visible{{outline:2px solid var(--steel);outline-offset:3px;border-radius
 <div class="wrap">
 
   <header class="mast">
-    <div class="eyebrow">For the Editorial Board &middot; Unlisted</div>
+    <div class="eyebrow">For the Editorial Board &middot; Locked</div>
     <h1 class="disp">The Budget</h1>
     <p class="tag">What runs, when it runs, and what we still need</p>
     <div class="rulebar">
@@ -258,6 +264,14 @@ a:focus-visible{{outline:2px solid var(--steel);outline-offset:3px;border-radius
       <span>Through {through}</span>
     </div>
   </header>
+
+  <nav class="desk" aria-label="Board pages">
+    <a href="https://thesportspage.net/newsroom.html" target="_blank" rel="noopener">The Newsroom<small>ranked ideas &amp; held stories</small></a>
+    <a href="https://github.com/pem725/the-sports-page/blob/main/tracking/open-calls.md" target="_blank" rel="noopener">Open Calls<small>predictions awaiting a grade</small></a>
+    <a href="https://github.com/pem725/the-sports-page/blob/main/tracking/back-burner.md" target="_blank" rel="noopener">Back Burner<small>benched pieces &amp; why</small></a>
+    <a href="https://github.com/pem725/the-sports-page/blob/main/tracking/reader-questions.md" target="_blank" rel="noopener">Reader Questions<small>what people asked</small></a>
+    <a href="https://github.com/pem725/the-sports-page/blob/main/tracking/picks-ledger.md" target="_blank" rel="noopener">Picks Ledger<small>every pool pick, graded</small></a>
+  </nav>
 
   <div class="sheet">
 
@@ -330,13 +344,22 @@ a:focus-visible{{outline:2px solid var(--steel);outline-offset:3px;border-radius
     <div class="foot">
       <span>The Sports Page</span>
       <span>Rebuilt {built}</span>
-      <span>Unlisted &middot; please do not forward</span>
+      <span>Locked &middot; the link is safe to share; the passphrase is not</span>
     </div>
 
   </div>
 </div>
 </body>
 </html>
+"""
+
+
+REDIRECT = """<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta http-equiv="refresh" content="0; url=https://thesportspage.net/board/">
+<title>The Board has moved</title></head>
+<body><p>The board now lives at <a href="https://thesportspage.net/board/">thesportspage.net/board</a>.</p></body></html>
 """
 
 
@@ -355,13 +378,42 @@ def main():
         raise SystemExit("no queue files resolved from QUEUE_ORDER.txt -- refusing to "
                          "publish an empty budget")
 
-    published = (REPO / "index.html").read_text(encoding="utf-8").count('class="issue-num"')
+    index = (REPO / "index.html").read_text(encoding="utf-8")
+    published = index.count('class="issue-num"')
     today = datetime.date.today()
-    page = render(schedule(rows, today), published, today)
+    # If today's issue is already out (the daily run builds this AFTER publishing),
+    # the running order starts tomorrow. Before 2026-10-15 it started today
+    # regardless, and listed tomorrow's piece in a slot that had already run.
+    m = re.search(r'class="issue-date">([^<]+)<', index)
+    start = today
+    if m and m.group(1).strip() == f"{today:%B} {today.day}, {today.year}":
+        start = today + datetime.timedelta(days=1)
+    page = render(schedule(rows, start), published, today)
 
     if a.show:
         print(page)
         return 0
+
+    sys.path.insert(0, str(REPO / "scripts"))
+    import lock_page
+    home = REPO / HOME / "index.html"
+    legacy = REPO / SLUG / "index.html"
+    home.parent.mkdir(parents=True, exist_ok=True)
+    legacy.parent.mkdir(parents=True, exist_ok=True)
+    if lock_page.have_passphrase():
+        # The board, encrypted, at the easy address. The old long link forwards
+        # there, so nobody's bookmark breaks and no plaintext copy stays served.
+        home.write_text(lock_page.lock(page, "The Board \u2014 The Sports Page"), encoding="utf-8")
+        legacy.write_text(REDIRECT, encoding="utf-8")
+        print(f"  budget: {len(rows)} slots, {published} published -> /{HOME}/ (locked)")
+    else:
+        # No passphrase on this machine/runner: never publish the board unlocked
+        # at the easy address. Keep the old unlisted page working until it is set.
+        home.write_text(lock_page.not_ready_page("The Board \u2014 The Sports Page"), encoding="utf-8")
+        legacy.write_text(page, encoding="utf-8")
+        print(f"  budget: BOARD_PASSPHRASE unset -- /{HOME}/ shows 'being locked'; "
+              f"old unlisted page kept at /{SLUG}/")
+    return 0
     out = REPO / SLUG / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page, encoding="utf-8")

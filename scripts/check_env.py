@@ -41,6 +41,7 @@ KNOWN = [
     "CANVAS_KEY",
     "CFBD_KEY",
     "GOATCOUNTER_TOKEN",
+    "BOARD_PASSPHRASE",       # locks thesportspage.net/board/ (scripts/lock_page.py)
     "GOOGLE_OAUTH_CLIENT_ID",
     "GOOGLE_OAUTH_CLIENT_SECRET",
     "OSF_TOKEN",

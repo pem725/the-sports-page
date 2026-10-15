@@ -140,10 +140,14 @@ jobs:
           # was written by hand and sat unchanged from 30 Aug while the archive
           # moved 155 -> 186. A page describing a moving thing has to be rebuilt
           # or it lies quietly.
-          python3 scripts/build_budget.py         || failed="$failed budget"
+          # Locked with the board passphrase (scripts/lock_page.py) and served at
+          # thesportspage.net/board/. If the secret is missing it refuses to publish
+          # the board unlocked there and keeps the old unlisted page instead.
+          BOARD_PASSPHRASE="${{ secrets.BOARD_PASSPHRASE }}" \
+            python3 scripts/build_budget.py       || failed="$failed budget"
           [ -n "$failed" ] && echo "::warning::refreshers failed:$failed (committing what did work)"
 
-          FILES="odds.html about.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json"
+          FILES="odds.html about.html board/index.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json"
           if git diff --quiet -- $FILES; then
             echo "no change to the board"; exit 0
           fi

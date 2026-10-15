@@ -531,7 +531,38 @@ linked from the homepage footer.
 gets a button in the bar. The measure that matters is how far a reader scrolls
 before reaching an actual story, and it is now zero.
 
-### The section bar — permanent features get a button, not a card
+### The board's address — thesportspage.net/board/, locked
+
+Set 2026-10-15, after Sean could not find the board's page: *"get a URL so it's
+easy for the gents... But you got to protect it also."* The budget sheet now
+lives at **https://thesportspage.net/board/**, with a row of links at the top to
+everything else the board reads (the Newsroom, open calls, back burner, reader
+questions, picks ledger). The old `/board/k7q2-desk-9f4m/` link forwards there.
+
+**It is encrypted, not merely unlisted.** `scripts/lock_page.py` encrypts the
+generated page with `BOARD_PASSPHRASE` (openssl AES-256 with PBKDF2; the browser
+decrypts it with WebCrypto), so what GitHub Pages serves is ciphertext. Each editor
+types the passphrase once and the browser remembers it. The link is safe to
+share; the passphrase is the thing to guard.
+
+**It refuses rather than leaks.** With no passphrase set, `build_budget.py`
+writes a "being locked" page at `/board/` and keeps the old unlisted page alive,
+so the board is never served in plaintext at the easy address.
+
+**Setting or changing the passphrase** (real terminal only, see Secrets):
+```bash
+python3 scripts/set_secret.py BOARD_PASSPHRASE      # local
+gh secret set BOARD_PASSPHRASE                       # the daily run
+```
+Change it to revoke someone; it is one shared passphrase. Per-person logins are
+still the Cloudflare Access plan in `tracking/cloudflare-access-runbook.md`.
+
+**Limits, stated plainly:** the repository is public, so the queue the board is
+built from is readable on GitHub. The lock protects the convenient view, not the
+underlying facts. Old plaintext versions stay in git history. `newsroom.html`
+stays public by design and is linked from the board, not locked by it.
+
+ — permanent features get a button, not a card
 
 Added 2026-10-15 on the editor's ask to make the Odds Board "more permanent and
 available" without adding clutter. `assets/sitenav.js` injects one slim bar
