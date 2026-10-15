@@ -212,7 +212,7 @@ ul{{margin:.4rem 0 .8rem 1.1rem}} li{{margin-bottom:.5rem}}
 
   <div class="footer">
     <span>The Sports Page &middot; The Newsroom &middot; regenerated from live files</span>
-    <span><a href="https://thesportspage.net/">&larr; The Archive</a> &middot; <a href="https://thesportspage.net/ask.html">Ask us something</a></span>
+    <span><a href="https://thesportspage.net/">&larr; All the Articles</a> &middot; <a href="https://thesportspage.net/ask.html">Ask us something</a></span>
   </div>
 </div>
 </body>

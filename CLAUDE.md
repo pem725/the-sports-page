@@ -441,8 +441,7 @@ Reader questions are the highest-value input the newsletter has, because a real
 question is *evidence of a gap*. Two of the last fifteen issues came from
 readers; the goal is to raise that ratio.
 
-The front door is `ask.html`, linked from a block on `index.html` directly under
-the subscribe box. Two channels: **`ideas@thesportspage.net`** and a GitHub issue
+The front door is `ask.html`, the "Ask The Sports Page" button in the section bar. Two channels: **`ideas@thesportspage.net`** and a GitHub issue
 with the `reader-question` label.
 
 **Use the domain address, never a personal one.** On 2026-08-24 all 23 public
@@ -516,25 +515,28 @@ It is `noindex` and linked discreetly from the homepage. Not secret — the
 selection process is part of what we are willing to show — but not the front
 door either.
 
-**ONE STICKY CARD ABOVE THE ARCHIVE. THE REST IS NEWS.** Set by the editor on
-2026-09-25: *"there's only one headliner that's sticky and the rest is the news.
-We're burying the news with way too much material."* The Odds Board is that card,
-and the Pool Desk and the Newsroom are a quiet one-line strip inside it rather
-than cards of their own. **A Reader Asks** sits *above* the archive heading, under
-the subscribe box, which is where this file always said it belonged before it
-drifted below the cards.
+**THE HOMEPAGE IS THE ARTICLES. NOTHING SITS ABOVE THEM.** Set by the editor on
+2026-09-25 (*"we're burying the news with way too much material"*), when three
+cards were cut to one, and finished on 2026-10-15, when the last one went too.
+The subscribe box, A Reader Asks and the Odds Board card are gone from the page;
+all of them live in the section bar. Under the masthead and the bar comes **The
+Articles** heading (not "Archive" &mdash; *"it's not the archive, it's the whole
+list"*), the filter chips, and the latest issue. The Newsroom and the Engine are
+linked from the homepage footer.
 
-Anything new that wants promoting joins the strip inside the card. **Do not add a
-second card.** Three blocks had piled up between the archive heading and the first
-issue; the fix took it to one. The measure that matters is how far a reader
-scrolls before reaching an actual story.
+**Do not add a card or a panel back above the articles.** A new permanent feature
+gets a button in the bar. The measure that matters is how far a reader scrolls
+before reaching an actual story, and it is now zero.
 
 ### The section bar — permanent features get a button, not a card
 
 Added 2026-10-15 on the editor's ask to make the Odds Board "more permanent and
 available" without adding clutter. `assets/sitenav.js` injects one slim bar
-under the masthead — **Home · Odds Board · Pool Desk · Ask · About · Subscribe**
-— pinned to the top as the reader scrolls. It brings its own CSS (copied markup
+under the masthead — **Home · Odds Board · Pool Desk · Ask The Sports Page ·
+About · Subscribe** — pinned to the top as the reader scrolls. **Subscribe is a
+toggle, not a link:** it drops the Buttondown form and the scan-to-subscribe code
+down from the bar on whatever page the reader is on, and a URL ending `#subscribe`
+opens it on load. It is the paper's only sign-up form. It brings its own CSS (copied markup
 that lost its stylesheet has broken this repo three times), shows short labels
 on phones so it never scrolls sideways, and marks the current page in gold.
 
