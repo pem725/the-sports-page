@@ -806,6 +806,7 @@ def build() -> str:
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="assets/sitenav.js" defer></script>
 </head>
 <body>
 <div class="masthead">

@@ -529,6 +529,26 @@ second card.** Three blocks had piled up between the archive heading and the fir
 issue; the fix took it to one. The measure that matters is how far a reader
 scrolls before reaching an actual story.
 
+### The section bar — permanent features get a button, not a card
+
+Added 2026-10-15 on the editor's ask to make the Odds Board "more permanent and
+available" without adding clutter. `assets/sitenav.js` injects one slim bar
+under the masthead — **Home · Odds Board · Pool Desk · Ask · About · Subscribe**
+— pinned to the top as the reader scrolls. It brings its own CSS (copied markup
+that lost its stylesheet has broken this repo three times), shows short labels
+on phones so it never scrolls sideways, and marks the current page in gold.
+
+A page gets it with one line before `</head>`:
+`<script src="assets/sitenav.js" defer></script>` (`../assets/` one level down).
+`build_odds_page.py` and `build_newsroom.py` carry that line, so the daily
+rebuilds keep it. Issue pages do NOT carry it; they keep their own back link.
+
+**The bar is where a new permanent feature goes.** Only something a reader
+returns to earns a button, and six is the ceiling — past that, cut something.
+
+The homepage archive also keeps loading as the reader scrolls (the "Show more"
+button stays as the fallback), using the same sport chips to sort.
+
 ### `engine.html` — the guts, opened up
 
 The public account of how this paper is built: architecture, the daily run, the

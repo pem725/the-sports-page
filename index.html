@@ -85,7 +85,7 @@ body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Geo
 .footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
 
-.arch-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:0 0 1rem;font-family:'Roboto Mono',monospace;font-size:.64rem}
+.arch-bar{scroll-margin-top:3rem;display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:0 0 1rem;font-family:'Roboto Mono',monospace;font-size:.64rem}
 .arch-bar .lbl{color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-right:.2rem}
 .arch-chip{border:1px solid var(--div);background:transparent;color:var(--muted);padding:.22rem .55rem;cursor:pointer;font:inherit;letter-spacing:.06em;text-transform:uppercase}
 .arch-chip:hover{border-color:var(--steel);color:var(--steel)}
@@ -106,6 +106,7 @@ window.goatcounter = { path: function (p) {
 </script>
 <script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
+<script src="assets/sitenav.js" defer></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -3522,7 +3523,7 @@ window.goatcounter = { path: function (p) {
 
 <!-- SHARE SECTION -->
 <div id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.5rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center">
-  <img src="assets/banner.png" alt="The Sports Page" style="max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
+  <img src="assets/banner.png" alt="The Sports Page" style="width:100%;max-width:360px;height:auto;margin:0 auto 1.2rem;display:block;opacity:.9">
   <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c9962a;margin-bottom:.4rem">Share The Sports Page</div>
   <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
   <img src="assets/qr-code.png" alt="QR Code — thesportspage.net" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
@@ -3641,6 +3642,13 @@ window.goatcounter = { path: function (p) {
   more.className = 'arch-more';
   more.type = 'button';
   more.addEventListener('click', function () { shown += STEP; render(); });
+  /* Keep the press running: when the "Show more" button scrolls into view, load
+     the next batch on its own. The button stays as the fallback and for keyboards. */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (ents) {
+      ents.forEach(function (e) { if (e.isIntersecting && !more.hidden) { shown += STEP; render(); } });
+    }, { rootMargin: '0px 0px 300px 0px' }).observe(more);
+  }
   list.parentNode.insertBefore(more, list.nextSibling);
 
   function chip(label, value) {
@@ -3656,7 +3664,7 @@ window.goatcounter = { path: function (p) {
       });
       b.setAttribute('aria-pressed', 'true');
       render();
-      list.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      bar.scrollIntoView({ block: 'start', behavior: 'smooth' });
     });
     bar.appendChild(b);
     return b;

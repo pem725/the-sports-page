@@ -135,6 +135,7 @@ ul{{margin:.4rem 0 .8rem 1.1rem}} li{{margin-bottom:.5rem}}
 .footer{{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;border-top:3px double var(--ink);margin-top:2rem;padding-top:.7rem}}
 .footer a{{color:var(--rust);text-decoration:none}}
 </style>
+<script src="assets/sitenav.js" defer></script>
 </head>
 <body>
 <div class="masthead">
