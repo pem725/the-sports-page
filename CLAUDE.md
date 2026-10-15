@@ -519,9 +519,9 @@ door either.
 2026-09-25 (*"we're burying the news with way too much material"*), when three
 cards were cut to one, and finished on 2026-10-15, when the last one went too.
 The subscribe box, A Reader Asks and the Odds Board card are gone from the page;
-all of them live in the section bar. Under the masthead and the bar comes **The
-Articles** heading (not "Archive" &mdash; *"it's not the archive, it's the whole
-list"*), the filter chips, and the latest issue. The Newsroom and the Engine are
+all of them live in the section bar. Under the masthead and the bar come the
+filter chips and then the latest issue &mdash; **no heading at all**, not "Archive"
+and not "Articles": *"It's the sports page. Of course there are articles."* The Newsroom and the Engine are
 linked from the homepage footer.
 
 **Do not add a card or a panel back above the articles.** A new permanent feature
