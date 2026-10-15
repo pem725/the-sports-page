@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 300 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 299 issues remaining of 500
 
 ## Repository Structure
 
@@ -1098,9 +1098,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 200 issues (#1-200)
-Queue: 4 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 176-october-offense, _TEMPLATE)
+Published: 201 issues (#1-201)
+Queue: 5 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 176-october-offense, 178-book-it-bills-notre-dame, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 300 issues remaining of 500
-Last published: Issue #200 — "He Inherited the Roster. He Wins One Game Fewer Than It Should." (170-inherited-roster.html) on October 14, 2026
+Goal: 299 issues remaining of 500
+Last published: Issue #201 — "A Coin That Hits Like Ohtani Slumps More Than He Does." (177-ohtani-cold-hand.html) on October 15, 2026
