@@ -113,12 +113,16 @@ window.goatcounter = { path: function (p) {
 
 <!-- MASTHEAD -->
 <div class="masthead">
-  <div class="kicker">A Statistical Dispatch for Friends &amp; Family</div>
-  <div style="display:flex;align-items:center;justify-content:center;gap:clamp(.7rem,2.2vw,1.4rem);flex-wrap:wrap;margin:.35rem 0 .1rem">
-    <img src="assets/logo-badge.png" srcset="assets/logo-badge.png 1x, assets/logo-badge@2x.png 2x"
-         alt="The Sports Page" width="88" height="88"
-         style="display:block;width:clamp(58px,9vw,88px);height:auto;flex:0 0 auto">
+  <!-- The lockup: the emblem stands exactly as tall as the header beside it
+       (kicker, name, tagline), and the pair is centered as one unit. Editor,
+       2026-10-15: "more prominent and centered... at the same height as the
+       header... not gaudy." On a phone it stacks, emblem above the name. -->
+  <div style="display:flex;align-items:center;justify-content:center;gap:clamp(.8rem,2.4vw,1.5rem);flex-wrap:wrap;margin:.2rem 0 .35rem">
+    <img data-emblem src="assets/logo-badge.png" srcset="assets/logo-badge.png 1x, assets/logo-badge@2x.png 2x"
+         alt="The Sports Page" width="108" height="108"
+         style="display:block;width:clamp(76px,13vw,108px);height:auto;flex:0 0 auto">
     <div style="text-align:center">
+      <div class="kicker" style="margin:0 0 .15rem">A Statistical Dispatch for Friends &amp; Family</div>
       <div class="title" style="margin:0">The Sports Page</div>
       <div class="tagline" style="margin:.1rem 0 0">Making the numbers mean something since the first pitch</div>
     </div>

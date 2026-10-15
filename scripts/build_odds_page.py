@@ -903,5 +903,6 @@ def build() -> str:
 
 
 if __name__ == "__main__":
-    OUT.write_text(build(), encoding="utf-8")
+    from add_emblem import stamp  # every page carries the emblem (2026-10-15)
+    OUT.write_text(stamp(build())[0], encoding="utf-8")
     print(f"  wrote {OUT.relative_to(REPO)}  ({OUT.stat().st_size:,} bytes)")

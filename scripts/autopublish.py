@@ -729,6 +729,13 @@ def main():
         deeper_published = True
         print(f"Moved queue/{deeper_filename} → published/{deeper_filename}")
 
+    # Step 8.6: The emblem. Every committed page carries it (editor, 2026-10-15),
+    # and stamping is idempotent, so running it on every publish costs nothing and
+    # catches a queue file written without it. Soft: a missing logo never blocks
+    # an issue.
+    emblem_files = f'"published/{filename}"' + (f' "published/{deeper_filename}"' if deeper_published else "")
+    run_soft(f'python3 scripts/add_emblem.py {emblem_files}', "Emblem")
+
     # Step 8.5: Readability. A WARNING, never a block — the issue is already
     # written and the day's publication should not hang on a style score. But the
     # warning is real: it lands in SOFT_FAILURES, so main() exits non-zero and

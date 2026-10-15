@@ -371,6 +371,9 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
    ```
    This replaces the `<!-- READERSHIP_BLOCK -->` marker in the template with the top-5 most-read issues of the prior week. Requires `$GOATCOUNTER_TOKEN` in the environment (set in `~/.zshrc`). If the API is unreachable or returns no data, the script writes a graceful "data pending" message and still exits 0 — do not skip this step.
 
+8. **Stamp the emblem** (the template is read-only, so the copy gets it):
+   `python3 scripts/add_emblem.py queue/sunday-NNN.html`
+
 8. **Move the file**:
    ```
    git mv queue/sunday-NNN.html published/sunday-NNN.html
@@ -1109,6 +1112,13 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 - **Fonts**: Playfair Display (headlines), Libre Baskerville (body), Roboto Mono (stats) — Google Fonts
 - **Palette**: `--ink: #1a1208`, `--cream: #f5f0e8`, `--aged: #e0d8c5`, `--rust: #b83a1e`, `--steel: #2c4a6e`, `--gold: #c9962a`
 - **Copy CSS from existing published issues** — do not invent new styles
+- **Every page carries the emblem** (the navy S with the normal curve), set by the
+  editor 2026-10-15. `python3 scripts/add_emblem.py --check` lists any page
+  without it; `add_emblem.py FILE` stamps one, idempotently. The publisher stamps
+  every issue it ships, and the odds and newsroom builders stamp their own output.
+  It sits beside the paper's name and steps above it on phones, so the name never
+  wraps. The homepage has its own larger lockup instead: the emblem exactly as tall
+  as the kicker, name and tagline beside it, the pair centered. Prominent, not gaudy.
 
 ## Statistical Models
 

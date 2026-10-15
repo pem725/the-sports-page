@@ -221,5 +221,6 @@ ul{{margin:.4rem 0 .8rem 1.1rem}} li{{margin-bottom:.5rem}}
 
 
 if __name__ == "__main__":
-    open(OUT, "w", encoding="utf-8").write(build())
+    from add_emblem import stamp  # every page carries the emblem (2026-10-15)
+    open(OUT, "w", encoding="utf-8").write(stamp(build())[0])
     print(f"  wrote newsroom.html ({os.path.getsize(OUT):,} bytes)")
