@@ -22,6 +22,7 @@ import getpass
 import hashlib
 import os
 import re
+import shlex
 import shutil
 import sys
 import time
@@ -38,7 +39,12 @@ def current(text: str, name: str):
     m = re.search(rf'(?m)^\s*export\s+{re.escape(name)}=(.*)$', text)
     if not m:
         return None
-    return m.group(1).strip().strip('"').strip("'")
+    raw = m.group(1).strip()
+    try:
+        parts = shlex.split(raw)              # undo the shell quoting written below
+        return parts[0] if len(parts) == 1 else raw
+    except ValueError:
+        return raw.strip('"').strip("'")
 
 
 def main() -> int:
@@ -114,9 +120,12 @@ def main() -> int:
     if os.path.exists(PATH):
         shutil.copy2(PATH, f"{PATH}.bak-{time.strftime('%Y%m%d-%H%M%S')}")
 
-    line = f"export {name}={new}"
+    # shlex.quote, so a passphrase with spaces or symbols survives `source`.
+    # Unquoted, `export BOARD_PASSPHRASE=blue moon` sets "blue" and fails on
+    # "moon" (found 2026-10-16, the first secret that was a phrase, not a token).
+    line = f"export {name}={shlex.quote(new)}"
     if old is not None:
-        text = re.sub(rf'(?m)^\s*export\s+{re.escape(name)}=.*$', line, text)
+        text = re.sub(rf'(?m)^\s*export\s+{re.escape(name)}=.*$', lambda _m: line, text)
     else:
         text = text.rstrip("\n") + "\n" + line + "\n"
 
