@@ -56,12 +56,12 @@
    "title": "Nine of Notre Dame's Twelve Games Cannot Help Them.",
    "grip": 8,
    "twist": 7,
-   "clock": 4,
+   "clock": 10,
    "stack": 8,
    "carry": 7,
    "answerable": true,
    "number": "resume weight by opponent: three games carry 89%",
-   "why": "ND is the paper's first priority and this is the structural cost of independence, not a complaint about the schedule"
+   "why": "ND is the paper's first priority and this is the structural cost of independence, not a complaint about the schedule REVIVED 2026-10-17: Kirk Herbstreit called ND's schedule 'an embarrassment' on Get Up (Oct 16), naming only BYU and Miami as real tests. Pushback: Miami's own schedule has one ranked opponent (ND). Test both schedules on the same SOS measure."
   },
   {
    "slug": "super-bowl-dull",
@@ -367,6 +367,45 @@
    "source": "Patrick sr, 2026-10-17, dictated",
    "number": "Per game, per player: golf ~70 strokes in four hours; a hitter ~4 plate appearances; an NFL starter ~60 snaps; plus pitches seen, touches. Count real chances to perform per game and per season, by sport and position, from MLB Stats API, nflverse snap counts, PGA scoring. Ties to the hot hand: fewer chances means noisier streaks.",
    "why": "Baseball is a game of waiting; football is waiting while fully engaged ('head on a swivel'). Sample size per game is the hidden variable under every hot-hand, slump and clutch argument -- this is the denominator piece for the whole series. Could pair with why-go-pro as cost per performance moment."
+  },
+  {
+   "slug": "murphy-counsell-midwest",
+   "title": "Two Notre Dame Men Are Running the Midwest",
+   "grip": 6,
+   "twist": 7,
+   "clock": 8,
+   "stack": 7,
+   "carry": 6,
+   "answerable": true,
+   "source": "Patrick sr, 2026-10-17, dictated",
+   "number": "Pat Murphy (ND head coach 1988-94, Brewers manager) and Craig Counsell (played for him at ND; Cubs manager) -- verified via MLB Stats API coach rosters 2026-10-17; ND years need three sources. Brewers 103-59 (MLB best, swept LAD); Cubs led MLB in runs (850). Statistical half: where do Midwest-born pitchers come from and do they last longer (fewer innings as teenagers, healthier shoulders)? Birth state from MLB Stats API, career length / IL stints by birth region.",
+   "why": "The editor's joy is the hook, but the issue needs a number: the 'cold-weather arms are fresher' hypothesis is testable and nobody publishes it. Bio facts about Murphy/Counsell must be triple-sourced; the editor first remembered Murphy's name wrong."
+  },
+  {
+   "slug": "rangers-without-shesterkin",
+   "title": "What Is a Goalie Worth?",
+   "grip": 7,
+   "twist": 7,
+   "clock": 9,
+   "stack": 6,
+   "carry": 6,
+   "answerable": true,
+   "source": "Patrick sr, 2026-10-17, dictated",
+   "number": "Igor Shesterkin out for the season (knee, announced Oct 10; NHL.com, ESPN, ABC). Goals saved above expected per season from NHL API shot data, converted to standings points; compare to the best skaters' value. Then: the Rangers' points pace with their replacement goalies. Plus/minus is the wrong stat -- explain why.",
+   "why": "His claim: the goalie is the most important player on the ice, and hockey's loser point makes preventing goals worth more than scoring them. Both halves are testable. Prior evidence says elite goalies are worth more wins than any skater, though they are also the least consistent from year to year."
+  },
+  {
+   "slug": "cfb-weekend-oct17",
+   "title": "CFB Saturday, Oct 17: ND-BYU, Indiana-Ohio State, Alabama-Georgia",
+   "grip": 7,
+   "twist": 6,
+   "clock": 10,
+   "stack": 9,
+   "carry": 5,
+   "answerable": true,
+   "source": "Patrick sr, 2026-10-17, dictated: 'if we don't have 10 pieces written off of it... we're not good journalists'",
+   "number": "Monday slot (Oct 19). Grade on frozen ratings from snapshot_ratings.py; chance of each result beforehand; what each result does to playoff odds (cfb-odds). Spin off: schedule strength (nd-nine-games), Indiana under Cignetti (when-does-the-signal-arrive).",
+   "why": "Biggest slate of the season. Sunday Edition covers the recap; Monday gets the one question the weekend raised most sharply."
   }
  ]
 }
