@@ -145,10 +145,26 @@ jobs:
           # the board unlocked there and keeps the old unlisted page instead.
           BOARD_PASSPHRASE="${{ secrets.BOARD_PASSPHRASE }}" \
             python3 scripts/build_budget.py       || failed="$failed budget"
+          # Readership for the Sunday Edition. The Sunday routine runs in a cloud
+          # sandbox with no secrets, so it cannot call GoatCounter itself (from
+          # late August every edition printed "data pending"). Fetch it here,
+          # where the secret lives; the routine injects the cached block.
+          GOATCOUNTER_TOKEN="${{ secrets.GOATCOUNTER_TOKEN }}" \
+            python3 scripts/fetch_readership.py --last7 --write || failed="$failed readership"
+          # Freeze the college ratings before the week's games. The Sunday Edition
+          # grades Saturday on these and refuses to use live ratings, which have
+          # already watched the games. It was a manual Thursday chore and was
+          # missed for weeks 4 through 7. Thursday, with Friday as the retry; the
+          # script never overwrites a snapshot that already exists.
+          case "$(TZ=America/New_York date +%u)" in
+            4|5) CFBD_KEY="${{ secrets.CFBD_KEY }}" \
+                   python3 scripts/snapshot_ratings.py || failed="$failed snapshot" ;;
+          esac
           [ -n "$failed" ] && echo "::warning::refreshers failed:$failed (committing what did work)"
 
-          FILES="odds.html about.html board/index.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json"
-          if git diff --quiet -- $FILES; then
+          FILES="odds.html about.html board/index.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json data/readership-block.html data/rating-snapshots"
+          # status, not diff: a new snapshot file is untracked and diff cannot see it
+          if [ -z "$(git status --porcelain -- $FILES)" ]; then
             echo "no change to the board"; exit 0
           fi
           git add $FILES

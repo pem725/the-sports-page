@@ -369,7 +369,11 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
    ```
    python3 scripts/fetch_readership.py --inject queue/sunday-NNN.html
    ```
-   This replaces the `<!-- READERSHIP_BLOCK -->` marker in the template with the top-5 most-read issues of the prior week. Requires `$GOATCOUNTER_TOKEN` in the environment (set in `~/.zshrc`). If the API is unreachable or returns no data, the script writes a graceful "data pending" message and still exits 0 — do not skip this step.
+   This replaces the `<!-- READERSHIP_BLOCK -->` marker in the template with the top-5 most-read issues of the prior week. **No token is needed at injection time.** The daily GitHub run (Mon–Sat) fetches the seven days ending yesterday and caches the block in `data/readership-block.html`; with no `$GOATCOUNTER_TOKEN` the script injects that cache, and if the cache is missing or more than 8 days old it writes a "data pending" block and still exits 0. Do not skip this step.
+
+   Why the cache: from late August to 2026-10-17 every automated Sunday Edition printed "data pending". The cloud routine has no secrets store, so its prompt carried the token inline, and the sandbox's safety check refused every week to run a command with a credential pasted into it. Fetch where the secret lives (the `GOATCOUNTER_TOKEN` Actions secret); never paste a token into a routine prompt.
+
+   The same daily run also freezes the college ratings on **Thursday (Friday as retry)** via `snapshot_ratings.py`. It was a manual chore and was missed for weeks 4–6, so three Sunday Editions could not show their upset arithmetic.
 
 8. **Stamp the emblem** (the template is read-only, so the copy gets it):
    `python3 scripts/add_emblem.py queue/sunday-NNN.html`
