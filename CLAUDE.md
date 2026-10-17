@@ -549,6 +549,15 @@ decrypts it with WebCrypto), so what GitHub Pages serves is ciphertext. Each edi
 types the passphrase once and the browser remembers it. The link is safe to
 share; the passphrase is the thing to guard.
 
+**It opens with the count.** Subscribers (and new this week), opens per issue,
+site visits against the week before, the most-read issue, and the pace needed for
+**2,000 readers by Issue #500** -- set 2026-10-17: *"by the time we hit 500 issues
+... we need a few thousand readers... I need this thing to start humming."*
+`scripts/readership_stats.py` fetches it at build time (Buttondown + GoatCounter
+Actions secrets) and it appears only inside the locked page; the numbers are never
+committed to the public repo. The Monday draft email carries the matching ask:
+forward one issue to somebody who'd argue with it.
+
 **It refuses rather than leaks.** With no passphrase set, `build_budget.py`
 writes a "being locked" page at `/board/` and keeps the old unlisted page alive,
 so the board is never served in plaintext at the easy address.

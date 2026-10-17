@@ -98,7 +98,38 @@ def esc(s):
     return H.escape(s, quote=False)
 
 
-def render(items, published, built):
+def count_strip(s):
+    """The readership numbers at the top of the board. Empty if no source answered."""
+    if not s or not any(k in s for k in ("subscribers", "views_7d")):
+        return ""
+    cells = []
+    if "subscribers" in s:
+        new = s.get("new_7d", 0)
+        cells.append(f'<div><span>Subscribers</span><b>{s["subscribers"]:,}</b>'
+                     f'<small>{"+" if new else ""}{new} this week</small></div>')
+    if "opens_avg" in s:
+        cells.append(f'<div><span>Open each issue</span><b>about {round(s["opens_avg"]):,}</b>'
+                     f'<small>average of the last 7 emails</small></div>')
+    if "views_7d" in s:
+        cells.append(f'<div><span>Site visits</span><b>{s["views_7d"]:,}</b>'
+                     f'<small>last 7 days; {s.get("views_prev_7d", 0):,} the week before</small></div>')
+    if "top" in s:
+        t = s["top"]
+        cells.append(f'<div class="top"><span>Most read this week</span>'
+                     f'<b><a href="https://thesportspage.net{esc(t["path"])}" target="_blank" '
+                     f'rel="noopener" style="color:inherit">{esc(t["hed"])}</a></b>'
+                     f'<small>{t["views"]:,} visits</small></div>')
+    pace = ""
+    if "pace_needed" in s:
+        pace = (f'\n  <p class="pace">The goal is <strong>2,000 readers by Issue #500</strong>, about '
+                f'{round(s["weeks_left"])} weeks away. That takes about '
+                f'<strong>{max(round(s["pace_needed"]), 0):,} new readers a week</strong>. '
+                f'Forward one issue to someone who would argue with it.</p>')
+    return ('  <section class="count" aria-label="Readership">\n    ' + "\n    ".join(cells)
+            + '\n  </section>' + pace + '\n')
+
+
+def render(items, published, built, count=""):
     slots = [x for x in items if x[0] == "slot"]
     last = slots[-1][1] if slots else built
     hot = sum(1 for _, _, r in slots if r["decay"] == "hot")
@@ -129,7 +160,7 @@ def render(items, published, built):
     legend = "".join(
         f'<div><span class="chip d-{k}">{k}</span> {v}</div>' for k, v in DECAY_NOTE.items())
     return TEMPLATE.format(
-        rows="\n".join(rows), legend=legend, published=published,
+        rows="\n".join(rows), legend=legend, published=published, count=count,
         nslots=len(slots), hot=hot, keeps=keeps,
         through=last.strftime("%a %-d %b %Y"),
         built=built.strftime("%-d %b %Y"))
@@ -172,6 +203,16 @@ body{{margin:0;padding:1.5rem 1rem 4rem;background:var(--ground);color:var(--ink
   font-size:clamp(2rem,6vw,3.1rem);font-weight:700;letter-spacing:.04em;
   text-transform:uppercase;line-height:1.08;margin:.15rem 0 .1rem;text-wrap:balance}}
 .mast .tag{{font-style:italic;color:var(--muted);font-size:.95rem;margin:0}}
+.count{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem;margin:.9rem 0 0}}
+.count div{{background:var(--paper);border-top:3px solid var(--ink);padding:.5rem .75rem .55rem}}
+.count b{{display:block;font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+  font-size:1.6rem;line-height:1.1;font-variant-numeric:tabular-nums}}
+.count span{{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.6rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}}
+.count small{{display:block;font-size:.8rem;color:var(--muted);line-height:1.35;margin-top:.15rem}}
+.count .top b{{font-size:1rem;line-height:1.3}}
+.pace{{font-size:.92rem;margin:.55rem 0 0;color:var(--ink)}}
+.pace strong{{color:var(--rust)}}
 .desk{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem;margin:1rem 0 0}}
 .desk a{{display:block;background:var(--card);border-left:3px solid var(--steel);padding:.55rem .75rem;
   color:var(--ink);text-decoration:none;font-weight:700;font-size:.95rem;line-height:1.3}}
@@ -265,6 +306,7 @@ a:focus-visible{{outline:2px solid var(--steel);outline-offset:3px;border-radius
     </div>
   </header>
 
+{count}
   <nav class="desk" aria-label="Board pages">
     <a href="https://thesportspage.net/newsroom.html" target="_blank" rel="noopener">The Newsroom<small>ranked ideas &amp; held stories</small></a>
     <a href="https://github.com/pem725/the-sports-page/blob/main/tracking/open-calls.md" target="_blank" rel="noopener">Open Calls<small>predictions awaiting a grade</small></a>
@@ -388,7 +430,16 @@ def main():
     start = today
     if m and m.group(1).strip() == f"{today:%B} {today.day}, {today.year}":
         start = today + datetime.timedelta(days=1)
-    page = render(schedule(rows, start), published, today)
+    # The readership count. Fetched at build time and shown only inside the locked
+    # page -- never written to the public repo. Any failure just drops the strip.
+    sys.path.insert(0, str(REPO / "scripts"))
+    try:
+        import readership_stats
+        count = count_strip(readership_stats.stats(published))
+    except Exception as e:
+        print(f"  budget: readership strip skipped ({type(e).__name__})")
+        count = ""
+    page = render(schedule(rows, start), published, today, count)
 
     if a.show:
         print(page)

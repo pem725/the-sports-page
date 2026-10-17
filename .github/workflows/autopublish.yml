@@ -143,7 +143,11 @@ jobs:
           # Locked with the board passphrase (scripts/lock_page.py) and served at
           # thesportspage.net/board/. If the secret is missing it refuses to publish
           # the board unlocked there and keeps the old unlisted page instead.
+          # The board also opens with the readership count (scripts/readership_stats.py),
+          # fetched here and shown only inside the locked page, never committed.
           BOARD_PASSPHRASE="${{ secrets.BOARD_PASSPHRASE }}" \
+          BUTTONDOWN_KEY="${{ secrets.BUTTONDOWN_KEY }}" \
+          GOATCOUNTER_TOKEN="${{ secrets.GOATCOUNTER_TOKEN }}" \
             python3 scripts/build_budget.py       || failed="$failed budget"
           # Readership for the Sunday Edition. The Sunday routine runs in a cloud
           # sandbox with no secrets, so it cannot call GoatCounter itself (from
