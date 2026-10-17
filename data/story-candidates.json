@@ -315,6 +315,58 @@
    "source": "Patrick sr, 2026-10-14",
    "number": "Series: each entry takes one stat fans trust (record in close games, QB wins, 'knows how to win') and asks which stat, why, and believe-or-know -- then tests it. Launched by 178-book-it-bills-notre-dame. Bayes is the spine: belief as a prior, evidence as the update, certainty as the one prior that cannot learn.",
    "why": "Understanding your own biases. Reader-fed: the launch piece asks readers to send the stat they trust."
+  },
+  {
+   "slug": "novelty-half-life",
+   "title": "How Long Does a New Idea Last?",
+   "grip": 6,
+   "twist": 8,
+   "clock": 4,
+   "stack": 7,
+   "carry": 9,
+   "answerable": true,
+   "source": "Patrick sr with Tim, 2026-10-17, dictated",
+   "number": "Half-life of a scheme's edge: for each named innovation (CFB: Briles Baylor spread, Leach Air Raid, Kelly Oregon, Malzahn; NFL: 2008 Wildcat, Kelly Eagles, McVay Rams, 2019 Ravens; defenses for contrast), the innovator's offensive or defensive efficiency vs league average (CFBD / nflverse EPA per play) in each season after debut, and the years until that edge falls by half.",
+   "why": "His claim: offensive gimmicks get caught fast in the NFL and slowly in college, while an attacking defense built on personnel and aggression lasts longer. Two testable halves (pro vs college decay rate; offense vs defense). The trap is small n -- a handful of named schemes, chosen because they were famous -- and regression to the mean, which shrinks any outlier season whether or not a defense 'caught up'. Carry: why every edge in business decays once it is copied."
+  },
+  {
+   "slug": "elite-ol-hard-to-spot",
+   "title": "Can Anyone Spot a Great Offensive Lineman?",
+   "grip": 8,
+   "twist": 7,
+   "clock": 3,
+   "stack": 6,
+   "carry": 7,
+   "answerable": true,
+   "source": "Patrick sr with Tim, 2026-10-17, dictated",
+   "number": "By position: how well does a recruit's star rating predict being drafted (and drafted early)? CFBD recruiting + draft data. Is the star-to-draft link weaker for OL than for skill positions? Second step: does combine size, or college starts (longevity), predict NFL starts for OL better than for others?",
+   "why": "His hypothesis: high school to college is mostly size; college to pro is size, technique and longevity. Follows Issue #147 (where linemen come from) with a different question (whether anyone can tell which ones are good). Answerable with data we already pull."
+  },
+  {
+   "slug": "why-go-pro",
+   "title": "Why Go Pro in Anything but Life?",
+   "grip": 7,
+   "twist": 8,
+   "clock": 3,
+   "stack": 8,
+   "carry": 10,
+   "answerable": true,
+   "source": "Patrick sr, 2026-10-17, dictated",
+   "number": "Earnings distribution of pro athletes (median vs mean, by sport and NFL position, via nflverse/OverTheCap contracts), career length by position, and the cost side: pay per career snap. Test his claim that linemen are paid least (likely false at tackle -- running backs are the usual cheap position; check).",
+   "why": "There are few Tiger Woods and many who scrape by. The mean salary is a skewed-distribution lie; the median is the honest number. Carry is maximal: the same skew governs actors, musicians, startups. Must not lecture; the number does the work. Sibling of player-vs-racehorse (Aug 11): that one is the cost side; build them as one piece or a pair."
+  },
+  {
+   "slug": "performance-moments",
+   "title": "How Many Times Does a Player Actually Get to Perform?",
+   "grip": 7,
+   "twist": 8,
+   "clock": 3,
+   "stack": 7,
+   "carry": 8,
+   "answerable": true,
+   "source": "Patrick sr, 2026-10-17, dictated",
+   "number": "Per game, per player: golf ~70 strokes in four hours; a hitter ~4 plate appearances; an NFL starter ~60 snaps; plus pitches seen, touches. Count real chances to perform per game and per season, by sport and position, from MLB Stats API, nflverse snap counts, PGA scoring. Ties to the hot hand: fewer chances means noisier streaks.",
+   "why": "Baseball is a game of waiting; football is waiting while fully engaged ('head on a swivel'). Sample size per game is the hidden variable under every hot-hand, slump and clutch argument -- this is the denominator piece for the whole series. Could pair with why-go-pro as cost per performance moment."
   }
  ]
 }
