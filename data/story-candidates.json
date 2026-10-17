@@ -61,7 +61,9 @@
    "carry": 7,
    "answerable": true,
    "number": "resume weight by opponent: three games carry 89%",
-   "why": "ND is the paper's first priority and this is the structural cost of independence, not a complaint about the schedule REVIVED 2026-10-17: Kirk Herbstreit called ND's schedule 'an embarrassment' on Get Up (Oct 16), naming only BYU and Miami as real tests. Pushback: Miami's own schedule has one ranked opponent (ND). Test both schedules on the same SOS measure."
+   "why": "ND is the paper's first priority and this is the structural cost of independence, not a complaint about the schedule REVIVED 2026-10-17: Kirk Herbstreit called ND's schedule 'an embarrassment' on Get Up (Oct 16), naming only BYU and Miami as real tests. Pushback: Miami's own schedule has one ranked opponent (ND). Test both schedules on the same SOS measure.",
+   "status": "queued",
+   "outcome": "Folded into 179-who-did-they-play (Mon Oct 19): ND 3 ranked opponents by the Oct 11 AP poll, same as Georgia and Indiana; champions 2014-25: 44 August tests, 42 final, only 28 the same."
   },
   {
    "slug": "super-bowl-dull",
@@ -406,6 +408,32 @@
    "source": "Patrick sr, 2026-10-17, dictated: 'if we don't have 10 pieces written off of it... we're not good journalists'",
    "number": "Monday slot (Oct 19). Grade on frozen ratings from snapshot_ratings.py; chance of each result beforehand; what each result does to playoff odds (cfb-odds). Spin off: schedule strength (nd-nine-games), Indiana under Cignetti (when-does-the-signal-arrive).",
    "why": "Biggest slate of the season. Sunday Edition covers the recap; Monday gets the one question the weekend raised most sharply."
+  },
+  {
+   "slug": "schedule-belief-series",
+   "title": "How Hard Was It? (series: a schedule is a belief)",
+   "grip": 8,
+   "twist": 8,
+   "clock": 7,
+   "stack": 8,
+   "carry": 9,
+   "answerable": true,
+   "source": "Patrick sr, 2026-10-17, dictated",
+   "number": "scripts/schedule_belief.py. Launched by 179. Follow-ups: (1) weekly trajectory of each contender's ranked-opponent count through 2026, re-run each Sunday; (2) end-of-season pre/post for every CFP team, not just champions; (3) NFL vs CFB: how much of a final ranking is settled head-to-head vs by proxy (share of top-25 pairs connected by a direct game or one common opponent).",
+   "why": "His frame: the NFL is a randomized trial (designed schedule, settle it on the field), college football an observational study -- wide bandwidth, low fidelity, so it runs on belief. Bayesian spine: the preseason poll is the prior, Saturdays are the update. Pairs with believe-it-or-know-it."
+  },
+  {
+   "slug": "fan-expectation-temperature",
+   "title": "Fan Expectations, Taken Like a Temperature",
+   "grip": 5,
+   "twist": 6,
+   "clock": 5,
+   "stack": 7,
+   "carry": 7,
+   "answerable": false,
+   "source": "Patrick sr, 2026-10-17, dictated (one line, not yet developed)",
+   "number": "TBD -- 'great temperature stories about fan expectations.' Possible measure: preseason vs current win-total markets or poll points as the fan base's expectation, tracked weekly like a thermometer.",
+   "why": "Logged so it is not lost; needs the editor to say what he meant before it can be scored properly."
   }
  ]
 }
