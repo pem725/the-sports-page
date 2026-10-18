@@ -123,10 +123,55 @@ def count_strip(s):
     if "pace_needed" in s:
         pace = (f'\n  <p class="pace">The goal is <strong>2,000 readers by Issue #500</strong>, about '
                 f'{round(s["weeks_left"])} weeks away. That takes about '
-                f'<strong>{max(round(s["pace_needed"]), 0):,} new readers a week</strong>. '
-                f'Forward one issue to someone who would argue with it.</p>')
+                f'<strong>{max(round(s["pace_needed"]), 0):,} new readers a week</strong>.</p>')
     return ('  <section class="count" aria-label="Readership">\n    ' + "\n    ".join(cells)
             + '\n  </section>' + pace + '\n')
+
+
+BRIEF = REPO / "data" / "board-brief.json"
+
+
+def brief_box(slots, built):
+    """The top of the board: what we need, what's pressing, what isn't, what's new.
+
+    The editor, 2026-10-18: "They're not going to read 100 pages... right up top,
+    what do you need? What's pressing? What's not pressing?" Hand-written lines
+    live in data/board-brief.json; the queue's runway is computed here, because a
+    line a human must remember to update is the line that goes stale first.
+    """
+    try:
+        b = json.loads(BRIEF.read_text(encoding="utf-8"))
+    except Exception:
+        b = {}
+    ask, pressing = list(b.get("ask", [])), list(b.get("pressing", []))
+    keeps = sum(1 for _, _, r in slots if r["decay"] == "keeps")
+    if not slots:
+        pressing.insert(0, "<strong>Nothing is scheduled.</strong> The queue is empty &mdash; "
+                           "we need a story for the next publishing day.")
+        ask.insert(0, "<strong>Send a story idea today.</strong> The queue is empty.")
+    else:
+        last = slots[-1][1]
+        if len(slots) <= 3:
+            pressing.insert(0, f"<strong>The queue runs out after {last:%a %-d %b}.</strong> "
+                               f"{len(slots)} piece{'s' if len(slots) != 1 else ''} left.")
+        if keeps < 2:
+            pressing.append("No evergreen pieces in reserve, so breaking news has nowhere to go.")
+    when = ""
+    try:
+        age = (built - datetime.date.fromisoformat(b.get("updated", ""))).days
+        when = f"Updated {datetime.date.fromisoformat(b['updated']):%-d %b}"
+        if age > 10:
+            when += " &middot; may be stale"
+    except Exception:
+        pass
+
+    def ul(items):
+        return "<ul>" + "".join(f"<li>{x}</li>" for x in items) + "</ul>" if items else "<p>Nothing.</p>"
+    cells = [("What we need from you", "need", ask), ("Pressing", "press", pressing),
+             ("Not pressing", "later", b.get("later", [])), ("What's new", "news", b.get("news", []))]
+    body = "\n    ".join(f'<div class="b-{k}"><h2>{t}</h2>{ul(v)}</div>' for t, k, v in cells)
+    return (f'  <section class="brief" aria-label="This week">\n    {body}\n  </section>\n'
+            f'  <p class="b-when">{when}</p>\n')
 
 
 def render(items, published, built, count=""):
@@ -145,22 +190,20 @@ def render(items, published, built, count=""):
                 '    </div>')
             continue
         chips = (f'<span class="chip topic">{esc(r["topic"])}</span>'
-                 f'<span class="chip d-{esc(r["decay"])}">{esc(r["decay"])}</span>'
-                 + "".join(f'<span class="chip">{esc(t)}</span>'
-                           for t in r["tags"] if t.lower() != r["topic"].lower()))
+                 f'<span class="chip d-{esc(r["decay"])}">{esc(r["decay"])}</span>')
         rows.append(
             f'    <div class="slot{" is-hot" if r["decay"]=="hot" else ""}">\n'
             f'      <div class="when"><b>{d.strftime("%a")} {d.day}</b>{d.strftime("%b")}</div>\n'
             '      <div>\n'
             f'        <p class="hed disp">{esc(r["hed"])}</p>\n'
-            f'        <p class="deck">{esc(r["deck"])}</p>\n'
             f'        <div class="chips">{chips}</div>\n'
             '      </div>\n'
             '    </div>')
     legend = "".join(
         f'<div><span class="chip d-{k}">{k}</span> {v}</div>' for k, v in DECAY_NOTE.items())
     return TEMPLATE.format(
-        rows="\n".join(rows), legend=legend, published=published, count=count,
+        rows="\n".join(rows) or '    <p class="empty">Nothing scheduled yet. Send an idea.</p>',
+        legend=legend, published=published, count=count, brief=brief_box(slots, built),
         nslots=len(slots), hot=hot, keeps=keeps,
         through=last.strftime("%a %-d %b %Y"),
         built=built.strftime("%-d %b %Y"))
@@ -203,6 +246,22 @@ body{{margin:0;padding:1.5rem 1rem 4rem;background:var(--ground);color:var(--ink
   font-size:clamp(2rem,6vw,3.1rem);font-weight:700;letter-spacing:.04em;
   text-transform:uppercase;line-height:1.08;margin:.15rem 0 .1rem;text-wrap:balance}}
 .mast .tag{{font-style:italic;color:var(--muted);font-size:.95rem;margin:0}}
+.brief{{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.5rem;margin:1rem 0 0}}
+.brief > div{{background:var(--paper);border-top:3px solid var(--ink);padding:.6rem .85rem .5rem}}
+.brief h2{{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.66rem;letter-spacing:.14em;
+  text-transform:uppercase;margin:0 0 .3rem;color:var(--muted);font-weight:600}}
+.brief .b-need{{border-top-color:var(--rust)}}
+.brief .b-need h2,.brief .b-press h2{{color:var(--rust)}}
+.brief ul{{margin:0;padding-left:1.1rem}}
+.brief li{{font-size:.95rem;line-height:1.45;margin:0 0 .35rem}}
+.brief p{{margin:0;font-size:.9rem;color:var(--muted)}}
+.b-when{{margin:.3rem 0 0;font-size:.72rem;color:var(--muted);text-align:right;
+  font-family:ui-monospace,Menlo,Consolas,monospace}}
+.sh2{{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.66rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin:1.2rem 0 0;font-weight:600}}
+.empty{{font-style:italic;color:var(--muted)}}
+.more{{margin:1.6rem 0 0;border-top:1px solid var(--rule);padding-top:.8rem}}
+.more summary{{cursor:pointer;font-weight:700;font-size:.95rem}}
 .count{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem;margin:.9rem 0 0}}
 .count div{{background:var(--paper);border-top:3px solid var(--ink);padding:.5rem .75rem .55rem}}
 .count b{{display:block;font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
@@ -297,15 +356,16 @@ a:focus-visible{{outline:2px solid var(--steel);outline-offset:3px;border-radius
 
   <header class="mast">
     <div class="eyebrow">For the Editorial Board &middot; Locked</div>
-    <h1 class="disp">The Budget</h1>
-    <p class="tag">What runs, when it runs, and what we still need</p>
+    <h1 class="disp">The Board</h1>
     <div class="rulebar">
       <span>{published} issues published</span>
-      <span>{nslots} slots scheduled</span>
-      <span>Through {through}</span>
+      <span>{nslots} scheduled</span>
+      <span>Rebuilt {built}</span>
     </div>
   </header>
 
+{brief}
+  <h2 class="sh2">The goal</h2>
 {count}
   <nav class="desk" aria-label="Board pages">
     <a href="https://thesportspage.net/newsroom.html" target="_blank" rel="noopener">The Newsroom<small>ranked ideas &amp; held stories</small></a>
@@ -317,17 +377,13 @@ a:focus-visible{{outline:2px solid var(--steel);outline-offset:3px;border-radius
 
   <div class="sheet">
 
-    <p class="lede">This is the running order, rebuilt automatically every publishing day &mdash;
-    so whenever you open it, it is current. One issue a day, Monday through Saturday, and the
-    Sunday Edition on Sundays, which means every piece competes with every other piece for a
-    single slot. <strong>If you have an idea, it displaces something on this page.</strong>
-    That is the whole reason you are looking at it.</p>
-
-    <h2 class="sh">The Running Order</h2>
-    <p class="shnote">{hot} hot &middot; {keeps} evergreen in reserve &middot; no two consecutive days share a topic</p>
+    <h2 class="sh">Coming Up</h2>
+    <p class="shnote">One issue a day, Mon&ndash;Sat. A new idea takes one of these slots.</p>
 
 {rows}
 
+    <details class="more">
+      <summary>How we pick stories, and how to send one</summary>
     <div class="legend">{legend}</div>
 
     <h2 class="sh">What Makes an Idea Run</h2>
@@ -383,6 +439,8 @@ a:focus-visible{{outline:2px solid var(--steel);outline-offset:3px;border-radius
     argue with is a metric nobody is using. If you think something on this page is the wrong call,
     that is the most useful thing you can send.</p>
 
+    </details>
+
     <div class="foot">
       <span>The Sports Page</span>
       <span>Rebuilt {built}</span>
@@ -416,9 +474,8 @@ def main():
         p = REPO / "queue" / name
         if p.exists() and not name.startswith("_"):
             rows.append(meta(p))
-    if not rows:
-        raise SystemExit("no queue files resolved from QUEUE_ORDER.txt -- refusing to "
-                         "publish an empty budget")
+    # An empty queue is news for the board, not a reason to stop building it --
+    # brief_box() puts "nothing is scheduled" at the top in red.
 
     index = (REPO / "index.html").read_text(encoding="utf-8")
     published = index.count('class="issue-num"')
