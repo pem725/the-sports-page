@@ -558,6 +558,17 @@ Actions secrets) and it appears only inside the locked page; the numbers are nev
 committed to the public repo. The Monday draft email carries the matching ask:
 forward one issue to somebody who'd argue with it.
 
+**It opens with a brief, because nobody reads a long board.** The editor,
+2026-10-18: *"They're not going to read 100 pages... right up top, what do you
+need? What's pressing? What's not pressing?"* Four short boxes come first, from
+`data/board-brief.json`: what we need from you, pressing, not pressing, what's new.
+Keep each line to a phone's width and **update the file whenever the week's asks
+change** (the box shows its date and says "may be stale" after 10 days). The queue
+runway is computed, not typed: when three or fewer pieces remain, or the queue is
+empty, that line goes to the top in red. An empty queue no longer stops the build.
+Then come the goal, the links, a compact running order, and the selection rubric
+folded under a "How we pick stories" toggle.
+
 **It refuses rather than leaks.** With no passphrase set, `build_budget.py`
 writes a "being locked" page at `/board/` and keeps the old unlisted page alive,
 so the board is never served in plaintext at the easy address.
