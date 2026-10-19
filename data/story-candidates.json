@@ -329,7 +329,7 @@
    "answerable": true,
    "source": "Patrick sr with Tim, 2026-10-17, dictated",
    "number": "Half-life of a scheme's edge: for each named innovation (CFB: Briles Baylor spread, Leach Air Raid, Kelly Oregon, Malzahn; NFL: 2008 Wildcat, Kelly Eagles, McVay Rams, 2019 Ravens; defenses for contrast), the innovator's offensive or defensive efficiency vs league average (CFBD / nflverse EPA per play) in each season after debut, and the years until that edge falls by half.",
-   "why": "His claim: offensive gimmicks get caught fast in the NFL and slowly in college, while an attacking defense built on personnel and aggression lasts longer. Two testable halves (pro vs college decay rate; offense vs defense). The trap is small n -- a handful of named schemes, chosen because they were famous -- and regression to the mean, which shrinks any outlier season whether or not a defense 'caught up'. Carry: why every edge in business decays once it is copied."
+   "why": "His claim: offensive gimmicks get caught fast in the NFL and slowly in college, while an attacking defense built on personnel and aggression lasts longer. Two testable halves (pro vs college decay rate; offense vs defense). The trap is small n -- a handful of named schemes, chosen because they were famous -- and regression to the mean, which shrinks any outlier season whether or not a defense 'caught up'. Carry: why every edge in business decays once it is copied. Editor, 2026-10-19: the adjustment to a hot new scheme should come faster in the NFL (all players capable; scheming is the lever) than in college (buy-in and teaching take longer)."
   },
   {
    "slug": "elite-ol-hard-to-spot",
@@ -434,6 +434,48 @@
    "source": "Patrick sr, 2026-10-17, dictated (one line, not yet developed)",
    "number": "TBD -- 'great temperature stories about fan expectations.' Possible measure: preseason vs current win-total markets or poll points as the fan base's expectation, tracked weekly like a thermometer.",
    "why": "Logged so it is not lost; needs the editor to say what he meant before it can be scored properly."
+  },
+  {
+   "slug": "pitching-change-runs",
+   "title": "Do runs go up after a pitching change?",
+   "grip": 8,
+   "twist": 8,
+   "clock": 7,
+   "stack": 6,
+   "carry": 8,
+   "answerable": true,
+   "source": "Editor, 2026-10-19",
+   "number": "Runs in the rest of the inning after a change vs base-out expected runs, by inning 1-9 (Retrosheet 2021-25)",
+   "why": "Editor's bet: runs rise after a change in innings 4-6, not in the 8th/9th. The trap is selection: pitchers get pulled while being hit. Lesson: compare to what the situation was already worth.",
+   "status": "in-progress"
+  },
+  {
+   "slug": "cfb-turnaround-speed",
+   "title": "How fast can a coach turn a program around?",
+   "grip": 8,
+   "twist": 7,
+   "clock": 8,
+   "stack": 7,
+   "carry": 7,
+   "answerable": true,
+   "source": "Editor, 2026-10-19",
+   "number": "Year-over-year SP+/win% jumps, FBS 2005-26; Indiana 2024 and UCLA 2026 against a regression-to-the-mean baseline",
+   "why": "Both coaches came from James Madison. Bad teams improve anyway, so the story is the gap above that baseline. Ties to murphy-counsell-midwest (coaching trees).",
+   "status": "in-progress"
+  },
+  {
+   "slug": "cfb-points-to-win",
+   "title": "How many points does it take to win in college?",
+   "grip": 8,
+   "twist": 7,
+   "clock": 6,
+   "stack": 7,
+   "carry": 6,
+   "answerable": true,
+   "source": "Editor, 2026-10-19",
+   "number": "Points thresholds for 50/75/90% wins, CFB vs NFL; season-level offense/defense trade-off; P(win | allow <=14); yards per play vs points",
+   "why": "Sequel to the NFL win-probability page, read on the points axis instead of the probability axis. Editor's bet: defense can carry you in the NFL but not in college.",
+   "status": "in-progress"
   }
  ]
 }
