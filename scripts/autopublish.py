@@ -372,7 +372,10 @@ def update_deeper(content, issue_num, today):
     content = re.sub(r'Issue\s*#\s*\[TBD\]', f'Issue #{issue_num}', content)
     # Scope the date substitution to the datebar only — never the body — so
     # historical dates in the companion's text are never overwritten.
-    date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2})?,?\s*\d{4}'
+    # The day is REQUIRED. When it was optional, "August 2014 to October 2026" in
+    # a byline (a data range, not a date) became "October 19, 2026 to October 19,
+    # 2026" in Issue #205. Placeholders always carry a day or "__".
+    date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2}),?\s*\d{4}'
 
     def _stamp_dates(m):
         return re.sub(date_pattern, date_str, m.group(0))
@@ -423,7 +426,10 @@ def update_article(content, issue_num, today):
     # the Memorial Day roll of honor (Issue #58) had all twelve death dates
     # overwritten with the publish date. Scope strictly to the datebar; the
     # <title> date is already handled above.
-    date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2})?,?\s*\d{4}'
+    # The day is REQUIRED. When it was optional, "August 2014 to October 2026" in
+    # a byline (a data range, not a date) became "October 19, 2026 to October 19,
+    # 2026" in Issue #205. Placeholders always carry a day or "__".
+    date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:_+|\d{1,2}),?\s*\d{4}'
 
     def _stamp_dates(m):
         return re.sub(date_pattern, date_str, m.group(0))
