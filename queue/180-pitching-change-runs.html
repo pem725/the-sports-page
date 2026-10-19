@@ -1,0 +1,218 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: keeps
+tags: MLB:mlb, Bullpens, Cause and Effect
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — We Bet Runs Go Up After a Pitching Change</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="We Bet Runs Go Up After a Pitching Change. They Do — Before It.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/180-pitching-change-runs.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/180-pitching-change-runs.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="We Bet Runs Go Up After a Pitching Change. They Do — Before It.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/180-pitching-change-runs.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Bullpens &middot; Major League Baseball, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. 206</span>
+    <span>October 20, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>We Bet Runs Go Up After a Pitching Change. <em>They Do &mdash; Before It.</em></h1>
+
+  <div class="deck">
+    Innings with a pitching change score about five times as many runs as innings without one. It looks like proof that the bullpen blew it. It is not. Once the new pitcher arrives, he gives up almost exactly what the situation was already worth. The runs cause the change.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Retrosheet play-by-play, 2021 to 2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">1.3</div><div class="l">Runs in a 6th inning with a pitching change</div></div>
+    <div class="sc"><div class="v now">0.28</div><div class="l">Runs in a 6th inning without one</div></div>
+    <div class="sc"><div class="v good">0.66</div><div class="l">Runs after the new pitcher arrives. Expected: 0.67</div></div>
+  </div>
+
+  <p><strong>Do hitters feast after a pitching change?</strong> Our editor bet they do, at least in the 4th, 5th and 6th innings, before the best relievers come in. In the 8th and 9th, he guessed, the bullpen wins.</p>
+
+  <p>We checked every play from five seasons, 2021 through 2025. In the 6th inning, an inning with a pitching change averages <strong>1.3 runs</strong>. An inning without one averages <strong>0.28</strong>. That is nearly five times as many.</p>
+
+  <p>Most people would read that as proof that changes go badly. Here is the surprise: watch what happens after the new pitcher arrives. He walks into runners and outs he did not create. That spot is worth <strong>0.67 runs</strong> on average. He gives up <strong>0.66</strong>. The big inning was already happening. Managers pull pitchers who are getting hit. <strong>The runs cause the change, not the other way around.</strong></p>
+
+  <p>By the end of this you will be able to spot this trap anywhere: the "effect" that is really the cause.</p>
+
+  <h2 class="sh">Half the Runs Came Before He Got There</h2>
+
+  <p>Take that 6th inning apart. Of the 1.3 runs, about 0.64 had already scored before the new pitcher threw a pitch. The rest is what any average pitcher would give up with those runners on and those outs.</p>
+
+  <figure style="margin:28px 0">
+    <svg viewBox="0 0 680 350" width="100%" height="auto" role="img" aria-label="Runs per inning, innings 1 through 9, when a pitcher is changed in the middle of the inning versus innings with no change. Innings with a change score 1.2 to 3.4 runs; innings without score 0.26 to 0.50. The runs scored after the new pitcher arrives almost exactly match what the runners and outs he inherited were already worth." style="display:block;background:#f5f0e8;font-family:'Roboto Mono',monospace"><line x1="56" x2="660" y1="300" y2="300" stroke="#c8b99a" stroke-width="1.4"/><text x="48" y="304" text-anchor="end" font-size="11" fill="#6b5e4a">0</text><line x1="56" x2="660" y1="238" y2="238" stroke="#c8b99a" stroke-width="1"/><text x="48" y="242" text-anchor="end" font-size="11" fill="#6b5e4a">1</text><line x1="56" x2="660" y1="176" y2="176" stroke="#c8b99a" stroke-width="1"/><text x="48" y="180" text-anchor="end" font-size="11" fill="#6b5e4a">2</text><line x1="56" x2="660" y1="114" y2="114" stroke="#c8b99a" stroke-width="1"/><text x="48" y="118" text-anchor="end" font-size="11" fill="#6b5e4a">3</text><text x="14" y="160" font-size="11" fill="#6b5e4a" transform="rotate(-90 14 160)" text-anchor="middle">runs in the inning</text><rect x="72.6" y="89.2" width="20" height="50.8" fill="#e3a593"/><rect x="72.6" y="140.0" width="20" height="160.0" fill="#b83a1e"/><line x1="69.6" x2="95.6" y1="97.3" y2="97.3" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="82.6" y="83.2" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1208">3.4</text><rect x="95.6" y="269.0" width="12" height="31.0" fill="#2c4a6e"/><text x="89.6" y="317" text-anchor="middle" font-size="11" fill="#1a1208">1st</text><rect x="139.7" y="132.6" width="20" height="44.6" fill="#e3a593"/><rect x="139.7" y="177.2" width="20" height="122.8" fill="#b83a1e"/><line x1="136.7" x2="162.7" y1="137.6" y2="137.6" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="149.7" y="126.6" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1208">2.7</text><rect x="162.7" y="274.0" width="12" height="26.0" fill="#2c4a6e"/><text x="156.7" y="317" text-anchor="middle" font-size="11" fill="#1a1208">2nd</text><rect x="206.8" y="126.4" width="20" height="50.8" fill="#e3a593"/><rect x="206.8" y="177.2" width="20" height="122.8" fill="#b83a1e"/><line x1="203.8" x2="229.8" y1="132.6" y2="132.6" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="216.8" y="120.4" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1208">2.8</text><rect x="229.8" y="271.5" width="12" height="28.5" fill="#2c4a6e"/><text x="223.8" y="317" text-anchor="middle" font-size="11" fill="#1a1208">3rd</text><rect x="273.9" y="169.8" width="20" height="42.8" fill="#e3a593"/><rect x="273.9" y="212.6" width="20" height="87.4" fill="#b83a1e"/><line x1="270.9" x2="296.9" y1="169.2" y2="169.2" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="283.9" y="163.2" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1208">2.1</text><rect x="296.9" y="274.6" width="12" height="25.4" fill="#2c4a6e"/><text x="290.9" y="317" text-anchor="middle" font-size="11" fill="#1a1208">4th</text><rect x="341.0" y="194.6" width="20" height="44.0" fill="#e3a593"/><rect x="341.0" y="238.6" width="20" height="61.4" fill="#b83a1e"/><line x1="338.0" x2="364.0" y1="194.0" y2="194.0" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="351.0" y="188.0" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1208">1.7</text><rect x="364.0" y="279.5" width="12" height="20.5" fill="#2c4a6e"/><text x="358.0" y="317" text-anchor="middle" font-size="11" fill="#1a1208">5th</text><rect x="408.1" y="219.4" width="20" height="40.9" fill="#e3a593"/><rect x="408.1" y="260.3" width="20" height="39.7" fill="#b83a1e"/><line x1="405.1" x2="431.1" y1="218.8" y2="218.8" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="418.1" y="212.8" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1208">1.3</text><rect x="431.1" y="282.6" width="12" height="17.4" fill="#2c4a6e"/><text x="425.1" y="317" text-anchor="middle" font-size="11" fill="#1a1208">6th</text><rect x="475.2" y="225.6" width="20" height="39.1" fill="#e3a593"/><rect x="475.2" y="264.7" width="20" height="35.3" fill="#b83a1e"/><line x1="472.2" x2="498.2" y1="225.0" y2="225.0" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="485.2" y="219.0" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1208">1.2</text><rect x="498.2" y="283.9" width="12" height="16.1" fill="#2c4a6e"/><text x="492.2" y="317" text-anchor="middle" font-size="11" fill="#1a1208">7th</text><rect x="542.3" y="213.2" width="20" height="42.2" fill="#e3a593"/><rect x="542.3" y="255.4" width="20" height="44.6" fill="#b83a1e"/><line x1="539.3" x2="565.3" y1="214.4" y2="214.4" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="552.3" y="207.2" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1208">1.4</text><rect x="565.3" y="282.0" width="12" height="18.0" fill="#2c4a6e"/><text x="559.3" y="317" text-anchor="middle" font-size="11" fill="#1a1208">8th</text><rect x="609.4" y="188.4" width="20" height="42.2" fill="#e3a593"/><rect x="609.4" y="230.6" width="20" height="69.4" fill="#b83a1e"/><line x1="606.4" x2="632.4" y1="187.2" y2="187.2" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="619.4" y="181.2" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1208">1.8</text><rect x="632.4" y="278.9" width="12" height="21.1" fill="#2c4a6e"/><text x="626.4" y="317" text-anchor="middle" font-size="11" fill="#1a1208">9th</text><text x="358" y="334" text-anchor="middle" font-size="11" fill="#6b5e4a">inning</text><rect x="360" y="13" width="12" height="11" fill="#b83a1e"/><text x="380" y="22" font-size="11" fill="#1a1208">scored before the new pitcher arrived</text><rect x="360" y="30" width="12" height="11" fill="#e3a593"/><text x="380" y="39" font-size="11" fill="#1a1208">scored after he arrived</text><line x1="358" x2="374" y1="53" y2="53" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="380" y="56" font-size="11" fill="#1a1208">what his runners and outs were worth</text><rect x="360" y="64" width="12" height="11" fill="#2c4a6e"/><text x="380" y="73" font-size="11" fill="#1a1208">innings with no change</text></svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:10px;line-height:1.5">Innings where a pitcher was pulled mid-inning, 2021&ndash;25. The dark part of each bar scored before the new pitcher threw a pitch. The dashed line is what his inherited runners and outs were worth. He lands on it almost every time. Source: Retrosheet play-by-play.</figcaption>
+  </figure>
+
+  <p>That holds in every inning from the 4th through the 9th. After the change, runs land within 2% of what the spot was worth. Early in the game, the 1st through the 3rd, they run about 13% higher. Those are mostly starters being knocked out, and there are only about 1,200 of them, so do not lean on it.</p>
+
+  <p>How do we know what a spot is "worth"? We counted. Every time there is a runner on first with one out, say, we tallied how many more runs scored that inning. Do that for all 24 combinations of runners and outs and you have the price of every situation. It is the right yardstick, because it asks what this inning was going to produce anyway.</p>
+
+  <div class="pull">
+    <p>The new pitcher did not cause the big inning. The big inning caused the new pitcher.</p>
+  </div>
+
+  <h2 class="sh">The Fair Test: A Fresh Inning</h2>
+
+  <p>The cleanest comparison is a change between innings. Nobody is on base, and nothing forced the move. In the 4th, 5th and 6th, a new pitcher allows 0.49 to 0.52 runs. The pitcher who stays allows 0.51. <strong>No difference at all.</strong> So if you groan when your manager walks to the mound in the 6th, you can relax; the new man is no worse than the old one. And hitters do not hit better against him: in the 6th, about .24 against the new arm, .25 against the old one.</p>
+
+  <p>Late in the game the editor is half right, and the other half goes the wrong way for hitters. In the 7th and the 9th, a fresh pitcher allows about one run in ten fewer. In the 9th, hitters bat about .22 against him and .25 against a pitcher who stays in. Hold that loosely, though. The same late edge did not show up in 2015 to 2019.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>More firefighters show up at bigger fires. Nobody thinks the firefighters made the fire bigger. A pitching change is a firefighter. So when you see two things show up together, ask which one came first. Then compare the result to what the situation was already worth, not to an ordinary day. A hospital looks dangerous next to a gym for the same reason: sick people go there.</p>
+
+  <p>Notice how close this came to being a headline the other way. "Innings with a pitching change score five times as many runs" is true, and it is the kind of graphic you will see on a broadcast. It just answers a question nobody asked.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p>Every regular-season play from 2021 to 2025, from Retrosheet. A mid-inning change compares the runs scored from the change to the end of the inning with the expected runs for the runners and outs at that moment, built from the same five seasons. A start-of-inning change compares the new pitcher's inning with innings where the same pitcher came back out. The 9th inning uses top halves only, because walk-offs cut the bottom halves short. Position players pitching are left out. As a check, our parsed run totals matched MLB's official team totals in all eight seasons we tested.</p>
+    <p><strong>The yardstick is an average pitcher, not the one who was pulled.</strong> Nobody can see what would have happened if the manager had left him in. And late in a game, "the same pitcher continuing" is often a starter cruising or a reliever mopping up a blowout, which makes that group a little odd. Adjusting for the batting order and the score barely moves the 9th-inning result.</p>
+    <p style="font-size:.8rem">The information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at <a href="https://www.retrosheet.org" target="_blank" rel="noopener">www.retrosheet.org</a>.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. 206 &middot; October 20, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
