@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 296 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 295 issues remaining of 500
 
 ## Repository Structure
 
@@ -1185,9 +1185,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 204 issues (#1-204)
-Queue: 4 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 179-who-did-they-play, _TEMPLATE)
+Published: 205 issues (#1-205)
+Queue: 3 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 296 issues remaining of 500
-Last published: Issue #204 — Sunday Edition No. 028 — "We Said 'Probably Wrong' on Friday. Notre Dame Lost on Saturday." (sunday-028.html) on October 18, 2026
+Goal: 295 issues remaining of 500
+Last published: Issue #205 — "Who Did They Even Play?" (179-who-did-they-play.html) on October 19, 2026
