@@ -1,0 +1,293 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: dated
+tags: MLB:mlb, Rays, Out of Nowhere, Regression to the Mean
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The Rays Were Supposed to Win 79 Games</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="The Rays Were Supposed to Win 79 Games">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/180-pitching-change-runs.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/180-pitching-change-runs.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Rays Were Supposed to Win 79 Games">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/180-pitching-change-runs.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Out of Nowhere &middot; Major League Baseball, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. 208</span>
+    <span>October 22, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>The Rays Were Supposed to Win 79 Games.</h1>
+
+  <div class="deck">
+    They won 98, and they open the World Series against Milwaukee on Friday. Only 14 teams since 1999 beat their forecast by more. Here is the odd part: that is what champions look like. 22 of the last 25 beat theirs.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; MLB standings, 1998 to 2026</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">79</div><div class="l">Wins we would have forecast for the 2026 Rays</div></div>
+    <div class="sc"><div class="v good">98</div><div class="l">Wins they got</div></div>
+    <div class="sc"><div class="v bad">22 of 25</div><div class="l">Champions since 1999 who beat their forecast</div></div>
+  </div>
+
+  <p><strong>What makes a team a surprise?</strong> Not being good. The Dodgers won 100 games and surprised nobody. A surprise is the gap between what you expected and what you got. So to measure one, you need to say out loud what you expected.</p>
+
+  <p>Here is ours, and you can do it on a napkin. <strong>Take last year&rsquo;s wins, and give back half the distance from 81.</strong> A 97-win team should win about 89. A 65-win team should win about 73. We fit that rule on 750 team-seasons since 1999, and it misses by about 10 wins either way.</p>
+
+  <p>One honest note before we use it. We did not print this forecast in March; we built it this week. So we kept it simple enough that you can check it yourself, with no knobs for us to turn after the fact.</p>
+
+  <p>The Rays went 77&ndash;85 in 2025. The rule said about 79 wins. <strong>They won 98.</strong> That is 19 wins above the forecast. Only 14 teams in 750 did better. And the team they face, the Brewers, won 103 against a forecast of 90. Both of this year&rsquo;s finalists came out of nowhere.</p>
+
+  <p>You would expect that to be rare among champions. It is the rule. By the end of this you will see why, and why it should make you a little suspicious of every &ldquo;how they built it&rdquo; story you read this week.</p>
+
+  <h2 class="sh">Champions Live on the Right Side</h2>
+
+  <figure style="margin:28px 0">
+<svg viewBox="0 0 680 330" width="100%" role="img" aria-label="Wins above forecast for 750 team-seasons, champions marked" style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="60" y="18" font-size="12" fill="#1a1208" font-weight="600">Wins above or below the forecast, 750 team-seasons, 1999&#8211;2025</text>
+<rect x="61.0" y="247.5" width="17.0" height="2.5" fill="#d8ceb8"/>
+<rect x="80.0" y="247.5" width="17.0" height="2.5" fill="#d8ceb8"/>
+<rect x="99.1" y="237.7" width="17.0" height="12.3" fill="#d8ceb8"/>
+<rect x="118.1" y="232.8" width="17.0" height="17.2" fill="#d8ceb8"/>
+<rect x="137.1" y="237.7" width="17.0" height="12.3" fill="#d8ceb8"/>
+<rect x="156.2" y="237.7" width="17.0" height="12.3" fill="#d8ceb8"/>
+<rect x="175.2" y="205.7" width="17.0" height="44.3" fill="#d8ceb8"/>
+<rect x="194.2" y="213.1" width="17.0" height="36.9" fill="#d8ceb8"/>
+<rect x="213.3" y="176.2" width="17.0" height="73.8" fill="#d8ceb8"/>
+<rect x="232.3" y="168.9" width="17.0" height="81.1" fill="#d8ceb8"/>
+<rect x="251.3" y="151.6" width="17.0" height="98.4" fill="#d8ceb8"/>
+<rect x="270.4" y="141.8" width="17.0" height="108.2" fill="#d8ceb8"/>
+<rect x="289.4" y="109.8" width="17.0" height="140.2" fill="#d8ceb8"/>
+<rect x="308.4" y="102.5" width="17.0" height="147.5" fill="#d8ceb8"/>
+<rect x="327.5" y="134.4" width="17.0" height="115.6" fill="#d8ceb8"/>
+<rect x="346.5" y="100.0" width="17.0" height="150.0" fill="#d8ceb8"/>
+<rect x="365.5" y="156.6" width="17.0" height="93.4" fill="#d8ceb8"/>
+<rect x="384.5" y="109.8" width="17.0" height="140.2" fill="#d8ceb8"/>
+<rect x="403.6" y="114.8" width="17.0" height="135.2" fill="#d8ceb8"/>
+<rect x="422.6" y="136.9" width="17.0" height="113.1" fill="#d8ceb8"/>
+<rect x="441.6" y="163.9" width="17.0" height="86.1" fill="#d8ceb8"/>
+<rect x="460.7" y="173.8" width="17.0" height="76.2" fill="#d8ceb8"/>
+<rect x="479.7" y="205.7" width="17.0" height="44.3" fill="#d8ceb8"/>
+<rect x="498.7" y="205.7" width="17.0" height="44.3" fill="#d8ceb8"/>
+<rect x="517.8" y="225.4" width="17.0" height="24.6" fill="#d8ceb8"/>
+<rect x="536.8" y="235.2" width="17.0" height="14.8" fill="#d8ceb8"/>
+<rect x="555.8" y="245.1" width="17.0" height="4.9" fill="#d8ceb8"/>
+<rect x="574.9" y="247.5" width="17.0" height="2.5" fill="#d8ceb8"/>
+<rect x="593.9" y="247.5" width="17.0" height="2.5" fill="#d8ceb8"/>
+<rect x="612.9" y="247.5" width="17.0" height="2.5" fill="#d8ceb8"/>
+<rect x="632.0" y="250.0" width="17.0" height="0.0" fill="#d8ceb8"/>
+<line x1="60" y1="250" x2="650" y2="250" stroke="#1a1208"/>
+<line x1="60.0" y1="250" x2="60.0" y2="255" stroke="#1a1208"/><text x="60.0" y="268" font-size="11" text-anchor="middle" fill="#6b5e4a">-30</text>
+<line x1="155.2" y1="250" x2="155.2" y2="255" stroke="#1a1208"/><text x="155.2" y="268" font-size="11" text-anchor="middle" fill="#6b5e4a">-20</text>
+<line x1="250.3" y1="250" x2="250.3" y2="255" stroke="#1a1208"/><text x="250.3" y="268" font-size="11" text-anchor="middle" fill="#6b5e4a">-10</text>
+<line x1="345.5" y1="250" x2="345.5" y2="255" stroke="#1a1208"/><text x="345.5" y="268" font-size="11" text-anchor="middle" fill="#6b5e4a">0</text>
+<line x1="440.6" y1="250" x2="440.6" y2="255" stroke="#1a1208"/><text x="440.6" y="268" font-size="11" text-anchor="middle" fill="#6b5e4a">+10</text>
+<line x1="535.8" y1="250" x2="535.8" y2="255" stroke="#1a1208"/><text x="535.8" y="268" font-size="11" text-anchor="middle" fill="#6b5e4a">+20</text>
+<line x1="631.0" y1="250" x2="631.0" y2="255" stroke="#1a1208"/><text x="631.0" y="268" font-size="11" text-anchor="middle" fill="#6b5e4a">+30</text>
+<line x1="345.5" y1="40" x2="345.5" y2="250" stroke="#6b5e4a" stroke-dasharray="3 3"/>
+<text x="339.5" y="52" font-size="10.5" text-anchor="end" fill="#6b5e4a">right on forecast</text>
+<circle cx="336.0" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="319.5" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="429.4" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="547.9" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="451.0" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="434.6" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="506.4" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="270.8" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="462.3" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="408.7" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="513.3" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="413.8" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="405.2" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="443.3" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="560.0" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="438.1" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="437.2" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="471.8" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="520.3" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="540.2" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="454.5" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="510.7" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="498.6" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="408.7" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<circle cx="371.5" cy="290" r="4.2" fill="#b83a1e" fill-opacity=".75"/>
+<text x="60" y="294" font-size="10.5" fill="#b83a1e" text-anchor="start">&#160;</text>
+<text x="60.0" y="312" font-size="10.5" fill="#b83a1e">Red dots: the 25 champions. 22 beat their forecast.</text>
+<line x1="469.2" y1="83" x2="469.2" y2="250" stroke="#2c4a6e" stroke-width="1.5"/><circle cx="469.2" cy="250" r="4" fill="#2c4a6e"/><text x="474.2" y="80" font-size="11" fill="#2c4a6e" font-weight="600">2026 Brewers +13</text>
+<line x1="528.2" y1="63" x2="528.2" y2="250" stroke="#2c4a6e" stroke-width="1.5"/><circle cx="528.2" cy="250" r="4" fill="#2c4a6e"/><text x="533.2" y="60" font-size="11" fill="#2c4a6e" font-weight="600">2026 Rays +19</text>
+<line x1="626.2" y1="194" x2="626.2" y2="250" stroke="#6b5e4a" stroke-width="1"/><circle cx="626.2" cy="250" r="3" fill="#6b5e4a"/><text x="629.2" y="190" font-size="10" text-anchor="end" fill="#6b5e4a">2001 Mariners +30</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Gray bars: every team-season since 1999, by wins above or below the napkin forecast. Two-thirds land within 10 wins of it. Red dots: the 25 World Series champions. Blue: this year&rsquo;s two finalists.</figcaption>
+  </figure>
+
+  <p>Look at where the red dots sit. Only three champions in 25 won fewer games than the forecast. Thirteen beat it by 10 or more. The 2013 Red Sox finished last in 2012, beat the rule by 23 wins, and won the whole thing.</p>
+
+  <p>Why? <strong>Because a title is picked on the outcome.</strong> To win one, you almost always need a great season. And a great season is mostly made of things the forecast could not see: a rookie who hits, a pitcher who stays healthy, a dozen one-run games that break your way. Teams that get those breaks show up in October. Teams that do not stay home. So when you look only at the winners, you are looking at the lucky end of the pile.</p>
+
+  <div class="pull">
+    <p>Every champion looks like a plan that worked. Most of them are a plan plus a season that broke right.</p>
+  </div>
+
+  <h2 class="sh">The Rays Have Done This Before</h2>
+
+  <p>The biggest surprises of the last 27 years read like a list of October stories. The 2001 Mariners beat the rule by 30 wins and won 116. The 1999 Diamondbacks beat it by 28. Third on the list: the 2008 Rays, worst to first, who also reached the World Series. The Mets show up too, in 2022, 22 wins above the rule. That one ended in the first round, which is its own lesson.</p>
+
+  <p>The Rays do it on a small check. Their payroll is about $96 million, among the smallest in baseball. The Brewers spend about $145 million, which is near the middle, not the bottom. Neither club is buying wins the way the Dodgers do. Both are good at the part money cannot buy: finding the season the forecast missed.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>Before you call anything a surprise, write down what you expected. If you cannot, you were not surprised; you were just watching. Then notice what you are looking at. A list of winners is a list of teams that got the breaks, so it will always make the breaks look like a plan.</p>
+
+  <p>That does not mean the Rays got lucky and nothing more. Nobody wins 98 games on luck alone. It means this: of the many teams that were about as good as the Rays, the one in the World Series is the one whose year broke right. Watch the &ldquo;blueprint&rdquo; stories this week with that in mind.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p>The forecast is a straight line fit to every pair of back-to-back seasons from 1999 to 2025, skipping 2020: this year&rsquo;s winning share = 0.23 + 0.55 &times; last year&rsquo;s. In wins, that is about 37 + 0.55 &times; last year&rsquo;s wins. The typical miss is 10 wins. Records come from the MLB Stats API and were checked against ESPN. Champions come from the same postseason feed.</p>
+    <p><strong>This is a deliberately simple forecast.</strong> It knows nothing about trades, injuries or free agents, so real projection systems beat it. That is the point: it is the &ldquo;reasonable fan&rdquo; baseline, and anyone can check it. Payrolls are approximate and differ by source. The Rays figure is from Spotrac and ESPN reporting, and the Brewers figure is from Spotrac and team-beat reporting.</p>
+  </div>
+
+    <p style="font-size:.8rem">The information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at <a href="https://www.retrosheet.org" target="_blank" rel="noopener">www.retrosheet.org</a>.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. 208 &middot; October 22, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
