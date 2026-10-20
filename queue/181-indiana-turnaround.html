@@ -1,0 +1,260 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: keeps
+tags: CFB:cfb, Coaching, Regression to the Mean
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Nearly 200 Bad Teams Changed Coaches. One Did This.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Nearly 200 Bad Teams Changed Coaches. One Did This.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/181-indiana-turnaround.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/181-indiana-turnaround.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nearly 200 Bad Teams Changed Coaches. One Did This.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/181-indiana-turnaround.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Out of Nowhere &middot; College Football, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. 207</span>
+    <span>October 21, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>Nearly 200 Bad Teams Changed Coaches. <em>One Did This.</em></h1>
+
+  <div class="deck">
+    A new coach is supposed to be a fresh start. Across twenty seasons, bad college teams that changed coaches improved by about 3 points a year later. Teams that kept their coach improved by about the same. Indiana in 2024 improved by 28, more than any team in twenty years.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; College football, 2006 to 2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">+3</div><div class="l">Typical gain for a bad team with a new coach</div></div>
+    <div class="sc"><div class="v now">+3</div><div class="l">Typical gain for a bad team that kept its coach</div></div>
+    <div class="sc"><div class="v good">+28</div><div class="l">Indiana&rsquo;s gain in 2024, the most since 2006</div></div>
+  </div>
+
+  <p><strong>How fast can a new coach turn a bad team around?</strong> Usually, not fast at all. We looked at 194 bad teams in major college football that changed head coaches between 2006 and 2025. On average they got about <strong>3 points better</strong> the next year. Bad teams that kept their coach also got about 3 points better.</p>
+
+  <p>That should surprise you. The new coach is supposed to be the reason things change. Mostly, he is not. Bad teams bounce back a little no matter who is in charge. Then there is Indiana. In 2024, its first year under Curt Cignetti, it got <strong>28 points</strong> better.</p>
+
+  <p>By the end, you will know what to compare the next big hire to, and why one Indiana should not fool you about the rest.</p>
+
+  <h2 class="sh">First, What a &ldquo;Point&rdquo; Means</h2>
+
+  <p>We measure teams with SP+, a power rating built by Bill Connelly. It is counted in points: how many points better a team is than an average team, on a neutral field. A team at +20 should beat an average team by about three touchdowns. A team at &minus;7 should lose to it by a touchdown.</p>
+
+  <p>Indiana in 2023 was a &minus;7 team. It went 3&ndash;9. Tom Allen was fired, and Cignetti came over from James Madison. In 2024 Indiana was a +20 team and went 11&ndash;2. A year after that, it went 16&ndash;0 and won the national title.</p>
+
+  <figure style="margin:28px 0">
+<svg viewBox="0 0 680 330" width="100%" role="img" aria-label="Histogram of one-year rating change for 194 bad teams that changed coaches. Most gained between minus 10 and plus 15 points. Indiana 2024 sits alone at plus 28." style="display:block;max-width:680px;margin:0 auto;font-family:'Roboto Mono',monospace">
+<line x1="56" y1="262" x2="656" y2="262" stroke="#1a1208" stroke-width="1"/>
+<rect x="82.0" y="254.3" width="23.0" height="7.7" fill="#2c4a6e" opacity=".75"/>
+<rect x="132.0" y="254.3" width="23.0" height="7.7" fill="#2c4a6e" opacity=".75"/>
+<rect x="157.0" y="254.3" width="23.0" height="7.7" fill="#2c4a6e" opacity=".75"/>
+<rect x="182.0" y="246.6" width="23.0" height="15.4" fill="#2c4a6e" opacity=".75"/>
+<rect x="207.0" y="223.6" width="23.0" height="38.4" fill="#2c4a6e" opacity=".75"/>
+<rect x="232.0" y="169.8" width="23.0" height="92.2" fill="#2c4a6e" opacity=".75"/>
+<rect x="257.0" y="231.3" width="23.0" height="30.7" fill="#2c4a6e" opacity=".75"/>
+<rect x="282.0" y="162.2" width="23.0" height="99.8" fill="#2c4a6e" opacity=".75"/>
+<rect x="307.0" y="70.0" width="23.0" height="192.0" fill="#2c4a6e" opacity=".75"/>
+<rect x="332.0" y="123.8" width="23.0" height="138.2" fill="#2c4a6e" opacity=".75"/>
+<rect x="357.0" y="108.4" width="23.0" height="153.6" fill="#2c4a6e" opacity=".75"/>
+<rect x="382.0" y="192.9" width="23.0" height="69.1" fill="#2c4a6e" opacity=".75"/>
+<rect x="407.0" y="146.8" width="23.0" height="115.2" fill="#2c4a6e" opacity=".75"/>
+<rect x="432.0" y="146.8" width="23.0" height="115.2" fill="#2c4a6e" opacity=".75"/>
+<rect x="457.0" y="162.2" width="23.0" height="99.8" fill="#2c4a6e" opacity=".75"/>
+<rect x="482.0" y="162.2" width="23.0" height="99.8" fill="#2c4a6e" opacity=".75"/>
+<rect x="507.0" y="146.8" width="23.0" height="115.2" fill="#2c4a6e" opacity=".75"/>
+<rect x="532.0" y="192.9" width="23.0" height="69.1" fill="#2c4a6e" opacity=".75"/>
+<rect x="557.0" y="254.3" width="23.0" height="7.7" fill="#2c4a6e" opacity=".75"/>
+<rect x="582.0" y="254.3" width="23.0" height="7.7" fill="#2c4a6e" opacity=".75"/>
+<rect x="632.0" y="254.3" width="23.0" height="7.7" fill="#b83a1e"/>
+<line x1="56.0" y1="262" x2="56.0" y2="267" stroke="#1a1208"/><text x="56.0" y="281" font-size="12" text-anchor="middle" fill="#6b5e4a">-30</text>
+<line x1="156.0" y1="262" x2="156.0" y2="267" stroke="#1a1208"/><text x="156.0" y="281" font-size="12" text-anchor="middle" fill="#6b5e4a">-20</text>
+<line x1="256.0" y1="262" x2="256.0" y2="267" stroke="#1a1208"/><text x="256.0" y="281" font-size="12" text-anchor="middle" fill="#6b5e4a">-10</text>
+<line x1="356.0" y1="262" x2="356.0" y2="267" stroke="#1a1208"/><text x="356.0" y="281" font-size="12" text-anchor="middle" fill="#6b5e4a">0</text>
+<line x1="456.0" y1="262" x2="456.0" y2="267" stroke="#1a1208"/><text x="456.0" y="281" font-size="12" text-anchor="middle" fill="#6b5e4a">+10</text>
+<line x1="556.0" y1="262" x2="556.0" y2="267" stroke="#1a1208"/><text x="556.0" y="281" font-size="12" text-anchor="middle" fill="#6b5e4a">+20</text>
+<line x1="656.0" y1="262" x2="656.0" y2="267" stroke="#1a1208"/><text x="656.0" y="281" font-size="12" text-anchor="middle" fill="#6b5e4a">+30</text>
+<text x="356" y="302" font-size="12" text-anchor="middle" fill="#1a1208">Change in power rating (points) the year after the coach changed</text>
+<line x1="356.0" y1="50" x2="356.0" y2="262" stroke="#6b5e4a" stroke-dasharray="3 3"/>
+<line x1="386.0" y1="44" x2="386.0" y2="262" stroke="#c9962a" stroke-width="2"/>
+<text x="392.0" y="52" font-size="12" fill="#1a1208">typical team: +3</text>
+<text x="656.0" y="220.3" font-size="12" text-anchor="end" fill="#b83a1e" font-weight="600">Indiana 2024</text>
+<text x="656.0" y="236.3" font-size="12" text-anchor="end" fill="#b83a1e">+28</text>
+<text x="56" y="26" font-size="12" fill="#6b5e4a">Teams (each bar = 2.5 points)</text>
+<text x="48" y="266.0" font-size="11" text-anchor="end" fill="#6b5e4a">0</text>
+<text x="48" y="189.2" font-size="11" text-anchor="end" fill="#6b5e4a">10</text>
+<text x="48" y="112.4" font-size="11" text-anchor="end" fill="#6b5e4a">20</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:12px;color:#6b5e4a;margin-top:10px;text-align:center;letter-spacing:.5px">194 bad teams that changed coaches, 2006&ndash;2025. Most land between &minus;10 and +15. One is off the edge.</figcaption>
+  </figure>
+
+  <h2 class="sh">Why Bad Teams Get Better Anyway</h2>
+
+  <p>Notice the big pile of bars just right of zero. That is <span class="cc" data-preview="Extreme results tend to be followed by less extreme ones, because part of any extreme was luck.">regression to the mean<a class="cc-i" href="https://thesportspage.net/concepts/regression-to-the-mean.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span>. If your team finished near the bottom, it probably had some bad luck too: close losses, injuries, a bad bounce. Next year the luck evens out; your team looks better. The new coach gets the credit. He would have gotten it anyway.</p>
+
+  <p>You will find plenty of teams that beat the average. About one in seven of these 194 gained 15 points or more. Only three gained 20 or more. Next best behind Indiana was Ole Miss in 2012, at +24. Indiana sits alone at the far right.</p>
+
+  <div class="pull">
+    <p>Bad teams get better no matter who coaches them. The new coach gets the credit either way.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Was It the Transfers? Was It the School He Came From?</h2>
+
+  <p>Indiana added 30 transfers in 2024, the third most in the country. So it is tempting to say the transfer portal did it. Hold that loosely. Across 656 team-seasons from 2021 to 2025, the number of transfers a team took in barely tracked how much it improved. Lots of teams load up on transfers; almost none do what Indiana did.</p>
+
+  <p>What about James Madison? Four coaches have left James Madison for a bigger job. Each took over a 3&ndash;9 team. Two went nowhere: Everett Withers went 2&ndash;10 at Texas State, and Mike Houston went 4&ndash;8 at East Carolina in his first year. Cignetti built Indiana. And Bob Chesney, who left James Madison for UCLA, is 6&ndash;0 this fall after UCLA went 3&ndash;9 last year. That is six games, and his team&rsquo;s rating still leans on a preseason guess. Four coaches is not a pattern. It is four stories.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>When your team hires a coach after a bad year, expect it to get a little better. That part is nearly free; you get it just for having been bad. The question you should ask is: <strong>better than what a bad team does anyway?</strong> Only that extra part belongs to the coach.</p>
+
+  <p>And be careful with Indiana. One great story makes the next hire feel like the next Indiana. That is how a few famous winners make a bet look safer than it is. For every Indiana there are nearly two hundred teams that got about 3 points better. Some coaches do turn a team around. They usually take longer than a year.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p>Every major college (FBS) team that played FBS football two years in a row, 2005&ndash;06 through 2024&ndash;25: 2,512 team-seasons, 2,509 with an SP+ rating. A &ldquo;bad team&rdquo; is in the bottom third of SP+ that year; Indiana in 2023 was 42nd from the bottom of 133. A coaching change means the coach who led the most games was different from the year before. Records, ratings, coaches and transfers come from CollegeFootballData. Indiana&rsquo;s records were checked against ESPN.</p>
+    <p><strong>Limits.</strong> SP+ comes from one source, and its scale drifts a little across eras. The 2020 season was shortened by COVID. Coach histories before James Madison joined FBS in 2022 come from general records, not the same feed. UCLA&rsquo;s 2026 numbers are through October 18 and will move. We cannot see what Indiana would have done without Cignetti, so &ldquo;the coach did it&rdquo; is still a guess, just a much better one than usual.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. 207 &middot; October 21, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
