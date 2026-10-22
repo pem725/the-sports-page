@@ -1,0 +1,1986 @@
+{
+ "CFB": {
+  "n_team_games": 29688,
+  "n_games": 14844,
+  "ties": 0,
+  "mean_pts": 27.4,
+  "median_pts": 27.0,
+  "sd_pts": 14.0,
+  "logit_thresholds_score": {
+   "0.5": 26.8,
+   "0.75": 35.0,
+   "0.9": 43.1,
+   "0.95": 48.6
+  },
+  "logit": [
+   -3.6243682744487926,
+   0.13503007851225104
+  ],
+  "logit_thresholds_allow_max": {
+   "0.5": 26.8,
+   "0.75": null,
+   "0.9": null,
+   "0.95": null
+  },
+  "allow_at_most_for": {
+   "0.75": 18.7,
+   "0.9": 10.6,
+   "0.95": 5.0,
+   "0.5": 26.8
+  },
+  "empirical_score_threshold_pm1": {
+   "0.5": [
+    26,
+    1782,
+    0.536
+   ],
+   "0.75": [
+    37,
+    1829,
+    0.825
+   ],
+   "0.9": [
+    46,
+    958,
+    0.903
+   ],
+   "0.95": [
+    54,
+    312,
+    0.955
+   ]
+  },
+  "p_win_scored_exact": {
+   "0": [
+    495,
+    0.0
+   ],
+   "2": [
+    12,
+    0.0
+   ],
+   "3": [
+    545,
+    0.006
+   ],
+   "5": [
+    7,
+    0.0
+   ],
+   "6": [
+    367,
+    0.019
+   ],
+   "7": [
+    980,
+    0.012
+   ],
+   "8": [
+    30,
+    0.0
+   ],
+   "9": [
+    183,
+    0.104
+   ],
+   "10": [
+    1091,
+    0.054
+   ],
+   "11": [
+    44,
+    0.0
+   ],
+   "12": [
+    172,
+    0.134
+   ],
+   "13": [
+    877,
+    0.113
+   ],
+   "14": [
+    1330,
+    0.101
+   ],
+   "15": [
+    155,
+    0.181
+   ],
+   "16": [
+    516,
+    0.248
+   ],
+   "17": [
+    1488,
+    0.235
+   ],
+   "18": [
+    124,
+    0.25
+   ],
+   "19": [
+    351,
+    0.279
+   ],
+   "20": [
+    1183,
+    0.336
+   ],
+   "21": [
+    1257,
+    0.257
+   ],
+   "22": [
+    255,
+    0.349
+   ],
+   "23": [
+    735,
+    0.434
+   ],
+   "24": [
+    1715,
+    0.469
+   ],
+   "25": [
+    203,
+    0.394
+   ],
+   "26": [
+    412,
+    0.536
+   ],
+   "27": [
+    1167,
+    0.56
+   ],
+   "28": [
+    1150,
+    0.526
+   ],
+   "29": [
+    291,
+    0.595
+   ],
+   "30": [
+    720,
+    0.662
+   ],
+   "31": [
+    1458,
+    0.66
+   ],
+   "32": [
+    182,
+    0.495
+   ],
+   "33": [
+    366,
+    0.721
+   ],
+   "34": [
+    1012,
+    0.748
+   ],
+   "35": [
+    915,
+    0.706
+   ],
+   "36": [
+    220,
+    0.718
+   ],
+   "37": [
+    536,
+    0.823
+   ],
+   "38": [
+    1073,
+    0.848
+   ],
+   "39": [
+    151,
+    0.695
+   ],
+   "40": [
+    264,
+    0.811
+   ],
+   "41": [
+    733,
+    0.87
+   ],
+   "42": [
+    722,
+    0.871
+   ],
+   "43": [
+    155,
+    0.819
+   ],
+   "44": [
+    344,
+    0.89
+   ],
+   "45": [
+    748,
+    0.914
+   ],
+   "46": [
+    64,
+    0.766
+   ],
+   "47": [
+    146,
+    0.904
+   ],
+   "48": [
+    404,
+    0.916
+   ],
+   "49": [
+    413,
+    0.939
+   ],
+   "50": [
+    94,
+    0.83
+   ],
+   "51": [
+    169,
+    0.941
+   ],
+   "52": [
+    378,
+    0.952
+   ],
+   "53": [
+    44,
+    0.864
+   ],
+   "54": [
+    77,
+    0.974
+   ],
+   "55": [
+    191,
+    0.969
+   ],
+   "56": [
+    252,
+    0.968
+   ],
+   "57": [
+    18,
+    0.944
+   ],
+   "58": [
+    85,
+    0.988
+   ],
+   "59": [
+    168,
+    0.97
+   ],
+   "60": [
+    12,
+    0.917
+   ],
+   "61": [
+    28,
+    0.929
+   ],
+   "62": [
+    78,
+    0.987
+   ],
+   "63": [
+    114,
+    0.965
+   ],
+   "64": [
+    7,
+    1.0
+   ],
+   "65": [
+    23,
+    0.957
+   ],
+   "66": [
+    61,
+    0.967
+   ],
+   "67": [
+    6,
+    0.833
+   ],
+   "68": [
+    13,
+    0.923
+   ],
+   "69": [
+    26,
+    1.0
+   ],
+   "70": [
+    34,
+    1.0
+   ]
+  },
+  "mirror_check_sum": [
+   [
+    10,
+    1.0
+   ],
+   [
+    17,
+    1.0
+   ],
+   [
+    21,
+    1.0
+   ],
+   [
+    24,
+    1.0
+   ],
+   [
+    28,
+    1.0
+   ],
+   [
+    35,
+    1.0
+   ]
+  ],
+  "allow_le14": {
+   "n": 6133,
+   "share_of_team_games": 0.207,
+   "p_win": 0.942,
+   "p_win_given_scored_le14": 0.058
+  },
+  "allow_le7": {
+   "n": 2406,
+   "share": 0.081,
+   "p_win": 0.991
+  },
+  "allow_le10": {
+   "n": 3710,
+   "share": 0.125,
+   "p_win": 0.973
+  },
+  "allow_le17": {
+   "n": 8292,
+   "share": 0.279,
+   "p_win": 0.896
+  },
+  "allow_le20": {
+   "n": 9950,
+   "share": 0.335,
+   "p_win": 0.861
+  },
+  "le14_share_2006_10": 0.229,
+  "le14_share_2021_25": 0.207,
+  "ypp": {
+   "n_team_games": 11760,
+   "seasons": [
+    2006,
+    2025
+   ],
+   "r_ypp_allowed_vs_pts_allowed": 0.721,
+   "r2": 0.52,
+   "r_total_yards_allowed_vs_pts_allowed": 0.751,
+   "spearman_ypp": 0.733,
+   "mean_ypp_allowed": 5.48,
+   "median_ypp_when_allowed_le14": 4.1,
+   "iqr_ypp_when_allowed_le14": [
+    3.45,
+    4.69
+   ],
+   "median_ypp_when_allowed_ge28": 6.34,
+   "slope_pts_per_1ypp": 6.8,
+   "by_band": {
+    "3-4": {
+     "n": 1259,
+     "p_allow_le14": 0.677,
+     "mean_pa": 12.3
+    },
+    "4-4.5": {
+     "n": 1264,
+     "p_allow_le14": 0.457,
+     "mean_pa": 16.7
+    },
+    "4.5-5": {
+     "n": 1516,
+     "p_allow_le14": 0.284,
+     "mean_pa": 20.8
+    },
+    "5-5.5": {
+     "n": 1718,
+     "p_allow_le14": 0.144,
+     "mean_pa": 24.7
+    },
+    "5.5-6": {
+     "n": 1608,
+     "p_allow_le14": 0.067,
+     "mean_pa": 28.3
+    },
+    "6-6.5": {
+     "n": 1364,
+     "p_allow_le14": 0.033,
+     "mean_pa": 32.2
+    },
+    "6.5-7": {
+     "n": 1000,
+     "p_allow_le14": 0.011,
+     "mean_pa": 36.1
+    },
+    "7-8": {
+     "n": 1094,
+     "p_allow_le14": 0.002,
+     "mean_pa": 40.7
+    },
+    "8-20": {
+     "n": 559,
+     "p_allow_le14": 0.0,
+     "mean_pa": 48.0
+    },
+    "<3": {
+     "n": 378,
+     "p_allow_le14": 0.854,
+     "mean_pa": 8.2
+    }
+   }
+  },
+  "n_team_seasons": 2483,
+  "sd_ppg": 7.22,
+  "sd_papg": 6.95,
+  "corr_ppg_papg": -0.293,
+  "pythag_exponent": 2.46,
+  "pythag_rmse_winpct": 0.092,
+  "ols_wp_on_off_def": {
+   "b_off_per_ppg": 0.019,
+   "b_def_per_ppg": 0.0187,
+   "se_off": 0.0003,
+   "se_def": 0.0003,
+   "diff_def_minus_off": -0.0003,
+   "se_diff": 0.0005
+  },
+  "ols_wp_on_margin_total": {
+   "b_margin": 0.0189,
+   "b_total": 0.0002,
+   "se_total": 0.0002
+  },
+  "matched_margin": {
+   "bin_width_ppg": 2.0,
+   "weighted_mean_diff_def_minus_off": -0.004,
+   "bins": [
+    {
+     "margin_bin": [
+      -26.0,
+      -24.0
+     ],
+     "n_def_led": 10,
+     "wp_def_led": 0.017,
+     "n_off_led": 10,
+     "wp_off_led": 0.067
+    },
+    {
+     "margin_bin": [
+      -24.0,
+      -22.0
+     ],
+     "n_def_led": 12,
+     "wp_def_led": 0.095,
+     "n_off_led": 11,
+     "wp_off_led": 0.098
+    },
+    {
+     "margin_bin": [
+      -22.0,
+      -20.0
+     ],
+     "n_def_led": 11,
+     "wp_def_led": 0.105,
+     "n_off_led": 16,
+     "wp_off_led": 0.129
+    },
+    {
+     "margin_bin": [
+      -20.0,
+      -18.0
+     ],
+     "n_def_led": 20,
+     "wp_def_led": 0.124,
+     "n_off_led": 22,
+     "wp_off_led": 0.136
+    },
+    {
+     "margin_bin": [
+      -18.0,
+      -16.0
+     ],
+     "n_def_led": 27,
+     "wp_def_led": 0.156,
+     "n_off_led": 36,
+     "wp_off_led": 0.155
+    },
+    {
+     "margin_bin": [
+      -16.0,
+      -14.0
+     ],
+     "n_def_led": 37,
+     "wp_def_led": 0.168,
+     "n_off_led": 35,
+     "wp_off_led": 0.209
+    },
+    {
+     "margin_bin": [
+      -14.0,
+      -12.0
+     ],
+     "n_def_led": 46,
+     "wp_def_led": 0.245,
+     "n_off_led": 57,
+     "wp_off_led": 0.247
+    },
+    {
+     "margin_bin": [
+      -12.0,
+      -10.0
+     ],
+     "n_def_led": 55,
+     "wp_def_led": 0.262,
+     "n_off_led": 48,
+     "wp_off_led": 0.253
+    },
+    {
+     "margin_bin": [
+      -10.0,
+      -8.0
+     ],
+     "n_def_led": 80,
+     "wp_def_led": 0.299,
+     "n_off_led": 56,
+     "wp_off_led": 0.323
+    },
+    {
+     "margin_bin": [
+      -8.0,
+      -6.0
+     ],
+     "n_def_led": 76,
+     "wp_def_led": 0.331,
+     "n_off_led": 55,
+     "wp_off_led": 0.359
+    },
+    {
+     "margin_bin": [
+      -6.0,
+      -4.0
+     ],
+     "n_def_led": 60,
+     "wp_def_led": 0.371,
+     "n_off_led": 84,
+     "wp_off_led": 0.4
+    },
+    {
+     "margin_bin": [
+      -4.0,
+      -2.0
+     ],
+     "n_def_led": 78,
+     "wp_def_led": 0.429,
+     "n_off_led": 76,
+     "wp_off_led": 0.439
+    },
+    {
+     "margin_bin": [
+      -2.0,
+      0.0
+     ],
+     "n_def_led": 94,
+     "wp_def_led": 0.477,
+     "n_off_led": 72,
+     "wp_off_led": 0.499
+    },
+    {
+     "margin_bin": [
+      0.0,
+      2.0
+     ],
+     "n_def_led": 78,
+     "wp_def_led": 0.517,
+     "n_off_led": 85,
+     "wp_off_led": 0.511
+    },
+    {
+     "margin_bin": [
+      2.0,
+      4.0
+     ],
+     "n_def_led": 111,
+     "wp_def_led": 0.56,
+     "n_off_led": 80,
+     "wp_off_led": 0.561
+    },
+    {
+     "margin_bin": [
+      4.0,
+      6.0
+     ],
+     "n_def_led": 95,
+     "wp_def_led": 0.623,
+     "n_off_led": 74,
+     "wp_off_led": 0.609
+    },
+    {
+     "margin_bin": [
+      6.0,
+      8.0
+     ],
+     "n_def_led": 83,
+     "wp_def_led": 0.665,
+     "n_off_led": 68,
+     "wp_off_led": 0.65
+    },
+    {
+     "margin_bin": [
+      8.0,
+      10.0
+     ],
+     "n_def_led": 71,
+     "wp_def_led": 0.702,
+     "n_off_led": 54,
+     "wp_off_led": 0.674
+    },
+    {
+     "margin_bin": [
+      10.0,
+      12.0
+     ],
+     "n_def_led": 45,
+     "wp_def_led": 0.736,
+     "n_off_led": 52,
+     "wp_off_led": 0.734
+    },
+    {
+     "margin_bin": [
+      12.0,
+      14.0
+     ],
+     "n_def_led": 48,
+     "wp_def_led": 0.756,
+     "n_off_led": 56,
+     "wp_off_led": 0.74
+    },
+    {
+     "margin_bin": [
+      14.0,
+      16.0
+     ],
+     "n_def_led": 28,
+     "wp_def_led": 0.788,
+     "n_off_led": 48,
+     "wp_off_led": 0.808
+    },
+    {
+     "margin_bin": [
+      16.0,
+      18.0
+     ],
+     "n_def_led": 19,
+     "wp_def_led": 0.855,
+     "n_off_led": 23,
+     "wp_off_led": 0.83
+    },
+    {
+     "margin_bin": [
+      18.0,
+      20.0
+     ],
+     "n_def_led": 17,
+     "wp_def_led": 0.853,
+     "n_off_led": 23,
+     "wp_off_led": 0.839
+    },
+    {
+     "margin_bin": [
+      20.0,
+      22.0
+     ],
+     "n_def_led": 13,
+     "wp_def_led": 0.902,
+     "n_off_led": 21,
+     "wp_off_led": 0.889
+    }
+   ]
+  },
+  "weak_offense_bottom25": {
+   "n": 621,
+   "mean_wp": 0.258,
+   "share_wp_ge_0.75": 0.006,
+   "share_winning": 0.072
+  },
+  "weak_defense_bottom25": {
+   "n": 622,
+   "mean_wp": 0.264,
+   "share_wp_ge_0.75": 0.005,
+   "share_winning": 0.08
+  },
+  "weak_off_with_top10_def": {
+   "n": 23,
+   "mean_wp": 0.581,
+   "share_wp_ge_0.75": 0.174,
+   "share_winning": 0.609
+  },
+  "weak_def_with_top10_off": {
+   "n": 27,
+   "mean_wp": 0.592,
+   "share_wp_ge_0.75": 0.111,
+   "share_winning": 0.815
+  },
+  "top10pct_wp_teams": {
+   "n": 306,
+   "share_below_median_offense": 0.039,
+   "share_below_median_defense": 0.052
+  },
+  "ols_wp_on_percentile_ranks": {
+   "b_off_pctile": 0.48,
+   "b_def_pctile": 0.449
+  },
+  "box_coverage": 0.396,
+  "box_coverage_by_season": {
+   "2006": 0.993,
+   "2007": 0.996,
+   "2008": 1.0,
+   "2009": 1.0,
+   "2010": 1.0,
+   "2011": 0.99,
+   "2012": 0.0,
+   "2013": 0.0,
+   "2014": 0.0,
+   "2015": 0.0,
+   "2016": 0.0,
+   "2017": 0.0,
+   "2018": 0.0,
+   "2019": 0.0,
+   "2020": 0.0,
+   "2021": 0.0,
+   "2022": 0.0,
+   "2023": 0.0,
+   "2024": 1.0,
+   "2025": 0.999
+  },
+  "hold_everyone_le14": {
+   "team_seasons": 2483,
+   "seasons_all_games_le14": 1,
+   "examples": [
+    [
+     2011,
+     "Alabama"
+    ]
+   ],
+   "median_team_share_games_le14": 0.182,
+   "p90_team_share": 0.455
+  },
+  "p_win_allowed_exactly_14": [
+   1330,
+   0.899
+  ],
+  "p_win_allowed_exactly_15": [
+   155,
+   0.819
+  ],
+  "p_win_allowed_exactly_17": [
+   1488,
+   0.765
+  ],
+  "thresholds_window": {
+   "2006-2025": {
+    "n_team_games": 29688,
+    "mean_pts": 27.4,
+    "score_for": {
+     "0.5": [
+      25.5,
+      4647
+     ],
+     "0.75": [
+      35.2,
+      3756
+     ],
+     "0.9": [
+      45.7,
+      1706
+     ],
+     "0.95": [
+      52.9,
+      859
+     ]
+    },
+    "allow_at_most": {
+     "0.5": [
+      25.5,
+      4232
+     ],
+     "0.75": [
+      17.3,
+      2634
+     ],
+     "0.9": [
+      12.5,
+      3514
+     ],
+     "0.95": [
+      9.4,
+      2328
+     ]
+    },
+    "p_win_allow_le14": 0.942,
+    "share_allow_le14": 0.207
+   },
+   "2006-2010": {
+    "n_team_games": 7150,
+    "mean_pts": 26.2,
+    "score_for": {
+     "0.5": [
+      23.9,
+      805
+     ],
+     "0.75": [
+      34.4,
+      709
+     ],
+     "0.9": [
+      42.7,
+      585
+     ],
+     "0.95": [
+      52.3,
+      184
+     ]
+    },
+    "allow_at_most": {
+     "0.5": [
+      23.9,
+      1010
+     ],
+     "0.75": [
+      16.4,
+      937
+     ],
+     "0.9": [
+      11.7,
+      627
+     ],
+     "0.95": [
+      9.3,
+      622
+     ]
+    },
+    "p_win_allow_le14": 0.934,
+    "share_allow_le14": 0.229
+   },
+   "2021-2025": {
+    "n_team_games": 7888,
+    "mean_pts": 26.9,
+    "score_for": {
+     "0.5": [
+      24.5,
+      1182
+     ],
+     "0.75": [
+      35.1,
+      996
+     ],
+     "0.9": [
+      43.0,
+      722
+     ],
+     "0.95": [
+      51.1,
+      165
+     ]
+    },
+    "allow_at_most": {
+     "0.5": [
+      24.5,
+      925
+     ],
+     "0.75": [
+      17.6,
+      702
+     ],
+     "0.9": [
+      12.9,
+      965
+     ],
+     "0.95": [
+      9.8,
+      633
+     ]
+    },
+    "p_win_allow_le14": 0.946,
+    "share_allow_le14": 0.207
+   },
+   "season": {
+    "bottom25_off": {
+     "n": 621,
+     "mean_wp": 0.258,
+     "winning_record": 45,
+     "share_winning": 0.072,
+     "ci95": [
+      0.055,
+      0.096
+     ],
+     "wp_ge_75": 4,
+     "share_ge_75": 0.006,
+     "ci95_75": [
+      0.003,
+      0.016
+     ]
+    },
+    "bottom25_def": {
+     "n": 622,
+     "mean_wp": 0.264,
+     "winning_record": 50,
+     "share_winning": 0.08,
+     "ci95": [
+      0.062,
+      0.104
+     ],
+     "wp_ge_75": 3,
+     "share_ge_75": 0.005,
+     "ci95_75": [
+      0.002,
+      0.014
+     ]
+    },
+    "bottomhalf_off_top25_def": {
+     "n": 229,
+     "mean_wp": 0.594,
+     "winning_record": 166,
+     "share_winning": 0.725,
+     "ci95": [
+      0.664,
+      0.779
+     ],
+     "wp_ge_75": 30,
+     "share_ge_75": 0.131,
+     "ci95_75": [
+      0.093,
+      0.181
+     ]
+    },
+    "bottomhalf_def_top25_off": {
+     "n": 217,
+     "mean_wp": 0.584,
+     "winning_record": 153,
+     "share_winning": 0.705,
+     "ci95": [
+      0.641,
+      0.762
+     ],
+     "wp_ge_75": 28,
+     "share_ge_75": 0.129,
+     "ci95_75": [
+      0.091,
+      0.18
+     ]
+    },
+    "matched_margin_extreme_quintiles": {
+     "def_led_lowest_total_quintile_n": 497,
+     "off_led_highest_total_quintile_n": 497,
+     "mean_resid_def_led": -0.0033,
+     "mean_resid_off_led": 0.003,
+     "diff_def_minus_off_winpct": -0.0063,
+     "ci95": [
+      -0.018,
+      0.0049
+     ],
+     "games_per_season_equiv": "diff x games"
+    },
+    "mean_games": 11.2,
+    "sd_off_ppg": 7.22,
+    "sd_def_ppg": 6.95
+   }
+  },
+  "ypp_split": {
+   "CFB 2006-2011": {
+    "n": 8550,
+    "r_ypp_pts": 0.714,
+    "r_yards_pts": 0.744,
+    "r_plays_pts": 0.31,
+    "mean_ypp": 5.42,
+    "mean_plays": 68.2,
+    "median_ypp_le14": 4.08,
+    "p_le14_given_ypp_lt4": 0.706,
+    "n_ypp_lt4": 1274,
+    "p_le14_given_ypp_ge6": 0.013,
+    "n_ypp_ge6": 2800,
+    "slope_pts_per_ypp": 6.8,
+    "R_ypp_plus_plays": 0.75
+   },
+   "CFB 2024-2025": {
+    "n": 3210,
+    "r_ypp_pts": 0.747,
+    "r_yards_pts": 0.775,
+    "r_plays_pts": 0.254,
+    "mean_ypp": 5.65,
+    "mean_plays": 66.8,
+    "median_ypp_le14": 4.16,
+    "p_le14_given_ypp_lt4": 0.76,
+    "n_ypp_lt4": 363,
+    "p_le14_given_ypp_ge6": 0.018,
+    "n_ypp_ge6": 1217,
+    "slope_pts_per_ypp": 6.9,
+    "R_ypp_plus_plays": 0.786
+   }
+  }
+ },
+ "NFL": {
+  "n_team_games": 10398,
+  "n_games": 5199,
+  "ties": 28,
+  "mean_pts": 22.5,
+  "median_pts": 22.0,
+  "sd_pts": 10.2,
+  "logit_thresholds_score": {
+   "0.5": 22.3,
+   "0.75": 28.8,
+   "0.9": 35.3,
+   "0.95": 39.8
+  },
+  "logit": [
+   -3.7413133123580713,
+   0.16805837744158986
+  ],
+  "logit_thresholds_allow_max": {
+   "0.5": 22.3,
+   "0.75": null,
+   "0.9": null,
+   "0.95": null
+  },
+  "allow_at_most_for": {
+   "0.75": 15.7,
+   "0.9": 9.2,
+   "0.95": 4.7,
+   "0.5": 22.3
+  },
+  "empirical_score_threshold_pm1": {
+   "0.5": [
+    22,
+    1022,
+    0.509
+   ],
+   "0.75": [
+    30,
+    932,
+    0.793
+   ],
+   "0.9": [
+    37,
+    458,
+    0.913
+   ],
+   "0.95": [
+    43,
+    151,
+    0.96
+   ]
+  },
+  "p_win_scored_exact": {
+   "0": [
+    123,
+    0.0
+   ],
+   "2": [
+    2,
+    0.0
+   ],
+   "3": [
+    202,
+    0.01
+   ],
+   "5": [
+    3,
+    0.0
+   ],
+   "6": [
+    191,
+    0.037
+   ],
+   "7": [
+    261,
+    0.019
+   ],
+   "8": [
+    18,
+    0.056
+   ],
+   "9": [
+    163,
+    0.11
+   ],
+   "10": [
+    510,
+    0.063
+   ],
+   "11": [
+    32,
+    0.094
+   ],
+   "12": [
+    99,
+    0.212
+   ],
+   "13": [
+    462,
+    0.201
+   ],
+   "14": [
+    357,
+    0.12
+   ],
+   "15": [
+    96,
+    0.26
+   ],
+   "16": [
+    387,
+    0.336
+   ],
+   "17": [
+    693,
+    0.266
+   ],
+   "18": [
+    90,
+    0.344
+   ],
+   "19": [
+    264,
+    0.515
+   ],
+   "20": [
+    732,
+    0.444
+   ],
+   "21": [
+    348,
+    0.348
+   ],
+   "22": [
+    189,
+    0.497
+   ],
+   "23": [
+    485,
+    0.629
+   ],
+   "24": [
+    662,
+    0.554
+   ],
+   "25": [
+    124,
+    0.597
+   ],
+   "26": [
+    273,
+    0.758
+   ],
+   "27": [
+    604,
+    0.728
+   ],
+   "28": [
+    292,
+    0.63
+   ],
+   "29": [
+    137,
+    0.737
+   ],
+   "30": [
+    340,
+    0.815
+   ],
+   "31": [
+    455,
+    0.793
+   ],
+   "32": [
+    73,
+    0.603
+   ],
+   "33": [
+    161,
+    0.845
+   ],
+   "34": [
+    363,
+    0.882
+   ],
+   "35": [
+    156,
+    0.821
+   ],
+   "36": [
+    72,
+    0.903
+   ],
+   "37": [
+    157,
+    0.93
+   ],
+   "38": [
+    229,
+    0.904
+   ],
+   "39": [
+    27,
+    0.889
+   ],
+   "40": [
+    66,
+    0.924
+   ],
+   "41": [
+    127,
+    0.945
+   ],
+   "42": [
+    76,
+    0.921
+   ],
+   "43": [
+    29,
+    1.0
+   ],
+   "44": [
+    46,
+    1.0
+   ],
+   "45": [
+    64,
+    0.969
+   ],
+   "46": [
+    8,
+    0.875
+   ],
+   "47": [
+    19,
+    1.0
+   ],
+   "48": [
+    43,
+    0.977
+   ],
+   "49": [
+    23,
+    0.957
+   ],
+   "50": [
+    2,
+    1.0
+   ],
+   "51": [
+    19,
+    0.947
+   ],
+   "52": [
+    13,
+    1.0
+   ],
+   "53": [
+    2,
+    1.0
+   ],
+   "54": [
+    6,
+    1.0
+   ],
+   "55": [
+    5,
+    1.0
+   ],
+   "56": [
+    8,
+    1.0
+   ],
+   "57": [
+    1,
+    1.0
+   ],
+   "58": [
+    1,
+    1.0
+   ],
+   "59": [
+    5,
+    1.0
+   ],
+   "62": [
+    1,
+    1.0
+   ],
+   "63": [
+    1,
+    1.0
+   ],
+   "70": [
+    1,
+    1.0
+   ]
+  },
+  "mirror_check_sum": [
+   [
+    10,
+    1.0
+   ],
+   [
+    17,
+    1.0
+   ],
+   [
+    21,
+    1.0
+   ],
+   [
+    24,
+    1.0
+   ],
+   [
+    28,
+    1.0
+   ],
+   [
+    35,
+    1.0
+   ]
+  ],
+  "allow_le14": {
+   "n": 2423,
+   "share_of_team_games": 0.233,
+   "p_win": 0.907,
+   "p_win_given_scored_le14": 0.093
+  },
+  "allow_le7": {
+   "n": 782,
+   "share": 0.075,
+   "p_win": 0.982
+  },
+  "allow_le10": {
+   "n": 1473,
+   "share": 0.142,
+   "p_win": 0.956
+  },
+  "allow_le17": {
+   "n": 3599,
+   "share": 0.346,
+   "p_win": 0.843
+  },
+  "allow_le20": {
+   "n": 4685,
+   "share": 0.451,
+   "p_win": 0.775
+  },
+  "le14_share_2006_10": 0.284,
+  "le14_share_2021_25": 0.217,
+  "ypp": {
+   "n_team_games": 10398,
+   "seasons": [
+    2006,
+    2025
+   ],
+   "r_ypp_allowed_vs_pts_allowed": 0.624,
+   "r2": 0.39,
+   "r_total_yards_allowed_vs_pts_allowed": 0.639,
+   "spearman_ypp": 0.615,
+   "mean_ypp_allowed": 5.36,
+   "median_ypp_when_allowed_le14": 4.37,
+   "iqr_ypp_when_allowed_le14": [
+    3.81,
+    4.96
+   ],
+   "median_ypp_when_allowed_ge28": 6.17,
+   "slope_pts_per_1ypp": 5.5,
+   "by_band": {
+    "3-4": {
+     "n": 991,
+     "p_allow_le14": 0.65,
+     "mean_pa": 12.7
+    },
+    "4-4.5": {
+     "n": 1212,
+     "p_allow_le14": 0.477,
+     "mean_pa": 16.1
+    },
+    "4.5-5": {
+     "n": 1643,
+     "p_allow_le14": 0.292,
+     "mean_pa": 19.1
+    },
+    "5-5.5": {
+     "n": 1855,
+     "p_allow_le14": 0.192,
+     "mean_pa": 21.7
+    },
+    "5.5-6": {
+     "n": 1625,
+     "p_allow_le14": 0.089,
+     "mean_pa": 25.0
+    },
+    "6-6.5": {
+     "n": 1280,
+     "p_allow_le14": 0.04,
+     "mean_pa": 28.0
+    },
+    "6.5-7": {
+     "n": 803,
+     "p_allow_le14": 0.03,
+     "mean_pa": 29.8
+    },
+    "7-8": {
+     "n": 670,
+     "p_allow_le14": 0.009,
+     "mean_pa": 33.4
+    },
+    "8-20": {
+     "n": 166,
+     "p_allow_le14": 0.006,
+     "mean_pa": 37.6
+    },
+    "<3": {
+     "n": 153,
+     "p_allow_le14": 0.908,
+     "mean_pa": 6.5
+    }
+   }
+  },
+  "n_team_seasons": 640,
+  "sd_ppg": 4.34,
+  "sd_papg": 3.4,
+  "corr_ppg_papg": -0.24,
+  "pythag_exponent": 2.72,
+  "pythag_rmse_winpct": 0.081,
+  "ols_wp_on_off_def": {
+   "b_off_per_ppg": 0.0277,
+   "b_def_per_ppg": 0.0282,
+   "se_off": 0.0008,
+   "se_def": 0.001,
+   "diff_def_minus_off": 0.0004,
+   "se_diff": 0.0014
+  },
+  "ols_wp_on_margin_total": {
+   "b_margin": 0.028,
+   "b_total": -0.0002,
+   "se_total": 0.0007
+  },
+  "matched_margin": {
+   "bin_width_ppg": 1.0,
+   "weighted_mean_diff_def_minus_off": 0.0007,
+   "bins": [
+    {
+     "margin_bin": [
+      -9.0,
+      -8.0
+     ],
+     "n_def_led": 12,
+     "wp_def_led": 0.245,
+     "n_off_led": 10,
+     "wp_off_led": 0.257
+    },
+    {
+     "margin_bin": [
+      -6.0,
+      -5.0
+     ],
+     "n_def_led": 17,
+     "wp_def_led": 0.345,
+     "n_off_led": 10,
+     "wp_off_led": 0.308
+    },
+    {
+     "margin_bin": [
+      -5.0,
+      -4.0
+     ],
+     "n_def_led": 21,
+     "wp_def_led": 0.358,
+     "n_off_led": 17,
+     "wp_off_led": 0.385
+    },
+    {
+     "margin_bin": [
+      -3.0,
+      -2.0
+     ],
+     "n_def_led": 14,
+     "wp_def_led": 0.451,
+     "n_off_led": 21,
+     "wp_off_led": 0.426
+    },
+    {
+     "margin_bin": [
+      -2.0,
+      -1.0
+     ],
+     "n_def_led": 23,
+     "wp_def_led": 0.463,
+     "n_off_led": 19,
+     "wp_off_led": 0.456
+    },
+    {
+     "margin_bin": [
+      -1.0,
+      0.0
+     ],
+     "n_def_led": 15,
+     "wp_def_led": 0.461,
+     "n_off_led": 20,
+     "wp_off_led": 0.505
+    },
+    {
+     "margin_bin": [
+      0.0,
+      1.0
+     ],
+     "n_def_led": 22,
+     "wp_def_led": 0.528,
+     "n_off_led": 18,
+     "wp_off_led": 0.535
+    },
+    {
+     "margin_bin": [
+      1.0,
+      2.0
+     ],
+     "n_def_led": 27,
+     "wp_def_led": 0.552,
+     "n_off_led": 17,
+     "wp_off_led": 0.545
+    },
+    {
+     "margin_bin": [
+      2.0,
+      3.0
+     ],
+     "n_def_led": 12,
+     "wp_def_led": 0.563,
+     "n_off_led": 14,
+     "wp_off_led": 0.557
+    },
+    {
+     "margin_bin": [
+      3.0,
+      4.0
+     ],
+     "n_def_led": 16,
+     "wp_def_led": 0.661,
+     "n_off_led": 16,
+     "wp_off_led": 0.598
+    },
+    {
+     "margin_bin": [
+      4.0,
+      5.0
+     ],
+     "n_def_led": 13,
+     "wp_def_led": 0.634,
+     "n_off_led": 15,
+     "wp_off_led": 0.617
+    },
+    {
+     "margin_bin": [
+      6.0,
+      7.0
+     ],
+     "n_def_led": 13,
+     "wp_def_led": 0.648,
+     "n_off_led": 15,
+     "wp_off_led": 0.722
+    },
+    {
+     "margin_bin": [
+      7.0,
+      8.0
+     ],
+     "n_def_led": 12,
+     "wp_def_led": 0.721,
+     "n_off_led": 11,
+     "wp_off_led": 0.702
+    }
+   ]
+  },
+  "weak_offense_bottom25": {
+   "n": 161,
+   "mean_wp": 0.304,
+   "share_wp_ge_0.75": 0,
+   "share_winning": 0.043
+  },
+  "weak_defense_bottom25": {
+   "n": 160,
+   "mean_wp": 0.319,
+   "share_wp_ge_0.75": 0.013,
+   "share_winning": 0.087
+  },
+  "weak_off_with_top10_def": {
+   "n": 3,
+   "mean_wp": 0.625,
+   "share_wp_ge_0.75": 0,
+   "share_winning": 1
+  },
+  "weak_def_with_top10_off": {
+   "n": 8,
+   "mean_wp": 0.57,
+   "share_wp_ge_0.75": 0.125,
+   "share_winning": 0.5
+  },
+  "top10pct_wp_teams": {
+   "n": 90,
+   "share_below_median_offense": 0.056,
+   "share_below_median_defense": 0.1
+  },
+  "ols_wp_on_percentile_ranks": {
+   "b_off_pctile": 0.409,
+   "b_def_pctile": 0.328
+  },
+  "hold_everyone_le14": {
+   "team_seasons": 640,
+   "seasons_all_games_le14": 0,
+   "examples": [],
+   "median_team_share_games_le14": 0.235,
+   "p90_team_share": 0.412
+  },
+  "p_win_allowed_exactly_14": [
+   357,
+   0.88
+  ],
+  "p_win_allowed_exactly_15": [
+   96,
+   0.74
+  ],
+  "p_win_allowed_exactly_17": [
+   693,
+   0.734
+  ],
+  "thresholds_window": {
+   "2006-2025": {
+    "n_team_games": 10398,
+    "mean_pts": 22.5,
+    "score_for": {
+     "0.5": [
+      21.9,
+      2416
+     ],
+     "0.75": [
+      30.1,
+      1166
+     ],
+     "0.9": [
+      37.5,
+      551
+     ],
+     "0.95": [
+      42.3,
+      342
+     ]
+    },
+    "allow_at_most": {
+     "0.5": [
+      21.9,
+      2018
+     ],
+     "0.75": [
+      15.7,
+      1995
+     ],
+     "0.9": [
+      10.2,
+      822
+     ],
+     "0.95": [
+      7.2,
+      636
+     ]
+    },
+    "p_win_allow_le14": 0.907,
+    "share_allow_le14": 0.233
+   },
+   "2006-2010": {
+    "n_team_games": 2560,
+    "mean_pts": 21.6,
+    "score_for": {
+     "0.5": [
+      20.8,
+      463
+     ],
+     "0.75": [
+      28.9,
+      422
+     ],
+     "0.9": [
+      34.1,
+      218
+     ],
+     "0.95": [
+      39.7,
+      124
+     ]
+    },
+    "allow_at_most": {
+     "0.5": [
+      20.8,
+      372
+     ],
+     "0.75": [
+      13.5,
+      294
+     ],
+     "0.9": [
+      9.3,
+      297
+     ],
+     "0.95": [
+      6.7,
+      157
+     ]
+    },
+    "p_win_allow_le14": 0.882,
+    "share_allow_le14": 0.284
+   },
+   "2021-2025": {
+    "n_team_games": 2718,
+    "mean_pts": 22.5,
+    "score_for": {
+     "0.5": [
+      21.2,
+      629
+     ],
+     "0.75": [
+      29.0,
+      488
+     ],
+     "0.9": [
+      38.2,
+      158
+     ],
+     "0.95": [
+      44.6,
+      45
+     ]
+    },
+    "allow_at_most": {
+     "0.5": [
+      21.2,
+      558
+     ],
+     "0.75": [
+      16.3,
+      425
+     ],
+     "0.9": [
+      10.4,
+      233
+     ],
+     "0.95": [
+      7.8,
+      148
+     ]
+    },
+    "p_win_allow_le14": 0.912,
+    "share_allow_le14": 0.217
+   },
+   "season": {
+    "bottom25_off": {
+     "n": 161,
+     "mean_wp": 0.304,
+     "winning_record": 7,
+     "share_winning": 0.043,
+     "ci95": [
+      0.021,
+      0.087
+     ],
+     "wp_ge_75": 0,
+     "share_ge_75": 0.0,
+     "ci95_75": [
+      0.0,
+      0.023
+     ]
+    },
+    "bottom25_def": {
+     "n": 160,
+     "mean_wp": 0.319,
+     "winning_record": 14,
+     "share_winning": 0.087,
+     "ci95": [
+      0.053,
+      0.142
+     ],
+     "wp_ge_75": 2,
+     "share_ge_75": 0.013,
+     "ci95_75": [
+      0.003,
+      0.044
+     ]
+    },
+    "bottomhalf_off_top25_def": {
+     "n": 52,
+     "mean_wp": 0.546,
+     "winning_record": 29,
+     "share_winning": 0.558,
+     "ci95": [
+      0.423,
+      0.684
+     ],
+     "wp_ge_75": 5,
+     "share_ge_75": 0.096,
+     "ci95_75": [
+      0.042,
+      0.206
+     ]
+    },
+    "bottomhalf_def_top25_off": {
+     "n": 50,
+     "mean_wp": 0.6,
+     "winning_record": 34,
+     "share_winning": 0.68,
+     "ci95": [
+      0.542,
+      0.792
+     ],
+     "wp_ge_75": 9,
+     "share_ge_75": 0.18,
+     "ci95_75": [
+      0.098,
+      0.308
+     ]
+    },
+    "matched_margin_extreme_quintiles": {
+     "def_led_lowest_total_quintile_n": 128,
+     "off_led_highest_total_quintile_n": 128,
+     "mean_resid_def_led": 0.0056,
+     "mean_resid_off_led": 0.0101,
+     "diff_def_minus_off_winpct": -0.0045,
+     "ci95": [
+      -0.0234,
+      0.0135
+     ],
+     "games_per_season_equiv": "diff x games"
+    },
+    "mean_games": 16.2,
+    "sd_off_ppg": 4.34,
+    "sd_def_ppg": 3.4
+   }
+  },
+  "ypp_split": {
+   "NFL 2006-2025": {
+    "n": 10398,
+    "r_ypp_pts": 0.624,
+    "r_yards_pts": 0.639,
+    "r_plays_pts": 0.23,
+    "mean_ypp": 5.36,
+    "mean_plays": 63.4,
+    "median_ypp_le14": 4.37,
+    "p_le14_given_ypp_lt4": 0.684,
+    "n_ypp_lt4": 1144,
+    "p_le14_given_ypp_ge6": 0.028,
+    "n_ypp_ge6": 2919,
+    "slope_pts_per_ypp": 5.5,
+    "R_ypp_plus_plays": 0.656
+   },
+   "NFL 2006-2011": {
+    "n": 3072,
+    "r_ypp_pts": 0.624,
+    "r_yards_pts": 0.634,
+    "r_plays_pts": 0.232,
+    "mean_ypp": 5.27,
+    "mean_plays": 62.9,
+    "median_ypp_le14": 4.33,
+    "p_le14_given_ypp_lt4": 0.716,
+    "n_ypp_lt4": 395,
+    "p_le14_given_ypp_ge6": 0.032,
+    "n_ypp_ge6": 785,
+    "slope_pts_per_ypp": 5.7,
+    "R_ypp_plus_plays": 0.651
+   },
+   "NFL 2024-2025": {
+    "n": 1088,
+    "r_ypp_pts": 0.67,
+    "r_yards_pts": 0.663,
+    "r_plays_pts": 0.218,
+    "mean_ypp": 5.35,
+    "mean_plays": 61.9,
+    "median_ypp_le14": 4.3,
+    "p_le14_given_ypp_lt4": 0.669,
+    "n_ypp_lt4": 133,
+    "p_le14_given_ypp_ge6": 0.013,
+    "n_ypp_ge6": 299,
+    "slope_pts_per_ypp": 5.7,
+    "R_ypp_plus_plays": 0.691
+   }
+  }
+ },
+ "validation": {
+  "espn_crosscheck": {
+   "team_scores_checked": 3550,
+   "mismatches": [
+    [
+     401677085,
+     "Coastal Carolina Chanticleers",
+     "15",
+     44
+    ],
+    [
+     401677085,
+     "UTSA Roadrunners",
+     "44",
+     15
+    ],
+    [
+     401677093,
+     "Texas A&M Aggies",
+     "31",
+     35
+    ],
+    [
+     401677093,
+     "USC Trojans",
+     "35",
+     31
+    ]
+   ],
+   "n_mismatch": 4
+  },
+  "note": "1,775 FBS-vs-FBS games (2011 wk12+, 2024, 2025) cross-checked team-by-team vs ESPN summary: 0 score errors; 2 games (2024 Myrtle Beach Bowl, 2024 Las Vegas Bowl) have home/away labels swapped between sources, scores identical.",
+  "spot_checks": [
+   [
+    "2006 Fiesta Bowl",
+    "Boise State 43, Oklahoma 42",
+    "match"
+   ],
+   [
+    "2013 Iron Bowl",
+    "Auburn 34, Alabama 28",
+    "match"
+   ],
+   [
+    "2019 CFP final",
+    "LSU 42, Clemson 25",
+    "match"
+   ]
+  ]
+ },
+ "data_notes": {
+  "cfb_games": "CFBD /games 2006-2025 regular+postseason, both teams classification fbs, completed",
+  "cfb_box": "CFBD /games/teams 2006 through 2011 week 11; CFBD monthly quota exhausted mid-pull (X-CallLimit-Remaining 0); filled 2011 remainder + 2024 + 2025 from ESPN summary API. 2012-2023 box scores NOT pulled.",
+  "cfb_plays": "rushingAttempts + pass attempts (college counts sacks as rushes, so sacks included)",
+  "nfl": "data/nfl/team-games.csv (nflverse-derived, scrimmage plays incl. sacks), 2006-2025, REG+POST for per-game; REG only for team-seasons; ties = 0.5 win",
+  "season_level": "regular season only; CFB team-season requires >=8 FBS-vs-FBS games; PPG/PAPG over FBS opponents only, centered on each season's mean"
+ }
+}

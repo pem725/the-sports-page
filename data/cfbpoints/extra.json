@@ -1,0 +1,420 @@
+{
+ "CFB": {
+  "2006-2025": {
+   "n_team_games": 29688,
+   "mean_pts": 27.4,
+   "score_for": {
+    "0.5": [
+     25.5,
+     4647
+    ],
+    "0.75": [
+     35.2,
+     3756
+    ],
+    "0.9": [
+     45.7,
+     1706
+    ],
+    "0.95": [
+     52.9,
+     859
+    ]
+   },
+   "allow_at_most": {
+    "0.5": [
+     25.5,
+     4232
+    ],
+    "0.75": [
+     17.3,
+     2634
+    ],
+    "0.9": [
+     12.5,
+     3514
+    ],
+    "0.95": [
+     9.4,
+     2328
+    ]
+   },
+   "p_win_allow_le14": 0.942,
+   "share_allow_le14": 0.207
+  },
+  "2006-2010": {
+   "n_team_games": 7150,
+   "mean_pts": 26.2,
+   "score_for": {
+    "0.5": [
+     23.9,
+     805
+    ],
+    "0.75": [
+     34.4,
+     709
+    ],
+    "0.9": [
+     42.7,
+     585
+    ],
+    "0.95": [
+     52.3,
+     184
+    ]
+   },
+   "allow_at_most": {
+    "0.5": [
+     23.9,
+     1010
+    ],
+    "0.75": [
+     16.4,
+     937
+    ],
+    "0.9": [
+     11.7,
+     627
+    ],
+    "0.95": [
+     9.3,
+     622
+    ]
+   },
+   "p_win_allow_le14": 0.934,
+   "share_allow_le14": 0.229
+  },
+  "2021-2025": {
+   "n_team_games": 7888,
+   "mean_pts": 26.9,
+   "score_for": {
+    "0.5": [
+     24.5,
+     1182
+    ],
+    "0.75": [
+     35.1,
+     996
+    ],
+    "0.9": [
+     43.0,
+     722
+    ],
+    "0.95": [
+     51.1,
+     165
+    ]
+   },
+   "allow_at_most": {
+    "0.5": [
+     24.5,
+     925
+    ],
+    "0.75": [
+     17.6,
+     702
+    ],
+    "0.9": [
+     12.9,
+     965
+    ],
+    "0.95": [
+     9.8,
+     633
+    ]
+   },
+   "p_win_allow_le14": 0.946,
+   "share_allow_le14": 0.207
+  },
+  "season": {
+   "bottom25_off": {
+    "n": 621,
+    "mean_wp": 0.258,
+    "winning_record": 45,
+    "share_winning": 0.072,
+    "ci95": [
+     0.055,
+     0.096
+    ],
+    "wp_ge_75": 4,
+    "share_ge_75": 0.006,
+    "ci95_75": [
+     0.003,
+     0.016
+    ]
+   },
+   "bottom25_def": {
+    "n": 622,
+    "mean_wp": 0.264,
+    "winning_record": 50,
+    "share_winning": 0.08,
+    "ci95": [
+     0.062,
+     0.104
+    ],
+    "wp_ge_75": 3,
+    "share_ge_75": 0.005,
+    "ci95_75": [
+     0.002,
+     0.014
+    ]
+   },
+   "bottomhalf_off_top25_def": {
+    "n": 229,
+    "mean_wp": 0.594,
+    "winning_record": 166,
+    "share_winning": 0.725,
+    "ci95": [
+     0.664,
+     0.779
+    ],
+    "wp_ge_75": 30,
+    "share_ge_75": 0.131,
+    "ci95_75": [
+     0.093,
+     0.181
+    ]
+   },
+   "bottomhalf_def_top25_off": {
+    "n": 217,
+    "mean_wp": 0.584,
+    "winning_record": 153,
+    "share_winning": 0.705,
+    "ci95": [
+     0.641,
+     0.762
+    ],
+    "wp_ge_75": 28,
+    "share_ge_75": 0.129,
+    "ci95_75": [
+     0.091,
+     0.18
+    ]
+   },
+   "matched_margin_extreme_quintiles": {
+    "def_led_lowest_total_quintile_n": 497,
+    "off_led_highest_total_quintile_n": 497,
+    "mean_resid_def_led": -0.0033,
+    "mean_resid_off_led": 0.003,
+    "diff_def_minus_off_winpct": -0.0063,
+    "ci95": [
+     -0.018,
+     0.0049
+    ],
+    "games_per_season_equiv": "diff x games"
+   },
+   "mean_games": 11.2,
+   "sd_off_ppg": 7.22,
+   "sd_def_ppg": 6.95
+  }
+ },
+ "NFL": {
+  "2006-2025": {
+   "n_team_games": 10398,
+   "mean_pts": 22.5,
+   "score_for": {
+    "0.5": [
+     21.9,
+     2416
+    ],
+    "0.75": [
+     30.1,
+     1166
+    ],
+    "0.9": [
+     37.5,
+     551
+    ],
+    "0.95": [
+     42.3,
+     342
+    ]
+   },
+   "allow_at_most": {
+    "0.5": [
+     21.9,
+     2018
+    ],
+    "0.75": [
+     15.7,
+     1995
+    ],
+    "0.9": [
+     10.2,
+     822
+    ],
+    "0.95": [
+     7.2,
+     636
+    ]
+   },
+   "p_win_allow_le14": 0.907,
+   "share_allow_le14": 0.233
+  },
+  "2006-2010": {
+   "n_team_games": 2560,
+   "mean_pts": 21.6,
+   "score_for": {
+    "0.5": [
+     20.8,
+     463
+    ],
+    "0.75": [
+     28.9,
+     422
+    ],
+    "0.9": [
+     34.1,
+     218
+    ],
+    "0.95": [
+     39.7,
+     124
+    ]
+   },
+   "allow_at_most": {
+    "0.5": [
+     20.8,
+     372
+    ],
+    "0.75": [
+     13.5,
+     294
+    ],
+    "0.9": [
+     9.3,
+     297
+    ],
+    "0.95": [
+     6.7,
+     157
+    ]
+   },
+   "p_win_allow_le14": 0.882,
+   "share_allow_le14": 0.284
+  },
+  "2021-2025": {
+   "n_team_games": 2718,
+   "mean_pts": 22.5,
+   "score_for": {
+    "0.5": [
+     21.2,
+     629
+    ],
+    "0.75": [
+     29.0,
+     488
+    ],
+    "0.9": [
+     38.2,
+     158
+    ],
+    "0.95": [
+     44.6,
+     45
+    ]
+   },
+   "allow_at_most": {
+    "0.5": [
+     21.2,
+     558
+    ],
+    "0.75": [
+     16.3,
+     425
+    ],
+    "0.9": [
+     10.4,
+     233
+    ],
+    "0.95": [
+     7.8,
+     148
+    ]
+   },
+   "p_win_allow_le14": 0.912,
+   "share_allow_le14": 0.217
+  },
+  "season": {
+   "bottom25_off": {
+    "n": 161,
+    "mean_wp": 0.304,
+    "winning_record": 7,
+    "share_winning": 0.043,
+    "ci95": [
+     0.021,
+     0.087
+    ],
+    "wp_ge_75": 0,
+    "share_ge_75": 0.0,
+    "ci95_75": [
+     0.0,
+     0.023
+    ]
+   },
+   "bottom25_def": {
+    "n": 160,
+    "mean_wp": 0.319,
+    "winning_record": 14,
+    "share_winning": 0.087,
+    "ci95": [
+     0.053,
+     0.142
+    ],
+    "wp_ge_75": 2,
+    "share_ge_75": 0.013,
+    "ci95_75": [
+     0.003,
+     0.044
+    ]
+   },
+   "bottomhalf_off_top25_def": {
+    "n": 52,
+    "mean_wp": 0.546,
+    "winning_record": 29,
+    "share_winning": 0.558,
+    "ci95": [
+     0.423,
+     0.684
+    ],
+    "wp_ge_75": 5,
+    "share_ge_75": 0.096,
+    "ci95_75": [
+     0.042,
+     0.206
+    ]
+   },
+   "bottomhalf_def_top25_off": {
+    "n": 50,
+    "mean_wp": 0.6,
+    "winning_record": 34,
+    "share_winning": 0.68,
+    "ci95": [
+     0.542,
+     0.792
+    ],
+    "wp_ge_75": 9,
+    "share_ge_75": 0.18,
+    "ci95_75": [
+     0.098,
+     0.308
+    ]
+   },
+   "matched_margin_extreme_quintiles": {
+    "def_led_lowest_total_quintile_n": 128,
+    "off_led_highest_total_quintile_n": 128,
+    "mean_resid_def_led": 0.0056,
+    "mean_resid_off_led": 0.0101,
+    "diff_def_minus_off_winpct": -0.0045,
+    "ci95": [
+     -0.0234,
+     0.0135
+    ],
+    "games_per_season_equiv": "diff x games"
+   },
+   "mean_games": 16.2,
+   "sd_off_ppg": 4.34,
+   "sd_def_ppg": 3.4
+  }
+ }
+}
