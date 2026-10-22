@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 293 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 292 issues remaining of 500
 
 ## Repository Structure
 
@@ -1185,9 +1185,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 207 issues (#1-207)
-Queue: 5 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 182-rays-out-of-nowhere, 183-sal-peralta, _TEMPLATE)
+Published: 208 issues (#1-208)
+Queue: 4 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 183-sal-peralta, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 293 issues remaining of 500
-Last published: Issue #207 — "Nearly 200 Bad Teams Changed Coaches. One Did This." (181-indiana-turnaround.html) on October 21, 2026
+Goal: 292 issues remaining of 500
+Last published: Issue #208 — "The Rays Were Supposed to Win 79 Games." (182-rays-out-of-nowhere.html) on October 22, 2026
