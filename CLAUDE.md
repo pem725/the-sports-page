@@ -1185,9 +1185,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 208 issues (#1-208)
+Published: 209 issues (#1-209)
 Queue: 4 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 183-sal-peralta, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 292 issues remaining of 500
-Last published: Issue #208 — "The Rays Were Supposed to Win 79 Games." (182-rays-out-of-nowhere.html) on October 22, 2026
+Goal: 291 issues remaining of 500
+Last published: Issue #209 — Sunday Edition No. 029 "The Turnaround We Wrote About Beat Michigan on Saturday" (sunday-029.html) on October 25, 2026
