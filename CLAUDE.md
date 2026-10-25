@@ -809,6 +809,27 @@ somewhere safer afterwards does nothing for the value that already leaked.
 published &mdash; *favourite, analyse, grey, defence, centred, cancelled*. Each one
 is invisible on its own, which is exactly why nobody caught them.
 
+## The AI box — a local reader, never a source
+
+From 2026-10-25 the house AI box (Framework Desktop, 128 GB; Ollama at
+`http://192.168.0.65:11434`, models gpt-oss:20b, gemma3:27b; details in
+`~/GitTemp/NASerator/docs/ai-box.md`) does desk work for the paper. **It is
+LAN-only: the GitHub Actions publish cannot reach it, so nothing in the 4:30am run
+may depend on it.** No auth on it, never port-forwarded.
+
+**`python3 scripts/cold_read.py queue/NNN-slug.html`** is the first job: the model
+reads the piece once, as a stranger, and reports the question, the answer with its
+number, what it expected, and where it got lost. It closes the gap
+`check_readability.py` admits to (presence, not quality). Run it before queueing
+and compare its answer to what the piece meant. First run caught a Sal sentence
+built on a statistic about a statistic ("batted .31 when they put the ball in
+play"), rewritten as a count.
+
+**The model is a reader, never a source.** Nothing it says enters a piece as a
+fact -- the same rule as web-search summarizers, for the same reason. The family
+privacy rule also applies: anything private goes to the box or nowhere, secrets to
+no model at all.
+
 ## The work queue
 
 **`TASKS.md` is the open list.** It states, for each task, the question, the data
