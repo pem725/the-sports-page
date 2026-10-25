@@ -257,6 +257,14 @@ tags: MLB:mlb, Mets, Small Sample
   QUEUE_ORDER.txt is NOT enough — the script re-checks. The flag is per-file and
   must be typed into the piece, so an override is always a recorded choice rather
   than a standing exemption, and the run log announces it.
+- `sal_approved: YYYY-MM-DD` — **optional, and the only way the bot publishes Sal.**
+  Added 2026-10-25 on the editor's instruction, for Sal's Peralta column on
+  10-27: it had to land between two CFB pieces on a weekday morning when nobody
+  could be at a keyboard. The bot publishes a Sal-bylined file only on that exact
+  date; a missed day does not roll forward, the file simply goes back to being
+  skipped. Only the editor sets it. Write any line about an event the night
+  before in terms that stay true whatever happened (*"he took the ball for
+  Game 3"*), and mark running totals as "through" the last game you saw.
 - `tags`: Comma-separated, for the index.html entry. Use `Text:cssclass` to apply a color class (mlb, nfl, cfb, nhl), or plain `Text` for default styling.
 
 **Every queue file also gets a topic glyph beside the headline**, added by
@@ -1050,7 +1058,7 @@ there rather than quietly substituting it.
   without checking its trigger. `088-sorsby` in particular is held for a
   one-year follow-up in 2027 **and** is Sal's Column, so it can never be
   autopublished under any circumstances.
-- **NEVER auto-publish as Sal**: Sal is a guest columnist with a rare cadence (once every 2-3 weeks max). The scheduled agent must NEVER write in Sal's voice, publish a file bylined "By Sal", or generate Sal's Column content. Sal only writes when the human user explicitly invokes him ("let Sal take this one"). If a queued file is bylined as Sal, SKIP it and pick a different file. See SKILL.md "Sal's Column" section for the full persona/rules.
+- **NEVER auto-publish as Sal**: Sal is a guest columnist with a rare cadence (once every 2-3 weeks max). The scheduled agent must NEVER write in Sal's voice, publish a file bylined "By Sal", or generate Sal's Column content. Sal only writes when the human user explicitly invokes him ("let Sal take this one"). If a queued file is bylined as Sal, SKIP it and pick a different file. The one exception is a `sal_approved:` date the editor typed into the file (see PUBLISH-META); it works for that single day only. See SKILL.md "Sal's Column" section for the full persona/rules.
 
 ### Sealed pre-registration (`scripts/seal.py`)
 
@@ -1186,7 +1194,7 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 ## Current State (update this when publishing)
 
 Published: 209 issues (#1-209)
-Queue: 4 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 183-sal-peralta, _TEMPLATE)
+Queue: 3 scheduled (185-coaches-came-home Mon 10/26, 183-sal-peralta Tue 10/27 via sal_approved, 184-bye-week Wed 10/28); benched: 088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race; plus _TEMPLATE
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
 Goal: 291 issues remaining of 500

@@ -233,11 +233,24 @@ def pick_file(last_topic):
             print(f"  Skipping {filename} (file not in queue/)")
             continue
 
-        # Check for Sal byline — never auto-publish Sal
+        # Check for Sal byline — never auto-publish Sal, with ONE exception.
+        #
+        # `sal_approved: YYYY-MM-DD` in PUBLISH-META lets the bot publish a Sal
+        # column on that exact date and no other. Added 2026-10-25 on the
+        # editor's instruction, for Sal's Peralta column on 10-27: Sal had to
+        # land between two CFB pieces, on a weekday morning nobody could be at a
+        # keyboard. The default stays "never": the editor types the date into
+        # the piece, so it is a recorded, single-day choice -- a missed day does
+        # not roll forward, it simply goes back to being skipped.
         content = read_file(path)
         if re.search(r'By\s+Sal\b', content, re.IGNORECASE):
-            print(f"  Skipping {filename} (Sal byline — requires manual publish)")
-            continue
+            approved = str(parse_meta(content).get("sal_approved", "")).strip()
+            if approved != datetime.date.today().isoformat():
+                note = f" (approved for {approved}, not today)" if approved else ""
+                print(f"  Skipping {filename} (Sal byline — requires manual publish){note}")
+                continue
+            print(f"  {filename}: Sal byline, but sal_approved is today ({approved}) "
+                  f"— publishing by the editor's dated approval.")
 
         # Variety check.
         #

@@ -1,0 +1,263 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: slow
+tags: CFB:cfb, Coaching, Regression to the Mean
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — One in Seven Coaches Goes Home to Coach. Home Gives Them No Edge.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="One in Seven Coaches Goes Home to Coach. Home Gives Them No Edge.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/185-coaches-came-home.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/185-coaches-came-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="One in Seven Coaches Goes Home to Coach. Home Gives Them No Edge.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/185-coaches-came-home.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">College Football &middot; Coaching, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>One in Seven Coaches Goes Home to Coach. <em>Home Gives Them No Edge.</em></h1>
+
+  <div class="deck">
+    Since 1970, major-college programs have hired a former player as head coach 181 times. Those coaches won 47% of their games. Every other coach at those same schools won 46%. The real story is what they were handed.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Major-college head coaches, 1970&ndash;2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">181</div><div class="l">Hires who had played at the school</div></div>
+    <div class="sc"><div class="v good">47%</div><div class="l">Games they won</div></div>
+    <div class="sc"><div class="v bad">46%</div><div class="l">Games everyone else won there</div></div>
+  </div>
+
+  <p>Chuck Amato died on October 19. He was 80. He played linebacker at NC State in the 1960s, spent years as an assistant elsewhere, and came home to run the program in 2000. His teams went 49&ndash;37 over seven seasons. The 2002 team went 11&ndash;3, which the Associated Press notes is still the only double-digit-win season in school history.</p>
+
+  <p>His death raised a question we could count. <strong>Does a coach do better at the school he played for?</strong></p>
+
+  <p>Here is the answer, with its number: <strong>no.</strong> Since 1970, 181 of about 1,345 major-college head coaching hires had played at the school. That is about one in seven, and it has held in every decade. They won 47% of their games. Every other coach at the same schools won 46%.</p>
+
+  <p>That should surprise you, because both of the usual stories predict a gap. One says a former player knows the place, sells it better, and wins more. The other says schools hire their old heroes for love and pay for it in losses. The numbers back neither one. By the end of this, you will know what does predict how a coach will do. You can look it up before he signs.</p>
+
+  <h2 class="sh">It Looks Like Coming Home Hurts</h2>
+
+  <p>Start with a number that seems to settle it the other way. Take every coach who lasted at least three seasons. Compare his record to how the team did in the five years before he arrived. <strong>Of 125 former players, 80 won less than that.</strong> That is nearly two in three. Of 746 outsiders, fewer than half did.</p>
+
+  <p>So the old heroes made things worse? Hold on. Look at what each group was handed. The teams that hired a former player had been winning 54% of their games. The teams that hired an outsider had been winning 48%. Former players got the better jobs.</p>
+
+  <p>And a good job is hard to keep good. A team that has won a lot has usually had some luck along with its talent: a healthy quarterback, a few close games. The luck does not come along for the next coach. So the record slides back toward the middle, no matter who is in charge. That is <strong>regression to the mean</strong>, and it is the whole story here.</p>
+
+  <figure style="margin:28px 0">
+<svg viewBox="0 0 680 340" width="100%" role="img" aria-label="Share of coaches whose teams won less than in the five years before they arrived, by how good the team had been, alumni versus outsiders" style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12" fill="#1a1208" font-weight="600">Coaches whose teams won less than in the five years before they came</text>
+<rect x="400" y="30" width="12" height="12" fill="#b83a1e"/><text x="417" y="40" font-size="11" fill="#1a1208">played there</text>
+<rect x="520" y="30" width="12" height="12" fill="#c8b99a"/><text x="537" y="40" font-size="11" fill="#1a1208">everyone else</text>
+<line x1="65" y1="270.0" x2="670" y2="270.0" stroke="#c8b99a" stroke-width="1.2"/><text x="60" y="274.0" font-size="11" text-anchor="end" fill="#6b5e4a">0%</text>
+<line x1="65" y1="217.5" x2="670" y2="217.5" stroke="#c8b99a" stroke-width="0.6"/><text x="60" y="221.5" font-size="11" text-anchor="end" fill="#6b5e4a">25%</text>
+<line x1="65" y1="165.0" x2="670" y2="165.0" stroke="#c8b99a" stroke-width="0.6"/><text x="60" y="169.0" font-size="11" text-anchor="end" fill="#6b5e4a">50%</text>
+<line x1="65" y1="112.5" x2="670" y2="112.5" stroke="#c8b99a" stroke-width="0.6"/><text x="60" y="116.5" font-size="11" text-anchor="end" fill="#6b5e4a">75%</text>
+<line x1="65" y1="60.0" x2="670" y2="60.0" stroke="#c8b99a" stroke-width="0.6"/><text x="60" y="64.0" font-size="11" text-anchor="end" fill="#6b5e4a">100%</text>
+<rect x="100" y="212.7" width="50" height="57.3" fill="#b83a1e"/>
+<text x="125.0" y="206.7" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">27%</text>
+<text x="125.0" y="250" font-size="9.5" text-anchor="middle" fill="#f5f0e8">6 of</text><text x="125.0" y="262" font-size="9.5" text-anchor="middle" fill="#f5f0e8">22</text>
+<rect x="156" y="211.2" width="50" height="58.8" fill="#c8b99a"/>
+<text x="181.0" y="205.2" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">28%</text>
+<text x="181.0" y="250" font-size="9.5" text-anchor="middle" fill="#1a1208">68 of</text><text x="181.0" y="262" font-size="9.5" text-anchor="middle" fill="#1a1208">243</text>
+<text x="153" y="288" font-size="11" text-anchor="middle" fill="#1a1208">Losing team</text><text x="153" y="302" font-size="10" text-anchor="middle" fill="#6b5e4a">(under .400)</text>
+<rect x="248" y="165.0" width="50" height="105.0" fill="#b83a1e"/>
+<text x="273.0" y="159.0" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">50%</text>
+<text x="273.0" y="250" font-size="9.5" text-anchor="middle" fill="#f5f0e8">20 of</text><text x="273.0" y="262" font-size="9.5" text-anchor="middle" fill="#f5f0e8">40</text>
+<rect x="304" y="176.2" width="50" height="93.8" fill="#c8b99a"/>
+<text x="329.0" y="170.2" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">45%</text>
+<text x="329.0" y="250" font-size="9.5" text-anchor="middle" fill="#1a1208">109 of</text><text x="329.0" y="262" font-size="9.5" text-anchor="middle" fill="#1a1208">244</text>
+<text x="301" y="288" font-size="11" text-anchor="middle" fill="#1a1208">Middling</text><text x="301" y="302" font-size="10" text-anchor="middle" fill="#6b5e4a">(.400–.549)</text>
+<rect x="396" y="98.2" width="50" height="171.8" fill="#b83a1e"/>
+<text x="421.0" y="92.2" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">82%</text>
+<text x="421.0" y="250" font-size="9.5" text-anchor="middle" fill="#f5f0e8">36 of</text><text x="421.0" y="262" font-size="9.5" text-anchor="middle" fill="#f5f0e8">44</text>
+<rect x="452" y="135.3" width="50" height="134.7" fill="#c8b99a"/>
+<text x="477.0" y="129.3" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">64%</text>
+<text x="477.0" y="250" font-size="9.5" text-anchor="middle" fill="#1a1208">127 of</text><text x="477.0" y="262" font-size="9.5" text-anchor="middle" fill="#1a1208">198</text>
+<text x="449" y="288" font-size="11" text-anchor="middle" fill="#1a1208">Winning</text><text x="449" y="302" font-size="10" text-anchor="middle" fill="#6b5e4a">(.550–.699)</text>
+<rect x="544" y="71.1" width="50" height="198.9" fill="#b83a1e"/>
+<text x="569.0" y="65.1" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">95%</text>
+<text x="569.0" y="250" font-size="9.5" text-anchor="middle" fill="#f5f0e8">18 of</text><text x="569.0" y="262" font-size="9.5" text-anchor="middle" fill="#f5f0e8">19</text>
+<rect x="600" y="115.1" width="50" height="154.9" fill="#c8b99a"/>
+<text x="625.0" y="109.1" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">74%</text>
+<text x="625.0" y="250" font-size="9.5" text-anchor="middle" fill="#1a1208">45 of</text><text x="625.0" y="262" font-size="9.5" text-anchor="middle" fill="#1a1208">61</text>
+<text x="597" y="288" font-size="11" text-anchor="middle" fill="#1a1208">Powerhouse</text><text x="597" y="302" font-size="10" text-anchor="middle" fill="#6b5e4a">(.700 and up)</text>
+<text x="340.0" y="328" font-size="10" text-anchor="middle" fill="#6b5e4a">grouped by how often the team won in the five years before the coach arrived</text></svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Coaches who lasted three or more seasons, hired 1970&ndash;2025, grouped by how often the team had won in the five seasons before they came. Red: coaches who had played at the school. Source: CollegeFootballData coaching records; playing histories from Wikipedia.</figcaption>
+  </figure>
+
+  <p>Read the chart left to right. Take over a losing team, and only about one coach in four does worse, former player or not. Take over a powerhouse, and nearly everyone does worse. <strong>The team you inherit tells you far more than where you played.</strong></p>
+
+  <p>Of 19 former players handed a powerhouse, 18 won less than the five years before them. The one who did not is Kirby Smart at Georgia, who has won 85% of his games.</p>
+
+  <div class="pull">
+    <p>Ask what the new coach was handed before you ask where he played.</p>
+  </div>
+
+  <h2 class="sh">Compare Like With Like</h2>
+
+  <p>Once you match coaches who took over similar teams, the gap almost closes. Former players come out about two points of winning percentage lower. That is about one game in fifty, and the likely range includes zero. We would not call it real.</p>
+
+  <p>Notice where the old heroes do look a bit worse: at the winning programs. One guess is that schools often promote a former player from the staff when a winning coach leaves. The program is at its peak on the day he is hired. That is a guess; our data cannot test it.</p>
+
+  <p>The list of homecomings runs from the best records in the sport to the worst. Steve Spurrier won 82% of his games at Florida. Jim Harbaugh won 78% at Michigan. Rick Venturi went 1&ndash;31&ndash;1 at Northwestern. Every one of them was coming home.</p>
+
+  <p>And Amato? NC State had won 44% of its games in the five years before he arrived. His teams won 57%. Coaches who take over a losing team usually improve it, and he did a little better than usual. Home had nothing to do with it; he was a good coach who started near the bottom and climbed.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>When your school hires a coach, look up how the team did over the last five years before you judge him. A coach who takes over a winner will probably win less. A coach who takes over a loser will probably win more. Where he played tells you about his heart. Those five years tell you about his record.</p>
+
+  <p>The same trap shows up everywhere. A new manager takes over a hot sales team and the numbers dip. A new principal takes over a failing school and scores rise. Before you credit or blame the person, ask what they were handed.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Records:</strong> every head coach at a major-college (FBS) program from 1970 to 2025, season by season, from CollegeFootballData. A tenure is an unbroken run at one school. &ldquo;Before he arrived&rdquo; is the team&rsquo;s record over the five prior seasons; tenures without five prior major-college seasons were left out of that comparison.</p>
+    <p><strong>Who &ldquo;played there&rdquo;:</strong> taken from each coach&rsquo;s Wikipedia playing history. That is not a primary source, so a few may be wrong. A handful of coaches who attended a school without playing were counted as outsiders. The comparison covers wins and losses only.</p>
+    <p><strong>What it cannot tell you:</strong> this is observational. We cannot see recruiting, budgets, or why a school chose its man. The adjusted gap of about two points has a likely range that includes zero.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

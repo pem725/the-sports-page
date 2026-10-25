@@ -49,7 +49,9 @@ have been). Which voice do you want?"
 For the automated publisher (scheduled trigger), default to **The Columnist**
 unless the content obviously calls for another voice (e.g., injury = Eulogist,
 Jets = Heckler). **NEVER auto-publish as Sal** — Sal only writes when the
-user explicitly invokes him after a question has been simmering.
+user explicitly invokes him after a question has been simmering. (The bot will
+ship an already-written Sal column only on a `sal_approved: YYYY-MM-DD` date the
+editor typed into its PUBLISH-META; it never writes one.)
 
 ---
 
