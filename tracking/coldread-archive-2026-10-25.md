@@ -1,0 +1,299 @@
+# Cold read of the archive — 2026-10-25
+
+The AI box (gpt-oss:20b, `scripts/cold_read.py`) read all 213 published pages once, as a stranger, in 16 minutes of box time. Raw results: `data/coldread/archive-2026-10-25.jsonl`.
+
+**How to use this.** The model is a reader, not a judge and never a source. A "lost me" quote is a sentence one reader stumbled on; a misread answer is a hint that the point is buried. Treat both as leads for a human edit. Published issues are edited only for real faults (feed.xml carries their bodies; keep GUIDs, pubDates and titles byte-identical).
+
+## Headline numbers
+
+- Clarity (1–5): 2: 1, 3: 53, 4: 151, 5: 2; 6 unscored.
+- 30 pages where the reader's one-line answer carried **no number** — the BLUF rule says it should.
+- 285 "lost me" quotes across 112 pages.
+- By file number, mean clarity: 1–50: 3.7 · 51–100: 3.8 · 101–150: 3.7 · 151–200: 3.6. Recent pieces read slightly harder, the same drift the readability rule was written for.
+
+## Answers with no number (the opening may be burying the finding)
+
+- `004-mets-500.html` — read as: Three of the Mets' first six games went to extra innings.
+- `027-mets-conditional-probability.html` — read as: About eleven percent.
+- `034-owner-hall-of-fame-shame-deeper.html` — read as: Because averaging multiple independent metrics reduces variance, making the composite more stable than any single measurement.
+- `034-owner-hall-of-fame-shame.html` — read as: It uses three metrics, z‑scored within each league and then averaged, to create the Owner Index.
+- `047-notre-dame-recruiting.html` — read as: The article lists twelve names of major‑league athletes who died in service.
+- `049-misery-index-ny-dc.html` — read as: New York fans have endured eighty more years of cumulative drought than Washington, D.C. fans, according to the article.
+- `052-preseason-sim-framework.html` — read as: The Pre-Season Simulation uses consensus expectations, a just‑noticeable‑difference threshold, and only two rules—higher‑projected team wins or coin flip—to for
+- `055-superstition-baseball-math.html` — read as: Because of regression to the mean, confirmation bias, and base rates, which make the stories look successful even when the rituals don’t actually cause the outc
+- `057-pyrrhic-2-sabres-mcdavid.html` — read as: No, they finished with the second pick, while the Edmonton Oilers won the lottery and selected Connor McDavid.
+- `064-mariners-streak.html` — read as: Because their low-average, high-power lineup produces lumpy results, scoring big when homers land and barely scoring when they don’t.
+- `083-ncaa-enforcement-collapse.html` — read as: A Texas judge granted Brendan Sorsby a temporary injunction that allowed him to play college football despite the NCAA’s permanent‑ineligibility ruling, but he 
+- `085-hs-still-holds.html` — read as: Because the Texas UIL District Executive Committees ruled the high school transfers ineligible and those rulings stuck, whereas a county judge overruled the NCA
+- `097-acceleration-second-derivative.html` — read as: It shows the Rays are ahead on credit, the Dodgers are cooling, and the Mets’ collapse was visible in the math a month before the standings caught up.
+- `099-clark-three-dimension.html` — read as: The article says Caitlin Clark is statistically similar to Oscar Robertson when three‑point shooting is excluded, and similar to Stephen Curry when it is includ
+- `100-deadline-sellers-market.html` — read as: Eight teams have clearly folded and twenty‑two are still buying.
+- `102-cfb-contender-board.html` — read as: The five teams that clear both talent and maturity gates are Ohio State, Oregon, Notre Dame, Texas, and Indiana.
+- `107-mets-own-mean.html` — read as: The Mets will climb back up toward eighty‑two wins, their twenty‑year mean.
+- `109-cfb-trajectories.html` — read as: Neither the level nor the slope alone; only the bend in the slope shows the program’s direction.
+- `112-variance-is-king.html` — read as: The player whose weekly points swing the most decides the outcome, not the highest‑scoring player, because variance—not average—determines the matchup.
+- `115-no-such-thing-as-a-cycle.html` — read as: No, the study found zero real cycles among the twenty‑six long‑lived franchises; instead each team has a level it returns to and a persistence that shows how qu
+- `119-bet-became-a-stock.html` — read as: The court ruled it is a swap, a financial instrument, not a wager.
+- `125-skenes-full-circle.html` — read as: No, his core pitching numbers like strikeouts, walks, and WHIP have stayed flat, so he isn’t declining.
+- `127-two-months-of-an-ace.html` — read as: It cost them about one percentage point, specifically nine-tenths of a point of championship odds.
+- `135-home-field-ranks.html` — read as: Playing at home is worth about thirteen ranks, meaning a team at home wins as often as a team thirteen places better playing away.
+- `169-fastball-denominator.html` — read as: He actually climbed one level, from Double‑A to Triple‑A, not three.
+- `173-whose-team.html` — read as: In the first season none of the roster is the new coach’s; by year three about half is his, and by year five all of it is his.
+- `177-ohtani-cold-hand.html` — read as: A player with Ohtani’s talent would go that cold about four times a year, while the real Ohtani does it about once a year.
+- `sunday-001.html` — read as: The Sports Page has had three clean hits, two partial hits, two pending predictions, and one model that was too optimistic about Paul Skenes.
+- `sunday-006.html` — read as: Three of the seven predictions have been resolved correctly.
+- `sunday-012.html` — read as: Yes, the Mets fired Carlos Mendoza the same evening the newsletter diagnosed their structural collapse, with the firing occurring twelve hours after the piece w
+
+## Most stumbles (3 "lost me" quotes)
+
+- `001-skenes-era.html` (clarity 4)
+    - "67.5 ERA (Now)"
+    - "1.97 Target (Pre-Game)"
+    - "5 earned runs against 324 career innings is 1.5% of his workload."
+- `002-alonso-orioles.html` (clarity 4)
+    - "1-for-6"
+    - "60.2%"
+    - ".228"
+- `005-draft-combinatorics.html` (clarity 2)
+    - "10 57.8"
+    - "32 factorial permutations: 2.63 times 10 35"
+- `010-soto-calf.html` (clarity 4)
+    - "The 54.4% chance of missing 10+ games — that’s tracking to be correct."
+    - "Without Soto, the remaining Mets lineup is hitting .211. That’s not a batting average. That’s a cry for help."
+    - "Scenario Days Games Missed WAR Lost Production Value Lost"
+- `014-star-sensitivity.html` (clarity 4)
+    - "One LeBron is worth 42 wins."
+    - "One Mike Trout is worth 10."
+    - "The math is structural — and it starts with counting to five."
+- `018-mets-pitching-mirage.html` (clarity 4)
+    - "The $765 million man — the $765 million man — was hitting .355 with a home run and 5 RBI when his right calf gave out on April 3."
+    - "Francisco Lindor is hitting .135 with a .577 OPS."
+    - "Bo Bichette is at .200 with a .229 OBP."
+- `019-spurious-correlation.html` (clarity 3)
+    - "On the ten trading days when the S&P 500 went up, the Mets won exactly once."
+    - "The Mets were seven times more likely to win when the market dropped."
+    - "The phi coefficient — −0.567 — crosses the threshold that academic journals have treated as “real” for nearly a century."
+- `020-jets-first-round-busts-deeper.html` (clarity 4)
+    - "Definition A — "Never made a Pro Bowl." The harshest, simplest test."
+    - "Definition B — "Career value below the slot's expected value.""
+    - "Definition C — "Fewer than four seasons as the drafting team's primary starter.""
+- `021-draft-hit-rate-jets-giants.html` (clarity 4)
+    - "The Giants’ rate of picks that never made a Pro Bowl is actually higher than the Jets’, at roughly 71% vs. 56%."
+    - "The Jets, by that narrow measure, have actually done better."
+    - "The Giants have had more picks that at least produced a few starting seasons. The Jets have had more picks that failed on every axis simultaneously."
+- `027-mets-conditional-probability.html` (clarity 4)
+    - "The probability of recovering from it is something else entirely — and the way you ask the question changes the answer by an order of magnitude."
+    - "The win percentage has dropped from .333 to .323."
+    - "Four out of roughly thirty-five is about eleven percent ."
+- `032-bust-leaderboard-32-teams.html` (clarity None)
+    - "The Jets are below average."
+    - "They are not the worst."
+    - "The worst is Cincinnati, by a margin that is genuinely surprising."
+- `035-devin-williams-collapse.html` (clarity 3)
+    - "$51M"
+    - "Three-Year Contract Value"
+    - "36.00 ERA, Last Four Appearances"
+- `038-mets-braves-asymmetry.html` (clarity 4)
+    - "The Braves’ rival is the Phillies"
+    - "The Mets’ only window of parity. 2 (2006, 2015)"
+    - "The Mets’ recent decades have been shaped, in large part, by losing to the Braves."
+- `039-mets-bullpen-eighth.html` (clarity 3)
+    - "$51M"
+    - "14–23"
+    - "Mets Record, May 8"
+- `042-plate-discipline-r07.html` (clarity 3)
+    - "Pitches per plate appearance (P/PA) measures, on average, how many pitches each hitter on a team sees before the at‑bat resolves."
+    - "The full league range, in any given season, runs from roughly 3.78 pitches per PA at the low end to about 3.98 at the high end — a spread of two‑tenths of a pitch across thirty tea"
+    - "To translate: P/PA explains roughly half of one percent of the variation in team wins."
+- `054-mariners-54-percent.html` (clarity 4)
+    - "54% of 162 games is 87.5, so a 54-percent team wins approximately 87 or 88 games over a full season."
+    - "The average is right around 87.7, or 54.1 percent of 162."
+    - "The strategy, even on charitable accounting, has delivered a team that wins approximately half a game per year fewer than what its own front office said it was aiming for."
+- `055-superstition-baseball-math.html` (clarity 4)
+    - "regression to the mean"
+    - "confirmation bias"
+    - "base rates"
+- `056-pyrrhic-1-jets-trevor.html` (clarity 4)
+    - "the phrase “Pyrrhic victory” is one of the few pieces of classical history that survives in everyday speech, and it survives because the idea behind it is genuinely useful."
+    - "The worse your record, the higher you pick. And in a league with no draft lottery to muddy the incentive — the National Football League — the worst record guarantees the first sele"
+    - "The fan shorthand had already been coined: Tank for Trevor."
+- `059-pyrrhic-4-astros-mlb-commons.html` (clarity 3)
+    - "274"
+    - "3 consecutive 100-loss seasons"
+    - "three consecutive number-one overall draft picks"
+- `060-mets-sell-or-hold.html` (clarity 4)
+    - "The 2023 Mets are the standout case — a fourteen‑game improvement to 89–73 in 2024, an NLCS appearance, and a directly visible payoff in players acquired (Luisangel Acuña, Drew Gil"
+    - "The 2024 Rockies (rust circle on the right) are the holder catastrophe — refused offers on McMahon; held veterans .265."
+    - "The sellers in this sample started their deadline at a marginally better record than the holders — about a forty‑point edge in deadline winning percentage — which means part of the"
+- `063-nd-roster-value.html` (clarity 4)
+    - "$40.4M"
+    - "$40.4 million"
+    - "$40.4 million 2026 Roster Valuation"
+- `068-defensive-reader-1-temporal.html` (clarity 4)
+    - "The $40.4M describes the 2026 roster, which has not played."
+    - "The 2025 roster that went 10–2 was a different and cheaper team."
+    - "Same name. Different object."
+- `070-defensive-reader-2-survivorship.html` (clarity 4)
+    - "The military had already mapped the bullet holes on the planes that made it home and recommended adding armor where the holes were most concentrated — the wings, the fuselage, the "
+    - "The missing observations were where the conclusion lived."
+    - "The sample of all 199th picks does not support “late picks are undervalued.”"
+- `072-team-clustering.html` (clarity 4)
+    - "The gap between Soto and the next regular (Francisco Álvarez at .726, with only one hundred and thirty‑eight plate appearances behind it) is .180 of OPS — the size of the gap betwe"
+    - "The Mets have nine players who are all roughly the same near‑replacement‑level hitter; replacing the worst two with anything average raises the team mean OPS by roughly twenty‑five"
+    - "Adding a second .800‑OPS hitter would do more for the Mets than for almost any other team in baseball, because their floor is so high above the league minimum but their middle is s"
+- `073-analog-year-2021.html` (clarity 4)
+    - "The feature pushing 2026 closer to 2021 than to last year is the walk rate."
+    - "The walk-rate spike is probably a marker of structural change, not noise — watch for an in‑season league response, the way the sticky‑stuff enforcement was triggered five years ago"
+    - "The pre‑modern game — the one with bunt singles and fifteen‑percent strikeout rates and pitchers who threw eight innings — is statistically too far from 2026 to inform it."
+- `074-predictability.html` (clarity 4)
+    - ""The Mets are not the most volatile team in baseball. They are roughly as predictable as the average major‑league franchise, which is to say, seventy times more predictable than th"
+    - ""The correlation is 0.490 . By the standard rule of thumb, last year's record explains roughly twenty‑four percent of the variance in next year's.""
+    - ""The lag‑one autocorrelation is the Pearson correlation between the value in year t and the value in year t+1, taken across all eligible adjacent‑year pairs in the series.""
+- `078-cross-sport-persistence.html` (clarity 4)
+    - "The NBA’s last year predicts this year with a +65 correlation, Utah/WY snow is +20, Colorado is –48, and the Pacific Northwest is –19."
+    - "The NBA leads at +65 . The NHL at +62. Major League Baseball at +49. The NFL at +34."
+    - "The snow side is more dramatic, and worth reading carefully. Utah and Wyoming clear +20 , which means knowing the upcoming winter's ENSO state actually tells you something about ho"
+- `084-peer-enforcement.html` (clarity None)
+    - "The Big 12 sued its own member."
+    - "Nebraska said it would not play Texas Tech if Sorsby was on the roster."
+    - "The threats were credible-sounding."
+- `090-clark-distance-match.html` (clarity 4)
+    - "Clark’s 2024 Assists — The All-Time WNBA Single-Season Record, Set as a Rookie"
+    - "Clark’s Share of Her Team’s Assists — Oscar’s Rookie Mark Was .401"
+    - "1961 The Rookie Season the Distance Math Matched Her To"
+- `098-1986-mets-year.html` (clarity 4)
+    - ""The Sports Page — Vol. I, No. 108 — July 14, 2026""
+    - ""The Sports Page · A Retrospective · From the Reader's Desk · Forty years on""
+    - ""Shea Stadium, the fall of 1986""
+- `102-cfb-contender-board.html` (clarity 4)
+    - "The five teams that clear both gates — talent and maturity"
+    - "Only five teams pass the talent test and the maturity test, and they are the only five with an honest claim on the trophy."
+    - "The fifth is the champion, Indiana — still No. 5 in the ratings, but carrying an asterisk, because the veteran roster that broke the talent rule last year is largely gone, and a ti"
+- `107-mets-own-mean.html` (clarity 3)
+    - "the phrase ‘regress to the Mets’ was confusing at first"
+    - "the idea that the mean is ‘mediocrity’ made me pause"
+    - "the note about ‘half its distance from average’ was unclear"
+- `110-qb-tiers-critique.html` (clarity 3)
+    - ""43% of dropbacks one dropped QB was pressured on — cited, and not adjusted for""
+    - ""The rank is a borrowed number""
+    - ""The authors half-know this: they bucket the field into seven tiers""
+- `112-variance-is-king.html` (clarity 4)
+    - "A good week from a starting receiver, versus a bad one"
+    - "A starting quarterback averages around seventeen points and almost never strays far; we can pencil him in for both sides."
+    - "Touchdowns are only about a third of his scoring, and they carry almost all of the swing."
+- `114-mets-royals-cost-per-title.html` (clarity 4)
+    - "The Royals opened the year around $114 million, sixteenth in baseball, and the Mets around $101 million, twenty‑first."
+    - "Over those thirty‑two years the Mets paid out about $2.3 billion in salary and won one championship."
+    - "The Mets two World Series, Royals two World Series ."
+- `116-deepest-wound-same-shape.html` (clarity 4)
+    - "The number of chances the summit gives you"
+    - "A favorite’s edge needs repetition, and the summit takes the repetition away."
+    - "The pain of a loss is not the loss itself; it is the distance between what you expected and what you got."
+- `123-one-that-got-away.html` (clarity 3)
+    - "“One strange number, explained.”"
+    - "“The question: why does every baseball team have exactly one trade it cannot talk about?”"
+    - "“The shape of the mistake”"
+- `125-skenes-full-circle.html` (clarity 4)
+    - "The question: Paul Skenes has a worse ERA and a .500 record. Is he actually declining?"
+    - "The answer: almost certainly not. Everything a pitcher controls — strikeouts, walks, home runs allowed — is where it has always been. The damage sits entirely in the parts he does "
+    - "Figure 1 · Everything Skenes controls held flat — and his ERA doubled anyway"
+- `127-two-months-of-an-ace.html` (clarity 3)
+    - "Two and a half games out when they sold"
+    - "10 Starts Skubal had left"
+    - "0.9 Points of title odds at stake"
+- `132-triple-crown-spacing.html` (clarity 3)
+    - "All that moved is where the squeeze sits, and it now sits in front of a Belmont that is simultaneously getting 20% longer."
+    - "The window did not grow by a single day. The extra week in front of the Preakness was taken from the gap before the Belmont — which is now shorter than the two-week turnaround ever"
+    - "Rest per furlong of the race a horse is about to run — a crude measure, but the direction is not subtle."
+- `133-nd-hype-floor.html` (clarity 4)
+    - "In a dead June, Notre Dame draws 18,884 Wikipedia lookups. In a live October it draws 70,836 . That is a floor of 27%."
+    - "The median across twelve blue bloods the median floor is 26.8%."
+    - "Alabama’s in-season months run 2.6 times Nebraska’s."
+- `141-al-east-luck.html` (clarity 3)
+    - "The club in first has the worst run differential of the three, and it is behind both of them by more than fifty runs."
+    - "They are six games behind. At that rate, catching up takes 131 games . Hold onto that number."
+    - "The season has 29 left."
+- `144-spoiler.html` (clarity 4)
+    - "The question: which eliminated team can still do the most damage?"
+    - "The answer: the Athletics, and it is not close. Their remaining games can move 201 points of other clubs’ playoff chances. The Mets can move 93."
+    - "A 53–83 club is about to play a month of games in which every single result matters to somebody."
+- `145-week1-signal.html` (clarity 4)
+    - "Adding a single opening result and it climbs to 21% ."
+    - "The week‑one result survives at 1.5 wins ."
+    - "29% of clubs that won their opener finished under .500. 11% of clubs that lost it finished 8–4 or better.  Put those together and 294 of 1,297 seasons — about 23% — had the opening"
+- `147-talent-addresses.html` (clarity 4)
+    - "Where Do They Find These Guys? Five Thousand High Schools Never Made One."
+    - "The single most productive school in America is a private boarding academy in Florida with 83 blue-chips. It did not find them in its catchment area. It recruited them."
+    - "The most productive is IMG Academy in Bradenton, Florida, with 83; it is a private boarding school that enrols nationally, which is the point rather than an aside."
+- `152-returning-noise.html` (clarity 3)
+    - "Penn State returned 7.6% of last season’s production."
+    - "Clemson returned 41% and lost by 41."
+    - "The correlation, in week one –0.28"
+- `153-one-run-luck.html` (clarity 4)
+    - "Detroit is up on its opponents"
+    - "They are 5–9 in extra innings on top of it."
+    - "The shortfall is 12.0."
+- `156-system-disagreement.html` (clarity 3)
+    - "The middle half of all thirty-five rankings spans twelve places."
+    - "The rankings run from 38th to 116th . The middle half alone spans 44 places ."
+    - "On Monday, Oregon had gone from 4th to 19th in the composite ranking."
+- `157-home-field-2019.html` (clarity 3)
+    - "Home margin in 2019, full stadiums"
+    - "Home margin in 2020, empty ones"
+    - "The comparison that matters"
+- `159-turnover-persistence.html` (clarity 3)
+    - "Turnovers feel like character and behave like weather."
+    - "Turnover margin, carried to next season"
+    - "Turnover margin r = +0.175 (t = +3.00)."
+- `164-where-you-put-them.html` (clarity 4)
+    - ""The order is worth nothing to your score. Over the long run it adds exactly zero.""
+    - ""The order nearly doubles your chance of winning — 22 in 100 instead of 15 in 100.""
+    - ""The fewer games you differ on, the more the order matters.""
+- `167-lottery-priced-honestly.html` (clarity 4)
+    - "292,201,338 ways to fill in a ticket"
+    - "1,381 drawn in ten years"
+    - "0 of them ever repeated"
+- `168-which-budges.html` (clarity 3)
+    - "Defense, 21.1%. Offense, 17.1%. A four-point edge, and when we resampled the clubs ten thousand times the interval ran from +0.5 to +7.5 — never touching zero."
+    - "The edge falls from +4.0 to +1.5 , and the interval now runs from −2.3 to +5.3. It crosses zero."
+    - "Notice what did not change: defense still swings around more, moving a full standard deviation either way 37% of the time against offense's 33%. But it swings both ways. It gains n"
+- `172-hope-days.html` (clarity 3)
+    - "The ending was identical."
+    - "The Mets curve does not do anything."
+    - "The Mets were mathematically finished a week before the All‑Star rosters were announced, and functionally finished in April."
+- `178-book-it-bills-notre-dame.html` (clarity 4)
+    - "15%"
+    - "16%"
+    - "1 in 40"
+- `eo-003-notre-dame.html` (clarity 4)
+    - "$20M ND NIL Spending (at the cap)"
+    - "$200M+ Federal Research Funding at Risk"
+    - "The EO’s enforcement mechanism is federal research funding"
+- `eo-006-juco-detour.html` (clarity 4)
+    - "The executive order limits athletes to one free transfer."
+    - "A transfer from a two‑year institution to a four‑year institution is not the same as a portal transfer between two four‑year schools."
+    - "Under the executive order’s one‑transfer limit, the JUCO‑to‑D1 move occupies a different regulatory category."
+- `sunday-001.html` (clarity 4)
+    - "Skenes’ 67.5 ERA would dilute quickly; recovery to career 1.97 ERA in ~4–5 starts"
+    - "Bichette’s 53% K-rate is “not just noise” (1-in-1,430 event)"
+    - "35–40% reduction in portal transfers under EO"
+- `sunday-009.html` (clarity 4)
+    - "Vegas leads the 2026 Stanley Cup Final 2–1 after three consecutive overtime thrillers."
+    - "Carolina’s series win probability, assuming even teams: P(win ≥3 of remaining 4 games) = 31.25%."
+    - "The comp predicted 75%."
+- `sunday-014.html` (clarity 3)
+    - "The Mets are now 36–52."
+    - "Notre Dame’s 2027 class just broke into the national top two."
+    - "The Astros are fighting."
+- `sunday-016.html` (clarity 4)
+    - "The Mets are approximately 43–60, dead last in the NL East by 17 games."
+    - "Luis Robert Jr. returned from a 60-day IL stint (disc inflammation) and has two home runs, drawing trade interest from eight or more contenders."
+    - "The acceleration was noise. The level was the answer."
+- `sunday-021.html` (clarity 4)
+    - "Boston will play in October."
+    - "The question we ask every Sunday: what did we claim this week, and did reality agree?"
+    - "The scoreboard. 6 issues published Monday through Saturday. 1 gradeable prediction: 1 hit, 0 misses, 0 pending from this week's pieces. 4 fresh predictions landed Thursday in Issue"
+- `sunday-028.html` (clarity 4)
+    - "Notre Dame lost to No. 8 BYU 28–24 on Oct 17."
+    - "Title odds dropped from ~16% to <5%."
+    - "The model was right about the uncertainty; the pick was optimistic about the team."

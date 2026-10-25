@@ -1,0 +1,411 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: keeps
+tags: MLB:mlb, Box Score Anatomy, RBI, Constructs
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The Best Hitter in Baseball Finished Fifth in Runs Batted In.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="The Best Hitter in Baseball Finished Fifth in Runs Batted In.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/186-rbi.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/186-rbi.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Best Hitter in Baseball Finished Fifth in Runs Batted In.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/186-rbi.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Box Score Anatomy, No. 1 &middot; Runs Batted In</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>The Best Hitter in Baseball <em>Finished Fifth in Runs Batted In.</em></h1>
+
+  <div class="deck">
+    In 2025 Salvador Perez and Carlos Correa hit almost alike. Perez drove in 100 runs; Correa drove in 52. Most people assume RBI measure the hitter. They also measure the men batting ahead of him and his manager &mdash; and only one of those is him.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Box Score Anatomy, No. 1 &middot; 145 regular hitters, 2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v good">100</div><div class="l">Runs Salvador Perez drove in</div></div>
+    <div class="sc"><div class="v bad">52</div><div class="l">Runs Carlos Correa drove in, with the same bat</div></div>
+    <div class="sc"><div class="v now">43%</div><div class="l">Of the RBI spread explained by how well a man hit</div></div>
+  </div>
+
+  <p><strong>What does a run batted in actually tell you?</strong> It is the oldest argument-winner in baseball. &ldquo;He drove in 120 runs&rdquo; ends a lot of bar fights.</p>
+
+  <p>Here is the answer, with its number. We took the 145 men who played every day in 2025. <strong>How well each one hit explains only 43% of the spread in their RBI.</strong> Add one more fact &mdash; how often he came to bat with runners on base &mdash; plus his power, and you can explain nearly 90%.</p>
+
+  <p>That should bother you a little. Most fans read RBI as a hitter&rsquo;s skill, maybe even his nerve. A big part of it is a seat at the table: who is on base when he walks up. By the end of this you will know how to read an RBI total. You will also have a new idea, one this whole series is built on: <strong>the difference between the number and the thing.</strong></p>
+
+  <p>This is the first of a series we are calling <strong>Box Score Anatomy</strong>. Each one takes a single stat and asks four questions. What is it? How do you get one? What is it a sign of? And what else is a sign of the same thing?</p>
+
+  <h2 class="sh">What It Is, and How You Get One</h2>
+
+  <p>You get an RBI when a run scores because of what you did at the plate. A hit counts. So does a sacrifice fly, a groundout that scores a man from third, or a walk with the bases loaded. A home run counts for everyone who scores, you included. You get nothing if the run scores on an error, or if you ground into a double play.</p>
+
+  <p>Now notice the catch. Only one of those ways needs nobody else: the home run, with the bases empty. Among our 145 hitters, just 29% of all their RBI were the batter driving himself in. <strong>The other 71% needed a teammate already on base.</strong></p>
+
+  <figure style="margin:28px 0">
+<svg viewBox="0 0 680 340" width="100%" role="img" aria-label="Runs batted in against plate appearances with runners on base, 145 qualified hitters, 2025" style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12" fill="#1a1208" font-weight="600">More runners on base, more runs batted in. 145 regular hitters, 2025</text>
+<line x1="70" y1="290.0" x2="650" y2="290.0" stroke="#c8b99a" stroke-width="0.6"/><text x="62" y="294.0" font-size="11" text-anchor="end" fill="#6b5e4a">20</text>
+<line x1="70" y1="248.3" x2="650" y2="248.3" stroke="#c8b99a" stroke-width="0.6"/><text x="62" y="252.3" font-size="11" text-anchor="end" fill="#6b5e4a">40</text>
+<line x1="70" y1="206.7" x2="650" y2="206.7" stroke="#c8b99a" stroke-width="0.6"/><text x="62" y="210.7" font-size="11" text-anchor="end" fill="#6b5e4a">60</text>
+<line x1="70" y1="165.0" x2="650" y2="165.0" stroke="#c8b99a" stroke-width="0.6"/><text x="62" y="169.0" font-size="11" text-anchor="end" fill="#6b5e4a">80</text>
+<line x1="70" y1="123.3" x2="650" y2="123.3" stroke="#c8b99a" stroke-width="0.6"/><text x="62" y="127.3" font-size="11" text-anchor="end" fill="#6b5e4a">100</text>
+<line x1="70" y1="81.7" x2="650" y2="81.7" stroke="#c8b99a" stroke-width="0.6"/><text x="62" y="85.7" font-size="11" text-anchor="end" fill="#6b5e4a">120</text>
+<line x1="70" y1="40.0" x2="650" y2="40.0" stroke="#c8b99a" stroke-width="0.6"/><text x="62" y="44.0" font-size="11" text-anchor="end" fill="#6b5e4a">140</text>
+<text x="70.0" y="306" font-size="11" text-anchor="middle" fill="#6b5e4a">160</text>
+<text x="175.5" y="306" font-size="11" text-anchor="middle" fill="#6b5e4a">200</text>
+<text x="280.9" y="306" font-size="11" text-anchor="middle" fill="#6b5e4a">240</text>
+<text x="386.4" y="306" font-size="11" text-anchor="middle" fill="#6b5e4a">280</text>
+<text x="491.8" y="306" font-size="11" text-anchor="middle" fill="#6b5e4a">320</text>
+<text x="597.3" y="306" font-size="11" text-anchor="middle" fill="#6b5e4a">360</text>
+<line x1="70" y1="290" x2="650" y2="290" stroke="#1a1208"/>
+<line x1="96.4" y1="252.1" x2="623.6" y2="85.7" stroke="#6b5e4a" stroke-dasharray="4 3"/>
+<circle cx="462.8" cy="71.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="420.6" cy="85.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="563.0" cy="96.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="454.9" cy="100.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="452.3" cy="102.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="512.9" cy="104.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="507.6" cy="112.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="462.8" cy="117.1" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="462.8" cy="117.1" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="460.2" cy="117.1" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="331.0" cy="119.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="462.8" cy="123.3" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="515.5" cy="127.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="309.9" cy="127.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="404.8" cy="131.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="502.4" cy="133.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="523.5" cy="133.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="465.5" cy="133.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="433.8" cy="133.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="365.3" cy="135.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="383.7" cy="135.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="436.5" cy="137.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="396.9" cy="140.0" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="399.5" cy="140.0" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="317.8" cy="142.1" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="415.4" cy="144.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="228.2" cy="144.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="483.9" cy="146.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="317.8" cy="146.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="462.8" cy="148.3" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="452.3" cy="148.3" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="410.1" cy="150.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="373.2" cy="152.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="354.7" cy="152.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="497.1" cy="152.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="420.6" cy="152.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="399.5" cy="154.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="262.5" cy="156.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="457.5" cy="156.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="344.2" cy="156.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="357.4" cy="156.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="407.5" cy="156.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="307.3" cy="158.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="151.7" cy="158.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="312.5" cy="158.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="412.7" cy="160.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="362.6" cy="162.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="375.8" cy="165.0" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="362.6" cy="165.0" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="280.9" cy="165.0" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="333.6" cy="167.1" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="299.4" cy="169.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="228.2" cy="169.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="373.2" cy="169.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="423.3" cy="171.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="370.5" cy="171.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="362.6" cy="171.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="294.1" cy="173.3" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="491.8" cy="173.3" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="410.1" cy="173.3" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="338.9" cy="175.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="349.5" cy="175.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="304.6" cy="175.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="325.7" cy="175.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="396.9" cy="177.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="299.4" cy="177.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="294.1" cy="177.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="454.9" cy="177.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="212.4" cy="177.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="320.5" cy="179.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="404.8" cy="179.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="236.1" cy="181.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="262.5" cy="181.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="420.6" cy="181.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="365.3" cy="181.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="275.6" cy="183.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="317.8" cy="183.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="317.8" cy="185.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="278.3" cy="185.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="336.3" cy="187.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="325.7" cy="187.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="386.4" cy="187.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="367.9" cy="190.0" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="378.5" cy="190.0" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="320.5" cy="192.1" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="291.5" cy="194.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="233.5" cy="194.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="230.8" cy="196.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="273.0" cy="198.3" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="246.6" cy="198.3" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="259.8" cy="200.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="299.4" cy="200.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="328.4" cy="200.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="391.6" cy="200.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="238.7" cy="200.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="265.1" cy="200.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="149.1" cy="202.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="109.5" cy="202.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="238.7" cy="202.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="280.9" cy="202.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="386.4" cy="204.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="436.5" cy="204.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="209.7" cy="204.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="299.4" cy="204.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="244.0" cy="204.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="228.2" cy="206.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="299.4" cy="206.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="309.9" cy="206.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="225.5" cy="208.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="304.6" cy="208.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="325.7" cy="210.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="265.1" cy="212.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="183.4" cy="212.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="204.5" cy="215.0" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="302.0" cy="217.1" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="212.4" cy="217.1" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="199.2" cy="221.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="230.8" cy="221.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="323.1" cy="221.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="254.5" cy="221.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="259.8" cy="221.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="275.6" cy="221.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="273.0" cy="221.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="288.8" cy="221.2" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="288.8" cy="223.3" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="230.8" cy="225.4" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="180.7" cy="227.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="336.3" cy="227.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="328.4" cy="227.5" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="251.9" cy="229.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="312.5" cy="229.6" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="257.2" cy="231.7" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="217.6" cy="235.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="236.1" cy="237.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="164.9" cy="237.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="273.0" cy="237.9" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="204.5" cy="242.1" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="180.7" cy="242.1" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="186.0" cy="258.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="120.1" cy="283.8" r="3.3" fill="#8a7e6a" fill-opacity=".45"/>
+<circle cx="549.8" cy="56.7" r="5" fill="#b83a1e"/><text x="540.8" y="60.7" font-size="11" fill="#b83a1e" font-weight="600" text-anchor="end">Schwarber</text>
+<circle cx="610.5" cy="69.2" r="5" fill="#b83a1e"/><text x="602.5" y="86.2" font-size="11" fill="#b83a1e" font-weight="600" text-anchor="end">Alonso, most chances</text>
+<circle cx="439.1" cy="94.2" r="5" fill="#2c4a6e"/><text x="430.1" y="88.2" font-size="11" fill="#2c4a6e" font-weight="600" text-anchor="end">Judge, best hitter in baseball</text>
+<circle cx="425.9" cy="123.3" r="5" fill="#c9962a"/><text x="417.9" y="115.3" font-size="11" fill="#c9962a" font-weight="600" text-anchor="end">Perez, 100</text>
+<circle cx="344.2" cy="223.3" r="5" fill="#c9962a"/><text x="352.2" y="237.3" font-size="11" fill="#c9962a" font-weight="600" text-anchor="start">Correa, 52</text>
+<text x="360.0" y="324" font-size="11" text-anchor="middle" fill="#1a1208">times he came to bat with runners on base</text>
+<text x="14" y="165.0" font-size="11" fill="#1a1208" transform="rotate(-90 14 165.0)" text-anchor="middle">runs batted in</text></svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Each dot is one of the 145 qualified hitters of 2025. Across: how many times he came to bat with at least one runner on base. Up: his runs batted in. Dashed line: the average trend. Source: MLB Stats API.</figcaption>
+  </figure>
+
+  <p>Look at the right edge. Pete Alonso came up with runners on base 365 times, more than anyone in baseball, and drove in 126. Aaron Judge had the best season at the plate of anyone, by a lot. He came up with runners on 300 times. And pitchers walked him on purpose 36 times, more than anyone; 31 of those came with men on base. A walk with first base open drives in nobody. Judge finished fifth.</p>
+
+  <div class="pull">
+    <p>An RBI is a team stat with one man&rsquo;s name on it.</p>
+  </div>
+
+  <h2 class="sh">What It Is a Sign Of</h2>
+
+  <p>Now the pair from the top. Perez and Correa had nearly the same overall line. But they got there differently. Correa reached base more often; Perez hit for more power, 30 home runs to 13. Perez also came up with runners on base 295 times to Correa&rsquo;s 264.</p>
+
+  <p>So RBI rewarded Perez twice: once for a bigger seat at the table, and once for power, which turns a runner into a run. It gave Correa nothing for the times he got on base himself. Those runs show up in somebody else&rsquo;s RBI.</p>
+
+  <p>Here is a way to picture it. Statisticians draw the things they cannot see as ovals and the number they can count as a box. Five ovals feed this box.</p>
+
+  <figure style="margin:28px 0">
+<svg viewBox="0 0 680 275" width="100%" role="img" aria-label="Diagram: power, contact, teammates on base, lineup spot and playing time all feed into the RBI count" style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1a1208"/></marker></defs>
+<text x="10" y="18" font-size="12" fill="#1a1208" font-weight="600">What goes into one number</text>
+<ellipse cx="140" cy="52" rx="108" ry="17" fill="none" stroke="#2c4a6e" stroke-width="1.6"/><text x="140" y="51" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">Power</text><text x="140" y="63" font-size="9.5" text-anchor="middle" fill="#2c4a6e">his skill</text>
+<line x1="250" y1="52" x2="478" y2="125" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah)"/>
+<ellipse cx="140" cy="94" rx="108" ry="17" fill="none" stroke="#2c4a6e" stroke-width="1.6"/><text x="140" y="93" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">Contact</text><text x="140" y="105" font-size="9.5" text-anchor="middle" fill="#2c4a6e">his skill</text>
+<line x1="250" y1="94" x2="478" y2="125" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah)"/>
+<ellipse cx="140" cy="136" rx="108" ry="17" fill="none" stroke="#b83a1e" stroke-width="1.6"/><text x="140" y="135" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">Teammates on base</text><text x="140" y="147" font-size="9.5" text-anchor="middle" fill="#b83a1e">not his</text>
+<line x1="250" y1="136" x2="478" y2="125" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah)"/>
+<ellipse cx="140" cy="178" rx="108" ry="17" fill="none" stroke="#b83a1e" stroke-width="1.6"/><text x="140" y="177" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">Lineup spot</text><text x="140" y="189" font-size="9.5" text-anchor="middle" fill="#b83a1e">manager’s call</text>
+<line x1="250" y1="178" x2="478" y2="125" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah)"/>
+<ellipse cx="140" cy="220" rx="108" ry="17" fill="none" stroke="#6b5e4a" stroke-width="1.6"/><text x="140" y="219" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">Games played</text><text x="140" y="231" font-size="9.5" text-anchor="middle" fill="#6b5e4a">health, role</text>
+<line x1="250" y1="220" x2="478" y2="125" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah)"/>
+<rect x="482" y="103" width="110" height="44" fill="#ede5d2" stroke="#1a1208" stroke-width="1.8"/><text x="537" y="130" font-size="15" text-anchor="middle" fill="#1a1208" font-weight="700">RBI</text>
+<text x="537" y="166" font-size="9.5" text-anchor="middle" fill="#6b5e4a">the number you see</text>
+<text x="140" y="268" font-size="9.5" text-anchor="middle" fill="#6b5e4a">the ingredients, mostly hidden from the box score</text></svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Two of the five ingredients belong to the hitter. Two belong to his teammates and his manager. One belongs to his body and his luck.</figcaption>
+  </figure>
+
+  <p>The things in the ovals are what we actually argue about. Statisticians call them <span class="cc" data-preview="The thing you care about but cannot count directly, like power or clutch. Stats are indicators of it.">constructs<a class="cc-i" href="https://thesportspage.net/concepts/constructs-and-indicators.html" target="_blank" rel="noopener" aria-label="Primer: Constructs and Indicators"></a></span>. The box is an <strong>indicator</strong>: something we can count because we think it moves with a thing we care about. RBI move with power and contact. They also move with your teammates and your lineup spot, which is the problem.</p>
+
+  <h2 class="sh">What Else Is a Sign of the Same Thing</h2>
+
+  <p>If you want the hitter alone, look at numbers that leave the teammates out. On-base percentage asks how often he reached. Slugging asks how much damage he did when he hit the ball. Put them together and you get OPS, the measure that made Perez and Correa twins. None of them cares who was on base.</p>
+
+  <p>And the thing many fans really mean by RBI &mdash; coming through when it counts &mdash; is its own construct, with its own indicators. That one is coming soon in this series, and it is a fight.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>When someone wins an argument with RBI, ask two questions. <strong>Who was on base, and where did he bat?</strong> A cleanup hitter behind two men who reach base will pile them up. The same bat leading off, behind the bottom of the order, will not.</p>
+
+  <p>Then ask the bigger question, the one this series will keep asking. <strong>What is this number a sign of, and what else makes it go up?</strong> Every stat in the box score is a window onto something you cannot see directly. Some windows are clean. This one has your teammates&rsquo; fingerprints all over it.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Data:</strong> the 145 hitters who qualified for the 2025 batting title, from the MLB Stats API: season totals plus the &ldquo;runners on&rdquo; and &ldquo;scoring position&rdquo; splits. Totals for traded players are combined. Perez and Correa were checked against ESPN; the RBI leaders against ESPN and MLB.com.</p>
+    <p><strong>The 43% and the nearly 90%:</strong> simple regressions across the 145 hitters. OPS alone explains 43% of the variation in RBI. Home runs plus plate appearances with runners on explains 88%; slugging plus those plate appearances, 84%.</p>
+    <p><strong>What it cannot tell you:</strong> plate appearances with runners on is a rough count of chances; it does not say how many runners, or where they stood. One season of qualified hitters leaves out part-timers. And this says nothing about whether &ldquo;clutch&rdquo; is real &mdash; that question gets its own issue.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

@@ -825,6 +825,20 @@ and compare its answer to what the piece meant. First run caught a Sal sentence
 built on a statistic about a statistic ("batted .31 when they put the ball in
 play"), rewritten as a count.
 
+**The box's desk jobs (all LAN-only, all advisory, none commit or publish):**
+
+| tool | role |
+|---|---|
+| `scripts/aibox_desk.py` | the morning desk, cron 05:50 on the workstation: fast-forward pull, `queue_health.py`, cold-read new or changed scheduled pieces, water-cooler collection; report at `~/.local/share/sports-page/desk-report.md` and a desktop notice when the runway is two issues or less. **Read the report at the start of a session.** |
+| `scripts/cold_read.py` | a stranger reads one piece: question, answer, number, where it got lost. `--out` for archive sweeps (first sweep: `tracking/coldread-archive-2026-10-25.md`) |
+| `scripts/archive_match.py` | "does the archive already answer this reader question?" shortlist; open every page before replying |
+| `scripts/headline_variants.py` | brainstorm only: 20 headlines filtered by `check_headline.py`, numbers not in the piece dropped. First trial wrote weaker headlines than ours and overclaimed one; the editor picks |
+| `scripts/water_cooler.py` | the numbers the press leans on, one article at a time; plan in `tracking/water-cooler-numbers.md` |
+
+Further roles that fit, not yet built: vision checks of OG cards with gemma3 (the "fallback looks
+fine" failures above are exactly what a second pair of eyes catches), alt text for every figure,
+and reader-mail triage that keeps the inbox in the house.
+
 **The model is a reader, never a source.** Nothing it says enters a piece as a
 fact -- the same rule as web-search summarizers, for the same reason. The family
 privacy rule also applies: anything private goes to the box or nowhere, secrets to

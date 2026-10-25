@@ -83,17 +83,28 @@ def main():
     ap.add_argument("files", nargs="+")
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--json", action="store_true", help="raw JSON per file")
+    ap.add_argument("--out", help="append one JSON line per file here (archive sweeps); skips files already in it")
     a = ap.parse_args()
     try:
         urllib.request.urlopen(f"{HOST}/api/tags", timeout=5)
     except OSError as e:
         sys.exit(f"AI box not reachable at {HOST} ({e}). This is a LAN-only desk tool.")
+    done = set()
+    if a.out and os.path.exists(a.out):
+        done = {json.loads(l)["file"] for l in open(a.out) if l.strip()}
     for f in a.files:
+        if f in done:
+            continue
         text = article_text(f)
         try:
             r, secs = ask(a.model, text)
         except (OSError, ValueError, KeyError) as e:
             print(f"\n{f}: cold read failed ({type(e).__name__}: {e})"); continue
+        if a.out:
+            with open(a.out, "a") as fh:
+                fh.write(json.dumps({"file": f, "model": a.model, "secs": round(secs, 1),
+                                     "words": len(text.split()), **r}) + "\n")
+            print(f"{os.path.basename(f)}: clarity {r.get('clarity', '-')}", flush=True); continue
         if a.json:
             print(json.dumps({"file": f, **r}, indent=1)); continue
         print("=" * 72)
