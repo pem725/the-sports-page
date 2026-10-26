@@ -53,7 +53,7 @@ figure, a takeaway, limits stated. Keep each short. Depth goes in the primer.
 12. **Strikeouts** — the cleanest pitching indicator.
 
 **Football**
-13. **QB wins** — the composite problem, louder.
+13. **QB wins** — the composite problem, louder. *Queued: `189-qb-wins` (Mon 11/2).*
 14. **Passer rating** — a formula nobody can recite; what it weights.
 15. **Rushing yards** — the line's stat with the back's name on it.
 16. **Tackles** — more tackles can mean a worse defense.

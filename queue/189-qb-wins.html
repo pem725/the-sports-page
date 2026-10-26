@@ -1,0 +1,264 @@
+<!-- PUBLISH-META
+topic: NFL
+decay: keeps
+tags: NFL:nfl, Box Score Anatomy, Quarterback Wins, Constructs
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Allow 28 Points and Even Tom Brady Loses Six in Ten.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Allow 28 Points and Even Tom Brady Loses Six in Ten.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/189-qb-wins.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/189-qb-wins.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Allow 28 Points and Even Tom Brady Loses Six in Ten.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/189-qb-wins.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Box Score Anatomy, No. 3 &middot; Quarterback Wins</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="NFL"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><ellipse cx="13" cy="10" rx="10.6" ry="6.1" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 10h6" stroke="currentColor" stroke-width="1.7"/></svg></span>Allow 28 Points and Even Tom Brady <em>Loses Six in Ten.</em></h1>
+
+  <div class="deck">
+    Across 13,934 NFL starts since 1999, quarterbacks whose defense held the other team under 17 points won 86% of the time. When the defense gave up 28 or more, they won 16%. Most people assume a quarterback&rsquo;s record measures the quarterback. A big piece of it measures the men he never shares the field with.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Box Score Anatomy, No. 3 &middot; NFL regular seasons, 1999&ndash;2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v good">86%</div><div class="l">QB win rate when his defense allows under 17</div></div>
+    <div class="sc"><div class="v bad">16%</div><div class="l">When it allows 28 or more</div></div>
+    <div class="sc"><div class="v now">23 of 61</div><div class="l">Tom Brady&rsquo;s wins when his defense gave up 28+</div></div>
+  </div>
+
+  <p><strong>Is a quarterback&rsquo;s win-loss record really his?</strong> You hear it every Sunday. &ldquo;He just wins.&rdquo; &ldquo;Look at his record as a starter.&rdquo; No stat in football ends more arguments.</p>
+
+  <p>Here is the answer, with its number. We took every regular-season start from 1999 to 2025, 13,934 of them. <strong>When the defense held the other team under 17 points, the quarterback&rsquo;s team won 86% of the time. When it gave up 28 or more, 16%.</strong> The quarterback was the same kind of player in both piles. The defense was not.</p>
+
+  <p>That should bother you a little, because the quarterback never plays a snap of defense. By the end of this you will know how to read a quarterback&rsquo;s record, and you will see the same lesson the first issue of this series found in baseball&rsquo;s runs batted in: a team stat with one man&rsquo;s name on it.</p>
+
+  <h2 class="sh">What It Is, and How You Get One</h2>
+
+  <p>There is no official rule for a quarterback win. The league credits wins to teams. Fans, broadcasts and record books then hand each one to whoever started at quarterback. So the &ldquo;stat&rdquo; is really a label: the team won, and he was the starter.</p>
+
+  <p>To get one, your team needs more points than the other team. You can help with the first part. The second part belongs to the defense, the kicker and the schedule.</p>
+
+  <figure style="margin:28px 0">
+<svg viewBox="0 0 680 340" width="100%" role="img" aria-label="How often the starting quarterback's team won, by points his defense allowed, 13,934 starts 1999 to 2025: 96 percent when allowing 0 to 9, down to 8 percent when allowing 35 or more" style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12" fill="#1a1208" font-weight="600">How often the quarterback “wins,” by what his defense gave up</text>
+<line x1="74" y1="280.0" x2="660" y2="280.0" stroke="#c8b99a" stroke-width="1.2"/><text x="68" y="284.0" font-size="11" text-anchor="end" fill="#6b5e4a">0%</text>
+<line x1="74" y1="225.0" x2="660" y2="225.0" stroke="#c8b99a" stroke-width="0.6"/><text x="68" y="229.0" font-size="11" text-anchor="end" fill="#6b5e4a">25%</text>
+<line x1="74" y1="170.0" x2="660" y2="170.0" stroke="#c8b99a" stroke-width="0.6"/><text x="68" y="174.0" font-size="11" text-anchor="end" fill="#6b5e4a">50%</text>
+<line x1="74" y1="115.0" x2="660" y2="115.0" stroke="#c8b99a" stroke-width="0.6"/><text x="68" y="119.0" font-size="11" text-anchor="end" fill="#6b5e4a">75%</text>
+<line x1="74" y1="60.0" x2="660" y2="60.0" stroke="#c8b99a" stroke-width="0.6"/><text x="68" y="64.0" font-size="11" text-anchor="end" fill="#6b5e4a">100%</text>
+<rect x="100" y="68.8" width="70" height="211.2" fill="#2c4a6e" fill-opacity=".85"/><text x="135.0" y="62.8" font-size="12" text-anchor="middle" fill="#1a1208" font-weight="600">96%</text><text x="135.0" y="296" font-size="11.5" text-anchor="middle" fill="#1a1208">0–9</text>
+<rect x="195" y="104.0" width="70" height="176.0" fill="#2c4a6e" fill-opacity=".85"/><text x="230.0" y="98.0" font-size="12" text-anchor="middle" fill="#1a1208" font-weight="600">80%</text><text x="230.0" y="296" font-size="11.5" text-anchor="middle" fill="#1a1208">10–16</text>
+<rect x="290" y="148.0" width="70" height="132.0" fill="#2c4a6e" fill-opacity=".85"/><text x="325.0" y="142.0" font-size="12" text-anchor="middle" fill="#1a1208" font-weight="600">60%</text><text x="325.0" y="296" font-size="11.5" text-anchor="middle" fill="#1a1208">17–20</text>
+<rect x="385" y="194.2" width="70" height="85.8" fill="#b83a1e" fill-opacity=".85"/><text x="420.0" y="188.2" font-size="12" text-anchor="middle" fill="#1a1208" font-weight="600">39%</text><text x="420.0" y="296" font-size="11.5" text-anchor="middle" fill="#1a1208">21–27</text>
+<rect x="480" y="231.6" width="70" height="48.4" fill="#b83a1e" fill-opacity=".85"/><text x="515.0" y="225.6" font-size="12" text-anchor="middle" fill="#1a1208" font-weight="600">22%</text><text x="515.0" y="296" font-size="11.5" text-anchor="middle" fill="#1a1208">28–34</text>
+<rect x="575" y="262.4" width="70" height="17.6" fill="#b83a1e" fill-opacity=".85"/><text x="610.0" y="256.4" font-size="12" text-anchor="middle" fill="#1a1208" font-weight="600">8%</text><text x="610.0" y="296" font-size="11.5" text-anchor="middle" fill="#1a1208">35+</text>
+<text x="370" y="316" font-size="11" text-anchor="middle" fill="#1a1208">points his defense allowed that day</text>
+<text x="370" y="334" font-size="10" text-anchor="middle" fill="#6b5e4a">13,934 regular-season starts, 1999–2025</text></svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Every regular-season start from 1999 to 2025, grouped by how many points the quarterback&rsquo;s defense allowed that day. Ties count as half a win. Source: nflverse game records.</figcaption>
+  </figure>
+
+  <p>Read it left to right. Give up fewer than 10 and almost anybody wins. Give up 35 and almost nobody does. The slope is steep, and the quarterback did not draw it.</p>
+
+  <div class="pull">
+    <p>A quarterback&rsquo;s record is half a quarterback and half a defense, with a kicker on top.</p>
+  </div>
+
+  <h2 class="sh">Even the Greatest</h2>
+
+  <p>Take the quarterback with the most wins in history. When Tom Brady&rsquo;s defense held teams under 17, his teams won about 97 in 100. When it gave up 28 or more, they won 23 of 61, fewer than four in ten. Patrick Mahomes, Aaron Rodgers and Drew Brees show the same cliff.</p>
+
+  <p>Now watch the same man across two seasons. We took every quarterback with at least 12 starts in back-to-back years, 398 pairs. When his record changed from one year to the next, the change tracked his defense&rsquo;s points allowed a little more closely than his own offense&rsquo;s points scored. His record moved with players he never meets in the huddle.</p>
+
+  <h2 class="sh">What It Is a Sign Of</h2>
+
+  <p>Now the picture we have been building in this series. The things you cannot see are ovals; the number you count is the box.</p>
+
+  <figure style="margin:28px 0">
+<svg viewBox="0 0 680 320" width="100%" role="img" aria-label="Diagram: quarterback play, the defense, the running game, the kicker, the schedule and luck all feed the quarterback win" style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1a1208"/></marker></defs>
+<text x="10" y="18" font-size="12" fill="#1a1208" font-weight="600">What goes into a quarterback “win”</text>
+<ellipse cx="140" cy="48" rx="112" ry="17" fill="none" stroke="#2c4a6e" stroke-width="1.6"/><text x="140" y="47" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">His passing</text><text x="140" y="59" font-size="9.5" text-anchor="middle" fill="#2c4a6e">his</text>
+<line x1="254" y1="48" x2="478" y2="152" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah2)"/>
+<ellipse cx="140" cy="90" rx="112" ry="17" fill="none" stroke="#2c4a6e" stroke-width="1.6"/><text x="140" y="89" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">His decisions</text><text x="140" y="101" font-size="9.5" text-anchor="middle" fill="#2c4a6e">his</text>
+<line x1="254" y1="90" x2="478" y2="152" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah2)"/>
+<ellipse cx="140" cy="132" rx="112" ry="17" fill="none" stroke="#b83a1e" stroke-width="1.6"/><text x="140" y="131" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">The defense</text><text x="140" y="143" font-size="9.5" text-anchor="middle" fill="#b83a1e">not his</text>
+<line x1="254" y1="132" x2="478" y2="152" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah2)"/>
+<ellipse cx="140" cy="174" rx="112" ry="17" fill="none" stroke="#6b5e4a" stroke-width="1.6"/><text x="140" y="173" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">Running game, line</text><text x="140" y="185" font-size="9.5" text-anchor="middle" fill="#6b5e4a">partly his</text>
+<line x1="254" y1="174" x2="478" y2="152" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah2)"/>
+<ellipse cx="140" cy="216" rx="112" ry="17" fill="none" stroke="#b83a1e" stroke-width="1.6"/><text x="140" y="215" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">Kicker, special teams</text><text x="140" y="227" font-size="9.5" text-anchor="middle" fill="#b83a1e">not his</text>
+<line x1="254" y1="216" x2="478" y2="152" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah2)"/>
+<ellipse cx="140" cy="258" rx="112" ry="17" fill="none" stroke="#b83a1e" stroke-width="1.6"/><text x="140" y="257" font-size="11.5" text-anchor="middle" fill="#1a1208" font-weight="600">Schedule and luck</text><text x="140" y="269" font-size="9.5" text-anchor="middle" fill="#b83a1e">nobody’s</text>
+<line x1="254" y1="258" x2="478" y2="152" stroke="#1a1208" stroke-width="1.2" marker-end="url(#ah2)"/>
+<rect x="482" y="130" width="130" height="44" fill="#ede5d2" stroke="#1a1208" stroke-width="1.8"/><text x="547" y="157" font-size="15" text-anchor="middle" fill="#1a1208" font-weight="700">QB WIN</text>
+<text x="547" y="192" font-size="9.5" text-anchor="middle" fill="#6b5e4a">the number on his line</text>
+<text x="140" y="306" font-size="9.5" text-anchor="middle" fill="#6b5e4a">the ingredients; two of six are his alone</text></svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Six ingredients feed one number. Two belong to the quarterback alone.</figcaption>
+  </figure>
+
+  <p>Quarterback wins are what statisticians call a <span class="cc" data-preview="A number fed by many causes, only some of them the player&rsquo;s. Two players with the same skill can post very different totals.">composite<a class="cc-i" href="https://thesportspage.net/concepts/constructs-and-indicators.html" target="_blank" rel="noopener" aria-label="Primer: Constructs and Indicators"></a></span>: many causes flow into one count. That is why the number wobbles. Of the quarterbacks in the top third by record one season, only about half were there the next. Home runs, by comparison, stay put about two times in three.</p>
+
+  <h2 class="sh">What Else Is a Sign of the Same Thing</h2>
+
+  <p>If you want the passer, look at what he controls. Yards per pass attempt. How often he throws an interception. How often he gets sacked, which is partly the line and partly him holding the ball. None of these is perfect, but each one leaves out the defense.</p>
+
+  <p>The record still matters for one thing: it tells you whether the team won. Just do not hand all of it to one man.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>When someone wins an argument with a quarterback&rsquo;s record, ask one question: <strong>how good was his defense?</strong> A great quarterback on a bad defense will lose games he played well. An average one behind a great defense will win games he did not.</p>
+
+  <p>And keep the bigger lesson from this series in your pocket. Before you credit a person with a number, count how many other people put their hands on it.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Data:</strong> every NFL regular-season game from 1999 to 2025 in the nflverse game records, which list each team&rsquo;s quarterback and the final score: 13,934 starts. Ties count as half a win. Tom Brady&rsquo;s 23 wins in 61 games when his defense allowed 28 or more were checked against ESPN&rsquo;s scores.</p>
+    <p><strong>A data trap we hit:</strong> the quarterback listed for a game is not always the man who started it. In one 2007 Colts game, Peyton Manning started and left early, and the records list his backup. A handful of such games will not move rates built on thousands of starts, but it is why we did not quote any one quarterback&rsquo;s perfect record.</p>
+    <p><strong>What it cannot tell you:</strong> points allowed is not purely the defense &mdash; a quarterback who throws an interception for a touchdown, or keeps his defense off the field, changes it. The season-to-season comparison is a correlation, not a controlled test. Across team seasons, points scored explains 55% of the spread in winning percentage and points allowed 44%; the quarterback shapes the first far more than the second.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
