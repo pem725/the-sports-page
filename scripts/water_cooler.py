@@ -53,7 +53,10 @@ FEEDS = [  # (outlet, sport, url)
 
 # Canonical stat families, so "dingers", "homers" and "HRs" land in one bucket.
 # The model may answer "other: <name>"; the report shows those so the list can grow.
-COMMON = "game score, series status, drought (years since), "
+# Betting numbers get their own families: the first audit found a share price and a
+# touchdown prop both filed as "point spread", which inflated the line's count.
+COMMON = ("game score, series status, drought (years since), point spread, moneyline odds, "
+          "over/under total, prop odds, futures odds, prediction-market price, ")
 FAMILIES = {
     "MLB": "home runs, RBI, batting average, hits, doubles, triples, walks, on-base percentage, slugging, OPS, "
            "stolen bases, runs scored, strikeouts (batter), ERA, wins (pitcher), saves, strikeouts (pitcher), "
@@ -75,7 +78,7 @@ PROMPT = """You are cataloguing the NUMBERS a sports article uses. You are an ex
 Do not judge whether numbers are true. Do not add numbers that are not in the text.
 
 For every number in the article that describes sports performance, money, standing or odds, record it.
-Skip dates, jersey numbers, ages of no consequence, and times of day.
+Skip dates and years, jersey numbers, ages of no consequence, times of day, bet sizes, and counts of model simulations.
 
 Map each to ONE stat family from this list, or write "other: <short name>":
 {families}
