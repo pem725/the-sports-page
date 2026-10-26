@@ -53,6 +53,22 @@ Ratios between stats survive that; absolute counts do not.
 - **Every number from the ledger that reaches print is re-checked against a primary feed.** The
   ledger records what an article *said*, not what is true.
 
+## First audit — 2026-10-25 (250 articles, 4,307 numbers, mostly Oct 20–26)
+
+- **Are the numbers real?** 15 articles re-fetched at random: 273 of 284 recorded numbers appear
+  verbatim. The 11 misses were rewordings (*seventh* stored as *7th*), not inventions.
+- **Are the labels right?** 40 claims read by hand: about **7 of 40 wrong** (roughly one in six).
+  The pattern matters more than the rate: **every betting number gets filed as "point spread"**
+  (a Kalshi share price, a +105 touchdown prop), and non-performance counts slip in (a year, "10,000
+  simulations"). Add `moneyline`, `prop odds`, `prediction-market price` families before any tally.
+- **Count articles, not numbers.** One NFL betting table supplied 147 of 229 "point spread" arguments.
+  `--report` now counts each family once per article.
+- **The first hint, per article:** the number the press *argues* with most is the betting line —
+  24 of 70 NFL articles, 11 of 47 CFB. Baseball argues with playoff odds and contract money; home
+  runs appear in 5 of 97. Week of the World Series and Week 7, so it is a snapshot, not a trend.
+  **Not publishable as a percentage until the families are fixed and a second audit comes in under
+  one wrong in ten.**
+
 ## Limits, stated now so nobody forgets
 
 - Feeds are a convenience sample: four outlets, whatever they syndicate. Not "the press."

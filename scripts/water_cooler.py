@@ -161,7 +161,7 @@ def collect(limit, model):
                 print(f"  skip (model): {it['title'][:60]} ({type(e).__name__})"); continue
             rec = dict(url=it["link"], outlet=outlet, sport=sport, date=iso(it["pub"]), title=it["title"],
                        words=len(text.split()), collected=dt.date.today().isoformat(), model=model,
-                       claims=r.get("claims", []), lead_family=r.get("lead_family"),
+                       claims=[c for c in r.get("claims", []) if isinstance(c, dict)], lead_family=r.get("lead_family"),
                        lead_number=r.get("lead_number"), main_point=r.get("main_point"))
             with open(LEDGER, "a") as fh:
                 fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
@@ -173,15 +173,22 @@ def collect(limit, model):
 
 def report():
     R = [json.loads(l) for l in open(LEDGER) if l.strip()]
+    junk = sum(1 for r in R for c in r["claims"] if not isinstance(c, dict))   # model returned a fragment, not a claim
+    for r in R:
+        r["claims"] = [c for c in r["claims"] if isinstance(c, dict)]
     print(f"{len(R)} articles, {sum(len(r['claims']) for r in R)} numbers, "
-          f"{min(r['date'] for r in R)} to {max(r['date'] for r in R)}\n")
+          f"{min(r['date'] for r in R)} to {max(r['date'] for r in R)}"
+          + (f"; {junk} malformed claim(s) skipped" if junk else "") + "\n")
     for sport in sorted({r["sport"] for r in R}):
         S = [r for r in R if r["sport"] == sport]
         lead = collections.Counter((r.get("lead_family") or "none").lower() for r in S)
-        arg = collections.Counter(c.get("family", "?").lower() for r in S for c in r["claims"] if c.get("role") == "argument")
+        # Count ARTICLES that argue with a family, not numbers: one betting table once
+        # supplied 147 of 229 NFL "point spread" arguments by itself.
+        arg = collections.Counter(f for r in S for f in {c.get("family", "?").lower() for c in r["claims"]
+                                                          if c.get("role") == "argument"})
         print(f"{sport}  ({len(S)} articles)")
         print("  leaned on hardest: " + ", ".join(f"{k} {v}" for k, v in lead.most_common(8)))
-        print("  used to argue:     " + ", ".join(f"{k} {v}" for k, v in arg.most_common(8)) + "\n")
+        print("  argued with (articles): " + ", ".join(f"{k} {v}" for k, v in arg.most_common(8)) + "\n")
 
 
 def main():
