@@ -37,8 +37,8 @@ figure, a takeaway, limits stated. Keep each short. Depth goes in the primer.
 ## The slate (draft order — reorder freely; MLB first while it is fresh)
 
 **Baseball — hitting**
-1. **RBI** — composite; teammates + lineup + power. *Queued: `186-rbi`.*
-2. **Home runs** — the cleanest power indicator? Reflective: power → HR, but also park, era, the ball. The 1998 lesson: everyone counted homers while doubles and walks went unseen (Bonds).
+1. **RBI** — composite; teammates + lineup + power. *Queued: `186-rbi` (Thu 10/29).*
+2. **Home runs** — *Queued: `187-home-runs` (buffer; needs a non-MLB issue before it).* the cleanest power indicator? Reflective: power → HR, but also park, era, the ball. The 1998 lesson: everyone counted homers while doubles and walks went unseen (Bonds).
 3. **Batting average** — contact, plus luck on balls in play. Why .300 is a myth of round numbers.
 4. **Hits (Ichiro, Rose)** — volume vs rate; hits reward playing every day and never walking.
 5. **Walks** — plate discipline; the stat that RBI punishes.
