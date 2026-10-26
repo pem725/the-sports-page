@@ -1,0 +1,277 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: dated
+tags: CFB:cfb, Notre Dame, Navy, Point Spreads
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Navy Beats the Spread Two Times in Three. It Rarely Beats the Team.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Navy Beats the Spread Two Times in Three. It Rarely Beats the Team.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/188-nd-navy.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/188-nd-navy.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Navy Beats the Spread Two Times in Three. It Rarely Beats the Team.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/188-nd-navy.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">College Football &middot; Notre Dame vs. Navy, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>Navy Beats the Spread Two Times in Three. <em>It Rarely Beats the Team.</em></h1>
+
+  <div class="deck">
+    Notre Dame is a 29.5-point favorite over Navy on Saturday. The betting market gives Navy about one chance in 31 to win the game. But since 2013, when Navy has been a big underdog, it has lost by less than the line 13 times in 20. The option keeps games close. It almost never wins them.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Betting lines and results, 2013&ndash;2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">1 in 31</div><div class="l">Navy&rsquo;s chance to win Saturday, by the betting market</div></div>
+    <div class="sc"><div class="v good">13 of 20</div><div class="l">Times Navy beat a big spread since 2013</div></div>
+    <div class="sc"><div class="v bad">84&ndash;13&ndash;1</div><div class="l">Notre Dame&rsquo;s record against Navy</div></div>
+  </div>
+
+  <p><strong>Does Navy have a chance on Saturday?</strong> Notre Dame comes off a bye, a loss at BYU still stinging. Navy is 2&ndash;5 and gave up 49 points to North Texas last week. They meet at noon in Foxborough, Massachusetts.</p>
+
+  <p>Here is the answer, with its number. The betting market makes Navy about a 1-in-31 shot to win the game outright. That fits the record: since 2013, underdogs of 28 to 35 points have won 17 times in 710 tries, about 1 in 42.</p>
+
+  <p>But that is the wrong question to ask about Navy, and the surprise is in the right one. You would think the market has Navy figured out; it sees the Midshipmen every year. Yet when Army, Navy or Air Force has been a two-touchdown underdog, the academy has beaten the spread 31 times in 47. By the end of this, you will know why a team can keep beating the line and still keep losing the game.</p>
+
+  <h2 class="sh">Close Is Not the Same as Winning</h2>
+
+  <p>Start with what a point spread is, because you hear it all week. It is not a prediction of who wins. It is the margin that splits the betting money in half. &ldquo;Notre Dame by 29.5&rdquo; means the market expects Notre Dame to win by about four touchdowns. Navy &ldquo;covers&rdquo; if it loses by 29 or fewer. Covering and winning are two different bets, and Navy&rsquo;s odds on them are wildly different.</p>
+
+  <p>Now look at what you get when the spread is really big: 24 points or more. That has happened 10 times since 2013.</p>
+
+  <figure style="margin:28px 0">
+<svg viewBox="0 0 680 420" width="100%" role="img" aria-label="Ten games since 2013 in which Army, Navy or Air Force was an underdog by 24 points or more: the spread against the actual losing margin. Seven lost by less than the spread; none won." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12" fill="#1a1208" font-weight="600">Academy long shots, 2013&#8211;2025: the spread vs. how much they lost by</text>
+<rect x="250" y="30" width="14" height="10" fill="#d8ceb8"/><text x="270" y="39" font-size="11" fill="#1a1208">the spread</text>
+<line x1="370" y1="35" x2="384" y2="35" stroke="#2c4a6e" stroke-width="3"/><circle cx="384" cy="35" r="4.5" fill="#2c4a6e"/><text x="392" y="39" font-size="11" fill="#1a1208">actual losing margin</text>
+<line x1="250.0" y1="50" x2="250.0" y2="368" stroke="#c8b99a" stroke-width="0.6"/><text x="250.0" y="384" font-size="11" text-anchor="middle" fill="#6b5e4a">0</text>
+<line x1="305.4" y1="50" x2="305.4" y2="368" stroke="#c8b99a" stroke-width="0.6"/><text x="305.4" y="384" font-size="11" text-anchor="middle" fill="#6b5e4a">10</text>
+<line x1="360.8" y1="50" x2="360.8" y2="368" stroke="#c8b99a" stroke-width="0.6"/><text x="360.8" y="384" font-size="11" text-anchor="middle" fill="#6b5e4a">20</text>
+<line x1="416.2" y1="50" x2="416.2" y2="368" stroke="#c8b99a" stroke-width="0.6"/><text x="416.2" y="384" font-size="11" text-anchor="middle" fill="#6b5e4a">30</text>
+<line x1="471.5" y1="50" x2="471.5" y2="368" stroke="#c8b99a" stroke-width="0.6"/><text x="471.5" y="384" font-size="11" text-anchor="middle" fill="#6b5e4a">40</text>
+<line x1="526.9" y1="50" x2="526.9" y2="368" stroke="#c8b99a" stroke-width="0.6"/><text x="526.9" y="384" font-size="11" text-anchor="middle" fill="#6b5e4a">50</text>
+<line x1="582.3" y1="50" x2="582.3" y2="368" stroke="#c8b99a" stroke-width="0.6"/><text x="582.3" y="384" font-size="11" text-anchor="middle" fill="#6b5e4a">60</text>
+<text x="240" y="70" font-size="11" text-anchor="end" fill="#1a1208">2013 Air Force vs Boise State</text>
+<rect x="250" y="60" width="132.9" height="14" fill="#d8ceb8"/>
+<line x1="250" y1="67" x2="371.8" y2="67" stroke="#2c4a6e" stroke-width="3"/><circle cx="371.8" cy="67" r="4.5" fill="#2c4a6e"/>
+<text x="391.9" y="71" font-size="10.5" fill="#2c4a6e">lost by 22</text>
+<text x="240" y="101" font-size="11" text-anchor="end" fill="#1a1208">2013 Army vs Stanford</text>
+<rect x="250" y="91" width="157.8" height="14" fill="#d8ceb8"/>
+<line x1="250" y1="98" x2="327.5" y2="98" stroke="#2c4a6e" stroke-width="3"/><circle cx="327.5" cy="98" r="4.5" fill="#2c4a6e"/>
+<text x="416.8" y="102" font-size="10.5" fill="#2c4a6e">lost by 14</text>
+<text x="240" y="132" font-size="11" text-anchor="end" fill="#1a1208">2014 Army vs Stanford</text>
+<rect x="250" y="122" width="152.3" height="14" fill="#d8ceb8"/>
+<line x1="250" y1="129" x2="443.8" y2="129" stroke="#b83a1e" stroke-width="3"/><circle cx="443.8" cy="129" r="4.5" fill="#b83a1e"/>
+<text x="452.8" y="133" font-size="10.5" fill="#b83a1e">lost by 35</text>
+<text x="240" y="163" font-size="11" text-anchor="end" fill="#1a1208">2015 Air Force vs Michigan State</text>
+<rect x="250" y="153" width="152.3" height="14" fill="#d8ceb8"/>
+<line x1="250" y1="160" x2="327.5" y2="160" stroke="#2c4a6e" stroke-width="3"/><circle cx="327.5" cy="160" r="4.5" fill="#2c4a6e"/>
+<text x="411.3" y="164" font-size="10.5" fill="#2c4a6e">lost by 14</text>
+<text x="240" y="194" font-size="11" text-anchor="end" fill="#1a1208">2017 Army vs Ohio State</text>
+<rect x="250" y="184" width="174.5" height="14" fill="#d8ceb8"/>
+<line x1="250" y1="191" x2="421.7" y2="191" stroke="#2c4a6e" stroke-width="3"/><circle cx="421.7" cy="191" r="4.5" fill="#2c4a6e"/>
+<text x="433.5" y="195" font-size="10.5" fill="#2c4a6e">lost by 31</text>
+<text x="240" y="225" font-size="11" text-anchor="end" fill="#1a1208">2018 Navy vs UCF</text>
+<rect x="250" y="215" width="132.9" height="14" fill="#d8ceb8"/>
+<line x1="250" y1="222" x2="310.9" y2="222" stroke="#2c4a6e" stroke-width="3"/><circle cx="310.9" cy="222" r="4.5" fill="#2c4a6e"/>
+<text x="391.9" y="226" font-size="10.5" fill="#2c4a6e">lost by 11</text>
+<text x="240" y="256" font-size="11" text-anchor="end" fill="#1a1208">2018 Army vs Oklahoma</text>
+<rect x="250" y="246" width="163.4" height="14" fill="#d8ceb8"/>
+<line x1="250" y1="253" x2="288.8" y2="253" stroke="#2c4a6e" stroke-width="3"/><circle cx="288.8" cy="253" r="4.5" fill="#2c4a6e"/>
+<text x="422.4" y="257" font-size="10.5" fill="#2c4a6e">lost by 7</text>
+<text x="240" y="287" font-size="11" text-anchor="end" fill="#1a1208">2021 Navy vs Cincinnati</text>
+<rect x="250" y="277" width="157.8" height="14" fill="#d8ceb8"/>
+<line x1="250" y1="284" x2="288.8" y2="284" stroke="#2c4a6e" stroke-width="3"/><circle cx="288.8" cy="284" r="4.5" fill="#2c4a6e"/>
+<text x="416.8" y="288" font-size="10.5" fill="#2c4a6e">lost by 7</text>
+<text x="240" y="318" font-size="11" text-anchor="end" fill="#1a1208">2023 Army vs LSU</text>
+<rect x="250" y="308" width="182.8" height="14" fill="#d8ceb8"/>
+<line x1="250" y1="315" x2="593.4" y2="315" stroke="#b83a1e" stroke-width="3"/><circle cx="593.4" cy="315" r="4.5" fill="#b83a1e"/>
+<text x="602.4" y="319" font-size="10.5" fill="#b83a1e">lost by 62</text>
+<text x="240" y="349" font-size="11" text-anchor="end" fill="#1a1208">2025 Navy vs Notre Dame</text>
+<rect x="250" y="339" width="168.9" height="14" fill="#d8ceb8"/>
+<line x1="250" y1="346" x2="466.0" y2="346" stroke="#b83a1e" stroke-width="3"/><circle cx="466.0" cy="346" r="4.5" fill="#b83a1e"/>
+<text x="475.0" y="350" font-size="10.5" fill="#b83a1e">lost by 39</text>
+<text x="430.0" y="404" font-size="10" text-anchor="middle" fill="#6b5e4a">points; blue = lost by less than the spread (7 games), red = lost by more (3)</text></svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Every regular-season game from 2013 to 2025 in which Army, Navy or Air Force was an underdog by 24 points or more. Gray bar: the spread. Line and dot: how much the academy lost by. Source: CollegeFootballData lines and results.</figcaption>
+  </figure>
+
+  <p>Seven of the ten lost by less than the spread. Army lost to Oklahoma in 2018 by seven, in overtime, as a 29.5-point underdog. Navy lost to Cincinnati in 2021 by seven. <strong>None of the ten won.</strong> Close, over and over; never over the top.</p>
+
+  <div class="pull">
+    <p>The option shortens the game. A short game is closer than the line. The better team still usually wins it.</p>
+  </div>
+
+  <h2 class="sh">Why the Option Keeps It Close</h2>
+
+  <p>Navy runs the ball on 81% of its plays this season. Notre Dame runs on 55%. Running plays keep the clock moving, and a moving clock means fewer drives for both teams.</p>
+
+  <p>Picture each drive as a coin you have loaded in the better team&rsquo;s favor. Give Notre Dame 12 flips and you will usually see a blowout. Give it eight and you see a smaller pile. The better team is just as good; it simply gets fewer chances to prove it. So the final margin shrinks, and the spread, set as if this were a normal game, ends up too big.</p>
+
+  <p>That fits a second number. As two-touchdown underdogs since 2013, the academies won nine games where their lines predicted about four. Luck alone would do that about one time in 25, so it is probably real. But every one of those wins came against spreads of 14 to 22 points. Against 24 or more, the count is zero.</p>
+
+  <h2 class="sh">And Notre Dame Is Not Most Teams</h2>
+
+  <p>Notre Dame leads the series 84&ndash;13&ndash;1. It won 43 straight from 1964 to 2006. Navy won three of four between 2007 and 2010, and once more in 2016, 28&ndash;27. Since then, Notre Dame has won eight in a row. Last year it won 49&ndash;10 as a 30.5-point favorite. That was one of the three red lines on the chart.</p>
+
+  <p>Will the bye help the Irish? On Wednesday we found a week off is worth about one point, and close to nothing for a team coming off a loss. One point does not matter in a four-touchdown game.</p>
+
+  <p>So here is what you should watch. If Navy has the ball for most of the first half and trails by two scores or less at the break, the option is doing its job. If Notre Dame scores on its first two drives, the short game gets long fast.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>A spread and a chance of winning answer different questions. One asks &ldquo;by how much?&rdquo; and the other asks &ldquo;who?&rdquo; A team can beat the first one for years and almost never beat the second.</p>
+
+  <p>And notice the coin-flip idea, because it shows up everywhere. The fewer chances the better side gets, the more room luck has. That is why one game is chaos and a full season is not. It is also why an underdog&rsquo;s best plan is often to make the game shorter.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Lines and results:</strong> every regular-season game with a betting line from 2013 to 2025 in CollegeFootballData (12,948 games), using the consensus line when present and the median of the books otherwise. Our line data starts in 2013 and misses some games, including the 2016 Navy&ndash;Notre Dame game; the series record comes from CollegeFootballData&rsquo;s full head-to-head history. Saturday&rsquo;s line is DraftKings and Bovada as of October 25; the 1-in-31 is DraftKings&rsquo; moneyline, Navy +3000.</p>
+    <p><strong>&ldquo;Expected&rdquo; wins</strong> come from how often all underdogs won at the same spread, in three-point bands. Run share is rushing attempts divided by all plays.</p>
+    <p><strong>What it cannot tell you:</strong> the academy numbers rest on 47 games, and the 24-point group on ten. We did not count drives directly; the short-game explanation fits the pattern but is not proven by it. And the line can move before Saturday.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
