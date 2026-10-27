@@ -1,0 +1,550 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: keeps
+tags: CFB:cfb, College Football History, Luck vs. Skill, Sample Size
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — A Thousand Games In, It Still Doesn’t Even Out</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.chart{width:100%;height:auto;display:block}
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="A Thousand Games In, It Still Doesn’t Even Out">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/190-every-program.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/190-every-program.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A Thousand Games In, It Still Doesn’t Even Out">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/190-every-program.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">College Football &middot; Every Program Since 1869</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>A Thousand Games In, It Still Doesn&rsquo;t Even Out</h1>
+  <div class="deck">
+    Seventy-four college football programs have played at least 1,000 games. If every game were a coin flip, nearly all of them would sit close to .500 by now. Only 20 do. The other 54 are too good or too bad, for too long, to be luck. You can watch it happen, every program from 1869 on, on our new page.
+  </div>
+  <div class="byline">By The Sports Page &middot; Every major program&rsquo;s record, 1869&ndash;2025</div>
+  <div class="stat-row">
+    <div class="sc"><div class="v now">74</div><div class="l">Programs with 1,000 or more major games</div></div>
+    <div class="sc"><div class="v good">20</div><div class="l">Of them close enough to .500 to pass for a coin</div></div>
+    <div class="sc"><div class="v bad">16&ndash;0</div><div class="l">Indiana last season, from a .426 all-time record</div></div>
+  </div>
+
+  <p><strong>Is a program&rsquo;s all-time record skill, or could luck have done it?</strong> Here is the answer, with its number. Seventy-four programs have played 1,000 or more major games. Luck could explain the records of 20. For the other 54, it can&rsquo;t.</p>
+  <p>That should surprise you, because you have heard the opposite your whole life: <em>it all evens out.</em> Over enough games, people figure, the bad bounces cancel the good ones and everybody drifts toward average. For a coin, that is true. For a football program, it mostly isn&rsquo;t.</p>
+  <p>By the end you will be able to look at any record and ask the one question that tells you how much luck is in it. How many games?</p>
+
+  <h2 class="sh">Watch Every Program at Once</h2>
+  <p>Start with the picture, because it does the arguing for us. Open <a href="https://thesportspage.net/every-program.html" target="_blank" rel="noopener" style="color:var(--steel)"><strong>Every Program Since 1869</strong></a> and press play. Each dot is one program. It moves right as the program plays more games, and up or down with its winning percentage. In 1869 there are two dots. By 2025 there are 304, and 168 of them have stopped: schools that dropped down a level, merged, or quit, plus the wartime service teams of the 1940s.</p>
+  <p>The idea is borrowed from Julian Critchlow, whose <a href="https://channel-swims.info/crossed" target="_blank" rel="noopener" style="color:var(--steel)">map of English Channel swims</a> starts every swimmer at hour zero. Our page has the same switch. Pick &ldquo;From season 1&rdquo; and every program kicks off together, Yale in 1872 beside Boise State in 1996.</p>
+
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 440" width="100%" role="img" aria-label="Every major college football program since 1869, at its all-time record through 2025. Across: games played, on a log scale. Up: winning percentage. A tan funnel shows where a coin flip would land; it is wide at a few games and narrow at a thousand. Most programs with a thousand games sit outside it." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<rect width="680" height="440" fill="#f5f0e8"/>
+<text x="10" y="18" font-size="12.5" fill="#1a1208" font-weight="600">Every major program since 1869, at its all-time record through 2025</text>
+<path d="M52.0,40.0 L58.3,40.0 L64.7,40.0 L71.0,40.0 L77.4,40.0 L83.7,40.0 L90.1,40.0 L96.4,40.0 L102.7,40.0 L109.1,40.0 L115.4,40.0 L121.8,40.0 L128.1,40.0 L134.5,40.0 L140.8,40.0 L147.1,40.0 L153.5,40.0 L159.8,40.0 L166.2,40.0 L172.5,46.5 L178.8,52.8 L185.2,58.9 L191.5,64.7 L197.9,70.4 L204.2,75.8 L210.6,81.0 L216.9,86.0 L223.2,90.9 L229.6,95.5 L235.9,100.0 L242.3,104.3 L248.6,108.4 L255.0,112.4 L261.3,116.3 L267.6,119.9 L274.0,123.5 L280.3,126.9 L286.7,130.2 L293.0,133.4 L299.4,136.4 L305.7,139.3 L312.0,142.2 L318.4,144.9 L324.7,147.5 L331.1,150.0 L337.4,152.4 L343.7,154.7 L350.1,157.0 L356.4,159.1 L362.8,161.2 L369.1,163.2 L375.5,165.1 L381.8,166.9 L388.1,168.7 L394.5,170.4 L400.8,172.1 L407.2,173.7 L413.5,175.2 L419.9,176.7 L426.2,178.1 L432.5,179.4 L438.9,180.7 L445.2,182.0 L451.6,183.2 L457.9,184.4 L464.3,185.5 L470.6,186.5 L476.9,187.6 L483.3,188.6 L489.6,189.5 L496.0,190.5 L502.3,191.4 L508.6,192.2 L515.0,193.0 L521.3,193.8 L527.7,194.6 L534.0,195.3 L540.4,196.0 L546.7,196.7 L553.0,197.4 L559.4,198.0 L565.7,198.6 L572.1,199.2 L578.4,199.7 L584.8,200.3 L591.1,200.8 L597.4,201.3 L603.8,201.8 L610.1,202.2 L616.5,202.7 L622.8,203.1 L629.2,203.5 L635.5,203.9 L641.8,204.3 L648.2,204.7 L654.5,205.0 L660.0,205.3 L660.0,222.7 L654.5,223.0 L648.2,223.3 L641.8,223.7 L635.5,224.1 L629.2,224.5 L622.8,224.9 L616.5,225.3 L610.1,225.8 L603.8,226.2 L597.4,226.7 L591.1,227.2 L584.8,227.7 L578.4,228.3 L572.1,228.8 L565.7,229.4 L559.4,230.0 L553.0,230.6 L546.7,231.3 L540.4,232.0 L534.0,232.7 L527.7,233.4 L521.3,234.2 L515.0,235.0 L508.6,235.8 L502.3,236.6 L496.0,237.5 L489.6,238.5 L483.3,239.4 L476.9,240.4 L470.6,241.5 L464.3,242.5 L457.9,243.6 L451.6,244.8 L445.2,246.0 L438.9,247.3 L432.5,248.6 L426.2,249.9 L419.9,251.3 L413.5,252.8 L407.2,254.3 L400.8,255.9 L394.5,257.6 L388.1,259.3 L381.8,261.1 L375.5,262.9 L369.1,264.8 L362.8,266.8 L356.4,268.9 L350.1,271.0 L343.7,273.3 L337.4,275.6 L331.1,278.0 L324.7,280.5 L318.4,283.1 L312.0,285.8 L305.7,288.7 L299.4,291.6 L293.0,294.6 L286.7,297.8 L280.3,301.1 L274.0,304.5 L267.6,308.1 L261.3,311.7 L255.0,315.6 L248.6,319.6 L242.3,323.7 L235.9,328.0 L229.6,332.5 L223.2,337.1 L216.9,342.0 L210.6,347.0 L204.2,352.2 L197.9,357.6 L191.5,363.3 L185.2,369.1 L178.8,375.2 L172.5,381.5 L166.2,388.0 L159.8,388.0 L153.5,388.0 L147.1,388.0 L140.8,388.0 L134.5,388.0 L128.1,388.0 L121.8,388.0 L115.4,388.0 L109.1,388.0 L102.7,388.0 L96.4,388.0 L90.1,388.0 L83.7,388.0 L77.4,388.0 L71.0,388.0 L64.7,388.0 L58.3,388.0 L52.0,388.0Z" fill="#e6dcc6"/>
+<line x1="52" x2="660" y1="388.0" y2="388.0" stroke="#d6cbb3" stroke-width="0.7"/>
+<text x="46" y="392.0" font-size="10.5" text-anchor="end" fill="#6b5e4a">.000</text>
+<line x1="52" x2="660" y1="301.0" y2="301.0" stroke="#d6cbb3" stroke-width="0.7"/>
+<text x="46" y="305.0" font-size="10.5" text-anchor="end" fill="#6b5e4a">.250</text>
+<line x1="52" x2="660" y1="214.0" y2="214.0" stroke="#d6cbb3" stroke-width="0.7"/>
+<text x="46" y="218.0" font-size="10.5" text-anchor="end" fill="#6b5e4a">.500</text>
+<line x1="52" x2="660" y1="127.0" y2="127.0" stroke="#d6cbb3" stroke-width="0.7"/>
+<text x="46" y="131.0" font-size="10.5" text-anchor="end" fill="#6b5e4a">.750</text>
+<line x1="52" x2="660" y1="40.0" y2="40.0" stroke="#d6cbb3" stroke-width="0.7"/>
+<text x="46" y="44.0" font-size="10.5" text-anchor="end" fill="#6b5e4a">1.000</text>
+<line x1="52.0" x2="52.0" y1="40" y2="388" stroke="#d6cbb3" stroke-width="0.7"/>
+<text x="52.0" y="403" font-size="10.5" text-anchor="middle" fill="#6b5e4a">1</text>
+<line x1="241.8" x2="241.8" y1="40" y2="388" stroke="#d6cbb3" stroke-width="0.7"/>
+<text x="241.8" y="403" font-size="10.5" text-anchor="middle" fill="#6b5e4a">10</text>
+<line x1="431.5" x2="431.5" y1="40" y2="388" stroke="#d6cbb3" stroke-width="0.7"/>
+<text x="431.5" y="403" font-size="10.5" text-anchor="middle" fill="#6b5e4a">100</text>
+<line x1="621.3" x2="621.3" y1="40" y2="388" stroke="#d6cbb3" stroke-width="0.7"/>
+<text x="621.3" y="403" font-size="10.5" text-anchor="middle" fill="#6b5e4a">1,000</text>
+<text x="660" y="420" font-size="10.5" text-anchor="end" fill="#6b5e4a">games played, all-time (each step is ten times more)</text>
+<text x="13" y="214" font-size="10.5" text-anchor="middle" fill="#6b5e4a" transform="rotate(-90 13 214)">all-time winning %</text>
+<circle cx="603.2" cy="196.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="557.5" cy="261.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="530.6" cy="234.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="275.2" cy="167.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="249.6" cy="293.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="223.4" cy="170.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="503.3" cy="215.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="511.5" cy="181.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="622.1" cy="205.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="622.7" cy="176.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="641.9" cy="189.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="567.1" cy="232.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="644.7" cy="189.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="643.0" cy="172.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="577.5" cy="221.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="302.9" cy="197.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="641.4" cy="210.5" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="418.1" cy="207.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="347.3" cy="218.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="542.4" cy="123.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="620.4" cy="196.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="475.2" cy="231.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="397.3" cy="206.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="594.4" cy="200.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="329.5" cy="220.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="630.0" cy="184.0" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="608.6" cy="206.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="536.4" cy="208.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="547.4" cy="247.3" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="275.2" cy="283.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="635.9" cy="206.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="241.8" cy="283.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="507.7" cy="153.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="476.2" cy="204.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="453.8" cy="186.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="539.1" cy="192.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="578.2" cy="201.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="406.7" cy="141.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="451.2" cy="283.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="558.3" cy="161.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="604.5" cy="211.0" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="580.4" cy="219.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="643.8" cy="171.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="285.5" cy="254.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="441.6" cy="190.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="233.1" cy="330.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="212.4" cy="263.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="588.3" cy="188.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="639.5" cy="192.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="520.9" cy="178.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="503.3" cy="235.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="634.8" cy="223.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="591.8" cy="238.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="526.3" cy="242.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="606.6" cy="178.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="233.1" cy="349.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="458.6" cy="225.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="263.4" cy="187.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="602.4" cy="160.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="579.2" cy="232.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="495.0" cy="255.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="223.4" cy="83.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="263.4" cy="200.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="567.4" cy="203.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="531.9" cy="181.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="476.7" cy="209.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="587.8" cy="216.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="184.6" cy="318.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="630.6" cy="217.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="454.4" cy="173.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="592.2" cy="208.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="340.1" cy="229.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="576.4" cy="270.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="353.9" cy="280.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="638.7" cy="173.0" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="249.6" cy="293.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="512.1" cy="241.5" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="510.3" cy="264.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="608.5" cy="155.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="493.8" cy="168.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="241.8" cy="214.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="233.1" cy="136.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="241.8" cy="196.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="392.1" cy="233.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="590.6" cy="184.5" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="490.7" cy="257.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="579.9" cy="209.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="521.8" cy="219.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="525.5" cy="172.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="645.3" cy="153.3" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="275.2" cy="98.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="466.0" cy="204.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="469.2" cy="266.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="645.1" cy="183.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="459.8" cy="209.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="249.6" cy="71.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="382.2" cy="125.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="495.7" cy="230.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="184.6" cy="318.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="363.9" cy="273.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="495.7" cy="200.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="615.5" cy="144.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="439.4" cy="201.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="199.7" cy="388.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="585.9" cy="212.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="568.0" cy="203.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="610.2" cy="196.3" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="596.2" cy="261.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="233.1" cy="233.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="644.2" cy="212.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="445.8" cy="260.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="446.5" cy="212.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="641.0" cy="197.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="335.0" cy="96.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="642.1" cy="229.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="249.6" cy="134.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="256.8" cy="127.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="358.0" cy="158.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="376.0" cy="115.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="641.7" cy="229.3" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="635.9" cy="229.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="320.5" cy="227.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="593.3" cy="273.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="633.9" cy="222.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="377.6" cy="200.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="553.6" cy="176.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="369.3" cy="239.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="429.0" cy="262.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="241.8" cy="144.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="548.2" cy="214.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="431.5" cy="161.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="223.4" cy="170.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="509.3" cy="212.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="329.5" cy="352.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="581.7" cy="224.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="643.3" cy="161.0" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="569.3" cy="211.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="555.8" cy="266.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="596.9" cy="197.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="326.6" cy="257.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="451.2" cy="201.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="233.1" cy="194.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="410.0" cy="261.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="280.5" cy="203.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="393.4" cy="216.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="302.9" cy="106.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="294.7" cy="58.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="523.7" cy="230.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="575.4" cy="219.5" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="634.4" cy="207.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="263.4" cy="280.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="515.2" cy="292.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="413.1" cy="135.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="597.4" cy="211.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="458.1" cy="235.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="332.3" cy="260.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="621.9" cy="166.0" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="595.1" cy="193.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="648.0" cy="133.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="626.5" cy="182.0" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="529.1" cy="225.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="233.1" cy="252.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="644.1" cy="189.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="640.9" cy="190.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="414.1" cy="211.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="639.3" cy="212.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="241.8" cy="214.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="642.7" cy="198.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="263.4" cy="200.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="530.4" cy="253.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="459.2" cy="215.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="233.1" cy="330.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="646.8" cy="196.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="645.7" cy="151.3" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="558.0" cy="209.5" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="573.8" cy="250.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="275.2" cy="272.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="623.6" cy="241.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="619.9" cy="264.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="490.7" cy="215.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="419.1" cy="242.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="199.7" cy="40.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="642.8" cy="195.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="290.2" cy="175.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="640.6" cy="208.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="590.3" cy="232.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="466.0" cy="262.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="443.0" cy="223.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="588.9" cy="219.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="644.0" cy="232.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="358.0" cy="226.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="641.4" cy="133.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="400.9" cy="224.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="595.2" cy="226.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="635.5" cy="124.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="641.9" cy="136.0" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="636.6" cy="206.3" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="463.8" cy="225.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="633.4" cy="186.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="632.2" cy="230.5" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="563.8" cy="238.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="647.5" cy="148.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="623.5" cy="171.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="294.7" cy="223.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="641.8" cy="185.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="294.7" cy="323.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="249.6" cy="293.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="451.2" cy="220.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="614.2" cy="137.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="642.6" cy="211.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="241.8" cy="179.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="256.8" cy="40.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="317.3" cy="262.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="233.1" cy="252.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="635.7" cy="239.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="574.2" cy="236.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="626.2" cy="216.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="349.6" cy="246.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="427.3" cy="268.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="589.1" cy="194.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="471.8" cy="212.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="607.6" cy="231.5" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="337.6" cy="268.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="471.8" cy="167.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="275.2" cy="144.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="532.1" cy="210.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="241.8" cy="283.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="476.7" cy="245.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="639.5" cy="210.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="526.1" cy="206.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="249.6" cy="277.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="635.2" cy="144.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="468.2" cy="233.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="634.6" cy="216.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="595.2" cy="201.3" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="411.0" cy="272.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="310.4" cy="214.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="302.9" cy="230.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="476.7" cy="210.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="481.3" cy="183.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="320.5" cy="200.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="631.6" cy="197.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="448.6" cy="267.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="396.0" cy="171.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="642.3" cy="190.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="405.6" cy="183.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="606.3" cy="237.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="644.4" cy="152.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="199.7" cy="272.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="241.8" cy="92.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="495.7" cy="210.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="645.4" cy="144.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="644.0" cy="177.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="642.5" cy="197.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="249.6" cy="182.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="475.7" cy="259.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="627.0" cy="193.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="446.5" cy="245.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="618.5" cy="259.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="477.6" cy="201.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="596.3" cy="180.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="450.6" cy="230.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="524.8" cy="196.0" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="479.0" cy="246.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="639.9" cy="227.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="624.0" cy="210.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="627.5" cy="182.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="290.2" cy="330.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="636.4" cy="179.8" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="631.6" cy="215.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="640.8" cy="224.7" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="371.0" cy="217.6" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="571.5" cy="210.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="590.0" cy="223.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="642.5" cy="181.5" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="285.5" cy="224.2" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="637.6" cy="242.3" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="399.7" cy="237.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="633.9" cy="178.9" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="518.7" cy="138.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="543.7" cy="206.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="530.2" cy="223.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="630.0" cy="221.2" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="495.4" cy="234.8" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="554.7" cy="219.1" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="638.1" cy="182.5" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="340.1" cy="214.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="382.2" cy="223.5" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="505.0" cy="202.6" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="594.2" cy="205.5" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="427.3" cy="318.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="256.8" cy="330.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="552.3" cy="249.0" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="573.3" cy="219.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="493.0" cy="198.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="644.5" cy="185.4" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="451.9" cy="284.7" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="249.6" cy="277.3" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="634.6" cy="222.1" r="2.6" fill="#2c4a6e" fill-opacity="0.55"/>
+<circle cx="470.2" cy="231.4" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="619.0" cy="121.9" r="2.3" fill="none" stroke="#a99d86" stroke-width="1"/>
+<circle cx="646.6" cy="127.0" r="4.6" fill="#2c4a6e"/>
+<line x1="641.6" y1="127.0" x2="588.6" y2="109.0" stroke="#2c4a6e" stroke-width="0.8"/>
+<text x="584.6" y="113.0" font-size="11" text-anchor="end" fill="#f5f0e8" font-weight="600" stroke="#f5f0e8" stroke-width="3.5">Alabama .750 after 1,360 games</text><text x="584.6" y="113.0" font-size="11" text-anchor="end" fill="#2c4a6e" font-weight="600">Alabama .750 after 1,360 games</text>
+<circle cx="638.9" cy="239.7" r="4.6" fill="#b83a1e"/>
+<line x1="633.9" y1="239.7" x2="580.9" y2="281.7" stroke="#b83a1e" stroke-width="0.8"/>
+<text x="576.9" y="285.7" font-size="11" text-anchor="end" fill="#f5f0e8" font-weight="600" stroke="#f5f0e8" stroke-width="3.5">Indiana .426 after 1,239</text><text x="576.9" y="285.7" font-size="11" text-anchor="end" fill="#b83a1e" font-weight="600">Indiana .426 after 1,239</text>
+<circle cx="641.4" cy="214.4" r="4.6" fill="#1a1208"/>
+<line x1="636.4" y1="214.4" x2="583.4" y2="162.4" stroke="#1a1208" stroke-width="0.8"/>
+<text x="579.4" y="166.4" font-size="11" text-anchor="end" fill="#f5f0e8" font-weight="600" stroke="#f5f0e8" stroke-width="3.5">Virginia .499 after 1,276</text><text x="579.4" y="166.4" font-size="11" text-anchor="end" fill="#1a1208" font-weight="600">Virginia .499 after 1,276</text>
+<text x="140" y="206" font-size="10.5" text-anchor="middle" fill="#6b5e4a" font-style="italic">a coin flip lands</text><text x="140" y="220" font-size="10.5" text-anchor="middle" fill="#6b5e4a" font-style="italic">in the tan 19 times in 20</text>
+<text x="264.8" y="54.0" font-size="10.5" fill="#f5f0e8" stroke="#f5f0e8" stroke-width="3.5">Randolph Field, 1944: 12 games, no losses</text><text x="264.8" y="54.0" font-size="10.5" fill="#6b5e4a">Randolph Field, 1944: 12 games, no losses</text>
+<circle cx="60" cy="432" r="3" fill="#2c4a6e" fill-opacity="0.55"/><text x="68" y="436" font-size="10.5" fill="#1a1208">still playing</text>
+<circle cx="170" cy="432" r="2.6" fill="none" stroke="#a99d86"/><text x="178" y="436" font-size="10.5" fill="#1a1208">stopped (dropped down or folded)</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Every major program since 1869, at its all-time record through 2025. Across: games played, where each step is ten times more. Up: winning percentage, with a tie counted as half a win. The tan funnel is where a fair coin would land 19 times in 20. It is wide at ten games and narrow at a thousand. Source: James Howell&rsquo;s historical scores.</figcaption>
+  </figure>
+
+  <h2 class="sh">What a Coin Would Do</h2>
+  <p>Picture a team that wins every game with a coin flip. After 10 games, its record could easily be anywhere from .200 to .800. Ten flips can do almost anything. After 1,000 games, it would almost never leave .470 to .530. Draw those ranges for every number of games and you get the tan funnel in the chart above: wide where there are few games, narrow where there are many.</p>
+  <p>Notice what that means for the left side of the chart. Randolph Field, a 1944 service team, played 12 games and lost none. A perfect record! But 12 games is the wide part of the funnel. The record cannot tell you how much was skill, so a perfect record there tells you less than it seems.</p>
+  <p>Now look right. Alabama is .750 after 1,360 games. A coin would need more luck than the world has ever seen to do that. The same goes for Ohio State at .758, Michigan at .732 and Notre Dame at .731. Down at the bottom, Wake Forest sits at .419 after 1,219 games. That isn&rsquo;t bad luck either. It&rsquo;s a long, real record.</p>
+  <div class="pull">
+    <p>Ten games, and luck can make almost any record. A thousand, and luck can barely move it.</p>
+  </div>
+
+  <h2 class="sh">Who Could Pass for a Coin</h2>
+  <p>Twenty programs with 1,000 or more games sit inside the funnel. Virginia is the closest: .499 after 1,276 games. Illinois is .504 after 1,321. Purdue, Baylor, Kentucky, Duke and South Carolina are all within a whisker of .500. That does not mean those programs <em>were</em> coins; good decades and bad decades can cancel out. It means their records alone can&rsquo;t tell you apart from one.</p>
+  <p>And here is the twist. The funnel catches a fair coin 19 times in 20, not every time. So even if all 74 programs were coins, three or four would land outside it by luck. Fifty-four do. So the spread you see is real. Some places have simply been better at football for a century.</p>
+
+  <h2 class="sh">Then There Is Indiana</h2>
+  <p>Indiana is .426 after 1,239 games, the third-lowest of the 74. By the funnel, that long losing record is not bad luck. And last season Indiana went 16&ndash;0 and beat Miami 27&ndash;21 for its first national title. (We looked at how its turnaround began in <a href="https://thesportspage.net/published/181-indiana-turnaround.html" target="_blank" rel="noopener" style="color:var(--steel)">Issue #207</a>.)</p>
+  <p>Both facts are true at the same time. The all-time record measures a program across 127 seasons, many coaches and thousands of players. It describes the past. It says very little about this year&rsquo;s team, which is one season: the wide part of the funnel all over again.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+  <p>Before you believe a record, ask how many games it rests on. With a few games, luck can make almost anything, so hold the record loosely. With a thousand, luck can barely move it, so whatever you see is real.</p>
+  <p>And retire &ldquo;it all evens out.&rdquo; That is a rule for coins. Teams are not coins, which is the whole reason anybody watches.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Records:</strong> James Howell&rsquo;s College Football Historical Scores, 304 programs and 14,408 seasons from 1869 to 2025. These are results as played on the field: vacated wins stay in, so Alabama is 999&ndash;319&ndash;42 here against an official 985&ndash;345&ndash;43. Howell counts only the seasons a program played at the major-college level, so Notre Dame enters in 1899 and Yale leaves after 1981. Totals will not match a school&rsquo;s own record book.</p>
+    <p><strong>Checked</strong> against CollegeFootballData for 2005&ndash;2025: 31,525 of 31,553 regular-season games match to the exact score, and none of the rest changes who won. Yale&rsquo;s 1872&ndash;1981 record differs from Sports-Reference&rsquo;s by one game.</p>
+    <p><strong>The funnel</strong> is .500 plus or minus two standard deviations of a fair coin, one over the square root of the games played. A tie counts as half a win. Leaving ties out moves no program across the line at 1,000 games.</p>
+    <p><strong>What it cannot tell you:</strong> a coin is the simplest kind of luck. Real luck in football is lumpier (injuries, schedules, a bad decade), so the funnel is a floor, not a full account. And it says nothing about why a program was good, only that it was.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

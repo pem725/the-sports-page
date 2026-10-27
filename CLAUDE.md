@@ -639,6 +639,32 @@ one of those failed while still looking fine. Do not quietly drop an item from i
 once it is fixed. A fixed bug that is no longer recorded is a bug that costs full
 price the next time.
 
+### `every-program.html` — every college program since 1869, as a time-lapse
+
+Built 2026-10-27 on the editor's ask, after his friend Julian Critchlow's
+[Channel-swim map](https://channel-swims.info/crossed); Julian gave his blessing
+and is credited on the page. Each dot is a major program: across, all-time games
+played (log scale); up, all-time winning percentage; behind them, the funnel where
+a fair coin would land (.500 plus or minus 1/&radic;games). Julian's "everyone
+starts at hour zero" idea is the second clock, **From season 1**.
+
+Rebuild with `python3 scripts/build_every_program.py` (add `--fetch` once a year,
+after James Howell updates his scores in January). The chart's code is
+`assets/every-program.js`; the builder inlines it with the data, and computes
+every number the page's text quotes, so the words cannot drift from the data.
+
+**Two traps in the source, both stated on the page:** Howell records results *as
+played* (vacated wins stay in; Alabama 999&ndash;319&ndash;42, officially
+985&ndash;345&ndash;43), and he counts only *major-college seasons* (Notre Dame from
+1899, Yale through 1981). Never quote a program's total from it as "the all-time
+record". Checked 2026-10-27: 31,525 of 31,553 games from 2005 to 2025 match
+CollegeFootballData to the exact score.
+
+**A chart in an issue needs `class="chart"` on its `<svg>`**, or the OG card
+silently falls back to the stat row. Do not use `paint-order` for label halos
+either: cairosvg ignores it and the labels vanish from the card. Stack a
+cream-stroked copy of the text under the real one instead.
+
 ### NEWSINESS — the metric that picks the story
 
 `scripts/newsiness.py`, rubric in `SKILL.md` Step 0.5, candidates in
