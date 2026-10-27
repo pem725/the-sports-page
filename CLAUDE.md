@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 290 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 289 issues remaining of 500
 
 ## Repository Structure
 
@@ -1228,9 +1228,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 210 issues (#1-210)
-Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 183-sal-peralta, 184-bye-week, 186-rbi, 187-home-runs, 188-nd-navy, 189-qb-wins, _TEMPLATE)
+Published: 211 issues (#1-211)
+Queue: 8 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 184-bye-week, 186-rbi, 187-home-runs, 188-nd-navy, 189-qb-wins, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 290 issues remaining of 500
-Last published: Issue #210 — "One in Seven Coaches Goes Home to Coach. Home Gives Them No Edge." (185-coaches-came-home.html) on October 26, 2026
+Goal: 289 issues remaining of 500
+Last published: Issue #211 — "The Mets Let Him Go. Then He Got Worse. Then He Won the Pennant." (183-sal-peralta.html) on October 27, 2026
