@@ -560,6 +560,20 @@
    "number": "Preliminary, MLB Stats API, best-of-7 series 1995-2025 (one pass, needs 2nd source): 3-1 leaders 42/49 (a coin predicts 43); trailing team won 58/125 elimination games (46%); a team that just survived won the next 30/58 (52%). No backs-against-the-wall effect, no momentum. Football half (safe-lead size by quarter, run-it-up) needs nflverse play-by-play.",
    "why": "Mirror of the Pyrrhic series (when losing pays). Leverage: a scoreless inning in a road tie only buys another inning; elite arms are a fixed stock. Civic carry: the 'destiny team' / momentum story is a coin read backwards. Handle the 1986 Mets as the believer's case. Football case studies (editor, 2026-10-28): Eric Morris (UIW 2018-21, North Texas 2023-25, Oklahoma State 2026) and G.J. Kinne (UIW 2022, Texas State 2023-). Both came out of the UIW go-for-it offense. Do NOT assert a run-it-up reputation; measure their 4th-down and onside choices with big leads from play-by-play and let the record speak.",
    "status": "idea"
+  },
+  {
+   "slug": "coaching-dna",
+   "title": "Coaching DNA: do assistants of winners win?",
+   "grip": 5,
+   "twist": 8,
+   "clock": 5,
+   "stack": 7,
+   "carry": 8,
+   "answerable": true,
+   "source": "Editor, 2026-10-28, out of the jugular idea (Morris and Kinne, both out of the Incarnate Word go-for-it program)",
+   "number": "Not yet computed. Plan: data/almamater/all_tenures.csv already holds FBS head-coach tenures 1970-2025 with Wikipedia page names and prior5_pct; add each coach's last assistant job and its head coach from the Wikipedia infobox, then compare first-head-job records of assistants from winning staffs (e.g. boss .700+) vs the rest, measured against the program's prior five years.",
+   "why": "The 'tree' is how the sport hires, and nobody checks it. Traps: selection (winners' assistants get better jobs, so compare to the program's prior 5, as in #185), survivorship (we only see assistants who got hired), and a famous boss is remembered by his hits. Could become a short series (overall effect, then one tree); flag saturation: #185 coaches-came-home and #29 year-one already cover coaches.",
+   "status": "idea"
   }
  ]
 }
