@@ -574,6 +574,20 @@
    "number": "Not yet computed. Plan: data/almamater/all_tenures.csv already holds FBS head-coach tenures 1970-2025 with Wikipedia page names and prior5_pct; add each coach's last assistant job and its head coach from the Wikipedia infobox, then compare first-head-job records of assistants from winning staffs (e.g. boss .700+) vs the rest, measured against the program's prior five years.",
    "why": "The 'tree' is how the sport hires, and nobody checks it. Traps: selection (winners' assistants get better jobs, so compare to the program's prior 5, as in #185), survivorship (we only see assistants who got hired), and a famous boss is remembered by his hits. Could become a short series (overall effect, then one tree); flag saturation: #185 coaches-came-home and #29 year-one already cover coaches.",
    "status": "idea"
+  },
+  {
+   "slug": "expert-wage",
+   "title": "What a TV expert's picks would pay: the 53% wage",
+   "grip": 6,
+   "twist": 8,
+   "clock": 7,
+   "stack": 8,
+   "carry": 9,
+   "answerable": true,
+   "source": "Editor, 2026-10-29: grade the broadcast 'experts' against break-even; express a 53-54% bettor's living as a wage (McDonald's, Big Mac Index); Annie Duke as the decision-under-uncertainty case.",
+   "number": "Computed: at -110 a bet wins $100 or loses $110. At 53% the edge is $1.30 per $110 risked (1.2%); 54% $3.40 (3.1%); 55% $5.50 (5.0%). To clear a $31K full-time wage (2,080 h x $15, wage needs a source) you must bet about $2.6M a year at 53%, $1.0M at 54%, $620K at 55%. And 1,000 picks carry a +/-1.6-point standard error, so a season cannot tell a 53% expert from a coin. Expert pick records still to collect (ESPN/CBS published weekly ATS picks; needs a primary, archived source).",
+   "why": "Builds on #160 (the vig, 52.4%), which never graded anyone. Civic core: confident TV picks vs a coin with a fee attached. Annie Duke (Penn cognitive psychology; finished the PhD 2023; Thinking in Bets, 2018) is a fair frame: poker rewards decisions, not outcomes. Big Mac price and McDonald's wage need sources before use.",
+   "status": "idea"
   }
  ]
 }
