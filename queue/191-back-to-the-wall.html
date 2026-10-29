@@ -1,0 +1,252 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: slow
+tags: MLB:mlb, World Series, Going for the Jugular, Luck vs. Skill, Survivorship
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Nobody Plays Better With Their Back to the Wall</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Nobody Plays Better With Their Back to the Wall">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/191-back-to-the-wall.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/191-back-to-the-wall.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Two in Three Home Run Hitters Do It Again. Most Doubles Hitters Don't.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/191-back-to-the-wall.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<style>.chart{width:100%;height:auto;display:block}</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+<div class="kicker">The World Series &middot; Going for the Jugular, No. 1</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>Nobody Plays Better With Their Back to the Wall</h1>
+
+  <div class="deck">
+    Since 1995, teams one loss from elimination in a best-of-seven won 58 of 125 of those games, 46%. Teams that survived one won the next game 30 times in 58, about half. A coin flipped once a game would have called the 3&ndash;1 series almost exactly.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Going for the Jugular, No. 1 &middot; Best-of-seven playoff series, 1995&ndash;2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">46%</div><div class="l">Elimination games won by the team facing elimination</div></div>
+    <div class="sc"><div class="v now">52%</div><div class="l">Next game won by a team that just survived one</div></div>
+    <div class="sc"><div class="v good">42 of 49</div><div class="l">Teams up 3&ndash;1 that won the series</div></div>
+  </div>
+
+  <p><strong>When a team is one loss from going home, does it play better?</strong> You have heard the line all week: the Rays are dangerous now, because they have nothing to lose. So we counted.</p>
+
+  <p>Here is the answer, with its number. Since 1995, a team facing elimination in a best-of-seven series has won <strong>58 of 125</strong> of those games, or 46%. That is a little worse than a coin, which fits, because the team that is behind is usually the weaker team.</p>
+
+  <p>The surprise is how little is left over. Most fans believe some teams have a gift for the comeback; you can probably name one. But a team that just survived an elimination game won the next one only 30 times in 58. No lift from the escape, no momentum. By the end of this, you will be able to read a 3&ndash;1 series the way the numbers do, and you will know when to spend your best players.</p>
+
+  <h2 class="sh">Two Nights in Tampa Bay</h2>
+
+  <p>The Brewers led the World Series three games to none. In Game 4, Milwaukee went to its best relievers early: the starter was out after three innings, and five of the club&rsquo;s top arms followed. They threw zeros from the fourth inning through the eleventh.</p>
+
+  <p>It did not win the game, and it could not have. The score was tied 2&ndash;2 from the fifth inning on, and the Brewers were the visiting team. From the sixth through the eleventh, their hitters reached base three times. When you are tied on the road, great pitching only buys you another inning; it cannot score a run. Cooper Pratt finally homered in the twelfth, and by then the good arms were spent. An error and four straight singles off the last man in the bullpen ended it, 4&ndash;3.</p>
+
+  <p>Then notice what the Rays paid to stay alive. They used their Game 1 starter in relief to survive Game 4, so they had no rested starter for Game 5. Drew Rasmussen went on three days&rsquo; rest and lasted four innings. Milwaukee&rsquo;s ace, Jacob Misiorowski, threw five and two-thirds scoreless, and the Brewers won 4&ndash;1. A team&rsquo;s best arms are a fixed supply. Every one you spend tonight is one you do not have tomorrow.</p>
+
+  <h2 class="sh">The Test</h2>
+
+  <p>We took every best-of-seven playoff series from 1995 through 2025, 92 of them, game by game. Then we asked three questions and set each answer against a coin.</p>
+
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 250" width="100%" role="img" aria-label="Three tests against a coin. Teams facing elimination won 46 percent, coin 50. Teams that just survived won the next game 52 percent, coin 50. Teams up 3 to 1 won the series 86 percent, coin 88." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12" fill="#1a1208" font-weight="600">What happened, against what a coin would do</text>
+<line x1="200" y1="34" x2="200" y2="196" stroke="#c8b99a" stroke-width="0.6"/><text x="200" y="212" font-size="11" text-anchor="middle" fill="#6b5e4a">0%</text>
+<line x1="305" y1="34" x2="305" y2="196" stroke="#c8b99a" stroke-width="0.6"/><text x="305" y="212" font-size="11" text-anchor="middle" fill="#6b5e4a">25%</text>
+<line x1="410" y1="34" x2="410" y2="196" stroke="#c8b99a" stroke-width="0.6"/><text x="410" y="212" font-size="11" text-anchor="middle" fill="#6b5e4a">50%</text>
+<line x1="515" y1="34" x2="515" y2="196" stroke="#c8b99a" stroke-width="0.6"/><text x="515" y="212" font-size="11" text-anchor="middle" fill="#6b5e4a">75%</text>
+<line x1="620" y1="34" x2="620" y2="196" stroke="#c8b99a" stroke-width="0.6"/><text x="620" y="212" font-size="11" text-anchor="middle" fill="#6b5e4a">100%</text>
+<text x="190" y="66" font-size="12" text-anchor="end" fill="#1a1208">Facing elimination</text>
+<text x="190" y="80" font-size="10" text-anchor="end" fill="#6b5e4a">won that game</text>
+<line x1="359.2" y1="70" x2="431.4" y2="70" stroke="#b83a1e" stroke-width="2"/>
+<line x1="410" y1="58" x2="410" y2="82" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/>
+<circle cx="394.9" cy="70" r="6" fill="#b83a1e"/><text x="441" y="66" font-size="12" fill="#1a1208" font-weight="600">46%</text>
+<text x="190" y="116" font-size="12" text-anchor="end" fill="#1a1208">Just survived one</text>
+<line x1="364.6" y1="120" x2="469.2" y2="120" stroke="#8a7e6a" stroke-width="2"/>
+<text x="190" y="130" font-size="10" text-anchor="end" fill="#6b5e4a">won the next game</text>
+<line x1="410" y1="108" x2="410" y2="132" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/>
+<circle cx="417.1" cy="120" r="6" fill="#8a7e6a"/><text x="479" y="116" font-size="12" fill="#1a1208" font-weight="600">52%</text>
+<text x="190" y="166" font-size="12" text-anchor="end" fill="#1a1208">Up 3&#8211;1</text>
+<text x="190" y="180" font-size="10" text-anchor="end" fill="#6b5e4a">won the series</text>
+<line x1="507.9" y1="170" x2="590.2" y2="170" stroke="#2c4a6e" stroke-width="2"/>
+<line x1="567.5" y1="158" x2="567.5" y2="182" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/>
+<circle cx="559.9" cy="170" r="6" fill="#2c4a6e"/><text x="480" y="160" font-size="12" fill="#1a1208" font-weight="600">86%</text>
+<line x1="420" y1="40" x2="436" y2="40" stroke="#1a1208" stroke-width="1.6" stroke-dasharray="3 2"/><text x="442" y="44" font-size="10.5" fill="#1a1208">what a coin would do</text>
+<text x="410" y="240" font-size="10" text-anchor="middle" fill="#6b5e4a">dot: what happened &#183; line: 95% range &#183; best-of-seven series, 1995&#8211;2025</text></svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Every best-of-seven playoff series from 1995 to 2025 (92 series). Elimination games leave out Game 7, where both teams face elimination. Source: MLB Stats API, game by game; the comebacks match Wikipedia&rsquo;s list of 3&ndash;1 series comebacks.</figcaption>
+  </figure>
+
+  <p>Read the dashes first; they are the coin. Every dot sits close to its dash, and every dash sits inside the dot&rsquo;s range. That is what &ldquo;no effect&rdquo; looks like in a picture.</p>
+
+  <p>The bottom row is the cleanest. To lose a series from 3&ndash;1 up, the leader has to drop three straight. A coin does that once in eight tries, so of 49 teams up 3&ndash;1, a coin says about 43 should finish the job. <strong>Forty-two did.</strong> Seven teams came back, and pure chance expects six.</p>
+
+  <div class="pull">
+    <p>At 3&ndash;1 the series is seven-eighths over before anybody&rsquo;s heart enters into it.</p>
+  </div>
+
+  <h2 class="sh">Then Why Does It Feel So Real?</h2>
+
+  <p>Because you remember the seven. The 2004 Red Sox came back from 0&ndash;3 against the Yankees, and nobody has forgotten it. The 1986 Mets were one strike from losing the World Series in Game 6 and won it in seven. Those stories are true, and they deserve the retelling.</p>
+
+  <p>But nobody retells the 42 teams that simply lost. A comeback is a story; a team going home on schedule is a box score. So memory keeps a list made entirely of survivors, and the list looks like a talent. That is <strong>survivorship</strong>, and it is the same trap as the &ldquo;destiny team&rdquo;: you only call a team destined after it wins.</p>
+
+  <p>Is it possible that a few teams really do rise to it? Sure. Here is the hard part: across 125 games, a real effect of a few percentage points would hide inside the range on that chart. What the numbers rule out is a <em>big</em> one, the kind a broadcast talks about.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>When you hear that a team is dangerous because its back is against the wall, check the series score instead. Up 3&ndash;1, the leader wins about seven times in eight, and the history agrees almost to the game.</p>
+
+  <p>And when you think about going for the jugular, ask what the extra effort can buy. A manager protecting a lead should throw his best. A manager tied on the road can only keep the game going, and the arms he spends doing it are gone for the next one. The Rays showed both sides in one week. Next in this series: football, where there is no series at all (coming soon).</p>
+
+  <p>For why a short series lets the weaker team win so often, see <a href="https://thesportspage.net/published/117-sweetest-moment-mirror.html" target="_blank" rel="noopener">Issue #142</a>: a team that wins 29 of 100 over a season wins 48 of 100 in one sudden-death game.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Data:</strong> every playoff game from 1995 to 2025 in the MLB Stats API, grouped into series. Ninety-two series were best-of-seven, meaning one team reached four wins; one series that would not sort cleanly was left out. An elimination game is one where exactly one team has three wins; Game 7, where both do, is left out. That gives 125 elimination games. &ldquo;Survived one&rdquo; means the team facing elimination won, and we scored its very next game.</p>
+    <p><strong>Checks:</strong> the seven comebacks from 3&ndash;1 down in this window (1996 Braves, 2003 Marlins, 2004 Red Sox, 2007 Red Sox, 2012 Giants, 2016 Cubs, 2020 Dodgers) match Wikipedia&rsquo;s list, team for team. The 2004 Red Sox count because they trailed 3&ndash;1 after four games, on the way back from 0&ndash;3. The ranges on the chart are 95% Wilson intervals: 38 to 55% for elimination games, 39 to 64% for the next game, 73 to 93% for 3&ndash;1 leaders.</p>
+    <p><strong>What it cannot tell you:</strong> a coin treats both teams as equal, and they are not; the trailing team is usually weaker, and home field shifts the odds a few points. A model with team strength would move each dash a little. It would not move it far, and 125 games cannot see an effect smaller than about eight points either way. The 2026 Series is not in the data; the Rays won one elimination game and lost the next, a perfectly ordinary week.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
