@@ -1,0 +1,32 @@
+COVERAGE -- data/coachtree/prior_jobs.csv
+coaches: 856 | high 797 (93%) | med 48 | low 11
+prior level (all): FBS 636, nonFBS-college 120, NFL 76, (none) 10, pro-other 7, HS 7
+prior role class (all): coordinator 414, position 276, HC 134, support 16, (none) 10, interim HC 5, unknown 1
+interim first jobs flagged: 123
+
+Why not high (first flag on each non-high row, grouped):
+    12  gap of 2 yrs between prior job and head job
+     5  body years [YYYY, YYYY, YYYY, YYYY] do not overlap infobox YYYY–YYYY
+     4  infobox: no coaching row before first head job (first listed job)
+     4  gap of 3 yrs between prior job and head job
+     3  body text does not mention prior school
+     3  matched HC row has role '...'
+     2  no Wikipedia page matched in all_tenures
+     2  infobox (none) has no coaching-career list
+     2  took first
+     2  body years [YYYY, YYYY] do not overlap infobox YYYY–YYYY
+     2  body years [YYYY] do not overlap infobox YYYY–YYYY
+     2  body: corroborates school and years
+     2  first FBS head job is an interim stint
+     1  level inferred (linked program, not FBS/NFL/pro/HS)
+     1  boss unresolved
+     1  body years [YYYY, YYYY, YYYY, YYYY] do not overlap infobox YYYY
+     1  body years [YYYY, YYYY, YYYY] do not overlap infobox YYYY–YYYY
+     1  body years [YYYY] do not overlap infobox YYYY
+     1  infobox (person) has no coaching-career list
+     1  gap of 7 yrs between prior job and head job
+     1  no FBS head coach found for Georgia Tech YYYY
+     1  infobox (CFL biography) has no coaching-career list
+     1  role not stated
+     1  prior job is an interim head-coach stint
+     1  head tenure began YYYY, before the program appears as FBS in the data (YYYY)

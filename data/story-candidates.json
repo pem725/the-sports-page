@@ -564,16 +564,16 @@
   {
    "slug": "coaching-dna",
    "title": "Coaching DNA: do assistants of winners win?",
-   "grip": 5,
+   "grip": 8,
    "twist": 8,
    "clock": 5,
    "stack": 7,
    "carry": 8,
    "answerable": true,
    "source": "Editor, 2026-10-28, out of the jugular idea (Morris and Kinne, both out of the Incarnate Word go-for-it program)",
-   "number": "Not yet computed. Plan: data/almamater/all_tenures.csv already holds FBS head-coach tenures 1970-2025 with Wikipedia page names and prior5_pct; add each coach's last assistant job and its head coach from the Wikipedia infobox, then compare first-head-job records of assistants from winning staffs (e.g. boss .700+) vs the rest, measured against the program's prior five years.",
-   "why": "The 'tree' is how the sport hires, and nobody checks it. Traps: selection (winners' assistants get better jobs, so compare to the program's prior 5, as in #185), survivorship (we only see assistants who got hired), and a famous boss is remembered by his hits. Could become a short series (overall effect, then one tree); flag saturation: #185 coaches-came-home and #29 year-one already cover coaches.",
-   "status": "idea"
+   "number": "Computed 2026-10-29 (scripts/coach_tree.py, data/coachtree/): 856 first FBS head jobs 1970-2025, 93% resolved at high confidence, 0/15 hand-check errors. Assistants of .700+ bosses (n=203 vs 305): raw win% +5.3 pts (2.2 to 8.5), but they inherit programs 4.1 pts better (1.2 to 7.0). Change vs prior 5: +1.2 (-2.1 to 4.4), null at .650/.700/.750. OLS on prior 5 (slope 0.43): +3.5 (0.61 to 6.4) -- Lord's paradox: change score and regression disagree when groups differ at baseline. Coordinators +3.0 vs position coaches; within role, the boss adds nothing.",
+   "why": "The 'tree' is how the sport hires, and nobody checks it. Traps: selection (winners' assistants get better jobs, so compare to the program's prior 5, as in #185), survivorship (we only see assistants who got hired), and a famous boss is remembered by his hits. Could become a short series (overall effect, then one tree); flag saturation: #185 coaches-came-home and #29 year-one already cover coaches. The change-score vs regression split also bears on #185 (same change-score method); recheck it with the regression before citing #185 again.",
+   "status": "researched"
   },
   {
    "slug": "expert-wage",

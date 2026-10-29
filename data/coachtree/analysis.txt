@@ -1,0 +1,68 @@
+COACHING DNA -- do assistants of winners win?  (scripts/coach_tree.py)
+Universe: first major-college head job (CFBD/FBS records) beginning 1970-2025.
+Outcome: first head job's win% minus the program's win% over the 5 seasons before the hire
+(the Issue #185 baseline). Differences are in percentage points. 2 significant digits.
+Bootstrap 95% CIs (10,000 resamples); two-sided permutation p (10,000 shuffles); seed 20261029.
+Change scores assume a prior-5 slope of 1; the OLS and quintile-match lines do not (fitted slope
+is printed), which matters because winners' assistants inherit better programs.
+
+Main sample: high-confidence rows with a boss record, a prior-5 baseline, not interim: n=508
+(excluded: 121 high-confidence rows whose prior job was itself a head job or HS/pro-other with no boss record)
+
+CUT: boss won .650 or better during the assistant's stint
+  change vs prior 5, winner's staff vs others  n=251 vs 257 | means -1.9 vs -2.1 pts | diff +0.15 pts (95% CI -3.0 to +3.4) | perm p=0.93
+  raw win%, winner's staff vs others           n=251 vs 257 | means 51% vs 45% | diff +5.4 pts (95% CI +2.3 to +8.4) | perm p=0.00050
+  prior-5 baseline inherited ('better jobs')   n=251 vs 257 | means 52% vs 47% | diff +5.2 pts (95% CI +2.4 to +8.0) | perm p=0.00030
+  OLS win% ~ prior5 + winner's staff           coef +3.1 pts (95% CI +0.32 to +5.9); prior-5 slope 0.43
+  same-baseline match (prior-5 quintiles)      diff +3.3 pts (95% CI +0.36 to +6.3)
+  vs ALL other hires (incl. no boss)           n=251 vs 361 | means -1.9 vs -1.4 pts | diff -0.52 pts (95% CI -3.5 to +2.4) | perm p=0.73
+
+CUT: boss won .700 or better during the assistant's stint
+  change vs prior 5, winner's staff vs others  n=203 vs 305 | means -1.3 vs -2.5 pts | diff +1.2 pts (95% CI -2.1 to +4.4) | perm p=0.46
+  raw win%, winner's staff vs others           n=203 vs 305 | means 51% vs 46% | diff +5.3 pts (95% CI +2.2 to +8.5) | perm p=0.00080
+  prior-5 baseline inherited ('better jobs')   n=203 vs 305 | means 52% vs 48% | diff +4.1 pts (95% CI +1.2 to +7.0) | perm p=0.0042
+  OLS win% ~ prior5 + winner's staff           coef +3.5 pts (95% CI +0.61 to +6.4); prior-5 slope 0.43
+  same-baseline match (prior-5 quintiles)      diff +3.6 pts (95% CI +0.57 to +6.8)
+  vs ALL other hires (incl. no boss)           n=203 vs 409 | means -1.3 vs -1.8 pts | diff +0.51 pts (95% CI -2.5 to +3.7) | perm p=0.74
+
+CUT: boss won .750 or better during the assistant's stint
+  change vs prior 5, winner's staff vs others  n=161 vs 347 | means -1.6 vs -2.2 pts | diff +0.55 pts (95% CI -2.9 to +4.0) | perm p=0.76
+  raw win%, winner's staff vs others           n=161 vs 347 | means 51% vs 46% | diff +4.9 pts (95% CI +1.5 to +8.2) | perm p=0.0038
+  prior-5 baseline inherited ('better jobs')   n=161 vs 347 | means 53% vs 48% | diff +4.3 pts (95% CI +1.2 to +7.4) | perm p=0.0042
+  OLS win% ~ prior5 + winner's staff           coef +3.0 pts (95% CI -0.053 to +6.1); prior-5 slope 0.43
+  same-baseline match (prior-5 quintiles)      diff +3.0 pts (95% CI -0.14 to +6.1)
+  vs ALL other hires (incl. no boss)           n=161 vs 451 | means -1.6 vs -1.6 pts | diff -0.0098 pts (95% CI -3.3 to +3.3) | perm p=1.0
+
+SENSITIVITY (cut .700)
+  high+med confidence                          n=206 vs 319 | means -1.2 vs -2.3 pts | diff +1.1 pts (95% CI -2.1 to +4.3) | perm p=0.51
+  high, first job lasted >= 3 seasons          n=170 vs 248 | means -1.8 vs -1.6 pts | diff -0.19 pts (95% CI -3.5 to +3.2) | perm p=0.91
+  high, hired 1990-2025                        n=140 vs 199 | means -0.48 vs -1.5 pts | diff +1.1 pts (95% CI -2.9 to +5.2) | perm p=0.61
+  high, boss on staff >= 2 seasons             n=155 vs 214 | means -0.059 vs -3.3 pts | diff +3.2 pts (95% CI -0.65 to +7.2) | perm p=0.11
+
+BY PRIOR ROLE (high confidence, prior-5 baseline, not interim)
+  coordinators vs position coaches: change     n=323 vs 176 | means -0.78 vs -3.8 pts | diff +3.0 pts (95% CI -0.24 to +6.2) | perm p=0.082
+  coordinators vs position coaches: raw win%   n=323 vs 176 | means 49% vs 46% | diff +3.7 pts (95% CI +0.55 to +6.9) | perm p=0.025
+  coordinators only: boss>=.700 vs others, change n=140 vs 182 | means -0.18 vs -1.3 pts | diff +1.1 pts (95% CI -3.2 to +5.3) | perm p=0.60
+  position coaches only: boss>=.700 vs others, change n=62 vs 114 | means -3.3 vs -4.1 pts | diff +0.80 pts (95% CI -4.2 to +5.7) | perm p=0.77
+
+BY PRIOR LEVEL (high confidence)
+  counts: FBS 463, nonFBS-college 85, NFL 54, HS 6, pro-other 4
+  NFL assistant vs FBS assistant: change       n=49 vs 458 | means -2.7 vs -1.9 pts | diff -0.80 pts (95% CI -5.6 to +4.0) | perm p=0.78
+  NFL assistant vs FBS assistant: raw win%     n=49 vs 458 | means 50% vs 48% | diff +2.0 pts (95% CI -2.7 to +6.6) | perm p=0.46
+  NFL only: boss>=.700 vs others, change       n=7 vs 42 | means -8.5 vs -1.8 pts | diff -6.7 pts (95% CI -18 to +5.7) | perm p=0.32
+  prior job a head job (lower level) vs assistants n=103 vs 509 | means +0.12 vs -2.0 pts | diff +2.1 pts (95% CI -1.6 to +5.8) | perm p=0.30
+
+TOP 5 'LAST-STOP' TREES (bosses whose staff was the immediate prior job of the most
+first-time FBS head coaches; high+med confidence; one-season interims excluded;
+change = mean of first-job win% minus program's prior 5)
+  Lou Holtz              11 assistants | mean change -1.3 pts (n=10 with baseline) | Larry Beightol (Louisiana Tech 1979), Monte Kiffin (NC State 1980), John Gutekunst (Minnesota 1986), Jim Strong (UNLV 1990), Barry Alvarez (Wisconsin 1990), Pete Cordelli (Kent State 1991), Ron Cooper (Eastern Michigan 1993), Rick Minter (Cincinnati 1994), Dave Roberts (Baylor 1997), Bob Davie (Notre Dame 1997), Skip Holtz (East Carolina 2005)
+  Bo Schembechler         9 assistants | mean change +1.6 pts (n=8 with baseline) | Jim Young (Arizona 1973), Frank Maloney (Syracuse 1974), George Mans (Eastern Michigan 1975), Elliot Uzelac (Western Michigan 1975), Gary Moeller (Illinois 1977), Chuck Stobart (Toledo 1977), Tom Reed (Miami (OH) 1978), Bill McCartney (Colorado 1982), Paul Schudel (Ball State 1985)
+  Urban Meyer             8 assistants | mean change +2.3 pts (n=8 with baseline) | Gregg Brandon (Bowling Green 2003), Kyle Whittingham (Utah 2004), Mike Sanford Sr. (UNLV 2005), Dan Mullen (Mississippi State 2009), Steve Addazio (Temple 2011), Tom Herman (Houston 2015), Chris Ash (Rutgers 2016), Ryan Day (Ohio State 2018)
+  Bob Stoops              7 assistants | mean change +3.7 pts (n=7 with baseline) | Mike Leach (Texas Tech 2000), Mark Mangino (Kansas 2002), Mike Stoops (Arizona 2004), Chuck Long (San Diego State 2006), Kevin Sumlin (Houston 2008), Kevin Wilson (Indiana 2011), Lincoln Riley (Oklahoma 2017)
+  Brian Kelly             7 assistants | mean change -3.8 pts (n=6 with baseline) | Jeff Quinn (Buffalo 2010), Charley Molnar (Massachusetts 2012), Chuck Martin (Miami (OH) 2014), Bob Diaco (UConn 2014), Mike Sanford Jr. (Western Kentucky 2017), Marcus Freeman (Notre Dame 2021), Clark Lea (Vanderbilt 2021)
+  Nick Saban              7 assistants | mean change +5.0 pts (n=7 with baseline) | Dean Pees (Kent State 1998), Bobby Williams (Michigan State 2000), Derek Dooley (Louisiana Tech 2007), Jim McElwain (Colorado State 2012), Kirby Smart (Georgia 2016), Jeremy Pruitt (Tennessee 2018), Charles Huff (Marshall 2021)
+  Bobby Bowden            6 assistants | mean change +2.7 pts (n=5 with baseline) | Frank Cignetti (West Virginia 1976), Brad Scott (South Carolina 1994), Gene McDowell (UCF 1996), Chuck Amato (NC State 2000), Mark Richt (Georgia 2001), Jimbo Fisher (Florida State 2010)
+  Frank Broyles           6 assistants | mean change -8.1 pts (n=6 with baseline) | Cecil Ingram (Clemson 1970), Billy Kinard (Ole Miss 1971), Charles Coffey (Virginia Tech 1971), Richard Williamson (Memphis 1975), Bo Rein (NC State 1976), Bill Lewis (Wyoming 1977)
+
+Note: a 'tree' here counts only the job held immediately before the first head job, so a
+coach who left Saban for two other stops before his first head job is not in Saban's tree.

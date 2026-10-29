@@ -1,0 +1,31 @@
+HAND-CHECK of data/coachtree/prior_jobs.csv -- 2026-10-29
+Sample: 15 rows, random.Random(20261029).sample(rows, 15); reproduce with
+  python3 scripts/coach_tree.py --offline --sample 15
+Each row checked by reading the coach's Wikipedia infobox coaching list and the body text,
+and the boss's record against seasons.csv (FBS) or the team-season page (NFL).
+
+ #  coach               first FBS HC          parsed prior job                               verdict
+ 1  Pete Lembo          Ball State 2011       Elon HC 2006-10 (FCS)                          correct
+ 2  Mike Stoops         Arizona 2004          Oklahoma AHC/co-DC 1999-2003, Bob Stoops .833  correct (55-11)
+ 3  Nelson Stokley      Louisiana 1986        Clemson OC/QB 1980-85, Danny Ford .735         correct; body says OC "from 1979", infobox 1980 (trap a, harmless)
+ 4  Matt Viator         UL Monroe 2016        McNeese HC 2006-15 (FCS)                       correct
+ 5  Dave Roberts        Baylor 1997           Notre Dame OC 1994-96, Lou Holtz .671          correct; body names Holtz
+ 6  Dave Wannstedt      Pittsburgh 2005       Miami Dolphins HC 2000-04                      correct
+ 7  Tom Rossley         SMU 1991              Atlanta Falcons QB 1990, Jerry Glanville .312  correct (5-11); body confirms
+ 8  Leon Fuller         Colorado State 1982   Texas DC 1977-81, Fred Akers .775              correct
+ 9  Sonny Cumbie        Texas Tech 2021       Texas Tech OC 2021, Matt Wells .625            correct; first job is an interim stint, flagged and excluded
+10  Thomas Hammock      Northern Illinois 2019 Ravens RB coach 2014-18, John Harbaugh .525   correct (42-38)
+11  Mike Gundy          Oklahoma State 2005   Oklahoma State AHC/OC 2001-04, Les Miles .571  correct; body confirms
+12  Kalen DeBoer        Fresno State 2020     Indiana OC 2019, Tom Allen .615                correct (8-5)
+13  Phil Bennett        SMU 2002              Kansas State DC 1999-2001, Bill Snyder .737    correct (28-10)
+14  Richard Williamson  Memphis 1975          Arkansas OC 1972-74, Frank Broyles .545        correct (17-14-2)
+15  Bob Chesney         James Madison 2024    Holy Cross HC 2018-23 (FCS)                    correct
+
+Errors: 0 of 15. With n=15 that bounds the error rate below about 1 in 5 (rule of three: 3/15),
+so it is evidence the parser works, not proof it is clean. 14 of the 15 were high confidence.
+
+Extra spot checks (not random) of NFL and non-FBS bosses: Cam Cameron/Norv Turner, Tim
+Brewster/Mike Shanahan, Butch Davis/Barry Switzer, Howard Schnellenberger/Don Shula, David
+Elson/Jack Harbaugh -- all correct. Defects found and fixed during development: state
+disambiguators read as roles ("Miami (OH)"), {{ubl}} and ** sub-lists in NFL-style infoboxes,
+a 0.000 boss record treated as missing, and CFBD crediting bowl games to an incoming coach.
