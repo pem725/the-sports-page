@@ -28,6 +28,7 @@ this file should ever hold; the email itself stays in the inbox.
 | 2026-09-27 | Sean | When does an inherited team become the new coach's team? | published | Issue #193 `173-whose-team` (co-bylined with Sean) and #200 `170-inherited-roster`. The Amato piece (`185-coaches-came-home`, queued 10/26) adds the five-years-before baseline |
 | 2026-10-23 | Patrick sr | Do bye weeks help? What is the probability of winning off a bye? | queued | `184-bye-week` Wed 10/28 — about one point; about none after a loss |
 | 2026-10-25 | Patrick sr | What is an RBI really a sign of? Stats as proxies for constructs (power, clutch, hustle) — one stat per issue, building toward DAGs and SEM | queued | series `Box Score Anatomy`, plan in `tracking/box-score-anatomy.md`; No. 1 `186-rbi` Thu 10/29; Concept No. 28 |
+| 2026-10-30 | Gene (Bears) | How many blockbuster trades pan out, in MLB and the NFL? | checked | not in archive (#123 is the famous lopsided ones, i.e. survivorship, not a base rate); build under way: Retrosheet trades + bWAR, nflverse trades + AV |
 
 ## The three-part test (from `ask.html`)
 
