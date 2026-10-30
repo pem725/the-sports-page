@@ -63,6 +63,12 @@ def season_state(date):
                 date = alt
                 break
         else:
+            # Offseason: the board stays frozen at its final standings. Exit
+            # cleanly so the daily run stops warning from now until March; an
+            # in-season miss still fails loudly.
+            if int(date[5:7]) in (10, 11, 12, 1, 2):
+                print(f"  offseason: no standings since the regular season ended; board left as is")
+                raise SystemExit(0)
             raise SystemExit(f"no regular-season standings within 30 days of {date}")
     T = {}
     for rec in d["records"]:
