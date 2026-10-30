@@ -1,0 +1,33 @@
+HAND CHECK: famous trades as the data record them
+
+MLB (window = 3 seasons; WAR for the new team; margin = star side got minus gave)
+star                   date       teams     phase         age  prior    exp    new    got margin
+Giancarlo Stanton      20171211   MIA>NYY   offseason      28     14     11    5.3    5.3    2.6
+Johan Santana          20080202   MIN>NYM   offseason      29     20     20     16     16     13
+Alex Rodriguez         20040216   TEX>NYY   offseason      28     26     26     21     21     17
+Ken Griffey Jr.        20000210   SEA>CIN   offseason      30     21     21    6.7    6.7   -6.7
+Curt Schilling         20031128   ARI>BOS   offseason      37     23     23     14     14     15
+Roy Halladay           20091216   TOR>PHI   offseason      33     17     17     18     18     18
+cabremi01              (in this trade; the bigger prior belonged to the row below)
+Dontrelle Willis       20071204   MIA>DET   offseason      26     15     15   -1.2     13     14
+Adrián González        20101206   SDP>BOS   offseason      29     15     15    9.9    9.9     11
+CC Sabathia            20080707   CLE>MIL   deadline       27     13     11    5.2    5.2    6.8
+Mookie Betts           20200210   BOS>LAD   offseason      27     24     19     14     16     11
+Manny Machado          20180718   BAL>LAD   deadline       25     19     11    2.6    2.6    2.1
+Josh Donaldson         20141128   OAK>TOR   offseason      29     16     16     19     19     12
+
+NFL (window = 3 seasons; AV for the new team; 'kind' says whether the trade cleared the
+veteran bar (>= 24 AV prior) or counts as a first-round-pick trade, in which case 'teams'
+is the side that got the earliest first-rounder and exp/new describe the top veteran)
+star                   date       teams     phase       age  prior    exp    new    got margin
+Khalil Mack            2018-09-01 LV>CHI    offseason    27     42     42     42     45     20  veteran
+Jalen Ramsey           2019-10-16 JAX>LA    in-season    25     33     29     37     37     29  veteran
+Laremy Tunsil          2019-09-01 HOU>MIA   offseason    25     18     18     22     15    -21  first-round pick
+AdamJa00               2020  NOT FOUND (outside window or below the 24-AV bar)
+(no veteran)           2017-04-27 CLE>HOU   offseason            0      0      0     39     14  first-round pick
+Brandin Cooks          2017-03-10 NO>NE     offseason    24     25     25     13     16    -28  veteran
+Brandin Cooks          2018-04-04 NE>LA     offseason    25     33     33     18     21     13  veteran
+Odell Beckham Jr.      2019-03-13 CLE>NYG   offseason    27     21     21     15     37     22  first-round pick
+Jay Cutler             2009-04-03 DEN>CHI   offseason    26     30     30     29     50    -25  veteran
+Darrelle Revis         2013-04-22 NYJ>TB    offseason    28     32     32    6.0    6.0    -24  veteran
+LyncMa00               2010  NOT FOUND (outside window or below the 24-AV bar)

@@ -1,0 +1,215 @@
+========================================================================
+MLB
+========================================================================
+Retrosheet transaction file: last full year 2021 (61 rows in 2022).
+Trade rows 1979-2021 between MLB clubs: 11607; player id from Retrosheet 8789, name-matched minor leaguer 152, never-MLB/unmatched name 1949, unnamed (PTBNL/cash) 717.
+Retrosheet-id rows that join to a B-R WAR row: 8789 of 8789 (100%).
+Trades 1980-2021 with at least one major leaguer named: 3928.
+
+######## Blockbuster threshold: >= 8 bWAR in the 3 prior seasons
+
+-- all blockbusters  (n=474 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 9.1% (6.8-12%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 24% (20-28%); on any team 42% (37-46%)
+     median ratio delivered/expected (for new team): 0.26 (0.22 to 0.30)
+     same, any team (separates leaving from declining): 0.50 (0.44 to 0.57)
+     median star age 30; median prior 3-yr WAR 10; median expected 9.3; median delivered 2.5
+  2. star-getting side (even = within 2.0 WAR): won 45% (41-50%), even 36% (32-41%), lost 18% (15-22%)
+     margin (WAR, star side minus other side): median 1.3 (0.94 to 2.0), IQR -0.80 to 4.7; median |margin| 3.1 (2.8 to 3.5); share |margin| > 10 WAR: 12% (9.4-15%)
+
+-- offseason trades only  (n=228 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 11% (7.5-16%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 30% (24-36%); on any team 44% (38-50%)
+     median ratio delivered/expected (for new team): 0.35 (0.29 to 0.41)
+     same, any team (separates leaving from declining): 0.54 (0.46 to 0.61)
+     median star age 30; median prior 3-yr WAR 11; median expected 11; median delivered 4.0
+  2. star-getting side (even = within 2.0 WAR): won 49% (42-55%), even 30% (25-37%), lost 21% (16-27%)
+     margin (WAR, star side minus other side): median 1.6 (1.1 to 2.8), IQR -1.5 to 6.2; median |margin| 4.2 (3.3 to 5.0); share |margin| > 10 WAR: 17% (13-23%)
+
+-- deadline (Jul-Aug) trades: rentals included  (n=199 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 5.5% (3.1-9.6%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 16% (12-22%); on any team 37% (31-44%)
+     median ratio delivered/expected (for new team): 0.15 (0.12 to 0.23)
+     same, any team (separates leaving from declining): 0.44 (0.36 to 0.49)
+     median star age 31; median prior 3-yr WAR 10; median expected 7.9; median delivered 1.4
+  2. star-getting side (even = within 2.0 WAR): won 42% (35-49%), even 44% (37-51%), lost 14% (9.9-20%)
+     margin (WAR, star side minus other side): median 0.92 (0.49 to 1.6), IQR -0.41 to 3.2; median |margin| 2.3 (1.9 to 2.8); share |margin| > 10 WAR: 5.0% (2.8-9.0%)
+
+-- other in-season (Apr-Jun, Sep)  (n=47 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 15% (7.4-28%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 26% (15-40%); on any team 49% (35-63%)
+     median ratio delivered/expected (for new team): 0.22 (0.15 to 0.34)
+     same, any team (separates leaving from declining): 0.64 (0.32 to 0.78)
+     median star age 29; median prior 3-yr WAR 11; median expected 9.7; median delivered 2.2
+  2. star-getting side (even = within 2.0 WAR): won 45% (31-59%), even 34% (22-48%), lost 21% (12-35%)
+     margin (WAR, star side minus other side): median 0.75 (-0.57 to 3.0), IQR -1.4 to 5.5; median |margin| 3.6 (2.1 to 5.6); share |margin| > 10 WAR: 17% (8.9-30%)
+
+-- 6-season window (trades through 2020)  (n=465 trades, window 6 seasons)
+  1. star delivered >= his prior pace for the new team: 3.0% (1.8-5.0%)
+     median ratio delivered/expected (for new team): 0.13 (0.10 to 0.15)
+     same, any team (separates leaving from declining): 0.30 (0.26 to 0.33)
+     median star age 30; median prior 3-yr WAR 10; median expected 20; median delivered 2.5
+  2. star-getting side (even = within 2.0 WAR): won 41% (37-46%), even 33% (29-37%), lost 26% (22-30%)
+     margin (WAR, star side minus other side): median 0.86 (0.43 to 1.3), IQR -2.1 to 4.9; median |margin| 3.7 (3.1 to 4.8); share |margin| > 10 WAR: 24% (21-28%)
+
+-- two-team trades only  (n=458 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 9.4% (7.0-12%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 24% (20-28%); on any team 41% (37-46%)
+     median ratio delivered/expected (for new team): 0.26 (0.21 to 0.30)
+  2. star-getting side (even = within 2.0 WAR): won 45% (40-50%), even 37% (33-41%), lost 18% (15-22%)
+
+-- no unnamed player/cash rows  (n=366 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 9.8% (7.2-13%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 25% (21-30%); on any team 43% (38-48%)
+     median ratio delivered/expected (for new team): 0.28 (0.23 to 0.31)
+  2. star-getting side (even = within 2.0 WAR): won 45% (40-50%), even 35% (30-40%), lost 20% (16-24%)
+
+-- 'even' band = 1 WAR  (n=474 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 9.1% (6.8-12%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 24% (20-28%); on any team 42% (37-46%)
+     median ratio delivered/expected (for new team): 0.26 (0.22 to 0.30)
+  2. star-getting side (even = within 1.0 WAR): won 53% (48-57%), even 24% (20-28%), lost 24% (20-28%)
+
+-- 'even' band = 4 WAR  (n=474 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 9.1% (6.8-12%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 24% (20-28%); on any team 42% (37-46%)
+     median ratio delivered/expected (for new team): 0.26 (0.22 to 0.30)
+  2. star-getting side (even = within 4.0 WAR): won 28% (24-32%), even 58% (54-62%), lost 14% (11-17%)
+
+-- trades 1980-1994  (n=125 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 11% (6.8-18%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 27% (20-36%); on any team 38% (30-46%)
+     median ratio delivered/expected (for new team): 0.37 (0.29 to 0.44)
+  2. star-getting side (even = within 2.0 WAR): won 47% (39-56%), even 32% (24-41%), lost 21% (15-29%)
+
+-- trades 1995-2009  (n=198 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 9.1% (5.8-14%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 23% (18-30%); on any team 44% (37-51%)
+     median ratio delivered/expected (for new team): 0.22 (0.16 to 0.29)
+  2. star-getting side (even = within 2.0 WAR): won 41% (35-48%), even 38% (32-45%), lost 20% (15-26%)
+
+-- trades 2010-2021  (n=151 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 7.3% (4.1-13%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 21% (15-28%); on any team 42% (34-50%)
+     median ratio delivered/expected (for new team): 0.21 (0.15 to 0.28)
+  2. star-getting side (even = within 2.0 WAR): won 49% (41-57%), even 38% (30-46%), lost 13% (8.7-20%)
+
+  Who the stars were: 173 of 474 pitchers; 48 trades sent two or more 8-WAR players.
+  Regression baseline: every MLB player with >= 8 bWAR in S-3..S-1, S=1980-2022, total WAR S..S+2 on any team / expected:
+     all players: median 0.61 (0.59 to 0.63) (n=4807)
+     age <=27   everyone: median 0.83 (n=1113) | traded stars (offseason), any team: 0.69, for new team: 0.51 (n=40)
+     age 28-30  everyone: median 0.68 (n=1476) | traded stars (offseason), any team: 0.61, for new team: 0.40 (n=87)
+     age 31-33  everyone: median 0.52 (n=1205) | traded stars (offseason), any team: 0.57, for new team: 0.30 (n=61)
+     age 34+    everyone: median 0.39 (n=1013) | traded stars (offseason), any team: 0.35, for new team: 0.27 (n=40)
+     share of EVERYONE over the bar who matched prior pace (any team): 21% (20-22%)
+
+######## Blockbuster threshold: >= 6 bWAR in the 3 prior seasons
+
+-- all blockbusters  (n=802 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 9.1% (7.3-11%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 24% (21-27%); on any team 41% (38-45%)
+     median ratio delivered/expected (for new team): 0.22 (0.19 to 0.25)
+  2. star-getting side (even = within 2.0 WAR): won 38% (35-41%), even 45% (42-49%), lost 17% (14-19%)
+
+######## Blockbuster threshold: >= 12 bWAR in the 3 prior seasons
+
+-- all blockbusters  (n=158 trades, window 3 seasons)
+  1. star delivered >= his prior pace for the new team: 11% (6.8-17%)
+     star delivered >= what regression alone predicts (age-matched, all MLB players over the same bar): for new team 25% (19-32%); on any team 41% (33-48%)
+     median ratio delivered/expected (for new team): 0.32 (0.27 to 0.40)
+  2. star-getting side (even = within 2.0 WAR): won 56% (49-64%), even 24% (18-31%), lost 20% (14-27%)
+
+========================================================================
+NFL
+========================================================================
+PFR AV per player-team-season from nflverse pfr_rosters.csv: seasons 2002-2021 (2022 rows exist but AV is blank); 5802 duplicate relocated-franchise rows dropped.
+nflverse trades.csv: 4975 rows, 1675 trades, 2002-2026.
+  player row: 796
+    player joins to AV: 678
+  pick resolved to draftee: 1926
+    of which flipped again: 513
+  pick unresolved (counts 0): 80
+
+NFL trade window: effective seasons 2005-2019 (3-season outcome through 2021).
+
+######## Veteran blockbuster: >= 30 AV in the 3 prior seasons
+
+-- veteran blockbusters  (n=35 trades, window 3 seasons)
+  1. star delivered >= his prior AV pace for the new team: 11% (4.5-26%)
+     star delivered >= what regression alone predicts (age-matched): new team 14% (6.3-29%); any team 29% (16-45%)
+     median ratio delivered/expected (new team): 0.35 (0.17 to 0.42)
+     same, any team: 0.42 (0.32 to 0.72)
+     median star age 29; median prior 3-yr AV 34; median expected 34; median delivered 11
+  2. star-getting side (even = within 5.0 AV): won 40% (26-56%), even 34% (21-51%), lost 26% (14-42%)
+     margin (AV): median 3.0 (-3.0 to 7.0), IQR -7.0 to 12; median |margin| 8.0 (5.0 to 13); share |margin| > 20 AV: 23% (12-39%)
+
+-- offseason  (n=32 trades, window 3 seasons)
+  1. star delivered >= his prior AV pace for the new team: 9.4% (3.2-24%)
+     star delivered >= what regression alone predicts (age-matched): new team 12% (5.0-28%); any team 28% (16-45%)
+     median ratio delivered/expected (new team): 0.32 (0.17 to 0.42)
+  2. star-getting side (even = within 5.0 AV): won 38% (23-55%), even 34% (20-52%), lost 28% (16-45%)
+
+-- in-season (deadline)  (n=3 trades, window 3 seasons)
+  1. star delivered >= his prior AV pace for the new team: 33% (6.1-79%)
+     star delivered >= what regression alone predicts (age-matched): new team 33% (6.1-79%); any team 33% (6.1-79%)
+     median ratio delivered/expected (new team): 0.47 (0.025 to 1.3)
+  2. star-getting side (even = within 5.0 AV): won 67% (21-94%), even 33% (6.1-79%), lost 0% (0-56%)
+
+-- 6-season window (trades through 2016)  (n=24 trades, window 6 seasons)
+  1. star delivered >= his prior AV pace for the new team: 8.3% (2.3-26%)
+     median ratio delivered/expected (new team): 0.19 (0.094 to 0.25)
+     same, any team: 0.27 (0.17 to 0.52)
+     median star age 30; median prior 3-yr AV 33; median expected 66; median delivered 12
+  2. star-getting side (even = within 5.0 AV): won 33% (18-53%), even 21% (9.2-40%), lost 46% (28-65%)
+     margin (AV): median -1.0 (-16 to 6.0), IQR -18 to 8.0; median |margin| 14 (8.0 to 21); share |margin| > 20 AV: 33% (18-53%)
+
+-- 'even' band = 3 AV  (n=35 trades, window 3 seasons)
+  1. star delivered >= his prior AV pace for the new team: 11% (4.5-26%)
+     star delivered >= what regression alone predicts (age-matched): new team 14% (6.3-29%); any team 29% (16-45%)
+     median ratio delivered/expected (new team): 0.35 (0.17 to 0.42)
+  2. star-getting side (even = within 3.0 AV): won 46% (30-62%), even 23% (12-39%), lost 31% (19-48%)
+
+-- 'even' band = 10 AV  (n=35 trades, window 3 seasons)
+  1. star delivered >= his prior AV pace for the new team: 11% (4.5-26%)
+     star delivered >= what regression alone predicts (age-matched): new team 14% (6.3-29%); any team 29% (16-45%)
+     median ratio delivered/expected (new team): 0.35 (0.17 to 0.42)
+  2. star-getting side (even = within 10 AV): won 29% (16-45%), even 51% (36-67%), lost 20% (10-36%)
+  Regression baseline: every NFL player with >= 30 AV in S-3..S-1, S=2005-2019, total AV S..S+2 / prior:
+     all: median 0.66 (0.63 to 0.68) (n=1161); share matching prior pace 17% (15-20%)
+     age <=25  everyone: 0.81 (n=86) | traded stars, any team: 0.77, new team: 0.26 (n=3)
+     age 26-28 everyone: 0.77 (n=353) | traded stars, any team: 0.95, new team: 0.62 (n=10)
+     age 29-31 everyone: 0.63 (n=404) | traded stars, any team: 0.38, new team: 0.38 (n=8)
+     age 32+   everyone: 0.53 (n=318) | traded stars, any team: 0.32, new team: 0.16 (n=11)
+  3. Team record, offseason veteran blockbusters: next-season win% change beyond what the league-wide regression predicts (slope -0.66): mean 0.20 (-6.2 to 6.5) win% points (n=32) = 0.034 wins per 17 games
+
+######## Veteran blockbuster: >= 24 AV in the 3 prior seasons
+
+-- veteran blockbusters  (n=83 trades, window 3 seasons)
+  1. star delivered >= his prior AV pace for the new team: 16% (9.4-25%)
+     star delivered >= what regression alone predicts (age-matched): new team 27% (18-37%); any team 34% (24-44%)
+     median ratio delivered/expected (new team): 0.40 (0.22 to 0.52)
+  2. star-getting side (even = within 5.0 AV): won 46% (35-56%), even 40% (30-51%), lost 14% (8.5-24%)
+
+######## Veteran blockbuster: >= 36 AV in the 3 prior seasons
+
+-- veteran blockbusters  (n=15 trades, window 3 seasons)
+  1. star delivered >= his prior AV pace for the new team: 13% (3.7-38%)
+     star delivered >= what regression alone predicts (age-matched): new team 13% (3.7-38%); any team 20% (7.0-45%)
+     median ratio delivered/expected (new team): 0.17 (0.049 to 0.38)
+  2. star-getting side (even = within 5.0 AV): won 27% (11-52%), even 40% (20-64%), lost 33% (15-58%)
+
+######## First-round-pick trades with no 24-AV veteran (side that got the earliest first-rounder)
+
+-- first-round pick trades  (n=100 trades, window 3 seasons)
+  2. first-rounder-getting side (even = within 5.0 AV): won 25% (18-34%), even 22% (15-31%), lost 53% (43-62%)
+     margin (AV): median -6.5 (-9.0 to -4.0), IQR -16 to 6.0; median |margin| 12 (8.0 to 14); share |margin| > 20 AV: 24% (17-33%)
+
+-- April (draft-week) trades  (n=82 trades, window 3 seasons)
+  2. first-rounder-getting side (even = within 5.0 AV): won 28% (19-39%), even 23% (15-33%), lost 49% (38-59%)
+
+-- 6-season window  (n=75 trades, window 6 seasons)
+  2. first-rounder-getting side (even = within 5.0 AV): won 33% (24-45%), even 9.3% (4.6-18%), lost 57% (46-68%)
+     margin (AV): median -11 (-18 to 0), IQR -32 to 16; median |margin| 23 (18 to 29); share |margin| > 20 AV: 53% (42-64%)
+
+-- 'even' band = 10 AV  (n=100 trades, window 3 seasons)
+  2. first-rounder-getting side (even = within 10 AV): won 13% (7.8-21%), even 49% (39-59%), lost 38% (29-48%)
