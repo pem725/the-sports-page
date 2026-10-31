@@ -49,12 +49,14 @@ TOPIC_TO_GLYPH = {
     "nfl": "nfl", "pro football": "nfl",
     "mlb": "mlb", "baseball": "mlb",
     "nhl": "nhl", "hockey": "nhl",
+    "cbb": "basketball", "college basketball": "basketball",
+    "nba": "basketball", "wnba": "basketball", "basketball": "basketball",
     "markets": "markets", "betting": "markets",
     "methods": "methods", "statistics": "methods",
 }
 TOPIC_TO_COLOUR = {
     "cfb": "var(--rust)", "nfl": "var(--steel)", "mlb": "var(--steel)",
-    "nhl": "var(--muted)", "markets": "var(--gold)", "methods": "var(--muted)",
+    "nhl": "var(--muted)", "basketball": "var(--rust)", "markets": "var(--gold)", "methods": "var(--muted)",
 }
 
 CSS = """

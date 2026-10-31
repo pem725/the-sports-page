@@ -1177,7 +1177,10 @@ we can be held to the same standard.
 4. NY Rangers (NHL) — when doing well
 5. NY Jets (NFL) — plus Raiders, Bills, Seahawks for the extended family
 6. Any player with an amazingly great or horrible performance
-7. No NBA — but WNBA is welcome on occasion when an interesting stat surfaces
+7. Basketball — college, WNBA and NBA — is Jeff's beat (joined the board 2026-10-31). WNBA and
+   college basketball are open to anyone. **The NBA has a pitch count:** a piece only when Jeff
+   writes or champions it, and at most one NBA piece in any two weeks. Topics `CBB`, `WNBA`,
+   `NBA` share the basketball glyph. Season plan: `tracking/season-rotation-2026-27.md`
 
 ## Sport-Season Calendar (topical relevance)
 
