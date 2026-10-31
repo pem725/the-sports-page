@@ -864,6 +864,7 @@ def build() -> str:
   <div class="pane" id="p-nfl" role="tabpanel" hidden>
     <h1 style="font-size:clamp(1.4rem,3.5vw,2rem);margin-bottom:.3rem">Thirty-Two Clubs, <em>Priced by the Market.</em></h1>
     <div class="deck">Each strip is one club&rsquo;s season, left to right; bar height is the chance of winning that game. Before a season starts we have no results, so the ratings come from the betting market rather than from our opinion of anybody. <strong>Hover any club</strong> to read the schedule underneath.</div>
+    <p style="font-family:'Roboto Mono',monospace;font-size:.78rem;margin:.6rem 0 .9rem"><a href="nfl-misery.html" style="color:var(--rust)">The Misery Slide &rarr;</a> <span style="color:var(--muted)">which club has the least to look forward to, updated every Tuesday</span></p>
     <div id="nfl-list">{nfl}</div>
     <div class="cfb-detail" id="nfl-detail" aria-live="polite"></div>
     <p style="font-size:.8rem;color:var(--muted);margin-top:1.2rem;line-height:1.6">

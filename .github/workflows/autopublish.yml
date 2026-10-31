@@ -164,9 +164,15 @@ jobs:
             4|5) CFBD_KEY="${{ secrets.CFBD_KEY }}" \
                    python3 scripts/snapshot_ratings.py || failed="$failed snapshot" ;;
           esac
+          # The NFL misery slide (nfl-misery.html): a Bayesian projection of every
+          # remaining game, rebuilt once the week's football is done -- Tuesday,
+          # after Monday night, with Wednesday as the retry. nflverse only, no key.
+          case "$(TZ=America/New_York date +%u)" in
+            2|3) python3 scripts/nfl_misery.py   || failed="$failed misery" ;;
+          esac
           [ -n "$failed" ] && echo "::warning::refreshers failed:$failed (committing what did work)"
 
-          FILES="odds.html about.html board/index.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json data/readership-block.html data/rating-snapshots"
+          FILES="odds.html about.html board/index.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json data/readership-block.html data/rating-snapshots nfl-misery.html data/nfl-misery.json"
           # status, not diff: a new snapshot file is untracked and diff cannot see it
           if [ -z "$(git status --porcelain -- $FILES)" ]; then
             echo "no change to the board"; exit 0
