@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 286 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 285 issues remaining of 500
 
 ## Repository Structure
 
@@ -1254,9 +1254,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 214 issues (#1-214)
-Queue: 7 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 187-home-runs, 189-qb-wins, 190-every-program, 191-back-to-the-wall, _TEMPLATE)
+Published: 215 issues (#1-215)
+Queue: 7 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 189-qb-wins, 190-every-program, 191-back-to-the-wall, 192-blockbuster-trades, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 286 issues remaining of 500
-Last published: Issue #214 — "Navy Beats the Spread Two Times in Three. It Rarely Beats the Team." (188-nd-navy.html) on October 30, 2026
+Goal: 285 issues remaining of 500
+Last published: Issue #215 — "Two in Three Home Run Hitters Do It Again. Most Doubles Hitters Don’t." (187-home-runs.html) on October 31, 2026
