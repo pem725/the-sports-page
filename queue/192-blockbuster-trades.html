@@ -1,0 +1,252 @@
+<!-- PUBLISH-META
+topic: Markets
+decay: dated
+tags: Markets, MLB:mlb, NFL:nfl, A Reader Asks, Regression to the Mean, Survivorship
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Nine Traded Stars in Ten Fall Short. Four Trades in Five Do Not.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Nine Traded Stars in Ten Fall Short. Four Trades in Five Do Not.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/192-blockbuster-trades.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/192-blockbuster-trades.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nine Traded Stars in Ten Fall Short. Four Trades in Five Do Not.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/192-blockbuster-trades.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<style>.chart{width:100%;height:auto;display:block}</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+<div class="kicker">A Reader Asks &middot; Blockbuster Trades</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--gold)" title="Markets"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M3.6 16h18.8" stroke="currentColor" stroke-width="1.6"/><rect x="5.6" y="9.4" width="3.8" height="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="11.1" y="4.6" width="3.8" height="11.4" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="16.6" y="11.4" width="3.8" height="4.6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>Nine Traded Stars in Ten Fall Short. Four Trades in Five Do Not.</h1>
+
+  <div class="deck">
+    Gene asked how many blockbuster trades pan out. We checked 474 baseball trades for a star since 1980. Only 43 stars played as well for their new team as they had before. Yet the team that got the star lost the trade only about one time in five.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; answering Gene &middot; MLB trades 1980&ndash;2021, NFL trades 2005&ndash;2019</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">43 of 474</div><div class="l">Traded baseball stars who matched their past for the new team</div></div>
+    <div class="sc"><div class="v good">86 of 474</div><div class="l">Trades the star&rsquo;s new team clearly lost</div></div>
+    <div class="sc"><div class="v bad">53 of 100</div><div class="l">NFL teams that got the best draft pick in a deal and lost it</div></div>
+  </div>
+
+  <p><strong>How many blockbuster trades actually pan out?</strong> Gene asked us that, and it is a better question than it sounds, because &ldquo;pan out&rdquo; means two different things.</p>
+
+  <p>Here is the answer, with its number. We found 474 baseball trades for a star since 1980. Only <strong>43</strong> of those stars played as well for the new team as they had in their last three years. But the team that got him clearly lost the trade only <strong>86 times</strong>, fewer than one in five.</p>
+
+  <p>That is the surprise. You would expect a star who disappoints to mean a trade that failed. Usually it does not. By the end, you will know what to expect when your team lands a star. You will also know which football deal to fear before the trade deadline on Tuesday, November 10.</p>
+
+  <h2 class="sh">What We Counted</h2>
+
+  <p>A <strong>blockbuster</strong>, for us, is a trade that sends away a player who was worth at least 8 wins over his last three seasons. Wins here means WAR, one number for how many wins a player adds over a cheap fill-in. Eight in three years is about an All-Star.</p>
+
+  <p>Then we followed every player in the deal for three seasons, and we only counted what each one did <em>for the team that got him</em>. Football gets the same treatment, with a similar number called Approximate Value. A draft pick counts as the player it became.</p>
+
+  <h2 class="sh">Why the Star Falls Short</h2>
+
+  <p>Look at when stars get traded. It is right after three great years, because that is when they are worth the most. Great years are part skill and part luck, and the luck does not travel with the player. That is <strong>regression to the mean</strong>.</p>
+
+  <p>So we checked stars who were <em>not</em> traded. Of every player who cleared the same bar, only about 21 in 100 matched it over the next three years. Traded or not, a hot streak cools.</p>
+
+  <p>The trade adds a second leak: many stars leave. A deadline rental plays two months and walks in free agency. Counting only what he did for the team that traded for him, the typical star gave about <strong>a quarter</strong> of his old pace. Counting every team he played for, about half.</p>
+
+  <h2 class="sh">Who Won the Trade</h2>
+
+  <p>Now the other meaning of &ldquo;pan out.&rdquo; Add up what each side got, for its own team, and compare. Call it even if the gap is under two wins in baseball, or five points of Approximate Value in football.</p>
+
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 260" width="100%" role="img" aria-label="Who won the trade. Baseball star trades, 474: the team that got the star won 45 percent, even 37 percent, lost 18 percent. Football star trades, 35: won 40, even 34, lost 26. Football trades for the best pick, 100: the team that got the pick won 25, even 22, lost 53." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12" fill="#1a1208" font-weight="600">Did the team that got the prize win the trade?</text>
+<text x="220" y="62" font-size="12" text-anchor="end" fill="#1a1208">Baseball star trades</text>
+<text x="220" y="76" font-size="10" text-anchor="end" fill="#6b5e4a">474 deals, 1980&#8211;2021</text>
+<rect x="230" y="48" width="186" height="34" fill="#2c4a6e"/><rect x="416" y="48" width="149.6" height="34" fill="#d8ceb8"/><rect x="565.6" y="48" width="74.4" height="34" fill="#b83a1e"/>
+<text x="323" y="70" font-size="12" text-anchor="middle" fill="#f5f0e8" font-weight="600">won 45%</text><text x="490.8" y="70" font-size="12" text-anchor="middle" fill="#1a1208">even 37%</text><text x="602.8" y="70" font-size="12" text-anchor="middle" fill="#f5f0e8" font-weight="600">lost 18%</text>
+<text x="220" y="122" font-size="12" text-anchor="end" fill="#1a1208">Football star trades</text>
+<text x="220" y="136" font-size="10" text-anchor="end" fill="#6b5e4a">35 deals, 2005&#8211;2019</text>
+<rect x="230" y="108" width="164" height="34" fill="#2c4a6e"/><rect x="394" y="108" width="140.6" height="34" fill="#d8ceb8"/><rect x="534.6" y="108" width="105.4" height="34" fill="#b83a1e"/>
+<text x="312" y="130" font-size="12" text-anchor="middle" fill="#f5f0e8" font-weight="600">won 40%</text><text x="464.3" y="130" font-size="12" text-anchor="middle" fill="#1a1208">even 34%</text><text x="587.3" y="130" font-size="12" text-anchor="middle" fill="#f5f0e8" font-weight="600">lost 26%</text>
+<text x="220" y="182" font-size="12" text-anchor="end" fill="#1a1208">Football: got the best pick</text>
+<text x="220" y="196" font-size="10" text-anchor="end" fill="#6b5e4a">100 deals, 2005&#8211;2019</text>
+<rect x="230" y="168" width="102.5" height="34" fill="#2c4a6e"/><rect x="332.5" y="168" width="90.2" height="34" fill="#d8ceb8"/><rect x="422.7" y="168" width="217.3" height="34" fill="#b83a1e"/>
+<text x="281.3" y="190" font-size="12" text-anchor="middle" fill="#f5f0e8" font-weight="600">won 25%</text><text x="377.6" y="190" font-size="12" text-anchor="middle" fill="#1a1208">even 22%</text><text x="531.4" y="190" font-size="12" text-anchor="middle" fill="#f5f0e8" font-weight="600">lost 53%</text>
+<text x="230" y="228" font-size="10" fill="#6b5e4a">value each side got, for its own team, over three seasons</text>
+<text x="230" y="244" font-size="10" fill="#6b5e4a">even = within 2 WAR (baseball) or 5 AV (football)</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Sources: Retrosheet transactions and Baseball-Reference WAR (baseball); nflverse trades and Pro Football Reference Approximate Value (football). A star had 8+ WAR, or 30+ AV, over the three seasons before the trade.</figcaption>
+  </figure>
+
+  <p>Read the top bar first. The team that got the star won 215 of these trades and lost 86. The other 173 were within two wins either way. How can the star fall short and his team still win? Because the players sent the other way usually did even less for <em>their</em> new team in those three years.</p>
+
+  <p>Chicago shows both meanings in two deals. In 2009 the Bears traded for Jay Cutler, and he played almost exactly as well as before. They still lost that deal by 25 points of value, because Denver got more out of Kyle Orton and the draft picks. In 2018 they traded for Khalil Mack. He matched his past too, and this time Chicago won by 20.</p>
+
+  <p>Baseball has its own pair. Johan Santana gave the Mets 16 wins in three years, short of the 20 he had given Minnesota. The Mets still won the deal by 13. Ken Griffey Jr. gave Cincinnati about 7, a third of his old pace, and the Reds lost the deal.</p>
+
+  <div class="pull">
+    <p>The star almost always disappoints. The trade usually does not.</p>
+  </div>
+
+  <h2 class="sh">Football&rsquo;s Real Trap</h2>
+
+  <p>The one deal that loses more often than it wins is in football. Take every trade built around a first-round pick, with no star veteran in it. The team that came away with the best pick lost <strong>53 of 100</strong> and won 25. Notice why. The team that pays the most for a pick is the one that loves it most, and on average it loved it too much. It is the same trap as <a href="https://thesportspage.net/published/100-deadline-sellers-market.html" target="_blank" rel="noopener">Issue #116</a> on the baseball deadline: whoever wins the bidding is usually the one who overpaid.</p>
+
+  <h2 class="sh">Why You Remember the Robberies</h2>
+
+  <p>Only 57 of the 474 baseball deals were lopsided by more than 10 wins, about one in eight, and those cut both ways. Those are the ones you remember. They are the ones we wrote about in <a href="https://thesportspage.net/published/123-one-that-got-away.html" target="_blank" rel="noopener">Issue #166</a>, &ldquo;Every Team Has Its Babe Ruth.&rdquo; Nobody tells a story about a fair trade. So memory keeps a list made of robberies, and the list makes trading look like a casino. That is <strong>survivorship</strong> again.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>When your team trades for a star, expect less than his last three years. Hold onto that: a star with 10 wins in his last three seasons usually gives his new team two or three. That does not mean the trade failed. Judge it by what the other side got, three years later.</p>
+
+  <p>And when you see a team trade up for a high pick before the NFL deadline on November 10 or at next spring&rsquo;s draft, be the skeptic. That is the one blockbuster that loses more often than it wins.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Baseball:</strong> every trade between big-league clubs in Retrosheet&rsquo;s transaction file, 1980 to 2021, where its records end. A blockbuster sent a player with at least 8 Baseball-Reference WAR over the three prior seasons: 474 trades. Each player&rsquo;s WAR counts only for the team that received him, over the next three seasons; a player who never played for them counts zero. &ldquo;Matched his past&rdquo; means at least his prior pace, adjusted for games in short seasons. The ranges: 9.1% matched (6.8 to 12%); won 45% (41 to 50%), even 37% (32 to 41%), lost 18% (15 to 22%).</p>
+    <p><strong>Football:</strong> nflverse&rsquo;s trade file with Pro Football Reference Approximate Value, which stops in 2021, so trades run 2005 to 2019. Only 35 trades sent a veteran with 30+ AV in three seasons, so the football ranges are wide: won 40% (26 to 56%), lost 26% (14 to 42%). The 100 pick trades had no veteran over 24 AV; the side with the best first-rounder lost 53% (43 to 62%). Picks are valued by the player drafted with them.</p>
+    <p><strong>Choices that move the answer:</strong> the line for &ldquo;even&rdquo; matters. At 1 WAR, the star&rsquo;s team wins 53% of baseball deals; at 4 WAR, it wins 28% and 58% come out even. Over six seasons instead of three, the star&rsquo;s team still wins 41% and loses 26%. Our checks of famous deals (Santana, Griffey, Halladay, Stanton, Mack, Ramsey, Revis, Cutler) matched the record.</p>
+    <p><strong>What it cannot tell you:</strong> WAR and Approximate Value are rough, and Approximate Value is roughest for linemen. Prospects who reached the majors after 2022 count zero here, which slightly favors the star&rsquo;s side in the latest trades. And &ldquo;won the trade&rdquo; ignores money: a team that took on a big contract may have paid for its win in ways WAR does not see.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
