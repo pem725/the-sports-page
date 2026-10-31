@@ -1,0 +1,55 @@
+OWNER SUCCESSION -- will the fan outlive the owner, and does it matter?
+as of 2026-10-31 | life table: SSA 2023 period life table (2026 Trustees Report)
+
+1. CHANGES OF CONTROL, 1980-2026 (data/ownership/transitions.csv, 67 rows)
+   rows by cause: a sale while alive 21 | b died, stayed in family 25 | c died, estate/heirs sold 10 | d other 8 | not a change 3
+   rows not fully two-source confirmed: 8 (DEN 1984, NYJ 1984, ATL 1989, MIN 1991, MIA 1994, ATL 1997, BAL 2004, SF 2024)
+
+2. OWNERS WHO DIED IN CONTROL SINCE 1980: 28
+   still in the family today: 18 of 28
+   sold to outsiders eventually: 10 of 28
+     Hugh Culverhouse 1994    sold 0.4 years after the death
+     Ralph Wilson 2014        sold 0.5 years after the death
+     Leon Hess 1999           sold 0.7 years after the death
+     Jack Kent Cooke 1997     sold 2.1 years after the death
+     Georgia Frontiere 2008   sold 2.6 years after the death
+     Pat Bowlen 2019          sold 3.2 years after the death
+     Joe Robbie 1990          sold 4.0 years after the death
+     Rankin Smith Sr 1997     sold 4.3 years after the death
+     Paul Allen 2018          sold 7.9 years after the death
+     Al Lerner 2002           sold 10 years after the death
+   sold within 1 year: 3   within 5 years: 8   median delay among sales: 2.9 years
+   stayed: Halas 1983, Art Rooney Sr 1988, Paul Brown 1991, Robert Irsay 1997, Wellington Mara 2005, Bob Tisch 2005, Lamar Hunt 2006, Al Davis 2011, Bud Adams 2013, William Clay Ford Sr 2014, Malcolm Glazer 2014, Dan Rooney 2017, Bob McNair 2018, Alex Spanos 2018, Tom Benson 2018, Bill Bidwill 2019, Virginia McCaskey 2025, Jim Irsay 2025
+   P(sold within 5 years | death), deaths with 5+ years of follow-up: 8.0 of 25 = 32%
+     sensitivity, dropping Bowlen and Spanos (control left before death): 30%
+   sales to outsiders by LIVING owners (incl. heirs selling >5 yrs after a death): 22 over 1300 franchise-years = 1.8% a year
+   all sales to outsiders since 1980: 31; 10 of them followed an owner's death
+   how 57 ends of a controlling tenure happened: sale while alive 21, death 28, handed to family while alive 8
+
+3. CURRENT CONTROLLING OWNERS (32 teams)
+   bought 16 | inherited on a death 11 | handed over by family while alive 4 | public 1 | founders 0
+   family successors (inherited + family transfer): 15 of 31 privately held
+   oldest: CIN Mike Brown (91); MIA Stephen Ross (86); NE Robert Kraft (85); DAL Jerry Jones (84); ATL Arthur Blank (84); DEN Rob Walton (82); NYJ Woody Johnson (79); NO Gayle Benson (79)
+   owner is also de facto GM: CIN Mike Brown 1991-present; DAL Jerry Jones 1989-present
+
+4. THE OWNER'S CLOCK -- a man aged 79.6 (Woody Johnson, b. 1947-04-12)
+   wealth adjustment: hazard x 0.43 at every age reproduces Chetty's top-1% life expectancy at 40 (87.3; SSA table gives 79)
+   national         median years left 8.3 | alive in 5 yrs 71%, 10 yrs 39%, 15 yrs 14% | expectancy 8.7
+   wealth-adjusted  median years left 13 | alive in 5 yrs 86%, 10 yrs 67%, 15 yrs 42% | expectancy 14
+
+5. THE FAN (male, national table) vs THE OWNER and vs THE FAMILY
+   model: owner sells while alive at 1.8%/yr; after death, P(sold within 5 yrs) = 32% at observed delays; then 1.8%/yr again. 90% intervals from parameter uncertainty.
+   owner table: national
+     fan 30: outlives the owner 98% | naive P(outlive) x P(sold<=5y) = 31% | team leaves the family in his lifetime 66% (90% 56%-76%)
+     fan 45: outlives the owner 95% | naive P(outlive) x P(sold<=5y) = 30% | team leaves the family in his lifetime 57% (90% 46%-68%)
+     fan 60: outlives the owner 86% | naive P(outlive) x P(sold<=5y) = 28% | team leaves the family in his lifetime 45% (90% 35%-56%)
+   owner table: wealth-adjusted
+     fan 30: outlives the owner 96% | naive P(outlive) x P(sold<=5y) = 31% | team leaves the family in his lifetime 66% (90% 55%-76%)
+     fan 45: outlives the owner 90% | naive P(outlive) x P(sold<=5y) = 29% | team leaves the family in his lifetime 56% (90% 46%-67%)
+     fan 60: outlives the owner 74% | naive P(outlive) x P(sold<=5y) = 24% | team leaves the family in his lifetime 42% (90% 33%-52%)
+
+Assumptions: independent lifetimes; the fan is male (a woman lives longer, so higher);
+history 1980-today is the base rate for the Johnsons, for whom no sale plan,
+will directive or sale process is reported; constant sale rate by living owners;
+SSA 2023 period mortality, not a cohort projection; the wealth multiplier is a
+single proportional hazard fitted at age 40.

@@ -1,0 +1,241 @@
+<!-- PUBLISH-META
+topic: NFL
+decay: slow
+tags: NFL:nfl, Jets, Raiders, Ownership, Base Rates, Life Tables
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Outliving the Owner Won&rsquo;t Save You. Ask the Raiders.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Outliving the Owner Won&rsquo;t Save You. Ask the Raiders.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/194-owner-succession.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/194-owner-succession.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Outliving the Owner Won&rsquo;t Save You. Ask the Raiders.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/194-owner-succession.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<style>.chart{width:100%;height:auto;display:block}</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+<div class="kicker">The Jets &middot; Who Owns Your Misery</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="NFL"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><ellipse cx="13" cy="10" rx="10.6" ry="6.1" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 10h6" stroke="currentColor" stroke-width="1.7"/></svg></span>Outliving the Owner Won&rsquo;t Save You. Ask the Raiders.</h1>
+
+  <div class="deck">
+    Since 1980, 28 NFL owners have died while running their teams. Eighteen of those teams are still in the family. A Jets fan of 60 will very likely outlive Woody Johnson, and still has worse than even odds of seeing the Jets leave the Johnsons.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Every NFL change of control, 1980&ndash;2026</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">18 of 28</div><div class="l">Teams that stayed in the family after the owner died</div></div>
+    <div class="sc"><div class="v now">3 of 28</div><div class="l">Sold within a year of the death</div></div>
+    <div class="sc"><div class="v bad">45 in 100</div><div class="l">Chance a Jets fan of 60 sees the team sold in his lifetime</div></div>
+  </div>
+
+  <p><strong>Will you outlive your team&rsquo;s owner, and would it help?</strong> Every long-suffering fan has done this grim little sum. Woody Johnson is 79. A Jets fan of 60 thinks: I&rsquo;ve got him by nineteen years. Just wait.</p>
+
+  <p>Here is the answer, with its number. Since 1980, 28 NFL owners have died while still in charge. <strong>Eighteen</strong> of those teams never left the family. Only <strong>three</strong> were sold within a year.</p>
+
+  <p>That is the surprise: the fan is betting on the wrong event. The owner dying is close to a sure thing. The team leaving the family is a coin flip. By the end, you will know the difference, and why the Raiders already learned it.</p>
+
+  <h2 class="sh">Ask the Raiders</h2>
+
+  <p>Al Davis ran the Raiders as owner and general manager for nearly forty years. He won three Super Bowls, then spent most of his last decade losing, and a lot of Raiders fans quietly did the same sum you are doing now. Davis died in October 2011, at 82. The team went to his son, Mark. It is still his.</p>
+
+  <p>Dallas fans should not get their hopes up either. Jerry Jones, 84, has run the Cowboys as owner and general manager since 1989. In 2016 he said his succession plan &ldquo;has been in place almost from the first interview.&rdquo; His children already work at the top of the club.</p>
+
+  <h2 class="sh">What Usually Happens</h2>
+
+  <p>We went through every change of control in the NFL since 1980, 67 of them, and pulled out the 28 times an owner died in charge. Eighteen teams went to a widow, a son, a daughter or a family trust. The Bears, the Steelers, the Giants, the Chiefs and the Colts are all on that list. Ten were eventually sold to outsiders, and the median wait was about three years. Paul Allen died in 2018; the Seahawks were not sold until this August.</p>
+
+  <p>Now the Jets&rsquo; own story, which is the best joke in the piece. The last time the Jets changed hands, it was because an owner died. Leon Hess&rsquo;s will said the team must be sold, and barred his own family from buying it. That is how Woody Johnson got the Jets in 2000, for $635 million. Notice what that means: the Johnsons own the team because of exactly the event you are hoping for. And no plan to sell has been reported. Woody has said two of his sons sit in on team meetings, as an &ldquo;apprenticeship.&rdquo;</p>
+
+  <div class="pull">
+    <p>The owner dying is close to a sure thing. The team leaving the family is a coin flip.</p>
+  </div>
+
+  <h2 class="sh">The Two Bets</h2>
+
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 275" width="100%" role="img" aria-label="A Jets fan of 30 outlives Woody Johnson 98 percent of the time but sees the team leave the Johnson family 66 percent. Fan of 45: 95 and 57. Fan of 60: 86 and 45." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12" fill="#1a1208" font-weight="600">The chance a Jets fan&#8230;</text>
+<line x1="200" y1="34" x2="200" y2="226" stroke="#c8b99a" stroke-width="0.6"/><text x="200" y="242" font-size="11" text-anchor="middle" fill="#6b5e4a">0%</text>
+<line x1="305" y1="34" x2="305" y2="226" stroke="#c8b99a" stroke-width="0.6"/><text x="305" y="242" font-size="11" text-anchor="middle" fill="#6b5e4a">25%</text>
+<line x1="410" y1="34" x2="410" y2="226" stroke="#c8b99a" stroke-width="0.6"/><text x="410" y="242" font-size="11" text-anchor="middle" fill="#6b5e4a">50%</text>
+<line x1="515" y1="34" x2="515" y2="226" stroke="#c8b99a" stroke-width="0.6"/><text x="515" y="242" font-size="11" text-anchor="middle" fill="#6b5e4a">75%</text>
+<line x1="620" y1="34" x2="620" y2="226" stroke="#c8b99a" stroke-width="0.6"/><text x="620" y="242" font-size="11" text-anchor="middle" fill="#6b5e4a">100%</text>
+<text x="190" y="70" font-size="12" text-anchor="end" fill="#1a1208">A fan of 30</text>
+<rect x="200" y="44" width="411.6" height="20" fill="#2c4a6e"/><text x="605.6" y="58.5" font-size="11.5" text-anchor="end" fill="#f5f0e8" font-weight="600">outlives Woody 98%</text>
+<rect x="200" y="68" width="277.2" height="20" fill="#b83a1e"/><text x="483.2" y="82.5" font-size="11.5" fill="#1a1208" font-weight="600">sees the team sold 66%</text>
+<text x="190" y="132" font-size="12" text-anchor="end" fill="#1a1208">A fan of 45</text>
+<rect x="200" y="106" width="399.0" height="20" fill="#2c4a6e"/><text x="593.0" y="120.5" font-size="11.5" text-anchor="end" fill="#f5f0e8" font-weight="600">outlives Woody 95%</text>
+<rect x="200" y="130" width="239.4" height="20" fill="#b83a1e"/><text x="445.4" y="144.5" font-size="11.5" fill="#1a1208" font-weight="600">sees the team sold 57%</text>
+<text x="190" y="194" font-size="12" text-anchor="end" fill="#1a1208">A fan of 60</text>
+<rect x="200" y="168" width="361.2" height="20" fill="#2c4a6e"/><text x="555.2" y="182.5" font-size="11.5" text-anchor="end" fill="#f5f0e8" font-weight="600">outlives Woody 86%</text>
+<rect x="200" y="192" width="189.0" height="20" fill="#b83a1e"/><text x="395.0" y="206.5" font-size="11.5" fill="#1a1208" font-weight="600">sees the team sold 45%</text>
+<text x="200" y="262" font-size="10" fill="#6b5e4a">sold = the team leaves the Johnson family in the fan&#8217;s lifetime</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Fan&rsquo;s and owner&rsquo;s lifetimes from the Social Security Administration&rsquo;s 2023 life table, men. &ldquo;Sold&rdquo; uses the NFL&rsquo;s own history since 1980: how often families sell after a death, and how often living owners sell. Our model; ranges in the methods box.</figcaption>
+  </figure>
+
+  <p>Look at the gap between each pair of bars. A fan of 60 outlives a 79-year-old man <strong>86 times in 100</strong>. But the team leaves the Johnson family in that fan&rsquo;s lifetime only about <strong>45 times in 100</strong>. That lower bar counts both ways out. One is a sale after Woody&rsquo;s death. The other is a plain sale while he is alive, which NFL owners do about once in every 55 years of ownership.</p>
+
+  <p>Is a fan of 30 better off? Yes, but mostly not because of Woody. A young fan simply has more years for any sale at all to happen.</p>
+
+  <p>One more twist, and it cuts against you. Very rich men live longer than the life table says. If we give Woody the life expectancy of the richest 1% of American men, his median rises from about eight more years to about thirteen. The fan of 60 now outlives him 74 times in 100, not 86.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>When you catch yourself doing the owner&rsquo;s-age math, ask the question underneath it. Not &ldquo;will he die?&rdquo; but &ldquo;will the team change hands?&rdquo; Those are two different events, and only the second one helps you. The data says it is closer to a coin flip than a sure thing, even with time on your side.</p>
+
+  <p>And hold onto this: a new owner is not a new team. The Patriots&rsquo; owner did not change when their fortunes did; the coach and the quarterback did. Whoever signs the checks, the seasons are decided by the people he hires. (The Packers, by the way, are owned by their fans. Green Bay is the one place where this math has no answer at all.)</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Owners:</strong> every change of controlling ownership of an NFL team from 1980 to October 31, 2026, 67 in all, each confirmed by two independent sources where we could (59 of 67). Twenty-eight owners died in control: 18 teams stayed in the family, 10 were sold, 3 within a year and 8 within five. Among deaths with five years of follow-up, 32% were sold within five years. Living owners sold at about 1.8% a year (22 sales over 1,300 franchise-years). Sources include AP, ESPN, the NFL and the teams; the Seahawks&rsquo; $9.6 billion sale was approved on August 26, 2026.</p>
+    <p><strong>Lifetimes:</strong> the Social Security Administration&rsquo;s 2023 period life table for men. Woody Johnson was born in 1947; his age is confirmed by CBS and ESPN. The national table gives a man of 79 a median of 8.3 more years. The wealth adjustment cuts the death rate at every age by the same share, enough to match the life expectancy that Chetty and colleagues (JAMA, 2016) found for the richest 1% of men at age 40, 87.3 years; it gives a median of 13. The fan is a man on the national table; a woman fan lives longer, so her odds are better.</p>
+    <p><strong>The ranges (90%):</strong> team leaves the family in the fan&rsquo;s lifetime: fan of 30, 56 to 76%; fan of 45, 46 to 68%; fan of 60, 35 to 56%. With the wealth adjustment, 33 to 52% for the fan of 60.</p>
+    <p><strong>What it cannot tell you:</strong> the Johnsons are not an average family, and history is a base rate, not a plan. A reported sale, a will that orders one, or a change in the family would move these numbers more than any table. Lifetimes are treated as independent, and the model holds the sale rate steady across decades.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
