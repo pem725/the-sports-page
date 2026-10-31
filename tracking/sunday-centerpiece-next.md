@@ -1,68 +1,54 @@
 # Sunday Edition — Next Centerpiece Brief
 
-**Teed up: 2026-08-01 (Sat). For Sunday Edition No. 17, built the morning of 2026-08-02.**
+**Teed up: 2026-10-31 (Sat). For the Sunday Edition built the morning of 2026-11-01.**
+Set by the editor: *"put the coin-flip pool thing in Sunday's edition."*
 
 > Planning brief, NOT finished copy. The Sunday Edition is built FRESH Sunday
-> morning with live data (SKILL.md "Sunday Edition Workflow"). Every number below
-> is a Saturday-night snapshot and MUST be re-fetched Sunday AM before it ships.
-> **Pull from the MLB Stats API (statsapi), not web summarizers** — reconcile to
-> the W-L record. Do not ship stale numbers.
+> morning. Every number below is a Saturday-morning snapshot taken BEFORE week 9
+> was played; re-read the pool's overall standings Sunday morning (weeks 1-9) and
+> recompute. **The repository is public: no names of pool members, no ranking of
+> the family** (see the learn-not-keep-score rule). Aggregates only, plus our own
+> entry, which is ours to grade.
 
-## This edition
-- **Sunday Edition No. 17** (16 already published).
-- **Recap window (reader issues #119–#126):** #119 NFL-spending/Jets QB · #121
-  Mets standings-vs-franchise · #122 CFB Ohio State–Texas line (entropy) · #123
-  Cubs/Red Sox droughts (one man ended both) · #124 CFB "fool's errand" contender
-  board · #125 no franchise cycles · #126 variance is king (fantasy). (#120 was
-  last week's Sunday Edition No. 16.)
+## Where it goes
 
-## The centerpiece: the deadline came, and the Mets sold
-**The hook:** The trade deadline just passed. Issue **#121 — "The Standings Say
-the Mets Should Bounce Back. The Franchise…"** — argued the talent/standings
-pointed to a rebound while the franchise itself looked broken. Reality answered
-at the deadline: the Mets acted like **sellers**, not a team betting on the
-bounce-back. That is a gradeable call, and grading our own framing against what
-the front office actually did is the whole point of the Sunday Edition.
+Block 3 of the football-season shape, **the improbability lesson**. It is the
+reason the edition exists on a week with little to grade.
 
-**Voice:** The Professor (Sundays always). Measured, honest, scoring the call.
+## The finding (snapshot through week 8)
 
-## Verified-ish as of Sat 8/1 — ALL **(RE-PULL Sun AM via statsapi + reporting)**
-- Mets posture at the deadline: **sellers.** Reported: dealt reliever **A.J.
-  Minter** (to the Twins); shopping **Clay Holmes, Freddy Peralta, Luis Robert
-  Jr.**; "everyone but the core" available. **(RE-PULL: confirm which deals
-  actually closed by the deadline — this is the single most important check.)**
-- Mets record / NL East: snapshot had them well under .500 and out of it (a
-  search read ~32–40, 5th, ~14.5 back — **UNVERIFIED, statsapi it**).
-- Context we've built on the Mets this year: #118 (cost-per-title, $380M vs a
-  Royals-level record), #121 (standings vs broken franchise), the WSJ "biggest
-  waste of money" thread. The deadline sell-off is the through-line paying off.
+- The family confidence pool: 15 college games a week against the spread,
+  confidence points 15 down to 1. A perfect week scores **120**.
+- **A coin scores 60 on average** (each pick wins half the time; half of 120).
+  Its weekly spread is wide: standard deviation **about 18 points**
+  (sqrt of 0.25 x (1^2 + ... + 15^2) = sqrt 310). So a coin's ordinary weeks
+  run from about 25 to 95.
+- **The whole pool, every entry in every week anyone played: 3,667 points over
+  61 entries = 60.1 a week.** Exactly a coin. Recompute with week 9.
+- Highest and lowest single weeks so far (94 and 17) both sit inside a coin's
+  ordinary range.
+- Over eight weeks a coin's total has a standard deviation of about 50 points,
+  so the leaders' 511 against a coin's 480 is well inside luck.
 
-## Fresh data to pull Sunday morning (REQUIRED, statsapi first)
-1. **Mets final deadline ledger** — who they actually traded, for whom. Turns
-   "acted like sellers" into a concrete list. Most important item.
-2. **Mets current record + NL East / wild-card standing**, run differential,
-   games back.
-3. Any **other newsletter-covered player/team** moved at the deadline (Pirates?
-   Skenes trade rumors? the sellers from #118 / the deadline pieces).
-4. **Paul Skenes' latest line** — the Skenes two-parter publishes Mon/Tue
-   (below), so a current stat check keeps the road-ahead honest.
+**The lesson:** a short leaderboard measures attendance and luck before it
+measures skill. Against the spread a real forecaster beats 50% by a few points,
+worth two or three pool points a week, smaller than one ordinary Saturday swing.
 
-## Predictions scorecard (score what's gradeable; mark the rest PENDING)
-- **#121 Mets bounce-back** — GRADEABLE: standings said rebound; front office
-  sold. Grade the framing (did "broken franchise" or "should bounce back" win?).
-- **Sunday Edition No. 16's open predictions** — carry forward and re-score.
-- **#122 Ohio State–Texas line / #124 CFB contender board** — PENDING (CFB
-  season hasn't started; nothing to grade yet).
-- #123 / #125 / #126 — methods/teaching pieces, not predictions. Nothing to grade.
+**Honest caveat to print:** entries are not independent (everyone picks the same
+games, and the lines are the same), so the 60.1 has a wider range than the
+naive 61-entry figure (+/- 4.5) suggests. Say so.
 
-## Road ahead (strong this week — the founding subject returns)
-- Tease the **Paul Skenes two-parter** publishing Mon/Tue: (1) his "struggling"
-  9–9 season is mostly noise — outcome stats lie; (2) "the radar gun knows first"
-  — which numbers predict vs revert, sparked by a reader's velocity question.
-  The newsletter's Issue-#1 subject, back, teaching the founding lesson.
-- And the new **Concept No. 26, Signal vs. Noise** primer that anchors them.
+## THE_MISS candidate: our own attendance
 
-## Reminders
-- Copy the template, don't consume it: `cp reserve/sunday-recap-template.html queue/sunday-017.html`
-- Inject the readership block: `python3 scripts/fetch_readership.py --inject queue/sunday-017.html`
-- Reader-facing number = published non-sunday + published sunday + 1.
+The Sports Page's own entry is 9th of 10 on total points (251), and **63 a week
+in the four weeks it actually played**, as good as the leaders' rate. It is low
+because it **scored zero in weeks 1, 2, 4 and 8**: week 4's picks were sealed
+but never entered, week 8 was never built. That is a real miss and a dull one;
+say it plainly, in one line. Week 9 was built and sealed (`seal.py --list`,
+digest committed 608dfdf) and entered.
+
+## Week 9 to grade
+
+`python3 scripts/seal.py --reveal --week 9` after it unlocks, then grade the
+sheet against Saturday's results. Biggest edge: Kansas State -2.5 at Colorado
+(15 points). Baylor at UCF was final before the sheet existed and is ungraded.
