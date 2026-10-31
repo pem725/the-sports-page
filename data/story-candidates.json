@@ -588,6 +588,62 @@
    "number": "Computed: at -110 a bet wins $100 or loses $110. At 53% the edge is $1.30 per $110 risked (1.2%); 54% $3.40 (3.1%); 55% $5.50 (5.0%). To clear a $31K full-time wage (2,080 h x $15, wage needs a source) you must bet about $2.6M a year at 53%, $1.0M at 54%, $620K at 55%. And 1,000 picks carry a +/-1.6-point standard error, so a season cannot tell a 53% expert from a coin. Expert pick records still to collect (ESPN/CBS published weekly ATS picks; needs a primary, archived source).",
    "why": "Builds on #160 (the vig, 52.4%), which never graded anyone. Civic core: confident TV picks vs a coin with a fee attached. Annie Duke (Penn cognitive psychology; finished the PhD 2023; Thinking in Bets, 2018) is a fair frame: poker rewards decisions, not outcomes. Big Mac price and McDonald's wage need sources before use.",
    "status": "idea"
+  },
+  {
+   "slug": "owner-succession",
+   "title": "Waiting for the owner to die doesn't work. The kids get the team.",
+   "grip": 8,
+   "twist": 9,
+   "clock": 6,
+   "stack": 8,
+   "carry": 8,
+   "answerable": true,
+   "source": "Editor and Patrick jr, 2026-10-31: will a Jets fan outlive Woody Johnson's ownership? Open with Al Davis -> Mark Davis; add Jerry Jones (reported plan to keep the Cowboys with his children).",
+   "number": "In research: every NFL control change since 1980 by cause (sale vs death->family vs death->estate sale), SSA life table for a man of 79 with a wealth adjustment, fan-outlives-team odds. scripts/owner_succession.py, data/ownership/.",
+   "why": "The fan's grim bet is on the wrong event: the team leaving the family, not the owner dying. Civic: name the event you are actually betting on. Never root for a death; the joke lands on the fan's math. Never name the family's own allegiances.",
+   "status": "researching"
+  },
+  {
+   "slug": "owner-gm",
+   "title": "Do owners who run the football side win less?",
+   "grip": 6,
+   "twist": 7,
+   "clock": 4,
+   "stack": 8,
+   "carry": 7,
+   "answerable": true,
+   "source": "Editor, 2026-10-31: Al Davis and Jerry Jones were owner-GMs who would not give up control, and it hurt; the best teams have hands-off owners who hire well. Packers (publicly owned) as the structural case; Buffalo should own the Bills.",
+   "number": "Not computed. Flag owner-GM seasons (Davis, Jones since 1989, Mike Brown) in data/ownership/ and compare win% with other owners, adjusted for regression; tiny n, so mind the interval. Al Davis also won three Super Bowls, so the confound is era.",
+   "why": "Tests a near-universal fan belief with an honest small sample. Survivorship trap: the hands-off owners we praise are the ones whose hires worked.",
+   "status": "idea"
+  },
+  {
+   "slug": "never-won-world-series",
+   "title": "Four clubs have never won a World Series. One has never been to one.",
+   "grip": 8,
+   "twist": 6,
+   "clock": 8,
+   "stack": 7,
+   "carry": 7,
+   "answerable": true,
+   "source": "Editor, 2026-10-31: the Mariners are the only club never to reach a World Series; the Brewers' 2026 title leaves four that never won (Mariners, Padres, Rays, Rockies).",
+   "number": "Brewers beat the Rays 4-1 (MLB Stats API, final game 2026-10-29). To compute: with 30 clubs and the expansion years, how long a drought a fair lottery predicts for each, vs the actual droughts; the Mariners since 1977.",
+   "why": "Timely (the Brewers just left the list); base rates and luck vs skill, and the Mariners as the long-shot nobody hits. Check every franchise's titles against MLB's own records before printing.",
+   "status": "idea"
+  },
+  {
+   "slug": "winning-prices-out-fans",
+   "title": "When the team gets good, the cheap seats disappear",
+   "grip": 5,
+   "twist": 6,
+   "clock": 4,
+   "stack": 7,
+   "carry": 8,
+   "answerable": false,
+   "source": "Editor, 2026-10-31: in Seattle in the late 1990s, Mariners tickets were a few dollars; winning plus new stadiums made both the Mariners and Seahawks expensive.",
+   "number": "Needs a primary price series (Team Marketing Report's Fan Cost Index, or team-published prices) and attendance; not yet sourced.",
+   "why": "Who pays for success; the stadium-subsidy question. Gate: no defensible ticket-price history yet.",
+   "status": "idea"
   }
  ]
 }
