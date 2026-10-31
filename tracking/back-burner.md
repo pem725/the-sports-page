@@ -73,3 +73,15 @@ Wed 16 Sep. Section kept for the record.
   college football pieces and two of anything else, which cannot be interleaved
   without a clash. *Revival trigger:* the moment one more baseball piece lands —
   the Detroit run-differential story is the obvious one.
+
+## Held 2026-10-31 — `193-lockout` waits for the week of Nov 23
+
+- **`193-lockout.html`** (MLB labor: "The Last Time Owners Asked for a Cap, Nobody
+  Won the World Series"). `dated`: it must run before the agreement expires
+  Dec 1. Held out of QUEUE_ORDER only because the order is sequential and a line
+  appended now would publish Fri 11/6. *Revival trigger:* when the queue reaches
+  the week of Nov 23, insert it there (Mon 11/23 or Tue 11/24), with no MLB piece
+  the day before. *Before it runs:* re-read the news. If a deal was signed, kill
+  it or rewrite it as a "the five-in-six didn't happen" piece; if a side moved
+  off the cap, the "new system" coding changes. The numbers come from
+  `scripts/work_stoppages.py --offline` and `data/stoppages/`.

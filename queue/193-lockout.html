@@ -1,0 +1,288 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: dated
+tags: MLB:mlb, Labor, Lockout, Base Rates, Forecast
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The Last Time Owners Asked for a Cap, Nobody Won the World Series</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="The Last Time Owners Asked for a Cap, Nobody Won the World Series">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/193-lockout.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/193-lockout.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Last Time Owners Asked for a Cap, Nobody Won the World Series">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/193-lockout.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<style>.chart{width:100%;height:auto;display:block}</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+<div class="kicker">Baseball&rsquo;s Labor Fight &middot; The Odds</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>The Last Time Owners Asked for a Cap, Nobody Won the World Series</h1>
+
+  <div class="deck">
+    Twelve times, a big league has fought over a new pay system like a cap. Ten of those fights stopped the games, and seven cost real games. Baseball&rsquo;s owners want a cap now. History puts a lockout at about five chances in six, and lost games next spring at about one in three.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; MLB, NFL, NBA and NHL labor talks, 1967&ndash;2026</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">10 of 12</div><div class="l">Fights over a new pay system that stopped the games</div></div>
+    <div class="sc"><div class="v bad">7 of 12</div><div class="l">That canceled regular-season games</div></div>
+    <div class="sc"><div class="v now">11 years</div><div class="l">For crowds to come back after 1994&ndash;95</div></div>
+  </div>
+
+  <p><strong>Will there be baseball on Opening Day?</strong> The players&rsquo; labor deal runs out at midnight on December 1. The owners want a hard salary cap, and the union has said no to any cap at all. So we counted every time this has happened before.</p>
+
+  <p>Here is the answer, with its number. Across baseball, football, basketball and hockey, a league has fought over a whole new pay system <strong>12 times</strong>. <strong>Ten</strong> ended in a strike or a lockout. Seven cost regular-season games.</p>
+
+  <p>The surprise is how long sports stoppages last. The typical big American strike is over in about nine days. Sports ones run for months, and the reason tells you exactly which date to watch this winter.</p>
+
+  <h2 class="sh">Why the Kind of Fight Matters</h2>
+
+  <p>Most labor talks are haggling inside a system both sides already accept: a higher minimum salary, a different tax line. We sorted all 33 negotiations since 1967 that ran to a deadline into two kinds. In the first, one side demanded a new system, like a cap, a fixed split of the money, or the end of the old rules that tied players to one team. In the second, they adjusted the old one.</p>
+
+  <p>The difference is large. Adjusting the old system ended in a stoppage about half the time, 11 of 21. A fight over a new system did it <strong>10 times in 12</strong>. A cap is the second kind, and that is the fight baseball is having.</p>
+
+  <p>We also tried to measure the distance in dollars, as the gap between the two sides&rsquo; first offers. It is on record for only three fights, and the smallest gap, baseball in 1994, went with the longest stoppage of the three. Three cases cannot carry a rule. What did carry one was the kind of fight, not its size.</p>
+
+  <h2 class="sh">How Long It Would Last</h2>
+
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 400" width="100%" role="img" aria-label="Twelve labor fights over a new pay system in MLB, NFL, NBA and NHL. Ten became stoppages. Longest: NHL 2004-05, 309 days; MLB 1994-95, 233 days; NBA 1998-99, 190; NBA 2011, 160; NHL 1994-95, 102. Seven canceled regular-season games. Two settled with no stoppage." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="14" font-size="12" fill="#1a1208" font-weight="600">Twelve fights over a new pay system: how long the games stopped</text>
+<line x1="278.8" y1="46" x2="278.8" y2="338" stroke="#1a1208" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="278.8" y="26" font-size="10" text-anchor="middle" fill="#1a1208">spring training</text>
+<line x1="336.8" y1="46" x2="336.8" y2="338" stroke="#1a1208" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="336.8" y="38" font-size="10" text-anchor="middle" fill="#1a1208">Opening Day</text>
+<line x1="506.4" y1="46" x2="506.4" y2="338" stroke="#1a1208" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="506.4" y="38" font-size="10" text-anchor="middle" fill="#1a1208">1994–95 record</text>
+<text x="162" y="69" font-size="11.5" text-anchor="end" fill="#1a1208">NHL 2004&#8211;05</text>
+<rect x="170" y="58" width="448.1" height="15" fill="#b83a1e"/>
+<text x="623.0" y="70" font-size="11" fill="#1a1208">309</text>
+<text x="162" y="93" font-size="11.5" text-anchor="end" fill="#1a1208">MLB 1994&#8211;95</text>
+<rect x="170" y="82" width="337.8" height="15" fill="#b83a1e"/>
+<text x="512.8" y="94" font-size="11" fill="#1a1208">233</text>
+<text x="162" y="117" font-size="11.5" text-anchor="end" fill="#1a1208">NBA 1998&#8211;99</text>
+<rect x="170" y="106" width="275.5" height="15" fill="#b83a1e"/>
+<text x="450.5" y="118" font-size="11" fill="#1a1208">190</text>
+<text x="162" y="141" font-size="11.5" text-anchor="end" fill="#1a1208">NBA 2011</text>
+<rect x="170" y="130" width="232.0" height="15" fill="#b83a1e"/>
+<text x="407.0" y="142" font-size="11" fill="#1a1208">160</text>
+<text x="162" y="165" font-size="11.5" text-anchor="end" fill="#1a1208">NHL 1994&#8211;95</text>
+<rect x="170" y="154" width="147.9" height="15" fill="#b83a1e"/>
+<text x="342" y="166" font-size="11" fill="#1a1208">102</text>
+<text x="162" y="189" font-size="11.5" text-anchor="end" fill="#1a1208">NFL 1982</text>
+<rect x="170" y="178" width="81.2" height="15" fill="#b83a1e"/>
+<text x="256.2" y="190" font-size="11" fill="#1a1208">56</text>
+<text x="162" y="213" font-size="11.5" text-anchor="end" fill="#1a1208">NFL 1974</text>
+<rect x="170" y="202" width="58.0" height="15" fill="#2c4a6e"/>
+<text x="233.0" y="214" font-size="11" fill="#1a1208">40</text>
+<text x="162" y="237" font-size="11.5" text-anchor="end" fill="#1a1208">MLB 1990</text>
+<rect x="170" y="226" width="44.9" height="15" fill="#2c4a6e"/>
+<text x="219.9" y="238" font-size="11" fill="#1a1208">31</text>
+<text x="162" y="261" font-size="11.5" text-anchor="end" fill="#1a1208">NFL 1987</text>
+<rect x="170" y="250" width="33.4" height="15" fill="#b83a1e"/>
+<text x="208.3" y="262" font-size="11" fill="#1a1208">23</text>
+<text x="162" y="285" font-size="11.5" text-anchor="end" fill="#1a1208">MLB 1976</text>
+<rect x="170" y="274" width="23.2" height="15" fill="#2c4a6e"/>
+<text x="198.2" y="286" font-size="11" fill="#1a1208">16</text>
+<text x="162" y="309" font-size="11.5" text-anchor="end" fill="#1a1208">NBA 1983</text>
+<text x="174" y="309" font-size="10.5" fill="#6b5e4a">settled, no stoppage</text>
+<text x="162" y="333" font-size="11.5" text-anchor="end" fill="#1a1208">NBA 1988</text>
+<text x="174" y="333" font-size="10.5" fill="#6b5e4a">settled, no stoppage</text>
+<rect x="170" y="356" width="12" height="10" fill="#b83a1e"/><text x="187" y="365" font-size="10.5" fill="#1a1208">regular-season games canceled</text>
+<rect x="420" y="356" width="12" height="10" fill="#2c4a6e"/><text x="437" y="365" font-size="10.5" fill="#1a1208">no games lost</text>
+<text x="170" y="386" font-size="10" fill="#6b5e4a">days from first day stopped to deal &#183; dashed lines: days from a Dec. 2 lockout</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:.5rem">Every labor fight over a new pay system in the four leagues since 1967. Dates from league and union statements and news reports of the time; where sources differ by a few days, the difference is noted in our data. Our count, for the methods see below.</figcaption>
+  </figure>
+
+  <p>Look at the dashed lines. A lockout that starts December 2 reaches spring training in mid-February, about day 75. It starts cancelling games around Opening Day in late March, about day 115.</p>
+
+  <p>Of the ten stoppages on the chart, <strong>five</strong> lasted past day 75 and <strong>four</strong> past day 115. Two went past baseball&rsquo;s own record of 232 days. Put that together with the five-in-six chance of a stoppage at all, and you get our forecast:</p>
+
+  <ul>
+    <li>A lockout in December: about <strong>5 in 6</strong>.</li>
+    <li>Still going when pitchers are due in camp: about <strong>4 in 10</strong>.</li>
+    <li>Regular-season games lost: about <strong>1 in 3</strong>.</li>
+    <li>Longer than 1994&ndash;95: about <strong>1 in 6</strong>.</li>
+  </ul>
+
+  <p>Hold those loosely. With ten stoppages to learn from, each of those numbers could be off by twenty points either way. The methods box has the ranges.</p>
+
+  <div class="pull">
+    <p>A December lockout costs almost nothing. The bill comes due in February.</p>
+  </div>
+
+  <h2 class="sh">Why Sports Stoppages Run So Long</h2>
+
+  <p>The government keeps a record of every large strike or lockout in America, 723 of them since 1993. The typical one lasts nine days. Of the 22 sports stoppages, 18 lasted longer than that. Why the gap?</p>
+
+  <p>Because a factory strike costs both sides money every single day. A baseball lockout in December costs almost nothing. Players are not paid in the winter, and no games are being played. Nobody feels real pain until games are on the line, so neither side has a reason to move until then. That is why the date to watch is not December 1. It is spring training. In the sports record, four of the five stoppages that reached day 75 also reached day 115.</p>
+
+  <h2 class="sh">What Is at Stake</h2>
+
+  <p>Baseball took in about <strong>$12 billion</strong> in 2024, by Forbes&rsquo;s count. Spread over a full schedule, that is about <strong>$5 million</strong> for every game played.</p>
+
+  <p>The fans are the bigger cost, and they come back slowly. In 1994, big-league teams drew 31,256 people a game. After the strike, in 1995, they drew 25,022, a drop of a fifth. Crowds did not get back to that level until 2006, eleven seasons later. (Expansion and new ballparks had lifted 1993 and 1994, so part of that peak was never going to last.)</p>
+
+  <p>Not every stoppage leaves that scar. After the 1981 strike, crowds were back within a year. The last lockout, in 2022, ran 99 days and cost no games at all once the schedule was patched. The difference is the World Series. Fans forgave a lost June. They did not forgive a lost October.</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>When you hear on December 2 that baseball has locked out its players, you do not need to panic. Five in six says it was coming, and a winter lockout is mostly a quiet one. Your date to watch is the middle of February. If camps open, the worst is over. If they do not, history says to expect lost games.</p>
+
+  <p>And when someone tells you the two sides are &ldquo;close,&rdquo; ask a different question: are they arguing about a number, or about the system? That is what has predicted a long fight.</p>
+
+  <p>One more stake, and it is ours. Opening Day 2027 is this paper&rsquo;s first birthday. We would like to celebrate it with a ballgame.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Negotiations:</strong> every labor agreement in MLB, the NFL, the NBA and the NHL from 1967 that expired or was reopened, including the ones that ended in a handshake: 33 in all, 21 with a stoppage. First-ever agreements, court settlements and early extensions are left out. We could not date some NBA agreements of the 1970s or NHL agreements before 1991; none is known to have had a stoppage, so leaving them out makes stoppages look a little more common, not less.</p>
+    <p><strong>The kind of fight:</strong> we called it a new-system fight when one side demanded a cap, a fixed revenue split, or the end of free-agency limits. That sorting was done by us, knowing how each fight ended, which is a weakness; three cases were close calls, and flipping them moves the 83% to 92% and the 52% to 45%. The ranges (95%): stoppage in a new-system fight 55% to 95%; games lost 32% to 81%. Our forecast&rsquo;s ranges: still going at day 75, 17% to 66%; games lost, 12% to 59%; past 232 days, 3% to 42%.</p>
+    <p><strong>Numbers:</strong> stoppage lengths are counted from the first day stopped to the day of the deal. Attendance is per game, from the Lahman baseball database, and matches MLB&rsquo;s own totals to within half a percent. Sources disagree on games lost in 1994&ndash;95 (938 or 948); the schedule itself gives 920, and we use none of those here. The $12 billion is Forbes&rsquo;s estimate of team revenue, reported by CBS Sports and others. The large-strike record is the Bureau of Labor Statistics list of stoppages with 1,000 or more workers.</p>
+    <p><strong>What it cannot tell you:</strong> the past cannot see this year&rsquo;s people or this year&rsquo;s money. Fights in one league are not independent of each other, and the clock on each one starts at a different point in the money calendar. This forecast uses history only. It ignores the reporting this fall that a lockout is widely expected, so read the five-in-six as a floor.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
