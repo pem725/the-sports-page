@@ -1,0 +1,59 @@
+MLB 2026-27 FORECAST -- from scripts/work_stoppages.py, 2026-10-31
+Agreement expires 2026-12-01 (11:59pm ET).  Thresholds counted from a 2026-12-02 start:
+  75 days  = ~Feb 15, 2027 (spring training reports)
+  115 days = ~Mar 27, 2027 (Opening Day, regular-season games at risk)
+  232 days = ~Jul 22, 2027 (the 1994-95 record)
+MLB 2026 is coded distance (a) = SYSTEM CHANGE: the owners' opening demand is a hard cap where none exists.
+Intervals: 95%, Monte Carlo (100000 draws) from Jeffreys Beta posteriors; at most two significant digits.
+
+A. P(stoppage on or near Dec 1)
+   history of system-change negotiations: 10 of 12 -> 83% (Wilson 95% 55%-95%)
+   all negotiations, for contrast:        21 of 33 -> 64% (Wilson 95% 47%-78%)
+   The history ignores what is already known this fall: a lockout is widely reported as expected
+   (AP 2026-05-28; CBS 2026-10-24) and the owners' stated preference is an offseason lockout.  Read
+   the historical figure as a floor on the editor's number, and section C as the main event.
+
+B. Duration, from SPORTS history (empirical exceedance among past stoppages)
+ B1. system-change stoppages (n=10)
+                                  given a stoppage       unconditional         
+   > 75d reaches spring training  50% (22%-78%) [5/10]   40% (17%-66%)
+   >115d cancels regular season   40% (15%-70%) [4/10]   32% (12%-59%)
+   >232d passes 232-day record    21% (4.4%-51%) [2/10]   17% (3.4%-42%)
+ B2. all stoppages (n=22)
+                                  given a stoppage       unconditional         
+   > 75d reaches spring training  37% (19%-57%) [8/22]   29% (14%-49%)
+   >115d cancels regular season   28% (12%-48%) [6/22]   22% (9.3%-40%)
+   >232d passes 232-day record    9.7% (2%-26%) [2/22]   7.8% (1.5%-22%)
+ B3. stoppages that began in the offseason/preseason, like this one (n=15)
+                                  given a stoppage       unconditional         
+   > 75d reaches spring training  47% (24%-71%) [7/15]   37% (18%-61%)
+   >115d cancels regular season   34% (14%-58%) [5/15]   27% (11%-49%)
+   >232d passes 232-day record    7.7% (0.7%-27%) [1/15]   6.1% (0.6%-22%)
+
+C. Duration, from the BLS hazard (n=723 U.S. stoppages since 1993)
+   > 75d reaches spring training  given a stoppage 8.6%;  unconditional 7.1% (4.9%-8.3%)
+   >115d cancels regular season   given a stoppage 5.4%;  unconditional 4.5% (3.1%-5.2%)
+   >232d passes 232-day record    given a stoppage 2.5%;  unconditional 2.1% (1.4%-2.4%)
+   conditional chain: P(past 115 | past 75) = 63%;  P(past 232 | past 115) = 46%
+
+D. WHERE THE TWO DISAGREE
+   Given a stoppage, sports history says it reaches spring training 50% of the time; BLS says 8.6%.
+   Sports history says it cancels games 40%; BLS says 5.4%.  It passes 232 days: sports 21%, BLS 2.5%.
+   The ordinary American strike is short (BLS median 9 days) because the cost lands on both sides
+   at once.  A sports lockout begun in December costs almost nothing until games are at stake: no
+   salaries are paid in the offseason and little revenue is lost.  So the sports clock that matters
+   is days to the first cancelled game, and the sports rows run long -- 18 of 22 sit above the BLS
+   median.  BLS is the wrong base rate for the first ~100 days of an offseason lockout.  It is a fair
+   warning for what follows: once a stoppage is long, it tends to stay long (BLS chance of ending
+   within 30 days: 79% for a new stoppage, 26% for one already 115 days old).
+   Sports chain (system-change stoppages): past 115 given past 75 = 4/5; past 232 given past 115 = 2/4.
+   BLS chain: 63% and 46%.  Both say the same thing: the spring-training deadline is the fork.
+
+E. ONE-LINE ANSWER (the editor's number)
+                                      unconditional              if the lockout happens
+   P(stoppage on/near Dec 1)          ~83% (55%-95%)             --
+   P(reaches spring training)         ~40% (17%-66%)             50% (22%-78%); other sports subsets 37%-50%; BLS 8.6%
+   P(cancels regular-season games)    ~32% (12%-59%)             40% (15%-70%); other sports subsets 28%-40%; BLS 5.4%
+   P(passes 232 days)                 ~17% (3.4%-42%)            21% (4.4%-51%); other sports subsets 7.7%-21%; BLS 2.5%
+   Headline column: system-change stoppages (B1), the class this one belongs to.  n = 10; every
+   interval spans roughly half the scale, so say 'about one in X', never a decimal.
