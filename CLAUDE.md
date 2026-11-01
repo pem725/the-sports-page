@@ -1257,9 +1257,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 215 issues (#1-215)
+Published: 216 issues (#1-216)
 Queue: 7 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 189-qb-wins, 190-every-program, 191-back-to-the-wall, 192-blockbuster-trades, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 285 issues remaining of 500
-Last published: Issue #215 — "Two in Three Home Run Hitters Do It Again. Most Doubles Hitters Don’t." (187-home-runs.html) on October 31, 2026
+Goal: 284 issues remaining of 500
+Last published: Issue #216 — "The Option Made It Close. Notre Dame Won Anyway. We Had Both in Print." (sunday-030.html) on November 1, 2026

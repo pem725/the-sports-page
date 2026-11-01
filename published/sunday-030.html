@@ -1,0 +1,468 @@
+<!-- PUBLISH-META
+topic: Sunday Edition
+tags: Sunday Edition, CFB, NFL, MLB
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Sunday Edition No. 030 &mdash; November 1, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.box.green-box{background:var(--green)}
+.box.green-box h3{color:#e0f0e8}
+.box.green-box p{color:#c8edcf}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.sh2{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin:1.2rem 0 .4rem}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.issue-list{list-style:none;padding:0;margin:0 0 1.8rem}
+.issue-list li{font-size:.9rem;line-height:1.65;padding:.5rem 0;border-bottom:1px solid var(--div)}
+.issue-list li:last-child{border-bottom:none}
+.issue-list .inum{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;color:var(--steel);margin-right:.4rem}
+.issue-list .idate{font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);margin-right:.4rem}
+.issue-list a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3);font-weight:700;transition:border-color .2s}
+.issue-list a:hover{border-color:var(--rust)}
+
+.nfl-table{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+.nfl-table th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+.nfl-table td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+.nfl-table tr:last-child td{border-bottom:none}
+.nfl-table .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+.nfl-table .coin-flip td{background:#f0f4fa;font-weight:700}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<meta property="og:title" content="The Option Made It Close. Notre Dame Won Anyway. We Had Both in Print.">
+<meta property="og:description" content="Sunday Edition No. 030 &mdash; six issues, two gradeable predictions, both from the same game. Navy covered. Notre Dame won. The pool hit coin flip.">
+<meta property="og:url" content="https://thesportspage.net/published/sunday-030.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Option Made It Close. Notre Dame Won Anyway. We Had Both in Print.">
+<meta name="twitter:description" content="Sunday Edition No. 030 &mdash; six issues, two gradeable predictions, both from the same game. Navy covered. Notre Dame won. The pool hit coin flip.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/banner.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Sunday Edition &middot; Week 9 CFB / Week 8 NFL &middot; All Sports</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Sunday Edition No. 030 &middot; Issue No. 216</span>
+    <span>November 1, 2026</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">The Option Made It Close. Notre Dame Won Anyway. <em>We Had Both in Print.</em></h1>
+
+  <div class="deck">
+    Six issues this week, two gradeable predictions &mdash; both about the same game. Navy trailed Notre Dame 13&ndash;7 at halftime as a 30.5-point underdog, then the Irish scored 28 unanswered. The option did what we said it would. The Brewers won the World Series. The family pool landed exactly on coin flip. Let&rsquo;s go through it.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; November 1, 2026 &middot; Sunday Edition No. 030</div>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="sc"><div class="v now">216</div><div class="l">Issues Published</div></div>
+    <div class="sc"><div class="v good">2 HIT</div><div class="l">Predictions Graded This Week</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">284</div><div class="l">Issues Remaining to 500</div></div>
+  </div>
+
+  <!-- READER'S CONTRACT -->
+  <p><strong>The question we ask every Sunday:</strong> what did we claim this week, and did reality agree?</p>
+
+  <p><strong>The scoreboard.</strong> Six issues this week, 2 gradeable predictions: 2 hit, 0 missed, 0 still pending from this week. Four pieces made no forward forecast. Two long-running picks &mdash; Notre Dame&rsquo;s championship odds and the Bills&rsquo; Super Bowl odds &mdash; remain active from Issue #202.</p>
+
+  <p><strong>Here is the honest note:</strong> no misses this week. The Rays lost the World Series, but Issue #208 described their overperformance &mdash; it did not predict their October. The Peralta story ended with an ALCS MVP and a World Series loss; that is new information, not a grading failure. A newsletter that invents misses is no more useful than one that buries them.</p>
+
+  <p><strong>Why we bother:</strong> a prediction nobody grades is just a story.</p>
+
+  <!-- WEEK IN REVIEW -->
+  <h2 class="sh">The Week in Review: Issues #210&ndash;215</h2>
+
+  <ol class="issue-list">
+    <li><span class="inum">#210</span><span class="idate">Oct 26</span> &mdash; <a href="185-coaches-came-home.html">One in Seven Coaches Goes Home to Coach. Home Gives Them No Edge.</a> &mdash; Since 1970, 181 major-college hires were former players at that school. They won 47% of their games. Other coaches at the same schools won 46%. The real number to look up is how the previous five years went.</li>
+    <li><span class="inum">#211</span><span class="idate">Oct 27</span> &mdash; <a href="183-sal-peralta.html">The Mets Let Him Go. Then He Got Worse. Then He Won the Pennant.</a> &mdash; Sal&rsquo;s Column: Freddy Peralta posted a 7.2 ERA in 22 Mets starts, then allowed 5 earned runs in his first 10 appearances for Tampa Bay, then won the ALCS MVP. The devil did not move him. August did.</li>
+    <li><span class="inum">#212</span><span class="idate">Oct 28</span> &mdash; <a href="184-bye-week.html">Notre Dame Got a Week Off. It Bought About One Point.</a> &mdash; Across 13,000-plus college games, a bye added about one point. For a team coming off a loss, about a third of a point &mdash; same as nothing. The Irish came off a loss at BYU. This held.</li>
+    <li><span class="inum">#213</span><span class="idate">Oct 29</span> &mdash; <a href="186-rbi.html">The Best Hitter in Baseball Finished Fifth in Runs Batted In.</a> &mdash; OPS alone explains only 43% of the variation in RBI across 145 hitters in 2025. Add plate appearances with runners on and the number jumps to 88%. The RBI is a window with your teammates&rsquo; fingerprints all over it.</li>
+    <li><span class="inum">#214</span><span class="idate">Oct 30</span> &mdash; <a href="188-nd-navy.html">Navy Beats the Spread Two Times in Three. It Rarely Beats the Team.</a> &mdash; As big underdogs, academies have covered 31 times in 47 games. They have won 9 times where their lines predicted 4. Against spreads of 24 or more: zero wins in ten tries. Notre Dame was a 30.5-point favorite on Saturday.</li>
+    <li><span class="inum">#215</span><span class="idate">Oct 31</span> &mdash; <a href="187-home-runs.html">Two in Three Home Run Hitters Do It Again. Most Doubles Hitters Don&rsquo;t.</a> &mdash; 67% of top-third home run hitters repeated the next season. Only 45% of doubles hitters did. Chance alone would keep 33%. Most fans assume home runs and doubles both measure power. They barely move together.</li>
+  </ol>
+
+  <hr>
+
+  <!-- PREDICTION SCORECARD -->
+  <h2 class="sh">The Prediction Scorecard</h2>
+
+  <table class="rec">
+    <thead>
+      <tr><th>#</th><th>Prediction</th><th>Outcome</th><th>Grade</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl">
+        <td class="mono">1</td>
+        <td>Issue #214: Navy wins outright: roughly 1 chance in 21 (~5%)</td>
+        <td>Notre Dame won 35&ndash;13 at Gillette Stadium. Navy did not come close to winning.</td>
+        <td class="mono">HIT &mdash; low probability for Navy did not happen</td>
+      </tr>
+      <tr class="hl">
+        <td class="mono">2</td>
+        <td>Issue #214: Academy teams as 24-point-plus underdogs cover the spread historically (7 of 10 recent games)</td>
+        <td>Notre Dame won by 22. The spread was 30.5. Navy covered. The option kept it from becoming a blowout.</td>
+        <td class="mono">HIT &mdash; historical pattern held exactly</td>
+      </tr>
+      <tr class="hl">
+        <td class="mono">3</td>
+        <td>Issue #212: Bye worth about 1/3 point for a team off a loss &mdash; same as nothing</td>
+        <td>Notre Dame won convincingly. The extra week did not transform the outcome. The Irish came off a loss and won by 22 &mdash; Notre Dame quality, not rest.</td>
+        <td class="mono">HIT &mdash; confirmed by outcome; the bye was not the margin</td>
+      </tr>
+      <tr class="match">
+        <td class="mono">4</td>
+        <td>Issue #202 (standing): Notre Dame wins CFB National Championship (~16% at issue time; updated to &lt;5% after BYU loss)</td>
+        <td>Notre Dame beat Navy 35&ndash;13. Now 8&ndash;1. Must win out and win the ACC Championship to reach the CFP. Path narrow but open.</td>
+        <td class="mono">PENDING &mdash; three ranked opponents remain</td>
+      </tr>
+      <tr class="match">
+        <td class="mono">5</td>
+        <td>Issue #202 (standing): Buffalo Bills win Super Bowl (~15%)</td>
+        <td>Bills entered Week 8 at 5&ndash;1, playing today at home as &minus;3 favorites.</td>
+        <td class="mono">PENDING &mdash; season ongoing</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- CFB SATURDAY SECTION -->
+  <h2 class="sh">What Yesterday&rsquo;s College Football Showed</h2>
+
+  <p><strong>Notre Dame 35, Navy 13 at Gillette Stadium, Foxborough.</strong> Navy trailed 7&ndash;6 after one quarter, then led 13&ndash;7 at halftime. Notre Dame scored 28 unanswered in the second half and won by 22. The spread was 30.5. Navy covered.</p>
+
+  <p>Issue #214 on Friday laid out exactly this shape: the option shortens the game; a short game is closer than the line; the better team still usually wins it. Navy had the ball for long stretches of the first half. Then the Irish scored five times. Notre Dame wins the game. Navy wins the spread. Both things were in print Friday morning, before kickoff.</p>
+
+  <p>The series record now stands 85&ndash;13&ndash;1. Notre Dame has won nine straight. As a 24-or-more-point underdog, Navy&rsquo;s record since 2013 is now zero wins in eleven. What the option does is make the game shorter. What it does not do is make the gap disappear. You can beat the number for years and still never beat the team.</p>
+
+  <p><strong>Ohio State fell to USC.</strong> Ohio State was a ranked program. The result matters for the playoff picture. Both teams were ranked; this was not an upset in the usual sense. Notre Dame remains in the conversation, depending on what happens in the standings elsewhere.</p>
+
+  <p><strong>Miami (FL) remained undefeated at 8&ndash;0.</strong></p>
+
+  <hr>
+
+  <!-- IMPROBABILITY LESSON: THE COIN FLIP POOL -->
+  <h2 class="sh">The Family Pool Scores Exactly a Coin</h2>
+
+  <p>Every week since August the family has played a confidence pool: fifteen college football games, ranked by how certain you are, 15 points for your strongest pick down to 1 for your weakest. A perfect week is 120 points. A coin &mdash; pick every game by flipping a coin, confidence assigned randomly &mdash; averages 60 points a week.</p>
+
+  <p>Through eight weeks of play, the whole pool averaged <strong>60.1 points per week.</strong> Sixty-one entries. Every entry from every week. The market cannot be beaten by the family, in aggregate, and this is exactly what should happen.</p>
+
+  <div class="box">
+    <h3>The Math Behind the Coin</h3>
+    <div class="math">A fair coin picks each game correctly 50% of the time.
+Points scored on a correct pick: 1 + 2 + ... + 15 = 120 total available.
+Expected weekly score for a coin: 0.50 × 120 = 60 points.
+
+Weekly standard deviation ≈ √(0.25 × (1² + 2² + ... + 15²)) ≈ √310 ≈ 18 points.
+
+One good Saturday moves you ±18 points. One great Saturday: ±36.
+Eight weeks of coin: expected 480, standard deviation ≈ 50 points.
+
+Our pool leaders: ~511 points through Week 8 — 31 points ahead of a coin.
+31 points divided by 50 points of noise: about 0.6 standard deviations.
+That is not skill. That is one above-average Saturday.</div>
+    <p>The entries are not independent &mdash; everyone picks the same games from the same lines &mdash; so the error bars are even wider than the naive calculation suggests. The leaders might be ahead by more than luck, or they might not. Eight weeks is not enough games to know which.</p>
+  </div>
+
+  <p>Our own entry is 9th of 10 on total points (251 through the weeks we played). Here is why: we scored zero in weeks 1, 2, 4, and 8. Not because we picked poorly &mdash; because we never entered those weeks. In the five weeks we played, we averaged 63 points per week: a little above coin flip, consistent with knowing the math but not much more than that. Week 9 was sealed before kickoff and entered. You can check the digest; the text did not change after Saturday&rsquo;s results were known.</p>
+
+  <p>The lesson has two parts. First: the spread is the market&rsquo;s best estimate of the gap between the teams. When you pick with the spread, you are essentially confirming the market&rsquo;s opinion and scoring 50% as a result. Beating the spread consistently &mdash; even by a few points per week &mdash; means finding games where the market is systematically wrong. Nobody in the family has found those games yet. The market is hard. That is not a complaint; it is a fact worth knowing before you argue with it at dinner.</p>
+
+  <p>Second: the short leaderboard through Week 8 measures attendance and luck before it measures anything about football knowledge. The leaders have played every week. We have not. The calibration table, the real test, needs 25 or 30 resolved games per confidence band before it says anything useful. We will run it in November and again at season&rsquo;s end.</p>
+
+  <div class="pull">
+    <p>&ldquo;The market is right until proven otherwise. Eight weeks is not enough to prove it.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on the family pool, Week 8</cite>
+  </div>
+
+  <hr>
+
+  <!-- READERSHIP BLOCK -->
+  <!-- readership-cache 2026-10-31 -->
+<h2 class="sh">What Readers Read &middot; October 24 &ndash; October 30</h2>
+<table class="rec">
+  <thead><tr><th>Rank</th><th>Issue</th><th>Reads</th></tr></thead>
+  <tbody>
+  <tr><td class="mono">#1</td><td><a href="https://thesportspage.net/published/017-wnba-soccer-comparison.html" target="_blank" rel="noopener">The WNBA and MLS Were Born the Same Year. One Pays $584K. The Other Pays...</a></td><td class="mono">2</td></tr>
+  <tr><td class="mono">#2</td><td><a href="https://thesportspage.net/published/048-pythagorean-mets.html" target="_blank" rel="noopener">Bill James Says the Mets Should Be 22–24. The Bigger Story Is What That ...</a></td><td class="mono">1</td></tr>
+  </tbody>
+</table>
+<p style="font-size:.82rem;color:var(--muted);margin-top:-.4rem"><em>Counts are unique pageviews per GoatCounter, with author visits excluded. Pulled 2026-10-31.</em></p>
+
+
+  <hr>
+
+  <!-- NFL WATCH BLOCK -->
+  <h2 class="sh">What to Watch Today &mdash; and Why Those Games</h2>
+
+  <p>Week 8 of the NFL season is in progress. The Bills are off bye and playing at home today; the Seahawks are on Monday night tomorrow. Two games worth knowing about before you turn on the television:</p>
+
+  <table class="nfl-table">
+    <thead>
+      <tr><th>Matchup</th><th>Spread</th><th>Win prob.</th><th>Why watch</th></tr>
+    </thead>
+    <tbody>
+      <tr class="coin-flip">
+        <td>Jets vs. Raiders (1pm ET)</td>
+        <td>NYJ &minus;1.5</td>
+        <td>54&ndash;55% Jets</td>
+        <td>The board&rsquo;s closest thing to a coin flip this week. The Jets are 2&ndash;5; the Raiders are 3&ndash;4. The market can barely separate them. One play decides both teams&rsquo; direction heading into the second half.</td>
+      </tr>
+      <tr>
+        <td>Bills at home</td>
+        <td>BUF &minus;3</td>
+        <td>~59% Bills</td>
+        <td>Buffalo enters at 5&ndash;1, first in the AFC East, off a bye. Three points at home is the market&rsquo;s way of saying they are the better team but not by much. Our standing Super Bowl pick rides here.</td>
+      </tr>
+      <tr>
+        <td>Seahawks vs. Bears (MNF, Nov 2)</td>
+        <td>Tomorrow night</td>
+        <td>Line pending</td>
+        <td>Seattle on Monday Night Football. Not today &mdash; listed so you know where the family game is.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:.72rem;color:var(--muted)">Win probabilities use a 13.5-point NFL standard deviation: a 1.5-point favorite wins about 54% of the time, a 3-point favorite about 59%. We hold no NFL model. Eight weeks of data is not a model. What you see is the market&rsquo;s estimate, not ours. Spreads from DraftKings and Bovada as of Sunday morning.</p>
+
+  <hr>
+
+  <!-- WORLD SERIES CLOSE -->
+  <h2 class="sh">The World Series: Closed</h2>
+
+  <p>The Milwaukee Brewers beat the Tampa Bay Rays 4&ndash;1. Game 5 finished October 28 at Tropicana Field. Milwaukee won their first World Series in franchise history.</p>
+
+  <p>Issue #208 described the Rays as one of the rarer overperformers in recent history: they won 98 games against a model that said 79. Of 750 team-seasons since 1999, only 14 beat the baseline by more. Then they lost the World Series to a team that also came out of nowhere &mdash; the Brewers won 103 games against a forecast of 90. Both finalists were at the far right of the distribution. The one that overperformed more on paper (Rays, by 19 games) lost to the one that overperformed a little less (Brewers, by 13). When everything is extreme, the extremes stop distinguishing who wins.</p>
+
+  <p>Issue #208 was not a prediction. It was a description of what the Rays had done. The result does not grade it. The piece stands: teams that win 19 more games than their forecast are rare, and they tend to be in the playoffs. What happens when they get there is a different question, and we did not answer it.</p>
+
+  <p>Freddy Peralta, who Issue #211 was about, won the ALCS MVP pitching for Tampa Bay and then lost the World Series. The Mets traded him in July after a 7.2 ERA in 22 starts. The Rays bought the bounce. He did not win the title. The Mets did not win the title. Nobody from this year is in the market for a regret.</p>
+
+  <hr>
+
+  <!-- OVER/UNDER REACTIONS -->
+  <h2 class="sh">Over-Reactions and Under-Reactions</h2>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--rust);margin-bottom:.6rem">Over-Reactions</h3>
+      <p>Ohio State losing to USC will be treated as a program-defining disaster this week. Ohio State was a ranked team. So was USC. The spread determined who was the underdog; the final score settled it. This is not a collapse. It is a ranked team losing to a ranked team in a sport where that happens about 30% of the time. The broadcast will spend four days building a narrative. The math already had a name for it: the score on a line that put one team in the 60% range.</p>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--steel);margin-bottom:.6rem">Under-Reactions</h3>
+      <p>The pool landing on coin flip is being received as a neutral result. It is the correct result. The spread is set by a market with billions of dollars and decades of data behind it. The people in the family pool are not wrong to pick with their gut &mdash; they are wrong to expect a systematic edge from it. A pool that scores coin flip after eight weeks is a pool that has not yet found a mistake the market made. That is a compliment to the market, and it is the most honest thing the pool has told us so far.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ROAD AHEAD -->
+  <h2 class="sh">What to Take Home, and the Road Ahead</h2>
+
+  <p>Two things worth holding from this week. First: a spread and a win probability answer different questions. Issue #214 said it plainly and the game confirmed it Saturday. Navy had a 5% chance to win the game and a 70% chance to cover the spread. Both numbers were correct. If you read only one of them, you will always be surprised by the right thing.</p>
+
+  <p>Second: Notre Dame is 8&ndash;1. The loss to BYU dropped the championship odds below 5% because the path requires running the table and winning the ACC Championship game against a schedule that still has three ranked opponents. None of that has changed. Saturday&rsquo;s win over Navy was exactly what it needed to be. The next three weeks &mdash; those three ranked opponents &mdash; are when the number actually moves.</p>
+
+  <p>The queue this week covers the QB wins debate (do wins belong on the stat line of a single player?), the Every Program chart that went live on the site this week, what it means to have your back against the wall in the playoffs, blockbuster trades and what they actually buy, and why you can outlive the owner but not the market. The calendar is full through Saturday November 7.</p>
+
+  <p>The World Series is over. Baseball goes dark until spring training in February. The newsletter follows the calendar: NFL and CFB until the bowl season, then the offseason pieces that can live without a live game underneath them.</p>
+
+  <div class="pull">
+    <p>&ldquo;A spread and a win probability answer different questions. So do eight weeks and a full season. Be patient with both.&rdquo;</p>
+    <cite>&mdash; The Sports Page, on what the Navy game taught us about reading numbers</cite>
+  </div>
+
+  <!-- STORY IDEAS INBOX (compact) -->
+  <aside id="pitch" style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.7rem 0;margin:1.6rem 0 .4rem;font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <span style="text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600">Pitch a stat &rarr;</span>
+      <input type="text" name="sport" placeholder="Sport" style="font-family:inherit;font-size:.7rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;width:5rem">
+      <input type="text" name="idea" placeholder="The weird number you noticed" required style="font-family:'Libre Baskerville',serif;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;flex:1;min-width:12rem">
+      <button id="pitch-btn" type="submit" style="background:var(--ink);color:var(--cream);font-family:inherit;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.32rem .7rem;cursor:pointer">Send</button>
+      <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea" style="color:var(--steel);text-decoration:none;font-size:.6rem" target="_blank" rel="noopener">or GitHub</a>
+    </form>
+    <div id="pitch-ok" style="display:none;margin-top:.3rem;color:var(--green);font-size:.62rem">Sent. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;margin-top:.3rem;color:var(--rust);font-size:.62rem">Failed &mdash; try the GitHub link.</div>
+  </aside>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='…';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='Send';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Sunday Edition No. 030 &middot; Issue No. 216</span>
+    <span>Active predictions tracked from Issue #202 (Oct 16, 2026)</span>
+    <span>See you next Sunday</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/sunday-030.html">
+
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+
+    <a href="https://twitter.com/intent/tweet?text=The%20Option%20Made%20It%20Close.%20Notre%20Dame%20Won%20Anyway.%20We%20Had%20Both%20in%20Print.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/sunday-030.html%3Futm_source%3Dx%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:background .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/sunday-030.html%3Futm_source%3Dfacebook%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.795 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.222 0h.003z"/></svg>
+      Facebook
+    </a>
+
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/sunday-030.html%3Futm_source%3Dlinkedin%26utm_medium%3Dshare" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20The%20Option%20Made%20It%20Close.%20Notre%20Dame%20Won%20Anyway.&body=Thought%20you%27d%20enjoy%20this%3A%0A%0AThe%20Option%20Made%20It%20Close.%20Notre%20Dame%20Won%20Anyway.%20We%20Had%20Both%20in%20Print.%0A%0ARead%20it%20here%3A%20https%3A//thesportspage.net/published/sunday-030.html%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/sunday-030.html"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+
+  </div>
+
+  <script>
+  (function(){
+    var btn=document.getElementById('sp-copy-link');
+    var lbl=document.getElementById('sp-copy-label');
+    if(!btn)return;
+    btn.addEventListener('click',function(){
+      var url=btn.getAttribute('data-url')||location.href;
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(function(){lbl.textContent='Copied!';setTimeout(function(){lbl.textContent='Copy link';},2000);});
+      }else{
+        var ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy');lbl.textContent='Copied!';}catch(e){lbl.textContent='Copy failed';}
+        document.body.removeChild(ta);setTimeout(function(){lbl.textContent='Copy link';},2000);
+      }
+    });
+  })();
+  </script>
+
+  <div style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:#6b5940;margin-top:.5rem">
+    <a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,.3)" target="_blank" rel="noopener">thesportspage.net</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://thesportspage.net/published/sunday-030.html" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,.3)" target="_blank" rel="noopener">Permalink</a>
+  </div>
+
+</section>
+
+<!-- WATCH_BLOCK placeholder not needed in Sunday editions -->
+
+</body>
+</html>
