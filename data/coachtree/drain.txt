@@ -1,0 +1,37 @@
+STAFF DRAIN -- does a head coach fall off after an assistant leaves for a first FBS head job?
+Boss-seasons 1969-2024 with 1-3 prior seasons and a next season at the same school: 4269
+Seasons where >=1 assistant left: 236 (raids not usable: 218, mostly because the boss left too)
+
+THE NAIVE VIEW (what fans see)
+  win% the raided season        0.698   vs others 0.549
+  win% the season after         0.662   vs others 0.542
+  change, raided vs not          -3.5 vs -0.6 pts
+
+THE FAIR VIEW: next ~ this season + prior 3 + raided
+  slope on this season 0.44, on prior 3 0.22
+  raided effect +2.1 pts (95% CI -0.2 to +4.5)
+
+LIKE WITH LIKE: seasons at .750 or better
+  raided n=112  next 0.764   not raided n=862  next 0.701
+  2+ assistants gone     n= 10  effect +1.6 pts (95% CI -4.5 to +7.5)
+  a coordinator gone     n=170  effect +1.1 pts (95% CI -1.7 to +3.8)
+
+SLOW EROSION: average of the next THREE seasons, same model
+  n=2410 (raided 153)  raided effect +3.3 pts (95% CI +1.2 to +5.4)
+  .750+ seasons: next-3 avg raided 0.754 (n=79) vs not 0.687 (n=607)
+
+NAMED CASES (boss, school, season, who left, win% that season -> next)
+  60 Arkansas         1970  Billy Kinard, Charles Coffey             0.818 -> 0.708
+  63 Alabama          1973  Pat Dye, Jimmy Sharpe                    0.917 -> 0.917
+  413 Michigan         1976  Gary Moeller, Chuck Stobart              0.833 -> 0.833
+  203 Arkansas         1988  Fred Goldsmith, David Lee                0.833 -> 0.833
+  221 Notre Dame       1989  Jim Strong, Barry Alvarez                0.923 -> 0.750
+  442 Florida          1998  Carl Franks, Bob Stoops                  0.833 -> 0.692
+  188 Virginia         2005  Ron Prince, Al Golden                    0.583 -> 0.417
+  246 Notre Dame       2013  Chuck Martin, Bob Diaco                  0.692 -> 0.615
+  462 Clemson          2021  Brent Venables, Tony Elliott             0.769 -> 0.786
+  429 Georgia          2023  Dell McGee, Fran Brown                   0.929 -> 0.786
+  46 Florida State    1999  Chuck Amato                              1.000 -> 0.846
+  46 Florida State    2000  Mark Richt                               0.846 -> 0.667
+  406 Alabama          2015  Kirby Smart                              0.933 -> 0.933
+  365 LSU              2019  Dave Aranda                              1.000 -> 0.500
