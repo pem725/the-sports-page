@@ -9,8 +9,13 @@ for simple tasks like queue management." It runs from the workstation's crontab
                The Oct 23-24 empty days happened because nobody looked; this looks.
   2. READ    -- cold_read.py on any queue file that is new or changed since the
                last morning, so a buried point is caught before it publishes.
-  3. LEDGER  -- water_cooler.py: today's sports pages into the numbers ledger.
-  4. REPORT  -- one short file, ~/.local/share/sports-page/desk-report.md, which
+  3. SCORES  -- check_scores.py on every scheduled piece and every issue published
+               in the last three days: each score, halftime line and record checked
+               against two feeds, with the box pointing at claims written in words.
+               Added 2026-11-02 after Sunday 030 printed the ND-Navy halftime score
+               wrong twice. A problem raises a desktop notice.
+  4. LEDGER  -- water_cooler.py: today's sports pages into the numbers ledger.
+  5. REPORT  -- one short file, ~/.local/share/sports-page/desk-report.md, which
                the next Claude session reads first.
 
 It never edits a queued piece, never commits, never pushes. The publishing bot in
@@ -84,7 +89,27 @@ def main():
     else:
         out += ["Nothing new in the queue since the last read.", ""]
 
-    # 3. ledger
+    # 3. scores. The secrets file is loaded inside the child shell only, so the
+    # CFBD second feed works from cron; nothing here can print a value.
+    recent = [os.path.join("published", f) for f in os.listdir(os.path.join(REPO, "published"))
+              if f.endswith(".html") and now.timestamp() - os.path.getmtime(os.path.join(REPO, "published", f)) < 3 * 86400]
+    targets = [f"queue/{f}" for f in order if os.path.isfile(os.path.join(qdir, f))] + sorted(recent)
+    out += ["## Scores (two feeds, every score)", ""]
+    if targets:
+        cmd = ('set -a; [ -f "$HOME/.config/secrets/tokens.env" ] && . "$HOME/.config/secrets/tokens.env"; set +a; '
+               'exec "$0" scripts/check_scores.py --aibox --quiet "$@"')
+        p = subprocess.run(["bash", "-c", cmd, sys.executable] + targets, cwd=REPO,
+                           capture_output=True, text=True, timeout=3600)
+        rep = (p.stdout + p.stderr).strip()
+        out += ["```", rep[-6000:], "```", ""]
+        if p.returncode:
+            bad = re.findall(r"^(\S+\.html)\s+\[FAIL\]", rep, re.M)
+            msg = f"Score check FAILED: {', '.join(bad) or 'see report'}"
+            out.insert(2, f"**{msg}**\n"); notify(msg)
+    else:
+        out += ["Nothing to check.", ""]
+
+    # 4. ledger
     if not a.no_ledger:
         led = run(["scripts/water_cooler.py", "--limit", "80"], timeout=5400)
         last = led.splitlines()[-1] if led else "no output"

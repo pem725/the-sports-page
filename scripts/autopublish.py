@@ -215,6 +215,37 @@ def already_published_today(today):
 # Step 1: Pick the next file from the queue
 # ---------------------------------------------------------------------------
 
+def score_check(path):
+    """Run check_scores.py on a piece about to publish. Returns the report text
+    if it found a WRONG score, record or feed disagreement, else None.
+
+    Added 2026-11-02 after Sunday Edition 030 printed the Notre Dame-Navy
+    halftime score wrong twice and an 8-1 record that was 7-1. A failure only
+    skips this piece: the next one in the queue goes out instead and a GitHub
+    issue names the bad number. If the checker itself breaks (a feed down, a
+    timeout), it never blocks the paper -- exit 1 is the only verdict obeyed."""
+    try:
+        p = subprocess.run([sys.executable, "scripts/check_scores.py", "--quiet", path],
+                           capture_output=True, text=True, timeout=600)
+    except Exception as ex:
+        print(f"  score check could not run ({ex}); publishing without it")
+        return None
+    if p.returncode == 1:
+        return p.stdout.strip()
+    if p.returncode not in (0, 1):
+        print(f"  score check errored (exit {p.returncode}); publishing without it")
+    return None
+
+
+def report_score_skip(filename, report):
+    today = datetime.date.today().strftime("%Y-%m-%d")
+    body = (f"The score check held back `{filename}` today and the next piece in the queue "
+            f"was published instead. Fix the number (or mark a deliberate quote with "
+            f'data-scorecheck="skip") and it goes out on the next run.\n\n```\n{report[-3000:]}\n```')
+    subprocess.run(["gh", "issue", "create", "--title", f"Score check held {filename}: {today}",
+                    "--label", "publish-failure", "--body", body], check=False)
+
+
 def pick_file(last_topic):
     """Read QUEUE_ORDER.txt and return (filename, full_path) for the next
     publishable file, respecting the variety rule."""
@@ -273,6 +304,12 @@ def pick_file(last_topic):
             else:
                 print(f"  Skipping {filename} (same topic as yesterday: {topic})")
                 continue
+
+        bad = score_check(path)
+        if bad:
+            print(f"  Skipping {filename} (score check failed):\n{bad}")
+            report_score_skip(filename, bad)
+            continue
 
         return filename, path
 

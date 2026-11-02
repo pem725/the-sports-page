@@ -353,6 +353,7 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
    ```
    python3 scripts/check_readability.py queue/sunday-NNN.html
    python3 scripts/check_voice.py queue/sunday-NNN.html
+   python3 scripts/check_scores.py queue/sunday-NNN.html --date YYYY-MM-DD   # Saturday's date
    ```
 
    **The template passes the frame check but is deliberately THIN on voice** —
@@ -907,6 +908,39 @@ there rather than quietly substituting it.
      State score had them. The ranking had none.
 
   **Check it:** `python3 scripts/check_poll_claims.py published/sunday-NNN.html`
+
+- **EVERY SCORE IS CHECKED AGAINST TWO FEEDS, BY A SCRIPT.** Added 2026-11-02
+  after Sunday Edition No. 030 printed the Notre Dame&ndash;Navy halftime score
+  two ways in one edition, both wrong (Navy "led 13&ndash;7 at halftime" and
+  "trailed 13&ndash;7 at halftime"; Notre Dame led 14&ndash;13), a 7&ndash;6 first
+  quarter that was 7&ndash;3, an 8&ndash;1 record that was 7&ndash;1, and an ACC
+  title game Notre Dame does not play in. The first sweep of the archive then
+  found two more that had gone out: Texas A&amp;M "now 1&ndash;3" (it was
+  2&ndash;2, No. 025) and "Mets won 4&ndash;3 vs. Angels on May 2" (that was May 1;
+  on May 2 they lost 4&ndash;3, No. 004).
+
+  `python3 scripts/check_scores.py FILE` finds every score-shaped number, works
+  out the game from the team names around it, and checks it at the right moment:
+  the final, halftime, a quarter, or any score the game passed through. It checks
+  **who** was ahead ("X beat Y 4&ndash;3" with X losing is wrong), the **date** if
+  one is written beside it, and a record stated as current ("now 7&ndash;1").
+  ESPN is the first feed; the second is CollegeFootballData, the MLB Stats API,
+  nflverse or the NHL API. Two feeds disagreeing is its own failure.
+
+  **Where it runs:** before queueing (with the other checks); in the Sunday
+  Edition checks; in `autopublish.py`, where a failing piece is skipped, the next
+  one publishes, and a GitHub issue names the number; and on the AI-box morning
+  desk with `--aibox`, over every scheduled piece and everything published in the
+  last three days. The box only *points* at claims written in words ("led by six
+  at the half"); the feeds settle them, and a quote that is not in the piece word
+  for word is thrown away.
+
+  **It prefers missing a number to crying wolf**, because a checker that cries
+  wolf gets switched off. Season, series, conference and projected records are
+  listed as "not checkable", not judged; only a record stated as current can fail.
+  First full sweep: 2 real errors flagged across the last 40 issues, no false
+  ones. A correction box is skipped automatically (it quotes the wrong number on
+  purpose); mark any other deliberate quote with `data-scorecheck="skip"`.
   before publishing any Sunday Edition.
 
 - **HEADLINES OPEN THE GAP. THE DECK CLOSES IT.** Added 2026-09-01 after the
