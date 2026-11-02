@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 285 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 283 issues remaining of 500
 
 ## Repository Structure
 
@@ -1291,9 +1291,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 216 issues (#1-216)
-Queue: 7 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 189-qb-wins, 190-every-program, 191-back-to-the-wall, 192-blockbuster-trades, _TEMPLATE)
+Published: 217 issues (#1-217)
+Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 190-every-program, 191-back-to-the-wall, 192-blockbuster-trades, 193-lockout, 194-owner-succession, 195-never-won-world-series, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 284 issues remaining of 500
-Last published: Issue #216 — "The Option Made It Close. Notre Dame Won Anyway. We Had Both in Print." (sunday-030.html) on November 1, 2026
+Goal: 283 issues remaining of 500
+Last published: Issue #217 — "Allow 28 Points and Even Tom Brady Loses Six in Ten." (189-qb-wins.html) on November 2, 2026
