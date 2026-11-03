@@ -487,7 +487,7 @@ def nearest_record(sent, pos, x, y, games):
 
 SKIP_PRE = re.compile(r"\b(swe(?:pt|ep)|series|alds|alcs|nlds|nlcs|wild card|best-of|stanley cup|the final|finals|"
                       r"playoffs?|postseason|game [1-7]\b|games [1-7]\b|since the break|over these|over the last|"
-                      r"in (?:his|her|their) first|last (?:year|season)|\bago\b|\bcup\b|stretch|"
+                      r"in (?:his|her|their) first (?:\d+|two|three|four|five|six|seven|eight|nine|ten|\w+ (?:games|starts|seasons|weeks))|last (?:year|season)|\bago\b|\bcup\b|stretch|"
                       r"over (?:their|the|its) last|(?:last|over) (?:ten|twenty|thirty|\d+)\b|at (?:ten|twenty|thirty)\b|"
                       r"through (?:\w+ )?(?:of those )?games|need(?:s|ed)? to go|would go|"
                       r"to finish|projected|projection|pace|outscored|combined|aggregate|all-time|since \d{4})\b", re.I)
