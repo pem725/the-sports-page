@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 283 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 282 issues remaining of 500
 
 ## Repository Structure
 
@@ -1291,9 +1291,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 217 issues (#1-217)
-Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 190-every-program, 191-back-to-the-wall, 192-blockbuster-trades, 193-lockout, 194-owner-succession, 195-never-won-world-series, _TEMPLATE)
+Published: 218 issues (#1-218)
+Queue: 8 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 191-back-to-the-wall, 192-blockbuster-trades, 193-lockout, 194-owner-succession, 195-never-won-world-series, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 283 issues remaining of 500
-Last published: Issue #217 — "Allow 28 Points and Even Tom Brady Loses Six in Ten." (189-qb-wins.html) on November 2, 2026
+Goal: 282 issues remaining of 500
+Last published: Issue #218 — "A Thousand Games In, It Still Doesn’t Even Out" (190-every-program.html) on November 3, 2026
