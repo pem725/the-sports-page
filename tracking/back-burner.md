@@ -10,6 +10,14 @@ what stops autopublish taking it. Do not delete a benched file, and do not
 
 ---
 
+## Held 2026-11-03 — `197-staff-drain` waiting on a non-CFB slot
+
+Part 2 of the coaching pair; part 1 (`196-coaching-dna`) is in the order for
+Mon Nov 9. Both are CFB, so 197 cannot follow 196 directly. **Trigger:** as
+soon as a non-CFB piece sits after 196 in QUEUE_ORDER.txt, add 197 after it.
+It is `keeps`, so it also serves as evergreen buffer. It links to
+`published/196-coaching-dna.html`, so it must never run before 196.
+
 ## The Mets season scorecard — not yet written
 
 **Status:** WRITTEN. Trigger fired; published as `175-mets-scorecard.html`, queued Tue 13 Oct.

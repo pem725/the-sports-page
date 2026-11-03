@@ -1,0 +1,245 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: keeps
+tags: CFB:cfb, Coaching, Selection, Regression to the Mean
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Does Working for a Great Coach Make You Better?</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+.chart{width:100%;height:auto;display:block}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Does Working for a Great Coach Make You Better?">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/196-coaching-dna.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/196-coaching-dna.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Does Working for a Great Coach Make You Better?">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/196-coaching-dna.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">College Football &middot; Coaching Trees</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>Does Working for a Great Coach Make You <em>Better?</em></h1>
+
+  <div class="deck">
+    Assistants of coaches who won 70% of their games go on to win 51 of every 100 in their first head job. Everyone else wins 46. But most of that gap was there before they arrived: they get handed better programs. What is left is small, less than half a win a season, and it may be nothing.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Every first-time major-college head coach, 1970&ndash;2025</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">51 vs. 46</div><div class="l">Wins per 100 in a first head job: great coach&rsquo;s staff vs. the rest</div></div>
+    <div class="sc"><div class="v bad">52 vs. 48</div><div class="l">Wins per 100 at those same programs in the 5 years before</div></div>
+    <div class="sc"><div class="v good">1 to 4</div><div class="l">Extra wins per 100 once you allow for the better job</div></div>
+  </div>
+
+<p><strong>Does working for a great coach make you a better coach?</strong> Every time a school hires a coordinator, you hear about his coaching tree. He learned under Saban. He came off the Bowden staff. The idea is that greatness rubs off.</p>
+
+  <p>Here is the answer, with its number. We found 508 coaches who got their first major-college head job since 1970, and the head coach each one worked for just before. The 203 whose boss had won 70% of his games or more went on to win <strong>51</strong> of every 100 games in the new job. The rest won <strong>46</strong>.</p>
+
+  <p>That looks like proof, and here is the surprise. Most of that 5-game gap was there before they showed up. The schools that hired a great coach&rsquo;s assistant had already been winning 52 of 100. The schools that hired everyone else had been winning 48. By the end, you will be able to tell a better coach from a better job.</p>
+
+  <h2 class="sh">The Job Comes With the R&eacute;sum&eacute;</h2>
+
+  <p>Think about how the hire happens. An athletic director reads the same r&eacute;sum&eacute; you do. An assistant from a 12&ndash;1 staff gets the call from the bigger school, with the better players and the bigger budget. So he walks into a job that was going to win anyway. If he wins there, part of that is the job.</p>
+
+  <p>So the fair test is not &ldquo;who won more?&rdquo; It is &ldquo;who did better than his program had been doing?&rdquo; We compared each new coach with his school&rsquo;s own last five years. Both groups slipped a little. The great coaches&rsquo; assistants slipped about 1 game in 100, and the others about 2.5. So against their own programs&rsquo; past, the great coaches&rsquo; assistants did better by about <strong>1 game in 100</strong>. That is small enough that it could be zero.</p>
+
+  <p>There is a second fair way to measure it, and it gives a bigger number. A program that has been great tends to come back toward the middle; that is <span class="cc" data-preview="An extreme result is usually part skill, part luck. The luck does not repeat, so the next result tends to land closer to average.">regression to the mean<a class="cc-i" href="https://thesportspage.net/concepts/regression-to-the-mean.html" target="_blank" rel="noopener" aria-label="Concept primer: regression to the mean"></a></span>. Allow for that, and the edge grows to about <strong>3.5 games in 100</strong>. Take the bigger number if you like. In a 12-game season it is less than half a win.</p>
+
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 338" width="100%" role="img" aria-label="Slope chart. Assistants of coaches who won 70 percent or more took over programs that had won 52 of 100 games and won 51 themselves. Everyone else took over programs at 48 and won 46. The gap was there before they arrived." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12.5" fill="#1a1208" font-weight="600">Wins per 100 games: the program before, and under the new coach</text>
+<line x1="150.0" y1="48" x2="150.0" y2="268" stroke="#c8b99a" stroke-width="0.8"/>
+<text x="150.0" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">Program, 5 years</text>
+<text x="150.0" y="300" font-size="11" text-anchor="middle" fill="#6b5e4a">before he came</text>
+<line x1="530.0" y1="48" x2="530.0" y2="268" stroke="#c8b99a" stroke-width="0.8"/>
+<text x="530.0" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">His first job</text>
+<text x="530.0" y="300" font-size="11" text-anchor="middle" fill="#6b5e4a">as head coach</text>
+<polyline points="150.0,109.0 530.0,121.8" fill="none" stroke="#2c4a6e" stroke-width="2.4"/>
+<circle cx="150.0" cy="109.0" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="1.5"/>
+<text x="140.0" y="113.0" font-size="12" text-anchor="end" fill="#2c4a6e" font-weight="600">52</text>
+<circle cx="530.0" cy="121.8" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="1.5"/>
+<text x="540.0" y="125.8" font-size="12" text-anchor="start" fill="#2c4a6e" font-weight="600">51</text>
+<text x="112.0" y="113.0" font-size="11" text-anchor="end" fill="#2c4a6e">Boss won 70%+</text>
+<polyline points="150.0,160.0 530.0,185.5" fill="none" stroke="#b83a1e" stroke-width="2.4"/>
+<circle cx="150.0" cy="160.0" r="5" fill="#b83a1e" stroke="#f5f0e8" stroke-width="1.5"/>
+<text x="140.0" y="164.0" font-size="12" text-anchor="end" fill="#b83a1e" font-weight="600">48</text>
+<circle cx="530.0" cy="185.5" r="5" fill="#b83a1e" stroke="#f5f0e8" stroke-width="1.5"/>
+<text x="540.0" y="189.5" font-size="12" text-anchor="start" fill="#b83a1e" font-weight="600">46</text>
+<text x="112.0" y="164.0" font-size="11" text-anchor="end" fill="#b83a1e">Everyone else</text>
+<text x="10" y="332" font-size="10" fill="#6b5e4a">508 first-time major-college head coaches, 1970-2025. 203 came from a boss who won 70% or more.</text>
+</svg>
+  </figure>
+
+  <p>Look at the two lines. They are almost parallel. The gap at the right is the gap at the left, carried over. That is what a better job looks like.</p>
+
+  <h2 class="sh">What Does Matter: the Job Title</h2>
+
+  <p>One thing does predict a better first season, and it is not the boss. It is what the assistant did for him. Coordinators beat position coaches by about <strong>3 games in 100</strong> against their programs&rsquo; past. That is not certain either; the range runs from zero to 6. But compare coordinators with coordinators, and working for a great boss added about 1 game in 100, which again could be nothing.</p>
+
+  <p>Notice what that means. Running an offense or a defense is real training for running a team. The name on the office door down the hall adds little on top of it.</p>
+
+  <p>You will want to know about the famous trees. Lou Holtz sent 11 assistants straight to their first head job, more than anyone. They did 1.3 games in 100 <em>worse</em> than their new programs had been doing. Nick Saban sent seven, Kirby Smart among them, and they did 5 better. Seven coaches is too few to tell a great tree from a lucky one; a few hires going either way flips the sign. Hold those loosely.</p>
+
+  <div class="pull">
+    <p>A great coach&rsquo;s name gets his assistant the interview and the better job. Most of the winning comes with the job.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>When a hire is sold to you on his coaching tree, ask one question: what job is he walking into? Then judge him against that program&rsquo;s own past, not against other coaches. A coach who keeps a good program good has done his job. A coach who takes a good program and wins a little more has done slightly better than that, and that is all the tree promises.</p>
+
+  <p>This works anywhere people are hired off a famous name: a law firm, a hospital, a kitchen. The question is always the same. Did the person get better, or did they get a better seat?</p>
+
+  <p>Next in this pair: the other side of the tree. When a head coach&rsquo;s assistants get hired away, does his team fall apart? Our editor bet that some famous coaches were propped up by their staffs. The answer is coming soon.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Data:</strong> head-coach records for every major-college (FBS) program from CollegeFootballData. For each coach whose first FBS head job began 1970&ndash;2025 (856 in all), the job he held just before came from the coaching list in his Wikipedia biography, checked against the article&rsquo;s own text. 93% matched at high confidence, and a hand check of 15 at random found no errors. The boss is the head coach at that school in the assistant&rsquo;s last season there.</p>
+    <p><strong>The sample:</strong> 508 coaches with a high-confidence prior job, a known boss record, and five seasons of program history; interim head coaches are left out. A &ldquo;great coach&rdquo; won 70% or more while the assistant was on staff. Cuts at 65% and 75% give the same answer.</p>
+    <p><strong>Two ways to be fair:</strong> subtracting the program&rsquo;s past gives +1.2 games in 100 (95% range &minus;2.1 to +4.4). Fitting the program&rsquo;s past as a line gives +3.5 (+0.6 to +6.4); only about 43% of a program&rsquo;s past carries into the new coach&rsquo;s record, so subtracting all of it penalizes coaches who inherit strong programs. When two groups start in different places, those two methods can disagree; statisticians call it Lord&rsquo;s paradox. We report both.</p>
+    <p><strong>What it cannot do:</strong> it sees only assistants who were hired, which is <span class="cc" data-preview="Looking only at the ones who made it through a filter, and forgetting the ones who did not.">survivorship<a class="cc-i" href="https://thesportspage.net/concepts/survivorship-bias.html" target="_blank" rel="noopener" aria-label="Concept primer: survivorship bias"></a></span>: the ones nobody hired are not here to count against a tree. It counts only the job held right before the first head job, so a coach who left Saban and made two more stops is not in Saban&rsquo;s tree. Code: <code>scripts/coach_tree.py</code>.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: keeps
+tags: CFB:cfb, Coaching, Regression to the Mean
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Was He Just Propped Up by His Staff?</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+.chart{width:100%;height:auto;display:block}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Was He Just Propped Up by His Staff?">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/197-staff-drain.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/197-staff-drain.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Was He Just Propped Up by His Staff?">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/197-staff-drain.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">College Football &middot; Coaching Trees</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>Was He Just Propped Up <em>by His Staff?</em></h1>
+
+  <div class="deck">
+    When a head coach&rsquo;s assistant leaves to run his own program, fans brace for the drop, and it comes: those teams slip 3.5 games in 100 the next year. But that is the slide every great season brings. Compared with teams that had just as good a year, the raided teams win more over the next three seasons, 75 of 100 against 69.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Every major-college head coach, 1969&ndash;2024</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">236</div><div class="l">Seasons a head coach lost an assistant to a head job of his own</div></div>
+    <div class="sc"><div class="v good">75 vs. 69</div><div class="l">Wins per 100 over the next 3 seasons, raided vs. not, after a big year</div></div>
+    <div class="sc"><div class="v good">+3</div><div class="l">Extra wins per 100 over 3 seasons for raided programs, like for like</div></div>
+  </div>
+
+<p><strong>When a head coach loses his best assistants, does his team fall apart?</strong> It is one of the oldest stories in college football. A coach wins big. Other schools hire away his coordinators. A few years later the wins dry up, and people say he was propped up by his staff all along.</p>
+
+  <p>Here is the answer, with its number. We checked every major-college head coach from 1969 to 2024: 4,269 seasons. In 236 of them, an assistant left to take his first head job. The next year those teams did slip, by <strong>3.5</strong> games in 100. Teams that lost no one slipped 0.6.</p>
+
+  <p>Now the surprise. The slip has nothing to do with the raid. Raids come after big seasons, and every big season is followed by a slide. Compare the raided teams with teams that had just as good a year, and the raided teams won <em>more</em> over the next three seasons, not fewer. By the end, you will see why a raid is a compliment.</p>
+
+  <h2 class="sh">Every Big Year Comes Back Down</h2>
+
+  <p>Start with the slide, because it happens to everybody. A season of 11 or 12 wins is mostly a good team, plus some luck: close games that broke your way, a healthy quarterback, a soft schedule. The good team comes back next year. The luck usually does not. That pull back toward average is <span class="cc" data-preview="An extreme result is usually part skill, part luck. The luck does not repeat, so the next result tends to land closer to average.">regression to the mean<a class="cc-i" href="https://thesportspage.net/concepts/regression-to-the-mean.html" target="_blank" rel="noopener" aria-label="Concept primer: regression to the mean"></a></span>, and it is the first thing to check whenever a team &ldquo;falls off.&rdquo;</p>
+
+  <p>So the fair comparison is between teams that had the same kind of year. Take every season in which a coach won 75% of his games or more. The ones that were <strong>not</strong> raided won 83 of 100 that year, 71 the next, and 69 a year over the three seasons after. The ones that <strong>were</strong> raided won 86, then 79, then 75.</p>
+
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 338" width="100%" role="img" aria-label="Slope chart for head-coach seasons at 75 percent wins or better. Programs that lost an assistant to a head job went 86, then 79, then averaged 75 over the next three seasons. Programs that lost no one went 83, then 71, then 69. Both slide; the raided programs slide less." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12.5" fill="#1a1208" font-weight="600">After a season of 75% wins or better: wins per 100 games</text>
+<line x1="150.0" y1="48" x2="150.0" y2="268" stroke="#c8b99a" stroke-width="0.8"/>
+<text x="150.0" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">The big</text>
+<text x="150.0" y="300" font-size="11" text-anchor="middle" fill="#6b5e4a">season</text>
+<line x1="340.0" y1="48" x2="340.0" y2="268" stroke="#c8b99a" stroke-width="0.8"/>
+<text x="340.0" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">The next</text>
+<text x="340.0" y="300" font-size="11" text-anchor="middle" fill="#6b5e4a">season</text>
+<line x1="530.0" y1="48" x2="530.0" y2="268" stroke="#c8b99a" stroke-width="0.8"/>
+<text x="530.0" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">Average of the</text>
+<text x="530.0" y="300" font-size="11" text-anchor="middle" fill="#6b5e4a">next three</text>
+<polyline points="150.0,85.2 340.0,132.8 530.0,160.0" fill="none" stroke="#2c4a6e" stroke-width="2.4"/>
+<circle cx="150.0" cy="85.2" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="1.5"/>
+<text x="140.0" y="89.2" font-size="12" text-anchor="end" fill="#2c4a6e" font-weight="600">86</text>
+<circle cx="340.0" cy="132.8" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="1.5"/>
+<text x="340.0" y="122.8" font-size="12" text-anchor="middle" fill="#2c4a6e" font-weight="600">79</text>
+<circle cx="530.0" cy="160.0" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="1.5"/>
+<text x="540.0" y="164.0" font-size="12" text-anchor="start" fill="#2c4a6e" font-weight="600">75</text>
+<text x="112.0" y="89.2" font-size="11" text-anchor="end" fill="#2c4a6e">Raided</text>
+<polyline points="150.0,105.6 340.0,187.2 530.0,200.8" fill="none" stroke="#b83a1e" stroke-width="2.4"/>
+<circle cx="150.0" cy="105.6" r="5" fill="#b83a1e" stroke="#f5f0e8" stroke-width="1.5"/>
+<text x="140.0" y="109.6" font-size="12" text-anchor="end" fill="#b83a1e" font-weight="600">83</text>
+<circle cx="340.0" cy="187.2" r="5" fill="#b83a1e" stroke="#f5f0e8" stroke-width="1.5"/>
+<text x="340.0" y="207.2" font-size="12" text-anchor="middle" fill="#b83a1e" font-weight="600">71</text>
+<circle cx="530.0" cy="200.8" r="5" fill="#b83a1e" stroke="#f5f0e8" stroke-width="1.5"/>
+<text x="540.0" y="204.8" font-size="12" text-anchor="start" fill="#b83a1e" font-weight="600">69</text>
+<text x="112.0" y="109.6" font-size="11" text-anchor="end" fill="#b83a1e">Not raided</text>
+<text x="10" y="332" font-size="10" fill="#6b5e4a">Major-college head coaches, 1969-2024. Raided: 79 seasons. Not raided: 607.</text>
+</svg>
+  </figure>
+
+  <p>Both lines fall. The raided line falls less. The raided teams did start a little higher, so we also checked with a model that allows for this season and the three before it. The edge holds: raided programs won about <strong>3 more games in 100</strong> over the next three seasons. The likely range runs from 1 to 5.</p>
+
+  <h2 class="sh">Why the Raided Teams Hold Up</h2>
+
+  <p>Notice which way the arrow points. The raid does not make the team good. The team being good brings the raid.</p>
+
+  <p>Schools do not hire assistants at random. They hire from programs whose success looks real: steady records, players coming back, a system that works year after year. A lucky one-year wonder gets fewer calls. So when your coordinators get hired away, it is a sign that your big season was more skill than luck, and skill is the part that comes back next year.</p>
+
+  <p>There is a second reason. The head coach who found those assistants once can usually find good ones again. Our <a href="https://thesportspage.net/published/196-coaching-dna.html" target="_blank" rel="noopener">earlier piece on coaching trees</a> found that a great boss adds little to his assistants. This is the other half: his eye for assistants seems to be part of what makes him great.</p>
+
+  <h2 class="sh">The Famous Cases</h2>
+
+  <p><strong>Florida State</strong> is the case that fits the story. Chuck Amato left after the 12&ndash;0 season in 1999 to run NC State. Mark Richt left after 11&ndash;2 in 2000 to run Georgia. In 2001 the Seminoles went 8&ndash;4, and Bobby Bowden never won more than 10 games in a season again. That is one program. Across 236 raids, it is the exception.</p>
+
+  <p><strong>Clemson</strong> lost both coordinators after 10&ndash;3 in 2021: Brent Venables to Oklahoma and Tony Elliott to Virginia. The next year Clemson went 11&ndash;3. Its slide came later, and the year right after the raid does not show it.</p>
+
+  <p><strong>LSU</strong> went 15&ndash;0 in 2019, then 5&ndash;5. It lost its defensive coordinator, Dave Aranda, to Baylor, but it also lost Joe Brady to the NFL, Joe Burrow, and much of the roster to the draft. When that much leaves at once, you cannot pin the drop on the coaches.</p>
+
+  <p><strong>Florida State</strong> again, under Mike Norvell: 13&ndash;1 in 2023, then 2&ndash;10. In our data, no assistant left for a head job in between. Whatever happened there, a raid does not explain it.</p>
+
+  <div class="pull">
+    <p>The raid does not make the team good. The team being good brings the raid.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p>When a team slips after a big year, measure the big year before you blame whoever left. Then compare the team with others that had the same year. Most of the slide is the luck going home, and it would have gone home anyway.</p>
+
+  <p>And when other schools come calling for your coordinators, take it as good news about your coach. People who hire for a living were looking at the same record you were, and they decided it was real.</p>
+
+  <p>This mistake shows up far from football. A company loses its top managers and the stock drops, a band loses its producer and the next album flops. Before you call it cause and effect, ask how good the year before was, and whether anyone else had a year like it.</p>
+
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Data:</strong> head-coach records for every major-college (FBS) program from CollegeFootballData, and the prior jobs of 856 first-time FBS head coaches from the study behind our earlier piece (Wikipedia coaching lists checked against article text; 93% high confidence).</p>
+    <p><strong>A raid:</strong> an assistant (coordinator or position coach) on the head coach&rsquo;s staff whose next job, within a year, was his first FBS head job. We count it against the head coach&rsquo;s season that the assistant finished. 454 such departures; 218 could not be used, mostly because the head coach left too, so there is no &ldquo;after&rdquo; to measure.</p>
+    <p><strong>The comparison:</strong> 4,269 head-coach seasons with at least one season before it and one after at the same school. The model predicts the next season (or the next three) from this season and the average of up to three before it, plus whether a raid happened. Next season: +2.1 games in 100 (95% range &minus;0.2 to +4.5). Next three seasons: +3.3 (+1.2 to +5.4), from 2,410 seasons with three to follow. The 75%-or-better comparison uses 79 raided seasons and 607 others.</p>
+    <p><strong>What it cannot do:</strong> it only sees assistants who left for their first FBS head job. A coordinator who went to the NFL, like Joe Brady, or to the same job somewhere else, is invisible here, and so is who replaced him. A raid followed by a great replacement hire looks the same as no raid. Code: <code>scripts/coach_drain.py</code>.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

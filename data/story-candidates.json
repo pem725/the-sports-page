@@ -573,7 +573,7 @@
    "source": "Editor, 2026-10-28, out of the jugular idea (Morris and Kinne, both out of the Incarnate Word go-for-it program)",
    "number": "Computed 2026-10-29 (scripts/coach_tree.py, data/coachtree/): 856 first FBS head jobs 1970-2025, 93% resolved at high confidence, 0/15 hand-check errors. Assistants of .700+ bosses (n=203 vs 305): raw win% +5.3 pts (2.2 to 8.5), but they inherit programs 4.1 pts better (1.2 to 7.0). Change vs prior 5: +1.2 (-2.1 to 4.4), null at .650/.700/.750. OLS on prior 5 (slope 0.43): +3.5 (0.61 to 6.4) -- Lord's paradox: change score and regression disagree when groups differ at baseline. Coordinators +3.0 vs position coaches; within role, the boss adds nothing.",
    "why": "The 'tree' is how the sport hires, and nobody checks it. Traps: selection (winners' assistants get better jobs, so compare to the program's prior 5, as in #185), survivorship (we only see assistants who got hired), and a famous boss is remembered by his hits. Could become a short series (overall effect, then one tree); flag saturation: #185 coaches-came-home and #29 year-one already cover coaches. The change-score vs regression split also bears on #185 (same change-score method); recheck it with the regression before citing #185 again.",
-   "status": "researched"
+   "status": "queued"
   },
   {
    "slug": "staff-drain",
@@ -587,7 +587,7 @@
    "source": "Editor, 2026-11-02 (Bowden's staff, Orgeron and Joe Brady, Dabo's coordinators, Norvell)",
    "number": "Computed 2026-11-02 (scripts/coach_drain.py, data/coachtree/drain.txt): 4,269 FBS boss-seasons 1969-2024; 236 lost an assistant to a first FBS head job. Naive: raided teams slip 3.5 pts next year vs 0.6 for others. Fair (next ~ this season + prior 3): raided +2.1 pts (-0.2 to 4.5); over the next three seasons +3.3 (1.2 to 5.4). Seasons at .750+: raided next-3 avg .754 (n=79) vs .687 (n=607).",
    "why": "The reverse of coaching-dna, and the twist is the trap: staffs get raided after good years, so the slide fans pin on the raid is regression to the mean. Being raided is a signal the program was really good, not lucky. Cases: Bowden lost Amato (after 1999) and Richt (after 2000), then FSU went 8-4 in 2001 -- one case, fits the story; Clemson went 11-3 the year after Venables and Elliott left; Norvell lost nobody to a head job before 2024's 2-10; LSU 2020 lost Aranda plus Brady (NFL, not in data) plus Burrow and the draft class. Limits: only first FBS head jobs count; NFL and lateral departures and replacements are invisible. Pair as part 2 with coaching-dna; saturation flag stands (#185, #29).",
-   "status": "researched"
+   "status": "drafted"
   },
   {
    "slug": "expert-wage",
