@@ -1,0 +1,254 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: slow
+tags: CFB:cfb, Notre Dame, Rankings, Observational Study
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Two of Every Three Top-25 Pairs Have Nothing in Common</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+.chart{width:100%;height:auto;display:block}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Two of Every Three Top-25 Pairs Have Nothing in Common">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/200-settled-on-the-field.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/200-settled-on-the-field.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Two of Every Three Top-25 Pairs Have Nothing in Common">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/200-settled-on-the-field.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">College Football &middot; Rankings</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>Two of Every Three Top-25 Pairs Have <em>Nothing in Common</em></h1>
+  <div class="deck">
+    Through Oct. 31, 199 of the 300 pairs of teams in the AP Top 25 had never played each other or a common opponent. Among the NFL&rsquo;s 12 best records it was 9 pairs in 66, and by January it is none. Saturday&rsquo;s Miami&ndash;Notre Dame game, the biggest of the month, will connect just two of the 300.
+  </div>
+  <div class="byline">By The Sports Page &middot; Every pair in the AP Top 25, and the NFL&rsquo;s best, since 2023</div>
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">199 of 300</div><div class="l">Top-25 pairs with no game and no shared opponent</div></div>
+    <div class="sc"><div class="v now">9 of 66</div><div class="l">Same count for the NFL&rsquo;s top 12, through eight weeks</div></div>
+    <div class="sc"><div class="v bad">2</div><div class="l">Top-25 pairs Saturday&rsquo;s Miami&ndash;Notre Dame game will connect</div></div>
+  </div>
+  <p><strong>When a college football ranking says one team is better than another, how often have they actually met on the field?</strong> Saturday night, No. 1 Miami plays at Notre Dame. The AP voters have the Irish fourth. The playoff committee, looking at the same games, has them eleventh. Somebody is reading the evidence differently, or there is not much evidence to read.</p>
+  <p>Here is the answer, with its number. Take the 25 teams in the AP poll and make every pair: 300 of them. Through Oct. 31, <strong>199</strong> of those pairs had never played each other and had not played a single team in common. In the NFL&rsquo;s top 12 it was <strong>9 of 66</strong>.</p>
+  <p>You might expect the big games to fix that. They barely move it. By the end, you will be able to tell which parts of any ranking are results and which are opinions.</p>
+  <h2 class="sh">A Trial and an Observational Study</h2>
+  <p>Our editor puts it this way. The NFL runs a randomized trial: a league office draws the schedule from a formula, every club plays 17 games, and division rivals meet twice. College football runs an observational study. There are more than 130 major-college teams, each plays 12 games, and the games were mostly picked years ago, by conference and by choice.</p>
+  <p>So we sorted every pair of top teams three ways. Did they play each other? If not, did they play a common opponent? If neither, any order you put them in is a belief. It is not a result.</p>
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 338" width="100%" role="img" aria-label="Stacked bars. College top 25 now: 9% of pairs played each other, 25% share an opponent, 66% neither. College top 12 now: 68% neither. NFL top 12 now: 14% neither. College top 25 after the 2025 season: 40% neither. NFL, all 32 clubs, after 2025: none." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12.5" fill="#1a1208" font-weight="600">Pairs of top teams: how is each pair connected?</text>
+<rect x="200" y="30" width="12" height="12" fill="#2c4a6e"/><text x="217" y="40" font-size="11" fill="#2c4a6e">Played each other</text>
+<rect x="345" y="30" width="12" height="12" fill="#c9962a"/><text x="362" y="40" font-size="11" fill="#8a6414">Common opponent only</text>
+<rect x="510" y="30" width="12" height="12" fill="#b83a1e"/><text x="527" y="40" font-size="11" fill="#b83a1e">Neither</text>
+<text x="192" y="81" font-size="11" text-anchor="end" fill="#1a1208">College top 25, now</text>
+<rect x="200.0" y="62" width="39.6" height="28" fill="#2c4a6e"/>
+<text x="219.8" y="81" font-size="11" text-anchor="middle" fill="#f5f0e8" font-weight="600">9%</text>
+<rect x="239.6" y="62" width="110.0" height="28" fill="#c9962a"/>
+<text x="294.6" y="81" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">25%</text>
+<rect x="349.6" y="62" width="290.4" height="28" fill="#b83a1e"/>
+<text x="494.8" y="81" font-size="11" text-anchor="middle" fill="#f5f0e8" font-weight="600">66%</text>
+<text x="192" y="129" font-size="11" text-anchor="end" fill="#1a1208">College top 12, now</text>
+<rect x="200.0" y="110" width="39.6" height="28" fill="#2c4a6e"/>
+<text x="219.8" y="129" font-size="11" text-anchor="middle" fill="#f5f0e8" font-weight="600">9%</text>
+<rect x="239.6" y="110" width="101.2" height="28" fill="#c9962a"/>
+<text x="290.2" y="129" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">23%</text>
+<rect x="340.8" y="110" width="299.2" height="28" fill="#b83a1e"/>
+<text x="490.4" y="129" font-size="11" text-anchor="middle" fill="#f5f0e8" font-weight="600">68%</text>
+<text x="192" y="177" font-size="11" text-anchor="end" fill="#1a1208">NFL top 12, now</text>
+<rect x="200.0" y="158" width="100.0" height="28" fill="#2c4a6e"/>
+<text x="250.0" y="177" font-size="11" text-anchor="middle" fill="#f5f0e8" font-weight="600">23%</text>
+<rect x="300.0" y="158" width="280.0" height="28" fill="#c9962a"/>
+<text x="440.0" y="177" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">64%</text>
+<rect x="580.0" y="158" width="60.0" height="28" fill="#b83a1e"/>
+<text x="610.0" y="177" font-size="11" text-anchor="middle" fill="#f5f0e8" font-weight="600">14%</text>
+<text x="192" y="225" font-size="11" text-anchor="end" fill="#1a1208">College top 25, final 2025</text>
+<rect x="200.0" y="206" width="61.6" height="28" fill="#2c4a6e"/>
+<text x="230.8" y="225" font-size="11" text-anchor="middle" fill="#f5f0e8" font-weight="600">14%</text>
+<rect x="261.6" y="206" width="202.4" height="28" fill="#c9962a"/>
+<text x="362.8" y="225" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">46%</text>
+<rect x="464.0" y="206" width="176.0" height="28" fill="#b83a1e"/>
+<text x="552.0" y="225" font-size="11" text-anchor="middle" fill="#f5f0e8" font-weight="600">40%</text>
+<text x="192" y="273" font-size="11" text-anchor="end" fill="#1a1208">NFL, all 32, final 2025</text>
+<rect x="200.0" y="254" width="206.8" height="28" fill="#2c4a6e"/>
+<text x="303.4" y="273" font-size="11" text-anchor="middle" fill="#f5f0e8" font-weight="600">47%</text>
+<rect x="406.8" y="254" width="233.2" height="28" fill="#c9962a"/>
+<text x="523.4" y="273" font-size="11" text-anchor="middle" fill="#1a1208" font-weight="600">53%</text>
+<text x="646.0" y="273" font-size="11" fill="#b83a1e" font-weight="600">0%</text>
+<line x1="10" y1="300" x2="670" y2="300" stroke="#c8b99a" stroke-width="0.8"/>
+<text x="10" y="318" font-size="10" fill="#6b5e4a">"Now": college through Oct. 31 (AP poll before week 10); NFL through week 8, top 12 by record.</text>
+<text x="10" y="332" font-size="10" fill="#6b5e4a">Final 2025: final AP poll and every game incl. bowls and playoffs. 2023 and 2024 look the same.</text>
+</svg>
+  </figure>
+  <p>Look at the red. Two-thirds of the college pairs are belief, now, with a month to go. Even after the bowls and the playoff, about 4 in 10 still are; 2023, 2024 and 2025 all land between 38% and 42%. The NFL ends every one of those seasons at zero. Every club has played every other club, or someone who did.</p>
+  <h2 class="sh">The Game That Settles One Pair</h2>
+  <p>Miami comes in 8&ndash;0 and No. 1 in both rankings. Notre Dame comes in 7&ndash;1, fourth to the AP and eleventh to the committee. Notice what the Irish have to go on. Of the other 24 teams in the AP poll, they have played one: BYU, and they lost 28&ndash;24 in Provo on Oct. 17. Miami has played one too, Wake Forest.</p>
+  <p>Now the surprise. The two had already played two of the same teams, North Carolina and Stanford. So Saturday&rsquo;s game will turn one &ldquo;common opponent&rdquo; pair into a head-to-head pair, and give Miami its first link to BYU. That is <strong>2 pairs out of 300</strong>, whoever wins. Of the 199 pairs with nothing in common, 198 will still have nothing in common on Sunday.</p>
+  <p>This is their second meeting in two seasons. The first was last year&rsquo;s opener in Miami Gardens. Here it is, using only the numbers that ESPN and CollegeFootballData agree on.</p>
+  <table style="width:100%;border-collapse:collapse;font-family:'Roboto Mono',monospace;font-size:.85rem;margin:1rem 0 1.4rem">
+<tr style="background:var(--ink);color:var(--cream)"><th style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="left">Aug. 31, 2025, Hard Rock Stadium</th><th style="padding:.35rem .5rem;border-bottom:1px solid var(--div)">Notre Dame</th><th style="padding:.35rem .5rem;border-bottom:1px solid var(--div)">Miami</th></tr>
+<tr><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)">Score by quarter</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">0 &middot; 7 &middot; 0 &middot; 17</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">0 &middot; 14 &middot; 7 &middot; 6</td></tr>
+<tr><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)">Final</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">24</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center"><strong>27</strong></td></tr>
+<tr><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)">First downs</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">18</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">20</td></tr>
+<tr><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)">Passing yards</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">221</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">205</td></tr>
+<tr><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)">Yards per play</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">about 5.5</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">about 5</td></tr>
+<tr><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)">Third downs</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">4 of 9</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">4 of 13, or 5 of 14</td></tr>
+<tr><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)">Turnovers</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">2</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">0</td></tr>
+<tr><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)">Time of possession</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">26:03</td><td style="padding:.35rem .5rem;border-bottom:1px solid var(--div)" align="center">33:57</td></tr>
+</table>
+  <p>Read it twice. Notre Dame gained more yards per play and lost. Miami won the turnovers 2&ndash;0, held the ball eight minutes longer, and won by three at home. One game settles who won that night. It does not settle who is better. A three-point game swings on a fumble, and it does not tell you what the score would be on the other team&rsquo;s field.</p>
+  <p>Saturday is that other field. Watch the turnovers and the clock, because that is where last year was decided. If Notre Dame wins, the two meetings split one apiece, each won by the home team. That settles who won each night. It does not settle who is better.</p>
+  <div class="pull">
+    <p>A head-to-head game is the one place college football is settled on the field. Going into November, the top 25 had played 26 of them.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+  <h2 class="sh">What to Take Home</h2>
+  <p>When you see two teams ranked side by side, ask one question: what connects them? A game between them is evidence. A common opponent is weaker evidence. Beating North Carolina by 11 and by 40 are both &ldquo;wins.&rdquo; Nothing at all means the order is somebody&rsquo;s belief, and two honest people can hold different ones. That is how the same team is fourth and eleventh in the same week.</p>
+  <p>The same check works on any ranking built from games that were never played: hospitals, schools, restaurants. Before you trust the order, count how many of the pairs were ever compared directly.</p>
+  <p>We counted Notre Dame&rsquo;s ranked opponents before, in <a href="https://thesportspage.net/published/179-who-did-they-play.html" target="_blank" rel="noopener">Who Did They Play?</a> This is the other half: not how hard the schedule was, but how much of it connects.</p>
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>Data:</strong> every completed game and the AP Top 25 from CollegeFootballData, read Nov. 4; the &ldquo;now&rdquo; poll is the last one before week 10, and games run through Oct. 31. NFL games from nflverse through week 8; the top 12 is by record, ties broken by point differential. End-of-season counts use the final AP poll and every game, bowls and playoffs included, and the NFL&rsquo;s full season with playoffs.</p>
+    <p><strong>The measure:</strong> each pair is &ldquo;played,&rdquo; &ldquo;common opponent only&rdquo; (any opponent, including lower-division teams), or &ldquo;neither.&rdquo; It counts links, not how strong each link is. A common opponent beaten by 3 and by 40 counts the same.</p>
+    <p><strong>The 2025 box score:</strong> ESPN and CollegeFootballData agree on the score, passing yards, first downs, turnovers and time of possession. They disagree on Miami&rsquo;s total yards (339 or 332), its rushing (134 or 127), and third downs; we print a range or leave the number out. Yards per play comes out about 5.5 for Notre Dame and about 5 for Miami on either feed. Code: <code>scripts/settled_on_field.py</code>, with <code>--game</code> for any box score on both feeds.</p>
+  </div>
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
