@@ -10,7 +10,10 @@ what stops autopublish taking it. Do not delete a benched file, and do not
 
 ---
 
-## Held 2026-11-03 — `197-staff-drain` waiting on a non-CFB slot
+## Released 2026-11-04 — `197-staff-drain` (was held 2026-11-03 for a non-CFB slot)
+
+Trigger met: `198-simmons-counterfactual` (NFL) queued Tue Nov 10 after 196, so 197 runs Wed Nov 11.
+
 
 Part 2 of the coaching pair; part 1 (`196-coaching-dna`) is in the order for
 Mon Nov 9. Both are CFB, so 197 cannot follow 196 directly. **Trigger:** as

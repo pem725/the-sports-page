@@ -1,0 +1,241 @@
+<!-- PUBLISH-META
+topic: NFL
+decay: slow
+tags: NFL:nfl, Bears, Trades, Survivorship, Counterfactual
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — What Did the Bears Really Give Up for Simmons?</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+.chart{width:100%;height:auto;display:block}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="What Did the Bears Really Give Up for Simmons?">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/198-simmons-counterfactual.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/198-simmons-counterfactual.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Did the Bears Really Give Up for Simmons?">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/198-simmons-counterfactual.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Pro Football &middot; Trades</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="NFL"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><ellipse cx="13" cy="10" rx="10.6" ry="6.1" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 10h6" stroke="currentColor" stroke-width="1.7"/></svg></span>What Did the Bears Really Give Up for <em>Simmons?</em></h1>
+  <div class="deck">
+    Two first-round picks near the end of the round usually become about seven seasons of starters. A defensive tackle like Jeffery Simmons, at 29, usually has two or three left. Chicago did not trade one player for two. It traded later seasons for sooner, better ones.
+  </div>
+  <div class="byline">By The Sports Page &middot; Every late first-round pick, 2013&ndash;2018, and every tackle like him</div>
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">2 or 3</div><div class="l">Seasons as a starter left for tackles like him at 29</div></div>
+    <div class="sc"><div class="v now">About 7</div><div class="l">Seasons as a starter from two late first-round picks, by 2033</div></div>
+    <div class="sc"><div class="v bad">1 in 5</div><div class="l">Tackles like him who started one season or none after 29</div></div>
+  </div>
+  <p><strong>What did the Bears really give up for Jeffery Simmons?</strong> On October 29, Chicago sent its next two first-round picks to Tennessee for him. In his first game he had a sack and six tackles, and the Bears won 34&ndash;17 at Seattle. Everyone is grading the trade on this season. You should grade it on the next seven.</p>
+  <p>Here is the answer, with its number. Defensive tackles who looked like Simmons at 28 started about <strong>2.5</strong> more seasons from 29 to 32. Two picks late in the first round started about <strong>7</strong> seasons between them in the years Chicago gave up.</p>
+  <p>Most people see one star for two maybes. The surprise is that this is a trade in <em>time</em>. Chicago bought good seasons now and paid with more seasons later. By the end, you will be able to read any win-now trade the same way.</p>
+  <h2 class="sh">How Long Does a Tackle Like Him Last?</h2>
+  <p>Simmons is 29. Through last season he had 42.5 sacks and had started six years in a row. So we found every interior lineman since 1999 who looked like that at 28: 25 to 60 sacks and a full season at that age. There were ten whose next four years we can see.</p>
+  <p>At 29, seven in ten were still starters. By 32, five in ten were. Fletcher Cox and Ndamukong Suh started all four years. Kawann Short started one. Marcell Dareus started none. That is <strong>1 in 5</strong> who were close to done.</p>
+  <p>Notice how easy it is to get this wrong. Our first try picked the comparison by <em>career</em> Pro Bowls. That list said a star lineman plays to 34 and nobody is finished by 30. But a man who got hurt at 29 never piled up four Pro Bowls, so he was never on the list. The career was the filter. That is <span class="cc" data-preview="Looking only at the ones who made it through a filter, and forgetting the ones who did not.">survivorship<a class="cc-i" href="https://thesportspage.net/concepts/survivorship-bias.html" target="_blank" rel="noopener" aria-label="Concept primer: survivorship bias"></a></span>, and it made the tackle look twice as durable as he is.</p>
+  <h2 class="sh">What Two Late Picks Become</h2>
+  <p>Chicago won six of its first eight games, so its picks will likely fall late in the round. We followed all 95 players taken 17th to 32nd from 2013 to 2018. Pick any year, and you will find a little over half of them starting. Over their first seven years they started <strong>3.7</strong> seasons each. About 1 in 6 started one season or none.</p>
+  <p>But you also care how good they are. About 3 in 10 late first-rounders make a Pro Bowl at some point. With two picks, the chance that at least one does is about a coin flip. Simmons has made four.</p>
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 338" width="100%" role="img" aria-label="Bar chart of expected starter seasons by year. Simmons: 0.7 in 2026 and 2027, 0.6 in 2028, 0.5 in 2029. The two picks: 0.6 in 2027, 1.2 in 2028, 1.3 in 2029, then 1.2, 1.1, 0.9 and 0.8 through 2033." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12.5" fill="#1a1208" font-weight="600">Expected starter seasons, year by year</text>
+<rect x="430" y="30" width="12" height="12" fill="#b83a1e"/><text x="448" y="40" font-size="11" fill="#b83a1e">Simmons (age 29 in 2026)</text>
+<rect x="430" y="48" width="12" height="12" fill="#2c4a6e"/><text x="448" y="58" font-size="11" fill="#2c4a6e">The two picks</text>
+<line x1="60" y1="268" x2="660" y2="268" stroke="#6b5e4a" stroke-width="1"/>
+<line x1="60" y1="118" x2="660" y2="118" stroke="#c8b99a" stroke-width="0.8" stroke-dasharray="4 4"/>
+<text x="56" y="122" font-size="10" text-anchor="end" fill="#6b5e4a">1</text>
+<text x="56" y="272" font-size="10" text-anchor="end" fill="#6b5e4a">0</text>
+<rect x="74" y="163.0" width="24" height="105.0" fill="#b83a1e"/>
+<text x="86" y="158.0" font-size="10" text-anchor="middle" fill="#b83a1e" font-weight="600">0.7</text>
+<text x="100" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">2026</text>
+<rect x="148" y="163.0" width="24" height="105.0" fill="#b83a1e"/>
+<text x="160" y="158.0" font-size="10" text-anchor="middle" fill="#b83a1e" font-weight="600">0.7</text>
+<rect x="176" y="185.5" width="24" height="82.5" fill="#2c4a6e"/>
+<text x="188" y="180.5" font-size="10" text-anchor="middle" fill="#2c4a6e" font-weight="600">0.6</text>
+<text x="174" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">2027</text>
+<rect x="222" y="178.0" width="24" height="90.0" fill="#b83a1e"/>
+<text x="234" y="173.0" font-size="10" text-anchor="middle" fill="#b83a1e" font-weight="600">0.6</text>
+<rect x="250" y="82.0" width="24" height="186.0" fill="#2c4a6e"/>
+<text x="262" y="77.0" font-size="10" text-anchor="middle" fill="#2c4a6e" font-weight="600">1.2</text>
+<text x="248" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">2028</text>
+<rect x="296" y="193.0" width="24" height="75.0" fill="#b83a1e"/>
+<text x="308" y="188.0" font-size="10" text-anchor="middle" fill="#b83a1e" font-weight="600">0.5</text>
+<rect x="324" y="70.0" width="24" height="198.0" fill="#2c4a6e"/>
+<text x="336" y="65.0" font-size="10" text-anchor="middle" fill="#2c4a6e" font-weight="600">1.3</text>
+<text x="322" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">2029</text>
+<rect x="398" y="95.5" width="24" height="172.5" fill="#2c4a6e"/>
+<text x="410" y="90.5" font-size="10" text-anchor="middle" fill="#2c4a6e" font-weight="600">1.1</text>
+<text x="396" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">2030</text>
+<rect x="472" y="106.0" width="24" height="162.0" fill="#2c4a6e"/>
+<text x="484" y="101.0" font-size="10" text-anchor="middle" fill="#2c4a6e" font-weight="600">1.1</text>
+<text x="470" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">2031</text>
+<rect x="546" y="127.0" width="24" height="141.0" fill="#2c4a6e"/>
+<text x="558" y="122.0" font-size="10" text-anchor="middle" fill="#2c4a6e" font-weight="600">0.9</text>
+<text x="544" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">2032</text>
+<rect x="620" y="149.5" width="24" height="118.5" fill="#2c4a6e"/>
+<text x="632" y="144.5" font-size="10" text-anchor="middle" fill="#2c4a6e" font-weight="600">0.8</text>
+<text x="618" y="286" font-size="11" text-anchor="middle" fill="#6b5e4a">2033</text>
+<text x="10" y="306" font-size="11" fill="#1a1208">Through 2029: Simmons 2.5, the picks 3.1. Through 2033: the picks about 7.</text>
+<text x="10" y="332" font-size="10" fill="#6b5e4a">Starter: 8+ games at half the snaps or more. Simmons: 10 like him at 28. Picks: 95 at No. 17-32, 2013-18.</text>
+</svg>
+  </figure>
+  <p>Look at the bars and you will see two stories. Through 2029, the sides are close: 2.5 seasons for Simmons, 3.1 for the picks. Simmons&rsquo;s seasons come first, and they are better ones. After 2029 the red bars stop. He will be 33. The blue bars keep coming.</p>
+  <h2 class="sh">A Trade in Time</h2>
+  <p>Think of it as a loan. Chicago is borrowing good seasons from its future to spend them now, while the team is winning. You may well think that is smart. A title in 2026 is worth more to a fan than two good starters in 2031. But the bill comes due around 2030, when the picks would have been starting and the tackle is gone.</p>
+  <p>And the loan has one borrower. If Simmons gets hurt, Chicago has no second chance; two picks spread the risk over two players. Our editor called it a delay of potential misery. Most fans cannot wait, and that is exactly what a trade like this buys.</p>
+  <div class="pull">
+    <p>A win-now trade is not one player for two. It is good seasons now for more seasons later.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+  <h2 class="sh">What to Take Home</h2>
+  <p>When your team trades the future for a star, ask two questions. How many seasons did they give, and how many did they get? Then ask when each one arrives. A trade can win the count and lose the calendar, or the reverse.</p>
+  <p>It is the same question you ask about any loan: a car, a credit card, a mortgage. Buying now and paying later is fine. Just know the price, and know when it is due.</p>
+  <div class="box">
+    <h3>How this was measured, and what it cannot do</h3>
+    <p><strong>The unit:</strong> a starter season is 8 or more regular-season games playing at least half of his unit&rsquo;s snaps (nflverse snap counts, from 2013). Sacks and games come from nflverse season stats from 1999; picks from the nflverse draft table.</p>
+    <p><strong>Simmons side:</strong> interior linemen born 1984&ndash;1993 with 25 to 60 career sacks and 10 or more games at 28, chosen only on what was known at 28; ten in all. A games-only version with 13 men agrees: about seven in ten played a full season at 29, under five in ten at 32. <strong>Pick side:</strong> picks 17&ndash;32, 2013&ndash;2018 (95 players); the Pro Bowl rate uses 1990&ndash;2017 (415). Trade terms from NFL.com and ESPN; the Seattle game from ESPN and nflverse.</p>
+    <p><strong>What it cannot do:</strong> a starter season is a count, not a grade, and Simmons&rsquo;s seasons are worth more than an average starter&rsquo;s. Ten comparison players is a small group. Where the picks fall depends on how Chicago finishes. And it leaves out money: rookie contracts are cheap and a star&rsquo;s is not. Code: <code>scripts/trade_counterfactual.py</code>.</p>
+  </div>
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

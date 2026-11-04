@@ -587,7 +587,21 @@
    "source": "Editor, 2026-11-02 (Bowden's staff, Orgeron and Joe Brady, Dabo's coordinators, Norvell)",
    "number": "Computed 2026-11-02 (scripts/coach_drain.py, data/coachtree/drain.txt): 4,269 FBS boss-seasons 1969-2024; 236 lost an assistant to a first FBS head job. Naive: raided teams slip 3.5 pts next year vs 0.6 for others. Fair (next ~ this season + prior 3): raided +2.1 pts (-0.2 to 4.5); over the next three seasons +3.3 (1.2 to 5.4). Seasons at .750+: raided next-3 avg .754 (n=79) vs .687 (n=607).",
    "why": "The reverse of coaching-dna, and the twist is the trap: staffs get raided after good years, so the slide fans pin on the raid is regression to the mean. Being raided is a signal the program was really good, not lucky. Cases: Bowden lost Amato (after 1999) and Richt (after 2000), then FSU went 8-4 in 2001 -- one case, fits the story; Clemson went 11-3 the year after Venables and Elliott left; Norvell lost nobody to a head job before 2024's 2-10; LSU 2020 lost Aranda plus Brady (NFL, not in data) plus Burrow and the draft class. Limits: only first FBS head jobs count; NFL and lateral departures and replacements are invisible. Pair as part 2 with coaching-dna; saturation flag stands (#185, #29).",
-   "status": "drafted"
+   "status": "queued"
+  },
+  {
+   "slug": "simmons-counterfactual",
+   "title": "What did the Bears really give up for Simmons? The counterfactual, by season",
+   "grip": 8,
+   "twist": 8,
+   "clock": 8,
+   "stack": 8,
+   "carry": 8,
+   "answerable": true,
+   "source": "Editor, 2026-11-03 (Simmons trade: age, years left, two firsts, injury leverage, 'a delay of potential misery')",
+   "number": "Computed 2026-11-03 (scripts/trade_counterfactual.py, data/trades/simmons_counterfactual.txt). Starter season = 8+ games at >=50% snaps. 10 interior DL like him at 28 (25-60 sacks, full season at 28, born 1984-93): starter at 29..32 = .7/.7/.6/.5, mean 2.5, 20% one or none. Picks 17-32, 2013-18 (n=95): 3.7 starter seasons in first 7 yrs, 17% one or none; Pro Bowl ever 31% (1990-2017, n=415), >=1 of two 52%. Through 2029 Simmons 2.5 vs picks 3.1; picks ~7 by 2033. Biased comps by career Pro Bowls say median last age 34, 0% done by 30 -- the survivorship trap, used in the piece.",
+   "why": "Everyone grades the trade on 2026; the counterfactual is a trade in time. Count seasons, then when they arrive. Carries to any loan. Survivorship trap caught live in our own first pass.",
+   "status": "queued"
   },
   {
    "slug": "expert-wage",
