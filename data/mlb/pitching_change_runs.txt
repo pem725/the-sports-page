@@ -1,0 +1,27 @@
+7289 games, 123861 usable half-innings, seasons 2023-2025
+RE24 (runs to end of inning):  bases 0=empty 1=1B 2=2B 4=3B, summed
+  outs 0: 0:0.50  1:0.90  2:1.15  3:1.53  4:1.41  5:1.87  6:2.00  7:2.36
+  outs 1: 0:0.27  1:0.53  2:0.69  3:0.95  4:0.96  5:1.21  6:1.41  7:1.61
+  outs 2: 0:0.10  1:0.23  2:0.33  3:0.46  4:0.36  5:0.51  6:0.59  7:0.78
+
+MID-INNING changes
+  inning   n      runs after   expected   naive vs avg inning   FAIR gap (95%)
+  1-3         640   0.73        0.66       +0.23              +0.076 (-0.015 to +0.170)
+  4-6        6239   0.67        0.68       +0.17              -0.006 (-0.035 to +0.023)
+  7          3735   0.62        0.64       +0.12              -0.016 (-0.051 to +0.019)
+  8          2724   0.66        0.65       +0.16              +0.009 (-0.034 to +0.051)
+  9 (top)     628   0.70        0.74       +0.19              -0.042 (-0.138 to +0.057)
+  all       13966   0.66        0.67       +0.16              -0.004 (-0.022 to +0.015)
+
+NEW-INNING changes
+  inning   n      runs after   expected   naive vs avg inning   FAIR gap (95%)
+  1-3         420   0.55        0.50       +0.04              +0.044 (-0.055 to +0.147)
+  4-6        5369   0.51        0.50       +0.00              +0.003 (-0.026 to +0.031)
+  7          7562   0.48        0.50       -0.02              -0.023 (-0.046 to -0.000)
+  8          9690   0.48        0.50       -0.03              -0.026 (-0.045 to -0.006)
+  9 (top)    5472   0.47        0.50       -0.04              -0.037 (-0.064 to -0.011)
+  all       28513   0.48        0.50       -0.02              -0.021 (-0.034 to -0.009)
+
+Mid-inning changes inheriting at least one runner: 84%
+Average half-inning (RE at 0 outs, empty): 0.503 runs
+Games with at least one change of either kind: 7286 of 7289

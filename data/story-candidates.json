@@ -450,7 +450,8 @@
    "source": "Editor, 2026-10-19",
    "number": "Runs in the rest of the inning after a change vs base-out expected runs, by inning 1-9 (Retrosheet 2021-25)",
    "why": "Editor's bet: runs rise after a change in innings 4-6, not in the 8th/9th. The trap is selection: pitchers get pulled while being hit. Lesson: compare to what the situation was already worth.",
-   "status": "in-progress"
+   "status": "queued",
+   "outcome": "Queued Thu 11/12 as 199-pitching-change-runs. 2023-25, 7,289 games, 13,966 mid-inning changes: naive 66 runs/100 vs 50 average inning; vs expected for the inherited state (67) the change adds -0.4 (-2.2 to +1.5). 4th-6th -0.6 (-3.5 to +2.3). Editor's bet wrong; fresh late relievers starting clean slightly better than average (8th -2.6). scripts/pitching_change_runs.py."
   },
   {
    "slug": "cfb-turnaround-speed",
