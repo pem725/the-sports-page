@@ -195,7 +195,8 @@ def render(items, published, built, count=""):
             f'    <div class="slot{" is-hot" if r["decay"]=="hot" else ""}">\n'
             f'      <div class="when"><b>{d.strftime("%a")} {d.day}</b>{d.strftime("%b")}</div>\n'
             '      <div>\n'
-            f'        <p class="hed disp">{esc(r["hed"])}</p>\n'
+            f'        <p class="hed disp"><a href="https://thesportspage.net/queue/{esc(r["file"])}" '
+            f'target="_blank" rel="noopener">{esc(r["hed"])}</a></p>\n'
             f'        <div class="chips">{chips}</div>\n'
             '      </div>\n'
             '    </div>')
@@ -303,6 +304,8 @@ h2.sh:first-of-type{{margin-top:.4rem}}
 .when b{{display:block;color:var(--ink);font-weight:600;font-size:.76rem}}
 .hed{{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
   font-size:1.2rem;font-weight:700;line-height:1.28;margin:0 0 .3rem;text-wrap:balance}}
+.hed a{{color:inherit;border-bottom:1px solid var(--rule)}}
+.hed a:hover{{color:var(--rust);border-bottom-color:var(--rust)}}
 .deck{{font-size:.93rem;color:var(--muted);margin:0 0 .5rem;max-width:64ch;line-height:1.6}}
 .chips{{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}}
 .chip{{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.59rem;

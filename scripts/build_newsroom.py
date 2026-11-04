@@ -14,7 +14,7 @@ forgot to update:
 The board is Tim, Sean and Patrick jr. The page exists so a disagreement can be
 specific -- not "I'd run something else" but "your TWIST on that is a 4."
 """
-import datetime, json, os, re, sys
+import datetime, html, json, os, re, sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(REPO, "newsroom.html")
@@ -42,8 +42,8 @@ def gather():
             continue
         t = open(p, encoding="utf-8").read()
         g = lambda k: (re.search(rf"{k}:\s*([^\n#]+)", t) or [None, "?"])[1].strip()
-        hed = re.search(r'class="hed">(.*?)</h2>', t, re.S)
-        title = re.sub(r"<[^>]+>", "", hed.group(1)).strip() if hed else f
+        hed = re.search(r'<h[12][^>]*class="hed"[^>]*>(.*?)</h[12]>', t, re.S)
+        title = html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", hed.group(1)))).strip() if hed else f
         q.append(dict(date=d, topic=g("topic"), decay=g("decay"), title=title, file=f))
         d += datetime.timedelta(days=1)
         if d.weekday() == 6:
@@ -76,7 +76,7 @@ def build():
     qrows = "".join(
         f'<tr><td class="dt">{x["date"]:%a %b %-d}</td><td class="tp">{x["topic"]}</td>'
         f'<td class="dc">{x["decay"]}<span class="dn"> &middot; {DECAY_NOTE.get(x["decay"],"")}</span></td>'
-        f'<td>{esc(x["title"])}</td></tr>' for x in q)
+        f'<td><a href="https://thesportspage.net/queue/{x["file"]}" target="_blank" rel="noopener">{esc(x["title"])}</a></td></tr>' for x in q)
     keeps = sum(1 for x in q if x["decay"] == "keeps")
     gap = issues - 0
     return f"""<!DOCTYPE html>
