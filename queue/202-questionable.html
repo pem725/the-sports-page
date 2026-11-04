@@ -1,0 +1,265 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: hot
+tags: CFB:cfb, Notre Dame, Miami, Base Rates, Injury Reports
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Will Toney Play? Two of Every Three Questionable Players Do.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Will Toney Play? Two of Every Three Questionable Players Do.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/202-questionable.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/202-questionable.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Will Toney Play? Two of Every Three Questionable Players Do.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/202-questionable.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Injury Report &middot; College Football, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>Will Toney Play? <em>Two of Every Three Questionable Players Do.</em></h1>
+
+  <div class="deck">
+    Miami&rsquo;s best player hurt his ankle Wednesday, three days before No. 1 Miami plays at Notre Dame. In the NFL, where every injury report is on file, a player listed questionable has played 9,634 times out of 14,346 since 2016. That is two in three. The betting line moved half a point.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; Written Wednesday night, as the news broke</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">2 in 3</div><div class="l">NFL questionable players who played, 2016&ndash;25</div></div>
+    <div class="sc"><div class="v bad">44%</div><div class="l">&hellip;if he sat out the last practice</div></div>
+    <div class="sc"><div class="v good">&frac12; pt</div><div class="l">How far the line moved, Sunday to Wednesday</div></div>
+  </div>
+
+  <p><strong>Malachi Toney hurt his ankle at practice Wednesday. Will he play Saturday night, and how much should it change what you expect?</strong> Start here: in the NFL, a player listed questionable plays about two times in three. Most fans hear &ldquo;questionable&rdquo; as a coin flip, or worse. It leans the other way. And the people with money on the game barely moved.</p>
+
+  <p>By the end you will be able to read an injury report the way a bookmaker does. Start at two in three. Then ask the one question that can move you.</p>
+
+  <h2 class="sh">What We Know, as of Wednesday Night</h2>
+
+  <p>Toney hurt his ankle in practice Wednesday, the Associated Press reported. Miami said he is &ldquo;undergoing further evaluation by the team&rsquo;s medical staff.&rdquo; The school did not say whether he will play. ESPN&rsquo;s Pete Thamel reported that his status is uncertain and that Toney is expected to push to play. He has had ankle trouble earlier this season and has not missed a game.</p>
+
+  <p>Here is why anyone cares. Toney has 73 catches for 1,027 yards and 13 touchdowns in eight games. We checked that two ways, against ESPN&rsquo;s box scores and against CollegeFootballData, and they agree to the yard.</p>
+
+  <p>That is all anybody knows. Everything past it is a guess, ours included.</p>
+
+  <h2 class="sh">What &ldquo;Questionable&rdquo; Has Meant</h2>
+
+  <p>College football keeps no public archive of its injury reports. The NFL does. So we matched every NFL final injury report since 2013 to that week&rsquo;s snap counts, and counted who actually took the field.</p>
+
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 342" width="100%" role="img" aria-label="Bars: share of NFL players on the final injury report who played that week. Probable 95%. Questionable and practiced on the final day 71%. Questionable, all 67%. Questionable with an ankle injury 67%. Questionable and sat out the final practice 44%. Doubtful 1%. Out 0%." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12.5" fill="#1a1208" font-weight="600">NFL players on the final injury report: how many played?</text>
+<text x="10" y="34" font-size="10.5" fill="#6b5e4a">Regular season, 2016&#8211;25 (probable: 2013&#8211;15). Played = any snap that week.</text>
+<text x="212" y="63" font-size="11" text-anchor="end" fill="#1a1208">Probable (label dropped 2016)</text>
+<rect x="220" y="46" width="310" height="26" fill="#e0d8c5"/>
+<rect x="220" y="46" width="293.8" height="26" fill="#2c4a6e"/>
+<text x="538" y="63" font-size="11" fill="#2c4a6e" font-weight="600">95%</text>
+<text x="576" y="63" font-size="9" fill="#6b5e4a">7,309 of 7,712</text>
+<text x="212" y="99" font-size="11" text-anchor="end" fill="#1a1208">Questionable, practiced</text>
+<rect x="220" y="82" width="310" height="26" fill="#e0d8c5"/>
+<rect x="220" y="82" width="221.5" height="26" fill="#2c4a6e"/>
+<text x="538" y="99" font-size="11" fill="#2c4a6e" font-weight="600">71%</text>
+<text x="576" y="99" font-size="9" fill="#6b5e4a">8,630 of 12,080</text>
+<text x="212" y="135" font-size="11" text-anchor="end" fill="#1a1208" font-weight="600">Questionable, all</text>
+<rect x="220" y="118" width="310" height="26" fill="#e0d8c5"/>
+<rect x="220" y="118" width="208.2" height="26" fill="#b83a1e"/>
+<text x="538" y="135" font-size="11" fill="#b83a1e" font-weight="600">67%</text>
+<text x="576" y="135" font-size="9" fill="#6b5e4a">9,634 of 14,346</text>
+<text x="212" y="171" font-size="11" text-anchor="end" fill="#1a1208">Questionable, ankle</text>
+<rect x="220" y="154" width="310" height="26" fill="#e0d8c5"/>
+<rect x="220" y="154" width="207.9" height="26" fill="#2c4a6e"/>
+<text x="538" y="171" font-size="11" fill="#2c4a6e" font-weight="600">67%</text>
+<text x="576" y="171" font-size="9" fill="#6b5e4a">1,441 of 2,149</text>
+<text x="212" y="207" font-size="11" text-anchor="end" fill="#1a1208">Questionable, sat out practice</text>
+<rect x="220" y="190" width="310" height="26" fill="#e0d8c5"/>
+<rect x="220" y="190" width="137.4" height="26" fill="#2c4a6e"/>
+<text x="538" y="207" font-size="11" fill="#2c4a6e" font-weight="600">44%</text>
+<text x="576" y="207" font-size="9" fill="#6b5e4a">1,004 of 2,266</text>
+<text x="212" y="243" font-size="11" text-anchor="end" fill="#1a1208">Doubtful</text>
+<rect x="220" y="226" width="310" height="26" fill="#e0d8c5"/>
+<rect x="220" y="226" width="2.6" height="26" fill="#2c4a6e"/>
+<text x="538" y="243" font-size="11" fill="#2c4a6e" font-weight="600">1%</text>
+<text x="576" y="243" font-size="9" fill="#6b5e4a">14 of 1,641</text>
+<text x="212" y="279" font-size="11" text-anchor="end" fill="#1a1208">Out</text>
+<rect x="220" y="262" width="310" height="26" fill="#e0d8c5"/>
+<text x="538" y="279" font-size="11" fill="#2c4a6e" font-weight="600">0%</text>
+<text x="576" y="279" font-size="9" fill="#6b5e4a">3 of 10,075</text>
+<line x1="10" y1="306" x2="670" y2="306" stroke="#c8b99a" stroke-width="0.8"/>
+<text x="10" y="322" font-size="10" fill="#6b5e4a">Source: NFL injury reports and snap counts via nflverse. College football keeps no public archive like this.</text>
+<text x="10" y="336" font-size="10" fill="#6b5e4a">&#8220;Practiced&#8221; = full or limited on the final practice day of the week.</text>
+</svg>
+  </figure>
+
+  <p>Look at the red bar. Two in three. Now look at the bar for ankles: the same. The body part changes nothing; what changes it is practice. A questionable player who sat out his last practice of the week played 44% of the time, less than half. One who practiced, even on a limited basis, played 71%.</p>
+
+  <p>So the practice report tells you more than the injury label does. Hold onto that for Thursday and Friday.</p>
+
+  <p>One more thing to notice. Before 2016 the NFL had a &ldquo;probable&rdquo; tag, and 95% of those players played. The league dropped it, so many of the players it would once have called probable now get called questionable. That is part of why the word leans toward playing. These are NFL players and NFL labels; a college staff may use words differently. Use the number as a starting point, not a verdict.</p>
+
+  <h2 class="sh">What the Money Did</h2>
+
+  <p>DraftKings opened Notre Dame as a 7&frac12;-point favorite on Sunday. By Wednesday night, with the news out, it was 7. Half a point, toward Miami. The other bet moved the other way: strip out the bookmaker&rsquo;s cut and Notre Dame&rsquo;s chance to win went from about 68% to 69%. Those are mixed signals; neither is bigger than one point.</p>
+
+  <p>We do not have a measured number for what one receiver is worth on the scoreboard, and we will not make one up. We can tell you what a point is worth. In our ratings, for a game this close, each point of spread moves the win chance by two or three percentage points. Our ratings are less sure of Notre Dame than the market is, 57% against 69%. Sunday will tell us who read it better.</p>
+
+  <div class="pull">
+    <p>An injury report that fits every story can only tell you the base rate.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Every Story Fits</h2>
+
+  <p>You have heard them already, or you will by Friday. He is really hurt. It is gamesmanship, so Notre Dame has to prepare for two offenses. It is an excuse loaded in advance if Miami loses, or a medal waiting if Miami wins without him.</p>
+
+  <p>Notice that &ldquo;uncertain, pushing to play&rdquo; fits all four. When a piece of news fits every story, it cannot tell you which story is true. That is the idea behind <span class="cc" data-preview="News only informs you if it is more likely under one explanation than another.">information and surprise<a class="cc-i" href="https://thesportspage.net/concepts/information-and-surprise.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span>. So do not spend your week arguing about the story. Start from the <span class="cc" data-preview="How often something happens in general, before you know anything special about this case.">base rate<a class="cc-i" href="https://thesportspage.net/concepts/base-rate.html" target="_blank" rel="noopener" aria-label="Open primer">i</a></span> and wait for the one fact that can move it: did he practice?</p>
+
+  <h2 class="sh">What to Take Home</h2>
+
+  <p><strong>Questionable means &ldquo;probably plays.&rdquo;</strong> Two in three, across more than 14,000 NFL cases.</p>
+  <p><strong>The practice report beats the injury label.</strong> 71% for players who practiced, 44% for those who sat.</p>
+  <p><strong>Watch the line, not the talk.</strong> Half a point is not panic.</p>
+  <p><strong>A report that fits every story tells you only the base rate.</strong> Wait for the fact that does not fit them all.</p>
+
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
