@@ -1,0 +1,238 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: slow
+tags: MLB:mlb, Mets, Small Samples, Accountability
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — We Called the Rays Lucky in July. They Won 98.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+.chart{width:100%;height:auto;display:block}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="We Called the Rays Lucky in July. They Won 98.">
+<meta property="og:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta property="og:url" content="https://thesportspage.net/published/201-mlb-worries.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/201-mlb-worries.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="We Called the Rays Lucky in July. They Won 98.">
+<meta name="twitter:description" content="A daily statistics newsletter — one strange number, explained.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/201-mlb-worries.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">Baseball &middot; The Year in Worries</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>We Called the Rays Lucky in July. They Won <em>98.</em></h1>
+  <div class="deck">
+    We graded 15 things this paper worried about in baseball&rsquo;s first half. Seven held up, four washed out, and four were half right. Worries about a team&rsquo;s record held. Worries about a player&rsquo;s first week mostly did not.
+  </div>
+  <div class="byline">By The Sports Page &middot; Every early-season MLB storyline we ran, graded against how 2026 ended</div>
+  <div class="stat-row">
+    <div class="sc"><div class="v good">7 of 15</div><div class="l">Spring worries that held up</div></div>
+    <div class="sc"><div class="v bad">4 of 15</div><div class="l">Worries that turned out to be nothing</div></div>
+    <div class="sc"><div class="v now">98</div><div class="l">Wins for the Rays we called lucky</div></div>
+  </div>
+  <p><strong>Which of this spring&rsquo;s baseball worries were real, and which were just noise?</strong> The season is over, so you and we can finally check. We went back through every storyline we ran from Opening Day to the All-Star break and graded each one against the final numbers.</p>
+  <p>Here is the answer, with its number. Of <strong>15</strong> worries, <strong>7</strong> held up and <strong>4</strong> were nothing. The rest were half right.</p>
+  <p>You would expect a paper that preaches small samples to dodge the small-sample traps. We did not. We even wrote the rule, in <a href="https://thesportspage.net/published/026-stabilization-thresholds.html" target="_blank" rel="noopener" style="color:var(--rust)">Issue #32</a>, and then broke it twice. By the end, you will know which worries to keep next April and which to let go.</p>
+  <h2 class="sh">The Ones We Got Wrong</h2>
+  <p>Start with the worst, so you can see we mean it. In mid-July the Rays were 56&ndash;37. In <a href="https://thesportspage.net/published/097-acceleration-second-derivative.html" target="_blank" rel="noopener" style="color:var(--rust)">Issue #110</a> we said their first place was &ldquo;bought on credit.&rdquo; By the runs they had scored and allowed, they should have won about five fewer games, so we expected them to fade. They went 42&ndash;27 the rest of the way and won <strong>98</strong>. Their runs said about 90. Luck is not a loan; nobody sends a bill. That is one of the four worries that turned out to be nothing.</p>
+  <p>On day three, in <a href="https://thesportspage.net/published/002-alonso-orioles.html" target="_blank" rel="noopener" style="color:var(--rust)">Issue #2</a>, we gave Pete Alonso a 60% chance of never hitting .250 this year. He hit <strong>.267</strong> with 43 home runs. And in <a href="https://thesportspage.net/published/028-mets-next-17-games.html" target="_blank" rel="noopener" style="color:var(--rust)">Issue #38</a> we said the Mets would win about six of their next 17. &ldquo;They will not win ten.&rdquo; They won ten of the 15 they played.</p>
+  <p>One more, and this one is a plain error. <a href="https://thesportspage.net/published/035-devin-williams-collapse.html" target="_blank" rel="noopener" style="color:var(--rust)">Issue #45</a> said Devin Williams had a 9.95 ERA. That was his ERA on April 21. By the day we printed it, after six straight scoreless outings, it was 5.68. That piece now carries a correction.</p>
+  <figure style="margin:28px 0">
+<svg class="chart" viewBox="0 0 680 338" width="100%" role="img" aria-label="Fifteen worries in three columns. Held up, seven: Soto's calf, the Mets at 7-14, at 10-21, needing .578, two broken closers, Raleigh's oblique, the Dodgers cooling. Half right, four: Skenes's ERA, offense not pitching, Williams is done, no bounce-back. Washed out, four: Alonso under .250, Bichette's strikeouts, six wins in 17, the Rays on credit." style="max-width:680px;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<text x="10" y="18" font-size="12.5" fill="#1a1208" font-weight="600">15 spring worries, graded at the end of the season</text>
+<rect x="10" y="34" width="212" height="30" fill="#2a6e3f"/>
+<text x="116" y="54" font-size="13" text-anchor="middle" fill="#f5f0e8" font-weight="600">Held up · 7</text>
+<rect x="10" y="72" width="212" height="28" fill="#ede5d2" stroke="#2a6e3f" stroke-width="1"/>
+<text x="18" y="90" font-size="11" fill="#1a1208">Soto's calf (#7)</text>
+<rect x="10" y="106" width="212" height="28" fill="#ede5d2" stroke="#2a6e3f" stroke-width="1"/>
+<text x="18" y="124" font-size="11" fill="#1a1208">Mets at 7–14 (#26)</text>
+<rect x="10" y="140" width="212" height="28" fill="#ede5d2" stroke="#2a6e3f" stroke-width="1"/>
+<text x="18" y="158" font-size="11" fill="#1a1208">Mets at 10–21 (#35)</text>
+<rect x="10" y="174" width="212" height="28" fill="#ede5d2" stroke="#2a6e3f" stroke-width="1"/>
+<text x="18" y="192" font-size="11" fill="#1a1208">Mets need .578 (#52)</text>
+<rect x="10" y="208" width="212" height="28" fill="#ede5d2" stroke="#2a6e3f" stroke-width="1"/>
+<text x="18" y="226" font-size="11" fill="#1a1208">Two broken closers (#54)</text>
+<rect x="10" y="242" width="212" height="28" fill="#ede5d2" stroke="#2a6e3f" stroke-width="1"/>
+<text x="18" y="260" font-size="11" fill="#1a1208">Raleigh's oblique (#63)</text>
+<rect x="10" y="276" width="212" height="28" fill="#ede5d2" stroke="#2a6e3f" stroke-width="1"/>
+<text x="18" y="294" font-size="11" fill="#1a1208">Dodgers cooling (#110)</text>
+<rect x="234" y="34" width="212" height="30" fill="#c9962a"/>
+<text x="340" y="54" font-size="13" text-anchor="middle" fill="#f5f0e8" font-weight="600">Half right · 4</text>
+<rect x="234" y="72" width="212" height="28" fill="#ede5d2" stroke="#c9962a" stroke-width="1"/>
+<text x="242" y="90" font-size="11" fill="#1a1208">Skenes's ERA (#1)</text>
+<rect x="234" y="106" width="212" height="28" fill="#ede5d2" stroke="#c9962a" stroke-width="1"/>
+<text x="242" y="124" font-size="11" fill="#1a1208">Offense, not pitching (#18)</text>
+<rect x="234" y="140" width="212" height="28" fill="#ede5d2" stroke="#c9962a" stroke-width="1"/>
+<text x="242" y="158" font-size="11" fill="#1a1208">Williams is done (#45)</text>
+<rect x="234" y="174" width="212" height="28" fill="#ede5d2" stroke="#c9962a" stroke-width="1"/>
+<text x="242" y="192" font-size="11" fill="#1a1208">No bounce-back (#121)</text>
+<rect x="458" y="34" width="212" height="30" fill="#b83a1e"/>
+<text x="564" y="54" font-size="13" text-anchor="middle" fill="#f5f0e8" font-weight="600">Washed out · 4</text>
+<rect x="458" y="72" width="212" height="28" fill="#ede5d2" stroke="#b83a1e" stroke-width="1"/>
+<text x="466" y="90" font-size="11" fill="#1a1208">Alonso under .250 (#2)</text>
+<rect x="458" y="106" width="212" height="28" fill="#ede5d2" stroke="#b83a1e" stroke-width="1"/>
+<text x="466" y="124" font-size="11" fill="#1a1208">Bichette's strikeouts (#8)</text>
+<rect x="458" y="140" width="212" height="28" fill="#ede5d2" stroke="#b83a1e" stroke-width="1"/>
+<text x="466" y="158" font-size="11" fill="#1a1208">Six wins in 17 (#38)</text>
+<rect x="458" y="174" width="212" height="28" fill="#ede5d2" stroke="#b83a1e" stroke-width="1"/>
+<text x="466" y="192" font-size="11" fill="#1a1208">Rays “on credit” (#110)</text>
+<text x="10" y="332" font-size="10" fill="#6b5e4a">Issue numbers in parentheses. Outcomes from the MLB Stats API, final 2026 regular season.</text>
+</svg>
+  </figure>
+  <h2 class="sh">The Ones That Held</h2>
+  <p>Look at the green column. You will notice what it has in common. The Mets worries were all about a <em>record</em>: 7&ndash;14 after 21 games, 10&ndash;21 after 31, and 20&ndash;26 needing .578 baseball to catch up. They played .466 instead and finished 74&ndash;88. You could see it after a month.</p>
+  <p>The other two that held were injuries. Juan Soto&rsquo;s calf cost him 15 games; we had said 10 or more was more likely than not. Cal Raleigh&rsquo;s 0-for-38 came with a sore oblique, and he hit .182 for the year. An injury is not a small sample. It is news.</p>
+  <h2 class="sh">What We Never Wrote</h2>
+  <p>Eleven of these 15 storylines were about the Mets. Meanwhile the White Sox went from 60 wins to <strong>84</strong>, the biggest jump in baseball, and the Braves went from 76 to 94. Neither got a single issue. If you worry about one team, you will miss the rest of the league. So did we.</p>
+  <div class="pull">
+    <p>Trust a record after a month. Ignore a player&rsquo;s first week. Treat an injury as news.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+  <h2 class="sh">What to Take Home</h2>
+  <p>Next April, sort every worry by what it rests on. A team&rsquo;s record after 30 games is worth worrying about. A hitter&rsquo;s first two games are not, even when the number is loud. An injury belongs in its own pile, because it changes the player, not just the sample.</p>
+  <p>And be careful when you hear &ldquo;lucky.&rdquo; Winning more than your runs say is not a debt that must be repaid. Sometimes the luck just keeps going, and sometimes the team was better than the runs showed.</p>
+  <div class="box">
+    <h3>How this was graded, and what it cannot do</h3>
+    <p><strong>The list:</strong> every MLB issue from Opening Day (March 27) to late July that made a claim or a worry the season could settle; 15 in all. Pieces with nothing to check, like history or method pieces, are left out.</p>
+    <p><strong>The outcomes:</strong> final 2026 standings, season stats, game logs and injured-list moves from the MLB Stats API. The Rays&rsquo; 98&ndash;64 was also checked against ESPN and Baseball-Reference, Alonso&rsquo;s line and Williams&rsquo;s game log against ESPN. The full ledger, with each claim and outcome, is in <code>data/mlb/worries-2026.csv</code>; code: <code>scripts/mlb_worries.py</code>.</p>
+    <p><strong>What it cannot do:</strong> the grades are ours, and &ldquo;half right&rdquo; is a judgment call. Fifteen worries is too few to say how often we are right in general. And the White Sox and Braves are measured against their 2025 records, not against what anyone expected in March.</p>
+  </div>
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none" target="_blank" rel="noopener">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)" target="_blank" rel="noopener">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
