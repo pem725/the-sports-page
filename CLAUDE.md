@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 282 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 281 issues remaining of 500
 
 ## Repository Structure
 
@@ -1291,9 +1291,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 218 issues (#1-218)
-Queue: 8 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 191-back-to-the-wall, 192-blockbuster-trades, 193-lockout, 194-owner-succession, 195-never-won-world-series, _TEMPLATE)
+Published: 219 issues (#1-219)
+Queue: 13 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 192-blockbuster-trades, 193-lockout, 194-owner-succession, 195-never-won-world-series, 196-coaching-dna, 197-staff-drain, 198-simmons-counterfactual, 199-pitching-change-runs, 200-settled-on-the-field, 201-mlb-worries, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 282 issues remaining of 500
-Last published: Issue #218 — "A Thousand Games In, It Still Doesn’t Even Out" (190-every-program.html) on November 3, 2026
+Goal: 281 issues remaining of 500
+Last published: Issue #219 — "Nobody Plays Better With Their Back to the Wall" (191-back-to-the-wall.html) on November 4, 2026
