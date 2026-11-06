@@ -1,54 +1,81 @@
 # Sunday Edition — Next Centerpiece Brief
 
-**Teed up: 2026-10-31 (Sat). For the Sunday Edition built the morning of 2026-11-01.**
-Set by the editor: *"put the coin-flip pool thing in Sunday's edition."*
+**Teed up: 2026-11-06 (Fri), before kickoff of Miami at Notre Dame.
+For the Sunday Edition built the morning of 2026-11-15**, after the committee's
+second rankings (Tuesday 2026-11-10, ~9pm ET). Set by the editor: *"Could it
+happen to Miami after we pound the living daylights out of them?"*
 
-> Planning brief, NOT finished copy. The Sunday Edition is built FRESH Sunday
-> morning. Every number below is a Saturday-morning snapshot taken BEFORE week 9
-> was played; re-read the pool's overall standings Sunday morning (weeks 1-9) and
-> recompute. **The repository is public: no names of pool members, no ranking of
-> the family** (see the learn-not-keep-score rule). Aggregates only, plus our own
-> entry, which is ours to grade.
+> Planning brief, NOT finished copy. The Sunday Edition is built fresh. Every
+> number below is a Friday snapshot taken BEFORE the game; re-pull the score,
+> the Nov 10 rankings (CFBD `/rankings`, poll "Playoff Committee Rankings") and
+> Toney's status, and grade the calls below against them. The calls are written
+> down now so the grade cannot be shaded afterwards; this file's commit time is
+> the record.
+
+The previous brief (coin-flip pool) ran in Sunday Edition No. 030; it is in git
+history.
+
+## The question
+
+**When a team loses its star, does the playoff committee punish it — and does
+it discount the team that beats it?** The test case: Miami without Malachi
+Toney, against the 2023 precedent of Florida State without Jordan Travis.
+
+## What we know, Friday 2026-11-06
+
+- **Toney:** high ankle sprain at practice Wed 11-04; surgery reported by ESPN
+  (Pete Thamel's sources), CBS (Matt Zenitz) and Yahoo (Ross Dellenger). Reported
+  timeline 4–6 weeks, aimed at the playoff (first round Dec 18–19). Miami has said
+  only that he is being evaluated. No ACC availability report found (ND is not an
+  ACC member).
+- **Line:** DraftKings ND −7.5, −278/+225, about **70%** vig-free (Wednesday
+  night −7, −258/+210, 69%). Total 54.5, from 55.5. Our SP+ model: ND **57%** —
+  it does not know about the injury.
+- **Committee, Nov 3:** 1 Miami (8–0), 2 Georgia, 3 Utah, 4 Indiana … 11 Notre
+  Dame (7–1, last in), 12 Ohio State (first out). Chair Hunter Yurachek: Notre
+  Dame lacks "that signature win."
+- **Format:** 12 teams; 4 power-conference champions + top Group of Six champion
+  get automatic bids; Notre Dame is in if it finishes in the top 12; the top four
+  in the rankings get byes regardless of conference title.
+- **Precedent:** 2023, 4-team field. FSU 13–0 and ACC champion, ranked 5th in
+  the final rankings after Travis broke his leg. Chair Boo Corrigan: "a
+  different team." The committee's letter to Sen. Rick Scott cited the protocol's
+  "unavailability of key players" clause, which looks at *postseason* performance.
+
+## The calls (graded Nov 15)
+
+The two probabilities come from models; the rest are leans with **no model
+behind them**, and the edition must say so.
+
+1. **ND wins:** 70% (market) / 57% (our SP+).
+2. **ND wins by 20 or more:** 22% (market spread, sd 16.5) / 15% (SP+).
+3. **Lean:** if ND wins, ND moves up from 11th on Nov 10 — the win counts, it is
+   not discounted for Toney's absence. The injury clause is about a team's *own*
+   availability, not its opponent's.
+4. **Lean:** Miami stays in the top 12 whatever happens Saturday. It cannot be
+   left out the way FSU was: the field is three times larger and an ACC title is
+   an automatic bid.
+5. **Lean:** the FSU logic, if it bites at all, bites on the **bye**, not the
+   bid. A clear Miami loss without Toney is direct evidence of a "different
+   team," which FSU's committee never had; FSU still fell from 4th to 5th.
+   Toney's playoff-timed return cuts the other way.
 
 ## Where it goes
 
-Block 3 of the football-season shape, **the improbability lesson**. It is the
-reason the edition exists on a week with little to grade.
+Block 3 of the football-season shape, the improbability lesson, or its own
+section if the rankings move hard. Stat-card candidates: ND's rank Nov 3 → Nov
+10; Miami's rank Nov 3 → Nov 10; the line's half-point for a 1,000-yard receiver.
 
-## The finding (snapshot through week 8)
+## What to take home (draft idea)
 
-- The family confidence pool: 15 college games a week against the spread,
-  confidence points 15 down to 1. A perfect week scores **120**.
-- **A coin scores 60 on average** (each pick wins half the time; half of 120).
-  Its weekly spread is wide: standard deviation **about 18 points**
-  (sqrt of 0.25 x (1^2 + ... + 15^2) = sqrt 310). So a coin's ordinary weeks
-  run from about 25 to 95.
-- **The whole pool, every entry in every week anyone played: 3,667 points over
-  61 entries = 60.1 a week.** Exactly a coin. Recompute with week 9.
-- Highest and lowest single weeks so far (94 and 17) both sit inside a coin's
-  ordinary range.
-- Over eight weeks a coin's total has a standard deviation of about 50 points,
-  so the leaders' 511 against a coin's 480 is well inside luck.
+A star's injury changes three numbers, and they are not the same size: the
+line (half a point), the team's ranking, and the opponent's credit for the win.
+Watch each one separately.
 
-**The lesson:** a short leaderboard measures attendance and luck before it
-measures skill. Against the spread a real forecaster beats 50% by a few points,
-worth two or three pool points a week, smaller than one ordinary Saturday swing.
+## Traps
 
-**Honest caveat to print:** entries are not independent (everyone picks the same
-games, and the lines are the same), so the 60.1 has a wider range than the
-naive 61-entry figure (+/- 4.5) suggests. Say so.
-
-## THE_MISS candidate: our own attendance
-
-The Sports Page's own entry is 9th of 10 on total points (251), and **63 a week
-in the four weeks it actually played**, as good as the leaders' rate. It is low
-because it **scored zero in weeks 1, 2, 4 and 8**: week 4's picks were sealed
-but never entered, week 8 was never built. That is a real miss and a dull one;
-say it plainly, in one line. Week 9 was built and sealed (`seal.py --list`,
-digest committed 608dfdf) and entered.
-
-## Week 9 to grade
-
-`python3 scripts/seal.py --reveal --week 9` after it unlocks, then grade the
-sheet against Saturday's results. Biggest edge: Kansas State -2.5 at Colorado
-(15 points). Baylor at UCF was final before the sheet existed and is ungraded.
+- No poll or ranking cited before its release: Nov 10, ~9pm ET.
+- Every score through `check_scores.py`.
+- Do not quote the committee protocol from a web summary; find the CFP's own
+  text or quote it as reported (Hancock's letter, via Rivals).
+- No family team-allegiance name-dropping.
