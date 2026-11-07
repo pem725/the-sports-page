@@ -599,8 +599,9 @@ stays public by design and is linked from the board, not locked by it.
 
 Added 2026-10-15 on the editor's ask to make the Odds Board "more permanent and
 available" without adding clutter. `assets/sitenav.js` injects one slim bar
-under the masthead — **Home · Odds Board · Pool Desk · Ask The Sports Page ·
-About · Subscribe** — pinned to the top as the reader scrolls. **Subscribe is a
+under the masthead — **Home · What to Watch · Odds Board · Pool Desk · Ask The
+Sports Page · Subscribe** (About moved to the homepage footer on 2026-11-07 to make
+room for the Game Watch Guide) — pinned to the top as the reader scrolls. **Subscribe is a
 toggle, not a link:** it drops the Buttondown form and the scan-to-subscribe code
 down from the bar on whatever page the reader is on, and a URL ending `#subscribe`
 opens it on load. It is the paper's only sign-up form. It brings its own CSS (copied markup
@@ -617,6 +618,30 @@ returns to earns a button, and six is the ceiling — past that, cut something.
 
 The homepage archive also keeps loading as the reader scrolls (the "Show more"
 button stays as the fallback), using the same sport chips to sort.
+
+### `watch.html` — the Game Watch Guide
+
+Added 2026-11-07 on the editor's ask (*"what to watch and when is it, what's the
+line ... organize it according to implications ... sortable"*). Every game this
+weekend with kickoff, channel, line and one line on why it matters; Saturday is
+college, Sunday the NFL.
+
+**It is live, not built.** The page fetches ESPN's scoreboard in the reader's
+browser (the feed sends `Access-Control-Allow-Origin: *`), so lines, kickoffs and
+scores are current every time it opens and refresh each minute. Nothing in the
+4:30am run touches it, and it cannot go stale.
+
+**Stakes = closeness to a coin flip x how much the two teams matter.** Closeness
+from the vig-free moneyline (spread through a normal, sd 16.5 college / 13.5 NFL,
+when there is no moneyline). College weight from the ranking ESPN carries, which
+is the CFP ranking once the committee publishes: top 4 1.0, 5-12 0.9, 13-16 0.75,
+17-25 0.5, unranked 0.15. NFL weight is `4·p·(1−p)` of the club's playoff chance
+on the Odds Board (`data/nfl-odds.json`). The weights are judgment, stated on the
+page; tune them in `cfbWeight()` / `nflWeight()`.
+
+**Notes.** `data/watch-notes.json`, keyed by ESPN event id, holds hand-written
+lines; every fact in one must trace to a named source. Games without a note get a
+generated sentence from the line and the rankings.
 
 ### `engine.html` — the guts, opened up
 

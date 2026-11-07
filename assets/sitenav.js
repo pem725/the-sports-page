@@ -20,10 +20,12 @@
   var items = [
     /* label, short label for phones, path, matches-current-page */
     ['Home',        'Home',  '',           /^\/?(index\.html)?$/],
+    ['What to Watch', 'Watch', 'watch.html', /watch\.html$/],
     ['Odds Board',  'Odds',  'odds.html',  /odds\.html$/],
     ['Pool Desk',   'Pool',  'pool/',      /\/pool\/?(index\.html)?$/],
-    ['Ask The Sports Page', 'Ask', 'ask.html', /ask\.html$/],
-    ['About',       'About', 'about.html', /about\.html$/]
+    ['Ask The Sports Page', 'Ask', 'ask.html', /ask\.html$/]
+    /* About left the bar 2026-11-07 to make room for the Game Watch Guide
+       (editor's call); it is linked from the homepage footer instead. */
   ];
   var path = location.pathname.replace(/^\/the-sports-page/, '');
 
