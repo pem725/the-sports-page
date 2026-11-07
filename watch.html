@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; The Game Watch Guide</title>
+<meta name="description" content="Every game this weekend, ranked by what rides on it: kickoff, channel, the line, and one line on why it matters. Sortable, and live.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;
+--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;
+font-size:16px;line-height:1.7;padding:1.5rem 1rem 3rem}
+.masthead{max-width:860px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;
+letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.title a{color:inherit;text-decoration:none}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;
+color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);
+padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:860px;margin:.8rem auto 0;background:var(--cream);padding:2rem 2.2rem 2.4rem;
+box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.2rem 1rem}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.deck{font-style:italic;font-size:1rem;color:var(--muted);border-left:3px solid var(--rust);
+padding-left:.9rem;margin:.6rem 0 1.2rem;line-height:1.5}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:0 0 .7rem}
+.tabs button,.sorts button,.sorts label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.12em;
+text-transform:uppercase;font-weight:600;padding:.42rem .8rem;border:1px solid var(--div);background:var(--card);
+color:var(--muted);cursor:pointer}
+.tabs button[aria-pressed="true"],.sorts button[aria-pressed="true"]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.sorts{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;border-bottom:3px double var(--ink);padding-bottom:.6rem;margin-bottom:1rem}
+.sorts .lbl{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:.2rem}
+.sorts label{display:inline-flex;gap:.35rem;align-items:center;margin-left:auto}
+.game{border:1px solid var(--div);background:var(--card);padding:.75rem .9rem .7rem;margin:0 0 .7rem;
+display:grid;grid-template-columns:3.6rem 1fr;gap:.2rem .9rem}
+.game.live{border-color:var(--rust)}
+.game.done{opacity:.78}
+.stk{grid-row:1/span 3;text-align:center;border-right:1px solid var(--div);padding-right:.6rem}
+.stk b{display:block;font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;line-height:1}
+.stk span{font-family:'Roboto Mono',monospace;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.meta{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;font-family:'Roboto Mono',monospace;
+font-size:.66rem;letter-spacing:.05em;color:var(--muted)}
+.meta .st{color:var(--rust);font-weight:600}
+.match{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:700;line-height:1.25}
+.match .rk{font-size:.8rem;color:var(--muted);font-weight:400}
+.match .rec{font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);font-weight:400}
+.match .sc{font-family:'Roboto Mono',monospace;font-weight:600;color:var(--rust)}
+.why{font-size:.86rem;line-height:1.55}
+.why .by{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;gap:.3rem;flex-wrap:wrap;margin:.15rem 0}
+.chip{font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;
+border:1px solid var(--steel);color:var(--steel);padding:.05rem .4rem}
+.chip.hot{border-color:var(--rust);color:var(--rust)}
+.bar{height:5px;background:var(--div);margin-top:.35rem}
+.bar i{display:block;height:100%;background:var(--steel)}
+.note{font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted);margin:.4rem 0 1rem}
+.how{border-top:1px solid var(--div);margin-top:1.6rem;padding-top:1rem;font-size:.86rem;line-height:1.6}
+.how h2{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:.4rem}
+.how p{margin-bottom:.6rem}
+a{color:var(--steel)}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;
+flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+@media(max-width:520px){.game{grid-template-columns:2.9rem 1fr;padding:.6rem .6rem}.stk b{font-size:1.35rem}
+.sorts label{margin-left:0}}
+</style>
+<script src="assets/sitenav.js" defer></script>
+</head>
+<body>
+<div class="masthead">
+  <div class="kicker">Statistics &middot; Explained &middot; Plainly</div>
+  <div class="title"><a href="https://thesportspage.net/"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="datebar"><span>The Game Watch Guide</span><span id="asof">loading&hellip;</span></div>
+</div>
+<div class="paper">
+  <h1>What to Watch, and When</h1>
+  <p class="deck">Every game on the card, ranked by what rides on it. The biggest game is rarely the one with the
+  most famous teams. It is the one that could go either way between teams whose seasons hang on it.</p>
+
+  <div class="tabs" id="days"></div>
+  <div class="sorts">
+    <span class="lbl">Sort</span>
+    <button data-sort="stakes" aria-pressed="true">Stakes</button>
+    <button data-sort="time" aria-pressed="false">Kickoff</button>
+    <button data-sort="close" aria-pressed="false">Closest</button>
+    <button data-sort="total" aria-pressed="false">Points</button>
+    <label><input type="checkbox" id="all"> every game</label>
+  </div>
+  <p class="note" id="status">Fetching the card&hellip;</p>
+  <div id="list"></div>
+
+  <div class="how">
+    <h2>How the stakes number works</h2>
+    <p><b>Stakes = how close the game is to a coin flip &times; how much the two teams matter.</b> 100 would be a
+    true toss-up between two teams whose seasons both hinge on it.</p>
+    <p><b>Closeness</b> comes from the betting market: the moneyline with the bookmaker's cut removed, or the spread
+    when there is no moneyline. A 50/50 game scores 1; a 90/10 game scores 0.2.</p>
+    <p><b>How much a team matters.</b> College: its current ranking, which after the committee's first release is the
+    playoff ranking. The top four (byes) count most, then the rest of the top 12, then the teams just outside it.
+    Twelve teams make the field, but conference champions get automatic bids, so "top 12" is a guide, not the field
+    itself. Pro: a team counts most when its playoff chance on our <a href="https://thesportspage.net/odds.html" target="_blank" rel="noopener">Odds Board</a>
+    is near 50%, and almost nothing when it is near 0% or 100%. A win cannot change much for a team that is already in, or already out.</p>
+    <p><b>What it does not know:</b> injuries the line has not priced, rivalries, or how good the television will be.
+    The line and the kickoff come live from ESPN's feed each time you open this page. The short notes under each game are
+    written by the paper where we have something to say, and generated from the rankings and the line where we do not.</p>
+  </div>
+
+  <div class="footer">
+    <span><a href="https://thesportspage.net/" style="color:inherit">The Sports Page</a> &middot; one question per issue, answered with numbers</span>
+    <span>See also the <a href="https://thesportspage.net/odds.html" style="color:inherit" target="_blank" rel="noopener">Odds Board</a></span>
+  </div>
+</div>
+
+<script>
+(function(){
+var TZ = 'America/New_York';
+var LEAGUE = {
+  cfb: {name:'College football', sd:16.5,
+        url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=80&limit=300&dates='+d;}},
+  nfl: {name:'NFL', sd:13.5,
+        url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates='+d;}}
+};
+var notes = {}, nflOdds = {}, games = [], sortKey = 'stakes', day = null;
+
+function ymd(dt){ return new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(dt).replace(/-/g,''); }
+function dowET(dt){ return new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(dt); }
+function kick(iso){ return new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',hour:'numeric',minute:'2-digit'}).format(new Date(iso)); }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+// Normal CDF (Abramowitz-Stegun 7.1.26), enough precision for a win probability.
+function phi(x){ var t=1/(1+0.3275911*Math.abs(x)/Math.SQRT2),
+  y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x/2);
+  return x>=0?(1+y)/2:(1-y)/2; }
+function implied(ml){ ml=parseFloat(ml); if(!isFinite(ml)) return null; return ml<0 ? -ml/(-ml+100) : 100/(ml+100); }
+
+// The weekend: Saturday is college, Sunday is the NFL.
+function weekend(){
+  var now = new Date(), d = dowET(now), off = {Sun:-1,Mon:5,Tue:4,Wed:3,Thu:2,Fri:1,Sat:0}[d];
+  var sat = new Date(now.getTime()+off*864e5), sun = new Date(sat.getTime()+864e5);
+  return [{key:'sat', label:'Saturday · college', date:ymd(sat), league:'cfb'},
+          {key:'sun', label:'Sunday · NFL', date:ymd(sun), league:'nfl'}];
+}
+
+// How much a team matters, 0 to 1. See "How the stakes number works".
+function cfbWeight(rank){
+  if(!rank || rank>25) return 0.15;
+  if(rank<=4) return 1.0;
+  if(rank<=12) return 0.9;
+  if(rank<=16) return 0.75;
+  return 0.5;
+}
+function nflWeight(name){
+  var po = nflOdds[name]; if(po==null) return 0.3;
+  return Math.max(0.1, 4*po*(1-po));
+}
+
+function parse(ev, lg){
+  var c = ev.competitions[0], h=null, a=null;
+  c.competitors.forEach(function(t){ if(t.homeAway==='home') h=t; else a=t; });
+  function side(t){ var r = t.curatedRank && t.curatedRank.current; return {
+    name: t.team.shortDisplayName || t.team.location, nick: t.team.name, id: t.team.id,
+    rank: (r && r<=25) ? r : null, rec: (t.records&&t.records[0]&&t.records[0].summary)||'',
+    score: t.score }; }
+  var H = side(h), A = side(a), o = (c.odds||[])[0] || {}, pH = null, line = o.details || '', total = o.overUnder || null;
+  var ml = o.moneyline || {};
+  var mh = ml.home && (ml.home.close||ml.home.open), ma = ml.away && (ml.away.close||ml.away.open);
+  var ih = mh && implied(mh.odds), ia = ma && implied(ma.odds);
+  if(ih && ia) pH = ih/(ih+ia);
+  else if(typeof o.spread === 'number') pH = phi(-o.spread/LEAGUE[lg].sd);
+  var wH = lg==='cfb' ? cfbWeight(H.rank) : nflWeight(H.nick),
+      wA = lg==='cfb' ? cfbWeight(A.rank) : nflWeight(A.nick);
+  var close = pH==null ? 0.5 : 1-Math.abs(2*pH-1);
+  var tv = ((c.broadcasts||[])[0]||{}).names; tv = tv ? tv.join(', ') : '';
+  var st = c.status.type;
+  return {id:ev.id, when:c.date, home:H, away:A, neutral:c.neutralSite, pH:pH, line:line, total:total,
+    close:close, stakes:Math.round(100*close*(wH+wA)/2), tv:tv, state:st.state, detail:st.shortDetail,
+    ranked: !!(H.rank||A.rank), lg:lg};
+}
+
+function chips(g){
+  var out = [], r = [g.home.rank, g.away.rank].filter(Boolean);
+  if(g.lg==='cfb'){
+    if(r.some(function(x){return x<=4;}) && g.close>0.5) out.push(['A bye on the line','hot']);
+    if(r.length===2 && r.every(function(x){return x<=12;})) out.push(['Both in the top 12','']);
+    if(r.some(function(x){return x>=10 && x<=14;})) out.push(['Cut-line team','hot']);
+  } else {
+    [g.home,g.away].forEach(function(t){ var po=nflOdds[t.nick]; if(po!=null && po>0.2 && po<0.8) out.push([t.nick+' on the bubble','hot']); });
+  }
+  if(g.close>=0.8) out.push(['Coin flip','']);
+  return out;
+}
+
+function autoWhy(g){
+  if(g.pH==null) return 'No line posted yet.';
+  var favH = g.pH>=0.5, fav = favH?g.home:g.away, dog = favH?g.away:g.home, p = Math.min(99, Math.round(100*(favH?g.pH:1-g.pH)));
+  var s = 'The betting market makes '+(g.lg==='nfl'?'the '+fav.nick:fav.name)+' '+(p>=99?'a near-certain winner':p+'% to win')+', once the bookmaker&rsquo;s cut is removed. ';
+  if(g.lg==='nfl'){
+    [g.home,g.away].forEach(function(t){ var po=nflOdds[t.nick];
+      if(po!=null && po>0.1 && po<0.9) s += 'The '+t.nick+' are '+Math.round(100*po)+'% to make the playoffs on our Odds Board. '; });
+    return s;
+  }
+  if(fav.rank && !dog.rank && p<65) s += 'Upset watch: an unranked side with a real chance against No. '+fav.rank+'.';
+  else if(dog.rank && fav.rank && dog.rank<fav.rank) s += 'The market favors the lower-ranked team.';
+  else if(fav.rank && dog.rank) s += 'Two ranked teams; the loser falls.';
+  return s;
+}
+
+function card(g){
+  var n = notes[g.id], live = g.state==='in', done = g.state==='post';
+  function team(t){ return (t.rank?'<span class="rk">'+t.rank+' </span>':'')+esc(t.name)+
+    ' <span class="rec">'+esc(t.rec)+'</span>'+((live||done)?' <span class="sc">'+esc(t.score)+'</span>':''); }
+  var ch = chips(g).map(function(c){return '<span class="chip '+c[1]+'">'+c[0]+'</span>';}).join('');
+  var why = n ? esc(n.note)+' <span class="by">&mdash; '+esc(n.by||'The Sports Page')+'</span>' : autoWhy(g);
+  return '<div class="game'+(live?' live':'')+(done?' done':'')+'">'+
+    '<div class="stk"><b>'+g.stakes+'</b><span>stakes</span><div class="bar"><i style="width:'+g.stakes+'%"></i></div></div>'+
+    '<div class="meta"><span>'+(live||done?'<span class="st">'+esc(g.detail)+'</span>':esc(kick(g.when)))+(g.tv?' &middot; '+esc(g.tv):'')+'</span>'+
+    '<span>'+esc(g.line||'no line')+(g.total?' &middot; O/U '+g.total:'')+'</span></div>'+
+    '<div class="match">'+team(g.away)+' <span class="rk">'+(g.neutral?'vs':'at')+'</span> '+team(g.home)+'</div>'+
+    '<div>'+(ch?'<div class="chips">'+ch+'</div>':'')+'<div class="why">'+why+'</div></div></div>';
+}
+
+function render(){
+  var all = document.getElementById('all').checked;
+  var list = games.filter(function(g){ return all || g.lg!=='cfb' || g.ranked; });
+  var by = {stakes:function(a,b){return b.stakes-a.stakes;}, time:function(a,b){return a.when<b.when?-1:1;},
+            close:function(a,b){return b.close-a.close;}, total:function(a,b){return (b.total||0)-(a.total||0);}}[sortKey];
+  list.sort(by);
+  document.getElementById('list').innerHTML = list.map(card).join('') ||
+    '<p class="note">No games on this card'+(all?'':' involving a ranked team &mdash; tick &ldquo;every game&rdquo;')+'.</p>';
+  var hidden = games.length-list.length;
+  document.getElementById('status').innerHTML = list.length+' games'+(hidden?' with a ranked team ('+hidden+' more under &ldquo;every game&rdquo;)':'')+
+    '. Lines and scores live from ESPN; refreshed '+new Date().toLocaleTimeString('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'})+' ET.';
+}
+
+function load(){
+  var lg = day.league;
+  return fetch(LEAGUE[lg].url(day.date)).then(function(r){return r.json();}).then(function(d){
+    games = (d.events||[]).map(function(e){ try{return parse(e,lg);}catch(err){return null;} }).filter(Boolean);
+    render();
+  }).catch(function(){ document.getElementById('status').textContent = 'ESPN’s feed did not answer. Try again in a minute.'; });
+}
+
+function pick(d){
+  day = d;
+  document.querySelectorAll('#days button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.key===d.key); });
+  document.getElementById('all').checked = false;
+  load();
+}
+
+var days = weekend();
+document.getElementById('days').innerHTML = days.map(function(d){
+  return '<button data-key="'+d.key+'" aria-pressed="false">'+d.label+'</button>'; }).join('');
+document.querySelectorAll('#days button').forEach(function(b,i){ b.onclick = function(){ pick(days[i]); }; });
+document.querySelectorAll('.sorts button').forEach(function(b){ b.onclick = function(){
+  sortKey = b.dataset.sort;
+  document.querySelectorAll('.sorts button').forEach(function(x){ x.setAttribute('aria-pressed', x===b); });
+  render(); }; });
+document.getElementById('all').onchange = render;
+document.getElementById('asof').textContent = new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long',month:'long',day:'numeric'}).format(new Date());
+
+Promise.all([
+  fetch('data/watch-notes.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
+  fetch('data/nfl-odds.json').then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})
+]).then(function(x){
+  notes = x[0].games || {};
+  (x[1].teams||[]).forEach(function(t){ nflOdds[t.name] = t.po; });
+  pick(dowET(new Date())==='Sun' ? days[1] : days[0]);
+  setInterval(load, 60000);
+});
+})();
+</script>
+</body>
+</html>
