@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 279 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 278 issues remaining of 500
 
 ## Repository Structure
 
@@ -1291,9 +1291,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 221 issues (#1-221)
-Queue: 12 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 193-lockout, 194-owner-succession, 195-never-won-world-series, 196-coaching-dna, 197-staff-drain, 198-simmons-counterfactual, 199-pitching-change-runs, 200-settled-on-the-field, 201-mlb-worries, _TEMPLATE)
+Published: 222 issues (#1-222)
+Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 193-lockout, 194-owner-succession, 195-never-won-world-series, 196-coaching-dna, 197-staff-drain, 198-simmons-counterfactual, 199-pitching-change-runs, 201-mlb-worries, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 279 issues remaining of 500
-Last published: Issue #221 — "Nine Traded Stars in Ten Fall Short. Four Trades in Five Do Not." (192-blockbuster-trades.html) on November 6, 2026
+Goal: 278 issues remaining of 500
+Last published: Issue #222 — "Two of Every Three Top-25 Pairs Have Nothing in Common" (200-settled-on-the-field.html) on November 7, 2026
