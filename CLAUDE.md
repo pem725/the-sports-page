@@ -1316,9 +1316,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 222 issues (#1-222)
+Published: 223 issues (#1-223)
 Queue: 11 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 193-lockout, 194-owner-succession, 195-never-won-world-series, 196-coaching-dna, 197-staff-drain, 198-simmons-counterfactual, 199-pitching-change-runs, 201-mlb-worries, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 278 issues remaining of 500
-Last published: Issue #222 — "Two of Every Three Top-25 Pairs Have Nothing in Common" (200-settled-on-the-field.html) on November 7, 2026
+Goal: 277 issues remaining of 500
+Last published: Issue #223 — "Notre Dame Toppled No. 1. We Got the Receiver Wrong." (sunday-031.html) on November 8, 2026
