@@ -202,7 +202,21 @@ def day_report(team, day, n):
         return g["home_won"] if g["done"] and g["date"] <= day else None
 
     H, inf, bye, _ = S.simulate(before, n)
-    _, inf2, bye2, _ = S.simulate(after, n, seed=11)
+    _, inf2, bye2, rank2 = S.simulate(after, n, seed=11)
+    board = []
+    for t in S.fbs:
+        k = S.idx[t]
+        board.append({"team": t, "no1": (rank2[:, k] == 0).mean(), "bye": bye2[:, k].mean(),
+                      "in": inf2[:, k].mean(), "med_rank": float(np.median(rank2[:, k])) + 1})
+    board = sorted(board, key=lambda b: -b["in"])[:20]
+    # the stand-in's ranking today: results through the day, nothing simulated
+    played = [g for g in S.games if g["done"] and g["date"] <= day]
+    w = {t: 0 for t in S.fbs}; e = {t: 0.0 for t in S.fbs}
+    for g in played:
+        for t, o, home, won in ((g["home"], g["away"], True, g["home_won"]), (g["away"], g["home"], False, not g["home_won"])):
+            if t in w:
+                w[t] += won; e[t] += S.ref_p(o, home, g["neutral"])
+    now = sorted(S.fbs, key=lambda t: -(w[t] - e[t] + SP_CREDIT * S.spof(t)))[:25]
     pre_in, pre_bye = inf[:, ti].mean(), bye[:, ti].mean()
     post_in, post_bye = inf2[:, ti].mean(), bye2[:, ti].mean()
 
@@ -229,7 +243,7 @@ def day_report(team, day, n):
     rows.sort(key=lambda r: -(abs(r["got_in"]) + abs(r["got_bye"])))
     return {"team": team, "day": day, "week": wk, "n": n,
             "pre": {"in": pre_in, "bye": pre_bye}, "post": {"in": post_in, "bye": post_bye},
-            "games": rows, "unrated": S.missing}
+            "games": rows, "unrated": S.missing, "board": board, "now": now}
 
 
 def check_week(week, year=2026):
@@ -285,6 +299,10 @@ def main():
         print(f"    {100*g['got_in']:+5.1f} / {100*g['got_bye']:+5.1f}  {g['game']} ({pct(g['p_actual'])} pregame){tag}")
     if hidden:
         print(f"  ({hidden} more games moved it by less than the simulation can tell from zero)")
+    print("  Final ranking, after the day (No. 1 / bye / bid / median final rank):")
+    for b in r["board"]:
+        print(f"    {b['team']:16} {pct(b['no1']):>4} {pct(b['bye']):>4} {pct(b['in']):>4}   {b['med_rank']:.0f}")
+    print("  Stand-in ranking now, nothing simulated:", ", ".join(f"{i+1} {t}" for i, t in enumerate(r["now"])))
     if r["unrated"]:
         print(f"  ({len(r['unrated'])} FBS teams had no frozen SP+ and were rated as FCS)")
 

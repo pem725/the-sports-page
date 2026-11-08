@@ -60,6 +60,25 @@ behind them**, and the edition must say so.
    team," which FSU's committee never had; FSU still fell from 4th to 5th.
    Toney's playoff-timed return cuts the other way.
 
+## Calls added Sun 2026-11-08, before the Nov 10 ranking
+
+Result: Notre Dame 31, Miami 24. Call 1 hit; call 2 (by 20+) missed.
+
+**The editor's calls for Tuesday's ranking (no model, his read):**
+1 Georgia, 2 Utah, 3 Alabama, Notre Dame 5 (maybe 6 or 7: "they'll keep them on
+the cusp"). Iowa from 19 to about 11. Ohio State and Oregon "done" at 6-3. UCLA
+rising. No. 4 not called.
+
+**The stand-in's ranking** (`scripts/cfp_sim.py`, strength of record on week 10
+SP+, results through Nov 7, nothing simulated): 1 Alabama, 2 Utah, 3 Indiana,
+4 Georgia, 5 Texas, 6 UCLA, 7 Notre Dame, 8 Miami, 9 Kentucky, 10 Texas Tech,
+11 Oregon, 12 BYU ... 16 Iowa, 18 Ohio State. It ignores head-to-head and
+margin, and the editor's case for Georgia at No. 1 rests on the margin.
+
+**The simulation, before and after Saturday, for Notre Dame:** bid 84% -> 96%,
+bye 20% -> 43%, final No. 1 under 1%. The Miami win gave +12 bid / +15 bye;
+Oregon over Ohio State +6 bye; nothing else measurable.
+
 ## Where it goes
 
 Block 3 of the football-season shape, the improbability lesson, or its own
