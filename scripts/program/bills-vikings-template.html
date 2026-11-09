@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Game Program: Bills at Vikings</title>
+<meta name="description" content="The game program for Monday night, Nov 9, 2026: the NFL's No. 1 scoring offense at its No. 1 scoring defense. Keys, player cards, Bayesian panels and a live win-probability calculator.">
+<link rel="icon" href="../assets/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--buf:#00338d;--min:#4f2683;--rule:#cfc5ad}
+*{box-sizing:border-box}
+body{margin:0;background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.6}
+.paper{max-width:980px;margin:0 auto;background:var(--cream);padding:28px 32px 40px;box-shadow:0 0 0 1px var(--rule)}
+a{color:var(--steel)}
+.mono{font-family:'Roboto Mono',monospace}
+.cover{border:3px double var(--ink);padding:22px 18px;text-align:center;position:relative}
+.cover .kick{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cover h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(34px,6vw,58px);line-height:1.02;margin:10px 0 6px}
+.cover h1 .at{font-style:italic;font-weight:400;font-size:.6em;color:var(--muted)}
+.cover .buf{color:var(--buf)} .cover .min{color:var(--min)}
+.cover .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;margin:4px 0 14px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:14px}
+.facts div{padding:8px 6px;border-right:1px solid var(--rule)} .facts div:last-child{border-right:0}
+.facts b{display:block;font-family:'Roboto Mono',monospace;font-size:19px}
+.facts span{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price{font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted);margin-top:8px}
+h2{font-family:'Playfair Display',serif;font-weight:900;font-size:30px;margin:40px 0 4px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+h2 small{font-family:'Roboto Mono',monospace;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);display:block}
+h3{font-family:'Playfair Display',serif;font-size:21px;margin:18px 0 4px}
+.contract{background:#fff8ea;border-left:4px solid var(--gold);padding:12px 16px;margin:20px 0}
+.contract p{margin:6px 0}
+.alert{background:var(--rust);color:#fff;padding:12px 16px;margin:18px 0;font-size:15px}
+.alert b{font-family:'Roboto Mono',monospace;letter-spacing:.06em}
+.keys{counter-reset:k}
+.key{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.key .num{font-family:'Roboto Mono',monospace;font-size:34px;font-weight:600;line-height:1;color:var(--rust)}
+.key .num small{display:block;font-size:11px;font-weight:400;color:var(--muted);letter-spacing:.05em;margin-top:6px;line-height:1.35}
+.key h3{margin-top:0}
+.watch{font-family:'Roboto Mono',monospace;font-size:13px;background:var(--ink);color:var(--cream);padding:7px 10px;margin-top:8px}
+.watch b{color:var(--gold)}
+.tracker{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;font-family:'Roboto Mono',monospace;font-size:12px}
+.tracker button{font:inherit;border:1px solid var(--ink);background:transparent;padding:4px 10px;cursor:pointer}
+.tracker button.on.b{background:var(--buf);color:#fff;border-color:var(--buf)}
+.tracker button.on.m{background:var(--min);color:#fff;border-color:var(--min)}
+.tracker button.on.x{background:var(--muted);color:#fff}
+.huh{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:12px}
+.huh div{border:1px solid var(--ink);padding:12px;background:#fffdf7}
+.huh b{font-family:'Roboto Mono',monospace;font-size:28px;display:block;color:var(--steel);line-height:1.1}
+.huh p{margin:6px 0 0;font-size:14px}
+table{border-collapse:collapse;width:100%;font-family:'Roboto Mono',monospace;font-size:12.5px}
+th,td{padding:5px 6px;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{cursor:pointer;user-select:none;background:var(--ink);color:var(--cream);font-weight:400;position:sticky;top:0}
+th.sorted::after{content:' \25BE'} th.sorted.asc::after{content:' \25B4'}
+tr.hl-BUF td{background:#dfe6f5;font-weight:600} tr.hl-MIN td{background:#e7dff0;font-weight:600}
+.tablewrap{max-height:420px;overflow:auto;border:1px solid var(--ink);margin-top:10px}
+.scroll-x{overflow-x:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:12px}
+.card{perspective:1000px;height:360px;cursor:pointer}
+.card .in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.card.flip .in{transform:rotateY(180deg)}
+.card .f,.card .b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid var(--ink);padding:12px;background:#fffdf7;display:flex;flex-direction:column}
+.card .b{transform:rotateY(180deg)}
+.card .band{margin:-12px -12px 10px;padding:8px 12px;color:#fff;font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between}
+.card.BUF .band{background:var(--buf)} .card.MIN .band{background:var(--min)}
+.card .nm{font-family:'Playfair Display',serif;font-weight:900;font-size:24px;line-height:1.05}
+.card .line{font-family:'Roboto Mono',monospace;font-size:12px;margin:8px 0;color:var(--muted)}
+.card .big{font-family:'Roboto Mono',monospace;font-size:30px;font-weight:600;margin-top:auto}
+.card .big small{display:block;font-size:11px;font-weight:400;color:var(--muted)}
+.card .cw{font-size:13px;line-height:1.45;margin-top:6px}
+.card .hint{font-family:'Roboto Mono',monospace;font-size:10px;color:var(--muted);text-align:right;margin-top:6px}
+.card .b .t{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card .split{font-size:12.5px;line-height:1.45;margin-top:auto}
+.lab{border:2px solid var(--steel);padding:16px;margin-top:16px;background:#f7f9fc}
+.lab h3{margin-top:0;color:var(--steel)}
+.ctl{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-family:'Roboto Mono',monospace;font-size:12.5px;margin:8px 0}
+.ctl input[type=range]{width:180px}
+.ctl input[type=number]{width:62px;font:inherit;padding:3px}
+.ctl select{font:inherit}
+.readout{font-family:'Roboto Mono',monospace;font-size:14px;background:var(--steel);color:#fff;padding:8px 12px;margin-top:8px}
+.readout b{color:var(--gold);font-size:18px}
+svg text{font-family:'Roboto Mono',monospace}
+.note{font-size:13px;color:var(--muted)}
+.score{display:grid;grid-template-columns:120px repeat(5,1fr);border:2px solid var(--ink);margin-top:10px;font-family:'Roboto Mono',monospace}
+.score div{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:6px;text-align:center}
+.score .h{background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.1em}
+.score input{width:100%;font:inherit;font-size:18px;text-align:center;border:0;background:transparent}
+.foot{margin-top:40px;border-top:3px double var(--ink);padding-top:10px;font-size:13px;color:var(--muted)}
+.foot p{margin:6px 0}
+@media (max-width:640px){.paper{padding:16px}.facts{grid-template-columns:repeat(2,1fr)}.facts div:nth-child(2){border-right:0}.key{grid-template-columns:1fr}.score{grid-template-columns:90px repeat(5,1fr)}.ctl input[type=range]{width:140px}}
+</style>
+</head>
+<body>
+<div class="paper">
+
+<div class="cover">
+  <div class="kick">The Sports Page &middot; Official Game Program &middot; Monday Night</div>
+  <h1><span class="buf">Bills</span> <span class="at">at</span> <span class="min">Vikings</span></h1>
+  <div class="sub">The league&rsquo;s No.&nbsp;1 scoring offense walks into its No.&nbsp;1 scoring defense.</div>
+  <div class="facts">
+    <div><b>8:15 ET</b><span>ESPN &middot; Mon Nov 9, 2026</span></div>
+    <div><b>6&ndash;1 &middot; 6&ndash;1</b><span>Buffalo &middot; Minnesota</span></div>
+    <div><b>33 &middot; 13</b><span>Bills score &middot; Vikings allow, per game</span></div>
+    <div><b>No. 39</b><span>1 vs 1 meetings since 1970</span></div>
+  </div>
+  <div class="price">U.S. Bank Stadium, Minneapolis (dome) &middot; Bills &minus;3.5, total 45.5, moneyline &minus;198 / +164 (DraftKings via ESPN, Monday afternoon) &rarr; about <b>64%</b> Buffalo once the bookmaker&rsquo;s cut is removed</div>
+</div>
+
+<div class="alert"><b>LATE CHANGE &middot; VIKINGS QB:</b> Kyler Murray is <b>out</b> (hamstring). <b>Carson Wentz starts.</b> Also out for Minnesota: WR Jauan Jennings (calf), RB Demond Claiborne (knee). Buffalo is without WRs Josh Palmer (hamstring) and Tyrell Shavers (knee); LT Dion Dawkins (ribs) is questionable. Confirmed on two feeds, the nflverse injury report and ESPN&rsquo;s game page.</div>
+
+<div class="contract">
+  <p><b>Tonight&rsquo;s question:</b> when the best offense meets the best defense, which one gives?</p>
+  <p><b>The answer, from 38 games since 1970:</b> neither does. The offense won 18, the defense 20, and the odds expected about 20 offensive wins. The No.&nbsp;1 offense averaged <b>23 points</b> in those games, eight under its usual 31. The No.&nbsp;1 defense allowed <b>23</b>, ten over its usual 13. They meet in the middle.</p>
+  <p><b>Why that surprises:</b> most fans expect a winner between the irresistible force and the immovable object. Usually both sides just bend.</p>
+  <p><b>What you get:</b> seven things to watch, fourteen player cards, and a win-probability calculator to keep open on your phone during the game.</p>
+</div>
+
+<h2><small>Section 1</small>Seven keys to the game</h2>
+<p class="note">Tap a team as each key plays out tonight. Your picks stay on this device.</p>
+<div class="keys" id="keys"></div>
+
+<h2><small>Section 2</small>Huh. Didn&rsquo;t think about that.</h2>
+<div class="huh" id="huh"></div>
+
+<h2><small>Section 3</small>The players</h2>
+<p class="note">Tap a card to flip it. The back shows his seven games, each bar one game, filled when his team won. Every split is seven games or fewer, so read it as a hint, not a law.</p>
+<div class="cards" id="cards"></div>
+
+<h2><small>Section 4</small>The Bayesian booth</h2>
+<p>A small sample can tell you something, but not everything. Each panel below starts from what is normal for the league, adds what these teams have actually done, and shows the blend. Move the sliders to see how much the evidence should move you.</p>
+
+<div class="lab" id="lab-wentz">
+  <h3>1. Is Carson Wentz a downgrade?</h3>
+  <p>Wentz has 48 dropbacks this season, scrambles and sacks included, and averaged <b>+0.10</b> expected points each. Murray had 185 and averaged <b>&minus;0.05</b>. Taken at face value, the backup has been better. But 48 plays is a small pile: one long touchdown moves the average a lot. This panel shrinks each quarterback toward the league average (+0.05) by an amount set by how much quarterbacks truly differ.</p>
+  <div class="ctl"><label>How much QBs truly differ (sd of true EPA/dropback): <input type="range" id="tau" min="0.03" max="0.30" step="0.01" value="0.13"> <span id="tauv"></span></label></div>
+  <svg id="wentzsvg" viewBox="0 0 680 230" width="100%"></svg>
+  <div class="readout" id="wentzout"></div>
+  <p class="note">The default, 0.13, is measured: the 34 passers with 100+ dropbacks this season spread out by 0.16, and 0.10 of that is luck you would expect from 250 plays each. The leftover is talent. Per-play spread is 1.57 expected points. One more thing the average hides: Wentz has been sacked on one dropback in eight (13%), against Murray&rsquo;s 8%, and Murray escaped to scramble 16 times.</p>
+</div>
+
+<div class="lab" id="lab-rz">
+  <h3>2. The red-zone collision</h3>
+  <p>Buffalo has scored a touchdown on <b>27 of 38</b> trips inside the 20. Minnesota has allowed one on only <b>8 of 21</b>. The league rate is 63%. Both numbers are extreme, and both rest on few trips. Shrink each toward the league, then combine them on the odds scale to get tonight&rsquo;s expected rate for Buffalo.</p>
+  <div class="ctl"><label>Weight of the league prior, in trips: <input type="range" id="m" min="0" max="60" step="1" value="20"> <span id="mv"></span></label></div>
+  <svg id="rzsvg" viewBox="0 0 680 230" width="100%"></svg>
+  <div class="readout" id="rzout"></div>
+  <p class="note">Each curve is a Beta posterior: the league rate is treated as if it had been seen on the chosen number of trips, then this season&rsquo;s trips are added. To combine the two, multiply the offense&rsquo;s odds by the defense&rsquo;s odds and divide by the league&rsquo;s odds. That is the same log5 arithmetic baseball uses for batter against pitcher.</p>
+</div>
+
+<div class="lab" id="lab-wp">
+  <h3>3. Live win probability: keep this open during the game</h3>
+  <p>Type the score and the time left. The pregame line (Bills by 3.5) acts as the prior. Through a normal curve that line gives Buffalo 60%, a little under the moneyline&rsquo;s 64%. As the clock runs, the line counts for less and the scoreboard counts for more. Final margins in the NFL scatter with a standard deviation of about 13.5 points over a full game, shrinking with the square root of the time left.</p>
+  <div class="ctl">
+    <label>Bills <input type="number" id="bs" value="0" min="0"></label>
+    <label>Vikings <input type="number" id="ms" value="0" min="0"></label>
+    <label>Quarter <select id="q"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+    <label>Clock <input type="number" id="mn" value="15" min="0" max="15" style="width:48px">:<input type="number" id="sc" value="0" min="0" max="59" style="width:48px"></label>
+    <label>Pregame line, Bills by <input type="number" id="ln" value="3.5" step="0.5"></label>
+  </div>
+  <svg id="wpsvg" viewBox="0 0 680 220" width="100%"></svg>
+  <div class="readout" id="wpout"></div>
+  <p class="note">The curve shows the Bills&rsquo; chance if the score stayed frozen at what you typed, at every point from now to the final whistle. It ignores who has the ball and timeouts, and in the last two minutes those matter. Treat anything under five minutes as rough.</p>
+</div>
+
+<h2><small>Section 5</small>Tale of the tape</h2>
+<p>Expected points added (EPA) per play measures how much each snap changed a team&rsquo;s expected score, given the down, the distance and the field position. Zero is average. For an offense, higher is better; for a defense, lower. The scatter puts every team on one picture.</p>
+<svg id="scatter" viewBox="0 0 680 440" width="100%"></svg>
+<p class="note">Hover or tap a dot. Up and to the right is the good corner: a strong offense paired with a strong defense.</p>
+<div class="tablewrap"><table id="teamtab"></table></div>
+
+<h2><small>Section 6</small>The 38 that came before</h2>
+<p>Every game since the 1970 merger between the league&rsquo;s top scoring offense and its top scoring defense, ranked as they stood entering the game. <b>Offense 18, defense 20.</b> In Super Bowls the defense won 5 of 6; in regular-season games the offense won 12 of 22, right on its odds. Click a column to sort.</p>
+<div class="tablewrap"><table id="histtab"></table></div>
+
+<h2><small>Section 7</small>Keep score</h2>
+<p class="note">Fill it in as you go. It saves on this device.</p>
+<div class="score" id="score"></div>
+
+<div class="foot">
+<p><b>Sources.</b> Play-by-play, FTN charting (blitzers, box counts, play action), injury reports and rosters: nflverse, through Sunday Nov 8. Line, injuries and season leaders: ESPN&rsquo;s game page, Monday afternoon. Season totals for every player card were checked against ESPN and match. The history uses FiveThirtyEight&rsquo;s NFL game file for 1970&ndash;98 and nflverse after that; the two agree on all 5,466 scores where they overlap.</p>
+<p><b>Limits.</b> Seven games is a small sample. The splits on the player cards are descriptions, not causes. Expected points come from nflverse&rsquo;s model, and blitz counts come from charters who can disagree.</p>
+<p>The Sports Page &middot; <a href="https://thesportspage.net/" target="_blank" rel="noopener">thesportspage.net</a> &middot; Program printed Monday, Nov 9, 2026.</p>
+</div>
+</div>
+
+<script>
+const D = /*DATA*/;
+const BUF='#00338d', MIN='#4f2683', RUST='#b83a1e', STEEL='#2c4a6e', GOLD='#c9962a', MUTED='#6b5e4a';
+const store={get(k,d){try{const v=localStorage.getItem('prog-bufmin-'+k);return v===null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('prog-bufmin-'+k,JSON.stringify(v))}catch(e){}}};
+const $=id=>document.getElementById(id);
+const phi=z=>{const t=1/(1+0.2316419*Math.abs(z)),d=0.3989423*Math.exp(-z*z/2),p=d*t*(0.3193815+t*(-0.3565638+t*(1.781478+t*(-1.821256+t*1.330274))));return z>0?1-p:p};
+const fmt=(x,d=2)=>{const r=x.toFixed(d);return /^-?0\.0+$/.test(r)?(0).toFixed(d):(x>0?'+':'')+r};
+const pct=x=>Math.round(x*100)+'%';
+
+/* ---------- keys ---------- */
+const KEYS=[
+ {n:'73%',s:'of dropbacks Minnesota blitzes. League: 29%.',h:'Brian Flores vs. Josh Allen',t:'Minnesota sends an extra rusher at a league-record rate, per the AP, and nearly twice as often as the next team (Buffalo, 38%). Allen is still good against it: +0.19 expected points per dropback when blitzed, fifth in the league, where the average quarterback is at zero. But he is far better when nobody comes, at +0.35. The odd part: Minnesota&rsquo;s defense is slightly <i>better</i> when it does not blitz (&minus;0.24 against &minus;0.20).',w:'If Minnesota sits back early and Buffalo stalls, Flores has found his answer. If Allen escapes a blitz and runs, that play averages +1.2 points.'},
+ {n:'+0.07',s:'EPA per play Minnesota allows on play action, against &minus;0.28 without it.',h:'The crack in the wall',t:'This is the biggest split in Minnesota&rsquo;s defense. On ordinary dropbacks it is suffocating. Fake a handoff first, and it plays like an average defense. Buffalo uses play action on 27% of dropbacks. Screens look like a soft spot too (+0.23 per play allowed), but on only 11 plays.',w:'Count Buffalo&rsquo;s play-action calls in the first half. More than six is a coach going straight at the weak spot.'},
+ {n:'8 of 21',s:'red-zone trips Minnesota opponents turned into touchdowns. League: 63%.',h:'Red zone: the strength-on-strength fight',t:'Buffalo scores a touchdown on 71% of its trips inside the 20 (27 of 38). Minnesota allows 38%. Something gives, and the Bayesian booth below puts the blended number near 56%. A touchdown instead of a field goal is a four-point swing in a game priced at three and a half.',w:'Every Bills trip inside the 20. Field goals mean Minnesota is winning the night.'},
+ {n:'4 of 7',s:'games Buffalo trailed after the first quarter.',h:'Do not panic early',t:'Buffalo&rsquo;s offense starts slowly. On its first 15 plays of a game it averages &minus;0.02 expected points per play, about league average; after that, +0.23. Its defense allowed an opening-drive touchdown in 3 of 7 games (Chargers, Patriots, Raiders).',w:'A 7&ndash;0 Minnesota lead after one drive is Buffalo&rsquo;s normal script, not a crisis.'},
+ {n:'10',s:'points Minnesota has allowed in seven fourth quarters, combined.',h:'The fourth quarter belongs to Minnesota',t:'Minnesota has outscored opponents 62&ndash;10 in fourth quarters; Buffalo is 77&ndash;72. Some of that is opponents chasing late, but a defense that allows 1.4 points per fourth quarter is not just lucky. Buffalo&rsquo;s defense gives up 40% of its points in the fourth.',w:'If it is within one score entering the fourth, Minnesota&rsquo;s profile says lean Vikings, whatever the line said.'},
+ {n:'+7 vs &minus;2',s:'turnover margin: Minnesota against Buffalo.',h:'Who gives it away',t:'Minnesota has 12 takeaways and only 5 giveaways; cornerback Byron Murphy has 3 interceptions. Buffalo has 9 takeaways and 11 giveaways, and Allen has 5 interceptions. A Minnesota offense that cannot score needs short fields, and turnovers are how it gets them.',w:'The first turnover. With a backup quarterback, Minnesota&rsquo;s plan is field position.'},
+ {n:'31%',s:'of third downs Minnesota allows to be converted. League: 40%.',h:'Third down',t:'Minnesota&rsquo;s defense has allowed 28 conversions on 91 third downs. Buffalo converts 47% (35 of 75), and it has faced 75 third downs to Minnesota&rsquo;s 97, because its first and second downs work. Wentz faces a Buffalo defense that is 25th in sack rate, so he should have time.',w:'Buffalo third-and-long. Third-and-short means the Bills&rsquo; early downs are winning.'},
+];
+const ks=store.get('keys',{});
+$('keys').innerHTML=KEYS.map((k,i)=>`<div class="key"><div class="num">${k.n}<small>${k.s}</small></div><div><h3>${i+1}. ${k.h}</h3><div>${k.t}</div><div class="watch"><b>WATCH:</b> ${k.w}</div>
+<div class="tracker" data-i="${i}">Went to: <button class="b" data-v="b">Bills</button><button class="m" data-v="m">Vikings</button><button class="x" data-v="x">Push</button></div></div></div>`).join('');
+document.querySelectorAll('.tracker').forEach(tr=>{const i=tr.dataset.i;const paint=()=>tr.querySelectorAll('button').forEach(b=>b.classList.toggle('on',ks[i]===b.dataset.v));paint();
+ tr.addEventListener('click',e=>{const v=e.target.dataset&&e.target.dataset.v;if(!v)return;ks[i]=ks[i]===v?null:v;store.set('keys',ks);paint()})});
+
+/* ---------- huh ---------- */
+const HUH=[
+ ['2 in 3','The chance the backup is truly the better quarterback. Shrink both toward the league average and Wentz still edges Murray, +0.06 to 0.00 per dropback. See the Bayesian booth.'],
+ ['2 of 2','The two blitz-happiest defenses in football meet tonight: Minnesota first at 73%, Buffalo second at 38%.'],
+ ['44%','of Minnesota&rsquo;s points come in the fourth quarter (62 of 140). Its first three quarters average under 12 points a game.'],
+ ['+1.2','expected points per Allen scramble. The average dropback in the league is worth +0.05. He scrambles half as often when blitzed, which is part of why the blitz works.'],
+ ['+0.11','Buffalo&rsquo;s EPA per carry against seven or more men in the box, against &minus;0.07 when the box is light. Backwards from what you&rsquo;d expect; Allen&rsquo;s short-yardage keepers are probably part of it.'],
+ ['23&ndash;23','the average score of the 38 No. 1-vs-No. 1 games when you take the offense&rsquo;s points and the defense&rsquo;s points allowed. Tonight&rsquo;s total is set at 45.5.'],
+ ['5 of 6','Super Bowls won by the No. 1 defense over the No. 1 offense, including Buffalo&rsquo;s 20&ndash;19 loss to the Giants in Super Bowl XXV. In the regular season it is a coin flip.'],
+ ['3 of 4','of the first four No. 1-vs-No. 1 games since 1970 featured Minnesota as the No. 1 defense, the Purple People Eaters in 1970&ndash;71. They went 1&ndash;2.'],
+];
+$('huh').innerHTML=HUH.map(h=>`<div><b>${h[0]}</b><p>${h[1]}</p></div>`).join('');
+
+/* ---------- player cards ---------- */
+const NOTES={
+ 'Josh Allen':'Blitzed on 35% of his dropbacks so far; expect over 70% tonight. Watch how fast the ball comes out on the first series.',
+ 'James Cook':'Fifth in the league in rushing. Minnesota&rsquo;s run defense is 8th, its weakest unit, so Buffalo may lean on him to slow the blitz.',
+ 'Khalil Shakir':'Buffalo&rsquo;s most-targeted receiver (38). The quick slant is the classic answer to a blitz, and that is his route.',
+ 'Dalton Kincaid':'Buffalo&rsquo;s receiving-yards leader. Tight ends feast on blitzing linebackers who vacate the middle.',
+ 'Keon Coleman':'Three touchdowns on 28 targets. With Palmer and Shavers out, more snaps come his way.',
+ 'Greg Rousseau':'7 sacks and 22 QB hits, most on the team by far. Wentz was sacked on 13% of his dropbacks; Rousseau is the man to make that number matter.',
+ 'Carson Wentz':'Took most of the snaps in weeks 1&ndash;2. Good average, bad sack rate, completion rate well below expected. Watch third-and-long.',
+ 'Justin Jefferson':'Only 335 yards in six games, a career-low pace. See whether the pace changes with Wentz back under center.',
+ 'T.J. Hockenson':'Leads Minnesota in catches (31). The safety valve for a quarterback under pressure.',
+ 'Jordan Addison':'Caught 16 of 34 targets. A low catch rate means deep shots, the kind of play that beats Buffalo&rsquo;s 21st-ranked explosive-play defense.',
+ 'Aaron Jones':'Minnesota&rsquo;s offense is 28th running the ball. If Jones gets 20 carries, Minnesota is ahead and killing the clock.',
+ 'Andrew Van Ginkel':'Team sack leader (6.5), 2.5 of them last week against Detroit. Usually the blitzer Allen has to beat.',
+ 'Dallas Turner':'6 sacks and 19 QB hits. With Van Ginkel, a pair Buffalo&rsquo;s tackles must handle with Dawkins questionable.',
+ 'Byron Murphy':'Three interceptions. Allen has thrown 5; a blitz that forces an early throw puts this man in play.',
+};
+const KIND={qb:{k:'epa',lab:'EPA per dropback',f:g=>g.epa},rb:{k:'yds',lab:'rushing yards',f:g=>g.yds},rec:{k:'yds',lab:'receiving yards',f:g=>g.yds},dfn:{k:'pr',lab:'sacks + QB hits',f:g=>g.sk+g.hits}};
+function season(p){const g=p.games,s=k=>g.reduce((a,x)=>a+(x[k]||0),0);
+ if(p.kind==='qb')return {line:`${s('cmp')} comp &middot; ${s('yds')} yds &middot; ${s('td')} TD &middot; ${s('int_')} INT &middot; ${s('rush')} rush yds`,big:fmt(g.reduce((a,x)=>a+x.epa*x.db,0)/s('db')),bl:'EPA per dropback'};
+ if(p.kind==='rb')return {line:`${s('car')} car &middot; ${s('yds')} yds &middot; ${s('td')} TD`,big:(s('yds')/s('car')).toFixed(1),bl:'yards per carry'};
+ if(p.kind==='rec')return {line:`${s('rec')} rec on ${s('tgt')} tgt &middot; ${s('yds')} yds &middot; ${s('td')} TD`,big:(s('yds')/g.length).toFixed(0),bl:'receiving yards per game'};
+ return {line:`${s('sk')} sacks &middot; ${s('hits')} QB hits &middot; ${s('tk')} tackles &middot; ${s('int_')} INT`,big:String(s('sk')),bl:'sacks'};}
+function bars(p){const K=KIND[p.kind],g=p.games,v=g.map(K.f),mx=Math.max(...v.map(Math.abs),0.01),W=190,H=110,bw=W/7-4,neg=v.some(x=>x<0),zero=neg?H/2:H-14;
+ let s=`<svg viewBox="0 0 ${W} ${H}" width="100%">`;s+=`<line x1="0" x2="${W}" y1="${zero}" y2="${zero}" stroke="#1a1208" stroke-width="0.6"/>`;
+ g.forEach((x,i)=>{const val=v[i],h=Math.abs(val)/mx*(neg?H/2-14:H-24),y=val>=0?zero-h:zero,c=p.team==='BUF'?BUF:MIN,won=x.margin>0;
+  s+=`<rect x="${i*(bw+4)+2}" y="${y}" width="${bw}" height="${Math.max(h,1)}" fill="${won?c:'#fffdf7'}" stroke="${c}" stroke-width="1.4"><title>Wk ${x.week} vs ${x.opp}: ${p.kind==='qb'?fmt(val):val} (${won?'W':'L'} by ${Math.abs(x.margin)})</title></rect>`;
+  s+=`<text x="${i*(bw+4)+2+bw/2}" y="${H-2}" font-size="8" text-anchor="middle" fill="${MUTED}">${x.opp}</text>`;});
+ return s+'</svg>';}
+function split(p){const K=KIND[p.kind],g=p.games;if(g.length<3)return `Only ${g.length} games: too few to split.`;
+ const v=g.map(K.f),srt=[...v].sort((a,b)=>a-b),med=srt[Math.floor(srt.length/2)];
+ const hi=g.filter((x,i)=>v[i]>med),lo=g.filter((x,i)=>v[i]<=med),avg=a=>a.reduce((s,x)=>s+x.margin,0)/a.length;
+ if(!hi.length||!lo.length)return '';
+ return `In his ${hi.length} best games by ${K.lab}, his team won by ${avg(hi).toFixed(0)} on average; in the other ${lo.length}, by ${avg(lo).toFixed(0)}. ${Math.abs(avg(hi)-avg(lo))<6?'Not much difference.':(avg(hi)>avg(lo)?'When he is going, so is the team.':'The team has won without him going.')}`;}
+$('cards').innerHTML=D.players.map(p=>{const S=season(p);return `<div class="card ${p.team}"><div class="in">
+<div class="f"><div class="band"><span>${p.team==='BUF'?'Bills':'Vikings'}</span><span>${p.pos}</span></div><div class="nm">${p.name}</div><div class="line">${S.line}</div><div class="cw">${NOTES[p.name]||''}</div><div class="big">${S.big}<small>${S.bl}</small></div><div class="hint">tap to flip &#8635;</div></div>
+<div class="b"><div class="band"><span>${p.name}</span><span>game by game</span></div><div class="t">${KIND[p.kind].lab}, filled = team won</div>${bars(p)}<div class="split">${split(p)}</div><div class="hint">tap to flip back &#8635;</div></div>
+</div></div>`}).join('');
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('flip')));
+
+/* ---------- normal curves helper ---------- */
+function curves(svg,xs,series,xlab,fmtx){const W=680,H=svg.viewBox.baseVal.height,L=40,R=16,T=14,B=34,x0=xs[0],x1=xs[1];
+ const X=x=>L+(x-x0)/(x1-x0)*(W-L-R);let ymax=0;const pts=series.map(s=>{const a=[];for(let i=0;i<=200;i++){const x=x0+(x1-x0)*i/200;const y=s.pdf(x);ymax=Math.max(ymax,y);a.push([x,y])}return a});
+ const Y=y=>H-B-y/ymax*(H-B-T-18);let o='';
+ for(let i=0;i<=4;i++){const x=x0+(x1-x0)*i/4;o+=`<line x1="${X(x)}" x2="${X(x)}" y1="${T}" y2="${H-B}" stroke="#ddd"/><text x="${X(x)}" y="${H-B+14}" font-size="10" text-anchor="middle" fill="${MUTED}">${fmtx(x)}</text>`}
+ o+=`<text x="${W/2}" y="${H-4}" font-size="11" text-anchor="middle" fill="${MUTED}">${xlab}</text>`;
+ series.forEach((s,j)=>{o+=`<path d="${pts[j].map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join('')}" fill="${s.fill||'none'}" fill-opacity="0.15" stroke="${s.c}" stroke-width="${s.w||2}" ${s.dash?'stroke-dasharray="5 4"':''}/>`;
+  const lx=L+8+j*150;o+=`<line x1="${lx}" x2="${lx+22}" y1="${T+6}" y2="${T+6}" stroke="${s.c}" stroke-width="3" ${s.dash?'stroke-dasharray="5 4"':''}/><text x="${lx+28}" y="${T+10}" font-size="11" fill="${s.c}">${s.lab}</text>`});
+ svg.innerHTML=o;}
+const npdf=(m,s)=>x=>Math.exp(-0.5*((x-m)/s)**2)/s;
+
+/* ---------- Wentz ---------- */
+function wentz(){const tau=+$('tau').value;$('tauv').textContent=tau.toFixed(2);const mu=0.049,sig=1.57;
+ const post=(m,n)=>{const se2=sig*sig/n,w=tau*tau/(tau*tau+se2),pm=mu+w*(m-mu),ps=Math.sqrt(1/(1/(tau*tau)+1/se2));return [pm,ps,w]};
+ const [wm,ws,ww]=post(0.096,48),[mm,mss,mw]=post(-0.045,185);
+ curves($('wentzsvg'),[-0.45,0.45],[{pdf:npdf(mu,tau),c:MUTED,dash:1,lab:'league prior',w:1.5},{pdf:npdf(mm,mss),c:RUST,fill:RUST,lab:'Murray'},{pdf:npdf(wm,ws),c:MIN,fill:MIN,lab:'Wentz'}],'true expected points per dropback',x=>fmt(x));
+ const pb=phi((wm-mm)/Math.sqrt(ws*ws+mss*mss));
+ $('wentzout').innerHTML=`Wentz: <b>${fmt(wm)}</b> (raw +0.10 kept ${pct(ww)} of the way) &middot; Murray: <b>${fmt(mm)}</b> (raw &minus;0.05 kept ${pct(mw)}) &middot; chance Wentz is truly better: <b>${pct(pb)}</b>`;}
+$('tau').addEventListener('input',wentz);wentz();
+
+/* ---------- red zone ---------- */
+function lbeta(a,b){const lg=z=>{const c=[76.18009172947146,-86.50532032941677,24.01409824083091,-1.231739572450155,0.1208650973866179e-2,-0.5395239384953e-5];let x=z,y=z,t=x+5.5;t-=(x+0.5)*Math.log(t);let s=1.000000000190015;for(const q of c)s+=q/++y;return -t+Math.log(2.5066282746310005*s/x)};return lg(a)+lg(b)-lg(a+b)}
+const bpdf=(a,b)=>x=>x<=0||x>=1?0:Math.exp((a-1)*Math.log(x)+(b-1)*Math.log(1-x)-lbeta(a,b));
+function rz(){const m=+$('m').value,L=0.634;$('mv').textContent=m;const a0=Math.max(m*L,0.5),b0=Math.max(m*(1-L),0.5);
+ const o=[a0+27,b0+11],d=[a0+8,b0+13];const po=o[0]/(o[0]+o[1]),pd=d[0]/(d[0]+d[1]);
+ const odds=x=>x/(1-x),comb=odds(po)*odds(pd)/odds(L),pc=comb/(1+comb);
+ curves($('rzsvg'),[0.05,0.98],[{pdf:bpdf(a0,b0),c:MUTED,dash:1,lab:'league',w:1.5},{pdf:bpdf(...d),c:MIN,fill:MIN,lab:'MIN defense'},{pdf:bpdf(...o),c:BUF,fill:BUF,lab:'BUF offense'}],'touchdown rate per red-zone trip',x=>Math.round(x*100)+'%');
+ $('rzout').innerHTML=`Buffalo offense: <b>${pct(po)}</b> (raw 71%) &middot; Minnesota defense: <b>${pct(pd)}</b> (raw 38%) &middot; tonight, Buffalo per trip: <b>${pct(pc)}</b>`;}
+$('m').addEventListener('input',rz);rz();
+
+/* ---------- live WP ---------- */
+const wpIn=['bs','ms','q','mn','sc','ln'];wpIn.forEach(k=>{const v=store.get('wp-'+k,null);if(v!==null)$(k).value=v;$(k).addEventListener('input',()=>{store.set('wp-'+k,$(k).value);wp()})});
+function wpAt(lead,t,line){if(t<=0)return lead>0?1:lead<0?0:0.5;const f=t/60;return phi((lead+line*f)/(13.5*Math.sqrt(f)))}
+function wp(){const lead=+$('bs').value-+$('ms').value,q=+$('q').value,t=Math.max(0,(4-q)*15+ +$('mn').value+ +$('sc').value/60),line=+$('ln').value;
+ const p=wpAt(lead,t,line);const W=680,H=220,L=40,R=16,T=12,B=34;const X=m=>L+(60-m)/60*(W-L-R),Y=v=>T+(1-v)*(H-T-B);
+ let o=`<rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="#fff"/>`;
+ [0,0.25,0.5,0.75,1].forEach(v=>o+=`<line x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="#e3e3e3"/><text x="${L-6}" y="${Y(v)+4}" font-size="10" text-anchor="end" fill="${MUTED}">${v*100}%</text>`);
+ [60,45,30,15,0].forEach((m,i)=>o+=`<text x="${X(m)}" y="${H-B+14}" font-size="10" text-anchor="middle" fill="${MUTED}">${['Kickoff','End Q1','Half','End Q3','Final'][i]}</text>`);
+ let path='';for(let m=t;m>=0;m-=0.25)path+=(m===t?'M':'L')+X(m).toFixed(1)+' '+Y(wpAt(lead,m,line)).toFixed(1);
+ o+=`<line x1="${X(60)}" x2="${X(t)}" y1="${Y(phi(line/13.5))}" y2="${Y(p)}" stroke="${MUTED}" stroke-dasharray="4 3"/>`;
+ o+=`<path d="${path}" fill="none" stroke="${BUF}" stroke-width="2.5"/><circle cx="${X(t)}" cy="${Y(p)}" r="6" fill="${GOLD}" stroke="#1a1208"/>`;
+ o+=`<text x="${W/2}" y="${H-4}" font-size="11" text-anchor="middle" fill="${MUTED}">Bills&rsquo; chance to win if the score stayed ${+$('bs').value}&ndash;${+$('ms').value}</text>`;
+ $('wpsvg').innerHTML=o;
+ const mm=Math.floor(t),ss=Math.round((t-mm)*60);
+ $('wpout').innerHTML=`${mm}:${String(ss).padStart(2,'0')} left &middot; Bills <b>${pct(p)}</b> &middot; Vikings <b>${pct(1-p)}</b> &middot; at kickoff it was ${pct(phi(line/13.5))}&ndash;${pct(1-phi(line/13.5))}`;}
+wp();
+
+/* ---------- sortable tables ---------- */
+function table(el,cols,rows,rowcls,init){let sk=init[0],asc=init[1];
+ function draw(){const r=[...rows].sort((a,b)=>{const x=a[sk],y=b[sk];return (x>y?1:x<y?-1:0)*(asc?1:-1)});
+  el.innerHTML='<thead><tr>'+cols.map(c=>`<th data-k="${c.k}" class="${c.k===sk?'sorted'+(asc?' asc':''):''}" title="${c.tip||''}">${c.h}</th>`).join('')+'</tr></thead><tbody>'+
+  r.map(x=>`<tr class="${rowcls(x)}">`+cols.map(c=>`<td>${c.f?c.f(x[c.k],x):x[c.k]}</td>`).join('')+'</tr>').join('')+'</tbody>';
+  el.querySelectorAll('th').forEach(th=>th.onclick=()=>{const k=th.dataset.k;if(k===sk)asc=!asc;else{sk=k;asc=!!cols.find(c=>c.k===k).asc}draw()});}
+ draw();}
+const e2=v=>v==null?'':fmt(v),p1=v=>v==null?'':Math.round(v*100)+'%';
+D.teams.forEach(t=>{t.rec=t.w+'-'+t.l});
+table($('teamtab'),[{k:'team',h:'Team',asc:1},{k:'w',h:'W-L',f:(v,x)=>x.rec},{k:'ppg',h:'Pts/G',f:v=>v.toFixed(1)},{k:'papg',h:'Opp/G',f:v=>v.toFixed(1),asc:1},{k:'off_epa',h:'Off EPA',f:e2},{k:'def_epa',h:'Def EPA',f:e2,asc:1},{k:'off_pass',h:'Pass O',f:e2},{k:'off_run',h:'Run O',f:e2},{k:'def_pass',h:'Pass D',f:e2,asc:1},{k:'def_run',h:'Run D',f:e2,asc:1},{k:'blitz',h:'Blitz %',f:p1,tip:'share of opponent dropbacks with at least one blitzer'},{k:'sack_rate',h:'Sack %',f:p1}],
+ D.teams,x=>x.team==='BUF'||x.team==='MIN'?'hl-'+x.team:'',['off_epa',false]);
+D.history.forEach(h=>{h.winner=h.so>h.sd?'Offense':h.sd>h.so?'Defense':'Tie';h.score=h.so+'-'+h.sd;h.kind=h.playoff?'Playoff':'Regular'});
+table($('histtab'),[{k:'date',h:'Date',asc:1},{k:'kind',h:'Type'},{k:'off',h:'No.1 O'},{k:'oppg',h:'O pts/g'},{k:'deff',h:'No.1 D'},{k:'dppg',h:'D allows/g',asc:1},{k:'so',h:'Score',f:(v,x)=>x.score},{k:'winner',h:'Winner'},{k:'pO',h:'O win chance',f:v=>v==null?'':Math.round(v*100)+'%',tip:'pregame: Elo probability before 1999, betting line after'}],
+ D.history,x=>'',['date',false]);
+
+/* ---------- scatter ---------- */
+(function(){const svg=$('scatter'),W=680,H=440,L=56,R=20,T=20,B=46,t=D.teams;
+ const xs=t.map(d=>d.off_epa),ys=t.map(d=>d.def_epa),x0=Math.min(...xs)-0.03,x1=Math.max(...xs)+0.03,y0=Math.min(...ys)-0.03,y1=Math.max(...ys)+0.03;
+ const X=v=>L+(v-x0)/(x1-x0)*(W-L-R),Y=v=>T+(v-y0)/(y1-y0)*(H-T-B);
+ let o=`<line x1="${X(0)}" x2="${X(0)}" y1="${T}" y2="${H-B}" stroke="#bbb"/><line x1="${L}" x2="${W-R}" y1="${Y(0)}" y2="${Y(0)}" stroke="#bbb"/>`;
+ o+=`<text x="${W/2}" y="${H-8}" font-size="11" text-anchor="middle" fill="${MUTED}">offense: EPA per play gained &rarr; better</text><text x="14" y="${H/2}" font-size="11" text-anchor="middle" fill="${MUTED}" transform="rotate(-90 14 ${H/2})">defense: EPA per play allowed (better at top) &uarr;</text>`;
+ o+=`<text x="${W-R-4}" y="${T+12}" font-size="10" text-anchor="end" fill="${MUTED}">good offense, good defense</text><text x="${L+4}" y="${H-B-6}" font-size="10" fill="${MUTED}">bad at both</text>`;
+ t.forEach(d=>{const hl=d.team==='BUF'?BUF:d.team==='MIN'?MIN:null;o+=`<g class="pt"><circle cx="${X(d.off_epa)}" cy="${Y(d.def_epa)}" r="${hl?9:5}" fill="${hl||'#a89f8c'}" stroke="#1a1208" stroke-width="${hl?1.5:0.5}"><title>${d.team} ${d.rec}: offense ${fmt(d.off_epa)}, defense ${fmt(d.def_epa)}</title></circle>`+
+  `<text x="${X(d.off_epa)+(hl?12:7)}" y="${Y(d.def_epa)+4}" font-size="${hl?13:9}" font-weight="${hl?700:400}" fill="${hl||MUTED}">${d.team}</text></g>`});
+ svg.innerHTML=o;})();
+
+/* ---------- scorecard ---------- */
+(function(){const sc=store.get('score',{});const hd=['','Q1','Q2','Q3','Q4','Final'];let o=hd.map(h=>`<div class="h">${h}</div>`).join('');
+ [['BUF','Bills'],['MIN','Vikings']].forEach(([k,n])=>{o+=`<div style="font-weight:600;color:${k==='BUF'?BUF:MIN}">${n}</div>`;for(let i=1;i<=5;i++)o+=`<div><input data-k="${k}${i}" value="${sc[k+i]||''}" inputmode="numeric"></div>`});
+ $('score').innerHTML=o;$('score').querySelectorAll('input').forEach(i=>i.addEventListener('input',()=>{sc[i.dataset.k]=i.value;store.set('score',sc)}));})();
+</script>
+</body>
+</html>
