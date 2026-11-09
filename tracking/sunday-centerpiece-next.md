@@ -79,6 +79,32 @@ margin, and the editor's case for Georgia at No. 1 rests on the margin.
 bye 20% -> 43%, final No. 1 under 1%. The Miami win gave +12 bid / +15 bye;
 Oregon over Ohio State +6 bye; nothing else measurable.
 
+**More calls, from the editor's Sunday-afternoon call with Patrick jr**
+(recorded during it; the AP poll came out mid-call, so all of these were made
+before the Nov 10 ranking):
+
+- *The editor, revised:* 1 Utah, 2 Georgia, 3 Alabama, 4 Indiana, 5 Notre Dame,
+  6 Texas. This replaces his morning call (Georgia 1, Utah 2). Grade the
+  revision and show both: changing a call before the release is allowed, and
+  saying so is the point.
+- *Patrick jr:* Notre Dame's chance of No. 1 is "zero," and "the highest they'll
+  go is four." Georgia 1, Utah 2; the transcript seems to have Miami 3 but is
+  garbled there. His claim to test is that the committee will keep the Irish
+  lower than the polls do.
+
+**The polls, released Sun Nov 8** (ESPN rankings feed; a second feed is still
+needed before anything is graded on them):
+- *AP:* 1 Georgia (53 first-place votes), 2 Utah (12), 3 Notre Dame (5),
+  4 UCLA, 5 Miami, 6 Indiana, 7 Alabama, 8 Texas, 9 Tennessee, 10 Texas Tech.
+- *Coaches:* 1 Georgia, 2 Utah, 3 Notre Dame, 4 UCLA, 5 Indiana, 6 Miami,
+  7 Alabama, 8 Texas, 9 Tennessee, 10 Texas Tech.
+
+That makes the real test: the polls, Massey's consensus and Massey's own rating
+all have Notre Dame 3rd or 4th. On Nov 3 the committee had the Irish 11th while
+the consensus had them 6th. If the committee puts them 5th or lower, the gap
+holds and Patrick jr's read wins. If it puts them 3rd, the committee has caught
+up with everyone else.
+
 **Third forecast: the computers, recorded Sun 2026-11-08 ~2:40pm ET.**
 Neither one was built to predict the committee. Both are on file so Tuesday can
 show whose read the committee was closest to.
