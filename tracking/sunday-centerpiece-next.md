@@ -79,6 +79,43 @@ margin, and the editor's case for Georgia at No. 1 rests on the margin.
 bye 20% -> 43%, final No. 1 under 1%. The Miami win gave +12 bid / +15 bye;
 Oregon over Ohio State +6 bye; nothing else measurable.
 
+**Third forecast: the computers, recorded Sun 2026-11-08 ~2:40pm ET.**
+Neither one was built to predict the committee. Both are on file so Tuesday can
+show whose read the committee was closest to.
+
+- *Massey consensus* (masseyratings.com/ranks?s=cf, dated Nov 8, **45 systems
+  in so far**; the Nov 1 edition had 91, so the order may shift as more report):
+  1 Georgia, 2 Alabama, 3 Notre Dame, 4 Utah, 5 Texas, 6 Miami, 7 UCLA,
+  8 Indiana, 9 Tennessee, 10 LSU, 11 Ohio State, 12 Ole Miss, 13 Oregon,
+  14 Kentucky, 15 Wake Forest, 16 Texas Tech, 17 BYU, 18 Iowa ... SMU 33,
+  Michigan 45, Syracuse 74, Boston College 87.
+- *Massey's own rating* (masseyratings.com/cf/fbs/ratings, games through Nov 7):
+  1 Georgia, 2 Utah, 3 Alabama, 4 Notre Dame, 5 Indiana, 6 Miami, 7 Ohio State,
+  8 Texas, 9 UCLA, 10 Tennessee, 11 Ole Miss, 12 Oregon, 13 Iowa.
+- Before Saturday, the Nov 1 consensus (91 systems) had Notre Dame **6th**,
+  against the committee's 11th. The systems ranged from 1st to 31st.
+
+**The simulation rerun on Massey's power ratings** (`cfp_sim.py --ratings
+data/rating-snapshots/massey-2026-11-08.json`). Massey's power scale matches SP+
+almost exactly: spread 12.3 vs 12.4 points, correlation 0.95.
+
+| Notre Dame | SP+ (frozen wk 10) | Massey (thru Nov 7) |
+|---|---|---|
+| Bid now | 96% | 92% |
+| Bye now | 43% | 15% |
+| Beat BC: bid / bye | 97% / 45% | 93% / 15% |
+| Lose to BC: bid / bye | 70% / 0% | 60% / 0% |
+
+**The bid holds up. The bye does not.** The gap comes from the rivals, not from
+Notre Dame: ND's rating (24 vs 25) and résumé so far (+1.8 vs +1.9 wins above a
+top-25 team) barely change. Under Massey, Georgia (+2.5), Utah (+2.7) and UCLA
+(+2.6) have stronger résumés, and Utah is 63% rather than 49% at Arizona. ND sits
+on the edge of the top four, and on that edge small shifts in three or four
+other teams cut its chance by a factor of three. Both rating sets agree on Boston
+College: a loss costs 27 to 33 points of bid and the whole bye. Caveat: Massey's
+ratings have already absorbed Saturday, so its "before Saturday" figures are not
+a fair before-and-after. Only the "now" column is comparable.
+
 ## Where it goes
 
 Block 3 of the football-season shape, the improbability lesson, or its own

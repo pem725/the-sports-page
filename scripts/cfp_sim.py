@@ -186,12 +186,12 @@ class Season:
         return H, inf, bye, rank
 
 
-def day_report(team, day, n):
+def day_report(team, day, n, ratings=None):
     year = int(day[:4])
     games = load_season(year)
     conf = load_conferences()
     wk = next(g["week"] for g in games if g["date"] == day)
-    S = Season(games, conf, snapshot(wk))
+    S = Season(games, conf, json.load(open(ratings))["sp"] if ratings else snapshot(wk))
     ti = S.idx[team]
     today = [j for j, g in enumerate(S.games) if g["date"] == day and g["done"]]
 
@@ -279,10 +279,11 @@ def main():
     ap.add_argument("--n", type=int, default=100000)
     ap.add_argument("--check-week", type=int)
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--ratings", help="a ratings file shaped like a snapshot ({\"sp\": {team: points}}) to use instead of the frozen week, e.g. data/rating-snapshots/massey-2026-11-08.json")
     a = ap.parse_args()
     if a.check_week:
         return check_week(a.check_week)
-    r = day_report(a.team, a.day, a.n)
+    r = day_report(a.team, a.day, a.n, a.ratings)
     if a.json:
         print(json.dumps(r, indent=2, default=float)); return
     pct = lambda x: f"{100 * x:.0f}%"
