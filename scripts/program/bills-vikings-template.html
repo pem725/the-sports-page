@@ -114,10 +114,10 @@ svg text{font-family:'Roboto Mono',monospace}
   <p><b>Tonight&rsquo;s question:</b> when the best offense meets the best defense, which one gives?</p>
   <p><b>The answer, from 38 games since 1970:</b> neither does. The offense won 18, the defense 20, and the odds expected about 20 offensive wins. The No.&nbsp;1 offense averaged <b>23 points</b> in those games, eight under its usual 31. The No.&nbsp;1 defense allowed <b>23</b>, ten over its usual 13. They meet in the middle.</p>
   <p><b>Why that surprises:</b> most fans expect a winner between the irresistible force and the immovable object. Usually both sides just bend.</p>
-  <p><b>What you get:</b> seven things to watch, fourteen player cards, and a win-probability calculator to keep open on your phone during the game.</p>
+  <p><b>What you get:</b> eight things to watch, fourteen player cards, and a win-probability calculator to keep open on your phone during the game.</p>
 </div>
 
-<h2><small>Section 1</small>Seven keys to the game</h2>
+<h2><small>Section 1</small>Eight keys to the game</h2>
 <p class="note">Tap a team as each key plays out tonight. Your picks stay on this device.</p>
 <div class="keys" id="keys"></div>
 
@@ -203,12 +203,21 @@ const KEYS=[
  {n:'10',s:'points Minnesota has allowed in seven fourth quarters, combined.',h:'The fourth quarter belongs to Minnesota',t:'Minnesota has outscored opponents 62&ndash;10 in fourth quarters; Buffalo is 77&ndash;72. Some of that is opponents chasing late, but a defense that allows 1.4 points per fourth quarter is not just lucky. Buffalo&rsquo;s defense gives up 40% of its points in the fourth.',w:'If it is within one score entering the fourth, Minnesota&rsquo;s profile says lean Vikings, whatever the line said.'},
  {n:'+7 vs &minus;2',s:'turnover margin: Minnesota against Buffalo.',h:'Who gives it away',t:'Minnesota has 12 takeaways and only 5 giveaways; cornerback Byron Murphy has 3 interceptions. Buffalo has 9 takeaways and 11 giveaways, and Allen has 5 interceptions. A Minnesota offense that cannot score needs short fields, and turnovers are how it gets them.',w:'The first turnover. With a backup quarterback, Minnesota&rsquo;s plan is field position.'},
  {n:'31%',s:'of third downs Minnesota allows to be converted. League: 40%.',h:'Third down',t:'Minnesota&rsquo;s defense has allowed 28 conversions on 91 third downs. Buffalo converts 47% (35 of 75), and it has faced 75 third downs to Minnesota&rsquo;s 97, because its first and second downs work. Wentz faces a Buffalo defense that is 25th in sack rate, so he should have time.',w:'Buffalo third-and-long. Third-and-short means the Bills&rsquo; early downs are winning.'},
+ {n:'6.5 vs 4.7',s:'yards per play: Bills offense (1st) vs Vikings defense (2nd). League: 5.4.',h:'Yards per play: the old-school number',t:'The stat everybody remembers, and it holds up. In 135 games this season, the team that gained more yards per play won 75% of the time. (Expected points per play, which also counts turnovers, down and distance, picks the winner 87% of the time, but you can work out yards per play from the box score at the bar.) By this measure tonight is not quite No. 1 against No. 1: Minnesota&rsquo;s defense is second to Seattle&rsquo;s (4.2). Add Buffalo&rsquo;s 6.5 to Minnesota&rsquo;s 4.7 allowed and subtract the league&rsquo;s 5.4, and you get the meet-in-the-middle number for tonight: <b>5.8</b>. On the other side, Minnesota gains 4.9 and Buffalo allows 5.4, which also lands at 4.9. The crack: Minnesota allows 4.5 yards per <i>carry</i>, more than it allows per dropback (4.9, sacks included), and Buffalo runs for 4.5.<div class=\"ctl\" style=\"margin-top:10px\">Live: Bills yards <input type=\"number\" id=\"by\" min=\"0\"> on plays <input type=\"number\" id=\"bp\" min=\"0\"> &middot; Vikings yards <input type=\"number\" id=\"vy\" min=\"0\"> on plays <input type=\"number\" id=\"vp\" min=\"0\"></div><div class=\"readout\" id=\"yppout\">Type the box-score yards and plays. The bar for Buffalo&rsquo;s offense is 5.8; for Minnesota&rsquo;s, 4.9.</div>',w:'Halftime yards per play. Buffalo over 5.8 means its offense is winning; under 5.8, Minnesota&rsquo;s defense is. Sacks count as plays, and the box score counts them the same way.'},
 ];
 const ks=store.get('keys',{});
 $('keys').innerHTML=KEYS.map((k,i)=>`<div class="key"><div class="num">${k.n}<small>${k.s}</small></div><div><h3>${i+1}. ${k.h}</h3><div>${k.t}</div><div class="watch"><b>WATCH:</b> ${k.w}</div>
 <div class="tracker" data-i="${i}">Went to: <button class="b" data-v="b">Bills</button><button class="m" data-v="m">Vikings</button><button class="x" data-v="x">Push</button></div></div></div>`).join('');
 document.querySelectorAll('.tracker').forEach(tr=>{const i=tr.dataset.i;const paint=()=>tr.querySelectorAll('button').forEach(b=>b.classList.toggle('on',ks[i]===b.dataset.v));paint();
  tr.addEventListener('click',e=>{const v=e.target.dataset&&e.target.dataset.v;if(!v)return;ks[i]=ks[i]===v?null:v;store.set('keys',ks);paint()})});
+
+
+(function(){const ids=['by','bp','vy','vp'];ids.forEach(k=>{const v=store.get('ypp-'+k,'');$(k).value=v;$(k).addEventListener('input',()=>{store.set('ypp-'+k,$(k).value);upd()})});
+ function upd(){const by=+$('by').value,bp=+$('bp').value,vy=+$('vy').value,vp=+$('vp').value;let o=[];
+  if(bp>0){const y=by/bp;o.push(`Bills <b>${y.toFixed(1)}</b> per play &rarr; ${y>=5.8?'their offense is winning':'Minnesota&rsquo;s defense is winning'} (bar 5.8)`)}
+  if(vp>0){const y=vy/vp;o.push(`Vikings <b>${y.toFixed(1)}</b> &rarr; ${y>=4.9?'ahead of their usual':'below their usual'} (bar 4.9)`)}
+  $('yppout').innerHTML=o.length?o.join(' &middot; '):'Type the box-score yards and plays. The bar for Buffalo&rsquo;s offense is 5.8; for Minnesota&rsquo;s, 4.9.';}
+ upd();})();
 
 /* ---------- huh ---------- */
 const HUH=[
@@ -319,7 +328,7 @@ function table(el,cols,rows,rowcls,init){let sk=init[0],asc=init[1];
  draw();}
 const e2=v=>v==null?'':fmt(v),p1=v=>v==null?'':Math.round(v*100)+'%';
 D.teams.forEach(t=>{t.rec=t.w+'-'+t.l});
-table($('teamtab'),[{k:'team',h:'Team',asc:1},{k:'w',h:'W-L',f:(v,x)=>x.rec},{k:'ppg',h:'Pts/G',f:v=>v.toFixed(1)},{k:'papg',h:'Opp/G',f:v=>v.toFixed(1),asc:1},{k:'off_epa',h:'Off EPA',f:e2},{k:'def_epa',h:'Def EPA',f:e2,asc:1},{k:'off_pass',h:'Pass O',f:e2},{k:'off_run',h:'Run O',f:e2},{k:'def_pass',h:'Pass D',f:e2,asc:1},{k:'def_run',h:'Run D',f:e2,asc:1},{k:'blitz',h:'Blitz %',f:p1,tip:'share of opponent dropbacks with at least one blitzer'},{k:'sack_rate',h:'Sack %',f:p1}],
+table($('teamtab'),[{k:'team',h:'Team',asc:1},{k:'w',h:'W-L',f:(v,x)=>x.rec},{k:'ppg',h:'Pts/G',f:v=>v.toFixed(1)},{k:'papg',h:'Opp/G',f:v=>v.toFixed(1),asc:1},{k:'off_epa',h:'Off EPA',f:e2},{k:'def_epa',h:'Def EPA',f:e2,asc:1},{k:'ypp_o',h:'Yds/play O',f:v=>v.toFixed(1)},{k:'ypp_d',h:'Yds/play D',f:v=>v.toFixed(1),asc:1},{k:'off_pass',h:'Pass O',f:e2},{k:'off_run',h:'Run O',f:e2},{k:'def_pass',h:'Pass D',f:e2,asc:1},{k:'def_run',h:'Run D',f:e2,asc:1},{k:'blitz',h:'Blitz %',f:p1,tip:'share of opponent dropbacks with at least one blitzer'},{k:'sack_rate',h:'Sack %',f:p1}],
  D.teams,x=>x.team==='BUF'||x.team==='MIN'?'hl-'+x.team:'',['off_epa',false]);
 D.history.forEach(h=>{h.winner=h.so>h.sd?'Offense':h.sd>h.so?'Defense':'Tie';h.score=h.so+'-'+h.sd;h.kind=h.playoff?'Playoff':'Regular'});
 table($('histtab'),[{k:'date',h:'Date',asc:1},{k:'kind',h:'Type'},{k:'off',h:'No.1 O'},{k:'oppg',h:'O pts/g'},{k:'deff',h:'No.1 D'},{k:'dppg',h:'D allows/g',asc:1},{k:'so',h:'Score',f:(v,x)=>x.score},{k:'winner',h:'Winner'},{k:'pO',h:'O win chance',f:v=>v==null?'':Math.round(v*100)+'%',tip:'pregame: Elo probability before 1999, betting line after'}],
