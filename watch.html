@@ -48,6 +48,10 @@ font-size:.66rem;letter-spacing:.05em;color:var(--muted)}
 .match .rk{font-size:.8rem;color:var(--muted);font-weight:400}
 .match .rec{font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);font-weight:400}
 .match .sc{font-family:'Roboto Mono',monospace;font-weight:600;color:var(--rust)}
+.match a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
+.match a:hover{color:var(--steel)}
+.open{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--steel);text-decoration:none;white-space:nowrap}
+.chip.prog{border-color:var(--gold);color:var(--gold)}
 .why{font-size:.86rem;line-height:1.55}
 .why .by{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .chips{display:flex;gap:.3rem;flex-wrap:wrap;margin:.15rem 0}
@@ -105,6 +109,8 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
     <p><b>What it does not know:</b> injuries the line has not priced, rivalries, or how good the television will be.
     The line and the kickoff come live from ESPN's feed each time you open this page. The short notes under each game are
     written by the paper where we have something to say, and generated from the rankings and the line where we do not.</p>
+    <p><b>Tap any game for its card:</b> the market's chance next to ESPN's model, where the uncertainty is, and the halftime
+    check, printed with how often it has been right this season.</p>
   </div>
 
   <div class="footer">
@@ -122,7 +128,7 @@ var LEAGUE = {
   nfl: {name:'NFL', sd:13.5,
         url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates='+d;}}
 };
-var notes = {}, nflOdds = {}, games = [], sortKey = 'stakes', day = null;
+var notes = {}, programs = {}, nflOdds = {}, games = [], sortKey = 'stakes', day = null;
 
 function ymd(dt){ return new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(dt).replace(/-/g,''); }
 function dowET(dt){ return new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(dt); }
@@ -189,6 +195,7 @@ function chips(g){
     [g.home,g.away].forEach(function(t){ var po=nflOdds[t.nick]; if(po!=null && po>0.2 && po<0.8) out.push([t.nick+' on the bubble','hot']); });
   }
   if(g.close>=0.8) out.push(['Coin flip','']);
+  if(programs[g.id]) out.push(['Full program','prog']);
   return out;
 }
 
@@ -212,12 +219,13 @@ function card(g){
   function team(t){ return (t.rank?'<span class="rk">'+t.rank+' </span>':'')+esc(t.name)+
     ' <span class="rec">'+esc(t.rec)+'</span>'+((live||done)?' <span class="sc">'+esc(t.score)+'</span>':''); }
   var ch = chips(g).map(function(c){return '<span class="chip '+c[1]+'">'+c[0]+'</span>';}).join('');
+  var href = 'game.html?lg='+g.lg+'&id='+encodeURIComponent(g.id);
   var why = n ? esc(n.note)+' <span class="by">&mdash; '+esc(n.by||'The Sports Page')+'</span>' : autoWhy(g);
   return '<div class="game'+(live?' live':'')+(done?' done':'')+'">'+
     '<div class="stk"><b>'+g.stakes+'</b><span>stakes</span><div class="bar"><i style="width:'+g.stakes+'%"></i></div></div>'+
     '<div class="meta"><span>'+(live||done?'<span class="st">'+esc(g.detail)+'</span>':esc(kick(g.when)))+(g.tv?' &middot; '+esc(g.tv):'')+'</span>'+
     '<span>'+esc(g.line||'no line')+(g.total?' &middot; O/U '+g.total:'')+'</span></div>'+
-    '<div class="match">'+team(g.away)+' <span class="rk">'+(g.neutral?'vs':'at')+'</span> '+team(g.home)+'</div>'+
+    '<div class="match"><a href="'+href+'">'+team(g.away)+' <span class="rk">'+(g.neutral?'vs':'at')+'</span> '+team(g.home)+'</a> <a class="open" href="'+href+'">Game card &rarr;</a></div>'+
     '<div>'+(ch?'<div class="chips">'+ch+'</div>':'')+'<div class="why">'+why+'</div></div></div>';
 }
 
@@ -262,9 +270,11 @@ document.getElementById('asof').textContent = new Intl.DateTimeFormat('en-US',{t
 
 Promise.all([
   fetch('data/watch-notes.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
-  fetch('data/nfl-odds.json').then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})
+  fetch('data/nfl-odds.json').then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
+  fetch('data/programs.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})
 ]).then(function(x){
   notes = x[0].games || {};
+  programs = x[2].games || {};
   (x[1].teams||[]).forEach(function(t){ nflOdds[t.name] = t.po; });
   pick(dowET(new Date())==='Sun' ? days[1] : days[0]);
   setInterval(load, 60000);

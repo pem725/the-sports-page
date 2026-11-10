@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; Game Card</title>
+<meta name="description" content="One game, read by the numbers: the market's chance, where the uncertainty is, and the checks to make at halftime, with how often each one is right this season.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;
+--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2;--green:#2a6e3f}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;
+font-size:16px;line-height:1.7;padding:1.5rem 1rem 3rem}
+.masthead{max-width:860px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;
+letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.title a{color:inherit;text-decoration:none}
+.datebar{display:flex;justify-content:space-between;gap:.5rem;font-family:'Roboto Mono',monospace;font-size:.65rem;
+color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);
+padding:.3rem 0;margin-top:.3rem}
+.datebar a{color:inherit}
+.paper{max-width:860px;margin:.8rem auto 0;background:var(--cream);padding:2rem 2.2rem 2.4rem;
+box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.2rem 1rem}}
+.meta{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted)}
+.meta .st{color:var(--rust);font-weight:600}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4.4vw,2.4rem);font-weight:900;line-height:1.15;margin:.2rem 0 .3rem}
+h1 .rk{font-size:.55em;color:var(--muted);font-weight:400}
+h1 .rec{font-family:'Roboto Mono',monospace;font-size:.32em;color:var(--muted);font-weight:400;letter-spacing:.05em}
+h1 .at{font-size:.55em;color:var(--muted);font-weight:400}
+.score{font-family:'Roboto Mono',monospace;font-size:1.5rem;font-weight:600;color:var(--rust);margin:.2rem 0}
+h2{font-family:'Playfair Display',serif;font-size:1.25rem;margin:1.6rem 0 .5rem;border-bottom:1px solid var(--div);padding-bottom:.2rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:1rem 0}
+.stat{background:var(--card);border:1px solid var(--div);padding:.7rem .6rem;text-align:center}
+.stat b{display:block;font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;line-height:1.05}
+.stat span{font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:520px){.stats{grid-template-columns:1fr 1fr}.stat b{font-size:1.45rem}}
+.keys{list-style:none}
+.keys li{border-left:3px solid var(--rust);background:var(--card);padding:.55rem .8rem;margin:0 0 .55rem;font-size:.92rem;line-height:1.55}
+.keys li .tag{font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);display:block}
+.check{background:var(--steel);color:var(--cream);padding:1rem 1.1rem;margin:.6rem 0;font-size:.92rem;line-height:1.6}
+.check b.big{font-family:'Playfair Display',serif;font-size:1.3rem}
+.check .src{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.06em;opacity:.8;display:block;margin-top:.4rem}
+.check.now{background:var(--rust)}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin:.4rem 0}
+th,td{padding:.35rem .4rem;border-bottom:1px solid var(--div);text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.num{font-family:'Roboto Mono',monospace}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+@media(max-width:600px){.cols{grid-template-columns:1fr}}
+.cols h3{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem}
+.small{font-size:.82rem;line-height:1.55}
+.small li{margin:0 0 .25rem 1rem}
+.prog{display:block;border:2px solid var(--gold);background:var(--card);padding:.7rem .9rem;margin:1rem 0;
+text-decoration:none;color:var(--ink);font-family:'Playfair Display',serif;font-weight:700}
+.prog span{display:block;font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.note{font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted);margin:.4rem 0}
+.how{border-top:1px solid var(--div);margin-top:1.8rem;padding-top:1rem;font-size:.84rem;line-height:1.6}
+.how p{margin-bottom:.6rem}
+a{color:var(--steel)}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;
+flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+</style>
+<script src="assets/sitenav.js" defer></script>
+</head>
+<body>
+<div class="masthead">
+  <div class="kicker">Statistics &middot; Explained &middot; Plainly</div>
+  <div class="title"><a href="https://thesportspage.net/"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="datebar"><span>Game Card</span><span><a href="https://thesportspage.net/watch.html">&larr; What to Watch</a></span></div>
+</div>
+<div class="paper">
+  <div id="card"><p class="note">Fetching the game&hellip;</p></div>
+
+  <div class="how">
+    <p><b>How to read this card.</b> The market's chance is the betting moneyline with the bookmaker's cut removed.
+    ESPN's chance is ESPN's own model, shown beside it because when the two disagree, that disagreement is worth knowing.
+    &ldquo;Where the uncertainty is&rdquo; lists what could swing this game and that the line may not fully reflect:
+    a team leader who is hurt, a disagreement between the forecasts, a team playing differently lately than all season.</p>
+    <p><b>Every halftime check prints how often it has been right</b>, counted on this season's games
+    (<span id="built">&hellip;</span>). The team ahead at the half wins most of the time. That is the baseline,
+    and any other sign you watch should be judged against it.</p>
+    <p>Everything here comes live from ESPN's feed each time you open the page, and refreshes every minute during the game.
+    The hit rates come from our own count, with the code in <code>scripts/halftime_baselines.py</code>.</p>
+  </div>
+
+  <div class="footer">
+    <span><a href="https://thesportspage.net/" style="color:inherit">The Sports Page</a> &middot; one question per issue, answered with numbers</span>
+    <span><a href="https://thesportspage.net/watch.html" style="color:inherit">The Game Watch Guide</a></span>
+  </div>
+</div>
+
+<script>
+(function(){
+var TZ = 'America/New_York';
+var LEAGUE = {
+  nfl: {name:'NFL', path:'football/nfl', sd:13.5},
+  cfb: {name:'college football', path:'football/college-football', sd:16.5}
+};
+var q = new URLSearchParams(location.search), lg = q.get('lg') || 'nfl', id = q.get('id');
+var base = {}, programs = {}, nflOdds = {}, timer = null;
+
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+function kick(iso){ return new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}).format(new Date(iso))+' ET'; }
+function implied(ml){ ml=parseFloat(ml); if(!isFinite(ml)) return null; return ml<0 ? -ml/(-ml+100) : 100/(ml+100); }
+function phi(x){ var t=1/(1+0.3275911*Math.abs(x)/Math.SQRT2),
+  y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x/2);
+  return x>=0?(1+y)/2:(1-y)/2; }
+function pct(p){ return Math.round(100*p)+'%'; }
+function nm(t){ return lg==='nfl' ? t.team.name : (t.team.shortDisplayName || t.team.location); }
+
+// The market's chance that the HOME side wins, from the first pickcenter entry that has one.
+function marketHome(d){
+  var pcs = d.pickcenter || [];
+  for(var i=0;i<pcs.length;i++){
+    var pc = pcs[i], h = pc.homeTeamOdds && implied(pc.homeTeamOdds.moneyLine), a = pc.awayTeamOdds && implied(pc.awayTeamOdds.moneyLine);
+    if(h && a) return {p:h/(h+a), line:pc.details||'', total:pc.overUnder, from:'moneyline'};
+    if(typeof pc.spread==='number') return {p:phi(-pc.spread/LEAGUE[lg].sd), line:pc.details||'', total:pc.overUnder, from:'spread'};
+  }
+  return null;
+}
+
+// WHERE THE UNCERTAINTY IS. Rule 1 of the Bills-Vikings post-mortem: spend the keys on
+// what is uncertain, not on what is famous. Each key is {tag, text}. The thresholds are
+// judgment; tune them here, the way cfbWeight() is tuned on the watch page.
+function keys(d, ctx){
+  var out = [], inj = {};
+  (d.injuries||[]).forEach(function(T){ (T.injuries||[]).forEach(function(i){
+    if(i.athlete) inj[i.athlete.id] = {status:i.status, what:(i.details&&i.details.type)||''}; }); });
+  // 1. A season leader who is out or in doubt. The line may have priced it; the viewer should still know.
+  (d.leaders||[]).forEach(function(T){ (T.leaders||[]).forEach(function(cat){
+    var L = cat.leaders && cat.leaders[0]; if(!L || !L.athlete) return;
+    var s = inj[L.athlete.id]; if(!s || !/out|reserve|doubtful|questionable/i.test(s.status)) return;
+    out.push({tag:'Missing piece', text:'<b>'+esc(L.athlete.displayName)+'</b> leads '+esc(T.team.displayName)+' in '+
+      esc(cat.displayName.toLowerCase())+' ('+esc(L.displayValue)+') and is listed <b>'+esc(s.status.toLowerCase())+'</b>'+
+      (s.what?' ('+esc(s.what.toLowerCase())+')':'')+'. Watch who fills that role, and how the first drives go.'});
+  }); });
+  // 2. The market and ESPN's model disagree by 10 points or more: someone knows something, or one of them is wrong.
+  if(ctx.mkt && ctx.espn!=null && Math.abs(ctx.mkt.p-ctx.espn)>=0.10)
+    out.push({tag:'Forecasts disagree', text:'The market has '+esc(ctx.homeName)+' at <b>'+pct(ctx.mkt.p)+'</b>; ESPN’s model has them at <b>'+
+      pct(ctx.espn)+'</b>. A gap that size usually means injury or lineup news the model has not absorbed.'});
+  // 3. Recent form against the season record: last five games won.
+  (d.lastFiveGames||[]).forEach(function(T){
+    var ev = T.events||[], w = ev.filter(function(e){return e.gameResult==='W';}).length;
+    if(ev.length===5 && (w===0 || w===5))
+      out.push({tag:w?'Hot streak':'Cold streak', text:esc(T.team.displayName)+' '+(w?'won':'lost')+' all of its last five. '+
+        'Five games is a small sample: a streak says less about next week than the season does.'});
+  });
+  // 4. A coin flip is itself the key: nothing on paper separates them.
+  if(ctx.mkt && Math.abs(ctx.mkt.p-0.5)<0.06)
+    out.push({tag:'Coin flip', text:'The market cannot separate these teams. Turnovers decide a game like this more often than talent does.'});
+  return out.slice(0,3);  // Rule 5: at most three keys.
+}
+
+function rateLine(r){ return r && r.n ? '<b class="big">'+r.pct+'%</b> ('+r.won+' of '+r.n+')' : 'not enough games yet'; }
+
+// HALFTIME CHECK. Rules 2-4: a checkpoint you can count, a time to check it, its hit rate, and the baseline.
+function halftime(d, H, A, st){
+  var b = base[lg]; if(!b) return '';
+  var lsH = (H.linescores||[]), lsA = (A.linescores||[]), out = '';
+  var src = '<span class="src">Counted on '+b.games+' '+base.season+' '+LEAGUE[lg].name+' games through '+esc(b.through)+'. One score = within 8 at the half.</span>';
+  var atHalf = st.type.name==='STATUS_HALFTIME', pastHalf = st.period>=3 || st.type.state==='post';
+  if((atHalf || pastHalf) && lsH.length>=2 && lsA.length>=2){
+    var h = +lsH[0].displayValue + +lsH[1].displayValue, a = +lsA[0].displayValue + +lsA[1].displayValue, lead = h-a;
+    if(lead===0) out += '<div class="check now">Tied at the half, '+h+'&ndash;'+a+'. The baseline does not apply; this is a second-half game.'+src+'</div>';
+    else {
+      var L = lead>0?nm(H):nm(A), one = Math.abs(lead)<=8, r = one ? b.leader_wins_one_score : b.leader_wins;
+      var s = '<div class="check now">'+esc(L)+' led '+Math.max(h,a)+'&ndash;'+Math.min(h,a)+' at the half. '+
+        (one?'In a one-score game, the':'The')+' team ahead at the half has won '+rateLine(r)+' this season.';
+      // Yards per play at the half, NFL only, and only while it IS the half: ESPN's box score is cumulative.
+      if(atHalf && lg==='nfl' && b.one_score_ypp_agrees && one){
+        var y = {}; ((d.boxscore||{}).teams||[]).forEach(function(T){ (T.statistics||[]).forEach(function(x){
+          if(x.name==='yardsPerPlay') y[T.team.id] = parseFloat(x.displayValue); }); });
+        var yl = lead>0 ? y[H.team.id] : y[A.team.id], yt = lead>0 ? y[A.team.id] : y[H.team.id];
+        if(isFinite(yl) && isFinite(yt) && yl!==yt){
+          var agree = yl>yt;
+          s += ' They are also '+(agree?'ahead':'behind')+' in yards per play ('+yl+' to '+yt+'). When that '+(agree?'agrees':'disagrees')+
+            ' with the score, the leader has won '+rateLine(agree?b.one_score_ypp_agrees:b.one_score_ypp_disagrees)+'.';
+        }
+      }
+      out += s + src + '</div>';
+    }
+  } else {
+    out += '<div class="check"><b>At halftime, look at the score first.</b> This season the team ahead at the half has won '+
+      rateLine(b.leader_wins)+' of '+LEAGUE[lg].name+' games, and '+rateLine(b.leader_wins_one_score)+' when it is a one-score game. '+
+      (lg==='nfl' && b.one_score_ypp_agrees ? 'In a one-score game, then check yards per play: when the leader also leads in it, '+
+        rateLine(b.one_score_ypp_agrees)+'; when it trails, '+rateLine(b.one_score_ypp_disagrees)+'. A tiebreaker, not a crystal ball.'
+        : 'We have no college play-by-play we trust for yards per play, so no other check is printed here untested.')+src+'</div>';
+  }
+  return out;
+}
+
+function teamStats(d){
+  var T = (d.boxscore||{}).teams||[]; if(T.length<2) return '';
+  var a = T[0], h = T[1], rows = '';
+  var want = ['totalPointsPerGame','totalPointsPerGameAllowed','yardsPerGame','yardsPerGameAllowed','passingYardsPerGame','rushingYardsPerGame',
+              'yardsPerPlay','totalYards','thirdDownEff','turnovers','possessionTime','redZoneAttempts'];
+  function map(t){ var m={}; (t.statistics||[]).forEach(function(x){ m[x.name]=x; }); return m; }
+  var ma = map(a), mh = map(h);
+  want.forEach(function(k){ if(ma[k] && mh[k]) rows += '<tr><td>'+esc(ma[k].label||k)+'</td><td class="num">'+esc(ma[k].displayValue)+'</td><td class="num">'+esc(mh[k].displayValue)+'</td></tr>'; });
+  return rows ? '<table><tr><th></th><th>'+esc(a.team.abbreviation)+'</th><th>'+esc(h.team.abbreviation)+'</th></tr>'+rows+'</table>' : '';
+}
+
+function people(d){
+  var cols = (d.leaders||[]).map(function(T){
+    var li = (T.leaders||[]).map(function(c){ var L=c.leaders&&c.leaders[0]; return L ? '<li><b>'+esc(L.athlete.displayName)+'</b>, '+esc(c.displayName.toLowerCase())+': '+esc(L.displayValue)+'</li>' : ''; }).join('');
+    var inj = ((d.injuries||[]).filter(function(I){return I.team.id===T.team.id;})[0]||{}).injuries||[];
+    var il = inj.filter(function(i){return /out|doubtful|questionable|reserve/i.test(i.status);}).slice(0,6)
+      .map(function(i){ return '<li>'+esc(i.athlete.displayName)+' &mdash; '+esc(i.status)+((i.details&&i.details.type)?' ('+esc(i.details.type)+')':'')+'</li>'; }).join('');
+    return '<div><h3>'+esc(T.team.displayName)+'</h3><ul class="small">'+li+'</ul>'+(il?'<p class="note">Injury report</p><ul class="small">'+il+'</ul>':'')+'</div>';
+  });
+  return cols.length ? '<div class="cols">'+cols.join('')+'</div>' : '';
+}
+
+function render(d){
+  var c = d.header.competitions[0], H=null, A=null;
+  c.competitors.forEach(function(t){ if(t.homeAway==='home') H=t; else A=t; });
+  var st = c.status, state = st.type.state, mkt = marketHome(d);
+  var pr = d.predictor, espn = pr && pr.homeTeam && pr.homeTeam.gameProjection ? parseFloat(pr.homeTeam.gameProjection)/100 : null;
+  var wp = d.winprobability||[], live = wp.length ? wp[wp.length-1].homeWinPercentage : null;
+  function side(t){ var r = t.rank && t.rank<=25 ? '<span class="rk">'+t.rank+' </span>' : '';
+    var rec = (t.record||[])[0]; return r+esc(nm(t))+(rec?' <span class="rec">'+esc(rec.summary)+'</span>':''); }
+  var tv = (c.broadcasts||[]).map(function(b){ return b.media && b.media.shortName; }).filter(Boolean).join(', ');
+  var venue = ((d.gameInfo||{}).venue||{}).fullName;
+  document.title = 'The Sports Page — '+nm(A)+' '+(c.neutralSite?'vs':'at')+' '+nm(H);
+
+  var h = '<div class="meta">'+(state==='pre' ? esc(kick(c.date)) : '<span class="st">'+esc(st.type.shortDetail)+'</span>')+
+    (tv?' &middot; '+esc(tv):'')+(venue?' &middot; '+esc(venue):'')+'</div>';
+  h += '<h1>'+side(A)+' <span class="at">'+(c.neutralSite?'vs':'at')+'</span> '+side(H)+'</h1>';
+  if(state!=='pre') h += '<div class="score">'+esc(nm(A))+' '+esc(A.score)+' &middot; '+esc(nm(H))+' '+esc(H.score)+'</div>';
+
+  var fav = mkt ? (mkt.p>=0.5 ? nm(H) : nm(A)) : null, fp = mkt ? Math.max(mkt.p,1-mkt.p) : null;
+  h += '<div class="stats">';
+  h += '<div class="stat"><b>'+(mkt?pct(fp):'&mdash;')+'</b><span>'+(mkt?esc(fav)+' to win, market':'no line yet')+'</span></div>';
+  if(espn!=null) h += '<div class="stat"><b>'+pct(mkt&&mkt.p<0.5?1-espn:espn)+'</b><span>'+(mkt?esc(fav):esc(nm(H)))+', ESPN model</span></div>';
+  if(state==='in' && live!=null) h += '<div class="stat"><b>'+pct(mkt&&mkt.p<0.5?1-live:live)+'</b><span>'+(mkt?esc(fav):esc(nm(H)))+' now, ESPN live</span></div>';
+  else h += '<div class="stat"><b>'+(mkt&&mkt.line?esc(mkt.line):'&mdash;')+'</b><span>'+(mkt&&mkt.total?'line &middot; total '+esc(mkt.total):'line')+'</span></div>';
+  h += '</div>';
+
+  if(lg==='nfl'){
+    var po = [A,H].map(function(t){ var p = nflOdds[t.team.name]; return p==null ? '' : 'the '+esc(t.team.name)+' are '+pct(p)+' to make the playoffs'; }).filter(Boolean);
+    if(po.length) h += '<p class="small">On our <a href="https://thesportspage.net/odds.html" target="_blank" rel="noopener">Odds Board</a>, '+po.join(' and ')+'.</p>';
+  }
+
+  var P = programs[id];
+  if(P) h += '<a class="prog" href="'+esc(P.url)+'"><span>The full program</span>'+esc(P.title)+' &rarr;</a>';
+
+  var K = keys(d, {mkt:mkt, espn:espn, homeName:nm(H)});
+  h += '<h2>Where the uncertainty is</h2>' + (K.length ? '<ul class="keys">'+K.map(function(k){
+    return '<li><span class="tag">'+esc(k.tag)+'</span>'+k.text+'</li>'; }).join('')+'</ul>'
+    : '<p class="small">'+(d.injuries && d.injuries.length ? 'Nothing on the injury report or in the forecasts stands out. ' :
+      'ESPN\u2019s feed carries no injury report for this game, so this card cannot see who is hurt. Nothing in the forecasts stands out. ')+
+      'The line is the best summary of this game.</p>');
+
+  h += '<h2>The halftime check</h2>' + halftime(d, H, A, st);
+  var ts = teamStats(d);
+  if(ts) h += '<h2>'+(state==='pre'?'The season, per game':'This game')+'</h2>'+ts;
+  var pp = people(d);
+  if(pp) h += '<h2>Who to watch</h2>'+pp;
+  h += '<p class="note">Updated '+new Date().toLocaleTimeString('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'})+' ET from ESPN’s feed.</p>';
+  document.getElementById('card').innerHTML = h;
+
+  if(state==='in' && !timer) timer = setInterval(load, 60000);
+  if(state!=='in' && timer){ clearInterval(timer); timer = null; }
+}
+
+function load(){
+  if(!id || !LEAGUE[lg]){ document.getElementById('card').innerHTML = '<p class="note">No game chosen. Pick one from <a href="watch.html">What to Watch</a>.</p>'; return; }
+  fetch('https://site.api.espn.com/apis/site/v2/sports/'+LEAGUE[lg].path+'/summary?event='+encodeURIComponent(id))
+    .then(function(r){return r.json();}).then(render)
+    .catch(function(){ document.getElementById('card').innerHTML = '<p class="note">ESPN’s feed did not answer. Try again in a minute.</p>'; });
+}
+
+Promise.all([
+  fetch('data/halftime-baselines.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
+  fetch('data/programs.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
+  fetch('data/nfl-odds.json').then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})
+]).then(function(x){
+  base = x[0]; programs = x[1].games || {};
+  (x[2].teams||[]).forEach(function(t){ nflOdds[t.name] = t.po; });
+  document.getElementById('built').textContent = base.built ? base.season+' season, rebuilt '+base.built : 'baselines not yet built';
+  load();
+});
+})();
+</script>
+</body>
+</html>

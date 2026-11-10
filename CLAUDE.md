@@ -643,6 +643,28 @@ page; tune them in `cfbWeight()` / `nflWeight()`.
 lines; every fact in one must trace to a named source. Games without a note get a
 generated sentence from the line and the rankings.
 
+### `game.html` — the game card behind every game on What to Watch
+
+Added 2026-11-10 on the editor's ask, after the Bills-Vikings post-mortem: every
+game in `watch.html` links to `game.html?lg=nfl|cfb&id=ESPN_EVENT_ID`. Live from
+ESPN's summary feed in the reader's browser, like the watch page. It shows the
+market's chance beside ESPN's model, **where the uncertainty is** (at most three
+keys, from `keys()`: a season leader hurt or questionable, market vs model 10+
+points apart, a five-game streak, a coin flip), the **halftime check**, season or
+game stats, leaders and the injury report.
+
+**It enforces the post-mortem's five rules in code.** Keys aim at uncertainty, never
+more than three. The halftime check prints its hit rate on THIS season from
+`data/halftime-baselines.json`, rebuilt daily by `scripts/halftime_baselines.py`
+(nflverse for the NFL; ESPN line scores for college). Yards per play is offered
+as a tiebreaker for the NFL only: college has no play-by-play we trust for it,
+so no untested rate is printed. ESPN's college feed carries no injury report, and
+the card says so rather than implying nobody is hurt.
+
+A hand-written program for a game is listed in `data/programs.json` by event id;
+both pages then link to it. Other sports need a backtested halftime (or
+period) baseline before they get a card.
+
 ### `engine.html` — the guts, opened up
 
 The public account of how this paper is built: architecture, the daily run, the
