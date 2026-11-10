@@ -26,3 +26,21 @@ MISS, 13-6 entering Q4 and BUF won it 10-0. 6 turnovers: Murphy INT, then a Went
 8 yards per play: higher-YPP team won (4.3 vs 3.9); the 5.8 projection was well off.
 
 Code: scratchpad twolooks.py (control = every other same-season pair; pair = unit).
+
+## The quote (sourced 2026-11-10)
+
+Joe Brady, postgame press conference, Buffalo Bills official YouTube channel,
+"Joe Brady Talks Strong Defensive Performance In 23-6 Victory Over The Vikings",
+posted 2026-11-09 (https://www.youtube.com/watch?v=_iJkNY7nBwg). Heard by the editor and
+matched in the video's auto-captions.
+
+- ~2:58, answering what feels different about the **defense** since the bye: "if you're
+  worried about your own stats this game ... we're not going to get the result that we
+  want ... you got to be the teammate. Make the play without making the play."
+- ~5:53, again about linebacker **Terrel Bernard** (who intercepted Wentz at 4:10 of the
+  3rd): "he's making a lot of plays without making the plays."
+
+He said it about the defense, not the offense. Use it for the Buffalo-D-vs-Wentz half of
+the post-mortem (0-8 on third down, 3 takeaways, ~-1.0 EPA per Wentz dropback), where the
+credit spreads across a unit instead of one stat line. Captions are machine-made: quote
+only the two short lines above, checked against the audio.
