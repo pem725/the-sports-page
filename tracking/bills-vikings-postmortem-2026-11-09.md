@@ -44,3 +44,46 @@ He said it about the defense, not the offense. Use it for the Buffalo-D-vs-Wentz
 the post-mortem (0-8 on third down, 3 takeaways, ~-1.0 EPA per Wentz dropback), where the
 credit spreads across a unit instead of one stat line. Captions are machine-made: quote
 only the two short lines above, checked against the audio.
+
+## Did the program guide the viewer? (the editor's question, 2026-11-10)
+
+**Aim.** Six of eight keys (blitz, play action, red zone, slow start, third down, yards
+per play) pointed at Buffalo's offense against Minnesota's defense. That matchup was close
+to a draw. The game was decided on the other side: Buffalo's defense against Wentz, a backup
+with 48 dropbacks of evidence. It sat in the Bayesian booth but got **no key**. The editor's
+own example, "watch his first 5 plays," would have caught it: Wentz was 1 for 5 on his first
+five dropbacks (-1.1 EPA each) by early in the 2nd quarter.
+
+**Live reads that misled:** the red-zone rule ("field goals mean Minnesota is winning"),
+the fourth-quarter lean (13-6 entering Q4, Buffalo won it 10-0), and the halftime
+yards-per-play bar (Buffalo 3.6 against 5.8 said "Minnesota's defense is winning"; it was,
+and Minnesota trailed). **Worked:** turnovers (key 6), Minnesota's third downs (0 for 5 at
+half), and yards per play as the after-the-game winner check.
+
+**Hindsight trap, caught.** The first story here was "the play count was the tell" (BUF 24,
+MIN 8 after one quarter). Over the 2026 season, the halftime play-count leader won only 54%
+of one-score games. That is the cherry-pick we warn readers about.
+
+**Halftime gauges, 2026 regular season through week 9 (135 games; 79 within 8 at half):**
+
+| leader at halftime in... | wins, all games | wins, one-score games |
+|---|---|---|
+| the score | 77% | 75% |
+| expected points per play | 72% | 66% |
+| yards per play | 70% | 65% |
+| plays run | 62% | 54% |
+| third-down rate | 61% | 50% |
+| turnovers | 55% | 51% |
+
+Nothing beats the score. In one-score games, when yards per play disagrees with the score the
+leader still wins 70% (23 games); when it agrees, 78% (45). Expected points: 67% (15) vs 77% (53).
+The gauges are tie-breakers, not oracles, and the program should say so.
+
+**Rules for the next program:**
+1. Spend keys on uncertainty, not fame. The thinnest evidence (a backup QB, a reshuffled
+   line) gets a key with a checkpoint.
+2. Every key gets a checkpoint a viewer can count at the bar, and a time to check it.
+3. Every checkpoint is backtested on this season before it prints, with its hit rate shown.
+   No untested rules.
+4. Print the baseline: the halftime score is right about 3 times in 4 in one-score games.
+5. At most three keys per matchup; both sides of the ball get keys.
