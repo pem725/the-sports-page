@@ -169,7 +169,7 @@ def listing():
             state = "?"
         if not v.exists():
             state = "VAULT GONE"
-        print(f"  {m['week']:<6}{m['sealed_at'][:19]:<22}{m['unlock'][:19]:<22}{state:<12}{m['sha256'][:16]}...")
+        print(f"  {str(m.get('week', r.stem.split('-commitment')[0][:6])):<6}{m['sealed_at'][:19]:<22}{m['unlock'][:19]:<22}{state:<12}{m['sha256'][:16]}...")
     print()
     return 0
 
