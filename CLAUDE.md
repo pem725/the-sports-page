@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 275 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 274 issues remaining of 500
 
 ## Repository Structure
 
@@ -1366,9 +1366,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 225 issues (#1-225)
-Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 193-lockout, 194-owner-succession, 197-staff-drain, 198-simmons-counterfactual, 199-pitching-change-runs, 201-mlb-worries, _TEMPLATE)
+Published: 226 issues (#1-226)
+Queue: 8 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 193-lockout, 194-owner-succession, 197-staff-drain, 199-pitching-change-runs, 201-mlb-worries, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 275 issues remaining of 500
-Last published: Issue #225 — "Does Working for a Great Coach Make You Better?" (196-coaching-dna.html) on November 10, 2026
+Goal: 274 issues remaining of 500
+Last published: Issue #226 — "What Did the Bears Really Give Up for Simmons?" (198-simmons-counterfactual.html) on November 11, 2026
