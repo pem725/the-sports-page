@@ -662,8 +662,24 @@ so no untested rate is printed. ESPN's college feed carries no injury report, an
 the card says so rather than implying nobody is hurt.
 
 A hand-written program for a game is listed in `data/programs.json` by event id;
-both pages then link to it. Other sports need a backtested halftime (or
-period) baseline before they get a card.
+both pages then link to it.
+
+**Hockey got its card on 2026-11-11** (`lg=nhl`), after its checkpoint was measured:
+the score **after two periods**, from ESPN line scores for every regular-season game
+(292 through Nov 10: leader wins 88%, one goal 77%, two or more 94%; overtime and
+shootout wins count as wins). The season opened **Sept 29** in ESPN's feed -- a scan
+starting in October silently drops a week, so `nhl()` starts at Sept 15; check the
+count against the standings (games played / 2). Hockey cards add **In net**: the
+probable starter (from the scoreboard's `probables`, since the summary lacks them),
+season save percentage, and any of the club's goalies on IR; a key fires when the
+starter is not the club's games-played leader. ESPN has no hockey win model and the
+puck line is always 1.5, so the market's moneyline stands alone and there is no
+spread fallback. On What to Watch, hockey is the **Tonight · NHL** tab; with no NHL
+playoff model yet, its stakes number is closeness alone, and the page states the
+night's range of favorites instead of stamping "coin flip" on every game.
+
+Basketball needs a measured checkpoint (the score after three quarters is the
+obvious candidate) before it gets a card.
 
 ### `engine.html` — the guts, opened up
 
