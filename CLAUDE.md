@@ -653,6 +653,18 @@ keys, from `keys()`: a season leader hurt or questionable, market vs model 10+
 points apart, a five-game streak, a coin flip), the **halftime check**, season or
 game stats, leaders and the injury report.
 
+**The card's shape is fixed: bottom line, then three points, then a closed drawer.**
+Set by the editor 2026-11-11 (*"think like USA Today ... only 3 points"*, after Koegel's
+*The Exceptional Presenter*). The dark banner states the bottom line: one big number
+(the favorite's chance pregame, the score live, the final after), one sentence, and a
+split bar. Then **no more than three points**, each built the same way: a figure (big
+number, a 100-square icon array, or two bars), a one-line headline, *Why it matters*,
+and *If you miss it*. Uncertainty keys come first, the checkpoint always appears, and a
+"biggest gap" point fills an empty slot pregame only when two teams differ by 15%+ on
+a stat. An even game gets fewer points, never padding. Rates are said as counts ("29 of
+every 100 power plays"), never as a gap between two rates. Stats, leaders, injuries,
+goalies and links live in the "details" drawer, which a live refresh keeps open.
+
 **It enforces the post-mortem's five rules in code.** Keys aim at uncertainty, never
 more than three. The halftime check prints its hit rate on THIS season from
 `data/halftime-baselines.json`, rebuilt daily by `scripts/halftime_baselines.py`

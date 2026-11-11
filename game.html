@@ -58,6 +58,38 @@ td.num{font-family:'Roboto Mono',monospace}
 text-decoration:none;color:var(--ink);font-family:'Playfair Display',serif;font-weight:700}
 .prog span{display:block;font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .note{font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted);margin:.4rem 0}
+.bluf{background:var(--ink);color:var(--cream);padding:1rem 1.1rem 1rem;margin:1rem 0 .4rem;display:grid;grid-template-columns:auto 1fr;gap:.3rem 1rem;align-items:center}
+.bn{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.6rem,9vw,3.6rem);line-height:1;color:var(--gold)}
+.bl{font-size:1.02rem;line-height:1.45;min-width:0}
+.bl b{color:#fff}
+.tagline{display:block;font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.15rem}
+.split{grid-column:1/-1;display:flex;height:1.7rem;margin-top:.5rem;font-family:'Roboto Mono',monospace;font-size:.68rem;font-weight:600}
+.split i{display:flex;align-items:center;font-style:normal;padding:0 .45rem;white-space:nowrap;overflow:hidden;min-width:0}
+.split .sa{background:var(--steel);color:#fff}.split .sh{background:var(--rust);color:#fff;justify-content:flex-end}
+.splitcap{grid-column:1/-1;font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.06em;opacity:.75}
+@media(max-width:520px){.bluf{grid-template-columns:1fr}}
+.pts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem}
+.pt{background:var(--card);border-top:4px solid var(--rust);padding:.8rem .9rem .7rem;min-width:0}
+.pt .fig{min-height:4.6rem;display:flex;align-items:center;margin-bottom:.4rem}
+.pt h3{font-family:'Playfair Display',serif;font-size:1.12rem;line-height:1.2;margin:0 0 .45rem;text-wrap:balance}
+.pt p{font-size:.86rem;line-height:1.45;margin:0 0 .4rem}
+.lab{display:block;font-family:'Roboto Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);font-weight:600}
+.lab.miss{color:var(--rust)}
+.pt .src{font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);margin-top:.5rem}
+.bignum{font-family:'Playfair Display',serif;font-weight:900;font-size:2.8rem;line-height:1;color:var(--ink)}
+.bignum small{display:block;font-family:'Roboto Mono',monospace;font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+.gridfig{display:flex;align-items:center;gap:.7rem}
+.gridfig svg{width:72px;height:72px;flex:none}
+.gl{font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);line-height:1.3}
+.gl b{display:block;font-family:'Playfair Display',serif;font-size:2rem;color:var(--rust);line-height:1}
+.bars{width:100%;display:flex;flex-direction:column;gap:.35rem}
+.br{display:grid;grid-template-columns:3.6rem 1fr 3rem;gap:.4rem;align-items:center;font-family:'Roboto Mono',monospace;font-size:.68rem}
+.br i{display:block;height:.9rem}.br .b1{background:var(--steel)}.br .b2{background:var(--rust)}
+.br b{font-size:.8rem;text-align:right}
+details.more{margin:1.4rem 0 .4rem;border-top:1px solid var(--div);padding-top:.6rem}
+details.more summary{cursor:pointer;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);font-weight:600}
+details.more summary:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.dh{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin:1rem 0 .3rem}
 .how{border-top:1px solid var(--div);margin-top:1.8rem;padding-top:1rem;font-size:.84rem;line-height:1.6}
 .how p{margin-bottom:.6rem}
 a{color:var(--steel)}
@@ -76,16 +108,11 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
   <div id="card"><p class="note">Fetching the game&hellip;</p></div>
 
   <div class="how">
-    <p><b>How to read this card.</b> The market's chance is the betting moneyline with the bookmaker's cut removed.
-    ESPN's chance is ESPN's own model, shown beside it because when the two disagree, that disagreement is worth knowing
-    (ESPN publishes none for hockey).
-    &ldquo;Where the uncertainty is&rdquo; lists what could swing this game and that the line may not fully reflect:
-    a team leader who is hurt, a disagreement between the forecasts, a team playing differently lately than all season.</p>
-    <p><b>Every halftime check prints how often it has been right</b>, counted on this season's games
-    (<span id="built">&hellip;</span>). In hockey the check comes after two periods. The team ahead at the checkpoint wins most of the time. That is the baseline,
-    and any other sign you watch should be judged against it.</p>
-    <p>Everything here comes live from ESPN's feed each time you open the page, and refreshes every minute during the game.
-    The hit rates come from our own count, with the code in <code>scripts/halftime_baselines.py</code>.</p>
+    <p><b>How to read this card.</b> The bottom line comes first: the market's chance, with the bookmaker's cut removed.
+    Then no more than three things to know, each with why it matters and what goes wrong if you miss it.
+    The checkpoint (halftime; after two periods in hockey) shows how often it has held, counted on this season's games
+    (<span id="built">&hellip;</span>) with the code in <code>scripts/halftime_baselines.py</code>.
+    Everything else is in the details. The card is live from ESPN's feed and refreshes every minute during the game.</p>
   </div>
 
   <div class="footer">
@@ -135,93 +162,127 @@ function marketHome(d){
   return null;
 }
 
-// WHERE THE UNCERTAINTY IS. Rule 1 of the Bills-Vikings post-mortem: spend the keys on
-// what is uncertain, not on what is famous. Each key is {tag, text}. The thresholds are
-// judgment; tune them here, the way cfbWeight() is tuned on the watch page.
+// THE CARD IS THREE POINTS, NEVER MORE. Set by the editor 2026-11-11, after The Exceptional
+// Presenter: bottom line up front, then each point answers three things in order --
+// what it is (a number or a figure, and one headline), why it matters, and what goes wrong
+// if you miss it. Everything else lives in the details drawer. Each point is
+// {fig, head, why, miss}. Rule 1 of the Bills-Vikings post-mortem still holds: the points
+// aim at what is uncertain, not at what is famous. Thresholds are judgment; tune them here.
+
+// FIGURES. Built to be read at a glance: a big number, an icon array, or two bars.
+function bigFig(v, unit){ return '<div class="bignum">'+esc(v)+(unit?'<small>'+esc(unit)+'</small>':'')+'</div>'; }
+// 100 squares, p of them filled: "77 of 100" is easier to feel than "77%".
+function grid100(p, label){
+  var s = '<svg class="grid" viewBox="0 0 90 90" role="img" aria-label="'+p+' of 100">';
+  for(var i=0;i<100;i++){ var r = Math.floor(i/10), c = i%10;
+    s += '<rect x="'+(c*9)+'" y="'+(r*9)+'" width="7.5" height="7.5" rx="1" fill="'+(i<p?'var(--rust)':'var(--div)')+'"/>'; }
+  return '<div class="gridfig">'+s+'</svg><div class="gl"><b>'+p+'</b> of 100'+(label?'<br>'+esc(label):'')+'</div></div>';
+}
+function bars(rows){  // rows: [[label, value, display]]
+  var m = Math.max.apply(null, rows.map(function(r){return Math.abs(r[1]);})) || 1;
+  return '<div class="bars">'+rows.map(function(r,i){
+    return '<div class="br"><span>'+esc(r[0])+'</span><i style="width:'+Math.max(4,Math.round(100*Math.abs(r[1])/m))+'%" class="'+(i?'b2':'b1')+'"></i><b>'+esc(r[2])+'</b></div>';
+  }).join('')+'</div>';
+}
+
 function keys(d, ctx){
   var out = [], inj = {};
   (d.injuries||[]).forEach(function(T){ (T.injuries||[]).forEach(function(i){
     if(i.athlete) inj[i.athlete.id] = {status:i.status, what:(i.details&&i.details.type)||''}; }); });
-  // 1. A season leader who is out or in doubt. The line may have priced it; the viewer should still know.
+  // 1. A season leader who is out or in doubt.
   (d.leaders||[]).forEach(function(T){ (T.leaders||[]).forEach(function(cat){
     var L = cat.leaders && cat.leaders[0]; if(!L || !L.athlete) return;
     var s = inj[L.athlete.id]; if(!s || !/out|reserve|doubtful|questionable|day-to-day/i.test(s.status)) return;
-    out.push({tag:'Missing piece', text:'<b>'+esc(L.athlete.displayName)+'</b> leads '+esc(T.team.displayName)+' in '+
-      esc(cat.displayName.toLowerCase())+' ('+esc(L.displayValue)+') and is listed <b>'+esc(s.status.toLowerCase())+'</b>'+
-      (s.what?' ('+esc(s.what.toLowerCase())+')':'')+'. Watch who fills that role, and '+SWING[lg]+'.'});
+    if(out.some(function(o){return o.who===L.athlete.id;})) return;  // one point per player, even one who leads two categories
+    out.push({who:L.athlete.id, fig:bigFig(L.displayValue, cat.displayName.toLowerCase()),
+      head:esc(L.athlete.displayName)+' is '+esc(s.status.toLowerCase()),
+      why:'The '+esc(T.team.shortDisplayName||T.team.displayName)+' leader in '+esc(cat.displayName.toLowerCase())+(s.what?', '+esc(s.what.toLowerCase()):'')+'.',
+      miss:'You judge the team by a lineup that is not on the field. Watch who fills the role, and '+SWING[lg]+'.'});
   }); });
-  // 2. The market and ESPN's model disagree by 10 points or more: someone knows something, or one of them is wrong.
+  // 2. Hockey: a backup in net. The goalie faces every shot.
+  (ctx.goalies||[]).forEach(function(g){
+    if(g.usual && g.usual.id!==g.id)
+      out.push({fig:bigFig(g.sv||'—','save %'), head:'Backup in net for the '+esc(g.team),
+        why:esc(g.name)+' '+(g.confirmed?'starts':'is expected to start')+', not '+esc(g.usual.name)+' ('+g.usual.gp+' games). The goalie faces every shot.',
+        miss:'You read tonight off a goalie who is not playing.'});
+  });
+  // 3. The market and ESPN's model 10+ points apart: someone knows something.
   if(ctx.mkt && ctx.espn!=null && Math.abs(ctx.mkt.p-ctx.espn)>=0.10)
-    out.push({tag:'Forecasts disagree', text:'The market has '+esc(ctx.homeName)+' at <b>'+pct(ctx.mkt.p)+'</b>; ESPN’s model has them at <b>'+
-      pct(ctx.espn)+'</b>. A gap that size usually means injury or lineup news the model has not absorbed.'});
-  // 3. Recent form against the season record: last five games won.
+    out.push({fig:bars([['Market',ctx.mkt.p,pct(ctx.mkt.p)],['ESPN',ctx.espn,pct(ctx.espn)]]),
+      head:'Two forecasts, '+Math.round(100*Math.abs(ctx.mkt.p-ctx.espn))+' points apart',
+      why:'Both are for '+esc(ctx.homeName)+'. A gap this big usually means injury or lineup news one of them has not priced.',
+      miss:'You trust whichever number you saw first.'});
+  // 4. Five straight, either way.
   (d.lastFiveGames||[]).forEach(function(T){
     var ev = T.events||[], w = ev.filter(function(e){return e.gameResult==='W';}).length;
     if(ev.length===5 && (w===0 || w===5))
-      out.push({tag:w?'Hot streak':'Cold streak', text:esc(T.team.displayName)+' '+(w?'won':'lost')+' all of its last five. '+
-        'Five games is a small sample: a streak says less about next week than the season does.'});
+      out.push({fig:bigFig(w?'5–0':'0–5','last five'), head:esc(T.team.shortDisplayName||T.team.displayName)+' '+(w?'won':'lost')+' five straight',
+        why:'Five games is a small sample. The whole season says more about tonight.',
+        miss:w?'You overrate a hot streak.':'You write a team off too soon.'});
   });
-  // 4. Hockey: a goalie other than the club's usual starter. The goalie is hockey's quarterback.
-  (ctx.goalies||[]).forEach(function(g){
-    if(g.usual && g.usual.id!==g.id)
-      out.push({tag:'Backup in net', text:'<b>'+esc(g.name)+'</b> is '+(g.confirmed?'starting':'expected to start')+' for '+esc(g.team)+
-        ', not '+esc(g.usual.name)+', who has played the most games in net for them ('+g.usual.gp+'). '+
-        'A backup\u2019s save percentage rests on fewer shots, so it says less about tonight.'});
-  });
-  // 5. A coin flip is itself the key: nothing on paper separates them.
-  if(ctx.mkt && Math.abs(ctx.mkt.p-0.5)<0.06)
-    out.push({tag:'Coin flip', text: lg==='nhl'
-      ? 'The market cannot separate these teams. In a game this even, one power play or one save can settle it.'
-      : 'The market cannot separate these teams. Turnovers decide a game like this more often than talent does.'});
-  return out.slice(0,3);  // Rule 5: at most three keys.
+  out.forEach(function(o){ o.key = true; });  // a real uncertainty, fit to lead the bottom line
+  return out;
 }
 
-function rateLine(r){ return r && r.n ? '<b class="big">'+r.pct+'%</b> ('+r.won+' of '+r.n+')' : 'not enough games yet'; }
-
-// HALFTIME CHECK. Rules 2-4: a checkpoint you can count, a time to check it, its hit rate, and the baseline.
-function halftime(d, H, A, st){
-  var b = base[lg], C = CHECK[lg]; if(!b) return '';
-  var lsH = (H.linescores||[]), lsA = (A.linescores||[]), out = '';
-  var src = '<span class="src">Counted on '+b.games+' '+base.season+(lg==='nhl'?'&ndash;'+String(base.season+1).slice(2):'')+' '+LEAGUE[lg].name+' games through '+esc(b.through)+'. '+
-    (lg==='nhl' ? 'Overtime and shootout wins count as wins.' : 'One score = within 8 at the half.')+'</span>';
+// THE CHECKPOINT: the half in football, the second intermission in hockey. Always a point,
+// because it is the one thing on the card with a hit rate measured on this season.
+function checkpoint(d, H, A, st){
+  var b = base[lg], C = CHECK[lg]; if(!b || !b.leader_wins) return null;
+  var src = 'Counted on '+b.games+' '+base.season+(lg==='nhl'?'–'+String(base.season+1).slice(2):'')+' '+LEAGUE[lg].name+' games through '+b.through+
+    (lg==='nhl'?'; overtime and shootout wins count.':'; one score = within 8.');
+  var lsH = (H.linescores||[]), lsA = (A.linescores||[]);
   var atHalf = lg==='nhl' ? (st.period===2 && /END_PERIOD|INTERMISSION/.test(st.type.name)) : st.type.name==='STATUS_HALFTIME',
-      pastHalf = st.period>=3 || st.type.state==='post';
-  if((atHalf || pastHalf) && lsH.length>=2 && lsA.length>=2){
+      past = st.period>=3 || st.type.state==='post';
+  if((atHalf || past) && lsH.length>=2 && lsA.length>=2){
     var h = +lsH[0].displayValue + +lsH[1].displayValue, a = +lsA[0].displayValue + +lsA[1].displayValue, lead = h-a;
-    if(lead===0) out += '<div class="check now">Tied '+C.at+', '+h+'&ndash;'+a+'. The baseline does not apply; '+C.tieNext+'.'+
-      (lg==='nhl' && b.tied_goes_to_extra ? ' Of the games tied after two this season, '+rateLine(b.tied_goes_to_extra)+' went to overtime or a shootout.' : '')+src+'</div>';
-    else {
-      var L = lead>0?nm(H):nm(A), one = Math.abs(lead)<=C.one,
-          r = one ? b.leader_wins_one_score : (lg==='nhl' && b.leader_wins_two_plus ? b.leader_wins_two_plus : b.leader_wins);
-      var s = '<div class="check now">'+esc(L)+' led '+Math.max(h,a)+'&ndash;'+Math.min(h,a)+' '+C.at+'. '+
-        (one?'In a '+C.oneWord+' game, the':'The')+' team ahead '+C.at+' has won '+rateLine(r)+' this season'+
-        (lg==='nhl' && !one ? ' when the lead is two goals or more' : '')+'.';
-      // Yards per play at the half, NFL only, and only while it IS the half: ESPN's box score is cumulative.
-      if(atHalf && lg==='nfl' && b.one_score_ypp_agrees && one){
-        var y = {}; ((d.boxscore||{}).teams||[]).forEach(function(T){ (T.statistics||[]).forEach(function(x){
-          if(x.name==='yardsPerPlay') y[T.team.id] = parseFloat(x.displayValue); }); });
-        var yl = lead>0 ? y[H.team.id] : y[A.team.id], yt = lead>0 ? y[A.team.id] : y[H.team.id];
-        if(isFinite(yl) && isFinite(yt) && yl!==yt){
-          var agree = yl>yt;
-          s += ' They are also '+(agree?'ahead':'behind')+' in yards per play ('+yl+' to '+yt+'). When that '+(agree?'agrees':'disagrees')+
-            ' with the score, the leader has won '+rateLine(agree?b.one_score_ypp_agrees:b.one_score_ypp_disagrees)+'.';
-        }
-      }
-      out += s + src + '</div>';
+    if(lead===0){
+      var x = lg==='nhl' && b.tied_goes_to_extra;
+      return {fig:x ? grid100(x.pct,'went past regulation') : bigFig(h+'–'+a,'tied'), head:'Tied '+h+'–'+a+' '+C.at, src:src,
+        why:x ? 'Of '+x.n+' games tied after two this season, '+x.won+' went to overtime or a shootout.' : 'The halftime baseline does not apply.',
+        miss:'You treat the first half as a forecast. '+C.tieNext.charAt(0).toUpperCase()+C.tieNext.slice(1)+'.'};
     }
-  } else if(lg==='nhl'){
-    out += '<div class="check"><b>After two periods, look at the score.</b> This season the team ahead after two has won '+
-      rateLine(b.leader_wins)+' of NHL games: '+rateLine(b.leader_wins_one_score)+' when up one goal, '+rateLine(b.leader_wins_two_plus)+
-      ' when up two or more. Tied after two, '+rateLine(b.tied_goes_to_extra)+' went past regulation. '+
-      'One goal is a real lead in hockey, but not a safe one.'+src+'</div>';
-  } else {
-    out += '<div class="check"><b>At halftime, look at the score first.</b> This season the team ahead at the half has won '+
-      rateLine(b.leader_wins)+' of '+LEAGUE[lg].name+' games, and '+rateLine(b.leader_wins_one_score)+' when it is a one-score game. '+
-      (lg==='nfl' && b.one_score_ypp_agrees ? 'In a one-score game, then check yards per play: when the leader also leads in it, '+
-        rateLine(b.one_score_ypp_agrees)+'; when it trails, '+rateLine(b.one_score_ypp_disagrees)+'. A tiebreaker, not a crystal ball.'
-        : 'We have no college play-by-play we trust for yards per play, so no other check is printed here untested.')+src+'</div>';
+    var L = lead>0?nm(H):nm(A), one = Math.abs(lead)<=C.one,
+        r = one ? b.leader_wins_one_score : (lg==='nhl' && b.leader_wins_two_plus ? b.leader_wins_two_plus : b.leader_wins);
+    var why = 'Teams in that spot have won '+r.won+' of '+r.n+' this season'+(one?' ('+C.oneWord+' leads)':'')+'.';
+    // Yards per play at the half, NFL only, and only while it IS the half: ESPN's box score is cumulative.
+    if(atHalf && lg==='nfl' && b.one_score_ypp_agrees && one){
+      var y = {}; ((d.boxscore||{}).teams||[]).forEach(function(T){ (T.statistics||[]).forEach(function(s){
+        if(s.name==='yardsPerPlay') y[T.team.id] = parseFloat(s.displayValue); }); });
+      var yl = lead>0 ? y[H.team.id] : y[A.team.id], yt = lead>0 ? y[A.team.id] : y[H.team.id];
+      if(isFinite(yl) && isFinite(yt) && yl!==yt){ var ag = yl>yt, rr = ag?b.one_score_ypp_agrees:b.one_score_ypp_disagrees;
+        why += ' They are '+(ag?'also ahead':'behind')+' in yards per play ('+yl+' to '+yt+'): that kind of leader has won '+rr.won+' of '+rr.n+'.'; }
+    }
+    return {fig:grid100(r.pct,'leaders who won'), head:esc(L)+' led '+Math.max(h,a)+'–'+Math.min(h,a)+' '+C.at, src:src, why:why,
+      miss: st.type.state==='post'
+        ? (((+H.score>+A.score)===(lead>0)) ? 'This one held. ' : 'This one did not. ')+(100-r.pct)+' in 100 of these leads do not.'
+        : (100-r.pct)+' in 100 of these leads do not hold. It is not over.'};
   }
-  return out;
+  var one = b.leader_wins_one_score;
+  return {fig:grid100(b.leader_wins.pct,'leaders who won'), head:C.at.charAt(0).toUpperCase()+C.at.slice(1)+', check the score', src:src,
+    why:'The team ahead '+C.at+' has won '+b.leader_wins.won+' of '+b.leader_wins.n+' '+LEAGUE[lg].name+' games this season.',
+    miss:one && one.n ? 'You call a close game early: '+C.oneWord+' leads hold only '+one.pct+' times in 100.' : 'You call a close game early.'};
+}
+
+// A FILLER POINT, pregame only, when fewer than three points are found: where the two teams
+// differ most this season, as a share of their average. Not uncertainty, so it goes last.
+function edge(d){
+  var T = (d.boxscore||{}).teams||[]; if(T.length<2) return null;
+  var want = {nfl:['totalPointsPerGame','totalPointsPerGameAllowed','yardsPerGame','yardsPerGameAllowed','turnovers'],
+              cfb:['totalPointsPerGame','totalPointsPerGameAllowed','yardsPerGame','yardsPerGameAllowed','turnovers'],
+              nhl:['avgGoals','avgGoalsAgainst','powerPlayPct','penaltyKillPct','avgShots','avgShotsAgainst']}[lg];
+  function m(t){ var o={}; (t.statistics||[]).forEach(function(x){ o[x.name]=x; }); return o; }
+  var a = m(T[0]), h = m(T[1]), best = null;
+  want.forEach(function(k){ if(!a[k]||!h[k]) return; var x = parseFloat(a[k].displayValue), y = parseFloat(h[k].displayValue);
+    if(!isFinite(x)||!isFinite(y)||x+y<=0) return; var g = Math.abs(x-y)/((x+y)/2); if(!best || g>best.g) best = {k:k, g:g, x:x, y:y, lab:a[k].label||k}; });
+  if(!best || best.g<0.15) return null;
+  // Say it in counts, not as a gap between two rates: "29 of every 100 power plays", never "41% apart".
+  var PCT = {powerPlayPct:['score on',' power plays'], penaltyKillPct:['kill',' penalties']}[best.k];
+  function say(t, v){ var n = esc(t.team.shortDisplayName||t.team.displayName);
+    return PCT ? 'The '+n+' '+PCT[0]+' '+Math.round(v)+' of every 100'+PCT[1] : n+': '+v; }
+  return {fig:bars([[T[0].team.abbreviation,best.x,String(best.x)],[T[1].team.abbreviation,best.y,String(best.y)]]),
+    head:'Biggest gap: '+esc(best.lab.toLowerCase()),
+    why:say(T[0],best.x)+'; '+say(T[1],best.y)+'. No stat splits these two more this season.',
+    miss:'You watch the stars and miss where this game tilts.'};
 }
 
 function teamStats(d){
@@ -294,45 +355,71 @@ function render(d){
   var h = '<div class="meta">'+(state==='pre' ? esc(kick(c.date)) : '<span class="st">'+esc(st.type.shortDetail)+'</span>')+
     (tv?' &middot; '+esc(tv):'')+(venue?' &middot; '+esc(venue):'')+'</div>';
   h += '<h1>'+side(A)+' <span class="at">'+(c.neutralSite?'vs':'at')+'</span> '+side(H)+'</h1>';
-  if(state!=='pre') h += '<div class="score">'+esc(nm(A))+' '+esc(A.score)+' &middot; '+esc(nm(H))+' '+esc(H.score)+'</div>';
 
-  var fav = mkt ? (mkt.p>=0.5 ? nm(H) : nm(A)) : null, fp = mkt ? Math.max(mkt.p,1-mkt.p) : null;
-  h += '<div class="stats">';
-  h += '<div class="stat"><b>'+(mkt?pct(fp):'&mdash;')+'</b><span>'+(mkt?esc(fav)+' to win, market':'no line yet')+'</span></div>';
-  if(espn!=null) h += '<div class="stat"><b>'+pct(mkt&&mkt.p<0.5?1-espn:espn)+'</b><span>'+(mkt?esc(fav):esc(nm(H)))+', ESPN model</span></div>';
-  if(state==='in' && live!=null) h += '<div class="stat"><b>'+pct(mkt&&mkt.p<0.5?1-live:live)+'</b><span>'+(mkt?esc(fav):esc(nm(H)))+' now, ESPN live</span></div>';
-  else h += '<div class="stat"><b>'+(mkt&&mkt.line?esc(mkt.line):'&mdash;')+'</b><span>'+(mkt&&mkt.total?'line &middot; total '+esc(mkt.total):'line')+'</span></div>';
+  // THE BOTTOM LINE: one number, one sentence, one bar.
+  var GL = lg==='nhl' ? goalies(d, H, A) : [];
+  var K = keys(d, {mkt:mkt, espn:espn, homeName:nm(H), goalies:GL}), CP = checkpoint(d, H, A, st);
+  var P3 = state==='pre' ? K.slice(0, CP?2:3).concat(CP?[CP]:[]) : (CP?[CP]:[]).concat(K).slice(0,3);
+  if(state==='pre' && P3.length<3){ var E = edge(d); if(E) P3.push(E); }
+  var pH = mkt ? mkt.p : null, num, line;
+  if(state==='post'){
+    var hs = +H.score, as = +A.score, W = hs>as?H:A, pw = pH==null ? null : (W===H?pH:1-pH);
+    num = esc(W.score)+'–'+esc((W===H?A:H).score);
+    line = '<b>'+esc(nm(W))+' won.</b> '+(pw==null ? '' : pw<0.5
+      ? 'An upset: the market gave them '+pct(pw)+'. That happens '+Math.round(100*pw)+' times in 100.'
+      : 'The favorite held: the market gave them '+pct(pw)+'.');
+  } else if(state==='in'){
+    var hs2 = +H.score, as2 = +A.score, Lt = hs2===as2 ? null : (hs2>as2?H:A);
+    num = Math.max(hs2,as2)+'–'+Math.min(hs2,as2);
+    var lp = live!=null && Lt ? (Lt===H?live:1-live) : null;
+    line = Lt ? '<b>'+esc(nm(Lt))+' lead'+(lg==='cfb'?'':'s')+'.</b> '+(lp!=null ? 'ESPN makes them '+pct(lp)+' to win from here.' : esc(st.type.shortDetail)+'.')
+              : '<b>Tied.</b> '+esc(st.type.shortDetail)+'.';
+  } else if(pH!=null){
+    var fp = Math.max(pH,1-pH), fav = pH>=0.5?H:A;
+    num = pct(fp);
+    line = '<b>'+esc(nm(fav))+' win '+Math.round(100*fp)+' times in 100.</b> '+
+      (fp<0.60 ? 'Close to a coin flip.' : fp<0.70 ? 'A real favorite, not a lock.' : fp<0.85 ? 'A clear favorite.' : 'A heavy favorite.')+
+      (P3.length && P3[0].key ? ' Watch this: '+P3[0].head.replace(/<[^>]+>/g,'')+'.' : '');
+  } else { num = '—'; line = 'No line yet. Check back closer to the start.'; }
+  h += '<div class="bluf"><div class="bn">'+num+'</div><div class="bl"><span class="tagline">Bottom line</span>'+line+'</div>';
+  if(pH!=null){ var aw = Math.round(100*(1-pH));
+    h += '<div class="split" aria-label="Market: '+esc(nm(A))+' '+aw+'%, '+esc(nm(H))+' '+(100-aw)+'%">'+
+      '<i class="sa" style="width:'+aw+'%">'+esc(A.team.abbreviation)+' '+aw+'%</i><i class="sh" style="width:'+(100-aw)+'%">'+esc(H.team.abbreviation)+' '+(100-aw)+'%</i></div>'+
+      '<div class="splitcap">'+(state==='pre'?'The market’s chance, bookmaker’s cut removed':'The market before the start')+
+      (mkt.line?' &middot; '+esc(mkt.line):'')+(mkt.total?' &middot; total '+esc(mkt.total):'')+'</div>'; }
   h += '</div>';
 
+  // THREE POINTS. Each: the figure and headline, why it matters, what goes wrong if you miss it.
+  var words = ['','One thing','Two things','Three things'];
+  if(P3.length){
+    h += '<h2>'+words[P3.length]+' to know</h2><div class="pts">'+P3.map(function(p){
+      return '<div class="pt"><div class="fig">'+p.fig+'</div><h3>'+p.head+'</h3>'+
+        '<p><span class="lab">Why it matters</span>'+p.why+'</p><p><span class="lab miss">If you miss it</span>'+p.miss+'</p>'+
+        (p.src?'<p class="src">'+esc(p.src)+'</p>':'')+'</div>'; }).join('')+'</div>';
+  }
+
+  var Pg = programs[id];
+  if(Pg) h += '<a class="prog" href="'+esc(Pg.url)+'"><span>The full program</span>'+esc(Pg.title)+' &rarr;</a>';
+
+  // THE DETAILS, closed by default: everything a fan might want, nothing a skimmer needs.
+  var dt = '';
+  if(espn!=null) dt += '<p class="small">ESPN’s model: '+esc(nm(H))+' '+pct(espn)+'.</p>';
+  else if(lg==='nhl') dt += '<p class="small">ESPN publishes no win-probability model for hockey, so the market stands alone.</p>';
   if(lg==='nfl'){
     var po = [A,H].map(function(t){ var p = nflOdds[t.team.name]; return p==null ? '' : 'the '+esc(t.team.name)+' are '+pct(p)+' to make the playoffs'; }).filter(Boolean);
-    if(po.length) h += '<p class="small">On our <a href="https://thesportspage.net/odds.html" target="_blank" rel="noopener">Odds Board</a>, '+po.join(' and ')+'.</p>';
+    if(po.length) dt += '<p class="small">On our <a href="https://thesportspage.net/odds.html" target="_blank" rel="noopener">Odds Board</a>, '+po.join(' and ')+'.</p>';
   }
-
-  var P = programs[id];
-  if(P) h += '<a class="prog" href="'+esc(P.url)+'"><span>The full program</span>'+esc(P.title)+' &rarr;</a>';
-
-  if(lg==='cfb') h += '<p class="small">Where do these two stand across their whole history? Find them on '+
+  if(lg==='cfb') dt += '<p class="small">Where do these two stand across their whole history? Find them on '+
     '<a href="https://thesportspage.net/every-program.html" target="_blank" rel="noopener">Every Program Since 1869</a>.</p>';
-  var GL = lg==='nhl' ? goalies(d, H, A) : [];
-  if(lg==='nhl'){
-    if(espn==null) h += '<p class="note">ESPN publishes no win-probability model for hockey, so the market stands alone here.</p>';
-    if(state==='pre' && GL.length) h += '<h2>In net</h2>'+inNet(GL);
-  }
-  var K = keys(d, {mkt:mkt, espn:espn, homeName:nm(H), goalies:GL});
-  h += '<h2>Where the uncertainty is</h2>' + (K.length ? '<ul class="keys">'+K.map(function(k){
-    return '<li><span class="tag">'+esc(k.tag)+'</span>'+k.text+'</li>'; }).join('')+'</ul>'
-    : '<p class="small">'+(d.injuries && d.injuries.length ? 'No team leader is on the injury report, and nothing in the forecasts stands out. ' :
-      'ESPN\u2019s feed carries no injury report for this game, so this card cannot see who is hurt. Nothing in the forecasts stands out. ')+
-      'The line is the best summary of this game.</p>');
-
-  h += '<h2>'+CHECK[lg].title+'</h2>' + halftime(d, H, A, st);
-  var ts = teamStats(d);
-  if(ts) h += '<h2>'+(state==='pre'?'The season, per game':'This game')+'</h2>'+ts;
-  var pp = people(d);
-  if(pp) h += '<h2>Who to watch</h2>'+pp;
+  if(GL.length) dt += '<h3 class="dh">In net</h3>'+inNet(GL);
+  var ts = teamStats(d); if(ts) dt += '<h3 class="dh">'+(state==='pre'?'The season, per game':'This game')+'</h3>'+ts;
+  var pp = people(d); if(pp) dt += '<h3 class="dh">Leaders and injuries</h3>'+pp;
+  if(!(d.injuries && d.injuries.length)) dt += '<p class="note">ESPN’s feed carries no injury report for this game, so this card cannot see who is hurt.</p>';
+  h += '<details class="more"><summary>The details: stats, leaders, injuries</summary>'+dt+'</details>';
   h += '<p class="note">Updated '+new Date().toLocaleTimeString('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'})+' ET from ESPN’s feed.</p>';
+  var open = document.querySelector('details.more') && document.querySelector('details.more').open;
   document.getElementById('card').innerHTML = h;
+  if(open) document.querySelector('details.more').open = true;  // a live refresh must not slam the drawer shut
 
   if(state==='in' && !timer) timer = setInterval(load, 60000);
   if(state!=='in' && timer){ clearInterval(timer); timer = null; }
