@@ -77,11 +77,12 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
 
   <div class="how">
     <p><b>How to read this card.</b> The market's chance is the betting moneyline with the bookmaker's cut removed.
-    ESPN's chance is ESPN's own model, shown beside it because when the two disagree, that disagreement is worth knowing.
+    ESPN's chance is ESPN's own model, shown beside it because when the two disagree, that disagreement is worth knowing
+    (ESPN publishes none for hockey).
     &ldquo;Where the uncertainty is&rdquo; lists what could swing this game and that the line may not fully reflect:
     a team leader who is hurt, a disagreement between the forecasts, a team playing differently lately than all season.</p>
     <p><b>Every halftime check prints how often it has been right</b>, counted on this season's games
-    (<span id="built">&hellip;</span>). The team ahead at the half wins most of the time. That is the baseline,
+    (<span id="built">&hellip;</span>). In hockey the check comes after two periods. The team ahead at the checkpoint wins most of the time. That is the baseline,
     and any other sign you watch should be judged against it.</p>
     <p>Everything here comes live from ESPN's feed each time you open the page, and refreshes every minute during the game.
     The hit rates come from our own count, with the code in <code>scripts/halftime_baselines.py</code>.</p>
@@ -98,10 +99,21 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
 var TZ = 'America/New_York';
 var LEAGUE = {
   nfl: {name:'NFL', path:'football/nfl', sd:13.5},
-  cfb: {name:'college football', path:'football/college-football', sd:16.5}
+  cfb: {name:'college football', path:'football/college-football', sd:16.5},
+  // Hockey: no spread fallback. The puck line is always 1.5 goals, so it carries no strength
+  // information; the moneyline does. sd is null on purpose.
+  nhl: {name:'NHL', path:'hockey/nhl', sd:null}
 };
+// The checkpoint each sport is read at: the half in football, the second intermission in hockey.
+var CHECK = {
+  nfl: {title:'The halftime check', at:'at the half', one:8, oneWord:'one-score', tieNext:'this is a second-half game'},
+  cfb: {title:'The halftime check', at:'at the half', one:8, oneWord:'one-score', tieNext:'this is a second-half game'},
+  nhl: {title:'The check after two periods', at:'after two periods', one:1, oneWord:'one-goal', tieNext:'the third period decides it'}
+};
+// What decides a close game, in words a fan of that sport would use.
+var SWING = {nfl:'how the first drives go', cfb:'how the first drives go', nhl:'how the first shifts go'};
 var q = new URLSearchParams(location.search), lg = q.get('lg') || 'nfl', id = q.get('id');
-var base = {}, programs = {}, nflOdds = {}, timer = null;
+var base = {}, programs = {}, nflOdds = {}, starters = {}, timer = null;
 
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
 function kick(iso){ return new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}).format(new Date(iso))+' ET'; }
@@ -110,7 +122,7 @@ function phi(x){ var t=1/(1+0.3275911*Math.abs(x)/Math.SQRT2),
   y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x/2);
   return x>=0?(1+y)/2:(1-y)/2; }
 function pct(p){ return Math.round(100*p)+'%'; }
-function nm(t){ return lg==='nfl' ? t.team.name : (t.team.shortDisplayName || t.team.location); }
+function nm(t){ return lg==='cfb' ? (t.team.shortDisplayName || t.team.location) : t.team.name; }
 
 // The market's chance that the HOME side wins, from the first pickcenter entry that has one.
 function marketHome(d){
@@ -118,7 +130,7 @@ function marketHome(d){
   for(var i=0;i<pcs.length;i++){
     var pc = pcs[i], h = pc.homeTeamOdds && implied(pc.homeTeamOdds.moneyLine), a = pc.awayTeamOdds && implied(pc.awayTeamOdds.moneyLine);
     if(h && a) return {p:h/(h+a), line:pc.details||'', total:pc.overUnder, from:'moneyline'};
-    if(typeof pc.spread==='number') return {p:phi(-pc.spread/LEAGUE[lg].sd), line:pc.details||'', total:pc.overUnder, from:'spread'};
+    if(typeof pc.spread==='number' && LEAGUE[lg].sd) return {p:phi(-pc.spread/LEAGUE[lg].sd), line:pc.details||'', total:pc.overUnder, from:'spread'};
   }
   return null;
 }
@@ -133,10 +145,10 @@ function keys(d, ctx){
   // 1. A season leader who is out or in doubt. The line may have priced it; the viewer should still know.
   (d.leaders||[]).forEach(function(T){ (T.leaders||[]).forEach(function(cat){
     var L = cat.leaders && cat.leaders[0]; if(!L || !L.athlete) return;
-    var s = inj[L.athlete.id]; if(!s || !/out|reserve|doubtful|questionable/i.test(s.status)) return;
+    var s = inj[L.athlete.id]; if(!s || !/out|reserve|doubtful|questionable|day-to-day/i.test(s.status)) return;
     out.push({tag:'Missing piece', text:'<b>'+esc(L.athlete.displayName)+'</b> leads '+esc(T.team.displayName)+' in '+
       esc(cat.displayName.toLowerCase())+' ('+esc(L.displayValue)+') and is listed <b>'+esc(s.status.toLowerCase())+'</b>'+
-      (s.what?' ('+esc(s.what.toLowerCase())+')':'')+'. Watch who fills that role, and how the first drives go.'});
+      (s.what?' ('+esc(s.what.toLowerCase())+')':'')+'. Watch who fills that role, and '+SWING[lg]+'.'});
   }); });
   // 2. The market and ESPN's model disagree by 10 points or more: someone knows something, or one of them is wrong.
   if(ctx.mkt && ctx.espn!=null && Math.abs(ctx.mkt.p-ctx.espn)>=0.10)
@@ -149,9 +161,18 @@ function keys(d, ctx){
       out.push({tag:w?'Hot streak':'Cold streak', text:esc(T.team.displayName)+' '+(w?'won':'lost')+' all of its last five. '+
         'Five games is a small sample: a streak says less about next week than the season does.'});
   });
-  // 4. A coin flip is itself the key: nothing on paper separates them.
+  // 4. Hockey: a goalie other than the club's usual starter. The goalie is hockey's quarterback.
+  (ctx.goalies||[]).forEach(function(g){
+    if(g.usual && g.usual.id!==g.id)
+      out.push({tag:'Backup in net', text:'<b>'+esc(g.name)+'</b> is '+(g.confirmed?'starting':'expected to start')+' for '+esc(g.team)+
+        ', not '+esc(g.usual.name)+', who has played the most games in net for them ('+g.usual.gp+'). '+
+        'A backup\u2019s save percentage rests on fewer shots, so it says less about tonight.'});
+  });
+  // 5. A coin flip is itself the key: nothing on paper separates them.
   if(ctx.mkt && Math.abs(ctx.mkt.p-0.5)<0.06)
-    out.push({tag:'Coin flip', text:'The market cannot separate these teams. Turnovers decide a game like this more often than talent does.'});
+    out.push({tag:'Coin flip', text: lg==='nhl'
+      ? 'The market cannot separate these teams. In a game this even, one power play or one save can settle it.'
+      : 'The market cannot separate these teams. Turnovers decide a game like this more often than talent does.'});
   return out.slice(0,3);  // Rule 5: at most three keys.
 }
 
@@ -159,17 +180,22 @@ function rateLine(r){ return r && r.n ? '<b class="big">'+r.pct+'%</b> ('+r.won+
 
 // HALFTIME CHECK. Rules 2-4: a checkpoint you can count, a time to check it, its hit rate, and the baseline.
 function halftime(d, H, A, st){
-  var b = base[lg]; if(!b) return '';
+  var b = base[lg], C = CHECK[lg]; if(!b) return '';
   var lsH = (H.linescores||[]), lsA = (A.linescores||[]), out = '';
-  var src = '<span class="src">Counted on '+b.games+' '+base.season+' '+LEAGUE[lg].name+' games through '+esc(b.through)+'. One score = within 8 at the half.</span>';
-  var atHalf = st.type.name==='STATUS_HALFTIME', pastHalf = st.period>=3 || st.type.state==='post';
+  var src = '<span class="src">Counted on '+b.games+' '+base.season+(lg==='nhl'?'&ndash;'+String(base.season+1).slice(2):'')+' '+LEAGUE[lg].name+' games through '+esc(b.through)+'. '+
+    (lg==='nhl' ? 'Overtime and shootout wins count as wins.' : 'One score = within 8 at the half.')+'</span>';
+  var atHalf = lg==='nhl' ? (st.period===2 && /END_PERIOD|INTERMISSION/.test(st.type.name)) : st.type.name==='STATUS_HALFTIME',
+      pastHalf = st.period>=3 || st.type.state==='post';
   if((atHalf || pastHalf) && lsH.length>=2 && lsA.length>=2){
     var h = +lsH[0].displayValue + +lsH[1].displayValue, a = +lsA[0].displayValue + +lsA[1].displayValue, lead = h-a;
-    if(lead===0) out += '<div class="check now">Tied at the half, '+h+'&ndash;'+a+'. The baseline does not apply; this is a second-half game.'+src+'</div>';
+    if(lead===0) out += '<div class="check now">Tied '+C.at+', '+h+'&ndash;'+a+'. The baseline does not apply; '+C.tieNext+'.'+
+      (lg==='nhl' && b.tied_goes_to_extra ? ' Of the games tied after two this season, '+rateLine(b.tied_goes_to_extra)+' went to overtime or a shootout.' : '')+src+'</div>';
     else {
-      var L = lead>0?nm(H):nm(A), one = Math.abs(lead)<=8, r = one ? b.leader_wins_one_score : b.leader_wins;
-      var s = '<div class="check now">'+esc(L)+' led '+Math.max(h,a)+'&ndash;'+Math.min(h,a)+' at the half. '+
-        (one?'In a one-score game, the':'The')+' team ahead at the half has won '+rateLine(r)+' this season.';
+      var L = lead>0?nm(H):nm(A), one = Math.abs(lead)<=C.one,
+          r = one ? b.leader_wins_one_score : (lg==='nhl' && b.leader_wins_two_plus ? b.leader_wins_two_plus : b.leader_wins);
+      var s = '<div class="check now">'+esc(L)+' led '+Math.max(h,a)+'&ndash;'+Math.min(h,a)+' '+C.at+'. '+
+        (one?'In a '+C.oneWord+' game, the':'The')+' team ahead '+C.at+' has won '+rateLine(r)+' this season'+
+        (lg==='nhl' && !one ? ' when the lead is two goals or more' : '')+'.';
       // Yards per play at the half, NFL only, and only while it IS the half: ESPN's box score is cumulative.
       if(atHalf && lg==='nfl' && b.one_score_ypp_agrees && one){
         var y = {}; ((d.boxscore||{}).teams||[]).forEach(function(T){ (T.statistics||[]).forEach(function(x){
@@ -183,6 +209,11 @@ function halftime(d, H, A, st){
       }
       out += s + src + '</div>';
     }
+  } else if(lg==='nhl'){
+    out += '<div class="check"><b>After two periods, look at the score.</b> This season the team ahead after two has won '+
+      rateLine(b.leader_wins)+' of NHL games: '+rateLine(b.leader_wins_one_score)+' when up one goal, '+rateLine(b.leader_wins_two_plus)+
+      ' when up two or more. Tied after two, '+rateLine(b.tied_goes_to_extra)+' went past regulation. '+
+      'One goal is a real lead in hockey, but not a safe one.'+src+'</div>';
   } else {
     out += '<div class="check"><b>At halftime, look at the score first.</b> This season the team ahead at the half has won '+
       rateLine(b.leader_wins)+' of '+LEAGUE[lg].name+' games, and '+rateLine(b.leader_wins_one_score)+' when it is a one-score game. '+
@@ -197,7 +228,9 @@ function teamStats(d){
   var T = (d.boxscore||{}).teams||[]; if(T.length<2) return '';
   var a = T[0], h = T[1], rows = '';
   var want = ['totalPointsPerGame','totalPointsPerGameAllowed','yardsPerGame','yardsPerGameAllowed','passingYardsPerGame','rushingYardsPerGame',
-              'yardsPerPlay','totalYards','thirdDownEff','turnovers','possessionTime','redZoneAttempts'];
+              'yardsPerPlay','totalYards','thirdDownEff','turnovers','possessionTime','redZoneAttempts',
+              'avgGoals','avgGoalsAgainst','avgShots','avgShotsAgainst','powerPlayPct','penaltyKillPct',
+              'shotsTotal','powerPlayGoals','powerPlayOpportunities','faceoffPercent','hits','blockedShots','giveaways','takeaways'];
   function map(t){ var m={}; (t.statistics||[]).forEach(function(x){ m[x.name]=x; }); return m; }
   var ma = map(a), mh = map(h);
   want.forEach(function(k){ if(ma[k] && mh[k]) rows += '<tr><td>'+esc(ma[k].label||k)+'</td><td class="num">'+esc(ma[k].displayValue)+'</td><td class="num">'+esc(mh[k].displayValue)+'</td></tr>'; });
@@ -208,11 +241,42 @@ function people(d){
   var cols = (d.leaders||[]).map(function(T){
     var li = (T.leaders||[]).map(function(c){ var L=c.leaders&&c.leaders[0]; return L ? '<li><b>'+esc(L.athlete.displayName)+'</b>, '+esc(c.displayName.toLowerCase())+': '+esc(L.displayValue)+'</li>' : ''; }).join('');
     var inj = ((d.injuries||[]).filter(function(I){return I.team.id===T.team.id;})[0]||{}).injuries||[];
-    var il = inj.filter(function(i){return /out|doubtful|questionable|reserve/i.test(i.status);}).slice(0,6)
+    var il = inj.filter(function(i){return /out|doubtful|questionable|reserve|day-to-day/i.test(i.status);}).slice(0,6)
       .map(function(i){ return '<li>'+esc(i.athlete.displayName)+' &mdash; '+esc(i.status)+((i.details&&i.details.type)?' ('+esc(i.details.type)+')':'')+'</li>'; }).join('');
     return '<div><h3>'+esc(T.team.displayName)+'</h3><ul class="small">'+li+'</ul>'+(il?'<p class="note">Injury report</p><ul class="small">'+il+'</ul>':'')+'</div>';
   });
   return cols.length ? '<div class="cols">'+cols.join('')+'</div>' : '';
+}
+
+// IN NET. Each club's expected starter, from ESPN's scoreboard, with that goalie's season line from the summary.
+// 'usual' is the club's goalie with the most games played: the comparison the backup key needs.
+function goalies(d, H, A){
+  var G = d.goalies||{}, out = [], inj = {};
+  (d.injuries||[]).forEach(function(T){ (T.injuries||[]).forEach(function(i){ if(i.athlete) inj[i.athlete.id] = i; }); });
+  [[A,'awayTeam'],[H,'homeTeam']].forEach(function(x){
+    var t = x[0], list = ((G[x[1]]||{}).athletes||[]).map(function(a){
+      var s = {}; (a.statistics||[]).forEach(function(y){ if(!(y.abbreviation in s)) s[y.abbreviation] = y.displayValue; });
+      return {id:a.id, name:a.displayName, gp:+s.GP||0, sv:s['SV%'], gaa:s.GAA, w:s.WINS, l:s.L, otl:s.OTL}; });
+    var usual = list.slice().sort(function(a,b){return b.gp-a.gp;})[0], pr = starters[t.team.id];
+    if(!pr) return;
+    var me = list.filter(function(g){return g.id===pr.id;})[0] || {id:pr.id, name:pr.name, gp:0};
+    me.team = nm(t); me.confirmed = pr.confirmed; me.usual = usual;
+    // A club's other goalies who are hurt: often the story of a season, already priced into the line but worth knowing.
+    me.hurt = list.filter(function(g){ var i = inj[g.id]; return i && /out|reserve/i.test(i.status); })
+      .map(function(g){ var i = inj[g.id]; return esc(g.name)+' ('+g.gp+' games, '+esc(g.sv)+') is listed '+esc(i.status.toLowerCase())+
+        ((i.details&&i.details.type)?' ('+esc(i.details.type.toLowerCase())+')':''); });
+    out.push(me);
+  });
+  return out;
+}
+function inNet(G){
+  if(!G.length) return '';
+  return '<div class="cols">'+G.map(function(g){
+    return '<div><h3>'+esc(g.team)+'</h3><p class="small"><b>'+esc(g.name)+'</b> &mdash; '+(g.confirmed?'confirmed':'expected, not yet confirmed')+'<br>'+
+      (g.gp ? g.gp+' games, save percentage '+esc(g.sv)+', '+esc(g.gaa)+' goals against per game' : 'no NHL games this season')+
+      (g.hurt.length ? '<br>'+g.hurt.join('; ')+'.' : '')+'</p></div>';
+  }).join('')+'</div><p class="note">The goalie faces every shot, which makes the position the closest thing hockey has to a quarterback. '+
+    'Starters are announced late; this card checks again each time you open it.</p>';
 }
 
 function render(d){
@@ -250,14 +314,19 @@ function render(d){
 
   if(lg==='cfb') h += '<p class="small">Where do these two stand across their whole history? Find them on '+
     '<a href="https://thesportspage.net/every-program.html" target="_blank" rel="noopener">Every Program Since 1869</a>.</p>';
-  var K = keys(d, {mkt:mkt, espn:espn, homeName:nm(H)});
+  var GL = lg==='nhl' ? goalies(d, H, A) : [];
+  if(lg==='nhl'){
+    if(espn==null) h += '<p class="note">ESPN publishes no win-probability model for hockey, so the market stands alone here.</p>';
+    if(state==='pre' && GL.length) h += '<h2>In net</h2>'+inNet(GL);
+  }
+  var K = keys(d, {mkt:mkt, espn:espn, homeName:nm(H), goalies:GL});
   h += '<h2>Where the uncertainty is</h2>' + (K.length ? '<ul class="keys">'+K.map(function(k){
     return '<li><span class="tag">'+esc(k.tag)+'</span>'+k.text+'</li>'; }).join('')+'</ul>'
-    : '<p class="small">'+(d.injuries && d.injuries.length ? 'Nothing on the injury report or in the forecasts stands out. ' :
+    : '<p class="small">'+(d.injuries && d.injuries.length ? 'No team leader is on the injury report, and nothing in the forecasts stands out. ' :
       'ESPN\u2019s feed carries no injury report for this game, so this card cannot see who is hurt. Nothing in the forecasts stands out. ')+
       'The line is the best summary of this game.</p>');
 
-  h += '<h2>The halftime check</h2>' + halftime(d, H, A, st);
+  h += '<h2>'+CHECK[lg].title+'</h2>' + halftime(d, H, A, st);
   var ts = teamStats(d);
   if(ts) h += '<h2>'+(state==='pre'?'The season, per game':'This game')+'</h2>'+ts;
   var pp = people(d);
@@ -269,10 +338,23 @@ function render(d){
   if(state!=='in' && timer){ clearInterval(timer); timer = null; }
 }
 
+// Hockey's probable goalies ride on the scoreboard, not the summary, so read that day's scoreboard first.
+function loadStarters(iso){
+  if(lg!=='nhl' || !iso) return Promise.resolve();
+  var day = new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(iso)).replace(/-/g,'');
+  return fetch('https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates='+day).then(function(r){return r.json();}).then(function(s){
+    (s.events||[]).forEach(function(e){ if(e.id!==id) return;
+      e.competitions[0].competitors.forEach(function(t){ var p = (t.probables||[]).filter(function(x){return x.name==='probableStartingGoalie';})[0];
+        if(p && p.athlete) starters[t.team.id] = {id:String(p.athlete.id), name:p.athlete.displayName, confirmed:/confirm/i.test((p.status||{}).name||'')}; }); });
+  }).catch(function(){});
+}
+
 function load(){
   if(!id || !LEAGUE[lg]){ document.getElementById('card').innerHTML = '<p class="note">No game chosen. Pick one from <a href="watch.html">What to Watch</a>.</p>'; return; }
   fetch('https://site.api.espn.com/apis/site/v2/sports/'+LEAGUE[lg].path+'/summary?event='+encodeURIComponent(id))
-    .then(function(r){return r.json();}).then(render)
+    .then(function(r){return r.json();})
+    .then(function(d){ return loadStarters(((d.header||{}).competitions||[{}])[0].date).then(function(){ return d; }); })
+    .then(render)
     .catch(function(){ document.getElementById('card').innerHTML = '<p class="note">ESPN’s feed did not answer. Try again in a minute.</p>'; });
 }
 

@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "built": "2026-11-10",
-  "one_score": "within 8 points at the half",
+  "built": "2026-11-11",
+  "one_score": "within 8 points at the half; in hockey, one goal after two periods",
   "nfl": {
     "games": 135,
     "through": "2026-11-09",
@@ -40,6 +40,31 @@
       "won": 167,
       "n": 247,
       "pct": 68
+    }
+  },
+  "nhl": {
+    "games": 292,
+    "through": "2026-11-10",
+    "tied_at_half": 60,
+    "leader_wins": {
+      "won": 203,
+      "n": 232,
+      "pct": 88
+    },
+    "leader_wins_one_score": {
+      "won": 68,
+      "n": 88,
+      "pct": 77
+    },
+    "leader_wins_two_plus": {
+      "won": 135,
+      "n": 144,
+      "pct": 94
+    },
+    "tied_goes_to_extra": {
+      "won": 22,
+      "n": 60,
+      "pct": 37
     }
   }
 }

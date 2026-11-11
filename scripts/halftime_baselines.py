@@ -15,9 +15,14 @@ SOURCES.
            score only. There is no free college play-by-play we trust for yards
            per play, so the card prints no yards-per-play rate for college,
            rather than borrowing the NFL's.
+  NHL      ESPN's scoreboard line scores, one request per day: the score after
+           two periods, hockey's checkpoint. Overtime and shootout wins count
+           as wins, because that is how the game ends for the viewer.
 
-A "one-score game" is one within 8 points at the half. Ties at the half are
-left out of the leader rates and counted separately.
+A "one-score game" is one within 8 points at the half; in hockey, a one-goal
+game after two. Ties at the checkpoint are left out of the leader rates and
+counted separately. Each league is built on its own: if one feed fails, the
+other leagues still update and the failed one keeps yesterday's numbers.
 """
 import argparse, csv, datetime as dt, gzip, io, json, os, sys, urllib.request
 from collections import defaultdict
@@ -27,6 +32,7 @@ OUT = os.path.join(REPO, "data", "halftime-baselines.json")
 PBP = "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{y}.csv.gz"
 CFB = ("https://site.api.espn.com/apis/site/v2/sports/football/college-football/"
        "scoreboard?groups=80&limit=300&dates={d}")
+NHL = "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates={d}"
 
 
 def fetch(url):
@@ -94,6 +100,42 @@ def cfb(season):
     return out
 
 
+def nhl(season):
+    """Per game: score after two periods, final winner, and whether it went past regulation."""
+    day, out, today = dt.date(season, 9, 15), [], dt.date.today()
+    while day < today:
+        for ev in json.loads(fetch(NHL.format(d=day.strftime("%Y%m%d")))).get("events", []):
+            if ev.get("season", {}).get("type") != 2:
+                continue  # regular season only
+            c = ev["competitions"][0]
+            if not c["status"]["type"].get("completed"):
+                continue
+            t = {x["homeAway"]: x for x in c["competitors"]}
+            try:
+                ls = {k: [float(q["value"]) for q in t[k]["linescores"]] for k in ("home", "away")}
+            except (KeyError, TypeError):
+                continue
+            if len(ls["home"]) < 3 or len(ls["away"]) < 3:
+                continue
+            out.append({"lead": sum(ls["home"][:2]) - sum(ls["away"][:2]), "home_won": bool(t["home"].get("winner")),
+                        "extra": len(ls["home"]) > 3, "date": day.isoformat()})
+        day += dt.timedelta(days=1)
+    return out
+
+
+def summarize_nhl(games):
+    led = [g for g in games if g["lead"] != 0]
+    tied = [g for g in games if g["lead"] == 0]
+    won = lambda g: (g["lead"] > 0) == g["home_won"]
+    one = [g for g in led if abs(g["lead"]) == 1]
+    more = [g for g in led if abs(g["lead"]) >= 2]
+    return {"games": len(games), "through": max(g["date"] for g in games), "tied_at_half": len(tied),
+            "leader_wins": rate(sum(map(won, led)), len(led)),
+            "leader_wins_one_score": rate(sum(map(won, one)), len(one)),
+            "leader_wins_two_plus": rate(sum(map(won, more)), len(more)),
+            "tied_goes_to_extra": rate(sum(g["extra"] for g in tied), len(tied))}
+
+
 def summarize(games, with_ypp):
     led = [g for g in games if g["lead"] != 0]
     close = [g for g in led if abs(g["lead"]) <= 8]
@@ -111,17 +153,34 @@ def summarize(games, with_ypp):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--season", type=int, default=dt.date.today().year)
+    # A season is named by the year it starts: January football and hockey belong to last year's season.
+    today = dt.date.today()
+    ap.add_argument("--season", type=int, default=today.year if today.month >= 8 else today.year - 1)
     ap.add_argument("--print", action="store_true")
     a = ap.parse_args()
-    out = {"season": a.season, "built": dt.date.today().isoformat(),
-           "one_score": "within 8 points at the half",
-           "nfl": summarize(nfl(a.season), True), "cfb": summarize(cfb(a.season), False)}
+    try:
+        old = json.load(open(OUT))
+    except (OSError, ValueError):
+        old = {}
+    out = {"season": a.season, "built": today.isoformat(),
+           "one_score": "within 8 points at the half; in hockey, one goal after two periods"}
+    build = {"nfl": lambda: summarize(nfl(a.season), True), "cfb": lambda: summarize(cfb(a.season), False),
+             "nhl": lambda: summarize_nhl(nhl(a.season))}
+    failed = []
+    for lg, f in build.items():
+        try:
+            out[lg] = f()
+        except Exception as e:  # one dead feed must not cost the other leagues their numbers
+            failed.append(lg)
+            print(f"{lg}: {e}", file=sys.stderr)
+            if lg in old and old.get("season") == a.season:
+                out[lg] = old[lg]
     print(json.dumps(out, indent=2))
     if not a.print:
         with open(OUT, "w") as f:
             json.dump(out, f, indent=2)
             f.write("\n")
+    return 1 if len(failed) == len(build) else 0
 
 
 if __name__ == "__main__":

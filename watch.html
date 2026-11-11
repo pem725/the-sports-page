@@ -105,12 +105,13 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
     playoff ranking. The top four (byes) count most, then the rest of the top 12, then the teams just outside it.
     Twelve teams make the field, but conference champions get automatic bids, so "top 12" is a guide, not the field
     itself. Pro: a team counts most when its playoff chance on our <a href="https://thesportspage.net/odds.html" target="_blank" rel="noopener">Odds Board</a>
-    is near 50%, and almost nothing when it is near 0% or 100%. A win cannot change much for a team that is already in, or already out.</p>
+    is near 50%, and almost nothing when it is near 0% or 100%. A win cannot change much for a team that is already in, or already out.
+    Hockey: we have no playoff model for it yet, so its stakes number is closeness alone, and it says so rather than guessing.</p>
     <p><b>What it does not know:</b> injuries the line has not priced, rivalries, or how good the television will be.
     The line and the kickoff come live from ESPN's feed each time you open this page. The short notes under each game are
     written by the paper where we have something to say, and generated from the rankings and the line where we do not.</p>
     <p><b>Tap any game for its card:</b> the market's chance next to ESPN's model, where the uncertainty is, and the halftime
-    check, printed with how often it has been right this season.</p>
+    check (after two periods, in hockey), printed with how often it has been right this season. Hockey cards also show who is expected in net.</p>
   </div>
 
   <div class="footer">
@@ -126,7 +127,10 @@ var LEAGUE = {
   cfb: {name:'College football', sd:16.5,
         url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=80&limit=300&dates='+d;}},
   nfl: {name:'NFL', sd:13.5,
-        url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates='+d;}}
+        url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates='+d;}},
+  // Hockey: no spread fallback (the puck line is always 1.5, so it says nothing about strength).
+  nhl: {name:'NHL', sd:null,
+        url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates='+d;}}
 };
 var notes = {}, programs = {}, nflOdds = {}, games = [], sortKey = 'stakes', day = null;
 
@@ -141,12 +145,13 @@ function phi(x){ var t=1/(1+0.3275911*Math.abs(x)/Math.SQRT2),
   return x>=0?(1+y)/2:(1-y)/2; }
 function implied(ml){ ml=parseFloat(ml); if(!isFinite(ml)) return null; return ml<0 ? -ml/(-ml+100) : 100/(ml+100); }
 
-// The weekend: Saturday is college, Sunday is the NFL.
+// The weekend: Saturday is college, Sunday is the NFL. Hockey plays nearly every night, so its tab is tonight.
 function weekend(){
   var now = new Date(), d = dowET(now), off = {Sun:-1,Mon:5,Tue:4,Wed:3,Thu:2,Fri:1,Sat:0}[d];
   var sat = new Date(now.getTime()+off*864e5), sun = new Date(sat.getTime()+864e5);
   return [{key:'sat', label:'Saturday · college', date:ymd(sat), league:'cfb'},
-          {key:'sun', label:'Sunday · NFL', date:ymd(sun), league:'nfl'}];
+          {key:'sun', label:'Sunday · NFL', date:ymd(sun), league:'nfl'},
+          {key:'nhl', label:'Tonight · NHL', date:ymd(now), league:'nhl'}];
 }
 
 // How much a team matters, 0 to 1. See "How the stakes number works".
@@ -174,9 +179,10 @@ function parse(ev, lg){
   var mh = ml.home && (ml.home.close||ml.home.open), ma = ml.away && (ml.away.close||ml.away.open);
   var ih = mh && implied(mh.odds), ia = ma && implied(ma.odds);
   if(ih && ia) pH = ih/(ih+ia);
-  else if(typeof o.spread === 'number') pH = phi(-o.spread/LEAGUE[lg].sd);
-  var wH = lg==='cfb' ? cfbWeight(H.rank) : nflWeight(H.nick),
-      wA = lg==='cfb' ? cfbWeight(A.rank) : nflWeight(A.nick);
+  else if(typeof o.spread === 'number' && LEAGUE[lg].sd) pH = phi(-o.spread/LEAGUE[lg].sd);
+  // Hockey has no playoff model on our board yet, so every club counts the same and stakes is closeness alone.
+  var wt = {cfb:function(t){return cfbWeight(t.rank);}, nfl:function(t){return nflWeight(t.nick);}, nhl:function(){return 1;}}[lg];
+  var wH = wt(H), wA = wt(A);
   var close = pH==null ? 0.5 : 1-Math.abs(2*pH-1);
   var tv = ((c.broadcasts||[])[0]||{}).names; tv = tv ? tv.join(', ') : '';
   var st = c.status.type;
@@ -191,10 +197,11 @@ function chips(g){
     if(r.some(function(x){return x<=4;}) && g.close>0.5) out.push(['A bye on the line','hot']);
     if(r.length===2 && r.every(function(x){return x<=12;})) out.push(['Both in the top 12','']);
     if(r.some(function(x){return x>=10 && x<=14;})) out.push(['Cut-line team','hot']);
-  } else {
+  } else if(g.lg==='nfl'){
     [g.home,g.away].forEach(function(t){ var po=nflOdds[t.nick]; if(po!=null && po>0.2 && po<0.8) out.push([t.nick+' on the bubble','hot']); });
   }
-  if(g.close>=0.8) out.push(['Coin flip','']);
+  // Not in hockey: nearly every NHL game is this close, and a label on every game says nothing. render() states the range instead.
+  if(g.close>=0.8 && g.lg!=='nhl') out.push(['Coin flip','']);
   if(programs[g.id]) out.push(['Full program','prog']);
   return out;
 }
@@ -202,12 +209,13 @@ function chips(g){
 function autoWhy(g){
   if(g.pH==null) return 'No line posted yet.';
   var favH = g.pH>=0.5, fav = favH?g.home:g.away, dog = favH?g.away:g.home, p = Math.min(99, Math.round(100*(favH?g.pH:1-g.pH)));
-  var s = 'The betting market makes '+(g.lg==='nfl'?'the '+fav.nick:fav.name)+' '+(p>=99?'a near-certain winner':p+'% to win')+', once the bookmaker&rsquo;s cut is removed. ';
+  var s = 'The betting market makes '+(g.lg!=='cfb'?'the '+fav.nick:fav.name)+' '+(p>=99?'a near-certain winner':p+'% to win')+', once the bookmaker&rsquo;s cut is removed. ';
   if(g.lg==='nfl'){
     [g.home,g.away].forEach(function(t){ var po=nflOdds[t.nick];
       if(po!=null && po>0.1 && po<0.9) s += 'The '+t.nick+' are '+Math.round(100*po)+'% to make the playoffs on our Odds Board. '; });
     return s;
   }
+  if(g.lg==='nhl') return s+(p<60 ? 'Close to a coin flip.' : '');
   if(fav.rank && !dog.rank && p<65) s += 'Upset watch: an unranked side with a real chance against No. '+fav.rank+'.';
   else if(dog.rank && fav.rank && dog.rank<fav.rank) s += 'The market favors the lower-ranked team.';
   else if(fav.rank && dog.rank) s += 'Two ranked teams; the loser falls.';
@@ -237,9 +245,11 @@ function render(){
   list.sort(by);
   document.getElementById('list').innerHTML = list.map(card).join('') ||
     '<p class="note">No games on this card'+(all?'':' involving a ranked team &mdash; tick &ldquo;every game&rdquo;')+'.</p>';
-  var hidden = games.length-list.length;
+  var hidden = games.length-list.length, fp = games.filter(function(g){return g.lg==='nhl' && g.pH!=null;})
+    .map(function(g){ return Math.round(100*Math.max(g.pH,1-g.pH)); }).sort(function(a,b){return a-b;});
+  var spread = fp.length>1 ? ' Tonight\u2019s favorites run from '+fp[0]+'% to '+fp[fp.length-1]+'%: in hockey even the favorite loses often, so the stakes number here is closeness alone.' : '';
   document.getElementById('status').innerHTML = list.length+' games'+(hidden?' with a ranked team ('+hidden+' more under &ldquo;every game&rdquo;)':'')+
-    '. Lines and scores live from ESPN; refreshed '+new Date().toLocaleTimeString('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'})+' ET.';
+    '. Lines and scores live from ESPN; refreshed '+new Date().toLocaleTimeString('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'})+' ET.'+spread;
 }
 
 function load(){
