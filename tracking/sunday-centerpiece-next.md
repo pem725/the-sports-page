@@ -161,3 +161,32 @@ Watch each one separately.
 - Do not quote the committee protocol from a web summary; find the CFP's own
   text or quote it as reported (Hancock's letter, via Rivals).
 - No family team-allegiance name-dropping.
+
+## Graded Wed 2026-11-11 against the Nov 10 committee ranking
+
+**The ranking, confirmed on two feeds** (ESPN rankings feed and CFBD `/rankings`,
+week 11, "Playoff Committee Rankings"; identical through 12):
+1 Georgia, 2 Utah, 3 Alabama, 4 UCLA, **5 Notre Dame** (from 11), 6 Texas, 7 Miami
+(from 1), 8 Tennessee, 9 Indiana, 10 BYU, 11 Kentucky, 12 Texas Tech ... 15 Iowa,
+16 Oregon, 20 Ohio State.
+
+| Call (all on file before the release) | Result | Grade |
+|---|---|---|
+| Editor, Sun morning: 1 Georgia, 2 Utah, 3 Alabama, ND 5 | all four exact | **HIT** |
+| Editor, Sun afternoon revision: 1 Utah, 2 Georgia, 3 Alabama, 4 Indiana, 5 ND, 6 Texas | 3 of 6 exact; Georgia and Utah swapped; Indiana 9th | PARTIAL. **The first call was better than the revision.** |
+| Editor: Iowa from 19 to about 11 | 15 | PARTIAL: direction right, half the distance |
+| Editor: Ohio State and Oregon "done" at 6-3 | 20 and 16, both outside the 12 | HIT |
+| Editor: UCLA rising | 8 to 4 | HIT |
+| Patrick jr: ND No. 1 chance "zero"; "highest they'll go is four" | 5 | HIT |
+| Patrick jr: committee keeps ND lower than the polls (AP 3, Coaches 3) | 5 | **HIT: his read wins the test this file set up** |
+| Patrick jr: Georgia 1, Utah 2 | exact | HIT |
+| Lean 3: ND moves up if it wins | 11 to 5 | HIT |
+| Lean 4: Miami stays in the top 12 | 7 | HIT |
+| Lean 5: any FSU-style cost lands on the bye, not the bid | Miami 1 to 7: out of the top 4, in the field | HIT, but a loss alone explains it; this does not isolate the injury |
+| Stand-in (`cfp_sim.py`, SP+): 1 Alabama, 2 Utah, 3 Indiana, 4 Georgia, 5 Texas, 6 UCLA, 7 ND | 1 exact (Utah); ND off by 2 | MISS on order |
+| Massey's own rating: 1 Georgia, 2 Utah, 3 Alabama, 4 ND | 3 exact; ND off by 1 | near HIT |
+| Massey consensus: ND 3 | 5 | off by 2 |
+
+**The lesson for Sunday:** the person, not a computer, called the top of this
+ranking best, and his first instinct beat his own revision. One week, one ranking:
+a story, not evidence of skill. Grade it again on Nov 17.
