@@ -248,6 +248,8 @@ function render(d){
   var P = programs[id];
   if(P) h += '<a class="prog" href="'+esc(P.url)+'"><span>The full program</span>'+esc(P.title)+' &rarr;</a>';
 
+  if(lg==='cfb') h += '<p class="small">Where do these two stand across their whole history? Find them on '+
+    '<a href="https://thesportspage.net/every-program.html" target="_blank" rel="noopener">Every Program Since 1869</a>.</p>';
   var K = keys(d, {mkt:mkt, espn:espn, homeName:nm(H)});
   h += '<h2>Where the uncertainty is</h2>' + (K.length ? '<ul class="keys">'+K.map(function(k){
     return '<li><span class="tag">'+esc(k.tag)+'</span>'+k.text+'</li>'; }).join('')+'</ul>'
