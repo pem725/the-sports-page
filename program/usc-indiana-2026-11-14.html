@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Program: USC at Indiana</title>
+<meta name="description" content="The Sports Page game program for USC at Indiana, Saturday Nov 14, 2026: the bottom line, three things to know, the Hoosier ledger, and players to watch.">
+<link rel="icon" href="../assets/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--iu:#990000;--usc:#b8860b;--rule:#cfc5ad}
+*{box-sizing:border-box}
+body{margin:0;background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.6}
+.paper{max-width:900px;margin:0 auto;background:var(--cream);padding:28px 32px 40px;box-shadow:0 0 0 1px var(--rule)}
+a{color:var(--steel)}
+.cover{border:3px double var(--ink);padding:22px 18px;text-align:center}
+.kick{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cover h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(36px,7vw,60px);line-height:1.02;margin:10px 0 6px}
+.cover h1 .at{font-style:italic;font-weight:400;font-size:.6em;color:var(--muted)}
+.cover .iu{color:var(--iu)} .cover .usc{color:var(--usc)}
+.cover .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;margin:4px 0 14px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:14px}
+.facts div{padding:8px 6px;border-right:1px solid var(--rule)} .facts div:last-child{border-right:0}
+.facts b{display:block;font-family:'Roboto Mono',monospace;font-size:19px}
+.facts span{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price{font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted);margin-top:8px}
+.ded{display:none;margin:16px 0 0;padding:12px 16px;border:1px solid var(--iu);background:#fbf1ef;font-family:'Playfair Display',serif;font-style:italic;font-size:19px;text-align:center;color:var(--iu)}
+.bluf{background:var(--ink);color:var(--cream);padding:18px 20px;margin:22px 0 8px}
+.bluf .bn{font-family:'Roboto Mono',monospace;font-size:54px;font-weight:600;line-height:1;color:var(--gold)}
+.bluf .bn small{font-size:15px;font-weight:400;color:var(--cream);margin-left:8px}
+.bluf p{margin:10px 0 0;font-size:17px}
+.split{display:flex;height:14px;margin-top:14px;font-size:0}
+.split i{display:block;height:100%}
+.splitlab{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:12px;margin-top:4px;color:#d9cfbb}
+h2{font-family:'Playfair Display',serif;font-weight:900;font-size:30px;margin:38px 0 4px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+h2 small{font-family:'Roboto Mono',monospace;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);display:block}
+h3{font-family:'Playfair Display',serif;font-size:22px;margin:0 0 6px;line-height:1.2}
+.pt{display:grid;grid-template-columns:230px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.pt .lab{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.pt p{margin:6px 0}
+.pt p b{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.big{font-family:'Roboto Mono',monospace;font-size:46px;font-weight:600;line-height:1;color:var(--iu)}
+.big small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:6px;line-height:1.35}
+svg text{font-family:'Roboto Mono',monospace}
+.ledger{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px}
+.ledger div{border:1px solid var(--ink);padding:12px;background:#fffdf7}
+.ledger b{font-family:'Roboto Mono',monospace;font-size:28px;display:block;color:var(--iu);line-height:1.1}
+.ledger p{margin:6px 0 0;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:14px}
+.card{border:2px solid var(--ink);background:#fffdf7;display:flex;flex-direction:column}
+.card .band{padding:6px 10px;color:#fff;font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between}
+.card.IU .band{background:var(--iu)} .card.USC .band{background:var(--usc)}
+.card .body{padding:10px 12px;display:flex;flex-direction:column;flex:1}
+.card .nm{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;line-height:1.05}
+.card .line{font-family:'Roboto Mono',monospace;font-size:12px;margin:6px 0;color:var(--muted)}
+.card .cw{font-size:13.5px;line-height:1.45;margin-top:auto}
+.score{display:grid;grid-template-columns:110px repeat(6,1fr);border:2px solid var(--ink);margin-top:12px;font-family:'Roboto Mono',monospace}
+.score div{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:6px 4px;text-align:center}
+.score .h{background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.1em}
+.score input{width:100%;font:inherit;font-size:18px;text-align:center;border:0;background:transparent}
+.score .tot{font-weight:600;font-size:18px}
+.live{display:block;margin:18px 0 0;padding:12px 16px;background:var(--steel);color:#fff;text-decoration:none;font-family:'Roboto Mono',monospace;font-size:14px}
+.live b{color:var(--gold)}
+.note{font-size:13px;color:var(--muted)}
+.foot{margin-top:40px;border-top:3px double var(--ink);padding-top:10px;font-size:13px;color:var(--muted)}
+.foot p{margin:6px 0}
+@media (max-width:640px){.paper{padding:16px}.facts{grid-template-columns:repeat(2,1fr)}.facts div:nth-child(2){border-right:0}.pt{grid-template-columns:1fr;gap:8px}.bluf .bn{font-size:44px}.score{grid-template-columns:70px repeat(6,1fr)}.score input{font-size:15px}}
+</style>
+<script src="../assets/sitenav.js" defer></script>
+</head>
+<body>
+<div class="paper">
+
+<div class="cover">
+  <a data-emblem href="https://thesportspage.net/" target="_blank" rel="noopener" style="display:block;text-align:left;border:none;text-decoration:none;margin:0 0 .5rem;line-height:0"><img src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="The Sports Page" width="44" height="44" style="width:44px;height:44px;border:none;display:inline-block"></a>
+<div class="kick">The Sports Page &middot; Official Game Program &middot; Saturday</div>
+  <h1><span class="usc">USC</span> <span class="at">at</span> <span class="iu">Indiana</span></h1>
+  <div class="sub">The champions have been winning ugly for a month. Saturday decides whether ugly still earns a bye.</div>
+  <div class="facts">
+    <div><b>3:30 ET</b><span>CBS &middot; Sat Nov 14</span></div>
+    <div><b>8&ndash;1 &middot; 7&ndash;2</b><span>Indiana &middot; USC</span></div>
+    <div><b>No. 9 &middot; 18</b><span>CFP ranking</span></div>
+    <div><b>0&ndash;4</b><span>Indiana vs USC, all time</span></div>
+  </div>
+  <div class="price">Memorial Stadium, Bloomington &middot; 47&deg; forecast at kickoff &middot; Indiana &minus;10, total 50.5, moneyline &minus;380 / +300 (DraftKings via ESPN, Wednesday night)</div>
+</div>
+
+<div class="ded" id="ded"></div>
+
+<div class="bluf">
+  <div class="bn">76 <small>times in 100, Indiana wins</small></div>
+  <p><b>Bottom line:</b> Indiana is a clear favorite, not a lock. Three forecasts agree on about three in four: the betting market (76 in 100), ESPN&rsquo;s model (78) and our own ratings (73). The catch is the last month. Indiana has been winning by a field goal, not by ten.</p>
+  <div class="split"><i style="width:76%;background:var(--iu)"></i><i style="width:24%;background:var(--usc)"></i></div>
+  <div class="splitlab"><span>Indiana 76</span><span>USC 24</span></div>
+</div>
+
+<h2><small>Section 1</small>Three things to know</h2>
+
+<div class="pt">
+  <div>
+    <div class="lab">The last month</div>
+    <svg viewBox="0 0 230 150" width="230" height="150" role="img" aria-label="Points per game: first five games Indiana scored 44 and allowed 11; last four, in regulation, scored 14 and allowed 15">
+      <text x="0" y="12" font-size="10" fill="#6b5e4a">POINTS A GAME</text>
+      <text x="0" y="40" font-size="11" fill="#1a1208">First 5</text>
+      <rect x="62" y="28" width="132" height="12" fill="#990000"/><text x="198" y="38" font-size="11" fill="#990000">44</text>
+      <rect x="62" y="42" width="33" height="12" fill="#a89f8c"/><text x="99" y="52" font-size="11" fill="#6b5e4a">11</text>
+      <text x="0" y="96" font-size="11" fill="#1a1208">Last 4</text>
+      <rect x="62" y="84" width="42" height="12" fill="#990000"/><text x="108" y="94" font-size="11" fill="#990000">14</text>
+      <rect x="62" y="98" width="45" height="12" fill="#a89f8c"/><text x="111" y="108" font-size="11" fill="#6b5e4a">15</text>
+      <rect x="0" y="128" width="10" height="10" fill="#990000"/><text x="14" y="137" font-size="10">scored</text>
+      <rect x="70" y="128" width="10" height="10" fill="#a89f8c"/><text x="84" y="137" font-size="10">allowed</text>
+    </svg>
+  </div>
+  <div>
+    <h3>In regulation over the last four games, Indiana scored 57 points and gave up 58.</h3>
+    <p>The first five games were blowouts: 44 points a game for, 11 against. Then came Nebraska (won 20&ndash;17), Ohio State (lost 15&ndash;19), Michigan (6&ndash;6 after four quarters, won in overtime) and Minnesota (16&ndash;16, won in overtime).</p>
+    <p><b>Why it matters:</b> the line says Indiana by ten. The last month says Indiana wins close games. Both can be true; a good team in a tight stretch is still a good team. But a ten-point favorite that has not won a game by ten since October 4 deserves a little humility.</p>
+    <p><b>If you miss it:</b> a tie game in the fourth quarter will feel like a collapse. For this team it has been a normal Saturday, and it has gone 3&ndash;1 in them.</p>
+  </div>
+</div>
+
+<div class="pt">
+  <div>
+    <div class="lab">What is riding on it</div>
+    <svg viewBox="0 0 230 150" width="230" height="150" role="img" aria-label="Chance of a first-round bye: 64 in 100 with a win, 11 in 100 with a loss">
+      <text x="0" y="12" font-size="10" fill="#6b5e4a">CHANCE OF A TOP-4 BYE</text>
+      <text x="0" y="44" font-size="11">Win</text>
+      <rect x="44" y="30" width="117" height="20" fill="#990000"/><text x="166" y="45" font-size="16" font-weight="600" fill="#990000">64</text>
+      <text x="0" y="90" font-size="11">Lose</text>
+      <rect x="44" y="76" width="20" height="20" fill="#a89f8c"/><text x="69" y="91" font-size="16" font-weight="600" fill="#6b5e4a">11</text>
+      <text x="0" y="132" font-size="10" fill="#6b5e4a">times in 100, from 60,000</text>
+      <text x="0" y="145" font-size="10" fill="#6b5e4a">simulated seasons</text>
+    </svg>
+  </div>
+  <div>
+    <h3>A loss probably does not end Indiana&rsquo;s season. It costs the bye.</h3>
+    <p>We played out the rest of the season 60,000 times. When Indiana wins Saturday, it makes the 12-team field about 99 times in 100 and earns a top-four seed, and the week off that comes with it, 64 times in 100. When it loses, it still makes the field about 75 times in 100, but the bye falls to 11.</p>
+    <p><b>Why it matters:</b> a top-four seed skips the first round. That is one fewer game to survive, and last year it took four playoff wins to win it all. For USC the game is bigger still: a win lifts its own playoff chance from about 22 in 100 to about 67.</p>
+    <p><b>If you miss it:</b> you will hear &ldquo;win and they&rsquo;re in&rdquo; on the broadcast. That is nearly true already. The real prize Saturday is the week off. <span class="note">(Our stand-in for the committee is rough. It reads the r&eacute;sum&eacute;, not the eye test, so treat these as sizes, not decimals.)</span></p>
+  </div>
+</div>
+
+<div class="pt">
+  <div>
+    <div class="lab">The halftime check</div>
+    <div class="big">83<small>of every 100 college teams ahead at the half won this season (514 of 619)</small></div>
+  </div>
+  <div>
+    <h3>At halftime, look at the score. Then remember Indiana trailed at the half in three of its last four.</h3>
+    <p>This season, the college team ahead at halftime has won 83 times in 100. When the lead is eight points or fewer, that drops to 68. Indiana trailed Nebraska 10&ndash;3, Ohio State 10&ndash;7 and Minnesota 10&ndash;7 at the half, and won two of the three.</p>
+    <p><b>Why it matters:</b> an Indiana lead at the half makes this very close to settled. A small USC lead is the one in three that still flips, and it is the script Indiana has been running all month.</p>
+    <p><b>If you miss it:</b> a 10&ndash;7 halftime deficit will read as trouble. For Indiana lately it has meant a fourth-quarter game, not a loss. The live game card tracks this as it happens: <a href="https://thesportspage.net/game.html?lg=cfb&amp;id=401858518" target="_blank" rel="noopener">open it on your phone</a>.</p>
+  </div>
+</div>
+
+<h2><small>Section 2</small>The Hoosier ledger</h2>
+<p>Every Indiana fan knows the long years. Here they are as numbers, along with what changed.</p>
+<svg id="seasons" viewBox="0 0 680 230" width="100%" style="max-width:680px;height:auto;display:block;margin:10px 0" role="img" aria-label="Indiana wins per season, 1990 to 2026"></svg>
+<p class="note">Wins per season, 1990&ndash;2026. 2026 is through nine games. Dashed line: eight wins.</p>
+
+<div class="ledger">
+  <div><b>2</b><p>Times Indiana won eight games or more in the 34 seasons from 1990 to 2023. It has done it in each of the last three.</p></div>
+  <div><b>35&ndash;3</b><p>Indiana&rsquo;s record since the start of 2024: 11&ndash;2, then 16&ndash;0 and the national title, and 8&ndash;1 this year.</p></div>
+  <div><b>38&ndash;3</b><p>Last New Year&rsquo;s Day in the Rose Bowl, over Alabama. Then 56&ndash;22 over Oregon, and 27&ndash;21 over Miami for the title.</p></div>
+  <div><b>0&ndash;4</b><p>Indiana against USC, ever. The first was in 1953. The biggest was the Rose Bowl on Jan. 1, 1968: USC 14, Indiana 3. The last was 1982.</p></div>
+</div>
+<p>So Saturday is a first in a small way. The last time these two met in a game this big, Indiana was the underdog in Pasadena. This time USC comes to Bloomington, and Indiana is the champion.</p>
+
+<h2><small>Section 3</small>Players to know</h2>
+<p>Season totals through nine games, from ESPN&rsquo;s game page.</p>
+<div class="cards">
+  <div class="card IU"><div class="band"><span>Indiana</span><span>QB</span></div><div class="body"><div class="nm">Josh Hoover</div><div class="line">1,860 yds &middot; 19 TD &middot; 2 INT</div><div class="cw">Two interceptions in 206 throws. He does not give the ball away, which matters most in exactly the kind of tight game Indiana keeps playing.</div></div></div>
+  <div class="card IU"><div class="band"><span>Indiana</span><span>WR</span></div><div class="body"><div class="nm">Charlie Becker</div><div class="line">50 catches &middot; 875 yds &middot; 9 TD</div><div class="cw">Nearly half of Hoover&rsquo;s passing yards go to him. Watch where he lines up on third down.</div></div></div>
+  <div class="card IU"><div class="band"><span>Indiana</span><span>RB</span></div><div class="body"><div class="nm">Turbo Richard</div><div class="line">113 carries &middot; 745 yds &middot; 6 TD</div><div class="cw">Indiana runs for 186 yards a game. Every carry also eats clock that USC&rsquo;s offense does not get.</div></div></div>
+  <div class="card IU"><div class="band"><span>Indiana</span><span>DL</span></div><div class="body"><div class="nm">Tobi Osunsanmi</div><div class="line">10 sacks</div><div class="cw">USC throws for 294 yards a game. Every sack is a throw that never happened. This is the matchup to watch.</div></div></div>
+  <div class="card USC"><div class="band"><span>USC</span><span>QB</span></div><div class="body"><div class="nm">Jayden Maiava</div><div class="line">2,524 yds &middot; 20 TD &middot; 5 INT</div><div class="cw">He threw for 30 points two weeks ago against Ohio State, the team that beat Indiana. Indiana allows 184 passing yards a game.</div></div></div>
+  <div class="card USC"><div class="band"><span>USC</span><span>RB</span></div><div class="body"><div class="nm">King Miller</div><div class="line">138 carries &middot; 680 yds &middot; 5 TD</div><div class="cw">He is running into the defense that allows 76 rushing yards a game. If he is past 80 by halftime, USC is in it.</div></div></div>
+</div>
+
+<h2><small>Section 4</small>Your scorecard</h2>
+<p>Fill it in as you watch. It saves on this phone.</p>
+<div class="score" id="score"></div>
+
+<a class="live" href="https://thesportspage.net/game.html?lg=cfb&amp;id=401858518" target="_blank" rel="noopener"><b>Live game card &rarr;</b> the market&rsquo;s chance, ESPN&rsquo;s model and the halftime check, updated every minute during the game.</a>
+
+<div class="foot">
+<p><b>Sources.</b> Line, ESPN&rsquo;s model, season stats, leaders and line scores: ESPN&rsquo;s game page and scoreboard, Wednesday Nov 11. Results, records and the head-to-head history: CollegeFootballData; Indiana&rsquo;s season records match James Howell&rsquo;s all-time file. CFP ranking confirmed on ESPN and CollegeFootballData. Halftime rates: every FBS game this season through Nov 7 with a halftime leader (<code>data/halftime-baselines.json</code>).</p>
+<p><b>Method.</b> The market&rsquo;s chance is the moneyline with the bookmaker&rsquo;s cut removed. Our ratings are SP+ through a normal curve (sd 16.5, home field 2.5). The bye and bid chances come from 60,000 simulated seasons on frozen SP+ ratings, with a r&eacute;sum&eacute; stand-in for the committee that knows nothing about head-to-head or the eye test.</p>
+<p><a href="https://thesportspage.net/" target="_blank" rel="noopener">The Sports Page</a> &middot; <a href="https://thesportspage.net/watch.html" target="_blank" rel="noopener">What to Watch this weekend</a> &middot; <a href="https://thesportspage.net/every-program.html" target="_blank" rel="noopener">Every program since 1869</a> &middot; <a href="https://thesportspage.net/how-to-watch.html" target="_blank" rel="noopener">New to football? How to watch a game</a></p>
+</div>
+</div>
+
+<script>
+// A personal line, read from the link (?for=Name) and never stored: the program stays the same for every reader.
+(function(){
+  var p=new URLSearchParams(location.search).get('for');
+  if(!p) return;
+  p=p.replace(/[^A-Za-z .'\-]/g,'').trim().slice(0,40);
+  if(!p) return;
+  var d=document.getElementById('ded');
+  d.textContent='Made for '+p+'. Go Hoosiers.';
+  d.style.display='block';
+})();
+
+// Indiana wins per season, 1990-2026 (Howell through 2025; 2026 from ESPN and CollegeFootballData, through nine games)
+(function(){
+  var W=[6,7,5,8,6,2,3,2,4,4,3,5,3,2,3,4,5,7,3,4,5,1,4,5,4,6,6,5,5,8,6,2,4,3,11,16,8];
+  var svg=document.getElementById('seasons'), x0=34, y0=196, bw=14.4, gap=2.5, k=10.5, s='';
+  for(var v=0;v<=16;v+=4){var y=y0-v*k;s+='<line x1="'+x0+'" x2="676" y1="'+y+'" y2="'+y+'" stroke="#cfc5ad" stroke-width="0.6"/><text x="'+(x0-6)+'" y="'+(y+4)+'" font-size="10" text-anchor="end" fill="#6b5e4a">'+v+'</text>';}
+  W.forEach(function(w,i){
+    var yr=1990+i, x=x0+4+i*(bw+gap), h=w*k, hot=yr>=2024;
+    s+='<rect x="'+x+'" y="'+(y0-h)+'" width="'+bw+'" height="'+h+'" fill="'+(hot?'#990000':'#a89f8c')+'"'+(yr===2026?' fill-opacity="0.55" stroke="#990000" stroke-dasharray="3 2"':'')+'><title>'+yr+': '+w+' wins'+(yr===2026?' (so far)':'')+'</title></rect>';
+    if(yr%5===0||yr>=2024) s+='<text x="'+(x+bw/2)+'" y="'+(y0+14)+'" font-size="9.5" text-anchor="middle" fill="#1a1208">'+(yr>=2024?"'"+String(yr).slice(2):yr)+'</text>';
+    if(hot) s+='<text x="'+(x+bw/2)+'" y="'+(y0-h-4)+'" font-size="10" text-anchor="middle" fill="#990000" font-weight="600">'+w+'</text>';
+  });
+  var y8=y0-8*k; s+='<line x1="'+x0+'" x2="676" y1="'+y8+'" y2="'+y8+'" stroke="#1a1208" stroke-dasharray="4 3" stroke-width="1"/>';
+  s+='<text x="'+x0+'" y="14" font-size="10" fill="#6b5e4a">WINS</text>';
+  svg.innerHTML=s;
+})();
+
+// Scorecard, saved on this device only
+(function(){
+  var key='tsp-score-401858518', st={};
+  try{st=JSON.parse(localStorage.getItem(key))||{};}catch(e){}
+  var cols=['1','2','3','4','OT','Final'], el=document.getElementById('score'), h='<div class="h"></div>';
+  cols.forEach(function(c){h+='<div class="h">'+c+'</div>';});
+  [['USC','usc'],['Indiana','iu']].forEach(function(t){
+    h+='<div style="text-align:left;font-weight:600;color:var(--'+t[1]+')">'+t[0]+'</div>';
+    for(var q=0;q<5;q++) h+='<div><input inputmode="numeric" maxlength="2" data-k="'+t[1]+q+'" value="'+(st[t[1]+q]||'')+'" aria-label="'+t[0]+' '+cols[q]+'"></div>';
+    h+='<div class="tot" id="tot-'+t[1]+'"></div>';
+  });
+  el.innerHTML=h;
+  function total(){['usc','iu'].forEach(function(t){var s=0,any=false;for(var q=0;q<5;q++){var v=parseInt(st[t+q],10);if(!isNaN(v)){s+=v;any=true;}}document.getElementById('tot-'+t).textContent=any?s:'';});}
+  el.addEventListener('input',function(e){var k=e.target.getAttribute('data-k');if(!k)return;st[k]=e.target.value.replace(/\D/g,'');try{localStorage.setItem(key,JSON.stringify(st));}catch(err){}total();});
+  total();
+})();
+</script>
+</body>
+</html>

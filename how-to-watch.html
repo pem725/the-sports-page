@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; How to Watch a Football Game</title>
+<meta name="description" content="New to football? What to look at, what the announcers mean, and five things worth talking about during the game.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;
+--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;
+font-size:16px;line-height:1.7;padding:1.5rem 1rem 3rem}
+.masthead{max-width:860px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;
+letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.title a{color:inherit;text-decoration:none}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;
+color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);
+padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:860px;margin:.8rem auto 0;background:var(--cream);padding:2rem 2.2rem 2.4rem;
+box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.2rem 1rem}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.deck{font-style:italic;font-size:1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.6rem 0 1.2rem;line-height:1.5}
+.tools{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;border-bottom:3px double var(--ink);padding-bottom:.7rem;margin-bottom:.8rem;
+position:sticky;top:0;background:var(--cream);padding-top:.5rem;z-index:2}
+.tools button{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+padding:.42rem .8rem;border:1px solid var(--div);background:var(--card);color:var(--muted);cursor:pointer}
+.tools button[aria-pressed="true"]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.tools input{flex:1;min-width:10rem;font-family:'Roboto Mono',monospace;font-size:.8rem;padding:.42rem .6rem;border:1px solid var(--div);background:#fffdf7}
+.toc{font-family:'Roboto Mono',monospace;font-size:.68rem;line-height:2;margin-bottom:1.2rem}
+.toc a{color:var(--steel);text-decoration:none;border-bottom:1px dotted var(--steel);margin-right:.7rem;white-space:nowrap}
+.g{border-top:1px solid var(--div);padding:1rem 0 .9rem;scroll-margin-top:4.5rem}
+.g:target{background:#fff4d6;box-shadow:0 0 0 .6rem #fff4d6}
+.g h2{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;line-height:1.2;margin-bottom:.3rem}
+.g .anc{font-family:'Roboto Mono',monospace;font-size:.8rem;color:var(--div);text-decoration:none;margin-right:.4rem}
+.g .anc:hover{color:var(--rust)}
+.g .sp{font-family:'Roboto Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400;
+border:1px solid var(--steel);color:var(--steel);padding:.05rem .4rem;margin-left:.6rem;vertical-align:.3em}
+.g p{margin:.35rem 0;font-size:.95rem}
+.g p span{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);
+display:block;margin-bottom:.05rem}
+.g .why{color:var(--muted);font-size:.88rem}
+.dia{display:block;max-width:100%;height:auto;margin:.6rem 0;border:1px solid var(--div)}
+.dia text{font-family:'Roboto Mono',monospace}
+.empty{font-family:'Roboto Mono',monospace;font-size:.8rem;color:var(--muted);display:none;padding:1rem 0}
+a{color:var(--steel)}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;
+flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+
+.bluf{background:var(--ink);color:var(--cream);padding:1rem 1.2rem;margin:0 0 1.4rem}
+.bluf b{color:var(--gold)}
+.bluf p{margin:.3rem 0;font-size:.98rem}
+h2.s{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;border-bottom:2px solid var(--ink);margin:1.6rem 0 .6rem;padding-bottom:.2rem}
+h2.s small{display:block;font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);font-weight:400}
+.downs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem}
+.downs div{border:1px solid var(--div);background:var(--card);padding:.7rem .8rem}
+.downs b{font-family:'Roboto Mono',monospace;font-size:1.5rem;display:block;color:var(--steel);line-height:1.1}
+.downs p{font-size:.88rem;margin-top:.3rem}
+dl.say dt{font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;margin-top:.8rem}
+dl.say dd{font-size:.93rem;margin:.1rem 0 0}
+ol.talk{padding-left:1.3rem}
+ol.talk li{margin:.6rem 0;font-size:.95rem}
+p.body{margin:.5rem 0;font-size:.97rem}
+</style>
+<script src="assets/sitenav.js" defer></script>
+</head>
+<body>
+<div class="masthead">
+  <div class="kicker">Statistics &middot; Explained &middot; Plainly</div>
+  <div class="title"><a href="https://thesportspage.net/"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="datebar"><span>How to Watch</span><span>Football, for newcomers</span></div>
+</div>
+<div class="paper">
+  <h1>How to Watch a Football Game</h1>
+  <p class="deck">You do not need to know every rule. You need to know where to look, and what the people on TV mean.</p>
+
+  <div class="bluf">
+    <p><b>The bottom line:</b> football is a fight over 10 yards. One team gets four tries to go 10 yards. Make it,
+    and it gets four more. Miss it, and the other team gets the ball.</p>
+    <p>So watch the <b>down</b> and the <b>yellow line</b> on the screen. Almost everything else is detail.</p>
+  </div>
+
+  <h2 class="s"><small>Before the snap</small>What to look at in the first quarter</h2>
+  <p class="body"><b>Look at the corner of the screen first.</b> It says something like "2nd &amp; 7": the second try, with 7
+  yards still to go. That one line tells you how nervous to be.</p>
+  <p class="body"><b>Watch the first few plays to learn each team&rsquo;s plan.</b> Coaches often script their opening plays
+  in advance. Does a team run the ball or throw it? Is the quarterback getting time to throw, or running for his life?
+  You will see the plan before the announcers say it.</p>
+  <p class="body"><b>Then pick one player to watch for a whole drive.</b> Not the ball. Try the quarterback, then a big
+  lineman. You will see a different game.</p>
+
+  <h2 class="s"><small>Down by down</small>What each try is for</h2>
+  <div class="downs">
+    <div><b>1st down</b><p>The free try. The offense can run or pass, and the defense has to guess. A good gain here makes the next two easy.</p></div>
+    <div><b>2nd down</b><p>Sets up third. Short yardage left means the offense is in charge. Long yardage means trouble.</p></div>
+    <div><b>3rd down</b><p>The big one. Most drives live or die here. Lean in.</p></div>
+    <div><b>4th down</b><p>Usually a kick: a punt to push the other team back, or a field goal for 3 points. Sometimes a team <i>goes for it</i>, and then everyone holds their breath. See <a href="https://thesportspage.net/glossary.html#fourth-down" target="_blank" rel="noopener">going for it</a>.</p></div>
+  </div>
+
+  <h2 class="s"><small>Translation</small>What the announcers mean</h2>
+  <dl class="say">
+    <dt>&ldquo;Moving the chains.&rdquo;</dt>
+    <dd>They made a first down and got four new tries. A sideline crew holds a 10-yard chain and literally moves it. <a href="https://thesportspage.net/glossary.html#moving-the-chains" target="_blank" rel="noopener">More</a>.</dd>
+    <dt>&ldquo;They&rsquo;re in the red zone.&rdquo;</dt>
+    <dd>Inside the last 20 yards before the end zone. Now the question is touchdown (7 points) or field goal (3). <a href="https://thesportspage.net/glossary.html#red-zone" target="_blank" rel="noopener">More</a>.</dd>
+    <dt>&ldquo;He&rsquo;s got a clean pocket.&rdquo;</dt>
+    <dd>The blockers are keeping defenders away from the quarterback, so he has time to throw. <a href="https://thesportspage.net/glossary.html#pocket" target="_blank" rel="noopener">More</a>.</dd>
+    <dt>&ldquo;They&rsquo;re going to take the points.&rdquo;</dt>
+    <dd>On fourth down, the coach is kicking a field goal for 3 points instead of gambling on a touchdown. <a href="https://thesportspage.net/glossary.html#field-goal" target="_blank" rel="noopener">More</a>.</dd>
+    <dt>&ldquo;The two-minute drill.&rdquo;</dt>
+    <dd>The hurry-up at the end of a half. The team throws to the sidelines and runs out of bounds to stop the clock. Watch the clock and the timeouts left. <a href="https://thesportspage.net/glossary.html#two-minute-drill" target="_blank" rel="noopener">More</a>.</dd>
+    <dt>&ldquo;They&rsquo;re bringing pressure&rdquo; or &ldquo;a blitz.&rdquo;</dt>
+    <dd>The defense sent extra players after the quarterback. Big risk, big reward. <a href="https://thesportspage.net/glossary.html#blitz" target="_blank" rel="noopener">More</a>.</dd>
+    <dt>&ldquo;Play-action.&rdquo;</dt>
+    <dd>The quarterback faked a handoff and then threw. Watch the defenders step toward the fake. <a href="https://thesportspage.net/glossary.html#play-action" target="_blank" rel="noopener">More</a>.</dd>
+    <dt>&ldquo;They&rsquo;re in Cover 2.&rdquo;</dt>
+    <dd>A defense with two players standing far back, each guarding half the field. <a href="https://thesportspage.net/glossary.html#cover-2" target="_blank" rel="noopener">See the diagram</a>.</dd>
+  </dl>
+
+  <h2 class="s"><small>Your turn</small>Five things worth talking about</h2>
+  <ol class="talk">
+    <li><b>&ldquo;Should they go for it?&rdquo;</b> On fourth down, ask the room before the coach decides. Everyone has a
+    view, and nobody is sure. That is the fun of it.</li>
+    <li><b>&ldquo;Who&rsquo;s winning up front?&rdquo;</b> Count how often the quarterback gets hit or hurried. The team winning
+    that battle usually wins the game, even when the score says otherwise for a while.</li>
+    <li><b>&ldquo;Was that a good call?&rdquo;</b> After a yellow flag, guess the penalty before the referee announces it.
+    <a href="https://thesportspage.net/glossary.html#holding" target="_blank" rel="noopener">Holding</a> and <a href="https://thesportspage.net/glossary.html#pass-interference" target="_blank" rel="noopener">pass interference</a> are the usual suspects.</li>
+    <li><b>&ldquo;Seven or three?&rdquo;</b> Every time a team reaches the <a href="https://thesportspage.net/glossary.html#red-zone" target="_blank" rel="noopener">red zone</a>, call it: touchdown
+    or field goal? Keep a tally. It often explains the final score.</li>
+    <li><b>&ldquo;Who&rsquo;s ahead at halftime?&rdquo;</b> Make a halftime call on the winner, then see whether it holds. Our
+    <a href="https://thesportspage.net/watch.html" target="_blank" rel="noopener">game cards</a> tell you how often the team ahead
+    at the half wins this season.</li>
+  </ol>
+
+  <p class="body" style="margin-top:1.2rem">Hear a term you do not know? It is probably in
+  <a href="https://thesportspage.net/glossary.html" target="_blank" rel="noopener">the Glossary</a>, with a picture when a picture helps.</p>
+
+  <div class="footer">
+    <span><a href="https://thesportspage.net/" style="color:inherit" target="_blank" rel="noopener">The Sports Page</a> &middot; one question per issue, answered with numbers</span>
+    <span>See also <a href="https://thesportspage.net/glossary.html" style="color:inherit" target="_blank" rel="noopener">the Glossary</a></span>
+  </div>
+</div>
+</body>
+</html>
