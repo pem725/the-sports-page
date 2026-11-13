@@ -735,6 +735,13 @@ and the page says so.
 accent, one without) were merged on the first build, and Pedro of the Red Sox showed a 1994
 Padres reliever's line. Shared names, compared without accents, carry their span of seasons.
 
+**NFL (added the same day)**, 1999–2025 from nflverse, by `scripts/build_stands_nfl.py` →
+`data/stands-nfl.json`: ranked within position (QB, RB, WR, TE, DL, LB, DB, K), regulars per
+16 games scaled to 17. Defenders need only 10 games because the feed has no snap counts, and
+the page says so. Kickers live in nflverse's "SPEC" group and are taken by position. 100 goes
+only to a top value nobody else matched: ten kickers at 100% on extra points are not each
+"the best". Rebuild after each Super Bowl.
+
 Data: `python3 scripts/build_stands.py` → `data/stands-mlb-hitting.json` and
 `data/stands-mlb-pitching.json` (about 4 MB each, 1 MB gzipped). Rebuild each winter after the
 World Series. It shares its season cache with the constructs research in

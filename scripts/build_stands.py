@@ -100,10 +100,12 @@ def midrank(vals):
 
 def scale(vals):
     """0-100 for display: the mid-rank percentile, floored and capped at 99, with 100
-    kept for the top value alone. Rounding would print 100 for a 99.7, which claims a
+    kept for a top value nobody else matched (ten kickers making every extra point are not
+    each "the best"). Rounding would print 100 for a 99.7, which claims a
     season was the best when it was not."""
     top = max(vals)
-    return [100 if v == top else min(99, int(p)) for v, p in zip(vals, midrank(vals))]
+    alone = sum(1 for v in vals if v == top) == 1  # a tie at the top is not "the best"
+    return [100 if (v == top and alone) else min(99, int(p)) for v, p in zip(vals, midrank(vals))]
 
 
 def value(t, f):
