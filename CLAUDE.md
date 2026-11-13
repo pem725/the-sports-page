@@ -716,7 +716,7 @@ about .75). Say that; do not oversell it. On the card it fills a pregame slot be
 Basketball needs a measured checkpoint (the score after three quarters is the
 obvious candidate) before it gets a card.
 
-### `where-it-stands.html` — any hitter's season since 1901, on 0 to 100
+### `where-it-stands.html` — any hitter's or pitcher's season since 1901, on 0 to 100
 
 Added 2026-11-13 on the editor's idea: put every number on a relative continuum. Each stat
 gets its percentile **within its own season** (leads: it holds the rules, parks and strategy
@@ -725,10 +725,20 @@ league ran. Percent of maximum was tried and dropped: one record (Wilson's 191 R
 ceiling for everyone. 100 is reserved for the single top value; everyone else caps at 99,
 because rounding printed 100 for a 99.7. Population: 300+ PA, scaled for short seasons.
 
-Data: `python3 scripts/build_stands.py` → `data/stands-mlb-hitting.json` (about 4 MB, 1 MB
-gzipped). Rebuild each winter after the World Series. It shares its season cache with the
-constructs research in `research/constructs/baseball-hitting/`, where the calibration and
-factor-analysis work lives. Pitching is next.
+**Pitchers (added the same day)** are ranked only within their job: starters (half their games
+started, 100+ innings) against starters, relievers (40+ innings) against relievers. Every
+percentile runs in the direction of its sentence ("had a better ERA than 90 of every 100").
+Saves rank relievers only, from 1969. Before the 1950s the reliever group is mostly swingmen,
+and the page says so.
+
+**Players are keyed by MLB id, never by name.** Two Pedro Martinezes (one spelled with an
+accent, one without) were merged on the first build, and Pedro of the Red Sox showed a 1994
+Padres reliever's line. Shared names, compared without accents, carry their span of seasons.
+
+Data: `python3 scripts/build_stands.py` → `data/stands-mlb-hitting.json` and
+`data/stands-mlb-pitching.json` (about 4 MB each, 1 MB gzipped). Rebuild each winter after the
+World Series. It shares its season cache with the constructs research in
+`research/constructs/baseball-hitting/`, where the calibration and factor-analysis work lives.
 
 ### `engine.html` — the guts, opened up
 

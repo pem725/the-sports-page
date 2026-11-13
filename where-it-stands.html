@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Sports Page &mdash; Where It Stands</title>
-<meta name="description" content="Any hitter's season since 1901, placed on a 0-to-100 scale twice: against everyone that season, and against every season ever.">
+<meta name="description" content="Any hitter's or pitcher's season since 1901, placed on a 0-to-100 scale twice: against everyone that season, and against every season ever.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;
@@ -63,16 +63,19 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
 <div class="masthead">
   <div class="kicker">Statistics &middot; Explained &middot; Plainly</div>
   <div class="title"><a href="https://thesportspage.net/"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
-  <div class="datebar"><span>Where It Stands</span><span id="span">every hitter since 1901</span></div>
+  <div class="datebar"><span>Where It Stands</span><span id="span">every season since 1901</span></div>
 </div>
 <div class="paper">
-  <h1>Was That a Great Season, or a Great Year to Hit?</h1>
+  <h1>Was That a Great Season, or a Great Year for It?</h1>
   <p class="deck">A number means little without its season. Ken Harrelson drove in 109 runs in 1968, the year of the
-  pitcher, and nobody in baseball drove in more. Pick any hitter's season and see each stat on a 0-to-100 scale twice:
-  against everyone that season, and against every season ever.</p>
+  pitcher, and nobody in baseball drove in more. Bob Gibson's 1.12 ERA that summer beat every starter in the game. Pick
+  any season since 1901 and see each stat on a 0-to-100 scale twice: against everyone that season, and against every season ever.</p>
 
+  <div class="chips" id="kind" role="group" aria-label="Hitters or pitchers">
+    <button data-k="hitting" aria-pressed="true">Hitters</button><button data-k="pitching" aria-pressed="false">Pitchers</button>
+  </div>
   <div class="tools">
-    <input id="q" list="names" type="search" placeholder="Type a hitter: Harrelson, Judge, Ruth&hellip;" aria-label="Find a hitter" autocomplete="off">
+    <input id="q" list="names" type="search" placeholder="Type a name&hellip;" aria-label="Find a player" autocomplete="off">
     <datalist id="names"></datalist>
   </div>
   <div class="chips" id="examples"><span class="lab">Try</span></div>
@@ -80,28 +83,39 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
 
   <div class="how">
     <h3>How to read it</h3>
-    <p><b>The big number is the season.</b> It says how many of every 100 regular hitters that same year this one beat.
-    It leads because it holds the rules, the ballparks and the strategy of the day fixed: everyone in it faced the same league.</p>
-    <p><b>The second line is all time.</b> The same number against every regular season since the stat was kept. When the two
-    disagree, the season was unusual: a low all-time number with a high season number means the whole league struggled that year.</p>
+    <p><b>The big number is the season.</b> Out of every 100 regulars that same year, how many this one beat. It leads
+    because it holds the rules, the ballparks and the strategy of the day fixed: everyone in it faced the same league.</p>
+    <p><b>The second line is all time.</b> The same count against every regular season since the stat was kept. When the two
+    disagree, the season was unusual: a low all-time number beside a high season number means the whole league struggled that year.</p>
     <p><b>The third line is the league.</b> The typical regular that season, and where that typical season ranks among all of them.</p>
-    <p class="note">100 is kept for the single top value; everyone else tops out at 99. Regulars means 300 or more plate appearances,
-    scaled down for short seasons (1918, 1981, 1994, 2020), so a 50 is an ordinary everyday player, not an ordinary major leaguer.
-    Strikeouts start in 1913, when both leagues kept them. Source: the MLB Stats API, rebuilt each winter.
-    Why percentiles and not &ldquo;percent of the record&rdquo;: one record season sets that ceiling for everyone, so the best RBI season of 2025
-    would read as 68%. <a href="https://github.com/pem725/the-sports-page/blob/main/research/constructs/baseball-hitting/README.md" target="_blank" rel="noopener">The research behind it</a>
-    &middot; <a href="https://thesportspage.net/glossary.html#rbi">What each stat means</a></p>
+    <p><b>Pitchers are compared within their own job.</b> A starter is ranked only against starters, a reliever only against
+    relievers: their ERAs and strikeout rates live in different worlds. The line between the two jobs is blurrier before the
+    1950s, when a pitcher who started fewer than half his games was usually a swingman who also started, not a modern reliever.
+    If a season ever has fewer than 20 pitchers in a group, the card says so instead of ranking a handful.</p>
+    <p class="note">Every number reads in the direction of its sentence: a high number for ERA means a <i>low</i> ERA.
+    100 is kept for the single top value; everyone else tops out at 99. Regulars: hitters with 300 or more plate appearances;
+    starters (at least half their games started) with 100 or more innings; relievers with 40 or more. All are scaled down for short
+    seasons (1918, 1981, 1994, 2020), so a 50 is an ordinary regular, not an ordinary major leaguer. Strikeouts start in 1913, when
+    both leagues kept them; saves in 1969, when they became official. Source: the MLB Stats API, rebuilt each winter. Why
+    percentiles and not &ldquo;percent of the record&rdquo;: one record season sets that ceiling for everyone, so the best RBI season of
+    2025 would read as 68%. <a href="https://github.com/pem725/the-sports-page/blob/main/research/constructs/baseball-hitting/README.md" target="_blank" rel="noopener">The research behind it</a>
+    &middot; <a href="https://thesportspage.net/glossary.html#era">What each stat means</a></p>
   </div>
 
   <div class="footer"><span>The Sports Page &middot; one question per issue, answered with numbers</span><span id="built"></span></div>
 </div>
 <script>
 (function(){
-  var D, byName = {}, cur = null;
-  var EX = [['Ken Harrelson',1968],['Hack Wilson',1930],['Kyle Schwarber',2025],['Aaron Judge',2024],['Babe Ruth',1921],['Ichiro Suzuki',2004]];
+  var DATA = {}, kind = 'hitting', D, byName = {}, norm = {}, cur = null;
+  var EX = {hitting: [['Ken Harrelson',1968],['Hack Wilson',1930],['Kyle Schwarber',2025],['Aaron Judge',2024],['Babe Ruth',1921],['Ichiro Suzuki',2004]],
+            pitching: [['Bob Gibson',1968],['Cy Young',1901],['Mariano Rivera',2004],['Paul Skenes',2025],['Sandy Koufax',1965],['Greg Maddux',1995]]};
+  var WHO = {hitters:'regulars', starters:'starters', relievers:'relievers'};
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
-  function fmt(v, dp){ return dp ? v.toFixed(dp).replace(/^0\./, '.') : String(Math.round(v)); }
-  function verb(k){ return {so:'struck out more than', sb:'stole more than', bb:'walked more than'}[k] || 'beat'; }
+  function plain(s){ return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim(); }
+  function fmt(v, s){
+    if(s.key === 'ip'){ var w = Math.floor(v + 1e-6), t = Math.round((v - w) * 3); if(t === 3){ w++; t = 0; } return w + (t ? '.'+t : ''); }
+    return s.dp === 3 && v < 1 ? v.toFixed(3).replace(/^0\./, '.') : s.dp ? v.toFixed(s.dp) : String(Math.round(v));
+  }
   function era(p){ return p < 10 ? 'one of the lowest of any season' : p < 30 ? 'lower than most seasons' :
                           p <= 70 ? 'about middle of the pack for history' : p <= 90 ? 'higher than most seasons' : 'one of the highest of any season'; }
 
@@ -109,19 +123,23 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
     var rows = byName[name]; if(!rows) return;
     var r = rows.filter(function(x){ return x[1] === year; })[0] || rows[rows.length-1];
     year = r[1]; cur = [name, year];
-    var team = D.teams[r[2]], S = D.seasons[String(year)];
-    var h = '<h2>'+esc(name)+', '+year+'</h2><div class="sub">'+(team ? esc(team)+' &middot; ' : '')+r[3]+' plate appearances</div>';
+    var grp = D.groups[r[3]], who = WHO[grp], S = (D.seasons[grp]||{})[String(year)], n = D.counts[grp+'|'+year] || 0;
+    var team = D.teams[r[2]];
+    var h = '<h2>'+esc(name)+', '+year+'</h2><div class="sub">'+(team ? esc(team)+' &middot; ' : '')+
+      (kind === 'hitting' ? r[4]+' plate appearances' : fmt(r[4], {key:'ip'})+' innings &middot; '+grp.slice(0,-1)+', one of '+n+' that season')+'</div>';
     h += '<div class="chips"><span class="lab">Seasons</span>'+rows.map(function(x){
       return '<button aria-pressed="'+(x[1]===year)+'" data-y="'+x[1]+'">'+x[1]+'</button>'; }).join('')+'</div>';
     h += '<div class="key"><span><i></i>against that season</span><span><u></u>against all time</span></div><div class="grid">';
     D.stats.forEach(function(s, k){
-      var c = r[4][k]; if(!c) return;
-      var v = c[0], ws = c[1], at = c[2], L = S && S[s.key];
-      h += '<div class="st"><div class="nm"><span>'+esc(s.label)+'</span><b>'+fmt(v, s.dp)+'</b></div>'+
-        '<div class="big"><strong>'+ws+'</strong><span>'+(ws===100 ? 'the most of any regular in '+year : verb(s.key)+' '+ws+' of every 100 regulars in '+year)+'</span></div>'+
-        '<div class="bar" role="img" aria-label="'+ws+' against '+year+', '+at+' against all time"><i style="width:'+ws+'%"></i><u style="left:calc('+at+'% - 1px)"></u></div>'+
-        '<p class="at">All time: '+(at===100 ? '<b>100</b>, the most of any regular season on record' : verb(s.key)+' <b>'+at+'</b> of every 100 regular seasons since '+Math.max(s.from, D.first))+'.</p>'+
-        (L ? '<p class="era">The typical regular in '+year+': '+fmt(L[0], s.dp)+', '+era(L[1])+'.</p>' : '')+'</div>';
+      var c = r[5][k]; if(!c) return;
+      var v = c[0], ws = c[1], at = c[2], L = S && S[s.key], since = Math.max(s.from, D.first);
+      var lead = ws == null
+        ? '<div class="big"><strong>&mdash;</strong><span>only '+n+' '+who+' in '+year+': too few to rank within the season</span></div>'
+        : '<div class="big"><strong>'+ws+'</strong><span>'+(ws===100 ? 'the best of any '+who.slice(0,-1)+' in '+year : s.verb+' '+ws+' of every 100 '+who+' in '+year)+'</span></div>';
+      h += '<div class="st"><div class="nm"><span>'+esc(s.label)+'</span><b>'+fmt(v, s)+'</b></div>'+lead+
+        '<div class="bar" role="img" aria-label="'+(ws==null?'':ws+' against '+year+', ')+at+' against all time"><i style="width:'+(ws||0)+'%"></i><u style="left:calc('+at+'% - 1px)"></u></div>'+
+        '<p class="at">All time: '+(at===100 ? '<b>100</b>, the best of any '+who.slice(0,-1)+' season on record' : s.verb+' <b>'+at+'</b> of every 100 '+who.slice(0,-1)+' seasons since '+since)+'.</p>'+
+        (L ? '<p class="era">The typical '+who.slice(0,-1)+' in '+year+': '+fmt(L[0], s)+', '+era(L[1])+'.</p>' : '')+'</div>';
     });
     h += '</div>';
     document.getElementById('out').innerHTML = h;
@@ -129,27 +147,44 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
       b.addEventListener('click', function(){ show(name, +b.dataset.y); }); });
     [].forEach.call(document.querySelectorAll('#examples button'), function(b){
       b.setAttribute('aria-pressed', b.dataset.n === name && +b.dataset.y === year); });
-    var u = new URL(location.href); u.searchParams.set('p', name); u.searchParams.set('y', year);
+    var u = new URL(location.href); u.searchParams.set('k', kind); u.searchParams.set('p', name); u.searchParams.set('y', year);
     history.replaceState(null, '', u);
   }
 
-  fetch('data/stands-mlb-hitting.json').then(function(r){ return r.json(); }).then(function(d){
-    D = d;
-    d.rows.forEach(function(x){ var n = d.names[x[0]]; (byName[n] = byName[n] || []).push(x); });
-    Object.keys(byName).forEach(function(n){ byName[n].sort(function(a,b){ return a[1]-b[1]; }); });
-    document.getElementById('names').innerHTML = d.names.map(function(n){ return '<option value="'+esc(n)+'">'; }).join('');
-    document.getElementById('span').textContent = d.first+'–'+d.last+' · '+d.rows.length.toLocaleString()+' seasons';
-    document.getElementById('built').textContent = 'Rebuilt '+d.built;
-    var ex = document.getElementById('examples');
-    EX.forEach(function(e){ if(!byName[e[0]]) return; var b = document.createElement('button');
-      b.textContent = e[0].split(' ').slice(-1)[0]+' '+e[1]; b.dataset.n = e[0]; b.dataset.y = e[1];
-      b.addEventListener('click', function(){ show(e[0], e[1]); }); ex.appendChild(b); });
-    var q = document.getElementById('q');
-    function pick(){ var n = q.value.trim(); if(byName[n]){ var rs = byName[n]; show(n, cur && cur[0]===n ? cur[1] : rs[rs.length-1][1]); } }
-    q.addEventListener('change', pick); q.addEventListener('input', pick);
-    var u = new URL(location.href), p = u.searchParams.get('p'), y = +u.searchParams.get('y');
-    if(p && byName[p]) show(p, y); else show(EX[0][0], EX[0][1]);
-  }).catch(function(){ document.getElementById('out').innerHTML = '<p class="note">The season data did not load. Try again in a minute.</p>'; });
+  function use(k, name, year){
+    kind = k;
+    [].forEach.call(document.querySelectorAll('#kind button'), function(b){ b.setAttribute('aria-pressed', b.dataset.k === k); });
+    document.getElementById('out').innerHTML = '<p class="note">Loading every season since 1901&hellip;</p>';
+    var p = DATA[k] ? Promise.resolve(DATA[k]) : fetch('data/stands-mlb-'+k+'.json').then(function(r){ return r.json(); });
+    return p.then(function(d){
+      DATA[k] = D = d; byName = {}; norm = {};
+      d.rows.forEach(function(x){ var n = d.names[x[0]]; (byName[n] = byName[n] || []).push(x); });
+      Object.keys(byName).forEach(function(n){ byName[n].sort(function(a,b){ return a[1]-b[1]; }); norm[plain(n)] = n; });
+      document.getElementById('names').innerHTML = d.names.map(function(n){ return '<option value="'+esc(n)+'">'; }).join('');
+      document.getElementById('span').textContent = d.first+'\u2013'+d.last+' \u00b7 '+d.rows.length.toLocaleString()+' '+(k==='hitting'?'hitter':'pitcher')+' seasons';
+      document.getElementById('built').textContent = 'Rebuilt '+d.built;
+      var q = document.getElementById('q'); q.value = ''; q.placeholder = k === 'hitting' ? 'Type a hitter: Harrelson, Judge, Ruth\u2026' : 'Type a pitcher: Gibson, Koufax, Skenes\u2026';
+      var ex = document.getElementById('examples'); ex.innerHTML = '<span class="lab">Try</span>';
+      EX[k].forEach(function(e){ var n = find(e[0]); if(!n || !byName[n].some(function(x){ return x[1] === e[1]; })) return; var b = document.createElement('button');
+        b.textContent = e[0].split(' ').slice(-1)[0]+' '+e[1]; b.dataset.n = n; b.dataset.y = e[1];
+        b.addEventListener('click', function(){ show(n, e[1]); }); ex.appendChild(b); });
+      var n0 = name && find(name);
+      if(n0) show(n0, year); else show(find(EX[k][0][0]), EX[k][0][1]);
+    }).catch(function(){ document.getElementById('out').innerHTML = '<p class="note">The season data did not load. Try again in a minute.</p>'; });
+  }
+
+  var q = document.getElementById('q');
+  // A shared name ("Pedro Martinez") carries its years in the label; typed bare, it means
+  // the one with the longest career, and the list offers the others.
+  function find(t){ var x = plain(t); if(norm[x]) return norm[x];
+    var c = Object.keys(norm).filter(function(k){ return k.indexOf(x+' (') === 0; }).map(function(k){ return norm[k]; });
+    return c.sort(function(a,b){ return byName[b].length - byName[a].length; })[0]; }
+  function pick(){ var n = find(q.value); if(n){ var rs = byName[n]; show(n, cur && cur[0]===n ? cur[1] : rs[rs.length-1][1]); } }
+  q.addEventListener('change', pick); q.addEventListener('input', pick);
+  [].forEach.call(document.querySelectorAll('#kind button'), function(b){
+    b.addEventListener('click', function(){ if(b.dataset.k !== kind) use(b.dataset.k); }); });
+  var u = new URL(location.href), k0 = u.searchParams.get('k') === 'pitching' ? 'pitching' : 'hitting';
+  use(k0, u.searchParams.get('p'), +u.searchParams.get('y'));
 })();
 </script>
 </body>
