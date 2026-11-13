@@ -66,10 +66,29 @@ of its own is a **Gene team**.
   answer effect shows up.
 - Nine weeks is a small sample: 15–28 chances per team. Treat the 2026 list as a snapshot.
 
-## Next tests (not done)
+## The Rangers point: power play and penalty kill (2026-11-13, `2_nhl_special.py`)
 
-- **The editor's Rangers point:** are teams that answer quickly also strong on the power
-  play *and* the penalty kill? NHL situationCode is already in the goal files.
+The editor's memory: Rangers teams that answered "took opportunities when they came", so
+they were good on the power play, and "surprisingly" stingy on the penalty kill too.
+344 team-seasons, 2015-16 to 2025-26. Special teams come from the NHL stats API.
+Power-play goals counted from the play-by-play agree with the API (r = .99, average gap
+1.3 goals a season).
+
+- **Good at both is barely more common than chance.** PP% and PK% correlate .17. Thirteen
+  of every 100 team-seasons are in the top third on both, against 11 by chance.
+- **Answering teams do have better special teams** (answer rate vs PP% .52, vs PK% .35),
+  but so does any team that outscores people (GF% vs PP% .55, vs PK% .50). Hold GF% fixed
+  and answering vs PP% drops to .11, and answering vs PK% turns slightly negative (−.15).
+- **One small real lean:** answer goals come on the power play a little more often than
+  goals in general (21 vs 20 per 100; 33,884 answer goals, about 5 standard errors). That
+  is a nudge, not a trait.
+- **Year to year:** PP% .37, PK% .26, answer rate .38, GF% .55.
+- **The Rangers he remembers were real.** 2023-24 (Presidents' Trophy): PP #3, PK #3,
+  answer rate #6 of 32. 2021-22: PP #4, PK #7. 2022-23: answer #3, PP #7, PK #13. But
+  2024-25 had the 28th-ranked power play, and 2025-26 ranked 25th in answering with the 5th-best power play.
+  The good years had all three because they were good years.
+
+## Next tests (not done)
 - **Comebacks, not answers:** win probability from behind late (the 2024 Mets).
 - **College football** via CFBD drives (watch the quota).
 
