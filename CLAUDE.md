@@ -716,6 +716,20 @@ about .75). Say that; do not oversell it. On the card it fills a pregame slot be
 Basketball needs a measured checkpoint (the score after three quarters is the
 obvious candidate) before it gets a card.
 
+### `where-it-stands.html` — any hitter's season since 1901, on 0 to 100
+
+Added 2026-11-13 on the editor's idea: put every number on a relative continuum. Each stat
+gets its percentile **within its own season** (leads: it holds the rules, parks and strategy
+fixed), then its percentile **all time** on a second line, then a line on how big that
+league ran. Percent of maximum was tried and dropped: one record (Wilson's 191 RBI) sets the
+ceiling for everyone. 100 is reserved for the single top value; everyone else caps at 99,
+because rounding printed 100 for a 99.7. Population: 300+ PA, scaled for short seasons.
+
+Data: `python3 scripts/build_stands.py` → `data/stands-mlb-hitting.json` (about 4 MB, 1 MB
+gzipped). Rebuild each winter after the World Series. It shares its season cache with the
+constructs research in `research/constructs/baseball-hitting/`, where the calibration and
+factor-analysis work lives. Pitching is next.
+
 ### `engine.html` — the guts, opened up
 
 The public account of how this paper is built: architecture, the daily run, the
