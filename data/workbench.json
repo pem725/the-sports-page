@@ -1,0 +1,33 @@
+{
+  "note": "Read by workbench.html. Newest first. status: cooking (not tested yet), tested (tested, not on the site), live (on the site). Every finding is stated with its limits; keep it that way.",
+  "items": [
+    {
+      "title": "What do hitting stats actually measure?",
+      "status": "cooking",
+      "updated": "2026-11-13",
+      "finding": "Factor-analyzing every hitter from 2021 to 2025 turns up four or five underlying traits: patience, contact, speed and power, maybe launch angle. Speed is the cleanest. Contact and power may be one trade-off, not two traits. The best model only fits moderately on a fresh sample (CFI .91, RMSEA .12), so this is not a result yet.",
+      "links": [["The analysis, with its misfit", "https://github.com/pem725/the-sports-page/blob/main/research/constructs/baseball-hitting/README.md"]]
+    },
+    {
+      "title": "Is it the player or the season?",
+      "status": "live",
+      "updated": "2026-11-13",
+      "finding": "Ranking each stat within its own season fixes era: 109 RBI in 1968 was as rare as 132 in 2025. It does not make the stats more stable from year to year, and it does not fix the factor models within one era. It helps them modestly across eras (CFI .85 to .89).",
+      "links": [["Where It Stands", "where-it-stands.html"], ["The calibration test", "https://github.com/pem725/the-sports-page/blob/main/research/constructs/baseball-hitting/README.md#calibration-where-does-a-number-stand-2026-11-13-second-pass"]]
+    },
+    {
+      "title": "Yards per play, adjusted for who you played",
+      "status": "live",
+      "updated": "2026-11-13",
+      "finding": "Calling each week's winners from the weeks before it, schedule-adjusted yards per play picked 234 of 359 college games and 62 of 93 NFL games. Points did about as well. So it is a good read, not a better one, and it gets graded on the game cards every week.",
+      "links": [["A game card that uses it", "game.html?lg=cfb&id=401858518"]]
+    },
+    {
+      "title": "When is a basketball lead safe?",
+      "status": "cooking",
+      "updated": "2026-11-12",
+      "finding": "Across last season, a 1-to-3-point halftime lead won 51 of 100 NBA games and 62 of 100 men's college games. A college lead also hints at which team is better. The numbers come from one source so far, and nothing goes on a card until a second source agrees.",
+      "links": []
+    }
+  ]
+}

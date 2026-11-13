@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page &mdash; In the Works</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="What The Sports Page is testing before it is ready: the analyses in the cooker, with what they found so far and what is still wrong with them.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;
+--gold:#c9962a;--muted:#6b5e4a;--div:#c8b99a;--card:#ede5d2}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;
+font-size:16px;line-height:1.7;padding:1.5rem 1rem 3rem}
+.masthead{max-width:860px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;
+letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.title a{color:inherit;text-decoration:none}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;
+color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);
+padding:.3rem 0;margin-top:.3rem}
+.paper{max-width:860px;margin:.8rem auto 0;background:var(--cream);padding:2rem 2.2rem 2.4rem;
+box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.2rem 1rem}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.deck{font-style:italic;font-size:1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.6rem 0 1.2rem;line-height:1.5}
+.tools{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin-bottom:.6rem}
+.tools input{flex:1;min-width:12rem;font-family:'Roboto Mono',monospace;font-size:.85rem;padding:.5rem .6rem;border:1px solid var(--div);background:#fffdf7}
+.chips{display:flex;gap:.3rem;flex-wrap:wrap;margin:.3rem 0 1rem;font-family:'Roboto Mono',monospace;font-size:.68rem}
+.chips button{font:inherit;letter-spacing:.06em;padding:.3rem .6rem;border:1px solid var(--div);background:var(--card);color:var(--ink);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.chips .lab{color:var(--muted);align-self:center;margin-right:.2rem;text-transform:uppercase;letter-spacing:.12em}
+h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;line-height:1.2;margin:.4rem 0 .1rem}
+.sub{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.06em;margin-bottom:.8rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.7rem}
+.st{background:#fffdf7;border:1px solid var(--div);padding:.7rem .8rem .65rem}
+.st .nm{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between}
+.st .nm b{color:var(--ink);font-weight:600;letter-spacing:.04em;font-size:.78rem;text-transform:none}
+.st .big{display:flex;align-items:baseline;gap:.45rem;margin-top:.15rem}
+.st .big strong{font-family:'Roboto Mono',monospace;font-size:2rem;font-weight:600;line-height:1;color:var(--steel)}
+.st .big span{font-size:.8rem;line-height:1.3}
+.bar{position:relative;height:8px;background:var(--card);margin:.45rem 0 .35rem}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--steel)}
+.bar u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--rust);text-decoration:none}
+.st p{font-size:.78rem;line-height:1.45;margin-top:.15rem}
+.st p.at b{color:var(--rust)}
+.st p.era{color:var(--muted);font-size:.72rem}
+.key{font-family:'Roboto Mono',monospace;font-size:.62rem;color:var(--muted);margin:.4rem 0 1rem;display:flex;gap:1rem;flex-wrap:wrap}
+.key i{display:inline-block;width:14px;height:8px;background:var(--steel);vertical-align:middle;margin-right:.3rem}
+.key u{display:inline-block;width:2px;height:12px;background:var(--rust);vertical-align:middle;margin-right:.3rem}
+.how{border-top:1px solid var(--div);margin-top:1.6rem;padding-top:.9rem;font-size:.88rem}
+.how h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.3rem}
+.how p{margin:.4rem 0}
+.note{font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted)}
+a{color:var(--steel)}
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;
+flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+
+.item{border-top:1px solid var(--div);padding:1rem 0 .8rem}
+.item h2{font-size:1.25rem;margin:0 0 .2rem}
+.tag{display:inline-block;font-family:'Roboto Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.08rem .45rem;margin-right:.5rem;border:1px solid}
+.tag.cooking{color:var(--gold);border-color:var(--gold)}
+.tag.tested{color:var(--steel);border-color:var(--steel)}
+.tag.live{color:var(--cream);background:var(--steel);border-color:var(--steel)}
+.item p{font-size:.92rem;margin:.35rem 0}
+.item .links{font-family:'Roboto Mono',monospace;font-size:.7rem}
+.item .links a{margin-right:1rem}
+</style>
+<script src="assets/sitenav.js" defer></script>
+</head>
+<body>
+<div class="masthead">
+  <div class="kicker">Statistics &middot; Explained &middot; Plainly</div>
+  <div class="title"><a href="https://thesportspage.net/"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="datebar"><span>In the Works</span><span id="span"></span></div>
+</div>
+<div class="paper">
+  <h1>In the Works</h1>
+  <p class="deck">What we are testing before it is ready. Each one says what it found so far and what is still wrong with it.
+  <b>Cooking</b> means not tested yet; <b>tested</b> means it held up but is not on the site; <b>live</b> means you can use it now.
+  Nothing here is a finding until it graduates.</p>
+  <div id="list"><p class="note">Loading&hellip;</p></div>
+  <div class="footer"><span>The Sports Page &middot; one question per issue, answered with numbers</span><span id="built"></span></div>
+</div>
+<script>
+(function(){
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function link(l){ var ext = /^https?:/.test(l[1]) && l[1].indexOf('thesportspage.net') < 0;
+    return '<a href="'+esc(l[1])+'"'+(ext ? ' target="_blank" rel="noopener"' : '')+'>'+esc(l[0])+'</a>'; }
+  fetch('data/workbench.json', {cache:'no-store'}).then(function(r){ return r.json(); }).then(function(d){
+    document.getElementById('list').innerHTML = d.items.map(function(x){
+      return '<div class="item"><h2>'+esc(x.title)+'</h2><p><span class="tag '+esc(x.status)+'">'+esc(x.status)+'</span>'+
+        '<span class="note">updated '+esc(x.updated)+'</span></p><p>'+esc(x.finding)+'</p>'+
+        (x.links && x.links.length ? '<p class="links">'+x.links.map(link).join('')+'</p>' : '')+'</div>';
+    }).join('');
+  }).catch(function(){ document.getElementById('list').innerHTML = '<p class="note">The list did not load.</p>'; });
+})();
+</script>
+</body>
+</html>
