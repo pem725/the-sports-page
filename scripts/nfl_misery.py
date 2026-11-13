@@ -520,7 +520,7 @@ table.rank{width:100%;border-collapse:collapse;font-size:13.5px}
 <body>
 <div class="masthead">
   <div class="kicker">NFL &middot; {SEASON} Season</div>
-  <div class="title"><a href="https://thesportspage.net/" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="title"><a href="https://thesportspage.net/">The Sports Page</a></div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
   <div class="datebar"><span>The Misery Slide</span><span>{m['played']} games played &middot; {m['left']} to go</span><span>Updated {upd}</span></div>
 </div>
@@ -566,7 +566,7 @@ table.rank{width:100%;border-collapse:collapse;font-size:13.5px}
 
   <div class="foot">
     <span>The Sports Page</span>
-    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
     <span>One Question Per Issue, Answered With Numbers.</span>
   </div>
 </div>

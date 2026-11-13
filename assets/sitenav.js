@@ -75,7 +75,6 @@
     var a = document.createElement('a');
     a.href = BASE + it[2];
     a.innerHTML = '<span class="sn-l">' + it[0] + '</span><span class="sn-s">' + it[1] + '</span>';
-    a.target = '_blank'; a.rel = 'noopener';   /* house rule: real links open a new tab */
     if (it[3].test(path)) a.setAttribute('aria-current', 'page');
     row.appendChild(a);
   });

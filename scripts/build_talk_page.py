@@ -111,7 +111,7 @@ h1{{font-family:'Playfair Display',Georgia,serif;font-size:2.4rem;line-height:1.
 </head>
 <body>
 <div class="paper">
-<div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none" target="_blank" rel="noopener">The Sports Page</a></div>
+<div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none">The Sports Page</a></div>
 <p class="kicker">{html.escape(meta['kicker'])}</p>
 <h1>{html.escape(meta['title'])}</h1>
 <p class="byline">{html.escape(meta['byline'])}</p>
@@ -121,7 +121,7 @@ h1{{font-family:'Playfair Display',Georgia,serif;font-size:2.4rem;line-height:1.
 <h2>Were you there? Pull up a chair.</h2>
 <p>{meta['cta']}</p>
 </div>
-<p class="foot"><a href="https://thesportspage.net/" target="_blank" rel="noopener">thesportspage.net</a> &middot; <a href="https://thesportspage.net/engine.html" target="_blank" rel="noopener">The Engine</a></p>
+<p class="foot"><a href="https://thesportspage.net/">thesportspage.net</a> &middot; <a href="https://thesportspage.net/engine.html">The Engine</a></p>
 </div>
 <script>
 /* Fit each 1920x1080 slide to its frame. */

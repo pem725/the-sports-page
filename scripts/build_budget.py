@@ -116,8 +116,8 @@ def count_strip(s):
     if "top" in s:
         t = s["top"]
         cells.append(f'<div class="top"><span>Most read this week</span>'
-                     f'<b><a href="https://thesportspage.net{esc(t["path"])}" target="_blank" '
-                     f'rel="noopener" style="color:inherit">{esc(t["hed"])}</a></b>'
+                     f'<b><a href="https://thesportspage.net{esc(t["path"])}" '
+                     f'style="color:inherit">{esc(t["hed"])}</a></b>'
                      f'<small>{t["views"]:,} visits</small></div>')
     pace = ""
     if "pace_needed" in s:
@@ -195,8 +195,8 @@ def render(items, published, built, count=""):
             f'    <div class="slot{" is-hot" if r["decay"]=="hot" else ""}">\n'
             f'      <div class="when"><b>{d.strftime("%a")} {d.day}</b>{d.strftime("%b")}</div>\n'
             '      <div>\n'
-            f'        <p class="hed disp"><a href="https://thesportspage.net/queue/{esc(r["file"])}" '
-            f'target="_blank" rel="noopener">{esc(r["hed"])}</a></p>\n'
+            f'        <p class="hed disp"><a href="https://thesportspage.net/queue/{esc(r["file"])}">'
+            f'{esc(r["hed"])}</a></p>\n'
             f'        <div class="chips">{chips}</div>\n'
             '      </div>\n'
             '    </div>')
@@ -371,7 +371,7 @@ a:focus-visible{{outline:2px solid var(--steel);outline-offset:3px;border-radius
   <h2 class="sh2">The goal</h2>
 {count}
   <nav class="desk" aria-label="Board pages">
-    <a href="https://thesportspage.net/newsroom.html" target="_blank" rel="noopener">The Newsroom<small>ranked ideas &amp; held stories</small></a>
+    <a href="https://thesportspage.net/newsroom.html">The Newsroom<small>ranked ideas &amp; held stories</small></a>
     <a href="https://github.com/pem725/the-sports-page/blob/main/tracking/open-calls.md" target="_blank" rel="noopener">Open Calls<small>predictions awaiting a grade</small></a>
     <a href="https://github.com/pem725/the-sports-page/blob/main/tracking/back-burner.md" target="_blank" rel="noopener">Back Burner<small>benched pieces &amp; why</small></a>
     <a href="https://github.com/pem725/the-sports-page/blob/main/tracking/reader-questions.md" target="_blank" rel="noopener">Reader Questions<small>what people asked</small></a>

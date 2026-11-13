@@ -616,6 +616,14 @@ rebuilds keep it. Issue pages do NOT carry it; they keep their own back link.
 **The bar is where a new permanent feature goes.** Only something a reader
 returns to earns a button, and six is the ceiling — past that, cut something.
 
+**Links: our own pages open in the same tab; another site opens a new one.** Set by the
+editor 2026-11-13, reversing the June rule that sent every link to a new tab (those tabs were
+for his side-by-side comparing, not for readers, and they break the Back button). Same tab
+for relative links, thesportspage.net, #anchors and mailto:; `target="_blank" rel="noopener"`
+only for other domains, the share buttons and the Buttondown form. `python3
+scripts/link_targets.py --check` finds violations and `--fix` rewrites them; the daily run
+warns on any. The Sunday template is skipped because it is read-only.
+
 The homepage archive also keeps loading as the reader scrolls (the "Show more"
 button stays as the fallback), using the same sport chips to sort.
 

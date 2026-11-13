@@ -173,7 +173,7 @@ PAGE = """<!DOCTYPE html>
 <body>
 <div class="masthead">
   <div class="kicker">College Football &middot; 1869&ndash;@@LAST@@</div>
-  <div class="title"><a href="https://thesportspage.net/" target="_blank" rel="noopener">The Sports Page</a></div>
+  <div class="title"><a href="https://thesportspage.net/">The Sports Page</a></div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
   <div class="datebar"><span>Every Program Since 1869</span><span>@@PROGRAMS@@ Programs &middot; @@SEASONS@@ Seasons</span><span>Records through @@LAST@@</span></div>
 </div>
@@ -226,7 +226,7 @@ PAGE = """<!DOCTYPE html>
 
   <div class="foot">
     <span>The Sports Page</span>
-    <span><a href="https://thesportspage.net/" target="_blank" rel="noopener">&larr; Back to the Archive</a></span>
+    <span><a href="https://thesportspage.net/">&larr; Back to the Archive</a></span>
     <span>One Question Per Issue, Answered With Numbers.</span>
   </div>
 </div>

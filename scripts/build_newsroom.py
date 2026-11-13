@@ -76,7 +76,7 @@ def build():
     qrows = "".join(
         f'<tr><td class="dt">{x["date"]:%a %b %-d}</td><td class="tp">{x["topic"]}</td>'
         f'<td class="dc">{x["decay"]}<span class="dn"> &middot; {DECAY_NOTE.get(x["decay"],"")}</span></td>'
-        f'<td><a href="https://thesportspage.net/queue/{x["file"]}" target="_blank" rel="noopener">{esc(x["title"])}</a></td></tr>' for x in q)
+        f'<td><a href="https://thesportspage.net/queue/{x["file"]}">{esc(x["title"])}</a></td></tr>' for x in q)
     keeps = sum(1 for x in q if x["decay"] == "keeps")
     gap = issues - 0
     return f"""<!DOCTYPE html>

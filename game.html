@@ -319,7 +319,7 @@ function yppTable(H, A){
     '<tr><td>Gains, as played</td><td class="num">'+Y.a.offRaw.toFixed(1)+'</td><td class="num">'+Y.h.offRaw.toFixed(1)+'</td></tr>'+
     '<tr><td>Allows, as played</td><td class="num">'+Y.a.defRaw.toFixed(1)+'</td><td class="num">'+Y.h.defRaw.toFixed(1)+'</td></tr></table>'+
     '<p class="note">Ranks of '+Y.L.of+'. Average is '+Y.L.mean.toFixed(1)+' yards a play. '+esc(yppTest(Y.L))+
-    ' <a href="https://thesportspage.net/glossary.html#yards-per-play" target="_blank" rel="noopener">What yards per play means</a>.</p>';
+    ' <a href="https://thesportspage.net/glossary.html#yards-per-play">What yards per play means</a>.</p>';
 }
 
 function teamStats(d){
@@ -445,10 +445,10 @@ function render(d){
   else if(lg==='nhl') dt += '<p class="small">ESPN publishes no win-probability model for hockey, so the market stands alone.</p>';
   if(lg==='nfl'){
     var po = [A,H].map(function(t){ var p = nflOdds[t.team.name]; return p==null ? '' : 'the '+esc(t.team.name)+' are '+pct(p)+' to make the playoffs'; }).filter(Boolean);
-    if(po.length) dt += '<p class="small">On our <a href="https://thesportspage.net/odds.html" target="_blank" rel="noopener">Odds Board</a>, '+po.join(' and ')+'.</p>';
+    if(po.length) dt += '<p class="small">On our <a href="https://thesportspage.net/odds.html">Odds Board</a>, '+po.join(' and ')+'.</p>';
   }
   if(lg==='cfb') dt += '<p class="small">Where do these two stand across their whole history? Find them on '+
-    '<a href="https://thesportspage.net/every-program.html" target="_blank" rel="noopener">Every Program Since 1869</a>.</p>';
+    '<a href="https://thesportspage.net/every-program.html">Every Program Since 1869</a>.</p>';
   if(GL.length) dt += '<h3 class="dh">In net</h3>'+inNet(GL);
   var yt = yppTable(H, A); if(yt) dt += '<h3 class="dh">Yards per play, the season</h3>'+yt;
   var ts = teamStats(d); if(ts) dt += '<h3 class="dh">'+(state==='pre'?'The season, per game':'This game')+'</h3>'+ts;

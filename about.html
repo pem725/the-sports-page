@@ -101,12 +101,12 @@ window.goatcounter = { path: function (p) {
 <!-- MASTHEAD -->
 <div class="masthead">
   <div class="kicker">Behind the Numbers</div>
-  <div class="title"><a href="index.html" style="color:inherit;text-decoration:none" target="_blank" rel="noopener"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="title"><a href="index.html" style="color:inherit;text-decoration:none"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
   <div class="tagline">How this newsletter got built, what broke, and what we learned</div>
   <div class="datebar">
     <span id="about-est">Est. March 2026</span>
     <span id="about-stats">Loading...</span>
-    <span><a href="index.html" style="color:inherit;border:none" target="_blank" rel="noopener">&larr; All the Articles</a></span>
+    <span><a href="index.html" style="color:inherit;border:none">&larr; All the Articles</a></span>
   </div>
 </div>
 
@@ -360,7 +360,7 @@ window.goatcounter = { path: function (p) {
       Promise.all(promises).then(function(items){
         items.forEach(function(item){
           var li = document.createElement('li');
-          var link = '<a href="queue/' + item.filename + '" target="_blank" rel="noopener">' + item.hed + '</a>';
+          var link = '<a href="queue/' + item.filename + '">' + item.hed + '</a>';
           var tag = item.topic ? '<span class="tag">' + item.topic + '</span>' : '';
           li.innerHTML = link + tag;
           list.appendChild(li);

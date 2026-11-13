@@ -154,8 +154,8 @@ def build_block(hits, start, end):
         display_hed = hed if len(hed) < 75 else hed[:72] + "..."
         rows.append(
             f'  <tr><td class="mono">#{rank}</td>'
-            f'<td><a href="https://thesportspage.net{path}" '
-            f'target="_blank" rel="noopener">{display_hed}</a></td>'
+            f'<td><a href="https://thesportspage.net{path}"'
+            f'>{display_hed}</a></td>'
             f'<td class="mono">{count}</td></tr>'
         )
     rows_html = "\n".join(rows)

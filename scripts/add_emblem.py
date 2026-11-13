@@ -60,7 +60,7 @@ def inline_img():
 
 
 def block_img(px, align):
-    return (f'<a data-emblem href="{BASE}" target="_blank" rel="noopener" '
+    return (f'<a data-emblem href="{BASE}" '
             f'style="display:block;text-align:{align};border:none;text-decoration:none;'
             f'margin:0 0 .5rem;line-height:0">'
             f'<img {SRC} alt="The Sports Page" width="{px}" height="{px}" '

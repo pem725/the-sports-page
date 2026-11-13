@@ -182,6 +182,8 @@ jobs:
           # plus nflverse. A failed league keeps yesterday's numbers.
           CFBD_KEY="${{ secrets.CFBD_KEY }}" \
             python3 scripts/ypp_ratings.py       || failed="$failed ypp"
+          # Own pages open in the same tab; only other sites get a new one.
+          python3 scripts/link_targets.py --check >/dev/null || echo "::warning::a generated page opens our own links in a new tab (scripts/link_targets.py --check)"
           [ -n "$failed" ] && echo "::warning::refreshers failed:$failed (committing what did work)"
 
           FILES="odds.html about.html board/index.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json data/readership-block.html data/rating-snapshots nfl-misery.html data/nfl-misery.json data/halftime-baselines.json data/ypp-ratings.json data/ypp-cfb-games.json"
