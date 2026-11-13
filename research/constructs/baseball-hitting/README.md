@@ -74,6 +74,46 @@ constructs explain about 69% of the spread in RBI per trip, but only about 41% o
 spread in runs. A run needs the hitters behind you. (The individual coefficients are not
 interpretable: the factor scores are too correlated.)
 
+## Calibration: where does a number stand? (2026-11-13, second pass)
+
+The editor's idea: put every value on a relative continuum before building composites.
+`5_calibrate.py` places all 24,527 player-seasons since 1901 (300+ PA, scaled for short
+seasons) three ways: percentile in all of history, percentile within its own season
+(shown as a normal score), and percent of the maximum (POMP). Each stat's history starts
+when both leagues kept it: strikeouts 1913, double plays 1939, caught stealing 1951, pitches
+and ground/air outs 1988.
+
+**What a calibrated number says** (RBI totals):
+
+| season | RBI | all-time percentile | in its season | POMP |
+|---|---|---|---|---|
+| Hack Wilson, 1930 | 191 | 100 | 99.7 | 100 |
+| Kyle Schwarber, 2025 | 132 | 99.3 | 99.8 | 68 |
+| Ken Harrelson, 1968 | 109 | 95.9 | 99.7 | 56 |
+
+Two lessons are in that table. **POMP is hostage to one season:** Wilson's record sets the
+ceiling, so the best RBI season of 2025 reads as 68%. Being linear, POMP also cannot change
+a correlation or a factor model at all (checked: identical to four decimals). **The season
+percentile removes the era:** Harrelson's 109 in 1968, the year of the pitcher, ranks with
+Schwarber's 132.
+
+**Does calibration help the models?** (`6_compare.R`)
+
+- *Year-to-year stability:* no. Across 6,800 consecutive-season pairs, raw rates are as
+  stable as calibrated ones, and slightly more so for HBP and intentional walks. A
+  percentile throws away distance, and the extremes are where those two stats live.
+- *Inside one era:* no. Samples B and C fit the same, raw or calibrated (CFI within .02).
+  Every player in them faced the same league, so there is no era to remove.
+- *Across eras:* **yes, modestly.** One season per player, 1988–2025 (1,940 players): CFI
+  .85 → .89, SRMR .096 → .081. The year alone explains 24% of the spread in strikeout rate
+  and 23% in pitches seen; uncalibrated, that league-wide drift masquerades as shared
+  variance between hitters.
+
+So calibration is the right footing for anything that crosses eras: all-time comparisons,
+career constructs, the glossary's "where does this stand". It does not rescue the model.
+The misfit is in the measurement (two-indicator factors, the contact–power trade-off), not
+the scale.
+
 ## What would make this better (the next tests)
 
 - Pitch-level data (Statcast: exit velocity, swing rate, chase rate) gives each construct
@@ -88,3 +128,4 @@ interpretable: the factor scores are too correlated.)
 
 `0_build_data.py` (MLB Stats API, no key) → `1_explore.R` → `2_confirm.R` →
 `3_fresh_sample.R`. `4_your_model.R` is the editor's hypothesis, to be tested the same way.
+`5_calibrate.py` → `6_compare.R` is the calibration pass.
