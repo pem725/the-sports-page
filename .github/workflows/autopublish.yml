@@ -177,9 +177,14 @@ jobs:
           # this season. Recount daily so the rate never trails the season it
           # describes. nflverse + ESPN scoreboards, no key.
           python3 scripts/halftime_baselines.py  || failed="$failed halftime"
+          # Yards per play, offense and defense, adjusted for the schedule: the game
+          # cards and programs read it. CFBD (about 3 calls; older weeks are cached)
+          # plus nflverse. A failed league keeps yesterday's numbers.
+          CFBD_KEY="${{ secrets.CFBD_KEY }}" \
+            python3 scripts/ypp_ratings.py       || failed="$failed ypp"
           [ -n "$failed" ] && echo "::warning::refreshers failed:$failed (committing what did work)"
 
-          FILES="odds.html about.html board/index.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json data/readership-block.html data/rating-snapshots nfl-misery.html data/nfl-misery.json data/halftime-baselines.json"
+          FILES="odds.html about.html board/index.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json data/readership-block.html data/rating-snapshots nfl-misery.html data/nfl-misery.json data/halftime-baselines.json data/ypp-ratings.json data/ypp-cfb-games.json"
           # status, not diff: a new snapshot file is untracked and diff cannot see it
           if [ -z "$(git status --porcelain -- $FILES)" ]; then
             echo "no change to the board"; exit 0

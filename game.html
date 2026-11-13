@@ -140,7 +140,7 @@ var CHECK = {
 // What decides a close game, in words a fan of that sport would use.
 var SWING = {nfl:'how the first drives go', cfb:'how the first drives go', nhl:'how the first shifts go'};
 var q = new URLSearchParams(location.search), lg = q.get('lg') || 'nfl', id = q.get('id');
-var base = {}, programs = {}, nflOdds = {}, starters = {}, timer = null;
+var base = {}, programs = {}, nflOdds = {}, starters = {}, ypp = {}, timer = null;
 
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
 function kick(iso){ return new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}).format(new Date(iso))+' ET'; }
@@ -285,6 +285,43 @@ function edge(d){
     miss:'You watch the stars and miss where this game tilts.'};
 }
 
+// YARDS PER PLAY, adjusted for the schedule (scripts/ypp_ratings.py). Yards against a top defense count
+// for more than yards against a weak one. Football only; its walk-forward test is printed with it,
+// because the card does not print an untested rate.
+function yppTeams(H, A){
+  var L = ypp[lg]; if(!L || !L.teams) return null;
+  var h = L.teams[H.team.id], a = L.teams[A.team.id];
+  return h && a ? {L:L, h:h, a:a} : null;
+}
+function yppTest(L){
+  var t = L.test; if(!t || !t.ypp || !t.ypp.n) return '';
+  return 'Tested on this season, calling each week from the weeks before it: it picked '+t.ypp.right+' of '+t.ypp.n+
+    ' winners; points picked '+t.points.right+'.';
+}
+function yppPoint(H, A){
+  var Y = yppTeams(H, A); if(!Y) return null;
+  var net = (Y.h.off - Y.h.def) - (Y.a.off - Y.a.def), up = net>=0 ? H : A, upY = net>=0 ? Y.h : Y.a;
+  var abs = Math.abs(net).toFixed(1);
+  return {fig:bars([[A.team.abbreviation+' gains', Y.a.off, Y.a.off.toFixed(1)],[A.team.abbreviation+' allows', Y.a.def, Y.a.def.toFixed(1)],
+                    [H.team.abbreviation+' gains', Y.h.off, Y.h.off.toFixed(1)],[H.team.abbreviation+' allows', Y.h.def, Y.h.def.toFixed(1)]]),
+    head: abs<0.3 ? 'Yards per play: dead even' : 'Yards per play: '+esc(nm(up))+', by '+abs+' a play',
+    why:'Once the schedule is counted: '+esc(nm(A))+', '+Y.a.off.toFixed(1)+' yards a play gained and '+Y.a.def.toFixed(1)+
+      ' allowed; '+esc(nm(H))+', '+Y.h.off.toFixed(1)+' gained and '+Y.h.def.toFixed(1)+' allowed. Watch the first few drives: who is winning that fight shows up there before it shows up on the scoreboard.',
+    miss:yppTest(Y.L) || 'You read the score and miss who is moving the ball.',
+    src:'Yards per play, adjusted for opponents, through week '+Y.L.through_week+'.'};
+}
+function yppTable(H, A){
+  var Y = yppTeams(H, A); if(!Y) return '';
+  function rk(n){ return ' <span class="rec">#'+n+'</span>'; }
+  return '<table><tr><th>Yards per play</th><th>'+esc(A.team.abbreviation)+'</th><th>'+esc(H.team.abbreviation)+'</th></tr>'+
+    '<tr><td>Gains, adjusted for schedule</td><td class="num">'+Y.a.off.toFixed(1)+rk(Y.a.offRank)+'</td><td class="num">'+Y.h.off.toFixed(1)+rk(Y.h.offRank)+'</td></tr>'+
+    '<tr><td>Allows, adjusted for schedule</td><td class="num">'+Y.a.def.toFixed(1)+rk(Y.a.defRank)+'</td><td class="num">'+Y.h.def.toFixed(1)+rk(Y.h.defRank)+'</td></tr>'+
+    '<tr><td>Gains, as played</td><td class="num">'+Y.a.offRaw.toFixed(1)+'</td><td class="num">'+Y.h.offRaw.toFixed(1)+'</td></tr>'+
+    '<tr><td>Allows, as played</td><td class="num">'+Y.a.defRaw.toFixed(1)+'</td><td class="num">'+Y.h.defRaw.toFixed(1)+'</td></tr></table>'+
+    '<p class="note">Ranks of '+Y.L.of+'. Average is '+Y.L.mean.toFixed(1)+' yards a play. '+esc(yppTest(Y.L))+
+    ' <a href="https://thesportspage.net/glossary.html#yards-per-play" target="_blank" rel="noopener">What yards per play means</a>.</p>';
+}
+
 function teamStats(d){
   var T = (d.boxscore||{}).teams||[]; if(T.length<2) return '';
   var a = T[0], h = T[1], rows = '';
@@ -360,6 +397,7 @@ function render(d){
   var GL = lg==='nhl' ? goalies(d, H, A) : [];
   var K = keys(d, {mkt:mkt, espn:espn, homeName:nm(H), goalies:GL}), CP = checkpoint(d, H, A, st);
   var P3 = state==='pre' ? K.slice(0, CP?2:3).concat(CP?[CP]:[]) : (CP?[CP]:[]).concat(K).slice(0,3);
+  if(state==='pre' && P3.length<3){ var Yp = yppPoint(H, A); if(Yp) P3.push(Yp); }
   if(state==='pre' && P3.length<3){ var E = edge(d); if(E) P3.push(E); }
   var pH = mkt ? mkt.p : null, num, line;
   if(state==='post'){
@@ -412,6 +450,7 @@ function render(d){
   if(lg==='cfb') dt += '<p class="small">Where do these two stand across their whole history? Find them on '+
     '<a href="https://thesportspage.net/every-program.html" target="_blank" rel="noopener">Every Program Since 1869</a>.</p>';
   if(GL.length) dt += '<h3 class="dh">In net</h3>'+inNet(GL);
+  var yt = yppTable(H, A); if(yt) dt += '<h3 class="dh">Yards per play, the season</h3>'+yt;
   var ts = teamStats(d); if(ts) dt += '<h3 class="dh">'+(state==='pre'?'The season, per game':'This game')+'</h3>'+ts;
   var pp = people(d); if(pp) dt += '<h3 class="dh">Leaders and injuries</h3>'+pp;
   if(!(d.injuries && d.injuries.length)) dt += '<p class="note">ESPN’s feed carries no injury report for this game, so this card cannot see who is hurt.</p>';
@@ -448,8 +487,10 @@ function load(){
 Promise.all([
   fetch('data/halftime-baselines.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
   fetch('data/programs.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
-  fetch('data/nfl-odds.json').then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})
+  fetch('data/nfl-odds.json').then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
+  fetch('data/ypp-ratings.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})
 ]).then(function(x){
+  ypp = x[3] || {};
   base = x[0]; programs = x[1].games || {};
   (x[2].teams||[]).forEach(function(t){ nflOdds[t.name] = t.po; });
   document.getElementById('built').textContent = base.built ? base.season+' season, rebuilt '+base.built : 'baselines not yet built';

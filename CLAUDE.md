@@ -690,6 +690,21 @@ spread fallback. On What to Watch, hockey is the **Tonight · NHL** tab; with no
 playoff model yet, its stakes number is closeness alone, and the page states the
 night's range of favorites instead of stamping "coin flip" on every game.
 
+**Yards per play, adjusted for the schedule, on every football card and program** (editor,
+2026-11-12: *"yards against a top-notch defense count way more than yards against a patsy"*).
+`scripts/ypp_ratings.py` runs daily and writes `data/ypp-ratings.json`: each team-game is one
+row, ypp = average + offense + opponent's defense + home edge, fit by play-weighted least squares
+with one game's worth of ridge shrinkage. College from CFBD box scores (plays = rushes + passes;
+college counts sacks as runs), cached in `data/ypp-cfb-games.json` so a day costs about 3 calls;
+NFL from nflverse. Keys are ESPN team ids, which CFBD shares. Cross-checked 2026-11-12: all 18
+Indiana team-games match ESPN to the yard but one.
+
+**It prints its own test, because it is a rate.** Walking forward week by week, the adjusted net
+picked 232 of 357 college winners (points, same model: 227) and 61 of 92 NFL winners (points: 61).
+It is about as good as points, not better, and it is partly different information (they correlate
+about .75). Say that; do not oversell it. On the card it fills a pregame slot before the generic
+"biggest gap" point, and its table sits at the top of the details drawer.
+
 Basketball needs a measured checkpoint (the score after three quarters is the
 obvious candidate) before it gets a card.
 
