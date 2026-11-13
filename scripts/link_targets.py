@@ -27,8 +27,9 @@ TARGET = re.compile(r"""\s+target\s*=\s*(["'])_blank\1""", re.I)
 REL = re.compile(r"""\s+rel\s*=\s*(["'])\s*noopener(?:\s+noreferrer)?\s*\1""", re.I)
 OURS = re.compile(r"^(?:https?://(?:www\.)?thesportspage\.net(?:/|$)|mailto:|#|\?|[^:]*$)", re.I)
 SKIP_DIRS = ("planning/", "node_modules/", ".git/")
-# The Sunday template is read-only by rule (CLAUDE.md); the editor decides whether it changes.
-SKIP_FILES = ("reserve/sunday-recap-template.html",)
+# The Sunday template is read-only by rule, but the editor approved this fix for it on
+# 2026-11-13, so it is checked like any other page.
+SKIP_FILES = ()
 
 
 def files():

@@ -622,7 +622,7 @@ for his side-by-side comparing, not for readers, and they break the Back button)
 for relative links, thesportspage.net, #anchors and mailto:; `target="_blank" rel="noopener"`
 only for other domains, the share buttons and the Buttondown form. `python3
 scripts/link_targets.py --check` finds violations and `--fix` rewrites them; the daily run
-warns on any. The Sunday template is skipped because it is read-only.
+warns on any. The Sunday template was brought in line with the editor's approval on 2026-11-13.
 
 The homepage archive also keeps loading as the reader scrolls (the "Show more"
 button stays as the fallback), using the same sport chips to sort.
