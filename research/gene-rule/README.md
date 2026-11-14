@@ -50,7 +50,8 @@ of its own is a **Gene team**.
 - **2026 (through Nov 12):** six Gene teams (answered half or more of 15+ chances): BUF
   12/17 (7–1), CIN 9/15 (6–2), DET 12/22 (6–2), DAL 15/23 (4–5), HOU 10/16 (3–5), LV 16/28
   (4–5). Not Gene teams: CHI 6/18 (7–2), SF 4/15 (7–1), JAX 3/11 (6–2). ESPN drive charts
-  agree with nflverse within one drive for every team; records checked against ESPN
+  agree with nflverse within one drive in every game (21 team-games differ by one; season
+  totals drift by up to three, Atlanta and Tampa Bay); records checked against ESPN
   standings and `check_scores.py`.
 - **'86 Mets:** answered in 29 of 100 half-innings; scored in 29 of 100 others. The 2024
   Mets answered 23 of 100, *below* their usual 28. What fans remember from 2024 is
@@ -98,6 +99,14 @@ Power-play goals counted from the play-by-play agree with the API (r = .99, aver
 scores), `0_nhl_goals.py` (NHL API, needs a User-Agent header or it returns 403),
 `1_nfl.py`, `2_nfl_game_and_2026.py`, `3_verify_espn.py`, `1_mlb.py`, `1_nhl.py`,
 `4_build_piece.py` (writes `queue/203-genes-rule.html` from the result files).
+
+**Daily refresh.** `refresh.sh` runs in every slot of the 4:30am GitHub Actions run, before
+the publish: it re-pulls 2026 drives, rebuilds the team table, checks records and drive
+counts against ESPN game by game, and rebuilds the queued piece. The 1999-2025 drives are
+frozen in `data/drives-1999-2025.csv.gz` so the run fetches only 2026. The "through" date
+comes from the last game both feeds have. If the Bears leave the best non-Gene teams it exits
+3 and opens one `publish-failure` issue; the queued piece keeps its last good numbers. After
+the piece publishes, only the data files keep refreshing.
 
 Retrosheet notice: The information used here was obtained free of charge from and is
 copyrighted by Retrosheet. Interested parties may contact Retrosheet at www.retrosheet.org.

@@ -104,6 +104,28 @@ jobs:
         continue-on-error: true
         run: python3 scripts/check_template_tokens.py || echo "::warning::template/publisher placeholder drift -- new articles will fail to publish"
 
+      # Gene's Rule (research/gene-rule): re-pull 2026 NFL drives, rebuild the Gene-team
+      # table, check it against ESPN game by game, and rebuild queue/203-genes-rule.html
+      # while it is still queued. BEFORE the publish, so the piece ships on the newest
+      # numbers both feeds share; the "through" date is computed, never typed. Every slot
+      # runs it, so a Monday-night game nflverse lacks at 2am is picked up by a later one.
+      # A failure never blocks the paper: the queued piece simply keeps yesterday's
+      # numbers. Exit 3 means the headline no longer holds and a person must rewrite it,
+      # so it opens one issue (not one a day) to say so.
+      - name: Refresh Gene's Rule numbers
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rc=0; research/gene-rule/refresh.sh || rc=$?
+          [ $rc -eq 0 ] && exit 0
+          echo "::warning::Gene's Rule refresh failed (exit $rc); queue/203 keeps its last good numbers"
+          if [ $rc -eq 3 ] && [ -z "$(gh issue list --state open --search "Gene's Rule headline" --json number -q '.[].number')" ]; then
+            gh issue create --label publish-failure --title "Gene's Rule headline no longer holds ($(TZ=America/New_York date +%F))" \
+              --body "research/gene-rule/4_build_piece.py stopped: the Bears are no longer among the three best non-Gene teams, or a feed check failed. queue/203-genes-rule.html still carries the last good numbers. Rewrite the headline, or pull the piece from QUEUE_ORDER.txt."
+          fi
+          exit $rc
+
       - name: Run autopublish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -187,6 +209,9 @@ jobs:
           [ -n "$failed" ] && echo "::warning::refreshers failed:$failed (committing what did work)"
 
           FILES="odds.html about.html board/index.html board/k7q2-desk-9f4m/index.html data/playoff-odds-trajectory.json data/cfb-odds.json data/nfl-odds.json data/bracket.json data/readership-block.html data/rating-snapshots nfl-misery.html data/nfl-misery.json data/halftime-baselines.json data/ypp-ratings.json data/ypp-cfb-games.json"
+          # Gene's Rule data (refreshed before the publish); the queued piece only while it exists
+          FILES="$FILES research/gene-rule/data"
+          [ -f queue/203-genes-rule.html ] && FILES="$FILES queue/203-genes-rule.html"
           # status, not diff: a new snapshot file is untracked and diff cannot see it
           if [ -z "$(git status --porcelain -- $FILES)" ]; then
             echo "no change to the board"; exit 0

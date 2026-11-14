@@ -7,7 +7,7 @@ next drive, in the same half with 2+ minutes left, is ours. ANSWERED: that drive
 touchdown or field goal. The fair comparison is our OTHER drives that began with a kickoff
 (after a field goal, or to open a half): same field position, no fresh wound.
 """
-import csv, glob, json, os, random
+import csv, glob, gzip, json, os, random
 from collections import defaultdict
 import numpy as np
 
@@ -16,9 +16,15 @@ SCORE = {"Touchdown", "Field goal"}
 
 
 def load():
+    # 1999-2025 are frozen in data/drives-1999-2025.csv.gz (committed, so the daily run
+    # need only fetch 2026). A per-season file in data/raw/ wins over the frozen copy.
     games = defaultdict(list)
-    for p in sorted(glob.glob(os.path.join(HERE, "data", "raw", "drives*.csv"))):
-        for r in csv.DictReader(open(p)):
+    raw = sorted(glob.glob(os.path.join(HERE, "data", "raw", "drives*.csv")))
+    have = {os.path.basename(p)[6:10] for p in raw}
+    hist = [r for r in csv.DictReader(gzip.open(os.path.join(HERE, "data", "drives-1999-2025.csv.gz"), "rt"))
+            if r["season"] not in have]
+    for rows in [hist] + [csv.DictReader(open(p)) for p in raw]:
+        for r in rows:
             r["drive"] = int(r["drive"]); r["half"] = int(r["half"])
             r["secs"] = float(r["secs"] or 0)
             games[r["game"]].append(r)

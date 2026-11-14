@@ -6,7 +6,6 @@ import json, os, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(os.path.dirname(HERE))
 SLUG = "203-genes-rule"
-THROUGH = os.environ.get("THROUGH", "Nov. 12")  # last game day in the feed; set it on refresh
 L = lambda f: json.load(open(os.path.join(HERE, "data", f)))
 nfl, n26, mlb, nhl = L("nfl-results.json"), L("nfl-2026.json"), L("mlb-results.json"), L("nhl-results.json")
 R = nfl["R"]
@@ -21,6 +20,8 @@ H = nhl["R"]["league"]
 h_ans, h_own = H["answer"][1], H["after_own"][1]
 teams = {t["team"]: t for t in n26["teams"]}
 espn = L("nfl-2026-espn.json")
+# the last game day in BOTH feeds, computed by 3_verify_espn.py; THROUGH overrides it
+THROUGH = os.environ.get("THROUGH") or espn["through"]
 NAME = dict(ARI="Cardinals", ATL="Falcons", BAL="Ravens", BUF="Bills", CAR="Panthers", CHI="Bears", CIN="Bengals",
             CLE="Browns", DAL="Cowboys", DEN="Broncos", DET="Lions", GB="Packers", HOU="Texans", IND="Colts",
             JAX="Jaguars", KC="Chiefs", LA="Rams", LAC="Chargers", LV="Raiders", MIA="Dolphins", MIN="Vikings",
@@ -29,6 +30,8 @@ NAME = dict(ARI="Cardinals", ATL="Falcons", BAL="Ravens", BUF="Bills", CAR="Pant
 # Records come from nflverse finals and must match ESPN's standings (the second feed).
 for t in teams.values():
     assert t["rec"] == espn["records"][t["team"]], (t["team"], t["rec"], espn["records"][t["team"]])
+# The piece says ESPN's drive charts agree "within one drive in every game"; hold it to that.
+assert espn["max_game_gap"] <= 1, ("ESPN and nflverse differ by more than one drive in a game", espn["game_gaps"])
 rec = lambda t: "&ndash;".join(str(x) for x in (teams[t]["rec"] if teams[t]["rec"][2] else teams[t]["rec"][:2]))
 pct = lambda t: (teams[t]["rec"][0] + teams[t]["rec"][2] / 2) / max(1, sum(teams[t]["rec"]))
 is_gene = lambda t: teams[t]["n"] >= 15 and teams[t]["made"] / teams[t]["n"] >= 0.5
@@ -104,7 +107,7 @@ body = f"""
 
   <figure style="margin:28px 0">
 {bars()}
-    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted);margin-top:.6rem;line-height:1.5">Per 100 chances: right after the other side scores (rust) against the fair comparison (steel). Football: NFL regular season, 1999 to {THROUGH}, 2026, drives with 2+ minutes left in the half. Baseball: every MLB half-inning, 1977&ndash;2025. Hockey: every NHL regular-season goal, 2015&ndash;16 to date.</figcaption>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted);margin-top:.6rem;line-height:1.5">Per 100 chances: right after the other side scores (rust) against the fair comparison (steel). Football: NFL regular season, 1999 to {THROUGH}, 2026, drives with 2+ minutes left in the half. Baseball: every MLB half-inning, 1977&ndash;2025. Hockey: every NHL regular-season goal, 2015&ndash;16 to Nov. 12, 2026.</figcaption>
   </figure>
 
   <p>Notice how flat that picture is. In baseball, a team that has just been scored on puts up a run in its next turn {p100(mlb["R"]["ans"])} times in 100. In every other half-inning it does so {p100(mlb["R"]["other"])} times in 100. The 1986 Mets, the best comeback team many of us ever loved, answered {p100(mets86["ans"])} times in 100, and scored in {p100(mets86["base"])} of 100 other half-innings. They were not rising to the occasion; they were a good lineup, every inning.</p>
@@ -128,7 +131,7 @@ body = f"""
 
   <figure style="margin:22px 0">
 {table()}
-    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted);margin-top:.6rem;line-height:1.5;text-align:center">Answered = drives right after the other team&rsquo;s touchdown that ended in a score. Counts from nflverse; ESPN&rsquo;s drive charts agree within one drive. Records through {THROUGH}.</figcaption>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted);margin-top:.6rem;line-height:1.5;text-align:center">Answered = drives right after the other team&rsquo;s touchdown that ended in a score. Counts from nflverse; ESPN&rsquo;s drive charts agree within one drive in every game. Records through {THROUGH}.</figcaption>
   </figure>
 
   <p>Why can a {rec("CHI")} team fail the rule? It has had only {CHI["n"]} chances. Flip a fair coin {CHI["n"]} times and you will often see {round(CHI["n"] / 3)} heads, or {round(2 * CHI["n"] / 3)}. A good team also gets scored on less, so it gets fewer chances to show you anything. After nine weeks, point differential forecasts the rest of an NFL season about four times as well as the answer rate does, and adding the answer rate to it adds almost nothing.</p>
