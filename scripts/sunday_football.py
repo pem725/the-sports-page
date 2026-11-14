@@ -176,7 +176,7 @@ def blocks(sat, nfl):
   <p>The best game on a card is rarely the one with the best teams; it is the one nearest a coin flip, because that is where the result carries the most information.</p>
 
   <table class="rec">
-    <thead><tr><th>Closest games</th><th>Line</th><th>Favourite wins</th><th>Kickoff</th></tr></thead>
+    <thead><tr><th>Closest games</th><th>Line</th><th>Favorite wins</th><th>Kickoff</th></tr></thead>
     <tbody>
 {nfl_rows}    </tbody>
   </table>
@@ -187,6 +187,7 @@ def blocks(sat, nfl):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--week", type=int)
+    ap.add_argument("--date", help="NFL card date, YYYY-MM-DD (default today); lets Saturday draft Sunday")
     ap.add_argument("--inject", help="HTML file carrying CFB_RECAP_BLOCK / NFL_WATCH_BLOCK markers")
     a = ap.parse_args()
 
@@ -194,7 +195,7 @@ def main():
     if week is None:
         raise SystemExit("no completed weeks yet")
     sat = saturday(week)
-    nfl = nfl_today()
+    nfl = nfl_today(datetime.date.fromisoformat(a.date) if a.date else None)
     cfb_html, watch_html = blocks(sat, nfl)
 
     if a.inject:
