@@ -160,7 +160,7 @@ def blocks(sat, nfl):
 
   <p>{"" if not top else f'{top["winner"]} beat {top["loser"]} {top["ws"]}&ndash;{top["ls"]}. That was about a <strong>1 in {1/top["p"]:.0f}</strong> result.'}</p>
 
-  <p><strong>There were {sat["rated"]} rated games on the card.</strong> Add up every underdog&rsquo;s chance of winning its own game and you get <strong>{sat["expected"]:.1f}</strong> &mdash; the number of upsets a normal Saturday should produce. The actual count was <strong>{sat["actual"]}</strong>.</p>
+  <p><strong>There were {sat["rated"]} rated games on the card.</strong> Add up every underdog&rsquo;s chance of winning its own game and you get about <strong>{sat["expected"]:.0f}</strong> &mdash; the number of upsets a normal Saturday should produce. The actual count was <strong>{sat["actual"]}</strong>.</p>
 
   <p>Notice what that does to the word "improbable." A long shot is unlikely <em>in its own game</em>; across a full card it is close to inevitable that <em>something</em> like it happens. The surprise was never that an upset occurred. The surprise is only ever <em>which one</em>.</p>
 
