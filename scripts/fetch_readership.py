@@ -46,6 +46,12 @@ STAMP = re.compile(r"<!-- readership-cache (\d{4}-\d{2}-\d{2}) -->")
 CACHE_MAX_AGE_DAYS = 8
 
 
+
+# Rank only, no counts, until the audience is big enough that the numbers
+# help rather than embarrass. Editor, 2026-11-15: "let's not expose ourselves
+# to being frauds. We're building this thing." Flip to True to show reads.
+SHOW_COUNTS = False
+
 def default_week():
     """Return (start, end) for most recent completed Sunday..Saturday."""
     today = datetime.date.today()
@@ -156,7 +162,8 @@ def build_block(hits, start, end):
             f'  <tr><td class="mono">#{rank}</td>'
             f'<td><a href="https://thesportspage.net{path}"'
             f'>{display_hed}</a></td>'
-            f'<td class="mono">{count}</td></tr>'
+            + (f'<td class="mono">{count}</td>' if SHOW_COUNTS else '')
+            + '</tr>'
         )
     rows_html = "\n".join(rows)
 
@@ -164,12 +171,14 @@ def build_block(hits, start, end):
         f'<h2 class="sh">What Readers Read &middot; '
         f'{start.strftime("%B %-d")} &ndash; {end.strftime("%B %-d")}</h2>\n'
         f'<table class="rec">\n'
-        f'  <thead><tr><th>Rank</th><th>Issue</th><th>Reads</th></tr></thead>\n'
+        f'  <thead><tr><th>Rank</th><th>Issue</th>{"<th>Reads</th>" if SHOW_COUNTS else ""}</tr></thead>\n'
         f'  <tbody>\n{rows_html}\n  </tbody>\n'
         f'</table>\n'
         f'<p style="font-size:.82rem;color:var(--muted);margin-top:-.4rem">'
-        f'<em>Counts are unique pageviews per GoatCounter, with author visits '
-        f'excluded. Pulled {datetime.date.today().isoformat()}.</em></p>\n'
+        + ('<em>Counts are unique pageviews per GoatCounter, with author visits excluded. '
+           if SHOW_COUNTS else
+           '<em>Ranked by unique pageviews (GoatCounter), author visits excluded. ')
+        + f'Pulled {datetime.date.today().isoformat()}.</em></p>\n'
     )
 
 
