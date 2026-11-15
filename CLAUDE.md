@@ -384,6 +384,16 @@ This workflow runs instead of the Regular Workflow every Sunday. It uses a copy-
 
    The same daily run also freezes the college ratings on **Thursday (Friday as retry)** via `snapshot_ratings.py`. It was a manual chore and was missed for weeks 4–6, so three Sunday Editions could not show their upset arithmetic.
 
+8. **Gate it: `python3 scripts/sunday_ready.py queue/sunday-NNN.html` must exit 0.**
+   It refuses `[FILL ...]` slots, highlighted fill spans, `{{PLACEHOLDERS}}` and an
+   uninjected readership marker. Added 2026-11-15: the overnight Sunday routine
+   (claude.ai routine "Sunday Edition autopublisher", 3am ET) found a human draft in
+   `queue/` with eight FILL slots, filled them from web search and published at 3:16am.
+   It moved Notre Dame's home game to Boston College, misranked Indiana and USC, and
+   cited a CFP ranking two days before its release. A correction email went out the
+   same morning. **The routine now leaves an existing queue draft alone**: if it is not
+   ready it opens a `publish-failure` issue instead of finishing it.
+
 8. **Stamp the emblem** (the template is read-only, so the copy gets it):
    `python3 scripts/add_emblem.py queue/sunday-NNN.html`
 
