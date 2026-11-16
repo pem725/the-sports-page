@@ -133,7 +133,7 @@ def series(today=None):
     v = visits(start.isoformat(), end.isoformat())
     new, opens = subs_and_opens(start.isoformat())
     log = load()
-    tags = sorted({p["tag"] for p in log["phases"] if p.get("tag")})
+    tags = sorted({t.strip() for p in log["phases"] if p.get("tag") for t in p["tag"].split(",")})
     return {"days": days, "visits": [v.get(d) for d in days], "new": [new.get(d, 0) for d in days],
             "opens": opens, "tagged": tagged(start.isoformat(), end.isoformat(), tags),
             "phases": log["phases"]}
@@ -202,7 +202,7 @@ def board_section(s):
             q = s["phases"][k - 1]
             base = [v for d, v in zip(s["days"], s["visits"]) if v is not None and q["start"] <= d < p["start"]]
         verdict = phase_verdict(dv, base) if base and dv else None
-        tagn = s["tagged"].get(p.get("tag")) if p.get("tag") else None
+        tagn = (sum(s["tagged"].get(t.strip(), 0) for t in p["tag"].split(",")) if p.get("tag") else None)
         rows.append(f'<tr><td>{H.escape(p["label"])}</td><td>{p["start"]}</td><td>{H.escape(p["what"])}</td>'
                     f'<td>{len(dv)}</td><td>{(sum(dv) / len(dv)):.0f}</td>'
                     f'<td>{"" if tagn is None else tagn}</td><td>{H.escape(verdict or "")}</td></tr>' if dv else
@@ -211,6 +211,9 @@ def board_section(s):
     table = ('<table class="camp"><tr><th>Phase</th><th>Began</th><th>What changed</th><th>Days</th>'
              '<th>Visits/day</th><th>Tagged visits</th><th>Call</th></tr>' + "".join(rows) + '</table>') if rows else \
         '<p>No phases logged yet. Start the baseline: <code>python3 scripts/campaigns.py --phase A "baseline"</code></p>'
+    if s["tagged"]:
+        table += ("<p>Tagged visits by link: " + ", ".join(f"{H.escape(t)} {n}" for t, n in
+                  sorted(s["tagged"].items(), key=lambda kv: -kv[1])) + "</p>")
     ideas = load().get("ideas", [])
     idea_html = ("<p><strong>Campaign ideas waiting:</strong></p><ul>" +
                  "".join(f"<li>{H.escape(i['text'])}</li>" for i in ideas if not i.get("used")) + "</ul>") if ideas else ""
@@ -239,7 +242,8 @@ def main():
         save(log)
         print(f"phase {a.phase[0]} from {log['phases'][-1]['start']}: {a.phase[1]}")
         if a.tag:
-            print("send this link:", link(a.tag, a.path))
+            for t in a.tag.split(","):
+                print("send this link:", link(t.strip(), a.path))
     if a.idea:
         log["ideas"].append({"text": a.idea, "added": now_iso()})
         save(log)
