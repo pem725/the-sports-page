@@ -270,6 +270,11 @@ body{{margin:0;padding:1.5rem 1rem 4rem;background:var(--ground);color:var(--ink
 .count span{{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.6rem;
   letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}}
 .count small{{display:block;font-size:.8rem;color:var(--muted);line-height:1.35;margin-top:.15rem}}
+.campaigns{{margin:1.2rem 0 0;background:var(--paper);border-top:3px solid var(--ink);padding:.6rem .8rem .8rem}}
+.campaigns h2{{font-size:1rem;margin:0 0 .3rem}}
+.campaigns p{{font-size:.82rem;color:var(--muted);margin:.2rem 0 .5rem}}
+.camp{{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.5rem}}
+.camp th,.camp td{{text-align:left;padding:.25rem .4rem;border-bottom:1px solid #d8cfbb}}
 .count .top b{{font-size:1rem;line-height:1.3}}
 .pace{{font-size:.92rem;margin:.55rem 0 0;color:var(--ink)}}
 .pace strong{{color:var(--rust)}}
@@ -499,6 +504,13 @@ def main():
     except Exception as e:
         print(f"  budget: readership strip skipped ({type(e).__name__})")
         count = ""
+    # The ABA campaign chart: phases from data/campaign-log.json, numbers fetched now
+    # and shown only inside the locked page. A failure drops the chart, never the board.
+    try:
+        import campaigns
+        count += campaigns.board_section(campaigns.series(today))
+    except Exception as e:
+        print(f"  budget: campaign chart skipped ({type(e).__name__})")
     page = render(schedule(rows, start), published, today, count)
 
     if a.show:
