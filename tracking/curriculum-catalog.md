@@ -1,0 +1,56 @@
+# The Curriculum Catalog: procedures and designs, each with a real sports case
+
+Set by the editor, 2026-11-18: *"The Sports Page isn't just about sports. It's about stats."* We want a catalog
+of the procedures we can now teach, each shown in use, on data we hold, answering a question a fan would
+actually ask. One row = one future issue (or a series), with a concept primer behind it where none exists yet.
+
+Rules that carry over from the rest of the paper: real cases only, never a schematic. Every number traced to a
+primary feed. The procedure is never the headline (headline rule 4); the question is. *Data* says where the
+numbers come from; *Status* says what is already done.
+
+## Models: what's in a predictor
+
+| Procedure | The fan's question | Data we hold | Status |
+|---|---|---|---|
+| **Ordinary regression** (what a coefficient means; a predictor's worth *given* the others) | Is yards per play worth anything once you know the score margin? | `data/ypp-ratings.json`, CFBD box scores, nflverse | Ratings live on every game card; no teaching piece. Primer needed: *what's in a predictor* |
+| **Logistic regression** (a probability from a line; log-odds) | How safe is a 10-point halftime lead, in the NFL vs. college? | `data/halftime-baselines.json`, nflverse play-by-play | Checkpoint rates are on game cards; the curve itself never shown |
+| **Poisson distribution** (counts of rare events) | Is a hat trick or a 1-0 game rarer than it "should" be? | NHL API, every game since 2015 (research/gene-rule) | Not started. A strong first one: the counts fit almost exactly, and you can see it |
+| **Poisson regression** (counts with predictors; exposure as an offset) | Do power plays explain goals, or does ice time? | NHL API boxscores | Not started |
+| **Classification and regression trees** | What single question best sorts playoff teams from the rest? | NFL team-seasons 1999-2025 (research/momentum/nfl) | Not started. Pair it with logistic regression: same data, a tree vs. a curve, and the overfitting primer |
+| **Data reduction** (factor analysis) | Is "a good hitter" one thing or three? | research/constructs/baseball-hitting | Under way (constructs glossary; primer `constructs-and-indicators`) |
+| **Paired comparisons** (Bradley-Terry; Massey's least-squares ratings) | How can a computer rank 136 teams that mostly never meet? | CFBD games 2014-2026 (research/cfp-committee) | Our margin rating already does this (Issue #233); not yet explained as a method |
+
+## Missing data, censoring and time
+
+| Procedure | The fan's question | Data we hold | Status |
+|---|---|---|---|
+| **Missing data mechanisms** (MCAR, MAR, MNAR) | SMU had no 1987 or 1988 season. How do you rank a program with a hole in it? | Howell scores (every-program.html), CFBD | Not started. **Verify the SMU years in both feeds before writing** |
+| **Data deleted, then restored** | Penn State's wins were vacated in 2012 and restored in 2015. Which record do you analyze? | Howell keeps results as played; the NCAA record does not | Not started. Howell's as-played rule is already noted on every-program.html. **Verify the dates** |
+| **Censoring and survival** (time to event; still-active cases) | How long does a program take to come back from sanctions? How long does a coach last? | Howell, CFBD coaches | The Half-Life series used survival curves (Gompertz). Right-censoring never named. Primer needed |
+
+## Designs, not just analyses
+
+| Design | The fan's question | Data we hold | Status |
+|---|---|---|---|
+| **Tournament and schedule design** (round robin vs. single elimination vs. a committee) | Why is the best NFL team obvious by January and the best college team never is? | NFL and CFB schedules; research/cfp-committee/coinflip | Coin-flip piece queued (Fri 11/20). The schedule-graph half (17 games in a 32-team league vs. 12 in a 136-team league) is unwritten |
+| **Regression discontinuity** | Does finishing 12th rather than 13th, or 25th rather than 26th, change a program's next year? | CFP rankings 2014-2026 (CFBD); AP votes | Not started. **Check sample size first:** few teams sit right at the line each year |
+| **Natural experiments** | Did the 12-team playoff change how teams schedule? | CFBD schedules | Not started |
+
+## Ranked data (the Massey thread)
+
+| Procedure | The fan's question | Data we hold | Status |
+|---|---|---|---|
+| **Rank agreement** (Spearman, Kendall's tau, Kendall's W) | How much do the computers agree, and when does the agreement break down? | Massey composite (permission requested, see below) | Issue #173 (Oregon) showed the spread informally |
+| **Rank aggregation** (Borda, medians, a cumulative index) | Who has been best *all season*, not just this week? | Weekly composite, week 1 onward | Editor's idea: a cumulative index plus each team's high and low |
+| **Rater bias** (multilevel model, raters nested in outlets) | Do poll voters rank the teams they cover higher? | AP individual ballots, **availability to verify** | Not started. The committee half is done (Issue #233, "mostly right") |
+
+## Massey: status
+
+2026-11-18: a draft to Kenneth Massey sits in the editor's GMU Outlook for review. It asks (1) for permission
+to use the weekly college football composite in non-commercial teaching pieces, with credit, and (2) whether
+he would work with us on ranked data. **His terms require written consent to reproduce or redistribute
+his content.** The draft discloses that `data/massey-*.json` and `data/rating-snapshots/massey-*.json` are
+already in this public repo, and offers to take them down. Until he answers:
+- Cite and link his pages as before.
+- Add no new Massey files to the repo.
+- If he says no, remove the files from the tip of the repo. Note they stay in git history.
