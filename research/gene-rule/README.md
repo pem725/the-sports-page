@@ -89,9 +89,57 @@ Power-play goals counted from the play-by-play agree with the API (r = .99, aver
   2024-25 had the 28th-ranked power play, and 2025-26 ranked 25th in answering with the 5th-best power play.
   The good years had all three because they were good years.
 
+## College football (2026-11-18, `0_cfb_drives.py`, `5_cfb.py`, `6_cfb_verify_espn.py`)
+
+FBS against FBS, regular season, 2014 to Nov. 17, 2026: 9,051 games from CFBD drives (one call
+per season and season type; 50 calls in all, cached gzipped in `data/raw/cfb-*.json.gz`).
+Same definitions as the NFL. CFBD has no "how the drive started" field, so a kickoff drive is
+the game's first drive, the second half's first drive, or the drive after the other team's
+field goal; scoring between drives is read from the score readings (the lower of the previous
+drive's start score and the end score of the drive before it, because CFBD sometimes folds a
+return touchdown into a start score and sometimes writes the next score into an end score).
+145 games (1.6%) were dropped because the drive scores did not reach the final score.
+
+| | College (2014–2025) | NFL (1999–2025) |
+|---|---|---|
+| answer drives that score, per 100 | 32 (49,931 chances) | 33 |
+| other kickoff drives | 35 | 34 |
+| same game, same opponent | 34 vs 36 | 34 vs 35 |
+| kickoff drives at the answer drives' score margins | 34 | – |
+| answer rate vs win%, team-season | .52 | .45 |
+| scoring on other drives vs win% | .71 | .61 |
+| answer premium vs win% | −.05 | −.01 |
+| answer premium, year to year | .06 | .01 |
+| answer rate, year to year | .31 | – |
+| forecast weeks 8+ win% from weeks 1–7 (R²): point diff / answer rate / both | .25 / .06 / .25 | .22 / .05 / .22 |
+| first TD of the game against you: answered / not / answered with a TD, wins per 100 | 45 / 22 / 49 | 42 / 27 / 48 |
+
+- **College shows a small answer *deficit*, every season.** The answer drive scored less than
+  the kickoff comparison in all 13 seasons (2026: 35 vs 37). Most of the gap is the
+  scoreboard: an answer drive starts 8 points behind on average, a kickoff drive 2. At the
+  same score margins the kickoff drives score 34 times in 100, against 32 for answers (raw:
+  35); same game, same opponent, 34 vs 36. What is left is about the size of the NFL's one point.
+- **Everything else matches the pros.** Answering tracks winning because it is scoring; the
+  premium does not track winning and does not repeat; the answer rate adds nothing to point
+  differential as a forecast.
+- **2026, CFP top 12 (committee ranking of Nov. 17; games through Nov. 14, FBS opponents
+  only).** Half or more answered: Alabama 14/19, Miami 12/17, Indiana 7/10, Texas 8/16,
+  Notre Dame 6/12, Tennessee 6/12. Under half: Georgia 5/13 (No. 1), Utah 8/18 (10–0),
+  UCLA 7/16 (10–0), Wake Forest 6/13, BYU 6/16, Texas Tech 7/20. Ranking saved in
+  `data/cfb-cfp-2026-11-17.json` from ESPN's rankings feed.
+- **Two feeds.** ESPN drive charts for all 111 top-12 team-games: 108 agree exactly on chances
+  and answers; 3 differ by one drive (Utah–Iowa State, where both feeds scramble the
+  scores; Texas Tech–Oregon State and Texas Tech–West Virginia, where ESPN's play-by-play
+  splits a PAT or drops points). Season totals agree for 10 of 12 teams; Utah 18 vs 17
+  chances, Texas Tech 20 vs 18. No final-score mismatches; all 12 records agree between
+  CFBD and ESPN.
+
+**Limits.** College schedules mix powers and minnows, so a team's answer chances come mostly
+against its better opponents; the same-game comparison is the fair one. FCS games are left
+out. Ten games is a small sample: 10–20 chances per team.
+
 ## Next tests (not done)
 - **Comebacks, not answers:** win probability from behind late (the 2024 Mets).
-- **College football** via CFBD drives (watch the quota).
 
 ## Files
 
@@ -99,6 +147,10 @@ Power-play goals counted from the play-by-play agree with the API (r = .99, aver
 scores), `0_nhl_goals.py` (NHL API, needs a User-Agent header or it returns 403),
 `1_nfl.py`, `2_nfl_game_and_2026.py`, `3_verify_espn.py`, `1_mlb.py`, `1_nhl.py`,
 `4_build_piece.py` (writes `queue/203-genes-rule.html` from the result files).
+College: `0_cfb_drives.py` (CFBD drives and games, one call per season and season type, logged to
+`data/raw/cfb-calls.log`, cached gzipped in `data/raw/`, which is gitignored), `5_cfb.py`,
+`6_cfb_verify_espn.py` (ESPN drive charts, cached in `data/raw/espn-cfb-summary/`),
+`7_build_cfb_piece.py` (writes `queue/207-genes-rule-college.html`; run `add_topic_glyph.py` after).
 
 **Daily refresh.** `refresh.sh` runs in every slot of the 4:30am GitHub Actions run, before
 the publish: it re-pulls 2026 drives, rebuilds the team table, checks records and drive

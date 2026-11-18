@@ -87,6 +87,8 @@ Wed 16 Sep. Section kept for the record.
 
 ## Held 2026-10-31 — `193-lockout` waits for the week of Nov 23
 
+**Queued 2026-11-18 for Tue 11/24.** News checked that day: no deal; MLB's Nov 3 offer delays a hard cap to 2028, union still opposes any cap, so the piece's premise holds. Re-check Monday 11/23; if a deal is signed, pull it from QUEUE_ORDER.
+
 - **`193-lockout.html`** (MLB labor: "The Last Time Owners Asked for a Cap, Nobody
   Won the World Series"). `dated`: it must run before the agreement expires
   Dec 1. Held out of QUEUE_ORDER only because the order is sequential and a line
