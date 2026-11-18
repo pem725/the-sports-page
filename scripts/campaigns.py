@@ -39,6 +39,7 @@ LOG = REPO / "data" / "campaign-log.json"
 GC = "https://thesportspage.goatcounter.com/api/v0"
 BD = "https://api.buttondown.com/v1"
 SITE = "https://thesportspage.net/"
+PERSONAL_TAGS = {"pm", "tb", "sm", "pj", "js"}  # the editors; pooled on the board, never ranked
 DAYS = 84  # twelve weeks on the chart
 
 
@@ -212,8 +213,13 @@ def board_section(s):
              '<th>Visits/day</th><th>Tagged visits</th><th>Call</th></tr>' + "".join(rows) + '</table>') if rows else \
         '<p>No phases logged yet. Start the baseline: <code>python3 scripts/campaigns.py --phase A "baseline"</code></p>'
     if s["tagged"]:
-        table += ("<p>Tagged visits by link: " + ", ".join(f"{H.escape(t)} {n}" for t, n in
-                  sorted(s["tagged"].items(), key=lambda kv: -kv[1])) + "</p>")
+        # The editors' personal links are pooled, never listed one by one. Set 2026-11-18:
+        # "I don't want a competition. I want everybody to contribute when they can."
+        board = sum(n for t, n in s["tagged"].items() if t in PERSONAL_TAGS)
+        other = sorted(((t, n) for t, n in s["tagged"].items() if t not in PERSONAL_TAGS), key=lambda kv: -kv[1])
+        table += f"<p>Visits from the board&rsquo;s own sharing, all of us together: {board}</p>"
+        if other:
+            table += ("<p>Campaign links: " + ", ".join(f"{H.escape(t)} {n}" for t, n in other) + "</p>")
     ideas = load().get("ideas", [])
     idea_html = ("<p><strong>Campaign ideas waiting:</strong></p><ul>" +
                  "".join(f"<li>{H.escape(i['text'])}</li>" for i in ideas if not i.get("used")) + "</ul>") if ideas else ""
