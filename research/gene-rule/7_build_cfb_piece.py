@@ -35,7 +35,7 @@ top_y, step = 46, 22
 H = top_y + step * len(rows) + 40
 svg = [f'<svg class="chart" viewBox="0 0 680 {H}" width="680" height="{H}" role="img" '
        f'aria-label="For every college football season from 2014 to 2026, drives right after the other team scores a touchdown scored less often than other kickoff drives: {n_short} seasons of {len(rows)}." '
-       'style="max-width:100%;height:auto;display:block;margin:0 auto;font-family:\'Roboto Mono\',monospace">']
+       'style="max-width:680px;margin:0 auto;font-family:\'Roboto Mono\',monospace">']
 svg.append(f'<circle cx="160" cy="14" r="5" fill="#b83a1e"/><text x="170" y="18" font-size="11" fill="#1a1208">right after they score a TD</text>')
 svg.append(f'<circle cx="400" cy="14" r="5" fill="#2c4a6e"/><text x="410" y="18" font-size="11" fill="#1a1208">other kickoff drives</text>')
 for t in range(LO, HI + 1, 2):
