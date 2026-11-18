@@ -54,3 +54,32 @@ already in this public repo, and offers to take them down. Until he answers:
 - Cite and link his pages as before.
 - Add no new Massey files to the repo.
 - If he says no, remove the files from the tip of the repo. Note they stay in git history.
+
+## Series: too many variables (for Jeff's methods students)
+
+Editor, 2026-11-18: load a boatload of collinear predictors of win/lose, use the huge sample so every
+coefficient is "significant", then show confounders, colliders and reversed arrows with DAGs; retrospective
+designs mislead, prospective models are weak because what matters is unobserved; in the end it usually
+comes down to one critical variable. First pass: `research/kitchen-sink/1_demo.py` (NFL team-games 1999-2025).
+
+**What the data already shows (13,898 team-games):**
+- Plays alone: + (z 15). Add time of possession: plays turns **negative, z −30**. Yards flips sign once
+  yards per play enters. Every flip is "significant"; sample size does not rescue a confused model.
+- The retrospective box score "explains" 71% of winners with plays + TOP, but the arrow runs backward:
+  teams that lead run the ball and the clock. Winning causes possession time.
+- Prospective (only what was known before kickoff, week 4 on, fit 1999-2017, tested 2018-2025): season-to-date
+  point margin + home = **63%**; all six season-to-date stats = **63%**, with yards and TOP carrying the wrong
+  sign. One variable does as well as the kitchen sink.
+
+| Piece | Lesson | Data | Status |
+|---|---|---|---|
+| The sign that flipped | collinearity; power is not validity | team-games (done above) | Demo done; DAG needed |
+| Winning causes time of possession | reversed arrow; retrospective design | team-games, nflverse pbp (score state by play) | Not started |
+| The playoff-team collider | conditioning on a common effect (selection) | NFL team-seasons | Not started |
+| What the market sees that we don't | unobserved variables; the spread as a benchmark | `research/momentum/nfl/data/games.csv` has spread_line | Not started |
+| Last year x decay x P(healthy) | one critical variable for fantasy; QB vs RB year-to-year | nflverse player stats (cached by build_stands_nfl.py) | Not started |
+| Hidden form | a true hidden Markov model: team "form" as a latent state week to week | team-games | Idea; check it beats a plain rating before writing |
+
+Traps: the J.J. Watt / Falcons right tackle stance anecdote needs a primary source (the clip or broadcast)
+before it is used, and the player is not named until then. Jeff's beat is basketball: a basketball replication
+would suit his students; check what box-score data we can get first.
