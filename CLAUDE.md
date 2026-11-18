@@ -801,7 +801,7 @@ record". Checked 2026-10-27: 31,525 of 31,553 games from 2005 to 2025 match
 CollegeFootballData to the exact score.
 
 **A chart in an issue needs `class="chart"` on its `<svg>`**, or the OG card
-silently falls back to the stat row. Do not use `paint-order` for label halos
+silently falls back to the stat row. **Never put `style="width:100%"` on the chart's `<svg>`** (size it from a `.chart{width:100%;height:auto;display:block}` CSS rule instead): cairosvg reads the inline percent width as zero and the card renders as a blank panel. Issue #233 shipped that way on 2026-11-18 and was caught only by opening the PNG. Do not use `paint-order` for label halos
 either: cairosvg ignores it and the labels vanish from the card. Stack a
 cream-stroked copy of the text under the real one instead.
 
