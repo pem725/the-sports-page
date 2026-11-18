@@ -53,13 +53,11 @@ for i, (k, v) in enumerate(a.items()):
     cx = L + bw * i + bw / 2; col = RUST if k.startswith("behind") else STEEL if k.startswith("ahead") else MUTED
     s.append(f'<rect x="{cx-bw*.3:.1f}" y="{sy(v):.1f}" width="{bw*.6:.1f}" height="{B-sy(v):.1f}" fill="{col}"/>')
     lo, hi = ci[k]["lo"], ci[k]["hi"]
-    s.append(f'<line x1="{cx:.1f}" x2="{cx:.1f}" y1="{sy(lo):.1f}" y2="{sy(hi):.1f}" stroke="{INK}" stroke-width="1.5"/>')
-    for e in (lo, hi):
-        s.append(f'<line x1="{cx-7:.1f}" x2="{cx+7:.1f}" y1="{sy(e):.1f}" y2="{sy(e):.1f}" stroke="{INK}" stroke-width="1.5"/>')
-    s.append(f'<text x="{cx:.1f}" y="{sy(hi)-8:.1f}" font-size="14" font-weight="600" fill="{INK}" text-anchor="middle">{v:.0f}</text>')
-    s.append(f'<text x="{cx:.1f}" y="{sy(v)+16:.1f}" font-size="10" fill="{CREAM}" text-anchor="middle">{lo:.0f}&#8211;{hi:.0f}</text>')
+    half = (hi - lo) / 2
+    s.append(f'<line x1="{cx:.1f}" x2="{cx:.1f}" y1="{sy(lo):.1f}" y2="{sy(hi):.1f}" stroke="{INK}" stroke-width="1.2"/>')
+    s.append(f'<text x="{cx:.1f}" y="{sy(hi)-9:.1f}" font-size="15" font-weight="600" fill="{INK}" text-anchor="middle">{v:.0f}<tspan font-size="11" font-weight="400" fill="{MUTED}"> &#177;{half:.0f}</tspan></text>')
     s.append(f'<text x="{cx:.1f}" y="{B+18}" font-size="12" fill="{INK}" text-anchor="middle">{k}</text>')
-s.append(f'<text x="{L+(W-L-20)/2:.0f}" y="{B+40}" font-size="11" fill="{MUTED}" text-anchor="middle">the offense\'s score, fourth quarter &#183; bars: 95% intervals</text>')
+s.append(f'<text x="{L+(W-L-20)/2:.0f}" y="{B+40}" font-size="11" fill="{MUTED}" text-anchor="middle">the offense\'s score, fourth quarter &#183; &#177; = 95% interval</text>')
 s.append(f'<text x="{L}" y="{T-12}" font-size="11" fill="{MUTED}">runs per 100 plays</text>')
 s.append('</svg>')
 open(os.path.join(HERE, "runshare.svg"), "w").write("\n".join(s))
