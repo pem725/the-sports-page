@@ -11,7 +11,11 @@ Inputs (raw/, fetched by fetch.py and by curl on 2026-11-18):
 
 Model
   P(A beats B) = Phi((SP+_A - SP+_B + home) / 16.5), home = 2.5 (0 if neutral).
-  Ratings are held fixed (no in-season updating) -- this understates uncertainty a bit.
+  Ratings are held fixed within a simulated season. With --rating-draws R (editor's rule,
+  2026-11-18: every bar gets an error bar), each team's true rating is first drawn from
+  Normal(SP+, 16.5 / sqrt(games played)) -- the game-level scatter divided by the games
+  behind the rating -- and nsims/R seasons are played on that draw. The spread of title
+  chances across draws gives the 95% interval; the point estimate is the mean over draws.
 
   Remaining regular-season games are simulated. Each FBS conference's title game
   is its top two by conference record (ties broken at random -- real tiebreakers
@@ -61,6 +65,7 @@ def main():
     ap.add_argument("--seed", type=int, default=2026)
     ap.add_argument("--today-field", action="store_true", help="skip season; seed today's committee top 12 straight")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--rating-draws", type=int, default=0, help="redraw ratings R times (0 = fixed SP+)")
     a = ap.parse_args()
     rng = np.random.default_rng(a.seed)
     sp, games, rank = load()
@@ -84,12 +89,21 @@ def main():
             (cw0 if hw else cl0)[h] += 1
             (cl0 if hw else cw0)[w] += 1
     remaining = [g for g in games if not g["completed"]]
-    rem = []
     for g in remaining:
-        h, w = g["homeTeam"], g["awayTeam"]
-        sp.setdefault(h, lowest); sp.setdefault(w, lowest)
-        p = pwin(h, w, sp, 0 if g["neutralSite"] else HFA)
-        rem.append((h, w, p, g["conferenceGame"]))
+        sp.setdefault(g["homeTeam"], lowest); sp.setdefault(g["awayTeam"], lowest)
+    played = collections.Counter()
+    for g in games:
+        if g["completed"]:
+            played[g["homeTeam"]] += 1; played[g["awayTeam"]] += 1
+    sp0 = dict(sp)
+    se = {t: SD / math.sqrt(max(1, played[t])) for t in sp0}
+
+    def build_rem(sp):
+        return [(g["homeTeam"], g["awayTeam"], pwin(g["homeTeam"], g["awayTeam"], sp, 0 if g["neutralSite"] else HFA),
+                 g["conferenceGame"]) for g in remaining]
+    rem = build_rem(sp)
+    R = max(1, a.rating_draws); per = a.nsims // R
+    draw_titles = []
 
     title = collections.Counter()
     final_ = collections.Counter()
@@ -99,7 +113,12 @@ def main():
     seed_n = collections.Counter()
     ref_field = None
 
-    for s in range(a.nsims):
+    for s in range(per * R):
+        if a.rating_draws and s % per == 0:
+            if s: draw_titles.append(title - prev)
+            prev = title.copy()
+            sp = {t: sp0[t] + rng.normal(0, se[t]) for t in sp0}
+            rem = build_rem(sp)
         newL = collections.Counter()
         cw, cl = cw0.copy(), cl0.copy()
         if not a.today_field:
@@ -161,21 +180,33 @@ def main():
         seed_of = {t: k for k, t in S.items()}
         title_by_seed[seed_of[ch]] += 1
 
-    N = a.nsims
+    if a.rating_draws:
+        draw_titles.append(title - prev)
+    N = per * R
     teams = sorted(set(make) | set(title), key=lambda t: -title[t])
     rows = []
     for t in teams:
         modal = seedcount[t].most_common(1)[0][0] if seedcount[t] else None
-        rows.append(dict(team=t, cfp_rank=rank.get(t), sp=round(sp[t], 1), make=make[t] / N,
+        rows.append(dict(team=t, cfp_rank=rank.get(t), sp=round(sp0[t], 1), make=make[t] / N,
                          final=final_[t] / N, title=title[t] / N, modal_seed=modal))
-    out = dict(nsims=N, loss_penalty=a.loss_penalty, today_field=a.today_field,
+        if a.rating_draws:
+            v = np.array([d[t] / per for d in draw_titles])
+            rows[-1].update(title_lo=float(np.percentile(v, 2.5)), title_hi=float(np.percentile(v, 97.5)),
+                            se_rating=round(se[t], 1))
+    fav = collections.Counter()
+    for d in draw_titles:
+        if d: fav[max(d, key=d.get)] += 1
+    out_fav = {k: v / len(draw_titles) for k, v in fav.most_common()} if a.rating_draws else {}
+    if out_fav: print("favorite across rating draws:", {k: round(v, 2) for k, v in list(out_fav.items())[:6]})
+    out = dict(favorite_share=out_fav, nsims=N, rating_draws=a.rating_draws, per_draw=per, loss_penalty=a.loss_penalty, today_field=a.today_field,
                title_by_seed={k: title_by_seed[k] / N for k in range(1, 13)}, rows=rows)
     if a.out:
         json.dump(out, open(os.path.join(HERE, a.out), "w"), indent=1)
     print(f"nsims={N} loss_penalty={a.loss_penalty} today_field={a.today_field}")
     print(f"{'team':16s} cfp  sp+   make  final  title  seed")
     for r in rows[:30]:
-        print(f"{r['team']:16s} {str(r['cfp_rank'] or '-'):>3s} {r['sp']:5.1f} {r['make']:6.3f} {r['final']:6.3f} {r['title']:6.3f}  {r['modal_seed']}")
+        print(f"{r['team']:16s} {str(r['cfp_rank'] or '-'):>3s} {r['sp']:5.1f} {r['make']:6.3f} {r['final']:6.3f} {r['title']:6.3f}  {r['modal_seed']}"
+              + (f"  [{r['title_lo']:.3f}, {r['title_hi']:.3f}] se {r['se_rating']}" if 'title_lo' in r else ""))
     print("title by seed:", {k: round(v, 3) for k, v in out["title_by_seed"].items()})
 
 
