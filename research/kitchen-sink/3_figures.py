@@ -40,20 +40,26 @@ s.append(f'<text x="600" y="140" font-size="11" fill="{RUST}" text-anchor="start
 s.append('</svg>')
 open(os.path.join(HERE, "dag.svg"), "w").write("\n".join(s))
 
-a = json.load(open(os.path.join(HERE, "arrows.json")))["run_share_q4"]
+ci = json.load(open(os.path.join(HERE, "intervals.json")))
+a = {k: ci[k]["share"] for k in ["behind 9+", "behind 1-8", "tied", "ahead 1-8", "ahead 9+"]}
 labels = list(a); W, B, T, L = 680, 230, 30, 40
 sy = lambda v: B - (B - T) * v / 100
 bw = (W - L - 20) / len(labels)
-s = [f'<svg class="chart" viewBox="0 0 {W} 280" role="img" aria-label="Fourth quarter, runs per 100 plays by the offense\'s score: ' + "; ".join(f"{k}: {v:.0f}" for k, v in a.items()) + f'." style="max-width:680px;margin:0 auto" {F}>']
+s = [f'<svg class="chart" viewBox="0 0 {W} 280" role="img" aria-label="Fourth quarter, runs per 100 plays by the offense\'s score, with 95 percent intervals: ' + "; ".join(f"{k}: {v:.0f} ({ci[k]['lo']:.0f} to {ci[k]['hi']:.0f})" for k, v in a.items()) + f'." style="max-width:680px;margin:0 auto" {F}>']
 for v in (0, 25, 50, 75, 100):
     s.append(f'<line x1="{L}" x2="{W-20}" y1="{sy(v):.1f}" y2="{sy(v):.1f}" stroke="{DIV}" stroke-width="{1 if v == 0 else .5}"/>')
     s.append(f'<text x="{L-6}" y="{sy(v)+4:.1f}" font-size="11" fill="{MUTED}" text-anchor="end">{v}</text>')
 for i, (k, v) in enumerate(a.items()):
     cx = L + bw * i + bw / 2; col = RUST if k.startswith("behind") else STEEL if k.startswith("ahead") else MUTED
     s.append(f'<rect x="{cx-bw*.3:.1f}" y="{sy(v):.1f}" width="{bw*.6:.1f}" height="{B-sy(v):.1f}" fill="{col}"/>')
-    s.append(f'<text x="{cx:.1f}" y="{sy(v)-6:.1f}" font-size="14" font-weight="600" fill="{INK}" text-anchor="middle">{v:.0f}</text>')
+    lo, hi = ci[k]["lo"], ci[k]["hi"]
+    s.append(f'<line x1="{cx:.1f}" x2="{cx:.1f}" y1="{sy(lo):.1f}" y2="{sy(hi):.1f}" stroke="{INK}" stroke-width="1.5"/>')
+    for e in (lo, hi):
+        s.append(f'<line x1="{cx-7:.1f}" x2="{cx+7:.1f}" y1="{sy(e):.1f}" y2="{sy(e):.1f}" stroke="{INK}" stroke-width="1.5"/>')
+    s.append(f'<text x="{cx:.1f}" y="{sy(hi)-8:.1f}" font-size="14" font-weight="600" fill="{INK}" text-anchor="middle">{v:.0f}</text>')
+    s.append(f'<text x="{cx:.1f}" y="{sy(v)+16:.1f}" font-size="10" fill="{CREAM}" text-anchor="middle">{lo:.0f}&#8211;{hi:.0f}</text>')
     s.append(f'<text x="{cx:.1f}" y="{B+18}" font-size="12" fill="{INK}" text-anchor="middle">{k}</text>')
-s.append(f'<text x="{L+(W-L-20)/2:.0f}" y="{B+40}" font-size="11" fill="{MUTED}" text-anchor="middle">the offense\'s score, fourth quarter</text>')
+s.append(f'<text x="{L+(W-L-20)/2:.0f}" y="{B+40}" font-size="11" fill="{MUTED}" text-anchor="middle">the offense\'s score, fourth quarter &#183; bars: 95% intervals</text>')
 s.append(f'<text x="{L}" y="{T-12}" font-size="11" fill="{MUTED}">runs per 100 plays</text>')
 s.append('</svg>')
 open(os.path.join(HERE, "runshare.svg"), "w").write("\n".join(s))

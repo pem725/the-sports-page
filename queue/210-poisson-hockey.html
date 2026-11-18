@@ -143,7 +143,7 @@ window.goatcounter = { path: function (p) {
 
   <div class="stat-row">
     <div class="sc"><div class="v now">3</div><div class="l">goals a game, about: the only number the formula needs</div></div>
-    <div class="sc"><div class="v bad">5.6</div><div class="l">shutouts in every 100 team-games (formula: 5.1)</div></div>
+    <div class="sc"><div class="v bad">5.6</div><div class="l">shutouts in every 100 team-games, 5.3&ndash;5.9 (formula: 5.1)</div></div>
     <div class="sc"><div class="v good">110</div><div class="l">goals by a team behind for every 100 by a team tied or ahead</div></div>
   </div>
 
@@ -173,7 +173,7 @@ window.goatcounter = { path: function (p) {
   <p>We took every regular-season NHL game from 2015&ndash;16 through last spring, about 13,500 games, from the league&rsquo;s own play-by-play feed. Each game gives two team-games, one for each side. We counted each team&rsquo;s goals and drew the formula from the average alone. Nothing else went in.</p>
 
   <figure style="margin:1.6rem 0">
-<svg class="chart" viewBox="0 0 680 300" role="img" aria-label="Out of every 100 NHL team-games since 2015-16, how many ended with each number of goals, beside the Poisson curve drawn from the average alone. 0 goals: 6 real, 5 predicted; 1 goals: 16 real, 15 predicted; 2 goals: 21 real, 23 predicted; 3 goals: 21 real, 22 predicted; 4 goals: 17 real, 17 predicted; 5 goals: 11 real, 10 predicted; 6 goals: 5 real, 5 predicted; 7 goals: 2 real, 2 predicted; 8+ goals: 1 real, 1 predicted." style="max-width:680px;margin:0 auto;font-family:'Roboto Mono',monospace">
+<svg class="chart" viewBox="0 0 680 300" role="img" aria-label="Out of every 100 NHL team-games since 2015-16, how many ended with each number of goals, beside the Poisson curve drawn from the average alone. 0 goals: 5.6 real (95 percent interval 5.3 to 5.9), 5.1 predicted; 1 goals: 15.6 real (95 percent interval 15.2 to 16.0), 15.2 predicted; 2 goals: 21.5 real (95 percent interval 21.0 to 21.9), 22.6 predicted; 3 goals: 21.4 real (95 percent interval 20.9 to 21.8), 22.4 predicted; 4 goals: 17.2 real (95 percent interval 16.8 to 17.6), 16.6 predicted; 5 goals: 10.8 real (95 percent interval 10.5 to 11.2), 9.9 predicted; 6 goals: 5.1 real (95 percent interval 4.9 to 5.4), 4.9 predicted; 7 goals: 2.0 real (95 percent interval 1.8 to 2.2), 2.1 predicted; 8+ goals: 0.8 real (95 percent interval 0.7 to 0.8), 1.1 predicted." style="max-width:680px;margin:0 auto;font-family:'Roboto Mono',monospace">
 <line x1="50" x2="660" y1="250.0" y2="250.0" stroke="#c8b99a" stroke-width="1"/>
 <text x="42" y="254.0" font-size="11" fill="#6b5e4a" text-anchor="end">0</text>
 <line x1="50" x2="660" y1="206.0" y2="206.0" stroke="#c8b99a" stroke-width="0.5"/>
@@ -187,22 +187,49 @@ window.goatcounter = { path: function (p) {
 <line x1="50" x2="660" y1="30.0" y2="30.0" stroke="#c8b99a" stroke-width="0.5"/>
 <text x="42" y="34.0" font-size="11" fill="#6b5e4a" text-anchor="end">25</text>
 <rect x="62.2" y="200.9" width="43.4" height="49.1" fill="#2c4a6e"/>
+<line x1="71.7" x2="71.7" y1="203.2" y2="198.4" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="65.7" x2="77.7" y1="203.2" y2="203.2" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="65.7" x2="77.7" y1="198.4" y2="198.4" stroke="#1a1208" stroke-width="1.5"/>
 <text x="83.9" y="268" font-size="12" fill="#1a1208" text-anchor="middle">0</text>
 <rect x="130.0" y="112.4" width="43.4" height="137.6" fill="#2c4a6e"/>
+<line x1="139.5" x2="139.5" y1="116.0" y2="108.9" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="133.5" x2="145.5" y1="116.0" y2="116.0" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="133.5" x2="145.5" y1="108.9" y2="108.9" stroke="#1a1208" stroke-width="1.5"/>
 <text x="151.7" y="268" font-size="12" fill="#1a1208" text-anchor="middle">1</text>
 <rect x="197.8" y="61.2" width="43.4" height="188.8" fill="#2c4a6e"/>
+<line x1="207.2" x2="207.2" y1="65.4" y2="57.0" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="201.2" x2="213.2" y1="65.4" y2="65.4" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="201.2" x2="213.2" y1="57.0" y2="57.0" stroke="#1a1208" stroke-width="1.5"/>
 <text x="219.4" y="268" font-size="12" fill="#1a1208" text-anchor="middle">2</text>
 <rect x="265.5" y="61.9" width="43.4" height="188.1" fill="#2c4a6e"/>
+<line x1="275.0" x2="275.0" y1="65.9" y2="58.0" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="269.0" x2="281.0" y1="65.9" y2="65.9" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="269.0" x2="281.0" y1="58.0" y2="58.0" stroke="#1a1208" stroke-width="1.5"/>
 <text x="287.2" y="268" font-size="12" fill="#1a1208" text-anchor="middle">3</text>
 <rect x="333.3" y="98.7" width="43.4" height="151.3" fill="#2c4a6e"/>
+<line x1="342.8" x2="342.8" y1="102.5" y2="95.1" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="336.8" x2="348.8" y1="102.5" y2="102.5" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="336.8" x2="348.8" y1="95.1" y2="95.1" stroke="#1a1208" stroke-width="1.5"/>
 <text x="355.0" y="268" font-size="12" fill="#1a1208" text-anchor="middle">4</text>
 <rect x="401.1" y="154.5" width="43.4" height="95.5" fill="#2c4a6e"/>
+<line x1="410.6" x2="410.6" y1="157.7" y2="151.4" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="404.6" x2="416.6" y1="157.7" y2="157.7" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="404.6" x2="416.6" y1="151.4" y2="151.4" stroke="#1a1208" stroke-width="1.5"/>
 <text x="422.8" y="268" font-size="12" fill="#1a1208" text-anchor="middle">5</text>
 <rect x="468.9" y="204.7" width="43.4" height="45.3" fill="#2c4a6e"/>
+<line x1="478.4" x2="478.4" y1="207.0" y2="202.4" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="472.4" x2="484.4" y1="207.0" y2="207.0" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="472.4" x2="484.4" y1="202.4" y2="202.4" stroke="#1a1208" stroke-width="1.5"/>
 <text x="490.6" y="268" font-size="12" fill="#1a1208" text-anchor="middle">6</text>
 <rect x="536.6" y="232.2" width="43.4" height="17.8" fill="#2c4a6e"/>
+<line x1="546.1" x2="546.1" y1="233.8" y2="230.8" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="540.1" x2="552.1" y1="233.8" y2="233.8" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="540.1" x2="552.1" y1="230.8" y2="230.8" stroke="#1a1208" stroke-width="1.5"/>
 <text x="558.3" y="268" font-size="12" fill="#1a1208" text-anchor="middle">7</text>
 <rect x="604.4" y="243.4" width="43.4" height="6.6" fill="#2c4a6e"/>
+<line x1="613.9" x2="613.9" y1="244.3" y2="242.5" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="607.9" x2="619.9" y1="244.3" y2="244.3" stroke="#1a1208" stroke-width="1.5"/>
+<line x1="607.9" x2="619.9" y1="242.5" y2="242.5" stroke="#1a1208" stroke-width="1.5"/>
 <text x="626.1" y="268" font-size="12" fill="#1a1208" text-anchor="middle">8+</text>
 <polyline fill="none" stroke="#b83a1e" stroke-width="2" points="83.9,204.8 151.7,115.9 219.4,50.8 287.2,52.9 355.0,103.7 422.8,163.1 490.6,207.0 558.3,231.8 626.1,240.1"/>
 <circle cx="83.9" cy="204.8" r="4.5" fill="#f5f0e8" stroke="#b83a1e" stroke-width="2"/>
@@ -216,13 +243,15 @@ window.goatcounter = { path: function (p) {
 <circle cx="626.1" cy="240.1" r="4.5" fill="#f5f0e8" stroke="#b83a1e" stroke-width="2"/>
 <text x="355" y="288" font-size="11" fill="#6b5e4a" text-anchor="middle">goals scored by one team in one game</text>
 <text x="42" y="18" font-size="11" fill="#6b5e4a" text-anchor="start" dx="-30">per 100 team-games</text>
-<rect x="430" y="30" width="14" height="14" fill="#2c4a6e"/><text x="450" y="42" font-size="12" fill="#1a1208">what happened</text>
-<circle cx="437" cy="60" r="4.5" fill="#f5f0e8" stroke="#b83a1e" stroke-width="2"/><text x="450" y="64" font-size="12" fill="#1a1208">Poisson, from the average</text>
+<rect x="390" y="30" width="14" height="14" fill="#2c4a6e"/><text x="410" y="42" font-size="12" fill="#1a1208">what happened, with 95% interval</text>
+<circle cx="397" cy="60" r="4.5" fill="#f5f0e8" stroke="#b83a1e" stroke-width="2"/><text x="410" y="64" font-size="12" fill="#1a1208">Poisson, from the average</text>
 </svg>
-    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);text-align:center;margin-top:.5rem">Per 100 NHL team-games, 2015&ndash;16 to 2025&ndash;26. Bars: what happened. Dots: the Poisson curve from the average (just under 3). Shootouts left out.</figcaption>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);text-align:center;margin-top:.5rem">Per 100 NHL team-games, 2015&ndash;16 to 2025&ndash;26. Bars: what happened, with 95% intervals (black) from resampling whole games. Dots: the Poisson curve from the average (just under 3). Shootouts left out.</figcaption>
   </figure>
 
   <p>Read it bar by bar. The formula says 5.1 shutouts in every 100 team-games; there were 5.6. It says 23 two-goal games; there were 21. Seven goals: 2.1 against 2.0. Two and three goals sit almost exactly tied, just as the box promised. No bar misses its dot by more than about one game in a hundred.</p>
+
+  <p>Now look at the small black bars. They show how far chance alone could push each count, with 27,000 team-games behind it. At zero, two, three, four, five and eight-plus goals, the dot sits <em>outside</em> them. So the misses are small, but they are not luck. Something in hockey is pushing the counts off the curve, and the next section finds it.</p>
 
   <p>There is a second test, and it is stricter. A Poisson count has a fingerprint: its <strong>variance</strong>, the measure of how widely the counts scatter, equals its average. Most real counts scatter more than that. Hockey&rsquo;s average is 3.0. Its variance is 3.0.</p>
 
@@ -259,6 +288,7 @@ window.goatcounter = { path: function (p) {
     <h3>How we did it</h3>
     <p><strong>Data.</strong> Every regular-season goal from 2015&ndash;16 through 2025&ndash;26, 13,512 games, from the NHL&rsquo;s play-by-play feed (api-web.nhle.com). Goals in regulation and overtime count; shootout tries do not. An empty-net goal is one scored while the other side&rsquo;s goalie was off the ice, from the feed&rsquo;s strength code.</p>
     <p><strong>Check against a second feed.</strong> For 2024&ndash;25 we counted 7,901 goals plus 77 shootout winners, which the league credits as one goal each: 7,978. The NHL&rsquo;s standings feed, summed over all 32 teams, gives 7,978 goals for.</p>
+    <p><strong>Uncertainty.</strong> The intervals on the bars are 95% intervals from 2,000 bootstrap resamples of whole games. Shutouts per 100 team-games: 5.6 (5.3&ndash;5.9); eight goals or more: 0.75 (0.65&ndash;0.85), against 1.1 from the curve. The curve&rsquo;s own uncertainty is smaller still, because it rests on one average from 27,000 team-games.</p>
     <p><strong>Limits.</strong> The curve is drawn from one league-wide average, though teams differ; that difference should make the real counts scatter <em>more</em> than Poisson, which makes the shortage of eight-goal games harder to explain, not easier. The rates by score use time in each state, so they are not adjusted for which teams tend to be ahead. Code: <code>research/poisson-hockey/</code> in our repository.</p>
   </div>
 
