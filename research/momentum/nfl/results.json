@@ -1,0 +1,1161 @@
+{
+ "generated": "2026-11-18",
+ "data": "nflverse games.csv refreshed 2026-11-18; 2026 through MNF 2026-11-16",
+ "expectation_sources": {
+  "1999-2025:spread": 1981,
+  "1999-2025:moneyline": 5295,
+  "2026:moneyline": 150
+ },
+ "test_a": {
+  "W5+": {
+   "games": 605,
+   "actual_per100": 66.8,
+   "expected_per100": 64.3,
+   "gap_per100": 2.5,
+   "se_per100": 1.8,
+   "z": 1.37
+  },
+  "W3+": {
+   "games": 1803,
+   "actual_per100": 62.0,
+   "expected_per100": 60.2,
+   "gap_per100": 1.8,
+   "se_per100": 1.1,
+   "z": 1.67
+  },
+  "none": {
+   "games": 10314,
+   "actual_per100": 50.1,
+   "expected_per100": 50.3,
+   "gap_per100": -0.2,
+   "se_per100": 0.5,
+   "z": -0.45
+  },
+  "L3+": {
+   "games": 1817,
+   "actual_per100": 37.7,
+   "expected_per100": 38.3,
+   "gap_per100": -0.6,
+   "se_per100": 1.1,
+   "z": -0.57
+  },
+  "L5+": {
+   "games": 633,
+   "actual_per100": 31.8,
+   "expected_per100": 32.9,
+   "gap_per100": -1.1,
+   "se_per100": 1.8,
+   "z": -0.62
+  }
+ },
+ "test_a_moneyline_only": {
+  "W5+": {
+   "games": 451,
+   "actual_per100": 67.6,
+   "expected_per100": 64.9,
+   "gap_per100": 2.8,
+   "se_per100": 2.1,
+   "z": 1.31
+  },
+  "W3+": {
+   "games": 1343,
+   "actual_per100": 62.0,
+   "expected_per100": 60.4,
+   "gap_per100": 1.6,
+   "se_per100": 1.2,
+   "z": 1.3
+  },
+  "none": {
+   "games": 7425,
+   "actual_per100": 50.3,
+   "expected_per100": 50.4,
+   "gap_per100": -0.1,
+   "se_per100": 0.5,
+   "z": -0.18
+  },
+  "L3+": {
+   "games": 1362,
+   "actual_per100": 36.6,
+   "expected_per100": 37.7,
+   "gap_per100": -1.1,
+   "se_per100": 1.2,
+   "z": -0.88
+  },
+  "L5+": {
+   "games": 492,
+   "actual_per100": 30.2,
+   "expected_per100": 32.5,
+   "gap_per100": -2.3,
+   "se_per100": 2.0,
+   "z": -1.16
+  }
+ },
+ "test_a_spread_only": {
+  "W5+": {
+   "games": 154,
+   "actual_per100": 64.3,
+   "expected_per100": 62.5,
+   "gap_per100": 1.8,
+   "se_per100": 3.7,
+   "z": 0.48
+  },
+  "W3+": {
+   "games": 460,
+   "actual_per100": 62.0,
+   "expected_per100": 59.6,
+   "gap_per100": 2.4,
+   "se_per100": 2.2,
+   "z": 1.09
+  },
+  "none": {
+   "games": 2889,
+   "actual_per100": 49.5,
+   "expected_per100": 50.0,
+   "gap_per100": -0.5,
+   "se_per100": 0.9,
+   "z": -0.57
+  },
+  "L3+": {
+   "games": 455,
+   "actual_per100": 41.1,
+   "expected_per100": 40.3,
+   "gap_per100": 0.8,
+   "se_per100": 2.2,
+   "z": 0.37
+  },
+  "L5+": {
+   "games": 141,
+   "actual_per100": 37.6,
+   "expected_per100": 34.5,
+   "gap_per100": 3.1,
+   "se_per100": 3.8,
+   "z": 0.81
+  }
+ },
+ "test_b": {
+  "team_seasons": 336,
+  "postseason_games": 309,
+  "results": {
+   "late_diff|season_diff|post_wins": {
+    "r_late": 0.213,
+    "r_base": 0.273,
+    "partial_r": 0.061,
+    "delta_r2": 0.003,
+    "beta_late": 0.012,
+    "beta_base": 0.06,
+    "partial_r_boot": {
+     "se": 0.057,
+     "lo": -0.048,
+     "hi": 0.169
+    },
+    "beta_late_boot": {
+     "se": 0.01,
+     "lo": -0.009,
+     "hi": 0.032
+    }
+   },
+   "late_diff|season_diff|post_woe": {
+    "r_late": 0.032,
+    "r_base": -0.027,
+    "partial_r": 0.062,
+    "delta_r2": 0.004,
+    "beta_late": 0.008,
+    "beta_base": -0.012,
+    "partial_r_boot": {
+     "se": 0.056,
+     "lo": -0.052,
+     "hi": 0.171
+    },
+    "beta_late_boot": {
+     "se": 0.007,
+     "lo": -0.006,
+     "hi": 0.021
+    }
+   },
+   "late_diff|early_diff|post_wins": {
+    "r_late": 0.213,
+    "r_base": 0.206,
+    "partial_r": 0.193,
+    "delta_r2": 0.036,
+    "beta_late": 0.03,
+    "beta_base": 0.041,
+    "partial_r_boot": {
+     "se": 0.056,
+     "lo": 0.084,
+     "hi": 0.303
+    },
+    "beta_late_boot": {
+     "se": 0.009,
+     "lo": 0.013,
+     "hi": 0.047
+    }
+   },
+   "late_diff|early_diff|post_woe": {
+    "r_late": 0.032,
+    "r_base": -0.055,
+    "partial_r": 0.039,
+    "delta_r2": 0.002,
+    "beta_late": 0.004,
+    "beta_base": -0.008,
+    "partial_r_boot": {
+     "se": 0.057,
+     "lo": -0.068,
+     "hi": 0.157
+    },
+    "beta_late_boot": {
+     "se": 0.005,
+     "lo": -0.007,
+     "hi": 0.014
+    }
+   },
+   "late_wpct|season_diff|post_wins": {
+    "r_late": 0.154,
+    "r_base": 0.273,
+    "partial_r": 0.055,
+    "delta_r2": 0.003,
+    "beta_late": 0.308,
+    "beta_base": 0.066,
+    "partial_r_boot": {
+     "se": 0.056,
+     "lo": -0.058,
+     "hi": 0.162
+    },
+    "beta_late_boot": {
+     "se": 0.306,
+     "lo": -0.301,
+     "hi": 0.888
+    }
+   },
+   "late_wpct|season_diff|post_woe": {
+    "r_late": -0.006,
+    "r_base": -0.027,
+    "partial_r": 0.005,
+    "delta_r2": 0.0,
+    "beta_late": 0.017,
+    "beta_base": -0.005,
+    "partial_r_boot": {
+     "se": 0.057,
+     "lo": -0.111,
+     "hi": 0.111
+    },
+    "beta_late_boot": {
+     "se": 0.2,
+     "lo": -0.381,
+     "hi": 0.398
+    }
+   },
+   "late_wpct|early_diff|post_wins": {
+    "r_late": 0.154,
+    "r_base": 0.206,
+    "partial_r": 0.154,
+    "delta_r2": 0.023,
+    "beta_late": 0.81,
+    "beta_base": 0.046,
+    "partial_r_boot": {
+     "se": 0.057,
+     "lo": 0.04,
+     "hi": 0.259
+    },
+    "beta_late_boot": {
+     "se": 0.286,
+     "lo": 0.226,
+     "hi": 1.364
+    }
+   },
+   "late_wpct|early_diff|post_woe": {
+    "r_late": -0.006,
+    "r_base": -0.055,
+    "partial_r": -0.005,
+    "delta_r2": 0.0,
+    "beta_late": -0.017,
+    "beta_base": -0.008,
+    "partial_r_boot": {
+     "se": 0.058,
+     "lo": -0.119,
+     "hi": 0.105
+    },
+    "beta_late_boot": {
+     "se": 0.191,
+     "lo": -0.424,
+     "hi": 0.337
+    }
+   },
+   "matched_quarters_over_market": {
+    "hot_minus_cold_per100": 7.3,
+    "se_per100": 5.3
+   },
+   "matched_quarters": {
+    "note": "late form residualized on season-minus-last-5 diff/game; top vs bottom quarter of playoff teams",
+    "hot": {
+     "team_seasons": 84,
+     "post_games": 184,
+     "wins_per100": 61.4,
+     "market_expected_per100": 57.0,
+     "mean_early_diff": 5.4,
+     "mean_late_diff": 14.3,
+     "mean_post_wins": 1.35
+    },
+    "cold": {
+     "team_seasons": 84,
+     "post_games": 136,
+     "wins_per100": 41.2,
+     "market_expected_per100": 44.0,
+     "mean_early_diff": 4.9,
+     "mean_late_diff": -2.7,
+     "mean_post_wins": 0.67
+    },
+    "hot_minus_cold_winrate_per100_se": 5.2
+   }
+  },
+  "super_bowl": {
+   "champions": 27,
+   "observed_top_quarter": 13,
+   "expected_from_season_strength": 10.8,
+   "sd": 2.5,
+   "expected_if_random": 7.0,
+   "strength_coef": 0.159,
+   "detail": [
+    {
+     "season": 1999,
+     "champion": "STL",
+     "late_diff": 13,
+     "late_rank": 1,
+     "playoff_teams": 12,
+     "top_quarter": true,
+     "last5": "4-1"
+    },
+    {
+     "season": 2000,
+     "champion": "BAL",
+     "late_diff": 21,
+     "late_rank": 1,
+     "playoff_teams": 12,
+     "top_quarter": true,
+     "last5": "5-0"
+    },
+    {
+     "season": 2001,
+     "champion": "NE",
+     "late_diff": 10.8,
+     "late_rank": 4,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "5-0"
+    },
+    {
+     "season": 2002,
+     "champion": "TB",
+     "late_diff": 5.8,
+     "late_rank": 6,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "3-2"
+    },
+    {
+     "season": 2003,
+     "champion": "NE",
+     "late_diff": 13.2,
+     "late_rank": 3,
+     "playoff_teams": 12,
+     "top_quarter": true,
+     "last5": "5-0"
+    },
+    {
+     "season": 2004,
+     "champion": "NE",
+     "late_diff": 12.6,
+     "late_rank": 1,
+     "playoff_teams": 12,
+     "top_quarter": true,
+     "last5": "4-1"
+    },
+    {
+     "season": 2005,
+     "champion": "PIT",
+     "late_diff": 15,
+     "late_rank": 3,
+     "playoff_teams": 12,
+     "top_quarter": true,
+     "last5": "4-1"
+    },
+    {
+     "season": 2006,
+     "champion": "IND",
+     "late_diff": -2,
+     "late_rank": 10,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "2-3"
+    },
+    {
+     "season": 2007,
+     "champion": "NYG",
+     "late_diff": 2,
+     "late_rank": 10,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "3-2"
+    },
+    {
+     "season": 2008,
+     "champion": "PIT",
+     "late_diff": 9.6,
+     "late_rank": 6,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "4-1"
+    },
+    {
+     "season": 2009,
+     "champion": "NO",
+     "late_diff": -3.4,
+     "late_rank": 11,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "2-3"
+    },
+    {
+     "season": 2010,
+     "champion": "GB",
+     "late_diff": 9,
+     "late_rank": 4,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "3-2"
+    },
+    {
+     "season": 2011,
+     "champion": "NYG",
+     "late_diff": 3.8,
+     "late_rank": 8,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "3-2"
+    },
+    {
+     "season": 2012,
+     "champion": "BAL",
+     "late_diff": -2,
+     "late_rank": 11,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "1-4"
+    },
+    {
+     "season": 2013,
+     "champion": "SEA",
+     "late_diff": 11.8,
+     "late_rank": 2,
+     "playoff_teams": 12,
+     "top_quarter": true,
+     "last5": "3-2"
+    },
+    {
+     "season": 2014,
+     "champion": "NE",
+     "late_diff": 5,
+     "late_rank": 8,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "3-2"
+    },
+    {
+     "season": 2015,
+     "champion": "DEN",
+     "late_diff": 2.8,
+     "late_rank": 11,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "3-2"
+    },
+    {
+     "season": 2016,
+     "champion": "NE",
+     "late_diff": 19,
+     "late_rank": 1,
+     "playoff_teams": 12,
+     "top_quarter": true,
+     "last5": "5-0"
+    },
+    {
+     "season": 2017,
+     "champion": "PHI",
+     "late_diff": 0.4,
+     "late_rank": 10,
+     "playoff_teams": 12,
+     "top_quarter": false,
+     "last5": "3-2"
+    },
+    {
+     "season": 2018,
+     "champion": "NE",
+     "late_diff": 10.6,
+     "late_rank": 1,
+     "playoff_teams": 12,
+     "top_quarter": true,
+     "last5": "3-2"
+    },
+    {
+     "season": 2019,
+     "champion": "KC",
+     "late_diff": 18.2,
+     "late_rank": 1,
+     "playoff_teams": 12,
+     "top_quarter": true,
+     "last5": "5-0"
+    },
+    {
+     "season": 2020,
+     "champion": "TB",
+     "late_diff": 14,
+     "late_rank": 4,
+     "playoff_teams": 14,
+     "top_quarter": true,
+     "last5": "4-1"
+    },
+    {
+     "season": 2021,
+     "champion": "LA",
+     "late_diff": 4.4,
+     "late_rank": 9,
+     "playoff_teams": 14,
+     "top_quarter": false,
+     "last5": "4-1"
+    },
+    {
+     "season": 2022,
+     "champion": "KC",
+     "late_diff": 9.4,
+     "late_rank": 4,
+     "playoff_teams": 14,
+     "top_quarter": true,
+     "last5": "5-0"
+    },
+    {
+     "season": 2023,
+     "champion": "KC",
+     "late_diff": 2,
+     "late_rank": 11,
+     "playoff_teams": 14,
+     "top_quarter": false,
+     "last5": "3-2"
+    },
+    {
+     "season": 2024,
+     "champion": "PHI",
+     "late_diff": 11.6,
+     "late_rank": 3,
+     "playoff_teams": 14,
+     "top_quarter": true,
+     "last5": "4-1"
+    },
+    {
+     "season": 2025,
+     "champion": "SEA",
+     "late_diff": 11.6,
+     "late_rank": 3,
+     "playoff_teams": 14,
+     "top_quarter": true,
+     "last5": "5-0"
+    }
+   ]
+  }
+ },
+ "test_b_forward_nov_dec": {
+  "team_seasons": 861,
+  "nov_games_mean": 3.9,
+  "dec_games_mean": 4.3,
+  "nov_diff->dec_diff": {
+   "r_late": 0.387,
+   "r_pre": 0.49,
+   "partial_r": 0.039,
+   "partial_r_se": 0.032,
+   "partial_r_ci": [
+    -0.027,
+    0.102
+   ],
+   "delta_r2": 0.0012,
+   "beta_late": 0.051,
+   "beta_pre": 0.607
+  },
+  "nov_diff->dec_wpct": {
+   "r_late": 0.357,
+   "r_pre": 0.431,
+   "partial_r": 0.06,
+   "partial_r_se": 0.034,
+   "partial_r_ci": [
+    -0.005,
+    0.125
+   ],
+   "delta_r2": 0.0029,
+   "beta_late": 0.003,
+   "beta_pre": 0.016
+  },
+  "nov_diff->dec_woe": {
+   "r_late": 0.056,
+   "r_pre": 0.045,
+   "partial_r": 0.034,
+   "partial_r_se": 0.034,
+   "partial_r_ci": [
+    -0.035,
+    0.097
+   ],
+   "delta_r2": 0.0011,
+   "beta_late": 0.005,
+   "beta_pre": 0.001
+  },
+  "nov_wpct->dec_diff": {
+   "r_late": 0.373,
+   "r_pre": 0.49,
+   "partial_r": 0.088,
+   "partial_r_se": 0.035,
+   "partial_r_ci": [
+    0.017,
+    0.156
+   ],
+   "delta_r2": 0.0059,
+   "beta_late": 2.954,
+   "beta_pre": 0.572
+  },
+  "nov_wpct->dec_wpct": {
+   "r_late": 0.35,
+   "r_pre": 0.431,
+   "partial_r": 0.107,
+   "partial_r_se": 0.035,
+   "partial_r_ci": [
+    0.041,
+    0.176
+   ],
+   "delta_r2": 0.0093,
+   "beta_late": 0.117,
+   "beta_pre": 0.015
+  },
+  "nov_wpct->dec_woe": {
+   "r_late": 0.073,
+   "r_pre": 0.045,
+   "partial_r": 0.058,
+   "partial_r_se": 0.035,
+   "partial_r_ci": [
+    -0.012,
+    0.124
+   ],
+   "delta_r2": 0.0033,
+   "beta_late": 0.234,
+   "beta_pre": -0.0
+  }
+ },
+ "test_c_2026": [
+  {
+   "team": "JAX",
+   "record": "7-2",
+   "games": 9,
+   "streak": "W3",
+   "streak_n": 3,
+   "season_diff": 13.9,
+   "early_diff": 12.8,
+   "last5_diff": 14.8,
+   "last5_record": "4-1",
+   "nov_games": 3,
+   "nov_diff": 25,
+   "nov_record": "3-0",
+   "last5_wins_over_market": 0.26,
+   "late_minus_early": 2.0
+  },
+  {
+   "team": "CIN",
+   "record": "7-2",
+   "games": 9,
+   "streak": "W5",
+   "streak_n": 5,
+   "season_diff": 9.4,
+   "early_diff": 3,
+   "last5_diff": 14.6,
+   "last5_record": "5-0",
+   "nov_games": 3,
+   "nov_diff": 14.7,
+   "nov_record": "3-0",
+   "last5_wins_over_market": 1.52,
+   "late_minus_early": 11.6
+  },
+  {
+   "team": "BUF",
+   "record": "8-1",
+   "games": 9,
+   "streak": "W5",
+   "streak_n": 5,
+   "season_diff": 9.8,
+   "early_diff": 5,
+   "last5_diff": 13.6,
+   "last5_record": "5-0",
+   "nov_games": 3,
+   "nov_diff": 20.7,
+   "nov_record": "3-0",
+   "last5_wins_over_market": 1.94,
+   "late_minus_early": 8.6
+  },
+  {
+   "team": "DET",
+   "record": "7-2",
+   "games": 9,
+   "streak": "W5",
+   "streak_n": 5,
+   "season_diff": 6.4,
+   "early_diff": -2,
+   "last5_diff": 13.2,
+   "last5_record": "5-0",
+   "nov_games": 3,
+   "nov_diff": 13,
+   "nov_record": "3-0",
+   "last5_wins_over_market": 1.78,
+   "late_minus_early": 15.2
+  },
+  {
+   "team": "LA",
+   "record": "6-4",
+   "games": 10,
+   "streak": "W4",
+   "streak_n": 4,
+   "season_diff": 6.1,
+   "early_diff": -0.2,
+   "last5_diff": 12.4,
+   "last5_record": "4-1",
+   "nov_games": 3,
+   "nov_diff": 16.7,
+   "nov_record": "3-0",
+   "last5_wins_over_market": 0.36,
+   "late_minus_early": 12.6
+  },
+  {
+   "team": "TB",
+   "record": "3-6",
+   "games": 9,
+   "streak": "L1",
+   "streak_n": -1,
+   "season_diff": 2.7,
+   "early_diff": -5,
+   "last5_diff": 8.8,
+   "last5_record": "3-2",
+   "nov_games": 2,
+   "nov_diff": 6.5,
+   "nov_record": "1-1",
+   "last5_wins_over_market": 1.14,
+   "late_minus_early": 13.8
+  },
+  {
+   "team": "KC",
+   "record": "7-2",
+   "games": 9,
+   "streak": "W2",
+   "streak_n": 2,
+   "season_diff": 9,
+   "early_diff": 10.2,
+   "last5_diff": 8,
+   "last5_record": "3-2",
+   "nov_games": 3,
+   "nov_diff": 13.7,
+   "nov_record": "2-1",
+   "last5_wins_over_market": -0.1,
+   "late_minus_early": -2.2
+  },
+  {
+   "team": "HOU",
+   "record": "3-6",
+   "games": 9,
+   "streak": "L1",
+   "streak_n": -1,
+   "season_diff": 1.6,
+   "early_diff": -6.2,
+   "last5_diff": 7.8,
+   "last5_record": "3-2",
+   "nov_games": 2,
+   "nov_diff": 9.5,
+   "nov_record": "1-1",
+   "last5_wins_over_market": -0.27,
+   "late_minus_early": 14.0
+  },
+  {
+   "team": "DEN",
+   "record": "7-2",
+   "games": 9,
+   "streak": "W5",
+   "streak_n": 5,
+   "season_diff": 1.3,
+   "early_diff": -5,
+   "last5_diff": 6.4,
+   "last5_record": "5-0",
+   "nov_games": 2,
+   "nov_diff": 4.5,
+   "nov_record": "2-0",
+   "last5_wins_over_market": 2.2,
+   "late_minus_early": 11.4
+  },
+  {
+   "team": "SF",
+   "record": "8-1",
+   "games": 9,
+   "streak": "W2",
+   "streak_n": 2,
+   "season_diff": 9.4,
+   "early_diff": 14.5,
+   "last5_diff": 5.4,
+   "last5_record": "4-1",
+   "nov_games": 2,
+   "nov_diff": 13.5,
+   "nov_record": "2-0",
+   "last5_wins_over_market": 0.83,
+   "late_minus_early": -9.1
+  },
+  {
+   "team": "PIT",
+   "record": "6-3",
+   "games": 9,
+   "streak": "L1",
+   "streak_n": -1,
+   "season_diff": 1.8,
+   "early_diff": -2.5,
+   "last5_diff": 5.2,
+   "last5_record": "4-1",
+   "nov_games": 2,
+   "nov_diff": 0.5,
+   "nov_record": "1-1",
+   "last5_wins_over_market": 1.27,
+   "late_minus_early": 7.7
+  },
+  {
+   "team": "SEA",
+   "record": "6-4",
+   "games": 10,
+   "streak": "W2",
+   "streak_n": 2,
+   "season_diff": 4.8,
+   "early_diff": 5.8,
+   "last5_diff": 3.8,
+   "last5_record": "3-2",
+   "nov_games": 3,
+   "nov_diff": 1.7,
+   "nov_record": "2-1",
+   "last5_wins_over_market": -0.28,
+   "late_minus_early": -2.0
+  },
+  {
+   "team": "MIN",
+   "record": "7-2",
+   "games": 9,
+   "streak": "W1",
+   "streak_n": 1,
+   "season_diff": 5.6,
+   "early_diff": 8.8,
+   "last5_diff": 3,
+   "last5_record": "3-2",
+   "nov_games": 3,
+   "nov_diff": -0.3,
+   "nov_record": "1-2",
+   "last5_wins_over_market": 0.5,
+   "late_minus_early": -5.8
+  },
+  {
+   "team": "GB",
+   "record": "6-4",
+   "games": 10,
+   "streak": "L1",
+   "streak_n": -1,
+   "season_diff": 0.5,
+   "early_diff": -1.6,
+   "last5_diff": 2.6,
+   "last5_record": "3-2",
+   "nov_games": 2,
+   "nov_diff": -1,
+   "nov_record": "1-1",
+   "last5_wins_over_market": 0.56,
+   "late_minus_early": 4.2
+  },
+  {
+   "team": "CHI",
+   "record": "7-2",
+   "games": 9,
+   "streak": "W4",
+   "streak_n": 4,
+   "season_diff": 6.3,
+   "early_diff": 11.8,
+   "last5_diff": 2,
+   "last5_record": "4-1",
+   "nov_games": 2,
+   "nov_diff": 10,
+   "nov_record": "2-0",
+   "last5_wins_over_market": 1.25,
+   "late_minus_early": -9.8
+  },
+  {
+   "team": "WAS",
+   "record": "3-5-1",
+   "games": 9,
+   "streak": "W1",
+   "streak_n": 1,
+   "season_diff": -3,
+   "early_diff": -8.5,
+   "last5_diff": 1.4,
+   "last5_record": "2-2",
+   "nov_games": 3,
+   "nov_diff": 4.3,
+   "nov_record": "2-1",
+   "last5_wins_over_market": 0.13,
+   "late_minus_early": 9.9
+  },
+  {
+   "team": "NYG",
+   "record": "5-3-1",
+   "games": 9,
+   "streak": "L1",
+   "streak_n": -1,
+   "season_diff": 0.8,
+   "early_diff": 0.8,
+   "last5_diff": 0.8,
+   "last5_record": "2-2",
+   "nov_games": 2,
+   "nov_diff": 2.5,
+   "nov_record": "1-1",
+   "last5_wins_over_market": 0.3,
+   "late_minus_early": 0.0
+  },
+  {
+   "team": "DAL",
+   "record": "4-6",
+   "games": 10,
+   "streak": "L1",
+   "streak_n": -1,
+   "season_diff": 0.4,
+   "early_diff": 0.4,
+   "last5_diff": 0.4,
+   "last5_record": "2-3",
+   "nov_games": 3,
+   "nov_diff": -1.7,
+   "nov_record": "1-2",
+   "last5_wins_over_market": -0.93,
+   "late_minus_early": 0.0
+  },
+  {
+   "team": "NO",
+   "record": "3-6",
+   "games": 9,
+   "streak": "L1",
+   "streak_n": -1,
+   "season_diff": -3.8,
+   "early_diff": -5.8,
+   "last5_diff": -2.2,
+   "last5_record": "2-3",
+   "nov_games": 2,
+   "nov_diff": -1,
+   "nov_record": "1-1",
+   "last5_wins_over_market": -0.5,
+   "late_minus_early": 3.6
+  },
+  {
+   "team": "CLE",
+   "record": "6-4",
+   "games": 10,
+   "streak": "W1",
+   "streak_n": 1,
+   "season_diff": -3.2,
+   "early_diff": -3.8,
+   "last5_diff": -2.6,
+   "last5_record": "3-2",
+   "nov_games": 3,
+   "nov_diff": -6.3,
+   "nov_record": "1-2",
+   "last5_wins_over_market": 1.0,
+   "late_minus_early": 1.2
+  },
+  {
+   "team": "MIA",
+   "record": "1-8",
+   "games": 9,
+   "streak": "L3",
+   "streak_n": -3,
+   "season_diff": -8.4,
+   "early_diff": -13.8,
+   "last5_diff": -4.2,
+   "last5_record": "1-4",
+   "nov_games": 3,
+   "nov_diff": -5.7,
+   "nov_record": "0-3",
+   "last5_wins_over_market": -0.46,
+   "late_minus_early": 9.6
+  },
+  {
+   "team": "CAR",
+   "record": "4-5",
+   "games": 9,
+   "streak": "W1",
+   "streak_n": 1,
+   "season_diff": -1.9,
+   "early_diff": 3,
+   "last5_diff": -5.8,
+   "last5_record": "2-3",
+   "nov_games": 2,
+   "nov_diff": -1,
+   "nov_record": "1-1",
+   "last5_wins_over_market": -0.48,
+   "late_minus_early": -8.8
+  },
+  {
+   "team": "NE",
+   "record": "5-5",
+   "games": 10,
+   "streak": "L2",
+   "streak_n": -2,
+   "season_diff": -2.1,
+   "early_diff": 3.2,
+   "last5_diff": -7.4,
+   "last5_record": "2-3",
+   "nov_games": 3,
+   "nov_diff": -12.7,
+   "nov_record": "1-2",
+   "last5_wins_over_market": -0.96,
+   "late_minus_early": -10.6
+  },
+  {
+   "team": "LV",
+   "record": "4-6",
+   "games": 10,
+   "streak": "L2",
+   "streak_n": -2,
+   "season_diff": -3.8,
+   "early_diff": 0.6,
+   "last5_diff": -8.2,
+   "last5_record": "1-4",
+   "nov_games": 3,
+   "nov_diff": -8,
+   "nov_record": "1-2",
+   "last5_wins_over_market": -0.69,
+   "late_minus_early": -8.8
+  },
+  {
+   "team": "TEN",
+   "record": "1-8",
+   "games": 9,
+   "streak": "L3",
+   "streak_n": -3,
+   "season_diff": -8,
+   "early_diff": -7,
+   "last5_diff": -8.8,
+   "last5_record": "1-4",
+   "nov_games": 2,
+   "nov_diff": -12,
+   "nov_record": "0-2",
+   "last5_wins_over_market": -0.32,
+   "late_minus_early": -1.8
+  },
+  {
+   "team": "IND",
+   "record": "3-7",
+   "games": 10,
+   "streak": "W1",
+   "streak_n": 1,
+   "season_diff": -6.3,
+   "early_diff": -2.8,
+   "last5_diff": -9.8,
+   "last5_record": "1-4",
+   "nov_games": 3,
+   "nov_diff": -12.3,
+   "nov_record": "1-2",
+   "last5_wins_over_market": -1.19,
+   "late_minus_early": -7.0
+  },
+  {
+   "team": "ARI",
+   "record": "3-7",
+   "games": 10,
+   "streak": "L2",
+   "streak_n": -2,
+   "season_diff": -10.5,
+   "early_diff": -10.8,
+   "last5_diff": -10.2,
+   "last5_record": "2-3",
+   "nov_games": 3,
+   "nov_diff": -13,
+   "nov_record": "1-2",
+   "last5_wins_over_market": 0.85,
+   "late_minus_early": 0.6
+  },
+  {
+   "team": "ATL",
+   "record": "3-7",
+   "games": 10,
+   "streak": "L3",
+   "streak_n": -3,
+   "season_diff": -5.7,
+   "early_diff": -0.6,
+   "last5_diff": -10.8,
+   "last5_record": "1-4",
+   "nov_games": 3,
+   "nov_diff": -18.3,
+   "nov_record": "0-3",
+   "last5_wins_over_market": -1.13,
+   "late_minus_early": -10.2
+  },
+  {
+   "team": "PHI",
+   "record": "2-7",
+   "games": 9,
+   "streak": "L7",
+   "streak_n": -7,
+   "season_diff": -8.1,
+   "early_diff": -4.5,
+   "last5_diff": -11,
+   "last5_record": "0-5",
+   "nov_games": 2,
+   "nov_diff": -12.5,
+   "nov_record": "0-2",
+   "last5_wins_over_market": -1.68,
+   "late_minus_early": -6.5
+  },
+  {
+   "team": "LAC",
+   "record": "1-8",
+   "games": 9,
+   "streak": "W1",
+   "streak_n": 1,
+   "season_diff": -10.6,
+   "early_diff": -9.8,
+   "last5_diff": -11.2,
+   "last5_record": "1-4",
+   "nov_games": 3,
+   "nov_diff": -11.3,
+   "nov_record": "1-2",
+   "last5_wins_over_market": -0.54,
+   "late_minus_early": -1.4
+  },
+  {
+   "team": "NYJ",
+   "record": "2-8",
+   "games": 10,
+   "streak": "L5",
+   "streak_n": -5,
+   "season_diff": -6,
+   "early_diff": -0.6,
+   "last5_diff": -11.4,
+   "last5_record": "0-5",
+   "nov_games": 3,
+   "nov_diff": -15.7,
+   "nov_record": "0-3",
+   "last5_wins_over_market": -1.85,
+   "late_minus_early": -10.8
+  },
+  {
+   "team": "BAL",
+   "record": "4-6",
+   "games": 10,
+   "streak": "L5",
+   "streak_n": -5,
+   "season_diff": -5,
+   "early_diff": 5.4,
+   "last5_diff": -15.4,
+   "last5_record": "0-5",
+   "nov_games": 3,
+   "nov_diff": -17.3,
+   "nov_record": "0-3",
+   "last5_wins_over_market": -2.29,
+   "late_minus_early": -20.8
+  }
+ ]
+}

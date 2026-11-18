@@ -1,0 +1,723 @@
+{
+ "notice": "The information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at www.retrosheet.org.",
+ "built": "2026-11-18",
+ "mlb_test_a": {
+  "calibration": {
+   "x0": {
+    "slope": 0.684,
+    "home_logodds": 0.157,
+    "home_win_per_100_even": 53.9
+   },
+   "x3": {
+    "slope": 0.684,
+    "home_logodds": 0.158,
+    "home_win_per_100_even": 53.9
+   },
+   "x5": {
+    "slope": 0.682,
+    "home_logodds": 0.158,
+    "home_win_per_100_even": 53.9
+   }
+  },
+  "buckets": [
+   {
+    "bucket": "W5+",
+    "games": 4833,
+    "actual_per100": 54.5,
+    "expected_per100": 53.2,
+    "gap_per100": 1.3,
+    "se_per100": 0.7,
+    "expected_if_streak_games_left_in": 54.2,
+    "season_wpct_incl_game_per100": 54.8
+   },
+   {
+    "bucket": "W3+",
+    "games": 17322,
+    "actual_per100": 52.8,
+    "expected_per100": 52.6,
+    "gap_per100": 0.3,
+    "se_per100": 0.4,
+    "expected_if_streak_games_left_in": 53.2,
+    "season_wpct_incl_game_per100": 53.0
+   },
+   {
+    "bucket": "none",
+    "games": 94111,
+    "actual_per100": 50.1,
+    "expected_per100": 50.0,
+    "gap_per100": 0.1,
+    "se_per100": 0.2,
+    "expected_if_streak_games_left_in": 50.0,
+    "season_wpct_incl_game_per100": 50.1
+   },
+   {
+    "bucket": "L3+",
+    "games": 17337,
+    "actual_per100": 46.6,
+    "expected_per100": 47.2,
+    "gap_per100": -0.6,
+    "se_per100": 0.4,
+    "expected_if_streak_games_left_in": 46.6,
+    "season_wpct_incl_game_per100": 46.6
+   },
+   {
+    "bucket": "L5+",
+    "games": 5020,
+    "actual_per100": 45.3,
+    "expected_per100": 46.1,
+    "gap_per100": -0.9,
+    "se_per100": 0.7,
+    "expected_if_streak_games_left_in": 45.1,
+    "season_wpct_incl_game_per100": 44.3
+   }
+  ],
+  "seasons": "1998-2025 regular season",
+  "team_games": 128770
+ },
+ "mlb_test_b": {
+  "team_seasons": 266,
+  "late_window": "final 30 regular-season games, run differential per game",
+  "postseason_games": 1000,
+  "series_won": {
+   "control_full_season": {
+    "r_late_raw": 0.057,
+    "r2_ctrl": 0.024,
+    "r2_ctrl_plus_late": 0.024,
+    "delta_r2": 0.0001,
+    "partial_r": -0.01,
+    "late_coef": -0.014,
+    "late_coef_95ci": [
+     -0.181,
+     0.155
+    ]
+   },
+   "control_rest_of_season": {
+    "r_late_raw": 0.057,
+    "r2_ctrl": 0.023,
+    "r2_ctrl_plus_late": 0.025,
+    "delta_r2": 0.0027,
+    "partial_r": 0.052,
+    "late_coef": 0.068,
+    "late_coef_95ci": [
+     -0.099,
+     0.235
+    ]
+   }
+  },
+  "excess_wins": {
+   "control_full_season": {
+    "r_late_raw": 0.083,
+    "r2_ctrl": 0.018,
+    "r2_ctrl_plus_late": 0.019,
+    "delta_r2": 0.0008,
+    "partial_r": 0.029,
+    "late_coef": 0.009,
+    "late_coef_95ci": [
+     -0.028,
+     0.047
+    ]
+   }
+  },
+  "matched": {
+   "cold (bottom third, late form vs own season)": {
+    "teams": 89,
+    "mean_full_diff_per_game": 0.7,
+    "mean_late_diff_per_game": 0.05,
+    "series_won_per_team": 0.83,
+    "postseason_games": 626,
+    "wins_per100_actual": 50.0,
+    "wins_per100_expected": 49.9
+   },
+   "middle": {
+    "teams": 88,
+    "mean_full_diff_per_game": 0.74,
+    "mean_late_diff_per_game": 0.84,
+    "series_won_per_team": 0.89,
+    "postseason_games": 664,
+    "wins_per100_actual": 49.7,
+    "wins_per100_expected": 50.1
+   },
+   "hot (top third)": {
+    "teams": 89,
+    "mean_full_diff_per_game": 0.74,
+    "mean_late_diff_per_game": 1.7,
+    "series_won_per_team": 0.97,
+    "postseason_games": 710,
+    "wins_per100_actual": 50.3,
+    "wins_per100_expected": 50.0
+   }
+  },
+  "hot_minus_cold_excess_wins_per100": 0.2,
+  "hot_minus_cold_95ci": [
+   -5.7,
+   6.5
+  ],
+  "seasons": "1998-2025"
+ },
+ "mlb_2026_postseason": {
+  "source": "MLB Stats API schedule, 2026 regular season and postseason",
+  "regular_games": 2429,
+  "postseason_games": 40,
+  "teams": [
+   {
+    "team": "Milwaukee Brewers",
+    "late30_run_diff_per_game": 1.8,
+    "late30_wpct": 0.733,
+    "season_run_diff_per_game": 1.32,
+    "season_wpct": 0.636,
+    "series_won": 3,
+    "fate": "won World Series"
+   },
+   {
+    "team": "Los Angeles Dodgers",
+    "late30_run_diff_per_game": 1.7,
+    "late30_wpct": 0.667,
+    "season_run_diff_per_game": 1.24,
+    "season_wpct": 0.617,
+    "series_won": 1,
+    "fate": "lost LCS"
+   },
+   {
+    "team": "Tampa Bay Rays",
+    "late30_run_diff_per_game": 1.4,
+    "late30_wpct": 0.667,
+    "season_run_diff_per_game": 0.53,
+    "season_wpct": 0.605,
+    "series_won": 2,
+    "fate": "lost World Series"
+   },
+   {
+    "team": "New York Yankees",
+    "late30_run_diff_per_game": 1.33,
+    "late30_wpct": 0.633,
+    "season_run_diff_per_game": 0.86,
+    "season_wpct": 0.578,
+    "series_won": 1,
+    "fate": "lost Division Series"
+   },
+   {
+    "team": "San Diego Padres",
+    "late30_run_diff_per_game": 0.87,
+    "late30_wpct": 0.667,
+    "season_run_diff_per_game": 0.25,
+    "season_wpct": 0.562,
+    "series_won": 1,
+    "fate": "lost Division Series"
+   },
+   {
+    "team": "Chicago Cubs",
+    "late30_run_diff_per_game": 0.83,
+    "late30_wpct": 0.433,
+    "season_run_diff_per_game": 0.91,
+    "season_wpct": 0.549,
+    "series_won": 0,
+    "fate": "lost Wild Card Series"
+   },
+   {
+    "team": "Chicago White Sox",
+    "late30_run_diff_per_game": 0.6,
+    "late30_wpct": 0.5,
+    "season_run_diff_per_game": 0.35,
+    "season_wpct": 0.519,
+    "series_won": 1,
+    "fate": "lost Division Series"
+   },
+   {
+    "team": "Cleveland Guardians",
+    "late30_run_diff_per_game": 0.6,
+    "late30_wpct": 0.633,
+    "season_run_diff_per_game": 0.07,
+    "season_wpct": 0.525,
+    "series_won": 1,
+    "fate": "lost LCS"
+   },
+   {
+    "team": "Houston Astros",
+    "late30_run_diff_per_game": 0.33,
+    "late30_wpct": 0.5,
+    "season_run_diff_per_game": -0.2,
+    "season_wpct": 0.5,
+    "series_won": 0,
+    "fate": "lost Wild Card Series"
+   },
+   {
+    "team": "Atlanta Braves",
+    "late30_run_diff_per_game": 0.17,
+    "late30_wpct": 0.567,
+    "season_run_diff_per_game": 0.72,
+    "season_wpct": 0.58,
+    "series_won": 1,
+    "fate": "lost Division Series"
+   },
+   {
+    "team": "Philadelphia Phillies",
+    "late30_run_diff_per_game": -0.17,
+    "late30_wpct": 0.5,
+    "season_run_diff_per_game": 0.09,
+    "season_wpct": 0.543,
+    "series_won": 0,
+    "fate": "lost Wild Card Series"
+   },
+   {
+    "team": "Boston Red Sox",
+    "late30_run_diff_per_game": -0.9,
+    "late30_wpct": 0.467,
+    "season_run_diff_per_game": 0.48,
+    "season_wpct": 0.537,
+    "series_won": 0,
+    "fate": "lost Wild Card Series"
+   }
+  ],
+  "spearman_late_vs_series_won": 0.74,
+  "spearman_season_vs_series_won": 0.43
+ },
+ "nhl_test_a": {
+  "calibration": {
+   "x0": {
+    "slope": 0.65,
+    "home_logodds": 0.187,
+    "home_win_per_100_even": 54.7
+   },
+   "x3": {
+    "slope": 0.647,
+    "home_logodds": 0.186,
+    "home_win_per_100_even": 54.6
+   },
+   "x5": {
+    "slope": 0.645,
+    "home_logodds": 0.186,
+    "home_win_per_100_even": 54.6
+   }
+  },
+  "buckets": [
+   {
+    "bucket": "W5+",
+    "games": 1800,
+    "actual_per100": 54.8,
+    "expected_per100": 53.6,
+    "gap_per100": 1.2,
+    "se_per100": 1.2,
+    "expected_if_streak_games_left_in": 55.5,
+    "season_wpct_incl_game_per100": 57.9
+   },
+   {
+    "bucket": "W3+",
+    "games": 6320,
+    "actual_per100": 52.7,
+    "expected_per100": 52.3,
+    "gap_per100": 0.4,
+    "se_per100": 0.6,
+    "expected_if_streak_games_left_in": 53.4,
+    "season_wpct_incl_game_per100": 55.2
+   },
+   {
+    "bucket": "none",
+    "games": 34698,
+    "actual_per100": 50.1,
+    "expected_per100": 50.0,
+    "gap_per100": 0.0,
+    "se_per100": 0.3,
+    "expected_if_streak_games_left_in": 50.0,
+    "season_wpct_incl_game_per100": 50.1
+   },
+   {
+    "bucket": "L3+",
+    "games": 6366,
+    "actual_per100": 46.8,
+    "expected_per100": 47.5,
+    "gap_per100": -0.7,
+    "se_per100": 0.6,
+    "expected_if_streak_games_left_in": 46.3,
+    "season_wpct_incl_game_per100": 44.4
+   },
+   {
+    "bucket": "L5+",
+    "games": 1865,
+    "actual_per100": 43.3,
+    "expected_per100": 45.4,
+    "gap_per100": -2.0,
+    "se_per100": 1.1,
+    "expected_if_streak_games_left_in": 43.5,
+    "season_wpct_incl_game_per100": 40.5
+   }
+  ],
+  "seasons": "2005-06 to 2025-26 regular season; OT and shootout results count as wins/losses",
+  "team_games": 47384
+ },
+ "nhl_test_b": {
+  "team_seasons": 320,
+  "late_window": "final 20 regular-season games, goal differential per game (shootout goal removed)",
+  "postseason_games": 1734,
+  "series_won": {
+   "control_full_season": {
+    "r_late_raw": 0.136,
+    "r2_ctrl": 0.064,
+    "r2_ctrl_plus_late": 0.065,
+    "delta_r2": 0.0008,
+    "partial_r": 0.029,
+    "late_coef": 0.07,
+    "late_coef_95ci": [
+     -0.225,
+     0.368
+    ]
+   },
+   "control_rest_of_season": {
+    "r_late_raw": 0.136,
+    "r2_ctrl": 0.051,
+    "r2_ctrl_plus_late": 0.071,
+    "delta_r2": 0.0196,
+    "partial_r": 0.144,
+    "late_coef": 0.311,
+    "late_coef_95ci": [
+     0.067,
+     0.567
+    ]
+   }
+  },
+  "excess_wins": {
+   "control_full_season": {
+    "r_late_raw": 0.1,
+    "r2_ctrl": 0.004,
+    "r2_ctrl_plus_late": 0.01,
+    "delta_r2": 0.0066,
+    "partial_r": 0.082,
+    "late_coef": 0.029,
+    "late_coef_95ci": [
+     -0.009,
+     0.067
+    ]
+   }
+  },
+  "matched": {
+   "cold (bottom third, late form vs own season)": {
+    "teams": 107,
+    "mean_full_diff_per_game": 0.4,
+    "mean_late_diff_per_game": -0.11,
+    "series_won_per_team": 0.91,
+    "postseason_games": 1125,
+    "wins_per100_actual": 50.1,
+    "wins_per100_expected": 51.1
+   },
+   "middle": {
+    "teams": 106,
+    "mean_full_diff_per_game": 0.37,
+    "mean_late_diff_per_game": 0.44,
+    "series_won_per_team": 0.92,
+    "postseason_games": 1144,
+    "wins_per100_actual": 49.7,
+    "wins_per100_expected": 49.8
+   },
+   "hot (top third)": {
+    "teams": 107,
+    "mean_full_diff_per_game": 0.38,
+    "mean_late_diff_per_game": 0.94,
+    "series_won_per_team": 0.99,
+    "postseason_games": 1199,
+    "wins_per100_actual": 50.2,
+    "wins_per100_expected": 49.1
+   }
+  },
+  "hot_minus_cold_excess_wins_per100": 2.1,
+  "hot_minus_cold_95ci": [
+   -2.2,
+   6.4
+  ],
+  "seasons": "2005-06 to 2025-26, excluding 2019-20 (four-month pause, bubble playoffs)"
+ },
+ "nhl_now": {
+  "source": "NHL stats API /stats/rest/en/game, games final as of fetch 2026-11-18",
+  "games": 343,
+  "last_game": "2026-11-17",
+  "teams": [
+   {
+    "team": "MIN",
+    "gp": 23,
+    "w": 16,
+    "streak": 4,
+    "last10_w": 8,
+    "last10_goal_diff_per_game": 2.1,
+    "season_goal_diff_per_game": 1.39
+   },
+   {
+    "team": "CAR",
+    "gp": 21,
+    "w": 16,
+    "streak": 4,
+    "last10_w": 8,
+    "last10_goal_diff_per_game": 2.6,
+    "season_goal_diff_per_game": 1.95
+   },
+   {
+    "team": "CGY",
+    "gp": 22,
+    "w": 10,
+    "streak": 1,
+    "last10_w": 5,
+    "last10_goal_diff_per_game": -0.3,
+    "season_goal_diff_per_game": -0.91
+   },
+   {
+    "team": "TBL",
+    "gp": 21,
+    "w": 14,
+    "streak": 1,
+    "last10_w": 7,
+    "last10_goal_diff_per_game": 1.5,
+    "season_goal_diff_per_game": 0.9
+   },
+   {
+    "team": "ANA",
+    "gp": 22,
+    "w": 11,
+    "streak": -1,
+    "last10_w": 6,
+    "last10_goal_diff_per_game": 0.6,
+    "season_goal_diff_per_game": 0.0
+   },
+   {
+    "team": "LAK",
+    "gp": 19,
+    "w": 6,
+    "streak": 1,
+    "last10_w": 4,
+    "last10_goal_diff_per_game": 0.0,
+    "season_goal_diff_per_game": -0.58
+   },
+   {
+    "team": "NJD",
+    "gp": 21,
+    "w": 15,
+    "streak": 2,
+    "last10_w": 8,
+    "last10_goal_diff_per_game": 1.4,
+    "season_goal_diff_per_game": 0.86
+   },
+   {
+    "team": "PHI",
+    "gp": 24,
+    "w": 7,
+    "streak": 1,
+    "last10_w": 4,
+    "last10_goal_diff_per_game": -0.4,
+    "season_goal_diff_per_game": -0.92
+   },
+   {
+    "team": "EDM",
+    "gp": 23,
+    "w": 17,
+    "streak": 6,
+    "last10_w": 8,
+    "last10_goal_diff_per_game": 1.8,
+    "season_goal_diff_per_game": 1.35
+   },
+   {
+    "team": "VAN",
+    "gp": 23,
+    "w": 5,
+    "streak": 2,
+    "last10_w": 3,
+    "last10_goal_diff_per_game": -1.1,
+    "season_goal_diff_per_game": -1.48
+   },
+   {
+    "team": "MTL",
+    "gp": 21,
+    "w": 12,
+    "streak": -2,
+    "last10_w": 6,
+    "last10_goal_diff_per_game": 0.5,
+    "season_goal_diff_per_game": 0.14
+   },
+   {
+    "team": "WPG",
+    "gp": 22,
+    "w": 10,
+    "streak": -1,
+    "last10_w": 6,
+    "last10_goal_diff_per_game": 0.0,
+    "season_goal_diff_per_game": -0.36
+   },
+   {
+    "team": "NSH",
+    "gp": 22,
+    "w": 11,
+    "streak": -2,
+    "last10_w": 7,
+    "last10_goal_diff_per_game": 0.4,
+    "season_goal_diff_per_game": 0.09
+   },
+   {
+    "team": "CHI",
+    "gp": 21,
+    "w": 6,
+    "streak": 1,
+    "last10_w": 3,
+    "last10_goal_diff_per_game": -1.4,
+    "season_goal_diff_per_game": -1.57
+   },
+   {
+    "team": "OTT",
+    "gp": 22,
+    "w": 14,
+    "streak": 3,
+    "last10_w": 6,
+    "last10_goal_diff_per_game": 0.4,
+    "season_goal_diff_per_game": 0.27
+   },
+   {
+    "team": "BUF",
+    "gp": 21,
+    "w": 8,
+    "streak": -5,
+    "last10_w": 4,
+    "last10_goal_diff_per_game": -0.6,
+    "season_goal_diff_per_game": -0.71
+   },
+   {
+    "team": "DET",
+    "gp": 21,
+    "w": 8,
+    "streak": 1,
+    "last10_w": 4,
+    "last10_goal_diff_per_game": -0.3,
+    "season_goal_diff_per_game": -0.33
+   },
+   {
+    "team": "FLA",
+    "gp": 23,
+    "w": 12,
+    "streak": -2,
+    "last10_w": 5,
+    "last10_goal_diff_per_game": 0.2,
+    "season_goal_diff_per_game": 0.17
+   },
+   {
+    "team": "PIT",
+    "gp": 20,
+    "w": 7,
+    "streak": -1,
+    "last10_w": 4,
+    "last10_goal_diff_per_game": -0.5,
+    "season_goal_diff_per_game": -0.5
+   },
+   {
+    "team": "CBJ",
+    "gp": 19,
+    "w": 7,
+    "streak": -5,
+    "last10_w": 3,
+    "last10_goal_diff_per_game": -1.0,
+    "season_goal_diff_per_game": -1.0
+   },
+   {
+    "team": "STL",
+    "gp": 21,
+    "w": 10,
+    "streak": 1,
+    "last10_w": 5,
+    "last10_goal_diff_per_game": -0.3,
+    "season_goal_diff_per_game": -0.14
+   },
+   {
+    "team": "VGK",
+    "gp": 23,
+    "w": 13,
+    "streak": -3,
+    "last10_w": 5,
+    "last10_goal_diff_per_game": 0.3,
+    "season_goal_diff_per_game": 0.48
+   },
+   {
+    "team": "NYI",
+    "gp": 20,
+    "w": 10,
+    "streak": 3,
+    "last10_w": 5,
+    "last10_goal_diff_per_game": 0.2,
+    "season_goal_diff_per_game": 0.45
+   },
+   {
+    "team": "COL",
+    "gp": 21,
+    "w": 12,
+    "streak": 1,
+    "last10_w": 6,
+    "last10_goal_diff_per_game": 0.8,
+    "season_goal_diff_per_game": 1.05
+   },
+   {
+    "team": "NYR",
+    "gp": 22,
+    "w": 13,
+    "streak": 3,
+    "last10_w": 6,
+    "last10_goal_diff_per_game": 0.1,
+    "season_goal_diff_per_game": 0.41
+   },
+   {
+    "team": "WSH",
+    "gp": 19,
+    "w": 10,
+    "streak": -3,
+    "last10_w": 5,
+    "last10_goal_diff_per_game": -0.7,
+    "season_goal_diff_per_game": -0.32
+   },
+   {
+    "team": "SJS",
+    "gp": 24,
+    "w": 10,
+    "streak": -1,
+    "last10_w": 3,
+    "last10_goal_diff_per_game": -1.5,
+    "season_goal_diff_per_game": -0.92
+   },
+   {
+    "team": "UTA",
+    "gp": 22,
+    "w": 10,
+    "streak": -6,
+    "last10_w": 2,
+    "last10_goal_diff_per_game": -0.9,
+    "season_goal_diff_per_game": -0.14
+   },
+   {
+    "team": "DAL",
+    "gp": 21,
+    "w": 13,
+    "streak": 3,
+    "last10_w": 6,
+    "last10_goal_diff_per_game": -0.4,
+    "season_goal_diff_per_game": 0.38
+   },
+   {
+    "team": "BOS",
+    "gp": 21,
+    "w": 13,
+    "streak": -3,
+    "last10_w": 5,
+    "last10_goal_diff_per_game": -0.4,
+    "season_goal_diff_per_game": 0.76
+   },
+   {
+    "team": "SEA",
+    "gp": 18,
+    "w": 9,
+    "streak": -3,
+    "last10_w": 4,
+    "last10_goal_diff_per_game": -1.7,
+    "season_goal_diff_per_game": -0.5
+   },
+   {
+    "team": "TOR",
+    "gp": 23,
+    "w": 8,
+    "streak": -7,
+    "last10_w": 1,
+    "last10_goal_diff_per_game": -1.9,
+    "season_goal_diff_per_game": -0.39
+   }
+  ],
+  "note": "streak counts OT/shootout wins as wins, OT/shootout losses as losses"
+ }
+}

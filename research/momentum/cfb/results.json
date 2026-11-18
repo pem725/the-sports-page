@@ -1,0 +1,1328 @@
+{
+ "generated": "2026-11-18",
+ "data_through_2026": "week 11 (Saturday 2026-11-14); CFBD cache pulled 2026-11-18 04:58 holds 3 week-12 MAC games (Nov 17), excluded",
+ "benchmarks": {
+  "elo_home_edge_points": 66.0,
+  "elo_recalibrated": {
+   "home_edge": 77.5,
+   "scale_k": 0.789
+  },
+  "spread_sd_points": 14.8,
+  "n_calibration_games_elo": 8605,
+  "n_calibration_games_spread": 8605,
+  "elo_calibration_deciles": [
+   {
+    "n": 861,
+    "expected_per100": 8.5,
+    "actual_per100": 13.7
+   },
+   {
+    "n": 861,
+    "expected_per100": 21.6,
+    "actual_per100": 26.8
+   },
+   {
+    "n": 861,
+    "expected_per100": 33.9,
+    "actual_per100": 40.4
+   },
+   {
+    "n": 861,
+    "expected_per100": 45.9,
+    "actual_per100": 48.1
+   },
+   {
+    "n": 861,
+    "expected_per100": 56.5,
+    "actual_per100": 56.3
+   },
+   {
+    "n": 860,
+    "expected_per100": 66.8,
+    "actual_per100": 64.8
+   },
+   {
+    "n": 860,
+    "expected_per100": 75.9,
+    "actual_per100": 71.2
+   },
+   {
+    "n": 860,
+    "expected_per100": 83.9,
+    "actual_per100": 77.4
+   },
+   {
+    "n": 860,
+    "expected_per100": 90.7,
+    "actual_per100": 87.6
+   },
+   {
+    "n": 860,
+    "expected_per100": 96.7,
+    "actual_per100": 94.8
+   }
+  ],
+  "market_calibration_deciles": [
+   {
+    "n": 861,
+    "expected_per100": 11.1,
+    "actual_per100": 11.3
+   },
+   {
+    "n": 861,
+    "expected_per100": 25.9,
+    "actual_per100": 23.0
+   },
+   {
+    "n": 861,
+    "expected_per100": 36.8,
+    "actual_per100": 37.7
+   },
+   {
+    "n": 861,
+    "expected_per100": 45.7,
+    "actual_per100": 47.7
+   },
+   {
+    "n": 861,
+    "expected_per100": 57.2,
+    "actual_per100": 55.1
+   },
+   {
+    "n": 860,
+    "expected_per100": 64.2,
+    "actual_per100": 65.8
+   },
+   {
+    "n": 860,
+    "expected_per100": 72.0,
+    "actual_per100": 72.3
+   },
+   {
+    "n": 860,
+    "expected_per100": 81.3,
+    "actual_per100": 81.7
+   },
+   {
+    "n": 860,
+    "expected_per100": 89.6,
+    "actual_per100": 89.4
+   },
+   {
+    "n": 860,
+    "expected_per100": 97.1,
+    "actual_per100": 97.0
+   }
+  ],
+  "line_coverage_testA": 1.0
+ },
+ "testA": {
+  "W5+": {
+   "elo_standard": {
+    "n_games": 1155,
+    "actual": 71.3,
+    "expected": 73.1,
+    "gap": -1.7,
+    "se": 1.1
+   },
+   "elo_recalibrated": {
+    "n_games": 1155,
+    "actual": 71.3,
+    "expected": 70.5,
+    "gap": 0.8,
+    "se": 1.1
+   },
+   "market_spread": {
+    "n_games": 1155,
+    "actual": 71.3,
+    "expected": 71.3,
+    "gap": 0.0,
+    "se": 1.0
+   },
+   "points_vs_spread": {
+    "n_games": 1155,
+    "actual": 10.9,
+    "expected": 10.7,
+    "gap": 0.3,
+    "se": 0.4
+   }
+  },
+  "W3+": {
+   "elo_standard": {
+    "n_games": 3022,
+    "actual": 66.6,
+    "expected": 67.0,
+    "gap": -0.4,
+    "se": 0.6
+   },
+   "elo_recalibrated": {
+    "n_games": 3022,
+    "actual": 66.6,
+    "expected": 65.0,
+    "gap": 1.6,
+    "se": 0.6
+   },
+   "market_spread": {
+    "n_games": 3022,
+    "actual": 66.6,
+    "expected": 65.8,
+    "gap": 0.8,
+    "se": 0.6
+   },
+   "points_vs_spread": {
+    "n_games": 3022,
+    "actual": 8.5,
+    "expected": 8.0,
+    "gap": 0.6,
+    "se": 0.2
+   }
+  },
+  "none (-2..+2)": {
+   "elo_standard": {
+    "n_games": 13278,
+    "actual": 49.2,
+    "expected": 49.1,
+    "gap": 0.1,
+    "se": 0.2
+   },
+   "elo_recalibrated": {
+    "n_games": 13278,
+    "actual": 49.2,
+    "expected": 49.2,
+    "gap": 0.0,
+    "se": 0.2
+   },
+   "market_spread": {
+    "n_games": 13278,
+    "actual": 49.2,
+    "expected": 49.2,
+    "gap": 0.0,
+    "se": 0.2
+   },
+   "points_vs_spread": {
+    "n_games": 13278,
+    "actual": -0.5,
+    "expected": -0.4,
+    "gap": -0.1,
+    "se": 0.1
+   }
+  },
+  "L3+": {
+   "elo_standard": {
+    "n_games": 2168,
+    "actual": 31.5,
+    "expected": 31.7,
+    "gap": -0.2,
+    "se": 0.8
+   },
+   "elo_recalibrated": {
+    "n_games": 2168,
+    "actual": 31.5,
+    "expected": 33.9,
+    "gap": -2.3,
+    "se": 0.8
+   },
+   "market_spread": {
+    "n_games": 2168,
+    "actual": 31.5,
+    "expected": 32.7,
+    "gap": -1.1,
+    "se": 0.8
+   },
+   "points_vs_spread": {
+    "n_games": 2168,
+    "actual": -8.9,
+    "expected": -8.7,
+    "gap": -0.3,
+    "se": 0.3
+   }
+  },
+  "L5+": {
+   "elo_standard": {
+    "n_games": 741,
+    "actual": 25.2,
+    "expected": 25.1,
+    "gap": 0.1,
+    "se": 1.3
+   },
+   "elo_recalibrated": {
+    "n_games": 741,
+    "actual": 25.2,
+    "expected": 27.8,
+    "gap": -2.6,
+    "se": 1.3
+   },
+   "market_spread": {
+    "n_games": 741,
+    "actual": 25.2,
+    "expected": 26.8,
+    "gap": -1.5,
+    "se": 1.3
+   },
+   "points_vs_spread": {
+    "n_games": 741,
+    "actual": -12.5,
+    "expected": -11.8,
+    "gap": -0.7,
+    "se": 0.6
+   }
+  }
+ },
+ "testA_market_ex2020": {
+  "W5+": {
+   "n_games": 1098,
+   "actual": 71.2,
+   "expected": 71.4,
+   "gap": -0.1,
+   "se": 1.1
+  },
+  "W3+": {
+   "n_games": 2873,
+   "actual": 66.5,
+   "expected": 65.8,
+   "gap": 0.7,
+   "se": 0.6
+  },
+  "none (-2..+2)": {
+   "n_games": 12527,
+   "actual": 49.2,
+   "expected": 49.2,
+   "gap": 0.0,
+   "se": 0.2
+  },
+  "L3+": {
+   "n_games": 2052,
+   "actual": 31.7,
+   "expected": 32.8,
+   "gap": -1.1,
+   "se": 0.8
+  },
+  "L5+": {
+   "n_games": 710,
+   "actual": 25.5,
+   "expected": 27.1,
+   "gap": -1.6,
+   "se": 1.3
+  }
+ },
+ "testB": {
+  "postseason": {
+   "d_nov": {
+    "win": {
+     "n_games": 465,
+     "corr_form_outcome": 0.13,
+     "beta_form_given_strength": 4.2,
+     "beta_95ci": [
+      1.0,
+      7.4
+     ],
+     "delta_R2": 0.013,
+     "hotter_third_mean": 58.1,
+     "colder_third_mean": 41.9,
+     "hot_minus_cold": 16.1,
+     "hot_minus_cold_95ci": [
+      4.5,
+      26.5
+     ]
+    },
+    "res_elo": {
+     "n_games": 465,
+     "corr_form_outcome": -0.09,
+     "beta_form_given_strength": -2.9,
+     "beta_95ci": [
+      -5.9,
+      0.4
+     ],
+     "delta_R2": 0.007,
+     "hotter_third_mean": -2.4,
+     "colder_third_mean": 2.4,
+     "hot_minus_cold": -4.7,
+     "hot_minus_cold_95ci": [
+      -15.6,
+      5.3
+     ]
+    },
+    "res_mkt": {
+     "n_games": 465,
+     "corr_form_outcome": 0.01,
+     "beta_form_given_strength": 0.2,
+     "beta_95ci": [
+      -2.9,
+      3.3
+     ],
+     "delta_R2": 0.0,
+     "hotter_third_mean": 2.5,
+     "colder_third_mean": -2.5,
+     "hot_minus_cold": 5.0,
+     "hot_minus_cold_95ci": [
+      -6.5,
+      14.4
+     ]
+    },
+    "ats": {
+     "n_games": 465,
+     "corr_form_outcome": -0.01,
+     "beta_form_given_strength": -0.2,
+     "beta_95ci": [
+      -1.3,
+      0.9
+     ],
+     "delta_R2": 0.0,
+     "hotter_third_mean": 0.5,
+     "colder_third_mean": -0.5,
+     "hot_minus_cold": 1.1,
+     "hot_minus_cold_95ci": [
+      -2.7,
+      4.4
+     ]
+    }
+   },
+   "d_novwp": {
+    "win": {
+     "n_games": 465,
+     "corr_form_outcome": 0.04,
+     "beta_form_given_strength": 5.5,
+     "beta_95ci": [
+      -1.1,
+      12.1
+     ],
+     "delta_R2": 0.005,
+     "hotter_third_mean": 53.2,
+     "colder_third_mean": 46.8,
+     "hot_minus_cold": 6.5,
+     "hot_minus_cold_95ci": [
+      -3.9,
+      18.6
+     ]
+    },
+    "res_elo": {
+     "n_games": 465,
+     "corr_form_outcome": -0.03,
+     "beta_form_given_strength": -3.2,
+     "beta_95ci": [
+      -9.9,
+      3.8
+     ],
+     "delta_R2": 0.002,
+     "hotter_third_mean": -1.9,
+     "colder_third_mean": 1.9,
+     "hot_minus_cold": -3.7,
+     "hot_minus_cold_95ci": [
+      -13.9,
+      8.9
+     ]
+    },
+    "res_mkt": {
+     "n_games": 465,
+     "corr_form_outcome": -0.01,
+     "beta_form_given_strength": -0.0,
+     "beta_95ci": [
+      -7.0,
+      6.4
+     ],
+     "delta_R2": 0.0,
+     "hotter_third_mean": -0.3,
+     "colder_third_mean": 0.3,
+     "hot_minus_cold": -0.6,
+     "hot_minus_cold_95ci": [
+      -10.8,
+      11.0
+     ]
+    },
+    "ats": {
+     "n_games": 465,
+     "corr_form_outcome": -0.05,
+     "beta_form_given_strength": -1.0,
+     "beta_95ci": [
+      -3.1,
+      1.1
+     ],
+     "delta_R2": 0.002,
+     "hotter_third_mean": -1.0,
+     "colder_third_mean": 1.0,
+     "hot_minus_cold": -1.9,
+     "hot_minus_cold_95ci": [
+      -4.8,
+      1.8
+     ]
+    }
+   },
+   "d_novats": {
+    "win": {
+     "n_games": 465,
+     "corr_form_outcome": 0.04,
+     "beta_form_given_strength": 4.6,
+     "beta_95ci": [
+      0.7,
+      8.8
+     ],
+     "delta_R2": 0.009,
+     "hotter_third_mean": 56.5,
+     "colder_third_mean": 43.5,
+     "hot_minus_cold": 12.9,
+     "hot_minus_cold_95ci": [
+      2.6,
+      24.5
+     ]
+    },
+    "res_elo": {
+     "n_games": 465,
+     "corr_form_outcome": -0.04,
+     "beta_form_given_strength": -3.0,
+     "beta_95ci": [
+      -7.1,
+      1.1
+     ],
+     "delta_R2": 0.004,
+     "hotter_third_mean": -2.4,
+     "colder_third_mean": 2.4,
+     "hot_minus_cold": -4.8,
+     "hot_minus_cold_95ci": [
+      -15.3,
+      6.7
+     ]
+    },
+    "res_mkt": {
+     "n_games": 465,
+     "corr_form_outcome": -0.0,
+     "beta_form_given_strength": 0.5,
+     "beta_95ci": [
+      -3.5,
+      4.5
+     ],
+     "delta_R2": 0.0,
+     "hotter_third_mean": 1.2,
+     "colder_third_mean": -1.2,
+     "hot_minus_cold": 2.3,
+     "hot_minus_cold_95ci": [
+      -7.6,
+      13.3
+     ]
+    },
+    "ats": {
+     "n_games": 465,
+     "corr_form_outcome": -0.04,
+     "beta_form_given_strength": -0.3,
+     "beta_95ci": [
+      -1.8,
+      1.2
+     ],
+     "delta_R2": 0.0,
+     "hotter_third_mean": -0.1,
+     "colder_third_mean": 0.1,
+     "hot_minus_cold": -0.1,
+     "hot_minus_cold_95ci": [
+      -3.9,
+      3.7
+     ]
+    }
+   }
+  },
+  "december_regular": {
+   "d_nov": {
+    "win": {
+     "n_games": 178,
+     "corr_form_outcome": 0.35,
+     "beta_form_given_strength": 6.3,
+     "beta_95ci": [
+      2.4,
+      10.2
+     ],
+     "delta_R2": 0.047,
+     "hotter_third_mean": 63.0,
+     "colder_third_mean": 37.0,
+     "hot_minus_cold": 26.1,
+     "hot_minus_cold_95ci": [
+      10.0,
+      42.9
+     ]
+    },
+    "res_elo": {
+     "n_games": 178,
+     "corr_form_outcome": -0.04,
+     "beta_form_given_strength": -0.8,
+     "beta_95ci": [
+      -4.6,
+      2.9
+     ],
+     "delta_R2": 0.001,
+     "hotter_third_mean": 0.2,
+     "colder_third_mean": -0.2,
+     "hot_minus_cold": 0.3,
+     "hot_minus_cold_95ci": [
+      -15.1,
+      14.3
+     ]
+    },
+    "res_mkt": {
+     "n_games": 178,
+     "corr_form_outcome": 0.01,
+     "beta_form_given_strength": 0.1,
+     "beta_95ci": [
+      -3.6,
+      3.8
+     ],
+     "delta_R2": 0.0,
+     "hotter_third_mean": 1.6,
+     "colder_third_mean": -1.6,
+     "hot_minus_cold": 3.2,
+     "hot_minus_cold_95ci": [
+      -11.8,
+      18.0
+     ]
+    },
+    "ats": {
+     "n_games": 178,
+     "corr_form_outcome": 0.07,
+     "beta_form_given_strength": 0.8,
+     "beta_95ci": [
+      -0.6,
+      2.1
+     ],
+     "delta_R2": 0.006,
+     "hotter_third_mean": 2.3,
+     "colder_third_mean": -2.3,
+     "hot_minus_cold": 4.5,
+     "hot_minus_cold_95ci": [
+      -1.7,
+      10.4
+     ]
+    }
+   },
+   "d_novwp": {
+    "win": {
+     "n_games": 178,
+     "corr_form_outcome": 0.24,
+     "beta_form_given_strength": 7.6,
+     "beta_95ci": [
+      -1.8,
+      17.8
+     ],
+     "delta_R2": 0.012,
+     "hotter_third_mean": 58.0,
+     "colder_third_mean": 42.0,
+     "hot_minus_cold": 16.0,
+     "hot_minus_cold_95ci": [
+      -4.2,
+      31.1
+     ]
+    },
+    "res_elo": {
+     "n_games": 178,
+     "corr_form_outcome": -0.07,
+     "beta_form_given_strength": -3.8,
+     "beta_95ci": [
+      -13.1,
+      5.4
+     ],
+     "delta_R2": 0.004,
+     "hotter_third_mean": -0.2,
+     "colder_third_mean": 0.2,
+     "hot_minus_cold": -0.4,
+     "hot_minus_cold_95ci": [
+      -19.2,
+      13.6
+     ]
+    },
+    "res_mkt": {
+     "n_games": 178,
+     "corr_form_outcome": -0.05,
+     "beta_form_given_strength": -3.2,
+     "beta_95ci": [
+      -11.7,
+      5.6
+     ],
+     "delta_R2": 0.003,
+     "hotter_third_mean": -0.1,
+     "colder_third_mean": 0.1,
+     "hot_minus_cold": -0.1,
+     "hot_minus_cold_95ci": [
+      -17.6,
+      13.2
+     ]
+    },
+    "ats": {
+     "n_games": 178,
+     "corr_form_outcome": 0.05,
+     "beta_form_given_strength": 1.2,
+     "beta_95ci": [
+      -2.4,
+      4.8
+     ],
+     "delta_R2": 0.002,
+     "hotter_third_mean": 1.6,
+     "colder_third_mean": -1.6,
+     "hot_minus_cold": 3.2,
+     "hot_minus_cold_95ci": [
+      -3.2,
+      9.2
+     ]
+    }
+   },
+   "d_novats": {
+    "win": {
+     "n_games": 178,
+     "corr_form_outcome": 0.05,
+     "beta_form_given_strength": 2.2,
+     "beta_95ci": [
+      -2.7,
+      7.4
+     ],
+     "delta_R2": 0.003,
+     "hotter_third_mean": 56.3,
+     "colder_third_mean": 43.7,
+     "hot_minus_cold": 12.6,
+     "hot_minus_cold_95ci": [
+      -3.3,
+      29.4
+     ]
+    },
+    "res_elo": {
+     "n_games": 178,
+     "corr_form_outcome": -0.16,
+     "beta_form_given_strength": -5.0,
+     "beta_95ci": [
+      -9.6,
+      -0.3
+     ],
+     "delta_R2": 0.024,
+     "hotter_third_mean": -5.8,
+     "colder_third_mean": 5.8,
+     "hot_minus_cold": -11.6,
+     "hot_minus_cold_95ci": [
+      -27.2,
+      4.9
+     ]
+    },
+    "res_mkt": {
+     "n_games": 178,
+     "corr_form_outcome": -0.11,
+     "beta_form_given_strength": -3.4,
+     "beta_95ci": [
+      -7.6,
+      1.0
+     ],
+     "delta_R2": 0.011,
+     "hotter_third_mean": -3.1,
+     "colder_third_mean": 3.1,
+     "hot_minus_cold": -6.2,
+     "hot_minus_cold_95ci": [
+      -21.0,
+      9.9
+     ]
+    },
+    "ats": {
+     "n_games": 178,
+     "corr_form_outcome": -0.02,
+     "beta_form_given_strength": -0.2,
+     "beta_95ci": [
+      -1.9,
+      1.3
+     ],
+     "delta_R2": 0.0,
+     "hotter_third_mean": -0.2,
+     "colder_third_mean": 0.2,
+     "hot_minus_cold": -0.4,
+     "hot_minus_cold_95ci": [
+      -6.4,
+      5.6
+     ]
+    }
+   }
+  },
+  "cfp_only": {
+   "d_nov": {
+    "win": {
+     "n_games": 50,
+     "corr_form_outcome": 0.32,
+     "beta_form_given_strength": 9.2,
+     "beta_95ci": [
+      -0.8,
+      18.5
+     ],
+     "delta_R2": 0.048,
+     "hotter_third_mean": 63.6,
+     "colder_third_mean": 36.4,
+     "hot_minus_cold": 27.3,
+     "hot_minus_cold_95ci": [
+      -5.9,
+      57.6
+     ]
+    },
+    "res_mkt": {
+     "n_games": 50,
+     "corr_form_outcome": 0.18,
+     "beta_form_given_strength": 4.9,
+     "beta_95ci": [
+      -3.6,
+      13.9
+     ],
+     "delta_R2": 0.019,
+     "hotter_third_mean": 9.5,
+     "colder_third_mean": -9.5,
+     "hot_minus_cold": 18.9,
+     "hot_minus_cold_95ci": [
+      -12.5,
+      46.2
+     ]
+    },
+    "ats": {
+     "n_games": 50,
+     "corr_form_outcome": 0.22,
+     "beta_form_given_strength": 2.4,
+     "beta_95ci": [
+      -1.2,
+      6.2
+     ],
+     "delta_R2": 0.029,
+     "hotter_third_mean": 3.2,
+     "colder_third_mean": -3.2,
+     "hot_minus_cold": 6.5,
+     "hot_minus_cold_95ci": [
+      -4.5,
+      18.5
+     ]
+    }
+   },
+   "d_novats": {
+    "win": {
+     "n_games": 50,
+     "corr_form_outcome": 0.03,
+     "beta_form_given_strength": 3.2,
+     "beta_95ci": [
+      -10.0,
+      14.8
+     ],
+     "delta_R2": 0.004,
+     "hotter_third_mean": 48.5,
+     "colder_third_mean": 51.5,
+     "hot_minus_cold": -3.0,
+     "hot_minus_cold_95ci": [
+      -35.3,
+      31.5
+     ]
+    },
+    "res_mkt": {
+     "n_games": 50,
+     "corr_form_outcome": -0.01,
+     "beta_form_given_strength": 0.3,
+     "beta_95ci": [
+      -11.2,
+      9.7
+     ],
+     "delta_R2": 0.0,
+     "hotter_third_mean": -2.9,
+     "colder_third_mean": 2.9,
+     "hot_minus_cold": -5.8,
+     "hot_minus_cold_95ci": [
+      -36.5,
+      24.7
+     ]
+    },
+    "ats": {
+     "n_games": 50,
+     "corr_form_outcome": -0.1,
+     "beta_form_given_strength": -1.5,
+     "beta_95ci": [
+      -6.5,
+      3.5
+     ],
+     "delta_R2": 0.007,
+     "hotter_third_mean": -2.1,
+     "colder_third_mean": 2.1,
+     "hot_minus_cold": -4.3,
+     "hot_minus_cold_95ci": [
+      -17.3,
+      7.1
+     ]
+    }
+   }
+  },
+  "postseason_ex2020": {
+   "res_mkt": {
+    "n_games": 453,
+    "corr_form_outcome": 0.01,
+    "beta_form_given_strength": 0.2,
+    "beta_95ci": [
+     -3.1,
+     3.5
+    ],
+    "delta_R2": 0.0,
+    "hotter_third_mean": 2.4,
+    "colder_third_mean": -2.4,
+    "hot_minus_cold": 4.8,
+    "hot_minus_cold_95ci": [
+     -6.5,
+     15.0
+    ]
+   },
+   "ats": {
+    "n_games": 453,
+    "corr_form_outcome": -0.02,
+    "beta_form_given_strength": -0.3,
+    "beta_95ci": [
+     -1.4,
+     0.8
+    ],
+    "delta_R2": 0.001,
+    "hotter_third_mean": 0.3,
+    "colder_third_mean": -0.3,
+    "hot_minus_cold": 0.6,
+    "hot_minus_cold_95ci": [
+     -3.2,
+     4.0
+    ]
+   }
+  }
+ },
+ "testC": [
+  {
+   "cfp": 1,
+   "team": "Georgia",
+   "espn_record": "9-1",
+   "cfbd_record": "9-1",
+   "record_match": true,
+   "streak": 3,
+   "nov_games": [
+    "W +35 v Ole Miss (spread-exp +3.5)",
+    "W +27 v Missouri (spread-exp +16.8)"
+   ],
+   "nov_margin": 31.0,
+   "nov_vs_spread": 20.9,
+   "nov_fbs_margin": 31.0,
+   "nov_fbs_vs_spread": 20.9,
+   "last3_vs_spread": 16.3,
+   "pre_nov_margin_fbs": 21.3
+  },
+  {
+   "cfp": 2,
+   "team": "Utah",
+   "espn_record": "10-0",
+   "cfbd_record": "10-0",
+   "record_match": true,
+   "streak": 10,
+   "nov_games": [
+    "W +8 v BYU (spread-exp +4.2)",
+    "W +1 v Arizona (spread-exp +2.5)"
+   ],
+   "nov_margin": 4.5,
+   "nov_vs_spread": 1.1,
+   "nov_fbs_margin": 4.5,
+   "nov_fbs_vs_spread": 1.1,
+   "last3_vs_spread": 6.3,
+   "pre_nov_margin_fbs": 18.9
+  },
+  {
+   "cfp": 3,
+   "team": "Alabama",
+   "espn_record": "8-2",
+   "cfbd_record": "8-2",
+   "record_match": true,
+   "streak": 3,
+   "nov_games": [
+    "W +18 v LSU (spread-exp -6.0)",
+    "W +15 v Vanderbilt (spread-exp +15.8)"
+   ],
+   "nov_margin": 16.5,
+   "nov_vs_spread": 11.6,
+   "nov_fbs_margin": 16.5,
+   "nov_fbs_vs_spread": 11.6,
+   "last3_vs_spread": 7.0,
+   "pre_nov_margin_fbs": 17.0
+  },
+  {
+   "cfp": 4,
+   "team": "UCLA",
+   "espn_record": "10-0",
+   "cfbd_record": "10-0",
+   "record_match": true,
+   "streak": 10,
+   "nov_games": [
+    "W +14 v Minnesota (spread-exp +3.8)",
+    "W +8 v Illinois (spread-exp +10.5)"
+   ],
+   "nov_margin": 11.0,
+   "nov_vs_spread": 3.9,
+   "nov_fbs_margin": 11.0,
+   "nov_fbs_vs_spread": 3.9,
+   "last3_vs_spread": 4.1,
+   "pre_nov_margin_fbs": 20.1
+  },
+  {
+   "cfp": 5,
+   "team": "Texas",
+   "espn_record": "8-2",
+   "cfbd_record": "8-2",
+   "record_match": true,
+   "streak": 4,
+   "nov_games": [
+    "W +14 v Missouri (spread-exp +2.5)",
+    "W +1 v LSU (spread-exp -5.2)"
+   ],
+   "nov_margin": 7.5,
+   "nov_vs_spread": 8.9,
+   "nov_fbs_margin": 7.5,
+   "nov_fbs_vs_spread": 8.9,
+   "last3_vs_spread": 8.6,
+   "pre_nov_margin_fbs": 13.6
+  },
+  {
+   "cfp": 6,
+   "team": "Notre Dame",
+   "espn_record": "9-1",
+   "cfbd_record": "9-1",
+   "record_match": true,
+   "streak": 3,
+   "nov_games": [
+    "W +7 v Miami (spread-exp +7.2)",
+    "W +34 v Boston College (spread-exp +29.2)"
+   ],
+   "nov_margin": 20.5,
+   "nov_vs_spread": 2.2,
+   "nov_fbs_margin": 20.5,
+   "nov_fbs_vs_spread": 2.2,
+   "last3_vs_spread": -1.3,
+   "pre_nov_margin_fbs": 27.0
+  },
+  {
+   "cfp": 7,
+   "team": "Miami",
+   "espn_record": "9-1",
+   "cfbd_record": "9-1",
+   "record_match": true,
+   "streak": 1,
+   "nov_games": [
+    "L -7 v Notre Dame (spread-exp -7.2)",
+    "W +11 v Duke (spread-exp +14.0)"
+   ],
+   "nov_margin": 2.0,
+   "nov_vs_spread": -1.4,
+   "nov_fbs_margin": 2.0,
+   "nov_fbs_vs_spread": -1.4,
+   "last3_vs_spread": -4.5,
+   "pre_nov_margin_fbs": 24.1
+  },
+  {
+   "cfp": 8,
+   "team": "Indiana",
+   "espn_record": "9-1",
+   "cfbd_record": "9-1",
+   "record_match": true,
+   "streak": 3,
+   "nov_games": [
+    "W +14 v USC (spread-exp +9.2)"
+   ],
+   "nov_margin": 14.0,
+   "nov_vs_spread": 4.8,
+   "nov_fbs_margin": 14.0,
+   "nov_fbs_vs_spread": 4.8,
+   "last3_vs_spread": -3.1,
+   "pre_nov_margin_fbs": 15.6
+  },
+  {
+   "cfp": 9,
+   "team": "Tennessee",
+   "espn_record": "8-2",
+   "cfbd_record": "8-2",
+   "record_match": true,
+   "streak": 2,
+   "nov_games": [
+    "W +28 v Kentucky (spread-exp +6.2)",
+    "W +15 v Texas A&M (spread-exp +1.2)"
+   ],
+   "nov_margin": 21.5,
+   "nov_vs_spread": 17.8,
+   "nov_fbs_margin": 21.5,
+   "nov_fbs_vs_spread": 17.8,
+   "last3_vs_spread": 11.7,
+   "pre_nov_margin_fbs": 11.6
+  },
+  {
+   "cfp": 10,
+   "team": "BYU",
+   "espn_record": "8-2",
+   "cfbd_record": "8-2",
+   "record_match": true,
+   "streak": 1,
+   "nov_games": [
+    "L -8 v Utah (spread-exp -4.2)",
+    "W +21 v Baylor (spread-exp +8.5)"
+   ],
+   "nov_margin": 6.5,
+   "nov_vs_spread": 4.4,
+   "nov_fbs_margin": 6.5,
+   "nov_fbs_vs_spread": 4.4,
+   "last3_vs_spread": -0.4,
+   "pre_nov_margin_fbs": 7.6
+  },
+  {
+   "cfp": 11,
+   "team": "Wake Forest",
+   "espn_record": "9-1",
+   "cfbd_record": "9-1",
+   "record_match": true,
+   "streak": 7,
+   "nov_games": [
+    "W +77 v Merrimack (spread-exp +46.5)",
+    "W +42 v SMU (spread-exp -2.5)"
+   ],
+   "nov_margin": 59.5,
+   "nov_vs_spread": 37.5,
+   "nov_fbs_margin": 42.0,
+   "nov_fbs_vs_spread": 44.5,
+   "last3_vs_spread": 35.3,
+   "pre_nov_margin_fbs": 21.2
+  },
+  {
+   "cfp": 12,
+   "team": "Texas Tech",
+   "espn_record": "9-1",
+   "cfbd_record": "9-1",
+   "record_match": true,
+   "streak": 3,
+   "nov_games": [
+    "W +5 v West Virginia (spread-exp +16.5)",
+    "W +25 v Oklahoma State (spread-exp -4.2)"
+   ],
+   "nov_margin": 15.0,
+   "nov_vs_spread": 8.9,
+   "nov_fbs_margin": 15.0,
+   "nov_fbs_vs_spread": 8.9,
+   "last3_vs_spread": 7.2,
+   "pre_nov_margin_fbs": 13.3
+  },
+  {
+   "cfp": 13,
+   "team": "Oregon",
+   "espn_record": "7-3",
+   "cfbd_record": "7-3",
+   "record_match": true,
+   "streak": 3,
+   "nov_games": [
+    "W +13 v Ohio State (spread-exp -7.8)",
+    "W +24 v Michigan (spread-exp +10.0)"
+   ],
+   "nov_margin": 18.5,
+   "nov_vs_spread": 17.4,
+   "nov_fbs_margin": 18.5,
+   "nov_fbs_vs_spread": 17.4,
+   "last3_vs_spread": 12.9,
+   "pre_nov_margin_fbs": 1.6
+  },
+  {
+   "cfp": 14,
+   "team": "Ohio State",
+   "espn_record": "7-3",
+   "cfbd_record": "7-3",
+   "record_match": true,
+   "streak": 1,
+   "nov_games": [
+    "L -13 v Oregon (spread-exp +7.8)",
+    "W +9 v Northwestern (spread-exp +14.5)"
+   ],
+   "nov_margin": -2.0,
+   "nov_vs_spread": -13.1,
+   "nov_fbs_margin": -2.0,
+   "nov_fbs_vs_spread": -13.1,
+   "last3_vs_spread": -14.8,
+   "pre_nov_margin_fbs": 21.1
+  },
+  {
+   "cfp": 15,
+   "team": "Iowa",
+   "espn_record": "8-2",
+   "cfbd_record": "8-2",
+   "record_match": true,
+   "streak": 3,
+   "nov_games": [
+    "W +14 v Northwestern (spread-exp +2.8)",
+    "W +21 v Purdue (spread-exp +19.2)"
+   ],
+   "nov_margin": 17.5,
+   "nov_vs_spread": 6.5,
+   "nov_fbs_margin": 17.5,
+   "nov_fbs_vs_spread": 6.5,
+   "last3_vs_spread": 13.5,
+   "pre_nov_margin_fbs": 10.1
+  },
+  {
+   "cfp": 16,
+   "team": "Kentucky",
+   "espn_record": "7-3",
+   "cfbd_record": "7-3",
+   "record_match": true,
+   "streak": -2,
+   "nov_games": [
+    "L -28 v Tennessee (spread-exp -6.2)",
+    "L -7 v Florida (spread-exp +3.0)"
+   ],
+   "nov_margin": -17.5,
+   "nov_vs_spread": -15.9,
+   "nov_fbs_margin": -17.5,
+   "nov_fbs_vs_spread": -15.9,
+   "last3_vs_spread": -8.2,
+   "pre_nov_margin_fbs": 4.7
+  },
+  {
+   "cfp": 17,
+   "team": "Boise State",
+   "espn_record": "9-1",
+   "cfbd_record": "9-1",
+   "record_match": true,
+   "streak": 9,
+   "nov_games": [
+    "W +26 v Colorado State (spread-exp +16.2)",
+    "W +5 v Oregon State (spread-exp +17.5)"
+   ],
+   "nov_margin": 15.5,
+   "nov_vs_spread": -1.4,
+   "nov_fbs_margin": 15.5,
+   "nov_fbs_vs_spread": -1.4,
+   "last3_vs_spread": -4.1,
+   "pre_nov_margin_fbs": 12.0
+  },
+  {
+   "cfp": 18,
+   "team": "USC",
+   "espn_record": "7-3",
+   "cfbd_record": "7-3",
+   "record_match": true,
+   "streak": -1,
+   "nov_games": [
+    "L -14 v Indiana (spread-exp -9.2)"
+   ],
+   "nov_margin": -14.0,
+   "nov_vs_spread": -4.8,
+   "nov_fbs_margin": -14.0,
+   "nov_fbs_vs_spread": -4.8,
+   "last3_vs_spread": -1.8,
+   "pre_nov_margin_fbs": 8.2
+  },
+  {
+   "cfp": 19,
+   "team": "Arizona",
+   "espn_record": "7-3",
+   "cfbd_record": "7-3",
+   "record_match": true,
+   "streak": -1,
+   "nov_games": [
+    "W +1 v TCU (spread-exp +6.8)",
+    "L -1 v Utah (spread-exp -2.5)"
+   ],
+   "nov_margin": 0.0,
+   "nov_vs_spread": -2.1,
+   "nov_fbs_margin": 0.0,
+   "nov_fbs_vs_spread": -2.1,
+   "last3_vs_spread": -2.8,
+   "pre_nov_margin_fbs": 14.3
+  },
+  {
+   "cfp": 20,
+   "team": "Houston",
+   "espn_record": "7-3",
+   "cfbd_record": "7-3",
+   "record_match": true,
+   "streak": -1,
+   "nov_games": [
+    "W +7 v Cincinnati (spread-exp +10.2)",
+    "L -10 v Colorado (spread-exp +7.5)"
+   ],
+   "nov_margin": -1.5,
+   "nov_vs_spread": -10.4,
+   "nov_fbs_margin": -1.5,
+   "nov_fbs_vs_spread": -10.4,
+   "last3_vs_spread": -7.4,
+   "pre_nov_margin_fbs": 7.0
+  },
+  {
+   "cfp": 21,
+   "team": "South Carolina",
+   "espn_record": "6-4",
+   "cfbd_record": "6-4",
+   "record_match": true,
+   "streak": -1,
+   "nov_games": [
+    "W +8 v Texas A&M (spread-exp +6.8)",
+    "L -28 v Arkansas (spread-exp +6.5)"
+   ],
+   "nov_margin": -10.0,
+   "nov_vs_spread": -16.6,
+   "nov_fbs_margin": -10.0,
+   "nov_fbs_vs_spread": -16.6,
+   "last3_vs_spread": -4.2,
+   "pre_nov_margin_fbs": 8.1
+  },
+  {
+   "cfp": 22,
+   "team": "Oklahoma",
+   "espn_record": "6-4",
+   "cfbd_record": "6-4",
+   "record_match": true,
+   "streak": 2,
+   "nov_games": [
+    "W +16 v Florida (spread-exp -4.8)",
+    "W +7 v Ole Miss (spread-exp +2.5)"
+   ],
+   "nov_margin": 11.5,
+   "nov_vs_spread": 12.6,
+   "nov_fbs_margin": 11.5,
+   "nov_fbs_vs_spread": 12.6,
+   "last3_vs_spread": 1.6,
+   "pre_nov_margin_fbs": 1.2
+  },
+  {
+   "cfp": 23,
+   "team": "Louisville",
+   "espn_record": "7-3",
+   "cfbd_record": "7-3",
+   "record_match": true,
+   "streak": 5,
+   "nov_games": [
+    "W +27 v Georgia Tech (spread-exp +14.8)",
+    "W +2 v North Carolina (spread-exp +3.5)"
+   ],
+   "nov_margin": 14.5,
+   "nov_vs_spread": 5.4,
+   "nov_fbs_margin": 14.5,
+   "nov_fbs_vs_spread": 5.4,
+   "last3_vs_spread": 5.3,
+   "pre_nov_margin_fbs": 8.7
+  },
+  {
+   "cfp": 24,
+   "team": "Florida",
+   "espn_record": "6-4",
+   "cfbd_record": "6-4",
+   "record_match": true,
+   "streak": 1,
+   "nov_games": [
+    "L -16 v Oklahoma (spread-exp +4.8)",
+    "W +7 v Kentucky (spread-exp -3.0)"
+   ],
+   "nov_margin": -4.5,
+   "nov_vs_spread": -5.4,
+   "nov_fbs_margin": -4.5,
+   "nov_fbs_vs_spread": -5.4,
+   "last3_vs_spread": -6.0,
+   "pre_nov_margin_fbs": 1.6
+  },
+  {
+   "cfp": 25,
+   "team": "Ole Miss",
+   "espn_record": "6-4",
+   "cfbd_record": "6-4",
+   "record_match": true,
+   "streak": -2,
+   "nov_games": [
+    "L -35 v Georgia (spread-exp -3.5)",
+    "L -7 v Oklahoma (spread-exp -2.5)"
+   ],
+   "nov_margin": -21.0,
+   "nov_vs_spread": -18.0,
+   "nov_fbs_margin": -21.0,
+   "nov_fbs_vs_spread": -18.0,
+   "last3_vs_spread": -5.8,
+   "pre_nov_margin_fbs": 13.1
+  }
+ ]
+}
