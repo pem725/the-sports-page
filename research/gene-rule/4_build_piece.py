@@ -39,7 +39,13 @@ gene = sorted([t for t in teams if is_gene(t)], key=lambda t: -pct(t))
 winning = [t for t in gene if pct(t) > 0.5]
 losing = [t for t in gene if pct(t) < 0.5]
 best_not = sorted([t for t in teams if not is_gene(t)], key=lambda t: -pct(t))[:3]
-assert "CHI" in best_not, "the Bears are no longer among the best non-Gene teams: rewrite the headline"
+# Test the headline's claim, not a sort order. On 2026-11-16 five clubs were 7-2 and the Bears sorted
+# fourth among equals; the old `"CHI" in best_not` check stopped the refresh (issue #39) although the
+# headline still held. Ties at the cut now keep the Bears in the sentence.
+assert not is_gene("CHI"), "the Bears are now a Gene team: rewrite the headline"
+assert pct("CHI") >= pct(best_not[-1]), "the Bears are no longer among the best non-Gene teams: rewrite the headline"
+if "CHI" not in best_not:
+    best_not[-1] = "CHI"
 WORD = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 7: "Seven", 8: "Eight"}
 CHI = teams["CHI"]
 
