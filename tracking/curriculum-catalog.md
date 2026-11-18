@@ -74,7 +74,7 @@ comes down to one critical variable. First pass: `research/kitchen-sink/1_demo.p
 | Piece | Lesson | Data | Status |
 |---|---|---|---|
 | The sign that flipped | collinearity; power is not validity | team-games (done above) | Demo done; DAG needed |
-| Winning causes time of possession | reversed arrow; retrospective design | team-games, nflverse pbp (score state by play) | Not started |
+| Winning causes time of possession | reversed arrow; retrospective design; the sign flip folded in | team-games, nflverse pbp 2016-25 | **Drafted 2026-11-18:** `queue/211-time-of-possession.html`, DAG from the editor's arrows; Q4 run share 22 (behind 9+) vs 67 (ahead 9+); 36 vs 25 s to next snap; run 4.5 vs pass 6.2 yd |
 | The playoff-team collider | conditioning on a common effect (selection) | NFL team-seasons | Not started |
 | What the market sees that we don't | unobserved variables; the spread as a benchmark | `research/momentum/nfl/data/games.csv` has spread_line | Not started |
 | Last year x decay x P(healthy) | one critical variable for fantasy; QB vs RB year-to-year | nflverse player stats (cached by build_stands_nfl.py) | Not started |
