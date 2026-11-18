@@ -75,7 +75,7 @@ hr{{border:none;border-top:1px solid var(--div);margin:1.5rem 0}}
   <div class="kicker">{kicker}</div>
   <div class="title"><a href="../index.html" style="color:inherit;text-decoration:none">The Sports Page</a></div>
   <div class="tagline">Making the numbers mean something since the first pitch</div>
-  <div class="datebar"><span>Issue No. __</span><span>April __, 2026</span><span>Distributed Free to Friends &amp; Family</span></div>
+  <div class="datebar"><span>Issue No. __</span><span>April __, 2026</span><span>Free and Family-Friendly</span></div>
 </div>
 <nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="../index.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
 <div id="main-content" class="paper">
@@ -92,7 +92,7 @@ hr{{border:none;border-top:1px solid var(--div);margin:1.5rem 0}}
   <div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
   <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
   <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
-  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Statistical Dispatch for Friends &amp; Family</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Family-Friendly Statistical Dispatch</div>
 </div>
 </body>
 </html>
