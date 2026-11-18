@@ -1,0 +1,507 @@
+{
+ "nsims": 20000,
+ "loss_penalty": 3.0,
+ "today_field": false,
+ "title_by_seed": {
+  "1": 0.2515,
+  "2": 0.1397,
+  "3": 0.1233,
+  "4": 0.11495,
+  "5": 0.08665,
+  "6": 0.07155,
+  "7": 0.0694,
+  "8": 0.0481,
+  "9": 0.0341,
+  "10": 0.0308,
+  "11": 0.027,
+  "12": 0.00295
+ },
+ "rows": [
+  {
+   "team": "Georgia",
+   "cfp_rank": 1,
+   "sp": 31.3,
+   "make": 1.0,
+   "final": 0.49855,
+   "title": 0.34705,
+   "modal_seed": 1
+  },
+  {
+   "team": "Notre Dame",
+   "cfp_rank": 6,
+   "sp": 25.6,
+   "make": 0.99645,
+   "final": 0.2157,
+   "title": 0.1111,
+   "modal_seed": 6
+  },
+  {
+   "team": "Alabama",
+   "cfp_rank": 3,
+   "sp": 22.9,
+   "make": 1.0,
+   "final": 0.22275,
+   "title": 0.09545,
+   "modal_seed": 3
+  },
+  {
+   "team": "Miami",
+   "cfp_rank": 7,
+   "sp": 24.4,
+   "make": 0.98725,
+   "final": 0.18665,
+   "title": 0.08965,
+   "modal_seed": 7
+  },
+  {
+   "team": "Utah",
+   "cfp_rank": 2,
+   "sp": 21.7,
+   "make": 0.99975,
+   "final": 0.2078,
+   "title": 0.0827,
+   "modal_seed": 2
+  },
+  {
+   "team": "Texas",
+   "cfp_rank": 5,
+   "sp": 22.4,
+   "make": 0.9981,
+   "final": 0.1628,
+   "title": 0.0677,
+   "modal_seed": 5
+  },
+  {
+   "team": "Indiana",
+   "cfp_rank": 8,
+   "sp": 23.1,
+   "make": 0.9465,
+   "final": 0.1333,
+   "title": 0.0605,
+   "modal_seed": 8
+  },
+  {
+   "team": "UCLA",
+   "cfp_rank": 4,
+   "sp": 21.1,
+   "make": 0.99585,
+   "final": 0.14425,
+   "title": 0.05715,
+   "modal_seed": 3
+  },
+  {
+   "team": "Wake Forest",
+   "cfp_rank": 11,
+   "sp": 22.6,
+   "make": 0.67425,
+   "final": 0.0681,
+   "title": 0.0295,
+   "modal_seed": 11
+  },
+  {
+   "team": "Tennessee",
+   "cfp_rank": 9,
+   "sp": 21.5,
+   "make": 0.8207,
+   "final": 0.06915,
+   "title": 0.0281,
+   "modal_seed": 10
+  },
+  {
+   "team": "BYU",
+   "cfp_rank": 10,
+   "sp": 18,
+   "make": 0.76825,
+   "final": 0.03485,
+   "title": 0.0116,
+   "modal_seed": 10
+  },
+  {
+   "team": "Texas Tech",
+   "cfp_rank": 12,
+   "sp": 19.4,
+   "make": 0.438,
+   "final": 0.02275,
+   "title": 0.0077,
+   "modal_seed": 11
+  },
+  {
+   "team": "Ohio State",
+   "cfp_rank": 14,
+   "sp": 24.1,
+   "make": 0.08925,
+   "final": 0.0107,
+   "title": 0.00505,
+   "modal_seed": 11
+  },
+  {
+   "team": "Oregon",
+   "cfp_rank": 13,
+   "sp": 18.3,
+   "make": 0.22105,
+   "final": 0.0102,
+   "title": 0.0037,
+   "modal_seed": 11
+  },
+  {
+   "team": "Boise State",
+   "cfp_rank": 17,
+   "sp": 13.4,
+   "make": 0.67985,
+   "final": 0.00835,
+   "title": 0.00165,
+   "modal_seed": 12
+  },
+  {
+   "team": "Louisville",
+   "cfp_rank": 23,
+   "sp": 17.1,
+   "make": 0.0327,
+   "final": 0.00095,
+   "title": 0.00055,
+   "modal_seed": 12
+  },
+  {
+   "team": "Iowa",
+   "cfp_rank": 15,
+   "sp": 17.4,
+   "make": 0.02745,
+   "final": 0.00105,
+   "title": 0.0003,
+   "modal_seed": 11
+  },
+  {
+   "team": "Liberty",
+   "cfp_rank": null,
+   "sp": 15.2,
+   "make": 0.04395,
+   "final": 0.0009,
+   "title": 0.0003,
+   "modal_seed": 12
+  },
+  {
+   "team": "New Mexico",
+   "cfp_rank": null,
+   "sp": 13.2,
+   "make": 0.0243,
+   "final": 0.00035,
+   "title": 0.0001,
+   "modal_seed": 12
+  },
+  {
+   "team": "North Dakota State",
+   "cfp_rank": null,
+   "sp": 10.8,
+   "make": 0.0323,
+   "final": 0.0001,
+   "title": 5e-05,
+   "modal_seed": 12
+  },
+  {
+   "team": "Houston",
+   "cfp_rank": 20,
+   "sp": 12.7,
+   "make": 0.00055,
+   "final": 5e-05,
+   "title": 5e-05,
+   "modal_seed": 12
+  },
+  {
+   "team": "Texas State",
+   "cfp_rank": null,
+   "sp": 6.8,
+   "make": 0.06035,
+   "final": 0.0003,
+   "title": 5e-05,
+   "modal_seed": 12
+  },
+  {
+   "team": "Miami (OH)",
+   "cfp_rank": null,
+   "sp": -2.8,
+   "make": 0.00085,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Arizona State",
+   "cfp_rank": null,
+   "sp": 3.1,
+   "make": 5e-05,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Memphis",
+   "cfp_rank": null,
+   "sp": 9.9,
+   "make": 0.0269,
+   "final": 0.0001,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Buffalo",
+   "cfp_rank": null,
+   "sp": -8.7,
+   "make": 0.0065,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "SMU",
+   "cfp_rank": null,
+   "sp": 11.6,
+   "make": 0.0001,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Jacksonville State",
+   "cfp_rank": null,
+   "sp": 2.9,
+   "make": 0.0082,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Ohio",
+   "cfp_rank": null,
+   "sp": -2.4,
+   "make": 0.0111,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Oklahoma State",
+   "cfp_rank": null,
+   "sp": 12.7,
+   "make": 0.00075,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Army",
+   "cfp_rank": null,
+   "sp": -1.9,
+   "make": 0.00215,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "San Diego State",
+   "cfp_rank": null,
+   "sp": -5.1,
+   "make": 0.00105,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Kentucky",
+   "cfp_rank": 16,
+   "sp": 7.4,
+   "make": 0.0008,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 11
+  },
+  {
+   "team": "East Carolina",
+   "cfp_rank": null,
+   "sp": -3,
+   "make": 0.00075,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "James Madison",
+   "cfp_rank": null,
+   "sp": 10.6,
+   "make": 0.01035,
+   "final": 0.0001,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Baylor",
+   "cfp_rank": null,
+   "sp": 10.7,
+   "make": 0.0006,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Louisiana Tech",
+   "cfp_rank": null,
+   "sp": 4.4,
+   "make": 0.0095,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "North Texas",
+   "cfp_rank": null,
+   "sp": 2.4,
+   "make": 0.0114,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Air Force",
+   "cfp_rank": null,
+   "sp": 2.9,
+   "make": 0.00095,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Middle Tennessee",
+   "cfp_rank": null,
+   "sp": -13.7,
+   "make": 5e-05,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "UNLV",
+   "cfp_rank": null,
+   "sp": -2.6,
+   "make": 0.0005,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "UTSA",
+   "cfp_rank": null,
+   "sp": 3.3,
+   "make": 0.0082,
+   "final": 5e-05,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Western Kentucky",
+   "cfp_rank": null,
+   "sp": -11.9,
+   "make": 5e-05,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Wyoming",
+   "cfp_rank": null,
+   "sp": -3.2,
+   "make": 0.001,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Toledo",
+   "cfp_rank": null,
+   "sp": 4.2,
+   "make": 0.0224,
+   "final": 5e-05,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Arizona",
+   "cfp_rank": 19,
+   "sp": 15,
+   "make": 0.0013,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Duke",
+   "cfp_rank": null,
+   "sp": 11.6,
+   "make": 0.00025,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "UAB",
+   "cfp_rank": null,
+   "sp": -4.4,
+   "make": 0.00065,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Georgia Southern",
+   "cfp_rank": null,
+   "sp": 3.1,
+   "make": 0.01095,
+   "final": 5e-05,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Louisiana",
+   "cfp_rank": null,
+   "sp": 4.2,
+   "make": 0.0039,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Western Michigan",
+   "cfp_rank": null,
+   "sp": 1.5,
+   "make": 0.02035,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Oregon State",
+   "cfp_rank": null,
+   "sp": 4,
+   "make": 0.0013,
+   "final": 5e-05,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Utah State",
+   "cfp_rank": null,
+   "sp": -6.8,
+   "make": 0.0002,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  },
+  {
+   "team": "Wisconsin",
+   "cfp_rank": null,
+   "sp": 8.3,
+   "make": 5e-05,
+   "final": 0.0,
+   "title": 0.0,
+   "modal_seed": 12
+  }
+ ]
+}

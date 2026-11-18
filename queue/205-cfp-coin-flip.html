@@ -1,0 +1,273 @@
+<!-- PUBLISH-META
+topic: CFB
+decay: hot
+tags: CFB:cfb, Playoff, Probability
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The Playoff Has One Favorite and Eleven Coin Flips</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+.chart{width:100%;height:auto;display:block}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="The Playoff Has One Favorite and Eleven Coin Flips">
+<meta property="og:description" content="Georgia wins the national title about 34 times in 100. Nobody else tops 12.">
+<meta property="og:url" content="https://thesportspage.net/published/205-cfp-coin-flip.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/205-cfp-coin-flip.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Playoff Has One Favorite and Eleven Coin Flips">
+<meta name="twitter:description" content="Georgia wins the national title about 34 times in 100. Nobody else tops 12.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/205-cfp-coin-flip.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">College Football &middot; The Playoff Picture, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}.chart{width:100%;height:auto;display:block}
+</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Distributed Free to Friends &amp; Family</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--rust)" title="CFB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M13 2.2 23 5.4 13 8.6 3 5.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><ellipse cx="13" cy="14.6" rx="8.2" ry="4.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.8 14.6h4.4" stroke="currentColor" stroke-width="1.5"/></svg></span>The Playoff Has One Favorite <em>and Eleven Coin Flips</em></h1>
+
+  <div class="deck">
+    We played out the rest of the college season and the 12-team bracket 40,000 times. Georgia won the title in about 34 of every 100. Nobody else got past 12, and most of the other contenders are close to even with each other.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; CFP committee rankings of Nov. 17 &middot; SP+ ratings via CollegeFootballData</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">34</div><div class="l">Georgia titles per 100 seasons</div></div>
+    <div class="sc"><div class="v now">12</div><div class="l">Best of the rest: Notre Dame</div></div>
+    <div class="sc"><div class="v good">46 of 55</div><div class="l">Games among the other 11 at 60&ndash;40 or closer</div></div>
+  </div>
+
+  <p><strong>Who wins the national title, and how much better is No. 2 than No. 11?</strong> The committee put out its new top 25 on Tuesday. We took it, played out the last two weekends, the title games and the bracket 40,000 times, and counted.</p>
+
+  <p><strong>The answer:</strong> Georgia wins about 34 times in 100. It is the clear favorite, and it still loses two times in three. No other team tops 12 in 100. Below Georgia the field is close to a pile of coin flips. Pick any two of the other eleven teams in the top 12 and put them on a neutral field; 46 of those 55 games are 60&ndash;40 or closer.</p>
+
+  <p><strong>Why that is surprising:</strong> a ranking looks like a ladder, and No. 2 sounds a long way above No. 11. In the ratings it is not. Wake Forest, at No. 11, rates higher than Utah at No. 2. <strong>What you get:</strong> a way to read the bracket on Selection Day, and a reason to stop treating a seed as a forecast.</p>
+
+  <h2 class="sh">Why the favorite usually loses</h2>
+
+  <p>Georgia is the best team by a wide margin. SP+ is a rating in points: how much better than an average team a club plays. Georgia sits at 31. Notre Dame is next at 26, and the rest of the top 12 run from 18 to 24.</p>
+
+  <p>Against any of the other eleven, Georgia would win between 64 and 79 games in 100. Call it 7 in 10. Now notice what a top-four seed has to do: skip the first round, then win three straight. Seven in 10, three times in a row, is about 1 in 3. A team that wins most of its games still loses most of its tournaments. You are watching what a short bracket does, and it would do the same to any favorite.</p>
+
+  <figure style="margin:28px 0">
+<svg xmlns="http://www.w3.org/2000/svg" class="chart" viewBox="0 0 680 389" width="680" height="389" role="img" aria-label="Title chances per 100 seasons: Georgia 34; Notre Dame 12; Alabama 9; Miami 9; Utah 7; Texas 7; Indiana 6; UCLA 5; Wake Forest 3; Tennessee 3; Ohio State 1; BYU 1; Texas Tech 1." style="max-width:100%;height:auto;display:block;margin:0 auto;font-family:'Roboto Mono',monospace">
+<rect x="0" y="0" width="680" height="389" fill="#f5f0e8"/>
+<text x="190" y="18" font-size="12" fill="#6b5e4a">National titles per 100 simulated seasons</text>
+<text x="8" y="49" font-size="11" fill="#6b5e4a">No. 1</text>
+<text x="180" y="49" font-size="12" text-anchor="end" fill="#1a1208">Georgia</text>
+<rect x="190" y="37" width="408" height="17" fill="#b83a1e"/>
+<text x="604" y="49" font-size="12" font-weight="600" fill="#1a1208">34</text>
+<text x="8" y="74" font-size="11" fill="#6b5e4a">No. 6</text>
+<text x="180" y="74" font-size="12" text-anchor="end" fill="#1a1208">Notre Dame</text>
+<rect x="190" y="62" width="144" height="17" fill="#2c4a6e"/>
+<text x="340" y="74" font-size="12" font-weight="600" fill="#1a1208">12</text>
+<text x="8" y="99" font-size="11" fill="#6b5e4a">No. 3</text>
+<text x="180" y="99" font-size="12" text-anchor="end" fill="#1a1208">Alabama</text>
+<rect x="190" y="87" width="108" height="17" fill="#2c4a6e"/>
+<text x="304" y="99" font-size="12" font-weight="600" fill="#1a1208">9</text>
+<text x="8" y="124" font-size="11" fill="#6b5e4a">No. 7</text>
+<text x="180" y="124" font-size="12" text-anchor="end" fill="#1a1208">Miami</text>
+<rect x="190" y="112" width="108" height="17" fill="#2c4a6e"/>
+<text x="304" y="124" font-size="12" font-weight="600" fill="#1a1208">9</text>
+<text x="8" y="149" font-size="11" fill="#6b5e4a">No. 2</text>
+<text x="180" y="149" font-size="12" text-anchor="end" fill="#1a1208">Utah</text>
+<rect x="190" y="137" width="84" height="17" fill="#2c4a6e"/>
+<text x="280" y="149" font-size="12" font-weight="600" fill="#1a1208">7</text>
+<text x="8" y="174" font-size="11" fill="#6b5e4a">No. 5</text>
+<text x="180" y="174" font-size="12" text-anchor="end" fill="#1a1208">Texas</text>
+<rect x="190" y="162" width="84" height="17" fill="#2c4a6e"/>
+<text x="280" y="174" font-size="12" font-weight="600" fill="#1a1208">7</text>
+<text x="8" y="199" font-size="11" fill="#6b5e4a">No. 8</text>
+<text x="180" y="199" font-size="12" text-anchor="end" fill="#1a1208">Indiana</text>
+<rect x="190" y="187" width="72" height="17" fill="#2c4a6e"/>
+<text x="268" y="199" font-size="12" font-weight="600" fill="#1a1208">6</text>
+<text x="8" y="224" font-size="11" fill="#6b5e4a">No. 4</text>
+<text x="180" y="224" font-size="12" text-anchor="end" fill="#1a1208">UCLA</text>
+<rect x="190" y="212" width="60" height="17" fill="#2c4a6e"/>
+<text x="256" y="224" font-size="12" font-weight="600" fill="#1a1208">5</text>
+<text x="8" y="249" font-size="11" fill="#6b5e4a">No. 11</text>
+<text x="180" y="249" font-size="12" text-anchor="end" fill="#1a1208">Wake Forest</text>
+<rect x="190" y="237" width="36" height="17" fill="#2c4a6e"/>
+<text x="232" y="249" font-size="12" font-weight="600" fill="#1a1208">3</text>
+<text x="8" y="274" font-size="11" fill="#6b5e4a">No. 9</text>
+<text x="180" y="274" font-size="12" text-anchor="end" fill="#1a1208">Tennessee</text>
+<rect x="190" y="262" width="36" height="17" fill="#2c4a6e"/>
+<text x="232" y="274" font-size="12" font-weight="600" fill="#1a1208">3</text>
+<text x="8" y="299" font-size="11" fill="#6b5e4a">No. 14</text>
+<text x="180" y="299" font-size="12" text-anchor="end" fill="#1a1208">Ohio State</text>
+<rect x="190" y="287" width="12" height="17" fill="#2c4a6e"/>
+<text x="208" y="299" font-size="12" font-weight="600" fill="#1a1208">1</text>
+<text x="8" y="324" font-size="11" fill="#6b5e4a">No. 10</text>
+<text x="180" y="324" font-size="12" text-anchor="end" fill="#1a1208">BYU</text>
+<rect x="190" y="312" width="12" height="17" fill="#2c4a6e"/>
+<text x="208" y="324" font-size="12" font-weight="600" fill="#1a1208">1</text>
+<text x="8" y="349" font-size="11" fill="#6b5e4a">No. 12</text>
+<text x="180" y="349" font-size="12" text-anchor="end" fill="#1a1208">Texas Tech</text>
+<rect x="190" y="337" width="12" height="17" fill="#2c4a6e"/>
+<text x="208" y="349" font-size="12" font-weight="600" fill="#1a1208">1</text>
+<line x1="190" y1="34" x2="190" y2="363" stroke="#1a1208" stroke-width="1"/>
+<text x="8" y="381" font-size="11" fill="#6b5e4a">Left: committee rank, Nov. 17. Not shown: under 1 in 100.</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted);margin-top:.6rem;line-height:1.5">National titles per 100 simulated seasons, from 40,000 runs of the last two weekends, the conference title games and the 12-team bracket. Ratings: SP+ via CollegeFootballData, Nov. 18. Field and rank: the committee&rsquo;s Nov. 17 top 25, as carried by ESPN.</figcaption>
+  </figure>
+
+  <h2 class="sh">The middle of the bracket is flat</h2>
+
+  <p>Look at seeds 5 through 12 as the committee has them today, and ask yourself how far apart they really are. The best rates 26 and the worst rates 18; that is about 8 points. One college game lands about 17 points away from its expected margin on a normal day. So the luck in a single game is about twice the widest gap in the middle of this bracket.</p>
+
+  <p>You can see it in the first round, played on the higher seed&rsquo;s campus. Seed today&rsquo;s top 12 straight down the list and Notre Dame beats Wake Forest 63 times in 100. Miami beats BYU 71 times, and Indiana beats Tennessee 60. Home field is worth only a few of those points.</p>
+
+  <p>The ranking is not wrong; it is doing a different job. The committee rewards what a team has done, and Utah and UCLA are unbeaten. By rating, though, they are the 8th and 10th best of the twelve. If the season ended today, both would still skip the first round. Here is the part you should hold onto: in 37 of every 100 of our seasons, the champion played in the first round.</p>
+
+  <h2 class="sh">Two weekends still move the field</h2>
+
+  <p>The bracket is not set. Ohio State is 14th in the ranking but rates fourth best in the country; it makes the field only about 26 times in 100. Boise State, 17th, is unbeaten in Pac-12 play. That makes it the likeliest team to take the spot saved for the best champion outside the four big conferences. It gets in about 67 times in 100 and wins it all about 2 times in 1,000. Texas Tech, holding No. 12 today, gets in only about 45 times in 100.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p>A ranking puts teams in order. It does not tell you how far apart they are. Before you ask &ldquo;who is ahead?&rdquo;, ask &ldquo;by how much?&rdquo; This year the answer is one team, then a crowd. When your bracket comes out on Selection Day and No. 2 looks safe against No. 11, remember that the rungs on that ladder are about a field goal apart, and one Saturday&rsquo;s luck is bigger than that.</p>
+
+  <div class="box">
+    <h3>How we measured it</h3>
+    <p><strong>The format.</strong> From the College Football Playoff&rsquo;s own site. Five conference champions get bids: the ACC, Big Ten, Big 12 and SEC champions, plus the highest-ranked champion of the American, Conference USA, MAC, Mountain West, Pac-12 or Sun Belt. Seven at-large teams fill the rest. Notre Dame gets in if it is ranked in the top 12. The top four are seeded 1&ndash;4 and get byes. Seeds 5&ndash;12 play on the higher seed&rsquo;s campus. A champion ranked outside the top 12 goes to the bottom of the seeding, and there is no reseeding.</p>
+    <p><strong>The model.</strong> Win chance comes from the SP+ gap through a normal curve with a spread of 16.5 points, plus 2.5 points for the home team. We simulate every remaining regular-season game, send the top two in each conference to its title game, then rank the teams. Our stand-in for the committee starts from Tuesday&rsquo;s order. Each new loss drops a team about six places (half that for a title-game loss), and conference champions move up a little. That part is judgment. Doubling or halving the penalty moves Georgia only between 32 and 35 in 100.</p>
+    <p><strong>Limits.</strong> Ratings are held fixed, so a team that gets hot or hurt is not followed; that makes the favorites look a bit surer than they are. Conference tiebreakers are settled at random among tied teams. Records were checked against both ESPN and CollegeFootballData. Code and data: <a href="https://github.com/pem725/the-sports-page/tree/main/research/cfp-committee/coinflip" target="_blank" rel="noopener" style="color:var(--gold)">research/cfp-committee/coinflip</a>.</p>
+  </div>
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
