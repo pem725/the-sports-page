@@ -657,6 +657,14 @@ is the CFP ranking once the committee publishes: top 4 1.0, 5-12 0.9, 13-16 0.75
 on the Odds Board (`data/nfl-odds.json`). The weights are judgment, stated on the
 page; tune them in `cfbWeight()` / `nflWeight()`.
 
+**The fan chooser** (editor, 2026-11-18: *"if it's the off season... branch off... or do you have no idea? Surprise
+me. Make it fun"*). A row of sports above the tabs (Baseball, College football, Pro football, Hockey, Surprise me);
+the choice is kept in `localStorage` (`tsp-fan`) and `?fan=mlb|cfb|nfl|nhl|surprise` opens it from a link. In or out
+of season is judged from ESPN's season **dates**, never its label: on 2026-11-18 the MLB feed still said "Regular
+Season" a week after its calendar ended. Out of season, the fan gets the return date and the in-season sports; only
+in-season leagues get a tab. **Surprise me** picks each board's best game and spins between boards, because stakes
+are not on one scale across sports (hockey's is closeness alone and would win every time).
+
 **Notes.** `data/watch-notes.json`, keyed by ESPN event id, holds hand-written
 lines; every fact in one must trace to a named source. Games without a note get a
 generated sentence from the line and the rankings.

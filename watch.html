@@ -27,10 +27,18 @@ h1{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.4rem);font-
 .deck{font-style:italic;font-size:1rem;color:var(--muted);border-left:3px solid var(--rust);
 padding-left:.9rem;margin:.6rem 0 1.2rem;line-height:1.5}
 .tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:0 0 .7rem}
-.tabs button,.sorts button,.sorts label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.12em;
+.tabs button,.sorts button,.sorts label,.fan button{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.12em;
 text-transform:uppercase;font-weight:600;padding:.42rem .8rem;border:1px solid var(--div);background:var(--card);
 color:var(--muted);cursor:pointer}
-.tabs button[aria-pressed="true"],.sorts button[aria-pressed="true"]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.tabs button[aria-pressed="true"],.sorts button[aria-pressed="true"],.fan button[aria-pressed="true"]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.fan{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin:0 0 .8rem}
+.fan .lbl,.fanmsg .lbl{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:.2rem}
+.fan button.surprise{border-color:var(--gold);color:var(--ink);background:#f3e7c6}
+.fanmsg{border:2px solid var(--gold);background:var(--card);padding:.8rem 1rem .7rem;margin:0 0 1rem;font-size:.92rem;line-height:1.55}
+.fanmsg p{margin:0 0 .55rem}
+.fanmsg .fan{margin:.2rem 0 0}
+.game.flash{animation:flash 2.6s ease-out}
+@keyframes flash{0%{box-shadow:0 0 0 5px var(--gold)}100%{box-shadow:0 0 0 0 rgba(201,150,42,0)}}
 .sorts{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;border-bottom:3px double var(--ink);padding-bottom:.6rem;margin-bottom:1rem}
 .sorts .lbl{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:.2rem}
 .sorts label{display:inline-flex;gap:.35rem;align-items:center;margin-left:auto}
@@ -83,6 +91,8 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
   <p class="deck">Every game on the card, ranked by what rides on it. The biggest game is rarely the one with the
   most famous teams. It is the one that could go either way between teams whose seasons hang on it.</p>
 
+  <div class="fan" id="fan"><span class="lbl">Watching for</span></div>
+  <div class="fanmsg" id="fanmsg" hidden></div>
   <div class="tabs" id="days"></div>
   <div class="sorts">
     <span class="lbl">Sort</span>
@@ -107,6 +117,9 @@ flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;co
     itself. Pro: a team counts most when its playoff chance on our <a href="https://thesportspage.net/odds.html">Odds Board</a>
     is near 50%, and almost nothing when it is near 0% or 100%. A win cannot change much for a team that is already in, or already out.
     Hockey: we have no playoff model for it yet, so its stakes number is closeness alone, and it says so rather than guessing.</p>
+    <p><b>Watching for one sport?</b> Pick it at the top and the page remembers. Between seasons it says when your sport is
+    back, from ESPN&rsquo;s own calendar, and offers what is on now. <b>Surprise me</b> spins between the boards and shows each
+    board&rsquo;s best game. It never ranks a hockey game against a football game, because the stakes numbers are not on one scale.</p>
     <p><b>What it does not know:</b> injuries the line has not priced, rivalries, or how good the television will be.
     The line and the kickoff come live from ESPN's feed each time you open this page. The short notes under each game are
     written by the paper where we have something to say, and generated from the rankings and the line where we do not.</p>
@@ -130,8 +143,19 @@ var LEAGUE = {
         url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates='+d;}},
   // Hockey: no spread fallback (the puck line is always 1.5, so it says nothing about strength).
   nhl: {name:'NHL', sd:null,
-        url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates='+d;}}
+        url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates='+d;}},
+  // Baseball: closeness alone, like hockey (the run line is always 1.5).
+  mlb: {name:'MLB', sd:null,
+        url:function(d){return 'https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates='+d;}}
 };
+// The fan chooser. "off" is the line a fan of that sport sees between seasons.
+var FAN = [
+  {lg:'mlb', label:'Baseball', off:'Baseball is in hibernation.', wait:'Until then it is the hot stove: trades, signings and arguments.'},
+  {lg:'cfb', label:'College football', off:'College football is in its long winter.', wait:'Recruiting does not count, whatever the message boards say.'},
+  {lg:'nfl', label:'Pro football', off:'The NFL is dark.', wait:'The draft will feel like a game. It is not one.'},
+  {lg:'nhl', label:'Hockey', off:'Hockey is off the ice.', wait:'Somewhere a goalie is still stretching.'}
+];
+var SEASON = {};   // lg -> {on:bool, next:Date|null}
 var notes = {}, programs = {}, nflOdds = {}, games = [], sortKey = 'stakes', day = null;
 
 function ymd(dt){ return new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(dt).replace(/-/g,''); }
@@ -151,7 +175,8 @@ function weekend(){
   var sat = new Date(now.getTime()+off*864e5), sun = new Date(sat.getTime()+864e5);
   return [{key:'sat', label:'Saturday · college', date:ymd(sat), league:'cfb'},
           {key:'sun', label:'Sunday · NFL', date:ymd(sun), league:'nfl'},
-          {key:'nhl', label:'Tonight · NHL', date:ymd(now), league:'nhl'}];
+          {key:'nhl', label:'Tonight · NHL', date:ymd(now), league:'nhl'},
+          {key:'mlb', label:'Tonight · MLB', date:ymd(now), league:'mlb'}];
 }
 
 // How much a team matters, 0 to 1. See "How the stakes number works".
@@ -181,7 +206,7 @@ function parse(ev, lg){
   if(ih && ia) pH = ih/(ih+ia);
   else if(typeof o.spread === 'number' && LEAGUE[lg].sd) pH = phi(-o.spread/LEAGUE[lg].sd);
   // Hockey has no playoff model on our board yet, so every club counts the same and stakes is closeness alone.
-  var wt = {cfb:function(t){return cfbWeight(t.rank);}, nfl:function(t){return nflWeight(t.nick);}, nhl:function(){return 1;}}[lg];
+  var wt = {cfb:function(t){return cfbWeight(t.rank);}, nfl:function(t){return nflWeight(t.nick);}, nhl:function(){return 1;}, mlb:function(){return 1;}}[lg];
   var wH = wt(H), wA = wt(A);
   var close = pH==null ? 0.5 : 1-Math.abs(2*pH-1);
   var tv = ((c.broadcasts||[])[0]||{}).names; tv = tv ? tv.join(', ') : '';
@@ -201,7 +226,7 @@ function chips(g){
     [g.home,g.away].forEach(function(t){ var po=nflOdds[t.nick]; if(po!=null && po>0.2 && po<0.8) out.push([t.nick+' on the bubble','hot']); });
   }
   // Not in hockey: nearly every NHL game is this close, and a label on every game says nothing. render() states the range instead.
-  if(g.close>=0.8 && g.lg!=='nhl') out.push(['Coin flip','']);
+  if(g.close>=0.8 && g.lg!=='nhl' && g.lg!=='mlb') out.push(['Coin flip','']);
   if(programs[g.id]) out.push(['Full program','prog']);
   return out;
 }
@@ -215,7 +240,7 @@ function autoWhy(g){
       if(po!=null && po>0.1 && po<0.9) s += 'The '+t.nick+' are '+Math.round(100*po)+'% to make the playoffs on our Odds Board. '; });
     return s;
   }
-  if(g.lg==='nhl') return s+(p<60 ? 'Close to a coin flip.' : '');
+  if(g.lg==='nhl' || g.lg==='mlb') return s+(p<60 ? 'Close to a coin flip.' : '');
   if(fav.rank && !dog.rank && p<65) s += 'Upset watch: an unranked side with a real chance against No. '+fav.rank+'.';
   else if(dog.rank && fav.rank && dog.rank<fav.rank) s += 'The market favors the lower-ranked team.';
   else if(fav.rank && dog.rank) s += 'Two ranked teams; the loser falls.';
@@ -229,7 +254,7 @@ function card(g){
   var ch = chips(g).map(function(c){return '<span class="chip '+c[1]+'">'+c[0]+'</span>';}).join('');
   var href = 'game.html?lg='+g.lg+'&id='+encodeURIComponent(g.id);
   var why = n ? esc(n.note)+' <span class="by">&mdash; '+esc(n.by||'The Sports Page')+'</span>' : autoWhy(g);
-  return '<div class="game'+(live?' live':'')+(done?' done':'')+'">'+
+  return '<div class="game'+(live?' live':'')+(done?' done':'')+'" data-id="'+esc(g.id)+'">'+
     '<div class="stk"><b>'+g.stakes+'</b><span>stakes</span><div class="bar"><i style="width:'+g.stakes+'%"></i></div></div>'+
     '<div class="meta"><span>'+(live||done?'<span class="st">'+esc(g.detail)+'</span>':esc(kick(g.when)))+(g.tv?' &middot; '+esc(g.tv):'')+'</span>'+
     '<span>'+esc(g.line||'no line')+(g.total?' &middot; O/U '+g.total:'')+'</span></div>'+
@@ -253,6 +278,7 @@ function render(){
 }
 
 function load(){
+  if(!day) return Promise.resolve();
   var lg = day.league;
   return fetch(LEAGUE[lg].url(day.date)).then(function(r){return r.json();}).then(function(d){
     games = (d.events||[]).map(function(e){ try{return parse(e,lg);}catch(err){return null;} }).filter(Boolean);
@@ -264,13 +290,92 @@ function pick(d){
   day = d;
   document.querySelectorAll('#days button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.key===d.key); });
   document.getElementById('all').checked = false;
-  load();
+  return load();
+}
+
+// ---- In season or not? Judged from ESPN's own season dates, never its label: on 2026-11-18 the MLB feed
+// still said "Regular Season" a week after its calendar had ended.
+function seasonOf(lg){
+  var base = LEAGUE[lg].url('').replace(/[?&]dates=$/,'');
+  function span(d){ var L=(d.leagues||[])[0]||{}, se=L.season||{}, cal=L.calendar||[], st=se.startDate||L.calendarStartDate;
+    // Football's calendar lists its phases; the first one that is not "Off Season" is when games start.
+    var first = cal.filter(function(c){return c && c.label && c.label!=='Off Season' && c.startDate;})[0];
+    if(first) st = first.startDate;
+    var off = cal.filter(function(c){return c && c.label==='Off Season';})[0];
+    return {start:new Date(st), end:new Date(off ? off.startDate : (se.endDate||L.calendarEndDate))}; }
+  return fetch(base).then(function(r){return r.json();}).then(function(d){
+    var now = new Date(), sp = span(d);
+    if(now>=sp.start && now<sp.end) return {on:true};
+    if(now<sp.start) return {on:false, next:sp.start};
+    // Past the end: ask for a date four months on, which lands in next season's calendar.
+    var probe = new Date(sp.end.getTime()+120*864e5);
+    var sep = base.indexOf('?')<0 ? '?' : '&';
+    return fetch(base+sep+'dates='+ymd(probe)).then(function(r){return r.json();}).then(function(d2){
+      var n = span(d2).start; return {on:false, next:(n>now?n:null)}; });
+  }).catch(function(){ return {on:true}; });   // if ESPN will not say, show the tab and let the card speak
+}
+
+function fanName(lg){ return FAN.filter(function(f){return f.lg===lg;})[0]; }
+function onSlots(){ return days.filter(function(d){ return SEASON[d.league] && SEASON[d.league].on; }); }
+function msg(html){ var m=document.getElementById('fanmsg'); m.innerHTML=html; m.hidden=!html; }
+function press(lg){ document.querySelectorAll('#fan button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lg===lg); }); }
+
+function choose(lg){
+  press(lg);
+  if(lg==='surprise') return surprise(0);
+  try{ localStorage.setItem('tsp-fan', lg); }catch(e){}
+  var s = SEASON[lg], f = fanName(lg);
+  if(s && s.on){ msg(''); var d = days.filter(function(x){return x.league===lg;})[0]; return pick(d); }
+  var when = '';
+  if(s && s.next){
+    var n = Math.ceil((s.next-new Date())/864e5);
+    when = ' ESPN&rsquo;s calendar has it back on '+new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long',month:'long',day:'numeric'}).format(s.next)+
+           ', '+n+' day'+(n===1?'':'s')+' from now.';
+  }
+  var alts = FAN.filter(function(x){ return x.lg!==lg && SEASON[x.lg] && SEASON[x.lg].on; });
+  if(!day && onSlots().length) pick(onSlots()[0]);
+  msg('<p><b>'+f.off+'</b>'+when+' '+f.wait+'</p><p>So who is your '+(alts.length?'other team':'plan B')+'?</p>'+
+      '<div class="fan">'+alts.map(function(x){ return '<button data-alt="'+x.lg+'">'+x.label+'</button>'; }).join('')+
+      '<button class="surprise" data-alt="surprise">No idea. Surprise me</button></div>');
+  document.querySelectorAll('#fanmsg button').forEach(function(b){ b.onclick = function(){ choose(b.dataset.alt); }; });
+}
+
+// Surprise me: the best game still to be decided on each board, then a spin between the boards.
+// Stakes are not on one scale across sports (hockey's is closeness alone), so the wheel never ranks
+// a hockey game against a football game; it picks the board at random and that board's top game.
+var spin = [], spinAt = 0;
+function surprise(again){
+  msg('<p>Spinning the wheel&hellip;</p>');
+  var get = again && spin.length ? Promise.resolve(spin) : Promise.all(onSlots().map(function(d){
+    return fetch(LEAGUE[d.league].url(d.date)).then(function(r){return r.json();}).then(function(x){
+      return (x.events||[]).map(function(e){ try{ var g=parse(e,d.league); g.slot=d; return g; }catch(err){return null;} }).filter(Boolean);
+    }).catch(function(){ return []; });
+  })).then(function(all){
+    spin = all.map(function(gs){ return gs.filter(function(g){ return g.state!=='post' && g.pH!=null; })
+      .sort(function(a,b){ return b.stakes-a.stakes; })[0]; }).filter(Boolean);
+    for(var i=spin.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=spin[i]; spin[i]=spin[j]; spin[j]=t; }
+    spinAt = 0; return spin;
+  });
+  return get.then(function(list){
+    if(!list.length){ msg('<p><b>Every game on every board is over.</b> Rare, and a sign to go outside. Come back tomorrow.</p>'); return; }
+    var g = list[spinAt % list.length]; spinAt++;
+    var who = function(t){ return g.lg==='cfb' ? t.name : t.nick; };
+    var lead = {cfb:'The wheel landed on Saturday&rsquo;s college card', nfl:'The wheel landed on Sunday&rsquo;s NFL card',
+                nhl:'The wheel landed on tonight&rsquo;s hockey', mlb:'The wheel landed on tonight&rsquo;s baseball'}[g.lg];
+    var fav = Math.round(100*Math.max(g.pH,1-g.pH));
+    msg('<p><b>'+lead+'.</b> Best game on it: '+esc(who(g.away))+' '+(g.neutral?'vs':'at')+' '+esc(who(g.home))+'. '+
+        (fav<=55?'A coin flip: the favorite wins '+fav+' times in 100.':'The favorite wins '+fav+' times in 100, so the other side wins '+(100-fav)+'.')+'</p>'+
+        (list.length>1?'<div class="fan"><button class="surprise" data-alt="again">Spin again</button></div>':''));
+    var again = document.querySelector('#fanmsg button'); if(again) again.onclick = function(){ press('surprise'); surprise(1); };
+    return pick(g.slot).then(function(){
+      document.getElementById('all').checked = true; render();
+      var el = document.querySelector('.game[data-id="'+g.id+'"]');
+      if(el){ el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); el.scrollIntoView({behavior:'smooth', block:'center'}); }
+    });
+  });
 }
 
 var days = weekend();
-document.getElementById('days').innerHTML = days.map(function(d){
-  return '<button data-key="'+d.key+'" aria-pressed="false">'+d.label+'</button>'; }).join('');
-document.querySelectorAll('#days button').forEach(function(b,i){ b.onclick = function(){ pick(days[i]); }; });
 document.querySelectorAll('.sorts button').forEach(function(b){ b.onclick = function(){
   sortKey = b.dataset.sort;
   document.querySelectorAll('.sorts button').forEach(function(x){ x.setAttribute('aria-pressed', x===b); });
@@ -286,7 +391,23 @@ Promise.all([
   notes = x[0].games || {};
   programs = x[2].games || {};
   (x[1].teams||[]).forEach(function(t){ nflOdds[t.name] = t.po; });
-  pick(dowET(new Date())==='Sun' ? days[1] : days[0]);
+  return Promise.all(FAN.map(function(f){ return seasonOf(f.lg).then(function(s){ SEASON[f.lg]=s; }); }));
+}).then(function(){
+  // Only leagues in season get a tab; every league keeps its fan button, which is the point.
+  var slots = onSlots();
+  document.getElementById('days').innerHTML = slots.map(function(d){
+    return '<button data-key="'+d.key+'" aria-pressed="false">'+d.label+'</button>'; }).join('');
+  document.querySelectorAll('#days button').forEach(function(b,i){ b.onclick = function(){ msg(''); press(slots[i].league); pick(slots[i]); }; });
+  var fan = document.getElementById('fan');
+  fan.innerHTML += FAN.map(function(f){ return '<button data-lg="'+f.lg+'" aria-pressed="false">'+f.label+'</button>'; }).join('')+
+                   '<button class="surprise" data-lg="surprise" aria-pressed="false">Surprise me</button>';
+  fan.querySelectorAll('button').forEach(function(b){ b.onclick = function(){ choose(b.dataset.lg); }; });
+  var want = (location.search.match(/[?&]fan=(\w+)/)||[])[1], saved = null;
+  try{ saved = localStorage.getItem('tsp-fan'); }catch(e){}
+  if(want && (want==='surprise' || fanName(want))) choose(want);
+  else if(saved && fanName(saved) && SEASON[saved].on) choose(saved);
+  else if(slots.length){ var d0 = slots.filter(function(d){ return d.league===(dowET(new Date())==='Sun'?'nfl':'cfb'); })[0] || slots[0]; press(d0.league); pick(d0); }
+  else msg('<p><b>Nothing is in season.</b> That has never happened. Check back in an hour.</p>');
   setInterval(load, 60000);
 });
 })();
