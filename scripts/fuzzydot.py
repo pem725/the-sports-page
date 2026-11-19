@@ -1,4 +1,5 @@
-"""Fuzzy dots: a point estimate drawn as a haze whose width IS its uncertainty.
+"""Fuzzy dots (for SCATTER PLOTS only; the editor rejected them on a dumbbell/row chart, 2026-11-19:
+stacked hazes merge into smears and the eye cannot settle). A point estimate drawn as a haze whose width IS its uncertainty.
 
 The editor's idea (2026-11-19): the less sure we are where a point sits, the bigger and
 fainter it should be. Here that is made exact. Each dot is an ellipse filled with a radial
