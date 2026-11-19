@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Write queue/207-genes-rule-college.html from data/cfb-results.json, data/cfb-2026-verify.json
 and data/cfb-cfp-2026-11-17.json, so every number in the piece comes from the result files.
-Run add_topic_glyph.py on the output afterwards (it is idempotent).
+Run add_topic_glyph.py on the output afterwards (it is idempotent). Order when refreshing:
+5_cfb.py, then 8_cfb_intervals.py (the fuzzy dots read its intervals), then this.
 """
-import json, os, re
+import json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(os.path.dirname(HERE))
@@ -13,6 +14,9 @@ SLUG = "207-genes-rule-college"
 R = json.load(open(os.path.join(HERE, "data", "cfb-results.json")))["R"]
 V = json.load(open(os.path.join(HERE, "data", "cfb-2026-verify.json")))
 T26 = R["y2026"]["teams"]
+CI = json.load(open(os.path.join(HERE, "data", "cfb-intervals.json")))
+sys.path.insert(0, os.path.join(REPO, "scripts"))
+from fuzzydot import FuzzyDots
 TOP = json.load(open(os.path.join(HERE, "data", "cfb-cfp-2026-11-17.json")))["ranks"][:12]
 
 p100 = lambda x: f"{round(100 * x):d}"
@@ -32,12 +36,16 @@ X0, X1, LO, HI = 150, 620, 28, 40
 xs = lambda v: X0 + (100 * v - LO) / (HI - LO) * (X1 - X0)
 rows = sorted(seasons)
 top_y, step = 46, 22
-H = top_y + step * len(rows) + 40
+H = top_y + step * len(rows) + 52
 svg = [f'<svg class="chart" viewBox="0 0 680 {H}" width="680" height="{H}" role="img" '
        f'aria-label="For every college football season from 2014 to 2026, drives right after the other team scores a touchdown scored less often than other kickoff drives: {n_short} seasons of {len(rows)}." '
        'style="max-width:680px;margin:0 auto;font-family:\'Roboto Mono\',monospace">']
-svg.append(f'<circle cx="160" cy="14" r="5" fill="#b83a1e"/><text x="170" y="18" font-size="11" fill="#1a1208">right after they score a TD</text>')
-svg.append(f'<circle cx="400" cy="14" r="5" fill="#2c4a6e"/><text x="410" y="18" font-size="11" fill="#1a1208">other kickoff drives</text>')
+se_of = lambda lo, hi: 100 * (hi - lo) / 3.92          # 95% interval -> standard error, in points
+ses = [se_of(*CI[str(y)][k][1:]) for y in rows for k in ("answer", "other")]
+fz = FuzzyDots(px_per_unit=(X1 - X0) / (HI - LO), se_ref=min(ses))
+leg = FuzzyDots(px_per_unit=16 / (2.5 * min(ses)), se_ref=min(ses), prefix="lg")   # compact legend dots
+svg.append(leg.dot(150, 14, min(ses), "#b83a1e") + '<text x="172" y="18" font-size="11" fill="#1a1208">right after they score a TD</text>')
+svg.append(leg.dot(390, 14, min(ses), "#2c4a6e") + '<text x="412" y="18" font-size="11" fill="#1a1208">other kickoff drives</text>')
 for t in range(LO, HI + 1, 2):
     x = xs(t / 100)
     svg.append(f'<line x1="{x:.1f}" y1="{top_y - 12}" x2="{x:.1f}" y2="{top_y + step * len(rows) - 8}" stroke="#c8b99a" stroke-width="0.6"/>')
@@ -48,9 +56,11 @@ for i, y in enumerate(rows):
     lab = f"{y}" + (" to date" if y == 2026 else "")
     svg.append(f'<text x="{X0 - 14}" y="{cy + 4}" font-size="11" fill="#1a1208" text-anchor="end">{lab}</text>')
     svg.append(f'<line x1="{xs(a):.1f}" y1="{cy}" x2="{xs(o):.1f}" y2="{cy}" stroke="#6b5e4a" stroke-width="1.2"/>')
-    svg.append(f'<circle cx="{xs(a):.1f}" cy="{cy}" r="5" fill="#b83a1e"/>')
-    svg.append(f'<circle cx="{xs(o):.1f}" cy="{cy}" r="5" fill="#2c4a6e"/>')
+    svg.append(fz.dot(xs(a), cy, se_of(*CI[str(y)]["answer"][1:]), "#b83a1e"))
+    svg.append(fz.dot(xs(o), cy, se_of(*CI[str(y)]["other"][1:]), "#2c4a6e"))
 svg.append(f'<text x="{(X0 + X1) / 2:.0f}" y="{top_y + step * len(rows) + 26}" font-size="10.5" fill="#6b5e4a" text-anchor="middle">drives that ended in a touchdown or field goal, per 100</text>')
+svg.append(f'<text x="{(X0 + X1) / 2:.0f}" y="{top_y + step * len(rows) + 40}" font-size="10" fill="#6b5e4a" text-anchor="middle">each dot is a haze: the wider and paler it is, the less sure we are where it sits</text>')
+svg.insert(1, fz.defs() + leg.defs())
 svg.append("</svg>")
 FIG = "\n".join(svg)
 
@@ -100,7 +110,7 @@ BODY = f'''
 
   <figure style="margin:28px 0">
 {FIG}
-    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted);margin-top:.6rem;line-height:1.5">Per 100 drives, FBS against FBS, regular season, drives with 2+ minutes left in the half. Rust: the drive right after the other team&rsquo;s touchdown. Steel: the same teams&rsquo; other drives that began with a kickoff. The scale starts at 28, not zero. 2026 through Nov. 17. Source: CollegeFootballData drives.</figcaption>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--muted);margin-top:.6rem;line-height:1.5">Per 100 drives, FBS against FBS, regular season, drives with 2+ minutes left in the half. Rust: the drive right after the other team&rsquo;s touchdown. Steel: the same teams&rsquo; other drives that began with a kickoff. The scale starts at 28, not zero. 2026 through Nov. 17. Each dot is a haze as wide as our uncertainty about it (95% intervals from resampling whole games). In most single seasons the two hazes overlap, so no one season proves much; what convinces is that rust sits left of steel in {n_short} of {len(rows)}. Source: CollegeFootballData drives.</figcaption>
   </figure>
 
   <p>Notice that the rust dot sits left of the steel one in every row. That many seasons in a row is not luck. So do college teams fold after a punch? Ask first who just punched you.</p>
