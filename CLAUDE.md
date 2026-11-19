@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 267 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 266 issues remaining of 500
 
 ## Repository Structure
 
@@ -1438,9 +1438,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 233 issues (#1-233)
-Queue: 4 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 193-lockout, _TEMPLATE)
+Published: 234 issues (#1-234)
+Queue: 9 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 193-lockout, 205-cfp-coin-flip, 207-genes-rule-college, 209-momentum, 210-poisson-hockey, 211-time-of-possession, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 267 issues remaining of 500
-Last published: Issue #233 — "Is the Playoff Rigged Against Small Schools? Ask the Bowl Games." (204-cfp-judges.html) on November 18, 2026
+Goal: 266 issues remaining of 500
+Last published: Issue #234 — "Will We Still Cheer for Humans in 90 Years? Start With 1936." (208-ninety-years.html) on November 19, 2026
