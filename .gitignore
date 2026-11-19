@@ -48,3 +48,6 @@ analysis/pool-bayes/**/*.rds
 # measurement model depends on it and it is small enough to keep.
 data/cfb-game-advanced.json
 research/kitchen-sink/raw/
+
+# Licensed data we may analyze but never redistribute (Kenneth Massey: inference only, no tables, no AI training)
+data/private/

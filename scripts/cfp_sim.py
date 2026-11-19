@@ -279,7 +279,7 @@ def main():
     ap.add_argument("--n", type=int, default=100000)
     ap.add_argument("--check-week", type=int)
     ap.add_argument("--json", action="store_true")
-    ap.add_argument("--ratings", help="a ratings file shaped like a snapshot ({\"sp\": {team: points}}) to use instead of the frozen week, e.g. data/rating-snapshots/massey-2026-11-08.json")
+    ap.add_argument("--ratings", help="a ratings file shaped like a snapshot ({\"sp\": {team: points}}) to use instead of the frozen week, e.g. a local file under data/private/ (never committed)")
     a = ap.parse_args()
     if a.check_week:
         return check_week(a.check_week)

@@ -30,7 +30,7 @@ others, and the whole thing failing must not cost the issue.
 """
 import argparse
 import datetime
-import json
+import glob, json
 import math
 import os
 import sys
@@ -176,12 +176,14 @@ def cfb_watch(date):
     key = os.environ.get("CFBD_KEY")
     if not key:
         return None
-    path = os.path.join(REPO, "data", "massey-preseason-2026.json")
-    if not os.path.exists(path):
+    # Ranks come from our own frozen weekly SP+ snapshot (snapshot_ratings.py), ordered best
+    # first. Until 2026-11-19 this read Kenneth Massey's composite; his data is now used for
+    # inference only and is never committed or redistributed (data/private/, gitignored).
+    snaps = sorted(glob.glob(os.path.join(REPO, "data", "rating-snapshots", "20??-w??.json")))
+    if not snaps:
         return None
-    R = {}
-    for t in json.load(open(path)):
-        R[ALIAS.get(t["team"], t["team"])] = t["cmp"]
+    sp = json.load(open(snaps[-1])).get("sp") or {}
+    R = {ALIAS.get(t, t): i + 1 for i, t in enumerate(sorted(sp, key=sp.get, reverse=True))}
     hdr = {"Authorization": "Bearer " + key}
     games = []
     for wk in range(0, 17):
@@ -228,8 +230,8 @@ def cfb_watch(date):
                    + ("Neutral field, so neither side gets the thirteen ranks home advantage is worth."
                       if best["neutral"] else
                       "Close games between ranked teams are where a week's rankings actually move."))
-    best["tells"] = (f'{fav} are favoured, and only just.' if best["p"] < 0.62
-                     else f'{fav} are favoured, but not by enough to call it.')
+    best["tells"] = (f'{fav} are favored, and only just.' if best["p"] < 0.62
+                     else f'{fav} are favored, but not by enough to call it.')
     return best
 
 

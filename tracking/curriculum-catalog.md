@@ -46,14 +46,13 @@ numbers come from; *Status* says what is already done.
 
 ## Massey: status
 
-2026-11-18: a draft to Kenneth Massey sits in the editor's GMU Outlook for review. It asks (1) for permission
-to use the weekly college football composite in non-commercial teaching pieces, with credit, and (2) whether
-he would work with us on ranked data. **His terms require written consent to reproduce or redistribute
-his content.** The draft discloses that `data/massey-*.json` and `data/rating-snapshots/massey-*.json` are
-already in this public repo, and offers to take them down. Until he answers:
-- Cite and link his pages as before.
-- Add no new Massey files to the repo.
-- If he says no, remove the files from the tip of the repo. Note they stay in git history.
+**2026-11-19: Kenneth Massey said yes, and offered his whole corpus.** The editor's terms, which are binding:
+- **Inference only.** We publish figures and conclusions drawn from his data: how far the systems agree, how much
+  a team's standing moves, just-noticeable differences. Credit him and link his pages every time.
+- **Never reproduce his tables or rankings** in any piece or page. Readers who want them go to masseyratings.com.
+- **Never redistribute his data.** His files live in `data/private/massey/`, which is gitignored and stays on our
+  machines. The six files once committed were removed from the repo tip on 2026-11-19.
+- **No AI training on it, ever.**
 
 ## Series: too many variables (for Jeff's methods students)
 
