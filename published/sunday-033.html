@@ -1,0 +1,498 @@
+<!--
+  ============================================================
+  SUNDAY EDITION TEMPLATE — DO NOT PUBLISH AS-IS
+  ============================================================
+  This file is the structural shell for every Sunday Edition.
+  The HTML structure, CSS, section ordering, and layout are
+  canonical — copy them exactly.
+
+  EVERYTHING ELSE IS AN EXAMPLE AND MUST BE REPLACED WITH
+  FRESH DATA PULLED SUNDAY MORNING BEFORE PUBLISHING:
+    - Title, masthead dates, Sunday Edition number
+    - Issue numbers (reader-facing)
+    - Stat cards (issue count, predictions hit, issues remaining)
+    - Issue list (past 7 days' published pieces with links)
+    - Prediction scorecard (rerun every model with fresh data)
+    - "What we got right" and "What we got wrong" sections
+    - Over/under reactions analysis
+    - Road ahead preview
+    - Pull quotes (update if appropriate, keep tone)
+
+  PROCESS: Copy this file to queue/sunday-NNN.html, then
+  replace every example value above. The template in reserve/
+  is read-only — never modify it in place. See CLAUDE.md
+  "Sunday Edition Workflow" for the full step-by-step process.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Sunday Edition No. 033 — November 22, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.4rem 0}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.chart{width:100%;height:auto;display:block;margin:1rem auto}
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+.box{background:var(--steel);color:#dce8f5;padding:1.5rem 1.8rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.8rem}
+.box p{font-size:.92rem;color:#c8daed;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.math{font-family:'Roboto Mono',monospace;background:rgba(255,255,255,.1);padding:.7rem 1rem;font-size:.8rem;color:#eef6ff;margin:.6rem 0;line-height:1.9;white-space:pre-wrap}
+
+.hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0}
+@media(max-width:560px){.hist-grid{grid-template-columns:1fr}}
+.hc{border:1px solid var(--div);background:var(--card);padding:1.1rem 1.2rem}
+.hc-name{font-family:'Roboto Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.35rem}
+.hc-stat{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--steel);line-height:1}
+.hc-label{font-family:'Roboto Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.hc p{font-size:.88rem;line-height:1.6}
+.hc .verdict{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+.hc .verdict.bad{color:var(--rust)}
+
+table.rec{width:100%;border-collapse:collapse;font-size:.88rem;margin:1rem 0}
+table.rec th{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:.4rem .6rem;text-align:left}
+table.rec td{padding:.45rem .6rem;border-bottom:1px solid var(--div);vertical-align:top}
+table.rec tr:last-child td{border-bottom:none}
+table.rec .mono{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted)}
+table.rec .hl td{background:#e0f0e8;font-weight:700}
+table.rec .hl .mono{color:var(--green)}
+table.rec .match td{background:#fff3d6}
+table.rec .match .mono{color:var(--gold);font-weight:700}
+table.rec .worse td{background:#fef0ec}
+table.rec .worse .mono{color:var(--rust)}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+
+.desk{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.desk{padding:1.6rem 1.4rem}}
+.desk-hed{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:.2rem}
+.desk-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;color:#a09070;margin-bottom:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.chip{font-family:'Roboto Mono',monospace;font-size:.66rem;background:rgba(201,150,42,.12);border:1px solid rgba(201,150,42,.35);color:#b8982a;padding:.28rem .65rem;cursor:pointer;transition:background .15s}
+.chip:hover{background:rgba(201,150,42,.25);color:var(--gold)}
+.desk label{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem}
+textarea#qi{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(201,150,42,.4);color:#f0ead8;font-family:'Libre Baskerville',serif;font-size:.95rem;line-height:1.6;padding:.85rem 1rem;resize:vertical;min-height:90px;outline:none;transition:border-color .2s}
+textarea#qi:focus{border-color:var(--gold)}
+textarea#qi::placeholder{color:#6b5e4a}
+#ask-btn{margin-top:.7rem;background:var(--gold);color:var(--ink);font-family:'Roboto Mono',monospace;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:none;padding:.72rem 1.8rem;cursor:pointer;transition:background .2s,transform .1s}
+#ask-btn:hover{background:#e0aa30;transform:translateY(-1px)}
+#ask-btn:disabled{background:#5a4a28;color:#3a3020;cursor:not-allowed;transform:none}
+.resp{margin-top:1.4rem;border-top:1px solid rgba(201,150,42,.3);padding-top:1.1rem;display:none}
+.resp.on{display:block}
+.resp-hed{font-family:'Roboto Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+#rtext{font-family:'Libre Baskerville',serif;font-size:.93rem;line-height:1.78;color:#e0d8c8;white-space:pre-wrap}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,150,42,.3);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ── SITE NEWS BOX ── */
+.site-news{max-width:820px;margin:1.2rem auto 0;background:var(--ink);color:#e8e0cf;padding:2.2rem 3rem;box-shadow:0 6px 40px rgba(0,0,0,.3)}
+@media(max-width:600px){.site-news{padding:1.6rem 1.4rem}}
+.site-news h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:.6rem}
+.site-news p{font-size:.92rem;color:#c8cabd;line-height:1.65;margin-bottom:.8rem}
+.site-news ul{list-style:none;padding:0;margin:0}
+.site-news li{font-size:.9rem;color:#e0d8c8;line-height:1.6;padding:.45rem 0;border-bottom:1px solid rgba(201,150,42,.15)}
+.site-news li:last-child{border-bottom:none}
+.site-news li strong{color:var(--gold)}
+.site-news a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,150,42,.35);transition:border-color .2s}
+.site-news a:hover{border-color:var(--gold)}
+
+/* ── SUNDAY EDITION EXTRAS ── */
+.intro{font-size:1.05rem;line-height:1.75;margin-bottom:1.8rem;padding:1.2rem 1.5rem;background:var(--card);border-left:4px solid var(--steel);color:var(--ink)}
+.issue-list{list-style:none;padding:0;margin:0 0 1.8rem}
+.issue-list li{font-size:.9rem;line-height:1.65;padding:.5rem 0;border-bottom:1px solid var(--div)}
+.issue-list li:last-child{border-bottom:none}
+.issue-list .inum{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;color:var(--steel);margin-right:.4rem}
+.issue-list .idate{font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);margin-right:.4rem}
+.issue-list a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3);font-weight:700;transition:border-color .2s}
+.issue-list a:hover{border-color:var(--rust)}
+.box.green-box{background:var(--green)}
+.box.green-box h3{color:#e0f0e8}
+.box.green-box p{color:#c8edcf}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+</style>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<!-- Open Graph + Twitter Card for social previews -->
+<meta property="og:title" content="Another Usual Saturday in College Football. Join the Fun.">
+<meta property="og:description" content="The headlines called it chaos. A normal Saturday holds about 16 surprises; yesterday held 16. The surprise was who lost, and how they lost.">
+<meta property="og:url" content="https://thesportspage.net/published/sunday-033.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Another Usual Saturday in College Football. Join the Fun.">
+<meta name="twitter:description" content="The headlines called it chaos. A normal Saturday holds about 16 surprises; yesterday held 16. The surprise was who lost, and how they lost.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/banner.png">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Sunday Edition &middot; Week 12 &middot; CFB &amp; NFL</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Sunday Edition No. 033 &middot; Issue No. 237</span>
+    <span>November 22, 2026</span>
+    <span>Free and Family-Friendly</span>
+  </div>
+</div>
+
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed">Another Usual Saturday in College Football. <em>Join the Fun.</em></h1>
+  <div class="deck">
+    The headlines called it chaos: No.&nbsp;4 UCLA, No.&nbsp;8 Indiana and No.&nbsp;14 Ohio State all lost. But a normal Saturday of 66 games holds about 16 surprises, and yesterday held 16. Nothing improbable happened. What caught everyone was <em>who</em> lost. Look at how those games were played, and you will say: yeah, I guess so.
+  </div>
+  <div class="byline">By The Sports Page &middot; November 22, 2026 &middot; Sunday Edition No. 033</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">16 <span style="font-size:.5em">of</span> 16</div><div class="l">Surprises Expected, Surprises Seen</div></div>
+    <div class="sc"><div class="v" style="color:var(--steel)">8 <span style="font-size:.5em">of</span> 8</div><div class="l">Saturdays Inside the Normal Range</div></div>
+    <div class="sc"><div class="v" style="color:var(--gold)">3 <span style="font-size:.5em">of</span> 4</div><div class="l">Big Losers Who Out-Gained the Winner</div></div>
+  </div>
+
+  <p><strong>The question:</strong> was yesterday really chaos, or did it only sound like chaos?</p>
+  <p><strong>The answer:</strong> it was a usual day. Our ratings, frozen on Thursday before a ball was kicked, said the 66 games we rate should hold about 16 surprises: games won by the team we expected to lose. There were 16.</p>
+  <p><strong>Why that is surprising:</strong> you heard the opposite all night. The surprise was never how many. It was which ones, and that is a different thing.</p>
+  <p><strong>What you get:</strong> one question to ask the next time a broadcast says &ldquo;nobody saw this coming.&rdquo; How many surprises does a normal day hold?</p>
+  <p><strong>The scoreboard.</strong> 6 issues, 2 gradeable predictions: 1 hit, 1 missed, 4 still pending. 4 pieces made no forward forecast at all, which is worth saying out loud rather than quietly skipping.</p>
+  <p><strong>Here is the surprising part.</strong> Our own ratings fell for UCLA too. They gave UCLA 76 chances in 100 at Michigan. UCLA lost 18&ndash;16 in triple overtime. That is our week&rsquo;s miss, and what it cost was a little pride. The interesting bit is below: by the measure we trust most, UCLA played like the better team and lost anyway.</p>
+
+  <h2 class="sh">What the headlines said</h2>
+  <p>&ldquo;Chaos takes over the Big Ten,&rdquo; ran one headline overnight (<a href="https://www.tsn.ca/ncaa/football/article/chaos-takes-over-the-big-ten-ucla-indiana-and-ohio-state-all-lose-in-week-12-n1-50555001/" target="_blank" rel="noopener">TSN</a>). Another called it &ldquo;chaos in top-10&rdquo; (<a href="https://yardbarker.com/college_football/articles/chaos_in_top_10_as_indiana_ucla_both_lose_in_ot_to_unranked_teams/s1_13132_44598889" target="_blank" rel="noopener">Yardbarker</a>). Three ranked Big Ten teams lost on the road to unranked teams. Every one of those facts is true. The word is the problem.</p>
+  <p>Chaos means something you could not have expected. So let us do the expecting.</p>
+
+  <h2 class="sh">What a normal Saturday looks like</h2>
+  <p>Take each game on the card. Our ratings give the weaker team some chance: 1 in 4, 1 in 10, 1 in 20. Now add those chances up across all 66 games. That sum is the number of surprises a normal Saturday should hold. Yesterday it came to about 16.</p>
+  <p>Notice what that means. Sixteen times yesterday, the team you expected to lose was going to win, and no one could say in advance which sixteen. Even the count wobbles. Some Saturdays hold 10, some hold 23, and both are normal. Here is every Saturday this fall where we froze our ratings first:</p>
+
+<svg class="chart" viewBox="0 0 680 330" role="img" aria-label="Upsets each Saturday against the number our ratings expected, with 95 percent ranges. week 2: expected 11, normal range 6 to 17, actual 15; week 3: expected 13, normal range 7 to 19, actual 7; week 7: expected 17, normal range 11 to 24, actual 19; week 8: expected 16, normal range 10 to 23, actual 20; week 9: expected 16, normal range 9 to 22, actual 13; week 10: expected 19, normal range 12 to 26, actual 22; week 11: expected 19, normal range 13 to 26, actual 22; week 12: expected 16, normal range 10 to 23, actual 16." style="max-width:680px;margin:0 auto" font-family="'Roboto Mono',monospace">
+<line x1="96.0" x2="96.0" y1="34" y2="272" stroke="#c8b99a" stroke-width=".5"/>
+<text x="96.0" y="288" font-size="11" fill="#6b5e4a" text-anchor="middle">0</text>
+<line x1="189.3" x2="189.3" y1="34" y2="272" stroke="#c8b99a" stroke-width=".5"/>
+<text x="189.3" y="288" font-size="11" fill="#6b5e4a" text-anchor="middle">5</text>
+<line x1="282.7" x2="282.7" y1="34" y2="272" stroke="#c8b99a" stroke-width=".5"/>
+<text x="282.7" y="288" font-size="11" fill="#6b5e4a" text-anchor="middle">10</text>
+<line x1="376.0" x2="376.0" y1="34" y2="272" stroke="#c8b99a" stroke-width=".5"/>
+<text x="376.0" y="288" font-size="11" fill="#6b5e4a" text-anchor="middle">15</text>
+<line x1="469.3" x2="469.3" y1="34" y2="272" stroke="#c8b99a" stroke-width=".5"/>
+<text x="469.3" y="288" font-size="11" fill="#6b5e4a" text-anchor="middle">20</text>
+<line x1="562.7" x2="562.7" y1="34" y2="272" stroke="#c8b99a" stroke-width=".5"/>
+<text x="562.7" y="288" font-size="11" fill="#6b5e4a" text-anchor="middle">25</text>
+<line x1="656.0" x2="656.0" y1="34" y2="272" stroke="#c8b99a" stroke-width=".5"/>
+<text x="656.0" y="288" font-size="11" fill="#6b5e4a" text-anchor="middle">30</text>
+<text x="96" y="20" font-size="11" fill="#6b5e4a">upsets on the Saturday card</text>
+<circle cx="430" cy="16" r="4.5" fill="none" stroke="#2c4a6e" stroke-width="1.6"/><text x="440" y="20" font-size="11" fill="#2c4a6e">expected</text>
+<circle cx="520" cy="16" r="4.5" fill="#b83a1e"/><text x="530" y="20" font-size="11" fill="#b83a1e">what happened</text>
+<text x="84" y="48" font-size="12" fill="#1a1208" text-anchor="end" font-weight="400">Week 2</text>
+<line x1="208.0" x2="413.3" y1="44" y2="44" stroke="#2c4a6e" stroke-width="1.2" stroke-opacity=".75"/>
+<circle cx="308.8" cy="44" r="4.5" fill="none" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="376.0" cy="44" r="4.5" fill="#b83a1e"/>
+<text x="84" y="78" font-size="12" fill="#1a1208" text-anchor="end" font-weight="400">Week 3</text>
+<line x1="226.7" x2="450.7" y1="74" y2="74" stroke="#2c4a6e" stroke-width="1.2" stroke-opacity=".75"/>
+<circle cx="333.1" cy="74" r="4.5" fill="none" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="226.7" cy="74" r="4.5" fill="#b83a1e"/>
+<text x="84" y="108" font-size="12" fill="#1a1208" text-anchor="end" font-weight="400">Week 7</text>
+<line x1="301.3" x2="544.0" y1="104" y2="104" stroke="#2c4a6e" stroke-width="1.2" stroke-opacity=".75"/>
+<circle cx="417.1" cy="104" r="4.5" fill="none" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="450.7" cy="104" r="4.5" fill="#b83a1e"/>
+<text x="84" y="138" font-size="12" fill="#1a1208" text-anchor="end" font-weight="400">Week 8</text>
+<line x1="282.7" x2="525.3" y1="134" y2="134" stroke="#2c4a6e" stroke-width="1.2" stroke-opacity=".75"/>
+<circle cx="402.1" cy="134" r="4.5" fill="none" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="469.3" cy="134" r="4.5" fill="#b83a1e"/>
+<text x="84" y="168" font-size="12" fill="#1a1208" text-anchor="end" font-weight="400">Week 9</text>
+<line x1="264.0" x2="506.7" y1="164" y2="164" stroke="#2c4a6e" stroke-width="1.2" stroke-opacity=".75"/>
+<circle cx="385.3" cy="164" r="4.5" fill="none" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="338.7" cy="164" r="4.5" fill="#b83a1e"/>
+<text x="84" y="198" font-size="12" fill="#1a1208" text-anchor="end" font-weight="400">Week 10</text>
+<line x1="320.0" x2="581.3" y1="194" y2="194" stroke="#2c4a6e" stroke-width="1.2" stroke-opacity=".75"/>
+<circle cx="443.2" cy="194" r="4.5" fill="none" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="506.7" cy="194" r="4.5" fill="#b83a1e"/>
+<text x="84" y="228" font-size="12" fill="#1a1208" text-anchor="end" font-weight="400">Week 11</text>
+<line x1="338.7" x2="581.3" y1="224" y2="224" stroke="#2c4a6e" stroke-width="1.2" stroke-opacity=".75"/>
+<circle cx="458.1" cy="224" r="4.5" fill="none" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="506.7" cy="224" r="4.5" fill="#b83a1e"/>
+<text x="84" y="258" font-size="12" fill="#1a1208" text-anchor="end" font-weight="600">Week 12</text>
+<line x1="282.7" x2="525.3" y1="254" y2="254" stroke="#2c4a6e" stroke-width="1.2" stroke-opacity=".75"/>
+<circle cx="396.5" cy="254" r="4.5" fill="none" stroke="#2c4a6e" stroke-width="1.6"/>
+<circle cx="394.7" cy="254" r="4.5" fill="#b83a1e"/>
+<text x="376" y="310" font-size="11" fill="#6b5e4a" text-anchor="middle">line = the normal range (95 of every 100 Saturdays land inside it)</text>
+</svg>
+
+  <p style="font-size:.72rem;color:var(--muted)">Each row is one Saturday. The open circle is the number of surprises our ratings expected; the line is the range that 95 of every 100 Saturdays would land in, by chance alone; the filled dot is what happened. The ratings are SP+ (CollegeFootballData), frozen before each card, with each game&rsquo;s uncertainty spread at 16.5 points. Weeks 4&ndash;6 are missing because we did not freeze the ratings those weeks, and we will not grade a week on ratings that already saw it.</p>
+  <p><strong>Eight Saturdays, eight inside the normal range.</strong> Week 3 sat right at the low edge, a quiet day. Not one Saturday this season was chaos. Every one was college football.</p>
+
+  <h2 class="sh">Not how many. Who.</h2>
+  <p>So why did it <em>feel</em> wild? Because three of the sixteen surprises happened to famous teams, on the same afternoon, in the same conference. That is the part you notice. It is also the part that is not rare: some surprise lands on a big name most weeks.</p>
+  <p>Now look at how those games were played. We use <strong>yards per play</strong>, adjusted for who each team has faced, because it is steadier than the score. One fumble swings a scoreboard by 7. It barely moves a team&rsquo;s yards per play.</p>
+  <table class="rec">
+    <thead><tr><th>The surprise</th><th>Expected yards per play, going in</th><th>Actual yards per play</th><th>Final</th></tr></thead>
+    <tbody>
+      <tr><td>Rutgers at Penn State</td><td class="mono">PSU 6.9, RU 5.2</td><td class="mono">PSU 6.8, RU 3.7</td><td class="mono">Rutgers 25&ndash;24</td></tr>
+      <tr><td>UCLA at Michigan</td><td class="mono">UCLA 5.7, MICH 4.2</td><td class="mono">UCLA 4.0, MICH 3.7</td><td class="mono">Michigan 18&ndash;16, 3OT</td></tr>
+      <tr><td>Ohio State at Nebraska</td><td class="mono">OSU 5.7, NEB 4.8</td><td class="mono">OSU 6.8, NEB 5.2</td><td class="mono">Nebraska 31&ndash;28</td></tr>
+      <tr class="hl"><td>Indiana at Washington</td><td class="mono">IU 6.6, UW 4.7</td><td class="mono">IU 5.9, UW 6.0</td><td class="mono">Washington 27&ndash;24, OT</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:.72rem;color:var(--muted)">Expected: our schedule-adjusted ratings, built before these games kicked off. Actual: total yards over rushes plus passes, from CollegeFootballData; ESPN&rsquo;s yardage totals agree. Our ratings picked 280 of 430 winners this season walking forward week by week, about 65 in 100.</p>
+  <p><strong>Three of the four losers gained more yards per play than the team that beat them.</strong> Penn State out-gained Rutgers by about 3 yards a play and lost by a point, with two turnovers to none. UCLA moved the ball better than Michigan, barely, and turned it over three times. Ohio State gained 6.8 a play, better than we expected, but ran only 49 plays to Nebraska&rsquo;s 73. It could not keep the ball, and it lost the game it was winning per snap.</p>
+  <p>Only Indiana lost the way a real upset loses: Washington matched it play for play. That is the one game in the four where you could say the better team did not show up.</p>
+  <p><strong>So: tough to win at Michigan? Yes.</strong> Michigan&rsquo;s defense held UCLA to 4.0 yards a play, well under the 5.7 we expected. But Michigan gained even less. A game where both offenses crawl is a game a single turnover can decide. That is not chaos. That is what a low-scoring game is.</p>
+
+
+  <h2 class="sh">Where the uncertainty lives</h2>
+  <p>Here is the trap in all of this. We talk about &ldquo;Ohio State&rdquo; or &ldquo;Notre Dame&rdquo; as if each were one solid thing. It is not. A team gets hurt, then gets healthy. A starter sits and a backup takes his reps. The team on the field in November is not quite the team that built its numbers in September, and a rating is an average over all of them. That is one honest reason a rating is never sure: it describes a team that keeps changing.</p>
+  <p>But watch what happens after a surprise. Everyone reaches for a story: the injury, the road crowd, the trap game. Some of those stories are true. The psychologist Paul Meehl warned that a room full of experts will invent a special reason for every case that does not fit, and that the special reasons mostly make predictions worse. A story told <em>after</em> the result always fits the result. So ask the story the same question you ask a number: would you have said it on Friday?</p>
+  <p>Is yards per play just a description of a good offense? Partly, yes. But it holds steady from week to week, which is what lets it look forward. Walking through this season one week at a time, it picked the winner about 65 times in 100, using only games already played. That is a measure worth trusting, and still far from a sure thing.</p>
+
+  <h2 class="sh">Notre Dame and Wake Forest</h2>
+  <p><strong>Notre Dame was surgical, then it stopped.</strong> The Irish led SMU 17&ndash;3 at halftime and won 24&ndash;3. They gained 7.2 yards a play, above the 6.5 we expected, and scored nothing in the fourth quarter. The defense is the story. SMU gained 327 yards and scored 3 points; it converted 6 of 17 third downs and managed 4.7 a play. Yards are not points until they cross the goal line.</p>
+  <p><strong>Wake Forest keeps scoring.</strong> Wake Forest beat Georgia Tech 50&ndash;29 at 8.7 yards a play and is 10&ndash;1. That is 99 points in two weeks. Last Saturday it beat SMU 49&ndash;7.</p>
+  <p>So here is a tempting sum. Wake Forest beat SMU by 42. Notre Dame beat SMU by 21. Is Wake Forest three touchdowns better? Hold onto that thought, and then drop it. A common opponent is one game against each, a week apart, and you just saw how far one game can stray from how it was played. The two scores are honest. The subtraction is not.</p>
+
+  <h2 class="sh">The Week in Review: Issues #231&ndash;236</h2>
+  <ol class="issue-list">
+    <li><span class="inum">#231</span><span class="idate">Nov 16</span> &mdash; <a href="https://thesportspage.net/published/201-mlb-worries.html">We Called the Rays Lucky in July. They Won 98.</a> &mdash; We graded 15 first-half baseball worries. Seven held up, four washed out, four were half right.</li>
+    <li><span class="inum">#232</span><span class="idate">Nov 17</span> &mdash; <a href="https://thesportspage.net/published/203-genes-rule.html">Good Teams Answer Back. The 7&ndash;2 Bears Rarely Do.</a> &mdash; Gene is right that good teams answer a score. They answer about as often as they score any other time.</li>
+    <li><span class="inum">#233</span><span class="idate">Nov 18</span> &mdash; <a href="https://thesportspage.net/published/204-cfp-judges.html">Is the Playoff Rigged Against Small Schools? Ask the Bowl Games.</a> &mdash; The committee ranks small-conference teams about five spots low. In bowls, they fall six points short of the math.</li>
+    <li><span class="inum">#234</span><span class="idate">Nov 19</span> &mdash; <a href="https://thesportspage.net/published/208-ninety-years.html">Will We Still Cheer for Humans in 90 Years? Start With 1936.</a> &mdash; Sprinters got about 5% faster. Complete games went from 43 in 100 starts to about 4 in 1,000.</li>
+    <li><span class="inum">#235</span><span class="idate">Nov 20</span> &mdash; <a href="https://thesportspage.net/published/205-cfp-coin-flip.html">The Playoff Has a Favorite. Probably.</a> &mdash; Georgia wins the title about 28 times in 100, somewhere between 6 and 60 once you admit the ratings can be wrong.</li>
+    <li><span class="inum">#236</span><span class="idate">Nov 21</span> &mdash; <a href="https://thesportspage.net/published/209-momentum.html">Is Your Team Getting Hot at the Right Time?</a> &mdash; Five straight wins add about one win in 100 to the next game. Hot teams in January were good in October.</li>
+  </ol>
+  <hr>
+
+  <h2 class="sh">The Prediction Scorecard</h2>
+  <table class="rec">
+    <thead><tr><th>#</th><th>Prediction</th><th>Outcome</th><th>Grade</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">1</td><td>Our sealed expectations for week 11: 15 games, ranked by how sure we were</td><td>9 of 15 right, a little better than a coin&rsquo;s 7 or 8</td><td class="mono">HIT</td></tr>
+      <tr><td class="mono">2</td><td>Our sealed expectations for week 12, same method</td><td>7 of 15 right. The three we were surest of, UCLA first, all went wrong</td><td class="mono">MISS</td></tr>
+      <tr><td class="mono">3</td><td>Issue #235: Georgia is the title favorite, about 28 in 100 (6 to 60)</td><td>Beat South Carolina 34&ndash;6; 10&ndash;1. No.&nbsp;1 in the committee&rsquo;s Nov. 17 ranking. Next ranking Tuesday.</td><td class="mono">PENDING</td></tr>
+      <tr><td class="mono">4</td><td>Issue #233: this week&rsquo;s real ranking argument is Miami, not Texas</td><td>Miami beat Virginia Tech 28&ndash;20; Texas beat Arkansas 45&ndash;3. The committee answers Tuesday.</td><td class="mono">PENDING</td></tr>
+      <tr><td class="mono">5</td><td>Issue #202 (standing): Notre Dame wins the national title</td><td>Beat SMU 24&ndash;3; 10&ndash;1.</td><td class="mono">PENDING</td></tr>
+      <tr><td class="mono">6</td><td>Issue #202 (standing): Buffalo wins the Super Bowl (about 15 in 100)</td><td>Beat the Jets 31&ndash;12 last Sunday; 8&ndash;1. Hosts Miami today.</td><td class="mono">PENDING</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:.72rem;color:var(--muted)">Rows 1 and 2 were written before kickoff and sealed with a SHA-256 fingerprint (week 12: commit 6ee6b07), then revealed this morning. Run <span class="mono">sha256sum</span> on the files in our repository to check that nothing was rewritten. Two weeks, 16 of 30 right: about what a coin would do, so our sense of which games we are surest about has shown no skill yet. Scores from CollegeFootballData and ESPN, which agree.</p>
+  <hr>
+
+  <h2 class="sh">What to watch today, and why</h2>
+  <p>The same idea works on the NFL card. Ask two things about any game. Is it close to a coin flip? And could the result move a team in or out of January? You need both.</p>
+  <p><strong>Baltimore at Carolina is a true coin flip with a season on it.</strong> Our ratings make it 50&ndash;50. Carolina makes the playoffs in 52 of every 100 seasons we simulate, the most unsettled number in the league; Baltimore sits at 14. <strong>Jets at Chargers is the opposite.</strong> It is a fair contest, and it decides nothing: both clubs make the playoffs in fewer than 1 season in 100.</p>
+  <table class="rec">
+    <thead><tr><th>Sunday&rsquo;s games, most at stake first</th><th>Our expected chance to win</th><th>Playoff chance, each club</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td class="mono">BAL at CAR</td><td class="mono">50 / 50</td><td class="mono">14 / 52</td></tr>
+      <tr><td class="mono">TB at DET</td><td class="mono">35 / 65</td><td class="mono">21 / 89</td></tr>
+      <tr><td class="mono">NO at CHI</td><td class="mono">30 / 70</td><td class="mono">14 / 85</td></tr>
+      <tr><td class="mono">PIT at PHI</td><td class="mono">53 / 47</td><td class="mono">75 / 2</td></tr>
+      <tr><td class="mono">JAX at NYG</td><td class="mono">68 / 32</td><td class="mono">99 / 69</td></tr>
+      <tr><td class="mono">MIN at SF</td><td class="mono">38 / 62</td><td class="mono">86 / 97</td></tr>
+      <tr><td class="mono">NYJ at LAC</td><td class="mono">36 / 64</td><td class="mono">under 1 / under 1</td></tr>
+      <tr><td class="mono">MIA at BUF</td><td class="mono">15 / 85</td><td class="mono">under 1 / 99+</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:.72rem;color:var(--muted)">Chances from our Odds Board: 20,000 simulated seasons, before today&rsquo;s games. &ldquo;Most at stake&rdquo; is closeness to a coin flip times how unsettled each club&rsquo;s playoff chance is. It is a rule of thumb, stated so you can argue with it. Eight of the 11 games shown.</p>
+  <p><strong>Our teams, briefly.</strong> The Bills host Miami with a playoff spot all but settled: the least important game on the card, for the second week running. The Bears host the Saints at 85 in 100, so a loss would sting more than a win would help. The Raiders, at 5 in 100, visit Denver. Seattle is off.</p>
+  <hr>
+
+  <h2 class="sh">What Readers Read &middot; November 15 &ndash; November 21</h2>
+<table class="rec">
+  <thead><tr><th>Rank</th><th>Issue</th></tr></thead>
+  <tbody>
+  <tr><td class="mono">#1</td><td><a href="https://thesportspage.net/published/204-cfp-judges.html">Is the Playoff Rigged Against Small Schools? Ask the Bowl Games.</a></td></tr>
+  <tr><td class="mono">#2</td><td><a href="https://thesportspage.net/published/sunday-032.html">Bills at Jets Is Today's Least Important Game. Vikings at Packers Is the...</a></td></tr>
+  <tr><td class="mono">#3</td><td><a href="https://thesportspage.net/published/071-half-life-1-framework.html">A Career Doesn&rsquo;t Decline. It Disappears.</a></td></tr>
+  <tr><td class="mono">#4</td><td><a href="https://thesportspage.net/published/116-deepest-wound-same-shape.html">The Deepest Wound in Sports Is Always the Same Shape.</a></td></tr>
+  <tr><td class="mono">#5</td><td><a href="https://thesportspage.net/published/091-cfb-rules-broke.html">For Twenty Years You Couldn't Win the Title Without Elite Recruits. Indi...</a></td></tr>
+  </tbody>
+</table>
+<p style="font-size:.82rem;color:var(--muted);margin-top:-.4rem"><em>Ranked by unique pageviews (GoatCounter), author visits excluded. Pulled 2026-11-22.</em></p>
+
+
+  <hr>
+
+  <h2 class="sh">What to take home, and the road ahead</h2>
+  <p><strong>What to take home:</strong> before you call a day chaos, ask how many surprises a normal day holds. On a college Saturday the answer is about sixteen, give or take six. Then look past the score to how the game was played. Most of yesterday&rsquo;s famous losers played like the better team and lost the coin toss that every close game hides. That is not a reason to stop watching. It is the reason to watch.</p>
+  <p>This week: Monday, Gene&rsquo;s Rule goes to college. Tuesday night the committee publishes its next ranking, and Wednesday our Judges&rsquo; Scorecard grades it. Later in the week: whether hockey goals fall the way pure chance says, and why winning teams hold the ball.</p>
+
+  <div class="pull">
+    <p>&ldquo;The surprise was never how many. It was which ones.&rdquo;</p>
+    <cite>&mdash; The Sports Page, Sunday Edition No. 033</cite>
+  </div>
+
+  <!-- STORY IDEAS INBOX (compact) -->
+  <aside id="pitch" style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.7rem 0;margin:1.6rem 0 .4rem;font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">
+    <form id="pitch-form" action="https://formspree.io/f/xykbazvr" method="POST" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
+      <input type="hidden" name="_subject" value="New Story Pitch &mdash; The Sports Page">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <span style="text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600">Pitch a stat &rarr;</span>
+      <input type="text" name="sport" placeholder="Sport" style="font-family:inherit;font-size:.7rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;width:5rem">
+      <input type="text" name="idea" placeholder="The weird number you noticed" required style="font-family:'Libre Baskerville',serif;font-size:.78rem;padding:.25rem .4rem;border:1px solid var(--div);background:var(--cream);color:var(--ink);outline:none;flex:1;min-width:12rem">
+      <button id="pitch-btn" type="submit" style="background:var(--ink);color:var(--cream);font-family:inherit;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;padding:.32rem .7rem;cursor:pointer">Send</button>
+      <a href="https://github.com/pem725/the-sports-page/issues/new?title=Story+Idea:&labels=story-idea" style="color:var(--steel);text-decoration:none;font-size:.6rem" target="_blank" rel="noopener">or GitHub</a>
+    </form>
+    <div id="pitch-ok" style="display:none;margin-top:.3rem;color:var(--green);font-size:.62rem">Sent. The weird ones become issues.</div>
+    <div id="pitch-err" style="display:none;margin-top:.3rem;color:var(--rust);font-size:.62rem">Failed &mdash; try the GitHub link.</div>
+  </aside>
+  <script>
+  document.getElementById('pitch-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('pitch-btn'),ok=document.getElementById('pitch-ok'),err=document.getElementById('pitch-err');
+    btn.disabled=true;btn.textContent='\u2026';ok.style.display='none';err.style.display='none';
+    try{
+      var r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+      if(r.ok){ok.style.display='block';this.reset();}else{err.style.display='block';}
+    }catch(x){err.style.display='block';}
+    btn.disabled=false;btn.textContent='Send';
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>The Sports Page &middot; Sunday Edition No. 033 &middot; Issue No. 237</span>
+    <span>Predictions tracked from Issues #231&ndash;236</span>
+    <span>See you next Sunday</span>
+  </div>
+
+</div>
+
+<!-- SHARE SECTION -->
+<section id="share" style="max-width:820px;margin:1.5rem auto 0;background:var(--ink);padding:2.2rem 3rem 2.5rem;box-shadow:0 6px 40px rgba(0,0,0,.3);text-align:center" data-canonical-url="https://thesportspage.net/published/sunday-033.html">
+
+  <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9962a;margin-bottom:.3rem">Pass it on.</div>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.92rem;color:#a09070;font-style:italic;margin-bottom:1.5rem">A few minutes to read. A few seconds to send.</div>
+
+  <!-- SOCIAL SHARE BUTTONS -->
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem">
+
+    <a href="https://twitter.com/intent/tweet?text=Another%20Usual%20Saturday%20in%20College%20Football.%20Join%20the%20Fun.%20%E2%80%94%20The%20Sports%20Page&url=https%3A//thesportspage.net/published/sunday-033.html" target="_blank" rel="noopener" aria-label="Share on X"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:#c9962a;color:#1a1208;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:background .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.97 6.817H1.673l7.73-8.835L1.254 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share on X
+    </a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//thesportspage.net/published/sunday-033.html" target="_blank" rel="noopener" aria-label="Share on Facebook"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.408 0 22.675 0z"/></svg>
+      Facebook
+    </a>
+
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//thesportspage.net/published/sunday-033.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+
+    <a href="mailto:?subject=From%20The%20Sports%20Page%3A%20Another%20Usual%20Saturday%20in%20College%20Football.%20Join%20the%20Fun.&body=Thought%20you%27d%20enjoy%20this%3A%0A%0AAnother%20Usual%20Saturday%20in%20College%20Football.%20Join%20the%20Fun.%0A%0A%0A%0ARead%20it%20here%3A%20https%3A//thesportspage.net/published/sunday-033.html%0A%0A%E2%80%94%20passed%20along%20via%20The%20Sports%20Page" aria-label="Share by email"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 4v16h24V4H0zm21.518 2L12 12.713 2.482 6h19.036zM2 18V7.183l10 7.05 10-7.05V18H2z"/></svg>
+      Email
+    </a>
+
+    <button type="button" id="sp-copy-link" aria-label="Copy link" data-url="https://thesportspage.net/published/sunday-033.html"
+       style="display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:#c9962a;padding:.6rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #c9962a;cursor:pointer;transition:all .15s">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span id="sp-copy-label">Copy link</span>
+    </button>
+
+  </div>
+
+  <!-- DIVIDER -->
+  <div style="max-width:200px;margin:0 auto 1.5rem;border-top:1px solid rgba(201,150,42,0.25)"></div>
+
+  <!-- QR CODE — physical/in-person sharing -->
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/banner.png" alt="The Sports Page" style="max-width:300px;height:auto;margin:0 auto 1rem;display:block;opacity:.85"></a>
+  <div style="font-family:'Libre Baskerville',serif;font-size:.78rem;color:#a09070;font-style:italic;margin-bottom:1rem">Or scan, for sharing the old-fashioned way.</div>
+  <a href="https://thesportspage.net/" style="text-decoration:none"><img src="../assets/qr-code.png" alt="QR Code to thesportspage.net" style="width:160px;height:160px;display:block;margin:0 auto 1rem;border:5px solid #c9962a;padding:4px;background:#fff"></a>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.72rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem"><a href="https://thesportspage.net/" style="color:#c9962a;text-decoration:none;border-bottom:1px solid rgba(201,150,42,0.5)">thesportspage.net</a></div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">© 2026 The Sports Page · A Family-Friendly Statistical Dispatch</div>
+
+</section>
+
+<!-- COPY-LINK INTERACTION (pure vanilla, no dependencies) -->
+<script>
+(function(){
+  var btn = document.getElementById('sp-copy-link');
+  if (!btn) return;
+  var label = document.getElementById('sp-copy-label');
+  var url = btn.getAttribute('data-url');
+  btn.addEventListener('click', function(){
+    try {
+      navigator.clipboard.writeText(url).then(function(){
+        label.textContent = 'Copied!';
+        btn.style.background = '#c9962a';
+        btn.style.color = '#1a1208';
+        setTimeout(function(){
+          label.textContent = 'Copy link';
+          btn.style.background = 'transparent';
+          btn.style.color = '#c9962a';
+        }, 1800);
+      });
+    } catch (e) {
+      // Fallback for older browsers: select-and-prompt
+      window.prompt('Copy this link:', url);
+    }
+  });
+})();
+</script><div style="font-family:'Libre Baskerville',serif;font-size:.88rem;color:#a09070;font-style:italic;margin-bottom:1.4rem">Scan the code or share the link. Free, always.</div>
+  <img src="../assets/qr-code.png" alt="QR Code" style="width:180px;height:180px;display:block;margin:0 auto 1rem;border:6px solid #c9962a;padding:4px;background:#fff">
+  <div style="font-family:'Roboto Mono',monospace;font-size:.75rem;color:#c9962a;letter-spacing:.08em;margin-bottom:.3rem">thesportspage.net</div>
+  <div style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#6b5e4a;letter-spacing:.1em;margin-top:1rem">&copy; 2026 The Sports Page &middot; A Family-Friendly Statistical Dispatch</div>
+
+
+</body>
+</html>
