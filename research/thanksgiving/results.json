@@ -1,0 +1,1312 @@
+{
+ "sample": {
+  "seasons": "1999-2025",
+  "reg_games": 6967,
+  "thanksgiving_games": 73
+ },
+ "q1_teams": {
+  "DET": {
+   "tg_record": "8-19",
+   "tg_n": 27,
+   "tg_win_per_100": 30,
+   "other_games_same_seasons_record": "167-241-2",
+   "other_win_per_100": 41,
+   "tg_expected_wins_market": 12.1,
+   "tg_expected_wins_spread_only": 12.2,
+   "tg_actual_wins": 8.0,
+   "other_expected_wins_market": 181.2,
+   "other_actual_wins": 168.0,
+   "tg_favored": 9,
+   "tg_record_when_favored": "7-2",
+   "tg_record_when_underdog": "1-17",
+   "opponents": [
+    [
+     "GB",
+     8
+    ],
+    [
+     "CHI",
+     6
+    ],
+    [
+     "NE",
+     3
+    ],
+    [
+     "HOU",
+     2
+    ],
+    [
+     "MIN",
+     2
+    ],
+    [
+     "IND",
+     1
+    ],
+    [
+     "ATL",
+     1
+    ],
+    [
+     "MIA",
+     1
+    ],
+    [
+     "TEN",
+     1
+    ],
+    [
+     "PHI",
+     1
+    ],
+    [
+     "BUF",
+     1
+    ]
+   ],
+   "opponents_beat_them": [
+    [
+     "GB",
+     6
+    ],
+    [
+     "CHI",
+     3
+    ],
+    [
+     "NE",
+     2
+    ],
+    [
+     "HOU",
+     2
+    ],
+    [
+     "IND",
+     1
+    ],
+    [
+     "ATL",
+     1
+    ],
+    [
+     "MIA",
+     1
+    ],
+    [
+     "TEN",
+     1
+    ],
+    [
+     "MIN",
+     1
+    ],
+    [
+     "BUF",
+     1
+    ]
+   ],
+   "games": [
+    {
+     "season": "1999",
+     "date": "1999-11-25",
+     "opp": "CHI",
+     "home": true,
+     "won": 1.0,
+     "margin": 4.0,
+     "p": 0.67,
+     "p_spread": 0.67,
+     "score": "21-17"
+    },
+    {
+     "season": "2000",
+     "date": "2000-11-23",
+     "opp": "NE",
+     "home": true,
+     "won": 1.0,
+     "margin": 25.0,
+     "p": 0.68,
+     "p_spread": 0.68,
+     "score": "34-9"
+    },
+    {
+     "season": "2001",
+     "date": "2001-11-22",
+     "opp": "GB",
+     "home": true,
+     "won": 0.0,
+     "margin": -2.0,
+     "p": 0.3,
+     "p_spread": 0.3,
+     "score": "27-29"
+    },
+    {
+     "season": "2002",
+     "date": "2002-11-28",
+     "opp": "NE",
+     "home": true,
+     "won": 0.0,
+     "margin": -8.0,
+     "p": 0.33,
+     "p_spread": 0.33,
+     "score": "12-20"
+    },
+    {
+     "season": "2003",
+     "date": "2003-11-27",
+     "opp": "GB",
+     "home": true,
+     "won": 1.0,
+     "margin": 8.0,
+     "p": 0.32,
+     "p_spread": 0.32,
+     "score": "22-14"
+    },
+    {
+     "season": "2004",
+     "date": "2004-11-25",
+     "opp": "IND",
+     "home": true,
+     "won": 0.0,
+     "margin": -32.0,
+     "p": 0.26,
+     "p_spread": 0.26,
+     "score": "9-41"
+    },
+    {
+     "season": "2005",
+     "date": "2005-11-24",
+     "opp": "ATL",
+     "home": true,
+     "won": 0.0,
+     "margin": -20.0,
+     "p": 0.41,
+     "p_spread": 0.41,
+     "score": "7-27"
+    },
+    {
+     "season": "2006",
+     "date": "2006-11-23",
+     "opp": "MIA",
+     "home": true,
+     "won": 0.0,
+     "margin": -17.0,
+     "p": 0.43,
+     "p_spread": 0.41,
+     "score": "10-27"
+    },
+    {
+     "season": "2007",
+     "date": "2007-11-22",
+     "opp": "GB",
+     "home": true,
+     "won": 0.0,
+     "margin": -11.0,
+     "p": 0.38,
+     "p_spread": 0.4,
+     "score": "26-37"
+    },
+    {
+     "season": "2008",
+     "date": "2008-11-27",
+     "opp": "TEN",
+     "home": true,
+     "won": 0.0,
+     "margin": -37.0,
+     "p": 0.17,
+     "p_spread": 0.21,
+     "score": "10-47"
+    },
+    {
+     "season": "2009",
+     "date": "2009-11-26",
+     "opp": "GB",
+     "home": true,
+     "won": 0.0,
+     "margin": -22.0,
+     "p": 0.16,
+     "p_spread": 0.21,
+     "score": "12-34"
+    },
+    {
+     "season": "2010",
+     "date": "2010-11-25",
+     "opp": "NE",
+     "home": true,
+     "won": 0.0,
+     "margin": -21.0,
+     "p": 0.28,
+     "p_spread": 0.33,
+     "score": "24-45"
+    },
+    {
+     "season": "2011",
+     "date": "2011-11-24",
+     "opp": "GB",
+     "home": true,
+     "won": 0.0,
+     "margin": -12.0,
+     "p": 0.36,
+     "p_spread": 0.38,
+     "score": "15-27"
+    },
+    {
+     "season": "2012",
+     "date": "2012-11-22",
+     "opp": "HOU",
+     "home": true,
+     "won": 0.0,
+     "margin": -3.0,
+     "p": 0.39,
+     "p_spread": 0.4,
+     "score": "31-34"
+    },
+    {
+     "season": "2013",
+     "date": "2013-11-28",
+     "opp": "GB",
+     "home": true,
+     "won": 1.0,
+     "margin": 30.0,
+     "p": 0.71,
+     "p_spread": 0.7,
+     "score": "40-10"
+    },
+    {
+     "season": "2014",
+     "date": "2014-11-27",
+     "opp": "CHI",
+     "home": true,
+     "won": 1.0,
+     "margin": 17.0,
+     "p": 0.75,
+     "p_spread": 0.71,
+     "score": "34-17"
+    },
+    {
+     "season": "2015",
+     "date": "2015-11-26",
+     "opp": "PHI",
+     "home": true,
+     "won": 1.0,
+     "margin": 31.0,
+     "p": 0.59,
+     "p_spread": 0.59,
+     "score": "45-14"
+    },
+    {
+     "season": "2016",
+     "date": "2016-11-24",
+     "opp": "MIN",
+     "home": true,
+     "won": 1.0,
+     "margin": 3.0,
+     "p": 0.53,
+     "p_spread": 0.56,
+     "score": "16-13"
+    },
+    {
+     "season": "2017",
+     "date": "2017-11-23",
+     "opp": "MIN",
+     "home": true,
+     "won": 0.0,
+     "margin": -7.0,
+     "p": 0.44,
+     "p_spread": 0.43,
+     "score": "23-30"
+    },
+    {
+     "season": "2018",
+     "date": "2018-11-22",
+     "opp": "CHI",
+     "home": true,
+     "won": 0.0,
+     "margin": -7.0,
+     "p": 0.4,
+     "p_spread": 0.41,
+     "score": "16-23"
+    },
+    {
+     "season": "2019",
+     "date": "2019-11-28",
+     "opp": "CHI",
+     "home": true,
+     "won": 0.0,
+     "margin": -4.0,
+     "p": 0.32,
+     "p_spread": 0.34,
+     "score": "20-24"
+    },
+    {
+     "season": "2020",
+     "date": "2020-11-26",
+     "opp": "HOU",
+     "home": true,
+     "won": 0.0,
+     "margin": -16.0,
+     "p": 0.41,
+     "p_spread": 0.41,
+     "score": "25-41"
+    },
+    {
+     "season": "2021",
+     "date": "2021-11-25",
+     "opp": "CHI",
+     "home": true,
+     "won": 0.0,
+     "margin": -2.0,
+     "p": 0.45,
+     "p_spread": 0.44,
+     "score": "14-16"
+    },
+    {
+     "season": "2022",
+     "date": "2022-11-24",
+     "opp": "BUF",
+     "home": true,
+     "won": 0.0,
+     "margin": -3.0,
+     "p": 0.22,
+     "p_spread": 0.23,
+     "score": "25-28"
+    },
+    {
+     "season": "2023",
+     "date": "2023-11-23",
+     "opp": "GB",
+     "home": true,
+     "won": 0.0,
+     "margin": -7.0,
+     "p": 0.78,
+     "p_spread": 0.74,
+     "score": "22-29"
+    },
+    {
+     "season": "2024",
+     "date": "2024-11-28",
+     "opp": "CHI",
+     "home": true,
+     "won": 1.0,
+     "margin": 3.0,
+     "p": 0.8,
+     "p_spread": 0.76,
+     "score": "23-20"
+    },
+    {
+     "season": "2025",
+     "date": "2025-11-27",
+     "opp": "GB",
+     "home": true,
+     "won": 0.0,
+     "margin": -7.0,
+     "p": 0.58,
+     "p_spread": 0.57,
+     "score": "24-31"
+    }
+   ],
+   "p_this_few_or_fewer_wins_given_market": 0.06,
+   "p_this_many_or_more_wins_given_market": 0.98,
+   "games_vs_DAL": 0,
+   "games_vs_NFC_North": 16,
+   "all_time_note": "Not confirmed from a primary source (PFR returned 403; no Lions/NFL record page found). Secondary outlets give 38-46-2 through 2025 and disagree with each other; not used."
+  },
+  "DAL": {
+   "tg_record": "15-12",
+   "tg_n": 27,
+   "tg_win_per_100": 56,
+   "other_games_same_seasons_record": "217-192-1",
+   "other_win_per_100": 53,
+   "tg_expected_wins_market": 17.0,
+   "tg_expected_wins_spread_only": 16.6,
+   "tg_actual_wins": 15.0,
+   "other_expected_wins_market": 219.7,
+   "other_actual_wins": 217.5,
+   "tg_favored": 20,
+   "tg_record_when_favored": "13-7",
+   "tg_record_when_underdog": "2-5",
+   "opponents": [
+    [
+     "WAS",
+     6
+    ],
+    [
+     "MIA",
+     3
+    ],
+    [
+     "DEN",
+     2
+    ],
+    [
+     "OAK",
+     2
+    ],
+    [
+     "NYG",
+     2
+    ],
+    [
+     "MIN",
+     1
+    ],
+    [
+     "CHI",
+     1
+    ],
+    [
+     "TB",
+     1
+    ],
+    [
+     "NYJ",
+     1
+    ],
+    [
+     "SEA",
+     1
+    ],
+    [
+     "NO",
+     1
+    ],
+    [
+     "PHI",
+     1
+    ],
+    [
+     "CAR",
+     1
+    ],
+    [
+     "LAC",
+     1
+    ],
+    [
+     "BUF",
+     1
+    ],
+    [
+     "LV",
+     1
+    ],
+    [
+     "KC",
+     1
+    ]
+   ],
+   "opponents_beat_them": [
+    [
+     "DEN",
+     2
+    ],
+    [
+     "WAS",
+     2
+    ],
+    [
+     "MIN",
+     1
+    ],
+    [
+     "MIA",
+     1
+    ],
+    [
+     "NO",
+     1
+    ],
+    [
+     "PHI",
+     1
+    ],
+    [
+     "CAR",
+     1
+    ],
+    [
+     "LAC",
+     1
+    ],
+    [
+     "BUF",
+     1
+    ],
+    [
+     "LV",
+     1
+    ]
+   ],
+   "games": [
+    {
+     "season": "1999",
+     "date": "1999-11-25",
+     "opp": "MIA",
+     "home": true,
+     "won": 1.0,
+     "margin": 20.0,
+     "p": 0.54,
+     "p_spread": 0.54,
+     "score": "20-0"
+    },
+    {
+     "season": "2000",
+     "date": "2000-11-23",
+     "opp": "MIN",
+     "home": true,
+     "won": 0.0,
+     "margin": -12.0,
+     "p": 0.3,
+     "p_spread": 0.3,
+     "score": "15-27"
+    },
+    {
+     "season": "2001",
+     "date": "2001-11-22",
+     "opp": "DEN",
+     "home": true,
+     "won": 0.0,
+     "margin": -2.0,
+     "p": 0.3,
+     "p_spread": 0.3,
+     "score": "24-26"
+    },
+    {
+     "season": "2002",
+     "date": "2002-11-28",
+     "opp": "WAS",
+     "home": true,
+     "won": 1.0,
+     "margin": 7.0,
+     "p": 0.47,
+     "p_spread": 0.47,
+     "score": "27-20"
+    },
+    {
+     "season": "2003",
+     "date": "2003-11-27",
+     "opp": "MIA",
+     "home": true,
+     "won": 0.0,
+     "margin": -19.0,
+     "p": 0.59,
+     "p_spread": 0.59,
+     "score": "21-40"
+    },
+    {
+     "season": "2004",
+     "date": "2004-11-25",
+     "opp": "CHI",
+     "home": true,
+     "won": 1.0,
+     "margin": 14.0,
+     "p": 0.6,
+     "p_spread": 0.6,
+     "score": "21-7"
+    },
+    {
+     "season": "2005",
+     "date": "2005-11-24",
+     "opp": "DEN",
+     "home": true,
+     "won": 0.0,
+     "margin": -3.0,
+     "p": 0.54,
+     "p_spread": 0.54,
+     "score": "21-24"
+    },
+    {
+     "season": "2006",
+     "date": "2006-11-23",
+     "opp": "TB",
+     "home": true,
+     "won": 1.0,
+     "margin": 28.0,
+     "p": 0.86,
+     "p_spread": 0.82,
+     "score": "38-10"
+    },
+    {
+     "season": "2007",
+     "date": "2007-11-22",
+     "opp": "NYJ",
+     "home": true,
+     "won": 1.0,
+     "margin": 31.0,
+     "p": 0.9,
+     "p_spread": 0.85,
+     "score": "34-3"
+    },
+    {
+     "season": "2008",
+     "date": "2008-11-27",
+     "opp": "SEA",
+     "home": true,
+     "won": 1.0,
+     "margin": 25.0,
+     "p": 0.87,
+     "p_spread": 0.8,
+     "score": "34-9"
+    },
+    {
+     "season": "2009",
+     "date": "2009-11-26",
+     "opp": "OAK",
+     "home": true,
+     "won": 1.0,
+     "margin": 17.0,
+     "p": 0.86,
+     "p_spread": 0.84,
+     "score": "24-7"
+    },
+    {
+     "season": "2010",
+     "date": "2010-11-25",
+     "opp": "NO",
+     "home": true,
+     "won": 0.0,
+     "margin": -3.0,
+     "p": 0.34,
+     "p_spread": 0.37,
+     "score": "27-30"
+    },
+    {
+     "season": "2011",
+     "date": "2011-11-24",
+     "opp": "MIA",
+     "home": true,
+     "won": 1.0,
+     "margin": 1.0,
+     "p": 0.73,
+     "p_spread": 0.7,
+     "score": "20-19"
+    },
+    {
+     "season": "2012",
+     "date": "2012-11-22",
+     "opp": "WAS",
+     "home": true,
+     "won": 0.0,
+     "margin": -7.0,
+     "p": 0.63,
+     "p_spread": 0.6,
+     "score": "31-38"
+    },
+    {
+     "season": "2013",
+     "date": "2013-11-28",
+     "opp": "OAK",
+     "home": true,
+     "won": 1.0,
+     "margin": 7.0,
+     "p": 0.8,
+     "p_spread": 0.77,
+     "score": "31-24"
+    },
+    {
+     "season": "2014",
+     "date": "2014-11-27",
+     "opp": "PHI",
+     "home": true,
+     "won": 0.0,
+     "margin": -23.0,
+     "p": 0.6,
+     "p_spread": 0.59,
+     "score": "10-33"
+    },
+    {
+     "season": "2015",
+     "date": "2015-11-26",
+     "opp": "CAR",
+     "home": true,
+     "won": 0.0,
+     "margin": -19.0,
+     "p": 0.48,
+     "p_spread": 0.47,
+     "score": "14-33"
+    },
+    {
+     "season": "2016",
+     "date": "2016-11-24",
+     "opp": "WAS",
+     "home": true,
+     "won": 1.0,
+     "margin": 5.0,
+     "p": 0.68,
+     "p_spread": 0.66,
+     "score": "31-26"
+    },
+    {
+     "season": "2017",
+     "date": "2017-11-23",
+     "opp": "LAC",
+     "home": true,
+     "won": 0.0,
+     "margin": -22.0,
+     "p": 0.47,
+     "p_spread": 0.47,
+     "score": "6-28"
+    },
+    {
+     "season": "2018",
+     "date": "2018-11-22",
+     "opp": "WAS",
+     "home": true,
+     "won": 1.0,
+     "margin": 8.0,
+     "p": 0.74,
+     "p_spread": 0.7,
+     "score": "31-23"
+    },
+    {
+     "season": "2019",
+     "date": "2019-11-28",
+     "opp": "BUF",
+     "home": true,
+     "won": 0.0,
+     "margin": -11.0,
+     "p": 0.73,
+     "p_spread": 0.68,
+     "score": "15-26"
+    },
+    {
+     "season": "2020",
+     "date": "2020-11-26",
+     "opp": "WAS",
+     "home": true,
+     "won": 0.0,
+     "margin": -25.0,
+     "p": 0.56,
+     "p_spread": 0.57,
+     "score": "16-41"
+    },
+    {
+     "season": "2021",
+     "date": "2021-11-25",
+     "opp": "LV",
+     "home": true,
+     "won": 0.0,
+     "margin": -3.0,
+     "p": 0.74,
+     "p_spread": 0.7,
+     "score": "33-36"
+    },
+    {
+     "season": "2022",
+     "date": "2022-11-24",
+     "opp": "NYG",
+     "home": true,
+     "won": 1.0,
+     "margin": 8.0,
+     "p": 0.79,
+     "p_spread": 0.78,
+     "score": "28-20"
+    },
+    {
+     "season": "2023",
+     "date": "2023-11-23",
+     "opp": "WAS",
+     "home": true,
+     "won": 1.0,
+     "margin": 35.0,
+     "p": 0.85,
+     "p_spread": 0.83,
+     "score": "45-10"
+    },
+    {
+     "season": "2024",
+     "date": "2024-11-28",
+     "opp": "NYG",
+     "home": true,
+     "won": 1.0,
+     "margin": 7.0,
+     "p": 0.66,
+     "p_spread": 0.63,
+     "score": "27-20"
+    },
+    {
+     "season": "2025",
+     "date": "2025-11-27",
+     "opp": "KC",
+     "home": true,
+     "won": 1.0,
+     "margin": 3.0,
+     "p": 0.38,
+     "p_spread": 0.4,
+     "score": "31-28"
+    }
+   ],
+   "p_this_few_or_fewer_wins_given_market": 0.25,
+   "p_this_many_or_more_wins_given_market": 0.86
+  }
+ },
+ "q2_boring": {
+  "thanksgiving": {
+   "n": 73,
+   "within8_per_100": 42,
+   "within3_per_100": 18,
+   "mean_abs_margin": 13.8,
+   "ot_per_100": 3,
+   "favorite_chance_mean": 0.68,
+   "tossups_55_or_less_per_100": 12,
+   "n_pbp": 73,
+   "excitement_mean": 3.47,
+   "excitement_median": 3.36,
+   "excitement_se": 0.17,
+   "lead_changes_mean": 0.95,
+   "q4_comeback_per_100": 16,
+   "trailed_entering_q4_won_per_100": 8
+  },
+  "all_other_reg": {
+   "n": 6894,
+   "within8_per_100": 51,
+   "within3_per_100": 24,
+   "mean_abs_margin": 11.5,
+   "ot_per_100": 6,
+   "favorite_chance_mean": 0.66,
+   "tossups_55_or_less_per_100": 12,
+   "n_pbp": 6891,
+   "excitement_mean": 3.85,
+   "excitement_median": 3.83,
+   "excitement_se": 0.02,
+   "lead_changes_mean": 1.14,
+   "q4_comeback_per_100": 24,
+   "trailed_entering_q4_won_per_100": 16
+  },
+  "other_thursday": {
+   "n": 256,
+   "within8_per_100": 52,
+   "within3_per_100": 21,
+   "mean_abs_margin": 10.9,
+   "ot_per_100": 5,
+   "favorite_chance_mean": 0.67,
+   "tossups_55_or_less_per_100": 12,
+   "n_pbp": 256,
+   "excitement_mean": 3.78,
+   "excitement_median": 3.69,
+   "excitement_se": 0.09,
+   "lead_changes_mean": 1.11,
+   "q4_comeback_per_100": 23,
+   "trailed_entering_q4_won_per_100": 15
+  },
+  "same_week_sunday": {
+   "n": 323,
+   "within8_per_100": 57,
+   "within3_per_100": 24,
+   "mean_abs_margin": 10.7,
+   "ot_per_100": 7,
+   "favorite_chance_mean": 0.66,
+   "tossups_55_or_less_per_100": 13,
+   "n_pbp": 323,
+   "excitement_mean": 4.05,
+   "excitement_median": 4.07,
+   "excitement_se": 0.08,
+   "lead_changes_mean": 1.29,
+   "q4_comeback_per_100": 25,
+   "trailed_entering_q4_won_per_100": 16
+  },
+  "most_exciting_tg": [
+   {
+    "game": "2012-11-22 HOU 34 at DET 31 (OT)",
+    "excitement": 8.64,
+    "percentile_all_games": 100,
+    "lead_changes": 1,
+    "q4_comeback": 1
+   },
+   {
+    "game": "2021-11-25 LV 36 at DAL 33",
+    "excitement": 7.05,
+    "percentile_all_games": 98,
+    "lead_changes": 0,
+    "q4_comeback": 0
+   },
+   {
+    "game": "2022-11-24 BUF 28 at DET 25",
+    "excitement": 6.85,
+    "percentile_all_games": 97,
+    "lead_changes": 3,
+    "q4_comeback": 1
+   },
+   {
+    "game": "2005-11-24 DEN 24 at DAL 21 (OT)",
+    "excitement": 5.91,
+    "percentile_all_games": 91,
+    "lead_changes": 0,
+    "q4_comeback": 0
+   },
+   {
+    "game": "2015-11-26 CHI 17 at GB 13",
+    "excitement": 5.78,
+    "percentile_all_games": 89,
+    "lead_changes": 1,
+    "q4_comeback": 0
+   }
+  ],
+  "least_exciting_tg": [
+   {
+    "game": "2008-11-27 SEA 9 at DAL 34",
+    "excitement": 1.65,
+    "percentile_all_games": 7,
+    "lead_changes": 0,
+    "q4_comeback": 0
+   },
+   {
+    "game": "2024-11-28 MIA 17 at GB 30",
+    "excitement": 1.59,
+    "percentile_all_games": 6,
+    "lead_changes": 0,
+    "q4_comeback": 0
+   },
+   {
+    "game": "2007-11-22 NYJ 3 at DAL 34",
+    "excitement": 1.58,
+    "percentile_all_games": 5,
+    "lead_changes": 0,
+    "q4_comeback": 0
+   },
+   {
+    "game": "2008-11-27 ARI 20 at PHI 48",
+    "excitement": 1.36,
+    "percentile_all_games": 3,
+    "lead_changes": 0,
+    "q4_comeback": 0
+   },
+   {
+    "game": "2008-11-27 TEN 47 at DET 10",
+    "excitement": 1.25,
+    "percentile_all_games": 2,
+    "lead_changes": 0,
+    "q4_comeback": 0
+   }
+  ],
+  "tg_games_above_league_median_excitement": "26 of 73",
+  "tg_lions_games": {
+   "n": 27,
+   "within8_per_100": 52,
+   "within3_per_100": 22,
+   "mean_abs_margin": 13.3,
+   "ot_per_100": 4,
+   "favorite_chance_mean": 0.67,
+   "tossups_55_or_less_per_100": 7,
+   "n_pbp": 27,
+   "excitement_mean": 3.71,
+   "excitement_median": 3.44,
+   "excitement_se": 0.29,
+   "lead_changes_mean": 1.15,
+   "q4_comeback_per_100": 26,
+   "trailed_entering_q4_won_per_100": 11
+  },
+  "tg_cowboys_games": {
+   "n": 27,
+   "within8_per_100": 48,
+   "within3_per_100": 22,
+   "mean_abs_margin": 13.5,
+   "ot_per_100": 4,
+   "favorite_chance_mean": 0.69,
+   "tossups_55_or_less_per_100": 19,
+   "n_pbp": 27,
+   "excitement_mean": 3.54,
+   "excitement_median": 3.41,
+   "excitement_se": 0.27,
+   "lead_changes_mean": 1,
+   "q4_comeback_per_100": 15,
+   "trailed_entering_q4_won_per_100": 7
+  },
+  "tg_night_or_third_game": {
+   "n": 19,
+   "within8_per_100": 21,
+   "within3_per_100": 5,
+   "mean_abs_margin": 15.1,
+   "ot_per_100": 0,
+   "favorite_chance_mean": 0.69,
+   "tossups_55_or_less_per_100": 11,
+   "n_pbp": 19,
+   "excitement_mean": 3.03,
+   "excitement_median": 2.84,
+   "excitement_se": 0.29,
+   "lead_changes_mean": 0.58,
+   "q4_comeback_per_100": 5,
+   "trailed_entering_q4_won_per_100": 5
+  },
+  "excitement_diff_tg_minus_all": -0.38,
+  "excitement_perm_p_two_sided": 0.03,
+  "within8_perm_p_two_sided": 0.16
+ },
+ "q3_stakes": {
+  "model": "logit(made playoffs) ~ wpct + wpct^2 + won*(1 + wpct + wpct^2) + games played; fit on all team-games in Thanksgiving weeks 1999-2025",
+  "n_team_games": 854,
+  "n_tg_team_games": 146,
+  "leverage_tg_mean_pts": 15.2,
+  "leverage_other_same_week_mean_pts": 14.8,
+  "leverage_tg_median_pts": 16.2,
+  "leverage_other_median_pts": 9.5,
+  "raw_po_rate_tg_teams_per_100": 40,
+  "raw_po_rate_other_per_100": 38,
+  "tg_games": {
+   "games": 73,
+   "both_losing_record_per_100": 15,
+   "both_winning_record_per_100": 23,
+   "both_made_playoffs_per_100": 10,
+   "neither_made_playoffs_per_100": 29,
+   "game_leverage_mean_pts": 30.4
+  },
+  "other_games_same_week": {
+   "games": 354,
+   "both_losing_record_per_100": 21,
+   "both_winning_record_per_100": 19,
+   "both_made_playoffs_per_100": 13,
+   "neither_made_playoffs_per_100": 36,
+   "game_leverage_mean_pts": 29.6
+  },
+  "raw_po_if_won_tg": 64,
+  "raw_po_if_lost_tg": 16,
+  "raw_po_if_won_other": 55,
+  "raw_po_if_lost_other": 22,
+  "leverage_DET_pts": 13.3,
+  "leverage_DAL_pts": 16.7,
+  "leverage_tg_opponents_and_night_teams_pts": 15.3,
+  "top_leverage_tg_games": [
+   {
+    "game_id": "2009_12_NYG_DEN",
+    "leverage_pts": 67.1
+   },
+   {
+    "game_id": "2016_12_MIN_DET",
+    "leverage_pts": 67.1
+   },
+   {
+    "game_id": "2014_13_SEA_SF",
+    "leverage_pts": 62.2
+   },
+   {
+    "game_id": "2018_12_WAS_DAL",
+    "leverage_pts": 57.9
+   },
+   {
+    "game_id": "2021_12_BUF_NO",
+    "leverage_pts": 57.9
+   }
+  ],
+  "bottom_leverage_tg_games": [
+   {
+    "game_id": "2020_12_WAS_DAL",
+    "leverage_pts": 5.9
+   },
+   {
+    "game_id": "2015_12_CAR_DAL",
+    "leverage_pts": 3.4
+   },
+   {
+    "game_id": "2021_12_CHI_DET",
+    "leverage_pts": 3.1
+   },
+   {
+    "game_id": "2007_12_NYJ_DAL",
+    "leverage_pts": 2.8
+   },
+   {
+    "game_id": "2008_13_TEN_DET",
+    "leverage_pts": 1.8
+   }
+  ]
+ },
+ "q4_2026": {
+  "records_through": "2026-11-16",
+  "odds_generated": "2026-11-17",
+  "note": "records are before week 12 (Nov 22-23); leverage from the 1999-2025 model applied to current records, approximate",
+  "games": [
+   {
+    "game": "CHI at DET",
+    "spread_line_home": -1.5,
+    "home_moneyline": "110",
+    "away_moneyline": "-130",
+    "home_win_chance_vigfree": 0.46,
+    "teams": {
+     "CHI": {
+      "record": "7-2",
+      "playoff_odds": 0.8327,
+      "division_odds": 0.2791,
+      "model_leverage_pts": 8.8
+     },
+     "DET": {
+      "record": "7-2",
+      "playoff_odds": 0.9048,
+      "division_odds": 0.4223,
+      "model_leverage_pts": 8.8
+     }
+    },
+    "game_leverage_pts_model": 17.5
+   },
+   {
+    "game": "PHI at DAL",
+    "spread_line_home": 8.5,
+    "home_moneyline": "-410",
+    "away_moneyline": "320",
+    "home_win_chance_vigfree": 0.77,
+    "teams": {
+     "PHI": {
+      "record": "2-7",
+      "playoff_odds": 0.016,
+      "division_odds": 0.0158,
+      "model_leverage_pts": 1.2
+     },
+     "DAL": {
+      "record": "4-6",
+      "playoff_odds": 0.2772,
+      "division_odds": 0.2638,
+      "model_leverage_pts": 9.5
+     }
+    },
+    "game_leverage_pts_model": 10.7
+   },
+   {
+    "game": "KC at BUF",
+    "spread_line_home": 3.0,
+    "home_moneyline": "-155",
+    "away_moneyline": "130",
+    "home_win_chance_vigfree": 0.58,
+    "teams": {
+     "KC": {
+      "record": "7-2",
+      "playoff_odds": 0.9692,
+      "division_odds": 0.4098,
+      "model_leverage_pts": 8.8
+     },
+     "BUF": {
+      "record": "8-1",
+      "playoff_odds": 0.9988,
+      "division_odds": 0.9895,
+      "model_leverage_pts": 2.1
+     }
+    },
+    "game_leverage_pts_model": 10.8
+   }
+  ],
+  "historical_tg_game_leverage_mean_pts": 30.4,
+  "historical_other_game_leverage_mean_pts": 29.6,
+  "sim_leverage": {
+   "note": "2026 Thanksgiving leverage from the Odds Board's own game probabilities (data/nfl-odds.json).\nSimplified seeding: 4 division winners + 3 wild cards per conference by wins, ties broken at random\n(the real tiebreakers are not modeled). Leverage = P(playoffs | win TG game) - P(playoffs | lose).",
+   "sims": 200000,
+   "odds_generated": "2026-11-17",
+   "games": [
+    {
+     "game": "CHI at DET",
+     "CHI": {
+      "p_playoffs": 0.831,
+      "if_win": 0.918,
+      "if_lose": 0.764,
+      "leverage_pts": 15.4
+     },
+     "DET": {
+      "p_playoffs": 0.906,
+      "if_win": 0.956,
+      "if_lose": 0.841,
+      "leverage_pts": 11.6
+     },
+     "game_leverage_pts": 27.0
+    },
+    {
+     "game": "PHI at DAL",
+     "PHI": {
+      "p_playoffs": 0.015,
+      "if_win": 0.035,
+      "if_lose": 0.004,
+      "leverage_pts": 3.1
+     },
+     "DAL": {
+      "p_playoffs": 0.271,
+      "if_win": 0.335,
+      "if_lose": 0.148,
+      "leverage_pts": 18.7
+     },
+     "game_leverage_pts": 21.9
+    },
+    {
+     "game": "KC at BUF",
+     "KC": {
+      "p_playoffs": 0.97,
+      "if_win": 0.991,
+      "if_lose": 0.955,
+      "leverage_pts": 3.6
+     },
+     "BUF": {
+      "p_playoffs": 0.999,
+      "if_win": 1.0,
+      "if_lose": 0.997,
+      "leverage_pts": 0.3
+     },
+     "game_leverage_pts": 3.9
+    }
+   ],
+   "calibration_max_abs_gap_vs_board": 0.035,
+   "other_games_same_week": [
+    [
+     "2026-11-30 CAR-TB",
+     53.1
+    ],
+    [
+     "2026-11-29 HOU-BAL",
+     41.1
+    ],
+    [
+     "2026-11-29 CLE-LV",
+     36.2
+    ],
+    [
+     "2026-11-29 SF-SEA",
+     30.1
+    ],
+    [
+     "2026-11-29 MIN-ATL",
+     28.8
+    ],
+    [
+     "2026-11-29 NE-LAC",
+     26.6
+    ],
+    [
+     "2026-11-29 NYG-IND",
+     23.1
+    ],
+    [
+     "2026-11-27 DEN-PIT",
+     21.7
+    ],
+    [
+     "2026-11-29 CIN-NO",
+     16.0
+    ],
+    [
+     "2026-11-29 WAS-ARI",
+     8.6
+    ],
+    [
+     "2026-11-29 JAX-TEN",
+     2.2
+    ],
+    [
+     "2026-11-29 NYJ-MIA",
+     0.2
+    ]
+   ]
+  },
+  "records_cross_check": "nflverse games.csv and ESPN standings/scoreboard agree on all six records and all three lines (checked 2026-11-18); TV: CHI-DET CBS, PHI-DAL FOX, KC-BUF NBC (ESPN scoreboard)"
+ },
+ "q5_parade": {
+  "parade_2025": {
+   "nbc_linear_830am_airing": 25400000.0,
+   "nbc_plus_peacock": 34300000.0,
+   "basis": "Nielsen preliminary",
+   "source": "https://www.nbcuniversal.com/article/nbcs-macys-thanksgiving-day-parade-set-all-time-viewership-record (Dec 1, 2025)"
+  },
+  "games_2025": {
+   "GB_at_DET_FOX": 47700000.0,
+   "KC_at_DAL_CBS": 57200000.0,
+   "CIN_at_BAL_NBC": 28400000.0,
+   "three_game_avg": 44700000.0,
+   "source": "https://www.nfl.com/news/2025-thanksgiving-day-nfl-games-shatter-viewership-records ; FOX: https://www.foxsports.com/stories/nfl/fox-packers-lions-thanksgiving-day-broadcast-sets-viewership-record (Dec 3, 2025)"
+  },
+  "caveat": "NFL.com release does not name the measurement basis or platforms; parade figure is preliminary. Not strictly like-for-like."
+ }
+}

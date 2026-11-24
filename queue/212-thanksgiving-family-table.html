@@ -1,0 +1,280 @@
+<!-- PUBLISH-META
+topic: NFL
+decay: dated
+tags: NFL:nfl, Thanksgiving, Playoff Odds
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — The Best Teams Play Thanksgiving Night. The Game That Matters Kicks Off at 1.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart{width:100%;height:auto;display:block}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="The Best Teams Play Thanksgiving Night. The Game That Matters Kicks Off at 1.">
+<meta property="og:description" content="Bills and Chiefs are nearly in already; their game moves 2 points of playoff chance. Bears at Lions moves 21. How to tell a big game from a famous one.">
+<meta property="og:url" content="https://thesportspage.net/published/212-thanksgiving-family-table.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/212-thanksgiving-family-table.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Best Teams Play Thanksgiving Night. The Game That Matters Kicks Off at 1.">
+<meta name="twitter:description" content="Bills and Chiefs are nearly in already; their game moves 2 points of playoff chance. Bears at Lions moves 21. How to tell a big game from a famous one.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/212-thanksgiving-family-table.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Professor &middot; Pro Football, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>Thursday, November 26, 2026</span>
+    <span>Free and Family-Friendly</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="NFL"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><ellipse cx="13" cy="10" rx="10.6" ry="6.1" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 10h6" stroke="currentColor" stroke-width="1.7"/></svg></span>The Best Teams Play Thanksgiving Night. <em>The Game That Matters Kicks Off at 1.</em></h1>
+
+  <div class="deck">
+    Bills and Chiefs, 9&ndash;1 and 8&ndash;2, are both nearly in the playoffs already. Win or lose tonight, their playoff chances move about 2 points between them. Bears at Lions at 1 p.m., both 8&ndash;2, moves 21. Here is how to tell a big game from a famous one, before you sit down.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; The Professor &middot; Lesson: what a game is worth</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v bad">21</div><div class="l">points of playoff chance riding on Bears at Lions</div></div>
+    <div class="sc"><div class="v now">20</div><div class="l">on Eagles at Cowboys, almost all of it Dallas&rsquo;s</div></div>
+    <div class="sc"><div class="v good">2</div><div class="l">on Chiefs at Bills, the best records of the day</div></div>
+  </div>
+
+  <p><strong>The question:</strong> which Thanksgiving game should you not miss?</p>
+
+  <p><strong>The answer:</strong> the 1 p.m. game, Bears at Lions. For each team, winning instead of losing is worth about 10 points of playoff chance. The night game, Chiefs at Bills, moves about 2 points in all.</p>
+
+  <p><strong>Why that is surprising:</strong> most of us rank games by the records. Tonight&rsquo;s game has the best two. But a game matters by how much it <em>changes</em>, and you can&rsquo;t change much for a team that is already in.</p>
+
+  <p><strong>What you get:</strong> one question to ask about any game on any day, and a card for each game on the table.</p>
+
+  <h2 class="sh">What a game is worth</h2>
+
+  <p>Here is the idea in one line. <strong>A game is worth the gap between what a win buys and what a loss costs.</strong> We play out the rest of the season 200,000 times, using the chances on our <a href="https://thesportspage.net/odds.html">Odds Board</a>. Then we split those seasons in two: the ones where a team won on Thursday, and the ones where it lost. The gap in playoff chance between the two piles is the game&rsquo;s worth to that team. Add both teams and you have the <strong>swing</strong>.</p>
+
+  <figure style="margin:1.4rem 0">
+<svg class="chart" viewBox="0 0 680 316" role="img" aria-label="Chance of making the playoffs, by Thanksgiving result. Bears: 84 if they lose, 96 if they win; Lions: 88 if they lose, 97 if they win; Eagles: 0 if they lose, 3 if they win; Cowboys: 10 if they lose, 26 if they win; Chiefs: 98 if they lose, 100 if they win; Bills: 100 if they lose, 100 if they win." style="max-width:680px;margin:0 auto" font-family="'Roboto Mono',monospace">
+<line x1="120.0" x2="120.0" y1="32" y2="286" stroke="#c8b99a" stroke-width=".5"/>
+<text x="120.0" y="26" font-size="11" fill="#6b5e4a" text-anchor="middle">0</text>
+<line x1="240.0" x2="240.0" y1="32" y2="286" stroke="#c8b99a" stroke-width=".5"/>
+<text x="240.0" y="26" font-size="11" fill="#6b5e4a" text-anchor="middle">25</text>
+<line x1="360.0" x2="360.0" y1="32" y2="286" stroke="#c8b99a" stroke-width=".5"/>
+<text x="360.0" y="26" font-size="11" fill="#6b5e4a" text-anchor="middle">50</text>
+<line x1="480.0" x2="480.0" y1="32" y2="286" stroke="#c8b99a" stroke-width=".5"/>
+<text x="480.0" y="26" font-size="11" fill="#6b5e4a" text-anchor="middle">75</text>
+<line x1="600.0" x2="600.0" y1="32" y2="286" stroke="#c8b99a" stroke-width=".5"/>
+<text x="600.0" y="26" font-size="11" fill="#6b5e4a" text-anchor="middle">100</text>
+<line x1="578.8" x2="580.0" y1="55.0" y2="55.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="523.1" x2="525.2" y1="55.0" y2="55.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="524.2" x2="579.4" y1="55.0" y2="55.0" stroke="#b83a1e" stroke-width="3"/>
+<circle cx="524.2" cy="55.0" r="5" fill="#f5f0e8" stroke="#b83a1e" stroke-width="1.8"/>
+<circle cx="579.4" cy="55.0" r="5" fill="#b83a1e"/>
+<text x="110" y="59.0" font-size="13" fill="#1a1208" text-anchor="end">Bears</text>
+<line x1="585.6" x2="586.6" y1="85.0" y2="85.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="540.5" x2="542.4" y1="85.0" y2="85.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="541.4" x2="586.1" y1="85.0" y2="85.0" stroke="#b83a1e" stroke-width="3"/>
+<circle cx="541.4" cy="85.0" r="5" fill="#f5f0e8" stroke="#b83a1e" stroke-width="1.8"/>
+<circle cx="586.1" cy="85.0" r="5" fill="#b83a1e"/>
+<text x="110" y="89.0" font-size="13" fill="#1a1208" text-anchor="end">Lions</text>
+<text x="640" y="74.0" font-size="15" font-weight="600" fill="#b83a1e">21</text>
+<line x1="134.4" x2="135.4" y1="137.0" y2="137.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="121.3" x2="121.6" y1="137.0" y2="137.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="121.4" x2="134.9" y1="137.0" y2="137.0" stroke="#6b5e4a" stroke-width="3"/>
+<circle cx="121.4" cy="137.0" r="5" fill="#f5f0e8" stroke="#6b5e4a" stroke-width="1.8"/>
+<circle cx="134.9" cy="137.0" r="5" fill="#6b5e4a"/>
+<text x="110" y="141.0" font-size="13" fill="#1a1208" text-anchor="end">Eagles</text>
+<line x1="244.5" x2="247.1" y1="167.0" y2="167.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="164.7" x2="166.5" y1="167.0" y2="167.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="165.6" x2="245.8" y1="167.0" y2="167.0" stroke="#b83a1e" stroke-width="3"/>
+<circle cx="165.6" cy="167.0" r="5" fill="#f5f0e8" stroke="#b83a1e" stroke-width="1.8"/>
+<circle cx="245.8" cy="167.0" r="5" fill="#b83a1e"/>
+<text x="110" y="171.0" font-size="13" fill="#1a1208" text-anchor="end">Cowboys</text>
+<text x="640" y="156.0" font-size="15" font-weight="600" fill="#b83a1e">20</text>
+<line x1="597.9" x2="598.3" y1="219.0" y2="219.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="588.0" x2="588.9" y1="219.0" y2="219.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="588.5" x2="598.1" y1="219.0" y2="219.0" stroke="#6b5e4a" stroke-width="3"/>
+<circle cx="588.5" cy="219.0" r="5" fill="#f5f0e8" stroke="#6b5e4a" stroke-width="1.8"/>
+<circle cx="598.1" cy="219.0" r="5" fill="#6b5e4a"/>
+<text x="110" y="223.0" font-size="13" fill="#1a1208" text-anchor="end">Chiefs</text>
+<line x1="600.0" x2="600.0" y1="249.0" y2="249.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="599.4" x2="599.6" y1="249.0" y2="249.0" stroke="#1a1208" stroke-width="1"/>
+<line x1="599.5" x2="600.0" y1="249.0" y2="249.0" stroke="#6b5e4a" stroke-width="3"/>
+<circle cx="599.5" cy="249.0" r="5" fill="#f5f0e8" stroke="#6b5e4a" stroke-width="1.8"/>
+<circle cx="600.0" cy="249.0" r="5" fill="#6b5e4a"/>
+<text x="110" y="253.0" font-size="13" fill="#1a1208" text-anchor="end">Bills</text>
+<text x="640" y="238.0" font-size="15" font-weight="600" fill="#6b5e4a">2</text>
+<text x="640" y="26" font-size="11" fill="#6b5e4a">swing</text>
+<text x="360" y="308" font-size="11" fill="#6b5e4a" text-anchor="middle">chance of making the playoffs, per 100 &#183; open = if they lose, filled = if they win</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);text-align:center;margin-top:.5rem">Each team&rsquo;s chance of making the playoffs if it loses Thursday (open circle) and if it wins (filled). The swing is the two gaps added. The thin ink line at each circle is a 95% interval for the simulation&rsquo;s own noise; it is under half a point, so it hides inside the circle. The bigger uncertainty is in our game chances, which the caption can&rsquo;t show.</figcaption>
+  </figure>
+
+  <p>Notice the shape. The two long red bars belong to teams with something to settle. The short gray ones belong to teams whose season is mostly decided: the Bills are in, and the Eagles, at 3&ndash;7, mostly are not.</p>
+
+  <h2 class="sh">The cards for the table</h2>
+
+  <p><strong>1:00 &middot; Bears at Lions (CBS). Swing: 21.</strong> Both teams are 8&ndash;2. A Bears win puts their playoff chance at 96 in 100; a loss drops it to 84. The Lions go 88 or 97. Our numbers give Detroit 53 in 100; ESPN&rsquo;s lean Chicago. Call it a coin flip, which is why it matters: a close game between good teams is where one result moves the most. <em>Watch for:</em> the halftime score. <a href="https://thesportspage.net/game.html?lg=nfl&amp;id=401873081">The game card</a> shows how often a halftime lead has held up this season.</p>
+
+  <p><strong>4:30 &middot; Eagles at Cowboys (Fox). Swing: 20.</strong> This one surprises people. The records are 3&ndash;7 and 5&ndash;6. But Dallas is still alive: 26 in 100 with a win, 10 with a loss. Nearly all of the swing is Dallas&rsquo;s. <em>Watch for:</em> a long shot&rsquo;s season being decided in one afternoon.</p>
+
+  <p><strong>8:20 &middot; Chiefs at Bills (NBC). Swing: 2.</strong> The best football of the day, and the smallest stakes for the playoffs. The Bills are in, more than 99 in 100 either way. The Chiefs go 98 or 100. What is at stake is <em>seeding</em>, who rests the first week and who plays at home. That is real, and it is a different question from getting in. <em>Watch for:</em> just the football. You have earned it by then.</p>
+
+  <p>And if your family&rsquo;s team plays Sunday, here is a twist. Two games this weekend swing more than anything on Thursday: Raiders at Browns, 34 (Cleveland carries 28 of it), and Seahawks at 49ers, 28 (Seattle carries 26). Long faces at dinner may get their turn on Sunday.</p>
+
+  <div class="box">
+    <h3>Sidebar: Do the Lions always lose on Thanksgiving?</h3>
+    <p>Mostly, yes. From 1999 to 2025 they went 8&ndash;19 on Thanksgiving, 30 wins in 100. In their other games those seasons they won 41 in 100.</p>
+    <p>But look at who they were. They were the underdog in 18 of the 27 games and won 1 of those. When they were favored, 9 times, they won 7. The pregame chances expected about 12 wins. They got 8. A shortfall that big turns up by luck about 6 times in 100: unusual, not spooky.</p>
+    <p>One more myth falls. The Cowboys were never the Lions&rsquo; Thanksgiving opponent in those years; mostly it was the Packers, Bears or Vikings. Bears and Lions met 6 times on the holiday and split them, 3 and 3.</p>
+  </div>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p><strong>Ask what a game changes, not who is playing.</strong> The best records and the biggest stakes are often in different games. Stakes live where a season is still undecided and the game is close to a coin flip.</p>
+
+  <p><strong>A team that is already in has little left to win.</strong> That is not a knock on the Bills. It is what being 9&ndash;1 has already bought them.</p>
+
+  <p><strong>And be thankful today.</strong> There is a lot to be thankful for: three games, a full table, and people who will argue with you about all of it. Pass the stuffing.</p>
+
+  <div class="box">
+    <h3>How we did it</h3>
+    <p><strong>Data.</strong> Records and the rest of the schedule from nflverse, through games of Nov. 23, checked against ESPN. Each remaining game&rsquo;s chance comes from our <a href="https://thesportspage.net/odds.html" style="color:var(--cream)">Odds Board</a>.</p>
+    <p><strong>The simulation.</strong> 200,000 runs of the rest of the season. Playoffs: four division winners and three wild cards per conference, by wins, with ties broken at random; the NFL&rsquo;s real tiebreakers are not modeled. Our simulated playoff chances land within 2 points of the Board&rsquo;s for every team. A game&rsquo;s swing is each team&rsquo;s playoff chance in the runs where it won, minus the runs where it lost, added over both teams.</p>
+    <p><strong>Uncertainty.</strong> The simulation&rsquo;s own noise is under half a point on every number here. The real uncertainty is in the game chances we feed it, and the swing depends on them: a game we call a coin flip that is really 70&ndash;30 would swing less. The Lions history uses pregame chances from closing prices, as collected by nflverse; the &ldquo;about 6 in 100&rdquo; is the chance of 8 or fewer wins given those 27 chances.</p>
+    <p><strong>Limits.</strong> Seeding is not modeled, which undersells the Bills&ndash;Chiefs game for anyone who cares about a first-week rest. Code: <code>research/thanksgiving/</code> in our repository.</p>
+  </div>
+
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; Thursday, November 26, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
