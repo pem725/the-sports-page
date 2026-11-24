@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 262 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 261 issues remaining of 500
 
 ## Repository Structure
 
@@ -1438,9 +1438,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 238 issues (#1-238)
-Queue: 6 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 207-genes-rule-college, 210-poisson-hockey, 211-time-of-possession, _TEMPLATE)
+Published: 239 issues (#1-239)
+Queue: 6 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 207-genes-rule-college, 211-time-of-possession, 212-thanksgiving-family-table, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 262 issues remaining of 500
-Last published: Issue #238 — "The Last Time Owners Asked for a Cap, Nobody Won the World Series" (193-lockout.html) on November 23, 2026
+Goal: 261 issues remaining of 500
+Last published: Issue #239 — "Hockey Goals Fall Like Raindrops. Until Somebody Falls Behind." (210-poisson-hockey.html) on November 24, 2026

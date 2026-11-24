@@ -8,7 +8,125 @@
     <atom:link href="https://thesportspage.net/feed.xml" rel="self" type="application/rss+xml" />
     <description>One strange sports statistic per issue, explained. Five pieces a week, with a Sunday Edition that scores our predictions against reality.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Nov 2026 17:58:34 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 17:35:09 GMT</lastBuildDate>
+    <item>
+      <title>#239: Hockey Goals Fall Like Raindrops. Until Somebody Falls Behind.</title>
+      <link>https://thesportspage.net/published/210-poisson-hockey.html</link>
+      <description>An NHL team scores just under three goals a game. Give that one number to a formula from 1837 and it tells you how often a team will score none, one, two or seven. Across 27,000 team-games since 2015, it is never off by more than about one game in a hundred. The places it misses are where the hockey is hiding.</description>
+      <content:encoded><![CDATA[<p style="text-align:center;margin:0 0 32px;"><a href="https://thesportspage.net/published/210-poisson-hockey.html" style="display:inline-block;"><img src="https://thesportspage.net/assets/og/210-poisson-hockey.png" alt="Hockey Goals Fall Like Raindrops. Until Somebody Falls Behind." style="max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #c9962a;"></a></p><div style="max-width:640px;margin:0 auto;font-family:Georgia,'Times New Roman',serif;color:#1a1208;font-size:16px;line-height:1.6">
+
+  <h1 class="hed" style="font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208"><span class="hed-glyph" style="color:var(--muted);font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold;line-height:1.2;margin:0 0 8px;color:#1a1208" title="NHL"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><ellipse cx="13" cy="8.4" rx="7.6" ry="2.7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5.4 8.4v3.4c0 1.5 3.4 2.7 7.6 2.7s7.6-1.2 7.6-2.7V8.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>Hockey Goals Fall Like Raindrops. <em>Until Somebody Falls Behind.</em></h1>
+
+  <div class="deck" style="font-style:italic;color:#6b5e4a;border-left:3px solid #b83a1e;padding-left:12px;margin:12px 0 18px;font-size:17px;line-height:1.5">
+    An NHL team scores just under three goals a game. Give that one number to a formula from 1837 and it tells you how often a team will score none, one, two or seven. Across 27,000 team-games since 2015, it is never off by more than about one game in a hundred. The places it misses are where the hockey is hiding.
+  </div>
+
+  <div class="byline" style="font-family:monospace;font-size:11px;letter-spacing:1px;color:#6b5e4a;text-transform:uppercase;margin-bottom:18px">By The Sports Page &middot; The Professor &middot; Lesson: the Poisson distribution</div>
+
+  <div class="stat-row" style="margin:0 0 22px">
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v now" style="font-size:28px;font-weight:bold;line-height:1;display:block">3</div><div class="l">goals a game, about: the only number the formula needs</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v bad" style="font-size:28px;font-weight:bold;line-height:1;display:block">5.6</div><div class="l">shutouts in every 100 team-games, 5.3&ndash;5.9 (formula: 5.1)</div></div>
+    <div class="sc" style="border:1px solid #c8b99a;background:#ede5d2;padding:12px;text-align:center;margin-bottom:6px"><div class="v good" style="font-size:28px;font-weight:bold;line-height:1;display:block">110</div><div class="l">goals by a team behind for every 100 by a team tied or ahead</div></div>
+  </div>
+
+  <p><strong>The question:</strong> how often should your team get shut out?</p>
+
+  <p><strong>The answer:</strong> about 5 or 6 games in every 100. Over an 82-game season that is four or five shutouts, and you can work it out from one number: the average.</p>
+
+  <p><strong>Why that is surprising:</strong> a hockey game feels like a story. A hot goalie, a bad bounce, a tired line. You would expect a pile of stories to make a mess. It does not. Since the fall of 2015, NHL teams have scored zero, one, two or seven goals almost as often as a formula that knows nothing about hockey says they should.</p>
+
+  <p><strong>What you get:</strong> by the end you will be able to draw that curve yourself, see the two places where hockey bends it, and know what a good fit does and does not prove.</p>
+
+  <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">Raindrops on a paving stone</h2>
+
+  <p>Picture rain just starting on one paving stone. In any single instant a drop is unlikely to land there. There are a great many instants. And one drop does not make the next one more or less likely. Count the drops each minute, and the counts follow a shape the French mathematician Sim&eacute;on Denis Poisson wrote down in 1837.</p>
+
+  <p>Now look at a goal. In any one second of a hockey game, a goal is unlikely; a game has 3,600 seconds. If goals also come without regard to each other, they should fall like rain. That is the bet. Below is the whole formula, so you can check it yourself.</p>
+
+  <div class="box" style="background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">The math, in three lines</h3>
+    <p style="font-family:'Roboto Mono',monospace;color:var(--cream)">chance of k goals = e<sup>&minus;&lambda;</sup> &times; &lambda;<sup>k</sup> &divide; k!</p>
+    <p>&lambda; (lambda) is the average. Try &lambda; = 3. Zero goals: e<sup>&minus;3</sup> = 0.05, or 5 games in 100. Each next count is the one before, times &lambda;, divided by k: one goal is 0.05 &times; 3 = 0.15; two goals is 0.15 &times; 3 &divide; 2 = 0.22; three goals is 0.22 &times; 3 &divide; 3 = 0.22 again.</p>
+    <p>Notice that last step. With an average of 3, two goals and three goals come out dead even. Hold onto that; the real games do it too.</p>
+  </div>
+
+  <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">27,000 team-games against one formula</h2>
+
+  <p>We took every regular-season NHL game from 2015&ndash;16 through last spring, about 13,500 games, from the league&rsquo;s own play-by-play feed. Each game gives two team-games, one for each side. We counted each team&rsquo;s goals and drew the formula from the average alone. Nothing else went in.</p>
+
+  <figure style="margin:1.6rem 0">
+<img src="https://thesportspage.net/assets/figures/210-poisson-hockey-fig1.png" alt="The Sports Page — chart" style="width:100%;max-width:680px;height:auto;display:block;margin:0 auto;border:1px solid #c8b99a;">
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);text-align:center;margin-top:.5rem">Per 100 NHL team-games, 2015&ndash;16 to 2025&ndash;26. Bars: what happened, with 95% intervals (black) from resampling whole games. Dots: the Poisson curve from the average (just under 3). Shootouts left out.</figcaption>
+  </figure>
+
+  <p>Read it bar by bar. The formula says 5.1 shutouts in every 100 team-games; there were 5.6. It says 23 two-goal games; there were 21. Seven goals: 2.1 against 2.0. Two and three goals sit almost exactly tied, just as the box promised. No bar misses its dot by more than about one game in a hundred.</p>
+
+  <p>Now look at the small black bars. They show how far chance alone could push each count, with 27,000 team-games behind it. At zero, two, three, four, five and eight-plus goals, the dot sits <em>outside</em> them. So the misses are small, but they are not luck. Something in hockey is pushing the counts off the curve, and the next section finds it.</p>
+
+  <p>There is a second test, and it is stricter. A Poisson count has a fingerprint: its <strong>variance</strong>, the measure of how widely the counts scatter, equals its average. Most real counts scatter more than that. Hockey&rsquo;s average is 3.0. Its variance is 3.0.</p>
+
+  <div class="pull" style="border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:14px 0;margin:22px 0;text-align:center">
+    <p style="font-size:19px;font-weight:bold;font-style:italic;color:#2c4a6e;line-height:1.45;margin:0">A fit this good should make you suspicious, not satisfied.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The fit is too good. Here is why.</h2>
+
+  <p>Raindrops do not care whether the stone is already wet. Hockey teams care a great deal about the score, and that breaks the rule that each goal ignores the last one.</p>
+
+  <p>We timed every minute of regulation by the score at that moment. Leaving out empty-net goals, a team that is behind scores at 2.9 goals per 60 minutes. Tied or ahead, it scores at 2.6. That is about 110 goals for every 100. The team behind presses, and the scores get pulled together.</p>
+
+  <p>You can see the squeeze if you take the empty-net goals out. The average drops to 2.7 and the variance to 2.6: too tight for Poisson. Shutouts fall short of the curve, too, 5.8 in every 100 against 6.5 predicted.</p>
+
+  <p>Then put the empty-net goals back. There were about 4,400 of them in regulation, and nearly every one went to the team already ahead, into a net left open by a team pulling its goalie to catch up. (We showed in <a href="https://thesportspage.net/published/113-pull-the-goalie.html" style="color:var(--rust)">Issue #133</a> why pulling the goalie is still the right call.) Those goals spread the scores back out.</p>
+
+  <p>So the near-perfect fit is two departures pointing in opposite directions. One squeezes the counts; the other stretches them. Add them up and you land on the curve. The formula is right about the scoreboard and wrong about how it got there.</p>
+
+  <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">The part chance owed us</h2>
+
+  <p>One miss we cannot explain yet. The formula says a team should score eight goals or more about 300 times in 27,000 team-games. It happened 203 times. About 100 eight-goal nights that chance owed us never came.</p>
+
+  <p>We checked the obvious suspect: a team far ahead easing off. It does not show up. Up by four or more, teams scored at 2.6 goals per 60, the same rate as a tied game. So the answer is somewhere else. If you have a theory, <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+the+missing+eight-goal+games" style="color:var(--rust)">send it to us</a>; we will test it.</p>
+
+  <h2 class="sh" style="font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #b83a1e;padding-bottom:4px;margin:28px 0 12px;color:#1a1208">What to take home</h2>
+
+  <p><strong>One number can give you the whole shape.</strong> When events are rare in any moment, have many chances to happen and do not affect each other, the average tells you how often you will see zero, one, two or seven. Your team will be shut out four or five times this season. That is what chance alone delivers, and nobody needs to be fired for it.</p>
+
+  <p><strong>A model that fits is not a model that is true.</strong> When a curve lands on the data, ask what it assumes, then take one piece away and see if the fit survives. Here it did not: the goals are not independent, and two errors canceled. You will hear &ldquo;the model fits, so the story is right&rdquo; about far bigger things than hockey. Now you know the first question to ask.</p>
+
+  <div class="box" style="background:#2c4a6e;color:#dce8f5;padding:18px 22px;margin:22px 0">
+    <h3 style="color:#ffffff;font-size:17px;font-weight:bold;margin:0 0 10px">How we did it</h3>
+    <p><strong>Data.</strong> Every regular-season goal from 2015&ndash;16 through 2025&ndash;26, 13,512 games, from the NHL&rsquo;s play-by-play feed (api-web.nhle.com). Goals in regulation and overtime count; shootout tries do not. An empty-net goal is one scored while the other side&rsquo;s goalie was off the ice, from the feed&rsquo;s strength code.</p>
+    <p><strong>Check against a second feed.</strong> For 2024&ndash;25 we counted 7,901 goals plus 77 shootout winners, which the league credits as one goal each: 7,978. The NHL&rsquo;s standings feed, summed over all 32 teams, gives 7,978 goals for.</p>
+    <p><strong>Uncertainty.</strong> The intervals on the bars are 95% intervals from 2,000 bootstrap resamples of whole games. Shutouts per 100 team-games: 5.6 (5.3&ndash;5.9); eight goals or more: 0.75 (0.65&ndash;0.85), against 1.1 from the curve. The curve&rsquo;s own uncertainty is smaller still, because it rests on one average from 27,000 team-games.</p>
+    <p><strong>Limits.</strong> The curve is drawn from one league-wide average, though teams differ; that difference should make the real counts scatter <em>more</em> than Poisson, which makes the shortage of eight-goal games harder to explain, not easier. The rates by score use time in each state, so they are not adjusted for which teams tend to be ahead. Code: <code>research/poisson-hockey/</code> in our repository.</p>
+  </div>
+
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  
+  <div class="footer" style="border-top:3px double #1a1208;padding-top:10px;margin-top:28px;font-family:monospace;font-size:11px;color:#6b5e4a">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. 239 &middot; November 24, 2026</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>]]></content:encoded>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://thesportspage.net/published/210-poisson-hockey.html</guid>
+    </item>
     <item>
       <title>#238: The Last Time Owners Asked for a Cap, Nobody Won the World Series</title>
       <link>https://thesportspage.net/published/193-lockout.html</link>
