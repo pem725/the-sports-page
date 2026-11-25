@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Program: Bears at Lions</title>
+<meta name="description" content="The Sports Page game program for Bears at Lions, Thanksgiving 2026: the bottom line, three things to know, Gene&rsquo;s Rule live, and players to watch.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--h:#0076b6;--a:#c83803;--p:#c83803;--rule:#cfc5ad}
+*{box-sizing:border-box}
+body{margin:0;background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.6}
+.paper{max-width:900px;margin:0 auto;background:var(--cream);padding:28px 32px 40px;box-shadow:0 0 0 1px var(--rule)}
+a{color:var(--steel)}
+.cover{border:3px double var(--ink);padding:22px 18px;text-align:center}
+.kick{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cover h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(36px,7vw,60px);line-height:1.02;margin:10px 0 6px}
+.cover h1 .at{font-style:italic;font-weight:400;font-size:.6em;color:var(--muted)}
+.cover .h{color:var(--h)} .cover .a{color:var(--a)}
+.cover .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;margin:4px 0 14px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:14px}
+.facts div{padding:8px 6px;border-right:1px solid var(--rule)} .facts div:last-child{border-right:0}
+.facts b{display:block;font-family:'Roboto Mono',monospace;font-size:19px}
+.facts span{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price{font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted);margin-top:8px}
+.ded{display:none;margin:16px 0 0;padding:12px 16px;border:1px solid var(--p);background:#fbf1ef;font-family:'Playfair Display',serif;font-style:italic;font-size:19px;text-align:center;color:var(--p)}
+.bluf{background:var(--ink);color:var(--cream);padding:18px 20px;margin:22px 0 8px}
+.bluf .bn{font-family:'Roboto Mono',monospace;font-size:54px;font-weight:600;line-height:1;color:var(--gold)}
+.bluf .bn small{font-size:15px;font-weight:400;color:var(--cream);margin-left:8px}
+.bluf p{margin:10px 0 0;font-size:17px}
+.split{display:flex;height:14px;margin-top:14px;font-size:0}
+.split i{display:block;height:100%}
+.splitlab{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:12px;margin-top:4px;color:#d9cfbb}
+h2{font-family:'Playfair Display',serif;font-weight:900;font-size:30px;margin:38px 0 4px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+h2 small{font-family:'Roboto Mono',monospace;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);display:block}
+h3{font-family:'Playfair Display',serif;font-size:22px;margin:0 0 6px;line-height:1.2}
+.pt{display:grid;grid-template-columns:230px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.pt .lab{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.pt p{margin:6px 0}
+.pt p b{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.big{font-family:'Roboto Mono',monospace;font-size:46px;font-weight:600;line-height:1;color:var(--p)}
+.big small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:6px;line-height:1.35}
+svg text{font-family:'Roboto Mono',monospace}
+.ledger{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px}
+.ledger div{border:1px solid var(--ink);padding:12px;background:#fffdf7}
+.ledger b{font-family:'Roboto Mono',monospace;font-size:28px;display:block;color:var(--p);line-height:1.1}
+.ledger p{margin:6px 0 0;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:14px}
+.card{border:2px solid var(--ink);background:#fffdf7;display:flex;flex-direction:column}
+.card .band{padding:6px 10px;color:#fff;font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between}
+.card.H .band{background:var(--h)} .card.A .band{background:var(--a)}
+.card .body{padding:10px 12px;display:flex;flex-direction:column;flex:1}
+.card .nm{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;line-height:1.05}
+.card .line{font-family:'Roboto Mono',monospace;font-size:12px;margin:6px 0;color:var(--muted)}
+.card .cw{font-size:13.5px;line-height:1.45;margin-top:auto}
+.score{display:grid;grid-template-columns:110px repeat(6,1fr);border:2px solid var(--ink);margin-top:12px;font-family:'Roboto Mono',monospace}
+.score div{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:6px 4px;text-align:center}
+.score .h{background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.1em}
+.score input{width:100%;font:inherit;font-size:18px;text-align:center;border:0;background:transparent}
+.score .tot{font-weight:600;font-size:18px}
+.live{display:block;margin:18px 0 0;padding:12px 16px;background:var(--steel);color:#fff;text-decoration:none;font-family:'Roboto Mono',monospace;font-size:14px}
+.live b{color:var(--gold)}
+.note{font-size:13px;color:var(--muted)}
+.foot{margin-top:40px;border-top:3px double var(--ink);padding-top:10px;font-size:13px;color:var(--muted)}
+.foot p{margin:6px 0}
+@media (max-width:640px){.paper{padding:16px}.facts{grid-template-columns:repeat(2,1fr)}.facts div:nth-child(2){border-right:0}.pt{grid-template-columns:1fr;gap:8px}.bluf .bn{font-size:44px}.score{grid-template-columns:70px repeat(6,1fr)}.score input{font-size:15px}}
+.alert{margin:16px 0 0;padding:12px 16px;border:2px solid var(--rust);background:#fbf1ef;font-size:14.5px}
+.alert b{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.06em}
+.trio{display:flex;gap:10px;align-items:flex-end}
+.trio div{flex:1;text-align:center;border-top:3px solid var(--rule);padding-top:4px}
+.trio b{display:block;font-family:'Roboto Mono',monospace;font-size:34px;font-weight:600;line-height:1.1}
+.trio span{font-family:'Roboto Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.trio .w{border-color:var(--p)} .trio .w b{color:var(--p)} .trio .l b{color:#a89f8c}
+.gene{margin-top:16px;border:2px solid var(--ink);background:#fffdf7;padding:14px 16px}
+.gene h3{margin:0 0 4px}
+</style>
+<script src="../assets/sitenav.js" defer></script>
+</head>
+<body>
+<div class="paper">
+
+<div class="cover">
+  <a data-emblem href="https://thesportspage.net/" style="display:block;text-align:left;border:none;text-decoration:none;margin:0 0 .5rem;line-height:0"><img src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="The Sports Page" width="44" height="44" style="width:44px;height:44px;border:none;display:inline-block"></a>
+  <div class="kick">The Sports Page &middot; Official Game Program &middot; Thanksgiving</div>
+  <h1><span class="a">Bears</span> <span class="at">at</span> <span class="h">Lions</span></h1>
+  <div class="sub">Two 8&ndash;2 teams, first place in the NFC North, and three forecasts that cannot agree on the favorite.</div>
+  <div class="facts"><div><b>1:00 ET</b><span>CBS &middot; Thu Nov 26</span></div><div><b>8&ndash;2 &middot; 8&ndash;2</b><span>Bears &middot; Lions</span></div><div><b>5 &middot; 6</b><span>straight wins, Bears &middot; Lions</span></div><div><b>4</b><span>straight Lions wins over Chicago</span></div></div>
+  <div class="price">Ford Field, Detroit (dome) &middot; Bears &minus;1.5, total 55.5, moneyline &minus;124 / +105 (DraftKings via ESPN, Wednesday morning) &rarr; about <b>53%</b> Chicago once the bookmaker&rsquo;s cut is removed</div>
+</div>
+
+<div class="ded" id="ded"></div>
+<div class="alert"><b>INJURIES &middot; TUESDAY PRACTICE REPORT:</b> Lions DT Skyler Gill-Howard (knee) is listed out; their sack leader, DE DJ Wonnum (back), and CB Ennis Rakestraw Jr. (shoulder) did not practice; S Chuck Clark (hamstring) was limited. Bears S Elijah Hicks (concussion) is listed out; CB Kyler Gordon (shoulder) and RB Roschon Johnson (ankle) did not practice. Names agree on two feeds, nflverse and ESPN. Final game statuses come Wednesday afternoon.</div>
+
+<div class="bluf">
+  <div class="bn">53 <small>times in 100, the Bears win</small></div>
+  <p><b>Bottom line:</b> this is a coin flip, and the forecasts cannot even agree which side of it they are on. The betting market has the Bears at 53 in 100. ESPN&rsquo;s model has the Lions at 55. Our Odds Board, built from earlier point spreads, has the Lions at 53. When three honest forecasts land on both sides of 50, believe the 50.</p>
+  <div class="split"><i style="width:53%;background:#c83803"></i><i style="width:47%;background:#0076b6"></i></div>
+  <div class="splitlab"><span>Bears 53</span><span>Lions 47</span></div>
+</div>
+
+<h2><small>Section 1</small>Three things to know</h2>
+<div class="pt"><div><div class="lab">Bears: chance to win the division</div><div class="trio" role="img" aria-label="Bears: chance to win the division: now 35, with a win 53, with a loss 19, times in 100"><div><b>35</b><span>now</span></div><div class="w"><b>53</b><span>with a win</span></div><div class="l"><b>19</b><span>with a loss</span></div></div><p class="note" style="margin-top:6px">times in 100, from 20,000 simulated seasons</p></div><div><h3>Win, and the Bears become the favorite to win the division. Lose, and it is about one in five.</h3><p>We played out the rest of the season 20,000 times. Right now the Bears win the NFC North 35 times in 100 and the Lions 45. A Bears win Thursday lifts Chicago to 53; a loss drops it to 19. The only bye in the conference, the No. 1 seed, moves from 14 to 22 with a win and to 6 with a loss.</p><p><b>Why it matters:</b> the division winner hosts a playoff game; a wild card travels. And these two meet again Jan. 3 in Chicago. If they finish tied, head-to-head comes first, and our simulation breaks ties at random, so it actually <i>understates</i> what Thursday is worth.</p><p><b>If you miss it:</b> both teams are likely in the playoffs either way (the Bears 96 in 100 with a win, 84 with a loss). Thursday decides <i>where</i> they play in January, not <i>whether</i>.</p></div></div>
+<div class="pt"><div><div class="lab">The Bears defense</div><div class="trio"><div><b>28th</b><span>yards a play allowed</span></div><div class="w"><b>6th</b><span>points allowed</span></div></div><p class="note" style="margin-top:6px">rank of 32; yards adjusted for the schedule</p></div><div><h3>The Bears give up yards, not points. The Lions bring the third-best offense in football.</h3><p>Once the schedule is counted, Chicago allows 5.9 yards a play, 28th of 32. Yet it allows only 19.7 points a game, sixth. Detroit gains 6.2 yards a play, third, and scores 28.8 a game.</p><p><b>Why it matters:</b> one of those Bears numbers is going to give on Thursday. Which one is the real Bears? We tested it this season: yards per play picked 81 of 121 winners from the weeks before, points picked 84. Neither knows much better than the other yet.</p><p><b>If you miss it:</b> a 70-yard Lions drive will feel like a disaster. For this defense it has been normal. Watch what happens inside the 20; that is where the Bears have been winning.</p></div></div>
+<div class="pt"><div><div class="lab">The halftime check</div><div class="big">79<small>of every 100 NFL teams ahead at the half won this season (119 of 151). Up by one score: 75 (62 of 83).</small></div></div><div><h3>At halftime, check the score. A one-score lead is three in four, not a lock.</h3><p>This season the NFL team ahead at the half has won 79 times in 100. When the lead is eight points or fewer, that drops to 75. Both of these teams have played five one-score games and won four of them.</p><p><b>Why it matters:</b> with a total of 55.5, this could be a 17&ndash;14 halftime. One time in four, a lead that size still flips.</p><p><b>If you miss it:</b> a three-point Lions lead at the half will feel like the game. It is roughly the same three-in-four a coin with a heavy thumb gives you. The live card tracks it: <a href="https://thesportspage.net/game.html?lg=nfl&amp;id=401873081">open it on your phone</a>.</p></div></div>
+
+<div class="gene"><h3>Gene&rsquo;s Rule, live</h3>
+<p>Gene&rsquo;s rule: you can tell a good team by how fast it answers after the other side scores. Through week 11, after an opponent&rsquo;s touchdown, the <b>Lions answered with a score 13 times in 24</b>. The <b>Bears answered 6 times in 19</b>, even though they score on 45 in 100 of their other kickoff drives. The league as a whole answers about 38 in 100.</p>
+<p>So the Bears are 8&ndash;2 and still not a Gene team. Our test found <a href="https://thesportspage.net/published/203-genes-rule.html">answering is mostly just scoring</a>: teams answer about as often as they score any other time. A Bears offense that scores 45 in 100 otherwise should not stay at 6 of 19. Thursday is a fresh look. Count it with us: each time the Lions score a touchdown, did Chicago&rsquo;s next drive score?</p></div>
+<h2><small>Section 2</small>The ledger</h2>
+<div class="ledger"><div><b>4</b><p>Straight Lions wins over the Bears: 23&ndash;20 on Thanksgiving 2024, 34&ndash;17, 52&ndash;21 and 19&ndash;16 last January. Caleb Williams started all four.</p></div><div><b>3&ndash;3</b><p>The Bears on Thanksgiving in Detroit since 1999: lost in 1999 and 2014, won in 2018, 2019 and 2021, lost in 2024.</p></div><div><b>28&ndash;26</b><p>The Bears against the Lions since 1999, all 54 games. About as even as two teams get.</p></div><div><b>+65 &middot; +68</b><p>Point difference this season, Bears and Lions. Ten games each, three points apart.</p></div></div>
+
+
+<h2><small>Section 3</small>Players to know</h2>
+<p>Season totals through ten games, from ESPN&rsquo;s game page.</p>
+<div class="cards"><div class="card A"><div class="band"><span>Bears</span><span>QB</span></div><div class="body"><div class="nm">Caleb Williams</div><div class="line">1,727 yds &middot; 10 TD &middot; 6 INT</div><div class="cw">0&ndash;4 against Detroit as a starter. The defense across from him is missing its sack leader if Wonnum sits.</div></div></div><div class="card A"><div class="band"><span>Bears</span><span>RB</span></div><div class="body"><div class="nm">D&rsquo;Andre Swift</div><div class="line">168 car &middot; 627 yds &middot; 10 TD</div><div class="cw">Ten touchdowns on the ground. The Bears run for 142 yards a game.</div></div></div><div class="card A"><div class="band"><span>Bears</span><span>WR</span></div><div class="body"><div class="nm">Luther Burden III</div><div class="line">51 rec &middot; 654 yds &middot; 4 TD</div><div class="cw">Williams&rsquo; top target. Watch him on third down.</div></div></div><div class="card A"><div class="band"><span>Bears</span><span>S</span></div><div class="body"><div class="nm">Dillon Thieneman</div><div class="line">64 tackles</div><div class="cw">Leads the Bears in tackles. Safety Elijah Hicks is out.</div></div></div><div class="card H"><div class="band"><span>Lions</span><span>QB</span></div><div class="body"><div class="nm">Jared Goff</div><div class="line">2,716 yds &middot; 20 TD &middot; 4 INT</div><div class="cw">Four interceptions in 332 throws. He rarely gives the ball away.</div></div></div><div class="card H"><div class="band"><span>Lions</span><span>RB</span></div><div class="body"><div class="nm">Jahmyr Gibbs</div><div class="line">222 car &middot; 1,098 yds &middot; 13 TD</div><div class="cw">Already past 1,000 yards. The Bears allow 94 rushing yards a game.</div></div></div><div class="card H"><div class="band"><span>Lions</span><span>WR</span></div><div class="body"><div class="nm">Amon-Ra St. Brown</div><div class="line">70 rec &middot; 792 yds &middot; 8 TD</div><div class="cw">The catch leader on the field. Bears CB Kyler Gordon missed Tuesday&rsquo;s practice.</div></div></div><div class="card H"><div class="band"><span>Lions</span><span>DE</span></div><div class="body"><div class="nm">DJ Wonnum</div><div class="line">7 sacks</div><div class="cw">Did not practice Tuesday (back). If he is out, Williams gets more time.</div></div></div></div>
+
+<h2><small>Section 4</small>Your scorecard</h2>
+<p>Fill it in as you watch. It saves on this phone.</p>
+<div class="score" id="score"></div>
+
+<a class="live" href="https://thesportspage.net/game.html?lg=nfl&amp;id=401873081"><b>Live game card &rarr;</b> the market&rsquo;s chance, ESPN&rsquo;s model and the halftime check, updated every minute during the game.</a>
+
+<div class="foot">
+<p><b>Sources.</b> Line, ESPN&rsquo;s model, season stats, leaders and injuries: ESPN&rsquo;s game page, Wednesday morning. Practice report, scores, records and the head-to-head history: nflverse. Answer rates: our Gene&rsquo;s Rule data, nflverse play-by-play through week 11. Halftime rates: every NFL game this season through Nov 23 with a leader at the half.</p><p><b>Method.</b> The market&rsquo;s chance is the moneyline with the bookmaker&rsquo;s cut removed. The Odds Board rates every club from the season&rsquo;s published point spreads (least squares, home edge 1.4 points) and plays out the rest of the season 20,000 times, margins normal with a 13.2-point spread. The &ldquo;with a win / with a loss&rdquo; numbers split those same seasons by this game&rsquo;s result. Ties in the standings are broken at random, not by the league&rsquo;s rules, so read them as sizes, not decimals. Yards per play is adjusted for the schedule (nflverse play-by-play through week 11); our test this season, calling each week from the weeks before it: yards per play picked 81 of 121 winners, points 84.</p>
+<p><a href="https://thesportspage.net/">The Sports Page</a> &middot; <a href="https://thesportspage.net/watch.html">What to Watch this weekend</a> &middot; <a href="https://thesportspage.net/odds.html">The Odds Board</a> &middot; <a href="https://thesportspage.net/how-to-watch.html">New to football? How to watch a game</a></p>
+</div>
+</div>
+
+<script>
+// A personal line, read from the link (?for=Name) and never stored: the program stays the same for every reader.
+(function(){
+  var p=new URLSearchParams(location.search).get('for');
+  if(!p) return;
+  p=p.replace(/[^A-Za-z .'\-]/g,'').trim().slice(0,40);
+  if(!p) return;
+  var d=document.getElementById('ded');
+  d.textContent='Made for '+p+'. Bear down.';
+  d.style.display='block';
+})();
+// Scorecard, saved on this device only
+(function(){
+  var key='tsp-score-401873081', st={};
+  try{st=JSON.parse(localStorage.getItem(key))||{};}catch(e){}
+  var cols=['1','2','3','4','OT','Final'], el=document.getElementById('score'), h='<div class="h"></div>';
+  cols.forEach(function(c){h+='<div class="h">'+c+'</div>';});
+  [['Bears','a'],['Lions','h']].forEach(function(t){
+    h+='<div style="text-align:left;font-weight:600;color:var(--'+t[1]+')">'+t[0]+'</div>';
+    for(var q=0;q<5;q++) h+='<div><input inputmode="numeric" maxlength="2" data-k="'+t[1]+q+'" value="'+(st[t[1]+q]||'')+'" aria-label="'+t[0]+' '+cols[q]+'"></div>';
+    h+='<div class="tot" id="tot-'+t[1]+'"></div>';
+  });
+  el.innerHTML=h;
+  function total(){['a','h'].forEach(function(t){var s=0,any=false;for(var q=0;q<5;q++){var v=parseInt(st[t+q],10);if(!isNaN(v)){s+=v;any=true;}}document.getElementById('tot-'+t).textContent=any?s:'';});}
+  el.addEventListener('input',function(e){var k=e.target.getAttribute('data-k');if(!k)return;st[k]=e.target.value.replace(/\D/g,'');try{localStorage.setItem(key,JSON.stringify(st));}catch(err){}total();});
+  total();
+})();
+</script>
+</body>
+</html>
