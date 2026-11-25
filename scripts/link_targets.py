@@ -34,7 +34,9 @@ SKIP_FILES = ()
 
 def files():
     out = subprocess.run(["git", "ls-files", "*.html", "*.js"], cwd=REPO, capture_output=True, text=True).stdout
-    return [f for f in out.split() if not f.startswith(SKIP_DIRS) and f not in SKIP_FILES]
+    # research/*/raw/ holds pages scraped from other sites as data; they are not ours to fix.
+    return [f for f in out.split() if not f.startswith(SKIP_DIRS) and f not in SKIP_FILES
+            and "/raw/" not in f]
 
 
 def internal(href):
@@ -48,6 +50,10 @@ def fix_tag(tag):
     if not m:
         return tag
     has_target = bool(TARGET.search(tag))
+    # A JavaScript-built tag that picks its target at run time ('+(ext ? ' target=...' : '')+')
+    # already follows the rule for every URL; leave it alone rather than strip a correct target.
+    if ("'+(" in tag or '"+(' in tag) and has_target:
+        return tag
     if internal(m.group(2)):
         if has_target:
             tag = REL.sub("", TARGET.sub("", tag))
