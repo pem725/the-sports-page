@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Program: Notre Dame at Syracuse</title>
+<meta name="description" content="The Sports Page game program for Notre Dame at Syracuse, Nov. 28, 2026: the bottom line, three things to know, and players to watch.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--h:#f76900;--a:#0c2340;--p:#0c2340;--rule:#cfc5ad}
+*{box-sizing:border-box}
+body{margin:0;background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.6}
+.paper{max-width:900px;margin:0 auto;background:var(--cream);padding:28px 32px 40px;box-shadow:0 0 0 1px var(--rule)}
+a{color:var(--steel)}
+.cover{border:3px double var(--ink);padding:22px 18px;text-align:center}
+.kick{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cover h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(36px,7vw,60px);line-height:1.02;margin:10px 0 6px}
+.cover h1 .at{font-style:italic;font-weight:400;font-size:.6em;color:var(--muted)}
+.cover .h{color:var(--h)} .cover .a{color:var(--a)}
+.cover .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;margin:4px 0 14px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:14px}
+.facts div{padding:8px 6px;border-right:1px solid var(--rule)} .facts div:last-child{border-right:0}
+.facts b{display:block;font-family:'Roboto Mono',monospace;font-size:19px}
+.facts span{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price{font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted);margin-top:8px}
+.ded{display:none;margin:16px 0 0;padding:12px 16px;border:1px solid var(--p);background:#fbf1ef;font-family:'Playfair Display',serif;font-style:italic;font-size:19px;text-align:center;color:var(--p)}
+.bluf{background:var(--ink);color:var(--cream);padding:18px 20px;margin:22px 0 8px}
+.bluf .bn{font-family:'Roboto Mono',monospace;font-size:54px;font-weight:600;line-height:1;color:var(--gold)}
+.bluf .bn small{font-size:15px;font-weight:400;color:var(--cream);margin-left:8px}
+.bluf p{margin:10px 0 0;font-size:17px}
+.split{display:flex;height:14px;margin-top:14px;font-size:0}
+.split i{display:block;height:100%}
+.splitlab{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:12px;margin-top:4px;color:#d9cfbb}
+h2{font-family:'Playfair Display',serif;font-weight:900;font-size:30px;margin:38px 0 4px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+h2 small{font-family:'Roboto Mono',monospace;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);display:block}
+h3{font-family:'Playfair Display',serif;font-size:22px;margin:0 0 6px;line-height:1.2}
+.pt{display:grid;grid-template-columns:230px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.pt .lab{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.pt p{margin:6px 0}
+.pt p b{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.big{font-family:'Roboto Mono',monospace;font-size:46px;font-weight:600;line-height:1;color:var(--p)}
+.big small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:6px;line-height:1.35}
+svg text{font-family:'Roboto Mono',monospace}
+.ledger{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px}
+.ledger div{border:1px solid var(--ink);padding:12px;background:#fffdf7}
+.ledger b{font-family:'Roboto Mono',monospace;font-size:28px;display:block;color:var(--p);line-height:1.1}
+.ledger p{margin:6px 0 0;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:14px}
+.card{border:2px solid var(--ink);background:#fffdf7;display:flex;flex-direction:column}
+.card .band{padding:6px 10px;color:#fff;font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between}
+.card.H .band{background:var(--h)} .card.A .band{background:var(--a)}
+.card .body{padding:10px 12px;display:flex;flex-direction:column;flex:1}
+.card .nm{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;line-height:1.05}
+.card .line{font-family:'Roboto Mono',monospace;font-size:12px;margin:6px 0;color:var(--muted)}
+.card .cw{font-size:13.5px;line-height:1.45;margin-top:auto}
+.score{display:grid;grid-template-columns:110px repeat(6,1fr);border:2px solid var(--ink);margin-top:12px;font-family:'Roboto Mono',monospace}
+.score div{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:6px 4px;text-align:center}
+.score .h{background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.1em}
+.score input{width:100%;font:inherit;font-size:18px;text-align:center;border:0;background:transparent}
+.score .tot{font-weight:600;font-size:18px}
+.live{display:block;margin:18px 0 0;padding:12px 16px;background:var(--steel);color:#fff;text-decoration:none;font-family:'Roboto Mono',monospace;font-size:14px}
+.live b{color:var(--gold)}
+.note{font-size:13px;color:var(--muted)}
+.foot{margin-top:40px;border-top:3px double var(--ink);padding-top:10px;font-size:13px;color:var(--muted)}
+.foot p{margin:6px 0}
+@media (max-width:640px){.paper{padding:16px}.facts{grid-template-columns:repeat(2,1fr)}.facts div:nth-child(2){border-right:0}.pt{grid-template-columns:1fr;gap:8px}.bluf .bn{font-size:44px}.score{grid-template-columns:70px repeat(6,1fr)}.score input{font-size:15px}}
+.alert{margin:16px 0 0;padding:12px 16px;border:2px solid var(--rust);background:#fbf1ef;font-size:14.5px}
+.alert b{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.06em}
+.trio{display:flex;gap:10px;align-items:flex-start}
+.trio div{flex:1;text-align:center;border-top:3px solid var(--rule);padding-top:4px}
+.trio b{display:block;font-family:'Roboto Mono',monospace;font-size:34px;font-weight:600;line-height:1.1}
+.trio span{font-family:'Roboto Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.trio .w{border-color:var(--p)} .trio .w b{color:var(--p)} .trio .l b{color:#a89f8c}
+.gene{margin-top:16px;border:2px solid var(--ink);background:#fffdf7;padding:14px 16px}
+.gene h3{margin:0 0 4px}
+</style>
+<script src="../assets/sitenav.js" defer></script>
+</head>
+<body>
+<div class="paper">
+
+<div class="cover">
+  <a data-emblem href="https://thesportspage.net/" style="display:block;text-align:left;border:none;text-decoration:none;margin:0 0 .5rem;line-height:0"><img src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="The Sports Page" width="44" height="44" style="width:44px;height:44px;border:none;display:inline-block"></a>
+  <div class="kick">The Sports Page &middot; Official Game Program &middot; Rivalry Weekend</div>
+  <h1><span class="a">Notre Dame</span> <span class="at">at</span> <span class="h">Syracuse</span></h1>
+  <div class="sub">The Irish are in the playoff either way. What Saturday decides is whether they get the first week off.</div>
+  <div class="facts"><div><b>Noon ET</b><span>ABC &middot; Sat Nov 28</span></div><div><b>10&ndash;1 &middot; 5&ndash;6</b><span>Notre Dame &middot; Syracuse</span></div><div><b>No. 4</b><span>in the committee&rsquo;s ranking</span></div><div><b>70&ndash;7</b><span>the last meeting, 2025</span></div></div>
+  <div class="price">JMA Wireless Dome, Syracuse (indoors) &middot; Notre Dame &minus;25.5, total 53.5, moneyline &minus;2800 / +1300 (DraftKings via ESPN) &rarr; about <b>93%</b> Notre Dame once the bookmaker&rsquo;s cut is removed</div>
+</div>
+
+<div class="ded" id="ded"></div>
+<div class="alert"><b>INJURIES:</b> ESPN&rsquo;s college feed carries no injury report, so this program prints none. No report is not the same as nobody hurt; check the team&rsquo;s own release before kickoff.</div>
+
+<div class="bluf">
+  <div class="bn">93 <small>times in 100, Notre Dame wins</small></div>
+  <p><b>Bottom line:</b> Notre Dame is a huge favorite, and every forecast agrees: the betting market 93 in 100, ESPN 95, our ratings 94. Seven in 100 is not zero, though. On a full Saturday, several favorites this size lose somewhere in the country. Saturday is about the bye, not the bid.</p>
+  <div class="split"><i style="width:93%;background:#0c2340"></i><i style="width:7%;background:#f76900"></i></div>
+  <div class="splitlab"><span>Notre Dame 93</span><span>Syracuse 7</span></div>
+</div>
+
+<h2><small>Section 1</small>Three things to know</h2>
+<div class="pt"><div><div class="lab">Notre Dame: chance of a first-round bye</div><div class="trio" role="img" aria-label="Notre Dame: chance of a first-round bye: now 61, with a win 65, with a loss 0, times in 100"><div><b>61</b><span>now</span></div><div class="w"><b>65</b><span>with a win</span></div><div class="l"><b>0</b><span>with a loss</span></div></div><p class="note" style="margin-top:6px">times in 100, from 60,000 simulated seasons</p></div><div><h3>Win, and Notre Dame keeps a two-in-three shot at a bye. Lose, and the bye is gone.</h3><p>We played out the rest of the season 60,000 times from the committee&rsquo;s Nov. 24 ranking. Notre Dame makes the 12-team field in essentially all of them, 99 in 100 even with a loss. The top four seeds skip the first round. Notre Dame gets one of them 61 times in 100 now, 65 with a win, and never with a loss.</p><p><b>Why it matters:</b> a bye is one fewer playoff game to survive. And Notre Dame has no conference title game, so this is its last game before Selection Day, Dec. 6.</p><p><b>If you miss it:</b> you will hear that the Irish &ldquo;control their own destiny.&rdquo; For the bye, they mostly do not: it also turns on what the teams around them do next week, and our stand-in for the committee is a stand-in, not the committee.</p></div></div>
+<div class="pt"><div><div class="lab">The receiver to watch</div><div class="big">1,257<small>receiving yards for Syracuse&rsquo;s Umari Hatcher in 11 games. Notre Dame allows 159 passing yards a game.</small></div></div><div><h3>Syracuse has one of the best receivers in the country. Notre Dame has the second-best defense.</h3><p>Umari Hatcher has 77 catches for 1,257 yards and nine touchdowns. Notre Dame&rsquo;s defense allows 3.8 yards a play once the schedule is counted, second of 138 major-college teams, and 12.8 points a game.</p><p><b>Why it matters:</b> if Syracuse is going to make this a game, it will be through Hatcher. Syracuse is 4&ndash;4 in games decided by eight points or fewer, and it needs this one to be one of those.</p><p><b>If you miss it:</b> a long Hatcher catch early will look like trouble. One big play is not a game plan against this defense; watch what happens on the next series.</p></div></div>
+<div class="pt"><div><div class="lab">The halftime check</div><div class="big">82<small>of every 100 college teams ahead at the half won this season (597 of 729). Up by one score: 65 (195 of 298).</small></div></div><div><h3>At halftime, check the score. A big Irish lead is about as safe as college football gets.</h3><p>This season the college team ahead at the half has won 82 times in 100, and 65 when the lead is eight points or fewer. The spread is 25.5 points. If Notre Dame leads by three scores at the half, it is over; if Syracuse is within one score, the upset is real.</p><p><b>Why it matters:</b> Notre Dame has outscored its opponents by 25 points a game. Its only loss was close: 28&ndash;24 at BYU.</p><p><b>If you miss it:</b> if Syracuse leads at halftime, that is the upset happening, not a fluke of the first half. The live card tracks it: <a href="https://thesportspage.net/game.html?lg=cfb&amp;id=401858314">open it on your phone</a>.</p></div></div>
+
+
+<h2><small>Section 2</small>The ledger</h2>
+<div class="ledger"><div><b>9&ndash;3</b><p>Notre Dame against Syracuse, all 12 meetings since 1914. Syracuse&rsquo;s last win was 24&ndash;23 in South Bend in 2008.</p></div><div><b>70&ndash;7</b><p>Last year, in South Bend.</p></div><div><b>+25</b><p>Points per game Notre Dame has outscored opponents by in 11 games. Syracuse: +2.4.</p></div><div><b>10th &middot; 2nd</b><p>Notre Dame&rsquo;s offense and defense in yards a play, schedule adjusted, of 138.</p></div></div>
+
+
+<h2><small>Section 3</small>Players to know</h2>
+<p>Season totals through eleven games, from ESPN&rsquo;s game page.</p>
+<div class="cards"><div class="card A"><div class="band"><span>Notre Dame</span><span>QB</span></div><div class="body"><div class="nm">CJ Carr</div><div class="line">2,697 yds &middot; 24 TD &middot; 3 INT</div><div class="cw">Three interceptions in 319 throws.</div></div></div><div class="card A"><div class="band"><span>Notre Dame</span><span>RB</span></div><div class="body"><div class="nm">Nolan James Jr.</div><div class="line">135 car &middot; 742 yds &middot; 11 TD</div><div class="cw">Eleven touchdowns on the ground. The Irish run for 183 yards a game.</div></div></div><div class="card A"><div class="band"><span>Notre Dame</span><span>WR</span></div><div class="body"><div class="nm">Jordan Faison</div><div class="line">56 rec &middot; 724 yds &middot; 7 TD</div><div class="cw">Carr&rsquo;s top target.</div></div></div><div class="card A"><div class="band"><span>Notre Dame</span><span>DL</span></div><div class="body"><div class="nm">Boubacar Traore</div><div class="line">5 sacks</div><div class="cw">Leads a defense that allows 12.8 points a game.</div></div></div><div class="card H"><div class="band"><span>Syracuse</span><span>QB</span></div><div class="body"><div class="nm">Steve Angeli</div><div class="line">1,886 yds &middot; 10 TD &middot; 6 INT</div><div class="cw">He will need time to find Hatcher. Notre Dame will not give much.</div></div></div><div class="card H"><div class="band"><span>Syracuse</span><span>WR</span></div><div class="body"><div class="nm">Umari Hatcher</div><div class="line">77 rec &middot; 1,257 yds &middot; 9 TD</div><div class="cw">More than 110 yards a game. The best player on Syracuse&rsquo;s side of the field.</div></div></div><div class="card H"><div class="band"><span>Syracuse</span><span>RB</span></div><div class="body"><div class="nm">Tylik Hill</div><div class="line">124 car &middot; 616 yds</div><div class="cw">Syracuse runs for 152 a game; Notre Dame allows 89.</div></div></div><div class="card H"><div class="band"><span>Syracuse</span><span>LB</span></div><div class="body"><div class="nm">Keyshawn Johnson</div><div class="line">9 sacks</div><div class="cw">Nine sacks in 11 games. The one Syracuse player who can wreck a drive.</div></div></div></div>
+
+<h2><small>Section 4</small>Your scorecard</h2>
+<p>Fill it in as you watch. It saves on this phone.</p>
+<div class="score" id="score"></div>
+
+<a class="live" href="https://thesportspage.net/game.html?lg=cfb&amp;id=401858314"><b>Live game card &rarr;</b> the market&rsquo;s chance, ESPN&rsquo;s model and the halftime check, updated every minute during the game.</a>
+
+<div class="foot">
+<p><b>Sources.</b> Line, ESPN&rsquo;s forecast, the weather, season stats and leaders: ESPN&rsquo;s game page, Wednesday evening. Scores and records: CollegeFootballData, checked against ESPN. Series history: James Howell and CollegeFootballData.</p><p><b>Method.</b> The market&rsquo;s chance is the moneyline with the bookmaker&rsquo;s cut removed. ESPN&rsquo;s chance is its FPI forecast on the game page. Ours comes from SP+ ratings (CollegeFootballData, Nov 25): rating gap plus 2.5 points for home field, through a normal curve with a 16.5-point spread. Playoff chances: we played out the rest of the season 60,000 times, starting each team where the committee put it on Nov. 24 and moving it by what each simulated result does to its record against its schedule. That is a stand-in for the committee, not the committee: it knows nothing of head-to-head, injuries or the eye test. The &ldquo;with a win / with a loss&rdquo; numbers split those same seasons by this game&rsquo;s result. Yards per play is adjusted for the schedule (CollegeFootballData box scores through week 13; rank of 138). Series records: James Howell&rsquo;s historical scores and CollegeFootballData agree on every game. Halftime rates: every major-college game this season through Nov. 21 with a leader at the half.</p>
+<p><a href="https://thesportspage.net/">The Sports Page</a> &middot; <a href="https://thesportspage.net/watch.html">What to Watch this weekend</a> &middot; <a href="https://thesportspage.net/odds.html">The Odds Board</a> &middot; <a href="https://thesportspage.net/every-program.html">Every program since 1869</a> &middot; <a href="https://thesportspage.net/how-to-watch.html">New to football? How to watch a game</a></p>
+</div>
+</div>
+
+<script>
+// A personal line, read from the link (?for=Name) and never stored: the program stays the same for every reader.
+(function(){
+  var p=new URLSearchParams(location.search).get('for');
+  if(!p) return;
+  p=p.replace(/[^A-Za-z .'\-]/g,'').trim().slice(0,40);
+  if(!p) return;
+  var d=document.getElementById('ded');
+  d.textContent='Made for '+p+'. Go Irish.';
+  d.style.display='block';
+})();
+// Scorecard, saved on this device only
+(function(){
+  var key='tsp-score-401858314', st={};
+  try{st=JSON.parse(localStorage.getItem(key))||{};}catch(e){}
+  var cols=['1','2','3','4','OT','Final'], el=document.getElementById('score'), h='<div class="h"></div>';
+  cols.forEach(function(c){h+='<div class="h">'+c+'</div>';});
+  [['Notre Dame','a'],['Syracuse','h']].forEach(function(t){
+    h+='<div style="text-align:left;font-weight:600;color:var(--'+t[1]+')">'+t[0]+'</div>';
+    for(var q=0;q<5;q++) h+='<div><input inputmode="numeric" maxlength="2" data-k="'+t[1]+q+'" value="'+(st[t[1]+q]||'')+'" aria-label="'+t[0]+' '+cols[q]+'"></div>';
+    h+='<div class="tot" id="tot-'+t[1]+'"></div>';
+  });
+  el.innerHTML=h;
+  function total(){['a','h'].forEach(function(t){var s=0,any=false;for(var q=0;q<5;q++){var v=parseInt(st[t+q],10);if(!isNaN(v)){s+=v;any=true;}}document.getElementById('tot-'+t).textContent=any?s:'';});}
+  el.addEventListener('input',function(e){var k=e.target.getAttribute('data-k');if(!k)return;st[k]=e.target.value.replace(/\D/g,'');try{localStorage.setItem(key,JSON.stringify(st));}catch(err){}total();});
+  total();
+})();
+</script>
+</body>
+</html>

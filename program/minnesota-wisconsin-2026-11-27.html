@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Program: Minnesota at Wisconsin</title>
+<meta name="description" content="The Sports Page game program for Minnesota at Wisconsin, Nov. 27, 2026: the bottom line, three things to know, and players to watch.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--h:#c5050c;--a:#7a0019;--p:#c5050c;--rule:#cfc5ad}
+*{box-sizing:border-box}
+body{margin:0;background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.6}
+.paper{max-width:900px;margin:0 auto;background:var(--cream);padding:28px 32px 40px;box-shadow:0 0 0 1px var(--rule)}
+a{color:var(--steel)}
+.cover{border:3px double var(--ink);padding:22px 18px;text-align:center}
+.kick{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cover h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(36px,7vw,60px);line-height:1.02;margin:10px 0 6px}
+.cover h1 .at{font-style:italic;font-weight:400;font-size:.6em;color:var(--muted)}
+.cover .h{color:var(--h)} .cover .a{color:var(--a)}
+.cover .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;margin:4px 0 14px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:14px}
+.facts div{padding:8px 6px;border-right:1px solid var(--rule)} .facts div:last-child{border-right:0}
+.facts b{display:block;font-family:'Roboto Mono',monospace;font-size:19px}
+.facts span{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price{font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted);margin-top:8px}
+.ded{display:none;margin:16px 0 0;padding:12px 16px;border:1px solid var(--p);background:#fbf1ef;font-family:'Playfair Display',serif;font-style:italic;font-size:19px;text-align:center;color:var(--p)}
+.bluf{background:var(--ink);color:var(--cream);padding:18px 20px;margin:22px 0 8px}
+.bluf .bn{font-family:'Roboto Mono',monospace;font-size:54px;font-weight:600;line-height:1;color:var(--gold)}
+.bluf .bn small{font-size:15px;font-weight:400;color:var(--cream);margin-left:8px}
+.bluf p{margin:10px 0 0;font-size:17px}
+.split{display:flex;height:14px;margin-top:14px;font-size:0}
+.split i{display:block;height:100%}
+.splitlab{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:12px;margin-top:4px;color:#d9cfbb}
+h2{font-family:'Playfair Display',serif;font-weight:900;font-size:30px;margin:38px 0 4px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+h2 small{font-family:'Roboto Mono',monospace;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);display:block}
+h3{font-family:'Playfair Display',serif;font-size:22px;margin:0 0 6px;line-height:1.2}
+.pt{display:grid;grid-template-columns:230px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.pt .lab{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.pt p{margin:6px 0}
+.pt p b{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.big{font-family:'Roboto Mono',monospace;font-size:46px;font-weight:600;line-height:1;color:var(--p)}
+.big small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:6px;line-height:1.35}
+svg text{font-family:'Roboto Mono',monospace}
+.ledger{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px}
+.ledger div{border:1px solid var(--ink);padding:12px;background:#fffdf7}
+.ledger b{font-family:'Roboto Mono',monospace;font-size:28px;display:block;color:var(--p);line-height:1.1}
+.ledger p{margin:6px 0 0;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:14px}
+.card{border:2px solid var(--ink);background:#fffdf7;display:flex;flex-direction:column}
+.card .band{padding:6px 10px;color:#fff;font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between}
+.card.H .band{background:var(--h)} .card.A .band{background:var(--a)}
+.card .body{padding:10px 12px;display:flex;flex-direction:column;flex:1}
+.card .nm{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;line-height:1.05}
+.card .line{font-family:'Roboto Mono',monospace;font-size:12px;margin:6px 0;color:var(--muted)}
+.card .cw{font-size:13.5px;line-height:1.45;margin-top:auto}
+.score{display:grid;grid-template-columns:110px repeat(6,1fr);border:2px solid var(--ink);margin-top:12px;font-family:'Roboto Mono',monospace}
+.score div{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:6px 4px;text-align:center}
+.score .h{background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.1em}
+.score input{width:100%;font:inherit;font-size:18px;text-align:center;border:0;background:transparent}
+.score .tot{font-weight:600;font-size:18px}
+.live{display:block;margin:18px 0 0;padding:12px 16px;background:var(--steel);color:#fff;text-decoration:none;font-family:'Roboto Mono',monospace;font-size:14px}
+.live b{color:var(--gold)}
+.note{font-size:13px;color:var(--muted)}
+.foot{margin-top:40px;border-top:3px double var(--ink);padding-top:10px;font-size:13px;color:var(--muted)}
+.foot p{margin:6px 0}
+@media (max-width:640px){.paper{padding:16px}.facts{grid-template-columns:repeat(2,1fr)}.facts div:nth-child(2){border-right:0}.pt{grid-template-columns:1fr;gap:8px}.bluf .bn{font-size:44px}.score{grid-template-columns:70px repeat(6,1fr)}.score input{font-size:15px}}
+.alert{margin:16px 0 0;padding:12px 16px;border:2px solid var(--rust);background:#fbf1ef;font-size:14.5px}
+.alert b{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.06em}
+.trio{display:flex;gap:10px;align-items:flex-start}
+.trio div{flex:1;text-align:center;border-top:3px solid var(--rule);padding-top:4px}
+.trio b{display:block;font-family:'Roboto Mono',monospace;font-size:34px;font-weight:600;line-height:1.1}
+.trio span{font-family:'Roboto Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.trio .w{border-color:var(--p)} .trio .w b{color:var(--p)} .trio .l b{color:#a89f8c}
+.gene{margin-top:16px;border:2px solid var(--ink);background:#fffdf7;padding:14px 16px}
+.gene h3{margin:0 0 4px}
+</style>
+<script src="../assets/sitenav.js" defer></script>
+</head>
+<body>
+<div class="paper">
+
+<div class="cover">
+  <a data-emblem href="https://thesportspage.net/" style="display:block;text-align:left;border:none;text-decoration:none;margin:0 0 .5rem;line-height:0"><img src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="The Sports Page" width="44" height="44" style="width:44px;height:44px;border:none;display:inline-block"></a>
+  <div class="kick">The Sports Page &middot; Official Game Program &middot; Rivalry Weekend</div>
+  <h1><span class="a">Minnesota</span> <span class="at">at</span> <span class="h">Wisconsin</span></h1>
+  <div class="sub">133 games since 1892, one game apart. Lose Friday and Wisconsin&rsquo;s lead in the series is gone.</div>
+  <div class="facts"><div><b>7:30 ET</b><span>NBC &middot; Fri Nov 27</span></div><div><b>7&ndash;4 &middot; 6&ndash;5</b><span>Wisconsin &middot; Minnesota</span></div><div><b>63&ndash;62&ndash;8</b><span>the series, Wisconsin ahead</span></div><div><b>4 of 5</b><span>recent meetings won by Minnesota</span></div></div>
+  <div class="price">Camp Randall Stadium, Madison &middot; forecast 40&deg;, light wind &middot; Wisconsin &minus;7.5, total 37.5, moneyline &minus;305 / +245 (DraftKings via ESPN) &rarr; about <b>72%</b> Wisconsin once the bookmaker&rsquo;s cut is removed</div>
+</div>
+
+<div class="ded" id="ded"></div>
+<div class="alert"><b>INJURIES:</b> ESPN&rsquo;s college feed carries no injury report, so this program prints none. No report is not the same as nobody hurt; check the team&rsquo;s own release before kickoff.</div>
+
+<div class="bluf">
+  <div class="bn">72 <small>times in 100, Wisconsin wins</small></div>
+  <p><b>Bottom line:</b> Wisconsin is a solid favorite at home, and every forecast agrees. The betting market says 72 in 100, ESPN 80, and our ratings 77. That is a team that should win. It is also a team that loses this game about one time in four, and Minnesota has won four of the last five.</p>
+  <div class="split"><i style="width:72%;background:#c5050c"></i><i style="width:28%;background:#7a0019"></i></div>
+  <div class="splitlab"><span>Wisconsin 72</span><span>Minnesota 28</span></div>
+</div>
+
+<h2><small>Section 1</small>Three things to know</h2>
+<div class="pt"><div><div class="lab">The series, since 1892</div><div class="trio"><div class="w"><b>63</b><span>Wisconsin wins</span></div><div><b>62</b><span>Minnesota wins</span></div><div class="l"><b>8</b><span>ties</span></div></div></div><div><h3>Win, and Wisconsin keeps its one-game lead. Lose, and the series is tied for the first time since 2014.</h3><p>These two have played 133 times. The series was dead even, 57&ndash;57, after Wisconsin&rsquo;s 2014 win. Since then Wisconsin won six and Minnesota five, including the last two: 24&ndash;7 in Madison in 2024 and 17&ndash;7 in Minneapolis last year.</p><p><b>Why it matters:</b> the winner takes Paul Bunyan&rsquo;s Axe home. A Minnesota win would also mean three straight over Wisconsin. Neither team is playing for the playoff; this game is the season&rsquo;s trophy.</p><p><b>If you miss it:</b> &ldquo;Minnesota owns this rivalry now&rdquo; will be said, and five games is not ownership. Four or more of five is what a team that wins half the time does about one time in five.</p></div></div>
+<div class="pt"><div><div class="lab">Yards a play, schedule adjusted</div><div class="trio"><div class="w"><b>4th</b><span>Wisconsin defense</span></div><div class="l"><b>113th</b><span>Minnesota offense</span></div></div><p class="note" style="margin-top:6px">rank of 138 major-college teams</p></div><div><h3>Wisconsin has the fourth-best defense in the country. Minnesota has the 113th-best offense.</h3><p>Once the schedule is counted, Wisconsin allows 3.9 yards a play, fourth of 138. Minnesota gains 5.5, 113th. The total is 37.5 points, tied for the lowest of the weekend&rsquo;s 66 major-college games. Expect long drives, punts and field goals.</p><p><b>Why it matters:</b> Minnesota is 6&ndash;5 and has been outscored on the season, by a tenth of a point a game. It got to 6&ndash;5 by going 4&ndash;1 in games decided by eight points or fewer. Close games are mostly coin flips. If this one is close late, that record will not help Minnesota.</p><p><b>If you miss it:</b> a Minnesota field goal drive will look like the offense waking up. Against this defense, a field goal is a good drive.</p></div></div>
+<div class="pt"><div><div class="lab">The halftime check</div><div class="big">82<small>of every 100 college teams ahead at the half won this season (597 of 729). Up by one score: 65 (195 of 298).</small></div></div><div><h3>At halftime, check the score. A one-score lead wins about two times in three.</h3><p>This season the college team ahead at the half has won 82 times in 100. When the lead is eight points or fewer, it drops to 65. In a game with a 37.5-point total, a one-score halftime is the likeliest thing you will see.</p><p><b>Why it matters:</b> with two defenses this strong, a 10&ndash;7 lead at the half is real, but it is a long way from safe.</p><p><b>If you miss it:</b> a 7&ndash;3 halftime will feel like a lock in a game this slow. It is about two in three. The live card tracks it: <a href="https://thesportspage.net/game.html?lg=cfb&amp;id=401858544">open it on your phone</a>.</p></div></div>
+
+
+<h2><small>Section 2</small>The ledger</h2>
+<div class="ledger"><div><b>133</b><p>Meetings since 1892, the series Wisconsin leads 63&ndash;62&ndash;8. Howell&rsquo;s scores and CollegeFootballData agree on every one.</p></div><div><b>17&ndash;7 &middot; 24&ndash;7</b><p>Minnesota&rsquo;s last two wins in the series, 2025 and 2024. Wisconsin last won it 28&ndash;14 in Minneapolis in 2023.</p></div><div><b>+9.3 &middot; &minus;0.1</b><p>Points per game each team has outscored opponents by this season, Wisconsin and Minnesota.</p></div><div><b>1&ndash;1 &middot; 4&ndash;1</b><p>Records in games decided by eight points or fewer, Wisconsin and Minnesota.</p></div></div>
+
+
+<h2><small>Section 3</small>Players to know</h2>
+<p>Season totals through eleven games, from ESPN&rsquo;s game page.</p>
+<div class="cards"><div class="card H"><div class="band"><span>Wisconsin</span><span>QB</span></div><div class="body"><div class="nm">Colton Joseph</div><div class="line">1,482 pass yds &middot; 558 rush yds</div><div class="cw">Leads the team in passing and in rushing. When he runs, Wisconsin moves.</div></div></div><div class="card H"><div class="band"><span>Wisconsin</span><span>WR</span></div><div class="body"><div class="nm">Tyrell Henry</div><div class="line">37 rec &middot; 439 yds</div><div class="cw">The leading receiver in an offense that throws for 173 yards a game.</div></div></div><div class="card H"><div class="band"><span>Wisconsin</span><span>LB</span></div><div class="body"><div class="nm">Sebastian Cheeks</div><div class="line">7 sacks</div><div class="cw">The pass rush in front of the country&rsquo;s fourth-best defense.</div></div></div><div class="card H"><div class="band"><span>Wisconsin</span><span>LB</span></div><div class="body"><div class="nm">Cooper Catalano</div><div class="line">103 tackles</div><div class="cw">More than nine a game. You will hear his name all night.</div></div></div><div class="card A"><div class="band"><span>Minnesota</span><span>QB</span></div><div class="body"><div class="nm">Drake Lindsey</div><div class="line">2,206 yds &middot; 15 TD &middot; 7 INT</div><div class="cw">Throws 33 times a game. Against this secondary, every throw is work.</div></div></div><div class="card A"><div class="band"><span>Minnesota</span><span>RB</span></div><div class="body"><div class="nm">TJ Thomas</div><div class="line">82 car &middot; 472 yds</div><div class="cw">The leading rusher, against a defense that allows 98 rushing yards a game.</div></div></div><div class="card A"><div class="band"><span>Minnesota</span><span>WR</span></div><div class="body"><div class="nm">Javon Tracy</div><div class="line">59 rec &middot; 568 yds &middot; 3 TD</div><div class="cw">Lindsey&rsquo;s top target.</div></div></div><div class="card A"><div class="band"><span>Minnesota</span><span>DL</span></div><div class="body"><div class="nm">TJ Bush Jr.</div><div class="line">6 sacks</div><div class="cw">Minnesota&rsquo;s sack leader, chasing a quarterback who runs.</div></div></div></div>
+
+<h2><small>Section 4</small>Your scorecard</h2>
+<p>Fill it in as you watch. It saves on this phone.</p>
+<div class="score" id="score"></div>
+
+<a class="live" href="https://thesportspage.net/game.html?lg=cfb&amp;id=401858544"><b>Live game card &rarr;</b> the market&rsquo;s chance, ESPN&rsquo;s model and the halftime check, updated every minute during the game.</a>
+
+<div class="foot">
+<p><b>Sources.</b> Line, ESPN&rsquo;s forecast, the weather, season stats and leaders: ESPN&rsquo;s game page, Wednesday evening. Scores and records: CollegeFootballData, checked against ESPN. Series history: James Howell and CollegeFootballData.</p><p><b>Method.</b> The market&rsquo;s chance is the moneyline with the bookmaker&rsquo;s cut removed. ESPN&rsquo;s chance is its FPI forecast on the game page. Ours comes from SP+ ratings (CollegeFootballData, Nov 25): rating gap plus 2.5 points for home field, through a normal curve with a 16.5-point spread. Playoff chances: we played out the rest of the season 60,000 times, starting each team where the committee put it on Nov. 24 and moving it by what each simulated result does to its record against its schedule. That is a stand-in for the committee, not the committee: it knows nothing of head-to-head, injuries or the eye test. The &ldquo;with a win / with a loss&rdquo; numbers split those same seasons by this game&rsquo;s result. Yards per play is adjusted for the schedule (CollegeFootballData box scores through week 13; rank of 138). Series records: James Howell&rsquo;s historical scores and CollegeFootballData agree on every game. Halftime rates: every major-college game this season through Nov. 21 with a leader at the half.</p>
+<p><a href="https://thesportspage.net/">The Sports Page</a> &middot; <a href="https://thesportspage.net/watch.html">What to Watch this weekend</a> &middot; <a href="https://thesportspage.net/odds.html">The Odds Board</a> &middot; <a href="https://thesportspage.net/every-program.html">Every program since 1869</a> &middot; <a href="https://thesportspage.net/how-to-watch.html">New to football? How to watch a game</a></p>
+</div>
+</div>
+
+<script>
+// A personal line, read from the link (?for=Name) and never stored: the program stays the same for every reader.
+(function(){
+  var p=new URLSearchParams(location.search).get('for');
+  if(!p) return;
+  p=p.replace(/[^A-Za-z .'\-]/g,'').trim().slice(0,40);
+  if(!p) return;
+  var d=document.getElementById('ded');
+  d.textContent='Made for '+p+'. On, Wisconsin!';
+  d.style.display='block';
+})();
+// Scorecard, saved on this device only
+(function(){
+  var key='tsp-score-401858544', st={};
+  try{st=JSON.parse(localStorage.getItem(key))||{};}catch(e){}
+  var cols=['1','2','3','4','OT','Final'], el=document.getElementById('score'), h='<div class="h"></div>';
+  cols.forEach(function(c){h+='<div class="h">'+c+'</div>';});
+  [['Minnesota','a'],['Wisconsin','h']].forEach(function(t){
+    h+='<div style="text-align:left;font-weight:600;color:var(--'+t[1]+')">'+t[0]+'</div>';
+    for(var q=0;q<5;q++) h+='<div><input inputmode="numeric" maxlength="2" data-k="'+t[1]+q+'" value="'+(st[t[1]+q]||'')+'" aria-label="'+t[0]+' '+cols[q]+'"></div>';
+    h+='<div class="tot" id="tot-'+t[1]+'"></div>';
+  });
+  el.innerHTML=h;
+  function total(){['a','h'].forEach(function(t){var s=0,any=false;for(var q=0;q<5;q++){var v=parseInt(st[t+q],10);if(!isNaN(v)){s+=v;any=true;}}document.getElementById('tot-'+t).textContent=any?s:'';});}
+  el.addEventListener('input',function(e){var k=e.target.getAttribute('data-k');if(!k)return;st[k]=e.target.value.replace(/\D/g,'');try{localStorage.setItem(key,JSON.stringify(st));}catch(err){}total();});
+  total();
+})();
+</script>
+</body>
+</html>

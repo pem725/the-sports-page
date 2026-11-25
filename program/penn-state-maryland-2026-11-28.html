@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Program: Penn State at Maryland</title>
+<meta name="description" content="The Sports Page game program for Penn State at Maryland, Nov. 28, 2026: the bottom line, three things to know, and players to watch.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1208;--cream:#f5f0e8;--aged:#e0d8c5;--rust:#b83a1e;--steel:#2c4a6e;--gold:#c9962a;--muted:#6b5e4a;--h:#e03a3e;--a:#041e42;--p:#041e42;--rule:#cfc5ad}
+*{box-sizing:border-box}
+body{margin:0;background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.6}
+.paper{max-width:900px;margin:0 auto;background:var(--cream);padding:28px 32px 40px;box-shadow:0 0 0 1px var(--rule)}
+a{color:var(--steel)}
+.cover{border:3px double var(--ink);padding:22px 18px;text-align:center}
+.kick{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cover h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(36px,7vw,60px);line-height:1.02;margin:10px 0 6px}
+.cover h1 .at{font-style:italic;font-weight:400;font-size:.6em;color:var(--muted)}
+.cover .h{color:var(--h)} .cover .a{color:var(--a)}
+.cover .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;margin:4px 0 14px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:14px}
+.facts div{padding:8px 6px;border-right:1px solid var(--rule)} .facts div:last-child{border-right:0}
+.facts b{display:block;font-family:'Roboto Mono',monospace;font-size:19px}
+.facts span{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price{font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted);margin-top:8px}
+.ded{display:none;margin:16px 0 0;padding:12px 16px;border:1px solid var(--p);background:#fbf1ef;font-family:'Playfair Display',serif;font-style:italic;font-size:19px;text-align:center;color:var(--p)}
+.bluf{background:var(--ink);color:var(--cream);padding:18px 20px;margin:22px 0 8px}
+.bluf .bn{font-family:'Roboto Mono',monospace;font-size:54px;font-weight:600;line-height:1;color:var(--gold)}
+.bluf .bn small{font-size:15px;font-weight:400;color:var(--cream);margin-left:8px}
+.bluf p{margin:10px 0 0;font-size:17px}
+.split{display:flex;height:14px;margin-top:14px;font-size:0}
+.split i{display:block;height:100%}
+.splitlab{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:12px;margin-top:4px;color:#d9cfbb}
+h2{font-family:'Playfair Display',serif;font-weight:900;font-size:30px;margin:38px 0 4px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+h2 small{font-family:'Roboto Mono',monospace;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);display:block}
+h3{font-family:'Playfair Display',serif;font-size:22px;margin:0 0 6px;line-height:1.2}
+.pt{display:grid;grid-template-columns:230px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.pt .lab{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.pt p{margin:6px 0}
+.pt p b{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.big{font-family:'Roboto Mono',monospace;font-size:46px;font-weight:600;line-height:1;color:var(--p)}
+.big small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:6px;line-height:1.35}
+svg text{font-family:'Roboto Mono',monospace}
+.ledger{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px}
+.ledger div{border:1px solid var(--ink);padding:12px;background:#fffdf7}
+.ledger b{font-family:'Roboto Mono',monospace;font-size:28px;display:block;color:var(--p);line-height:1.1}
+.ledger p{margin:6px 0 0;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:14px}
+.card{border:2px solid var(--ink);background:#fffdf7;display:flex;flex-direction:column}
+.card .band{padding:6px 10px;color:#fff;font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between}
+.card.H .band{background:var(--h)} .card.A .band{background:var(--a)}
+.card .body{padding:10px 12px;display:flex;flex-direction:column;flex:1}
+.card .nm{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;line-height:1.05}
+.card .line{font-family:'Roboto Mono',monospace;font-size:12px;margin:6px 0;color:var(--muted)}
+.card .cw{font-size:13.5px;line-height:1.45;margin-top:auto}
+.score{display:grid;grid-template-columns:110px repeat(6,1fr);border:2px solid var(--ink);margin-top:12px;font-family:'Roboto Mono',monospace}
+.score div{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:6px 4px;text-align:center}
+.score .h{background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.1em}
+.score input{width:100%;font:inherit;font-size:18px;text-align:center;border:0;background:transparent}
+.score .tot{font-weight:600;font-size:18px}
+.live{display:block;margin:18px 0 0;padding:12px 16px;background:var(--steel);color:#fff;text-decoration:none;font-family:'Roboto Mono',monospace;font-size:14px}
+.live b{color:var(--gold)}
+.note{font-size:13px;color:var(--muted)}
+.foot{margin-top:40px;border-top:3px double var(--ink);padding-top:10px;font-size:13px;color:var(--muted)}
+.foot p{margin:6px 0}
+@media (max-width:640px){.paper{padding:16px}.facts{grid-template-columns:repeat(2,1fr)}.facts div:nth-child(2){border-right:0}.pt{grid-template-columns:1fr;gap:8px}.bluf .bn{font-size:44px}.score{grid-template-columns:70px repeat(6,1fr)}.score input{font-size:15px}}
+.alert{margin:16px 0 0;padding:12px 16px;border:2px solid var(--rust);background:#fbf1ef;font-size:14.5px}
+.alert b{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.06em}
+.trio{display:flex;gap:10px;align-items:flex-start}
+.trio div{flex:1;text-align:center;border-top:3px solid var(--rule);padding-top:4px}
+.trio b{display:block;font-family:'Roboto Mono',monospace;font-size:34px;font-weight:600;line-height:1.1}
+.trio span{font-family:'Roboto Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.trio .w{border-color:var(--p)} .trio .w b{color:var(--p)} .trio .l b{color:#a89f8c}
+.gene{margin-top:16px;border:2px solid var(--ink);background:#fffdf7;padding:14px 16px}
+.gene h3{margin:0 0 4px}
+</style>
+<script src="../assets/sitenav.js" defer></script>
+</head>
+<body>
+<div class="paper">
+
+<div class="cover">
+  <a data-emblem href="https://thesportspage.net/" style="display:block;text-align:left;border:none;text-decoration:none;margin:0 0 .5rem;line-height:0"><img src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="The Sports Page" width="44" height="44" style="width:44px;height:44px;border:none;display:inline-block"></a>
+  <div class="kick">The Sports Page &middot; Official Game Program &middot; Rivalry Weekend</div>
+  <h1><span class="a">Penn State</span> <span class="at">at</span> <span class="h">Maryland</span></h1>
+  <div class="sub">Penn State is 6&ndash;5. It has outscored its opponents by ten points a game. Both of those are true.</div>
+  <div class="facts"><div><b>3:30 ET</b><span>FS1 &middot; Sat Nov 28</span></div><div><b>6&ndash;5 &middot; 4&ndash;7</b><span>Penn State &middot; Maryland</span></div><div><b>1&ndash;4</b><span>Penn State in one-score games</span></div><div><b>44&ndash;3&ndash;1</b><span>the series, Penn State ahead</span></div></div>
+  <div class="price">SECU Stadium, College Park &middot; forecast 51&deg;, gusts to 17 mph &middot; Penn State &minus;7, total 48.5, moneyline &minus;278 / +225 (DraftKings via ESPN) &rarr; about <b>71%</b> Penn State once the bookmaker&rsquo;s cut is removed</div>
+</div>
+
+<div class="ded" id="ded"></div>
+<div class="alert"><b>INJURIES:</b> ESPN&rsquo;s college feed carries no injury report, so this program prints none. No report is not the same as nobody hurt; check the team&rsquo;s own release before kickoff.</div>
+
+<div class="bluf">
+  <div class="bn">71 <small>times in 100, Penn State wins</small></div>
+  <p><b>Bottom line:</b> Penn State is the favorite on the road: the betting market says 71 in 100, ESPN 82, our ratings 74. Read that as about seven in ten. Penn State&rsquo;s season has turned on close games, and it has lost four of five of them.</p>
+  <div class="split"><i style="width:71%;background:#041e42"></i><i style="width:29%;background:#e03a3e"></i></div>
+  <div class="splitlab"><span>Penn State 71</span><span>Maryland 29</span></div>
+</div>
+
+<h2><small>Section 1</small>Three things to know</h2>
+<div class="pt"><div><div class="lab">Games decided by 8 points or fewer</div><div class="trio"><div class="w"><b>1</b><span>won</span></div><div class="l"><b>4</b><span>lost</span></div></div><p class="note" style="margin-top:6px">Penn State, 2026</p></div><div><h3>Penn State has lost four games by eight points or fewer. A fair coin does that about one time in five.</h3><p>The four: 24&ndash;20 to Wisconsin, 31&ndash;23 to USC, 21&ndash;18 at Michigan and 25&ndash;24 to Rutgers. Three of them were at home. The one close win was 28&ndash;25 over Washington. A team that wins half its close games goes 1&ndash;4 or worse in five of them about 19 times in 100.</p><p><b>Why it matters:</b> close games are where luck lives. Penn State&rsquo;s other six games were decided by 14 points or more, and it won five. 6&ndash;5 undersells this team, and the market price on Saturday says so.</p><p><b>If you miss it:</b> you will hear that Penn State &ldquo;can&rsquo;t win close games,&rdquo; as if it were a trait. Over a season or two, records in close games mostly drift back to even. Watch the fourth quarter as a coin flip, not a character test.</p></div></div>
+<div class="pt"><div><div class="lab">The series, since 1917</div><div class="trio"><div class="w"><b>44</b><span>Penn State wins</span></div><div class="l"><b>3</b><span>Maryland wins</span></div><div><b>1</b><span>tie</span></div></div></div><div><h3>Maryland has beaten Penn State three times in 48 tries.</h3><p>Maryland won in 1961, 2014 and 2020. The 2014 game was 20&ndash;19 in State College; the 2020 game was 35&ndash;19, also there. Penn State has won the last four, the most recent 44&ndash;7 in 2024.</p><p><b>Why it matters:</b> history is not a forecast; this season is. Maryland is 4&ndash;7, has allowed 31 points a game, and lost its last game 35&ndash;21 to USC. But it beat Wisconsin by three, and Wisconsin beat Penn State.</p><p><b>If you miss it:</b> &ldquo;Penn State owns Maryland&rdquo; is true about the past. Saturday&rsquo;s seven-in-ten comes from 2026, not from 1961.</p></div></div>
+<div class="pt"><div><div class="lab">The halftime check</div><div class="big">82<small>of every 100 college teams ahead at the half won this season (597 of 729). Up by one score: 65 (195 of 298).</small></div></div><div><h3>At halftime, check the score. A one-score lead wins about two times in three.</h3><p>This season the college team ahead at the half has won 82 times in 100. When the lead is eight points or fewer, it drops to 65. For Penn State this year, one-score games have gone the wrong way four times in five.</p><p><b>Why it matters:</b> if Penn State leads by two scores at the half, relax. If it is a one-score game, you are watching the part of the season that has gone badly.</p><p><b>If you miss it:</b> a seven-point halftime lead will feel safe. It is about two in three. The live card tracks it: <a href="https://thesportspage.net/game.html?lg=cfb&amp;id=401858539">open it on your phone</a>.</p></div></div>
+
+
+<h2><small>Section 2</small>The ledger</h2>
+<div class="ledger"><div><b>+10.3</b><p>Points per game Penn State has outscored opponents by in 11 games. Maryland: &minus;4.0.</p></div><div><b>59th &middot; 27th</b><p>Penn State&rsquo;s offense and defense in yards a play, schedule adjusted, of 138. Maryland: 73rd and 45th.</p></div><div><b>48</b><p>Meetings since 1917. Howell&rsquo;s scores and CollegeFootballData agree on every one.</p></div><div><b>2 of 3</b><p>Penn State&rsquo;s last three games, won; the loss was 25&ndash;24 to Rutgers.</p></div></div>
+
+
+<h2><small>Section 3</small>Players to know</h2>
+<p>Season totals through eleven games, from ESPN&rsquo;s game page.</p>
+<div class="cards"><div class="card A"><div class="band"><span>Penn State</span><span>QB</span></div><div class="body"><div class="nm">Rocco Becht</div><div class="line">2,396 yds &middot; 19 TD &middot; 5 INT</div><div class="cw">Five interceptions in 297 throws.</div></div></div><div class="card A"><div class="band"><span>Penn State</span><span>RB</span></div><div class="body"><div class="nm">Carson Hansen</div><div class="line">115 car &middot; 619 yds &middot; 7 TD</div><div class="cw">Penn State runs for 158 a game; Maryland allows 149.</div></div></div><div class="card A"><div class="band"><span>Penn State</span><span>WR</span></div><div class="body"><div class="nm">Chase Sowell</div><div class="line">44 rec &middot; 758 yds &middot; 5 TD</div><div class="cw">More than 17 yards a catch. The big-play threat.</div></div></div><div class="card A"><div class="band"><span>Penn State</span><span>LB</span></div><div class="body"><div class="nm">Tony Rojas</div><div class="line">86 tackles &middot; 6.5 sacks</div><div class="cw">Leads the team in tackles and in sacks.</div></div></div><div class="card H"><div class="band"><span>Maryland</span><span>QB</span></div><div class="body"><div class="nm">Malik Washington</div><div class="line">2,309 yds &middot; 11 TD &middot; 10 INT</div><div class="cw">Ten interceptions in 346 throws. Turnovers are Maryland&rsquo;s risk and Penn State&rsquo;s chance.</div></div></div><div class="card H"><div class="band"><span>Maryland</span><span>RB</span></div><div class="body"><div class="nm">DeJuan Williams</div><div class="line">110 car &middot; 592 yds &middot; 7 TD</div><div class="cw">The leading rusher.</div></div></div><div class="card H"><div class="band"><span>Maryland</span><span>WR</span></div><div class="body"><div class="nm">Chris Durr Jr.</div><div class="line">74 rec &middot; 848 yds &middot; 5 TD</div><div class="cw">Washington&rsquo;s top target, by a lot.</div></div></div><div class="card H"><div class="band"><span>Maryland</span><span>LB</span></div><div class="body"><div class="nm">Zion Elee</div><div class="line">6 sacks</div><div class="cw">Maryland&rsquo;s sack leader.</div></div></div></div>
+
+<h2><small>Section 4</small>Your scorecard</h2>
+<p>Fill it in as you watch. It saves on this phone.</p>
+<div class="score" id="score"></div>
+
+<a class="live" href="https://thesportspage.net/game.html?lg=cfb&amp;id=401858539"><b>Live game card &rarr;</b> the market&rsquo;s chance, ESPN&rsquo;s model and the halftime check, updated every minute during the game.</a>
+
+<div class="foot">
+<p><b>Sources.</b> Line, ESPN&rsquo;s forecast, the weather, season stats and leaders: ESPN&rsquo;s game page, Wednesday evening. Scores and records: CollegeFootballData, checked against ESPN. Series history: James Howell and CollegeFootballData.</p><p><b>Method.</b> The market&rsquo;s chance is the moneyline with the bookmaker&rsquo;s cut removed. ESPN&rsquo;s chance is its FPI forecast on the game page. Ours comes from SP+ ratings (CollegeFootballData, Nov 25): rating gap plus 2.5 points for home field, through a normal curve with a 16.5-point spread. Playoff chances: we played out the rest of the season 60,000 times, starting each team where the committee put it on Nov. 24 and moving it by what each simulated result does to its record against its schedule. That is a stand-in for the committee, not the committee: it knows nothing of head-to-head, injuries or the eye test. The &ldquo;with a win / with a loss&rdquo; numbers split those same seasons by this game&rsquo;s result. Yards per play is adjusted for the schedule (CollegeFootballData box scores through week 13; rank of 138). Series records: James Howell&rsquo;s historical scores and CollegeFootballData agree on every game. Halftime rates: every major-college game this season through Nov. 21 with a leader at the half.</p>
+<p><a href="https://thesportspage.net/">The Sports Page</a> &middot; <a href="https://thesportspage.net/watch.html">What to Watch this weekend</a> &middot; <a href="https://thesportspage.net/odds.html">The Odds Board</a> &middot; <a href="https://thesportspage.net/every-program.html">Every program since 1869</a> &middot; <a href="https://thesportspage.net/how-to-watch.html">New to football? How to watch a game</a></p>
+</div>
+</div>
+
+<script>
+// A personal line, read from the link (?for=Name) and never stored: the program stays the same for every reader.
+(function(){
+  var p=new URLSearchParams(location.search).get('for');
+  if(!p) return;
+  p=p.replace(/[^A-Za-z .'\-]/g,'').trim().slice(0,40);
+  if(!p) return;
+  var d=document.getElementById('ded');
+  d.textContent='Made for '+p+'. We are.';
+  d.style.display='block';
+})();
+// Scorecard, saved on this device only
+(function(){
+  var key='tsp-score-401858539', st={};
+  try{st=JSON.parse(localStorage.getItem(key))||{};}catch(e){}
+  var cols=['1','2','3','4','OT','Final'], el=document.getElementById('score'), h='<div class="h"></div>';
+  cols.forEach(function(c){h+='<div class="h">'+c+'</div>';});
+  [['Penn State','a'],['Maryland','h']].forEach(function(t){
+    h+='<div style="text-align:left;font-weight:600;color:var(--'+t[1]+')">'+t[0]+'</div>';
+    for(var q=0;q<5;q++) h+='<div><input inputmode="numeric" maxlength="2" data-k="'+t[1]+q+'" value="'+(st[t[1]+q]||'')+'" aria-label="'+t[0]+' '+cols[q]+'"></div>';
+    h+='<div class="tot" id="tot-'+t[1]+'"></div>';
+  });
+  el.innerHTML=h;
+  function total(){['a','h'].forEach(function(t){var s=0,any=false;for(var q=0;q<5;q++){var v=parseInt(st[t+q],10);if(!isNaN(v)){s+=v;any=true;}}document.getElementById('tot-'+t).textContent=any?s:'';});}
+  el.addEventListener('input',function(e){var k=e.target.getAttribute('data-k');if(!k)return;st[k]=e.target.value.replace(/\D/g,'');try{localStorage.setItem(key,JSON.stringify(st));}catch(err){}total();});
+  total();
+})();
+</script>
+</body>
+</html>
