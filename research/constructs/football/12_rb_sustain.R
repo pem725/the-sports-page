@@ -27,15 +27,9 @@ cat('\nypc next year: 100+ both r=', round(cor(A$ypc,A$ypc.n),2), 'n=', nrow(A),
 cat('rush yards per game next year (100+ both): r=', round(cor(A$yds/A$games, A$yds.n/A$games.n),2), '\n')
 # reliability by volume: split-half style — Spearman-Brown says r rises with carries
 for(lo in c(100,150,200,250,300)){ S <- A[A$car>=lo & A$car.n>=lo,]; cat(lo,'+ carries both years: r =', round(cor(S$ypc,S$ypc.n),2), ' n =', nrow(S), '\n') }
-png('fig/ypc_next_year.png', 900, 450); par(mfrow=c(1,2), mar=c(4,4,2,1))
-plot(A$ypc, A$ypc.n, pch=16, col=rgb(.17,.29,.43,.35), xlab='yards per carry, this season', ylab='next season', main=sprintf('100+ carries both seasons, r = %.2f', cor(A$ypc,A$ypc.n)), xlim=c(2.5,7), ylim=c(2.5,7)); abline(0,1,lty=3); abline(lm(ypc.n~ypc,A), col='#b83a1e', lwd=2)
-plot(E$ypc, E$ypc.n, pch=16, col=rgb(.72,.23,.12,.5), xlab='yards per carry, this season', ylab='next season', main=sprintf('250+ carries both seasons, r = %.2f', cor(E$ypc,E$ypc.n)), xlim=c(2.5,7), ylim=c(2.5,7)); abline(0,1,lty=3); abline(lm(ypc.n~ypc,E), col='#2c4a6e', lwd=2)
-dev.off()
+# figures: see 17_figures.py (house-style SVG)
 # --- college -> NFL, plotted with names
 d <- read.csv('data/rb_link.csv'); d <- d[d$cfb_car>=200 & d$nfl_car>=200,]
-png('fig/college_to_nfl.png', 900, 600); par(mar=c(4,4,2,1))
-plot(d$cfb_ypc, d$nfl_ypc, pch=16, col=rgb(.17,.29,.43,.5), cex=sqrt(d$nfl_car)/20, xlab='college yards per carry (2014+ seasons)', ylab='NFL yards per carry (career, through 2025)', main=sprintf('75 backs, r = %.2f  (dot size = NFL carries)', cor(d$cfb_ypc,d$nfl_ypc)))
-abline(lm(nfl_ypc~cfb_ypc,d), col='#b83a1e', lwd=2); lab <- d$nfl_car>900 | d$cfb_ypc>7 | d$nfl_ypc>5 | d$nfl_ypc<3.8
-text(d$cfb_ypc[lab], d$nfl_ypc[lab], d$name[lab], pos=4, cex=.75); dev.off()
+# figures: see 17_figures.py (house-style SVG)
 cat('weighted by NFL carries r =', round(cov.wt(cbind(d$cfb_ypc,d$nfl_ypc), wt=d$nfl_car, cor=TRUE)$cor[1,2],2),
     '; 600+ NFL carries r =', round(with(d[d$nfl_car>=600,], cor(cfb_ypc,nfl_ypc)),2), ' n=', sum(d$nfl_car>=600), '\n')

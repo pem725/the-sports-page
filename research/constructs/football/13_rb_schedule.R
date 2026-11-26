@@ -19,8 +19,4 @@ cat('share of college carries in Power conferences, mean:', round(mean(d$p5),2),
 print(round(coef(summary(lm(nfl_ypc ~ cfb_ypc + p5, d))),2))
 set.seed(2); b <- replicate(4000, { i <- sample(nrow(d), replace=TRUE); cor(d$rel[i], d$nfl_ypc[i]) }); cat('95% interval:', round(quantile(b,c(.025,.975)),2), '\n')
 o <- d[order(-d$cfb_ypc), c('name','college','cfb_ypc','rel','p5','nfl_ypc')]; o[,3:6] <- round(o[,3:6],1); print(head(o,8), row.names=FALSE)
-png('fig/college_rel_to_nfl.png', 900, 560); par(mar=c(4,4,2,1))
-plot(d$rel, d$nfl_ypc, pch=16, col=ifelse(d$p5>.5, rgb(.17,.29,.43,.6), rgb(.72,.23,.12,.7)), cex=sqrt(d$nfl_car)/20,
-  xlab='college yards per carry ABOVE his conference\'s backs', ylab='NFL yards per carry', main=sprintf('schedule-relative: r = %.2f   (blue = Power conference, red = other)', cor(d$rel,d$nfl_ypc)))
-abline(lm(nfl_ypc~rel,d), col='#1a1208', lwd=2); lab <- d$nfl_car>900 | abs(d$rel)>1.6 | d$nfl_ypc>5 | d$nfl_ypc<3.7
-text(d$rel[lab], d$nfl_ypc[lab], d$name[lab], pos=4, cex=.75); dev.off()
+# figures: see 17_figures.py (house-style SVG)
