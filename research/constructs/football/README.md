@@ -122,6 +122,55 @@ Derrick Henry and Jahmyr Gibbs top the list and are the only 2 of 46 active back
 clears average. Corum, the one-season leader, is third with an interval running from below average.
 The model agrees with the eye only after it admits how little one season says.
 
+## Running backs: the editor's attenuation challenge (2026-11-26, third pass)
+
+`11_rb_history.py`, `12_rb_sustain.R`, `13_rb_schedule.R`, `14_rb_espn_check.py`; plots in `fig/`.
+The editor: careers are short, so the correlations are attenuated; plot them (the quartet); look at
+established backs. What the data say:
+
+- **Careers are short.** Backs whose first 100-carry season came 1999–2015: median two such seasons;
+  36% had exactly one.
+- **Reliability rises with carries.** Same back, next season, yards per carry: r = .24 (100+ carries
+  both years, n = 741), .29 (200+), .32 (250+), .42 (300+, n = 49). Rushing yards per game: .52.
+- **Chance is most of a season.** One NFL run: mean 4.5, median 3, SD 6.3 (137,000 runs, 2016–25).
+  At the typical 176 carries, chance alone is about 56% of the spread in a season's yards per carry.
+  Half signal needs about 230 carries; 80% needs about 900.
+- **A 1,000-yard season (scaled to 16 games) repeats 47% [42, 52] of the time**; a track record does
+  not raise it (47% after one, 44% after two, 48% after three); 36% at 29 and older.
+- **The link was rebuilt on every carry** (it had used only 100-carry seasons). 92 backs with 200+
+  carries in each league: drop 1.5 [1.4, 1.7], 90 of 92 lower, r = .22 [.01, .40]. ESPN as a second
+  feed, on the 68 backs it carries in both leagues: drop 1.5, 66 of 68, r = .24. Darrell Henderson,
+  both feeds: 8.2 on 431 college carries, 4.2 on 442 NFL carries (4.6 was his 100-carry seasons only).
+- **Neither a schedule nor the scouts rescue the college number.** Conference-relative college ypc:
+  r = .20. Draft round predicts NFL carries (r = .40), not NFL ypc (r = −.12).
+
+## Defensive linemen: what is a tackle for loss? (2026-11-26)
+
+`15_build_dl.py` → `16_dl_explore.R`. 2018–2025, 300+ snaps, per 100 defensive snaps; 830 edge and
+907 interior player-seasons. Play-by-play, snap counts and PFR's charting (pressures, hurries,
+knockdowns), all via nflverse.
+
+**Two traps.** (1) Most sacks also carry tackle-for-loss credit (2024: 1,076 of 1,314), so raw TFL
+contains sacks; the run-stuff measure counts TFL on non-sack plays only. Officially, 58% of an edge
+rusher's TFL and 47% of an interior lineman's are sacks. (2) nflverse's `position` is a player's
+current label (Garrett and Hendrickson are now "LB"); PFF's role label (ED edge, DI interior) is used,
+with PFR's season label as fallback. PFR "pressures" = hurries + knockdowns + sacks, so only the parts
+enter the factor model; batted passes exist only from 2024 and are left out.
+
+**Two constructs, in both groups:** pass rush (hurries, knockdowns, sacks, forced fumbles) and run
+defense (tackles on runs, run stuffs, fewer missed tackles). Parallel analysis: 2 interior, 4 edge;
+MAP 1. They correlate negatively (−.29 edge, −.38 interior): linemen specialize.
+
+**A run stuff is run defense, not quickness.** Non-sack TFL correlates −.01 to .06 with sacks,
+hurries and knockdowns, and loads with run tackles.
+
+**What repeats (same player, next season, 1,078 pairs):** pressures .68, run tackles .60, knockdowns
+.48, hurries .46, sacks .43, run stuffs .24, forced fumbles .23. Pressure is the skill; the sack is the
+finish, and it depends on the quarterback and the coverage too. The pass-rush construct is far more
+the player than a back's yards per carry (.2–.3).
+
+**Not here:** the Sack Exchange era. Sacks became official in 1982 and this data starts in 1999.
+
 ## Next
 
 - More running indicators; defense; within-league year-to-year invariance.
