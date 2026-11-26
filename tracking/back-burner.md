@@ -98,3 +98,9 @@ Wed 16 Sep. Section kept for the record.
   it or rewrite it as a "the five-in-six didn't happen" piece; if a side moved
   off the cap, the "new system" coding changes. The numbers come from
   `scripts/work_stoppages.py --offline` and `data/stoppages/`.
+
+- **`220-what-repeats-receivers.html`** (What Repeats, Part 5 of 5: "7 Scores, Then 17,
+  Then 8. Same Player."). `keeps`. Held out of QUEUE_ORDER on 2026-11-26 only for the
+  rotation: Part 4 (pass rush, NFL) runs Mon Dec 7, and Part 5 is NFL too. *Revival trigger:*
+  as soon as a non-NFL piece follows Part 4, slot Part 5 right after it, so the series
+  finishes within the week. Its "The series" box already lists all five parts.
