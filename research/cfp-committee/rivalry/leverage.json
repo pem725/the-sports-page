@@ -1,0 +1,3709 @@
+{
+ "run": "2026-11-25",
+ "ranking_released": "2026-11-24",
+ "sp_taken": "2026-11-25",
+ "n": 60000,
+ "window": [
+  "2026-11-26",
+  "2026-11-28"
+ ],
+ "games": [
+  {
+   "date": "2026-11-28",
+   "home": "UCLA",
+   "away": "USC",
+   "hrank": 9,
+   "arank": 15,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "UCLA",
+     "p_win": 0.7190833333333333,
+     "in": 0.6764833333333333,
+     "if_win": 0.9144049136632286,
+     "if_lose": 0.06745772767724711,
+     "swing": 0.8469471859859815,
+     "bye": 0.34835,
+     "bye_if_win": 0.4844362034998262,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "USC",
+     "p_win": 0.28091666666666665,
+     "in": 0.08296666666666666,
+     "if_win": 0.29534262830020763,
+     "if_lose": 0.0,
+     "swing": 0.29534262830020763,
+     "bye": 1.6666666666666667e-05,
+     "bye_if_win": 5.932957579353308e-05,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 1.142289814286189,
+   "third": 0.86312058373592,
+   "movers": [
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.25681066436233135
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.18203482705916824
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.11478958988370574
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.11326845904232685
+    }
+   ],
+   "expected_move": 0.46149078055555554
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Oregon",
+   "away": "Washington",
+   "hrank": 12,
+   "arank": 24,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Oregon",
+     "p_win": 0.7498833333333333,
+     "in": 0.6834666666666667,
+     "if_win": 0.9109861534016402,
+     "if_lose": 0.0013327114013460385,
+     "swing": 0.9096534420002942,
+     "bye": 0.02395,
+     "bye_if_win": 0.03193830151356878,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Washington",
+     "p_win": 0.25011666666666665,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.9096534420002942,
+   "third": 0.9204223857773093,
+   "movers": [
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.25440660011836824
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.1763796102584395
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.1246033531872518
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": -0.1094783583839688
+    }
+   ],
+   "expected_move": 0.3412261422222222
+  },
+  {
+   "date": "2026-11-28",
+   "home": "BYU",
+   "away": "Cincinnati",
+   "hrank": 10,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "BYU",
+     "p_win": 0.8881,
+     "in": 0.8052,
+     "if_win": 0.9066546560072064,
+     "if_lose": 0.0,
+     "swing": 0.9066546560072064,
+     "bye": 0.005033333333333333,
+     "bye_if_win": 0.005667529932815374,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Cincinnati",
+     "p_win": 0.1119,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.9066546560072064,
+   "third": 0.93204642712901,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.27118920588939577
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.15797458582293394
+    },
+    {
+     "team": "USC",
+     "if_home_wins": -0.0910596693439422
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.07718056209202018
+    }
+   ],
+   "expected_move": 0.18020376
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Alabama",
+   "away": "Auburn",
+   "hrank": 6,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Alabama",
+     "p_win": 0.8812833333333333,
+     "in": 0.9085666666666666,
+     "if_win": 1.0,
+     "if_lose": 0.22981889653235996,
+     "swing": 0.77018110346764,
+     "bye": 0.0087,
+     "bye_if_win": 0.009871967017796017,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Auburn",
+     "p_win": 0.11871666666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.77018110346764,
+   "third": 0.7774635192816381,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.1950461342994595
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.12634475696740327
+    },
+    {
+     "team": "USC",
+     "if_home_wins": -0.10291368557457707
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": -0.091369375739492
+    }
+   ],
+   "expected_move": 0.16115734555555558
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Vanderbilt",
+   "away": "Tennessee",
+   "hrank": 99,
+   "arank": 5,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Vanderbilt",
+     "p_win": 0.10161666666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Tennessee",
+     "p_win": 0.8983833333333333,
+     "in": 0.9268166666666666,
+     "if_win": 1.0,
+     "if_lose": 0.2798097424963097,
+     "swing": 0.7201902575036903,
+     "bye": 0.05271666666666667,
+     "bye_if_win": 0.058679479806318754,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.7201902575036903,
+   "third": 0.7447869830483044,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": 0.19696630293055428
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.1238303670705046
+    },
+    {
+     "team": "USC",
+     "if_home_wins": 0.10098730645284557
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": 0.08593345183976064
+    }
+   ],
+   "expected_move": 0.13149337388888888
+  },
+  {
+   "date": "2026-11-27",
+   "home": "Iowa",
+   "away": "Nebraska",
+   "hrank": 13,
+   "arank": 25,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Iowa",
+     "p_win": 0.5734666666666667,
+     "in": 0.4446,
+     "if_win": 0.7422111136944897,
+     "if_lose": 0.04446702094404501,
+     "swing": 0.6977440927504447,
+     "bye": 0.0409,
+     "bye_if_win": 0.07132062311090444,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Nebraska",
+     "p_win": 0.4265333333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.6977440927504447,
+   "third": 0.8064393451830704,
+   "movers": [
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.22424737618903953
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": -0.1472754923922328
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.10499811794533848
+    },
+    {
+     "team": "Miami",
+     "if_home_wins": -0.08295881814380646
+    }
+   ],
+   "expected_move": 0.3413401066666667
+  },
+  {
+   "date": "2026-11-26",
+   "home": "Texas Tech",
+   "away": "TCU",
+   "hrank": 11,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Texas Tech",
+     "p_win": 0.7998,
+     "in": 0.5394666666666666,
+     "if_win": 0.661790447611903,
+     "if_lose": 0.050782550782550784,
+     "swing": 0.6110078968293522,
+     "bye": 0.0295,
+     "bye_if_win": 0.036884221055263816,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "TCU",
+     "p_win": 0.2002,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.6110078968293522,
+   "third": 0.896548770892357,
+   "movers": [
+    {
+     "team": "USC",
+     "if_home_wins": -0.18542393673676494
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.15784673774171143
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": 0.1350094433365252
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.08984913561057606
+    }
+   ],
+   "expected_move": 0.19566912000000003
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Wake Forest",
+   "away": "Duke",
+   "hrank": 8,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Wake Forest",
+     "p_win": 0.7936166666666666,
+     "in": 0.8887333333333334,
+     "if_win": 1.0,
+     "if_lose": 0.46087377856739076,
+     "swing": 0.5391262214326092,
+     "bye": 0.3633166666666667,
+     "bye_if_win": 0.45775668353739213,
+     "bye_if_lose": 0.00016151174997981103
+    },
+    {
+     "team": "Duke",
+     "p_win": 0.20638333333333334,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.5391262214326092,
+   "third": 0.553954622762176,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.10417698837251244
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.08908991113751868
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": -0.08651446743696689
+    },
+    {
+     "team": "USC",
+     "if_home_wins": -0.04982253694229373
+    }
+   ],
+   "expected_move": 0.17660616222222225
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Colorado State",
+   "away": "Boise State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Colorado State",
+     "p_win": 0.07576666666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Boise State",
+     "p_win": 0.9242333333333334,
+     "in": 0.44476666666666664,
+     "if_win": 0.48079489306452194,
+     "if_lose": 0.005279366476022877,
+     "swing": 0.47551552658849905,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.47551552658849905,
+   "third": 0.5197843197179666,
+   "movers": [
+    {
+     "team": "Liberty",
+     "if_home_wins": 0.3329050061365233
+    },
+    {
+     "team": "North Dakota State",
+     "if_home_wins": 0.059872757563606736
+    },
+    {
+     "team": "New Mexico",
+     "if_home_wins": 0.050976492551481345
+    },
+    {
+     "team": "Louisiana Tech",
+     "if_home_wins": 0.020787152456265064
+    }
+   ],
+   "expected_move": 0.06659697555555555
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Miami",
+   "away": "Boston College",
+   "hrank": 7,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Miami",
+     "p_win": 0.98305,
+     "in": 0.9096,
+     "if_win": 0.9156367088822203,
+     "if_lose": 0.5594886922320551,
+     "swing": 0.35614801665016516,
+     "bye": 0.20086666666666667,
+     "bye_if_win": 0.20433006120407576,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Boston College",
+     "p_win": 0.01695,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.35614801665016516,
+   "third": 0.40523310626425674,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.08186129526746794
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.0763805900375174
+    },
+    {
+     "team": "USC",
+     "if_home_wins": -0.049634720508689154
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.04656288895200392
+    }
+   ],
+   "expected_move": 0.011868773333333346
+  },
+  {
+   "date": "2026-11-27",
+   "home": "UTSA",
+   "away": "Tulsa",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "UTSA",
+     "p_win": 0.5648833333333333,
+     "in": 0.1853,
+     "if_win": 0.327147198536571,
+     "if_lose": 0.0011491170950319839,
+     "swing": 0.325998081441539,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Tulsa",
+     "p_win": 0.43511666666666665,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.325998081441539,
+   "third": 0.35175356806825175,
+   "movers": [
+    {
+     "team": "Boise State",
+     "if_home_wins": -0.17402898376440357
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.11598627339007031
+    },
+    {
+     "team": "New Mexico",
+     "if_home_wins": -0.014052670591628017
+    },
+    {
+     "team": "North Dakota State",
+     "if_home_wins": -0.012320697446437687
+    }
+   ],
+   "expected_move": 0.1602542366666667
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Missouri State",
+   "away": "Liberty",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Missouri State",
+     "p_win": 0.0598,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Liberty",
+     "p_win": 0.9402,
+     "in": 0.2875666666666667,
+     "if_win": 0.30539601503226266,
+     "if_lose": 0.007246376811594203,
+     "swing": 0.2981496382206685,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.2981496382206685,
+   "third": 0.36038265536614644,
+   "movers": [
+    {
+     "team": "New Mexico",
+     "if_home_wins": 0.08245909158064758
+    },
+    {
+     "team": "North Dakota State",
+     "if_home_wins": 0.07900629316516777
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.06704650472858897
+    },
+    {
+     "team": "Louisiana Tech",
+     "if_home_wins": 0.04676481936408131
+    }
+   ],
+   "expected_move": 0.03352630666666667
+  },
+  {
+   "date": "2026-11-27",
+   "home": "Utah",
+   "away": "West Virginia",
+   "hrank": 2,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Utah",
+     "p_win": 0.9479666666666666,
+     "in": 0.98485,
+     "if_win": 1.0,
+     "if_lose": 0.7088404868673926,
+     "swing": 0.29115951313260735,
+     "bye": 0.5368333333333334,
+     "bye_if_win": 0.563785646471395,
+     "bye_if_lose": 0.04580397181294042
+    },
+    {
+     "team": "West Virginia",
+     "p_win": 0.052033333333333334,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.29115951313260735,
+   "third": 0.332436121693106,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.0719564328645334
+    },
+    {
+     "team": "USC",
+     "if_home_wins": -0.06554305213633803
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.05312191514395681
+    },
+    {
+     "team": "Miami",
+     "if_home_wins": -0.05177432376644231
+    }
+   ],
+   "expected_move": 0.028723390000000026
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Indiana",
+   "away": "Purdue",
+   "hrank": 14,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Indiana",
+     "p_win": 0.9613666666666667,
+     "in": 0.14793333333333333,
+     "if_win": 0.15387815956450887,
+     "if_lose": 0.0,
+     "swing": 0.15387815956450887,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Purdue",
+     "p_win": 0.03863333333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.15387815956450887,
+   "third": 0.2136412191696107,
+   "movers": [
+    {
+     "team": "UCLA",
+     "if_home_wins": -0.060540626197862824
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.04775395395521764
+    },
+    {
+     "team": "Arizona",
+     "if_home_wins": -0.020718829748142497
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": -0.01236124909537184
+    }
+   ],
+   "expected_move": 0.011430315555555546
+  },
+  {
+   "date": "2026-11-27",
+   "home": "New Mexico",
+   "away": "Air Force",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "New Mexico",
+     "p_win": 0.78175,
+     "in": 0.029216666666666665,
+     "if_win": 0.03718153714955762,
+     "if_lose": 0.0006872852233676976,
+     "swing": 0.03649425192618992,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Air Force",
+     "p_win": 0.21825,
+     "in": 0.004216666666666666,
+     "if_win": 0.019320351279114165,
+     "if_lose": 0.0,
+     "swing": 0.019320351279114165,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.055814603205304084,
+   "third": 0.07112717047801906,
+   "movers": [
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.013169169287974902
+    },
+    {
+     "team": "North Dakota State",
+     "if_home_wins": -0.011829081545123073
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.007228278063932891
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.006110105569091084
+    }
+   ],
+   "expected_move": 0.019045833333333338
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Georgia Southern",
+   "away": "Louisiana Tech",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Georgia Southern",
+     "p_win": 0.5269666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Louisiana Tech",
+     "p_win": 0.4730333333333333,
+     "in": 0.018183333333333333,
+     "if_win": 0.03653724191388909,
+     "if_lose": 0.0017078879119488898,
+     "swing": 0.0348293540019402,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0348293540019402,
+   "third": 0.07135961784019394,
+   "movers": [
+    {
+     "team": "New Mexico",
+     "if_home_wins": 0.013454298144461717
+    },
+    {
+     "team": "North Dakota State",
+     "if_home_wins": 0.012642271673810431
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": 0.00914106512642221
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.007097373761229431
+    }
+   ],
+   "expected_move": 0.017364021111111114
+  },
+  {
+   "date": "2026-11-27",
+   "home": "San Jos\u00e9 State",
+   "away": "North Dakota State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "San Jos\u00e9 State",
+     "p_win": 0.1094,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "North Dakota State",
+     "p_win": 0.8906,
+     "in": 0.030233333333333334,
+     "if_win": 0.0328991690994835,
+     "if_lose": 0.008531383302864107,
+     "swing": 0.02436778579661939,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.02436778579661939,
+   "third": 0.09909053499800814,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.021785257164236738
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.011042203538809359
+    },
+    {
+     "team": "Louisiana Tech",
+     "if_home_wins": 0.008492210538588903
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.007794080033960316
+    }
+   ],
+   "expected_move": 0.0047483866666666675
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Syracuse",
+   "away": "Notre Dame",
+   "hrank": 99,
+   "arank": 4,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Syracuse",
+     "p_win": 0.06105,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Notre Dame",
+     "p_win": 0.93895,
+     "in": 0.9992333333333333,
+     "if_win": 1.0,
+     "if_lose": 0.9874419874419874,
+     "swing": 0.012558012558012588,
+     "bye": 0.6109166666666667,
+     "bye_if_win": 0.6506381241457656,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.012558012558012588,
+   "third": 0.08286921178981442,
+   "movers": [
+    {
+     "team": "Wake Forest",
+     "if_home_wins": 0.011795693567885901
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.009728980174690816
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": 0.009375572824105755
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.009323324941835076
+    }
+   ],
+   "expected_move": 0.0014397233333333366
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Arizona",
+   "away": "Arizona State",
+   "hrank": 16,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Arizona",
+     "p_win": 0.8053,
+     "in": 0.0020833333333333333,
+     "if_win": 0.0025870276087586407,
+     "if_lose": 0.0,
+     "swing": 0.0025870276087586407,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Arizona State",
+     "p_win": 0.1947,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0025870276087586407,
+   "third": 0.051023306410813214,
+   "movers": [
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.009964629765230382
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": 0.00670204646825634
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.0045513827849918975
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": 0.004183230286987805
+    }
+   ],
+   "expected_move": 0.0008112499999999999
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Utah State",
+   "away": "Texas State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Utah State",
+     "p_win": 0.25051666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Texas State",
+     "p_win": 0.7494833333333333,
+     "in": 0.0005166666666666667,
+     "if_win": 0.0006893637839400476,
+     "if_lose": 0.0,
+     "swing": 0.0006893637839400476,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0006893637839400476,
+   "third": 0.4576232372818651,
+   "movers": [
+    {
+     "team": "Liberty",
+     "if_home_wins": 0.20084227510160282
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": -0.1941583486251136
+    },
+    {
+     "team": "Louisiana Tech",
+     "if_home_wins": 0.010357860952915798
+    },
+    {
+     "team": "New Mexico",
+     "if_home_wins": -0.009245560760705828
+    }
+   ],
+   "expected_move": 0.0002588672222222222
+  },
+  {
+   "date": "2026-11-27",
+   "home": "Ole Miss",
+   "away": "Mississippi State",
+   "hrank": 22,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Ole Miss",
+     "p_win": 0.8115,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Mississippi State",
+     "p_win": 0.1885,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.06607275062880888,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.01575212204315396
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": 0.0080764300536115
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.007734963742357492
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": 0.00717057462547932
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-27",
+   "home": "Akron",
+   "away": "Buffalo",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Akron",
+     "p_win": 0.18163333333333334,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Buffalo",
+     "p_win": 0.8183666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.05072503521289719,
+   "movers": [
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.008922995109247767
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": -0.008444790103968924
+    },
+    {
+     "team": "Tennessee",
+     "if_home_wins": -0.007562659648812198
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.007147925279028022
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-27",
+   "home": "Ohio",
+   "away": "Toledo",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Ohio",
+     "p_win": 0.4045,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Toledo",
+     "p_win": 0.5955,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.047268329252804664,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.008638888629423302
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.0075804075131540305
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": -0.0072810188486164
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.00480966125213933
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-27",
+   "home": "South Alabama",
+   "away": "App State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "South Alabama",
+     "p_win": 0.4269,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "App State",
+     "p_win": 0.5731,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.0477640770660705,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.008440354517887938
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.0075434094868044865
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.006373285406524598
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.005700838905808525
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-27",
+   "home": "Florida State",
+   "away": "Florida",
+   "hrank": 99,
+   "arank": 20,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Florida State",
+     "p_win": 0.55305,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Florida",
+     "p_win": 0.44695,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.040403396182202934,
+   "movers": [
+    {
+     "team": "USC",
+     "if_home_wins": 0.0064672768266996195
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.005684504999862838
+    },
+    {
+     "team": "Miami",
+     "if_home_wins": 0.004904760586589729
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.003942676874876039
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-27",
+   "home": "Memphis",
+   "away": "Temple",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Memphis",
+     "p_win": 0.92695,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Temple",
+     "p_win": 0.07305,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.36707710922643577,
+   "movers": [
+    {
+     "team": "UTSA",
+     "if_home_wins": 0.14944536640217193
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": -0.09736771992599191
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.06094170730129356
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": -0.00885432621171911
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-27",
+   "home": "Texas A&M",
+   "away": "Texas",
+   "hrank": 99,
+   "arank": 3,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Texas A&M",
+     "p_win": 0.2136,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Texas",
+     "p_win": 0.7864,
+     "in": 1.0,
+     "if_win": 1.0,
+     "if_lose": 1.0,
+     "swing": 0.0,
+     "bye": 0.7833666666666667,
+     "bye_if_win": 0.995400983384198,
+     "bye_if_lose": 0.002730961298377029
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.04680965298971391,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.011093394193169015
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": -0.008148988484638353
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.007609384505380401
+    },
+    {
+     "team": "Alabama",
+     "if_home_wins": 0.004644499563744686
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-27",
+   "home": "Wisconsin",
+   "away": "Minnesota",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Wisconsin",
+     "p_win": 0.7738166666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Minnesota",
+     "p_win": 0.22618333333333332,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.037387084872066476,
+   "movers": [
+    {
+     "team": "Indiana",
+     "if_home_wins": 0.005199585158236597
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.005111083228936941
+    },
+    {
+     "team": "Miami",
+     "if_home_wins": 0.0043976336326083665
+    },
+    {
+     "team": "Tennessee",
+     "if_home_wins": -0.00296825383390642
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Kentucky",
+   "away": "Louisville",
+   "hrank": 99,
+   "arank": 19,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Kentucky",
+     "p_win": 0.3302833333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Louisville",
+     "p_win": 0.6697166666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.0652342851432493,
+   "movers": [
+    {
+     "team": "BYU",
+     "if_home_wins": -0.008035729849758755
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": 0.0070293058296995725
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.006987841896472946
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.0066000866844601325
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Ohio State",
+   "away": "Michigan",
+   "hrank": 21,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Ohio State",
+     "p_win": 0.88015,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Michigan",
+     "p_win": 0.11985,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.06387673660226531,
+   "movers": [
+    {
+     "team": "Liberty",
+     "if_home_wins": 0.015466810900687411
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": 0.005876484072649957
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": -0.0054798594754770225
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.0044573697011055236
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "North Carolina",
+   "away": "NC State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "North Carolina",
+     "p_win": 0.7089333333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "NC State",
+     "p_win": 0.29106666666666664,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.04158523240824022,
+   "movers": [
+    {
+     "team": "Boise State",
+     "if_home_wins": -0.006509664719021979
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": 0.004852605894833745
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": -0.004616907832688422
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.0038854426001664333
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Wyoming",
+   "away": "UConn",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Wyoming",
+     "p_win": 0.45605,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "UConn",
+     "p_win": 0.54395,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.03685828891875114,
+   "movers": [
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.006475804722364864
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": -0.0058696110212909935
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.004059794301959241
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.003416376324195003
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Charlotte",
+   "away": "Navy",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Charlotte",
+     "p_win": 0.11896666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Navy",
+     "p_win": 0.8810333333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.06191466525033946,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.008197854818223882
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": -0.007898370778626401
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.006878168130833806
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": 0.006686770150764687
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Ball State",
+   "away": "Central Michigan",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Ball State",
+     "p_win": 0.32753333333333334,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Central Michigan",
+     "p_win": 0.6724666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.04202774352851349,
+   "movers": [
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.006243745766401854
+    },
+    {
+     "team": "Alabama",
+     "if_home_wins": -0.005308396635814394
+    },
+    {
+     "team": "Tennessee",
+     "if_home_wins": 0.004176886207035269
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": -0.004125183567324137
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Northwestern",
+   "away": "Illinois",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Northwestern",
+     "p_win": 0.6507333333333334,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Illinois",
+     "p_win": 0.34926666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.04722868932440488,
+   "movers": [
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.008398637338869697
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": -0.005855727805996802
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": 0.004991172981577918
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": -0.003791533864750285
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Arkansas",
+   "away": "LSU",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Arkansas",
+     "p_win": 0.1037,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "LSU",
+     "p_win": 0.8963,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.048359101076739894,
+   "movers": [
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.010263954175982526
+    },
+    {
+     "team": "Alabama",
+     "if_home_wins": -0.005756333952364523
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": 0.004023541476077308
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": 0.0034609944888255306
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "East Carolina",
+   "away": "Florida Atlantic",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "East Carolina",
+     "p_win": 0.5580833333333334,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Florida Atlantic",
+     "p_win": 0.4419166666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.04217181802057664,
+   "movers": [
+    {
+     "team": "BYU",
+     "if_home_wins": 0.004857416011531779
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": 0.004423178328910843
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": -0.0041382218167379525
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": 0.003916766680676975
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Western Kentucky",
+   "away": "Kennesaw State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Western Kentucky",
+     "p_win": 0.4603333333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Kennesaw State",
+     "p_win": 0.5396666666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.04251755157683532,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.006833139595471771
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": 0.0055067471316136984
+    },
+    {
+     "team": "Alabama",
+     "if_home_wins": 0.0048564766962201356
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.004182948772250561
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "UL Monroe",
+   "away": "Marshall",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "UL Monroe",
+     "p_win": 0.27713333333333334,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Marshall",
+     "p_win": 0.7228666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.05233981072739117,
+   "movers": [
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.006379770171288768
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.006006009936781964
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.005443933069607554
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": -0.004730339877772161
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Old Dominion",
+   "away": "Southern Miss",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Old Dominion",
+     "p_win": 0.62405,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Southern Miss",
+     "p_win": 0.37595,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.035797292586952786,
+   "movers": [
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.005211357891205692
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.0048615492391987924
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": 0.004344613299292033
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.003136943532100256
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Colorado",
+   "away": "UCF",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Colorado",
+     "p_win": 0.4549666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "UCF",
+     "p_win": 0.5450333333333334,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.03509224175441063,
+   "movers": [
+    {
+     "team": "Boise State",
+     "if_home_wins": -0.005057053955272062
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.00391738674759598
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.0036502239663717684
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": 0.002957668172919481
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Iowa State",
+   "away": "Kansas State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Iowa State",
+     "p_win": 0.45113333333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Kansas State",
+     "p_win": 0.5488666666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.048131780914412906,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.008577450126237784
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": 0.006316763153026206
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.006048072225385004
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": 0.005163740820295026
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Rice",
+   "away": "Army",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Rice",
+     "p_win": 0.24251666666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Army",
+     "p_win": 0.7574833333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.03914141603345864,
+   "movers": [
+    {
+     "team": "Alabama",
+     "if_home_wins": 0.005937724746038042
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.004135125611020363
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": 0.004055446589100731
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.0033750463512153273
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "James Madison",
+   "away": "Coastal Carolina",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "James Madison",
+     "p_win": 0.89375,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Coastal Carolina",
+     "p_win": 0.10625,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.040327985739750404,
+   "movers": [
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.006595913890031557
+    },
+    {
+     "team": "Tennessee",
+     "if_home_wins": -0.005536267653914684
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.004405320170026039
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": -0.003918277800630698
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Georgia State",
+   "away": "Louisiana",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Georgia State",
+     "p_win": 0.27148333333333335,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Louisiana",
+     "p_win": 0.7285166666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.03201720860405654,
+   "movers": [
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.005325422536154922
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.004986465898533188
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": -0.0049362277327599235
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": 0.0029575939923602856
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Florida International",
+   "away": "Sam Houston",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Florida International",
+     "p_win": 0.80945,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Sam Houston",
+     "p_win": 0.19055,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.031500938114382405,
+   "movers": [
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.004638378056262771
+    },
+    {
+     "team": "Tennessee",
+     "if_home_wins": 0.003705782645335831
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.0034830787769227767
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.0027314018943238594
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Middle Tennessee",
+   "away": "New Mexico State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Middle Tennessee",
+     "p_win": 0.6027333333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "New Mexico State",
+     "p_win": 0.39726666666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.03237027700940418,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.005395401927921761
+    },
+    {
+     "team": "Miami",
+     "if_home_wins": 0.0037047762074504664
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.0032475492163674957
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": -0.0029340151099616074
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Clemson",
+   "away": "South Carolina",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Clemson",
+     "p_win": 0.32953333333333334,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "South Carolina",
+     "p_win": 0.6704666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.05255885072324213,
+   "movers": [
+    {
+     "team": "UTSA",
+     "if_home_wins": 0.008090270246163739
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.006685883987470054
+    },
+    {
+     "team": "Miami",
+     "if_home_wins": 0.006214989288951034
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.004961211283827038
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Virginia Tech",
+   "away": "Virginia",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Virginia Tech",
+     "p_win": 0.5524666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Virginia",
+     "p_win": 0.44753333333333334,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.03980341333895726,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.005543780368049367
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": -0.004740490899698774
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.004276888392655498
+    },
+    {
+     "team": "New Mexico",
+     "if_home_wins": 0.003540715725478649
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Arkansas State",
+   "away": "Troy",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Arkansas State",
+     "p_win": 0.7046166666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Troy",
+     "p_win": 0.29538333333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.051724880694747885,
+   "movers": [
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.009042359013073598
+    },
+    {
+     "team": "Miami",
+     "if_home_wins": -0.006018551758663282
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.005496975756991207
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": 0.005190813243855202
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Georgia",
+   "away": "Georgia Tech",
+   "hrank": 1,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Georgia",
+     "p_win": 0.99175,
+     "in": 1.0,
+     "if_win": 1.0,
+     "if_lose": 1.0,
+     "swing": 0.0,
+     "bye": 0.9955333333333334,
+     "bye_if_win": 0.9980169733635829,
+     "bye_if_lose": 0.696969696969697
+    },
+    {
+     "team": "Georgia Tech",
+     "p_win": 0.00825,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.2605912923029132,
+   "movers": [
+    {
+     "team": "Wake Forest",
+     "if_home_wins": 0.03650928238777995
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.03392533858881225
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": -0.03287882607267534
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.03194842297438727
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Stanford",
+   "away": "SMU",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Stanford",
+     "p_win": 0.13145,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "SMU",
+     "p_win": 0.86855,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.06822468338162407,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.010428781409319632
+    },
+    {
+     "team": "USC",
+     "if_home_wins": 0.008998484048879443
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.00726253378186853
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": 0.00650178825124853
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Maryland",
+   "away": "Penn State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Maryland",
+     "p_win": 0.2612,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Penn State",
+     "p_win": 0.7388,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.03297305095552508,
+   "movers": [
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.005246356480011316
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.0035542854284350556
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.003248856567760361
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.003170573364696394
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "South Florida",
+   "away": "Tulane",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "South Florida",
+     "p_win": 0.8386833333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Tulane",
+     "p_win": 0.16131666666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.04963271246474445,
+   "movers": [
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.008209581910521457
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.006393079787614719
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": 0.005608888138276202
+    },
+    {
+     "team": "Alabama",
+     "if_home_wins": -0.004925489628411106
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Northern Illinois",
+   "away": "UTEP",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Northern Illinois",
+     "p_win": 0.5100166666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "UTEP",
+     "p_win": 0.4899833333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.04538764451398437,
+   "movers": [
+    {
+     "team": "Liberty",
+     "if_home_wins": 0.00701431064001945
+    },
+    {
+     "team": "USC",
+     "if_home_wins": 0.004877759835255832
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.004017381202341852
+    },
+    {
+     "team": "Tennessee",
+     "if_home_wins": -0.0038359939609496907
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Bowling Green",
+   "away": "Massachusetts",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Bowling Green",
+     "p_win": 0.39511666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Massachusetts",
+     "p_win": 0.6048833333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.0394359285414132,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": 0.006475867008226555
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.005435455660341093
+    },
+    {
+     "team": "Miami",
+     "if_home_wins": 0.004122240378919617
+    },
+    {
+     "team": "Tennessee",
+     "if_home_wins": -0.0039778827930093685
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Delaware",
+   "away": "Jacksonville State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Delaware",
+     "p_win": 0.32143333333333335,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Jacksonville State",
+     "p_win": 0.6785666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.03654780319181896,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.004902187949661463
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.004635334565774474
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.003541148581405862
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": -0.003445232864039527
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "North Texas",
+   "away": "UAB",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "North Texas",
+     "p_win": 0.7128333333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "UAB",
+     "p_win": 0.2871666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.03721689703092734,
+   "movers": [
+    {
+     "team": "UTSA",
+     "if_home_wins": -0.0055593830108839615
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.003782572251719296
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": 0.00350189319947658
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.003446446738083031
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Missouri",
+   "away": "Oklahoma",
+   "hrank": 23,
+   "arank": 17,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Missouri",
+     "p_win": 0.6360833333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Oklahoma",
+     "p_win": 0.36391666666666667,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.04429826967984091,
+   "movers": [
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.006317668232837748
+    },
+    {
+     "team": "UTSA",
+     "if_home_wins": 0.004753839185072273
+    },
+    {
+     "team": "Alabama",
+     "if_home_wins": 0.004287830872846787
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": -0.004069430726518608
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Rutgers",
+   "away": "Michigan State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Rutgers",
+     "p_win": 0.3617,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Michigan State",
+     "p_win": 0.6383,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.046014771201952985,
+   "movers": [
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.009526062462045348
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.004941329027014024
+    },
+    {
+     "team": "Alabama",
+     "if_home_wins": 0.004135475110115694
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": -0.004063617456359525
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Oklahoma State",
+   "away": "Kansas",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Oklahoma State",
+     "p_win": 0.7373666666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Kansas",
+     "p_win": 0.26263333333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.038976958117585565,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.008348675507200531
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": -0.004531928631068882
+    },
+    {
+     "team": "Tennessee",
+     "if_home_wins": 0.004370012973506032
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.0036892133017334683
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Washington State",
+   "away": "San Diego State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Washington State",
+     "p_win": 0.43651666666666666,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "San Diego State",
+     "p_win": 0.5634833333333333,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.2279885641682809,
+   "movers": [
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.09019507503606028
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.0861662843323065
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.007939418785105179
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.006520108748777287
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "California",
+   "away": "Pittsburgh",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "California",
+     "p_win": 0.119,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Pittsburgh",
+     "p_win": 0.881,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.05381426123230232,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.00835503327324122
+    },
+    {
+     "team": "Wake Forest",
+     "if_home_wins": -0.0059704244921579
+    },
+    {
+     "team": "BYU",
+     "if_home_wins": 0.005225790656784857
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": -0.005101632026249692
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "UNLV",
+   "away": "Nevada",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "UNLV",
+     "p_win": 0.585,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Nevada",
+     "p_win": 0.415,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.037501115573404686,
+   "movers": [
+    {
+     "team": "Iowa",
+     "if_home_wins": 0.005666426389317969
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": -0.005386331651391879
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.004003707136237322
+    },
+    {
+     "team": "Texas Tech",
+     "if_home_wins": -0.00393231043833453
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Houston",
+   "away": "Baylor",
+   "hrank": 18,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Houston",
+     "p_win": 0.6072,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Baylor",
+     "p_win": 0.3928,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.04191878941724002,
+   "movers": [
+    {
+     "team": "UTSA",
+     "if_home_wins": 0.008256209487060462
+    },
+    {
+     "team": "Boise State",
+     "if_home_wins": -0.0056419593079470864
+    },
+    {
+     "team": "Alabama",
+     "if_home_wins": 0.0044791758906697066
+    },
+    {
+     "team": "Oregon",
+     "if_home_wins": 0.0031405214815292126
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Fresno State",
+   "away": "Oregon State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Fresno State",
+     "p_win": 0.56315,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Oregon State",
+     "p_win": 0.43685,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.052056577046168395,
+   "movers": [
+    {
+     "team": "Boise State",
+     "if_home_wins": 0.009672905862382564
+    },
+    {
+     "team": "UCLA",
+     "if_home_wins": 0.00916653167160053
+    },
+    {
+     "team": "Liberty",
+     "if_home_wins": -0.006950207556374932
+    },
+    {
+     "team": "Iowa",
+     "if_home_wins": -0.006950160133228911
+    }
+   ],
+   "expected_move": 0.0
+  },
+  {
+   "date": "2026-11-28",
+   "home": "Hawai'i",
+   "away": "Sacramento State",
+   "hrank": 99,
+   "arank": 99,
+   "neutral": false,
+   "sides": [
+    {
+     "team": "Hawai'i",
+     "p_win": 0.87275,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    },
+    {
+     "team": "Sacramento State",
+     "p_win": 0.12725,
+     "in": 0.0,
+     "if_win": 0.0,
+     "if_lose": 0.0,
+     "swing": 0.0,
+     "bye": 0.0,
+     "bye_if_win": 0.0,
+     "bye_if_lose": 0.0
+    }
+   ],
+   "leverage": 0.0,
+   "third": 0.057250480560265486,
+   "movers": [
+    {
+     "team": "Oregon",
+     "if_home_wins": -0.013166160078202815
+    },
+    {
+     "team": "Alabama",
+     "if_home_wins": 0.005388578019969725
+    },
+    {
+     "team": "Indiana",
+     "if_home_wins": 0.004722931471083741
+    },
+    {
+     "team": "Tennessee",
+     "if_home_wins": 0.004088762627896925
+    }
+   ],
+   "expected_move": 0.0
+  }
+ ],
+ "board": [
+  {
+   "team": "Georgia",
+   "in": 1.0,
+   "bye": 0.9955333333333334,
+   "cfp": 1
+  },
+  {
+   "team": "Texas",
+   "in": 1.0,
+   "bye": 0.7833666666666667,
+   "cfp": 3
+  },
+  {
+   "team": "Notre Dame",
+   "in": 0.9992333333333333,
+   "bye": 0.6109166666666667,
+   "cfp": 4
+  },
+  {
+   "team": "Utah",
+   "in": 0.98485,
+   "bye": 0.5368333333333334,
+   "cfp": 2
+  },
+  {
+   "team": "Tennessee",
+   "in": 0.9268166666666666,
+   "bye": 0.05271666666666667,
+   "cfp": 5
+  },
+  {
+   "team": "Miami",
+   "in": 0.9096,
+   "bye": 0.20086666666666667,
+   "cfp": 7
+  },
+  {
+   "team": "Alabama",
+   "in": 0.9085666666666666,
+   "bye": 0.0087,
+   "cfp": 6
+  },
+  {
+   "team": "Wake Forest",
+   "in": 0.8887333333333334,
+   "bye": 0.3633166666666667,
+   "cfp": 8
+  },
+  {
+   "team": "BYU",
+   "in": 0.8052,
+   "bye": 0.005033333333333333,
+   "cfp": 10
+  },
+  {
+   "team": "Oregon",
+   "in": 0.6834666666666667,
+   "bye": 0.02395,
+   "cfp": 12
+  },
+  {
+   "team": "UCLA",
+   "in": 0.6764833333333333,
+   "bye": 0.34835,
+   "cfp": 9
+  },
+  {
+   "team": "Texas Tech",
+   "in": 0.5394666666666666,
+   "bye": 0.0295,
+   "cfp": 11
+  },
+  {
+   "team": "Boise State",
+   "in": 0.44476666666666664,
+   "bye": 0.0,
+   "cfp": null
+  },
+  {
+   "team": "Iowa",
+   "in": 0.4446,
+   "bye": 0.0409,
+   "cfp": 13
+  },
+  {
+   "team": "Liberty",
+   "in": 0.2875666666666667,
+   "bye": 0.0,
+   "cfp": null
+  },
+  {
+   "team": "UTSA",
+   "in": 0.1853,
+   "bye": 0.0,
+   "cfp": null
+  },
+  {
+   "team": "Indiana",
+   "in": 0.14793333333333333,
+   "bye": 0.0,
+   "cfp": 14
+  },
+  {
+   "team": "USC",
+   "in": 0.08296666666666666,
+   "bye": 1.6666666666666667e-05,
+   "cfp": 15
+  },
+  {
+   "team": "North Dakota State",
+   "in": 0.030233333333333334,
+   "bye": 0.0,
+   "cfp": null
+  },
+  {
+   "team": "New Mexico",
+   "in": 0.029216666666666665,
+   "bye": 0.0,
+   "cfp": null
+  },
+  {
+   "team": "Louisiana Tech",
+   "in": 0.018183333333333333,
+   "bye": 0.0,
+   "cfp": null
+  },
+  {
+   "team": "Air Force",
+   "in": 0.004216666666666666,
+   "bye": 0.0,
+   "cfp": null
+  },
+  {
+   "team": "Arizona",
+   "in": 0.0020833333333333333,
+   "bye": 0.0,
+   "cfp": 16
+  },
+  {
+   "team": "Texas State",
+   "in": 0.0005166666666666667,
+   "bye": 0.0,
+   "cfp": null
+  }
+ ]
+}
