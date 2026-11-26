@@ -1,4 +1,5 @@
 # Hitters and pitchers: constructs, reliability, and the human judges (2026-11-26)
+**Data policy (editor, 2026-11-26):** per-player Baseball Savant data stays local and out of git, like Massey's. `hitters.csv`, `hitters_scored.csv`, `pitchers.csv`, `pitchers_scored.csv` and `hit_pairs.csv` are gitignored; rebuild them with `1_build.py`. The repo keeps only our own derived results: rankings, correlations and figures.
 
 Same treatment as the running backs and defensive linemen in `../football/`. Unpublished.
 

@@ -1,2 +1,9 @@
 raw/
 data/*.rds
+# Baseball Savant (MLB Advanced Media) per-player tracking data: kept local, never committed
+# (editor, 2026-11-26). Rebuild with 1_build.py. Only our own derived results go in git.
+data/hitters.csv
+data/hitters_scored.csv
+data/pitchers.csv
+data/pitchers_scored.csv
+data/hit_pairs.csv
