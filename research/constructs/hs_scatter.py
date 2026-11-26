@@ -20,7 +20,7 @@ def _nice(lo, hi, n=6):
 def _esc(s): return str(s).replace('&', '&amp;').replace('<', '&lt;').replace("'", '&#8217;')
 def scatter(x, y, labels=None, title='', xlab='', ylab='', size=None, highlight=(), diagonal=False,
             xlim=None, ylim=None, W=680, H=440, label_if=None):
-    x0, x1, y0, y1 = 62, W - 22, H - 52, 46
+    x0, x1, y0, y1 = 84, W - 22, H - 58, 40
     xl, xh = xlim or (min(x), max(x)); yl, yh = ylim or (min(y), max(y))
     px, py = (xh - xl) * .04, (yh - yl) * .04; xl, xh, yl, yh = xl - px, xh + px, yl - py, yh + py
     sx = lambda v: x0 + (v - xl) / (xh - xl) * (x1 - x0); sy = lambda v: y0 - (v - yl) / (yh - yl) * (y0 - y1)
@@ -52,6 +52,13 @@ def scatter(x, y, labels=None, title='', xlab='', ylab='', size=None, highlight=
             tx, an = (sx(x[i]) + 8, 'start') if right else (sx(x[i]) - 8, 'end')
             o.append(f'<text x="{tx:.1f}" y="{sy(y[i]) - 6:.1f}" font-size="10.5" font-weight="600" fill="{RUST if labels[i] in hl else INK}" text-anchor="{an}">{_esc(labels[i])}</text>')
     o.append(f'<text x="{x0}" y="22" font-size="13" font-weight="600" fill="{INK}">{_esc(title)}  <tspan fill="{STEEL}">r = {r:.2f}, n = {len(x)}</tspan></text>')
-    o.append(f'<text x="{x0}" y="38" font-size="11" fill="{MUTED}">{_esc(ylab)}</text>')
-    o.append(f'<text x="{(x0 + x1) / 2}" y="{H - 14}" font-size="11" fill="{MUTED}" text-anchor="middle">{_esc(xlab)}</text></svg>')
+    # key: what the two lines mean, bottom right inside the frame
+    kx, ky = x1 - 12, y0 - 14
+    o.append(f'<rect x="{kx - 236}" y="{ky - (36 if diagonal else 20)}" width="242" height="{44 if diagonal else 26}" fill="{CREAM}" opacity="0.92"/>')
+    o.append(f'<line x1="{kx - 228}" x2="{kx - 200}" y1="{ky - 4}" y2="{ky - 4}" stroke="{STEEL}" stroke-width="2.2"/><text x="{kx - 194}" y="{ky}" font-size="10.5" fill="{INK}">trend (best straight line)</text>')
+    if diagonal: o.append(f'<line x1="{kx - 228}" x2="{kx - 200}" y1="{ky - 22}" y2="{ky - 22}" stroke="{MUTED}" stroke-width="1" stroke-dasharray="4 3"/><text x="{kx - 194}" y="{ky - 18}" font-size="10.5" fill="{INK}">same value on both axes</text>')
+    # axis titles: y rotated along the y-axis, x centered under the x-axis, both in ink
+    cy = (y0 + y1) / 2
+    o.append(f'<text x="22" y="{cy:.1f}" font-size="12.5" font-weight="600" fill="{INK}" text-anchor="middle" transform="rotate(-90 22 {cy:.1f})">{_esc(ylab)}</text>')
+    o.append(f'<text x="{(x0 + x1) / 2}" y="{H - 16}" font-size="12.5" font-weight="600" fill="{INK}" text-anchor="middle">{_esc(xlab)} &#8594;</text></svg>')
     return '\n'.join(o)

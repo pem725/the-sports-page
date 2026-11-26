@@ -23,6 +23,6 @@ X = [float(r['cfb_ypc']) for r in L]; Y = [float(r['nfl_ypc']) for r in L]; N = 
 show = {'Darrell Henderson', 'Derrick Henry', 'Jahmyr Gibbs', "De'Von Achane", 'Isiah Pacheco'}
 open(os.path.join(F, 'college_to_nfl.svg'), 'w').write(scatter(X, Y, labels=N, size=[float(r['nfl_car']) for r in L],
     highlight={'Darrell Henderson'}, diagonal=True, title='The same back in two leagues',
-    xlab='yards per carry in college (2014+ seasons) · dot size = NFL carries', ylab='yards per carry in the NFL (every carry, through 2025)',
+    xlab='yards per carry in college (2014+ seasons) · dot size = NFL carries', ylab='NFL yards per carry (every carry)',
     label_if=lambda i: N[i] in show))
 print('ok')
