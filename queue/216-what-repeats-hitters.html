@@ -1,0 +1,298 @@
+<!-- PUBLISH-META
+topic: MLB
+decay: keeps
+tags: MLB:mlb, What Repeats, Reliability
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — Speed Comes Back Every Year. Half a Batting Average Does Not.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart{width:100%;height:auto;display:block}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="Speed Comes Back Every Year. Half a Batting Average Does Not.">
+<meta property="og:description" content="A hitter’s speed and strikeouts come back almost whole the next season. His batting average comes back about halfway. What Repeats, Part 1 of 5.">
+<meta property="og:url" content="https://thesportspage.net/published/216-what-repeats-hitters.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/216-what-repeats-hitters.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Speed Comes Back Every Year. Half a Batting Average Does Not.">
+<meta name="twitter:description" content="A hitter’s speed and strikeouts come back almost whole the next season. His batting average comes back about halfway. What Repeats, Part 1 of 5.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/216-what-repeats-hitters.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">What Repeats &middot; Part 1 of 5</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Free and Family-Friendly</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="MLB"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><circle cx="13" cy="10" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 5.3c2.5 2.7 2.5 6.7 0 9.4M17.7 5.3c-2.5 2.7-2.5 6.7 0 9.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>Speed Comes Back Every Year. <em>Half a Batting Average Does Not.</em></h1>
+
+  <div class="deck">
+    Line up a hitter&rsquo;s numbers from one season against the next, and they do not come back equally. How fast he runs comes back almost all the way. How often he strikes out comes back most of the way. His batting average comes back about halfway. The other half was never really his.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; The Professor &middot; Lesson: how much of a number is the player?</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v good">.95</div><div class="l">of sprint speed repeats the next season</div></div>
+    <div class="sc"><div class="v now">.83</div><div class="l">of strikeouts repeats</div></div>
+    <div class="sc"><div class="v bad">.47</div><div class="l">of batting average repeats (.43&ndash;.51)</div></div>
+  </div>
+
+  <p><strong>The question:</strong> when a hitter has a big year, how much of it is really him?</p>
+
+  <p><strong>The answer:</strong> it depends on which number you look at. Some numbers come back almost whole the next season. Sprint speed comes back .95 of the way, on a scale where 1 means all of it. Strikeouts come back .83. Batting average comes back only .47, and OPS .49.</p>
+
+  <p><strong>Why that is surprising:</strong> the back of a baseball card treats every number the same way. Same type, same size, same line. Most fans read them all as the player. But the numbers we print biggest, batting average and OPS, are the ones that come back least.</p>
+
+  <p><strong>What you get:</strong> one number for any stat, its <strong>repeat rate</strong>. It tells you how much of a season is the player. And it tells you how far to pull a hot or cold year back toward average before you bet on it.</p>
+
+  <h2 class="sh">Shoe size and green lights</h2>
+
+  <p>Think about two numbers in your own life. Your shoe size this year tells you your shoe size next year almost exactly. It is <em>you</em>. How many green lights you hit on the way to work this week tells you almost nothing about next week. You drove the same way. The lights did the rest.</p>
+
+  <p>Most sports numbers sit somewhere between those two. Here is how to place them. Take every hitter who came to the plate 300 times in back-to-back seasons, from 2015 through 2025. That is 1,625 pairs of seasons. For each number, ask one question: did the hitters who were high on it one year stay high the next? The answer runs from 0, no pull at all, to 1, every hitter in the same place.</p>
+
+  <figure style="margin:1.6rem 0">
+<svg class="chart" viewBox="0 0 680 412" role="img" aria-label="Dot chart of how much of each hitting stat repeats the next season, 2015 to 2025, with 95 percent intervals. sprint speed: 0.95; swings and misses: 0.88; chasing bad pitches: 0.84; strikeouts: 0.83; exit velocity: 0.77; walks: 0.71; home runs: 0.64; singles: 0.64; doubles: 0.25; on-base percentage: 0.54; OPS: 0.49; batting average: 0.47." style="max-width:680px;margin:0 auto;display:block" font-family="'Roboto Mono',monospace">
+<text x="232" y="22" font-size="13" font-weight="600" fill="#1a1208">Hitters, 300+ trips to the plate, 2015–25</text>
+<line x1="232.0" x2="232.0" y1="42" y2="306" stroke="#d9cfba" stroke-width="0.8"/><text x="232.0" y="322" font-size="11" fill="#6b5e4a" text-anchor="middle">0</text>
+<line x1="313.6" x2="313.6" y1="42" y2="306" stroke="#d9cfba" stroke-width="0.8"/><text x="313.6" y="322" font-size="11" fill="#6b5e4a" text-anchor="middle">0.2</text>
+<line x1="395.2" x2="395.2" y1="42" y2="306" stroke="#d9cfba" stroke-width="0.8"/><text x="395.2" y="322" font-size="11" fill="#6b5e4a" text-anchor="middle">0.4</text>
+<line x1="476.8" x2="476.8" y1="42" y2="306" stroke="#d9cfba" stroke-width="0.8"/><text x="476.8" y="322" font-size="11" fill="#6b5e4a" text-anchor="middle">0.6</text>
+<line x1="558.4" x2="558.4" y1="42" y2="306" stroke="#d9cfba" stroke-width="0.8"/><text x="558.4" y="322" font-size="11" fill="#6b5e4a" text-anchor="middle">0.8</text>
+<line x1="640.0" x2="640.0" y1="42" y2="306" stroke="#d9cfba" stroke-width="0.8"/><text x="640.0" y="322" font-size="11" fill="#6b5e4a" text-anchor="middle">1</text>
+<text x="220" y="56" font-size="11.5" fill="#1a1208" text-anchor="end">sprint speed</text>
+<line x1="617.9" x2="621.7" y1="52" y2="52" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="619.9" cy="52" r="4.6" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="628.7" y="56" font-size="10.5" fill="#6b5e4a">.95</text>
+<text x="220" y="78" font-size="11.5" fill="#1a1208" text-anchor="end">swings and misses</text>
+<line x1="585.8" x2="594.8" y1="74" y2="74" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="590.5" cy="74" r="4.6" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="601.8" y="78" font-size="10.5" fill="#6b5e4a">.88</text>
+<text x="220" y="100" font-size="11.5" fill="#1a1208" text-anchor="end">chasing bad pitches</text>
+<line x1="569.0" x2="580.6" y1="96" y2="96" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="575.0" cy="96" r="4.6" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="587.6" y="100" font-size="10.5" fill="#6b5e4a">.84</text>
+<text x="220" y="122" font-size="11.5" fill="#1a1208" text-anchor="end">strikeouts</text>
+<line x1="566.0" x2="578.1" y1="118" y2="118" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="572.3" cy="118" r="4.6" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="585.1" y="122" font-size="10.5" fill="#6b5e4a">.83</text>
+<text x="220" y="144" font-size="11.5" fill="#1a1208" text-anchor="end">exit velocity</text>
+<line x1="539.3" x2="555.3" y1="140" y2="140" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="547.6" cy="140" r="4.6" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="562.3" y="144" font-size="10.5" fill="#6b5e4a">.77</text>
+<text x="220" y="166" font-size="11.5" fill="#1a1208" text-anchor="end">walks</text>
+<line x1="511.5" x2="531.2" y1="162" y2="162" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="521.7" cy="162" r="4.6" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="538.2" y="166" font-size="10.5" fill="#6b5e4a">.71</text>
+<text x="220" y="188" font-size="11.5" fill="#1a1208" text-anchor="end">home runs</text>
+<line x1="479.0" x2="502.7" y1="184" y2="184" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="491.2" cy="184" r="4.6" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="509.7" y="188" font-size="10.5" fill="#6b5e4a">.64</text>
+<text x="220" y="210" font-size="11.5" fill="#1a1208" text-anchor="end">singles</text>
+<line x1="481.8" x2="505.1" y1="206" y2="206" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="493.8" cy="206" r="4.6" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="512.1" y="210" font-size="10.5" fill="#6b5e4a">.64</text>
+<text x="220" y="232" font-size="11.5" fill="#1a1208" text-anchor="end">doubles</text>
+<line x1="315.6" x2="352.7" y1="228" y2="228" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="334.4" cy="228" r="4.6" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="359.7" y="232" font-size="10.5" fill="#6b5e4a">.25</text>
+<text x="220" y="254" font-size="11.5" fill="#1a1208" text-anchor="end">on-base percentage</text>
+<line x1="438.0" x2="466.1" y1="250" y2="250" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="452.4" cy="250" r="4.6" fill="#b83a1e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="473.1" y="254" font-size="10.5" fill="#6b5e4a">.54</text>
+<text x="220" y="276" font-size="11.5" fill="#1a1208" text-anchor="end">OPS</text>
+<line x1="418.2" x2="448.2" y1="272" y2="272" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="433.5" cy="272" r="4.6" fill="#b83a1e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="455.2" y="276" font-size="10.5" fill="#6b5e4a">.49</text>
+<text x="220" y="298" font-size="11.5" fill="#1a1208" text-anchor="end">batting average</text>
+<line x1="407.6" x2="438.6" y1="294" y2="294" stroke="#1a1208" stroke-width="1.5"/>
+<circle cx="423.4" cy="294" r="4.6" fill="#b83a1e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="445.6" y="298" font-size="10.5" fill="#6b5e4a">.47</text>
+<text x="16" y="179.0" font-size="12.5" font-weight="600" fill="#1a1208" text-anchor="middle" transform="rotate(-90 16 179.0)">the stat</text>
+<text x="436.0" y="344" font-size="12.5" font-weight="600" fill="#1a1208" text-anchor="middle">how much of it repeats the next season (0 = none, 1 = all)</text>
+<circle cx="82" cy="364" r="4.6" fill="#2c4a6e"/><text x="92" y="368" font-size="10.5" fill="#1a1208">one thing the player does</text>
+<circle cx="312" cy="364" r="4.6" fill="#b83a1e"/><text x="322" y="368" font-size="10.5" fill="#1a1208">a mix of many things</text>
+<line x1="494" x2="516" y1="364" y2="364" stroke="#1a1208" stroke-width="1.5"/><text x="522" y="368" font-size="10.5" fill="#1a1208">95% interval</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);text-align:center;margin-top:.5rem">Same hitter, next season: the correlation between one year and the next, 1,625 pairs of seasons, 2015&ndash;2025 (pairs touching 2020 left out). Black lines are 95% intervals. Counting stats are per trip to the plate. Sources: MLB Stats API, the Lahman database, and Baseball Savant for speed, swings, chases and exit velocity.</figcaption>
+  </figure>
+
+  <p>Read the chart from the top. Notice that the things a hitter <em>does</em> sit high. How fast he runs. How often he swings and misses. Whether he chases pitches out of the zone. How hard he hits the ball. Those are his shoe size.</p>
+
+  <p>Now look at the red dots at the bottom. On-base percentage, OPS and batting average are not one thing. Each is a mix of several, and one part of the mix is where the ball happens to land. A hard line drive can find a glove. A weak flare can drop in. That part does not come back.</p>
+
+  <p>And notice doubles, at .25. A double is often a single that rolled into the gap, or a fly ball the outfielder just missed. Of all the hits, it is the most green light.</p>
+
+  <div class="pull">
+    <p>The numbers we print biggest are the ones that come back least.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Bryce Harper&rsquo;s two seasons</h2>
+
+  <p>In 2015 Bryce Harper won the National League MVP. He got 33 hits for every 100 at-bats. In 2016 he got 24. That looks like a different player.</p>
+
+  <p>Look at his strikeouts instead. In 2015 he struck out on 20 of every 100 trips to the plate. In 2016, 19. The part of Harper that comes back every year came back. The part that depends on where the ball lands did not.</p>
+
+  <p>Here is how to use a repeat rate yourself. Take how far a player was from average. Multiply by the repeat rate. Add that to average, and you have a fair guess for next year. The average hitter in 2015 got about 26 hits per 100 at-bats, so Harper was 7 above. Half of 7 is about 3. So a fair guess for his 2016 was about 30. He got 24, worse than the guess. Luck runs both ways, and a guess only says where to start.</p>
+
+  <p>Do the same with his strikeouts and almost nothing changes, because strikeouts repeat .83 of the way. That is what a high repeat rate buys you: a number you can trust next year.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p><strong>Judge a hitter by what he controls.</strong> Speed, swings and misses, chases and how hard he hits the ball all come back. Lean on those when you size up a player, and treat batting average as part skill and part weather.</p>
+
+  <p><strong>Pull every number toward average by its repeat rate.</strong> A stat that repeats .47 of the way keeps about half of its distance from average. Most of a hot streak in batting average is the half that goes away. We wrote earlier about how many tries a stat needs before it settles, in <a href="https://thesportspage.net/published/026-stabilization-thresholds.html">Issue #32</a>. This is the other side of the coin: even after a full season, some numbers are still mostly luck.</p>
+
+  <p><strong>Big type is not the same as big signal.</strong> The more things a number mixes together, the more room luck has to get in. For more, see our primers on <a href="https://thesportspage.net/concepts/regression-to-the-mean.html">regression to the mean</a> and <a href="https://thesportspage.net/concepts/signal-vs-noise.html">signal and noise</a>.</p>
+
+  <div class="box">
+    <h3>The series: What Repeats</h3>
+    <p>Five sports questions, one idea: how much of a number is the player? <strong>Part 1: hitters</strong> (this issue). Part 2: quarterbacks. Part 3: pitchers. Part 4: pass rushers. Part 5: receivers. Parts 2 through 5 are coming soon.</p>
+  </div>
+
+  <div class="box">
+    <h3>How we did it</h3>
+    <p><strong>Who.</strong> Every hitter with 300 or more trips to the plate in a season, 2015&ndash;2025 (the 2020 bar scaled to its 60 games): 3,048 seasons. A pair is the same hitter in back-to-back seasons; pairs that touch 2020 are left out. That leaves 1,625 pairs.</p>
+    <p><strong>The repeat rate</strong> is the correlation between one season and the next across those pairs. The 95% intervals use the standard Fisher method. Counting stats are taken per trip to the plate (and square-rooted, which steadies a rate). Batting average .47 (.43&ndash;.51); OPS .49 (.46&ndash;.53); on-base .54 (.50&ndash;.57); strikeouts .83 (.82&ndash;.85); walks .71; home runs .64; singles .64; doubles .25 (.20&ndash;.30).</p>
+    <p><strong>Two feeds.</strong> Every box-score number here comes from the MLB Stats API and was recomputed from the Lahman database; the repeat rates match to the hundredth, pair for pair. Harper&rsquo;s seasons match on both feeds (654 and 627 trips to the plate). Sprint speed (.95), swings and misses (.88), chases (.84) and exit velocity (.77) come from Baseball Savant alone. That is one feed. We publish only these summary figures, never the per-player data.</p>
+    <p><strong>Limits.</strong> The same hitter can appear in several pairs, so the intervals are a little too narrow. Only hitters who kept their jobs are in the pairs, and players who slumped out of the lineup are missing. The &ldquo;fair guess&rdquo; rule assumes the spread of a stat is about the same each year, which holds closely here. Code: <code>research/constructs/baseball-validation/</code> in our repository.</p>
+  </div>
+
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!-- PUBLISH-META
+topic: NFL
+decay: keeps
+tags: NFL:nfl, What Repeats, Regression to the Mean
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — 23 Sacks in One Season. Expect Far Fewer the Next.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart{width:100%;height:auto;display:block}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="23 Sacks in One Season. Expect Far Fewer the Next.">
+<meta property="og:description" content="A pass rusher&rsquo;s pressures repeat from season to season far better than his sacks. The share of pressures that become sacks does not repeat at all. What Repeats, Part 4.">
+<meta property="og:url" content="https://thesportspage.net/published/219-what-repeats-pass-rush.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/219-what-repeats-pass-rush.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="23 Sacks in One Season. Expect Far Fewer the Next.">
+<meta name="twitter:description" content="A pass rusher&rsquo;s pressures repeat from season to season far better than his sacks. The share of pressures that become sacks does not repeat at all. What Repeats, Part 4.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/219-what-repeats-pass-rush.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">What Repeats &middot; Part 4 of 5</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Free and Family-Friendly</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="NFL"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><ellipse cx="13" cy="10" rx="10.6" ry="6.1" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 10h6" stroke="currentColor" stroke-width="1.7"/></svg></span>23 Sacks in One Season. <em>Expect Far Fewer the Next.</em></h1>
+
+  <div class="deck">
+    Myles Garrett had 23 sacks in 2025, the most since the stat became official. Sacks are how everyone rates a pass rusher. But a player&rsquo;s sack total repeats only so-so from one season to the next. His pressures repeat far better. And the share of pressures that turn into sacks does not repeat at all.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; The Professor &middot; Lesson: how much of a number is the player?</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v good">.68</div><div class="l">how closely a pass rusher&rsquo;s pressures repeat the next season (.64&ndash;.71)</div></div>
+    <div class="sc"><div class="v now">.43</div><div class="l">how closely his sacks repeat (.38&ndash;.48)</div></div>
+    <div class="sc"><div class="v bad">.01</div><div class="l">how closely the share of pressures that become sacks repeats (about zero)</div></div>
+  </div>
+
+  <p><strong>The question:</strong> when a pass rusher piles up sacks, how much of that number is him?</p>
+
+  <p><strong>The answer:</strong> less than half. A lineman&rsquo;s sacks repeat at .43 on a scale where 1 means the same every year and 0 means no link at all. His pressures, every time he hurries, hits or sacks the quarterback, repeat at .68. The finish, the share of pressures that become sacks, repeats at .01. That part is luck.</p>
+
+  <p><strong>Why that is surprising:</strong> the sack is the stat on the screen, in the record book and in the contract. It feels like the purest measure of a pass rusher. It is really two things multiplied together: a skill that repeats, and a finish that does not.</p>
+
+  <p><strong>What you get:</strong> one number to look up for any stat, its <strong>repeat rate</strong>, and a rule for using it. The repeat rate tells you how much of this season&rsquo;s edge to expect back next season.</p>
+
+  <h2 class="sh">Where the sack came from</h2>
+
+  <p>If you watched the Jets&rsquo; New York Sack Exchange in the early 1980s, you watched this stat being born. Sacks were not official until 1982. The year before, Joe Klecko led the league with 20.5 sacks that did not count. In 1984 Mark Gastineau had 22, a record that stood until 2001. In 2025 Myles Garrett had 23, the most since the stat became official.</p>
+
+  <p>So the sack has always been a highlight. The question here is a duller one, and more useful: if a man has a big sack year, what should you expect next year? Our data start in 1999, and the detailed charting in 2018, so the answer comes from today&rsquo;s game.</p>
+
+  <h2 class="sh">Same player, next season</h2>
+
+  <p>We took every defensive lineman and edge rusher with 300 or more snaps in a season, from 2018 through 2025. For each stat, we counted it per 100 snaps. Then we paired each player&rsquo;s season with his next one, 1,078 pairs in all, and asked how closely the second season followed the first.</p>
+
+  <figure style="margin:1.6rem 0">
+<svg class="chart" viewBox="0 0 680 430" role="img" aria-label="Same pass rusher, next season: how closely each stat repeats, with 95 percent intervals. Pressures 0.68, tackles on running plays 0.60, knockdowns 0.48, hurries 0.46, sacks 0.43, run stuffs 0.24, forced fumbles 0.23, sacks per pressure 0.01." style="max-width:680px;margin:0 auto" font-family="'Roboto Mono',monospace">
+<rect width="680" height="430" fill="#f5f0e8"/>
+<line x1="300.0" x2="300.0" y1="40" y2="312" stroke="#d9cfba" stroke-width="0.7"/>
+<text x="300.0" y="330" font-size="11" fill="#6b5e4a" text-anchor="middle">0</text>
+<line x1="370.0" x2="370.0" y1="40" y2="312" stroke="#d9cfba" stroke-width="0.7"/>
+<text x="370.0" y="330" font-size="11" fill="#6b5e4a" text-anchor="middle">0.2</text>
+<line x1="440.0" x2="440.0" y1="40" y2="312" stroke="#d9cfba" stroke-width="0.7"/>
+<text x="440.0" y="330" font-size="11" fill="#6b5e4a" text-anchor="middle">0.4</text>
+<line x1="510.0" x2="510.0" y1="40" y2="312" stroke="#d9cfba" stroke-width="0.7"/>
+<text x="510.0" y="330" font-size="11" fill="#6b5e4a" text-anchor="middle">0.6</text>
+<line x1="580.0" x2="580.0" y1="40" y2="312" stroke="#d9cfba" stroke-width="0.7"/>
+<text x="580.0" y="330" font-size="11" fill="#6b5e4a" text-anchor="middle">0.8</text>
+<line x1="650.0" x2="650.0" y1="40" y2="312" stroke="#d9cfba" stroke-width="0.7"/>
+<text x="650.0" y="330" font-size="11" fill="#6b5e4a" text-anchor="middle">1</text>
+<text x="16" y="24" font-size="13" font-weight="600" fill="#1a1208">Same pass rusher, next season: what repeats?</text>
+<text x="288" y="62" font-size="11.5" fill="#1a1208" text-anchor="end">pressures (all three added up)</text>
+<line x1="525.2" x2="547.9" y1="58" y2="58" stroke="#1a1208" stroke-width="1.4"/>
+<circle cx="537.0" cy="58" r="5" fill="#b83a1e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="555.9" y="62" font-size="11" fill="#1a1208">0.68</text>
+<text x="288" y="96" font-size="11.5" fill="#1a1208" text-anchor="end">tackles on running plays</text>
+<line x1="494.7" x2="521.7" y1="92" y2="92" stroke="#1a1208" stroke-width="1.4"/>
+<circle cx="508.7" cy="92" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="529.7" y="96" font-size="11" fill="#1a1208">0.60</text>
+<text x="288" y="130" font-size="11.5" fill="#1a1208" text-anchor="end">knockdowns</text>
+<line x1="453.3" x2="485.3" y1="126" y2="126" stroke="#1a1208" stroke-width="1.4"/>
+<circle cx="469.7" cy="126" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="493.3" y="130" font-size="11" fill="#1a1208">0.48</text>
+<text x="288" y="164" font-size="11.5" fill="#1a1208" text-anchor="end">hurries</text>
+<line x1="445.6" x2="478.4" y1="160" y2="160" stroke="#1a1208" stroke-width="1.4"/>
+<circle cx="462.5" cy="160" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="486.4" y="164" font-size="11" fill="#1a1208">0.46</text>
+<text x="288" y="198" font-size="11.5" fill="#1a1208" text-anchor="end">sacks</text>
+<line x1="434.5" x2="468.5" y1="194" y2="194" stroke="#1a1208" stroke-width="1.4"/>
+<circle cx="451.9" cy="194" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="476.5" y="198" font-size="11" fill="#1a1208">0.43</text>
+<text x="288" y="232" font-size="11.5" fill="#1a1208" text-anchor="end">run stuffs (non-sack tackles for loss)</text>
+<line x1="363.8" x2="403.2" y1="228" y2="228" stroke="#1a1208" stroke-width="1.4"/>
+<circle cx="383.8" cy="228" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="411.2" y="232" font-size="11" fill="#1a1208">0.24</text>
+<text x="288" y="266" font-size="11.5" fill="#1a1208" text-anchor="end">forced fumbles</text>
+<line x1="359.1" x2="398.8" y1="262" y2="262" stroke="#1a1208" stroke-width="1.4"/>
+<circle cx="379.2" cy="262" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="406.8" y="266" font-size="11" fill="#1a1208">0.23</text>
+<text x="288" y="300" font-size="11.5" fill="#1a1208" text-anchor="end">sacks per pressure (the finish)</text>
+<line x1="300.0" x2="324.3" y1="296" y2="296" stroke="#1a1208" stroke-width="1.4"/>
+<circle cx="303.3" cy="296" r="5" fill="#2c4a6e" stroke="#f5f0e8" stroke-width="0.8"/>
+<text x="332.3" y="300" font-size="11" fill="#1a1208">0.01</text>
+<text x="475.0" y="352" font-size="12.5" font-weight="600" fill="#1a1208" text-anchor="middle">correlation with the same stat next season</text>
+<text x="16" y="177.0" font-size="12.5" font-weight="600" fill="#1a1208" transform="rotate(-90 16 177.0)" text-anchor="middle">stat</text>
+<circle cx="22" cy="412" r="5" fill="#b83a1e"/><text x="32" y="416" font-size="10.5" fill="#1a1208">a sum of other stats</text>
+<circle cx="202" cy="412" r="5" fill="#2c4a6e"/><text x="212" y="416" font-size="10.5" fill="#1a1208">a single stat</text>
+<line x1="322" x2="344" y1="412" y2="412" stroke="#1a1208" stroke-width="1.4"/><text x="350" y="416" font-size="10.5" fill="#1a1208">95% interval &#183; 1,078 player pairs, 2018&#8211;2025</text>
+</svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);text-align:center;margin-top:.5rem">Defensive linemen and edge rushers with 300+ snaps, 2018&ndash;2025, per 100 snaps. Each dot is the correlation between a player&rsquo;s stat in one season and the same stat the next; the line is its 95% interval. Pressures are hurries, knockdowns and sacks added up. Sources: nflverse play-by-play and snap counts; Pro Football Reference charting.</figcaption>
+  </figure>
+
+  <p>Read it from the top. Pressures repeat best: a man who gets after the quarterback this year mostly does it again. Notice where sacks sit, below hurries and knockdowns, the parts of a pass rush nobody puts on a highlight reel. Now look at the bottom row. About 1 pass rush in 4 that reaches the quarterback ends in a sack. Whether a given player beats that rate one year tells you almost nothing about the next.</p>
+
+  <p>Garrett shows both halves. In 2025 he had 53 charted pressures, his most since the charting began in 2018, so the skill was real. But he turned 23 of them into sacks, about 4 in 10, against roughly 1 in 4 for everyone else. The pressure is him. The finish depends on whether the quarterback held the ball and whether the coverage held up behind him.</p>
+
+  <div class="pull">
+    <p>The pressure is the player. The finish is the quarterback, the coverage and the bounce of the ball.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">Use the pressures, not the sacks</h2>
+
+  <p>Try a practical test. To guess a lineman&rsquo;s sacks next season, which works better: this season&rsquo;s sacks, or this season&rsquo;s pressures? The pressures win, .53 to .43, and the gap is not chance (it runs from about .06 to .14). The sack count you can see predicts future sacks worse than the pressure count you usually cannot.</p>
+
+  <p>The repeat rate also tells you how far to pull a big year back toward average. Sacks repeat at about .4. So a man who beats the average by a lot this year should keep about 4 parts in 10 of that edge. Pressures repeat at about .7, so he keeps about 7 in 10 of that. That is <a href="https://thesportspage.net/concepts/regression-to-the-mean.html">regression to the mean</a>, measured.</p>
+
+  <h2 class="sh">A tackle for loss is two stats under one name</h2>
+
+  <p>The official tackle for loss has the same problem in another form. Most sacks are also scored as tackles for loss. For an edge rusher, 58 of every 100 official tackles for loss are sacks; for an interior lineman, 47. So the stat is about half pass rush and half something else.</p>
+
+  <p>The something else is a run stuff: a runner tackled behind the line. Is that quickness, the same burst that gets a man to the quarterback? The numbers say no. Run stuffs have almost no link to sacks, hurries or knockdowns. They go with tackles on running plays: run defense. And the two jobs pull against each other. The linemen who rush the passer best make fewer tackles on runs, because they are upfield and gone.</p>
+
+  <p>Run defense is real, too. Tackles on running plays repeat at .60. But the splashy part, the stuff in the backfield, repeats at only .24. It makes the highlight. It is mostly the play.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p><strong>Before you trust a stat, ask how well it repeats.</strong> A number that bounces from year to year is mostly not the player. Sacks bounce more than pressures; run stuffs and forced fumbles bounce most of all.</p>
+
+  <p><strong>Pull a big year back by the right amount.</strong> Keep about as much of the edge as the repeat rate says: about 4 in 10 for sacks, 7 in 10 for pressures. That is the honest forecast, and it is kinder to the player than a contract built on one lucky finish.</p>
+
+  <p><strong>Look under the highlight.</strong> The stat on the screen is often a skill times a bounce. Find the part that repeats, and judge the player on that. <a href="https://thesportspage.net/published/026-stabilization-thresholds.html">Issue #32</a> asked how many tries a stat needs to settle down. The repeat rate is the same idea seen from the other side. Its name is <a href="https://thesportspage.net/concepts/signal-vs-noise.html">signal versus noise</a>.</p>
+
+  <div class="box">
+    <h3>The series</h3>
+    <p><strong>What Repeats</strong> asks one question across four sports: how much of a number is the player? Part 1, hitters; Part 2, quarterbacks; Part 3, pitchers; Part 4, pass rushers (this one); Part 5, receivers. The other parts are coming soon.</p>
+  </div>
+
+  <div class="box">
+    <h3>How we did it</h3>
+    <p><strong>Data.</strong> Defensive linemen and edge rushers with 300+ defensive snaps, regular seasons 2018&ndash;2025: 1,737 player-seasons. Sacks, tackles for loss, tackles on running and passing plays, and forced fumbles from nflverse play-by-play; snaps from nflverse snap counts; hurries, knockdowns and pressures from Pro Football Reference&rsquo;s charting, via nflverse. Positions use each player&rsquo;s role (edge or interior), not his current roster label. All rates are per 100 snaps.</p>
+    <p><strong>Repeat rates.</strong> The correlation between a player&rsquo;s rate in one season and his rate the next, over 1,078 consecutive-season pairs (1,070 for the share of pressures that became sacks). Intervals are 95%, by Fisher&rsquo;s z. Pressures predicting next season&rsquo;s sacks: .53; sacks predicting them: .43; difference .10 (.06&ndash;.14, from 2,000 resamples of pairs).</p>
+    <p><strong>Second feeds.</strong> Sacks: 59 of 60 randomly drawn player-seasons match ESPN exactly (the miss was a player traded midseason). Garrett&rsquo;s 23 in 2025: nflverse and ESPN; the most since 1982 by StatMuse&rsquo;s list and by nflverse back to 1999. History: sacks unofficial until 1982 and Klecko&rsquo;s 20.5 in 1981, from the Pro Football Hall of Fame and Wikipedia; Gastineau&rsquo;s 22 in 1984, from Wikipedia and StatMuse. <em>One feed only:</em> the charted pressures, hurries and knockdowns (Pro Football Reference), and the tackle-for-loss split (nflverse play-by-play; ESPN does not publish tackles for loss).</p>
+    <p><strong>Limits.</strong> Charting services disagree on what counts as a pressure. Pro Football Reference counts fewer than some, which is why about 1 in 4 of its pressures is a sack. Per-snap rates mix passing and running downs. A repeat rate also carries team changes, new schemes and injuries, so it measures the player in his setting, not the player alone. Code: <code>research/constructs/football/</code> in our repository.</p>
+  </div>
+
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>
