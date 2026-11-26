@@ -70,3 +70,23 @@ the chance of a future event)
 - A purely historical or descriptive issue with no inference (a record, a timeline) is usually
   SAME (no analysis to get wrong) or CANNOT-ASK only if the issue's point is a probability.
 - One verdict per issue: the main decision, not every sentence.
+
+## Sensitivity pass: the expected-value rule (editor's audit, 2026-11-26)
+
+The editor's audit (18 of 20 codes agreed) questioned the CANNOT-ASK / no-forecast calls: an ANOVA
+hands the analyst group means, and **a group mean is an expected value, which is a forecast.**
+"Two of every three questionable players play" is the mean of a 0/1 outcome in a group.
+
+For the sensitivity pass only, the one-tool analyst MAY forecast with a group mean (or a cell
+mean from a factorial ANOVA): a point estimate for the next case from the average of past cases
+in its group. The analyst still has no interval, no conditioning beyond the groups they form,
+no simulation, no model of how a rate settles, no ranking method and no time-to-event.
+
+Re-code each issue originally coded CANNOT-ASK with the same four verdicts:
+- **SAME**: the issue's decision IS a group base rate, and a group mean delivers it.
+- **SAME-WRONG-REASON**: the point estimate lands right, but the decision rests on the
+  uncertainty or the conditioning the analyst lacks (they would state it with false certainty).
+- **CHANGED**: the group mean points to a different decision (wrong group, wrong base rate,
+  an average where the issue needed a spread, a tail or a sequence).
+- **CANNOT-ASK**: even with group means the question cannot be posed (a simulation of a season,
+  a ranking, how many starts until recovery, a probability conditional on a live game state).

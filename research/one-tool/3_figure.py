@@ -7,20 +7,26 @@ C = {}
 for f in glob.glob(os.path.join(H, 'codes', 'coder[ABCD].jsonl')):
     for l in open(f): o = json.loads(l); C[str(o['issue'])] = o
 NAMES = [('group-difference', 'comparing two groups'), ('descriptive-history', 'describing the record'),
-         ('association', 'does X go with Y?'), ('small-sample-rate', 'a rate on few tries'),
-         ('causal', 'does X cause Y?'), ('measurement', 'what a stat measures'),
-         ('forecast-probability', 'forecasts and chances')]
+         ('forecast-probability', 'forecasts and chances'), ('small-sample-rate', 'a rate on few tries'),
+         ('association', 'does X go with Y?'), ('causal', 'does X cause Y?'),
+         ('measurement', 'what a stat measures')]
 def wilson(k, n, z=1.96):
     p = k / n; d = 1 + z * z / n; c = (p + z * z / (2 * n)) / d; h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
     return c - h, c + h
+# Counted with the editor's expected-value rule (an average may serve as a forecast), and an issue
+# counts as lost only when BOTH sensitivity coders say so: the conservative count the piece leads with.
+E1 = {str(json.loads(l)['issue']): json.loads(l) for l in open(os.path.join(H, 'codes', 'ev_coder1.jsonl'))}
+E2 = {str(json.loads(l)['issue']): json.loads(l) for l in open(os.path.join(H, 'codes', 'ev_coder2.jsonl'))}
+lost = lambda v: v in ('CHANGED', 'CANNOT-ASK')
+def ev_lost(i, o): return (lost(E1[i]['verdict']) and lost(E2[i]['verdict'])) if i in E1 else lost(o['verdict'])
 rows = []
 for key, lab in NAMES:
-    v = [o for o in C.values() if o['question_type'] == key]
-    k = sum(o['verdict'] in ('CHANGED', 'CANNOT-ASK') for o in v); lo, hi = wilson(k, len(v))
+    v = [(i, o) for i, o in C.items() if o['question_type'] == key]
+    k = sum(ev_lost(i, o) for i, o in v); lo, hi = wilson(k, len(v))
     rows.append((lab, k, len(v), k / len(v), lo, hi))
 INK, CREAM, STEEL, RUST, MUTED, GRID = '#1a1208', '#f5f0e8', '#2c4a6e', '#b83a1e', '#6b5e4a', '#d9cfba'
 W, Hh = 680, 400; x0, x1 = 230, 590; sx = lambda v: x0 + v * (x1 - x0); top, step = 52, 40
-o = [f'<svg class="chart" viewBox="0 0 {W} {Hh}" role="img" aria-label="Share of our decisions that change or vanish when only t-tests and ANOVA are allowed, by kind of question, with 95 percent intervals: '
+o = [f'<svg class="chart" viewBox="0 0 {W} {Hh}" role="img" aria-label="Share of our decisions that change or vanish when only t-tests and ANOVA are allowed (an average may serve as a forecast), by kind of question, with 95 percent intervals: '
      + '; '.join(f'{r[0]}: {r[1]} of {r[2]}' for r in rows) + f'." style="max-width:680px;margin:0 auto" font-family="\'Roboto Mono\',monospace">']
 for t in (0, .25, .5, .75, 1):
     o.append(f'<line x1="{sx(t):.1f}" x2="{sx(t):.1f}" y1="{top - 14}" y2="{top + step * len(rows) - 10}" stroke="{GRID}" stroke-width="0.8"/>'

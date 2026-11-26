@@ -105,8 +105,10 @@ Wed 16 Sep. Section kept for the record.
   as soon as a non-NFL piece follows Part 4, slot Part 5 right after it, so the series
   finishes within the week. Its "The series" box already lists all five parts.
 
-- **`222-one-tool.html`** ("One Tool Would Have Cost Us 121 of Our 207 Answers.", Methods,
-  `keeps`). Held 2026-11-26 because its codes are AI judgments: *revival trigger* is the editor's
-  audit of the 20 codes in `research/one-tool/AUDIT.md`. Fill the `[AUDIT PENDING ...]` line in
-  the methods box with his agreement count; if he disagrees with more than about 4 of 20, revisit
-  the codebook before publishing. Then slot it on any day after a non-Methods piece.
+- **`222-one-tool.html`** ("One Tool Would Have Cost Us 83 of Our 207 Answers.", Methods, `keeps`).
+  The editor audited 20 codes on 2026-11-26 and agreed with 18. His forecast objection led to the
+  expected-value recount (121 strict -> 83 conservative), now in the piece. *Revival trigger:* his
+  answers on (1) whether the public shout-out to co-author Patrick McGovern ("PJ") may include family
+  team allegiances (the house rule says no), and (2) overriding Sean's old note against citing his
+  academic papers (he asked for the 2010 tool-based science paper explicitly). Then slot it on any
+  day after a non-Methods piece.
