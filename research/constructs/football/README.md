@@ -81,10 +81,49 @@ doesn't transfer one for one, because college carries gain more.
 - Team-seasons mix quality with style and with game script (leading teams run).
 - Offense only; college includes games against FCS teams.
 
+## Running backs (2026-11-26, second pass)
+
+`4_build_rb.py` → `5_rb_same_player.R` → `6_rb_constructs.R` → `7_rb_omega.R` → `8_rb_rank.R` →
+`9_rb_judges.R` → `10_rb_today.R`. College: CFBD player season stats (36 calls), backs with 100+
+carries. NFL: nflverse season stats plus Next Gen Stats (yards over expected, from 2018), 100+ carries.
+Sacks never touch a back's carries, so the definitional trap above is absent here.
+
+**1. The same back gains a yard and a half less in the NFL.** 75 backs with 200+ carries in each
+league (linked by ESPN id, with a name-plus-college fallback for CFBD's older ids): college 5.9
+yards a carry, NFL 4.4; drop 1.5 [1.3, 1.7]. 74 of 75 dropped. About 0.9 of it is the league (all
+college backs 5.3 vs all NFL backs 4.3, which matches the team-level gap counted the NFL way, 0.8);
+the rest is selection, since these backs sat at the 79th percentile of college seasons.
+
+**2. College yards per carry barely predicts NFL yards per carry:** r = .21 [.02, .37]. Each extra
+college yard buys about 0.1 in the NFL. (Range restriction, since only backs who reached the NFL and
+got 200 carries are in, pushes this down; it is a floor.)
+
+**3. Constructs (EFA, 375 RB-seasons 2018–2025).** Scree elbow after 1; parallel analysis 6; MAP 1.
+Five interpretable factors: breakaway (yards over expected, 10+ and 20+ yard runs), chain-mover
+(first downs, TD rate, EPA), receiving (yards per catch, after the catch), patience (time to the line,
+dancing: style, not quality) and role (8-man boxes vs targets). Yards per carry, EPA and yards after
+the catch loaded above 1: they are composites of the other indicators, so they were dropped from the
+measurement model and kept as criteria. Receiving stats did not cohere as one construct; fumbles load
+zero (noise). Final model: breakaway + chain-mover, r = .58; CFI .94, SRMR .04, RMSEA .16 (few df).
+Omega hierarchical for the rushing items: .66–.71: about two-thirds of a rushing line is one general
+ability.
+
+**4. One season is mostly not the back.** Same back, consecutive seasons (212 pairs): breakaway .26,
+chain-mover .18, yards per carry .29, rushing yards .38. A season's rate is mostly line, scheme,
+opponents and luck. So a one-season ranking put Blake Corum first in 2025 on 145 carries.
+
+**5. Human judges (AP All-Pro, 2018–2025, 15 backs; Wikipedia, one source).** How well each number
+picks the All-Pros (AUC): scrimmage yards .98 [.95, .99], rushing yards .97, yards per carry .90,
+breakaway .89, rate score .87 [.81, .93]. The voters reward volume, and carries are themselves a
+coach's judgment. But rate adds to volume (p = .005): given the workload, the efficient back gets the vote.
+
+**6. Today's backs, pooled 2024–2026 and shrunk** by Spearman-Brown on a season reliability of .19:
+Derrick Henry and Jahmyr Gibbs top the list and are the only 2 of 46 active backs whose 95% interval
+clears average. Corum, the one-season leader, is third with an interval running from below average.
+The model agrees with the eye only after it admits how little one season says.
+
 ## Next
 
-- Player level: running backs in both leagues (sacks don't touch an RB's carries, so the
-  definitional trap vanishes there; this is the cleaner test of "is a yard a yard").
 - More running indicators; defense; within-league year-to-year invariance.
 
 ## Files
