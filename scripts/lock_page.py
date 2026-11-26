@@ -85,7 +85,7 @@ def not_ready_page(title="The Sports Page"):
 
 _HEAD = """<!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>try{var t=localStorage.getItem("tsp-board-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive">

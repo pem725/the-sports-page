@@ -213,6 +213,7 @@ def render(items, published, built, count=""):
 TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
+<script>try{{var t=localStorage.getItem('tsp-board-theme');if(t)document.documentElement.setAttribute('data-theme',t)}}catch(e){{}}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive">
@@ -457,6 +458,21 @@ a:focus-visible{{outline:2px solid var(--steel);outline-offset:3px;border-radius
 
   </div>
 </div>
+<button id="theme-toggle" type="button" aria-label="Switch between light and dark"
+  style="position:fixed;top:.7rem;right:.7rem;z-index:50;font-family:'Roboto Mono',monospace;font-size:.72rem;
+  letter-spacing:.06em;padding:.45rem .75rem;border:1px solid var(--rule);background:var(--paper);color:var(--ink);
+  border-radius:999px;cursor:pointer;box-shadow:var(--shadow)"></button>
+<script>
+(function(){{
+  var root=document.documentElement, b=document.getElementById('theme-toggle');
+  function cur(){{ var t=root.getAttribute('data-theme'); if(t) return t;
+    return window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }}
+  function label(){{ b.textContent = cur()==='dark' ? 'Light mode' : 'Dark mode'; }}
+  b.addEventListener('click', function(){{ var n = cur()==='dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', n); try{{ localStorage.setItem('tsp-board-theme', n); }}catch(e){{}} label(); }});
+  label();
+}})();
+</script>
 </body>
 </html>
 """
