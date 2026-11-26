@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 260 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 259 issues remaining of 500
 
 ## Repository Structure
 
@@ -1438,9 +1438,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 240 issues (#1-240)
-Queue: 6 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 211-time-of-possession, 212-thanksgiving-family-table, 213-judges-scorecard-2, _TEMPLATE)
+Published: 241 issues (#1-241)
+Queue: 13 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 211-time-of-possession, 213-judges-scorecard-2, 214-yard-gap, 215-henderson, 216-what-repeats-hitters, 217-what-repeats-quarterbacks, 218-what-repeats-pitchers, 219-what-repeats-pass-rush, 220-what-repeats-receivers, 222-one-tool, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 260 issues remaining of 500
-Last published: Issue #240 — "In College, the Answer Drive Comes Up Short. Even No. 1 Georgia’s." (207-genes-rule-college.html) on November 25, 2026
+Goal: 259 issues remaining of 500
+Last published: Issue #241 — "The Best Teams Play Thanksgiving Night. The Game That Matters Kicks Off at 1." (212-thanksgiving-family-table.html) on November 26, 2026
