@@ -99,13 +99,13 @@ Wed 16 Sep. Section kept for the record.
   off the cap, the "new system" coding changes. The numbers come from
   `scripts/work_stoppages.py --offline` and `data/stoppages/`.
 
-- **`220-what-repeats-receivers.html`** (What Repeats, Part 5 of 5: "7 Scores, Then 17,
+- **REVIVED 2026-11-26, now in QUEUE_ORDER after 222.** **`220-what-repeats-receivers.html`** (What Repeats, Part 5 of 5: "7 Scores, Then 17,
   Then 8. Same Player."). `keeps`. Held out of QUEUE_ORDER on 2026-11-26 only for the
   rotation: Part 4 (pass rush, NFL) runs Mon Dec 7, and Part 5 is NFL too. *Revival trigger:*
   as soon as a non-NFL piece follows Part 4, slot Part 5 right after it, so the series
   finishes within the week. Its "The series" box already lists all five parts.
 
-- **`222-one-tool.html`** ("One Tool Would Have Cost Us 83 of Our 207 Answers.", Methods, `keeps`).
+- **REVIVED 2026-11-26 (editor approved the PJ Magoo shout-out and the paper citation), now in QUEUE_ORDER after 219.** **`222-one-tool.html`** ("One Tool Would Have Cost Us 83 of Our 207 Answers.", Methods, `keeps`).
   The editor audited 20 codes on 2026-11-26 and agreed with 18. His forecast objection led to the
   expected-value recount (121 strict -> 83 conservative), now in the piece. *Revival trigger:* his
   answers on (1) whether the public shout-out to co-author Patrick McGovern ("PJ") may include family
