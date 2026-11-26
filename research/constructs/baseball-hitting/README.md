@@ -114,6 +114,45 @@ career constructs, the glossary's "where does this stand". It does not rescue th
 The misfit is in the measurement (two-indicator factors, the contact–power trade-off), not
 the scale.
 
+## Does the model hold from era to era? (2026-11-26, third pass)
+
+`7_invariance_years.R`: one row per player-season, 1988–2025 (2020 dropped), 9,871 rows in
+five eras. Multi-group CFA up the invariance ladder. Season-by-season groups (~270 hitters)
+ran away on the two-indicator patience factor, with negative variances, so eras it is, with
+variances bounded at zero.
+
+| step | CFI / RMSEA / SRMR |
+|---|---|
+| each era alone | .85–.88 / .12–.13 / .08–.09 |
+| configural (same shape) | .873 / .12 / .075 |
+| metric (same loadings) | .868 / .11 / .079 |
+| scalar (same intercepts) | **.749** / .15 / .109 |
+
+**The shape and loadings hold; the intercepts don't.** The four constructs are recognizably
+the same in every era (all mediocre, and mediocre the same way), and a stat tracks its
+construct about as strongly in 1990 as in 2024. What changes is the level: the same patience,
+power or speed produces different numbers in different eras.
+
+**The stats that drift most are the manager's, not the hitter's.** The largest scalar
+breaks are intentional walks and sacrifice bunts. Per 600 PA, regulars only (95% intervals):
+
+| | 1988–94 | 1995–2005 | 2006–14 | 2015–19 | 2021–25 |
+|---|---|---|---|---|---|
+| intentional walks | 5.4 [5.2, 5.7] | 4.4 | 4.1 | 3.1 | 1.9 [1.7, 2.0] |
+| sac bunts | 4.1 [3.8, 4.3] | 3.2 | 2.6 | 1.4 | 1.2 [1.0, 1.3] |
+| strikeouts | 85 [84, 87] | 94 | 105 | 123 | 131 [129, 133] |
+
+Strikeouts rose 54%, but most of that rise is carried by the constructs themselves (hitters
+really did trade contact for power). Intentional walks and bunts fell about two-thirds *at
+the same power and speed*: the dugout stopped ordering them. A stat that a manager controls
+is not a clean measure of the player, and it is exactly the one that fails to transfer
+across eras.
+
+**Limits.** Rows are not independent (one hitter, several seasons). The bounds hide, rather
+than cure, the two-indicator patience problem, and with bounds active the score tests are
+inflated; read their ranking, not their size. Per-season invariance needs a third patience
+indicator (chase rate, from Statcast, 2015 on).
+
 ## What would make this better (the next tests)
 
 - Pitch-level data (Statcast: exit velocity, swing rate, chase rate) gives each construct
