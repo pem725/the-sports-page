@@ -1,0 +1,343 @@
+<!-- PUBLISH-META
+topic: NFL
+decay: keeps
+tags: NFL:nfl, CFB:cfb, Regression to the Mean, Reliability
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sports Page — 90 of 92 Backs Were Worse in the Pros. The Best Fell Hardest.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1208;
+  --cream:  #f5f0e8;
+  --aged:   #e0d8c5;
+  --rust:   #b83a1e;
+  --steel:  #2c4a6e;
+  --gold:   #c9962a;
+  --muted:  #6b5e4a;
+  --div:    #c8b99a;
+  --card:   #ede5d2;
+  --green:  #2a6e3f;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--aged);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.72;padding:1.5rem 1rem 3rem}
+
+.masthead{max-width:820px;margin:0 auto;text-align:center;border-top:4px solid var(--ink);padding:.5rem 0 0}
+.kicker{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;margin:.1rem 0}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin:.2rem 0 .4rem}
+.datebar{display:flex;justify-content:space-between;font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:.3rem 0;margin-top:.3rem}
+
+.paper{max-width:820px;margin:.8rem auto 0;background:var(--cream);padding:2.5rem 3rem 2.8rem;box-shadow:0 6px 40px rgba(0,0,0,.2);border:1px solid var(--div)}
+@media(max-width:600px){.paper{padding:1.6rem 1.4rem}}
+
+.hed{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:900;line-height:1.12;margin-bottom:.4rem}
+.hed em{color:var(--rust);font-style:italic}
+.deck{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.1rem;color:var(--muted);border-left:3px solid var(--rust);padding-left:.9rem;margin:.8rem 0 1.2rem;line-height:1.5}
+.byline{font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.4rem}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin:0 0 1.8rem}
+@media(max-width:460px){.stat-row{grid-template-columns:1fr 1fr}}
+.sc{background:var(--card);padding:1rem .8rem;text-align:center}
+.sc .v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.sc .v.bad{color:var(--rust)}.sc .v.now{color:var(--steel)}.sc .v.good{color:var(--green)}
+.sc .l{font-family:'Roboto Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.sh{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--rust);padding-bottom:.2rem;margin:2rem 0 1rem}
+
+.pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.9rem 0;margin:1.8rem 0;text-align:center}
+.pull p{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;font-style:italic;color:var(--steel);line-height:1.45}
+.pull cite{font-family:'Roboto Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-top:.5rem}
+
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+
+.footer{border-top:3px double var(--ink);padding-top:.7rem;margin-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.3rem;font-family:'Roboto Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.07em}
+hr{border:none;border-top:1px solid var(--div);margin:1.5rem 0}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;z-index:100;font-family:"Roboto Mono",monospace;font-size:.75rem;transition:top .2s}.skip-link:focus{top:0}
+
+/* Concept-primer (i) component — see /concepts/ */
+.cc{position:relative;display:inline-block;white-space:nowrap}
+.cc-i{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-left:.2em;border-radius:50%;border:1.4px solid var(--gold);background:transparent;color:var(--gold);font-family:'Playfair Display',serif;font-size:.7em;font-weight:700;font-style:italic;text-decoration:none;line-height:1;cursor:help;vertical-align:.18em;transition:background .15s,color .15s}
+.cc-i::before{content:"i"}
+.cc-i:hover,.cc-i:focus{background:var(--gold);color:var(--cream);outline:none}
+.cc[data-preview]:hover::after,.cc[data-preview]:focus-within::after{content:attr(data-preview);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--cream);font-family:'Roboto Mono',monospace;font-style:normal;font-weight:400;font-size:.72rem;line-height:1.55;letter-spacing:.02em;padding:.65rem .85rem;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.25);width:min(280px,calc(100vw - 2rem));white-space:normal;text-align:left;z-index:50;pointer-events:none}
+@media(max-width:520px){.cc[data-preview]:hover::after{left:0;transform:none}}
+.watch{border:2px solid var(--steel);background:var(--card);padding:1.1rem 1.4rem;margin:2rem 0 0}
+.watch-label{font-family:'Roboto Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:.6rem}
+.w-yday{font-size:.86rem !important;line-height:1.6;background:var(--cream);border-left:3px solid var(--gold);padding:.5rem .7rem;margin:0 0 .8rem !important}
+.w-ylab{font-family:'Roboto Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-right:.4rem}
+.w-row{border-top:1px solid var(--div);padding:.55rem 0}
+.w-row:first-of-type{border-top:none;padding-top:0}
+.w-sport{font-family:'Roboto Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+.w-game{font-size:1rem;line-height:1.4;margin:.1rem 0 .2rem}
+.w-time{font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:.5rem}
+.w-why{font-size:.86rem;line-height:1.6;color:var(--ink)}
+.watch-note{font-size:.74rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--div);padding-top:.5rem;margin:.7rem 0 0 !important}
+.box{background:var(--ink);color:#c8b99a;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
+.box p{font-size:.9rem;line-height:1.65;margin-bottom:.7rem}
+.box p:last-child{margin-bottom:0}
+.chart{width:100%;height:auto;display:block}
+
+.hed-glyph{display:inline-flex;align-items:center;vertical-align:-0.08em;margin-right:.44rem}
+.hed-glyph svg{width:.66em;height:.51em}
+</style>
+<!-- Open Graph + Twitter Card -->
+<meta property="og:title" content="90 of 92 Backs Were Worse in the Pros. The Best Fell Hardest.">
+<meta property="og:description" content="90 of 92 running backs gained fewer yards a carry in the NFL than in college, and the college order barely survives. Why: a new ruler, regression to the mean, and the wild single carry.">
+<meta property="og:url" content="https://thesportspage.net/published/215-henderson.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sports Page">
+<meta property="og:image" content="https://thesportspage.net/assets/og/215-henderson.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="90 of 92 Backs Were Worse in the Pros. The Best Fell Hardest.">
+<meta name="twitter:description" content="90 of 92 running backs gained fewer yards a carry in the NFL than in college, and the college order barely survives. Why: a new ruler, regression to the mean, and the wild single carry.">
+<meta name="twitter:image" content="https://thesportspage.net/assets/og/215-henderson.png">
+<script>
+/* Collapse the GitHub Pages path namespace into the custom domain's. Half of all
+   recorded traffic arrived as /the-sports-page/... because the site answers on
+   both pem725.github.io/the-sports-page and thesportspage.net, and GoatCounter
+   counted them as different pages. Also folds /index.html into /. */
+window.goatcounter = { path: function (p) {
+  return (p.replace(/^\/the-sports-page/, '').replace(/\/index\.html$/, '/')) || '/';
+} };
+</script>
+<script data-goatcounter="https://thesportspage.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="kicker">The Professor &middot; Pro Football, 2026</div>
+  <div class="title"><a href="https://thesportspage.net/" style="color:inherit;text-decoration:none"><style>@media(max-width:520px){img[data-emblem]{display:block!important;height:1.25em!important;margin:0 auto .2rem!important}}</style><img data-emblem src="https://thesportspage.net/assets/logo-badge.png" srcset="https://thesportspage.net/assets/logo-badge.png 1x, https://thesportspage.net/assets/logo-badge@2x.png 2x" alt="" width="40" height="40" style="display:inline-block;height:1.05em;width:auto;vertical-align:-.17em;margin-right:.28em;border:none">The Sports Page</a></div>
+  <div class="tagline">Making the numbers mean something since the first pitch</div>
+  <div class="datebar">
+    <span>Vol. I, No. TODO_NN</span>
+    <span>TODO_DATE</span>
+    <span>Free and Family-Friendly</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav style="max-width:820px;margin:.4rem auto 0;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.08em"><a href="https://thesportspage.net/" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">&larr; Back to Archive</a></nav>
+
+<!-- PAPER -->
+<div id="main-content" class="paper">
+
+  <h1 class="hed"><span class="hed-glyph" style="color:var(--steel)" title="NFL"><svg class="tg" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><ellipse cx="13" cy="10" rx="10.6" ry="6.1" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 10h6" stroke="currentColor" stroke-width="1.7"/></svg></span>90 of 92 Backs Were Worse in the Pros. <em>The Best Fell Hardest.</em></h1>
+
+  <div class="deck">
+    Darrell Henderson ran for 8.9 yards a carry in each of his last two seasons at Memphis. In five NFL seasons he averaged 4.2. He was not unusual. Of 92 running backs with 200 carries in both college and the NFL, 90 gained less in the pros, about a yard and a half less.
+  </div>
+
+  <div class="byline">By The Sports Page &middot; The Professor &middot; Lesson: how many tries stand behind a rate?</div>
+
+  <div class="stat-row">
+    <div class="sc"><div class="v now">90</div><div class="l">of 92 backs gained fewer yards a carry in the NFL than in college</div></div>
+    <div class="sc"><div class="v bad">1.5</div><div class="l">yards a carry lost by the typical back (1.4&ndash;1.7)</div></div>
+    <div class="sc"><div class="v good">900</div><div class="l">carries before a back&rsquo;s average is mostly about him</div></div>
+  </div>
+
+  <p><strong>The question:</strong> does a great yards-per-carry average in college tell you a back will be great in the NFL?</p>
+
+  <p><strong>The answer:</strong> barely. The same back drops from 5.9 yards a carry in college to 4.3 in the NFL. And the order mostly does not survive the move. For each extra yard a back gained per carry in college, he gained about a tenth of a yard more in the NFL.</p>
+
+  <p><strong>Why that is surprising:</strong> good running backs are good running backs. Derrick Henry ran over people at Alabama and kept doing it for a decade. Nobody comes out of the woodwork. So you would expect the college number to carry over. It hardly does.</p>
+
+  <p><strong>What you get:</strong> three things that hide a good back inside his own average. And one question to ask of any rate: <em>how many tries stand behind it?</em></p>
+
+  <h2 class="sh">Plot it first</h2>
+
+  <p>A correlation is one number standing in for a whole picture, and the picture can hide a lot. So here is the picture. Every dot is a back with at least 200 carries in each league. Across is his college average; up is his NFL average.</p>
+
+  <figure style="margin:1.6rem 0">
+<svg class="chart" viewBox="0 0 680 400" role="img" aria-label="Scatterplot of 92 running backs. Across: yards per carry in college. Up: yards per carry in the NFL. Almost every back sits below the diagonal where the two would be equal. The trend line is nearly flat. Darrell Henderson, at 8.2 in college and 4.2 in the NFL, is far to the right." style="max-width:680px;margin:0 auto" font-family="'Roboto Mono',monospace">
+<line x1="56.0" x2="56.0" y1="350" y2="24" stroke="#c8b99a" stroke-width="0.5"/><text x="56.0" y="366" font-size="11" fill="#6b5e4a" text-anchor="middle">4</text>
+<line x1="176.8" x2="176.8" y1="350" y2="24" stroke="#c8b99a" stroke-width="0.5"/><text x="176.8" y="366" font-size="11" fill="#6b5e4a" text-anchor="middle">5</text>
+<line x1="297.6" x2="297.6" y1="350" y2="24" stroke="#c8b99a" stroke-width="0.5"/><text x="297.6" y="366" font-size="11" fill="#6b5e4a" text-anchor="middle">6</text>
+<line x1="418.4" x2="418.4" y1="350" y2="24" stroke="#c8b99a" stroke-width="0.5"/><text x="418.4" y="366" font-size="11" fill="#6b5e4a" text-anchor="middle">7</text>
+<line x1="539.2" x2="539.2" y1="350" y2="24" stroke="#c8b99a" stroke-width="0.5"/><text x="539.2" y="366" font-size="11" fill="#6b5e4a" text-anchor="middle">8</text>
+<line x1="660.0" x2="660.0" y1="350" y2="24" stroke="#c8b99a" stroke-width="0.5"/><text x="660.0" y="366" font-size="11" fill="#6b5e4a" text-anchor="middle">9</text>
+<line x1="56" x2="660" y1="350.0" y2="350.0" stroke="#c8b99a" stroke-width="0.5"/><text x="50" y="354.0" font-size="11" fill="#6b5e4a" text-anchor="end">3</text>
+<line x1="56" x2="660" y1="241.3" y2="241.3" stroke="#c8b99a" stroke-width="0.5"/><text x="50" y="245.3" font-size="11" fill="#6b5e4a" text-anchor="end">4</text>
+<line x1="56" x2="660" y1="132.7" y2="132.7" stroke="#c8b99a" stroke-width="0.5"/><text x="50" y="136.7" font-size="11" fill="#6b5e4a" text-anchor="end">5</text>
+<line x1="56" x2="660" y1="24.0" y2="24.0" stroke="#c8b99a" stroke-width="0.5"/><text x="50" y="28.0" font-size="11" fill="#6b5e4a" text-anchor="end">6</text>
+<line x1="56.0" y1="241.3" x2="297.6" y2="24.0" stroke="#6b5e4a" stroke-width="1" stroke-dasharray="4 3"/><text x="267.4" y="38.0" font-size="10.5" fill="#6b5e4a" text-anchor="end">same in both leagues</text>
+<line x1="92.2" y1="225.9" x2="611.7" y2="168.1" stroke="#2c4a6e" stroke-width="2"/>
+<text x="611.7" y="304.4" font-size="10.5" fill="#2c4a6e" text-anchor="end">blue line: +0.1 in the NFL per college yard</text>
+<circle cx="171.0" cy="239.1" r="4.2" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="322.4" cy="178.6" r="7.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="299.7" cy="227.3" r="4.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="241.0" cy="165.4" r="2.6" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="183.0" cy="181.1" r="5.0" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="357.7" cy="177.4" r="6.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="389.0" cy="231.5" r="7.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="347.4" cy="229.8" r="4.5" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="316.8" cy="197.3" r="4.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="261.7" cy="191.0" r="4.2" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="153.3" cy="205.6" r="3.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="476.4" cy="66.8" r="3.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="332.8" cy="129.8" r="7.0" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="312.5" cy="193.1" r="4.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="289.8" cy="262.6" r="3.9" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="264.7" cy="178.7" r="7.8" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="316.4" cy="223.6" r="5.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="160.4" cy="252.6" r="4.9" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="206.0" cy="288.0" r="3.0" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="295.8" cy="161.8" r="5.6" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="298.4" cy="198.4" r="6.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="254.8" cy="273.3" r="3.5" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="88.1" cy="192.7" r="2.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="352.7" cy="172.3" r="4.0" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="566.4" cy="220.2" r="3.8" fill="#b83a1e" fill-opacity="0.95"/>
+<circle cx="134.9" cy="226.1" r="7.0" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="286.1" cy="215.2" r="7.8" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="184.4" cy="189.2" r="4.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="316.8" cy="111.4" r="4.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="379.6" cy="143.7" r="7.2" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="262.1" cy="224.6" r="4.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="199.2" cy="232.1" r="4.5" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="364.9" cy="190.6" r="5.9" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="265.8" cy="227.2" r="3.9" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="187.7" cy="286.7" r="3.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="165.3" cy="237.9" r="4.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="287.9" cy="225.4" r="5.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="321.3" cy="169.9" r="3.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="300.4" cy="248.7" r="6.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="314.9" cy="164.8" r="3.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="369.6" cy="201.1" r="3.6" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="372.6" cy="236.1" r="3.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="330.9" cy="220.7" r="5.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="444.8" cy="215.9" r="5.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="98.7" cy="197.4" r="4.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="177.4" cy="162.5" r="4.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="362.2" cy="126.3" r="5.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="341.8" cy="249.7" r="4.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="241.3" cy="239.3" r="3.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="349.2" cy="213.7" r="4.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="312.4" cy="208.4" r="3.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="198.5" cy="122.8" r="3.6" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="172.1" cy="228.0" r="4.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="193.5" cy="178.8" r="5.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="236.0" cy="186.9" r="5.0" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="276.0" cy="205.5" r="5.2" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="336.6" cy="148.2" r="5.2" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="222.2" cy="191.1" r="3.0" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="208.4" cy="205.2" r="4.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="389.2" cy="150.5" r="2.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="396.3" cy="231.1" r="2.9" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="350.6" cy="65.3" r="4.2" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="244.3" cy="99.7" r="4.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="288.2" cy="227.8" r="3.8" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="319.8" cy="187.0" r="3.5" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="241.0" cy="165.9" r="2.6" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="340.3" cy="277.7" r="3.0" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="191.5" cy="285.3" r="2.8" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="239.0" cy="297.9" r="2.7" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="224.5" cy="277.0" r="3.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="207.4" cy="192.3" r="4.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="207.3" cy="213.6" r="3.2" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="483.7" cy="218.9" r="5.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="310.0" cy="236.6" r="4.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="483.9" cy="229.7" r="7.3" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="253.6" cy="226.7" r="4.0" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="94.5" cy="294.6" r="4.8" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="256.5" cy="144.6" r="9.0" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="246.6" cy="210.8" r="5.8" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="317.4" cy="254.9" r="3.2" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="367.9" cy="212.2" r="8.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="366.0" cy="146.1" r="7.2" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="406.1" cy="174.8" r="4.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="251.8" cy="202.9" r="6.8" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="323.9" cy="246.8" r="6.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="317.2" cy="205.4" r="7.4" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="336.7" cy="225.5" r="6.8" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="239.5" cy="257.0" r="5.9" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="185.6" cy="216.4" r="3.5" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="168.9" cy="190.2" r="4.6" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="147.9" cy="165.3" r="5.1" fill="#2c4a6e" fill-opacity="0.4"/>
+<circle cx="194.1" cy="248.9" r="2.9" fill="#2c4a6e" fill-opacity="0.4"/>
+<text x="576.4" y="212.2" font-size="11" font-weight="600" fill="#b83a1e" text-anchor="start">Darrell</text><text x="576.4" y="225.2" font-size="11" font-weight="600" fill="#b83a1e" text-anchor="start">Henderson</text>
+<text x="358.6" y="69.3" font-size="11" font-weight="600" fill="#1a1208" text-anchor="start">De&#8217;Von Achane</text>
+<text x="252.3" y="103.7" font-size="11" font-weight="600" fill="#1a1208" text-anchor="start">Jahmyr Gibbs</text>
+<text x="244.5" y="134.6" font-size="11" font-weight="600" fill="#1a1208" text-anchor="end">Derrick Henry</text>
+<text x="358.0" y="388" font-size="11" fill="#6b5e4a" text-anchor="middle">yards per carry in college &#183; dot size = NFL carries</text>
+<text x="56" y="14" font-size="11" fill="#6b5e4a">yards per carry in the NFL</text></svg>
+    <figcaption style="font-family:'Roboto Mono',monospace;font-size:.7rem;color:var(--muted);text-align:center;margin-top:.5rem">92 running backs with 200+ carries in each league. College seasons from 2014 on (CollegeFootballData); NFL regular seasons through 2025 (nflverse). Dashed line: the same average in both leagues. Blue line: the trend. ESPN, as a second feed, gives the same drop and the same weak trend.</figcaption>
+  </figure>
+
+  <p>Notice two things. First, almost every dot sits below the dashed line. Only Isiah Pacheco and D&rsquo;Ernest Johnson gained more in the pros. Second, the blue line is nearly flat. Henderson, the dot far to the right, was the best college runner on the chart by a wide margin. In the NFL he landed in the crowd, just under the league&rsquo;s 4.3.</p>
+
+  <p>The correlation is .22, somewhere between about zero and .4 allowing for chance. The picture says what that number means: the college average tells you a little, and only a little.</p>
+
+  <h2 class="sh">Where did a yard and a half go?</h2>
+
+  <p><strong>About a yard of it is the league.</strong> College runs gain more than NFL runs, even when both leagues count sacks the same way. Measured two ways, team by team and back by back, that gap comes to most of a yard a carry. It is not that Henderson got worse. The ruler changed.</p>
+
+  <p><strong>The rest is regression to the mean.</strong> The backs who reach the NFL were not typical college backs. Their college seasons sat around the 79th percentile of all college backs. Some of that was skill. Some was a good line, a weak schedule or a lucky year, and luck does not come with you to the next level. Pick the top of any noisy list and the second measurement will come in lower. The bigger the first number, the bigger the fall. Henderson&rsquo;s fall was the biggest on the chart.</p>
+
+  <div class="pull">
+    <p>A running back&rsquo;s career is too short for his own average to catch up with him.</p>
+    <cite>&mdash; The Sports Page</cite>
+  </div>
+
+  <h2 class="sh">One carry is a wild number</h2>
+
+  <p>The third thing explains why the order falls apart. A single NFL run averages 4.5 yards, but the middle run gains 3. Most runs gain a little; a few gain 40. From one carry to the next, the spread is more than six yards.</p>
+
+  <p>Average a wild number over a season and plenty of the wildness is still in it. In a typical NFL season, more than half the difference between one back&rsquo;s average and another&rsquo;s is chance alone. A back needs about 230 carries before his average is even half signal. He needs about 900 before it is mostly about him and his surroundings.</p>
+
+  <p>That is three or four full seasons. The typical NFL back gets two seasons of 100 carries or more, and then he is gone. So the number we use to judge running backs rarely gets enough carries to become reliable. Good backs may well be good backs. Their average is just too short a sample to prove it.</p>
+
+  <h2 class="sh">What to take home</h2>
+
+  <p><strong>Plot the correlation before you believe it.</strong> One number can hide a dashed line nobody reaches and a trend that is nearly flat. The picture tells you which.</p>
+
+  <p><strong>Ask how many tries stand behind a rate.</strong> A batting average after a week, a free-throw percentage after ten shots, a back&rsquo;s yards per carry after one season: each is a rate built on too few tries. The fewer the tries, the more of the number is luck.</p>
+
+  <p><strong>Expect the biggest numbers to shrink the most.</strong> When a player tops a noisy list, part of what put him there was luck. That part stays behind when he moves up.</p>
+
+  <div class="box">
+    <h3>How we did it</h3>
+    <p><strong>Data.</strong> College rushing by player from CollegeFootballData, 2014&ndash;2025 seasons; NFL regular-season rushing from nflverse, 2014&ndash;2025. A back is linked across leagues by his ESPN athlete number, or by name and college where the college feed uses an older number. 92 backs had 200+ carries in each league. Their college average was 5.9 (5.7&ndash;6.0), their NFL average 4.3 (4.3&ndash;4.4), the drop 1.5 (1.4&ndash;1.7); correlation .22 (.01&ndash;.40). Intervals are 95%, from 4,000 resamples of backs. Second feed: ESPN career rushing, which covers 68 of the 92 in both leagues: drop 1.5, 66 of 68 lower in the NFL, correlation .24. Henderson on both feeds: 431 college carries for 3,545 yards; 442 NFL carries for 1,854 yards.</p>
+    <p><strong>The league and the selection.</strong> Backs with 100+ carries in a season, 2014&ndash;2025: college 5.3 yards a carry, NFL 4.3. Team offenses counted the same way give a similar gap. Our backs&rsquo; college seasons ranked at the 79th percentile (median) of all college backs with 100+ carries.</p>
+    <p><strong>Chance.</strong> The spread of one NFL run is 6.3 yards (137,000 runs, 2016&ndash;2025, nflverse play-by-play, kneel-downs left out; one feed). With the typical season&rsquo;s carries, chance alone accounts for about 56% of the spread in yards per carry between backs. Reliability then rises with carries as the true spread over the true spread plus chance: half at about 230 carries, 80% at about 900. &ldquo;True&rdquo; here includes the line and the scheme, not just the back. A back&rsquo;s career length: the median back whose first 100-carry season came in 1999&ndash;2015 had two such seasons.</p>
+    <p><strong>Limits.</strong> College seasons before 2014 are not in the data, so older backs are judged on part of their college careers. Only backs who reached 200 NFL carries are in the chart; the ones who never got there are missing, which can flatten a trend. Code: <code>research/constructs/football/</code> in our repository.</p>
+  </div>
+
+
+  <!-- ASK BLOCK -- keep this in every issue. Reader questions are the best input we get. -->
+  <div style="border-top:1px solid var(--div);border-bottom:1px solid var(--div);padding:.9rem 0;margin:2rem 0 0;text-align:center">
+    <p style="font-family:'Roboto Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);margin:0">
+      Argued about something you could not settle?
+      <a href="mailto:ideas@thesportspage.net?subject=The+Sports+Page+%E2%80%94+A+Reader+Asks&body=Here+is+something+I+have+argued+about+and+cannot+settle%3A%0A%0A%0A%0AWhy+it+bugs+me%3A%0A%0A%0A%0A%E2%80%94+" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.35)">Send it to us</a>
+      &middot;
+      <a href="https://thesportspage.net/ask.html" style="color:var(--steel);text-decoration:none">what makes a good question</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- WATCH_BLOCK -->
+  <div class="footer">
+    <span>The Sports Page</span>
+    <span>Vol. I, No. TODO_NN &middot; TODO_DATE</span>
+    <span>One Question Per Issue, Answered With Numbers.</span>
+  </div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.8rem">Licensed under <a href="https://thesportspage.net/license.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">The Sports Page License</a> &middot; Borrow it, give it back better &middot; Non-commercial, attribution required</div>
+  <div style="text-align:center;font-family:'Roboto Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.08em;margin-top:.25rem"><a href="https://thesportspage.net/commercial-gain-quiz.html" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,58,30,.3)">Not sure what counts as commercial? Take the 2-minute quiz &rarr;</a></div>
+
+</div>
+
+<!-- SHARE SECTION will be injected here at publish time -->
+
+</body>
+</html>

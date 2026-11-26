@@ -28,7 +28,7 @@ cfb = []
 for (pid, y), s in P.items():
     name, pos, team, conf = meta[(pid, y)]
     car = s.get('rushing_CAR', 0)
-    if pos not in ('RB', '?') or car < MIN: continue
+    if pos not in ('RB', '?') or car < 1: continue
     rec = s.get('receiving_REC', 0)
     cfb.append(dict(pid=pid, name=name, year=y, team=team, conf=conf, car=car, yds=s.get('rushing_YDS', 0),
         rtd=s.get('rushing_TD', 0), long=s.get('rushing_LONG', 0), rec=rec, recyds=s.get('receiving_YDS', 0),
@@ -60,9 +60,11 @@ for r in csv.DictReader(open(os.path.join(RAW, 'players.csv'))):
 C = defaultdict(lambda: [0, 0, 0, ''])
 for r in cfb: c = C[r['pid']]; c[0] += r['car']; c[1] += r['yds']; c[2] += 1; c[3] = r['name']
 N = defaultdict(lambda: [0, 0, 0, '', ''])
-for r in nfl:
-    if r['year'] == 2026: continue
-    n = N[r['gsis']]; n[0] += r['car']; n[1] += r['yds']; n[2] += 1; n[3] = r['name']
+ALLN = set(r['gsis'] for r in nfl)   # backs who had at least one 100-carry NFL season
+for y in range(2014, 2026):
+    for r in csv.DictReader(open(os.path.join(HERE, 'data', 'raw', f'reg{y}.csv'))):
+        if r['player_id'] not in ALLN or r.get('position') != 'RB' or not float(r.get('carries') or 0): continue
+        n = N[r['player_id']]; n[0] += float(r['carries']); n[1] += float(r['rushing_yards'] or 0); n[2] += 1; n[3] = r['player_display_name']
 link = []
 for g, n in N.items():
     if g not in esp: continue
@@ -87,6 +89,7 @@ for g, n in N.items():
     c = C[cands[0]]
     link.append(dict(gsis=g, espn=e[0], name=n[3], college=e[1], draft_round=e[2], rookie=e[3],
         cfb_car=c[0], cfb_ypc=c[1] / c[0], cfb_seasons=c[2], nfl_car=n[0], nfl_ypc=n[1] / n[0], nfl_seasons=n[2]))
+cfb = [r for r in cfb if r['car'] >= MIN]
 for nm, rows in (('rb_cfb', cfb), ('rb_nfl', nfl), ('rb_link', link)):
     with open(os.path.join(HERE, 'data', nm + '.csv'), 'w', newline='') as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
