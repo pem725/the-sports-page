@@ -51,3 +51,21 @@ research/kitchen-sink/raw/
 
 # Licensed data we may analyze but never redistribute (Kenneth Massey: inference only, no tables, no AI training)
 data/private/
+
+# Private family-pool planning (2026-11-27): kept on disk, never published.
+planning/2026-10-31-game-day-notes.md
+planning/2026-11-01-breakfast-notes.md
+planning/2026-w13-*
+planning/mascot-cora-table.csv
+planning/pool-*
+planning/*-rationale.md
+
+# Regenerable research caches: re-fetch with each project's 0_fetch script.
+research/momentum/*/raw/
+research/momentum/nfl/data/
+research/momentum/*/run.log
+research/ninety-years/raw/
+__pycache__/
+
+# Dry-run output of the rivalry grader; the Tuesday run writes the real one.
+research/cfp-committee/judges/grade-rivalry-2026.json

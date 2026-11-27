@@ -618,8 +618,8 @@
    "answerable": true,
    "source": "Editor, 2026-10-29: grade the broadcast 'experts' against break-even; express a 53-54% bettor's living as a wage (McDonald's, Big Mac Index); Annie Duke as the decision-under-uncertainty case.",
    "number": "Computed: at -110 a bet wins $100 or loses $110. At 53% the edge is $1.30 per $110 risked (1.2%); 54% $3.40 (3.1%); 55% $5.50 (5.0%). To clear a $31K full-time wage (2,080 h x $15, wage needs a source) you must bet about $2.6M a year at 53%, $1.0M at 54%, $620K at 55%. And 1,000 picks carry a +/-1.6-point standard error, so a season cannot tell a 53% expert from a coin. Expert pick records still to collect (ESPN/CBS published weekly ATS picks; needs a primary, archived source).",
-   "why": "Builds on #160 (the vig, 52.4%), which never graded anyone. Civic core: confident TV picks vs a coin with a fee attached. Annie Duke (Penn cognitive psychology; finished the PhD 2023; Thinking in Bets, 2018) is a fair frame: poker rewards decisions, not outcomes. Big Mac price and McDonald's wage need sources before use.",
-   "status": "idea"
+   "why": "Builds on #160 (the vig, 52.4%), which never graded anyone. Civic core: confident TV picks vs a coin with a fee attached. Annie Duke (Penn cognitive psychology; finished the PhD 2023; Thinking in Bets, 2018) is a fair frame: poker rewards decisions, not outcomes. Big Mac price and McDonald's wage need sources before use. REFRAME 2026-11-27 under the no-gambling rule: drop the payout premise; ask how often a TV expert beats a coin flip, graded as a forecaster (Brier).",
+   "status": "reframe"
   },
   {
    "slug": "owner-succession",
@@ -870,9 +870,37 @@
    "carry": 9,
    "answerable": true,
    "number": "5,431 NFL games 2006-2025: the spread misses the final margin by 0.03 points on average and by 13 typically; 7-point favorites won 77 in 100, not the 70 a smooth curve says; line chances land within ~2 points of what happened.",
-   "why": "Three-part series: PRIORS (the spread read as uncertainty, not a wager), CROWDS (why a number built to balance behavior still predicts well -- the Good Judgment Project, Tetlock and Mellers, superforecasters and the orchestrator), GRADING (Brier score on our own calls, TASKS C4b). Opener could pair with Dallas's 99-in-100 collapse on Thanksgiving. Concept primer on priors. GJP facts must be verified from its papers and Superforecasting (2015) before print; no betting tenor.",
+   "why": "Three-part series: PRIORS (the spread read as uncertainty, not a wager), CROWDS (why a number built to balance behavior still predicts well -- the Good Judgment Project, Tetlock and Mellers, superforecasters and the orchestrator), GRADING (Brier score on our own calls, TASKS C4b). Opener could pair with Dallas's 99-in-100 collapse on Thanksgiving. Concept primer on priors. GJP facts must be verified from its papers and Superforecasting (2015) before print; no betting tenor. PART 2 seed (breakfast notes 11/1): taken together the family pool is about even with the beat writers' consensus and beats individual writers -- the crowd result at our own table; see candidate crowd-vs-writers.",
    "status": "idea",
    "source": "Patrick, 2026-11-27 (Thanksgiving debrief); data in research/spread-calibration/ and research/thanksgiving/"
+  },
+  {
+   "slug": "nfl-misery-trajectory",
+   "title": "Whose Season Is Sliding Fastest?",
+   "grip": 7,
+   "twist": 6,
+   "clock": 7,
+   "stack": 7,
+   "carry": 6,
+   "answerable": true,
+   "number": "Each NFL team's playoff chance over its remaining schedule, week by week, as a line; rank by the slope, not the level.",
+   "why": "Second-half misery: extends nfl-misery.html with a trajectory rather than replacing it. Editor's first guesses for the bottom: Jets, Browns, Falcons -- check them, don't assume them.",
+   "status": "idea",
+   "source": "Patrick, game-day notes 2026-10-31"
+  },
+  {
+   "slug": "cam-ward-coaching-tree",
+   "title": "One High School, a Whole Coaching Tree",
+   "grip": 6,
+   "twist": 6,
+   "clock": 4,
+   "stack": 5,
+   "carry": 6,
+   "answerable": true,
+   "number": "Coaches who passed through the Oregon high school program behind Cam Ward, and how their later staffs (Oklahoma State and others) performed against expectation.",
+   "why": "Coaching DNA: does a tree of coaches carry a measurable edge, or is it survivorship (we only trace the trees that worked)? Name that trap in the piece.",
+   "status": "idea",
+   "source": "Patrick, game-day notes 2026-10-31"
   }
  ]
 }
