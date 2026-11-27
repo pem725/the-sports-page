@@ -13,7 +13,8 @@ The CFP ranking comes out Tuesday Dec 1, about 9pm ET. Nothing in this piece may
 **The angle: we grade ourselves first.** On Thursday we said what each result should do to each
 team's playoff and bye chances. Did the committee move the way the math said?
 - Upsets: expected (sum of underdog chances) vs actual. A weekend of 67 games should produce ~18.
-- Brier score of our win chances vs a coin flip (.25).
+- Brier score of our win chances vs a coin flip (.25) AND the crowd's spread:
+  `python3 scripts/brier_scorecard.py --refresh --week 13` (season: ours .19, crowd .18).
 - Team by team: our chance of the field given the actual result vs the committee's new rank
   (top 12 as the proxy for "in": champion bids aren't settled until Selection Day; say so).
 - The big four from the frozen file: USC-UCLA (leverage 1.14), Washington-Oregon (.91),

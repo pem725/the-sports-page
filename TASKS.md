@@ -193,6 +193,11 @@ Never back-fill a probability onto an old HIT/MISS call; that is the
 after-the-fact reasoning `seal.py` exists to prevent. Calls without one are
 reported as "not scorable", not guessed. Same sample-size caution as C4.
 
+**Status 2026-11-27: built.** `scripts/brier_scorecard.py` (frozen SP+ vs the frozen
+spread vs a coin, 476 games, results cached in data/brier/). Season: ours .19, crowd .18,
+coin .25; the crowd beats us, gap +.003 to +.017. Next: NFL has no model to score; the
+pool ledger's `model_p` (weeks 1-5) could be added as a fourth row.
+
 ### C5. Garbage time contaminates every box-score number we have
 `data/nfl/broadcast-stats.csv` counts every snap, including the ones taken with
 four minutes left and a 24-point gap. Those snaps are played by different people
