@@ -1275,6 +1275,32 @@ there rather than quietly substituting it.
   The depth belongs in the concept primer and the methods box — the issue itself
   should be readable at a bus stop.
 
+- **NO GAMBLING TENOR. STATISTICS SET EXPECTATIONS.** Set by the editor
+  2026-11-27: *"I don't want gambling and all of that to be even a tenor at all
+  in this ... Don't denigrate it by adding in some divisive material like
+  gambling."* Picking (the family pool, our own forecasts) is fine; betting is
+  not.
+
+  **The point spread stays, read as a PRIOR, never as a wager.** Clarified the
+  same day: *"Point spread is designed to communicate uncertainty ... expectation
+  is your priors ... Not to be gamblers, but to really be thoughtful."* So:
+
+  - **Translate every line into a chance.** *"Dallas was favored by 8.5 points,
+    which means it was expected to win about 79 in 100"*, never *"Dallas closed
+    at −451"*. The closer the spread, the more uncertain the game; say that.
+  - **Teach the reader what kind of number it is.** A line is a prior set before
+    kickoff and then moved by *behavior* (where the money goes), so it balances
+    the two sides and carries the house's margin. Explaining that mechanism is
+    education and is welcome; it is how a reader learns to interpret the number.
+  - **Never the betting tenor.** No tips, no picks against the spread, no
+    "covering", no "sharps", no "lock of the week", no payouts. Our own forecasts
+    are framed as expectations and graded as forecasts.
+  - Leave the tools alone (Odds Board, What to Watch, game cards); change the
+    framing in what we write.
+
+  The educational purpose is what sets this paper apart from every other sports
+  page, and betting copy is what makes it sound like all of them.
+
 - **Refresh any live-standings piece the day before it publishes.** A queued issue
   freezes its numbers on the day it was written, and a headline built on a live
   standing can go false while it sits in the queue. This has now happened twice:

@@ -112,3 +112,15 @@ Wed 16 Sep. Section kept for the record.
   team allegiances (the house rule says no), and (2) overriding Sean's old note against citing his
   academic papers (he asked for the 2010 tool-based science paper explicitly). Then slot it on any
   day after a non-Methods piece.
+
+## Held 2026-11-27 — `206-rivalry-leverage` superseded by its own rerun
+
+- **`206-rivalry-leverage.html`** ("Sixty Games This Week. The Big One Isn't on Saturday.",
+  CFB, `dated`). Drafted 2026-11-18 from the Nov 17 CFP ranking and never queued. The Nov 25
+  rerun on the Nov 24 ranking (`research/cfp-committee/rivalry/leverage.json`, frozen in
+  4cd49e7) changed the answer: USC at UCLA, a **Saturday** game, now carries the biggest expected
+  move (46), ahead of Nebraska at Iowa (34). The headline is false on current numbers, and
+  Nebraska-Iowa kicked off Fri 11/27 at 12:08 pm ET, inside the bot's late-cron window.
+  The analysis itself lives on in Scorecard No. 3, which grades the frozen predictions.
+  *Revival trigger:* rivalry week 2027, as a template: rerun `rivalry_leverage.py` on that
+  year's final ranking before rivalry week and rewrite every number. Never publish this text as-is.

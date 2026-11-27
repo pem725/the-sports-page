@@ -171,6 +171,28 @@ own published forecasts.
 sample size on every point. **Do not publish before ~25 resolved games per band**
 — the ledger's own report says so and it is right.
 
+### C4b. Brier-score the Sunday Edition scorecard
+Added 2026-11-27 on the editor's ask, after the Good Judgment Project talk
+(Tetlock and Mellers). The Sunday scorecard grades HIT / MISS / PARTIALLY HIT,
+which cannot tell a 79-in-100 call that lost (a little wrong) from a 99-in-100
+call that lost (very wrong). The Brier score can: the squared gap between the
+stated chance and what happened, averaged over every call.
+
+**Data:** every forecast we have published with a stated probability -- the
+picks ledger (`data/picks-ledger.json`), the frozen rivalry and CFB predictions
+(`research/cfp-committee/`), the Sunday scorecards in `published/sunday-*.html`.
+
+**Done:** a script that scores every graded forecast, prints our running Brier
+score beside two baselines a reader can understand -- always saying 50 in 100,
+and the pregame point-spread chance (read as a prior, per the no-gambling rule)
+-- and a Sunday Edition line that carries the week's number and the season's.
+Lower is better; say so every time, because nobody's intuition knows that.
+
+**Trap:** only calls that carried a probability *at the time* can be scored.
+Never back-fill a probability onto an old HIT/MISS call; that is the
+after-the-fact reasoning `seal.py` exists to prevent. Calls without one are
+reported as "not scorable", not guessed. Same sample-size caution as C4.
+
 ### C5. Garbage time contaminates every box-score number we have
 `data/nfl/broadcast-stats.csv` counts every snap, including the ones taken with
 four minutes left and a 24-point gap. Those snaps are played by different people
