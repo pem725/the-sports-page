@@ -1,0 +1,62 @@
+<!-- DRAFT for Sunday Edition No. 034 (Sun 2026-11-29). NOT a queue file: it lives in
+     tracking/ so the 3am routine cannot mistake it for an unfinished edition.
+     Paste the section below into the improbability-lesson slot, after the
+     generated CFB recap. Every number here was checked 2026-11-27 against ESPN
+     AND nflverse (finals, the four key plays, win chances). Sources and the
+     Saturday to-do list are at the bottom. No betting language: spreads are read
+     as the crowd's prior (CLAUDE.md, "No gambling tenor"). -->
+
+<section class="thanksgiving-lesson">
+  <h2 class="sh">Thanksgiving: Three Close Games, and One Lead Nobody Keeps</h2>
+
+  <p><strong>The question:</strong> all three Thanksgiving games were decided by four points or fewer. Was that as strange as it felt?</p>
+
+  <p><strong>The answer:</strong> stranger. The Bears beat the Lions 39&ndash;35. The Eagles beat the Cowboys 39&ndash;38. The Bills beat the Chiefs 13&ndash;10. Add the margins and you get 8 points across three games. We went back through 20 years of games that started out as evenly matched as these three. A day like Thursday turns up about <strong>1 time in 75</strong>. You would expect a close day now and then; football is full of them. But three at once is another matter. In the 19 Thanksgivings since 2006 with three games, it had never happened. The closest was 2022, at 18 points.</p>
+
+  <p>Notice which claim we chose. &ldquo;All three within one score&rdquo; is far less rare, about 1 day in 7. Pick the claim <em>before</em> you count. If you count first and then pick, you will always find something that sounds amazing.</p>
+
+  <h3>Dallas, at 99 in 100</h3>
+
+  <p>Dallas came in favored by 8.5 points. That is the crowd&rsquo;s prior: the line people settle on before kickoff, as they react to news and to each other. Turn it into a chance and Dallas was expected to win about <strong>79 in 100</strong>. Late in the third quarter it led 31&ndash;10, and both in-game models we checked put its chance near <strong>99 in 100</strong>.</p>
+
+  <p>Then three plays went the other way. A punt was blocked and returned for a touchdown. A 40-yard field goal sailed wide left with three and a half minutes left. And up two with 55 seconds to go, Dallas went for it on fourth down and was sacked. Philadelphia needed 11 yards to get in range, and Jake Elliott made a 59-yarder with seconds left. Eagles 39, Cowboys 38.</p>
+
+  <p>So was 99 in 100 a bad number? We checked it, and it was not. We took every NFL team from 2006 to 2025 that reached a 99-in-100 chance. The model expected about 21 of them to lose; 19 did. A model that is honest at 99 in 100 will be wrong about once a season, and somebody has to be that team. This year it was Dallas, on Thanksgiving, by one point.</p>
+
+  <p>Hold onto that the next time you hear &ldquo;nobody saw this coming.&rdquo; Somebody did. They saw it coming 1 time in 100, which is just what 99 to 1 means.</p>
+
+  <h3>What we said on Thursday</h3>
+
+  <p>Issue #241 said the 1 p.m. game, Bears at Lions, mattered most, and called it a coin flip. Chicago won it by four. We also gave each team its playoff chance after a win and after a loss. Chicago won: we said 96 in 100, and today&rsquo;s board says 96. Detroit lost: we said 88, the board says 89. Dallas lost: we said 10, the board says 10. The night game was the best football of the day. It changed almost nothing, as we said it would.</p>
+
+  <h3>What to take home</h3>
+  <p>A 99-in-100 chance is a promise about a hundred games, not about this one. Judge a forecast by how its misses add up across a season, never by one night in Dallas.</p>
+</section>
+
+<!-- ===================================================================
+SOURCES (checked 2026-11-27)
+- Finals: ESPN scoreboard + nflverse games.csv. CHI 39-35 DET, PHI 39-38 DAL, BUF 13-10 KC.
+- Records now: CHI 9-2, DET 8-3, DAL 5-7, PHI 4-7, BUF 10-1, KC 8-3 (ESPN).
+- Key plays: ESPN summary + nflverse pbp 2026 (game 2026_12_PHI_DAL). Blocked punt by
+  T.Robinson, Q4 13:53; Aubrey 40 yd wide left, Q4 3:27; 4th-down sack by T.Robinson at
+  PHI 48, Q4 0:55; Elliott 59 yd good, Q4 0:07 (nflverse) / 0:02 (ESPN): written as
+  "with seconds left". Two Eagles two-point tries failed (one after a holding penalty).
+- Peak Dallas chance: ESPN 99.4 (Q3 3:35, 31-10); nflverse wp 98.5, vegas_wp 99.4.
+- "Favored by 8.5" = nflverse closing spread_line; 79 in 100 from the moneyline with the
+  house margin removed; spread-bucket check: 7.5-9.5 favorites won 76 of 100 (595 games).
+- 1 in 75 (margins summing to 8 or less): research/thanksgiving/close_games.py, 200,000
+  resampled days from 2000-2025 games with spreads within 1 point of each game's.
+  1 in 7 = all three within 8 points. 1 in 45 = all three within 4.
+- 19 three-game Thanksgivings since 2006; only 2022 all one-score (margins 3, 8, 7 = 18).
+- 99-in-100 calibration: research/thanksgiving/calibration.py, data/calibration.json.
+  nflverse wp, first play each team reached 0.99, 2006-2025: 21 expected losses, 19 actual.
+- Playoff chances: Issue #241 if-win/if-lose vs data/nfl-odds.json generated 2026-11-27
+  (CHI .9602, DET .889, DAL .0979).
+
+SATURDAY / SUNDAY TO-DO
+- [ ] Re-pull data/nfl-odds.json Saturday night; update "today's board" numbers if moved.
+- [ ] Run check_readability, check_voice, check_scores --date 2026-11-26 on the
+      assembled edition (check_scores needs the Thursday date for these games).
+- [ ] Decide placement vs. the generated CFB recap; trim if the edition runs long.
+- [ ] Do NOT mention the private week-13 pool grading.
+=================================================================== -->
