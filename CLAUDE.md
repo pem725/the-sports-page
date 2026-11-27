@@ -1292,6 +1292,10 @@ there rather than quietly substituting it.
     kickoff and then moved by *behavior* (where the money goes), so it balances
     the two sides and carries the house's margin. Explaining that mechanism is
     education and is welcome; it is how a reader learns to interpret the number.
+  - **Say "the crowd", never "the market".** The editor, same day: *"The market
+    just is money ... But the crowd is decision making. That's what I care
+    about."* A spread is a crowd's judgment, updated as people act on it; that
+    is the Good Judgment Project's idea, and it is what we teach.
   - **Never the betting tenor.** No tips, no picks against the spread, no
     "covering", no "sharps", no "lock of the week", no payouts. Our own forecasts
     are framed as expectations and graded as forecasts.
