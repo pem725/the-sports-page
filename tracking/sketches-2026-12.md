@@ -85,6 +85,28 @@ once, so the answer is a trade-off table, not a verdict.
   lacks (recruiting, injuries). Matching shrinks this, never removes it.
 - Two-digit numbers only. Builds on #029 (coaching stabilization); link it.
 
+**Editor's calls, 2026-11-27:** bad year = 3+ wins below the school's own trailing 5-year
+average (per game, scaled to the season). Open, his questions: does a coach's year 1 count
+(main pass: no; sensitivity pass with it: same story), and the floor (381 of 5,500
+school-seasons were too weak to ever fall 3 wins; they cannot trigger, and the piece says so).
+
+**First pass (research/coach-keep-or-fire/build.py), 340 bad years, 103 changed, 237 kept:**
+
+| outcome | changed | kept | RR [95%] | OR [95%] |
+|---|---|---|---|---|
+| sank further next year | 21% | 12% | 1.8 [1.0-3.2] | 2.0 [1.0-4.0] |
+| next 5 years below pre-slump | 74% | 81% | 0.91 [0.80-1.0] | 0.66 [0.41-1.1] |
+| back to 6+ wins within 2 years | 54% | 66% | 0.82 [0.67-0.99] | 0.61 [0.38-0.97] |
+
+Intervals resample schools. Stratifying on tenure and prior strength barely moves them
+(Mantel-Haenszel RR 1.9 / 0.93 / 0.88). The changed group's bad year was worse (2.6 vs 3.3
+wins, SP+ -8.7 vs -6.2), which should make sinking further *harder*, and they sank more:
+the new coach's first-year dip. **The RR/OR lesson is in the second row**: the outcome is
+common (about 8 in 10), so the odds ratio (0.66) looks like a big effect while the relative
+risk (0.91) says about 1 in 10. Same data, two very different headlines.
+Next: match on SP+ of the bad year (the AD saw the roster), split "changed" into left vs
+let go where a source allows, and check the 1970s bowl-proxy rows separately.
+
 **Steps:** build the panel (1 day, local data, no CFBD calls), match + bootstrap (1 day),
 draft, the checks, cold_read. Draft by Fri 12/4 so the board sees it.
 
