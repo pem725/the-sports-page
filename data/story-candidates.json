@@ -929,6 +929,48 @@
    "why": "Teaches relative risk and odds ratios on a real decision with several outcomes and horizons at once; shows a trade-off, not a verdict. Builds on #029 (coaching stabilization) and candidate cfb-turnaround-speed. Coaching-carousel season makes it timely now.",
    "status": "idea",
    "source": "Patrick, 2026-11-27"
+  },
+  {
+   "slug": "count-is-fuzzy",
+   "title": "18 in 100 Is a Count, a Chance, and a Guess",
+   "grip": 6,
+   "twist": 7,
+   "clock": 3,
+   "stack": 7,
+   "carry": 10,
+   "answerable": true,
+   "number": "A real 18-of-100 from the archive (e.g. a success rate) shown three ways: 18 hits and 82 misses, 0.18, and the range the next 100 could land in (binomial) plus what we believe the true rate is (beta), drawn as a figure.",
+   "why": "Concept primer on distributions of counts: binomial/beta for hits and misses, Poisson for stolen bases, zero-inflated Poisson or negative binomial for interceptions, skewed continuous for yards per carry. Says why the choice of distribution matters. Pairs with the one-tool piece (222) as tool appropriateness, not a dig at social scientists.",
+   "status": "idea",
+   "source": "Patrick, 2026-11-27"
+  },
+  {
+   "slug": "multicollinearity",
+   "title": "Three Stats Said the Same Thing. Which One Gets the Credit?",
+   "grip": 6,
+   "twist": 7,
+   "clock": 3,
+   "stack": 6,
+   "carry": 9,
+   "answerable": true,
+   "number": "A real regression from the constructs work where correlated predictors (e.g. yards, first downs, points) split the credit unstably; show the coefficients jump between samples while the prediction holds.",
+   "why": "Concept primer: multicollinearity. When predictors move together you cannot tell which one did it; large data sets help but do not cure it. Data already in research/constructs/.",
+   "status": "idea",
+   "source": "Patrick, 2026-11-27"
+  },
+  {
+   "slug": "graph-tricks",
+   "title": "The Chart Was True. The Picture Lied.",
+   "grip": 7,
+   "twist": 7,
+   "clock": 5,
+   "stack": 8,
+   "carry": 9,
+   "answerable": true,
+   "number": "A real broadcast or press graphic (water-cooler ledger) redrawn honestly: area/volume pictograms vs height, chopped axes; how much bigger the gap looks than it is.",
+   "why": "Darrell Huff's How to Lie with Statistics (1954) in sports clothes. House habits to repeat: always plot, ask for the figure behind every correlation, and the numerator and denominator behind every ratio. Use a real graphic, never a made-up one.",
+   "status": "idea",
+   "source": "Patrick, 2026-11-27"
   }
  ]
 }
