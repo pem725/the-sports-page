@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 258 issues remaining of 500
+**The Sports Page** — a daily sports statistics newsletter at https://thesportspage.net/. Each issue takes one strange, extreme, or counterintuitive stat and explains what it actually means. Goal: 257 issues remaining of 500
 
 ## Repository Structure
 
@@ -1468,9 +1468,9 @@ Editorial broadsheet aesthetic (aged newsprint, NOT tech blog):
 
 ## Current State (update this when publishing)
 
-Published: 242 issues (#1-242)
-Queue: 13 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 206-rivalry-leverage, 211-time-of-possession, 214-yard-gap, 215-henderson, 216-what-repeats-hitters, 217-what-repeats-quarterbacks, 218-what-repeats-pitchers, 219-what-repeats-pass-rush, 220-what-repeats-receivers, 222-one-tool, _TEMPLATE)
+Published: 243 issues (#1-243)
+Queue: 12 articles ready (088-sorsby-supplemental-bet, 104-payroll-explosion-arms-race, 206-rivalry-leverage, 214-yard-gap, 215-henderson, 216-what-repeats-hitters, 217-what-repeats-quarterbacks, 218-what-repeats-pitchers, 219-what-repeats-pass-rush, 220-what-repeats-receivers, 222-one-tool, _TEMPLATE)
 Concept primers: 27 published (latest: concepts/nomothetic-vs-idiographic.html, Concept No. 27)
 Reserve: 2 evergreen pieces (incl. sunday-recap-template.html)
-Goal: 258 issues remaining of 500
-Last published: Issue #242 — "Alabama Won 47–0 and Fell Three Spots. Neither Computer Moved It." (213-judges-scorecard-2.html) on November 27, 2026
+Goal: 257 issues remaining of 500
+Last published: Issue #243 — "Does Keeping the Ball Win Football Games? Check Which Came First." (211-time-of-possession.html) on November 28, 2026
