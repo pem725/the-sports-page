@@ -197,7 +197,12 @@ def cfb_watch(date):
             break
     if not games:
         return None
-    best = None
+    # Apply the bar BEFORE choosing. Until 2026-11-28 the best-scoring game was picked first
+    # and then tested against the bar, so one lopsided game featuring a top club could hide
+    # every close game on the card (rivalry Saturday reported "nothing close"), and the quiet
+    # line called that lopsided game "the tightest". Now: best among games that clear the
+    # bar; if none clears it, report the genuinely tightest one.
+    best, tightest = None, None
     for x in games:
         h, a = x.get("homeTeam"), x.get("awayTeam")
         rh, ra = R.get(h), R.get(a)
@@ -215,14 +220,16 @@ def cfb_watch(date):
         score = closeness * quality
         row = dict(sport="College Football", score=score, when=x.get("startDate", ""),
                    home=h, away=a, rh=rh, ra=ra, p=p, neutral=neutral, gap=gap)
-        if best is None or score > best["score"]:
+        if tightest is None or closeness > 1 - abs(tightest["p"] - 0.5) * 2:
+            tightest = row
+        if max(p, 1 - p) <= MAX_LOPSIDED and (best is None or score > best["score"]):
             best = row
-    if not best:
+    if not tightest:
         return None
-    if best["p"] > MAX_LOPSIDED:
+    if not best:
         return dict(sport="College Football", quiet=True,
                     note=f'nothing close &mdash; the tightest game involving a ranked side is '
-                         f'{best["p"]*100:.0f}/{100-best["p"]*100:.0f}')
+                         f'{tightest["p"]*100:.0f}/{100-tightest["p"]*100:.0f}')
     fav = best["home"] if best["rh"] < best["ra"] else best["away"]
     best["why"] = (f'The ratings put these two {best["gap"]} places apart, making it '
                    f'{"an" if str(int(best["p"]*100))[0] in "18" else "a"} '
